@@ -1,5 +1,5 @@
-# Amnesia2022-Remastered
-Amnesia 2022, A Text Adventure Game Written by Thomas Disch
+# Amnesia2022-Restored
+An Adventure Game Written by Thomas Disch
 
 
 Documentation Below:
