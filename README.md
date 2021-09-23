@@ -1,4 +1,4 @@
-# Amnesia2022-Restored
+# Amnesia : Restored
 An Adventure Game Written by Thomas Disch
 
 
