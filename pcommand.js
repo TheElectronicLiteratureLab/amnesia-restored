@@ -328,6 +328,41 @@ let takeItem = (itemName) => {
   }
 };
 
+
+// drop item from inventory
+let dropItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasName(item, itemName);
+  let itemIndex = disk.inventory.findIndex(findItem);
+  const item = getItemInInventory(itemName);
+  
+
+  if (typeof itemIndex === 'number' && itemIndex > -1){
+    if (item.isDroppable) {
+      room.items.push(item)
+      disk.inventory.splice(itemIndex, 1);
+      if (typeof itemIndex === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(`You dropped the ${getName(item.name)}.`);
+      }
+    } else {
+      if (typeof item.onTake === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(item.block || `You can't drop that.`);
+      }
+    }
+  }
+  if (!item) {
+    println(`You can't drop what you don't have.`);
+    return;
+  }
+
+
+
+};
+
 // list useable items in room and inventory
 let use = () => {
   const room = getRoom(disk.roomId);
@@ -412,6 +447,7 @@ let help = () => {
   const instructions = `The following commands are available:
     LOOK:   'look at key'
     TAKE:   'take book'
+    DROP:   'drop key'
     GO:     'go north'
     USE:    'use door'
     TALK:   'talk to mary'
@@ -478,6 +514,7 @@ let commands = [
     get: takeItem,
     use: useItem,
     say: sayString,
+    drop: dropItem,
     save: x => save(x),
     load: x => load(x),
     restore: x => load(x),

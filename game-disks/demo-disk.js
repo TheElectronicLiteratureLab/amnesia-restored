@@ -77,6 +77,10 @@ const demoDisk = {
                 // remove this method (we don't need it anymore)
                 delete key.onLook;
               },
+              isDroppable: true,
+              onDrop: () => {
+                println(`You dropped the silver key.`);
+              },
               isTakeable: true,
               onTake: () => {
                 println(`You took it.`);
