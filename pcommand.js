@@ -347,7 +347,7 @@ let dropItem = (itemName) => {
         println(`You dropped the ${getName(item.name)}.`);
       }
     } else {
-      if (typeof item.onTake === 'function') {
+      if (typeof item.onDrop === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
       } else {
         println(item.block || `You can't drop that.`);
