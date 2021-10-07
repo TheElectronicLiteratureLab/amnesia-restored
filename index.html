@@ -7,20 +7,20 @@
 </div>
 
 <!-- CSS styles -->
-<link id="styles" rel="stylesheet" type="text/css" href="styles/modern.css">
+<link id="styles" rel="stylesheet" type="text/css" href="css/modern.css">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
 
 <!-- Include game engine -->
 <!-- Be sure to load in dependencies first -->
-<script src="parser.js"></script>
-<script src="index.js"></script>
-<script src="pcommand.js"></script>
-<script src="internalfunc.js"></script>
+<script src="scr/text-engine/parser.js"></script>
+<script src="scr/text-engine/init.js"></script>
+<script src="scr/text-engine/pcommand.js"></script>
+<script src="scr/text-engine/internalfunc.js"></script>
 
 <!-- Include game data ('disk') -->
-<script src="game-disks/demo-disk.js"></script>
+<script src="scr/text-engine/game-disks/demo-disk.js"></script>
 
 <!-- Load disk into engine -->
 <script>loadDisk(demoDisk);</script>
