@@ -94,15 +94,22 @@ let go = () => {
 
 // find the exit with the passed direction in the given list
 // string, array -> exit
-let getExit = (dir, exits) => exits.find(exit =>
+let getExitDir = (dir, exits) => exits.find(exit =>
   Array.isArray(exit.dir)
     ? exit.dir.includes(dir)
     : exit.dir === dir
 );
 
+//find the exit with the id in the given list
+let getExitId = (id, exits) => exits.find(exit => 
+  Array.isArray(exit.id)
+  ? exit.id.includes(id) 
+  : exit.id === id 
+);
+
 // go the passed direction
 // string -> nothing
-let goDir = (dir) => {
+function goDir(dir) {
   const room = getRoom(disk.roomId);
   const exits = room.exits;
 
@@ -111,10 +118,35 @@ let goDir = (dir) => {
     return;
   }
 
-  const nextRoom = getExit(dir, exits);
+  const nextRoom = getExitDir(dir, exits);
 
   if (!nextRoom) {
     println(`There is no exit in that direction.`);
+    return;
+  }
+
+  if (nextRoom.block) {
+    println(nextRoom.block);
+    return;
+  }
+
+  enterRoom(nextRoom.id);
+}
+
+//go to named place 
+let goPlaces = (id) => {
+  const room = getRoom(disk.roomId);
+  const places = room.exits;
+
+  if (!places) {
+    println(`You can't go there`);
+    return;
+  }
+
+  const nextRoom = getExitId(id, places);
+
+  if (!nextRoom) {
+    println(`You can't reach there`);
     return;
   }
 

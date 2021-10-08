@@ -41,7 +41,7 @@ let applyInput = (input) => {
     useItem(arguments[0]);
   } else if (arguments.length >= commands.length) {
     exec(commands[commands.length - 1][command], arguments);
-  } else if (room.exits && getExit(command, room.exits)) {
+  } else if (room.exits && getExitDir(command, room.exits)) {
     // handle shorthand direction command, e.g. "EAST" instead of "GO EAST"
     goDir(command);
   } else if (disk.conversation && (disk.conversation[command] || conversationIncludesTopic(disk.conversation, command))) {
