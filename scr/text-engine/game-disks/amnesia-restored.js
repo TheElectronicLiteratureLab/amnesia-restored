@@ -1,6 +1,7 @@
 
 const amnesiaRestored = {
   roomId: 'hote-room-1', // Set this to the ID of the room you want the player to start in.
+  currPos: [],
   rooms: [
     {
       id: 'hote-room-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
@@ -8,70 +9,31 @@ const amnesiaRestored = {
       desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`, // Displayed when the player first enters the room.
       items: [
         {
-          name: 'bed'
-        },
-        {
-          name: 'mirror'
-        },
-        {
-          name: 'drawer'
-        },
-        {
-          name: 'closet'
-        },
-        {
-          name: 'clothes hanger'
-        },
-        {
-          name: ['sheet', 'sheets']
-        },
-        {
-          name: ['bible', 'gideon bible', 'gideon', 'holy book']
-        },
-        {
-          name: 'brochure'
-        },
-        {
-          name: 'phone'
+          name: 'up',
+          onTake: () => {
+            enterRoom('hote-room-2');
+          }
         }
-      ],
-      exits: [
-        {dir: 'north', id: 'bath'}
       ]
     },
     {
-      id: 'bath',
-      name: 'Bathroom',
-      desc: '',
-      items: [
-        {
-          name: 'towel'
-        },
-        {
-          name: 'sink'
-        },
-        {
-          name: 'toilet'
-        }
-      ],
-      exits: [
-        {dir: "south", id: "hote-room-1"}
-      ]
+      id: 'hote-room-2',
+      name: '',
+      desc: "You get out of bed, and as you do, you realize, from a glance at your naked body, that you are white, male, and reasonably well-put-together. But what about your face? That’s part of anyone’s identity that should be proof against amnesia. The mirror over the dresser is angled so you can’t see yourself from where you stand. So you decide to take a simple test, closing your eyes and taking an inventory of how you think you ought to look.",
+      onEnter: () => {
+        let char = getCharacter('mirror');
+        console.log(char);
+        char.onTalk();
+      }
     },
-
-
-
-
-
-
-    {
-      id: 'clearing',
-      name: 'A Forest Clearing',
-      desc: `It's a forest clearing. To the SOUTH is The First Room.`,
-      exits: [ // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
-        {dir: 'north', id: 'clearing', block: `The DOOR leading NORTH is overgrown with VINES.`},// If an exit has a block, the player will not be able to go that direction until the block is removed.
-        {dir: 'clearing', id: 'clearing', block: 'YOU SHALL NOT PASS'}
-      ],
-    }
   ],
+  characters: [
+    {
+      name: 'mirror',
+      roomId: 'hote-room-2',
+      onTalk: () => {
+        println("Hi!");
+      }
+    }
+  ]
 };

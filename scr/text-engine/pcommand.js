@@ -152,6 +152,13 @@ let talk = () => {
   chars();
 };
 
+//////////////////////////////////////////////////
+// Set aside for character creation commands only
+// Will be deleted from command list after completion.
+//////////////////////////////////////////////////
+
+////////////////////////////////////////////////
+
 // speak to someone or about some topic
 // string, string -> nothing
 let talkToOrAboutX = (preposition, x) => {
