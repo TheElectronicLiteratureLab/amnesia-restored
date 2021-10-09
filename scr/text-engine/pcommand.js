@@ -125,6 +125,25 @@ let goDir = (dir) => {
 
   enterRoom(nextRoom.id);
 };
+/*let clearInput = () => { // Removes the option for the player to see the arrow
+  document.getElementById("arrow").innerHTML = "";
+};*/
+/*let pressEnter = (dir) => { //Making a semi universal press Enter function
+  const room = getRoom(disk.roomId); //Fetches the room id
+  const exits = room.exits; // Finds the exit
+  var enterKeyDown = false; // Setting the key press to boolean value, so it doesn't trigger more than once
+  const nextRoom = getExit(dir, exits); // Goes to the next room id no matter what
+  clearInput(); // When PLEASE PRESS ENTER TO CONTINUE displays, we don't want the player to type anything
+  println(`PLEASE PRESS [ENTER] TO CONTINUE`); // Pretty please press enter :)
+  input.addEventListener('keydown', (e) => { //actually hitting enter
+    if (!enterKeyDown){ // checking enter isn't already down
+      return;
+    }else{
+    enterRoom(nextRoom.id); // Bingo bongo your in the next node
+    enterKeyDown = true; // returns the boolean back to 
+    }
+  },
+  )};*/
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');
