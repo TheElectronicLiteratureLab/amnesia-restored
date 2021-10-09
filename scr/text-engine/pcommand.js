@@ -26,7 +26,9 @@ let look = () => {
 
 // look in the passed way
 // string -> nothing
-let lookThusly = (str) => println(`You look ${str}.`);
+function lookThusly(str) {
+  return println(`You look ${str}.`);
+}
 
 // look at the passed item or character
 // array -> nothing
@@ -100,13 +102,6 @@ let getExitDir = (dir, exits) => exits.find(exit =>
     : exit.dir === dir
 );
 
-//find the exit with the id in the given list
-let getExitId = (id, exits) => exits.find(exit => 
-  Array.isArray(exit.id)
-  ? exit.id.includes(id) 
-  : exit.id === id 
-);
-
 // go the passed direction
 // string -> nothing
 function goDir(dir) {
@@ -132,30 +127,13 @@ function goDir(dir) {
 
   enterRoom(nextRoom.id);
 }
-
-//go to named place 
-let goPlaces = (id) => {
-  const room = getRoom(disk.roomId);
-  const places = room.exits;
-
-  if (!places) {
-    println(`You can't go there`);
-    return;
+//testing some things to further parse input
+let inputRead = () => {
+  if (input.value !== 'leave') {
+    console.log(`you're not leaving`)
+  } else {
+    console.log(`nice, you're leaving`)
   }
-
-  const nextRoom = getExitId(id, places);
-
-  if (!nextRoom) {
-    println(`You can't reach there`);
-    return;
-  }
-
-  if (nextRoom.block) {
-    println(nextRoom.block);
-    return;
-  }
-
-  enterRoom(nextRoom.id);
 };
 
 // shortcuts for cardinal directions
@@ -480,7 +458,8 @@ let help = () => {
     LOOK:   'look at key'
     TAKE:   'take book'
     DROP:   'drop key'
-    GO:     'go north'
+    GO:     'go North'
+    HEAD:   'head foyer'
     USE:    'use door'
     TALK:   'talk to mary'
     ITEMS:  list items in the room
@@ -541,6 +520,7 @@ let commands = [
   // one argument (e.g. "go north", "take book")
   {
     look: lookThusly,
+    head: goDir,
     go: goDir,
     take: takeItem,
     get: takeItem,
