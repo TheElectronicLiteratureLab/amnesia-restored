@@ -35,6 +35,7 @@ const demoDisk = {
           desc: `Sometimes called a Swiss Cheese plant, no office is complete without one. It has lovely, large leaves. This is the biggest you\'ve ever seen.
 
           There's **SOMETHING SHINY** in the pot.`,
+          
           block: `It's far too large for you to carry.`, // optional reason player cannot pick up this item
           // when player looks at the plant, they discover a shiny object which turns out to be a key
           onLook: () => {
@@ -77,10 +78,10 @@ const demoDisk = {
                 // remove this method (we don't need it anymore)
                 delete key.onLook;
               },
-              // isDroppable: true,
-              // onDrop: () => {
-              //   println(`You dropped the silver key.`);
-              // },
+              isDroppable: true,
+              onDrop: () => {
+                println(`You dropped the silver key.`);
+              },
               isTakeable: true,
               onTake: () => {
                 println(`You took it.`);

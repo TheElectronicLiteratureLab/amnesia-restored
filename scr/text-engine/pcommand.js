@@ -26,7 +26,9 @@ let look = () => {
 
 // look in the passed way
 // string -> nothing
-let lookThusly = (str) => println(`You look ${str}.`);
+function lookThusly(str) {
+  return println(`You look ${str}.`);
+}
 
 // look at the passed item or character
 // array -> nothing
@@ -125,8 +127,14 @@ function goDir(dir) {
 
   enterRoom(nextRoom.id);
 }
-
-
+//testing some things to further parse input
+let inputRead = () => {
+  if (input.value !== 'leave') {
+    console.log(`you're not leaving`)
+  } else {
+    console.log(`nice, you're leaving`)
+  }
+};
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');

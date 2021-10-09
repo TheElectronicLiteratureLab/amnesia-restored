@@ -10,28 +10,34 @@ const healthClubDisk = {
       The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
       exits: [
         {
-          dir: 'left', // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
+          dir: ['left'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
           id: 'heal-club1',
         },
         {
-          dir: 'right',
-          id: 'heal-club2',
+          dir: ['right'],
+          id: 'heal-club?',
         },
         {
-          dir: 'leave',
+          dir: ['leave'],
           id: 'cor-?'
         }
       ],
     },
     {
-      id: 'clearing',
-      name: 'A Forest Clearing',
-      desc: `It's a forest clearing. To the SOUTH is The First Room.`,
+      id: 'heal-club1',
+      name: `Women's Locker Room`,
+      desc: `You enter the women’s locker room, and a woman who seems to be in training for the Olympic hammer throw looks at you with the joy of combat already glistening in her eyes. 
+      “Not here, buddy,” she informs you in a low voice. “This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room.” 
+      She points the direction with her thumb. “That way.”`,
       exits: [
         {
-          dir: 'south',
-          id: 'start',
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
         },
+        {
+          dir: [],
+          id: 'heal-club 2'
+        }
       ],
     }
   ],
