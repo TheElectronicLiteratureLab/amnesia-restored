@@ -47,21 +47,6 @@ let println = (line, className) => {
 // array -> any
 let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
-//gets the last user input and stores it inside the lastInput variable
-let lastInput;
-function getLastInput () {
-  lastInput = String(inputs[inputs.length-1]);
-  console.log(lastInput);
-};
-
-//parses the users last input against first parameter, outputs text of second parameter
-function parseLastInput (kWord, outText) {
-  getLastInput();
-  if (lastInput !== kWord) {
-    println(outText);
-  };
-};
-
 // return the first name if it's an array, or the only name
 // string | array -> string
 function getName(name) {

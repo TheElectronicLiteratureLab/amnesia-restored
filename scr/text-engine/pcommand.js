@@ -346,7 +346,6 @@ let dropItem = (itemName) => {
   let itemIndex = disk.inventory.findIndex(findItem);
   const item = getItemInInventory(itemName);
   
-
   if (typeof itemIndex === 'number' && itemIndex > -1){
     if (item.isDroppable) {
       room.items.push(item)
@@ -368,10 +367,35 @@ let dropItem = (itemName) => {
     println(`You can't drop what you don't have.`);
     return;
   }
-
-
-
 };
+
+//messing with sasquatch below
+//gets the last user input and stores it inside the lastInput variable
+let lastInput;
+function getLastInput () {
+  lastInput = inputs[inputs.length-1];
+};
+
+//parses the users last input against first parameter, outputs text of second parameter
+function parseLastInput (kWord, outText) {
+  getLastInput();
+  if (lastInput !== kWord) {
+    println(outText);
+  };
+};
+
+function womensLock () {
+  input.addEventListener('keydown', (h) => {
+    const ent = 13;
+
+    if (h.keyCode === ent) {
+      console.log('womens lock ran now');
+      parseLastInput('leave', `"I'm warning you, Bozo: Out of here!"`);
+      return;
+    };
+  });
+};
+//done messing with sasquatch, see above
 
 // list useable items in room and inventory
 let use = () => {
