@@ -100,13 +100,6 @@ let getExitDir = (dir, exits) => exits.find(exit =>
     : exit.dir === dir
 );
 
-//find the exit with the id in the given list
-let getExitId = (id, exits) => exits.find(exit => 
-  Array.isArray(exit.id)
-  ? exit.id.includes(id) 
-  : exit.id === id 
-);
-
 // go the passed direction
 // string -> nothing
 function goDir(dir) {
@@ -132,31 +125,6 @@ function goDir(dir) {
 
   enterRoom(nextRoom.id);
 }
-
-//head place function 
-let goPlaces = (id) => {
-  const room = getRoom(disk.roomId);
-  const places = room.exits;
-
-  if (!places) {
-    println(`You can't go there`);
-    return;
-  }
-
-  const nextRoom = getExitId(id, places);
-
-  if (!nextRoom) {
-    println(`You can't reach there`);
-    return;
-  }
-
-  if (nextRoom.block) {
-    println(nextRoom.block);
-    return;
-  }
-
-  enterRoom(nextRoom.id);
-};
 
 
 
@@ -544,7 +512,7 @@ let commands = [
   // one argument (e.g. "go north", "take book")
   {
     look: lookThusly,
-    head: goPlaces,
+    head: goDir,
     go: goDir,
     take: takeItem,
     get: takeItem,
