@@ -133,7 +133,7 @@ function goDir(dir) {
   enterRoom(nextRoom.id);
 }
 
-//go to named place 
+//head place function 
 let goPlaces = (id) => {
   const room = getRoom(disk.roomId);
   const places = room.exits;
@@ -157,6 +157,8 @@ let goPlaces = (id) => {
 
   enterRoom(nextRoom.id);
 };
+
+
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');
@@ -480,7 +482,8 @@ let help = () => {
     LOOK:   'look at key'
     TAKE:   'take book'
     DROP:   'drop key'
-    GO:     'go north'
+    GO:     'go North'
+    HEAD:   'head foyer'
     USE:    'use door'
     TALK:   'talk to mary'
     ITEMS:  list items in the room
@@ -541,6 +544,7 @@ let commands = [
   // one argument (e.g. "go north", "take book")
   {
     look: lookThusly,
+    head: goPlaces,
     go: goDir,
     take: takeItem,
     get: takeItem,

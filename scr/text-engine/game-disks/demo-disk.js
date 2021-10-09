@@ -55,7 +55,7 @@ const demoDisk = {
                 } else if (room.id === 'reception') {
                   println(`You unlock the door to the **EAST**!`);
                   // remove the block
-                  const exit = getExit('east', room.exits);
+                  const exit = getExitDir('east', room.exits);
                   delete exit.block;
                   // this item can only be used once
                   const key = getItemInInventory('shiny');
@@ -134,7 +134,7 @@ const demoDisk = {
           desc: `There are 4" metal letters nailed to the door. They spell out: "RESEARCH LAB".`,
           onUse: () => {
             const reception = getRoom('reception');
-            const exit = getExit('east', reception.exits);
+            const exit = getExitDir('east', reception.exits);
             if (exit.block) {
               println(`It's locked.`);
             } else {
