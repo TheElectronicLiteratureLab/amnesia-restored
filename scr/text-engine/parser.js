@@ -8,6 +8,7 @@ let applyInput = (input) => {
   inputsPos = inputs.length;
   println(`> ${input}`);
   prevInput = input;
+  console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
 
@@ -28,25 +29,79 @@ let applyInput = (input) => {
       hairColor = 'light';
       enterRoom('hote-room-3');
     } else if (disk.roomId === 'hote-room-2') {
-      hairColor = 'light';
-      enterRoom('hote-room-3');
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        hairColor = 'light';
+        enterRoom('hote-room-3');
+      }
     }
 
     //long or short hair
     else if (disk.roomId === 'hote-room-3' && prevInput === 'long') {
+      hairLength = 'short';
       enterRoom('hote-room-4');
     }
     else if (disk.roomId === 'hote-room-3' && prevInput === 'short') {
+      hairLength = 'long';
       enterRoom('hote-room-4');
     }
     else if (disk.roomId === 'hote-room-3') {
-      enterRoom('hote-room-4');
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        let hair = ['short', 'long'];
+        hairLength = pickOne(hair);
+        console.log(hairLength);
+        enterRoom('hote-room-4');
+      }
     }
 
-
-    else if (disk.roomId === 'hote-room-2' && prevInput === 'dark') {
-      enterRoom('hote-room-3');
+    //beard, stache, or neither
+    else if (disk.roomId === 'hote-room-4' && prevInput === 'beard') {
+      hairFace = 'a mustache'
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4' && prevInput === 'mustache') {
+      hairFace = 'a full beard'
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4' && prevInput === 'neither') {
+      let facialHair = ['a full beard', 'a mustache but no beard'];
+      hairFace = pickOne(facialHair);
+      console.log(hairFace);
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4') {
+      if (prevInput === '') 
+      {
+        println('Come again?');        
+      }
+      else {
+        let facialHair = ['a full beard', 'a mustache', 'neither a beard or mustache'];
+        hairFace = pickOne(facialHair);
+        console.log(hairFace);
+        enterRoom('hote-room-5');
+      }
     }
+
+    //blue or brown?
+    else if (disk.roomId === 'hote-room-5' && prevInput === 'blue') {
+      eyeColor = 'brown';
+      enterRoom('hote-room-6');
+    } else if (disk.roomId === 'hote-room-5' && prevInput === 'brown') {
+      eyeColor = 'blue';
+      enterRoom('hote-room-6');
+    } else if (disk.roomId === 'hote-room-5') {
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        eyeColor = 'blue';
+        enterRoom('hote-room-6');  
+      }
+    }
+
+    //check to make sure player is in room
 
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
