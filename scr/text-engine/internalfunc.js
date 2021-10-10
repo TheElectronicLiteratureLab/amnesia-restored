@@ -176,3 +176,28 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
+
+// this is a function simulates the press enter mechanic from the original 
+let pressEnter = (id) => {
+  println('\nPlease press **[ENTER]** to continue');
+  //disable normal input
+  document.querySelector('input').disabled = true;
+  document.getElementById("arrow").innerHTML = "";
+
+  //create a listener for Enter button
+  let cont = (e) => {
+    if (e.key === 'Enter') {
+      println("WE DID IT!");
+      enterRoom(id);
+      document.removeEventListener("keydown", cont);
+      //input.addEventListener('keypress', response);
+    }
+  }
+  document.addEventListener("keydown", cont);
+}
+
+let renableInput = () => {
+  setTimeout(() => {
+    document.querySelector('input').disabled = false;
+    document.querySelector('input').focus(); }, 100);
+}

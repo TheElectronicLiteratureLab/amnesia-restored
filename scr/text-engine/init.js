@@ -44,15 +44,18 @@ let init = (disk) => {
   return initializedDisk;
 };
 
+let response = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+}
+
 // register listeners for input events
 let setup = () => {
-  input.addEventListener('keypress', (e) => {
-    const ENTER = 13;
 
-    if (e.keyCode === ENTER) {
-      applyInput();
-    }
-  });
+  input.addEventListener('keypress', response);
 
   input.addEventListener('keydown', (e) => {
     input.focus();

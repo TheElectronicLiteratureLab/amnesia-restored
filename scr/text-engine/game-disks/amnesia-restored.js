@@ -53,8 +53,18 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         println(`You could hardly be more completely mistaken! For when you look in the mirror, the stranger you see there has ${hairLength}, ${hairColor} hair. He has ${hairFace}. And his eyes are emphatically ${eyeColor}.`);
+        pressEnter('hote-room-7');
       }
     },
+    {
+      id: 'hote-room-7',
+      name: 'Hotel Room',
+      desc: `blahblahblah`,
+      onEnter: () => {
+        println('YoU MADe iT, now the game can begin woooooooot');
+        renableInput();
+      }
+    }
     
   ],
   characters: []
