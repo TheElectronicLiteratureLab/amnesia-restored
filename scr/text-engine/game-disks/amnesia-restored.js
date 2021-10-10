@@ -1,4 +1,4 @@
-let hairlength = '';
+let hairColor = '';
 
 
 const amnesiaRestored = {
@@ -23,35 +23,18 @@ const amnesiaRestored = {
       name: '',
       desc: "You get out of bed, and as you do, you realize, from a glance at your naked body, that you are white, male, and reasonably well-put-together. But what about your face? That’s part of anyone’s identity that should be proof against amnesia. The mirror over the dresser is angled so you can’t see yourself from where you stand. So you decide to take a simple test, closing your eyes and taking an inventory of how you think you ought to look.",
       onEnter: () => {
-        let char = getCharacter('__charCreationMirror__');
-        console.log(char);
-        char.onTalk();
+        println('Your hair--is it light or dark?');
       }
     },
-  ],
-  characters: [
     {
-      name: '__charCreationMirror__',
-      roomId: 'hote-room-2',
-      topics: [
-        {
-          option: 'Is your hair short or long?',
-          removeOnRead: true,
-          keyword: 'short',
-          onSelected: () => {
-            console.log(getCharacter('__charCreationMirror__').topics[0].keyword);
-            
-            println('Your hair is long!')
-            hairlength = 'long';
-            
-          }
-          
-
-        }
-      ],
-      onTalk: () => {
-        
+      id: 'hote-room-3',
+      name: '',
+      desc: '',
+      onEnter: () => {
+        println('Long or short?');
       }
-    }
-  ]
+    },
+    
+  ],
+  characters: []
 };

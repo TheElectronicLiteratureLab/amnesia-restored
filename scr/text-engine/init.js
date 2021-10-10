@@ -1,6 +1,12 @@
 // global properties, assigned with let for easy overriding by the user
 let disk;
 
+// global values for character creation
+hairColor = '';
+hairLength = '';
+hairFace = '';
+eyeColor = '';
+
 // store user input history
 let inputs = [''];
 let inputsPos = 0;

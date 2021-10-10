@@ -1,20 +1,54 @@
+
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
+let prevInput = '';
 let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
   println(`> ${input}`);
-
+  prevInput = input;
   const val = input.toLowerCase();
   setInput(''); // reset input field
 
   const exec = (cmd, arg) => {
     if (cmd) {
       cmd(arg);
+      
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-    } else {
+    }
+    //hard coding for the character creation, will come back to fix this
+    //just trying to make it work for now
+    //light or dark hair
+    else if (disk.roomId === 'hote-room-2' && prevInput === 'light') {
+      hairColor = 'dark';
+      enterRoom('hote-room-3');
+    } else if (disk.roomId === 'hote-room-2' && prevInput === 'dark') {
+      hairColor = 'light';
+      enterRoom('hote-room-3');
+    } else if (disk.roomId === 'hote-room-2') {
+      hairColor = 'light';
+      enterRoom('hote-room-3');
+    }
+
+    //long or short hair
+    else if (disk.roomId === 'hote-room-3' && prevInput === 'long') {
+      enterRoom('hote-room-4');
+    }
+    else if (disk.roomId === 'hote-room-3' && prevInput === 'short') {
+      enterRoom('hote-room-4');
+    }
+    else if (disk.roomId === 'hote-room-3') {
+      enterRoom('hote-room-4');
+    }
+
+
+    else if (disk.roomId === 'hote-room-2' && prevInput === 'dark') {
+      enterRoom('hote-room-3');
+    }
+
+    else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
   };
