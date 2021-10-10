@@ -125,25 +125,28 @@ let goDir = (dir) => {
 
   enterRoom(nextRoom.id);
 };
-/*let clearInput = () => { // Removes the option for the player to see the arrow
+// clear the output
+let clearWindow = () => {
+  document.getElementById("output").innerHTML = "";
+};
+// clear the arrow (if it works)
+let clearInput = () => {
   document.getElementById("arrow").innerHTML = "";
-};*/
-/*let pressEnter = (dir) => { //Making a semi universal press Enter function
-  const room = getRoom(disk.roomId); //Fetches the room id
-  const exits = room.exits; // Finds the exit
-  var enterKeyDown = false; // Setting the key press to boolean value, so it doesn't trigger more than once
-  const nextRoom = getExit(dir, exits); // Goes to the next room id no matter what
-  clearInput(); // When PLEASE PRESS ENTER TO CONTINUE displays, we don't want the player to type anything
-  println(`PLEASE PRESS [ENTER] TO CONTINUE`); // Pretty please press enter :)
-  input.addEventListener('keydown', (e) => { //actually hitting enter
-    if (!enterKeyDown){ // checking enter isn't already down
-      return;
-    }else{
-    enterRoom(nextRoom.id); // Bingo bongo your in the next node
-    enterKeyDown = true; // returns the boolean back to 
-    }
-  },
-  )};*/
+}
+//bring back the arrow
+let restoreInput = () => {
+  document.getElementById("arrow").innerHTML = ">";
+}
+// bare bones just press enter to go to a room
+let pressEnter = (event) => {
+  const room = getRoom(disk.roomId);
+  const exits = room.exits;
+  const nextRoom = getExit(event, exits);//Making a semi universal press Enter function
+  if (event.key === 'Enter'){
+    enterRoom(nextRoom);
+  };
+};
+  
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');

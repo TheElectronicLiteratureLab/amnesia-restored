@@ -5,6 +5,11 @@ const suicideInSunderland = {
         id: 'hell-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: 'Lethe', // Displayed each time the player enters the room.
         desc: `Now you are dead--but that isn’t the end of your problems. Because it turns out that there is an afterlife--and you are there. It is highly unpleasant, though strictly speaking it isn’t hell. Not yet. You and a few thousand other naked anxious souls are standing on the bank of a misty black river, being stung by mosquitoes and bitten by large centipedes.`, // Displayed when the player first enters the room.
+        onEnter: () =>{
+            println(`PLEASE PRESS [ENTER] TO CONTINUE`, "enter"); // Pretty please press enter :)
+            document.addEventListener("keydown", pressEnter);
+            clearInput();
+        },
         exits: [
             // GO NORTH command leads to the Reception Desk
                 {
@@ -57,7 +62,19 @@ const suicideInSunderland = {
             // GO NORTH command leads to the Reception Desk
                 {
                 dir: 'north', 
-                id: 'hell-3',
+                id: 'gameover',
+                },
+            ],
+      },
+      {
+        id: 'hell-6',
+        name: 'Lethe',
+        desc: `“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.`,
+        exits: [
+            // GO NORTH command leads to the Reception Desk
+                {
+                dir: 'north', 
+                id: 'gameover',
                 },
             ],
       },

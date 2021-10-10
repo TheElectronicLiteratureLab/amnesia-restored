@@ -119,6 +119,8 @@ let loadDisk = (uninitializedDisk) => {
   input.focus();
 };
 
+
+
 // npm support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = loadDisk;
