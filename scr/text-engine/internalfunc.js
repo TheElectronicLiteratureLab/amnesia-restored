@@ -106,6 +106,14 @@ let objectHasName = (obj, name) => {
     : compareNames(obj.name);
 }
 
+// determine whether the object has the passed name
+// item | character, string -> bool
+let objectHasId = (obj, id) => {
+  const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
+
+  return Array.isArray(obj.itemId) ? obj.itemId.find(compareIds) : compareIds(obj.itemId);
+}
+
 // get a list of all characters in the passed room
 // string -> characters
 let getCharactersInRoom = (roomId) => disk.characters.filter(c => c.roomId === roomId);
@@ -119,12 +127,46 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasName(item, itemName))
-};
+  return room.items && room.items.find(item => objectHasName(item, itemName));
+}
+
+// get item name from ID
+let getItemName = (itemId, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasId(item, itemId));
+}
 
 // get item by name from inventory
 // string -> item
-let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
+let getItemInInventory = (name) => disk.inventory.find(item => objectHasId(item, name));
+
+// add item into players inventory automatically taken from pcmommands
+let addItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasId(item, itemName);
+  let itemIndex = room.items && room.items.findIndex(findItem);
+
+  if (typeof itemIndex === 'number' && itemIndex > -1) {
+    const item = room.items[itemIndex];
+    if (item.isTakeable) {
+      disk.inventory.push(item);
+      room.items.splice(itemIndex, 1);
+
+      if (typeof item.onTake === 'function') {
+        item.onTake({disk, println, room, getRoom, enterRoom, item});
+      }
+    }
+  }
+};
+
+/*
+let addItem = (itemId, roomId) => {
+  let item = getItemName(itemId, roomId);
+  println(item.name[0]);
+
+}
+*/
 
 // retrieves a keyword from a topic
 // topic -> string
@@ -187,7 +229,6 @@ let pressEnter = (id) => {
   //create a listener for Enter button
   let cont = (e) => {
     if (e.key === 'Enter') {
-      println("WE DID IT!");
       enterRoom(id);
       document.removeEventListener("keydown", cont);
       //input.addEventListener('keypress', response);
@@ -196,8 +237,10 @@ let pressEnter = (id) => {
   document.addEventListener("keydown", cont);
 }
 
-let renableInput = () => {
+// renables input after pressEnter();
+let reenableInput = () => {
   setTimeout(() => {
     document.querySelector('input').disabled = false;
+    document.getElementById("arrow").innerHTML = "> ";
     document.querySelector('input').focus(); }, 100);
 }

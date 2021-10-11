@@ -519,6 +519,7 @@ let commands = [
     go: goDir,
     take: takeItem,
     get: takeItem,
+    wake: takeItem,
     use: useItem,
     say: sayString,
     drop: dropItem,
