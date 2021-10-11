@@ -1,18 +1,22 @@
 let playerMoney = 0;
 
 const amnesiaRestored = {
-  roomId: 'hote-room-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
       id: 'hote-room-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Hotel Room', // Displayed each time the player enters the room.
       desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        
+      },
       items: [
         {
           name: 'up',
           onTake: () => {
             enterRoom('hote-room-2');
+            getInput();
           }
         }
       ]
@@ -107,6 +111,90 @@ const amnesiaRestored = {
           desc: 'It is a white plastic ballpoint.',
           isTakeable: true,
           isDroppable: true
+        },
+        {
+          itemId: 'roomtv',
+          name: ['Simplex TV', 'TV', 'television', 'telly'],
+          desc: 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.' ,
+          channelArr: [
+            'On Channel 2 there is an ad for Kool-Aid, and then a re-run of WHEEL OF FORTUNE resumes. The three contestants are trying to guess the letters of someone’s name. There’s no T in it, no S, no N.', 
+            'It’s tuned to the hotel’s own cable channel, and the screen fills with the heaving breasts and writhing limbs of a closed-circuit X-rated movie. You fee1 just enough arousal to know that your sexual orientation is definitely heterosexual.',
+            'Channel 4 has a news program. The President of El Salvador wants more money for his country’s defense. The President and the Soviet Union have unkind things to say about each other. Two people died in a fire in the Bronx. The weather will remain sunny.',
+            'Channel 5 has ads for soap and toothpaste and floor wax, and then a talk show host resumes his interview with an actress starring in a new prime-time soap opera, who feels that her role is helping her to grow in unexpected directions.',
+            'static',
+            'Channel 7 also has a news program. The President has asked Congress for money for arms. Two people died in a fire in the Bronx. \nRioting continues for the fifth day at the State Penitentiary at Revoltillo in Texas, where prisoners are protesting the prison’s food and its unsanitary conditions. There is some footage showing vats of stew cooking in the prison kitchen, the sight of which makes you continue to feel strangely queasy all through the weather forecast, which is for another bright and sunny day.',
+            'static',
+            `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: “100 people surveyed, top five answers are on the board--here’s the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
+            'static',
+            'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
+            'static',
+            `Channel 13 is showing a lot of advertising interspersed with clips from an old black-and-white movie.`
+          ],
+          isOn: false,
+          arrCount: 0,
+          onUse: () => {
+            let item = getItemInRoom('roomtv', 'hote-room-8');
+            item.isOn = !item.isOn;
+            if(item.isOn) {
+              item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
+              println(item.desc);
+            } else {
+              item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.'
+              println(item.desc);
+            }
+          }
+        },
+        {
+          itemId: 'computer',
+          name: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
+          desc: 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.',
+          isOn: false,
+          onUse: () => {
+            let pc = getItemInRoom('computer', 'hote-room-8');
+            pc.isOn = !pc.isOn;
+            if(pc.isOn === true)
+            {
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+              println(pc.desc)
+            } else {
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+              println(pc.desc);
+            }
+          }
+        },
+        {
+          itemId: 'drawer',
+          name: 'drawer',
+          desc: 'A drawer'
+        },
+        {
+          itemId: 'roomphone',
+          name: ['phone', 'telephone'],
+          desc: 'The phone on the dresser belongs to NYNEX.',
+          onTake: () => {
+            println("You probably shouldn't take that.");
+          }
+        },
+        {
+          itemId: 'brochure',
+          name: ['brochure', 'hotel brochure'],
+          desc: 'A brochure from the Sunderland Hotel',
+          isTakeable: true,
+          isDroppable: true,
+          onUse: () => {
+
+          },
+          onTake: () => {
+
+          },
+          onDrop: () => {
+
+          }
+        },
+        {
+          itemId: 'window',
+          name: 'window',
+          desc: ''
         }
       ]
     }

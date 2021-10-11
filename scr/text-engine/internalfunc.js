@@ -127,7 +127,7 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasName(item, itemName));
+  return room.items && room.items.find(item => objectHasId(item, itemName));
 }
 
 // get item name from ID
@@ -244,3 +244,5 @@ let reenableInput = () => {
     document.getElementById("arrow").innerHTML = "> ";
     document.querySelector('input').focus(); }, 100);
 }
+
+// trying to automatically applay specific 

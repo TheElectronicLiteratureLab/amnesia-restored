@@ -112,7 +112,7 @@ let applyInput = (input) => {
       }
     }
     else {
-      println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
+      //println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
   };
 
