@@ -1,15 +1,75 @@
 let playerMoney = 0;
 
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre-1', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
-      id: 'hote-room-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: 'Hotel Room', // Displayed each time the player enters the room.
-      desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`, // Displayed when the player first enters the room.
+      id: 'titl-scre-1',
+      name: 'AMNESIA: RESTORED',
+      desc: '',
       onEnter: () => {
-        
+        pressEnter(`amne-intr-1`);
+      }
+    },
+    {
+      id: 'amne-intr-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+      name: '', // Displayed each time the player enters the room.
+      desc: '',
+      onEnter: () => {
+        document.getElementById("output").innerHTML = "";
+        document.querySelector('input').disabled = true;
+        document.getElementById("arrow").innerHTML = "";
+        //document.getElementById("inputarrow").disabled = true;
+        println("You wake up feeling wonderful.\n\n ");
+        setTimeout(() => {  println("But also, in some indefinable way, strange\n\n "); }, 2000);
+        setTimeout(() => {  println("Slowly, as you lie there on the cool bedspread, it dawns on you that you have absolutely no idea where you are. A hotel room, by the look of it. But with the curtains drawn, you don't know in what city, or even what country.\n\n\n"); }, 4000);
+        setTimeout(() => {  pressEnter('amne-intr-2');}, 4100);  
+      },
+    },
+    {
+      id: 'amne-intr-2',
+      name: '',
+      desc: "",
+      onEnter: () => {
+        document.getElementById("output").innerHTML = "";
+        println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
+        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 5000);
+        setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 5000);
+        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 5100);
+      },
+    },
+    {
+      id: 'amne-intr-3',
+      name: '',
+      desc: '',
+      onEnter: () => {
+        document.getElementById("output").innerHTML = "";
+        println('INSERT CREDITS HERE');
+        println('AMNESIA: RESTORED was originally written by Thomas M. Disch, \nand programmed in JavaScript');
+        println("Software copyright C 1984, 1985, 1986 By Thomas M. Disch and Cognetics Corp.");
+        println("Story copyright C 1984, 1985, 1986 by Thomas M. Disch");
+        println("AMNESIA: RESTORED C 2021 by ??????????");
+        println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook");
+        println("Project Manager: Andrew Thompson");
+        println("Lead Designer: Ariel Wallace");
+        println("Lead Programmer: Ahria Nicholas");
+        println("Lead Web Developer: Elaina Sundwell");
+        println("Lead Animator: James Kay");
+        println("Lead Videographer: Zach McNaught");
+        println("Lead Promotioner: Sydney Brower");
+        println("Special Thanks: Washington State University Vancouver, Greg, Sarah, more, more, more");
+        pressEnter('hote-room-1');
+      }
+    },
+    {
+      id: 'hote-room-1',
+      name: 'Hotel Room',
+      desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`,
+      onEnter: () => {
+        document.getElementById("output").innerHTML = "";
+        println(`What's a person to do in such a situation? \n\nWhat YOU do is...`);
+        reenableInput();
       },
       items: [
         {

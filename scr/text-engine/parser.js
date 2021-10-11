@@ -20,6 +20,7 @@ let applyInput = (input) => {
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
     }
+    
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair

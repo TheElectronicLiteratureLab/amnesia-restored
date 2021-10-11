@@ -221,7 +221,10 @@ let endConversation = () => {
 
 // this is a function simulates the press enter mechanic from the original 
 let pressEnter = (id) => {
-  println('\nPlease press **[ENTER]** to continue');
+  if (disk.roomId === 'amne-intr-1' || disk.roomId === 'amne-intr-2' || disk.room === 'amne-intr-3'){
+    
+  }
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
