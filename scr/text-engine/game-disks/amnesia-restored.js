@@ -1,5 +1,3 @@
-let playerMoney = 0;
-
 const amnesiaRestored = {
   roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [],
@@ -140,7 +138,6 @@ const amnesiaRestored = {
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {
         addItem('xindexer');
-        playerMoney ++ ;
         reenableInput();
       },
       onLook: () => {
@@ -218,9 +215,8 @@ const amnesiaRestored = {
           name: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
           desc: 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.',
           isOn: false,
-          onUse: () => {
+          onLook: () => {
             let pc = getItemInRoom('computer', 'hote-room-8');
-            pc.isOn = !pc.isOn;
             if(pc.isOn === true)
             {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
@@ -228,6 +224,16 @@ const amnesiaRestored = {
             } else {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
               println(pc.desc);
+            }
+          },
+          onUse: () => {
+            let pc = getItemInRoom('computer', 'hote-room-8');
+            if(pc.isOn === true)
+            {
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+              println(`The computer is already on.`);
+            } else {
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
             }
           }
         },

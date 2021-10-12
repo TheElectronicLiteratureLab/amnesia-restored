@@ -499,12 +499,17 @@ let forward = () => {
 
 let turnOffOn = (toggle, itemId) => {
   let item = getItemInRoom(itemId, disk.roomId);
-  console.log(item);
-  if(item != undefined  && !item.isOn) { 
+  
+  if(item != undefined  && item.isOn != undefined) { 
     if (toggle === 'on') {
       if (item.isOn === !true) {
         item.isOn = true;
           println(`You turned the ${item.name[0]} on.`);
+          if(item.itemId === 'computer') {
+            println(`After 20 seconds or so, the machine emits a groaning noise in the area of the disk drives, and then a "Beep!"
+
+              The small built-in cooling fan begins to whir quietly. The screen remains blank -- and without software that is how it will remain. But you've learned one piece of information: you have used this kind of machine before.`);
+          }
         } else {
           println(`The ${item.name[0]} is already turned on.`);
         }
@@ -521,6 +526,7 @@ let turnOffOn = (toggle, itemId) => {
     } else {
       println(`You can't do that.`);
     }
+    console.log(item);
   }
 
 
