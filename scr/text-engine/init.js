@@ -65,11 +65,11 @@ let setup = () => {
       autocomplete();
     }
   });
+};
 
   input.addEventListener('focusout', () => {
     input.focus({preventScroll: true});
   });
-};
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)

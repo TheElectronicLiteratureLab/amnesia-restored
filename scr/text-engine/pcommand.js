@@ -125,28 +125,7 @@ let goDir = (dir) => {
 
   enterRoom(nextRoom.id);
 };
-// clear the output
-let clearWindow = () => {
-  document.getElementById("output").innerHTML = "";
-};
-// clear the arrow (if it works)
-let clearInput = () => {
-  document.getElementById("arrow").innerHTML = "";
-}
-//bring back the arrow
-let restoreInput = () => {
-  document.getElementById("arrow").innerHTML = ">";
-}
-// bare bones just press enter to go to a room
-let pressEnter = (event) => {
-  const room = getRoom(disk.roomId);
-  const exits = room.exits;
-  const nextRoom = getExit(event, exits);//Making a semi universal press Enter function
-  if (event.key === 'Enter'){
-    enterRoom(nextRoom);
-  };
-};
-  
+
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');
