@@ -354,7 +354,6 @@ let dropItem = (itemName) => {
   let itemIndex = disk.inventory.findIndex(findItem);
   const item = getItemInInventory(itemName);
   
-
   if (typeof itemIndex === 'number' && itemIndex > -1){
     if (item.isDroppable) {
       room.items.push(item)
