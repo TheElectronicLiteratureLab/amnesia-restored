@@ -136,6 +136,7 @@ let inputRead = () => {
   }
 };
 
+
 // shortcuts for cardinal directions
 let n = () => goDir('north');
 let s = () => goDir('south');
@@ -161,6 +162,13 @@ let talk = () => {
   println(`You can talk TO someone or ABOUT some topic.`);
   chars();
 };
+
+//////////////////////////////////////////////////
+// Set aside for character creation commands only
+// Will be deleted from command list after completion.
+//////////////////////////////////////////////////
+
+////////////////////////////////////////////////
 
 // speak to someone or about some topic
 // string, string -> nothing
@@ -478,6 +486,29 @@ let sayString = (str) => println(`You say ${removePunctuation(str)}.`);
 // nothing -> string
 let getInput = () => input.value.trim();
 
+// TV Commands
+let forward = () => {
+  let item = getItemInRoom('roomtv', 'hote-room-8');
+  if(item.arrCount >= 12) {
+    println('You have entered the nightmare zone');
+    //enterRoom('nigh-node');
+    item.arrCount = 0;
+  }
+  if(item.isOn === true) {
+    console.log(item.channelArr[item.arrCount]);
+    println(item.channelArr[item.arrCount]);
+    item.arrCount++;
+  } else {
+    if (disk.roomId === 'hote-room-8') {
+      println(`The TV isn't turned on.`);
+    } else {
+      println(`You can't do that here.`);
+    }
+  }
+
+}
+
+
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
 // e.g. index 0 means no parameters ("help"), index 1 means 1 parameter ("go north"), etc.
@@ -512,6 +543,9 @@ let commands = [
     save,
     load,
     restore: load,
+    forward,
+    f: forward,
+
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -520,6 +554,7 @@ let commands = [
     go: goDir,
     take: takeItem,
     get: takeItem,
+    wake: takeItem,
     use: useItem,
     say: sayString,
     drop: dropItem,
