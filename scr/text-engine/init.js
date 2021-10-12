@@ -44,7 +44,7 @@ let init = (disk) => {
   return initializedDisk;
 };
 
-let response = (e) => {
+let quickResponse = (e) => {
   const ENTER = 13;
 
   if (e.keyCode === ENTER) {
@@ -55,7 +55,7 @@ let response = (e) => {
 // register listeners for input events
 let setup = () => {
 
-  input.addEventListener('keypress', response);
+  input.addEventListener('keypress', quickResponse);
 
   input.addEventListener('keydown', (e) => {
     input.focus();

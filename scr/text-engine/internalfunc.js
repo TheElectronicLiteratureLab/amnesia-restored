@@ -136,10 +136,9 @@ document.addEventListener("keydown", cont);
 };
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
-  setTimeout(() => {
     document.querySelector('input').disabled = false;
     document.getElementById('arrow').innerHTML = ">";
-    document.querySelector('input').focus(); }, 100);
+    document.querySelector('input').focus();
 };
 
 
@@ -265,34 +264,3 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
-
-// this is a function simulates the press enter mechanic from the original 
-let pressEnter = (id) => {
-  if (disk.roomId === 'amne-intr-1' || disk.roomId === 'amne-intr-2' || disk.room === 'amne-intr-3'){
-    
-  }
-  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
-  //disable normal input
-  document.querySelector('input').disabled = true;
-  document.getElementById("arrow").innerHTML = "";
-
-  //create a listener for Enter button
-  let cont = (e) => {
-    if (e.key === 'Enter') {
-      enterRoom(id);
-      document.removeEventListener("keydown", cont);
-      //input.addEventListener('keypress', response);
-    }
-  }
-  document.addEventListener("keydown", cont);
-}
-
-// renables input after pressEnter();
-let reenableInput = () => {
-  setTimeout(() => {
-    document.querySelector('input').disabled = false;
-    document.getElementById("arrow").innerHTML = "> ";
-    document.querySelector('input').focus(); }, 100);
-}
-
-// trying to automatically applay specific 

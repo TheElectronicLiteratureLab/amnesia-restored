@@ -40,7 +40,10 @@ let applyInput = (input) => {
         println(pickOne(confirmArray));
         enterRoom('hote-room-3');
       }
-    }
+      // Suicide at Sunderland special commands
+    } else if (disk.roomId === 'hell-3' && prevInput === 'Xavier' || 'Xavier Hollings' || 'Hollings') {
+      enterRoom('hell-4');
+    } 
 
     //long or short hair
     else if (disk.roomId === 'hote-room-3' && prevInput === 'long') {
@@ -110,10 +113,18 @@ let applyInput = (input) => {
         println(pickOne(confirmArray));
         enterRoom('hote-room-6');  
       }
-    }
+    }// Suicide at Sunderland special commands
+   else if (disk.roomId === 'hell-3' && prevInput === 'Xavier' || 'Xavier Hollings' || 'Hollings') {
+     if (prevInput === '')
+     {
+      println(`Sorry, I didn't understand your input. For a list of available commands, type HELP, but your in Hell so HELP doesn't come.`);
+     }
+      enterRoom('hell-4');
+    } 
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
+    
   };
 
   let args = val.split(' ')
