@@ -1,6 +1,12 @@
 // global properties, assigned with let for easy overriding by the user
 let disk;
 
+// global values for character creation
+hairColor = '';
+hairLength = '';
+hairFace = '';
+eyeColor = '';
+
 // store user input history
 let inputs = [''];
 let inputsPos = 0;
@@ -38,15 +44,18 @@ let init = (disk) => {
   return initializedDisk;
 };
 
+let response = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+}
+
 // register listeners for input events
 let setup = () => {
-  input.addEventListener('keypress', (e) => {
-    const ENTER = 13;
 
-    if (e.keyCode === ENTER) {
-      applyInput();
-    }
-  });
+  input.addEventListener('keypress', response);
 
   input.addEventListener('keydown', (e) => {
     input.focus();

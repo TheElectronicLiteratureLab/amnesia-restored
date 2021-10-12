@@ -12,13 +12,13 @@ const demoDisk = {
       // here, we use it to change the foyer's description
       onLook: () => {
         const room = getRoom('foyer');
-        room.desc = `You are currently standing in the foyer. There's a huge **MONSTERA** plant to your right, and a massive **WINDOW** to your left bathing the room in natural light. Both the **PLANT** and the **WINDOW** stretch to the ceiling, which must be at least 25 feet high.
+        room.desc = `You are currently standing in the foyer. There's a huge MONSTERA plant to your right, and a massive WINDOW to your left bathing the room in natural light. Both the **PLANT** and the **WINDOW** stretch to the ceiling, which must be at least 25 feet high.
 
         ***Rooms** form the foundation of the engine's design. At any given time, your player will be standing in one of the rooms you built for them. These can be literal rooms like the foyer you find yourself in now, or metaphorical rooms like **The End of Time** or **Purgatory**.
 
         Each room you create should have a description. (That's what you're reading now!)
 
-        Rooms can have **exits** that take you to other rooms. For instance, to the **NORTH** is the **RECEPTION DESK**.
+        Rooms can have **exits** that take you to other rooms. For instance, to the NORTH** is the **RECEPTION DESK**.
 
         Rooms can also contain **items**. Sometimes the player can **TAKE** or **USE** items.
 

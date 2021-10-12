@@ -1,20 +1,117 @@
+
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
+let prevInput = '';
+let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
 let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
   println(`> ${input}`);
-
+  prevInput = input;
+  console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
 
   const exec = (cmd, arg) => {
     if (cmd) {
       cmd(arg);
+      
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-    } else {
+    }
+    //hard coding for the character creation, will come back to fix this
+    //just trying to make it work for now
+    //light or dark hair
+    else if (disk.roomId === 'hote-room-2' && prevInput === 'light') {
+      hairColor = 'dark';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-3');
+    } else if (disk.roomId === 'hote-room-2' && prevInput === 'dark') {
+      hairColor = 'light';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-3');
+    } else if (disk.roomId === 'hote-room-2') {
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        hairColor = 'light';
+        println(pickOne(confirmArray));
+        enterRoom('hote-room-3');
+      }
+    }
+
+    //long or short hair
+    else if (disk.roomId === 'hote-room-3' && prevInput === 'long') {
+      hairLength = 'short';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-4');
+    }
+    else if (disk.roomId === 'hote-room-3' && prevInput === 'short') {
+      hairLength = 'long';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-4');
+    }
+    else if (disk.roomId === 'hote-room-3') {
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        let hair = ['short', 'long'];
+        hairLength = pickOne(hair);
+        println(pickOne(confirmArray));
+        enterRoom('hote-room-4');
+      }
+    }
+
+    //beard, stache, or neither
+    else if (disk.roomId === 'hote-room-4' && prevInput === 'beard') {
+      hairFace = 'a mustache'
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4' && prevInput === 'mustache') {
+      hairFace = 'a full beard'
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4' && prevInput === 'neither') {
+      let facialHair = ['a full beard', 'a mustache but no beard'];
+      hairFace = pickOne(facialHair);
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-5');
+    } else if (disk.roomId === 'hote-room-4') {
+      if (prevInput === '') 
+      {
+        println('Come again?');        
+      }
+      else {
+        let facialHair = ['a full beard', 'a mustache', 'neither a beard or mustache'];
+        hairFace = pickOne(facialHair);
+        println(pickOne(confirmArray));
+        enterRoom('hote-room-5');
+      }
+    }
+
+    //blue or brown?
+    else if (disk.roomId === 'hote-room-5' && prevInput === 'blue') {
+      eyeColor = 'brown';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-6');
+    } else if (disk.roomId === 'hote-room-5' && prevInput === 'brown') {
+      eyeColor = 'blue';
+      println(pickOne(confirmArray));
+      enterRoom('hote-room-6');
+    } else if (disk.roomId === 'hote-room-5') {
+      if (prevInput === '')
+      {
+        println('Come again?');
+      } else {
+        eyeColor = 'blue';
+        println(pickOne(confirmArray));
+        enterRoom('hote-room-6');  
+      }
+    }
+    else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
   };
