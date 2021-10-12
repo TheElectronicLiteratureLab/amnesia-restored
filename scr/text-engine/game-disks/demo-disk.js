@@ -492,3 +492,6 @@ const unlock = () => {
 
 // attach it to the zero-argument commands object on the disk
 commands[0] = Object.assign(commands[0], {unlock});
+
+
+// womensLock('leave', 'get out bozo, im warning you');
