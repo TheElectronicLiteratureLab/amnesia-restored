@@ -500,7 +500,7 @@ let forward = () => {
 let turnOffOn = (toggle, itemId) => {
   let item = getItemInRoom(itemId, disk.roomId);
   console.log(item);
-  if(item != undefined) { 
+  if(item != undefined  && !item.isOn) { 
     if (toggle === 'on') {
       if (item.isOn === !true) {
         item.isOn = true;
@@ -516,10 +516,10 @@ let turnOffOn = (toggle, itemId) => {
           println(`The ${item.name[0]} is already turned off.`);
         }
       } else {
-        println(`You can't do that.`);
+        println(`Can you rephrase that?`);
       }
     } else {
-      println(`Can you rephrase that?`);
+      println(`You can't do that.`);
     }
   }
 
