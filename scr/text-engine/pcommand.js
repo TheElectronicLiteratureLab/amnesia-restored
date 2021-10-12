@@ -544,7 +544,6 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
-    turn: useItem,
     say: sayString,
     drop: dropItem,
     save: x => save(x),

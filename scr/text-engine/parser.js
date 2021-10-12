@@ -20,7 +20,6 @@ let applyInput = (input) => {
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
     }
-    
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair
@@ -113,7 +112,7 @@ let applyInput = (input) => {
       }
     }
     else {
-      //println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
+      println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
   };
 
