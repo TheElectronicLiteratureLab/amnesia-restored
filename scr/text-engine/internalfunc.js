@@ -55,7 +55,9 @@ function getName(name) {
 
 // retrieve room by its ID
 // string -> room
-let getRoom = (id) => disk.rooms.find(room => room.id === id);
+function getRoom(id) {
+  return disk.rooms.find(room => room.id === id);
+}
 
 // remove punctuation marks from a string
 // string -> string

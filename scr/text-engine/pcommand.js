@@ -369,34 +369,6 @@ let dropItem = (itemName) => {
   }
 };
 
-//messing with sasquatch below
-//gets the last user input and stores it inside the lastInput variable
-let lastInput;
-function getLastInput () {
-  lastInput = inputs[inputs.length-1];
-};
-
-//parses the users last input against first parameter, outputs text of second parameter
-function parseLastInput (kWord, outText) {
-  getLastInput();
-  if (lastInput !== kWord) {
-    println(outText);
-  };
-};
-
-function womensLock () {
-  input.addEventListener('keydown', (h) => {
-    const ent = 13;
-
-    if (h.keyCode === ent) {
-      console.log('womens lock ran now');
-      parseLastInput('leave', `"I'm warning you, Bozo: Out of here!"`);
-      return;
-    };
-  });
-};
-//done messing with sasquatch, see above
-
 // list useable items in room and inventory
 let use = () => {
   const room = getRoom(disk.roomId);
