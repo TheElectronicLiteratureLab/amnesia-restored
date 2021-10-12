@@ -136,6 +136,7 @@ let inputRead = () => {
   }
 };
 
+
 // shortcuts for cardinal directions
 let n = () => goDir('north');
 let s = () => goDir('south');

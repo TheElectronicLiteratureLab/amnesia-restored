@@ -74,11 +74,11 @@ let setup = () => {
       autocomplete();
     }
   });
+};
 
   input.addEventListener('focusout', () => {
     input.focus({preventScroll: true});
   });
-};
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
@@ -127,6 +127,8 @@ let loadDisk = (uninitializedDisk) => {
   // focus on the input
   input.focus();
 };
+
+
 
 // npm support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
