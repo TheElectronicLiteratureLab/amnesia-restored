@@ -104,7 +104,6 @@ let response = (e) => {
 };
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
 let pressEnter = (id) => {
-  println('\nPlease press **[ENTER]** to continue');
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
