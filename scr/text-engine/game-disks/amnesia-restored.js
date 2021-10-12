@@ -1,7 +1,7 @@
 let playerMoney = 0;
 
 const amnesiaRestored = {
-  roomId: 'titl-scre-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -34,9 +34,9 @@ const amnesiaRestored = {
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
         println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
-        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 5000);
-        setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 5000);
-        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 5100);
+        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 1000);
+        setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
+        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 1150);
       },
     },
     {
@@ -175,7 +175,7 @@ const amnesiaRestored = {
         {
           itemId: 'roomtv',
           name: ['Simplex TV', 'TV', 'television', 'telly'],
-          desc: 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.' ,
+          desc: '' ,
           channelArr: [
             'On Channel 2 there is an ad for Kool-Aid, and then a re-run of WHEEL OF FORTUNE resumes. The three contestants are trying to guess the letters of someone’s name. There’s no T in it, no S, no N.', 
             'It’s tuned to the hotel’s own cable channel, and the screen fills with the heaving breasts and writhing limbs of a closed-circuit X-rated movie. You fee1 just enough arousal to know that your sexual orientation is definitely heterosexual.',
@@ -192,9 +192,18 @@ const amnesiaRestored = {
           ],
           isOn: false,
           arrCount: 0,
+          onLook: () => {
+            let item = getItemInRoom('roomtv', 'hote-room-8');
+            if(item.isOn) {
+              item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
+              println(item.desc);
+            } else {
+              item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.'
+              println(item.desc);
+            }
+          },
           onUse: () => {
             let item = getItemInRoom('roomtv', 'hote-room-8');
-            item.isOn = !item.isOn;
             if(item.isOn) {
               item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
               println(item.desc);

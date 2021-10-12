@@ -497,6 +497,32 @@ let forward = () => {
 
 }
 
+let turnOffOn = (toggle, itemId) => {
+  let item = getItemInRoom(itemId, disk.roomId);
+  console.log(item);
+  if(item != undefined) { 
+    if (toggle === 'on') {
+      if (item.isOn === !true) {
+        item.isOn = true;
+          println(`You turned the ${item.name[0]} on.`);
+        } else {
+          println(`The ${item.name[0]} is already turned on.`);
+        }
+      } else if (toggle === 'off') {
+        if (item.isOn === !false) {
+          item.isOn = false;
+          println(`You turned the ${item.name[0]} off.`);
+        } else {
+          println(`The ${item.name[0]} is already turned off.`);
+        }
+      } else {
+        println(`You can't do that.`);
+      }
+    } else {
+      println(`Can you rephrase that?`);
+    }
+  }
+
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -534,7 +560,6 @@ let commands = [
     restore: load,
     forward,
     f: forward,
-
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -561,5 +586,6 @@ let commands = [
     },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
+    turn: args => turnOffOn(args[0], args[1])
   },
 ];
