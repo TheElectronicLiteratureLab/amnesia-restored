@@ -49,11 +49,15 @@ let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
 // return the first name if it's an array, or the only name
 // string | array -> string
-let getName = name => typeof name === 'object' ? name[0] : name;
+function getName(name) {
+  return typeof name === 'object' ? name[0] : name;
+}
 
 // retrieve room by its ID
 // string -> room
-let getRoom = (id) => disk.rooms.find(room => room.id === id);
+function getRoom(id) {
+  return disk.rooms.find(room => room.id === id);
+}
 
 // remove punctuation marks from a string
 // string -> string

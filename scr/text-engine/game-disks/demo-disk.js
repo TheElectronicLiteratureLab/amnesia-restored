@@ -3,7 +3,7 @@ const demoDisk = {
   rooms: [
     {
       id: 'foyer', // unique ID for this room
-      name: 'The Foyer', // room name (shown when player enters the room)
+      name: ['The Foyer', 'Foyer', 'Start'], // room name (shown when player enters the room)
       // room description (shown when player first enters the room)
       desc:  `Welcome to the **TEXT-ENGINE** demo disk! This disk is a text adventure game designed to introduce you to the features available to you in **text-engine**. Using this engine, you can make a text game of your own.
 
@@ -35,6 +35,7 @@ const demoDisk = {
           desc: `Sometimes called a Swiss Cheese plant, no office is complete without one. It has lovely, large leaves. This is the biggest you\'ve ever seen.
 
           There's **SOMETHING SHINY** in the pot.`,
+          
           block: `It's far too large for you to carry.`, // optional reason player cannot pick up this item
           // when player looks at the plant, they discover a shiny object which turns out to be a key
           onLook: () => {
@@ -55,7 +56,7 @@ const demoDisk = {
                 } else if (room.id === 'reception') {
                   println(`You unlock the door to the **EAST**!`);
                   // remove the block
-                  const exit = getExit('east', room.exits);
+                  const exit = getExitDir('east', room.exits);
                   delete exit.block;
                   // this item can only be used once
                   const key = getItemInInventory('shiny');
@@ -77,10 +78,10 @@ const demoDisk = {
                 // remove this method (we don't need it anymore)
                 delete key.onLook;
               },
-              // isDroppable: true,
-              // onDrop: () => {
-              //   println(`You dropped the silver key.`);
-              // },
+              isDroppable: true,
+              onDrop: () => {
+                println(`You dropped the silver key.`);
+              },
               isTakeable: true,
               onTake: () => {
                 println(`You took it.`);
@@ -110,12 +111,12 @@ const demoDisk = {
       // places the player can go from this room
       exits: [
         // GO NORTH command leads to the Reception Desk
-        {dir: 'north', id: 'reception'},
+        {dir: ['north', 'leave', 'reception'], id: 'reception'},
       ],
     },
     {
       id: 'reception',
-      name: 'Reception Desk',
+      name: ['Reception Desk', 'reception', 'front desk', 'front office'],
       desc: `**BENJI** is here. I'm sure he'd be happy to tell you more about the features available in **text-engine**.
 
       *You can speak with characters using the **TALK** command.*
@@ -134,7 +135,7 @@ const demoDisk = {
           desc: `There are 4" metal letters nailed to the door. They spell out: "RESEARCH LAB".`,
           onUse: () => {
             const reception = getRoom('reception');
-            const exit = getExit('east', reception.exits);
+            const exit = getExitDir('east', reception.exits);
             if (exit.block) {
               println(`It's locked.`);
             } else {
@@ -156,7 +157,7 @@ const demoDisk = {
         // exits with a BLOCK cannot be used, but print a message instead
         {dir: 'east', id: 'lab', block: `The door is locked.`},
         {dir: ['upstairs', 'up'], id: 'advanced', block: `There's a locked GATE blocking your path.`},
-        {dir: 'south', id: 'foyer'},
+        {dir: ['south', 'foyer', 'start'], id: 'foyer'},
       ],
     },
     {
@@ -491,3 +492,6 @@ const unlock = () => {
 
 // attach it to the zero-argument commands object on the disk
 commands[0] = Object.assign(commands[0], {unlock});
+
+
+// womensLock('leave', 'get out bozo, im warning you');

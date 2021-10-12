@@ -1,19 +1,25 @@
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
+let prevInput = '';
+
 let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
   println(`> ${input}`);
-
+  prevInput = input;
   const val = input.toLowerCase();
   setInput(''); // reset input field
 
   const exec = (cmd, arg) => {
+    const room = getRoom(disk.roomId);
+    let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
+    } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
+      enterRoom('heal-club2');
     } else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
@@ -41,7 +47,7 @@ let applyInput = (input) => {
     useItem(arguments[0]);
   } else if (arguments.length >= commands.length) {
     exec(commands[commands.length - 1][command], arguments);
-  } else if (room.exits && getExit(command, room.exits)) {
+  } else if (room.exits && getExitDir(command, room.exits)) {
     // handle shorthand direction command, e.g. "EAST" instead of "GO EAST"
     goDir(command);
   } else if (disk.conversation && (disk.conversation[command] || conversationIncludesTopic(disk.conversation, command))) {
