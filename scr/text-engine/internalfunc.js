@@ -47,9 +47,26 @@ let println = (line, className) => {
 // array -> any
 let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
+//gets the last user input and stores it inside the lastInput variable
+let lastInput;
+function getLastInput () {
+  lastInput = String(inputs[inputs.length-1]);
+  console.log(lastInput);
+};
+
+//parses the users last input against first parameter, outputs text of second parameter
+function parseLastInput (kWord, outText) {
+  getLastInput();
+  if (lastInput !== kWord) {
+    println(outText);
+  };
+};
+
 // return the first name if it's an array, or the only name
 // string | array -> string
-let getName = name => typeof name === 'object' ? name[0] : name;
+function getName(name) {
+  return typeof name === 'object' ? name[0] : name;
+}
 
 // retrieve room by its ID
 // string -> room
@@ -136,6 +153,14 @@ let objectHasName = (obj, name) => {
     : compareNames(obj.name);
 }
 
+// determine whether the object has the passed name
+// item | character, string -> bool
+let objectHasId = (obj, id) => {
+  const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
+
+  return Array.isArray(obj.itemId) ? obj.itemId.find(compareIds) : compareIds(obj.itemId);
+}
+
 // get a list of all characters in the passed room
 // string -> characters
 let getCharactersInRoom = (roomId) => disk.characters.filter(c => c.roomId === roomId);
@@ -149,12 +174,46 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasName(item, itemName))
-};
+  return room.items && room.items.find(item => objectHasId(item, itemName));
+}
+
+// get item name from ID
+let getItemName = (itemId, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasId(item, itemId));
+}
 
 // get item by name from inventory
 // string -> item
-let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
+let getItemInInventory = (name) => disk.inventory.find(item => objectHasId(item, name));
+
+// add item into players inventory automatically taken from pcmommands
+let addItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasId(item, itemName);
+  let itemIndex = room.items && room.items.findIndex(findItem);
+
+  if (typeof itemIndex === 'number' && itemIndex > -1) {
+    const item = room.items[itemIndex];
+    if (item.isTakeable) {
+      disk.inventory.push(item);
+      room.items.splice(itemIndex, 1);
+
+      if (typeof item.onTake === 'function') {
+        item.onTake({disk, println, room, getRoom, enterRoom, item});
+      }
+    }
+  }
+};
+
+/*
+let addItem = (itemId, roomId) => {
+  let item = getItemName(itemId, roomId);
+  println(item.name[0]);
+
+}
+*/
 
 // retrieves a keyword from a topic
 // topic -> string
@@ -206,3 +265,34 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
+
+// this is a function simulates the press enter mechanic from the original 
+let pressEnter = (id) => {
+  if (disk.roomId === 'amne-intr-1' || disk.roomId === 'amne-intr-2' || disk.room === 'amne-intr-3'){
+    
+  }
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  //disable normal input
+  document.querySelector('input').disabled = true;
+  document.getElementById("arrow").innerHTML = "";
+
+  //create a listener for Enter button
+  let cont = (e) => {
+    if (e.key === 'Enter') {
+      enterRoom(id);
+      document.removeEventListener("keydown", cont);
+      //input.addEventListener('keypress', response);
+    }
+  }
+  document.addEventListener("keydown", cont);
+}
+
+// renables input after pressEnter();
+let reenableInput = () => {
+  setTimeout(() => {
+    document.querySelector('input').disabled = false;
+    document.getElementById("arrow").innerHTML = "> ";
+    document.querySelector('input').focus(); }, 100);
+}
+
+// trying to automatically applay specific 

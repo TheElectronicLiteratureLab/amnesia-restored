@@ -26,7 +26,9 @@ let look = () => {
 
 // look in the passed way
 // string -> nothing
-let lookThusly = (str) => println(`You look ${str}.`);
+function lookThusly(str) {
+  return println(`You look ${str}.`);
+}
 
 // look at the passed item or character
 // array -> nothing
@@ -94,7 +96,7 @@ let go = () => {
 
 // find the exit with the passed direction in the given list
 // string, array -> exit
-let getExit = (dir, exits) => exits.find(exit =>
+let getExitDir = (dir, exits) => exits.find(exit =>
   Array.isArray(exit.dir)
     ? exit.dir.includes(dir)
     : exit.dir === dir
@@ -102,7 +104,7 @@ let getExit = (dir, exits) => exits.find(exit =>
 
 // go the passed direction
 // string -> nothing
-let goDir = (dir) => {
+function goDir(dir) {
   const room = getRoom(disk.roomId);
   const exits = room.exits;
 
@@ -111,7 +113,7 @@ let goDir = (dir) => {
     return;
   }
 
-  const nextRoom = getExit(dir, exits);
+  const nextRoom = getExitDir(dir, exits);
 
   if (!nextRoom) {
     println(`There is no exit in that direction.`);
@@ -124,6 +126,14 @@ let goDir = (dir) => {
   }
 
   enterRoom(nextRoom.id);
+}
+//testing some things to further parse input
+let inputRead = () => {
+  if (input.value !== 'leave') {
+    console.log(`you're not leaving`)
+  } else {
+    console.log(`nice, you're leaving`)
+  }
 };
 
 
@@ -152,6 +162,13 @@ let talk = () => {
   println(`You can talk TO someone or ABOUT some topic.`);
   chars();
 };
+
+//////////////////////////////////////////////////
+// Set aside for character creation commands only
+// Will be deleted from command list after completion.
+//////////////////////////////////////////////////
+
+////////////////////////////////////////////////
 
 // speak to someone or about some topic
 // string, string -> nothing
@@ -359,9 +376,6 @@ let dropItem = (itemName) => {
     println(`You can't drop what you don't have.`);
     return;
   }
-
-
-
 };
 
 // list useable items in room and inventory
@@ -449,7 +463,8 @@ let help = () => {
     LOOK:   'look at key'
     TAKE:   'take book'
     DROP:   'drop key'
-    GO:     'go north'
+    GO:     'go North'
+    HEAD:   'head foyer'
     USE:    'use door'
     TALK:   'talk to mary'
     ITEMS:  list items in the room
@@ -471,6 +486,29 @@ let sayString = (str) => println(`You say ${removePunctuation(str)}.`);
 // retrieve user input (remove whitespace at beginning or end)
 // nothing -> string
 let getInput = () => input.value.trim();
+
+// TV Commands
+let forward = () => {
+  let item = getItemInRoom('roomtv', 'hote-room-8');
+  if(item.arrCount >= 12) {
+    println('You have entered the nightmare zone');
+    //enterRoom('nigh-node');
+    item.arrCount = 0;
+  }
+  if(item.isOn === true) {
+    console.log(item.channelArr[item.arrCount]);
+    println(item.channelArr[item.arrCount]);
+    item.arrCount++;
+  } else {
+    if (disk.roomId === 'hote-room-8') {
+      println(`The TV isn't turned on.`);
+    } else {
+      println(`You can't do that here.`);
+    }
+  }
+
+}
+
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -506,13 +544,18 @@ let commands = [
     save,
     load,
     restore: load,
+    forward,
+    f: forward,
+
   },
   // one argument (e.g. "go north", "take book")
   {
     look: lookThusly,
+    head: goDir,
     go: goDir,
     take: takeItem,
     get: takeItem,
+    wake: takeItem,
     use: useItem,
     say: sayString,
     drop: dropItem,
