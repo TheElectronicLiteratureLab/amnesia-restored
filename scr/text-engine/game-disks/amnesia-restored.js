@@ -212,7 +212,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'computer',
-          name: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
+          name: ['IBM PC' , 'computer', 'comp', 'pc'],
           desc: 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.',
           isOn: false,
           onLook: () => {
@@ -231,7 +231,6 @@ const amnesiaRestored = {
             if(pc.isOn === true)
             {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-              println(`The computer is already on.`);
             } else {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
             }

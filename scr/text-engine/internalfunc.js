@@ -106,7 +106,7 @@ let objectHasName = (obj, name) => {
     : compareNames(obj.name);
 }
 
-// determine whether the object has the passed name
+// determine whether the object has the passed id
 // item | character, string -> bool
 let objectHasId = (obj, id) => {
   const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
@@ -124,10 +124,18 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 
 // get item by name from room with ID
 // string, string -> item
-let getItemInRoom = (itemName, roomId) => {
+let getItemInRoomById = (itemName, roomId) => {
   const room = getRoom(roomId);
 
   return room.items && room.items.find(item => objectHasId(item, itemName));
+}
+
+// get item by name from room
+// string, string -> item
+let getItemInRoom = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
 // get item name from ID

@@ -498,7 +498,9 @@ let forward = () => {
 }
 
 let turnOffOn = (toggle, itemId) => {
+  
   let item = getItemInRoom(itemId, disk.roomId);
+
   
   if(item != undefined  && item.isOn != undefined) { 
     if (toggle === 'on') {
