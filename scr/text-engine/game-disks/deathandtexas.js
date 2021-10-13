@@ -12,13 +12,12 @@ const deathAndTexas = {
           const execution = [ 'Firing Squad', 'Lethal Injection'];
           if(prevInput === 'Firing Squad'){
             firingSquad = true;
-            pressEnter('deat-4');
-            reenableInput();
+
           }else if(prevInput == execution[1]){
             lethalInjection = true;
-            pressEnter('deat-3');
+
           }else{
-            pressEnter('deat-2');
+            
           }
         }
       },
