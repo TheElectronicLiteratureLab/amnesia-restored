@@ -477,7 +477,7 @@ let getInput = () => input.value.trim();
 
 // TV Commands
 let forward = () => {
-  let item = getItemInRoom('roomtv', 'hote-room-8');
+  let item = getItemInRoomById('roomtv', 'hote-room-8');
   if(item.arrCount >= 12) {
     println('You have entered the nightmare zone');
     //enterRoom('nigh-node');
@@ -498,7 +498,14 @@ let forward = () => {
 }
 
 let turnOffOn = (toggle, itemId) => {
-  
+  console.log(toggle + ' ' + itemId);
+  if (itemId === "on" || itemId === "off") {
+    let temp = '';
+    temp = toggle;
+    toggle = itemId;
+    itemId = temp;
+  }
+
   let item = getItemInRoom(itemId, disk.roomId);
 
   

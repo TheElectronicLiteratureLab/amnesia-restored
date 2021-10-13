@@ -133,7 +133,7 @@ const amnesiaRestored = {
       },
     },
     {
-      id: 'hote-room-8',
+      id: 'hote-room-8', // The main room you can start exploring
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {
@@ -172,7 +172,7 @@ const amnesiaRestored = {
         {
           itemId: 'roomtv',
           name: ['Simplex TV', 'TV', 'television', 'telly'],
-          desc: '' ,
+          desc: ' ',
           channelArr: [
             'On Channel 2 there is an ad for Kool-Aid, and then a re-run of WHEEL OF FORTUNE resumes. The three contestants are trying to guess the letters of someone’s name. There’s no T in it, no S, no N.', 
             'It’s tuned to the hotel’s own cable channel, and the screen fills with the heaving breasts and writhing limbs of a closed-circuit X-rated movie. You fee1 just enough arousal to know that your sexual orientation is definitely heterosexual.',
@@ -190,17 +190,24 @@ const amnesiaRestored = {
           isOn: false,
           arrCount: 0,
           onLook: () => {
-            let item = getItemInRoom('roomtv', 'hote-room-8');
+            let item = getItemInRoomById('roomtv', 'hote-room-8');
             if(item.isOn) {
-              item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
-              println(item.desc);
+              if (item.desc == ' ')
+              {
+                println('It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.');
+              }
+              item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
+              
             } else {
+              if (item.desc == ' ')
+              {
+                println('It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.');
+              }
               item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.'
-              println(item.desc);
             }
           },
           onUse: () => {
-            let item = getItemInRoom('roomtv', 'hote-room-8');
+            let item = getItemInRoomById('roomtv', 'hote-room-8');
             if(item.isOn) {
               item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
               println(item.desc);
@@ -213,21 +220,29 @@ const amnesiaRestored = {
         {
           itemId: 'computer',
           name: ['IBM PC' , 'computer', 'comp', 'pc'],
-          desc: 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.',
+          desc: ' ',
           isOn: false,
           onLook: () => {
-            let pc = getItemInRoom('computer', 'hote-room-8');
+            let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
             {
+              if (item.desc == ' ')
+              {
+                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
+              }
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-              println(pc.desc)
+              println(pc.desc);
             } else {
+              if (item.desc == ' ')
+              {
+                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
+              }
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
               println(pc.desc);
             }
           },
           onUse: () => {
-            let pc = getItemInRoom('computer', 'hote-room-8');
+            let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
             {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
