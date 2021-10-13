@@ -10,14 +10,15 @@ const deathAndTexas = {
           let firingSquad = false;
           let lethalInjection = false;
           const execution = [ 'Firing Squad', 'Lethal Injection'];
-          if(prevInput == execution.indexOf('Firing Squad')){
+          if(prevInput === 'Firing Squad'){
             firingSquad = true;
-            enterRoom('deat-4');
-          }else if(prevInput == execution.indexOf('Lethal Injection')){
+            pressEnter('deat-4');
+            reenableInput();
+          }else if(prevInput == execution[1]){
             lethalInjection = true;
-            enterRoom('deat-3')
+            pressEnter('deat-3');
           }else{
-            enterRoom('deat-2');
+            pressEnter('deat-2');
           }
         }
       },
@@ -178,7 +179,7 @@ const deathAndTexas = {
       // println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
       onEnter: () => {
         println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
-        if(!firingSquad){
+        if(firingSquad){
           pressEnter('deat-19');
         }else{
           pressEnter('deat-20');
