@@ -81,7 +81,7 @@ const hotelroomRevisted = {
                     name: ['television', 'tv', 'telly', 'Simplex TV'], 
                     desc: `It is a Simplex TV -- a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change channels, but the third is broken off. The TV is off.`,
                     isOn: false,
-                    onUse: () => {
+                    onLook: () => {
                         let tv = getItemInRoom('roomtv', 'hote-revi');
                         tv.isOn = !tv.isOn;
                         if(tv.isOn){
@@ -89,9 +89,8 @@ const hotelroomRevisted = {
                         } else {
                             println(`The TV isn't on.`);
                         }
-                        //turning tv off?
-                    },
-                    onForward: () => {
+                    }
+                    /*
                         let tv = getItemInRoom('roomtv', 'hote-revi'); 
                         
                         if(tv.isOn){
@@ -99,7 +98,7 @@ const hotelroomRevisted = {
                         } else {
                             println(`The TV isn't on.`)
                         };
-                    },    
+                    },   */ 
                 }, 
                 {
                     //itemId: 'computer',
