@@ -147,7 +147,11 @@ let getItemName = (itemId, roomId) => {
 
 // get item by name from inventory
 // string -> item
-let getItemInInventory = (name) => disk.inventory.find(item => objectHasId(item, name));
+let getItemInInventoryById = (name) => disk.inventory.find(item => objectHasId(item, name));
+
+// get item by name from inventory
+// string -> item
+let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
 
 // add item into players inventory automatically taken from pcmommands
 let addItem = (itemName) => {
