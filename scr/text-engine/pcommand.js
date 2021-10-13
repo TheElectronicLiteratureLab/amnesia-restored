@@ -26,7 +26,9 @@ let look = () => {
 
 // look in the passed way
 // string -> nothing
-let lookThusly = (str) => println(`You look ${str}.`);
+function lookThusly(str) {
+  return println(`You look ${str}.`);
+}
 
 // look at the passed item or character
 // array -> nothing
@@ -94,7 +96,7 @@ let go = () => {
 
 // find the exit with the passed direction in the given list
 // string, array -> exit
-let getExit = (dir, exits) => exits.find(exit =>
+let getExitDir = (dir, exits) => exits.find(exit =>
   Array.isArray(exit.dir)
     ? exit.dir.includes(dir)
     : exit.dir === dir
@@ -102,7 +104,7 @@ let getExit = (dir, exits) => exits.find(exit =>
 
 // go the passed direction
 // string -> nothing
-let goDir = (dir) => {
+function goDir(dir) {
   const room = getRoom(disk.roomId);
   const exits = room.exits;
 
@@ -111,7 +113,7 @@ let goDir = (dir) => {
     return;
   }
 
-  const nextRoom = getExit(dir, exits);
+  const nextRoom = getExitDir(dir, exits);
 
   if (!nextRoom) {
     println(`There is no exit in that direction.`);
@@ -124,7 +126,16 @@ let goDir = (dir) => {
   }
 
   enterRoom(nextRoom.id);
+}
+//testing some things to further parse input
+let inputRead = () => {
+  if (input.value !== 'leave') {
+    console.log(`you're not leaving`)
+  } else {
+    console.log(`nice, you're leaving`)
+  }
 };
+
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');
@@ -151,6 +162,13 @@ let talk = () => {
   println(`You can talk TO someone or ABOUT some topic.`);
   chars();
 };
+
+//////////////////////////////////////////////////
+// Set aside for character creation commands only
+// Will be deleted from command list after completion.
+//////////////////////////////////////////////////
+
+////////////////////////////////////////////////
 
 // speak to someone or about some topic
 // string, string -> nothing
@@ -336,7 +354,6 @@ let dropItem = (itemName) => {
   let itemIndex = disk.inventory.findIndex(findItem);
   const item = getItemInInventory(itemName);
   
-
   if (typeof itemIndex === 'number' && itemIndex > -1){
     if (item.isDroppable) {
       room.items.push(item)
@@ -358,9 +375,6 @@ let dropItem = (itemName) => {
     println(`You can't drop what you don't have.`);
     return;
   }
-
-
-
 };
 
 // list useable items in room and inventory
@@ -448,7 +462,8 @@ let help = () => {
     LOOK:   'look at key'
     TAKE:   'take book'
     DROP:   'drop key'
-    GO:     'go north'
+    GO:     'go North'
+    HEAD:   'head foyer'
     USE:    'use door'
     TALK:   'talk to mary'
     ITEMS:  list items in the room
@@ -470,6 +485,110 @@ let sayString = (str) => println(`You say ${removePunctuation(str)}.`);
 // retrieve user input (remove whitespace at beginning or end)
 // nothing -> string
 let getInput = () => input.value.trim();
+
+// TV Commands: If tv is on goes through a channel array.
+let forward = () => {
+  let item = getItemInRoomById('roomtv', 'hote-room-8');
+  if(item.arrCount >= 12) {
+    println('You have entered the nightmare zone');
+    //enterRoom('nigh-node');
+    item.arrCount = 0;
+  }
+  if(item.isOn === true) {
+    console.log(item.channelArr[item.arrCount]);
+    println(item.channelArr[item.arrCount]);
+    item.arrCount++;
+  } else {
+    if (disk.roomId === 'hote-room-8') {
+      println(`The TV isn't turned on.`);
+    } else {
+      println(`You can't do that here.`);
+    }
+  }
+}
+
+// toggle any object between their on state or off state.
+let turnOffOn = (toggle, itemId) => {
+  if (itemId === "on" || itemId === "off") { //switches the input arguments if player put them in backwards (gramattically still correct)
+    let temp = '';
+    temp = toggle;
+    toggle = itemId;
+    itemId = temp;
+  }
+  let item = getItemInRoom(itemId, disk.roomId);
+
+  if(item != undefined  && item.isOn != undefined) { // make sure that said item exists and that the item has the property isOn 
+    if (toggle === 'on') {
+      if (item.isOn === !true) {
+        item.isOn = true;
+          if(item.itemId === 'computer') {
+            println(`Without having to look for the switch, you reach behind the computer to turn it on. \n\nAfter 20 seconds or so, the machine emits a groaning noise in the area of the disk drives, and then a "Beep!" \n\nThe small built-in cooling fan begins to whir quietly. The screen remains blank -- and without software that is how it will remain. But you've learned one piece of information: you have used this kind of machine before.`);
+          } else {
+            println(`You turned the ${item.name[0]} on.`);
+          }
+        } else {
+          println(`The ${item.name[0]} is already turned on.`);
+        }
+    } else if (toggle === 'off') {
+      if (item.isOn === !false) {
+        item.isOn = false;
+        println(`You turned the ${item.name[0]} off.`);
+      } else {
+        println(`The ${item.name[0]} is already turned off.`);
+      }
+    } else { //mispells an item but has right syntax
+      println(`Can you rephrase that?`);
+    }
+  } else { //if player tries to turn on something that is not able to turn on 
+    println(`You can't do that.`);
+  }
+}
+
+// open command
+let open = (itemToOpen) => {
+  //println(itemToOpen);
+  let item = getItemInRoom(itemToOpen, disk.roomId);
+  
+  if (item.itemId === 'curtains') {
+    if(item.isOpen === !true) {
+      item.isOpen = true;
+      println(`The ${item.name[0]} are now open.`);
+    } else {
+      println("They're already opened.");
+    }
+  } else if (item.itemId === 'window') {
+    println('The window is sealed to keep the air-conditioned air in the hotel.');
+  } else if (item.itemId === 'dresser') {
+    println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
+  } else {
+    println("You can't open that.");
+  }
+}
+
+// close command
+let close = (itemToOpen) => {
+  //println(itemToOpen);
+  let item = getItemInRoom(itemToOpen, disk.roomId);
+  if (item !== undefined)
+  {
+    if (item.itemId === 'curtains') {
+      if(item.isOpen === !false) {
+        item.isOpen = false;
+        println(`The ${item.name[0]} are closed and the room is restored to the original semi-twilight you.`);
+      } else {
+        println("They're already closed.");
+      }
+    } else if (item.itemId === 'window') {
+      println('You may not close that.');
+    } else {
+      println("You can't close that.");
+    }
+  }
+  
+}
+
+
+// jump command
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -505,14 +624,19 @@ let commands = [
     save,
     load,
     restore: load,
+    forward,
+    f: forward,
   },
   // one argument (e.g. "go north", "take book")
   {
     look: lookThusly,
+    head: goDir,
     go: goDir,
     take: takeItem,
     get: takeItem,
+    wake: takeItem,
     use: useItem,
+    answer: useItem,
     say: sayString,
     drop: dropItem,
     save: x => save(x),
@@ -520,6 +644,8 @@ let commands = [
     restore: x => load(x),
     x: x => lookAt([null, x]), // IF standard shortcut for look at
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
+    open: x => open(x),
+    close: x => close(x)
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
@@ -530,5 +656,6 @@ let commands = [
     },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
+    turn: args => turnOffOn(args[0], args[1])
   },
 ];

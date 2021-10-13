@@ -1,19 +1,19 @@
 @font-face{
   font-family: 'Apple II';
-  src: url('../fonts/font.ttf');
+  src: url('../fnt/font.ttf');
 }
 
 body {
-  color: #ff8012;
+  color: #12A220;
   font-size: 2.2vh;
   font-family: 'Apple II';
   line-height: 4vh;
   /* screen glow */
   background-image: radial-gradient(
-    #1f0b00, black 120%
+    #010800, black 120%
   );
   /* text glow */
-  text-shadow: 0 0 5px rgba(255, 78, 0, 0.6);
+  text-shadow: 0 0 5px rgba(12, 255, 0, 0.6);
 }
 
 /* scanlines */
@@ -24,7 +24,7 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: repeating-linear-gradient(rgba(255, 78, 0, 0.03) 0.5vh, rgba(0, 0, 0, 0.05) 0.8vh);
+  background: repeating-linear-gradient(rgba(12, 255, 0, 0.03) 0.5vh, rgba(0, 0, 0, 0.05) 0.8vh);
   z-index: -1;
 }
 
@@ -62,13 +62,26 @@ body::after {
 }
 
 a {
-  color: orange;
+  color: green;
+}
+
+button {
+  color: #12A220;
+  background: transparent;
+  font-size: 1.6vh;
+  font-family: "Apple II";
+  border-color: rgba(12, 255, 0, 0.6);
+  border-style: dashed;
+  padding: 1%;
+
+  /* text glow */
+  text-shadow: 0 0 5px rgba(12, 255, 0, 0.6);
 }
 
 #input {
   height: 4vh;
   width: 98.5vh;
-  color: orange;
+  color: green;
   background: transparent;
   font-size: 2vh;
   font-family: "Apple II";
@@ -87,9 +100,27 @@ span {
 }
 
 @keyframes blink {
-  0% {background: orange;}
-  49% {background: orange;}
+  0% {background: green;}
+  49% {background: green;}
   60% {background: transparent;}
   99% {background: transparent;}
-  100% {background: orange;}
+  100% {background: green;}
+}
+
+/* Used for println() */
+.tom {
+  font-size: 3vh;
+  text-align: center;
+}
+.intro {
+  font-size: 5vh;
+  text-align: center;
+}
+
+.enter {
+  text-align: center;
+}
+
+#wrapper {
+  bottom: 0;
 }
