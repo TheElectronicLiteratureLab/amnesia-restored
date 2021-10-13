@@ -297,6 +297,8 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
+
+
 // list takeable items in room
 let take = () => {
   const room = getRoom(disk.roomId);
@@ -506,7 +508,14 @@ let forward = () => {
     }
   }
 
-}
+};
+
+//ask character about topic function
+
+// function askAbout(xCharacter, yTopic) {
+//   const room = getRoom(disk.roomId);
+
+// };
 
 
 // objects with methods for handling commands
