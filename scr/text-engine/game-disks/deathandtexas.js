@@ -6,6 +6,20 @@ const deathAndTexas = {
         name: '', // Displayed each time the player enters the room.
         desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
         // arguement for lethal injection or firing squad
+        onEnter: () =>{
+          let firingSquad = false;
+          let lethalInjection = false;
+          const execution = [ 'Firing Squad', 'Lethal Injection'];
+          if(prevInput == execution.indexOf('Firing Squad')){
+            firingSquad = true;
+            enterRoom('deat-4');
+          }else if(prevInput == execution.indexOf('Lethal Injection')){
+            lethalInjection = true;
+            enterRoom('deat-3')
+          }else{
+            enterRoom('deat-2');
+          }
+        }
       },
       {
         id: 'deat-2', // if the player doesn't pick firing squad or lethal injection
@@ -17,7 +31,11 @@ const deathAndTexas = {
         id: 'deat-3', // if the player chooses lethal injection
         name: '', // Displayed each time the player enters the room.
         desc: `On the morning of the day you are to receive the lethal injection, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
-        
+        onLook: () =>  {
+          const room = getRoom('deat-4');
+          room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
+
+        },
       },
       {
         id: 'deat-4', // if the player chooses firing squad
@@ -151,14 +169,45 @@ const deathAndTexas = {
       },
     },
     {
-      id: 'deat-18', // If CATHOLIC
+      id: 'deat-18', // Last Words
       name: '', // Displayed each time the player enters the room.
       desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
       But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
       “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
+      // if anything
+      // println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
       onEnter: () => {
-        pressEnter('deat-16');
+        println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
+        if(!firingSquad){
+          pressEnter('deat-19');
+        }else{
+          pressEnter('deat-20');
+        }
       }
+    },
+    {
+      id: 'deat-19', // If Firing Squad
+      name: '', // Displayed each time the player enters the room.
+      desc: `A stake has been placed in the courtyard of the prison, and you are bound to it. A chaplain appears to offer you some last words of comfort, and he too refuses to listen to your protests, as does the guard who offers you a blindfold and a last cigarette.
+      “It’s just as well you don’t smoke,” he says, as he walks toward the group of six marksmen standing at the ready some ten yards away. “It’s bad for your health. Says so right on the package.”
+      The marksmen laugh appreciatively at his joke.
+      They take aim. You close your eyes. The order to Fire! is given.
+      You die.`, // Displayed when the player first enters the room.
+      // Go to Game Over
+    },
+    {
+      id: 'deat-20', // If lethal injection
+      name: '', // Displayed each time the player enters the room.
+      desc: `It is a small room glaringly lighted with about 500 watts of fluorescent light. The light gives a surreal intensity to the room’s single item of furniture, a kind of dentist’s chair that has been modified with a panoply of leather and canvas restraints. You are made to sit in the chair, and a guard secures the restraints.
+      “This is the first time we’ve ever done a lethal injection here in Texas. They say it’s the wave of the future, but I don’t know. I think there’s something to be said for the traditional way of doing these things. What do you think?”\n
+      The guard frowns thoughtfully at your protests of innocence and your frenzied attempt to explain the bizarre events that got you into this fix. “There’s nothing I can do to help you, fellow. Talk to the chaplain.”\n
+      The chaplain assures you that only God can help you now. The chaplain leaves.\n
+      A medical attendant enters the room. He makes a tourniquet below your biceps with a length of rubber tubing, and then when he has found a vein, he injects the poison.
+      There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:
+      `, // Displayed when the player first enters the room.
+      // if anything
+      // println('And then you die'
+      //pressEnter('gameover?')
     },
     ],
   };
