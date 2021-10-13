@@ -6,7 +6,7 @@ const nightmare = {
                 id: 'nightmareIntro',
                 name:'Nightmare',
                 desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the mirror.”`,
-                //Making the mirror into a character possibly, to trigger next two rooms
+                
                 onEnter: () =>{
                     reenableInput();
                         if(applyInput === 'Go to mirror'){
@@ -33,7 +33,9 @@ const nightmare = {
                     }else{
                         enterRoom('nightmareIntro');
                     }
-                    
+                    //if(var == "floor number"){
+                    //  enterRoom('"floor number"');}
+                    //} possibly seperate this into a function that can be called and remember the floor number. This would be a very long if statement.
                 }
             },
             {
@@ -146,7 +148,8 @@ const nightmare = {
                     if(applyInput === 'Use Escalator'){
                         enterRoom('secondFloor');
                     }else{
-                        enterRoom('escalatorError');
+                        printIn('You try to [response] but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.');
+                        prevIn
                     }
                 }
 
@@ -257,6 +260,7 @@ const nightmare = {
                     }else{
                         enterRoom('escalatorError');
                     }
+                    
                 }
             },
             {
@@ -345,3 +349,5 @@ const nightmare = {
 
 
 },
+//prevInput command to remember reply and recall it in the text.
+//possibly move the escalatorError room into a printIn in the else statement to avoid having to remember the room number.
