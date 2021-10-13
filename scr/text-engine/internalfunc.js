@@ -49,11 +49,15 @@ let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
 // return the first name if it's an array, or the only name
 // string | array -> string
-let getName = name => typeof name === 'object' ? name[0] : name;
+function getName(name) {
+  return typeof name === 'object' ? name[0] : name;
+}
 
 // retrieve room by its ID
 // string -> room
-let getRoom = (id) => disk.rooms.find(room => room.id === id);
+function getRoom(id) {
+  return disk.rooms.find(room => room.id === id);
+}
 
 // remove punctuation marks from a string
 // string -> string
@@ -95,6 +99,38 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 };
+let response = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+};
+
+// Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
+let pressEnter = (id) => {
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  //disable normal input
+  document.querySelector('input').disabled = true;
+  document.getElementById("arrow").innerHTML = "";
+
+let cont = (e) => {
+  if (e.key === 'Enter') {
+    enterRoom(id);
+    document.removeEventListener("keydown", cont);
+    //input.addEventListener('keypress', response);
+  }
+}
+document.addEventListener("keydown", cont);
+};
+// bring back the input after you delete it with the Press Enter function
+let reenableInput = () => {
+  setTimeout(() => {
+    document.querySelector('input').disabled = false;
+    document.getElementById('arrow').innerHTML = ">";
+    document.querySelector('input').focus(); }, 100);
+};
+
 
 // determine whether the object has the passed name
 // item | character, string -> bool
@@ -104,6 +140,14 @@ let objectHasName = (obj, name) => {
   return Array.isArray(obj.name)
     ? obj.name.find(compareNames)
     : compareNames(obj.name);
+}
+
+// determine whether the object has the passed id
+// item | character, string -> bool
+let objectHasId = (obj, id) => {
+  const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
+
+  return Array.isArray(obj.itemId) ? obj.itemId.find(compareIds) : compareIds(obj.itemId);
 }
 
 // get a list of all characters in the passed room
@@ -116,15 +160,61 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 
 // get item by name from room with ID
 // string, string -> item
+let getItemInRoomById = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasId(item, itemName));
+}
+
+// get item by name from room
+// string, string -> item
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasName(item, itemName))
-};
+  return room.items && room.items.find(item => objectHasName(item, itemName));
+}
+
+// get item name from ID
+let getItemName = (itemId, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasId(item, itemId));
+}
+
+// get item by name from inventory
+// string -> item
+let getItemInInventoryById = (name) => disk.inventory.find(item => objectHasId(item, name));
 
 // get item by name from inventory
 // string -> item
 let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
+
+// add item into players inventory automatically taken from pcmommands
+let addItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasId(item, itemName);
+  let itemIndex = room.items && room.items.findIndex(findItem);
+
+  if (typeof itemIndex === 'number' && itemIndex > -1) {
+    const item = room.items[itemIndex];
+    if (item.isTakeable) {
+      disk.inventory.push(item);
+      room.items.splice(itemIndex, 1);
+
+      if (typeof item.onTake === 'function') {
+        item.onTake({disk, println, room, getRoom, enterRoom, item});
+      }
+    }
+  }
+};
+
+/*
+let addItem = (itemId, roomId) => {
+  let item = getItemName(itemId, roomId);
+  println(item.name[0]);
+
+}
+*/
 
 // retrieves a keyword from a topic
 // topic -> string
