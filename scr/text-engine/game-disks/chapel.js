@@ -415,7 +415,7 @@ const lobby = {
     },
   ],  
 },
-
+//Figure out coding options for multiple attempts
 {//Attempt to get up (1st attempt)
   id: 'chap-21',
   desc: `A dim faraway voice seems to be telling you to do something. But it is so far away, and you are so comfortable, and there is a sunset above you, all with stripes of gold and indigo.`,
@@ -467,8 +467,8 @@ const lobby = {
 },
 
 {//Examine arm (After getting up)
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-22',
+  desc: `High on your left arm, near the padded shoulder of the tuxedo jacket, the white polyester has been torn and blotched with blood that is still damp to the touch. When you remove the jacket to examine the wound there is a sharp twinge of pain in your shoulder. There is a larger blotch on the frilly shirt.`,
 
   exits: [
     {
@@ -479,8 +479,10 @@ const lobby = {
 },
 
 {//Remove shirt
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-23',
+  desc: `You take off the ruined shirt as well and see, to your relief that the source of these bloodstains is a superficial wound--an inch-long line drawn across the smooth flesh as though by a ruler. It represents, you realize, the path of a bullet. And though you did not see or hear that bullet fired you have no doubt at all that it was Luke who shot at you. Perhaps, if you had not stumbled over the kneeler, his bullet might have had a deadlier result.
+  Tentatively you move your arm. Any pronounced movement from the shoulder seems to start the blood flowing freshly from the wound.
+  `,
 
   exits: [
     {
@@ -491,11 +493,15 @@ const lobby = {
 },
 
 {//Bandage wound (With what?)
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-24',
+  desc: `Good idea, but what to use for a bandage?`,
 
   exits: [
-    {
+    {//Use Frilly Shirt
+      dir: 'Text',
+      id: 'chap-#',
+    },
+    {//Use T-Shirt
       dir: 'Text',
       id: 'chap-#',
     },
@@ -503,8 +509,9 @@ const lobby = {
 },
 
 {//Bandage wound with frilly shirt
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-24A',
+  desc: `Carefully you tear off the left arm of the bloodstained shirt and wrap it about the wound as a crude bandage. Your arm hurts but not much more than if you'd had a shot at a doctor’s office.
+  Now to get dressed again. Except that it's missing its left arm the frilly shirt is still wearable. Or there are the T-shirts in the gym bag--the plain red T-shirt or the Mickey Mouse T-shirt.`,
 
   exits: [
     {
@@ -515,8 +522,8 @@ const lobby = {
 },
 
 {//Bandage wound with shirt (Which shirt?)
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-24B',
+  desc: `Which T-shirt--the Mickey Mouse T-shirt or the red T-shirt?`,
 
   exits: [
     {
@@ -527,8 +534,9 @@ const lobby = {
 },
 
 {//Bandage wound with Mickey Mouse shirt
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-24C',
+  desc: `You tear the Mickey Mouse T-shirt into strips and wrap them about the wound in a crude bandage. Your arm hurts but not much more than if you’d had a shot at the doctor’s office.
+  Now to get dressed again. You could rip off the arm of the shirt you were wearing and put that on again. Or you could wear the other T-shirt under the jacket of the tux. It’s all up to your sense of what the well-dressed murder victim should appear in.`,
 
   exits: [
     {
@@ -539,8 +547,10 @@ const lobby = {
 },
 
 {//Bandage wound with red shirt
-  id: 'chap-#',
-  desc: `Text`,
+  id: 'chap-24D',
+  desc: `You tear the red T-shirt into strips and wrap them about the wound in a crude bandage. Your arm hurts but not much more than if you’d had a shot at the doctor’s office.
+  Now to get dressed again. You could rip off the arm of the shirt you were wearing and put that on again. Or you could wear the other T-shirt under the jacket of the tux. It’s all up to your sense of what the well-dressed murder victim should appear in.
+  `,
 
   exits: [
     {
