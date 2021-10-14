@@ -173,6 +173,14 @@ let getItemInRoom = (itemName, roomId) => {
   return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
+// get item by name from room
+// string, string -> item
+let getItemInRoom = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasName(item, itemName));
+}
+
 // get item name from ID
 let getItemName = (itemId, roomId) => {
   const room = getRoom(roomId);

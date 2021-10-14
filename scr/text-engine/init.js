@@ -49,6 +49,23 @@ let quickResponse = (e) => {
 
   if (e.keyCode === ENTER) {
     applyInput();
+
+    // Events that need to happen based off of the moveCount will be here
+    // This is where global checks will happen.
+    if (moveCount === 4) {
+      println(`You almost say "Come in," before you remember that you don't have any clothes on.`);
+    } else if (moveCount === 13) {
+      f_firstphonecall = true;
+    }
+    else if (moveCount >= 14 && f_firstphonecall === true) {
+      if (disk.roomId === 'hote-room-8') {
+        if(moveCount === 14) {
+          println(`Suddenly the phone comes to life. It rings.`);
+        } else {
+          println(`The phone keeps ringing.`);
+        }
+      }
+    }
   }
 }
 
