@@ -597,11 +597,7 @@ let commands = [
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
   },
-<<<<<<< Updated upstream
-];
-=======
   {
     ask: args => askXAboutY(args[0], args[1], args[2]),
   },
 ];
->>>>>>> Stashed changes
