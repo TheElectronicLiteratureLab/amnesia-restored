@@ -17,13 +17,13 @@ const hotelroomRevisted = {
             },
             onLook: () => {
                 const room = getRoom('hote-revi');
-                let keyDesc = `There is a **room key** with a large green plastic tag showing your room number, 1502.`;
-                let bibleDesc = `Also, a **Gideon Bible**.`;
+                let keyDesc = `Beside the pad is the **room key** with a large green plastic tag showing your room number, Room 1502.`;
+                let bibleDesc = ` and a **Gideon Bible**.`;
                 let penDesc = `A **ballpoint pen** has been placed near the phone.`;
 
                 room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
                 
-                To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
+                To pass the time the hotel offers a **television**${bibleDesc} ${penDesc}
                 
                 To the left of the dresser is an **IBM PC** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
                 
@@ -122,6 +122,16 @@ const hotelroomRevisted = {
                           pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
                         }
                       }             
+                },
+                {
+                    itemId: 'dresser',
+                    name: ['dresser', 'drawer'],
+                    desc: ``,
+                    isOpen: false,
+                    onLook: () => {
+                        //let bible = 
+                    },
+
                 },
                 {
                     //itemId: 'tuxedo', 
