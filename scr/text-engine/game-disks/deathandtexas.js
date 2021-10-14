@@ -6,18 +6,19 @@ const deathAndTexas = {
         name: '', // Displayed each time the player enters the room.
         desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
         // arguement for lethal injection or firing squad
-        onEnter: () =>{
-          let firingSquad = false;
-          let lethalInjection = false;
-          const execution = [ 'Firing Squad', 'Lethal Injection'];
-          if(prevInput === 'Firing Squad'){
-            firingSquad = true;
-          }else if(prevInput == execution[1]){
-            lethalInjection = true;
-          }else{
-            
-          }
-        }
+        exits: [
+          {
+            dir: ['lethal', 'injection', 'firing', 'squad'],
+            id : 'deat-21'
+          },
+        ],
+      },
+      {
+        id: 'deat-21', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+        name: '', // Displayed each time the player enters the room.
+        desc: '', // Displayed when the player first enters the room.
+        // arguement for lethal injection or firing squad
+
       },
       {
         id: 'deat-2', // if the player doesn't pick firing squad or lethal injection
