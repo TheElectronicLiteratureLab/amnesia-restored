@@ -2,7 +2,6 @@
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
 let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
-let moveCount = 0;
 let f_firstphonecall = false;
 
 let applyInput = (input) => {
@@ -14,15 +13,15 @@ let applyInput = (input) => {
   //console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
-  moveCount++;
-  console.log(moveCount);
+  
 
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
     let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
-      
+      moveCount++;
+  console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
 
