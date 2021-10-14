@@ -262,6 +262,7 @@ const amnesiaRestored = {
           isOpen: false,
           onLook: () => {
             let dresser = getItemInRoomById('dresser', disk.roomId);
+            let stationary = getItemInRoomById('stationary', disk.roomId);
             let bible = getItemInRoomById('bible', disk.roomId);
             let roomkey = getItemInRoomById('roomkey', disk.roomId);
             let pen = getItemInRoomById('pen', disk.roomId);
@@ -272,11 +273,14 @@ const amnesiaRestored = {
             let comma3 = ',';
             let iOne = ' a Gideon Bible, ';
             let iTwo = ' the room key with its large green tag, ';
-            //let iThr = ' ';
+            let iThr = ' ';
             let iFou = ', and beneath the telephone the hotel’s brochure';
             let iFiv = ' a pen,';
 
             if (dresser.desc === ' ') {
+              if (!stationary === undefined) {
+              
+              }
               if (bible === undefined) {
                 iOne = '';
               }
@@ -297,8 +301,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'roomkey',
-          name: ['room key', 'hotel key'],
-
+          name: ['metal key', 'room key', 'hotel key', '1502 key', 'key'],
           desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
           isTakeable: true,
           isDroppable: true
@@ -314,15 +317,6 @@ const amnesiaRestored = {
           itemId: 'roomphone',
           name: ['phone', 'telephone'],
           desc: 'The phone on the dresser belongs to NYNEX.',
-          inUse: false,
-          onUse: () => {
-            let phone = getItemInRoomById('roomphone', 'hote-room-8');
-            if (f_firstphonecall === true) {
-              f_firstphonecall = false;
-              phone.inUse = true;
-              println(`"Good morning," says a woman's voice, after you say hello. "This is the Registration desk. You are aware, are you not, that the check-out time is twelve o' clock? "If you haven't checked out by that hour, Mr. Cameron, we will have to bill you for another night. But if you wish to extend your stay, I can adjust your bill accordingly. "Do you wish to stay another night?"`);
-            }
-          },
           onTake: () => {
             println("You probably shouldn't take that.");
           }
@@ -377,121 +371,8 @@ const amnesiaRestored = {
               println(item.desc);
             }
           }
-        },
-        {
-          itemId: 'software',
-          name: 'software',
-          desc: ' ',
-          onLook: () => {
-            println("You look absolutely everywhere you can conceive of looking for software that could be booted into the computer, but your search is futile.")
-          }
-        },
-        {
-          itemId: 'bed',
-          name: ['bed', 'mattress', 'hotel bed'],
-          desc: ' ',
-          onLook: () => {
-            let bed = getItemInRoomById('bed', 'hote-room-8');
-            let sheet = getItemInInventoryById('sheet');
-            let one = 'There is a rumpled sheet on the bed. ';
-            if (sheet){
-              one = '';
-            }
-            bed.desc = `It is a double bed. ${one}A quilted bedspread is rolled up in a ball. An oversized down-filled pillow is propped against the headboard.`;
-            println(bed.desc);
-          }
-        },
-        {
-          itemId: 'sheet',
-          name: 'sheet',
-          desc: 'The sheet has a floral pattern on it.',
-          isTakeable: true,
-          isDroppable: true,
-          onDrop: () => {
-            println('You put the sheet back where you found it.');
-          }
-        },
-        {
-          itemId: 'closet',
-          name: 'closet',
-          desc: ' ',
-          onLook: () => {
-            let closet = getItemInRoomById('bed', 'hote-room-8');
-            let hanger = getItemInInventoryById('hanger');
-            let one = '';
-            if (hanger){
-              one = 'not even';
-            } else {
-              one = 'save for'
-            }
-            closet.desc = `There's nothing in the walk-in closet -- ${one} a forlorn coathanger.`;
-            println(closet.desc);
-          }
-        },
-        {
-          itemId: 'hanger',
-          name: ['coathanger', 'hanger'],
-          desc: `A hanger is a hanger is a hanger.`,
-          isTakeable: true,
-          isDroppable: true
-        },
-        {
-          itemId: 'hoteldoor',
-          name: 'door',
-          desc: ' ',
-          isOpen: false,
-          onLook: () => {
-            let door = getItemInRoomById('hoteldoor', disk.roomId);
-            let one = ``;
-            if (door.isOpen === false) {
-              one = 'closed.'
-            } else {
-              one  = 'open.'
-            }
-            if (door.desc === ' ') {
-              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
-              println(door.desc);  
-            } else {
-              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
-            }
-          },
-          onUse: () => {
-            //enterRoom('hote-coor');
-          }  
         }
-      ],
-      exits: [
-        //{dir: 'leave', id: 'hote-coor'},
-        //{dir: 'north', id: 'hote-coor'},
-        //{dir: 'bathroom', id: 'hote-bath'}
       ]
-    },
-    {
-      id: 'hote-room-9',
-      name: ' ',
-      desc: ' ',
-      onEnter: () => {
-        let pen = getItemInInventoryById('pen');
-        let penGet = '';
-        if(pen) {
-          penGet = 'Oh yes, you took it from the dresser.';
-        } else {
-          penGet = 'Oh yes, it is on the dresser.'
-        }
-        println(`"Cameron." You test out the sound of the name she's given you. But can you be sure you are the Cameron that rented this room? \nIf your own signature as "Cameron" jibes with the one on the receipt the bellboy is bringing... \n${penGet} \nYou try several practice signatures.`);
-        pressEnter('hote-room-10');
-      }
-    },
-    {
-      id: 'hote-room-10',
-      name: ' ',
-      desc: ' ',
-      onEnter: () => {
-        reenableInput();
-        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it.`);
-        println('You examine the slip and find that a name, which is presumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.');
-        println(`The bellboy makes a significant cough -- he must be waiting for a tip. Should you give him one?`);
-      }
     },
     //**********************************************************/
     //               Hotel Room 1502 Revisited                 /
@@ -2527,6 +2408,6 @@ exits: [
     },
   ],  
 },
-
   ],
+  characters: []
 };
