@@ -125,10 +125,9 @@ document.addEventListener("keydown", cont);
 };
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
-  setTimeout(() => {
     document.querySelector('input').disabled = false;
     document.getElementById('arrow').innerHTML = ">";
-    document.querySelector('input').focus(); }, 100);
+    document.querySelector('input').focus();
 };
 
 
@@ -163,7 +162,15 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoomById = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasId(item, itemName));
+  return room.items && room.items.find(item => objectHasName(item, itemName));
+}
+
+// get item by name from room
+// string, string -> item
+let getItemInRoom = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
 // get item by name from room
