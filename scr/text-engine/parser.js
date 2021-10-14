@@ -24,7 +24,12 @@ let applyInput = (input) => {
 
     } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
       enterRoom('heal-club2');
-    } 
+    } else if ( currentRoom === 'heal-club6' && (prevInput !== 'hide' || prevInput !== 'go') && currentRoom.desc === `You take a quick tour of the lockers, opening and closing the metal doors quietly, hoping to find a forgotten or abandoned piece of clothing. Your search of the first alcove yields slim pickings: a plastic bag from a bookstore, a white sock with holes in both toe and heel, a broken shoelace, and a small brass key. Four of the lockers are padlocked. Yanking at the handles accomplishes nothing.
+    You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.
+    Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`)
+    {
+      println(`You can't do that. You're paralyzed with fear. Nothing seems possible except to find somewhere to hide.`);
+    }
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair

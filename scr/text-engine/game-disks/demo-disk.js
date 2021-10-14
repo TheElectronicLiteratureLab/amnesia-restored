@@ -31,7 +31,8 @@ const demoDisk = {
           desc: `All you can see are puffy white clouds over a blue sky.`, // description shown when player looks at the item
         },
         {
-          name: ['monstera', 'plant', 'swiss cheese'], // player can refer to this item by any of these names
+          name: ['monstera', 'plant', 'swiss cheese'],
+          id: 'monstera', // player can refer to this item by any of these names
           desc: `Sometimes called a Swiss Cheese plant, no office is complete without one. It has lovely, large leaves. This is the biggest you\'ve ever seen.
 
           There's **SOMETHING SHINY** in the pot.`,
