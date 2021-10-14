@@ -1,7 +1,6 @@
 
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
-let prevInput = '';
 let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
 let moveCount = 0;
 let f_firstphonecall = false;
@@ -19,11 +18,17 @@ let applyInput = (input) => {
   console.log(moveCount);
 
   const exec = (cmd, arg) => {
+    const room = getRoom(disk.roomId);
+    let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
       
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
+
+    } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
+      enterRoom('heal-club2');
+    } else {
     }
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
@@ -169,7 +174,7 @@ let applyInput = (input) => {
     useItem(arguments[0]);
   } else if (arguments.length >= commands.length) {
     exec(commands[commands.length - 1][command], arguments);
-  } else if (room.exits && getExit(command, room.exits)) {
+  } else if (room.exits && getExitDir(command, room.exits)) {
     // handle shorthand direction command, e.g. "EAST" instead of "GO EAST"
     goDir(command);
   } else if (disk.conversation && (disk.conversation[command] || conversationIncludesTopic(disk.conversation, command))) {

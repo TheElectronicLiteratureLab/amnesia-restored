@@ -49,11 +49,15 @@ let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
 // return the first name if it's an array, or the only name
 // string | array -> string
-let getName = name => typeof name === 'object' ? name[0] : name;
+function getName(name) {
+  return typeof name === 'object' ? name[0] : name;
+}
 
 // retrieve room by its ID
 // string -> room
-let getRoom = (id) => disk.rooms.find(room => room.id === id);
+function getRoom(id) {
+  return disk.rooms.find(room => room.id === id);
+}
 
 // remove punctuation marks from a string
 // string -> string
@@ -95,6 +99,38 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 };
+let response = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+};
+
+// Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
+let pressEnter = (id) => {
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  //disable normal input
+  document.querySelector('input').disabled = true;
+  document.getElementById("arrow").innerHTML = "";
+
+let cont = (e) => {
+  if (e.key === 'Enter') {
+    enterRoom(id);
+    document.removeEventListener("keydown", cont);
+    //input.addEventListener('keypress', response);
+  }
+}
+document.addEventListener("keydown", cont);
+};
+// bring back the input after you delete it with the Press Enter function
+let reenableInput = () => {
+  setTimeout(() => {
+    document.querySelector('input').disabled = false;
+    document.getElementById('arrow').innerHTML = ">";
+    document.querySelector('input').focus(); }, 100);
+};
+
 
 // determine whether the object has the passed name
 // item | character, string -> bool
@@ -230,34 +266,3 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
-
-// this is a function simulates the press enter mechanic from the original 
-let pressEnter = (id) => {
-  if (disk.roomId === 'amne-intr-1' || disk.roomId === 'amne-intr-2' || disk.room === 'amne-intr-3'){
-    
-  }
-  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
-  //disable normal input
-  document.querySelector('input').disabled = true;
-  document.getElementById("arrow").innerHTML = "";
-
-  //create a listener for Enter button
-  let cont = (e) => {
-    if (e.key === 'Enter') {
-      enterRoom(id);
-      document.removeEventListener("keydown", cont);
-      //input.addEventListener('keypress', response);
-    }
-  }
-  document.addEventListener("keydown", cont);
-}
-
-// renables input after pressEnter();
-let reenableInput = () => {
-  setTimeout(() => {
-    document.querySelector('input').disabled = false;
-    document.getElementById("arrow").innerHTML = "> ";
-    document.querySelector('input').focus(); }, 100);
-}
-
-// trying to automatically applay specific 
