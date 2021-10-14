@@ -19,7 +19,7 @@ const hotelroomRevisted = {
                 const room = getRoom('hote-revi');
                 let keyDesc = `Beside the pad is the **room key** with a large green plastic tag showing your room number, Room 1502.`;
                 let bibleDesc = ` and a **Gideon Bible**.`;
-                let penDesc = `A **ballpoint pen** has been placed near the phone.`;
+                let penDesc = `A **ballpoint pen** has been used as a bookmark in the Bible by someone wiht no respect for bindings.`;
 
                 room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
                 
@@ -32,7 +32,7 @@ const hotelroomRevisted = {
                 };
 
                 if(getItemInInventory('Gideon Bible')){ //if the Gideon Bible is already in inventory
-                    room.desc = room.desc.replace(`${bibleDesc}`, '');
+                    room.desc = room.desc.replace(`${bibleDesc}`, '.');
                 };
 
                 if(getItemInInventory('ballpoint pen')){ //if the pen is already in inventory
@@ -43,12 +43,17 @@ const hotelroomRevisted = {
 
             items: [
                 {
-                    //itemId: '1502phone',
-                    name: 'phone',
-                    desc: 'The phone on the dress belongs to NYNEX.',
+                    itemId: 'roomphone',
+                    name: ['phone', 'telephone'],
+                    desc: `On the beside tabel there is a dial phone that rests on top of a shiny cardboard brochure that bears the message: "Welcome to ***The Sunderland Hotel***-- Your Gateway to the Wonderland of Manhattan!"`,
                     onUse: () => {
-                        enterRoom('hote-revi-2'); //LUKE SEQUENCE, just wanted to check if works...won't work without calling getRoom
+                        println(`To use the phone, type DIAL followed by the hotel number you wish to dial.`);
                     },
+
+
+                    /*onUse: () => {
+                        enterRoom('hote-revi-2'); //LUKE SEQUENCE, just wanted to check if works...won't work without calling getRoom
+                    },*/
                 },
                 { 
                     itemId: 'roomkey', 
