@@ -1,8 +1,8 @@
 
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
-let prevInput = '';
 let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
+
 let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
@@ -14,12 +14,17 @@ let applyInput = (input) => {
   setInput(''); // reset input field
 
   const exec = (cmd, arg) => {
+    const room = getRoom(disk.roomId);
+    let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
       
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-    }
+
+    } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
+      enterRoom('heal-club2');
+    } 
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair
@@ -40,7 +45,10 @@ let applyInput = (input) => {
         println(pickOne(confirmArray));
         enterRoom('hote-room-3');
       }
-    }
+      // Suicide at Sunderland special commands
+    } else if (disk.roomId === 'hell-3' && prevInput === 'Xavier' || 'Xavier Hollings' || 'Hollings') {
+      enterRoom('hell-4');
+    } 
 
     //long or short hair
     else if (disk.roomId === 'hote-room-3' && prevInput === 'long') {
@@ -110,10 +118,18 @@ let applyInput = (input) => {
         println(pickOne(confirmArray));
         enterRoom('hote-room-6');  
       }
-    }
+    }// Suicide at Sunderland special commands
+   else if (disk.roomId === 'hell-3' && prevInput === 'Xavier' || 'Xavier Hollings' || 'Hollings') {
+     if (prevInput === '')
+     {
+      println(`Sorry, I didn't understand your input. For a list of available commands, type HELP, but your in Hell so HELP doesn't come.`);
+     }
+      enterRoom('hell-4');
+    } 
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
+    
   };
 
   let args = val.split(' ')

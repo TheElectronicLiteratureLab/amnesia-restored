@@ -44,7 +44,7 @@ let init = (disk) => {
   return initializedDisk;
 };
 
-let response = (e) => {
+let quickResponse = (e) => {
   const ENTER = 13;
 
   if (e.keyCode === ENTER) {
@@ -55,7 +55,7 @@ let response = (e) => {
 // register listeners for input events
 let setup = () => {
 
-  input.addEventListener('keypress', response);
+  input.addEventListener('keypress', quickResponse);
 
   input.addEventListener('keydown', (e) => {
     input.focus();
@@ -74,11 +74,11 @@ let setup = () => {
       autocomplete();
     }
   });
+};
 
   input.addEventListener('focusout', () => {
     input.focus({preventScroll: true});
   });
-};
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
@@ -127,6 +127,8 @@ let loadDisk = (uninitializedDisk) => {
   // focus on the input
   input.focus();
 };
+
+
 
 // npm support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

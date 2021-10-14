@@ -47,21 +47,6 @@ let println = (line, className) => {
 // array -> any
 let pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
-//gets the last user input and stores it inside the lastInput variable
-let lastInput;
-function getLastInput () {
-  lastInput = String(inputs[inputs.length-1]);
-  console.log(lastInput);
-};
-
-//parses the users last input against first parameter, outputs text of second parameter
-function parseLastInput (kWord, outText) {
-  getLastInput();
-  if (lastInput !== kWord) {
-    println(outText);
-  };
-};
-
 // return the first name if it's an array, or the only name
 // string | array -> string
 function getName(name) {
@@ -70,7 +55,9 @@ function getName(name) {
 
 // retrieve room by its ID
 // string -> room
-let getRoom = (id) => disk.rooms.find(room => room.id === id);
+function getRoom(id) {
+  return disk.rooms.find(room => room.id === id);
+}
 
 // remove punctuation marks from a string
 // string -> string
@@ -112,6 +99,37 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 };
+let response = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+};
+
+// Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
+let pressEnter = (id) => {
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  //disable normal input
+  document.querySelector('input').disabled = true;
+  document.getElementById("arrow").innerHTML = "";
+
+let cont = (e) => {
+  if (e.key === 'Enter') {
+    enterRoom(id);
+    document.removeEventListener("keydown", cont);
+    //input.addEventListener('keypress', response);
+  }
+}
+document.addEventListener("keydown", cont);
+};
+// bring back the input after you delete it with the Press Enter function
+let reenableInput = () => {
+    document.querySelector('input').disabled = false;
+    document.getElementById('arrow').innerHTML = ">";
+    document.querySelector('input').focus();
+};
+
 
 // determine whether the object has the passed name
 // item | character, string -> bool
@@ -123,7 +141,7 @@ let objectHasName = (obj, name) => {
     : compareNames(obj.name);
 }
 
-// determine whether the object has the passed name
+// determine whether the object has the passed id
 // item | character, string -> bool
 let objectHasId = (obj, id) => {
   const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
@@ -141,10 +159,18 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 
 // get item by name from room with ID
 // string, string -> item
-let getItemInRoom = (itemName, roomId) => {
+let getItemInRoomById = (itemName, roomId) => {
   const room = getRoom(roomId);
 
   return room.items && room.items.find(item => objectHasId(item, itemName));
+}
+
+// get item by name from room
+// string, string -> item
+let getItemInRoom = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
 // get item name from ID
@@ -156,7 +182,11 @@ let getItemName = (itemId, roomId) => {
 
 // get item by name from inventory
 // string -> item
-let getItemInInventory = (name) => disk.inventory.find(item => objectHasId(item, name));
+let getItemInInventoryById = (name) => disk.inventory.find(item => objectHasId(item, name));
+
+// get item by name from inventory
+// string -> item
+let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
 
 // add item into players inventory automatically taken from pcmommands
 let addItem = (itemName) => {
@@ -235,32 +265,3 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
-
-// this is a function simulates the press enter mechanic from the original 
-let pressEnter = (id) => {
-  
-  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
-  //disable normal input
-  document.querySelector('input').disabled = true;
-  document.getElementById("arrow").innerHTML = "";
-
-  //create a listener for Enter button
-  let cont = (e) => {
-    if (e.key === 'Enter') {
-      enterRoom(id);
-      document.removeEventListener("keydown", cont);
-      //input.addEventListener('keypress', response);
-    }
-  }
-  document.addEventListener("keydown", cont);
-}
-
-// renables input after pressEnter();
-let reenableInput = () => {
-  setTimeout(() => {
-    document.querySelector('input').disabled = false;
-    document.getElementById("arrow").innerHTML = "> ";
-    document.querySelector('input').focus(); }, 100);
-}
-
-// trying to automatically applay specific 
