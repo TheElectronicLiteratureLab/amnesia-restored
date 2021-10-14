@@ -517,6 +517,20 @@ let forward = () => {
 
 // };
 
+function askXAboutY(xCharacter, yPrep, zTopic) {
+  const room = getRoom(disk.roomId);
+  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
+
+  if (yPrep !== 'about') {
+    println('You can Ask x(character) about y(topic)');
+  }
+  
+  if (yPrep === 'about'){
+    console.log(character.name);
+    console.log(xCharacter, zTopic);
+  }
+};
+
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -583,4 +597,11 @@ let commands = [
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
   },
+<<<<<<< Updated upstream
 ];
+=======
+  {
+    ask: args => askXAboutY(args[0], args[1], args[2]),
+  },
+];
+>>>>>>> Stashed changes

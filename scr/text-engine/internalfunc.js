@@ -163,7 +163,7 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasId(item, itemName));
+  return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
 // get item name from ID
