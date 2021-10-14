@@ -12,10 +12,8 @@ const deathAndTexas = {
           const execution = [ 'Firing Squad', 'Lethal Injection'];
           if(prevInput === 'Firing Squad'){
             firingSquad = true;
-
           }else if(prevInput == execution[1]){
             lethalInjection = true;
-
           }else{
             
           }
