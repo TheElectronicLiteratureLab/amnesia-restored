@@ -3,15 +3,20 @@
 // accepts optional string input; otherwise grabs it from the input element
 let prevInput = '';
 let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
+let moveCount = 0;
+let f_firstphonecall = false;
+
 let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
   println(`> ${input}`);
   prevInput = input;
-  console.log(inputs);
+  //console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
+  moveCount++;
+  console.log(moveCount);
 
   const exec = (cmd, arg) => {
     if (cmd) {
@@ -111,6 +116,32 @@ let applyInput = (input) => {
         enterRoom('hote-room-6');  
       }
     }
+    
+    //Yes or no phone
+    else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'yes') {
+      println(`"I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
+      getItemInRoomById('roomphone', disk.roomId).inUse = false;
+      enterRoom('hote-room-9');
+    } else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'no') {
+      println(`"We have your VISA slip here. I'll have a bellboy bring it up to you. Have a good day." She hangs up.`);
+      getItemInRoomById('roomphone', disk.roomId).inUse = false;
+      enterRoom('hote-room-9');
+    }
+    
+    //yes or no bellboy
+    else if (disk.roomId === 'hote-room-10' && prevInput === 'yes') {
+      println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
+      // Flag tiping bellboy
+      //f_tippedbellboy = true;
+      enterRoom('hote-room-8');
+    } else if (disk.roomId === 'hote-room-10' && prevInput === 'no') {
+      println(`The bellboy leaves with a discontened mumble, and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
+      // Flag tiping bellboy
+      //f_tippedbellboy = false;
+      enterRoom('hote-room-8');
+    }
+    
+
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }

@@ -572,11 +572,18 @@ let close = (itemToOpen) => {
     } else {
       println("You can't close that.");
     }
-  }
-  
+  } 
 }
 
-
+let answer = (phone) => {
+  let item = getItemInRoom(phone, disk.roomId);
+  if (item !== undefined){
+    console.log(item);
+    if (item.itemId === 'roomphone'){
+      useItem(item.name[0]);
+    }
+  }
+}
 // jump command
 
 // objects with methods for handling commands
@@ -632,7 +639,8 @@ let commands = [
     x: x => lookAt([null, x]), // IF standard shortcut for look at
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
-    close: x => close(x)
+    close: x => close(x),
+    answer: x => answer(x)
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
