@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hell-1', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -372,6 +372,9 @@ const amnesiaRestored = {
             }
           }
         }
+      ],
+      exits: [
+        {dir: 'bathroom', id: 'bath-1'}
       ]
     },
     //**********************************************************/
@@ -833,7 +836,7 @@ const amnesiaRestored = {
       name: '',
       desc: `Every few years a kind of canoe comes up to the shore, and an old man with a long white beard and eyes that glow like a battery-operated jack-o-lantern offers the waiting throng a chance to get into the canoe and be taken to the seat of the Last Judgement. But first, you have to tell him your name. And you--and all these others--are the poor souls who died in a state of amnesia. You can’t remember your names, and you can’t get either to heaven or to hell until this old geezer, whose name is Charon, has checked you off his list. Each time he returns you have one chance to tell him what you think your name might be.`,
       onEnter: () =>{
-          println('\nPlease Press **[ENTER]** to Continue');
+          //println('\nPlease Press **[ENTER]** to Continue');
           pressEnter('hell-3');
       },
   },

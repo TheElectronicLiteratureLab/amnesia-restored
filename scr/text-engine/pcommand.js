@@ -546,7 +546,6 @@ let turnOffOn = (toggle, itemId) => {
     println(`You can't do that.`);
   }
 }
-};
 
 //ask character about topic function
 
