@@ -259,7 +259,6 @@ const amnesiaRestored = {
           isOpen: false,
           onLook: () => {
             let dresser = getItemInRoomById('dresser', disk.roomId);
-            let stationary = getItemInRoomById('stationary', disk.roomId);
             let bible = getItemInRoomById('bible', disk.roomId);
             let roomkey = getItemInRoomById('roomkey', disk.roomId);
             let pen = getItemInRoomById('pen', disk.roomId);
@@ -270,14 +269,11 @@ const amnesiaRestored = {
             let comma3 = ',';
             let iOne = ' a Gideon Bible, ';
             let iTwo = ' the room key with its large green tag, ';
-            let iThr = ' ';
+            //let iThr = ' ';
             let iFou = ', and beneath the telephone the hotel’s brochure';
             let iFiv = ' a pen,';
 
             if (dresser.desc === ' ') {
-              if (!stationary === undefined) {
-              
-              }
               if (bible === undefined) {
                 iOne = '';
               }
@@ -434,6 +430,31 @@ const amnesiaRestored = {
           desc: `A hanger is a hanger is a hanger.`,
           isTakeable: true,
           isDroppable: true
+        },
+        {
+          itemId: 'hoteldoor',
+          name: 'door',
+          desc: ' ',
+          isOpen: false,
+          onLook: () => {
+            let door = getItemInRoomById('hoteldoor', disk.roomId);
+            let one = ``;
+            if (door.isOpen === false) {
+              one = 'closed.'
+            } else {
+              one  = 'open.'
+            }
+            if (door.desc === ' ') {
+              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
+              println(door.desc);  
+            } else {
+              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
+            }
+          },
+          onUse: () => {
+            //enterRoom('hote-coor');
+          }  
+        
         }
       ],
       exits: [

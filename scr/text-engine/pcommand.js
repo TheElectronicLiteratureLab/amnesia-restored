@@ -535,31 +535,56 @@ let turnOffOn = (toggle, itemId) => {
 
 // open command
 let open = (itemToOpen) => {
-  //println(itemToOpen);
-  let item = getItemInRoom(itemToOpen, disk.roomId);
   
-  if (item.itemId === 'curtains') {
-    if(item.isOpen === !true) {
-      item.isOpen = true;
-      println(`The ${item.name[0]} are now open.`);
-    } else {
-      println("They're already opened.");
+  let item = getItemInRoom(itemToOpen, disk.roomId);
+  console.log(item);
+  // Items that can be opened
+  // Curtains
+  if (item !== undefined)
+  {
+    if (item.itemId === 'curtains') {
+      if(item.isOpen === !true) {
+        item.isOpen = true;
+        println(`The ${item.name[0]} are now open.`);
+      } else {
+        println("They're already opened.");
+      }
     }
-  } else if (item.itemId === 'window') {
-    println('The window is sealed to keep the air-conditioned air in the hotel.');
-  } else if (item.itemId === 'dresser') {
-    println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
-  } else {
+    // Window
+    else if (item.itemId === 'window') {
+      println('YOU ARE SEALED INSIDE NOOOO');
+    }     
+    // Dresser
+    if (item.itemId === 'dresser') {
+      if(item.isOpen === !true) {
+        item.isOpen = true;
+        println(`The ${item.name[0]} is now open.`);
+        println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
+      } else {
+        println("They're already opened.");
+      }
+    }
+    // Door
+    if (item.itemId === 'hoteldoor') {
+      if(item.isOpen === !true) {
+        item.isOpen = true;
+        println(`The ${item.name} is now open.`);
+      } else {
+        println(`The ${item.name} is already open.`);
+      }
+    }
+  }
+  else {
     println("You can't open that.");
   }
 }
 
 // close command
 let close = (itemToOpen) => {
-  //println(itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
   if (item !== undefined)
   {
+    // Curtains
     if (item.itemId === 'curtains') {
       if(item.isOpen === !false) {
         item.isOpen = false;
@@ -567,11 +592,31 @@ let close = (itemToOpen) => {
       } else {
         println("They're already closed.");
       }
-    } else if (item.itemId === 'window') {
-      println('You may not close that.');
-    } else {
-      println("You can't close that.");
     }
+    // Window
+    else if (item.itemId === 'window') {
+      println('You may not close that.');
+    }
+    // Dresser
+    else if (item.itemId === 'dresser') {
+      if(item.isOpen === !false) {
+        item.isOpen = false;
+        println(`The ${item.name[0]} is now closed.`);
+      } else {
+        println(`The ${item.name[0]} is already closed.`);
+      }
+    }
+    // Door
+    else if (item.itemId === 'hoteldoor') {
+      if(item.isOpen === !false) {
+        item.isOpen = false;
+        println(`The ${item.name} is now closed.`);
+      } else {
+        println(`The ${item.name} is already closed.`);
+      }
+    }    
+  } else {
+      println("You can't close that.");
   } 
 }
 
