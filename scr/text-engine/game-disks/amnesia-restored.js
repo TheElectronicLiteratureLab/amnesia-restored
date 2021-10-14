@@ -1,7 +1,5 @@
-let playerMoney = 0;
-
 const amnesiaRestored = {
-  roomId: 'titl-scre-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -34,9 +32,9 @@ const amnesiaRestored = {
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
         println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
-        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 5000);
-        setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 5000);
-        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 5100);
+        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 1000);
+        setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
+        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 1150);
       },
     },
     {
@@ -135,16 +133,15 @@ const amnesiaRestored = {
       },
     },
     {
-      id: 'hote-room-8',
+      id: 'hote-room-8', // The main room you can start exploring
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {
         addItem('xindexer');
-        playerMoney ++ ;
         reenableInput();
       },
       onLook: () => {
-        println(`You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you;re a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`)
+        println(`You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`)
       },
       items: [
         {
@@ -175,7 +172,7 @@ const amnesiaRestored = {
         {
           itemId: 'roomtv',
           name: ['Simplex TV', 'TV', 'television', 'telly'],
-          desc: 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.' ,
+          desc: ' ',
           channelArr: [
             'On Channel 2 there is an ad for Kool-Aid, and then a re-run of WHEEL OF FORTUNE resumes. The three contestants are trying to guess the letters of someone’s name. There’s no T in it, no S, no N.', 
             'It’s tuned to the hotel’s own cable channel, and the screen fills with the heaving breasts and writhing limbs of a closed-circuit X-rated movie. You fee1 just enough arousal to know that your sexual orientation is definitely heterosexual.',
@@ -192,9 +189,26 @@ const amnesiaRestored = {
           ],
           isOn: false,
           arrCount: 0,
+          onLook: () => {
+            let item = getItemInRoomById('roomtv', 'hote-room-8');
+            if(item.isOn) {
+              if (item.desc == ' ')
+              {
+                println('It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.');
+              } else {
+                item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
+              }
+              
+            } else {
+              if (item.desc == ' ')
+              {
+                println('It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.');
+              }
+              item.desc = 'It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.'
+            }
+          },
           onUse: () => {
-            let item = getItemInRoom('roomtv', 'hote-room-8');
-            item.isOn = !item.isOn;
+            let item = getItemInRoomById('roomtv', 'hote-room-8');
             if(item.isOn) {
               item.desc = ' It is a Simplex TV--a brand you’ve never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.';
               println(item.desc);
@@ -206,26 +220,95 @@ const amnesiaRestored = {
         },
         {
           itemId: 'computer',
-          name: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
-          desc: 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.',
+          name: ['IBM PC' , 'computer', 'comp', 'pc'],
+          desc: ' ',
           isOn: false,
+          onLook: () => {
+            let pc = getItemInRoomById('computer', 'hote-room-8');
+            if(pc.isOn === true)
+            {
+              if (item.desc == ' ')
+              {
+                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
+              }
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+              println(pc.desc);
+            } else {
+              if (item.desc == ' ')
+              {
+                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
+              }
+              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+              println(pc.desc);
+            }
+          },
           onUse: () => {
-            let pc = getItemInRoom('computer', 'hote-room-8');
-            pc.isOn = !pc.isOn;
+            let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
             {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-              println(pc.desc)
             } else {
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
-              println(pc.desc);
             }
           }
         },
         {
-          itemId: 'drawer',
-          name: 'drawer',
-          desc: 'A drawer'
+          itemId: 'dresser',
+          name: ['dresser', 'drawer'],
+          desc: ` `,
+          isOpen: false,
+          onLook: () => {
+            let dresser = getItemInRoomById('dresser', disk.roomId);
+            let stationary = getItemInRoomById('stationary', disk.roomId);
+            let bible = getItemInRoomById('bible', disk.roomId);
+            let roomkey = getItemInRoomById('roomkey', disk.roomId);
+            let pen = getItemInRoomById('pen', disk.roomId);
+            let brochure = getItemInRoomById('brochure', disk.roomId);
+
+            let comma1 = ',';
+            let comma2 = ',';
+            let comma3 = ',';
+            let iOne = ' a Gideon Bible, ';
+            let iTwo = ' the room key with its large green tag, ';
+            let iThr = ' ';
+            let iFou = ', and beneath the telephone the hotel’s brochure';
+            let iFiv = ' a pen,';
+
+            if (dresser.desc === ' ') {
+              if (!stationary === undefined) {
+              
+              }
+              if (bible === undefined) {
+                iOne = '';
+              }
+              if (roomkey === undefined) {
+                iTwo = '';
+              }
+              if (brochure === undefined) {
+                iFou = '';
+              }
+              if (pen === undefined) {
+                iFiv = '';
+              }
+              println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
+            } else {
+              dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
+            }
+          }
+        },
+        {
+          itemId: 'roomkey',
+          name: ['room key', 'hotel key'],
+          desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
+          isTakeable: true,
+          isDroppable: true
+        },
+        {
+          itemId: 'stationary',
+          name: ['hotel stationary', 'stationary', 'paper'],
+          desc: 'The stationary says SUNDERLAND HOTEL at the top.',
+          isTakeable: true,
+          isDroppable: true
         },
         {
           itemId: 'roomphone',
@@ -242,19 +325,49 @@ const amnesiaRestored = {
           isTakeable: true,
           isDroppable: true,
           onUse: () => {
-
+            println('Brochure coming soon!');
           },
           onTake: () => {
-
+            println(`You take it but don't read it`);
           },
           onDrop: () => {
 
           }
         },
         {
+          itemId: 'curtains',
+          name: ['drapes', 'curtains'],
+          desc: ' ',
+          isOpen: false,
+          onLook: () => {
+            let item = getItemInRoomById('curtains', disk.roomId);
+            if (item.isCurtOpen === true) {
+              if (item.desc === ' ')
+              println(`The ${item.name[0]} are open.`);
+            } else {
+              println(item.desc);
+            }
+            if (item.isCurtOpen === false) {
+              if (item.desc === ' ')
+              println(`The ${item.name[0]} are closed.`);
+            } else {
+              println(item.desc);
+            }
+          }
+        },
+        {
           itemId: 'window',
           name: 'window',
-          desc: ''
+          desc: 'The window is shrouded by the drapes.',
+          onLook: () => {
+            let item = getItemInRoomById('curtains', disk.roomId);
+            if (item.isCurtOpen === false) {
+              item.desc = 'The window is shrouded by the drapes';
+            } else {
+              item.desc = `Even without being able to see the Empire State Building off to the south, you would know by the sheer immensity of the view that you are in Manhattan. It seems familiar, but only in the general way that a famous postcard view is familiar. You don’t feel as though you belong in this city, as though you are a New Yorker.`;
+              println(item.desc);
+            }
+          }
         }
       ]
     }

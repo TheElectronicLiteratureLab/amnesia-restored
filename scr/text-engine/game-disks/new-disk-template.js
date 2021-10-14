@@ -10,7 +10,7 @@ const healthClubDisk = {
       The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
       exits: [
         {
-          dir: ['left'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
+          dir: ['left', 'dolls', 'girls', `women's`, 'womens'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
           id: 'heal-club1',
         },
         {
@@ -39,6 +39,34 @@ const healthClubDisk = {
           id: 'heal-club 2'
         }
       ],
+    },
+    {
+      id: 'heal-club3',
+      name: `Women's Locker Room`,
+      desc: `"I'm warning you, Bozo: Out of here!`,
+      exits: [
+        {
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
+        },
+        {
+          dir: [],
+          id: 'heal-club4'
+        }        
+      ],
+    },
+    {
+      id: 'heal-club4',
+      name: `Women's Locker Room`,
+      desc: `"Okay, that's it." 
+      With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
+      exits: [
+        {
+          dir: [],
+          id: 'Deat-Tex'
+        }
+      ]
     }
   ],
 };
+
