@@ -12,10 +12,12 @@ const lobby = {
       onLook: () => { // Looking around the Lobby.
         const room = getRoom('lobb-1');
         room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
+
         The Sunderland Hotel
         is happy to welcome
         The Noise Abatement League
         to the Big Apple.
+        
         Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
         Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the evening news to a man slumped in a wing-back chair. The man, who is dressed like a Texas businessman in suit and tie, with boots and Stetson, tilts back his hat to look at you. Then he stands up, smiling, and gestures for you to come to him.`;
       },
@@ -23,7 +25,7 @@ const lobby = {
 
       exits: [
         { // If the player is wearing the Tux and goes to Luke
-          dir: ['w', 'west',],
+          dir: ['w', 'west', 'to man', 'man', 'luke', 'person', 'to person',],
           id: 'lobb-3', 
         },
 
@@ -141,7 +143,7 @@ const lobby = {
         room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
       },
       exits: [
-        { // Leads straight to chapel
+        { // Leads to the stairs
           dir: 'stairs',
           id: 'lobb-17',
         },
@@ -189,10 +191,9 @@ const lobby = {
         },
 
         {// Anything else but going to the elevator
-          dir: 'no',
+          dir: ['no',],
           id: 'lobb-10',
         },
-
       ],  
     },
 
@@ -222,7 +223,7 @@ const lobby = {
         },
 
         {// responding 'take gun' or 'fight man/Luke'
-          dir: 'fight',
+          dir: ['fight', 'fight man', 'fight luke', 'attack', 'take gun', 'steal gun'],
           id: 'lobb-13',
         },
 
@@ -240,7 +241,7 @@ const lobby = {
         },
 
         {// responding 'take gun' or 'fight man/Luke'
-          dir: 'fight',
+          dir: ['fight', 'fight man', 'fight luke', 'attack', 'take gun', 'steal gun'],
           id: 'lobb-13',
         },
       ],  
@@ -252,39 +253,31 @@ const lobby = {
 
       exits: [
         {// responding 'give man/Luke room key'
-         dir: 'give key',
+         dir: ['give key', 'give room key'],
          id: 'lobb-14',
         },
 
         {// if the player either didn't take the key from the room, or says: "I don't have key/I can't"
-          dir: 'no',
+          dir: ['no', 'i cant', 'dont have key', 'what key'],
           id: 'lobb-12',
         },
       ],  
     },
 
-    { 
+    {//leads to the Hell Ending
       id: 'lobb-12',
-      desc: `"You didn’t take your room key when you left your room? God-damn, but you are a turkey.  Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
-
-      exits: [
-        { // leads to the same 'Hell' ending as the suicide from earlier.
-          dir: 'dead',
-          id: 'hell-1',
-        },
-      ],  
+      onEnter: () => {
+        println(`"You didn’t take your room key when you left your room? God-damn, but you are a turkey.  Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`);
+        pressEnter('hell-1');
+     },
     },
 
-    { 
+    {//leads to the Hell Ending
       id: 'lobb-13',
-      desc: `Unwisely you try to take the man’s revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet--right between the eyes.`,
-
-      exits: [
-        { // leads to the same 'Hell' ending as the suicide from earlier.
-          dir: 'dead',
-          id: 'hell-1',
-        },
-      ],  
+      onEnter: () => {
+        println(`Unwisely you try to take the man’s revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet--right between the eyes.`);
+        pressEnter('hell-1');
+     },
     },
 
     { 
@@ -293,7 +286,7 @@ const lobby = {
 
       exits: [
         {// responding "enter room"
-          dir: 'enter',
+          dir: ['enter', 'enter room', 'open door', 'go in room',],
           id: 'lobb-16',
         },
 
@@ -304,70 +297,49 @@ const lobby = {
       ],  
     },
 
-    { 
+    {//leads to the Hell Ending
       id: 'lobb-15',
-      desc: `"God-damn, but you are a turkey. Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
-
-      exits: [
-        {// leads to the same 'Hell' ending as the suicide from earlier.
-          dir: 'dead',
-          id: 'hell-1',
-        },
-      ],  
+      onEnter: () => {
+        println(`"God-damn, but you are a turkey. Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`);
+        pressEnter('hell-1');
+     },
     },
 
-    { 
+
+    {//leads to the Chapel
       id: 'lobb-16',
-      desc: `You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don’t it?" He presses the button for 2, and the elevator takes you to the second floor--and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`,
-
-      exits: [
-        { // Leads straight to chapel
-          dir: 'chapel',
-          id: 'chap-1',
-        },
-      ],  
+      onEnter: () => {
+        println(`You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don’t it?" He presses the button for 2, and the elevator takes you to the second floor--and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`);
+        pressEnter('chap-1');
+     },
     },
+
 //End Tuxless Section
 
 //Begin Lobby Stairs Section
-    { 
-      id: 'lobb-17',
-      desc: `Halfway up the stairs a woman in a bright blue dress insists on giving you a mimeographed flyer with the headline: TOO MUCH NOISE CAN DRIVE YOU CRAZY!!! A large yellow button pinned to her dress shows her to be a member of the New York City Chapter of the Noise Abatement League. "The next presentation will be in just a minute or two!" she calls after you as you continue up the staircase. At the top you take your direction from an arrow pointing you to the All­-Faith Chapel.`,
-
-      exits: [
-        { // Leads straight to chapel
-          dir: 'enter',
-          id: 'chap-1',
-        },
-
-      ],  
+    {//leads to the Chapel
+     id: 'lobb-17',
+     onEnter: () => {
+      println(`Halfway up the stairs a woman in a bright blue dress insists on giving you a mimeographed flyer with the headline: TOO MUCH NOISE CAN DRIVE YOU CRAZY!!! A large yellow button pinned to her dress shows her to be a member of the New York City Chapter of the Noise Abatement League. "The next presentation will be in just a minute or two!" she calls after you as you continue up the staircase. At the top you take your direction from an arrow pointing you to the All­-Faith Chapel.`);
+      pressEnter('chap-1');
+     },
     },
 
-    { //East from (lobby-7)
+    {//East from (lobb-7)
       id: 'lobb-18',
-      desc: `You walk on past the stairs towards the 52nd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
+      onEnter: () => {
+       println(`You walk on past the stairs towards the 52nd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`);
+       pressEnter('lobb-17');
+      },
+     },
 
-      exits: [
-        {// responding 'go to stairs"
-          dir: 'stairs',
-          id: 'lobb-17',
-        },
-
-      ],  
-    },
-
-    { //West from (7)
-      id: 'lobb-18A',
-      desc: `Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
-
-      exits: [
-        {// responding 'go to stairs"
-          dir: 'stairs',
-          id: 'lobb-17',
-        },
-
-      ],  
-    },
+     {//West from (lobb-7)
+      id: 'lobb-18',
+      onEnter: () => {
+       println(`Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`);
+       pressEnter('lobb-17');
+      },
+     },
 
 //End Lobby Stairs Section
 
@@ -378,14 +350,14 @@ const lobby = {
 
     //When speaking to Luke, (Lobb-4B) He asks: "Do you take my meaning?" There is no negative response to this question, and in the original game it makes your character automatically answer yes.
     
-    //Needs to adjust rooms for compass direction movements. This allows for access to stairs from room 7. And probably a few other things too.
     //properly name the dir for navigation. Will need to happen once we have an array of words that will work.
     //adding in specific look functions for the room, and for Luke
-    //Fix desc for 18 and 18A. Check where they should properly happen.
+
     //Manuscript text for 4 and 5 have some diolouge shifted around. Original game skips this issue by forcing you onto a path.
-    //Connect any sections that shoul auto-advance to the next ones, such as those leading to hell or the chapel.
-    //Organize the code a little bit so it's easier to tell the wearing-tux rooms from the non-wearing-tux rooms
-    //Last updated 10/9/2021
+
+    //Connect any sections that should auto-advance to the next ones, such as those leading to hell or the chapel.
+
+    //Last updated 10/14/2021
 
 //End Lobby Notes
 
