@@ -866,6 +866,1545 @@ const amnesiaRestored = {
       desc: `“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`,
 
     },
+    //**********************************************************/
+    //                Sunderland Health Club                   /
+    //********************************************************/
+    {
+      id: 'heal-club', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+      name: 'Health Club Reception Room', // Displayed each time the player enters the room.
+      desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be “Back in 10 Minutes.”
+      The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
+      exits: [
+        {
+          dir: ['left', 'dolls', 'girls', 'girls', `women's`, 'womens'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
+          id: 'heal-club1',
+        },
+        {
+          dir: ['right', 'guys', 'mens', 'boys', `boy's`, `men's`],
+          id: 'heal-club5',
+        },
+        {
+          dir: ['leave'],
+          id: 'cor-?'
+        }
+      ],
+    },
+    {
+      id: 'heal-club1',
+      name: `Women's Locker Room`,
+      desc: `You enter the women’s locker room, and a woman who seems to be in training for the Olympic hammer throw looks at you with the joy of combat already glistening in her eyes. 
+      “Not here, buddy,” she informs you in a low voice. “This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room.” 
+      She points the direction with her thumb. “That way.”`,
+      exits: [
+        {
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
+        },
+        {
+          dir: [],
+          id: 'heal-club2'
+        }
+      ],
+    },
+    {
+      id: 'heal-club3',
+      name: `Women's Locker Room`,
+      desc: `"I'm warning you, Bozo: Out of here!`,
+      exits: [
+        {
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
+        },
+        {
+          dir: [],
+          id: 'heal-club4'
+        }        
+      ],
+    },
+    {
+      id: 'heal-club4',
+      name: `Women's Locker Room`,
+      desc: `"Okay, that's it." 
+      With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
+      exits: [
+        {
+          dir: [],
+          id: 'Deat-Tex'
+        }
+      ],
+    },
+    {
+      id: 'heal-club5',
+      name: `Men's Locker Room`,
+      desc: `You are in the men’s locker room. 
+      To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked “Sauna,” that on the left “Massage.” Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
+      exits: [
+        {
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
+        },
+        {
+          dir: ['right', 'lockers'],
+          id: 'heal-club6'
+        },
+        {
+          dir: ['left door', 'massage'],
+          id: 'heal-club7'
+        },
+        {
+          dir: ['right door', 'sauna'],
+          id: 'heal-club8'
+        }, 
+        {
+          dir: ['showers', 'shower'],
+          id: 'heal-club9'
+        },
+        {
+          dir: ['weight room', 'weights'],
+          id: 'heal-club10'
+        }
+      ],
+    },
+    {
+      id: 'heal-club6',
+      name: `Men's Locker Room`,
+      desc: `You try and wedge yourself intop one of the metal lockers but clearly they weren't intended for this purpose -- or you weren't. There must be somewhere else you can hide`,
+      onLook: () => {
+        const room = getRoom('heal-club6');
+        const room2 = getRoom('heal-club');
+        room.desc = `You take a quick tour of the lockers, opening and closing the metal doors quietly, hoping to find a forgotten or abandoned piece of clothing. Your search of the first alcove yields slim pickings: a plastic bag from a bookstore, a white sock with holes in both toe and heel, a broken shoelace, and a small brass key. Four of the lockers are padlocked. Yanking at the handles accomplishes nothing.
+        You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.
+        Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`;
+        room2.block = `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
+        Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+      },
+    },
+    {
+      id: 'heal-club7',
+      name: `Men's Locker Room`,
+      desc: '',
+      block: 'The door to that room is locked.'
+    },
+    {
+      id: 'heal-club9',
+      name: `Men's Locker Room`,
+      desc: '',
+      block: `There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`,
+
+    },
+    {
+      id: 'heal-club8',
+      name: `Men's Locker Room`,
+      desc: `As you enter the sauna a blast of superheated air wraps your body in what feels like a suit of flames. Your heartbeat quickens, and the narrow confines of the steamy, pine-paneled cell bend and warp and tilt. 
+      You are barely able to keep yourself from falling against the iron stove and its pile of heated rocks. You crumble onto the bench of wooden slats, and then…`,
+      exits: [
+        {
+          dir: [],
+          id: 'heal-club11'
+        }
+      ]
+    },
+    {
+      id: 'heal-club11',
+      name: `Men's Locker Room`,
+      desc: `But this 'then' is like no other then. It does not follow the time that's gone before. Like a fluid under tremendous pressure, the memories suppressed by your amnesia overwhelm you. At some cue supplied by this hot dark cubbyhole, your past supplants your present life. 
+      You are experiencing . . . DEJA-VU!`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu'
+        }
+      ],
+    },//BELOW HERE IS AFTER DEJA-VU
+    {
+      id: 'heal-club12',
+      name: 'Massage Room',
+      desc: `“Mr. Cameron, are you conscious, can you hear me?”
+      A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.
+      “He’s opened his eyes,” another voice says.
+      “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room.
+      But maybe he just can’t take the heat in that sauna. Some guys can’t.”
+      He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
+      exits: [
+        {
+          dir: [],
+          id: 'heal-club13'
+        },
+      ],
+    },
+    {
+      id: 'heal-club13',
+      name: 'Massage Room',
+      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”  The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper, but you are still able to hear what he says.  “--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. “It was on the floor of the sauna.”
+      `,
+      exits: [
+          {
+            dir: [],
+            id: 'heal-club14'
+          },
+      ],
+    },
+    {
+        id: 'heal-club14',
+        name: 'Massage Room',
+        desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time. You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.
+        He rolls you over onto your stomach but instead of continuing the massage he turns on the sunlamp and leaves you alone in the room. The warmth of the lamp fills you with a strange peaceful passivity. You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym in the other. “Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
+        exits: [
+            {
+                dir:[],
+                id: 'heal-club15'
+            },
+        ],
+    },
+    {
+        id: 'heal-club15',
+        name: 'Massage Room'
+    },
+    //**********************************************************/
+    //                       Deja-Vu                           /
+    //********************************************************/
+    {
+      id: 'deja-vu', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+      name: '', // Displayed each time the player enters the room.
+      desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.
+      Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You’ll probably be beaten again--but you can’t help yourself. You scream the same few senseless words over and over, a litany of terror:`,
+      exits: [
+        {
+          dir: [], 
+          id: 'deja-vu1',
+        },
+      ],
+    },
+    {
+      id: 'deja-vu1',
+      name: '',
+      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.
+      You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five=alarm chili.'
+      He waits for you to say the two words that will get you fed.`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu2'
+        },
+        {
+          dir: [],
+          id: 'deja-vu3'
+        }
+      ],
+    },
+    {
+      id: 'deja-vu2',
+      name: '',
+      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut. You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu4'
+        },
+        
+      ],
+    },
+    {
+      id: 'deja-vu3',
+      name: '',
+      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.
+      When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu5'
+        },
+      ],
+    },
+    {
+      id: 'deja-vu4',
+      name: '',
+      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
+      exits: [
+        {
+          dir: [],
+          id: 'heal-club12'
+        },
+      ],
+    },
+    {
+      id: 'deja-vu5',
+      name: '',
+      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu4'
+        },
+      ],
+    },
+    //**********************************************************/
+    //                   Death and Texas                       /
+    //********************************************************/
+    {
+      id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+      name: '', // Displayed each time the player enters the room.
+      desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
+      // arguement for lethal injection or firing squad
+      onEnter: () =>{
+        let firingSquad = false;
+        let lethalInjection = false;
+        const execution = [ 'Firing Squad', 'Lethal Injection'];
+        if(prevInput === 'Firing Squad'){
+          firingSquad = true;
+
+        }else if(prevInput == execution[1]){
+          lethalInjection = true;
+
+        }else{
+          
+        }
+      }
+    },
+    {
+      id: 'deat-2', // if the player doesn't pick firing squad or lethal injection
+      name: '',
+      desc: `You must make a decision: the firing squad or lethal injection, which will it be?`,
+      // arguement for lethal injection or firing squad
+    },
+    {
+      id: 'deat-3', // if the player chooses lethal injection
+      name: '', // Displayed each time the player enters the room.
+      desc: `On the morning of the day you are to receive the lethal injection, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      onLook: () =>  {
+        const room = getRoom('deat-4');
+        room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
+
+      },
+    },
+    {
+      id: 'deat-4', // if the player chooses firing squad
+      name: '', // Displayed each time the player enters the room.
+      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      onLook: () =>  {
+        const room = getRoom('deat-4');
+        room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
+
+      },
+    },
+    {
+      id: 'deat-5', // if the player chooses to appeal the decision
+      name: '', // Displayed each time the player enters the room.
+      desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection--which is it?`, // Displayed when the player first enters the room.
+      // Need arguement here for firing squad or lethal injection
+    },
+    {
+      id: 'deat-6', // if BITE/SPIT or any obscenity at Denise
+      name: '', // Displayed each time the player enters the room.
+      desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+      
+    },
+    {
+      id: 'deat-7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU
+      name: '', // Displayed each time the player enters the room.
+      desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-9');
+      }
+    },
+    {
+      id: 'deat-8', // if ASK ABOUT XAVIER at DENISE
+      name: '', // Displayed each time the player enters the room.
+      desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-10')
+      }
+    },
+    {
+      id: 'deat-9', // Proceeding to last meal node
+      name: '', // Displayed each time the player enters the room.
+      desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-10');
+      }
+    },
+    {
+      id: 'deat-10', // last meal node
+      name: '', // Displayed each time the player enters the room.
+      desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+     // argument made and stored for either ribs, turkey, steak
+    },
+    {
+      id: 'deat-11', // religious node
+      name: '', // Displayed each time the player enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+     // argument made and stored for either ribs, turkey, steak
+    },
+    {
+      id: 'deat-12', // If none or go away
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-15');
+      }
+    },
+    {
+      id: 'deat-13', // If JEWISH
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-16');
+      }
+    },
+    {
+      id: 'deat-14', // If PROTESTANT
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-16');
+      }
+    },
+    {
+      id: 'deat-15', // If CATHOLIC
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-16');
+      }
+    },
+    {
+      id: 'deat-16', // Last meal continued 
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      // IF Steak and Potatoes
+      // const room = getRoom('deat-16')
+      // room.desc = "A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad."
+      //IF Roasted Turkey
+      // const room = getRoom('deat-16')
+      // room.desc = "Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner.."
+      // IF Barbecue Ribs
+      // const room = getRoom('deat-16')
+      // room.desc = "The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw."
+      //else
+      // const room = getRoom('deat-16')
+      // room.desc = "You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”"
+    },
+    {
+      id: 'deat-17', // LAst meal continued, tracking last input
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.
+
+
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      // IF Steak and Potatoes
+      // const room = getRoom('deat-17')
+      // room.desc = "You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love."
+      //IF Roasted Turkey
+      // const room = getRoom('deat-17')
+      // room.desc = "You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”"
+      // IF Barbecue Ribs
+      // const room = getRoom('deat-17')
+      // room.desc = "You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!."
+      //else
+      // const room = getRoom('deat-17')
+      // room.desc = "Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock. You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!”
+      onEnter: () => {
+        pressEnter('deat-18');
+    },
+  },
+  {
+    id: 'deat-18', // Last Words
+    name: '', // Displayed each time the player enters the room.
+    desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
+    But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
+    “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
+    // if anything
+    // println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
+    onEnter: () => {
+      println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
+      if(firingSquad){
+        pressEnter('deat-19');
+      }else{
+        pressEnter('deat-20');
+      }
+    }
+  },
+  {
+    id: 'deat-19', // If Firing Squad
+    name: '', // Displayed each time the player enters the room.
+    desc: `A stake has been placed in the courtyard of the prison, and you are bound to it. A chaplain appears to offer you some last words of comfort, and he too refuses to listen to your protests, as does the guard who offers you a blindfold and a last cigarette.
+    “It’s just as well you don’t smoke,” he says, as he walks toward the group of six marksmen standing at the ready some ten yards away. “It’s bad for your health. Says so right on the package.”
+    The marksmen laugh appreciatively at his joke.
+    They take aim. You close your eyes. The order to Fire! is given.
+    You die.`, // Displayed when the player first enters the room.
+    // Go to Game Over
+  },
+  {
+    id: 'deat-20', // If lethal injection
+    name: '', // Displayed each time the player enters the room.
+    desc: `It is a small room glaringly lighted with about 500 watts of fluorescent light. The light gives a surreal intensity to the room’s single item of furniture, a kind of dentist’s chair that has been modified with a panoply of leather and canvas restraints. You are made to sit in the chair, and a guard secures the restraints.
+    “This is the first time we’ve ever done a lethal injection here in Texas. They say it’s the wave of the future, but I don’t know. I think there’s something to be said for the traditional way of doing these things. What do you think?”\n
+    The guard frowns thoughtfully at your protests of innocence and your frenzied attempt to explain the bizarre events that got you into this fix. “There’s nothing I can do to help you, fellow. Talk to the chaplain.”\n
+    The chaplain assures you that only God can help you now. The chaplain leaves.\n
+    A medical attendant enters the room. He makes a tourniquet below your biceps with a length of rubber tubing, and then when he has found a vein, he injects the poison.
+    There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:
+    `, // Displayed when the player first enters the room.
+    // if anything
+    // println('And then you die'
+    //pressEnter('gameover?')
+  },
+  //**********************************************************/
+  //                        Lobby                            /
+  //********************************************************/
+  {
+    id: 'lobb-1',
+    name: 'The Lobby',
+    desc: `You step out of the elevator into the lobby of the Sunderland Hotel, and the first thing you see is yourself looking elegantly sheepish in your white tuxedo, for the doors of the facing elevator are made of mirror-glass.`, 
+    
+
+    onLook: () => { // Looking around the Lobby.
+      const room = getRoom('lobb-1');
+      room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
+      The Sunderland Hotel
+      is happy to welcome
+      The Noise Abatement League
+      to the Big Apple.
+      Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
+      Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the evening news to a man slumped in a wing-back chair. The man, who is dressed like a Texas businessman in suit and tie, with boots and Stetson, tilts back his hat to look at you. Then he stands up, smiling, and gestures for you to come to him.`;
+    },
+    
+
+    exits: [
+      { // If the player is wearing the Tux and goes to Luke
+        dir: 'west',
+        id: 'lobb-3', 
+      },
+
+      { // If the player is NOT wearing the Tux and goes to Luke
+        dir: 'tuxless', //Temporary dir, used to access the tuxless path.
+        id: 'lobb-8', 
+      },
+
+    ],
+  },
+
+//Begin Lobby Wandering Section
+{ 
+id: 'lobb-#',
+desc: `Text`,
+
+onLook: () => {
+  const room = getRoom('lobb-#');
+  room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
+  The Sunderland Hotel
+  is happy to welcome
+  The Noise Abatement League
+  to the Big Apple.
+  Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
+  Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the evening news to a man slumped in a wing-back chair. The man, who is dressed like a Texas businessman in suit and tie, with boots and Stetson, tilts back his hat to look at you. Then he stands up, smiling, and gestures for you to come to him.`;
+},
+
+exits: [
+  {
+    dir: 'Text',
+    id: '#',
+  },
+],  
+},
+
+
+//End Lobby Wandering Section
+//Once the player talks to Luke, they won't be able to walk around the Lobby anymore until they return later.
+
+//Begin Tuxedo Lobby Section
+
+  {//talking to Luke while wearing the tux
+    id: 'lobb-3',
+    desc: `"Johnny my boy!" booms the man in the Stetson, in a voice as abrasive as desert sand. "Wouldn't your dear old mother -God rest her gentle soul!--be proud to see you now?" He advances toward you grinning like a friendly skull, with his long, thin arms extended to embrace you, and before you can back away or offer any other protest the embrace is completed. Not what you'd call warm, just a short symbolic collision between your torso and his, with him maintaining the same cadaverous grin all the while. "Well, my boy," he says, releasing you, "how are you feeling after your big toot?"`,
+    exits: [
+      { // Answering in confirmation, goes to 4.
+        dir: 'okay',
+        id: 'lobb-4',
+      },
+
+      { // Answering negativley, goes to 4A.
+        dir: 'no',
+        id: 'lobb-4A',
+      },
+
+      { // Asking 'Who are you?' or something similar, skips both 4 and 4A to go to 4B.
+        dir: 'who',
+        id: 'lobb-4B',
+      },
+    ],  
+  },
+
+  {
+    id: 'lobb-4',
+    desc: `"Wish I could say the same for myself, but that's no matter now. Say, why that funny look? Something wrong with what I'm wearing?" You shake your head and go on wondering how anyone who'd ever met this man--as you must have in the life you can't remember--could ever forget him. For he is memorably ugly.`,
+    exits: [
+      {// Asking 'Who are you?' or something similar.
+        dir: 'who',
+        id: 'lobb-4B',
+      },
+    ],  
+  },
+
+  {
+    id: 'lobb-4A',
+    desc: `"I'm feeling just fine myself, but that's no matter now."`,
+    exits: [
+      {// Asking 'Who are you?' or something similar.
+        dir: 'who',
+        id: 'lobb-4B',
+      },
+    ],  
+  },
+
+  {
+    id: 'lobb-4B',
+    desc: `"Hey, Johnny boy, this is no time for dumb questions like that. I gotta go down to this here rats' cellar and fetch back that preacher. Meanwhile you'd better go up to the chapel on the next floor and smooth things over with the little lady. I think she was starting to worry that you was going to leave her standing at the altar a second time, but I told her, 'Honey, I said, just joking like, 'if that Cameron boy walks out on you this time with another dumb excuse like the last one, he's going to have to answer to your daddy.' And then, Johnny, I showed her what I was packing--" The man holds open the jacket of his suit to reveal a shoulder holster from which the butt of a small handgun projects. "--and that seemed to ease her worrying a whole lot. Nuff said, my boy? Do you take my meaning?"`,
+    
+    onLook: () => { // (6) Looking at Luke
+      const room = getRoom('lobb-4B');
+      room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
+    },
+
+    exits: [
+      { //Continues onto 5
+        dir: 'yes',
+        id: 'lobb-5',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-5',
+    desc: `"Glad to hear it. Cause I wouldn't want to have to do anything to make my little cactus blossom unhappy. You've given that poor gal enough trouble to last her a lifetime, and from here on out, Mr. Know-It-All Cameron the Third, you're going to do right by my little Alice--or my name ain't Luke Dudley. Now scoot on up those stairs and give her some of that sweet talk that got the two of you into this situation.'`,
+    
+    onLook: () => { // (6) Looking at Luke
+      const room = getRoom('lobb-5');
+      room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
+    },
+    
+    exits: [
+      { // Leads straight to chapel
+        dir: 'stairs',
+        id: 'chap-1',
+      },
+
+      { // Asking Luke any form of question.
+        dir: 'what',
+        id: 'lobb-7',
+      },
+
+    ],  
+  },
+
+  { 
+    id: 'lobb-7',
+    desc: `Luke pats his concealed pistol. "I said 'scoot,' boy, and when I say 'scoot' I'm not talking about by-and-by. I'm saying 'scoot now.'"`,
+
+    exits: [
+      {// responding 'go to stairs"
+        dir: 'stairs',
+        id: 'lobb-17',
+      },
+
+      {// if player tries to go east past the stairs towards the street exit
+        dir: 'east',
+        id: 'lobb-18',
+      },
+
+      {// if player tries to go west past the stairs towards the street exit
+        dir: 'west',
+        id: 'lobb-18A',
+      },
+
+    ],  
+  },
+//End Tuxedo Lobby Section
+
+//Begin Tuxless Lobby Section
+
+  { //if attempting to talk to Luke without wearing the Tuxedo from earlier.
+    id: 'lobb-8',
+    desc: `"Well, god damn," swears the man in the Stetson hat loud enough to be heard from the other side of the reception area. He strides toward you with an angry glint in his beady eyes. "Now where in tarnation is that white suit. I ain't shelling out five hundred bucks to get my little Alice looking like a proper bride and then have you showing up looking like a pig farmer. No siree!" He lays a hand on your shoulder and pushed you back toward the elevator alcove. "We are going right back to your room, and you are going to get dressed in your bridegroom uniform, and then by God you're going to do the right thing by my little Alice. Now get inside that elevator."`,
+
+    exits: [
+      {// Responding by going to the elevator.
+        dir: 'elevator',
+        id: 'lobb-9',
+      },
+
+      {// Anything else but going to the elevator
+        dir: 'no',
+        id: 'lobb-10',
+      },
+
+    ],  
+  },
+
+  { 
+    id: 'lobb-9',
+    desc: `The man in the Stetson--his brass belt-buckle identifies him as 'LUKE'--follows you into the elevator and pushes the button for 15. The doors whoosh close and the elevator starts to go up.`,
+
+    exits: [
+      {// Attempting to ask a question
+        dir: 'what',
+        id: 'lobb-10A',
+      },
+
+    ],  
+  },
+
+  { // entering from lobb-8
+    id: 'lobb-10',
+    desc: `The man spreads back the lapel of his suitcoat to reveal a shoulder holster from which the butt of a small handgun projects. "Now I don't want any trouble out of you, Mr. smarty-pants Cameron the Third. This ain't going to be no shotgun wedding, but it might turn out to be a .38 caliber wedding, if you insist on it."
+    
+    You are persuaded by his eloquence and get in the elevator. He follows after you and pushes the button for 15. The doors whoosh closed and the elevator starts to go up.`,
+
+    exits: [
+      {// any response except 'take gun' or 'fight man/Luke'
+        dir: 'any',
+        id: 'lobb-11',
+      },
+
+      {// responding 'take gun' or 'fight man/Luke'
+        dir: 'fight',
+        id: 'lobb-13',
+      },
+
+    ],  
+  },
+
+  { // entering from lobby-9
+    id: 'lobb-10A',
+    desc: `The man spreads back the lapel of his suitcoat to reveal a shoulder holster from which the butt of a small handgun projects. "Now I don't want any trouble out of you, Mr. smarty-pants Cameron the Third. This ain't going to be no shotgun wedding, but it might turn out to be a .38 caliber wedding, if you insist on it."`,
+
+    exits: [
+      {// any response except 'take gun' or 'fight man/Luke'
+        dir: 'any',
+        id: 'lobb-11',
+      },
+
+      {// responding 'take gun' or 'fight man/Luke'
+        dir: 'fight',
+        id: 'lobb-13',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-11',
+    desc: `The man pats his concealed weapon significantly and gives you a grin like a skull trying to be friendly. The elevator arrives at 15 and the doors open. He motions for you to get out, and then follows you to the door of Room 1502. "Now give me the key," he demands.`,
+
+    exits: [
+      {// responding 'give man/Luke room key'
+       dir: 'give key',
+       id: 'lobb-14',
+      },
+
+      {// if the player either didn't take the key from the room, or says: "I don't have key/I can't"
+        dir: 'no',
+        id: 'lobb-12',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-12',
+    desc: `"You didn’t take your room key when you left your room? God-damn, but you are a turkey.  Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
+
+    exits: [
+      { // leads to the same 'Hell' ending as the suicide from earlier.
+        dir: 'dead',
+        id: 'hell-1',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-13',
+    desc: `Unwisely you try to take the man’s revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet--right between the eyes.`,
+
+    exits: [
+      { // leads to the same 'Hell' ending as the suicide from earlier.
+        dir: 'dead',
+        id: 'hell-1',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-14',
+    desc: `He takes the key from you and unlocks the door to Room 1502. "Now you get in there and change into that white monkey suit on the double--and then like the song says, you're going to the chapel and you're going to get married." He chuckles and adds: "Going to the Chapel of Love!"`,
+
+    exits: [
+      {// responding "enter room"
+        dir: 'enter',
+        id: 'lobb-16',
+      },
+
+      {// any response but "enter room"
+        dir: 'no',
+        id: 'lobb-15',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-15',
+    desc: `"God-damn, but you are a turkey. Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
+
+    exits: [
+      {// leads to the same 'Hell' ending as the suicide from earlier.
+        dir: 'dead',
+        id: 'hell-1',
+      },
+    ],  
+  },
+
+  { 
+    id: 'lobb-16',
+    desc: `You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don’t it?" He presses the button for 2, and the elevator takes you to the second floor--and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`,
+
+    exits: [
+      { // Leads straight to chapel
+        dir: 'chapel',
+        id: 'chap-1',
+      },
+    ],  
+  },
+//End Tuxless Section
+
+//Begin Lobby Stairs Section
+  { 
+    id: 'lobb-17',
+    desc: `Halfway up the stairs a woman in a bright blue dress insists on giving you a mimeographed flyer with the headline: TOO MUCH NOISE CAN DRIVE YOU CRAZY!!! A large yellow button pinned to her dress shows her to be a member of the New York City Chapter of the Noise Abatement League. "The next presentation will be in just a minute or two!" she calls after you as you continue up the staircase. At the top you take your direction from an arrow pointing you to the All­-Faith Chapel.`,
+
+    exits: [
+      { // Leads straight to chapel
+        dir: 'enter',
+        id: 'chap-1',
+      },
+
+    ],  
+  },
+
+  { //East from (lobby-7)
+    id: 'lobb-18',
+    desc: `You walk on past the stairs towards the 52nd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
+
+    exits: [
+      {// responding 'go to stairs"
+        dir: 'stairs',
+        id: 'lobb-17',
+      },
+
+    ],  
+  },
+
+  { //West from (7)
+    id: 'lobb-18A',
+    desc: `Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
+
+    exits: [
+      {// responding 'go to stairs"
+        dir: 'stairs',
+        id: 'lobb-17',
+      },
+
+    ],  
+  },
+  //**********************************************************/
+  //                          Chapel                         /
+  //********************************************************/
+//End Lobby Stairs Section
+
+//End Lobby
+
+//Begin Lobby Notes
+
+  //Add in basic rooms for walking around the Lobby before talking to Luke
+  //Needs to adjust rooms for compass direction movements. This allows for access to stairs from room 7. And probably a few other things too.
+  //properly name the dir for navigation. Will need to happen once we have an array of words that will work.
+  //adding in specific look functions for the room, and for Luke
+  //Fix desc for 18 and 18A. Check where they should properly happen.
+  //Manuscript text for 4 and 5 have some diolouge shifted around. Original game skips this issue by forcing you onto a path.
+  //Connect any sections that shoul auto-advance to the next ones, such as those leading to hell or the chapel.
+  //Organize the code a little bit so it's easier to tell the wearing-tux rooms from the non-wearing-tux rooms
+  //Last updated 10/9/2021
+
+//End Lobby Notes
+
+// Start Templates
+  // Templates for quick & easy copy/paste use. These will be deleted when the work is finished.
+
+  // Basic template for a new room, looking around, and it's exits.
+  { 
+    id: '#',
+    desc: `Text`,
+
+    onLook: () => {
+      const room = getRoom('name');
+      room.desc = `Description`;
+    },
+
+    exits: [
+      {
+        dir: 'Text',
+        id: '#',
+      },
+    ],  
+  },
+        {
+        id: 'chap-1',
+        name: 'All-Faith Chapel',
+        desc: `You are standing before a large rosewood door bearing a mottled brass nameplate declaring this to be the ALL-FAITH CHAPEL.`, 
+           
+        exits: [
+          { //Any direction or "enter chapel" will result in entering the chapel.
+            dir: 'enter',
+            id: 'chap-2', 
+          },
+  
+        ],
+      },
+
+      { 
+        id: 'chap-2',
+        desc: `You enter the chapel, which is dim and fragrant with the mingled scents of flowers and candlewax. It seems to be deserted.`,
+  
+        onLook: () => {
+          const room = getRoom('chap-2');
+          room.desc = `The chapel is about twenty feet square, windowless, with a high coffered ceiling and a terracotta floor. In the center of the room is a large round slab of marble too low to dine at but too high to be a coffee table. Grouped about it on three sides are pews of blond wood. Behind it is a lectern flanked by a vase of wilting gladiolas on a free­standing marble column and a large candelabra, its candles burned down to the sockets. The general effect is that of a funeral parlor without a corpse.
+          High up on three of the walls, forming a kind of frieze, is the All-Faith Chapel's chief claim to distinction, a much-darkened mural representing all the faiths of mankind worshipping the Supreme Being, painted (a plaque behind the lectern informs you) in 1938 by Maxfield Parrish. Christ, Moses, Mohammed, Buddha, Confucius, Martin Luther, and Mary Baker Eddy are represented sitting down at or standing about a table and waving their arms, all seeming to be alarmed by the gold-and-violet sunset sky painted on the wall to their right or by the magenta dawn to their left, or possibly by the simultaneity of these events, although the servants who are waiting on this distinguished gathering seem entirely unperturbed.`;
+        },
+  
+        exits: [
+          {
+            dir: 'leave',
+            id: 'chap-4',
+          },
+          {
+            dir: 'pray',
+            id: 'chap-3',
+          },
+        ],  
+      },
+
+      { 
+        id: 'chap-3',
+        desc: `You enter one of the pews nearest the central marble slab and kneel on the padded kneeler. You fold your hands and bow your head and close your eyes. You’re all ready to say a prayer--but what do you want to say a prayer for?`,
+  
+        exits: [
+          {
+            dir: 'leave',
+            id: 'chap-4',
+          },
+          {
+            dir: 'memory',
+            id: 'chap-3A',
+          },
+        ],  
+      },
+
+      { 
+        id: 'chap-3A',
+        desc: `You pray to have your memory restored--if not in whole, then for the least scrap of your past, a flashback from childhood, a face, a voice, a feeling--anything authentically belonging to your mislaid identity. And then you wait, trying to make your mind receptively blank. But a blank mind is hard to maintain. You begin to imagine memories you would like to have--your first communion, your bar mitzvah, your wedding day--and the image of each is so vivid that you might be seeing it in an album of family photographs.`,
+  
+        exits: [
+          {
+            dir: 'leave',
+            id: 'chap-4',
+          },
+        ],  
+      },
+//End Starting Chapel Section
+
+//Begin Alice Chapel Section
+      { 
+        id: 'chap-4',
+        desc: `Just as you decide to leave the empty chapel, the door opens behind you, and a woman’s voice exclaims, "John! Oh my darling, you're here!" You spin around to confront the figure of a woman in a bridal gown.`,
+  
+        onLook: () => {
+          const room = getRoom('chap-4');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//If response is "Who are you?"
+            dir: 'who',
+            id: 'chap-5',
+          },
+          {//If response is "Ask woman/Alice about Luke"
+            dir: 'ask luke',
+            id: 'chap-6',
+          },
+          {//If response is "Ask woman/Alice about marriage/wedding"
+            dir: 'ask marriage',
+            id: 'chap-7',
+          },
+        ],  
+      },
+
+ //Begin Alice Chapel Questions
+      { //"Who are you?"
+        id: 'chap-5',
+        desc: `In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am… a woman of mystery." Her Garbo imitation is first-rate.`,
+  
+        onLook: () => {
+          const room = getRoom('chap-5');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//If response is "Ask woman/Alice about Luke"
+            dir: 'ask luke',
+            id: 'chap-6',
+          },
+          {//If response is "Ask woman/Alice about marriage/wedding"
+            dir: 'ask marriage',
+            id: 'chap-7',
+          },
+        ],  
+      },
+  
+      {//"Ask woman/Alice about Luke"
+        id: 'chap-6',
+        desc: `"Oh darling, don't make me get into all that again. Can I help it if the man is my father? Once we're in Australia he can't bother us anymore."`,
+  
+        onLook: () => {
+          const room = getRoom('chap-6');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//If response is "Who are you?"
+            dir: 'who',
+            id: 'chap-5',
+          },
+          {//If response is "Ask woman/Alice about marriage/wedding"
+            dir: 'ask marriage',
+            id: 'chap-7',
+          },
+        ],  
+      },
+
+      {//"Ask woman/Alice about marriage/wedding"
+        id: 'chap-7',
+        desc: `"Isn't it wonderful? I've always wanted to be married in full bridal regalia, and even if there's not to be a great crowd to see us, it's so much more solemn like this. And more fun too. It's so sweet of you to go along with my whims. And I promise that tonight I'll go along with all of yours. Oh my darling, take me in your arms! Kiss me! Make me yours!"`,
+  
+        onLook: () => {
+          const room = getRoom('chap-7');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//If response is "Who are you?"
+            dir: 'who',
+            id: 'chap-5',
+          },
+          {//If response is "Ask woman/Alice about Luke"
+            dir: 'ask luke',
+            id: 'chap-6',
+          },
+          {//If response is "Lift Veil"
+            dir: 'lift veil',
+            id: 'chap-8',
+          },
+        ],  
+      },
+
+      { //Lifting the veil
+        id: 'chap-8',
+        desc: `You grasp the lower edge of the veil with a gentle firmness and raise it slowly--to reveal a pale, pretty, and slightly frightened face. Her eyes are fixed on yours imploringly, but she bites her lower lip, as though to keep herself from asking aloud the question that is in her eyes. But the eyes need no interpreters. Do you love me? they ask. Will you love me? Can you love me?`,
+  
+        onLook: () => {
+          const room = getRoom('chap-8');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//If response is "I love you"
+            dir: 'i love you',
+            id: 'chap-9',
+          },
+        ],  
+      },
+
+      {//"I love you"
+        id: 'chap-9',
+        desc: `"Oh my darling, I love you too. More than anything in the whole world. You are my world. You're everything to me. Oh my love--kiss me!"`,
+  
+        onLook: () => {
+          const room = getRoom('chap-9');
+          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+        },
+  
+        exits: [
+          {//Kiss Alice (Veil raised)
+            dir: 'kiss',
+            id: 'chap-10',
+          },
+        ],  
+      },
+
+      {//Kiss Alice (Veil raised)
+        id: 'chap-10',
+        desc: `Her lips meet yours eagerly, and the satin of her gown is crushed to the polyester of your tux. The invitation is irresistible. The kiss intensifies from perhaps to entirely. Something phony may be going on, but a kiss like this doesn't leave any room to doubt one thing--this woman wants you.`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Kiss Alice (Veil down)
+        id: 'chap-10A',
+        desc: `You place your hands on her shoulders and incline your head until your lips meet… the yellowed lace of the wedding veil. It has a dusty smell with a faint overtone of mothballs.`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Telling Alice about amnesia
+        id: 'chap-11',
+        desc: `She laughs. "Well, that’s nothing to worry about, darling. If you had herpes, that would be something else again." When she sees that you don't laugh at her joke, she fingers her bridal veil nervously. "You're not serious, are you?"`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-11A',
+          },
+        ],  
+      },
+
+      {//Answering yes, serious about amnesia
+        id: 'chap-11A',
+        desc: `When you assure her that you are perfectly serious and that you're suffering from total amnesia and have no idea who she is, she smiles grimly, lifts her satin-gloved hand and slaps your face. "John Cameron, you are the most despicable liar I've ever known, and if you think you can worm your way out of our getting married this time, you are mistaken."`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about self (1st time)
+        id: 'chap-12',
+        desc: `"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover--but I'm not going to make comparisons. And you’ve told me you love me-­ and I've believed you."`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about self (2nd time)
+        id: 'chap-12A',
+        desc: `"Are you serious? Maybe you think I blame you for what happened in Texas. But I know that wasn't your fault. You had to get away from that jail. It would have destroyed your soul. You simply have to stop thinking about all that-­ and think about Australia instead."`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about self (3rd time)
+        id: 'chap-12B',
+        desc: `"What a vain creature you are, John! Why don't we talk about me for a change? How I feel about sacrificing my career for your sake? Do you realize I could go to jail for helping you get out of the country?"`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about self (4th+ time)
+        id: 'chap-12C',
+        desc: `In reply to your repeated question, she will only shake her head, as though at the annoyance of a persistent fly.`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about Austrailia - if chap-12A has appeared
+        id: 'chap-13',
+        desc: `"Oh, we're going to be so happy in Australia, John--I know we wil1. It may be hard at first, since we don’t either of us know anything about sheep ranches--or are they called farms?--but we're young and strong and healthy, and our love will see us through our trials."`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about Texas - if chap-12A has appeared
+        id: 'chap-14',
+        desc: `"John, you must try and forget about all that. Oh, I really wish you did have amnesia, so that you'd never be haunted by those terrible memories. Forget Texas, John. Pretend it never happened."`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+      {//Asking about Jail - if chap-12A has appeared
+        id: 'chap-15',
+        desc: `"Oh John, please, this is our wedding day. It's not a time to talk about these morbid matters. That's over and done with. Try to forget. Try!"`,
+    
+        exits: [
+          {
+            dir: 'Text',
+            id: 'chap-#',
+          },
+        ],  
+      },
+
+ //End Alice Chapel Questions
+
+ {//When attempting to leave the chapel after Alice has appeared. Also when responding to Alice's questions with: go away/ask her to go/say goodbye/I will not marry you or similar response
+  id: 'chap-16',
+  desc: `"John!" the woman in the bridal dress shrieks, "please don't abandon me like this. I'll die of shame if you leave me now. Surely, whatever reason you may have for changing your mind, it's something we can talk about it. It's Daddy, isn't it? He's such a bully, I know. But once you get to know him he's really a sweet person, and in any case, John, once we're in Australia he won't be able to bother us anymore." She throws herself on her knees before you and lifts up her arms (the same gesture in which you can see Mary Baker Eddy worshipping the Supreme Being in the chapel's mural) imploringly. "Please John. Please say you'll marry me."`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Refusing to marry
+  id: 'chap-17',
+  desc: `Considering her almost hysterical manner up till now, she accepts your refusal with surprising dignity. "Very well then, I won't argue. But promise me at least this--promise that we can meet again tomorrow--just to talk. We can't talk now. Daddy will be here at any moment. I must go out and tell him you've left me standing at the altar once again. I expect he'll be very mad for a while, so please stay in the chapel for another half hour or so, till we’re out of the hotel. And then tomorrow at noon I'll meet you in that lovely hall of Tiffany lamps at the New York Historical Society. It will be a sort of anniversary for us. Please be there, John." She turns to leave, and then turns round again to hand you a small blue box bearing the words "Tiffany & Co." "Speaking of Tiffany," she says with a sad smile, "I almost forgot to give you this. I bought it with your money, so it belongs to you--until you decide that you want to put it on my finger."`,
+
+  onLook: () => {//looking at the box
+    println(`It is nearly cubical. It is dark blue with silver lettering that says TIFFANY & CO.`)
+  },
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Take the box
+  id: 'chap-18',
+  desc: `You accept the box from her, and then in a flash of white satin and yellow lace she is out the door of the chapel.`,
+
+  onLook: () => {//looking at the box
+    println(`It is nearly cubical. It is dark blue with silver lettering that says TIFFANY & CO.`)
+  },
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Refuse to take the box
+  id: 'chap-18A',
+  desc: `When you do not at once accept the box from her, she mutters a fervent, "Oh, damn you!" and throws it at your feet. Then in a flash of white satin and yellow lace she is out the door of the chapel.`,
+
+  onLook: () => {//looking at the box
+    println(`It is nearly cubical. It is dark blue with silver lettering that says TIFFANY & CO.`)
+  },
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Open the box
+  id: 'chap-19',
+  desc: `You tilt back the hinged lid of the box and find, nestled in white velvet, a thick golden wedding band. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+//End Alice Chapel Section
+
+//Begin Exiting Chapel Section
+{//When attempting to follow Alice
+  id: 'chap-20',
+  desc: `After a moment’s hesitation, you spring forward to pursue her--and fall to the terra cotta floor, tripped by a kneeling pad. As you push yourself up from the dark tiles, a familiar vertigo overcomes you. Your body seems much too heavy a weight for your arms to raise and you slump back to the floor, watching the great octagons of terracotta bend and warp, waver and grow black. Your last conscious thought is that you may be the first bridegroom ever to have fainted when left standing at the altar.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+//Figure out coding options for multiple attempts
+{//Attempt to get up (1st attempt)
+  id: 'chap-21',
+  desc: `A dim faraway voice seems to be telling you to do something. But it is so far away, and you are so comfortable, and there is a sunset above you, all with stripes of gold and indigo.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Attempt to get up (2nd attempt)
+  id: 'chap-21A',
+  desc: `The same voice calls to you. It is nearer now, an annoying buzz. You blink your eyes and shift your head--and see that a magenta dawn is silhouetting the poplars.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Attempt to get up (3rd attempt)
+  id: 'chap-21B',
+  desc: `You wake up with a strange pain in your left arm. You realize that you have been lying on the terracotta tiles for some time staring in a daze at the two wings of the mural frieze by Maxfield Parrish.
+
+  There is blood on the tiles where you were lying.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Anything except trying to get up
+  id: 'chap-21C',
+  desc: `You can't do that. You're lying unconscious on the floor.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Examine arm (After getting up)
+  id: 'chap-22',
+  desc: `High on your left arm, near the padded shoulder of the tuxedo jacket, the white polyester has been torn and blotched with blood that is still damp to the touch. When you remove the jacket to examine the wound there is a sharp twinge of pain in your shoulder. There is a larger blotch on the frilly shirt.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Remove shirt
+  id: 'chap-23',
+  desc: `You take off the ruined shirt as well and see, to your relief that the source of these bloodstains is a superficial wound--an inch-long line drawn across the smooth flesh as though by a ruler. It represents, you realize, the path of a bullet. And though you did not see or hear that bullet fired you have no doubt at all that it was Luke who shot at you. Perhaps, if you had not stumbled over the kneeler, his bullet might have had a deadlier result.
+  Tentatively you move your arm. Any pronounced movement from the shoulder seems to start the blood flowing freshly from the wound.
+  `,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Bandage wound (With what?)
+  id: 'chap-24',
+  desc: `Good idea, but what to use for a bandage?`,
+
+  exits: [
+    {//Use Frilly Shirt
+      dir: 'Text',
+      id: 'chap-#',
+    },
+    {//Use T-Shirt
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Bandage wound with frilly shirt
+  id: 'chap-24A',
+  desc: `Carefully you tear off the left arm of the bloodstained shirt and wrap it about the wound as a crude bandage. Your arm hurts but not much more than if you'd had a shot at a doctor’s office.
+  Now to get dressed again. Except that it's missing its left arm the frilly shirt is still wearable. Or there are the T-shirts in the gym bag--the plain red T-shirt or the Mickey Mouse T-shirt.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Bandage wound with shirt (Which shirt?)
+  id: 'chap-24B',
+  desc: `Which T-shirt--the Mickey Mouse T-shirt or the red T-shirt?`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Bandage wound with Mickey Mouse shirt
+  id: 'chap-24C',
+  desc: `You tear the Mickey Mouse T-shirt into strips and wrap them about the wound in a crude bandage. Your arm hurts but not much more than if you’d had a shot at the doctor’s office.
+  Now to get dressed again. You could rip off the arm of the shirt you were wearing and put that on again. Or you could wear the other T-shirt under the jacket of the tux. It’s all up to your sense of what the well-dressed murder victim should appear in.`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Bandage wound with red shirt
+  id: 'chap-24D',
+  desc: `You tear the red T-shirt into strips and wrap them about the wound in a crude bandage. Your arm hurts but not much more than if you’d had a shot at the doctor’s office.
+  Now to get dressed again. You could rip off the arm of the shirt you were wearing and put that on again. Or you could wear the other T-shirt under the jacket of the tux. It’s all up to your sense of what the well-dressed murder victim should appear in.
+  `,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Dressed again (Could just move this text into the shirt sections)
+  id: 'chap-#',
+  desc: `Text`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Attempting to leave before bandaging wound
+  id: 'chap-#',
+  desc: `Text`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+
+{//Leaving the chapel
+  id: 'chap-#',
+  desc: `Text`,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'chap-#',
+    },
+  ],  
+},
+//End Exiting Chapel Section
+//End Chapel
+
+//Begin Marriage Section (Chapel)
+{//What is your name?
+  id: 'marr-1',
+  desc: `"Oh my darling!" she cries, leaping to her feet and embracing you with all of love's tender fury and then some. "Oh my sweet eternal love!" Her lips meet yours, preventing any reply but a kiss: and then another kiss, and then, as though he'd been waiting outside the door of the chapel for this cue, the father of the bride enters with a preacher and two witnesses in tow. You recognize both witnesses: one is the cleaning woman who entered Room 1502 without knocking just after you woke up ear1ier in the day, and the other is the man, Buddy, who took you from the penthouse health club and sauna back to Room 1502.
+  
+  The preacher, a thin white-haired man in a Roman collar, takes charge. He positions you and Alice before the marble slab of the altar. He directs Luke Dudley to stand behind his daughter--and to remove his Stetson, which he does with reluctance. Buddy and the cleaning woman take up a position in the center aisle, as though to be able to block you if you make a final bolt. The preacher begins to intone the wedding service from memory, only breaking stride to ask you your name.`,
+
+  exits: [
+    {//Respond with John Cameron, John Cameron III, or John
+      dir: 'John',
+      id: 'marr-2',
+    },
+    {//Fail to respond appropriately
+      dir: 'Text',
+      id: 'marr-1A',
+    },
+  ],  
+},
+
+{//Forced to respond with name
+  id: 'marr-1A',
+  desc: `"Very funny, Johnny-boy," Luke says to you. Then, to the preacher: "His name is John Cameron."`,
+
+  exits: [
+    {//Forced to next question
+      dir: 'Text',
+      id: 'marr-2',
+    },
+  ],  
+},
+
+{//Take as your wife?
+  id: 'marr-2',
+  desc: ``,
+  exits: [
+    {//Correct response
+      dir: 'Text',
+      id: 'marr-3',
+    },
+    {//Fail to respond appropriately
+      dir: 'Text',
+      id: 'marr-2A',
+    },
+  ],  
+},
+
+{//Forced to respond "I do"
+  id: 'marr-2A',
+  desc: ``,
+
+  exits: [
+    {
+      dir: 'Text',
+      id: 'marr-#',
+    },
+  ],  
+},
   ],
   characters: []
 };
