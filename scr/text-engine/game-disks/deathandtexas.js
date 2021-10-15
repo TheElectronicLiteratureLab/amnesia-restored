@@ -8,7 +8,7 @@ const deathAndTexas = {
         // arguement for lethal injection or firing squad
         exits: [
           {
-            dir: ['firing', 'squad', 'firing squad'], //Two word strings are not working, need to find out why
+            dir: ['squad',], //Two word strings are not working, need to find out why
             id : 'deat-f3'
           },
           {

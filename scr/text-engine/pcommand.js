@@ -629,6 +629,7 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
+    firing: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
