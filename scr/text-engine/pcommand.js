@@ -548,7 +548,7 @@ let turnOffOn = (toggle, itemId) => {
 let dial = (number) => { 
   const room = getRoom(disk.roomId);
   let numbers = [
-    [`3`,'phone-1'], // front desk
+    [`3`, 'phone-1'], // front desk
     [`4`, 'phone-2'], // room Service 
     ['5', 'phone-3'], // valet
     ['6', 'phone-4'], // bellman
@@ -556,59 +556,70 @@ let dial = (number) => {
     ['8', 'phone-6'], // other rooms
     ['9', 'phone-7'], // outside calls
     ['911', 'phone-8'],
-
-    // brochure numbers
-    ['555-1188', 'phone-9'], // Rod & Harpmeister Funeral Service
-    ['555-7656', 'phone-10'], // Rolo's Pizzeria
-    ['555-7673', 'phone-11'], // Koch's Florists 
-
-    // address book numbers (in Hotel Room)
-
-    ['555-1314', 'phone-12'], // JA
-    ['555-1315', 'phone-13'], // Wit's End
-    ['555-2712', 'phone-14'], // FBI
-    ['555-2259', 'phone-15'], // E.H.
-    ['555-2577', 'phone-16'], // Lila T.
-    ['555-2783', 'phone-17'], // Sue G.
-    ['555-4312', 'phone-18'], // Chelsea H.
-    ['555-4365', 'phone-19'], // Sex
-    ['555-4685', 'phone-20'], // Kvetch
-    ['555-5436', 'phone-21'], // AA
-    ['555-5643', 'phone-22'], // Interlude
-    ['555-6200', 'phone-23'], // TTTT
-    ['555-8422', 'phone-24'], // Drugs
-    ['555-8749', 'phone-25'], // R + J
-    ['555-8876', 'phone-26'], // J.L.
-    ['571-7171', 'phone-27'], // Soft
-    ['976-1212', 'phone-28'], // F
-
-    // from bette number
-    ['555-5413', 'phone-29'], // Denise's Number
   ];
 
-  // make phone numbers phones, phone-#
+  
+   //if brochure item is in inventory push numbers
+   if(getItemInInventoryById('brochure')){
+    numbers.push(
+      ['555-1188', 'phone-9'], // Rod & Harpmeister Funeral Service
+      //['555-7656', 'phone-10'], // Rolo's Pizzeria
+      //['555-7673', 'phone-11'], // Koch's Florists 
+    );
+  }
 
+  // if address book item is in inventory push numbers
+  if(getItemInInventory('address book')){
+    numbers.push(
+      ['555-1314', 'phone-12'], // JA
+      ['555-1315', 'phone-13'], // Wit's End
+      ['555-2712', 'phone-14'], // FBI
+      ['555-2259', 'phone-15'], // E.H.
+      ['555-2577', 'phone-16'], // Lila T.
+      ['555-2783', 'phone-17'], // Sue G.
+      ['555-4312', 'phone-18'], // Chelsea H.
+      ['555-4365', 'phone-19'], // Sex
+      ['555-4685', 'phone-20'], // Kvetch
+      ['555-5436', 'phone-21'], // AA
+      ['555-5643', 'phone-22'], // Interlude
+      ['555-6200', 'phone-23'], // TTTT
+      ['555-8422', 'phone-24'], // Drugs
+      ['555-8749', 'phone-25'], // R + J
+      ['555-8876', 'phone-26'], // J.L.
+      ['571-7171', 'phone-27'], // Soft
+      ['976-1212', 'phone-28'], // F
+    );
+  }
+
+  // after Bette's phonecall push numbers
+  /*if(_bettescall === true){
+    numbers.push(
+      ['555-5413', 'phone-29'], // Denise's Number
+    );
+  }*/
+
+  // checks to see if you're in a room with a phone
   if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
     for(let i = 0; i < numbers.length; i++){
-      
-      if(number === numbers[i][0]){
-        let room = numbers[i][1];
-      enterRoom(room);
-      } else {
-        println(`No`);
-      }
-    }
-    
-    
-    
-    /*if(number === '3'){
-      println(`You call the front desk`)
-    }else {
-      println(`That number doesn't exist.`);
-    };*/
+      if(numbers[i][0] === number){
+        //const room = getRoom(roomId);
+        let roomId = numbers[i][1];
+        //enterRoom(room);
+        println(roomId);
+        break;
+      }; 
+      if(numbers[i][0] !== number){
+        println(`This number doesn't exist.`)
+        break;
+      };
+    } 
   } else {
     println(`With what phone?`);
   };
+
+  
+ 
+
 }
 
 

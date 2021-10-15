@@ -30,7 +30,7 @@ const hoteroomRevi = {
                 
                 To pass the time the hotel offers a ***television***${bibleDesc}. ${penDesc}
                 
-                To the left of the dresser is an ***IBM PC*** computer on its own metal cart. There's a **window** bro.`; // change IBM PC to be the computer name the css style is
+                To the left of the dresser is an ***IBM computer*** on it's own metal stand.`; // change IBM PC to be the computer name the css style is // text in this node is shortened, to keep from redunancy
                 if(getItemInInventory('metal key')){ // if the room key is already in inventory
                     room.desc = room.desc.replace(`${keyDesc}`, '');
                 };
@@ -90,16 +90,16 @@ const hoteroomRevi = {
                         {
                           if (item.desc == ' ')
                           {
-                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
+                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned on.');
                           }
-                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned on.';
                           println(pc.desc);
                         } else {
                           if (item.desc == ' ')
                           {
-                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
+                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned off.');
                           }
-                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned off.';
                           println(pc.desc);
                         }
                       }, // not printing the correct lines, only prints 'You don't notice anything remarkable about it.'
@@ -107,9 +107,9 @@ const hoteroomRevi = {
                         let pc = getItemInRoomById('computer', 'hote-revi-1');
                         if(pc.isOn === true)
                         {
-                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned on.';
                         } else {
-                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the rental division of the User-Friendly Computer Store. It is turned off.';
                         }
                     }     
                 }, 
@@ -155,6 +155,10 @@ const hoteroomRevi = {
                     desc: `You take the brochure from where it lies beneath the telephone, breathing a prayer as you do that it will be able to live up to the promise boldly printed at the foot of the stiff cardboard cover: How We Can Help You Enjoy New York. 
                     
                     The cover is mostly given up to an artist's rendering of the Sunderland Hotel viewed from the vantage of a low-flying helicopter. It is essentially a ziggurat, its upper stories overlain with curlicures of ornamental stonework. There, and a swimming pool on the penthouse floor of the ziggurat, have been rendered in great detail by the artist's pen, while the ground floor, which covers a full block of 5th Avenue, is an impressionistic blur of shoppers and shopfronts, probably by way of play down the fact that the entrance, around the corner on 53rd St., is quite modest, nothing but a canopy with the hotel's name. It doesn't seem familiar-- but no one except a helocopter pilot or a pigeon would ever see the building from this privileged angle, so its strangeness is not to be wondered at.`,
+                    isTakeable: true,
+                    onDrop: () => {
+                        println(`You shouldn't drop that. It might be important.`);
+                    }
                 },
                 {
                     itemId: 'roomphone',
@@ -166,14 +170,113 @@ const hoteroomRevi = {
 
                 },
                 {
-                    itemId: '',
-                    name: [],
+                    itemId: 'curtains',
+                    name: ['drapes', 'curtains'],
                     desc: ``,
+                    isOpen: false,
+                    onLook: () => {
+                      let item = getItemInRoomById('curtains', disk.roomId);
+                      if (item.isCurtOpen === true){
+                          if(item.desc === ''){
+                              println(`The ${item.name[0]} are open.`);
+                          } else{
+                              println(item.desc);
+                          }
+                      }
+                      if (item.isCurtOpen === false){
+                          if (item.desc === ''){
+                              println(`The ${item.name[0]} are closed.`);
+                          } else {
+                              println(item.desc);
+                          }
+                      }  
+                    }
+                },
+                {
+                    itemId: 'window',
+                    name: 'window',
+                    desc: `The window is shrouded by the drapes`,
+                    onLook: () => {
+                        let curtain = getItemInRoomById('curtains', disk.roomId);
+                        let window = getItemInRoomById('window', disk.roomId);
+                        if (curtain.isCurtOpen === false){
+                            window.desc = window.desc;
+                        } else {
+                            let exwindDesc = `Now you know where you are. But when are you? What day is it? For that matter, what month, what year? It isn't winter, that much is clear from the greenery poking up out of odd parts of the stone forest. But the year? Maybe you could figure it out by presidents, since that part of your memory, the part concerned with public events, still seems to be functional. Let's see-- Ford took over from Nixon. And after Ford there's been... Carter. That would have been in '76. And after Carter? Reagan, right. Then it started getting hazy. Which meant that this was '81 at the earliest. Which proved what? That your mind isn't totally dysfunctional. The weird thing is that despite the panicky feeling that comes and goes you're not feeling so bad. In a way it was kind of enjoyable. This is probably how people would like to feel when they take a vacation.`;
+                            window.desc = `Even without being able to see the Empire State Building off to the southeast, you would know by the sheer immesity of the view that you are in Manhattan. Skyscraper after skyscraper contests for light and air like the pines of a stone forest. It seems familiar, but only in the general way that a famous postcard view is familiar. You don't feel as though you ***belong*** in this city, as though you are a New Yorker.
+                            
+                            ${exwindDesc}`; // if player has looked out the window before remove this extra text?
+                        }
+                    }
                 }, 
+                {
+                    itemId: 'software',
+                    name: 'software',
+                    desc: `You look absolutely everywhere you can conceive of looking for software that could be booted into the computer, but your search is futile.`
+                },
+                {
+                    itemId: 'bed',
+                    name: ['bed', 'mattress', 'hotel bed'],
+                    desc: '',
+                    onLook: () => {
+                        let bed = getItemInRoomById('bed', disk.roomId);
+                        let tuxedoDesc = `There is an all-white tuxedo, sitting on the bed.`;
+                        let sheetDesc = `There is a rumpled sheet on the bed.`
+
+                        bed.desc = `It is a double bed. ${sheetDesc} A quilted bedspread is rolled up in a ball. An oversized down-filled pillow is propped against the headboard. ${tuxedoDesc}`;
+
+                        if(getItemInInventory('tuxedo')){
+                            bed.desc = bed.desc.replace(`${tuxedoDesc}`, '');
+                        }
+                        if(getItemInInventory('sheet')){
+                            bed.desc = bed.desc.replace(`${sheetDesc}`, '');
+                        }
+                        
+                    }
+                },
+                {
+                    itemId: 'sheet',
+                    name: ['sheet', 'bedsheet'],
+                    desc: 'The sheet has a floral pattern on it',
+                    isTakeable: true,
+                    isDroppable: true,
+                    onDrop: () => {
+                        println(`You put the sheet back where you found it.`);
+                    }
+                },
+                {
+                    itemId: 'closet',
+                    name: 'closet',
+                    desc: '',
+                    onLook: () => {
+                        let closet = getItemInRoomById('closet', disk.roomId);
+                        let hangerDesc = `-- save for a forlorn coathanger.`;
+
+                        closet.desc = `There's nothing in the walk-in closet${hangerDesc}`;
+
+                        if(getItemInInventory('hanger')){
+                            closet.desc = closet.desc.replace(`${hangerDesc}`, '.');
+                        }
+                    }
+                },
             ], // closes hote-revi room items 
             exits: [
 
             ], //closes hote-revi room exits 
         }, // closes hote-revi room
+        {
+            id: 'hote-revi-1', 
+            name: 'The Bathroom',
+            desc: ``,
+
+            items: [
+
+            ],
+            
+            exits: [
+
+            ]
+        }, // closes hote-revi-1 room (bathroom)
     ], // closes hote-revi rooms
 }; // closes hoteroomRevi
+
