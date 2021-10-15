@@ -9,22 +9,30 @@ const nightmare = {
           reenableInput();
           if(applyInput === 'Go to mirror') {
             enterRoom('nigh-3');
-          } else {
-            //enterRoom('nigh-2');
+        // }else{
+        //    enterRoom('nigh-2')}
           }
-        }
+        },
+
+        exits:[
+            {
+                dir:['mirror'],
+                id: 'nigh-3'
+            },
+            
+        ],
       },
       {
           //if player does anything but look into the mirror, need to figure out how to paste the previous text entery into the engine's response here. 
           id: 'nigh-2',
-          name: 'Nightmare',
+          name: '',
           desc: `You tell yourself to 
           [Quote response to 1 >],
           but something prevents you. Your acts seem not to be your own. And the voice repeats its command: “Come here, X. Come here to me, in the mirror.”`,
           //previous room replays, this loops until the player goes to the mirror.
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Go to mirror'){
+              if(applyInput === 'Go mirror'){
                   enterRoom('nigh-3');
               }else{
                   enterRoom('nigh-1');
@@ -32,26 +40,38 @@ const nightmare = {
               //if(var == "floor number"){
               //  enterRoom('"floor number"');}
               //} possibly seperate this into a function that can be called and remember the floor number. This would be a very long if statement.
-          }
+          },
+          exits:[
+            {
+                dir:['mirror'],
+                id: 'nigh-3'
+            },
+            
+        ],
       },
       {
           id: 'nigh-3',
-          name: 'Nightmare',
+          name: '',
           desc: `Obedient to the voice, you go to the mirror. The figure in the mirror leans forward to peer at you intently. He is dressed all in white, like a bridegroom or a ghost. And though he has no face--only eyes that stare anxiously from the smooth ovoid of his head--he smiles, recognizing you. “Excellent,” he whispers. “Now come with me--before the store closes.” In the mirror you see him turn away from you and walk toward the door of the room, where he pauses to look back at you, and to beckon, with his raised hand, for you to follow.`,
           //if any other response is given but enter mirror go to dreamPara
           onEnter: () =>{
               reenableInput();
               if(applyInput === 'Walk through mirror'){
                   enterRoom('nigh-4');
-              }else{
-                  enterRoom('nigh-2');
               }
               
-          }
+          },
+          exits:[
+            {
+                dir:['walk'],
+                id: 'nigh-4'
+            },
+            
+        ],
       },
       {
           id: 'nigh-4',
-          name: 'Nightmare',
+          name: '',
           desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!” You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. Then you press the nozzle and write:`,
           onEnter: () =>{
               reenableInput();
@@ -63,11 +83,26 @@ const nightmare = {
                   enterRoom('nigh-9');
               }
               
-          }
+          },
+          exits:[
+            {
+                dir:['explictive'],
+                id: 'nigh-6'
+            },
+            {
+                dir:['x'],
+                id:'nigh-8'
+            },
+            {
+                dir:['any other input'],
+                id:'nigh-9',
+            },
+            
+        ],
       },
       {
           id: 'nigh-5',
-          name:'Nightmare',
+          name:'',
           desc: 'No sooner have you sprayed your offensive message on the subway car’s window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor’s Commission to Keep the Subways Clean, who is no less a celebrity than ____________',
           //need to add a way for this text to be added to a list then recalled later in the text.
           onEnter: () =>{
@@ -78,7 +113,7 @@ const nightmare = {
       },
       {
           id: 'nigh-6',
-          name: 'Nightmare',
+          name: '',
           desc: 'The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner [Last Name from 4>], please take the guilty party away.',
           onEnter:() =>{
               println('Press ENTER to continue');
@@ -87,7 +122,7 @@ const nightmare = {
       },
       {
           id:'nigh-7',
-          name: 'Nightmare',
+          name: '',
           desc: 'Commissioner [Last Name from 4>] and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner [Last Name from 4>] tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. Your struggles are useless as the tattooist’s buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner [Last Name from 4>] holds up a mirror to your face--and you wake, screaming.',
           onEnter:() =>{
               println('Press ENTER to continue');
@@ -98,7 +133,7 @@ const nightmare = {
       },
       {
           id:'nigh-8',
-          name:'Nightmare',
+          name:'',
           desc:'You spray a giant X across the window of the subway car, then return the spray can to the figure who had given it to you--and who is no longer faceless. Yet the face he now has is somehow more frightening than his earlier facelessness--for it is your own face.<br> He has taken it from you, along with your name, and left you nothing but this scrawl on the subway window. You press your hands to the featureless ovoid that grows from the stalk of your neck and try, mouthlessly, to scream. You wake, trembling and covered with sweat.',
           onEnter:() =>{
               println('Press ENTER to continue');
@@ -107,7 +142,7 @@ const nightmare = {
       },
       {
           id: 'nigh-9',
-          name: 'Nightmare',
+          name: '',
           desc: 'The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. “I’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th f1oor. And there--” His featureless head nods toward the purring escalator at the center of the deserted sales floor. ”-is the escalator. See you later X.”',
           onEnter: () =>{
               reenableInput();
@@ -121,7 +156,7 @@ const nightmare = {
       },
       {
           id: 'escl-erro',
-          name: 'Nightmare',
+          name: '',
           desc: 'You try to [Quote response to 7>]--but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.',
           onEnter: () =>{
               reenableInput();
