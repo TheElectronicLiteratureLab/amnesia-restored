@@ -629,7 +629,8 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
-    firing: args => goDir(args),
+    lethal: args => goDir(args),
+    xavier: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
@@ -654,6 +655,10 @@ let commands = [
     say(args) {
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
       sayString(str);
+    },
+    steak(args) {
+      const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
+      goDir(str);
     },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
