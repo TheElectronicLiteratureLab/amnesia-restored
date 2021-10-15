@@ -22,5 +22,6 @@ const player ={
     tScore: totalScore,
     moves: moveCount,
     pCorrds: playCoord,
+    inventory: initializedDisk.inventory,
 
 }

@@ -544,6 +544,66 @@ let turnOffOn = (toggle, itemId) => {
   }
 }
 
+// dial command
+let dial = (number) => {
+  const room = getRoom(disk.roomId);
+  let numbers = [
+    [`3`, `Front Desk`, 'hote-revi-9'], //front desk
+    [`4`, `Room Service`], //room Service 
+    ['5', 'Valet'], //valet
+    ['6', 'Bellman'], //bellman
+    ['7', 'Security'], //security
+    '8', //other rooms
+    '9', //outside calls
+    '911', 
+    '555-1188', //Rod & Harpmeister Funeral Service
+    '555-7656', //Rolo's Pizzeria
+    '555-7673', //Koch's Florists 
+    //address book numbers
+    '555-1314', //JA
+    '555-1315', //Wit's End
+    '555-2712', //FBI
+    '555-2259', //E.H.
+    '555-2577', //Lila T.
+    '555-2783', //Sue G.
+    '555-4312', //Chelsea H.
+    '555-4365', //Sex
+    '555-4685', //Kvetch
+    '555-5413', //Denise's Number
+    '555-5436', //AA
+    '555-5643', //Interlude
+    '555-6200', //TTTT
+    '555-8422', //Drugs
+    '555-8749', //R + J
+    '555-8876', //J.L.
+    '571-7171', //Soft
+    '976-1212', //F
+  ];
+
+  if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ //add telephone booths on streets
+    if(number === '3'){
+      println(`You call the front desk`)
+    }else {
+      println(`That number doesn't exist.`);
+    };
+    
+    /*numbers.forEach(call);
+    
+    let call = () => {
+       for(let i = 0; i < numbers.length; i++){
+          if(number !== numbers[i][0]){
+            println(`You call the front desk`)
+          }else {
+            println(`That number doesn't exist.`);
+          };
+        }
+     };*/
+  } else {
+    println(`You're an amnesiac, you don't have a brick. Find a dial phone.`); //ask Ahria/group what they want this to print!
+  };
+}
+
+
 // open command
 let open = (itemToOpen) => {
   
@@ -688,6 +748,7 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
+    answer: useItem,
     say: sayString,
     drop: dropItem,
     save: x => save(x),
@@ -697,7 +758,8 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
-    answer: x => answer(x)
+    answer: x => answer(x),
+    dial: x => dial(x),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

@@ -27,7 +27,7 @@ let applyInput = (input) => {
 
     } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
       enterRoom('heal-club2');
-    }
+    } 
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair
