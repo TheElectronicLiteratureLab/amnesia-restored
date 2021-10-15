@@ -660,6 +660,7 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
+    leave: useItem,
     answer: useItem,
     say: sayString,
     drop: dropItem,
