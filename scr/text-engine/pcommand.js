@@ -545,14 +545,14 @@ let turnOffOn = (toggle, itemId) => {
 }
 
 // dial command
-let dial = (number) => {
+let dial = (number) => { 
   const room = getRoom(disk.roomId);
   let numbers = [
-    [`3`, `Front Desk`, 'hote-revi-9'], //front desk
-    [`4`, `Room Service`], //room Service 
-    ['5', 'Valet'], //valet
-    ['6', 'Bellman'], //bellman
-    ['7', 'Security'], //security
+    [`3`, 'hote-revi-9'], //front desk
+    [`4`, ], //room Service 
+    ['5', ], //valet
+    ['6', ], //bellman
+    ['7', ], //security
     '8', //other rooms
     '9', //outside calls
     '911', 
@@ -580,6 +580,8 @@ let dial = (number) => {
     '976-1212', //F
   ];
 
+  //make phone numbers phones, phone-#
+
   if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ //add telephone booths on streets
     if(number === '3'){
       println(`You call the front desk`)
@@ -599,7 +601,7 @@ let dial = (number) => {
         }
      };*/
   } else {
-    println(`You're an amnesiac, you don't have a brick. Find a dial phone.`); //ask Ahria/group what they want this to print!
+    println(`With what phone?`);
   };
 }
 
@@ -706,7 +708,7 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
-    dial: x => dial(x),
+    dial: dial,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
