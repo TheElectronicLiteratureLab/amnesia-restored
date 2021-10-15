@@ -649,6 +649,8 @@ let commands = [
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
+    go: args => goDir(args[1]),
+    walk: args => goDir(args[1]),
     look: lookAt,
     say(args) {
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
