@@ -776,4 +776,7 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
+  {
+    ask: args => askXAboutY(args[0], args[2]),
+  },
 ];
