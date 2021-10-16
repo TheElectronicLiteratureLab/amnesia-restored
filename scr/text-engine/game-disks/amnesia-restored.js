@@ -250,6 +250,9 @@ const amnesiaRestored = {
             } else {
               println('The computer is off.');
             }
+          },
+          onBlock: () => {
+            //activate phone
           }
         },
         {
@@ -434,31 +437,16 @@ const amnesiaRestored = {
         {
           itemId: 'hoteldoor',
           name: 'door',
-          desc: ' ',
+          desc: 'is closed',
           isOpen: false,
-          onLook: () => {
-            let door = getItemInRoomById('hoteldoor', disk.roomId);
-            let one = ``;
-            if (door.isOpen === false) {
-              one = 'closed.'
-            } else {
-              one  = 'open.'
-            }
-            if (door.desc === ' ') {
-              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
-              println(door.desc);  
-            } else {
-              door.desc = `It is a standard issue wooden door. At the moment it is ${one}`;
-            }
-          },
           onUse: () => {
             //enterRoom('hote-coor');
           }  
-        
-        }
+        },
       ],
+      
       exits: [
-        {dir: 'leave', id: 'hote-revi'},
+        {dir: 'leave', id: 'hote-coor', block: `Just as you leave the phone rings.`},
         //{dir: 'north', id: 'hote-coor'},
         //{dir: 'bathroom', id: 'hote-bath'}
       ]
@@ -803,5 +791,8 @@ const amnesiaRestored = {
       }
     } 
   },//end of hote-revi-8 room   
+  //************************************/
+  //*   Suicide at the Sunderland     */
+  //**********************************/
   ],
 };

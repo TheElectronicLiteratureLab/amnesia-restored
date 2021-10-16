@@ -608,7 +608,7 @@ let dial = (number) => {
 let open = (itemToOpen) => {
   
   let item = getItemInRoom(itemToOpen, disk.roomId);
-  console.log(item);
+  
   // Items that can be opened
   // Curtains
   if (item !== undefined)
@@ -626,7 +626,7 @@ let open = (itemToOpen) => {
       println('YOU ARE SEALED INSIDE NOOOO');
     }     
     // Dresser
-    if (item.itemId === 'dresser') {
+    else if (item.itemId === 'dresser') {
       if(item.isOpen === !true) {
         item.isOpen = true;
         println(`The ${item.name[0]} is now open.`);
@@ -636,10 +636,12 @@ let open = (itemToOpen) => {
       }
     }
     // Door
-    if (item.itemId === 'hoteldoor') {
-      if(item.isOpen === !true) {
+    else if (item.itemId === 'hoteldoor') {
+      if(item.isOpen !== true) {
         item.isOpen = true;
         println(`The ${item.name} is now open.`);
+        item.desc = 'is open'
+        console.log(item);
       } else {
         println(`The ${item.name} is already open.`);
       }
@@ -679,8 +681,9 @@ let close = (itemToOpen) => {
     }
     // Door
     else if (item.itemId === 'hoteldoor') {
-      if(item.isOpen === !false) {
+      if(item.isOpen !== false) {
         item.isOpen = false;
+        item.desc = 'is closed'
         println(`The ${item.name} is now closed.`);
       } else {
         println(`The ${item.name} is already closed.`);
@@ -700,6 +703,7 @@ let answer = (phone) => {
     }
   }
 }
+
 // jump command
 
 // objects with methods for handling commands
