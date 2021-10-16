@@ -604,6 +604,14 @@ let dial = (number) => {
 }
 
 
+//ask character about topic function
+const askXAboutY = ([x, y]) => {
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+  disk.conversant = character;
+  talkToOrAboutX('about', y);
+};
+
+
 // open command
 let open = (itemToOpen) => {
   
