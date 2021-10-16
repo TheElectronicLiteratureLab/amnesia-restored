@@ -7,6 +7,7 @@ const corridor1502 = {
         desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one.\n
 
         Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
+        
         items: [
             {
                 name: 'room', // If the player tries to go back to room 1502
@@ -30,11 +31,11 @@ const corridor1502 = {
             block: 'You try to return to your room, but the door locked automatically when it was closed.'
           },
           {
-            dir: ['east', 'right', ], 
+            dir: ['east', 'right', '1503'], 
             id: 'corridor-1503',
           },
           {
-            dir: ['west', 'left'], 
+            dir: ['west', 'left', '1501'], 
             id: 'corridor-1501',
           },
           {
@@ -49,64 +50,197 @@ const corridor1502 = {
       },
       {
         id: 'corridor-1501',
-        name: '',
+        name: '15th Floor Hallway',
         desc: `You are standing in the front of the door with the lighted EXIT sign over it. This must be the stairway.`,
+        onEnter: () =>{
+            const room =getRoom('corridor-1502');
+            if((getItemInRoom('towel') || getItemInInventory('towel'))){
+                room.desc = `Despite the fact you are not wearing a stitch, you go out into the corridor. You're at one end of it, near a lighted EXIT sign. Facing you is the door to Room 1501. On along the corridor, the numbers of the rooms increase by increments of one. Some five doors away the maid's laundry trolley is parked, but the maid is not in sight. Farther down the corridor an arrow points left toward a bank of elevators.`
+            }else{
+                room.desc = `Despite the fact you are not wearing a stitch, you go out into the corridor. You're at one end of it, near a lighted EXIT sign. Facing you is the door to Room 1501. On along the corridor, the numbers of the rooms increase by increments of one. Some five doors away the maid's laundry trolley is parked, but the maid is not in sight. Farther down the corridor an arrow points left toward a bank of elevators.`
+            }
+        },
         exits: [
          {
             dir: ['east', 'right'], 
             id: 'corridor-1502',
          },
          {
-            dir: ['west', 'left'], 
-            id: 'corridor-1501',
+            dir: ['west', 'left', 'stairwell', 'exit'], 
+            id: 'corridor-stairwell15',
         },
-        ],
-      },
-      {
-        id: 'deja-vu2',
-        name: '',
-        desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut. You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
-        exits: [
-          {
-            dir: [],
-            id: 'deja-vu4'
-          },
-          
-        ],
-      },
-      {
-        id: 'deja-vu3',
-        name: '',
-        desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.
-        When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
-        exits: [
-          {
-            dir: [],
-            id: 'deja-vu5'
+        {
+            dir: ['elevator'], 
+            id: 'corridor-elevator15',
           },
         ],
       },
       {
-        id: 'deja-vu4',
-        name: '',
-        desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
+        id: 'corridor-1503',
+        name: '15th Floor Hallway',
+        desc: `To your west is room 1502 and beyond that, the stairway. Right now you are standing in front of the doors to 1503 and 1504.`,
         exits: [
-          {
-            dir: [],
-            id: 'heal-club12'
+         {
+            dir: ['east', 'right'], 
+            id: 'corridor-1509',
+         },
+         {
+            dir: ['west', 'left'], 
+            id: 'corridor-1502',
+        },
+        {
+            dir: ['stairs', 'stairwell'], 
+            id: 'corridor-stairwell15',
+        },
+        {
+            dir: ['elevator'], 
+            id: 'corridor-elevator15',
           },
         ],
       },
       {
-        id: 'deja-vu5',
-        name: '',
-        desc: `You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+        id: 'corridor-1509',
+        name: '15th Floor Hallway',
+        desc: `You are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner.`,
         exits: [
-          {
-            dir: [],
-            id: 'deja-vu4'
+         {
+            dir: ['1509', 'room 1509', 'inside'], 
+            id: 'corridor-1509inside',
+         },
+         {
+            dir: ['west', 'left', ], 
+            id: 'corridor-1503',
+        },
+        {
+            dir: ['elevator', 'east', 'right'], 
+            id: 'corridor-elevator15',
           },
         ],
       },
+      {
+        id: 'corridor-1509inside',
+        name: 'Room 1509',
+        desc: `You enter room 1509, where the maid who earlier came to clean your own room is busy vacuuming the carpet.
+
+        "Excuse me, sir" she says as she turns off the vacuum. "No one is allowed in empty hotel rooms at the Sunderland except the staff. I'm afraid you'll have to leave.`,
+        onEnter: () => {
+            pressEnter('corridor-1509outside');
+        },
+      },
+      {
+        id: 'corridor-1509outside',
+        name: '15th Floor Hallway',
+        desc: `Not wishing to make a scene, you quietly withdraw from the room and go back to the hallway. \nYou are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner.`,
+        exits: [
+            {
+               dir: ['1509', 'room 1509', 'inside'], 
+               id: 'corridor-1509inside',
+               block: ''
+            },
+            {
+               dir: ['west', 'left', ], 
+               id: 'corridor-1503',
+           },
+           {
+               dir: ['elevator', 'east', 'right'], 
+               id: 'corridor-elevator15',
+             },
+           ],
+      },
+      {
+        id: 'corridor-stairwell15', // Stairway on 15th floor
+        name: 'Firestairs',
+        desc: `The door opens onto the landing of a wide stairwell. The concrete steps and walls are painted battleship grey.`,
+        exits: [
+          {
+            dir: ['up', 'ascend'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
+            id: 'corridor-stairwellph'
+          },
+          {
+            dir: ['down', 'descend'],
+            id: 'corridor-stairwellde'
+          },
+          {
+            dir: ['exit', 'leave'],
+            id: 'corridor-1501'
+          },
+        ],
+      },
+      {
+        id: 'corridor-stairwellph', // To the health club
+        name: '',
+        desc: `You mount the stairs slowly to the next landing. The concrete feels cold under your bare feet. You climb, in all, five flights of steps--and find yourself, at last, before a door marked SUNDERLAND HEALTH CLUB, Authorized Personnel Only.`,
+        onEnter: () => {
+            pressEnter('corridor-rooftop');
+        },
+      },
+      {
+        id: 'corridor-rooftop',
+        name: 'Roof of the Sunderland',
+        desc: `You find yourself on a gravel rooftop. Immediately in front of you is a drained swimming pool surrounded by deck chairs made of brightly colored metal tubing.
+
+        Beyond the pool is the penthouse proper, a flat-roofed, windowless brick structure with a metal door from which the weather has almost entirely peeled away the lettering:
+        S DE AND SAU   & HE LT   LUB`,
+        items: [
+            {
+                name: 'door', // If the player tries to go back to room 1502
+                desc: `You are now standing in front of the metal door.`,
+                onUse: () => {
+                      goDir( 'heal-club');
+                  },
+            }
+        ],
+        exits: [
+          {
+            dir: ['inside', ' health club', 'enter'],
+            id: 'heal-club'
+          },
+          {
+            dir: ['leave', 'descend'],
+            id: 'corridor-stairwell15'
+          },
+        ],
+      },
+      {
+        id: 'corridor-stairwellde',
+        name: 'Firestairs',
+        desc: `You go down the steps. At the next floor landing, you feel an odd vertiginous feeling. Foolishly you ignore the feeling, and as you approach the landing of still another floor you lose all sense of balance. 
+
+        The stairwell whirls about you. You clutch for the railing and collapse on the landing where you lie, an inert and unconscious heap.`,
+       onEnter: () =>{
+           pressEnter('nightmare'); // change to whatever the room id of the nightmare is
+       },
+      },
+      {
+        id: 'nyu-medical1', // After the nightmare, proceeding to death and texas
+        name: 'NYU Medical Center',
+        desc: `You awaken not where you fell, on the landing of the Sunderland's firestairs, but in a hospital bed. Your arms have been fastened to the sides of the bed by canvas restraining straps. After you have struggled a little while, a nurse enters with a hypodermic. "Now, now, Mr. Hollings, none of that or I will have to sedate you."`,
+        exits: [
+            {
+              dir: ['fight', 'protest', 'scream', 'struggle', 'kill','nurse', 'hollings'],
+              id: 'nyu-medical2'
+            },
+            {
+              dir: ['explain', 'explaination', 'you'],
+              id: 'nyu-medical3'
+            },
+          ],
+    },
+    {
+        id: 'nyu-medical2', // Proceed to Death and Texas
+        name: 'NYU Medical Center',
+        desc: `Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`,
+       onEnter: () =>{
+           pressEnter('deat-1'); 
+       },
+    },
+    {
+        id: 'nyu-medical3', // Proceed to Death and Texas
+        name: 'NYU Medical Center',
+        desc: `"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`,
+       onEnter: () =>{
+           pressEnter('deat-1'); 
+       },
+    },
     ],
   };
