@@ -148,6 +148,44 @@ const corridor1502 = {
            ],
       },
       {
+        id: 'corridor-elevator15',
+        name: '15th Floor Hallway',
+        desc: `You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
+        onEnter: () => {
+            const room=getRoom('corridor-elevator15');
+            if((!getItemInRoom('towel') || !getItemInInventory('towel'))){
+                room.desc`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`,
+                goDir('corridor-security');
+            }
+
+        },
+        exits: [
+            {
+               dir: ['1509', 'room 1509', 'inside'], 
+               id: 'corridor-1509inside',
+               block: ''
+            },
+            {
+               dir: ['west', 'left', ], 
+               id: 'corridor-1503',
+           },
+           {
+               dir: ['elevator', 'east', 'right'], 
+               id: 'corridor-elevator15',
+             },
+           ],
+      },
+      {
+        id: 'corridor-security', // Proceeding to Death and Texas, discovered without clothes
+        name: '15th Floor Hallway',
+        desc: `Hotel security has obviously been alerted to your running about naked.\n
+        All at once, they are on you. Your arms are whipped behind your back, and handcuffs are snapped about your writs.
+        You realize that any further resistance is useless, and you submit to being led by the two security guards down the entire length of the staircase to the hotel's sub-basement, where you await the arrival of the police in a room the size of a broom closet.`,
+        onEnter: () => {
+            pressEnter('deat-1'); // proceed to death and texas
+        }
+      },
+      {
         id: 'corridor-stairwell15', // Stairway on 15th floor
         name: 'Firestairs',
         desc: `The door opens onto the landing of a wide stairwell. The concrete steps and walls are painted battleship grey.`,
