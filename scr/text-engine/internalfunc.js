@@ -80,7 +80,8 @@ let enterRoom = (id) => {
   println(room.img, 'img');
 
   if (room.name) {
-    println(`${getName(room.name)}`, 'room-name');
+    document.getElementById("currroom").innerHTML = `${getName(room.name)}`;
+    //println(, 'room-name');
   }
 
   if (room.visits === 0) {

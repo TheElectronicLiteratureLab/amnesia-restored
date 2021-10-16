@@ -6,32 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amnesia Restored</title>
+  <!-- CSS styles -->
+  <link id="styles" rel="stylesheet" type="text/css" href="css/dev.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Game content -->
-<div id="output"></div>
+  <div id="game">
+    <!-- Game content -->
+    <div id="currroom">CURRENT ROOM</div>
+    <div id="output"></div>
+    <!-- Player input -->
+    <div class="input">
+    <span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false"></div>
+  </div>
+  
+  
+  
+  
+  
+  <div id="statusbar">STATUS BAR</div>
+  <div id="menubutton">MENU BUTTON</div>
+  <div id="inventory">INVENTORY</div>
+  <div id="addressbook">ADDRESS BOOK</div>
+  <div id="map">MAP</div>
 
-<!-- Player input -->
-<div class="input">
-  <span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false">
-</div>
 
-<!-- CSS styles -->
-<link id="styles" rel="stylesheet" type="text/css" href="css/retro.css">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+  <!-- Include game engine -->
+  <!-- Be sure to load in dependencies first -->
+  <script src="scr/text-engine/parser.js"></script>
+  <script src="scr/text-engine/init.js"></script>
+  <script src="scr/text-engine/pcommand.js"></script>
+  <script src="scr/text-engine/internalfunc.js"></script>
+  <script src='scr/text-engine/playercharacter.js'></script>
 
-<!-- Include game engine -->
-<!-- Be sure to load in dependencies first -->
-<script src="scr/text-engine/parser.js"></script>
-<script src="scr/text-engine/init.js"></script>
-<script src="scr/text-engine/pcommand.js"></script>
-<script src="scr/text-engine/internalfunc.js"></script>
-<script src='scr/text-engine/playercharacter.js'></script>
-
-<!-- Include game data ('disk') -->
-<script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+  <!-- Include game data ('disk') -->
+  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
 
 <!-- Load disk into engine -->
 <script>loadDisk(amnesiaRestored);</script>
