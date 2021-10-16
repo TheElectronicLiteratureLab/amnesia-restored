@@ -12,7 +12,7 @@ const deathAndTexas = {
             id : 'deat-f3'
           },
           {
-            dir: ['lethal', 'injection'],
+            dir: ['injection'],
             id : 'deat-le3'
           },
           {
@@ -20,7 +20,7 @@ const deathAndTexas = {
             id : 'deat-3'
           },
           {
-            dir: [''],
+            dir: [''], //onExit command here
             id : 'deat-2'
           },
         ],
@@ -39,7 +39,7 @@ const deathAndTexas = {
             id : 'deat-le3'
           },
           {
-            dir: [''],
+            dir: [''], //onExit command here
             id : 'deat-2'
           },
         ],
@@ -56,23 +56,23 @@ const deathAndTexas = {
         },
         exits: [
           {
-            dir: ['kiss', 'hug', 'touch'],
+            dir: ['kiss', 'hug', 'touch'], // second argument matters here
             id : 'deat-f4'
           },
           {
-            dir: ['marriage', 'denise', 'who are you'],
+            dir: ['marriage', 'denise', 'who are you'], // second argument matters here
             id : 'deat-f7'
           },
           {
-            dir: ['bite', 'spit', 'fuck', 'die'],
+            dir: ['bite', 'spit', 'fuck', 'die'], // second argument matters here
             id : 'deat-f6'
           },
           {
-            dir: ['xavier', 'hollings', 'xavier hollings', 'xav'],
+            dir: ['xavier', 'hollings', 'xavier hollings', 'xav'], // second argument matters here
             id : 'deat-f8'
           },
-          { //Anything other than the directions, wonder how to do that
-            dir: [''],
+          { 
+            dir: [''], //onExit command here
             id : 'deat-f5'
           },
         ],
@@ -83,11 +83,11 @@ const deathAndTexas = {
         desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection--which is it?`, // Displayed when the player first enters the room.
         exits: [
           {
-            dir: ['firing', 'squad'],
+            dir: ['squad'],
             id : 'deat-f3'
           },
           {
-            dir: ['lethal', 'injection'],
+            dir: ['injection'],
             id : 'deat-le3'
           },
           {
@@ -173,7 +173,7 @@ const deathAndTexas = {
         },
         { //Anything other than the directions, wonder how to do that
           dir: [''],
-          id : 'deat-le5'
+          id : 'deat-le5' //onExit here
         },
       ],
     },
@@ -232,7 +232,7 @@ const deathAndTexas = {
      // argument made and stored for either ribs, turkey, steak
      onEnter: () =>{
       document.querySelector('input').disabled = false;
-      document.getElementById('arrow').innerHTML = ">";
+      document.getElementById('arrow').innerHTML = '>';
      },
      exits: [
       {
@@ -260,7 +260,7 @@ const deathAndTexas = {
      // argument made and stored for either ribs, turkey, steak
      onEnter: () => {
         document.querySelector('input').disabled = false;
-        document.getElementById('arrow').innerHTML = ">";
+        document.getElementById('arrow').innerHTML = '>';
        },
      exits: [
       {
@@ -284,7 +284,7 @@ const deathAndTexas = {
     {
       id: 'deat-fsp', // religious node if firing squad and steak and potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -308,7 +308,7 @@ const deathAndTexas = {
     {
       id: 'deat-fbr', // religious node if firing squad and barbeque ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -332,7 +332,7 @@ const deathAndTexas = {
     {
       id: 'deat-frt', // religious node if firing quad and roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -356,7 +356,7 @@ const deathAndTexas = {
     {
       id: 'deat-ftar', // religious node if firing squad and no meal selected
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -380,7 +380,7 @@ const deathAndTexas = {
       {
         id: 'deat-lesp', // religious node if lethal injection and steak and potatoes
         name: '', // Displayed each time the player enters the room.
-        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
        // argument made and stored for either ribs, turkey, steak
        exits: [
         {
@@ -404,7 +404,7 @@ const deathAndTexas = {
       {
         id: 'deat-lebr', // religious node if lethal injection and barbeque ribs
         name: '', // Displayed each time the player enters the room.
-        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
        // argument made and stored for either ribs, turkey, steak
        exits: [
         {
@@ -428,7 +428,7 @@ const deathAndTexas = {
       {
         id: 'deat-lert', // religious node if lethal injection and roasted turkey
         name: '', // Displayed each time the player enters the room.
-        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
        // argument made and stored for either ribs, turkey, steak
        exits: [
         {
@@ -452,7 +452,7 @@ const deathAndTexas = {
       {
         id: 'deat-letar', // religious node if lethal injection and no meal selected
         name: '', // Displayed each time the player enters the room.
-        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+        desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
        // argument made and stored for either ribs, turkey, steak
        exits: [
         {
@@ -534,7 +534,7 @@ const deathAndTexas = {
       {
         id: 'deat-letar5', // lethal injection & no meal cont
         name: '', // Displayed each time the player enters the room.
-        desc: '"Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!”', // Displayed when the player first enters the room.
+        desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-lelw');
         }
@@ -583,7 +583,7 @@ const deathAndTexas = {
       {
         id: 'deat-lesp3', //  lethal injection & steak and potatoes
         name: '', // Displayed each time the player enters the room.
-        desc: '"A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad."', // Displayed when the player first enters the room.
+        desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-lesp4');
         }
@@ -600,7 +600,7 @@ const deathAndTexas = {
       {
         id: 'deat-lesp5', // lethal injection & steak and potatoes
         name: '', // Displayed each time the player enters the room.
-        desc: '"You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love."', // Displayed when the player first enters the room.
+        desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-lelw');
         }
@@ -822,7 +822,7 @@ const deathAndTexas = {
       {
         id: 'deat-ftar5', // firing squad & no meal cont
         name: '', // Displayed each time the player enters the room.
-        desc: '"Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!”', // Displayed when the player first enters the room.
+        desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-flw');
         }
@@ -871,7 +871,7 @@ const deathAndTexas = {
       {
         id: 'deat-fsp3', //  firing squad & steak and potatoes
         name: '', // Displayed each time the player enters the room.
-        desc: '"A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad."', // Displayed when the player first enters the room.
+        desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-fsp4');
         }
@@ -888,7 +888,7 @@ const deathAndTexas = {
       {
         id: 'deat-fsp5', // firing squad & steak and potatoes
         name: '', // Displayed each time the player enters the room.
-        desc: '"You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love."', // Displayed when the player first enters the room.
+        desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
         onEnter: () => {
           pressEnter('deat-flw');
         }
@@ -1074,7 +1074,7 @@ const deathAndTexas = {
       // if anything
       onEnter: () =>{
         document.querySelector('input').disabled = false;
-        document.getElementById('arrow').innerHTML = ">";
+        document.getElementById('arrow').innerHTML = '>';
        },
       exits: [
         {
@@ -1096,7 +1096,7 @@ const deathAndTexas = {
       // if anything
       onEnter: () =>{
         document.querySelector('input').disabled = false;
-        document.getElementById('arrow').innerHTML = ">";
+        document.getElementById('arrow').innerHTML = '>';
        },
       exits: [
         {
@@ -1130,7 +1130,7 @@ const deathAndTexas = {
       There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:`, // Displayed when the player first enters the room.
       onEnter: () =>{
         document.querySelector('input').disabled = false;
-        document.getElementById('arrow').innerHTML = ">";
+        document.getElementById('arrow').innerHTML = '>';
        },
       exits: [
         {
