@@ -1,4 +1,4 @@
-const hoteroomRevi = {
+const hotereviDisk = {
     roomId: 'hote-revi', // this is the Hotel Room 1502 revisited node, entered from Sunderland Health Club node
     currPos: [],
     rooms: [
@@ -261,20 +261,20 @@ const hoteroomRevi = {
                 },
             ], // closes hote-revi room items 
             exits: [
-
+                
             ], //closes hote-revi room exits 
         }, // closes hote-revi room
         {
             id: 'hote-revi-1', 
             name: 'The Bathroom',
-            desc: ``,
+            desc: `It's da bathroom`,
 
             items: [
 
             ],
             
             exits: [
-
+                
             ]
         }, // closes hote-revi-1 room (bathroom)
     ], // closes hote-revi rooms
