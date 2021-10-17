@@ -11,6 +11,20 @@ body {
   color: #f2ebdf;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 10px;
+}
+
 button {
   border: 2px solid #707070;
   color: #f2ebdf;

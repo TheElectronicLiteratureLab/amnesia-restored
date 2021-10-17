@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre-1', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
