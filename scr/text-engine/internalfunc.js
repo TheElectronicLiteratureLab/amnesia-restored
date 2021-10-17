@@ -40,7 +40,8 @@ let println = (line, className) => {
   }
 
   output.appendChild(newLine).innerHTML = str;
-  window.scrollTo(0, document.body.scrollHeight);
+  //output.scrollTo(0, document.body.scrollHeight);
+  output.scrollTo(0, output.scrollHeight);
 };
 
 // get random array element

@@ -446,7 +446,7 @@ const amnesiaRestored = {
       ],
       
       exits: [
-        {dir: 'leave', id: 'hote-coor', block: `Just as you leave the phone rings.`},
+        {dir: 'leave', id: 'hote-coor'},
         //{dir: 'north', id: 'hote-coor'},
         //{dir: 'bathroom', id: 'hote-bath'}
       ]

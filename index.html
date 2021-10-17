@@ -13,24 +13,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="game">
+  <div class="game">
     <!-- Game content -->
-    <div id="currroom">CURRENT ROOM</div>
-    <div id="output"></div>
-    <!-- Player input -->
-    <div class="input">
-    <span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false"></div>
+    <div class="sidebar">
+      <div id="inventory">INVENTORY</div>
+      <div id="addressbook">ADDRESS BOOK</div>
+      <div id="mapbutton">MAP</div>
+    </div>
+    
+    <div id="container-o">
+      <div id="currroom">CURRENT ROOM</div>
+      <div id="output"></div>
+      <!-- Player input -->
+      <div class="input"><span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
+
+      <div class="statusbar">
+        <div class="nested" id="hunger">
+          <div>img</div>
+          <div>HUNGER</div>
+        </div>
+        <div class="nested" id="fatigue">
+          <div>img</div>
+          <div>FATIGUE</div>
+        </div>
+        <div id="money">MONEY</div>
+        <div id="time">TIME</div>
+      </div>
+    </div>
+    
+    <div class="nested" id="menubutton">
+      <button>MENU</button>
+    </div>
+
+    <div id="map">MAP</div>
   </div>
-  
-  
-  
-  
-  
-  <div id="statusbar">STATUS BAR</div>
-  <div id="menubutton">MENU BUTTON</div>
-  <div id="inventory">INVENTORY</div>
-  <div id="addressbook">ADDRESS BOOK</div>
-  <div id="map">MAP</div>
+
+ 
 
 
 

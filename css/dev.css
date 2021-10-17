@@ -1,42 +1,144 @@
-div {
-    border: 1px solid red;
+@font-face{
+  font-family: 'Work Sans', sans-serif;
+  src: url('fonts/font.ttf');
+}
+
+body {
+  background: white;
+  font-size: 2.5vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 2.5vh;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: .25fr 6fr 0.50fr;
+  margin-top: 100px;
+  border: 5px solid purple;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 95%;
+}
+
+.sidebar {
+  border: 0px solid yellow;
+  grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+  grid-gap: 25px;
+  grid-row: inherit;
+  text-align: center;
+  height: 520px;
+  margin-top: 4vh;
+  row-gap: 40px;
+}
+
+.sidebar div{
+  border: 3px solid brown;
+  writing-mode: vertical-lr;
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.nested {
+  border: 0px solid grey;
+  text-align: center;
+}
+
+.nested button {
+  margin-top: 4vh;
+  font-size: x-large;
+}
+
+#container-o {
+  border: 0px solid black;
+  width: 100%;
+  margin: auto;
+}
+
+#currroom {
+    border: 0px solid black;
+    margin-top: 1.5vh;
+    margin-bottom: 0.5vh;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 3.5vh;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 100%;
 }
 
 #output {
     border: 3px solid blue;
-}
-
-#currroom {
-    margin-top: 7.5vh;
-    font-family: 'Nanum Gothic Coding', monospace;
-    font-size: 3.5vh;
-    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 #output {
-  padding: 2vw 2vw 0 2vw;
+  padding: 1.5vw 1.5vw 0 1.5vw;
   overflow-x: hidden;
   overflow-y: auto;
-  width:250px; /* or whatever width you want. */
+  width: auto; /* or whatever width you want. */
   height: 500px;
-  max-height: 500px;
-  max-width:250px; /* or whatever width you want. */
-  display: inline-block;
+  margin: auto;
 }
 
-#game {
-    overflow: scroll;
+#output div {
+    border: 0px solid red;
+    margin: 0.5%;
+    width: auto;
+}
+
+.input {
+  border: 5px solid black;
+  display: flex;
+  margin-top: 10px;
 }
 
 #input {
   height: 4vh;
-  width: 98.5vh;
+  width: 96%;
   color: lightskyblue;
   background: transparent;
   font-size: 2.5vh;
-  font-family: 'Work Sans', sans-serif;
   border: none;
   position: relative;
   bottom: 0.175vh;
   margin-left: .5vw;
+}
+
+#arrow {
+  font-size: 3.5vh;
+  color: rgb(37, 204, 4);
+  margin-top: 5px;
+}
+
+#input:focus {
+  outline: none;
+}
+
+.statusbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 0.5%;
+  padding: 25px;
+  text-align: center;
+  border: 5px solid yellowgreen;
+}
+
+.statusbar div {
+  border: 1px solid grey
+}
+
+#map {
+  position: absolute;
+  background-color: white;
+  top: 16%;
+  left: 16%;
+  display: none;
+  border: 1px solid grey;
+  height: 600px;
+  width: 1300px;
+  text-align: center;
 }
