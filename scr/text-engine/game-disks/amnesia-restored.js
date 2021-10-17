@@ -32,7 +32,7 @@ const amnesiaRestored = {
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
         println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
-        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 1000);
+        setTimeout(() => {  println("Thomas M. Disch's\n \n", "enter"); }, 1000);
         setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 1150);
       },

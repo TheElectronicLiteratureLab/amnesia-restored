@@ -169,3 +169,13 @@ button {
   width: 200px;
   display: none;
 }
+
+/*Classes meant for ingame println function*/
+.enter {
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+  font-size: 3rem;
+}
