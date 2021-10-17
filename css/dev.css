@@ -8,13 +8,23 @@ body {
   font-size: 2.5vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 2.5vh;
+  color: #f2ebdf;
+}
+
+button {
+  border: 2px solid #707070;
+  color: #f2ebdf;
+  background: #ad3121;
+
 }
 
 .game {
+  border: 5px solid #2d0140;
+  background-color: #2d0140;
   display: grid;
   grid-template-columns: .25fr 6fr 0.50fr;
   margin-top: 100px;
-  border: 5px solid purple;
+  
   margin-right: auto;
   margin-left: auto;
   max-width: 95%;
@@ -32,8 +42,7 @@ body {
   row-gap: 40px;
 }
 
-.sidebar div{
-  border: 3px solid brown;
+.sidebar button{
   writing-mode: vertical-lr;
   padding: 10px;
   margin-top: auto;
@@ -70,7 +79,8 @@ body {
 }
 
 #output {
-    border: 3px solid blue;
+    border: 2px solid #707070;
+    background: #0d0d0d;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -90,7 +100,8 @@ body {
 }
 
 .input {
-  border: 5px solid black;
+  border: 2px solid #707070;
+  background-color: #0d0d0d;
   display: flex;
   margin-top: 10px;
 }
@@ -98,7 +109,7 @@ body {
 #input {
   height: 4vh;
   width: 96%;
-  color: lightskyblue;
+  color: #f2ebdf;
   background: transparent;
   font-size: 2.5vh;
   border: none;
@@ -109,7 +120,7 @@ body {
 
 #arrow {
   font-size: 3.5vh;
-  color: rgb(37, 204, 4);
+  color: #f2ebdf;
   margin-top: 5px;
 }
 
@@ -118,27 +129,29 @@ body {
 }
 
 .statusbar {
+  border: 3px solid #707070;
+  color: #f2ebdf;
+  background: #ad3121;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   margin-top: 0.5%;
   padding: 25px;
   text-align: center;
-  border: 5px solid yellowgreen;
+  
 }
 
 .statusbar div {
-  border: 1px solid grey
+  border: 1px solid #707070;
+  background: #0d0d0d;
 }
 
 #map {
+  border: 5px solid grey;
   position: absolute;
-  background-color: white;
-  top: 16%;
-  left: 16%;
+  top: 165px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
   display: none;
-  border: 1px solid grey;
-  height: 600px;
-  width: 1300px;
-  text-align: center;
 }

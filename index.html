@@ -8,17 +8,22 @@
   <title>Amnesia Restored</title>
   <!-- CSS styles -->
   <link id="styles" rel="stylesheet" type="text/css" href="css/dev.css">
+  <link rel="stylesheet" href="scr/leaflet.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+  
+  <!-- Addtional Scripts -->
+  <script src="scr/leaflet.js"></script>
+
 </head>
 <body>
   <div class="game">
     <!-- Game content -->
     <div class="sidebar">
-      <div id="inventory">INVENTORY</div>
-      <div id="addressbook">ADDRESS BOOK</div>
-      <div id="mapbutton">MAP</div>
+      <button id="invbutton">INVENTORY</button>
+      <button id="addrbutton">ADDRESS BOOK</button>
+      <button id="mapbutton">MAP</button>
     </div>
     
     <div id="container-o">
@@ -45,10 +50,43 @@
       <button>MENU</button>
     </div>
 
-    <div id="map">MAP</div>
+    <div id="map" style="width: 70%; height: 50%; background: #ffffff;"></div>
   </div>
+  
+  
+  <script type="text/javascript">
+//Creating the Map
+  var map = L.map('map').setView([0, 0], 0);
+  L.tileLayer('map/{z}/{x}/{y}.png', {
+    continuousWorld: false,
+    noWrap: true,	
+    minZoom: 3,
+    maxZoom: 6,
+  }).addTo(map);
+//Coordinate Finder
+  var marker = L.marker([0, 0], {
+    draggable: true,
+  }).addTo(map);
+  marker.bindPopup('LatLng Marker').openPopup();
+  marker.on('dragend', function(e) {
+    marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+  });
+//Markers
 
- 
+
+
+const targetDiv = document.getElementById("map");
+  const btn = document.getElementById("mapbutton");
+  btn.onclick = function () {
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "block";
+  }
+};
+
+
+</script>
 
 
 
