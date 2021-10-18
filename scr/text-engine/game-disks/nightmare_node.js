@@ -25,15 +25,11 @@ const nightmare = {
           //previous room replays, this loops until the player goes to the mirror.
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Go to mirror'){
-                  enterRoom('nigh-3');
-              }else{
-                  enterRoom('nigh-1');
-              }
+              },
               //if(var == "floor number"){
               //  enterRoom('"floor number"');}
               //} possibly seperate this into a function that can be called and remember the floor number. This would be a very long if statement.
-          },
+          
           exits:[
             {
                 dir:['mirror'],
@@ -95,10 +91,17 @@ const nightmare = {
           //need to add a way for this text to be added to a list then recalled later in the text.
           onEnter: () =>{
               reenableInput();
-                println(applyInput);
             //needs to be flagged to move to the next room regardless of input, exit function perhaps?
               
-          }
+          },
+
+          
+            exits:[
+            {
+                dir:['name'],
+                id: 'nigh-6',
+            }
+          ],
       },
       {
           id: 'nigh-6',
@@ -153,12 +156,12 @@ const nightmare = {
           desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. “I’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th f1oor. And there--” His featureless head nods toward the purring escalator at the center of the deserted sales floor. ”-is the escalator. See you later X.”`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'go to escalator'){
+              /*if(applyInput === 'go to escalator'){
                   enterRoom('nigh-sale');
               }else{
                   println('You try to [prevInput] but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.');
                   
-              }    
+              }*/    
           },
           exits:[
               {
@@ -173,14 +176,19 @@ const nightmare = {
           desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter--and points at the ascending escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'go Escalator'){
                   enterRoom('nigh-sale2');
               }else{
                   println('You try to [response] but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.');
                   
-              }
-          }
-
+              }*/
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale2',
+            }
+          ],
       },
       {
           id: 'nigh-sale2',
@@ -188,12 +196,13 @@ const nightmare = {
           desc: `You take the escalator to the second floor, where four female manikins have been grouped in a tableau representing an outing to the beach. Each of the manikins has lifted her plaster hand to point to the upward-bound escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale3');
-              }else{
-                  enterRoom('escl-erro');
-              }
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale3',
+            }
+          ],
 
 
       },
@@ -203,12 +212,13 @@ const nightmare = {
           desc: `You take the escalator to the third floor, which is devoted to displays of men’s fashions. On the counter just before you a single leather glove on sale for $12.95 points to the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale4');
-              }else{
-                  enterRoom('escl-erro');
-              }
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale4',
+            }
+          ],
       },
       {
           id:'nigh-sale4',
@@ -216,12 +226,18 @@ const nightmare = {
           desc: `You take the escalator to the fourth floor, where a placard informs you that the Les Delices has been closed for renovation. Another placard shows a hand pointing, with no explanation, toward the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale5');
               }else{
                   enterRoom('escl-erro');
-              }
-          }
+              }*/
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale5',
+            }
+          ],
       },
       {
           id:'nigh-sale5',
@@ -230,11 +246,11 @@ const nightmare = {
           //need to make sure this yes or no question is coded correctly
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Yes'){
+              /*if(applyInput === 'Yes'){
                   enterRoom('knif-sale');
               }else(applyInput === 'no');{
                   enterRoom('knif-sale2');
-              }
+              }*/
           }
       },
       {
@@ -243,11 +259,11 @@ const nightmare = {
           desc:`“Very good, Sir. This--” He holds a knife with an 8-inch stainless steel blade to your throat. “--is our very best all-purpose carving knife. And this--” The carving knife drops from his hand, and he takes another, smaller knife from the counter. “This is a superb knife for boning chicken.” He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale6');
               }else{
                   enterRoom('escl-erro');
-              }
+              }*/
           }
           
       },
@@ -257,11 +273,11 @@ const nightmare = {
           desc: `“No? You won’t even look at my knives?” The white-haired salesman sighs. “I don’t know why I waste my time. All these years, and all these knives, and never once … never once … “He picks up the largest of the knives from the counter and, with a really remarkable steadiness of purpose, slowly positions it over the left-hand breast pocket of his suit and commits suicide. “I’m sorry,” he says, with his last dying breath. “I tried to be a good salesman. I did … my level … best.”`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale-6');
               }else{
                   enterRoom('escl-erro');
-              }
+              }*/
           }
       },
       {
@@ -270,11 +286,11 @@ const nightmare = {
           desc:`You take the escalator to the sixth floor, where the management of Oldman’s announces, on a large poster that it is proud to be selling, in cooperation with the Sistine Chapel, a collection of priceless Fine Art Reproductions, including a gigantic full-color reproduction of the Hand of God from the ceiling of the Sistine Chapel. The Hand of God is pointing to the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale7');
               }else{
                   enterRoom('escl-erro');
-              }
+              }*/
           }
       },
       {
@@ -283,11 +299,11 @@ const nightmare = {
           desc:`You take the escalator to the seventh floor, which seems to be an empty warehouse. Luxuriant growths of cobwebs festoon the light fixtures. Unmarked boxes and bundles are piled everywhere. The disembodied arm of a mannequin lies in the dust, its finger pointing with modest insistence to the UP escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale8');
               }else{
                   enterRoom('escl-erro');
-              }
+              }*/
               
           }
       },
@@ -297,11 +313,11 @@ const nightmare = {
           desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. “Hello!” says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - “I see we have our work cut out for us today! Sit down, please.” He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'sit','sit in chair','get shampoo'){
+             /* if(applyInput === 'sit','sit in chair','get shampoo'){
                   enterRoom('sham-sale');
               }else(applyInput === 'use escalator');{
                   enterRoom('nigh-sale9');
-              }
+              }*/
           }
       },
       {
@@ -321,11 +337,11 @@ const nightmare = {
           desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he’d promised, you have been completely remodeled in the new blank style. “Now, isn’t that a lot better,” the old man says, holding up a mirror for you to see your now so much more geometrical face. “I’m sure the Personnel Department will hire you right off the bat--and assign you to work in one of the front windows. Well, have a nice day.” And he points you toward the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'Use Escalator'){
+              /*if(applyInput === 'Use Escalator'){
                   enterRoom('nigh-sale9');
               }else{
                   enterRoom('escl-erro');
-              }
+              }*/
           }
       },
       {
@@ -344,11 +360,11 @@ const nightmare = {
           desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'riddle'){
+              /*if(applyInput === 'riddle'){
                   enterRoom('ridd-3');
               }else{
                   enterRoom('ridd-2');
-              }
+              }*/
           }
       },
       {
@@ -357,11 +373,11 @@ const nightmare = {
           desc:`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`,
           onEnter: () =>{
               reenableInput();
-              if(applyInput === 'riddle'){
+              /*if(applyInput === 'riddle'){
                   enterRoom('ridd-3');
               }else{
                   enterRoom('ridd-2');
-              }
+              }*/
           }
       },
       {
