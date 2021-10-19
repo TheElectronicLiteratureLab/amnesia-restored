@@ -248,7 +248,8 @@ const hcDvDisk = {
     {
         id: 'deja-vu3',
         name: '',
-        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five=alarm chili.'
+        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five alarm chili.'
+
         He waits for you to say the two words that will get you fed.`,
         onEnter: () => {
             reenableInput();
@@ -256,7 +257,7 @@ const hcDvDisk = {
 
         onBlock: () => {
             if (prevInput === 'please sir') {
-                enterRoom('deja-vu5');
+                enterRoom('deja-vu7');
             } else {
                 enterRoom('deja-vu4');
             };
@@ -265,76 +266,160 @@ const hcDvDisk = {
     {
       id: 'deja-vu4',
       name: '',
-      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut. You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut.`,
+
+      onEnter: () => {
+          pressEnter('deja-vu5');
+      }
       
     },
     {
       id: 'deja-vu5',
       name: '',
-      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.
-      When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+      count: 0,
+      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even in the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      onEnter: () => {
+          reenableInput();
+      },
+      onBlock: () => {
+        let room = getRoom('deja-vu5');
+        println('There is no way out');
+        room.count++;
+        console.log(room.count);
+        if (room.count === 5){
+            enterRoom('deja-vu6')
+        }
+      }
     },
     {
-      id: 'deja-vu?',
+      id: 'deja-vu7',
+      name: '',
+      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” 
+      
+      He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.`,
+
+      onEnter: () => {
+        pressEnter('deja-vu8')
+      },
+    },
+    {
+        id: 'deja-vu8',
+        name: '',
+        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+
+        oneEnter: () => {
+            pressEnter('deja-vu5')
+        }
+
+    },
+    {
+      id: 'deja-vu6',
       name: '',
       desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
-    },
-    {
-      id: 'deja-vu?',
-      name: '',
-      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu4'
-        },
-      ],
+      onEnter: () => {
+          pressEnter('heal-club14')
+      }
     },
     //BELOW HERE IS AFTER DEJA-VU
     {
-      id: 'heal-club?',
+      id: 'heal-club14',
       name: 'Massage Room',
       desc: `“Mr. Cameron, are you conscious, can you hear me?”
-      A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.
-      “He’s opened his eyes,” another voice says.
-      “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room.
-      But maybe he just can’t take the heat in that sauna. Some guys can’t.”
-      He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
-      exits: [
-        {
-          dir: [],
-          id: 'heal-club?'
-        },
-      ],
-    },
-    {
-      id: 'heal-club?',
-      name: 'Massage Room',
-      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”  The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper, but you are still able to hear what he says.  “--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. “It was on the floor of the sauna.”
-      `,
-      exits: [
-          {
-            dir: [],
-            id: 'heal-club?'
-          },
-      ],
-    },
-    {
-        id: 'heal-club?',
-        name: 'Massage Room',
-        desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time. You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.
-        He rolls you over onto your stomach but instead of continuing the massage he turns on the sunlamp and leaves you alone in the room. The warmth of the lamp fills you with a strange peaceful passivity. You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym in the other. “Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
-        exits: [
-            {
-                dir:[],
-                id: 'heal-club15'
-            },
-        ],
+      A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.`,
+      onEnter: () => {
+          pressEnter('heal-club15')
+      }
     },
     {
         id: 'heal-club15',
-        name: 'Massage Room'
-    }
+        name:'Massage Room',
+        desc: `“He’s opened his eyes,” another voice says.
+        “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t.”`,
+        onEnter: () => {
+            pressEnter('heal-club16');
+        }
+    },
+    {
+        id: 'heal-club16',
+        name: 'Massage Room',
+        desc: `He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
+        onEnter: () => {
+            pressEnter('heal-club17');
+        }
+    },
+    {
+      id: 'heal-club17',
+      name: 'Massage Room',
+      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”`,
+      onEnter: () => {
+          pressEnter('heal-club18');
+      },
+    },
+    {
+        id: 'heal-club18',
+        name: 'Massage Room',
+        desc: `The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper,`,
+        onEnter: () => {
+            pressEnter('heal-club19')
+        }
+    },
+    {
+        id: 'heal-club19',
+        name: 'Massage Room',
+        desc: `“--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” 
+        
+        “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. 
+        
+        “It was on the floor of the sauna.”`,
+        onEnter: () => {
+            pressEnter('heal-club20');
+        }
+    },
+    {
+        id: 'heal-club20',
+        name: 'Massage Room',
+        desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time.
+        
+        You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.`,
+        onEnter: () => {
+            pressEnter('heal-club21');
+        }
+    },
+    {
+        id: 'heal-club21',
+        name: 'Massage Room',
+        desc: `He rolls you over onto your stomach but instead of continuing the massage he turns on the sunlamp and leaves you alone in the room. The warmth of the lamp fills you with a strange peaceful passivity. 
+        
+        You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym bag in the other.`,
+        onEnter: () => {
+            pressEnter('heal-club22')
+        }
+    },
+    {
+        id: 'heal-club22',
+        name: 'Massage Room',
+        desc: `“Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
+        onEnter: () => {
+            reenableInput();
+        },
+        onBlock: () => {
+            if (prevInput = 'yes') {
+                enterRoom('heal-club23');
+            } else {
+                enterRoom('heal-club24');
+            }
+        }
+    },
+    {
+        id: 'heal-club23',
+        name: 'Massage Room',
+        desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+    },
+    {
+        id: 'heal-club24',
+        name: 'Massage Room',
+        desc: `The masseur lays his hand on your shoulder. “Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
+    },
   ],
 };
 
