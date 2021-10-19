@@ -656,6 +656,7 @@ let commands = [
     firing: args => goDir(args),
     xavier: args => goDir(args),
     john: args => goDir(args),
+    press: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
