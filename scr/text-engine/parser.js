@@ -17,17 +17,14 @@ let applyInput = (input) => {
 
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
-    let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
       moveCount++;
   console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-
-    // } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
-    //   enterRoom('heal-club2');
     } 
+    
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair

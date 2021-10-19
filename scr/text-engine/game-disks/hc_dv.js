@@ -419,7 +419,98 @@ const hcDvDisk = {
         id: 'heal-club24',
         name: 'Massage Room',
         desc: `The masseur lays his hand on your shoulder. “Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
+        items: [
+          {
+            name: 'Green Canvas Gym Bag',
+            desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+            isTakeable: true,
+            isDroppable: true,
+            descRead: false,
+            onTake: () => {
+              const room = getRoom(disk.roomId);
+              if (room.descRead === false) {
+                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+              } room.descRead = true;
+              pressEnter('heal-club25');
+            },
+            onLook: () => {
+              takeItem('Green Canvas Gym Bag');
+              pressEnter('heal-club25');
+            }
+          },
+        ]
     },
+    {
+      id: 'heal-club25',
+      name: 'Massage Room',
+      desc: `Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
+      
+      You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
+      onEnter: () => {
+        disk.inventory.push([
+          {
+            name: `Levi's Jeans`,
+            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'T Shirt',
+            desc: `It is a red teeshirt that has faded to a shade of pink.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'Sneakers',
+            desc:`The well-worn sneakers are made by Adidas.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'Address Book',
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as “SEX” and “Drugs.” Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            isTakeable: true,
+            isDroppable: false,
+          },
+        ])
+        pressEnter('heal-club26');
+      }
+    },
+    {
+      id: 'heal-club26',
+      name: 'Massage Room',
+      desc: `But at least he is a stranger with clothes on, and that’s some improvement. There is a knock on the door, and the masseur asks you if you are ready to go back to your room.`,
+      onEnter: () => {
+        reenableInput();
+      },
+      onBlock: () => {
+        if(prevInput !== 'yes') {
+          println(`“That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time.” Half a minute later, he raps again. “How about it, Mr. Cameron. Do you think you can make it back to your room?”`)
+        } if (prevInput === 'leave' || 'exit') {
+          println(`“Ah, Mr. Cameron,” the masseur says unctuously. “I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door.” You try to protest, but your words go unheeded.`)
+        }else {
+          enterRoom('heal-club27');
+        }
+      }
+    },
+    {
+      id: 'heal-club27',
+      name: 'Massage Room',
+      desc: `The masseur seems relieved when you follow Buddy out. He has been given your satchel, the plastic bookbag, and a pass key to Room 1502. You take the elevator down to 15, and Buddy leads the way to your room.`,
+      onEnter: () => {
+        pressEnter('heal-club28');
+      }
+    },
+    {
+      id: 'heal-club28',
+      name: 'Massage Room',
+      desc: `Once you are inside the door he hands you the satchel, the bookbag, and their contents and says good-bye -- with a look in his eyes that conveys his low opinion of men who make a habit of fainting in saunas.
+      
+      You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
+      onEnter: () => {
+        pressEnter('hote-revi');
+      }
+    }
   ],
 };
 
