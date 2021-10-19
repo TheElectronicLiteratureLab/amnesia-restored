@@ -1,6 +1,6 @@
 // This simple game disk can be used as a starting point to create a new adventure.
 // Change anything you want, add new rooms, etc.
-const healClubDisk = {
+const hcDvDisk = {
   roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
   rooms: [
     {
@@ -147,10 +147,37 @@ const healClubDisk = {
         reenableInput();
       },
       exits: [
-        {
-
-        }
-      ],
+            {
+              dir: ['leave', 'exit'],
+              id: 'heal-club',
+              block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
+              
+              Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+            },
+            {
+              dir: ['right', 'lockers', 'locker',],
+              id: 'heal-club6'
+            },
+            {
+              dir: ['left door', 'massage'],
+              id: 'heal-club7',
+              block: 'The door to that room is locked.'
+            },
+            {
+              dir: ['right door', 'sauna'],
+              id: 'heal-club8'
+            }, 
+            {
+              dir: ['showers', 'shower'],
+              id: 'heal-club9',
+              block: `As you do, you realize that a man and womana re coming out of the shower. Even in your present predicament you can't help but wonder what the woman is doing in the men's locker room.`
+            },
+            {
+              dir: ['weight room', 'weights', 'weight', 'room'],
+              id: 'heal-club10',
+              block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
+            }
+          ],
     },
     {
       id: 'heal-club7',
@@ -174,37 +201,8 @@ const healClubDisk = {
 
       You are barely able to keep yourself from falling against the iron stove and its pile of heated rocks. You crumble onto the bench of wooden slats, and then…`,
       onEnter: () => {
-        pressEnter('heal-club11')
+        pressEnter('heal-club11');
       },
-      exits: [
-        {
-          dir: ['leave', 'exit'],
-          id: 'heal-club',
-        },
-        {
-          dir: ['right', 'lockers', 'locker',],
-          id: 'heal-club6'
-        },
-        {
-          dir: ['left door', 'massage'],
-          id: 'heal-club7',
-          block: 'The door to that room is locked.'
-        },
-        {
-          dir: ['right door', 'sauna'],
-          id: 'heal-club8'
-        }, 
-        {
-          dir: ['showers', 'shower'],
-          id: 'heal-club9',
-          block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`
-        },
-        {
-          dir: ['weight room', 'weights', 'weight', 'room'],
-          id: 'heal-club10',
-          block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
-        }
-      ],
     },
     {
       id: 'heal-club11',
@@ -212,9 +210,87 @@ const healClubDisk = {
       desc: `But this 'then' is like no other then. It does not follow the time that's gone before. Like a fluid under tremendous pressure, the memories suppressed by your amnesia overwhelm you. At some cue supplied by this hot dark cubbyhole, your past supplants your present life. 
       You are experiencing . . . DEJA-VU!`,
       onEnter: () => {
-        pressEnter('deja-vu')
+        pressEnter('deja-vu');
       }
-    },//BELOW HERE IS AFTER DEJA-VU
+    },
+    {
+      id: 'deja-vu', 
+      name: '', 
+      desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`,
+      
+      onEnter: () => {
+          pressEnter('deja-vu1');
+      }
+    },
+    {
+      id: 'deja-vu1',
+      name: '',
+      desc:`Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You’ll probably be beaten again--but you can’t help yourself. You scream the same few senseless words over and over, a litany of terror:`,
+      onEnter: () => {
+        reenableInput();
+    },
+      onBlock: () => {
+          for (let count = 0; count < 3; count++) {
+              println(`'${prevInput}'`);
+          }
+          enterRoom('deja-vu2');
+      }
+    },
+    {
+      id: 'deja-vu2',
+      name: '',
+      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.`,
+        onEnter: () => {
+            pressEnter('deja-vu3');
+        }
+      
+    },
+    {
+        id: 'deja-vu3',
+        name: '',
+        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five=alarm chili.'
+        He waits for you to say the two words that will get you fed.`,
+        onEnter: () => {
+            reenableInput();
+        },
+
+        onBlock: () => {
+            if (prevInput === 'please sir') {
+                enterRoom('deja-vu5');
+            } else {
+                enterRoom('deja-vu4');
+            };
+        },
+    },
+    {
+      id: 'deja-vu4',
+      name: '',
+      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut. You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      
+    },
+    {
+      id: 'deja-vu5',
+      name: '',
+      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.
+      When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+    },
+    {
+      id: 'deja-vu?',
+      name: '',
+      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
+    },
+    {
+      id: 'deja-vu?',
+      name: '',
+      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      exits: [
+        {
+          dir: [],
+          id: 'deja-vu4'
+        },
+      ],
+    },
+    //BELOW HERE IS AFTER DEJA-VU
     {
       id: 'heal-club?',
       name: 'Massage Room',
@@ -263,16 +339,3 @@ const healClubDisk = {
 };
 
 
-//adjusted text for the locker room interaction
-
-// 
-
-//       Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`,
-//       // onLook: () => { //need to adjust this, shouldnt be able to hide before looking
-//       //   const room = getRoom('heal-club6');
-//       //   const room2 = getRoom('heal-club');
-//       //   room.desc = 
-//       //   room2.block = `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
-
-//       //   Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
-//       // },

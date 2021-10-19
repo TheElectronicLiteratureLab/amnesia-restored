@@ -72,6 +72,8 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 let enterRoom = (id) => {
   const room = getRoom(id);
 
+  
+
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
     return;
@@ -88,7 +90,7 @@ let enterRoom = (id) => {
     println(room.desc);
   }
 
-  room.visits++;
+  // room.visits++;
 
   disk.roomId = id;
 
@@ -99,6 +101,7 @@ let enterRoom = (id) => {
   // reset any active conversation
   delete disk.conversation;
   delete disk.conversant;
+
 };
 let response = (e) => {
   const ENTER = 13;

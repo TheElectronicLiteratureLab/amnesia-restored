@@ -25,8 +25,8 @@ let applyInput = (input) => {
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
 
-    } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
-      enterRoom('heal-club2');
+    // } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
+    //   enterRoom('heal-club2');
     } 
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
@@ -144,6 +144,10 @@ let applyInput = (input) => {
       enterRoom('hote-room-8');
     }
     
+    if (typeof room.onBlock === 'function') {
+      room.onBlock({disk, println, getRoom, enterRoom,});
+      return;
+    }
 
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);

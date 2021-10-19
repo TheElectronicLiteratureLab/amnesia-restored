@@ -120,6 +120,8 @@ function goDir(dir) {
     return;
   }
 
+  
+
   if (nextRoom.block) {
     println(nextRoom.block);
     return;
@@ -605,11 +607,11 @@ let dial = (number) => {
 
 
 //ask character about topic function
-const askXAboutY = ([x, y]) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  disk.conversant = character;
-  talkToOrAboutX('about', y);
-};
+// const askXAboutY = ([x, y]) => {
+//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+//   disk.conversant = character;
+//   talkToOrAboutX('about', y);
+// };
 
 
 // open command
