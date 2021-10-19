@@ -55,7 +55,15 @@ const hotereviDisk = {
                     itemId: 'tuxedo',
                     name: 'tuxedo',
                     desc: `It's a tux.`,
-                    isWearable: true
+                    isWearable: true,
+                    isRemovable: true
+                },
+                {
+                    itemId: 'pants',
+                    name: 'pants',
+                    desc: `It's pants!`,
+                    isWearable: true,
+                    isRemovable: true
                 },
                 {
                     itemId: 'roomtv',

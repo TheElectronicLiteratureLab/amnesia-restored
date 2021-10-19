@@ -620,19 +620,41 @@ if(getItemInInventory('address book')){
   };
 }
 
+let playerClothes = [];
+
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
   
-  if(item.isWearable === true){
-    //player.clothes = true;
+  if(item.isWearable === true && playerClothes.length === 0){
     println(`You put on the ${item.name}.`);
+    playerClothes.push(item);
+    console.log(playerClothes.length);
+  } else if(item.isWearable === true && playerClothes.length === 1){
+    println(`You must first remove the clothes you're wearing in order to put on something else.`);
   }
 
   if(!item.isWearable){
-    println(`You can't wear that.`)
+    println(`You can't wear that.`);
   }
 } 
+
+// remove command
+let remove = (clothes) => {
+  let item = getItemInRoom(clothes, disk.roomId);
+
+  if(item.isRemovable === true && playerClothes.length === 1){
+    println(`You remove the ${item.name}.`);
+    playerClothes.splice(item);
+    console.log(playerClothes.length);
+  } else if (item.isRemovable && playerClothes.length === 0){
+    println(`You're not wearing anything`);
+  }
+
+  if(!item.isRemovable){
+    println(`You can't remove that.`);
+  }
+}
 
 
 // open command
@@ -739,6 +761,7 @@ let commands = [
     close: x => close(x),
     dial: dial,
     wear: wear,
+    remove: remove,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
