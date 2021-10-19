@@ -615,15 +615,24 @@ if(getItemInInventory('address book')){
       println(id);
     }
 
-
   } else {
     println(`With what phone?`);
   };
-
-  
- 
-
 }
+
+// wear command
+let wear = (clothes) => {
+  let item = getItemInRoom(clothes, disk.roomId);
+  
+  if(item.isWearable === true){
+    //player.clothes = true;
+    println(`You put on the ${item.name}.`);
+  }
+
+  if(!item.isWearable){
+    println(`You can't wear that.`)
+  }
+} 
 
 
 // open command
@@ -729,6 +738,7 @@ let commands = [
     open: x => open(x),
     close: x => close(x),
     dial: dial,
+    wear: wear,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

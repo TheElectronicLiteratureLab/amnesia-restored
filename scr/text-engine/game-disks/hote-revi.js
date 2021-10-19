@@ -20,6 +20,12 @@ const hotereviDisk = {
                 };
             },
 
+            onBlock: () => {
+                if(moveCount >= 4 || (prevInput === 'leave' || 'exit')){
+                    enterRoom('hote-revi-2');
+                };
+            },
+
             onLook: () => {
                 const room = getRoom('hote-revi');
 
@@ -46,6 +52,36 @@ const hotereviDisk = {
             
             items: [
                 {
+                    itemId: 'tuxedo',
+                    name: 'tuxedo',
+                    desc: `It's a tux.`,
+                    isWearable: true
+                },
+                {
+                    itemId: 'roomtv',
+                    name: ['Simplex TV', 'TV', 'television', 'telly'],
+                    desc: `It is a Simplex TV-- a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`,
+                    isOn: false,
+
+                    // need to go over this in more detail.
+                    onLook: () => {
+                        let item = getItemInRoomById('roomtv', 'hote-revi');
+                        if(item.isOn){
+                            item.desc = item.desc.replace(' The TV is off.', ' The TV is on.');
+                            println(`You turn on the TV, which is showing a soft-core porn movie over the hotel's own cable channel. It seems to you, theoretically, that this ought to be effective as dynamite for breaking up the logjam of your memories, but while your imagination fully appreciates the movie's message, your memory remains inviolately blank. For all you know you could have been a virgin or another Don Juan with an entire catalog of sexual conquests.`);
+                        } 
+                    },
+                    onUse: () => {
+                        let item = getItemInRoomById('roomtv', 'hote-revi');
+                        if(item.isOn){
+                            println(`You watch the TV`)
+                        } else {
+                            println(`The TV isn't on`);
+                        }
+                    }
+                    // add onUse
+                }, 
+                {
                     itemId: 'roomkey',
                     name: ['room key', 'hotel key'],
                     desc: `The key chain is green plastic with the numerals 1502 in white. The key is ordinary.`,
@@ -70,14 +106,6 @@ const hotereviDisk = {
                     desc: `It is a white plastic ballpoint`,
                     isTakeable: true,
                     isDroppable: true
-                }, 
-                {
-                    itemId: 'roomtv',
-                    name: ['Simplex TV', 'TV', 'television', 'telly'],
-                    desc: ``,
-                    isOn: false
-                    // add onLook
-                    // add onUse
                 }, 
                 {
                     itemId: 'computer',
@@ -322,7 +350,7 @@ const hotereviDisk = {
                     onUse: () => {
                         println(`You remove any clothing you have on.
                         
-                        You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed on that badly, but cleaniness is next to godliness after all.`);
+                        You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed on that badly, but cleaniness is next to godliness after all. You dry off with a big fluffy towel.`);
                     }
                 },
                 {
@@ -351,10 +379,102 @@ const hotereviDisk = {
             
             exits: [
                 {
-                    dir: ['hotel']
+                    dir: ['hotel'],
+                    id: 'hote-revi' 
                 }
             ]
         }, // closes hote-revi-1 room (bathroom)
+        {
+            id: 'hote-revi-2',
+            name: 'Hotel Room',
+            desc: 'The phone rings.',
+
+            items: [
+                {
+                    itemId: 'phone',
+                    name: 'phone',
+                    onUse: () => enterRoom('hote-revi-3')
+                }
+            ]
+        }, // closes hote-revi-2 (luke's phonecall)
+        {
+            id: 'hote-revi-3',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`You go to the bedside table and answer the phone with a rather tentative "Hello?"
+                
+                "John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes." He goes on without waiting for your reply. "I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucket yet?"`);
+                pressEnter('hote-revi-4');
+            }
+        }, // closes hote-revi-3 (luke's phonecall)
+        {
+            id: 'hote-revi-4',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                //if yes
+                println(`"Well then, what are we waiting for? I'm paying this damned preacher by the hour, and he's going to want time and a half for overtime pretty soon. Get on down to the lobby on the double." He hangs up, and you're left thinking that getting married is almost as easy as...as putting on a suit of clothes.`);
+                //if no
+                println(`Well, get moving my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
+                //if any other answer
+                println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called ***ALICE AT THE SUNDERLAND HOTEL***. And there is the costume for the White Rabbit in the box on the bed.`);
+            }
+        }, // closes hote-revi-4 (luke's phonecall)
+        {
+            id: 'hote-revi-5',
+            name: '',
+            desc: '',
+            onEnter: () => {
+                println(`You hear a key being fitted into the lock of the door and feel-- too late-- a sense of urgency. A man enters the room, dressed like a Texas businessman in a suit and tie with boots and a Stetson. The gun in his hand, however, is not consistent with his western theme, being a very modest .38 caliber pistol.`);
+                pressEnter('hote-revi-6');
+            }
+        }, // closes hote-revi-5 (death for dawdlers ending)
+        {
+            id: 'hote-revi-6',
+            name: '',
+            desc: '',
+            onEnter: () => {
+                println(`"That's right, son," he says; aiming the gun at your chest, "you just freeze, and I will explain something about my character. I have never been a man to abide dawdlers. In fact, one time in Nashville, there was this waitress who took the better part of an hour to serve me a damned hamburger. I told her I was becoming impatient, and then I told her again. And then I lost my temper. Like this!"`);
+            }
+        }, // closes hote-revi-6 (death for dawdlers ending)
+        {
+            id: 'hote-revi-7',
+            name: '',
+            desc: '',
+            onEnter: () => {
+                println(`The man shoots you twide in the chest, first through you liver and then through your heart. In the moments before your death, your killer offers some parting words of advice. "In the future, friend, don't dawdle. Dawdling never go anyone anywhere." He bends down and places your hands crosswise over the two bullet holes in your chest, straightens out your legs, and leaves the room with a tip of his Stetson.
+                
+                A fly alights on your nose. For a little white you feel the tickle of its feet, and then you're dead.`);
+                pressEnter(); // leads to end screen
+            }
+        }, // closes hote-revi-7 (death for dawdlers ending)
+        {
+            id: 'hote-revi-8',
+            name: '',
+            desc: '',
+            onEnter: () => {
+                if(getItemInInventory('metal key')){
+                    println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You have it.
+                    
+                    You return to the room to pick up anything else you think you ought to have with you.
+                    
+                    You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
+                    
+                    You leave the room and close the door behind you. Then you head down the corridor toward the bank of elevators. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby without stopping at any of the intervening floors.`);
+                    pressEnter('lobby');//leads to Lobby node
+                } else {
+                    println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You've left it back in the room.
+                    
+                    You return to get the key-- and anything else you think you ought to have with you.
+                    
+                    You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
+                    
+                    You leave the room and close the door behind you. Then you head down the corridor toward the bank of elevators. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby without stopping at any of the intervening floors.`);
+                    pressEnter('lobby');//leads to Lobby node
+                }
+            } 
+        },//end of hote-revi-8 room 
     ], // closes hote-revi rooms
 }; // closes hoteroomRevi
 
