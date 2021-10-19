@@ -259,22 +259,100 @@ const hotereviDisk = {
                         }
                     }
                 },
+                {
+                    itemId: 'hanger',
+                    name: 'hanger',
+                    desc: `A hanger is a hanger is a hanger.`,
+                    isTakeable: true,
+                    isDroppable: true,
+                    onDrop: () => {
+                        println(`You put the metal hanger back where you found it.`)
+                    }
+                }
             ], // closes hote-revi room items 
             exits: [
-                
+                {
+                    dir: ['bathroom'],
+                    id: 'hote-revi-1'
+                }, // leads to hotel bathroom
+                {
+                    // leads to lobby, place block that IF player tries to leave room before conversation with Luke, conversation triggers
+                },
+                {
+                    // window exit
+                }
             ], //closes hote-revi room exits 
         }, // closes hote-revi room
         {
             id: 'hote-revi-1', 
             name: 'The Bathroom',
-            desc: `It's da bathroom`,
-
+            desc: `You're in the bathroom. It has the usual amenities of a good but not over-fancy hotel-- a small pink ***sink*** encased in Formica that's pretending to be marble, a tiled ***shower***, a ***toliet***, a towel rack with a ***large towel***. But no clothes.`,
+            onEnter: () => {
+                const room = getRoom('hote-revi-1');
+                if(getItemInInventory('towel')){
+                    room.desc = room.desc.replace(` with a ***large towel***.`, '.'); 
+                }
+            },
             items: [
-
+                {
+                    itemId: 'sink',
+                    name: ['sink', 'pink sink'],
+                    desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of ***soap*** sitting on the vanity.`,
+                    onLook: () => {
+                        if(getItemInInventory('soap')){
+                            let sink = getItemInRoomById('soap', 'hote-revi-1');
+                            sink.desc = sink.desc.replace(' There is a used cake of ***soap*** sitting on the vanity.', '');
+                        }
+                    }
+                },
+                {
+                    itemId: 'soap',
+                    name: 'soap',
+                    desc: 'It smells like lemon.',
+                    isTakeable: true,
+                    isDroppable: true,
+                    onUse: () => {
+                        println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you're never worn one?`);
+                    }
+                },
+                {
+                    itemId: `shower`,
+                    name: ['shower', 'tiled shower'],
+                    desc: 'The tiled shower is equipped with hot and cold water knobs, and a water conserving shower head.',
+                    onUse: () => {
+                        println(`You remove any clothing you have on.
+                        
+                        You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed on that badly, but cleaniness is next to godliness after all.`);
+                    }
+                },
+                {
+                    itemId: 'toliet',
+                    name: 'toliet',
+                    desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face -- looking very sheepish. What did you ***expect*** to find?`,
+                    onUse: () => {
+                        println(`You go to the toliet. But it hasn't solved any problems, has it? You still don't know who you are. You still don't have any clothes. And with each minute that goes by you can feel the level of your anxiety rising like water about to spill over a dam. You've got to DO SOMETHING!`);
+                    }
+                },
+                {
+                    itemId: 'large towel',
+                    name: ['towel', 'large towel'],
+                    desc: `It is a large fluffy towel.`,
+                    /* on WEAR towel, println(`For lack of anything better you wrap a towel around your waist. It wouldn't pass muster anywhere but in a steam room, but it might keep you from being arrested for indecent exposure. 
+                    
+                    Are you doing in the bathroom?`)*/
+                    isTakeable: true,
+                    isDroppable: true,
+                    onTake: () => {
+                        let bathroom = getRoom('hote-revi-1');
+                        bathroom.desc = bathroom.desc.replace(` with a ***large towel***.`, '.');
+                    }
+                }, 
             ],
             
             exits: [
-                
+                {
+                    dir: ['hotel']
+                }
             ]
         }, // closes hote-revi-1 room (bathroom)
     ], // closes hote-revi rooms
