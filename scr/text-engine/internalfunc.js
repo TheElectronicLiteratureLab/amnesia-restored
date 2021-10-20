@@ -40,7 +40,8 @@ let println = (line, className) => {
   }
 
   output.appendChild(newLine).innerHTML = str;
-  window.scrollTo(0, document.body.scrollHeight);
+  //output.scrollTo(0, document.body.scrollHeight);
+  output.scrollTo(0, output.scrollHeight);
 };
 
 // get random array element
@@ -72,6 +73,8 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 let enterRoom = (id) => {
   const room = getRoom(id);
 
+  
+
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
     return;
@@ -80,14 +83,15 @@ let enterRoom = (id) => {
   println(room.img, 'img');
 
   if (room.name) {
-    println(`${getName(room.name)}`, 'room-name');
+    document.getElementById("currroom").innerHTML = `${getName(room.name)}`;
+    //println(, 'room-name');
   }
 
   if (room.visits === 0) {
     println(room.desc);
   }
 
-  room.visits++;
+  // room.visits++;
 
   disk.roomId = id;
 
@@ -98,6 +102,7 @@ let enterRoom = (id) => {
   // reset any active conversation
   delete disk.conversation;
   delete disk.conversant;
+
 };
 let response = (e) => {
   const ENTER = 13;
@@ -125,10 +130,9 @@ document.addEventListener("keydown", cont);
 };
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
-  setTimeout(() => {
     document.querySelector('input').disabled = false;
     document.getElementById('arrow').innerHTML = ">";
-    document.querySelector('input').focus(); }, 100);
+    document.querySelector('input').focus();
 };
 
 
@@ -142,7 +146,7 @@ let objectHasName = (obj, name) => {
     : compareNames(obj.name);
 }
 
-// determine whether the object has the passed name
+// determine whether the object has the passed id
 // item | character, string -> bool
 let objectHasId = (obj, id) => {
   const compareIds = i => i.toLowerCase().includes(id.toLowerCase());
@@ -160,10 +164,18 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 
 // get item by name from room with ID
 // string, string -> item
+let getItemInRoomById = (itemName, roomId) => {
+  const room = getRoom(roomId);
+
+  return room.items && room.items.find(item => objectHasName(item, itemName));
+}
+
+// get item by name from room
+// string, string -> item
 let getItemInRoom = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasId(item, itemName));
+  return room.items && room.items.find(item => objectHasName(item, itemName));
 }
 
 // get item name from ID
@@ -175,7 +187,11 @@ let getItemName = (itemId, roomId) => {
 
 // get item by name from inventory
 // string -> item
-let getItemInInventory = (name) => disk.inventory.find(item => objectHasId(item, name));
+let getItemInInventoryById = (name) => disk.inventory.find(item => objectHasId(item, name));
+
+// get item by name from inventory
+// string -> item
+let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
 
 // add item into players inventory automatically taken from pcmommands
 let addItem = (itemName) => {
