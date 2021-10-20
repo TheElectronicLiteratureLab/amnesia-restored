@@ -1194,10 +1194,82 @@ const lobby = {
   desc: `You enjoy the complimentary bottle, and then a second, and arrive at your destination in a mellow, accepting frame of mind. Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide to name`,
   exits: [
     {//Name the first child
-      dir: 'Text',
-      id: 'marr-11',
+      dir: ['Thomas', 'child', 'first',],
+      id: 'marr-10A',
     },
   ],  
+},
+
+{//The player is able to name the second child.
+  id: 'marr-10A',
+  desc: "A year later Alice gives birth to your first daughter, and her name is ",
+  exits: [
+  {//Name the quints (1/5)
+    dir: ['kids', 'second', 'child',],
+    id: 'marr-11',
+  },  
+ ],
+},
+
+{//The player is able to name all five of the quintuplets, starting with the first.
+  id: 'marr-11',
+  desc: "Then come the quints, and their names are:",
+  exits: [
+  {//Name the quints (1/5)
+    dir: ['kids', 'third', 'child',],
+    id: 'marr-12',
+  },  
+ ],
+},
+
+{//Time to name the second quintuplet
+  id: 'marr-12',
+  desc: "",
+  exits: [
+  {//Name the kids (2/5)
+    dir: ['kids', 'fourth', 'child',],
+    id: 'marr-13',
+  },  
+ ],
+},
+
+{//Time to name the third quintuplet
+  id: 'marr-13',
+  desc: "",
+  exits: [
+  {//Name the kids (3/5)
+    dir: ['kids', 'fifth', 'child',],
+    id: 'marr-14',
+  },  
+ ],
+},
+
+{//Time to name the fourth quintuplet
+  id: 'marr-14',
+  desc: ``,
+  exits: [
+  {//Name the kids (4/5)
+    dir: ['kids', 'sixth', 'child',],
+    id: 'marr-15',
+  },  
+ ],
+},
+
+{//Time to name the final quintuplet
+  id: 'marr-15',
+  desc: ``,
+  exits: [
+  {//Name the kids (5/5)
+    dir: ['kids', 'seventh', 'child', 'last',],
+    id: 'marr-16',
+  },  
+ ],
+},
+
+{//End of game (Sheep Rancher Ending) //Need to add some sort of code to print out the previous seven names that the player has entered.
+  id: 'marr-16',
+  desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she always coyly avoids answering. "You don't really want to know about those things, John." she would tell you, and then turn away to call to the children: "[Here print out the series of seven names], come get your supper while it’s hot!" On your deathbed you are still wondering who you are and what you’d done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
+  
 },
 
 
@@ -1248,6 +1320,9 @@ const lobby = {
       // End Templates
   
       //Begin Notes
+      
+      //Add in any press enter related functions
+      //Finish marriage path
       //Variable for if the veil is raised or not. This will affect the "Lift Veil" and "Kiss Alice" exits. This also affects the look function, as Alice is normally wearing the veil.
       //Variable for how many times the player has asked "About myself." This will affect which response (chap-12, chap-12A, chap-12B, chap-12C) appears
       //Add in actual item variable for the box if the player chooses to take it.
