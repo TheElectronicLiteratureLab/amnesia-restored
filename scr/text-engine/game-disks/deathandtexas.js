@@ -1,4 +1,6 @@
 const deathAndTexas = {
+  // *** NAMING CONVENTION FOR THE ROOMS: deat-(executionstyle, last meal, religion choice) ex. deat-lertp = death and texas lethal injection roast rutkey protestant,
+  // deat-fspc = death and texas firing squad steak and potatoes catholic
     roomId: 'deat-1', // Set this to the ID of the room you want the player to start in.
     rooms: [ // LIST OF COMMANDS NEEDED [Lethal Injection, Firing Squad, Kiss, Catholic, Jewish, Protestant, Steak and Potatoes, Roasted Turkey, Barbebque Ribs]
       {
