@@ -2,6 +2,7 @@
 // process user input & update game state (bulk of the engine)
 // accepts optional string input; otherwise grabs it from the input element
 let confirmArray = ['Ok.', 'Got it.', 'Check.', 'If you say so.', 'All right.'];
+let f_firstphonecall = false;
 
 let applyInput = (input) => {
   input = input || getInput();
@@ -12,24 +13,18 @@ let applyInput = (input) => {
   console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
+  
 
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
-    let currentRoom = room.id;
     if (cmd) {
       cmd(arg);
-      
+      moveCount++;
+  console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-
-    } else if (currentRoom === 'heal-club1' && (prevInput !== 'leave' || prevInput !== 'exit')) {
-      enterRoom('heal-club2');
-    } else if ( currentRoom === 'heal-club6' && (prevInput !== 'hide' || prevInput !== 'go') && currentRoom.desc === `You take a quick tour of the lockers, opening and closing the metal doors quietly, hoping to find a forgotten or abandoned piece of clothing. Your search of the first alcove yields slim pickings: a plastic bag from a bookstore, a white sock with holes in both toe and heel, a broken shoelace, and a small brass key. Four of the lockers are padlocked. Yanking at the handles accomplishes nothing.
-    You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.
-    Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`)
-    {
-      println(`You can't do that. You're paralyzed with fear. Nothing seems possible except to find somewhere to hide.`);
-    }
+    } 
+    
     //hard coding for the character creation, will come back to fix this
     //just trying to make it work for now
     //light or dark hair
@@ -126,6 +121,36 @@ let applyInput = (input) => {
      }
       enterRoom('hell-4');
     }
+    
+    //Yes or no phone
+    else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'yes') {
+      println(`"I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
+      getItemInRoomById('roomphone', disk.roomId).inUse = false;
+      enterRoom('hote-room-9');
+    } else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'no') {
+      println(`"We have your VISA slip here. I'll have a bellboy bring it up to you. Have a good day." She hangs up.`);
+      getItemInRoomById('roomphone', disk.roomId).inUse = false;
+      enterRoom('hote-room-9');
+    }
+    
+    //yes or no bellboy
+    else if (disk.roomId === 'hote-room-10' && prevInput === 'yes') {
+      println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
+      // Flag tiping bellboy
+      //f_tippedbellboy = true;
+      enterRoom('hote-room-8');
+    } else if (disk.roomId === 'hote-room-10' && prevInput === 'no') {
+      println(`The bellboy leaves with a discontened mumble, and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
+      // Flag tiping bellboy
+      //f_tippedbellboy = false;
+      enterRoom('hote-room-8');
+    }
+    
+    if (typeof room.onBlock === 'function') {
+      room.onBlock({disk, println, getRoom, enterRoom,});
+      return;
+    }
+
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }

@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hell-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -32,7 +32,7 @@ const amnesiaRestored = {
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
         println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
-        setTimeout(() => {  println("Thomas Disch's\n \n", "tom"); }, 1000);
+        setTimeout(() => {  println("Thomas M. Disch's\n \n", "enter"); }, 1000);
         setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 1150);
       },
@@ -230,14 +230,14 @@ const amnesiaRestored = {
             let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
             {
-              if (item.desc == ' ')
+              if (pc.desc === ' ')
               {
                 println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
               }
               pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
               println(pc.desc);
             } else {
-              if (item.desc == ' ')
+              if (pc.desc === ' ')
               {
                 println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
               }
@@ -249,10 +249,13 @@ const amnesiaRestored = {
             let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
             {
-              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+              println('The computer is already on.');
             } else {
-              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+              println('The computer is off.');
             }
+          },
+          onBlock: () => {
+            //activate phone
           }
         },
         {
@@ -819,7 +822,557 @@ const amnesiaRestored = {
       } 
     },
     //**********************************************************/
-    //  Suicide at the Sunderland and After Death and Texas?   /
+    //                      The Nightmare                      /
+    //********************************************************/
+    {
+      id: 'nigh-1',
+      name:'Nightmare',
+      desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
+
+      exits:[
+          {
+              dir:['mirror'],
+              id: 'nigh-3'
+          },
+          
+      ],
+    },
+    { 
+        id: 'nigh-2',
+        name: '',
+        desc: `You tell yourself to 
+        [Quote response to 1 >],
+        but something prevents you. Your acts seem not to be your own. And the voice repeats its command: “Come here, X. Come here to me, in the mirror.”`,
+        //previous room replays, this loops until the player goes to the mirror.
+        onEnter: () =>{
+            reenableInput();
+            },
+        
+        exits:[
+          {
+              dir:['mirror'],
+              id: 'nigh-3'
+          },
+          
+      ],
+    },
+    {
+        id: 'nigh-3',
+        name: '',
+        desc: `Obedient to the voice, you go to the mirror. The figure in the mirror leans forward to peer at you intently. He is dressed all in white, like a bridegroom or a ghost. And though he has no face--only eyes that stare anxiously from the smooth ovoid of his head--he smiles, recognizing you. “Excellent,” he whispers. “Now come with me--before the store closes.” In the mirror you see him turn away from you and walk toward the door of the room, where he pauses to look back at you, and to beckon, with his raised hand, for you to follow.`,
+
+
+            
+        exits:[
+          {
+              dir:['walk'],
+              id: 'nigh-4'
+          },
+          
+      ],
+    },
+    {
+        id: 'nigh-4',
+        name: '',
+        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!” You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. Then you press the nozzle and write:`,
+        onEnter: () =>{
+            reenableInput();
+            
+        },
+        exits:[
+          {
+              dir:['fuck'],
+              id: 'nigh-5'
+          },
+          {
+              dir:['x'],
+              id:'nigh-8'
+          },
+          {
+              dir:['thing'],
+              id:'nigh-9',
+          },
+          
+      ],
+    },
+    {
+        id: 'nigh-5',
+        name:'',
+        desc: `No sooner have you sprayed your offensive message on the subway car’s window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor’s Commission to Keep the Subways Clean, who is no less a celebrity than ____________`,
+        //need to add a way for this text to be added to a list then recalled later in the text.
+        onEnter: () =>{
+            reenableInput();
+
+            
+        },
+
+        
+          exits:[
+          {
+              dir:['name'],
+              id: 'nigh-6',
+          }
+        ],
+    },
+    {
+        id: 'nigh-6',
+        name: '',
+        desc: `The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner [prevInput], please take the guilty party away.`,
+        onEnter:() =>{
+            println('Press ENTER to continue');
+            pressEnter('nigh-7');
+        },
+        exits:[
+            {
+                dir:['ENTER'],
+                id:'nigh-7',
+            }
+        ],
+    },
+    {
+        id:'nigh-7',
+        name: '',
+        desc: `Commissioner [prevInput] and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner [Last Name from 4>] tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. Your struggles are useless as the tattooist’s buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner [Last Name from 4>] holds up a mirror to your face--and you wake, screaming.`,
+        onEnter:() =>{
+            println('Press ENTER to continue');
+            pressEnter('nigh-10');
+            //this node exits to wherever the player entered into the nightmare node.
+        },
+        exits:[
+          {
+              dir:['ENTER'],
+              id:'nigh-10',
+          }
+      ],
+
+    },
+    {
+        id:'nigh-8',
+        name:'',
+        desc:`You spray a giant X across the window of the subway car, then return the spray can to the figure who had given it to you--and who is no longer faceless. Yet the face he now has is somehow more frightening than his earlier facelessness--for it is your own face.<br> He has taken it from you, along with your name, and left you nothing but this scrawl on the subway window. You press your hands to the featureless ovoid that grows from the stalk of your neck and try, mouthlessly, to scream. You wake, trembling and covered with sweat.`,
+        onEnter:() =>{
+            println('Press ENTER to continue');
+            pressEnter('nigh-10');
+        },
+        exits:[
+          {
+              dir:['ENTER'],
+              id:'nigh-10',
+          }
+      ],
+    },
+    {
+        id: 'nigh-9',
+        name: '',
+        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. “I’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th f1oor. And there--” His featureless head nods toward the purring escalator at the center of the deserted sales floor. ”-is the escalator. See you later X.”`,
+        onEnter: () =>{
+            reenableInput();
+            /*if(applyInput === 'go to escalator'){
+                enterRoom('nigh-sale');
+            }else{
+                println('You try to [prevInput] but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.');
+                
+            }*/    
+        },
+        exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale',
+            }
+        ],
+    },
+    {
+        id: 'nigh-sale',
+        name: '',
+        desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter--and points at the ascending escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale2',
+          }
+        ],
+    },
+    {
+        id: 'nigh-sale2',
+        name: '',
+        desc: `You take the escalator to the second floor, where four female manikins have been grouped in a tableau representing an outing to the beach. Each of the manikins has lifted her plaster hand to point to the upward-bound escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale3',
+          }
+        ],
+
+
+    },
+    {
+        id:'nigh-sale3',
+        name:'',
+        desc: `You take the escalator to the third floor, which is devoted to displays of men’s fashions. On the counter just before you a single leather glove on sale for $12.95 points to the Up escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale4',
+          }
+        ],
+    },
+    {
+        id:'nigh-sale4',
+        name: '',
+        desc: `You take the escalator to the fourth floor, where a placard informs you that the Les Delices has been closed for renovation. Another placard shows a hand pointing, with no explanation, toward the Up escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale5',
+          }
+        ],
+    },
+    {
+        id:'nigh-sale5',
+        name: '',
+        desc:`You take the escalator to the fifth floor, where a white­haired salesman stands daydreaming behind a counter displaying all kinds of cutlery. “Could I interest you in a knife, Sir?” he asks wistfully.`,
+        //need to make sure this yes or no question is coded correctly
+        onEnter: () =>{
+            reenableInput();
+
+        },
+        exits:[
+            {
+                dir:['yes'],
+                id:'knif-sale'
+            },
+            {
+                dir:['no'],
+                id:'knif-sale2'
+            }
+        ],
+    },
+    {
+        id:'knif-sale',
+        name:'',
+        desc:`“Very good, Sir. This--” He holds a knife with an 8-inch stainless steel blade to your throat. “--is our very best all-purpose carving knife. And this--” The carving knife drops from his hand, and he takes another, smaller knife from the counter. “This is a superb knife for boning chicken.” He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale6',
+          }
+        ],
+        
+    },
+    {
+        id: 'knif-sale2',
+        name: '',
+        desc: `“No? You won’t even look at my knives?” The white-haired salesman sighs. “I don’t know why I waste my time. All these years, and all these knives, and never once … never once … “He picks up the largest of the knives from the counter and, with a really remarkable steadiness of purpose, slowly positions it over the left-hand breast pocket of his suit and commits suicide. “I’m sorry,” he says, with his last dying breath. “I tried to be a good salesman. I did … my level … best.”`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale6',
+          }
+        ],
+    },
+    {
+        id:'nigh-sale6',
+        name:'',
+        desc:`You take the escalator to the sixth floor, where the management of Oldman’s announces, on a large poster that it is proud to be selling, in cooperation with the Sistine Chapel, a collection of priceless Fine Art Reproductions, including a gigantic full-color reproduction of the Hand of God from the ceiling of the Sistine Chapel. The Hand of God is pointing to the Up escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale7',
+          }
+        ],
+    },
+    {
+        id:'nigh-sale7',
+        name:'',
+        desc:`You take the escalator to the seventh floor, which seems to be an empty warehouse. Luxuriant growths of cobwebs festoon the light fixtures. Unmarked boxes and bundles are piled everywhere. The disembodied arm of a mannequin lies in the dust, its finger pointing with modest insistence to the UP escalator.`,
+        onEnter: () =>{
+            reenableInput();
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale8',
+          }
+        ],
+    },
+    {
+        id:'nigh-sale8',
+        name:'',
+        desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. “Hello!” says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - “I see we have our work cut out for us today! Sit down, please.” He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
+        onEnter: () =>{
+              printIn('Press ENTER to continue');
+              pressEnter('sham-sale');
+        },
+        exits:[
+              {
+                dir:['ENTER'],
+                id:'sham-sale',
+              }
+        ],
+    },
+    {
+        id:'sham-sale',
+        name:'',
+        desc:`“This won’t take more than five or six hours,” the aged hair stylist assures you. “We simply have to remove all these facial growths and seal these unsightly pores with sealing wax and then fill in these repulsive cavities. My, what large nostrils you have! But with your nose removed they won’t be a problem any longer. Then we’ll take care of your eyes with some industrial-strength eye-cover. The better stores these days prefer mannequins with perfectly blank faces. Eyes are out, didn’t you know that?”`,
+        onEnter:() =>{
+            printIn('Press ENTER to continue');
+            pressEnter('sham-sale2');
+        },
+        exits:[
+          {
+            dir:['ENTER'],
+            id:'sham-sale2',
+          }
+    ],
+
+        
+    },
+    {
+        id:'sham-sale2',
+        name: '',
+        desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he’d promised, you have been completely remodeled in the new blank style. “Now, isn’t that a lot better,” the old man says, holding up a mirror for you to see your now so much more geometrical face. “I’m sure the Personnel Department will hire you right off the bat--and assign you to work in one of the front windows. Well, have a nice day.” And he points you toward the Up escalator.`,
+        onEnter: () =>{
+            reenableInput();
+            /*if(applyInput === 'Use Escalator'){
+                enterRoom('nigh-sale9');
+            }else{
+                enterRoom('escl-erro');
+            }*/
+        },
+        exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale9',
+          }
+        ],
+    },
+    {
+        id: 'nigh-sale9',
+        name: '',
+        desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the [Name of computer for which the disc is adapted] computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. “That is a riddle,” the salesman explains, “and you must solve it.” The lines on the screen are:`,
+        onEnter:() =>{
+            printIn('Press ENTER to continue');
+            pressEnter('ridd-1');
+        },
+        exits:[
+          {
+            dir:['ENTER'],
+            id:'ridd-1',
+          }
+    ],
+        
+    },
+    {
+        id:'ridd-1',
+        name:'',
+        desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
+        onEnter: () =>{
+            getInput();
+              if(getInput === 'a riddle'){
+                  enterRoom('ridd-2')
+              }
+              else{
+                  println(`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`)
+              }
+        },
+
+        exits:[
+            {
+                dir:['riddle'],
+                id:'ridd-2',
+            }
+        ],
+    },
+    /*{
+        id: 'ridd-2',
+        name:'',
+        desc:`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`,
+        onEnter: () =>{
+            reenableInput();
+              if(applyInput === 'riddle'){
+                enterRoom('ridd-3');
+              }else{
+                enterRoom('ridd-2');
+            }
+        }
+      },*/
+    {
+        id:'ridd-2',
+        name:'',
+        desc:`“Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--” But instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. “The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?”`,
+      
+        exits:[
+          {
+              dir:['switch'],
+              id:'ridd-4',
+          },
+          {
+              dir:['escalator'],
+              id:'nigh-sale10',
+          }
+      ],
+    },
+    {
+        id:'nigh-sale10',
+        name:'',
+        desc: ``,
+        onEnter: () => {
+            println('You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. “Hello,” says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. “My name’s Hugette, what’s yours?” You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. “My full name,” she continues, “is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?”')
+            pressEnter('nigh-sale11');
+            
+        },
+        exits:[
+          {
+            dir:['ENTER'],
+            id:'nigh-sale11',
+          }
+      ],
+    },
+    {
+      id:'nigh-sale11',
+      name:'',
+      desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,  
+      //add ride to one argument commands
+      exits:[
+          {
+              dir:['escalator'],
+              id:'nigh-sale12',
+          }
+      ],
+
+    },
+    {
+      id:'nigh-sale12',
+      name:'',
+      desc:`You run up the escalator’s moving steps to the eleventh floor and arrive on the sales floor just in time to see the mannequin with your head under his arm taking the steps of the upbound escalator two at a time. A burglar alarm begins to shriek. An aged security officer catches hold of your wrist and asks you where the fire is. The only answer you can give, voiceless as you are, is to point to the escalator where the thieving mannequin bears away your head in triumph. “I’m sorry, young man,” says the security officer. “But we can’t have people going about the store without their heads or their shoes. That’s the rule here at Oldman’s. You’ll have to come along with me.”`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['no','ride escalator','refuse']){
+              enterRoom('nigh-sale13')}
+          else(getInput === ['follow security officer'])
+              {enterRoom('nigh-sale14')}
+          }
+    },
+    {
+      id:'nigh-sale13',
+      name: '',
+      desc:`The security officer takes you to a fitting room at the side of the sales floor and deftly fits a spare head into the empty socket in your neck. You look at yourself in the mirror. To your surprise you are now a man of sixty or seventy years, and a cousin if not the twin of the security officer, who welcomes you with a smile to your new place of employment. At last, you have a mouth and are able--even as you wake from the nightmare--to scream.`,
+      //exits nightmare
+      
+    },
+    {
+      id:'nigh-sale14',
+      name: '',
+      desc:`“You won’t? You won’t!” he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: “Help! Help me get out of this box. I’m suffocating. Help!” Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
+    onEnter: () => {
+        getInput();
+        if(getInput === ['open box','look for head','search for head']){
+            enterRoom('nigh-sale15')
+        }
+
+    },
+    exits:[
+      {
+        dir:['box','head'],
+        id:'nigh-sale15',
+      }
+      ],
+  },
+  {
+      id:'nigh-sale15',
+      name: '',
+      desc:`You open the box nearest at hand. It contains a ceramic vase, jade green with dark specklings. It won’t do for a head.`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['open box','look for head','search for head']){
+              enterRoom('nigh-sale16')
+          }
+
+        },
+        exits:[
+          {
+            dir:['box','head'],
+            id:'nigh-sale16',
+          }
+          ],
+  },
+  {
+      id:'nigh-sale16',
+      name: '',
+      desc:`You open another box. It contains a basket imported from Thailand. It’s just about the right size for carrying your head, once you find it, but that’s small consolation.`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['open box','look for head','search for head']){
+              enterRoom('nigh-sale17')
+          }
+
+        },
+        exits:[
+          {
+            dir:['box','head'],
+            id:'nigh-sale17',
+          }
+          ],
+  },
+  {
+      id:'nigh-sale17',
+      name: '',
+      desc:`You open a third box. It contains a large Gouda cheese from the Gourmet Grocery Department.`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['open box','look for head','search for head']){
+              enterRoom('nigh-sale18')
+          }
+
+        },
+        exits:[
+          {
+            dir:['box','head'],
+            id:'nigh-sale18',
+          }
+          ],
+  },
+  {
+      id:'nigh-sale18',
+      name: '',
+      desc:`You open yet another box. It contains lingerie in a style you would not have supposed Oldman’s would stock. You begin to feel discouraged. It’s been several minutes since you’ve heard so much as a whimper from your detached cranium.`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['open box','look for head','search for head']){
+              enterRoom('nigh-sale19')
+          }
+
+        }
+  },
+  {
+      id:'nigh-sale19',
+      name: '',
+      desc:`You open a fifth box, which seems too small to contain your head. But there it is, still alive! Its eyes look up to you gratefully. Its lips smile. And then, with horror, you realize your mistake. This isn’t your own head. It’s an identical head that’s been substituted for your own. This head belongs to ... to … His name is on the tip of your tongue. But of course, without a head you are also without a tongue. You wake, gasping for breath, and instantly the nightmare fades from your memory.`,
+      //exit nightmare node
+  },
+    //**********************************************************/
+    //                Suicide at the Sunderland                /
     //********************************************************/
     {
       id: 'hell-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
@@ -906,6 +1459,7 @@ const amnesiaRestored = {
       id: 'heal-club', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Health Club Reception Room', // Displayed each time the player enters the room.
       desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be “Back in 10 Minutes.”
+      
       The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
       exits: [
         {
@@ -926,8 +1480,11 @@ const amnesiaRestored = {
       id: 'heal-club1',
       name: `Women's Locker Room`,
       desc: `You enter the women’s locker room, and a woman who seems to be in training for the Olympic hammer throw looks at you with the joy of combat already glistening in her eyes. 
+      
       “Not here, buddy,” she informs you in a low voice. “This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room.” 
+      
       She points the direction with her thumb. “That way.”`,
+      
       exits: [
         {
           dir: ['leave', 'exit'],
@@ -935,41 +1492,56 @@ const amnesiaRestored = {
         },
         {
           dir: [],
-          id: 'heal-club2'
+          id: 'heal-club2',
+          block: `"I'm warning you, Bozo: Out of here!`
+          
         }
       ],
+      onBlock: () => {
+        if (prevInput !== 'leave' || 'exit') {
+          enterRoom('heal-club2');
+        } else {
+          enterRoom('heal-club');
+        }
+      },
+    },
+    {
+      id: 'heal-club2',
+      name: ``,
+      desc: `"I'm warning you, Bozo: Out of here!`,
+      
+      exits: [
+        {
+          dir: ['leave', 'exit'],
+          id: 'heal-club',
+        },
+        {
+          dir: [],
+          id: 'heal-club3'
+        }        
+      ],
+      onBlock: () => {
+        if (prevInput !== 'leave' || 'exit') {
+          enterRoom('heal-club3');
+        } else {
+          enterRoom('heal-club');
+        }
+      },
     },
     {
       id: 'heal-club3',
       name: `Women's Locker Room`,
-      desc: `"I'm warning you, Bozo: Out of here!`,
-      exits: [
-        {
-          dir: ['leave', 'exit'],
-          id: 'heal-club',
-        },
-        {
-          dir: [],
-          id: 'heal-club4'
-        }        
-      ],
-    },
-    {
-      id: 'heal-club4',
-      name: `Women's Locker Room`,
       desc: `"Okay, that's it." 
       With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
-      exits: [
-        {
-          dir: [],
-          id: 'Deat-Tex'
-        }
-      ],
+      onEnter: () => {
+        pressEnter('deat-1')
+      }
     },
     {
       id: 'heal-club5',
       name: `Men's Locker Room`,
       desc: `You are in the men’s locker room. 
+
       To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked “Sauna,” that on the left “Massage.” Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
       exits: [
         {
@@ -977,12 +1549,13 @@ const amnesiaRestored = {
           id: 'heal-club',
         },
         {
-          dir: ['right', 'lockers'],
+          dir: ['right', 'lockers', 'locker',],
           id: 'heal-club6'
         },
         {
           dir: ['left door', 'massage'],
-          id: 'heal-club7'
+          id: 'heal-club7',
+          block: 'The door to that room is locked.'
         },
         {
           dir: ['right door', 'sauna'],
@@ -990,376 +1563,1527 @@ const amnesiaRestored = {
         }, 
         {
           dir: ['showers', 'shower'],
-          id: 'heal-club9'
+          id: 'heal-club9',
+          block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`
         },
         {
-          dir: ['weight room', 'weights'],
-          id: 'heal-club10'
+          dir: ['weight room', 'weights', 'weight', 'room'],
+          id: 'heal-club10',
+          block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
         }
       ],
     },
     {
       id: 'heal-club6',
       name: `Men's Locker Room`,
-      desc: `You try and wedge yourself intop one of the metal lockers but clearly they weren't intended for this purpose -- or you weren't. There must be somewhere else you can hide`,
-      onLook: () => {
-        const room = getRoom('heal-club6');
-        const room2 = getRoom('heal-club');
-        room.desc = `You take a quick tour of the lockers, opening and closing the metal doors quietly, hoping to find a forgotten or abandoned piece of clothing. Your search of the first alcove yields slim pickings: a plastic bag from a bookstore, a white sock with holes in both toe and heel, a broken shoelace, and a small brass key. Four of the lockers are padlocked. Yanking at the handles accomplishes nothing.
-        You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.
-        Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`;
-        room2.block = `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
-        Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+      desc: `You take a quick tour of the lockers, opening and closing the metal doors quietly, hoping to find a forgotten or abandoned piece of clothing. Your search of the first alcove yields slim pickings: a plastic bag from a bookstore, a white sock with holes in both toe and heel, a broken shoelace, and a small brass key. Four of the lockers are padlocked. Yanking at the handles accomplishes nothing.`,
+      
+      onEnter: () => {
+        pressEnter('heal-club12')
+      }
+    },
+    {
+      id: 'heal-club12',
+      name: `Men's Locker Room`,
+      desc: `You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.`,
+
+      onEnter: () => {
+        pressEnter('heal-club13')
+      }
+    },
+    {
+      id: 'heal-club13',
+      name: `Men's locker Room`,
+      desc: `Just as you are about to slip into this outfit you hear the voices of two men entering the locker room from the direction of the weight room. You feel a panicky certainty that these clothes belong to one of them, and you stuff them in the plastic bookstore bag. You wish you could crawl into the bag yourself, so strong is your impulse to hide from these approaching strangers.`,
+      onEnter: () => {
+        reenableInput();
       },
+      exits: [
+            {
+              dir: ['leave', 'exit'],
+              id: 'heal-club',
+              block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
+              
+              Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+            },
+            {
+              dir: ['right', 'lockers', 'locker',],
+              id: 'heal-club6'
+            },
+            {
+              dir: ['left door', 'massage'],
+              id: 'heal-club7',
+              block: 'The door to that room is locked.'
+            },
+            {
+              dir: ['right door', 'sauna'],
+              id: 'heal-club8'
+            }, 
+            {
+              dir: ['showers', 'shower'],
+              id: 'heal-club9',
+              block: `As you do, you realize that a man and womana re coming out of the shower. Even in your present predicament you can't help but wonder what the woman is doing in the men's locker room.`
+            },
+            {
+              dir: ['weight room', 'weights', 'weight', 'room'],
+              id: 'heal-club10',
+              block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
+            }
+          ],
     },
     {
       id: 'heal-club7',
       name: `Men's Locker Room`,
-      desc: '',
-      block: 'The door to that room is locked.'
+      desc: 'massage'
     },
     {
       id: 'heal-club9',
       name: `Men's Locker Room`,
-      desc: '',
-      block: `There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`,
-
+      desc: 'showers',
+    },
+    {
+      id: 'heal-club10',
+      name: `Men's Locker Room`,
+      desc: `weight room`
     },
     {
       id: 'heal-club8',
       name: `Men's Locker Room`,
       desc: `As you enter the sauna a blast of superheated air wraps your body in what feels like a suit of flames. Your heartbeat quickens, and the narrow confines of the steamy, pine-paneled cell bend and warp and tilt. 
+
       You are barely able to keep yourself from falling against the iron stove and its pile of heated rocks. You crumble onto the bench of wooden slats, and then…`,
-      exits: [
-        {
-          dir: [],
-          id: 'heal-club11'
-        }
-      ]
+      onEnter: () => {
+        pressEnter('heal-club11');
+      },
     },
     {
       id: 'heal-club11',
       name: `Men's Locker Room`,
       desc: `But this 'then' is like no other then. It does not follow the time that's gone before. Like a fluid under tremendous pressure, the memories suppressed by your amnesia overwhelm you. At some cue supplied by this hot dark cubbyhole, your past supplants your present life. 
       You are experiencing . . . DEJA-VU!`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu'
-        }
-      ],
-    },//BELOW HERE IS AFTER DEJA-VU
-    {
-      id: 'heal-club12',
-      name: 'Massage Room',
-      desc: `“Mr. Cameron, are you conscious, can you hear me?”
-      A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.
-      “He’s opened his eyes,” another voice says.
-      “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room.
-      But maybe he just can’t take the heat in that sauna. Some guys can’t.”
-      He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
-      exits: [
-        {
-          dir: [],
-          id: 'heal-club13'
-        },
-      ],
-    },
-    {
-      id: 'heal-club13',
-      name: 'Massage Room',
-      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”  The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper, but you are still able to hear what he says.  “--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. “It was on the floor of the sauna.”
-      `,
-      exits: [
-          {
-            dir: [],
-            id: 'heal-club14'
-          },
-      ],
-    },
-    {
-        id: 'heal-club14',
-        name: 'Massage Room',
-        desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time. You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.
-        He rolls you over onto your stomach but instead of continuing the massage he turns on the sunlamp and leaves you alone in the room. The warmth of the lamp fills you with a strange peaceful passivity. You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym in the other. “Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
-        exits: [
-            {
-                dir:[],
-                id: 'heal-club15'
-            },
-        ],
-    },
-    {
-        id: 'heal-club15',
-        name: 'Massage Room'
+      onEnter: () => {
+        pressEnter('deja-vu');
+      }
     },
     //**********************************************************/
-    //                       Deja-Vu                           /
+    //                       Deja Vu                           /
     //********************************************************/
     {
-      id: 'deja-vu', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: '', // Displayed each time the player enters the room.
-      desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.
-      Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You’ll probably be beaten again--but you can’t help yourself. You scream the same few senseless words over and over, a litany of terror:`,
-      exits: [
-        {
-          dir: [], 
-          id: 'deja-vu1',
-        },
-      ],
+      id: 'deja-vu', 
+      name: '', 
+      desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`,
+      
+      onEnter: () => {
+          pressEnter('deja-vu1');
+      }
     },
     {
       id: 'deja-vu1',
       name: '',
-      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.
-      You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five=alarm chili.'
-      He waits for you to say the two words that will get you fed.`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu2'
-        },
-        {
-          dir: [],
-          id: 'deja-vu3'
-        }
-      ],
+      desc:`Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You’ll probably be beaten again--but you can’t help yourself. You scream the same few senseless words over and over, a litany of terror:`,
+      onEnter: () => {
+        reenableInput();
+    },
+      onBlock: () => {
+          for (let count = 0; count < 3; count++) {
+              println(`'${prevInput}'`);
+          }
+          enterRoom('deja-vu2');
+      }
     },
     {
       id: 'deja-vu2',
       name: '',
-      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut. You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu4'
-        },
-        
-      ],
+      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.`,
+        onEnter: () => {
+            pressEnter('deja-vu3');
+        }
+      
     },
     {
-      id: 'deja-vu3',
-      name: '',
-      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.
-      When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu5'
+        id: 'deja-vu3',
+        name: '',
+        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five alarm chili.'
+
+        He waits for you to say the two words that will get you fed.`,
+        onEnter: () => {
+            reenableInput();
         },
-      ],
+
+        onBlock: () => {
+            if (prevInput === 'please sir') {
+                enterRoom('deja-vu7');
+            } else {
+                enterRoom('deja-vu4');
+            };
+        },
     },
     {
       id: 'deja-vu4',
       name: '',
-      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
-      exits: [
-        {
-          dir: [],
-          id: 'heal-club12'
-        },
-      ],
+      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut.`,
+
+      onEnter: () => {
+          pressEnter('deja-vu5');
+      }
+      
     },
     {
       id: 'deja-vu5',
       name: '',
-      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
-      exits: [
-        {
-          dir: [],
-          id: 'deja-vu4'
+      count: 0,
+      desc: `You think: this is not possible, it is not legal, it can’t go on. Not even in the state of Texas can a prisoner be treated like this. You have not been charged with any crime. There has been no trial. One minute you were driving your car home, and the next a motorcycle cop was signaling for you to pull off to the side of the road. The worst of it is that no one knows you’re here, in Santa Candelaria, and so no one will think to report you missing. Suddenly you understand the meaning of hell. There is no way out.`,
+      onEnter: () => {
+          reenableInput();
+      },
+      onBlock: () => {
+        let room = getRoom('deja-vu5');
+        println('There is no way out');
+        room.count++;
+        console.log(room.count);
+        if (room.count === 5){
+            enterRoom('deja-vu6')
+        }
+      }
+    },
+    {
+      id: 'deja-vu7',
+      name: '',
+      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” 
+      
+      He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.`,
+
+      onEnter: () => {
+        pressEnter('deja-vu8')
+      },
+    },
+    {
+        id: 'deja-vu8',
+        name: '',
+        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+
+        oneEnter: () => {
+            pressEnter('deja-vu5')
+        }
+
+    },
+    {
+      id: 'deja-vu6',
+      name: '',
+      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
+      onEnter: () => {
+          pressEnter('heal-club14')
+      }
+    },
+    //**********************************************************/
+    //        EXIT FROM DEJA-VU Sunderland Health Club         /
+    //********************************************************/    
+    {
+      id: 'heal-club14',
+      name: 'Massage Room',
+      desc: `“Mr. Cameron, are you conscious, can you hear me?”
+      A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.`,
+      onEnter: () => {
+          pressEnter('heal-club15')
+      }
+    },
+    {
+        id: 'heal-club15',
+        name:'Massage Room',
+        desc: `“He’s opened his eyes,” another voice says.
+        “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t.”`,
+        onEnter: () => {
+            pressEnter('heal-club16');
+        }
+    },
+    {
+        id: 'heal-club16',
+        name: 'Massage Room',
+        desc: `He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
+        onEnter: () => {
+            pressEnter('heal-club17');
+        }
+    },
+    {
+      id: 'heal-club17',
+      name: 'Massage Room',
+      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”`,
+      onEnter: () => {
+          pressEnter('heal-club18');
+      },
+    },
+    {
+        id: 'heal-club18',
+        name: 'Massage Room',
+        desc: `The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper,`,
+        onEnter: () => {
+            pressEnter('heal-club19')
+        }
+    },
+    {
+        id: 'heal-club19',
+        name: 'Massage Room',
+        desc: `“--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” 
+        
+        “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. 
+        
+        “It was on the floor of the sauna.”`,
+        onEnter: () => {
+            pressEnter('heal-club20');
+        }
+    },
+    {
+        id: 'heal-club20',
+        name: 'Massage Room',
+        desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time.
+        
+        You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.`,
+        onEnter: () => {
+            pressEnter('heal-club21');
+        }
+    },
+    {
+        id: 'heal-club21',
+        name: 'Massage Room',
+        desc: `He rolls you over onto your stomach but instead of continuing the massage he turns on the sunlamp and leaves you alone in the room. The warmth of the lamp fills you with a strange peaceful passivity. 
+        
+        You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym bag in the other.`,
+        onEnter: () => {
+            pressEnter('heal-club22')
+        }
+    },
+    {
+        id: 'heal-club22',
+        name: 'Massage Room',
+        desc: `“Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
+        onEnter: () => {
+            reenableInput();
         },
-      ],
+        onBlock: () => {
+            if (prevInput = 'yes') {
+                enterRoom('heal-club23');
+            } else {
+                enterRoom('heal-club24');
+            }
+        }
+    },
+    {
+        id: 'heal-club23',
+        name: 'Massage Room',
+        desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+    },
+    {
+        id: 'heal-club24',
+        name: 'Massage Room',
+        desc: `The masseur lays his hand on your shoulder. “Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
+        items: [
+          {
+            name: 'Green Canvas Gym Bag',
+            desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+            isTakeable: true,
+            isDroppable: true,
+            descRead: false,
+            onTake: () => {
+              const room = getRoom(disk.roomId);
+              if (room.descRead === false) {
+                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+              } room.descRead = true;
+              pressEnter('heal-club25');
+            },
+            onLook: () => {
+              takeItem('Green Canvas Gym Bag');
+              pressEnter('heal-club25');
+            }
+          },
+        ]
+    },
+    {
+      id: 'heal-club25',
+      name: 'Massage Room',
+      desc: `Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
+      
+      You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
+      onEnter: () => {
+        disk.inventory.push([
+          {
+            name: `Levi's Jeans`,
+            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'T Shirt',
+            desc: `It is a red teeshirt that has faded to a shade of pink.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'Sneakers',
+            desc:`The well-worn sneakers are made by Adidas.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
+            name: 'Address Book',
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as “SEX” and “Drugs.” Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            isTakeable: true,
+            isDroppable: false,
+          },
+        ])
+        pressEnter('heal-club26');
+      }
+    },
+    {
+      id: 'heal-club26',
+      name: 'Massage Room',
+      desc: `But at least he is a stranger with clothes on, and that’s some improvement. There is a knock on the door, and the masseur asks you if you are ready to go back to your room.`,
+      onEnter: () => {
+        reenableInput();
+      },
+      onBlock: () => {
+        if(prevInput !== 'yes') {
+          println(`“That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time.” Half a minute later, he raps again. “How about it, Mr. Cameron. Do you think you can make it back to your room?”`)
+        } if (prevInput === 'leave' || 'exit') {
+          println(`“Ah, Mr. Cameron,” the masseur says unctuously. “I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door.” You try to protest, but your words go unheeded.`)
+        }else {
+          enterRoom('heal-club27');
+        }
+      }
+    },
+    {
+      id: 'heal-club27',
+      name: 'Massage Room',
+      desc: `The masseur seems relieved when you follow Buddy out. He has been given your satchel, the plastic bookbag, and a pass key to Room 1502. You take the elevator down to 15, and Buddy leads the way to your room.`,
+      onEnter: () => {
+        pressEnter('heal-club28');
+      }
+    },
+    {
+      id: 'heal-club28',
+      name: 'Massage Room',
+      desc: `Once you are inside the door he hands you the satchel, the bookbag, and their contents and says good-bye -- with a look in his eyes that conveys his low opinion of men who make a habit of fainting in saunas.
+      
+      You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
+      onEnter: () => {
+        pressEnter('hote-revi');
+      }
     },
     //**********************************************************/
     //                   Death and Texas                       /
     //********************************************************/
     {
       id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: '', // Displayed each time the player enters the room.
+      name: 'Death and Texas', // Displayed each time the player enters the room.
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
       // arguement for lethal injection or firing squad
-      onEnter: () =>{
-        let firingSquad = false;
-        let lethalInjection = false;
-        const execution = [ 'Firing Squad', 'Lethal Injection'];
-        if(prevInput === 'Firing Squad'){
-          firingSquad = true;
-
-        }else if(prevInput == execution[1]){
-          lethalInjection = true;
-
-        }else{
-          
-        }
-      }
+      exits: [
+        {
+          dir: ['squad',], //Two word strings are not working, need to find out why
+          id : 'deat-f3'
+        },
+        {
+          dir: ['injection'],
+          id : 'deat-le3'
+        },
+        {
+          dir: ['appeal', 'fight', 'resist'],
+          id : 'deat-3'
+        },
+        {
+          dir: [''], //onExit command here
+          id : 'deat-2'
+        },
+      ],
     },
     {
       id: 'deat-2', // if the player doesn't pick firing squad or lethal injection
       name: '',
       desc: `You must make a decision: the firing squad or lethal injection, which will it be?`,
-      // arguement for lethal injection or firing squad
+      exits: [
+        {
+          dir: ['firing', 'squad', 'firing squad'],
+          id : 'deat-f3'
+        },
+        {
+          dir: ['lethal', 'injection', 'lethal injection'],
+          id : 'deat-le3'
+        },
+        {
+          dir: [''], //onExit command here
+          id : 'deat-2'
+        },
+      ],
     },
+    
     {
-      id: 'deat-3', // if the player chooses lethal injection
-      name: '', // Displayed each time the player enters the room.
-      desc: `On the morning of the day you are to receive the lethal injection, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
-      onLook: () =>  {
-        const room = getRoom('deat-4');
-        room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
-
-      },
-    },
-    {
-      id: 'deat-4', // if the player chooses firing squad
+      id: 'deat-f3', // if the player chooses firing squad
       name: '', // Displayed each time the player enters the room.
       desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
       onLook: () =>  {
-        const room = getRoom('deat-4');
+        const room = getRoom('deat-f3');
         room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
 
       },
+      exits: [
+        {
+          dir: ['kiss', 'hug', 'touch'], // second argument matters here
+          id : 'deat-f4'
+        },
+        {
+          dir: ['marriage', 'denise', 'who are you'], // second argument matters here
+          id : 'deat-f7'
+        },
+        {
+          dir: ['bite', 'spit', 'fuck', 'die'], // second argument matters here
+          id : 'deat-f6'
+        },
+        {
+          dir: ['xavier', 'hollings', 'xavier hollings', 'xav'], // second argument matters here
+          id : 'deat-f8'
+        },
+        { 
+          dir: [''], //onExit command here
+          id : 'deat-f5'
+        },
+      ],
     },
     {
-      id: 'deat-5', // if the player chooses to appeal the decision
+      id: 'deat-3', // if the player chooses to appeal the decision
       name: '', // Displayed each time the player enters the room.
       desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection--which is it?`, // Displayed when the player first enters the room.
-      // Need arguement here for firing squad or lethal injection
+      exits: [
+        {
+          dir: ['squad'],
+          id : 'deat-f3'
+        },
+        {
+          dir: ['injection'],
+          id : 'deat-le3'
+        },
+        {
+          dir: [''],
+          id : 'deat-2'
+        },
+      ],
     },
     {
-      id: 'deat-6', // if BITE/SPIT or any obscenity at Denise
+      id: 'deat-f4', // if Kiss, hug, or touch  Denise if firing squad selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+          pressEnter('deat-f5');
+      }
+    },
+    {
+      id: 'deat-f5', // after Kiss, hug, or touch  Denise if firing squad selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+          pressEnter('deat-f9');
+      }
+    },
+    {
+      id: 'deat-f6', // if BITE/SPIT or any obscenity at Denise if firing squad selected
       name: '', // Displayed each time the player enters the room.
       desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
-      
+      onEnter: () => {
+        pressEnter('deat-f10');
+    }
     },
     {
-      id: 'deat-7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU
+      id: 'deat-f7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if firing squad selected
       name: '', // Displayed each time the player enters the room.
       desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-9');
+        pressEnter('deat-f9');
       }
     },
     {
-      id: 'deat-8', // if ASK ABOUT XAVIER at DENISE
+      id: 'deat-f8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
       name: '', // Displayed each time the player enters the room.
       desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-10')
+        pressEnter('deat-f9');
       }
     },
     {
-      id: 'deat-9', // Proceeding to last meal node
+      id: 'deat-f9', // Proceeding to last meal node if firing squad selected
       name: '', // Displayed each time the player enters the room.
       desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-10');
+        pressEnter('deat-f10');
+        reenableInput();
       }
     },
     {
-      id: 'deat-10', // last meal node
+      id: 'deat-le3', // if the player chooses lethal injection
       name: '', // Displayed each time the player enters the room.
-      desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      onLook: () =>  {
+        const room = getRoom('deat-le3');
+      room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
+
+    },
+     exits: [
+      {
+        dir: ['kiss', 'hug', 'touch'],
+        id : 'deat-le4'
+      },
+      {
+        dir: ['marriage', 'denise', 'who are you'],
+        id : 'deat-le7'
+      },
+      {
+        dir: ['bite', 'spit', 'fuck', 'die'],
+        id : 'deat-le6'
+      },
+      {
+        dir: ['xavier', 'hollings', 'xavier hollings', 'xav'],
+        id : 'deat-le8'
+      },
+      { //Anything other than the directions, wonder how to do that
+        dir: [''],
+        id : 'deat-le5' //onExit here
+      },
+    ],
+  },
+  {
+    id: 'deat-le4', // if Kiss, hug, or touch  Denise if lethal injection selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+        pressEnter('deat-le5');
+    }
+  },
+  {
+    id: 'deat-le5', // after Kiss, hug, or touch  Denise if lethal injection selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+        pressEnter('deat-le9');
+    }
+  },
+  {
+    id: 'deat-le6', // if BITE/SPIT or any obscenity at Denise if lethal injection selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-le10');
+  }
+  },
+  {
+    id: 'deat-le7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if lethal injection selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-le9');
+    }
+  },
+  {
+    id: 'deat-le8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-le9');
+    }
+  },
+  {
+    id: 'deat-le9', // Proceeding to last meal node if firing squad selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-le10');
+    }
+  },
+  {
+    id: 'deat-le10', // last meal node if lethal injection squad
+    name: '', // Displayed each time the player enters the room. 
+    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   onEnter: () =>{
+    document.querySelector('input').disabled = false;
+    document.getElementById('arrow').innerHTML = '>';
+   },
+   exits: [
+    {
+      dir: ['steak', 'potatoes', 'steak and potatoes'], // two word arguement
+      id : 'deat-lesp'
+    },
+    {
+      dir: ['barbecue', 'ribs', 'barbecue ribs'], // two word arguement
+      id : 'deat-lebr'
+    },
+    {
+      dir: ['roasted', 'turkey', 'roasted turkey'], // two word arguement
+      id : 'deat-lert'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-letar'
+    },
+  ],
+  },
+  {
+    id: 'deat-f10', // last meal node if firing squad
+    name: '', // Displayed each time the player enters the room. 
+    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   onEnter: () => {
+      document.querySelector('input').disabled = false;
+      document.getElementById('arrow').innerHTML = '>';
+     },
+   exits: [
+    {
+      dir: ['steak', 'potatoes', 'steak and potatoes'], // two word arguement
+      id : 'deat-fsp'
+    },
+    {
+      dir: ['barbecue', 'ribs', 'barbecue ribs'], // two word arguement
+      id : 'deat-fbr'
+    },
+    {
+      dir: ['roasted', 'turkey', 'roasted turkey'], // two word arguement
+      id : 'deat-frt'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-ftar'
+    },
+  ],
+  },
+  {
+    id: 'deat-fsp', // religious node if firing squad and steak and potatoes
+    name: '', // Displayed each time the player enters the room.
+    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   exits: [
+    {
+      dir: ['jewish'], 
+      id : 'deat-fspj'
+    },
+    {
+      dir: ['catholic'], 
+      id : 'deat-fspc'
+    },
+    {
+      dir: ['protestant'], 
+      id : 'deat-fspp'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-fsp1'
+    },
+  ],
+  },
+  {
+    id: 'deat-fbr', // religious node if firing squad and barbeque ribs
+    name: '', // Displayed each time the player enters the room.
+    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   exits: [
+    {
+      dir: ['jewish'], 
+      id : 'deat-fbrj'
+    },
+    {
+      dir: ['catholic'], 
+      id : 'deat-fbrc'
+    },
+    {
+      dir: ['protestant'], 
+      id : 'deat-fbrp'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-fbr1'
+    },
+  ],
+  },
+  {
+    id: 'deat-frt', // religious node if firing quad and roasted turkey
+    name: '', // Displayed each time the player enters the room.
+    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   exits: [
+    {
+      dir: ['jewish'], 
+      id : 'deat-frtj'
+    },
+    {
+      dir: ['catholic'], 
+      id : 'deat-frtc'
+    },
+    {
+      dir: ['protestant'], 
+      id : 'deat-frtp'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-frt1'
+    },
+  ],
+  },
+  {
+    id: 'deat-ftar', // religious node if firing squad and no meal selected
+    name: '', // Displayed each time the player enters the room.
+    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+   // argument made and stored for either ribs, turkey, steak
+   exits: [
+    {
+      dir: ['jewish'], 
+      id : 'deat-ftarj'
+    },
+    {
+      dir: ['catholic'], 
+      id : 'deat-ftarc'
+    },
+    {
+      dir: ['protestant'], 
+      id : 'deat-ftarp'
+    },
+    {
+      dir: [''], // If no input
+      id : 'deat-ftar1'
+    },
+  ],
+  },
+    {
+      id: 'deat-lesp', // religious node if lethal injection and steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
+     exits: [
+      {
+        dir: ['jewish'], 
+        id : 'deat-lespj'
+      },
+      {
+        dir: ['catholic'], 
+        id : 'deat-lespc'
+      },
+      {
+        dir: ['protestant'], 
+        id : 'deat-lespp'
+      },
+      {
+        dir: [''], // If no input
+        id : 'deat-lesp1'
+      },
+    ],
     },
     {
-      id: 'deat-11', // religious node
+      id: 'deat-lebr', // religious node if lethal injection and barbeque ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?””`, // Displayed when the player first enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
+     exits: [
+      {
+        dir: ['jewish'], 
+        id : 'deat-lebrj'
+      },
+      {
+        dir: ['catholic'], 
+        id : 'deat-lebrc'
+      },
+      {
+        dir: ['protestant'], 
+        id : 'deat-lebrp'
+      },
+      {
+        dir: [''], // If no input
+        id : 'deat-lebr1'
+      },
+    ],
     },
     {
-      id: 'deat-12', // If none or go away
+      id: 'deat-lert', // religious node if lethal injection and roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-15');
-      }
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+     // argument made and stored for either ribs, turkey, steak
+     exits: [
+      {
+        dir: ['jewish'], 
+        id : 'deat-lertj'
+      },
+      {
+        dir: ['catholic'], 
+        id : 'deat-lertc'
+      },
+      {
+        dir: ['protestant'], 
+        id : 'deat-lertp'
+      },
+      {
+        dir: [''], // If no input
+        id : 'deat-lert1'
+      },
+    ],
     },
     {
-      id: 'deat-13', // If JEWISH
+      id: 'deat-letar', // religious node if lethal injection and no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+     // argument made and stored for either ribs, turkey, steak
+     exits: [
+      {
+        dir: ['jewish'], 
+        id : 'deat-letarj'
+      },
+      {
+        dir: ['catholic'], 
+        id : 'deat-letarc'
+      },
+      {
+        dir: ['protestant'], 
+        id : 'deat-letarp'
+      },
+      {
+        dir: [''], // If no input
+        id : 'deat-letar1'
+      },
+    ],
+    },
+    {
+      id: 'deat-letarj', // If JEWISH, lethal injection & no meal selected
       name: '', // Displayed each time the player enters the room.
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-16');
+        pressEnter('deat-letar2');
       }
     },
     {
-      id: 'deat-14', // If PROTESTANT
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-16');
-      }
-    },
-    {
-      id: 'deat-15', // If CATHOLIC
+      id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
       name: '', // Displayed each time the player enters the room.
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-16');
+        pressEnter('deat-letar2');
       }
     },
     {
-      id: 'deat-16', // Last meal continued 
+      id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-letar1', // If none or go away, lethal injection & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-letar2', // lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      // IF Steak and Potatoes
-      // const room = getRoom('deat-16')
-      // room.desc = "A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad."
-      //IF Roasted Turkey
-      // const room = getRoom('deat-16')
-      // room.desc = "Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner.."
-      // IF Barbecue Ribs
-      // const room = getRoom('deat-16')
-      // room.desc = "The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw."
-      //else
-      // const room = getRoom('deat-16')
-      // room.desc = "You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”"
+      onEnter: () => {
+        pressEnter('deat-letar3');
+      }
     },
     {
-      id: 'deat-17', // LAst meal continued, tracking last input
+      id: 'deat-letar3', //  lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.
-
-
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      // IF Steak and Potatoes
-      // const room = getRoom('deat-17')
-      // room.desc = "You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love."
-      //IF Roasted Turkey
-      // const room = getRoom('deat-17')
-      // room.desc = "You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”"
-      // IF Barbecue Ribs
-      // const room = getRoom('deat-17')
-      // room.desc = "You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!."
-      //else
-      // const room = getRoom('deat-17')
-      // room.desc = "Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock. You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!”
+      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
       onEnter: () => {
-        pressEnter('deat-18');
+        pressEnter('deat-letar4');
+      }
     },
+    {
+      id: 'deat-letar4', //  lethal injection & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar5');
+      }
+    },
+    {
+      id: 'deat-letar5', // lethal injection & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lelw');
+      }
+    },
+    {
+      id: 'deat-letarj', // If JEWISH, lethal injection & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-lesp1', // If none or go away, lethal injection & Steak and Potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp2');
+      }
+    },
+    {
+      id: 'deat-lesp2', // lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp3');
+      }
+    },
+    {
+      id: 'deat-lesp3', //  lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp4');
+      }
+    },
+    {
+      id: 'deat-lesp4', //  lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp5');
+      }
+    },
+    {
+      id: 'deat-lesp5', // lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lelw');
+      }
+    },
+    {
+      id: 'deat-lespj', // If JEWISH, lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp2');
+      }
+    },
+    {
+      id: 'deat-lespc', // If CATHOLIC & lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp2');
+      }
+    },
+    {
+      id: 'deat-lespp', // If Protestant & lethal injection & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lesp2');
+      }
+    },
+    {
+      id: 'deat-lebr1', // If none or go away, lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr2');
+      }
+    },
+    {
+      id: 'deat-lebr2', // lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr3');
+      }
+    },
+    {
+      id: 'deat-lebr3', //  lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr4');
+      }
+    },
+    {
+      id: 'deat-lebr4', //  lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr5');
+      }
+    },
+    {
+      id: 'deat-lebr5', // lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lelw');
+      }
+    },
+    {
+      id: 'deat-lebrj', // If JEWISH, lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr2');
+      }
+    },
+    {
+      id: 'deat-lebrc', // If CATHOLIC & lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr2');
+      }
+    },
+    {
+      id: 'deat-lebrp', // If Protestant & lethal injection & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lebr2');
+      }
+    },
+    {
+      id: 'deat-lert1', // If none or go away, lethal injection & Roasted Turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert2');
+      }
+    },
+    {
+      id: 'deat-lert2', // lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert3');
+      }
+    },
+    {
+      id: 'deat-lert3', //  lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert4');
+      }
+    },
+    {
+      id: 'deat-lert4', //  lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert5');
+      }
+    },
+    {
+      id: 'deat-lert5', // lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lelw');
+      }
+    },
+    {
+      id: 'deat-lertj', // If JEWISH, lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert2');
+      }
+    },
+    {
+      id: 'deat-lertc', // If CATHOLIC & lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert2');
+      }
+    },
+    {
+      id: 'deat-lertp', // If Protestant & lethal injection & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert2');
+      }
+    },
+    {
+      id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar2');
+      }
+    },
+    {
+      id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar2');
+      }
+    },
+    {
+      id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar2');
+      }
+    },
+    {
+      id: 'deat-ftar1', // If none or go away, firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar2');
+      }
+    },
+    {
+      id: 'deat-ftar2', // firing squad & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar3');
+      }
+    },
+    {
+      id: 'deat-ftar3', //  lethal injection & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar4');
+      }
+    },
+    {
+      id: 'deat-ftar4', //  firing squad & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar5');
+      }
+    },
+    {
+      id: 'deat-ftar5', // firing squad & no meal cont
+      name: '', // Displayed each time the player enters the room.
+      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-flw');
+      }
+    },
+    {
+      id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-letar2');
+      }
+    },
+    {
+      id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-ftar2');
+      }
+    },
+    {
+      id: 'deat-fsp1', // If none or go away, firing squad & Steak and Potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp2');
+      }
+    },
+    {
+      id: 'deat-fsp2', // firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp3');
+      }
+    },
+    {
+      id: 'deat-fsp3', //  firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp4');
+      }
+    },
+    {
+      id: 'deat-fsp4', //  firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp5');
+      }
+    },
+    {
+      id: 'deat-fsp5', // firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-flw');
+      }
+    },
+    {
+      id: 'deat-fspj', // If JEWISH, firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp2');
+      }
+    },
+    {
+      id: 'deat-fspc', // If CATHOLIC & firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp2');
+      }
+    },
+    {
+      id: 'deat-fspp', // If Protestant & firing squad & steak and potatoes
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fsp2');
+      }
+    },
+    {
+      id: 'deat-fbr1', // If none or go away, firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr2');
+      }
+    },
+    {
+      id: 'deat-fbr2', // firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr3');
+      }
+    },
+    {
+      id: 'deat-fbr3', //  firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr4');
+      }
+    },
+    {
+      id: 'deat-fbr4', //  firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr5');
+      }
+    },
+    {
+      id: 'deat-fbr5', // firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-flw');
+      }
+    },
+    {
+      id: 'deat-fbrj', // If JEWISH, firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr2');
+      }
+    },
+    {
+      id: 'deat-fbrc', // If CATHOLIC & firing squad& Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr2');
+      }
+    },
+    {
+      id: 'deat-fbrp', // If Protestant & firing squad & Barbecue Ribs
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fbr2');
+      }
+    },
+    {
+      id: 'deat-frt1', // If none or go away, firing squad& Roasted Turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt2');
+      }
+    },
+    {
+      id: 'deat-frt2', // firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt3');
+      }
+    },
+    {
+      id: 'deat-frt3', //  firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt4');
+      }
+    },
+    {
+      id: 'deat-frt4', //  firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-lert5');
+      }
+    },
+    {
+      id: 'deat-frt5', // firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-flw');
+      }
+    },
+    {
+      id: 'deat-frtj', // If JEWISH, firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt2');
+      }
+    },
+    {
+      id: 'deat-lertc', // If CATHOLIC & firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt2');
+      }
+    },
+    {
+      id: 'deat-frtp', // If Protestant & firing squad & roasted turkey
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-frt2');
+      }
+    },
+    {
+      id: 'deat-fbad', // If you swear at the guard firing squad
+      name: '', // Displayed each time the player enters the room.
+      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        pressEnter('deat-fgo');
+      }
+    },
+  {
+    id: 'deat-lebad', // if you swear at the guard lethal injection
+    name: '', // Displayed each time the player enters the room.
+    desc: 'The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.', // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-fgo');
+    }
   },
   {
-    id: 'deat-18', // Last Words
+    id: 'deat-lelw', // Last Words lethal injection route
     name: '', // Displayed each time the player enters the room.
     desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
     But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
     “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
     // if anything
-    // println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
-    onEnter: () => {
-      println('The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.');
-      if(firingSquad){
-        pressEnter('deat-19');
-      }else{
-        pressEnter('deat-20');
-      }
-    }
+    onEnter: () =>{
+      document.querySelector('input').disabled = false;
+      document.getElementById('arrow').innerHTML = '>';
+     },
+    exits: [
+      {
+        dir: ['no', '', 'yes'], //Two word strings are not working, need to find out why
+        id : 'deat-lego'
+      },
+      {
+        dir: ['fuck', 'shit', 'die'], //Two word strings are not working, need to find out why
+        id : 'deat-lebad'
+      },
+    ],
   },
   {
-    id: 'deat-19', // If Firing Squad
+    id: 'deat-flw', // Last Words firing squad route
+    name: '', // Displayed each time the player enters the room.
+    desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
+    But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
+    “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
+    // if anything
+    onEnter: () =>{
+      document.querySelector('input').disabled = false;
+      document.getElementById('arrow').innerHTML = '>';
+     },
+     onBlock: () => {
+      enterRoom(`deat-fgo`);
+    },
+    exits: [
+      {
+        dir: ['no', '', 'yes'], //Two word strings are not working, need to find out why
+        id : 'deat-fgo'
+      },
+      {
+        dir: ['fuck', 'shit', 'die'], //Two word strings are not working, need to find out why
+        id : 'deat-fbad'
+      },
+    ],
+  },
+  {
+    id: 'deat-fgo', // If Firing Squad
     name: '', // Displayed each time the player enters the room.
     desc: `A stake has been placed in the courtyard of the prison, and you are bound to it. A chaplain appears to offer you some last words of comfort, and he too refuses to listen to your protests, as does the guard who offers you a blindfold and a last cigarette.
     “It’s just as well you don’t smoke,” he says, as he walks toward the group of six marksmen standing at the ready some ten yards away. “It’s bad for your health. Says so right on the package.”
@@ -1369,15 +3093,29 @@ const amnesiaRestored = {
     // Go to Game Over
   },
   {
-    id: 'deat-20', // If lethal injection
+    id: 'deat-lego', // If lethal injection
     name: '', // Displayed each time the player enters the room.
     desc: `It is a small room glaringly lighted with about 500 watts of fluorescent light. The light gives a surreal intensity to the room’s single item of furniture, a kind of dentist’s chair that has been modified with a panoply of leather and canvas restraints. You are made to sit in the chair, and a guard secures the restraints.
     “This is the first time we’ve ever done a lethal injection here in Texas. They say it’s the wave of the future, but I don’t know. I think there’s something to be said for the traditional way of doing these things. What do you think?”\n
     The guard frowns thoughtfully at your protests of innocence and your frenzied attempt to explain the bizarre events that got you into this fix. “There’s nothing I can do to help you, fellow. Talk to the chaplain.”\n
     The chaplain assures you that only God can help you now. The chaplain leaves.\n
     A medical attendant enters the room. He makes a tourniquet below your biceps with a length of rubber tubing, and then when he has found a vein, he injects the poison.
-    There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:
-    `, // Displayed when the player first enters the room.
+    There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:`, // Displayed when the player first enters the room.
+    onEnter: () =>{
+      document.querySelector('input').disabled = false;
+      document.getElementById('arrow').innerHTML = '>';
+     },
+    onBlock: () => {
+      enterRoom(`deat-ledie`);
+    },
+  },
+  {
+    id: 'deat-ledie', // If lethal injection
+    name: '', // Displayed each time the player enters the room.
+    desc: `And then you die`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('game-over');
+    },
     // if anything
     // println('And then you die'
     //pressEnter('gameover?')
@@ -2439,5 +4177,4 @@ exits: [
   ],  
 },
   ],
-  characters: []
 };
