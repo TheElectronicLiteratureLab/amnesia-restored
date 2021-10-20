@@ -9,6 +9,7 @@ const hotelroomRevisted = {
             You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
             //**interactable items**
             onEnter: () => {
+                reenableInput();
                 if(getRoom('hote-revi').visits >= 2){
                     let hotelRoom = getRoom('hote-revi');
                     hotelRoom.desc = `You're standing in your hotel room`;
@@ -17,13 +18,13 @@ const hotelroomRevisted = {
             },
             onLook: () => {
                 const room = getRoom('hote-revi');
-                let keyDesc = `There is a **room key** with a large green plastic tag showing your room number, 1502.`;
-                let bibleDesc = `Also, a **Gideon Bible**.`;
-                let penDesc = `A **ballpoint pen** has been placed near the phone.`;
+                let keyDesc = `Beside the pad is the **room key** with a large green plastic tag showing your room number, Room 1502.`;
+                let bibleDesc = ` and a **Gideon Bible**.`;
+                let penDesc = `A **ballpoint pen** has been used as a bookmark in the Bible by someone wiht no respect for bindings.`;
 
                 room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
                 
-                To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
+                To pass the time the hotel offers a **television**${bibleDesc} ${penDesc}
                 
                 To the left of the dresser is an **IBM PC** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
                 
@@ -32,7 +33,7 @@ const hotelroomRevisted = {
                 };
 
                 if(getItemInInventory('Gideon Bible')){ //if the Gideon Bible is already in inventory
-                    room.desc = room.desc.replace(`${bibleDesc}`, '');
+                    room.desc = room.desc.replace(`${bibleDesc}`, '.');
                 };
 
                 if(getItemInInventory('ballpoint pen')){ //if the pen is already in inventory
@@ -43,45 +44,48 @@ const hotelroomRevisted = {
 
             items: [
                 {
-                    //itemId: '1502phone',
-                    name: 'phone',
-                    desc: 'The phone on the dress belongs to NYNEX.',
+                    itemId: 'roomphone',
+                    name: ['phone', 'telephone'],
+                    desc: `On the beside tabel there is a dial phone that rests on top of a shiny cardboard brochure that bears the message: "Welcome to ***The Sunderland Hotel***-- Your Gateway to the Wonderland of Manhattan!"`,
                     onUse: () => {
-                        enterRoom('hote-revi-2'); //LUKE SEQUENCE, just wanted to check if works...won't work without calling getRoom
+                        println(`To use the phone, type DIAL followed by the hotel number you wish to dial.`);
                     },
+
+
+                    /*onUse: () => {
+                        enterRoom('hote-revi-2'); //LUKE SEQUENCE, just wanted to check if works...won't work without calling getRoom
+                    },*/
                 },
                 { 
-                    //itemId: 'metel key', //change? keep? 
-                    name: ['metal key', 'room key', 'hotel key', '1502 key', 'key'],
+                    itemId: 'roomkey', 
+                    name: ['room key', 'hotel key', '1502 key', 'key'],
                     desc: `The key chain is green plastic with the numerals 1502 in white. The key is ordinary.`,
                     isTakeable: true,
-                    onTake: () => println('You take the metal key.')//appears in inventory as 'metal key'
+                    isDroppable: true,
                 }, 
                 {
-                    //itemId: 'bible',
-                    name: ['Gideon Bible', 'bible', 'holy book', 'bible'],
+                    itemId: 'bible',
+                    name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
                     desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for thos ewith special needs. the list of texxts commended to 'those in doubt and uncertainty' has been crossed out, and above the deleted citations of chapter and verse someone had written 'John 1'.
                     
                     If you remember John 1 rightly, it seems oddly irrevlevant to the needs of those in doubt. But never mind.`,
+                    passage: `You open the Bible to the beginning of the Gospel according to St. John. The text is what you remembered it to be -- "In the beginning was the Word, and the Word was ***with God***, and the Word was God.'`, //displayed on read function
                     isTakeable: true,
-                    onTake: () => println('You take the Gideon Bible'), //appears in inventory as 'Gideon Bible'
-                    isDroppable: true,
-                    onDrop: () => println('') 
+                    isDroppable: true,  
                 },
                 {
-                    //itemId: 'pen',
-                    name: ['pen', 'ballpoint pen'],
+                    itemId: 'pen',
+                    name: ['ballpoint pen', 'pen'],
                     desc: `It is a white plastic ballpoint.`,
                     isTakeable: true, 
-                    onTake: () => println('You take the ballpoint pen.'), //appears in inventory as 'ballpoint pen'
-
+                    isDroppable: true,
                 },
                 {
-                    //itemId: 'roomtv',
-                    name: ['television', 'tv', 'telly', 'Simplex TV'], 
+                    itemId: 'roomtv',
+                    name: ['Simplex TV', 'TV', 'television', 'telly'], 
                     desc: `It is a Simplex TV -- a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change channels, but the third is broken off. The TV is off.`,
                     isOn: false,
-                    onUse: () => {
+                    /*onLook: () => {
                         let tv = getItemInRoom('roomtv', 'hote-revi');
                         tv.isOn = !tv.isOn;
                         if(tv.isOn){
@@ -89,34 +93,51 @@ const hotelroomRevisted = {
                         } else {
                             println(`The TV isn't on.`);
                         }
-                        //turning tv off?
-                    },
-                    onForward: () => {
-                        let tv = getItemInRoom('roomtv', 'hote-revi'); 
-                        
-                        if(tv.isOn){
-                            println(`The F button that shoulder tune the TV to the next channel doesn't seem to be working any longer.`)
-                        } else {
-                            println(`The TV isn't on.`)
-                        };
-                    },    
+                    },*/
                 }, 
                 {
-                    //itemId: 'computer',
+                    itemId: 'computer',
                     names: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
                     desc: `The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
                     isOn: false,
-                    onUse: () => {
-                        let pc = getItemInRoom('computer', 'hote-revi');
-                        pc.isOn = !pc.isOn;
-                        if(pc.isOn === true){
-                            pc.desc = `The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.`;
-                            println(pc.desc);
+                    onLook: () => {
+                        let pc = getItemInRoomById('computer', 'hote-revi-1');
+                        if(pc.isOn === true)
+                        {
+                          if (item.desc == ' ')
+                          {
+                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
+                          }
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+                          println(pc.desc);
                         } else {
-                            pc.desc = `The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`;
-                            println(pc.desc);
-                        };
-                    },                
+                          if (item.desc == ' ')
+                          {
+                            println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
+                          }
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+                          println(pc.desc);
+                        }
+                      },
+                      onUse: () => {
+                        let pc = getItemInRoomById('computer', 'hote-revi-1');
+                        if(pc.isOn === true)
+                        {
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+                        } else {
+                          pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
+                        }
+                      }             
+                },
+                {
+                    itemId: 'dresser',
+                    name: ['dresser', 'drawer'],
+                    desc: ``,
+                    isOpen: false,
+                    onLook: () => {
+                        //let bible = 
+                    },
+
                 },
                 {
                     //itemId: 'tuxedo', 
@@ -125,8 +146,7 @@ const hotelroomRevisted = {
                     
                     Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
                     isTakeable: true, 
-                    onTake: () => println('You take the white tuxedo.'),//appears in inventory as 'white tuxedo'
-                    //add onWear function to put clothes on player 
+                    isDroppable: true,
                     isWearable: true,
                     
                 },
@@ -201,8 +221,8 @@ const hotelroomRevisted = {
                     name: ['towel', 'large towel'],
                     desc: `It is a large fluffy towel.`,
                     isTakeable: true,
+                    isDroppable: true,
                     onTake: () => {
-                        println('You take the towel'); //appears in inventory as 'towel'
                         const bathroom = getRoom('hote-revi-1');
                         bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
                     },
@@ -253,7 +273,7 @@ const hotelroomRevisted = {
                 } else {
                     println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called *Alice at the Sunderland Hotel*. And there is the costume for the White Rabbit in three boxes on the bed.`)
                 }
-                pressEnter('hote-revi-1');
+                pressEnter('hote-revi-5');
             },
         },//end of hote-revi-4 room (conversation w/Luke on phone)
         {
