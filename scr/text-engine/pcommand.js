@@ -781,10 +781,12 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
-    firing: args => goDir(args),
+    firing: args => goDir(args), //Firing and below commands won't work, they're just accepting whatever word this is as a command
+    lethal: args => goDir(args),
     xavier: args => goDir(args),
-    john: args => goDir(args),
-    press: args => goDir(args),
+    steak: args => goDir(args), 
+    roasted: args => goDir(args),
+    barbecue: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
@@ -812,6 +814,10 @@ let commands = [
     say(args) {
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
       sayString(str);
+    },
+    steak(args) {
+      const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
+      goDir(str);
     },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
