@@ -66,7 +66,7 @@ const nightmare = {
                 id:'nigh-8'
             },
             {
-                dir:['thing'],
+                dir:['something'],
                 id:'nigh-9',
             },
             
@@ -298,7 +298,7 @@ const nightmare = {
           name:'',
           desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. “Hello!” says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - “I see we have our work cut out for us today! Sit down, please.” He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
           onEnter: () =>{
-                printIn('Press ENTER to continue');
+                println('Press ENTER to continue');
                 pressEnter('sham-sale');
           },
           exits:[
@@ -313,7 +313,7 @@ const nightmare = {
           name:'',
           desc:`“This won’t take more than five or six hours,” the aged hair stylist assures you. “We simply have to remove all these facial growths and seal these unsightly pores with sealing wax and then fill in these repulsive cavities. My, what large nostrils you have! But with your nose removed they won’t be a problem any longer. Then we’ll take care of your eyes with some industrial-strength eye-cover. The better stores these days prefer mannequins with perfectly blank faces. Eyes are out, didn’t you know that?”`,
           onEnter:() =>{
-              printIn('Press ENTER to continue');
+              println('Press ENTER to continue');
               pressEnter('sham-sale2');
           },
           exits:[
@@ -349,7 +349,7 @@ const nightmare = {
           name: '',
           desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the [Name of computer for which the disc is adapted] computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. “That is a riddle,” the salesman explains, “and you must solve it.” The lines on the screen are:`,
           onEnter:() =>{
-              printIn('Press ENTER to continue');
+              println('Press ENTER to continue');
               pressEnter('ridd-1');
           },
           exits:[
@@ -365,6 +365,7 @@ const nightmare = {
           name:'',
           desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
           onEnter: () =>{
+              reenableInput();
               getInput();
                 if(getInput === 'a riddle'){
                     enterRoom('ridd-2')
@@ -398,17 +399,29 @@ const nightmare = {
           id:'ridd-2',
           name:'',
           desc:`“Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--” But instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. “The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?”`,
+          onEnter: ()=>{
+              reenableInput();
+          },
         
           exits:[
             {
                 dir:['switch'],
-                id:'ridd-4',
+                id:'ridd-3',
             },
             {
                 dir:['escalator'],
                 id:'nigh-sale10',
             }
         ],
+      },
+      {
+          id:'ridd-3',
+          name:'',
+          desc:`“You’ve got it? Good: I’ll switch it off.”  He reaches behind your neck, and the last thing you remember are his fingers on the switch of consciousness as he turns you off. You awake with a cry of protest.`,
+          onEnter: () =>{
+              pressEnter('nigh-exit');
+          }
+
       },
       {
           id:'nigh-sale10',
@@ -431,6 +444,9 @@ const nightmare = {
         name:'',
         desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,  
         //add ride to one argument commands
+        onEnter: () => {
+            reenableInput();
+        },
         exits:[
             {
                 dir:['escalator'],
@@ -444,6 +460,7 @@ const nightmare = {
         name:'',
         desc:`You run up the escalator’s moving steps to the eleventh floor and arrive on the sales floor just in time to see the mannequin with your head under his arm taking the steps of the upbound escalator two at a time. A burglar alarm begins to shriek. An aged security officer catches hold of your wrist and asks you where the fire is. The only answer you can give, voiceless as you are, is to point to the escalator where the thieving mannequin bears away your head in triumph. “I’m sorry, young man,” says the security officer. “But we can’t have people going about the store without their heads or their shoes. That’s the rule here at Oldman’s. You’ll have to come along with me.”`,
         onEnter: () => {
+            reenableInput();
             getInput();
             if(getInput === ['no','ride escalator','refuse']){
                 enterRoom('nigh-sale13')}
@@ -466,6 +483,8 @@ const nightmare = {
           getInput();
           if(getInput === ['open box','look for head','search for head']){
               enterRoom('nigh-sale15')
+          }else{
+              println(`try again`);
           }
 
       },
@@ -484,6 +503,8 @@ const nightmare = {
             getInput();
             if(getInput === ['open box','look for head','search for head']){
                 enterRoom('nigh-sale16')
+            }else{
+                println(`try again`);
             }
   
           },
@@ -502,6 +523,8 @@ const nightmare = {
             getInput();
             if(getInput === ['open box','look for head','search for head']){
                 enterRoom('nigh-sale17')
+            }else{
+                println(`try again`);
             }
   
           },
@@ -520,6 +543,8 @@ const nightmare = {
             getInput();
             if(getInput === ['open box','look for head','search for head']){
                 enterRoom('nigh-sale18')
+            }else{
+                println(`try again`);
             }
   
           },
@@ -538,9 +563,18 @@ const nightmare = {
             getInput();
             if(getInput === ['open box','look for head','search for head']){
                 enterRoom('nigh-sale19')
-            }
-  
+            }else{
+              println(`try again`);
           }
+        },
+            exits:[
+                {
+                  dir:['box','head'],
+                  id:'nigh-sale19',
+                }
+            ],
+  
+          
     },
     {
         id:'nigh-sale19',
@@ -557,5 +591,3 @@ const nightmare = {
 
 
 }
-//prevInput command to remember reply and recall it in the text.
-//possibly move the escalatorError room into a printIn in the else statement to avoid having to remember the room number.
