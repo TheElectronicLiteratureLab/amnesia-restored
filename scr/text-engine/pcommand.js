@@ -120,6 +120,8 @@ function goDir(dir) {
     return;
   }
 
+  
+
   if (nextRoom.block) {
     println(nextRoom.block);
     return;
@@ -649,6 +651,14 @@ function askXAboutY(xCharacter, yPrep, zTopic) {
   }
 };
 
+//ask character about topic function
+// const askXAboutY = ([x, y]) => {
+//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+//   disk.conversant = character;
+//   talkToOrAboutX('about', y);
+// };
+
+
 // open command
 let open = (itemToOpen) => {
   //println(itemToOpen);
@@ -826,6 +836,6 @@ let commands = [
     turn: args => turnOffOn(args[0], args[1])
   },
   {
-    ask: args => askXAboutY(args[0], args[1], args[2]),
+    ask: args => askXAboutY(args[0], args[2]),
   },
 ];
