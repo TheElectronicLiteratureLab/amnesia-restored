@@ -6,7 +6,6 @@ const nightmare = {
         name:'Nightmare',
         desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
 
-        //need to know how to implement a println that shows nigh-2 when anything other than go to mirror is entered.
         exits:[
             {
                 dir:['mirror'],
@@ -15,8 +14,7 @@ const nightmare = {
             
         ],
       },
-      {
-          //if player does anything but look into the mirror, need to figure out how to paste the previous text entery into the engine's response here. 
+      { 
           id: 'nigh-2',
           name: '',
           desc: `You tell yourself to 
@@ -26,9 +24,6 @@ const nightmare = {
           onEnter: () =>{
               reenableInput();
               },
-              //if(var == "floor number"){
-              //  enterRoom('"floor number"');}
-              //} possibly seperate this into a function that can be called and remember the floor number. This would be a very long if statement.
           
           exits:[
             {
@@ -42,7 +37,7 @@ const nightmare = {
           id: 'nigh-3',
           name: '',
           desc: `Obedient to the voice, you go to the mirror. The figure in the mirror leans forward to peer at you intently. He is dressed all in white, like a bridegroom or a ghost. And though he has no face--only eyes that stare anxiously from the smooth ovoid of his head--he smiles, recognizing you. “Excellent,” he whispers. “Now come with me--before the store closes.” In the mirror you see him turn away from you and walk toward the door of the room, where he pauses to look back at you, and to beckon, with his raised hand, for you to follow.`,
-          //if any other response is given but enter mirror go to dreamPara
+
 
               
           exits:[
@@ -59,13 +54,6 @@ const nightmare = {
           desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!” You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. Then you press the nozzle and write:`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'explictive'){
-                  enterRoom('nigh-5');
-              }else if(applyInput === 'x'){
-                  enterRoom('nigh-8');
-              }else{
-                  enterRoom('nigh-9');
-              }*/
               
           },
           exits:[
@@ -91,7 +79,7 @@ const nightmare = {
           //need to add a way for this text to be added to a list then recalled later in the text.
           onEnter: () =>{
               reenableInput();
-            //needs to be flagged to move to the next room regardless of input, exit function perhaps?
+
               
           },
 
@@ -176,12 +164,6 @@ const nightmare = {
           desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter--and points at the ascending escalator.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'go Escalator'){
-                  enterRoom('nigh-sale2');
-              }else{
-                  println('You try to [response] but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.');
-                  
-              }*/
           },
           exits:[
             {
@@ -226,11 +208,6 @@ const nightmare = {
           desc: `You take the escalator to the fourth floor, where a placard informs you that the Les Delices has been closed for renovation. Another placard shows a hand pointing, with no explanation, toward the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale5');
-              }else{
-                  enterRoom('escl-erro');
-              }*/
           },
           exits:[
             {
@@ -246,12 +223,18 @@ const nightmare = {
           //need to make sure this yes or no question is coded correctly
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Yes'){
-                  enterRoom('knif-sale');
-              }else(applyInput === 'no');{
-                  enterRoom('knif-sale2');
-              }*/
-          }
+
+          },
+          exits:[
+              {
+                  dir:['yes'],
+                  id:'knif-sale'
+              },
+              {
+                  dir:['no'],
+                  id:'knif-sale2'
+              }
+          ],
       },
       {
           id:'knif-sale',
@@ -259,12 +242,13 @@ const nightmare = {
           desc:`“Very good, Sir. This--” He holds a knife with an 8-inch stainless steel blade to your throat. “--is our very best all-purpose carving knife. And this--” The carving knife drops from his hand, and he takes another, smaller knife from the counter. “This is a superb knife for boning chicken.” He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale6');
-              }else{
-                  enterRoom('escl-erro');
-              }*/
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale6',
+            }
+          ],
           
       },
       {
@@ -273,12 +257,13 @@ const nightmare = {
           desc: `“No? You won’t even look at my knives?” The white-haired salesman sighs. “I don’t know why I waste my time. All these years, and all these knives, and never once … never once … “He picks up the largest of the knives from the counter and, with a really remarkable steadiness of purpose, slowly positions it over the left-hand breast pocket of his suit and commits suicide. “I’m sorry,” he says, with his last dying breath. “I tried to be a good salesman. I did … my level … best.”`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale-6');
-              }else{
-                  enterRoom('escl-erro');
-              }*/
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale6',
+            }
+          ],
       },
       {
           id:'nigh-sale6',
@@ -286,12 +271,13 @@ const nightmare = {
           desc:`You take the escalator to the sixth floor, where the management of Oldman’s announces, on a large poster that it is proud to be selling, in cooperation with the Sistine Chapel, a collection of priceless Fine Art Reproductions, including a gigantic full-color reproduction of the Hand of God from the ceiling of the Sistine Chapel. The Hand of God is pointing to the Up escalator.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale7');
-              }else{
-                  enterRoom('escl-erro');
-              }*/
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale7',
+            }
+          ],
       },
       {
           id:'nigh-sale7',
@@ -299,26 +285,28 @@ const nightmare = {
           desc:`You take the escalator to the seventh floor, which seems to be an empty warehouse. Luxuriant growths of cobwebs festoon the light fixtures. Unmarked boxes and bundles are piled everywhere. The disembodied arm of a mannequin lies in the dust, its finger pointing with modest insistence to the UP escalator.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'Use Escalator'){
-                  enterRoom('nigh-sale8');
-              }else{
-                  enterRoom('escl-erro');
-              }*/
-              
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale8',
+            }
+          ],
       },
       {
           id:'nigh-sale8',
           name:'',
           desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. “Hello!” says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - “I see we have our work cut out for us today! Sit down, please.” He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
           onEnter: () =>{
-              reenableInput();
-             /* if(applyInput === 'sit','sit in chair','get shampoo'){
-                  enterRoom('sham-sale');
-              }else(applyInput === 'use escalator');{
-                  enterRoom('nigh-sale9');
-              }*/
-          }
+                printIn('Press ENTER to continue');
+                pressEnter('sham-sale');
+          },
+          exits:[
+                {
+                  dir:['ENTER'],
+                  id:'sham-sale',
+                }
+          ],
       },
       {
           id:'sham-sale',
@@ -327,7 +315,13 @@ const nightmare = {
           onEnter:() =>{
               printIn('Press ENTER to continue');
               pressEnter('sham-sale2');
-          }
+          },
+          exits:[
+            {
+              dir:['ENTER'],
+              id:'sham-sale2',
+            }
+      ],
 
           
       },
@@ -342,7 +336,13 @@ const nightmare = {
               }else{
                   enterRoom('escl-erro');
               }*/
-          }
+          },
+          exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale9',
+            }
+          ],
       },
       {
           id: 'nigh-sale9',
@@ -351,7 +351,13 @@ const nightmare = {
           onEnter:() =>{
               printIn('Press ENTER to continue');
               pressEnter('ridd-1');
-          }
+          },
+          exits:[
+            {
+              dir:['ENTER'],
+              id:'ridd-1',
+            }
+      ],
           
       },
       {
@@ -359,33 +365,191 @@ const nightmare = {
           name:'',
           desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
           onEnter: () =>{
-              reenableInput();
-              /*if(applyInput === 'riddle'){
-                  enterRoom('ridd-3');
-              }else{
-                  enterRoom('ridd-2');
-              }*/
-          }
+              getInput();
+                if(getInput === 'a riddle'){
+                    enterRoom('ridd-2')
+                }
+                else{
+                    println(`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`)
+                }
+          },
+
+          exits:[
+              {
+                  dir:['riddle'],
+                  id:'ridd-2',
+              }
+          ],
       },
-      {
+      /*{
           id: 'ridd-2',
           name:'',
           desc:`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`,
           onEnter: () =>{
               reenableInput();
-              /*if(applyInput === 'riddle'){
+                if(applyInput === 'riddle'){
                   enterRoom('ridd-3');
-              }else{
+                }else{
                   enterRoom('ridd-2');
-              }*/
+              }
           }
-      },
+        },*/
       {
-          id:'ridd-3',
+          id:'ridd-2',
           name:'',
           desc:`“Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--” But instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. “The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?”`,
-          
+        
+          exits:[
+            {
+                dir:['switch'],
+                id:'ridd-4',
+            },
+            {
+                dir:['escalator'],
+                id:'nigh-sale10',
+            }
+        ],
       },
+      {
+          id:'nigh-sale10',
+          name:'',
+          desc: ``,
+          onEnter: () => {
+              println('You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. “Hello,” says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. “My name’s Hugette, what’s yours?” You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. “My full name,” she continues, “is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?”')
+              pressEnter('nigh-sale11');
+              
+          },
+          exits:[
+            {
+              dir:['ENTER'],
+              id:'nigh-sale11',
+            }
+        ],
+      },
+      {
+        id:'nigh-sale11',
+        name:'',
+        desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,  
+        //add ride to one argument commands
+        exits:[
+            {
+                dir:['escalator'],
+                id:'nigh-sale12',
+            }
+        ],
+
+      },
+      {
+        id:'nigh-sale12',
+        name:'',
+        desc:`You run up the escalator’s moving steps to the eleventh floor and arrive on the sales floor just in time to see the mannequin with your head under his arm taking the steps of the upbound escalator two at a time. A burglar alarm begins to shriek. An aged security officer catches hold of your wrist and asks you where the fire is. The only answer you can give, voiceless as you are, is to point to the escalator where the thieving mannequin bears away your head in triumph. “I’m sorry, young man,” says the security officer. “But we can’t have people going about the store without their heads or their shoes. That’s the rule here at Oldman’s. You’ll have to come along with me.”`,
+        onEnter: () => {
+            getInput();
+            if(getInput === ['no','ride escalator','refuse']){
+                enterRoom('nigh-sale13')}
+            else(getInput === ['follow security officer'])
+                {enterRoom('nigh-sale14')}
+            }
+      },
+      {
+        id:'nigh-sale13',
+        name: '',
+        desc:`The security officer takes you to a fitting room at the side of the sales floor and deftly fits a spare head into the empty socket in your neck. You look at yourself in the mirror. To your surprise you are now a man of sixty or seventy years, and a cousin if not the twin of the security officer, who welcomes you with a smile to your new place of employment. At last, you have a mouth and are able--even as you wake from the nightmare--to scream.`,
+        //exits nightmare
+        
+      },
+      {
+        id:'nigh-sale14',
+        name: '',
+        desc:`“You won’t? You won’t!” he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: “Help! Help me get out of this box. I’m suffocating. Help!” Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
+      onEnter: () => {
+          getInput();
+          if(getInput === ['open box','look for head','search for head']){
+              enterRoom('nigh-sale15')
+          }
+
+      },
+      exits:[
+        {
+          dir:['box','head'],
+          id:'nigh-sale15',
+        }
+        ],
+    },
+    {
+        id:'nigh-sale15',
+        name: '',
+        desc:`You open the box nearest at hand. It contains a ceramic vase, jade green with dark specklings. It won’t do for a head.`,
+        onEnter: () => {
+            getInput();
+            if(getInput === ['open box','look for head','search for head']){
+                enterRoom('nigh-sale16')
+            }
+  
+          },
+          exits:[
+            {
+              dir:['box','head'],
+              id:'nigh-sale16',
+            }
+            ],
+    },
+    {
+        id:'nigh-sale16',
+        name: '',
+        desc:`You open another box. It contains a basket imported from Thailand. It’s just about the right size for carrying your head, once you find it, but that’s small consolation.`,
+        onEnter: () => {
+            getInput();
+            if(getInput === ['open box','look for head','search for head']){
+                enterRoom('nigh-sale17')
+            }
+  
+          },
+          exits:[
+            {
+              dir:['box','head'],
+              id:'nigh-sale17',
+            }
+            ],
+    },
+    {
+        id:'nigh-sale17',
+        name: '',
+        desc:`You open a third box. It contains a large Gouda cheese from the Gourmet Grocery Department.`,
+        onEnter: () => {
+            getInput();
+            if(getInput === ['open box','look for head','search for head']){
+                enterRoom('nigh-sale18')
+            }
+  
+          },
+          exits:[
+            {
+              dir:['box','head'],
+              id:'nigh-sale18',
+            }
+            ],
+    },
+    {
+        id:'nigh-sale18',
+        name: '',
+        desc:`You open yet another box. It contains lingerie in a style you would not have supposed Oldman’s would stock. You begin to feel discouraged. It’s been several minutes since you’ve heard so much as a whimper from your detached cranium.`,
+        onEnter: () => {
+            getInput();
+            if(getInput === ['open box','look for head','search for head']){
+                enterRoom('nigh-sale19')
+            }
+  
+          }
+    },
+    {
+        id:'nigh-sale19',
+        name: '',
+        desc:`You open a fifth box, which seems too small to contain your head. But there it is, still alive! Its eyes look up to you gratefully. Its lips smile. And then, with horror, you realize your mistake. This isn’t your own head. It’s an identical head that’s been substituted for your own. This head belongs to ... to … His name is on the tip of your tongue. But of course, without a head you are also without a tongue. You wake, gasping for breath, and instantly the nightmare fades from your memory.`,
+        //exit nightmare node
+    },
+    
+
    
     ],
 
