@@ -1000,7 +1000,7 @@ const lobby = {
   desc: ``,
   onEnter: () => {
     println(`You leave the Chapel, taking your gym bag, and at that very moment in the alcove just across the corridor the doors of a down-going elevator open. You take the elevator down to the lobby and get out.`);
-    pressEnter('?-#');//Transitions to the Lobby Revisited Node
+    pressEnter('lobby-revi');//Transitions to the Lobby Revisited Node
   },
 },
 //End Exiting Chapel Section
@@ -1014,40 +1014,37 @@ const lobby = {
   The preacher, a thin white-haired man in a Roman collar, takes charge. He positions you and Alice before the marble slab of the altar. He directs Luke Dudley to stand behind his daughter--and to remove his Stetson, which he does with reluctance. Buddy and the cleaning woman take up a position in the center aisle, as though to be able to block you if you make a final bolt. The preacher begins to intone the wedding service from memory, only breaking stride to ask you your name.`,
 
   exits: [
-    {//Respond with John Cameron, John Cameron III, or John
-      dir: 'John',
-      id: 'marr-2',
-    },
     {//Fail to respond appropriately
       dir: 'Text',
       id: 'marr-1A',
+    },
+    {//Respond with John Cameron, John Cameron III, or John
+      dir: ['John', 'John Cameron', 'John Cameron III', 'John Cameron 3'],
+      id: 'marr-2',
     },
   ],  
 },
 
 {//Forced to respond with name
   id: 'marr-1A',
-  desc: `"Very funny, Johnny-boy," Luke says to you. Then, to the preacher: "His name is John Cameron."`,
-
-  exits: [
-    {//Forced to next question
-      dir: 'Text',
-      id: 'marr-2',
-    },
-  ],  
+  desc: ``,
+  onEnter: () => {
+    println(`"Very funny, Johnny-boy," Luke says to you. Then, to the preacher: "His name is John Cameron."`);
+    pressEnter('marr-2');
+  },
 },
 
 {//Take as your wife?
   id: 'marr-2',
-  desc: ``,
+  desc: `“Do you John Cameron, take this woman to be your lawfully wedding wife, to have and to hold, to love and to cherish, through richer or poorer, in sickness and in health, long as you both shall live?”`,
   exits: [
-    {//Correct response
-      dir: 'Text',
-      id: 'marr-3',
-    },
     {//Fail to respond appropriately
       dir: 'Text',
       id: 'marr-2A',
+    },
+    {//Agree or say "I do"
+      dir: ['I do', 'yes', 'i will'],
+      id: 'marr-3',
     },
   ],  
 },
@@ -1055,11 +1052,150 @@ const lobby = {
 {//Forced to respond "I do"
   id: 'marr-2A',
   desc: ``,
+  onEnter: () => {
+    println(`"Johnny-boy," Luke reminds you, touching the bulge created by the revolver in his shoulder holster, "the man is asking you a question."
+    
+    "I do," you say.`);
+    pressEnter('marr-3');
+  },
+},
 
+{//Alice holds out the box
+  id: 'marr-3',
+  desc: `And so does Alice, after which she produces a small blue box from the lacy recesses of her bodice and hands it to Luke, who holds it out to you.`,
   exits: [
-    {
+    {//Fail to respond appropriately
+      dir: 'no',
+      id: 'marr-3A',
+    },
+    {//Take the box
+      dir: ['take box'],
+      id: 'marr-4',
+    },
+  ],  
+},
+
+{//Forced to take it
+  id: 'marr-3A',
+  desc: ``,
+  onEnter: () => {
+    println(`"Johnny-boy, take the ring!!" Luke booms.`);
+    pressEnter('marr-4');
+  },
+},
+
+{//Recieving the box and ring
+  id: 'marr-4',
+  desc: `You take the box, which is warm still from its resting place in your bride's bosom. It smells of lilacs, and is nearly cubical. It is dark blue with silver lettering that says TIFFANY And Co. You tilt back the hinged lid of the box and find, nestled in white velvet, a thick golden wedding band.
+  
+  An engraver has written in miniscule script within the band: 'To my beloved wife Alice, from John.'
+  
+  Alice removes the glove from her left hand, and holds out that hand with the fingers spread to facilitate the ring's easier placement.`,
+  exits: [
+    {//Fail to respond appropriately
+      dir: 'no',
+      id: 'marr-4A',
+    },
+    {//Place the ring on her finger
+      dir: ['place ring', 'give ring',],
+      id: 'marr-5',
+    },
+  ],  
+},
+
+{//Forced to respond
+  id: 'marr-4A',
+  desc: ``,
+  onEnter: () => {
+    println(`"Johnny-boy," Luke says in the tone of a parent explaining something something to a confused child, "the ring goes on her finger."`);
+    pressEnter('marr-5');
+  },
+},
+
+{//Putting ring on her finger
+  id: 'marr-5',
+  desc: `You put the ring on her finger and repeat the words the preacher tells you to: "With this ring I thee wed." The preacher then pronounces you man and wife and says, "You may kiss the bride."`,
+  exits: [
+    {//Fail to respond appropriately
+      dir: 'no',
+      id: 'marr-5A',
+    },
+    {//Kiss the bride
+      dir: ['kiss bride', 'kiss alice', 'kiss'],
+      id: 'marr-6',
+    },
+  ],  
+},
+
+{//Forced to respond
+  id: 'marr-5A',
+  desc: ``,
+  onEnter: () => {
+    println(`"Johnny-boy," says Luke, repeating the preacher's suggestion and making it a command, "kiss the bride, you dork!"
+  
+    Reluctantly you draw closer to your bride.`);
+    pressEnter('marr-6');
+  },
+},
+
+{//Kissed the Bride
+  id: 'marr-6',
+  desc: ``,
+  onEnter: () => {
+    println(`She lifts the veil, revealing a smile that seems more triumphant than blissful, but the kiss you then exchange has a wordless way of saying that you will soon be rewarded for your submission to the yoke of marriage.`);
+    pressEnter('marr-7');
+  },
+},
+
+{//Staying at the Hotel
+  id: 'marr-7',
+  desc: ``,
+  onEnter: () => {
+    println(`And so you are. That night, after a small wedding dinner in the Rathskeller, you enjoy that reward and cement the bond of marriage in Room 1502.`);
+    pressEnter('marr-8');
+  },
+},
+
+{//The next day
+  id: 'marr-8',
+  desc: ``,
+  onEnter: () => {
+    println(`The next morning Luke arrives with a great deal of luggage and drives you to JFK airport, where you board a Qantas jet for Melbourne, Australia.`);
+    pressEnter('marr-9');
+  },
+},
+
+{//In the Jet, offered Champagne.
+  id: 'marr-9',
+  desc: `As the jet lifts off the ground, a stewardess approaches you with a complimentary bottle of champagne. (You are both still wearing the clothes from the wedding.)`,
+  exits: [
+    {//Fail to respond appropriately
+      dir: 'no',
+      id: 'marr-9A',
+    },
+    {//Correct Response
+      dir: ['drink', 'drink champagne'],
+      id: 'marr-10',
+    },
+  ],  
+},
+
+{//Forced to respond
+  id: 'marr-9A',
+  desc: ``,
+  onEnter: () => {
+    println(`"Oh darling," Alice says in a cajoling tone. "Don’t be so contrary. Look--it's Australian champagne! I'll bet you didn't know there was such a thing, did you?"`);
+    pressEnter('marr-10');
+  },
+},
+
+{//Drank the champage, time to name the kids
+  id: 'marr-10',
+  desc: `You enjoy the complimentary bottle, and then a second, and arrive at your destination in a mellow, accepting frame of mind. Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide to name`,
+  exits: [
+    {//Name the first child
       dir: 'Text',
-      id: 'marr-#',
+      id: 'marr-11',
     },
   ],  
 },
@@ -1081,17 +1217,33 @@ const lobby = {
       // Templates for quick & easy copy/paste use. These will be deleted when the work is finished.
   
       // Basic template for a new room, looking around, and it's exits.
-      {//
-        id: 'chap-#',
-        desc: `Text`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+
+
+      {//Text
+  id: 'marr-#',
+  desc: ``,
+  exits: [
+    {//Fail to respond appropriately
+      dir: 'Text',
+      id: 'marr-#A',
+    },
+    {//Correct Response
+      dir: [''],
+      id: 'marr-#',
+    },
+  ],  
+},
+
+{//Forced to respond
+  id: 'marr-#A',
+  desc: ``,
+  onEnter: () => {
+    println(``);
+    pressEnter('marr-#');
+  },
+},
+
+
   
       // End Templates
   
