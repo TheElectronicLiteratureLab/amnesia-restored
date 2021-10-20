@@ -545,62 +545,84 @@ let turnOffOn = (toggle, itemId) => {
 }
 
 // dial command
-let dial = (number) => {
+let dial = (number) => { 
   const room = getRoom(disk.roomId);
   let numbers = [
-    [`3`, `Front Desk`, 'hote-revi-9'], //front desk
-    [`4`, `Room Service`], //room Service 
-    ['5', 'Valet'], //valet
-    ['6', 'Bellman'], //bellman
-    ['7', 'Security'], //security
-    '8', //other rooms
-    '9', //outside calls
-    '911', 
-    '555-1188', //Rod & Harpmeister Funeral Service
-    '555-7656', //Rolo's Pizzeria
-    '555-7673', //Koch's Florists 
-    //address book numbers
-    '555-1314', //JA
-    '555-1315', //Wit's End
-    '555-2712', //FBI
-    '555-2259', //E.H.
-    '555-2577', //Lila T.
-    '555-2783', //Sue G.
-    '555-4312', //Chelsea H.
-    '555-4365', //Sex
-    '555-4685', //Kvetch
-    '555-5413', //Denise's Number
-    '555-5436', //AA
-    '555-5643', //Interlude
-    '555-6200', //TTTT
-    '555-8422', //Drugs
-    '555-8749', //R + J
-    '555-8876', //J.L.
-    '571-7171', //Soft
-    '976-1212', //F
+      { num: '3', roomid: 'phone-1'}, // front desk
+      { num: '4', roomid: 'phone-2'}, // room service
+      { num: '5', roomid: 'phone-3'}, // valet
+      { num: '6', roomid: 'phone-4'}, // bellman
+      { num: '7', roomid: 'phone-5'}, // security
+      { num: '8-', roomid: 'phone-6'}, // other rooms
+      { num: '9-', roomid: 'phone-7'}, // outside calls
+      { num: '911', roomid: 'phone-8'} // 911
   ];
 
-  if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ //add telephone booths on streets
-    if(number === '3'){
-      println(`You call the front desk`)
-    }else {
-      println(`That number doesn't exist.`);
-    };
-    
-    /*numbers.forEach(call);
-    
-    let call = () => {
-       for(let i = 0; i < numbers.length; i++){
-          if(number !== numbers[i][0]){
-            println(`You call the front desk`)
-          }else {
-            println(`That number doesn't exist.`);
-          };
-        }
-     };*/
+
+// if brochure === in inventory push numbers
+  if(getItemInInventory('brochure')){
+    numbers.push(
+      { num: '555-1188', roomid: 'phone-9'}, // Rod & Harpmeister Funeral Service
+      { num: '555-7656', roomid: 'phone-10'}, // Rolo's Pizzeria
+      { num: '555-7673', roomid: 'phone-11'} // Koch's Florists
+    );
+  }
+
+
+// if address book === in inventory push numbers
+if(getItemInInventory('address book')){
+  numbers.push(
+    { num: '555-1314', roomid: 'phone-12'}, // JA
+    { num: '555-1315', roomid: 'phone-13'}, // Wit's End
+    { num: '555-2712', roomid: 'phone-14'}, // FBI
+    { num: '555-2259', roomid: 'phone-15'}, // E.H.
+    { num: '555-2577', roomid: 'phone-16'}, // Lila T.
+    { num: '555-2783', roomid: 'phone-17'}, // Sue G.
+    { num: '555-4312', roomid: 'phone-18'}, // Chelsea H.
+    { num: '555-4365', roomid: 'phone-19'}, // Sex
+    { num: '555-4685', roomid: 'phone-20'}, // Kvetch
+    { num: '555-5436', roomid: 'phone-21'}, // AA
+    { num: '555-5643', roomid: 'phone-22'}, // Interlude
+    { num: '555-6200', roomid: 'phone-23'}, // TTTT
+    { num: '555-8422', roomid: 'phone-24'}, // Drugs
+    { num: '555-8749', roomid: 'phone-25'}, // R + J
+    { num: '555-8876', roomid: 'phone-26'}, // J.L.
+    { num: '571-7171', roomid: 'phone-27'}, // Soft
+    { num: '976-1212', roomid: 'phone-28'} // F
+  );
+}
+
+// after Bette's phonecall with Denise's Number push number
+// { num: '555-5413', roomid: 'phone-29'}
+
+  // checks to see if you're in a room with a phone
+  if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
+    const num = number;
+    let id;
+   
+  
+    for(let i = 0; i < numbers.length; i++){
+      if(numbers[i].num === num){
+        id = numbers[i].roomid;
+      } 
+    }
+
+    if(!id){
+      println(`This number doesn't exist.`)
+    }
+
+    if(id){
+      println(id);
+    }
+
+
   } else {
-    println(`You're an amnesiac, you don't have a brick. Find a dial phone.`); //ask Ahria/group what they want this to print!
+    println(`With what phone?`);
   };
+
+  
+ 
+
 }
 
 
@@ -630,7 +652,7 @@ let open = (itemToOpen) => {
       if(item.isOpen === !true) {
         item.isOpen = true;
         println(`The ${item.name[0]} is now open.`);
-        println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
+        println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
       } else {
         println("They're already opened.");
       }
@@ -763,7 +785,7 @@ let commands = [
     open: x => open(x),
     close: x => close(x),
     answer: x => answer(x),
-    dial: x => dial(x),
+    dial: dial,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
