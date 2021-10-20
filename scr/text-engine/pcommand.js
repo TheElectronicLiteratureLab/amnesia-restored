@@ -297,6 +297,8 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
+
+
 // list takeable items in room
 let take = () => {
   const room = getRoom(disk.roomId);
@@ -507,6 +509,7 @@ let forward = () => {
   }
 }
 
+
 // toggle any object between their on state or off state.
 let turnOffOn = (toggle, itemId) => {
   if (itemId === "on" || itemId === "off") { //switches the input arguments if player put them in backwards (gramattically still correct)
@@ -625,10 +628,30 @@ if(getItemInInventory('address book')){
 
 }
 
+//ask character about topic function
+
+// function askAbout(xCharacter, yTopic) {
+//   const room = getRoom(disk.roomId);
+
+// };
+
+function askXAboutY(xCharacter, yPrep, zTopic) {
+  const room = getRoom(disk.roomId);
+  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
+
+  if (yPrep !== 'about') {
+    println('You can Ask x(character) about y(topic)');
+  }
+  
+  if (yPrep === 'about'){
+    console.log(character.name);
+    console.log(xCharacter, zTopic);
+  }
+};
 
 // open command
 let open = (itemToOpen) => {
-  
+  //println(itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
   
   // Items that can be opened
@@ -668,18 +691,21 @@ let open = (itemToOpen) => {
         println(`The ${item.name} is already open.`);
       }
     }
-  }
-  else {
+  } else if (item.itemId === 'window') {
+    println('The window is sealed to keep the air-conditioned air in the hotel.');
+  } else if (item.itemId === 'dresser') {
+    println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
+  } else {
     println("You can't open that.");
   }
 }
 
 // close command
 let close = (itemToOpen) => {
+  //println(itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
   if (item !== undefined)
   {
-    // Curtains
     if (item.itemId === 'curtains') {
       if(item.isOpen === !false) {
         item.isOpen = false;
@@ -687,9 +713,7 @@ let close = (itemToOpen) => {
       } else {
         println("They're already closed.");
       }
-    }
-    // Window
-    else if (item.itemId === 'window') {
+    } else if (item.itemId === 'window') {
       println('You may not close that.');
     }
     // Dresser
@@ -713,18 +737,8 @@ let close = (itemToOpen) => {
     }    
   } else {
       println("You can't close that.");
-  } 
-}
-
-let answer = (phone) => {
-  let item = getItemInRoom(phone, disk.roomId);
-  if (item !== undefined){
-    console.log(item);
-    if (item.itemId === 'roomphone'){
-      useItem(item.name[0]);
     }
   }
-}
 
 // jump command
 
@@ -767,6 +781,10 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
+    firing: args => goDir(args),
+    xavier: args => goDir(args),
+    john: args => goDir(args),
+    press: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
@@ -774,6 +792,7 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
+    leave: useItem,
     answer: useItem,
     say: sayString,
     drop: dropItem,
@@ -797,5 +816,8 @@ let commands = [
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
+  },
+  {
+    ask: args => askXAboutY(args[0], args[1], args[2]),
   },
 ];

@@ -40,26 +40,14 @@ const healClubDisk = {
         },
         {
           dir: [],
-          id: 'heal-club2',
-          
+          id: 'heal-club2'
         }
       ],
-      
     },
     {
-      onBlock: () => {
-        if (prevInput !== 'leave' || 'exit') {
-          enterRoom('heal-club2');
-        } else {
-          enterRoom('heal-club');
-        }
-      },
-    },
-    {
-      id: 'heal-club2',
-      name: ``,
+      id: 'heal-club3',
+      name: `Women's Locker Room`,
       desc: `"I'm warning you, Bozo: Out of here!`,
-      
       exits: [
         {
           dir: ['leave', 'exit'],
@@ -67,19 +55,21 @@ const healClubDisk = {
         },
         {
           dir: [],
-          id: 'heal-club3'
+          id: 'heal-club4'
         }        
       ],
-      
     },
     {
-      id: 'heal-club3',
+      id: 'heal-club4',
       name: `Women's Locker Room`,
       desc: `"Okay, that's it." 
       With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
-      onEnter: () => {
-        pressEnter('deat-1')
-      }
+      exits: [
+        {
+          dir: [],
+          id: 'Deat-Tex'
+        }
+      ],
     },
     {
       id: 'heal-club5',
