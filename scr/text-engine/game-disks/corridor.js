@@ -7,6 +7,7 @@ const corridor1502 = {
         desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one.\n
 
         Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
+        removeOnRead: true,
         
         items: [
             {
@@ -101,7 +102,57 @@ const corridor1502 = {
       {
         id: 'corridor-1509',
         name: '15th Floor Hallway',
-        desc: `You are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner.`,
+        desc: `You are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner. The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
+        items: [
+            {
+                name: 'trolley', // If the player tries to go back to room 1502
+                desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
+                onUse: () => {
+                    const room1502 = getRoom('corridor-1509');
+                    const exit = getExitDir('hote-room-1', room1502.exits);
+                    if ((getItemInRoom('roomkey') || getItemInInventory('roomkey'))) {
+                      delete exit.block;
+                    } else {
+                      println('You try to return to your room, but the door locked automatically when it was closed.');
+                    }
+                  },
+                   // when player looks at the plant, they discover a shiny object which turns out to be a key
+          onLook: () => {
+            if (getItemInRoom('towel', 'bedsheet') || getItemInInventory('towel')) {
+              // the key is already in the pot or the player's inventory
+              println(`You're already wearing a towel.`);
+              return;
+            }
+            const corridor = getRoom('corridor-1509');
+            // put the silver key in the pot
+            corridor.items.push({
+              name: ['towel', 'blanket', 'bed'],
+              desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
+              onLook: () => {
+                const towel = getItemInInventory('trolley') || getItemInRoom('trolley', '1509');
+
+                // now that we know it's a towel, place that name first so the engine calls it by that name
+                towel.name.unshift('towel');
+
+                // let's also update the description
+                towel.desc = `A single large bed blanket`;
+
+                // remove this method (we don't need it anymore)
+                delete towel.onLook;
+              },
+              isTakeable: true,
+              onTake: () => {
+                println(`You took it.`);
+                // update the monstera's description, removing everything starting at the line break
+                const plant = getItemInRoom('towel');
+                plant.desc = plant.desc.slice(0, plant.desc.indexOf('\n'));
+              },
+              isWearable: true,
+            });
+          },
+            },
+
+        ],
         exits: [
          {
             dir: ['1509', 'room 1509', 'inside'], 
@@ -131,6 +182,9 @@ const corridor1502 = {
         id: 'corridor-1509outside',
         name: '15th Floor Hallway',
         desc: `Not wishing to make a scene, you quietly withdraw from the room and go back to the hallway. \nYou are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner.`,
+        onEnter: () => {
+            reenableInput();
+        },
         exits: [
             {
                dir: ['1509', 'room 1509', 'inside'], 
