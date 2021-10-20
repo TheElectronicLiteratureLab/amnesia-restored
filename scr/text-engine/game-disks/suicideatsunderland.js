@@ -23,11 +23,26 @@ const suicideAtSunderland = {
         {
         id: 'hell-3',
         name: '',
+        count: 0,
         desc: `Then if you’re wrong, you’ve got a few years to think of another name that might be yours. Eventually in the course of all eternity, you’ll probably come up with the name that corresponds to the name on his list. So, here’s your first chance. Charon hands you your Emigration Card, and there’s the blank you’ve got to fill in.\n PRINT YOUR NAME HERE`,
         onEnter: () =>{
             reenableInput();
-            }  
+            },  
+        onBlock: () => {
+            let room = getRoom('hell-3');
+            println('“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.');
+            room.count++;
+            if (room.count === 5){
+              enterRoom('hell-5');
+            }
         },
+        exits: [
+          {
+            dir: ('hollings', 'xavier'),
+            id: 'hell-4',
+          },
+        ],
+      },  
     {
         id: 'hell-4',
         name: '',
@@ -45,12 +60,6 @@ const suicideAtSunderland = {
             reenableInput();
             pressEnter(loadDisk(gameOver));
         }
-      },
-      {
-        id: 'hell-6',
-        name: '',
-        desc: `“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`,
-
       },
     ],
     
