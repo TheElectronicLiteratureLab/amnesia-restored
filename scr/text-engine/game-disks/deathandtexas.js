@@ -1098,6 +1098,9 @@ const deathAndTexas = {
         document.querySelector('input').disabled = false;
         document.getElementById('arrow').innerHTML = '>';
        },
+       onBlock: () => {
+        enterRoom(`deat-fgo`);
+      },
       exits: [
         {
           dir: ['no', '', 'yes'], //Two word strings are not working, need to find out why
@@ -1132,26 +1135,17 @@ const deathAndTexas = {
         document.querySelector('input').disabled = false;
         document.getElementById('arrow').innerHTML = '>';
        },
-      exits: [
-        {
-          dir: [''], //Two word strings are not working, need to find out why
-          id : 'deat-ledie'
-        },
-      ],
-      // if anything
-      // println('And then you die'
-      //pressEnter('gameover?')
+      onBlock: () => {
+        enterRoom(`deat-ledie`);
+      },
     },
     {
       id: 'deat-ledie', // If lethal injection
       name: '', // Displayed each time the player enters the room.
       desc: `And then you die`, // Displayed when the player first enters the room.
-      exits: [
-        {
-          dir: [''], //Two word strings are not working, need to find out why
-          id : 'deat-ledie'
-        },
-      ],
+      onEnter: () => {
+        pressEnter('game-over');
+      },
       // if anything
       // println('And then you die'
       //pressEnter('gameover?')
