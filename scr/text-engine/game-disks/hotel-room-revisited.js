@@ -9,6 +9,7 @@ const hotelroomRevisted = {
             You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
             //**interactable items**
             onEnter: () => {
+                reenableInput();
                 if(getRoom('hote-revi').visits >= 2){
                     let hotelRoom = getRoom('hote-revi');
                     hotelRoom.desc = `You're standing in your hotel room`;

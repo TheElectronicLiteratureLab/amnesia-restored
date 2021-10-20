@@ -120,6 +120,8 @@ function goDir(dir) {
     return;
   }
 
+  
+
   if (nextRoom.block) {
     println(nextRoom.block);
     return;
@@ -296,6 +298,8 @@ let talkToOrAboutX = (preposition, x) => {
     }
   }
 };
+
+
 
 // list takeable items in room
 let take = () => {
@@ -507,6 +511,7 @@ let forward = () => {
   }
 }
 
+
 // toggle any object between their on state or off state.
 let turnOffOn = (toggle, itemId) => {
   if (itemId === "on" || itemId === "off") { //switches the input arguments if player put them in backwards (gramattically still correct)
@@ -656,23 +661,81 @@ let remove = (clothes) => {
   }
 }
 
+//ask character about topic function
+
+// function askAbout(xCharacter, yTopic) {
+//   const room = getRoom(disk.roomId);
+
+// };
+
+function askXAboutY(xCharacter, yPrep, zTopic) {
+  const room = getRoom(disk.roomId);
+  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
+
+  if (yPrep !== 'about') {
+    println('You can Ask x(character) about y(topic)');
+  }
+  
+  if (yPrep === 'about'){
+    console.log(character.name);
+    console.log(xCharacter, zTopic);
+  }
+};
+
+//ask character about topic function
+// const askXAboutY = ([x, y]) => {
+//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+//   disk.conversant = character;
+//   talkToOrAboutX('about', y);
+// };
+
 
 // open command
 let open = (itemToOpen) => {
   //println(itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
   
-  if (item.itemId === 'curtains') {
-    if(item.isOpen === !true) {
-      item.isOpen = true;
-      println(`The ${item.name[0]} are now open.`);
-    } else {
-      println("They're already opened.");
+  // Items that can be opened
+  // Curtains
+  if (item !== undefined)
+  {
+    if (item.itemId === 'curtains') {
+      if(item.isOpen === !true) {
+        item.isOpen = true;
+        println(`The ${item.name[0]} are now open.`);
+      } else {
+        println("They're already opened.");
+      }
+    }
+    // Window
+    else if (item.itemId === 'window') {
+      println('YOU ARE SEALED INSIDE NOOOO');
+    }     
+    // Dresser
+    else if (item.itemId === 'dresser') {
+      if(item.isOpen === !true) {
+        item.isOpen = true;
+        println(`The ${item.name[0]} is now open.`);
+        println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
+      } else {
+        println("They're already opened.");
+      }
+    }
+    // Door
+    else if (item.itemId === 'hoteldoor') {
+      if(item.isOpen !== true) {
+        item.isOpen = true;
+        println(`The ${item.name} is now open.`);
+        item.desc = 'is open'
+        console.log(item);
+      } else {
+        println(`The ${item.name} is already open.`);
+      }
     }
   } else if (item.itemId === 'window') {
     println('The window is sealed to keep the air-conditioned air in the hotel.');
   } else if (item.itemId === 'dresser') {
-    println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
+    println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
   } else {
     println("You can't open that.");
   }
@@ -693,13 +756,30 @@ let close = (itemToOpen) => {
       }
     } else if (item.itemId === 'window') {
       println('You may not close that.');
-    } else {
+    }
+    // Dresser
+    else if (item.itemId === 'dresser') {
+      if(item.isOpen === !false) {
+        item.isOpen = false;
+        println(`The ${item.name[0]} is now closed.`);
+      } else {
+        println(`The ${item.name[0]} is already closed.`);
+      }
+    }
+    // Door
+    else if (item.itemId === 'hoteldoor') {
+      if(item.isOpen !== false) {
+        item.isOpen = false;
+        item.desc = 'is closed'
+        println(`The ${item.name} is now closed.`);
+      } else {
+        println(`The ${item.name} is already closed.`);
+      }
+    }    
+  } else {
       println("You can't close that.");
     }
   }
-  
-}
-
 
 // jump command
 
@@ -742,6 +822,12 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
+    firing: args => goDir(args), //Firing and below commands won't work, they're just accepting whatever word this is as a command
+    lethal: args => goDir(args),
+    xavier: args => goDir(args),
+    steak: args => goDir(args), 
+    roasted: args => goDir(args),
+    barbecue: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
@@ -749,6 +835,7 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
+    leave: useItem,
     answer: useItem,
     say: sayString,
     drop: dropItem,
@@ -759,19 +846,29 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
+    answer: x => answer(x),
     dial: dial,
     wear: wear,
     remove: remove,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
+    go: args => goDir(args[1]),
+    walk: args => goDir(args[1]),
     look: lookAt,
     say(args) {
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
       sayString(str);
     },
+    steak(args) {
+      const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
+      goDir(str);
+    },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
+  },
+  {
+    ask: args => askXAboutY(args[0], args[2]),
   },
 ];
