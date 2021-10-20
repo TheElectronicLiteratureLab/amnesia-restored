@@ -47,20 +47,12 @@ const suicideAtSunderland = {
         id: 'hell-4',
         name: '',
         desc: `Charon examines your card, scratches his head, and hands it back. “So tell me, Xavier,” he says, “what’s your middle name?”`,
-        onEnter: () =>{
-            pressEnter('hell-5');
-            reenableInput();
-        }
+        onBlock: () => {
+          println(`"Sorry, that's not right. Better luck next time."`);
+          pressEnter(loaddisk(gameOver));
+          },
       },
-      {
-        id: 'hell-5',
-        name: '',
-        desc: `"Sorry, that's not right. Better luck next time."”`,
-        onEnter: () =>{
-            reenableInput();
-            pressEnter(loadDisk(gameOver));
-        }
-      },
+     
     ],
     
   };
