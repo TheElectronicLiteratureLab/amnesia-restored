@@ -6,32 +6,101 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amnesia Restored</title>
+  <!-- CSS styles -->
+  <link id="styles" rel="stylesheet" type="text/css" href="css/dev.css">
+  <link rel="stylesheet" href="scr/leaflet.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
+  
+  <!-- Addtional Scripts -->
+  <script src="scr/leaflet.js"></script>
+
 </head>
 <body>
-  <!-- Game content -->
-<div id="output"></div>
+  <div class="game">
+    <!-- Game content -->
+    <div class="sidebar">
+      <button id="invbutton">INVENTORY</button>
+      <button id="addrbutton">ADDRESS BOOK</button>
+      <button id="mapbutton">MAP</button>
+    </div>
+    
+    <div id="container-o">
+      <div id="currroom">CURRENT ROOM</div>
+      <div id="output"></div>
+      <!-- Player input -->
+      <div class="input"><span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
 
-<!-- Player input -->
-<div class="input">
-  <span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false">
-</div>
+      <div class="statusbar">
+        <div class="nested" id="hunger">
+          <div>img</div>
+          <div>HUNGER</div>
+        </div>
+        <div class="nested" id="fatigue">
+          <div>img</div>
+          <div>FATIGUE</div>
+        </div>
+        <div id="money">MONEY</div>
+        <div id="time">TIME</div>
+      </div>
+    </div>
+    
+    <div class="nested" id="menubutton">
+      <button>MENU</button>
+    </div>
 
-<!-- CSS styles -->
-<link id="styles" rel="stylesheet" type="text/css" href="css/retro.css">
+    <div id="map" style="width: 70%; height: 50%; background: #ffffff;"></div>
+  </div>
+  
+  
+  <script type="text/javascript">
+//Creating the Map
+  var map = L.map('map').setView([0, 0], 0);
+  L.tileLayer('map/{z}/{x}/{y}.png', {
+    continuousWorld: false,
+    noWrap: true,	
+    minZoom: 3,
+    maxZoom: 6,
+  }).addTo(map);
+//Coordinate Finder
+  var marker = L.marker([0, 0], {
+    draggable: true,
+  }).addTo(map);
+  marker.bindPopup('LatLng Marker').openPopup();
+  marker.on('dragend', function(e) {
+    marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+  });
+//Markers
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
 
-<!-- Include game engine -->
-<!-- Be sure to load in dependencies first -->
-<script src="scr/text-engine/parser.js"></script>
-<script src="scr/text-engine/init.js"></script>
-<script src="scr/text-engine/pcommand.js"></script>
-<script src="scr/text-engine/internalfunc.js"></script>
-<script src='scr/text-engine/playercharacter.js'></script>
 
-<!-- Include game data ('disk') -->
-<script src="scr/text-engine/game-disks/nightmare_node.js"></script>
+const targetDiv = document.getElementById("map");
+  const btn = document.getElementById("mapbutton");
+  btn.onclick = function () {
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "block";
+  }
+};
+
+
+</script>
+
+
+
+  <!-- Include game engine -->
+  <!-- Be sure to load in dependencies first -->
+  <script src="scr/text-engine/parser.js"></script>
+  <script src="scr/text-engine/init.js"></script>
+  <script src="scr/text-engine/pcommand.js"></script>
+  <script src="scr/text-engine/internalfunc.js"></script>
+  <script src='scr/text-engine/playercharacter.js'></script>
+
+  <!-- Include game data ('disk') -->
+  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
 
 <!-- Load disk into engine -->
-<script>loadDisk(nightmare);</script>
+<script>loadDisk(amnesiaRestored);</script>
+</body>
