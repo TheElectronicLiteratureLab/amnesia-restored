@@ -815,7 +815,6 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
-    answer: x => answer(x),
     dial: dial,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")

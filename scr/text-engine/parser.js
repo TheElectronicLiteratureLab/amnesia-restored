@@ -146,7 +146,7 @@ let applyInput = (input) => {
       enterRoom('hote-room-8');
     }
     
-    if (typeof room.onBlock === 'function') {
+    else if (typeof room.onBlock === 'function') {
       room.onBlock({disk, println, getRoom, enterRoom,});
       return;
     }
