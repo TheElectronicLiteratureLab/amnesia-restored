@@ -471,7 +471,7 @@ const amnesiaRestored = {
         room.exits[1].id = 'corridor-1502';
       },
       onBlock: () => {
-        if (prevInput === 'answer phone' || prevInput === 'answer' || prevInput === 'answer the phone') {
+        if (prevInput === 'answer phone' || prevInput === 'answer the phone') {
           enterRoom('hote-room-10');
         } else {
           println('The phone continues ringing.');
@@ -519,9 +519,9 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'yes') {
-          enterRoom('hote-room-14');
+          enterRoom('hote-room-13');
         } else if (prevInput === 'no') {
-          enterRoom('hote-room-15');
+          enterRoom('hote-room-14');
         } else {
           println(`I'm sorry come again?`);
         }
@@ -532,16 +532,13 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"If you haven't checked out by that hour, Mr. Cameron, we will have to bill you for another night. But if you wish to extend your stay, I can adjust your bill accordingly. Do you wish to continue your stay?"`);
-      },
-      onBlock: () => {
         if (prevInput === 'yes') {
-          enterRoom('hote-room-12');
-        } else if (prevInput === 'no') {
-          enterRoom('hote-room-13');
+          println(`I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
         } else {
-          println(`I'm sorry come again?`);
+          println(`"We have your VISA slip here. I'll have a bellboy bring it to you. Have a good day." She hangs up.`);
         }
+
+        pressEnter('hote-room-15');
       }
     },
     {
@@ -549,29 +546,12 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"If you haven't checked out by that hour, Mr. Cameron, we will have to bill you for another night. But if you wish to extend your stay, I can adjust your bill accordingly. Do you wish to continue your stay?"`);
+        println(`"No? But I have the slip already made up. If you wish to make some other arrangement I'll have to ask you to come down to the Registration desk now. Can you do that? \n\nYou can't, of course, not without proper clothing. So you tell her to put it on your VISA card, and that settles that."`);
+        pressEnter('hote-room-15');
       },
-      onBlock: () => {
-        if (prevInput === 'yes') {
-          enterRoom('hote-room-12');
-        } else if (prevInput === 'no') {
-          enterRoom('hote-room-13');
-        } else {
-          println(`I'm sorry come again?`);
-        }
-      }
     },
     {
       id: 'hote-room-15',
-      name: '',
-      desc: '',
-      onEnter: () => {
-        println(`"No? But I have the slip already made up. If you wish to make some other arrangement I'll have to ask you to come down to the Registration desk now. Can you do that? \n\nYou can't, of course, not without proper clothing. So you tell her to put it on your VISA card, and that settles that."`);
-        pressEnter('hote-room-16');
-      },
-    },
-    {
-      id: 'hote-room-16',
       name: '',
       desc: '',
       onEnter: () => {
@@ -582,25 +562,26 @@ const amnesiaRestored = {
           println('Oh yes, it is on the dresser.');
         }
         println('You try several practice signatures.');
+        pressEnter('hote-room-16');
+      },
+    },
+    {
+      id: 'hote-room-16',
+      name: '',
+      desc: '',
+      onEnter: () => {
+        document.getElementById("output").innerHTML = '';
+        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
     },
     {
       id: 'hote-room-17',
       name: '',
-      desc: '',
-      onEnter: () => {
-        document.getElementById("output").innerHTML = '';
-        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
-        pressEnter('hote-room-18');
-      },
-    },
-    {
-      id: 'hote-room-18',
-      name: '',
       desc: 'The bellboy makes a significant cough -- he must be waiting for a tip. Should you give him one?',
       onEnter: () => {
         reenableInput();
+        getRoom('hote-room-8').visits++;
       },
       onBlock: () => {
         if (prevInput === 'yes') {
@@ -608,14 +589,13 @@ const amnesiaRestored = {
           //eventual flag will need to be toggled that you tipped.
           enterRoom('hote-room-8');
         } else if (prevInput === 'no') {
-          println('');
+          println(`The bellboy leaves with a discontented mumble, and you are left to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes. \n`);
           enterRoom('hote-room-8')
         } else {
           println('Yes or No?');
         }
       }
     },
-    
     
     //**********************************************************/
     //               Hotel Room 1502 Revisited                 /
