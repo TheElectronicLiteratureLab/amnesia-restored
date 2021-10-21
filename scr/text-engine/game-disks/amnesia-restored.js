@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-1', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -92,6 +92,7 @@ const amnesiaRestored = {
       onBlock: () => {
         if (prevInput === 'light'){
           hairColor = 'dark';
+          console.log(hairColor);
           println(pickOne(confirmArray));
           enterRoom('hote-room-3');
         } else if (prevInput === 'dark'){
@@ -113,20 +114,21 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         println('Long or short?');
+        console.log(hairColor);
       },
       onBlock: () => {
         if (prevInput === 'long'){
-          hairColor = 'short';
+          hairLength = 'short';
           println(pickOne(confirmArray));
           enterRoom('hote-room-4');
         } else if (prevInput === 'short'){
-          hairColor = 'long';
+          hairLength = 'long';
           println(pickOne(confirmArray));
           enterRoom('hote-room-4');
         } else if (prevInput === '') {
           println('Come again?');
         } else {
-          hairColor = 'light';
+          hairLength = 'short';
           println(pickOne(confirmArray));
           enterRoom('hote-room-4');
         }
@@ -141,11 +143,11 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'beard'){
-          hairColor = 'a mustache';
+          hairFace = 'a mustache';
           println(pickOne(confirmArray));
           enterRoom('hote-room-5');
         } else if (prevInput === 'mustache'){
-          hairColor = 'a full beard';
+          hairFace = 'a full beard';
           println(pickOne(confirmArray));
           enterRoom('hote-room-5');
         } else if (prevInput === 'neither'){
@@ -6943,7 +6945,7 @@ const amnesiaRestored = {
       }
     },
     //**********************************************************/
-    //        EXIT FROM DEJA-VU Sunderland Health Club         /
+    //        EXIT FROM DEJA-VU to Sunderland Health Club      /
     //********************************************************/    
     {
       id: 'heal-club14',
@@ -7027,7 +7029,7 @@ const amnesiaRestored = {
             reenableInput();
         },
         onBlock: () => {
-            if (prevInput = 'yes') {
+            if (prevInput === 'yes') {
                 enterRoom('heal-club23');
             } else {
                 enterRoom('heal-club24');
