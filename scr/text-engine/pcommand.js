@@ -714,8 +714,7 @@ let open = (itemToOpen) => {
 let close = (itemToOpen) => {
   //println(itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
-  if (item !== undefined)
-  {
+  if (item !== undefined){
     if (item.itemId === 'curtains') {
       if(item.isOpen === !false) {
         item.isOpen = false;
@@ -747,8 +746,35 @@ let close = (itemToOpen) => {
     }    
   } else {
       println("You can't close that.");
-    }
   }
+}
+
+function teleport (place) {
+  enterRoom(place);
+  println(`
+  Player Teleported to ${place}`);
+}
+
+function setMoney(amount) {
+  playMon = amount;
+  println(`
+    Player Money now set to ${amount}`
+  );
+};
+
+function setHunger(amount) {
+  playHung = amount;
+  println(`
+    Player Hunger now set to ${amount}`
+  );
+};
+
+function setFatigue(amount) {
+  playFat = amount;
+  println(`
+    Player fatigue now set to ${amount}`
+  );
+};
 
 // jump command
 
@@ -817,6 +843,10 @@ let commands = [
     close: x => close(x),
     answer: x => answer(x),
     dial: dial,
+    devcom1: x => teleport(x),
+    devcom2: args => setMoney(args),
+    devcom3: x => setHunger(x),
+    devcom4: x => setFatigue(x),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

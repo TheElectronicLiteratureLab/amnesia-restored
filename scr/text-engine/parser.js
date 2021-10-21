@@ -122,16 +122,16 @@ let applyInput = (input) => {
       enterRoom('hell-4');
     }
     
-    //Yes or no phone
-    else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'yes') {
-      println(`"I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
-      getItemInRoomById('roomphone', disk.roomId).inUse = false;
-      enterRoom('hote-room-9');
-    } else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'no') {
-      println(`"We have your VISA slip here. I'll have a bellboy bring it up to you. Have a good day." She hangs up.`);
-      getItemInRoomById('roomphone', disk.roomId).inUse = false;
-      enterRoom('hote-room-9');
-    }
+    // //Yes or no phone
+    // else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'yes') {
+    //   println(`"I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
+    //   getItemInRoomById('roomphone', disk.roomId).inUse = false;
+    //   enterRoom('hote-room-9');
+    // } else if (disk.roomId === 'hote-room-8' && getItemInRoomById('roomphone', disk.roomId).inUse === true && prevInput === 'no') {
+    //   println(`"We have your VISA slip here. I'll have a bellboy bring it up to you. Have a good day." She hangs up.`);
+    //   getItemInRoomById('roomphone', disk.roomId).inUse = false;
+    //   enterRoom('hote-room-9');
+    // }
     
     //yes or no bellboy
     else if (disk.roomId === 'hote-room-10' && prevInput === 'yes') {
@@ -146,8 +146,8 @@ let applyInput = (input) => {
       enterRoom('hote-room-8');
     }
     
-    if (typeof room.onBlock === 'function') {
-      room.onBlock({disk, println, getRoom, enterRoom,});
+    else if (typeof room.onBlock === 'function') {
+      room.onBlock({disk, println, getRoom, enterRoom});
       return;
     }
 

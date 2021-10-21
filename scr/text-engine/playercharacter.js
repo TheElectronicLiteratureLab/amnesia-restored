@@ -8,11 +8,12 @@ let survScore = 0;
 let totalScore = (detScore + charScore + survScore);
 let moveCount = 0;
 let playCoord = [];
+let playCloth = [];
 
 const player ={
 
     id: 'playChar',
-    clothes: [],
+    clothes: playCloth,
     fatigue: playFat,
     hunger: playHung,
     money: playMon,
@@ -20,8 +21,6 @@ const player ={
     cScore: charScore,
     sScore: survScore,
     tScore: totalScore,
-    moves: moveCount,
-    pCorrds: playCoord,
-    //inventory: initializedDisk.inventory,
+    pCorrds: playCoord
 
-}
+};
