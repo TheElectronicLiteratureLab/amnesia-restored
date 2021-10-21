@@ -3,15 +3,15 @@ const amnesiaRestored = {
   currPos: [],
   rooms: [
     {
-      id: 'titl-scre-1',
+      id: 'titl-scre',
       name: 'AMNESIA: RESTORED',
       desc: '',
       onEnter: () => {
-        pressEnter(`amne-intr-1`);
+        pressEnter(`amne-intr`);
       }
     },
     {
-      id: 'amne-intr-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+      id: 'amne-intr', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: '', // Displayed each time the player enters the room.
       desc: '',
       onEnter: () => {
@@ -22,11 +22,11 @@ const amnesiaRestored = {
         println("You wake up feeling wonderful.\n\n ");
         setTimeout(() => {  println("But also, in some indefinable way, strange\n\n "); }, 2000);
         setTimeout(() => {  println("Slowly, as you lie there on the cool bedspread, it dawns on you that you have absolutely no idea where you are. A hotel room, by the look of it. But with the curtains drawn, you don't know in what city, or even what country.\n\n\n"); }, 4000);
-        setTimeout(() => {  pressEnter('amne-intr-2');}, 4100);  
+        setTimeout(() => {  pressEnter('amne-intr-1');}, 4100);  
       },
     },
     {
-      id: 'amne-intr-2',
+      id: 'amne-intr-1',
       name: '',
       desc: "",
       onEnter: () => {
@@ -34,11 +34,11 @@ const amnesiaRestored = {
         println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n\n`)
         setTimeout(() => {  println("Thomas M. Disch's\n \n", "enter"); }, 1000);
         setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
-        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-3'));}, 1150);
+        setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-2'));}, 1150);
       },
     },
     {
-      id: 'amne-intr-3',
+      id: 'amne-intr-2',
       name: '',
       desc: '',
       onEnter: () => {
