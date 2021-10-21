@@ -9,7 +9,7 @@ let totalScore = (detScore + charScore + survScore);
 let moveCount = 0;
 let playCoord = [];
 
-const player ={
+const playerc ={
 
     id: 'playChar',
     clothes: [],

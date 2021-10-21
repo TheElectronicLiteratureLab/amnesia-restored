@@ -118,6 +118,7 @@ let pressEnter = (id) => {
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
+  document.querySelector('input').focus();
 
 let cont = (e) => {
   if (e.key === 'Enter') {
@@ -130,9 +131,10 @@ document.addEventListener("keydown", cont);
 };
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
+  setTimeout(() => {
     document.querySelector('input').disabled = false;
     document.getElementById('arrow').innerHTML = ">";
-    document.querySelector('input').focus();
+    document.querySelector('input').focus(); }, 100);
 };
 
 
@@ -167,7 +169,7 @@ let getCharacter = (name, chars = disk.characters) => chars.find(char => objectH
 let getItemInRoomById = (itemName, roomId) => {
   const room = getRoom(roomId);
 
-  return room.items && room.items.find(item => objectHasName(item, itemName));
+  return room.items && room.items.find(item => objectHasId(item, itemName));
 }
 
 // get item by name from room

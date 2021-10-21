@@ -617,7 +617,7 @@ if(getItemInInventory('address book')){
     }
 
     if(id){
-      println(id);
+      enterRoom(id);
     }
 
   } else {
@@ -625,11 +625,54 @@ if(getItemInInventory('address book')){
   };
 }
 
-let playerClothes = [];
+//let pclothes = [];
+let playerCloth = {
+  top: [],
+
+}
+
+
 
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
+  console.log(item);
+
+  
+  if(item.top && playerCloth.top.length === 0){
+    console.log(playerCloth.top);
+    playerCloth.top.push(item.itemId);
+    println(`You put on ${clothes} on your torso.`);
+  } else if(item.top && playerCloth.top.length >= 1){
+    println(`You must first remove ${playerCloth.top} you're wearing in order ot put on something else.`);
+  }
+
+  
+  
+
+  /*
+  if(item.bottom && playerCloth[1].length === 0){
+    playerCloth[1].push(item.itemId);
+    println(`You put on ${clothes} on your legs.`);
+    console.log(playerCloth[1].length);
+  } */
+  
+  /*else if (playerCloth[0].length === 1){
+    println(`You must first remove ${playerCloth[0]} you're wearing in order ot put on something else.`);
+  }*/
+
+
+
+  /*
+    if(item.top && !pclothes.length === 1){
+      pclothes.push(item);
+      println(`You put on ${item.name} on your body.`);
+    } else if (item.top && pclothes.length === 1){
+      println(`You must first remove ${pclothes} you're wearing in order to put on something else.`);
+    }
+    */
+   /*
+ 
   
   if(item.isWearable === true && playerClothes.length === 0){
     println(`You put on the ${item.name}.`);
@@ -642,12 +685,36 @@ let wear = (clothes) => {
   if(!item.isWearable){
     println(`You can't wear that.`);
   }
+
+  /*if(!item.body || !item.head || !item.feet){
+    println(`You can't wear that.`);
+  }*/
+
+  /*
+  if (!player.clothes.body){
+    player.clothes.body.push('')
+}
+
+if (!)
+
+delete player.clothes.body
+*/
 } 
 
 // remove command
 let remove = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
 
+  /*
+  if(item.top && !player.clothes.top){
+    player.clothes.body.splice(item);
+    println(`You take off ${item.name} on your body.`);
+  } else if (item.top && player.clothes.top){
+    println(`You're not wearing anything.`);
+  }
+
+*//*
+  
   if(item.isRemovable === true && playerClothes.length === 1){
     println(`You remove the ${item.name}.`);
     playerClothes.splice(item);
@@ -658,7 +725,7 @@ let remove = (clothes) => {
 
   if(!item.isRemovable){
     println(`You can't remove that.`);
-  }
+  }*/
 }
 
 //ask character about topic function
