@@ -112,6 +112,14 @@ let response = (e) => {
   }
 };
 
+// bring back the input after you delete it with the Press Enter function
+let reenableInput = () => {
+  setTimeout(() => {
+    document.querySelector('input').disabled = false;
+    document.getElementById('arrow').innerHTML = ">";
+    document.querySelector('input').focus(); }, 100);
+};
+
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
 let pressEnter = (id) => {
   println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
@@ -128,6 +136,7 @@ let pressEnter = (id) => {
   }
 document.addEventListener("keydown", cont);
 };
+
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
   setTimeout(() => {

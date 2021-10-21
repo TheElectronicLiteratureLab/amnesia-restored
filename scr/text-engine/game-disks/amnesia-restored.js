@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -333,9 +333,6 @@ const amnesiaRestored = {
               println('The computer is off.');
             }
           },
-          onBlock: () => {
-            //activate phone
-          }
         },
         {
           itemId: 'dresser',
@@ -6692,7 +6689,19 @@ const amnesiaRestored = {
       desc: `"Okay, that's it." 
       With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
       onEnter: () => {
-        pressEnter('deat-1')
+        pressEnter('heal-club29')
+      }
+    },
+    {
+      id: 'heal-club29',
+      name: `Women's Locker Room`,
+      desc: `     You awake in the infirmary of a prison hospital, where a nurse informs you
+      
+      (1) that you're lucky to be alive after suffering from a severe concussion when your head struck the floor of the gym, and
+      
+      (2) that you are awaiting extradition to Texas on a murder charge.`,
+      onEnter: () => {
+        pressEnter('deat-1');
       }
     },
     {
@@ -7132,8 +7141,12 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: 'Death and Texas', // Displayed each time the player enters the room.
-      desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
+      name: '', // Displayed each time the player enters the room.
+      desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
+      
+      The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
+      
+      The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
       // arguement for lethal injection or firing squad
       exits: [
         {

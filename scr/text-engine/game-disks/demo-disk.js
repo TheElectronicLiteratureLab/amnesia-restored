@@ -182,6 +182,22 @@ const demoDisk = {
       ],
     },
   ],
+  player: [
+    {
+      time: new Date('May 4, 1986 09:05:00'),
+      id: 'playChar',
+      clothes: [],
+      fatigue: 100,
+      hunger: 100,
+      money: 0.00,
+      dScore: 0,
+      cScore: 0,
+      sScore: 0,
+      tScore: 0,
+      moves: 0,
+      pCorrds: []
+  }
+  ],
   characters: [
     {
       name: ['Benji', 'Benj', 'receptionist'],
