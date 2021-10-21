@@ -78,9 +78,7 @@ const nightmare = {
           desc: `No sooner have you sprayed your offensive message on the subway car’s window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor’s Commission to Keep the Subways Clean, who is no less a celebrity than ____________`,
           //need to add a way for this text to be added to a list then recalled later in the text.
           onEnter: () =>{
-              reenableInput();
-
-              
+              reenableInput();    
           },
 
           
@@ -94,9 +92,9 @@ const nightmare = {
       {
           id: 'nigh-6',
           name: '',
-          desc: `The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner [prevInput], please take the guilty party away.`,
+          desc: ``,
           onEnter:() =>{
-              println('Press ENTER to continue');
+              println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner `,println(prevInput)`, please take the guilty party away.`);
               pressEnter('nigh-7');
           },
           exits:[
@@ -366,12 +364,15 @@ const nightmare = {
           desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
           onEnter: () =>{
               reenableInput();
+          },
+          onBlock: () =>{
+              
               getInput();
-                if(getInput === 'a riddle'){
+                if(applyInput === 'a riddle'){
                     enterRoom('ridd-2')
                 }
                 else{
-                    println(`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`)
+                    enterRoom('ridd-4')
                 }
           },
 
@@ -382,19 +383,25 @@ const nightmare = {
               }
           ],
       },
-      /*{
-          id: 'ridd-2',
+      {
+          id: 'ridd-4',
           name:'',
           desc:`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`,
           onEnter: () =>{
               reenableInput();
-                if(applyInput === 'riddle'){
+                if(applyInput === 'a riddle'){
                   enterRoom('ridd-3');
                 }else{
                   enterRoom('ridd-2');
               }
-          }
-        },*/
+          },
+          exits:[
+              {
+                  dir:['riddle'],
+                  id:'ridd-2',
+              }
+          ],
+        },
       {
           id:'ridd-2',
           name:'',
@@ -466,7 +473,18 @@ const nightmare = {
                 enterRoom('nigh-sale13')}
             else(getInput === ['follow security officer'])
                 {enterRoom('nigh-sale14')}
-            }
+            },
+            exits:[
+                {
+                    dir:['officer'],
+                    id:'nigh-sale14',
+            
+                },
+                {
+                    dir:['no','escalator','refuse'],
+                    id:'nigh-sale13',
+                }
+            ],
       },
       {
         id:'nigh-sale13',
@@ -480,6 +498,7 @@ const nightmare = {
         name: '',
         desc:`“You won’t? You won’t!” he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: “Help! Help me get out of this box. I’m suffocating. Help!” Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
       onEnter: () => {
+          reenableInput();
           getInput();
           if(getInput === ['open box','look for head','search for head']){
               enterRoom('nigh-sale15')
