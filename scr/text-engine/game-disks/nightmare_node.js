@@ -7,17 +7,15 @@ const nightmare = {
         desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
         onBlock: () => {
             if(prevInput !== 'mirror'){
-                println(`You tell yourself to ${prevInput} but something prevents you. Your acts seem not to be your own. And the voice repeats its command: “Come here, X. Come here to me, in the mirror.”`)
+                if (prevInput === '') {
+                    println('can you rephrase that?');
+                }else {
+                    println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: “Come here, X. Come here to me, in the mirror.”`);
+                }
+            }else{
+                enterRoom('nigh-2');
             }
         },
-
-        exits:[
-            {
-                dir:['mirror'],
-                id: 'nigh-3'
-            },
-            
-        ],
       },
       { 
           id: 'nigh-2',
@@ -55,10 +53,18 @@ const nightmare = {
           id: 'nigh-4',
           name: '',
           desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!” You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. Then you press the nozzle and write:`,
-          onEnter: () =>{
-              reenableInput();
-              
-          },
+          onBlock: () => {
+              if(prevInput !== 'x'){
+                  if(prevInput === ''){
+                      println('Can you rephrase that?');
+                  }else(prevInput === 'fuck'||'shit'||'explictive');{
+                      enterRoom('nigh-5');}
+                }
+              else{
+                      enterRoom('nigh-9');
+                  }
+
+              },
           exits:[
             {
                 dir:['fuck'],
