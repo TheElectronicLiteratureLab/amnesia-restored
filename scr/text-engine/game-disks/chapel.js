@@ -17,7 +17,9 @@ const lobby = {
       { 
         id: 'chap-2',
         desc: `You enter the chapel, which is dim and fragrant with the mingled scents of flowers and candlewax. It seems to be deserted.`,
-  
+        onEnter: () => {
+          reenableInput();
+        },
         onLook: () => {
           const room = getRoom('chap-2');
           room.desc = `The chapel is about twenty feet square, windowless, with a high coffered ceiling and a terracotta floor. In the center of the room is a large round slab of marble too low to dine at but too high to be a coffee table. Grouped about it on three sides are pews of blond wood. Behind it is a lectern flanked by a vase of wilting gladiolas on a free­standing marble column and a large candelabra, its candles burned down to the sockets. The general effect is that of a funeral parlor without a corpse.
@@ -817,6 +819,9 @@ const lobby = {
 {//When attempting to follow Alice
   id: 'chap-20',
   desc: `After a moment’s hesitation, you spring forward to pursue her--and fall to the terra cotta floor, tripped by a kneeling pad. As you push yourself up from the dark tiles, a familiar vertigo overcomes you. Your body seems much too heavy a weight for your arms to raise and you slump back to the floor, watching the great octagons of terracotta bend and warp, waver and grow black. Your last conscious thought is that you may be the first bridegroom ever to have fainted when left standing at the altar.`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {
       dir: 'get up',
@@ -839,6 +844,9 @@ const lobby = {
 {//Attempt to get up (2nd attempt)
   id: 'chap-21A',
   desc: `The same voice calls to you. It is nearer now, an annoying buzz. You blink your eyes and shift your head--and see that a magenta dawn is silhouetting the poplars.`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {
       dir: 'get up',
@@ -896,6 +904,9 @@ const lobby = {
 {//Bandage wound (With what?)
   id: 'chap-24',
   desc: `Good idea, but what to use for a bandage?`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Use Frilly Shirt
       dir: ['shirt', 'use shirt', 'frilly shirt',],
@@ -1037,6 +1048,9 @@ const lobby = {
 {//Take as your wife?
   id: 'marr-2',
   desc: `“Do you John Cameron, take this woman to be your lawfully wedding wife, to have and to hold, to love and to cherish, through richer or poorer, in sickness and in health, long as you both shall live?”`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Fail to respond appropriately
       dir: 'Text',
@@ -1063,6 +1077,9 @@ const lobby = {
 {//Alice holds out the box
   id: 'marr-3',
   desc: `And so does Alice, after which she produces a small blue box from the lacy recesses of her bodice and hands it to Luke, who holds it out to you.`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Fail to respond appropriately
       dir: 'no',
@@ -1091,6 +1108,9 @@ const lobby = {
   An engraver has written in miniscule script within the band: 'To my beloved wife Alice, from John.'
   
   Alice removes the glove from her left hand, and holds out that hand with the fingers spread to facilitate the ring's easier placement.`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Fail to respond appropriately
       dir: 'no',
@@ -1115,6 +1135,9 @@ const lobby = {
 {//Putting ring on her finger
   id: 'marr-5',
   desc: `You put the ring on her finger and repeat the words the preacher tells you to: "With this ring I thee wed." The preacher then pronounces you man and wife and says, "You may kiss the bride."`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Fail to respond appropriately
       dir: 'no',
@@ -1168,6 +1191,9 @@ const lobby = {
 {//In the Jet, offered Champagne.
   id: 'marr-9',
   desc: `As the jet lifts off the ground, a stewardess approaches you with a complimentary bottle of champagne. (You are both still wearing the clothes from the wedding.)`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Fail to respond appropriately
       dir: 'no',
@@ -1192,6 +1218,9 @@ const lobby = {
 {//Drank the champage, time to name the kids
   id: 'marr-10',
   desc: `You enjoy the complimentary bottle, and then a second, and arrive at your destination in a mellow, accepting frame of mind. Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide to name`,
+  onEnter: () => {
+    reenableInput();
+  },
   exits: [
     {//Name the first child
       dir: ['Thomas', 'child', 'first',],
@@ -1269,69 +1298,21 @@ const lobby = {
 {//End of game (Sheep Rancher Ending) //Need to add some sort of code to print out the previous seven names that the player has entered.
   id: 'marr-16',
   desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she always coyly avoids answering. "You don't really want to know about those things, John." she would tell you, and then turn away to call to the children: "[Here print out the series of seven names], come get your supper while it’s hot!" On your deathbed you are still wondering who you are and what you’d done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
-  
-},
+ },
 
+ ],
+};
 
+  //End Marriage Section
 
-
-
-//End Marriage Section
-
-
-
-
-
-
-
-  
-      // Start Templates
-      // Templates for quick & easy copy/paste use. These will be deleted when the work is finished.
-  
-      // Basic template for a new room, looking around, and it's exits.
-
-
-      {//Text
-  id: 'marr-#',
-  desc: ``,
-  exits: [
-    {//Fail to respond appropriately
-      dir: 'Text',
-      id: 'marr-#A',
-    },
-    {//Correct Response
-      dir: [''],
-      id: 'marr-#',
-    },
-  ],  
-},
-
-{//Forced to respond
-  id: 'marr-#A',
-  desc: ``,
-  onEnter: () => {
-    println(``);
-    pressEnter('marr-#');
-  },
-},
-
-
-  
-      // End Templates
-  
       //Begin Notes
-      
-      //Add in any press enter related functions
-      //Finish marriage path
+
       //Variable for if the veil is raised or not. This will affect the "Lift Veil" and "Kiss Alice" exits. This also affects the look function, as Alice is normally wearing the veil.
       //Variable for how many times the player has asked "About myself." This will affect which response (chap-12, chap-12A, chap-12B, chap-12C) appears
       //Add in actual item variable for the box if the player chooses to take it.
-      //When failing to type "get up" when on the floor, it should lead to lobb-21C. It will need to remember whatever get up attempt the player was on, then return them to it.
+      //When failing to type "get up" when on the floor, it should lead to the text in lobb-21C. It will need to remember whatever get up attempt the player was on, then return them to it.
       //When failing to type appropriate response when bandaging wound, it should lead to lobb-26. It will need to remember whatever get up attempt the player was on, then return them to it.
 
-      //Last updated 10/14/2021
+      //Notes last updated 10/21/2021
   
       //End Notes
-  
-    ],
-  };
