@@ -39,8 +39,6 @@ const lobby = {
 
 //Begin Lobby Wandering Section
 
-    //In the manuscript, the player has the option to move around a little before talking to Luke. However, unlike later during Lobby Revisited, there isn't really anything you can look at. Original game just jumps to Luke, and we may want to do that here too.
-
 //End Lobby Wandering Section
   //Once the player talks to Luke, they won't be able to walk around the Lobby anymore until they return later.
 
@@ -137,7 +135,9 @@ const lobby = {
       desc: `"Glad to hear it. Cause I wouldn't want to have to do anything to make my little cactus blossom unhappy. You've given that poor gal enough trouble to last her a lifetime, and from here on out, Mr. Know-It-All Cameron the Third, you're going to do right by my little Alice--or my name ain't Luke Dudley. 
       
       Now scoot on up those stairs and give her some of that sweet talk that got the two of you into this situation.'`,
-      
+      onEnter: () => {
+        reenableInput();
+      },
       onLook: () => { // (6) Looking at Luke
         const room = getRoom('lobb-5');
         room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
@@ -346,43 +346,15 @@ const lobby = {
 //End Lobby
 
 //Begin Lobby Notes
-    //In the beginning of the Lobby section, the manuscript mentions letting the player walk around before talking to Luke, but there isn't much to see and you can't interact with anything. The original game moves straight onto Luke. And also proceeds to describe him in detail, which I feel is a smoother explanation than letting the player guess.
+    //What dialouge occurs in the lobby depends on if the player has entered wearing the Tux or not. This splits onto one or two paths.
 
-    //When speaking to Luke, (Lobb-4B) He asks: "Do you take my meaning?" There is no negative response to this question, and in the original game it makes your character automatically answer yes.
+    //When speaking to Luke, (Lobb-4B) He asks: "Do you take my meaning?" There is no negative response to this question, and in the original game it makes your character automatically answer yes. By diolouge flow and Luke's general character, it's possible to connect this (lobb-4E) to the path leading to the Hell ending (lobb-15).
     
-    //properly name the dir for navigation. Will need to happen once we have an array of words that will work.
     //adding in specific look functions for the room, and for Luke
-
-    //Manuscript text for 4 and 5 have some diolouge shifted around. Original game skips this issue by forcing you onto a path.
-
-    //Connect any sections that should auto-advance to the next ones, such as those leading to hell or the chapel.
 
     //Last updated 10/14/2021
 
 //End Lobby Notes
-
-// Start Templates
-    // Templates for quick & easy copy/paste use. These will be deleted when the work is finished.
-
-    // Basic template for a new room, looking around, and it's exits.
-    { 
-      id: '#',
-      desc: `Text`,
-
-      onLook: () => {
-        const room = getRoom('name');
-        room.desc = `Description`;
-      },
-
-      exits: [
-        {
-          dir: 'Text',
-          id: '#',
-        },
-      ],  
-    },
-
-// End Templates
 
   ],
 };
