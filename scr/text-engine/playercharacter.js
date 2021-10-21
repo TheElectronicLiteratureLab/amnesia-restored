@@ -21,6 +21,6 @@ const player ={
     cScore: charScore,
     sScore: survScore,
     tScore: totalScore,
-    pCorrds: playCoord
+    pCoords: playCoord
 
 };
