@@ -119,20 +119,21 @@ let pressEnter = (id) => {
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
 
-let cont = (e) => {
-  if (e.key === 'Enter') {
-    enterRoom(id);
-    document.removeEventListener("keydown", cont);
-    //input.addEventListener('keypress', response);
+  let cont = (e) => {
+    if (e.key === 'Enter') {
+      enterRoom(id);
+      document.removeEventListener("keydown", cont);
+      //input.addEventListener('keypress', response);
+    }
   }
-}
 document.addEventListener("keydown", cont);
 };
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
+  setTimeout(() => {
     document.querySelector('input').disabled = false;
     document.getElementById('arrow').innerHTML = ">";
-    document.querySelector('input').focus();
+    document.querySelector('input').focus(); }, 100);
 };
 
 

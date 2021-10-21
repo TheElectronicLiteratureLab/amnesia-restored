@@ -215,7 +215,7 @@ const hcDvDisk = {
     },
     {
       id: 'deja-vu', 
-      name: '', 
+      name: 'Deja-Vu', 
       desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`,
       
       onEnter: () => {
@@ -227,7 +227,7 @@ const hcDvDisk = {
       name: '',
       desc:`Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You’ll probably be beaten again--but you can’t help yourself. You scream the same few senseless words over and over, a litany of terror:`,
       onEnter: () => {
-        reenableInput();
+        setTimeout(() => {  reenableInput();}, 10);  
     },
       onBlock: () => {
           for (let count = 0; count < 3; count++) {
@@ -252,7 +252,7 @@ const hcDvDisk = {
 
         He waits for you to say the two words that will get you fed.`,
         onEnter: () => {
-            reenableInput();
+          setTimeout(() => {  reenableInput();}, 500); 
         },
 
         onBlock: () => {

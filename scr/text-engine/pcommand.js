@@ -805,7 +805,6 @@ let commands = [
     wake: takeItem,
     use: useItem,
     leave: useItem,
-    answer: useItem,
     say: sayString,
     drop: dropItem,
     save: x => save(x),
