@@ -617,17 +617,121 @@ if(getItemInInventory('address book')){
     }
 
     if(id){
-      println(id);
+      enterRoom(id);
     }
-
 
   } else {
     println(`With what phone?`);
   };
+}
 
+let playerCloth = {
+  top: [],
+  bottom: [],
+  head: [],
+  feet: [],
+}
+
+
+
+// wear command
+let wear = (clothes) => {
+  let item = getItemInRoom(clothes, disk.roomId);
+
+  /*if(item.top && item.bottom && playerCloth.top.length === 0 && playerCloth.bottom.length === 0){
+    playerCloth.top.push(item.itemId);
+    playerCloth.bottom.push(item.itemId);
+    println(`You put on ${clothes}.`);
+  } else if(item.top && item.bottom && playerCloth.top.length >= 1 || playerCloth.bottom.length >= 1){
+    println(`You must first remove the ${playerCloth.top} you're wearing in order to put on something else.`);
+  } */
+
+  /*
+  if(item.top && item.bottom && playerCloth.top.length === 0 && playerCloth.bottom.length === 0){
+    playerCloth.top.push(itemId);
+    playerCloth.bottom.push(itemId);
+    println(`You've put on the ${clothes}`);
+  } else if (item.top && item.bottom && playerCloth.top.length >= 1 || playerCloth.bottom.length >= 1 && playerCloth.top[0] !== itemId || playerCloth.bottom[0] !== itemId){
+    println(`You must first remove the ${playerCloth.top} and ${playerCloth.bottom}  `)
+  }*/
   
- 
+  if(item.top && !item.bottom && playerCloth.top.length === 0){
+    playerCloth.top.push(item.itemId);
+    println(`You put on ${clothes} on your torso.`);
+  } else if(item.top && !item.bottom && playerCloth.top.length >= 1 && playerCloth.top[0] !== item.itemId){
+    println(`You must first remove the ${playerCloth.top} you're wearing in order to put on something else.`);
+  } else if(item.top && !item.bottom && playerCloth.top.length >= 1 && playerCloth.top[0] === item.itemId){
+    println(`You're already wearing that.`);
+  }
 
+  if(item.bottom && !item.top && playerCloth.bottom.length === 0){
+    playerCloth.bottom.push(item.itemId);
+    println(`You put on ${clothes} on your legs.`);
+  } else if(item.bottom && !item.top && playerCloth.bottom.length >= 1 && playerCloth.bottom[0] !== item.itemId){
+    println(`You must first remove the ${playerCloth.bottom} you're wearing in order to put on something else.`);
+  } else if(item.bottom && !item.top && playerCloth.bottom.length >= 1 && playerCloth.bottom[0] === item.itemId){
+    println(`You're already wearing that.`);
+  }
+  
+  if(item.head && playerCloth.head.length === 0){
+    playerCloth.head.push(item.itemId);
+    println(`You put on ${clothes} on your head.`);
+  } else if(item.head && playerCloth.head.length >= 1 && playerCloth.head[0] !== item.itemId){
+    println(`You must first remove the ${playerCloth.head} you're wearing in order to put on something else.`);
+  } else if(item.head && playerCloth.head.length >= 1 && playerCloth.head[0] === item.itemId){
+    println(`You're already wearing that.`);
+  }
+  
+  if(item.feet && playerCloth.feet.length === 0){;
+    playerCloth.feet.push(item.itemId);
+    println(`You put on ${clothes} on your feet.`);
+  } else if(item.feet && playerCloth.feet.length >= 1 && playerCloth.feet[0] !== item.itemId){
+    println(`You must first remove the ${playerCloth.feet} you're wearing in order to put on something else.`);
+  } else if(item.feet && playerCloth.feet.length >= 1 && playerCloth.feet[0] === item.itemId){
+    println(`You're already wearing that.`);
+  }
+  
+  if(!item.top || !item.bottom || !item.head || !item.feet){
+    println(`You can't wear that.`);
+  }
+} 
+
+// remove command
+let remove = (clothes) => {
+  let item = getItemInRoom(clothes, disk.roomId);
+
+  if(item.top && !item.bottom && playerCloth.top.length >= 1){
+    playerCloth.top.splice(item.itemId);
+    println(`You remove the ${clothes} on your torso.`);
+  } else if(item.top && !item.bottom && playerCloth.top.length === 0){
+    println(`You're not wearing anything`);
+  } 
+
+  if(item.bottom && !item.top && playerCloth.bottom.length >= 1){
+    playerCloth.bottom.splice(item.itemId);
+    println(`You remove the ${clothes} on your legs.`);
+  } else if(item.bottom && !item.top && playerCloth.bottom.length === 0){
+    println(`You're not wearing anything`);
+  } 
+
+  if(item.head && playerCloth.head.length >= 1){
+    playerCloth.head.splice(item.itemId);
+    println(`You remove the ${clothes} on your head.`);
+  } else if(item.head && playerCloth.head.length === 0){
+    println(`You're not wearing anything`);
+  } 
+
+  if(item.feet && playerCloth.feet.length >= 1){
+    playerCloth.feet.splice(item.itemId);
+    println(`You remove the ${clothes} on your feet.`);
+  } else if(item.feet && playerCloth.feet.length === 0){
+    println(`You're not wearing anything`);
+  } 
+
+
+  if(!item.top || !item.bottom || !item.head || !item.feet){
+    println(`You can't remove that.`);
+  }
 }
 
 //ask character about topic function
@@ -845,6 +949,8 @@ let commands = [
     devcom2: args => setMoney(args),
     devcom3: x => setHunger(x),
     devcom4: x => setFatigue(x),
+    wear: wear,
+    remove: remove,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

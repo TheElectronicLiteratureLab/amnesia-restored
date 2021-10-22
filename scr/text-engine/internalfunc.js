@@ -119,6 +119,7 @@ let pressEnter = (id) => {
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
+  document.querySelector('input').focus();
 
   let cont = (e) => {
     if (e.key === 'Enter') {

@@ -10,7 +10,7 @@ let moveCount = 0;
 let playCoord = [];
 let playCloth = [];
 
-const player ={
+const playerc ={
 
     id: 'playChar',
     clothes: playCloth,
