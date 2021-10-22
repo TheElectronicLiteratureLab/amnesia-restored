@@ -16,6 +16,12 @@ const nightmare = {
                 enterRoom('nigh-2');
             }
         },
+        exits:[
+            {
+            dir:['mirror'],
+            id:'nigh-2',
+            }
+        ],    
       },
       {
           id: 'nigh-2',
@@ -35,16 +41,13 @@ const nightmare = {
           name: '',
           desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!” You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. Then you press the nozzle and write:`,
           onBlock: () => {
-              if(prevInput !== 'x'){
+              if(prevInput === 'x'){
                   enterRoom('nigh-7');
-                  if(prevInput === ''){
-                      println('Can you rephrase that?');
-                  }else(prevInput === 'fuck'||'shit'||'explictive');{
-                      enterRoom('nigh-4');}
-                }
-              else{
-                      enterRoom('nigh-8');
-                  }
+              }else if(prevInput === 'fuck'||'shit'||'explictive'){
+                  enterRoom('nigh-4');
+              }else(prevInput === '');{
+                  enterRoom('nigh-8');
+              }
 
               },
           exits:[
@@ -67,8 +70,13 @@ const nightmare = {
           id: 'nigh-4',
           name:'',
           desc: `No sooner have you sprayed your offensive message on the subway car’s window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor’s Commission to Keep the Subways Clean, who is no less a celebrity than ____________`,
+          onblock: () => {
+              if(prevInput === ''){
+                  enterRoom('nigh-5')
+              }
+          },
           //need to add a way for this text to be added to a list then recalled later in the text.
-             
+
             exits:[
             {
                 dir:['name'],
@@ -79,8 +87,9 @@ const nightmare = {
       {
           id: 'nigh-5',
           name: '',
-          desc: `The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner [prevInput], please take the guilty party away.`,
+          desc: ``,
           onEnter:() =>{
+              println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner ${prevInput}, please take the guilty party away.`)
               pressEnter('nigh-6');
           },
           exits:[
@@ -93,8 +102,9 @@ const nightmare = {
       {
           id:'nigh-6',
           name: '',
-          desc: `Commissioner [prevInput] and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner [Last Name from 4>] tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. Your struggles are useless as the tattooist’s buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner [Last Name from 4>] holds up a mirror to your face--and you wake, screaming.`,
+          desc: ``,
           onEnter:() =>{
+              println(`Commissioner ${prevInput} and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner [Last Name from 4>] tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. Your struggles are useless as the tattooist’s buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner ${prevInput} holds up a mirror to your face--and you wake, screaming.`)
               pressEnter('nigh-10');
               //this node exits to wherever the player entered into the nightmare node.
           },
@@ -123,7 +133,7 @@ const nightmare = {
       {
           id: 'nigh-8',
           name: '',
-          desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. “I’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th f1oor. And there--” His featureless head nods toward the purring escalator at the center of the deserted sales floor. ”-is the escalator. See you later X.”`,
+          desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. “I’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th floor. And there--” His featureless head nods toward the purring escalator at the center of the deserted sales floor. ”-is the escalator. See you later X.”`,
           onEnter: () =>{
               reenableInput(); 
           },
@@ -152,11 +162,21 @@ const nightmare = {
           id: 'nigh-sale',
           name: '',
           desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter--and points at the ascending escalator.`,
+          onEnter: () => {
+            reenableInput();
+        },
+          onBlock: () =>{
+            if(prevInput !== 'escalator'){
+                println(`You try to ${prevInput} but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the escalator. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.`)
+            }else{
+                enterRoom('nigh-sale-2')
+            }
+        },
 
           exits:[
             {
                 dir:['escalator'],
-                id:'nigh-sale2',
+                id:'nigh-sale-2',
             }
           ],
       },
@@ -164,7 +184,9 @@ const nightmare = {
           id: 'nigh-sale-2',
           name: '',
           desc: `You take the escalator to the second floor, where four female manikins have been grouped in a tableau representing an outing to the beach. Each of the manikins has lifted her plaster hand to point to the upward-bound escalator.`,
-
+          onEnter: () => {
+              reenableInput();
+          },
           exits:[
             {
                 dir:['escalator'],
@@ -283,7 +305,7 @@ const nightmare = {
           name:'',
           desc:`“This won’t take more than five or six hours,” the aged hair stylist assures you. “We simply have to remove all these facial growths and seal these unsightly pores with sealing wax and then fill in these repulsive cavities. My, what large nostrils you have! But with your nose removed they won’t be a problem any longer. Then we’ll take care of your eyes with some industrial-strength eye-cover. The better stores these days prefer mannequins with perfectly blank faces. Eyes are out, didn’t you know that?”`,
           onEnter:() =>{
-              pressEnter('sham-sale2');
+              pressEnter('sham-sale-2');
           },
           exits:[
             {
@@ -327,6 +349,9 @@ const nightmare = {
           id:'ridd-1',
           name:'',
           desc:`Although I talk of no one and Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of ________.`,
+          onEnter: () =>{
+            reenableInput();
+        },
           onBlock: () => {
               if(prevInput === 'a riddle'){
                   enterRoom('ridd-2');
@@ -355,7 +380,7 @@ const nightmare = {
             },
             {
                 dir:['escalator'],
-                id:'nigh-sale10',
+                id:'nigh-sale-10',
             }
         ],
       },
@@ -365,7 +390,7 @@ const nightmare = {
           desc: ``,
           onEnter: () => {
               println('You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. “Hello,” says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. “My name’s Hugette, what’s yours?” You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. “My full name,” she continues, “is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?”')
-              pressEnter('nigh-sale11');
+              pressEnter('nigh-sale-11');
               
           },
           exits:[
@@ -378,7 +403,10 @@ const nightmare = {
       {
         id:'nigh-sale-11',
         name:'',
-        desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,  
+        desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,
+        onEnter: () =>{
+            reenableInput(); 
+        },
         //add ride to one argument commands
         exits:[
             {
@@ -497,6 +525,12 @@ const nightmare = {
             }
   
           },
+          exits:[
+            {
+              dir:['box','head'],
+              id:'nigh-sale-19',
+            }
+            ],
     },
     {
         id:'nigh-sale-19',
