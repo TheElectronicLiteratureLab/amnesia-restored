@@ -762,6 +762,33 @@ function askXAboutY(xCharacter, yPrep, zTopic) {
 //   talkToOrAboutX('about', y);
 // };
 
+function createPhone() {
+  const rooms = testDisk.rooms;
+  const thisRoom = getRoom(disk.roomId);
+  rooms.forEach(room => {
+    let curRoom = getRoom(disk.roomId);
+    let chance = Math.floor(Math.random() * 101);
+    console.log(chance);
+    if(chance <= 15 && !thisRoom.phonesMade) {
+      curRoom.exits.push(
+        {
+          dir: ['phone', 'telephone', 'booth'],
+          id: 'pho-boo1'
+        },
+      ); curRoom.desc = `There is a phone booth on the corner.`;
+    }
+    console.log(curRoom.id + '' + curRoom.desc);
+  })
+  thisRoom.phonesMade = true;
+};
+
+function testing() {
+  const curRoom = getRoom(disk.roomId);
+  console.log(curRoom.desc);
+  curRoom.desc = `there is a phone booth on this corner`;
+  println(curRoom.desc);
+};
+
 
 // open command
 let open = (itemToOpen) => {
