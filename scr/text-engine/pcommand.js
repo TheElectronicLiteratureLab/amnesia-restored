@@ -782,12 +782,12 @@ function createPhone() {
   thisRoom.phonesMade = true;
 };
 
-function testing() {
-  const curRoom = getRoom(disk.roomId);
-  console.log(curRoom.desc);
-  curRoom.desc = `there is a phone booth on this corner`;
-  println(curRoom.desc);
-};
+// function testing() {
+//   const curRoom = getRoom(disk.roomId);
+//   console.log(curRoom.desc);
+//   curRoom.desc = `there is a phone booth on this corner`;
+//   println(curRoom.desc);
+// };
 
 
 // open command
