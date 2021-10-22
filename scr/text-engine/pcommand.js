@@ -954,6 +954,8 @@ let commands = [
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
+    search: args => goDir(args[1]),
+    look: args => goDir(args[1]),
     go: args => goDir(args[1]),
     walk: args => goDir(args[1]),
     look: lookAt,
