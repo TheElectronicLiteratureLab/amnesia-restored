@@ -156,7 +156,7 @@ const corridor1502 = {
         exits: [
          {
             dir: ['1509', 'room 1509', 'inside'], 
-            id: 'corridor-1509inside',
+            id: 'corridor-1509-inside',
          },
          {
             dir: ['west', 'left', ], 
@@ -164,12 +164,12 @@ const corridor1502 = {
         },
         {
             dir: ['elevator', 'east', 'right'], 
-            id: 'corridor-elevator15',
+            id: 'corridor-elevator-15',
           },
         ],
       },
       {
-        id: 'corridor-1509inside',
+        id: 'corridor-1509-inside',
         name: 'Room 1509',
         desc: `You enter room 1509, where the maid who earlier came to clean your own room is busy vacuuming the carpet.
 
@@ -179,7 +179,7 @@ const corridor1502 = {
         },
       },
       {
-        id: 'corridor-1509outside',
+        id: 'corridor-1509-outside',
         name: '15th Floor Hallway',
         desc: `Not wishing to make a scene, you quietly withdraw from the room and go back to the hallway. \nYou are standing in front of the doors to rooms 1509 and 1510. The door to room 1509 stands slightly ajar. Inside you can hear the purr of a vacuum cleaner.`,
         onEnter: () => {
@@ -197,16 +197,16 @@ const corridor1502 = {
            },
            {
                dir: ['elevator', 'east', 'right'], 
-               id: 'corridor-elevator15',
+               id: 'corridor-elevator-15',
              },
            ],
       },
       {
-        id: 'corridor-elevator15',
+        id: 'corridor-elevator-15',
         name: '15th Floor Hallway',
         desc: `You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
         onEnter: () => {
-            const room=getRoom('corridor-elevator15');
+            const room=getRoom('corridor-elevator-15');
             if((!getItemInRoom('towel') || !getItemInInventory('towel'))){
                 room.desc`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`,
                 goDir('corridor-security');
@@ -225,12 +225,12 @@ const corridor1502 = {
            },
            {
                dir: ['elevator', 'east', 'right'], 
-               id: 'corridor-elevator15',
+               id: 'corridor-elevator-15',
              },
            ],
       },
       {
-        id: 'corridor-elevatorbellboy',
+        id: 'corridor-elevator-bellboy',
         name: '15th Floor Hallway',
         desc: `You call for the elevator -- and a moment later the doors of one of the elevators whoosh open, and a woman in a floppy hat and a bellboy regard you with expressions of disdain and amusement, respectively. "Really!" the woman protests as you step toward the elevator.
 
@@ -248,7 +248,7 @@ const corridor1502 = {
            },
            {
                dir: ['elevator', 'east', 'right'], 
-               id: 'corridor-elevator15',
+               id: 'corridor-elevator-15',
                
              },
            ],
@@ -261,108 +261,108 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                 dir: ['l'], // This is the letter L, for lobby
-                id: 'corridor-elevatorlobby',
+                id: 'corridor-elevator-lobby',
                 
              },
             {
                dir: ['2'], 
-               id: 'corridor-elevator2',
+               id: 'corridor-elevator-2',
                
             },
             {
                 dir: ['3'], 
-                id: 'corridor-elevator3',
+                id: 'corridor-elevator-3',
                 
             },
             {
                 dir: ['4'], 
-                id: 'corridor-elevator4',
+                id: 'corridor-elevator-4',
                 
             },
             {
                 dir: ['5'], 
-                id: 'corridor-elevator5',
+                id: 'corridor-elevator-5',
                 
             },
             {
                 dir: ['6'], 
-                id: 'corridor-elevator6',
+                id: 'corridor-elevator-6',
                 
             },
             {
                 dir: ['7'], 
-                id: 'corridor-elevator7',
+                id: 'corridor-elevator-7',
                 
             },
             {
                 dir: ['8'], 
-                id: 'corridor-elevator8',
+                id: 'corridor-elevator-8',
                 
             },
             {
                 dir: ['9'], 
-                id: 'corridor-elevator9',
+                id: 'corridor-elevator-9',
                 
             },
             {
                 dir: ['10'], 
-                id: 'corridor-elevator10',
+                id: 'corridor-elevator-10',
                 
             },
             {
                 dir: ['11'], 
-                id: 'corridor-elevator11',
+                id: 'corridor-elevator-11',
                 
             },
             {
                 dir: ['12'], 
-                id: 'corridor-elevator12',
+                id: 'corridor-elevator-12',
                 
              },
              {
                  dir: ['13'], 
-                 id: 'corridor-elevator13',
+                 id: 'corridor-elevator-13',
                  
              },
              {
                  dir: ['14'], 
-                 id: 'corridor-elevator14',
+                 id: 'corridor-elevator-14',
                  
              },
              {
                  dir: ['15'], 
-                 id: 'corridor-elevator15',
+                 id: 'corridor-elevator-15',
                  
              },
              {
                  dir: ['16'], 
-                 id: 'corridor-elevator16',
+                 id: 'corridor-elevator-16',
                  
              },
              {
                  dir: ['17'], 
-                 id: 'corridor-elevator17',
+                 id: 'corridor-elevator-17',
                  
              },
              {
                  dir: ['18'], 
-                 id: 'corridor-elevator18',
+                 id: 'corridor-elevator-18',
                  
              },
              {
                  dir: ['19'], 
-                 id: 'corridor-elevator19',
+                 id: 'corridor-elevator-19',
                  
              },
              {
                 dir: ['ph'], 
-                id: 'corridor-elevatorph',
+                id: 'corridor-elevator-ph',
                 
             },
            ],
       },
       {
-        id: 'corridor-hostileelevator', // Random Event if the player is pressing buttons on the elevator
+        id: 'corridor-hostile-elevator', // Random Event if the player is pressing buttons on the elevator
         name: 'Elevator',
         desc: `The doors close. You wait for something to happen. Nothing happens. You continue to wait, and nothing continues to happen. Clearly, this is a hostile elevator. You push the button marked OPEN DOOR. Zilch.
 
@@ -371,7 +371,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['ph',], 
-               id: 'corridor-elevatorph',
+               id: 'corridor-elevator-ph',
                
             },
             {
@@ -391,7 +391,7 @@ const corridor1502 = {
         }
       },
       {
-        id: 'corridor-elevator2', // Player presses 2
+        id: 'corridor-elevator-2', // Player presses 2
         name: '2nd Floor Hallway',
         desc: `You press the button for 2. After a lurch and some movement, the elevator arrives at the 2nd floor, the doors open, and you walk out into the hallway.
 
@@ -479,7 +479,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-2end',
+                id: 'corridor-2-end',
                 
             },
             {
@@ -499,7 +499,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-2end', // End of the hallway
+        id: 'corridor-2-end', // End of the hallway
         name: '2nd Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -511,7 +511,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-2end',
+                id: 'corridor-2-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -598,7 +598,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell2',
+               id: 'corridor-stairwell-2',
                
             },
             {
@@ -623,19 +623,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell2', 
+        id: 'corridor-stairwell-2', 
         name: '2nd Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell2',
+                id: 'corridor-stairwell-2',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -655,7 +655,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator3', // Player presses 3
+        id: 'corridor-elevator-3', // Player presses 3
         name: '3rd Floor Hallway',
         desc: `You press the button for 3. After a lurch and some movement, the elevator arrives at the 3rd floor, the doors open, and you walk out into the hallway.
 
@@ -743,7 +743,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-3end',
+                id: 'corridor-3-end',
                 
             },
             {
@@ -762,7 +762,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-3end', // End of the hallway
+        id: 'corridor-3-end', // End of the hallway
         name: '3rd Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -774,7 +774,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-3end',
+                id: 'corridor-3-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -861,7 +861,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell3',
+               id: 'corridor-stairwell-3',
                
             },
             {
@@ -886,19 +886,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell3', 
+        id: 'corridor-stairwell-3', 
         name: '3rd Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell3',
+                id: 'corridor-stairwell-3',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -918,7 +918,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator4', // Player presses 4
+        id: 'corridor-elevator-4', // Player presses 4
         name: '4th Floor Hallway',
         desc: `You press the button for 4. After a lurch and some movement, the elevator arrives at the 4th floor, the doors open, and you walk out into the hallway.
 
@@ -1012,7 +1012,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-4end',
+                id: 'corridor-4-end',
                 
             },
             {
@@ -1026,7 +1026,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-4end', // End of the hallway
+        id: 'corridor-4-end', // End of the hallway
         name: '4th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -1038,7 +1038,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-4end',
+                id: 'corridor-4-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -1125,7 +1125,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell4',
+               id: 'corridor-stairwell-4',
                
             },
             {
@@ -1150,19 +1150,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell4', 
+        id: 'corridor-stairwell-4', 
         name: '4th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell4',
+                id: 'corridor-stairwell-4',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -1182,7 +1182,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator5', // Player presses 5
+        id: 'corridor-elevator-5', // Player presses 5
         name: '5th Floor Hallway',
         desc: `You press the button for 5. After a lurch and some movement, the elevator arrives at the 5th floor, the doors open, and you walk out into the hallway.
 
@@ -1276,7 +1276,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-5end',
+                id: 'corridor-5-end',
                 
             },
             {
@@ -1290,7 +1290,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-5end', // End of the hallway
+        id: 'corridor-5-end', // End of the hallway
         name: '5th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -1302,7 +1302,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-5end',
+                id: 'corridor-5-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -1389,7 +1389,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell5',
+               id: 'corridor-stairwell-5',
                
             },
             {
@@ -1414,19 +1414,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell5', 
+        id: 'corridor-stairwell-5', 
         name: '5th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell5',
+                id: 'corridor-stairwell-5',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -1446,7 +1446,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator6', // Player presses 6
+        id: 'corridor-elevator-6', // Player presses 6
         name: '6th Floor Hallway',
         desc: `You press the button for 6. After a lurch and some movement, the elevator arrives at the 6th floor, the doors open, and you walk out into the hallway.
 
@@ -1534,7 +1534,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-6end',
+                id: 'corridor-6-end',
                 
             },
             {
@@ -1548,7 +1548,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-6end', // End of the hallway
+        id: 'corridor-6-end', // End of the hallway
         name: '6th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -1560,13 +1560,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-6end',
+                id: 'corridor-6-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-6end',
+                id: 'corridor-6-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -1647,7 +1647,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell6',
+               id: 'corridor-stairwell-6',
                
             },
             {
@@ -1672,19 +1672,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell6', 
+        id: 'corridor-stairwell-6', 
         name: '6th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell6',
+                id: 'corridor-stairwell-6',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -1704,7 +1704,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator7', // Player presses 7
+        id: 'corridor-elevator-7', // Player presses 7
         name: '7th Floor Hallway',
         desc: `You press the button for 7. After a lurch and some movement, the elevator arrives at the 7th floor, the doors open, and you walk out into the hallway.
 
@@ -1792,7 +1792,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-7end',
+                id: 'corridor-7-end',
                 
             },
             {
@@ -1806,7 +1806,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-7end', // End of the hallway
+        id: 'corridor-7-end', // End of the hallway
         name: '7th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -1818,13 +1818,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-7end',
+                id: 'corridor-7-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-7end',
+                id: 'corridor-7-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -1905,7 +1905,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell7',
+               id: 'corridor-stairwell-7',
                
             },
             {
@@ -1930,19 +1930,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell7', 
+        id: 'corridor-stairwell-7', 
         name: '7th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell7',
+                id: 'corridor-stairwell-7',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -1962,7 +1962,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator8', // Player presses 8
+        id: 'corridor-elevator-8', // Player presses 8
         name: '8th Floor Hallway',
         desc: `You press the button for 8. After a lurch and some movement, the elevator arrives at the 8th floor, the doors open, and you walk out into the hallway.
 
@@ -2050,7 +2050,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-8end',
+                id: 'corridor-8-end',
                 
             },
             {
@@ -2064,7 +2064,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-8end', // End of the hallway
+        id: 'corridor-8-end', // End of the hallway
         name: '8th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -2076,13 +2076,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-8end',
+                id: 'corridor-8-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-8end',
+                id: 'corridor-8-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -2163,7 +2163,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell8',
+               id: 'corridor-stairwell-8',
                
             },
             {
@@ -2188,19 +2188,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell8', 
+        id: 'corridor-stairwell-8', 
         name: '8th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell8',
+                id: 'corridor-stairwell-8',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -2220,7 +2220,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator9', // Player presses 9
+        id: 'corridor-elevator-9', // Player presses 9
         name: '9th Floor Hallway',
         desc: `You press the button for 9. After a lurch and some movement, the elevator arrives at the 9th floor, the doors open, and you walk out into the hallway.
 
@@ -2308,7 +2308,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-9end',
+                id: 'corridor-9-end',
                 
             },
             {
@@ -2322,7 +2322,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-9end', // End of the hallway
+        id: 'corridor-9-end', // End of the hallway
         name: '9th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -2334,13 +2334,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-9end',
+                id: 'corridor-9-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-9end',
+                id: 'corridor-9-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -2421,7 +2421,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell9',
+               id: 'corridor-stairwell-9',
                
             },
             {
@@ -2446,7 +2446,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell9', 
+        id: 'corridor-stairwell-9', 
         name: '9th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
@@ -2458,7 +2458,7 @@ const corridor1502 = {
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell9',
+                id: 'corridor-stairwell-9',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -2478,7 +2478,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator10', // Player presses 10
+        id: 'corridor-elevator-10', // Player presses 10
         name: '10th Floor Hallway',
         desc: `You press the button for 10. After a lurch and some movement, the elevator arrives at the 10th floor, the doors open, and you walk out into the hallway.
 
@@ -2566,7 +2566,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-10end',
+                id: 'corridor-10-end',
                 
             },
             {
@@ -2580,7 +2580,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-10end', // End of the hallway
+        id: 'corridor-10-end', // End of the hallway
         name: '10th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -2592,13 +2592,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-10end',
+                id: 'corridor-10-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-10end',
+                id: 'corridor-10-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -2640,7 +2640,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-708', 
+        id: 'corridor-1008', 
         name: '10th Floor Hallway',
         desc: `You are standing betwixt rooms 1007 and 1008`,
         
@@ -2679,7 +2679,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell10',
+               id: 'corridor-stairwell-10',
                
             },
             {
@@ -2704,19 +2704,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell10', 
+        id: 'corridor-stairwell-10', 
         name: '10th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell10',
+                id: 'corridor-stairwell-10',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -2736,7 +2736,7 @@ const corridor1502 = {
            
       }, // FLOORS 11-19 ****************************************************************
       {
-        id: 'corridor-elevator11', // Player presses 11
+        id: 'corridor-elevator-11', // Player presses 11
         name: '11th Floor Hallway',
         desc: `You press the button for 11. After a lurch and some movement, the elevator arrives at the 11thd floor, the doors open, and you walk out into the hallway.
 
@@ -2824,7 +2824,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-11end',
+                id: 'corridor-11-end',
                 
             },
             {
@@ -2844,7 +2844,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-11end', // End of the hallway
+        id: 'corridor-11-end', // End of the hallway
         name: '11th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -2856,7 +2856,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-11end',
+                id: 'corridor-11-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -2873,7 +2873,7 @@ const corridor1502 = {
       
       {
         id: 'corridor-1110', 
-        name: '2nd Floor Hallway',
+        name: '11th Floor Hallway',
         desc: `You are standing in front of the doors to rooms 1109 and 1110.`,
         
         exits: [ // These need to be specified with the press command
@@ -2927,7 +2927,7 @@ const corridor1502 = {
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-210',
+                id: 'corridor-1110',
                 block: 'You cannot go that way.',
                 
             },
@@ -2943,7 +2943,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell11',
+               id: 'corridor-stairwell-11',
                
             },
             {
@@ -2968,19 +2968,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell11', 
+        id: 'corridor-stairwell-11', 
         name: '11th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell11',
+                id: 'corridor-stairwell-11',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -3000,7 +3000,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator12', // Player presses 12
+        id: 'corridor-elevator-12', // Player presses 12
         name: '12th Floor Hallway',
         desc: `You press the button for 2. After a lurch and some movement, the elevator arrives at the 12th floor, the doors open, and you walk out into the hallway.
 
@@ -3088,7 +3088,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-12end',
+                id: 'corridor-12-end',
                 
             },
             {
@@ -3108,7 +3108,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-12end', // End of the hallway
+        id: 'corridor-12-end', // End of the hallway
         name: '12th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -3120,7 +3120,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-12end',
+                id: 'corridor-12-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -3207,7 +3207,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell12',
+               id: 'corridor-stairwell-12',
                
             },
             {
@@ -3232,19 +3232,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell12', 
+        id: 'corridor-stairwell-12', 
         name: '12th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside' ,'up'], 
-                id: 'corridor-stairwell12',
+                id: 'corridor-stairwell-12',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -3264,7 +3264,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator13', // Player presses 13
+        id: 'corridor-elevator-13', // Player presses 13
         name: '13th Floor Hallway',
         desc: `You press the button for 13. After a lurch and some movement, the elevator arrives at the 13th floor, the doors open, and you walk out into the hallway.
 
@@ -3352,7 +3352,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-13end',
+                id: 'corridor-13-end',
                 
             },
             {
@@ -3371,7 +3371,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-13end', // End of the hallway
+        id: 'corridor-13-end', // End of the hallway
         name: '13th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -3383,7 +3383,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-13end',
+                id: 'corridor-13-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -3470,7 +3470,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell13',
+               id: 'corridor-stairwell-13',
                
             },
             {
@@ -3495,19 +3495,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell13', 
+        id: 'corridor-stairwell-13', 
         name: '13th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell13',
+                id: 'corridor-stairwell-13',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -3527,7 +3527,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator14', // Player presses 14
+        id: 'corridor-elevator-14', // Player presses 14
         name: '14th Floor Hallway',
         desc: `You press the button for 14. After a lurch and some movement, the elevator arrives at the 14th floor, the doors open, and you walk out into the hallway.
 
@@ -3621,7 +3621,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-14end',
+                id: 'corridor-14-end',
                 
             },
             {
@@ -3635,7 +3635,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-14end', // End of the hallway
+        id: 'corridor-14-end', // End of the hallway
         name: '14th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -3647,7 +3647,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-14end',
+                id: 'corridor-14-end',
                 lock: 'You cannot go that way.',
                 
             },
@@ -3734,7 +3734,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell14',
+               id: 'corridor-stairwell-14',
                
             },
             {
@@ -3759,19 +3759,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell14', 
+        id: 'corridor-stairwell-14', 
         name: '14th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside',  ,'up'], 
-                id: 'corridor-stairwell14',
+                id: 'corridor-stairwell-14',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -3791,7 +3791,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator16', // Player presses 16
+        id: 'corridor-elevator-16', // Player presses 16
         name: '16th Floor Hallway',
         desc: `You press the button for 16. After a lurch and some movement, the elevator arrives at the 16th floor, the doors open, and you walk out into the hallway.
 
@@ -3879,7 +3879,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-16end',
+                id: 'corridor-16-end',
                 
             },
             {
@@ -3893,7 +3893,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-16end', // End of the hallway
+        id: 'corridor-16-end', // End of the hallway
         name: '16th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -3905,13 +3905,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-16end',
+                id: 'corridor-16-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-16end',
+                id: 'corridor-16-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -3992,7 +3992,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell16',
+               id: 'corridor-stairwell-16',
                
             },
             {
@@ -4017,7 +4017,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell16', 
+        id: 'corridor-stairwell-16', 
         name: '16th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
@@ -4029,7 +4029,7 @@ const corridor1502 = {
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell16',
+                id: 'corridor-stairwell-16',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -4049,7 +4049,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator17', // Player presses 17
+        id: 'corridor-elevator-17', // Player presses 17
         name: '17th Floor Hallway',
         desc: `You press the button for 17. After a lurch and some movement, the elevator arrives at the 17th floor, the doors open, and you walk out into the hallway.
 
@@ -4137,7 +4137,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-17end',
+                id: 'corridor-17-end',
                 
             },
             {
@@ -4151,7 +4151,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-17end', // End of the hallway
+        id: 'corridor-17-end', // End of the hallway
         name: '17th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -4163,13 +4163,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-17end',
+                id: 'corridor-17-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-17end',
+                id: 'corridor-17-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -4250,7 +4250,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell17',
+               id: 'corridor-stairwell-17',
                
             },
             {
@@ -4275,19 +4275,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell17', 
+        id: 'corridor-stairwell-17', 
         name: '17th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell17',
+                id: 'corridor-stairwell-17',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -4307,7 +4307,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator8', // Player presses 18
+        id: 'corridor-elevator-18', // Player presses 18
         name: '18th Floor Hallway',
         desc: `You press the button for 18. After a lurch and some movement, the elevator arrives at the 18th floor, the doors open, and you walk out into the hallway.
 
@@ -4395,7 +4395,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-18end',
+                id: 'corridor-18-end',
                 
             },
             {
@@ -4409,7 +4409,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-18end', // End of the hallway
+        id: 'corridor-18-end', // End of the hallway
         name: '18th Floor Hallway',
         desc: `You are at the easterly end of the hallway.`,
         
@@ -4421,13 +4421,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-18end',
+                id: 'corridor-18-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-18end',
+                id: 'corridor-18-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -4508,7 +4508,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell8',
+               id: 'corridor-stairwell-18',
                
             },
             {
@@ -4533,19 +4533,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell18', 
+        id: 'corridor-stairwell-18', 
         name: '18th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell18',
+                id: 'corridor-stairwell-18',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -4565,7 +4565,7 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-elevator19', // Player presses 19
+        id: 'corridor-elevator-19', // Player presses 19
         name: '19th Floor Hallway',
         desc: `You press the button for 19. After a lurch and some movement, the elevator arrives at the 19th floor, the doors open, and you walk out into the hallway.
 
@@ -4653,7 +4653,7 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-19end',
+                id: 'corridor-19-end',
                 
             },
             {
@@ -4679,13 +4679,13 @@ const corridor1502 = {
             },
             {
                 dir: ['east','right'], 
-                id: 'corridor-19end',
+                id: 'corridor-19-end',
                 lock: 'You cannot go that way.',
                 
             },
             {
                 dir: ['north', 'south'], 
-                id: 'corridor-19end',
+                id: 'corridor-19-end',
                 block: 'You cannot go that way.',
                 
             },
@@ -4766,7 +4766,7 @@ const corridor1502 = {
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left'], 
-               id: 'corridor-stairwell19',
+               id: 'corridor-stairwell-19',
                
             },
             {
@@ -4791,19 +4791,19 @@ const corridor1502 = {
            
       },
       {
-        id: 'corridor-stairwell19', 
+        id: 'corridor-stairwell-19', 
         name: '19th Floor Hallway',
         desc: `You are standing just down from the stairway.`,
         
         exits: [ // These need to be specified with the press command
             {
                dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], 
-               id: 'corridor-stairwell15',
+               id: 'corridor-stairwell-15',
                
             },
             {
                 dir: ['inside', 'up'], 
-                id: 'corridor-stairwell19',
+                id: 'corridor-stairwell-19',
                 block: "Your're still outside the stairwell."
                 
             },
@@ -4834,17 +4834,17 @@ const corridor1502 = {
         }
       },
       {
-        id: 'corridor-stairwell15', // Stairway on 15th floor
+        id: 'corridor-stairwell-15', // Stairway on 15th floor
         name: 'Firestairs',
         desc: `The door opens onto the landing of a wide stairwell. The concrete steps and walls are painted battleship grey.`,
         exits: [
           {
             dir: ['up', 'ascend'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
-            id: 'corridor-stairwellph'
+            id: 'corridor-stairwell-ph'
           },
           {
             dir: ['down', 'descend'],
-            id: 'corridor-stairwellde'
+            id: 'corridor-stairwell-de'
           },
           {
             dir: ['exit', 'leave'],
@@ -4853,7 +4853,7 @@ const corridor1502 = {
         ],
       },
       {
-        id: 'corridor-stairwellph', // To the health club
+        id: 'corridor-stairwell-ph', // To the health club
         name: '',
         desc: `You mount the stairs slowly to the next landing. The concrete feels cold under your bare feet. You climb, in all, five flights of steps--and find yourself, at last, before a door marked SUNDERLAND HEALTH CLUB, Authorized Personnel Only.`,
         onEnter: () => {
@@ -4861,7 +4861,7 @@ const corridor1502 = {
         },
       },
       {
-        id: 'corridor-elevatorph', // Player presses ph, to the health club
+        id: 'corridor-elevator-ph', // Player presses ph, to the health club
         name: '',
         desc: `The doors close, and the elevator rises with a little lurch. Its progress is marked by red lights that wink on and off behind the numbers above the door: 16, 17, 18, 19, and your destination, the Penthouse floor. The door opens and you step out into a narrow corridor. A sign in front of the elevator directs you (by an arrow pointing to the right) to the entrance of the Sunderland Sauna and Health Club. The door of the elevator closes behind you.`,
         onEnter: () => {
@@ -4894,12 +4894,12 @@ const corridor1502 = {
           },
           {
             dir: ['leave', 'descend'],
-            id: 'corridor-stairwell15'
+            id: 'corridor-stairwell-15'
           },
         ],
       },
       {
-        id: 'corridor-stairwellde',
+        id: 'corridor-stairwell-de',
         name: 'Firestairs',
         desc: `You go down the steps. At the next floor landing, you feel an odd vertiginous feeling. Foolishly you ignore the feeling, and as you approach the landing of still another floor you lose all sense of balance. 
 
@@ -4909,22 +4909,22 @@ const corridor1502 = {
        },
       },
       {
-        id: 'nyu-medical1', // After the nightmare, proceeding to death and texas
+        id: 'nyu-medical-1', // After the nightmare, proceeding to death and texas
         name: 'NYU Medical Center',
         desc: `You awaken not where you fell, on the landing of the Sunderland's firestairs, but in a hospital bed. Your arms have been fastened to the sides of the bed by canvas restraining straps. After you have struggled a little while, a nurse enters with a hypodermic. "Now, now, Mr. Hollings, none of that or I will have to sedate you."`,
         exits: [
             {
               dir: ['fight', 'protest', 'scream', 'struggle', 'kill','nurse', 'hollings'],
-              id: 'nyu-medical2'
+              id: 'nyu-medical-2'
             },
             {
               dir: ['explain', 'explaination', 'you'],
-              id: 'nyu-medical3'
+              id: 'nyu-medical-3'
             },
           ],
     },
     {
-        id: 'nyu-medical2', // Proceed to Death and Texas
+        id: 'nyu-medical-2', // Proceed to Death and Texas
         name: 'NYU Medical Center',
         desc: `Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`,
        onEnter: () =>{
@@ -4932,7 +4932,7 @@ const corridor1502 = {
        },
     },
     {
-        id: 'nyu-medical3', // Proceed to Death and Texas
+        id: 'nyu-medical-3', // Proceed to Death and Texas
         name: 'NYU Medical Center',
         desc: `"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`,
        onEnter: () =>{
