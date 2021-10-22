@@ -43,28 +43,13 @@ const nightmare = {
           onBlock: () => {
               if(prevInput === 'x'){
                   enterRoom('nigh-7');
-              }else if(prevInput === 'fuck'||'shit'||'explictive'){
+              }else if(prevInput === 'fuck'||prevInput === 'shit'||prevInput === 'explictive'){
                   enterRoom('nigh-4');
               }else(prevInput === '');{
                   enterRoom('nigh-8');
               }
 
               },
-          exits:[
-            {
-                dir:['fuck'],
-                id: 'nigh-4'
-            },
-            {
-                dir:['x'],
-                id:'nigh-7'
-            },
-            {
-                dir:['thing'],
-                id:'nigh-8',
-            },
-            
-        ],
       },
       {
           id: 'nigh-4',
