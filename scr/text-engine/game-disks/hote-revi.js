@@ -68,6 +68,13 @@ const hotereviDisk = {
                     isRemovable: true
                 },
                 {
+                    itemId: 'sweater',
+                    name: 'sweater',
+                    top: true,
+                    isWearable: true,
+                    isRemovable: true
+                },
+                {
                     itemId: 'pants',
                     name: ['pants', 'jeans'],
                     bottom: true,
@@ -76,9 +83,9 @@ const hotereviDisk = {
                 },
                 {
                     itemId: 'tophat',
-                    name: 'top hat',
+                    name: 'hat',
                     desc: `It's a hat!`,
-                    
+                    head: true,
                     isWearable: true,
                     isRemovable: true
                 },
@@ -86,7 +93,7 @@ const hotereviDisk = {
                     itemId: 'shoes',
                     name: 'suit shoes',
                     desc: `It's a shoes!`,
-                   
+                    feet: true,
                     isWearable: true,
                     isRemovable: true
                 },
