@@ -625,12 +625,12 @@ if(getItemInInventory('address book')){
   };
 }
 
-let playerCloth = {
+/*let playerCloth = {
   top: [],
   bottom: [],
   head: [],
   feet: [],
-}
+}*/
 
 
 
@@ -655,39 +655,39 @@ let wear = (clothes) => {
     println(`You must first remove the ${playerCloth.top} and ${playerCloth.bottom}  `)
   }*/
   
-  if(item.top && !item.bottom && playerCloth.top.length === 0){
-    playerCloth.top.push(item.itemId);
+  if(item.top && !item.bottom && playCloth.top.length === 0){
+    playCloth.top.push(item.itemId);
     println(`You put on ${clothes} on your torso.`);
-  } else if(item.top && !item.bottom && playerCloth.top.length >= 1 && playerCloth.top[0] !== item.itemId){
-    println(`You must first remove the ${playerCloth.top} you're wearing in order to put on something else.`);
-  } else if(item.top && !item.bottom && playerCloth.top.length >= 1 && playerCloth.top[0] === item.itemId){
+  } else if(item.top && !item.bottom && playCloth.top.length >= 1 && playCloth.top[0] !== item.itemId){
+    println(`You must first remove the ${playCloth.top} you're wearing in order to put on something else.`);
+  } else if(item.top && !item.bottom && playCloth.top.length >= 1 && playCloth.top[0] === item.itemId){
     println(`You're already wearing that.`);
   }
 
-  if(item.bottom && !item.top && playerCloth.bottom.length === 0){
-    playerCloth.bottom.push(item.itemId);
+  if(item.bottom && !item.top && playCloth.bottom.length === 0){
+    playCloth.bottom.push(item.itemId);
     println(`You put on ${clothes} on your legs.`);
-  } else if(item.bottom && !item.top && playerCloth.bottom.length >= 1 && playerCloth.bottom[0] !== item.itemId){
-    println(`You must first remove the ${playerCloth.bottom} you're wearing in order to put on something else.`);
-  } else if(item.bottom && !item.top && playerCloth.bottom.length >= 1 && playerCloth.bottom[0] === item.itemId){
+  } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] !== item.itemId){
+    println(`You must first remove the ${playCloth.bottom} you're wearing in order to put on something else.`);
+  } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] === item.itemId){
     println(`You're already wearing that.`);
   }
   
-  if(item.head && playerCloth.head.length === 0){
-    playerCloth.head.push(item.itemId);
+  if(item.head && playCloth.head.length === 0){
+    playCloth.head.push(item.itemId);
     println(`You put on ${clothes} on your head.`);
-  } else if(item.head && playerCloth.head.length >= 1 && playerCloth.head[0] !== item.itemId){
-    println(`You must first remove the ${playerCloth.head} you're wearing in order to put on something else.`);
-  } else if(item.head && playerCloth.head.length >= 1 && playerCloth.head[0] === item.itemId){
+  } else if(item.head && playCloth.head.length >= 1 && playCloth.head[0] !== item.itemId){
+    println(`You must first remove the ${playCloth.head} you're wearing in order to put on something else.`);
+  } else if(item.head && playCloth.head.length >= 1 && playCloth.head[0] === item.itemId){
     println(`You're already wearing that.`);
   }
   
-  if(item.feet && playerCloth.feet.length === 0){;
-    playerCloth.feet.push(item.itemId);
+  if(item.feet && playCloth.feet.length === 0){;
+    playCloth.feet.push(item.itemId);
     println(`You put on ${clothes} on your feet.`);
-  } else if(item.feet && playerCloth.feet.length >= 1 && playerCloth.feet[0] !== item.itemId){
-    println(`You must first remove the ${playerCloth.feet} you're wearing in order to put on something else.`);
-  } else if(item.feet && playerCloth.feet.length >= 1 && playerCloth.feet[0] === item.itemId){
+  } else if(item.feet && playCloth.feet.length >= 1 && playCloth.feet[0] !== item.itemId){
+    println(`You must first remove the ${playCloth.feet} you're wearing in order to put on something else.`);
+  } else if(item.feet && playCloth.feet.length >= 1 && playCloth.feet[0] === item.itemId){
     println(`You're already wearing that.`);
   }
   
@@ -700,31 +700,31 @@ let wear = (clothes) => {
 let remove = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
 
-  if(item.top && !item.bottom && playerCloth.top.length >= 1){
-    playerCloth.top.splice(item.itemId);
+  if(item.top && !item.bottom && playCloth.top.length >= 1){
+    playCloth.top.splice(item.itemId);
     println(`You remove the ${clothes} on your torso.`);
-  } else if(item.top && !item.bottom && playerCloth.top.length === 0){
+  } else if(item.top && !item.bottom && playCloth.top.length === 0){
     println(`You're not wearing anything`);
   } 
 
-  if(item.bottom && !item.top && playerCloth.bottom.length >= 1){
-    playerCloth.bottom.splice(item.itemId);
+  if(item.bottom && !item.top && playCloth.bottom.length >= 1){
+    playCloth.bottom.splice(item.itemId);
     println(`You remove the ${clothes} on your legs.`);
-  } else if(item.bottom && !item.top && playerCloth.bottom.length === 0){
+  } else if(item.bottom && !item.top && playCloth.bottom.length === 0){
     println(`You're not wearing anything`);
   } 
 
-  if(item.head && playerCloth.head.length >= 1){
-    playerCloth.head.splice(item.itemId);
+  if(item.head && playCloth.head.length >= 1){
+    playCloth.head.splice(item.itemId);
     println(`You remove the ${clothes} on your head.`);
-  } else if(item.head && playerCloth.head.length === 0){
+  } else if(item.head && playCloth.head.length === 0){
     println(`You're not wearing anything`);
   } 
 
-  if(item.feet && playerCloth.feet.length >= 1){
-    playerCloth.feet.splice(item.itemId);
+  if(item.feet && playCloth.feet.length >= 1){
+    playCloth.feet.splice(item.itemId);
     println(`You remove the ${clothes} on your feet.`);
-  } else if(item.feet && playerCloth.feet.length === 0){
+  } else if(item.feet && playCloth.feet.length === 0){
     println(`You're not wearing anything`);
   } 
 

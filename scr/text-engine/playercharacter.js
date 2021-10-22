@@ -8,7 +8,13 @@ let survScore = 0;
 let totalScore = (detScore + charScore + survScore);
 let moveCount = 0;
 let playCoord = [];
-let playCloth = [];
+let playCloth = {
+    top: [],
+    bottom: [],
+    head: [],
+    feet: [],
+  };
+  
 
 const playerc ={
 
