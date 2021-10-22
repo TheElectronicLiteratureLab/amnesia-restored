@@ -14,13 +14,12 @@ let applyInput = (input) => {
   const val = input.toLowerCase();
   setInput(''); // reset input field
   
-
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
     if (cmd) {
       cmd(arg);
       moveCount++;
-  console.log(moveCount);
+      console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
     } 
@@ -28,11 +27,9 @@ let applyInput = (input) => {
       room.onBlock({disk, println, getRoom, enterRoom,});
       return;
     }
-
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
     }
-    
   };
 
   let args = val.split(' ')
