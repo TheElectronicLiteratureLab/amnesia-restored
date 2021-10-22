@@ -31,7 +31,8 @@ const demoDisk = {
           desc: `All you can see are puffy white clouds over a blue sky.`, // description shown when player looks at the item
         },
         {
-          name: ['monstera', 'plant', 'swiss cheese'], // player can refer to this item by any of these names
+          name: ['monstera', 'plant', 'swiss cheese'],
+          id: 'monstera', // player can refer to this item by any of these names
           desc: `Sometimes called a Swiss Cheese plant, no office is complete without one. It has lovely, large leaves. This is the biggest you\'ve ever seen.
 
           There's **SOMETHING SHINY** in the pot.`,
@@ -180,6 +181,22 @@ const demoDisk = {
         {dir: ['downstairs', 'down'], id: 'reception'},
       ],
     },
+  ],
+  player: [
+    {
+      time: new Date('May 4, 1986 09:05:00'),
+      id: 'playChar',
+      clothes: [],
+      fatigue: 100,
+      hunger: 100,
+      money: 0.00,
+      dScore: 0,
+      cScore: 0,
+      sScore: 0,
+      tScore: 0,
+      moves: 0,
+      pCorrds: []
+  }
   ],
   characters: [
     {
