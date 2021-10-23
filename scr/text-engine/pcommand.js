@@ -741,19 +741,19 @@ let remove = (clothes) => {
 
 // };
 
-function askXAboutY(xCharacter, yPrep, zTopic) {
-  const room = getRoom(disk.roomId);
-  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
+// function askXAboutY(xCharacter, yPrep, zTopic) {
+//   const room = getRoom(disk.roomId);
+//   const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
 
-  if (yPrep !== 'about') {
-    println('You can Ask x(character) about y(topic)');
-  }
+//   if (yPrep !== 'about') {
+//     println('You can Ask x(character) about y(topic)');
+//   }
   
-  if (yPrep === 'about'){
-    console.log(character.name);
-    console.log(xCharacter, zTopic);
-  }
-};
+//   if (yPrep === 'about'){
+//     console.log(character.name);
+//     console.log(xCharacter, zTopic);
+//   }
+// };
 
 //ask character about topic function
 // const askXAboutY = ([x, y]) => {
@@ -762,12 +762,6 @@ function askXAboutY(xCharacter, yPrep, zTopic) {
 //   talkToOrAboutX('about', y);
 // };
 
-
-// function arrayTest() {
-//   for(let i = 0, l = disk.rooms.length; i < l; i++){
-//     console.log(disk.rooms[i]);
-//   }
-// }
 
 function createPhone() { //create function
   const rooms = hcDvDisk.rooms; //set variable to loaded disk
@@ -788,35 +782,6 @@ function createPhone() { //create function
   }
   thisRoom.phonesMade = true; //dont allow the function to run again
 };
-
-// function creationPhone () {
-//   const rooms = testDisk.rooms;
-
-//   rooms.forEach(phoneCreate)
-
-//   console.log(rooms.exits)
-// };
-
-// function phoneCreate() {
-//   const room = getRoom(disk.roomId);
-//   const chance = Math.floor(Math.random() * 101);
-//   if (chance <= 15 && !room.phonesMade) {
-//     room.exits.push(
-//       {
-//         dir: ['phone', 'telephone', 'booth', 'phonebooth', 'pay phone'],
-//         id: 'pho-boo1',
-//       }
-//     ); room.desc = room.desc + `
-//     There is a phone booth on the corner.`;
-//   };
-// };
-
-// function testing() {
-//   const curRoom = getRoom(disk.roomId);
-//   console.log(curRoom.desc);
-//   curRoom.desc = `there is a phone booth on this corner`;
-//   println(curRoom.desc);
-// };
 
 
 // open command
@@ -1025,7 +990,7 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
-  {
-    ask: args => askXAboutY(args[0], args[2]),
-  },
+  // {
+  //   ask: args => askXAboutY(args[0], args[2]),
+  // },
 ];
