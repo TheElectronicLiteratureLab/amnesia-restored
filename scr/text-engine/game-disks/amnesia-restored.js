@@ -8,7 +8,8 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         pressEnter(`amne-intr`);
-      }
+      },
+      exits: [],
     },
     {
       id: 'amne-intr', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
@@ -24,6 +25,7 @@ const amnesiaRestored = {
         setTimeout(() => {  println("Slowly, as you lie there on the cool bedspread, it dawns on you that you have absolutely no idea where you are. A hotel room, by the look of it. But with the curtains drawn, you don't know in what city, or even what country.\n\n\n"); }, 4000);
         setTimeout(() => {  pressEnter('amne-intr-1');}, 4100);  
       },
+      exits: [],
     },
     {
       id: 'amne-intr-1',
@@ -36,6 +38,7 @@ const amnesiaRestored = {
         setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-2'));}, 1150);
       },
+      exits: [],
     },
     {
       id: 'amne-intr-2',
@@ -58,7 +61,8 @@ const amnesiaRestored = {
         println("Lead Promotioner: Sydney Brower");
         println("Special Thanks: Washington State University Vancouver, Greg, Sarah, more, more, more");
         pressEnter('hote-room-1');
-      }
+      },
+      exits: [],
     },
     //**********************************************************/
     //                     Hotel Room 1502                     /
@@ -72,6 +76,7 @@ const amnesiaRestored = {
         println(`What's a person to do in such a situation? \n\nWhat YOU do is...`);
         reenableInput();
       },
+      exits: [],
       items: [
         {
           name: 'up',
@@ -89,6 +94,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Your hair--is it light or dark?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'light'){
           hairColor = 'dark';
@@ -116,6 +122,7 @@ const amnesiaRestored = {
         println('Long or short?');
         console.log(hairColor);
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'long'){
           hairLength = 'short';
@@ -141,6 +148,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Do you have a beard? Or a mustache? or neither?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'beard'){
           hairFace = 'a mustache';
@@ -172,6 +180,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('What is the color of your eyes?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'blue'){
           hairColor = 'brown';
@@ -201,7 +210,8 @@ const amnesiaRestored = {
       onEnter: () => {
         println(`You could hardly be more completely mistaken! For when you look in the mirror, the stranger you see there has ${hairLength}, ${hairColor} hair. He has ${hairFace}. And his eyes are emphatically ${eyeColor}.`);
         pressEnter('hote-room-7');
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-7',
@@ -214,6 +224,7 @@ const amnesiaRestored = {
         //reenableInput();
         pressEnter('hote-room-8');
       },
+      exits: [],
     },
     {
       id: 'hote-room-8', // The main room you can start exploring
@@ -7040,6 +7051,27 @@ const amnesiaRestored = {
         id: 'heal-club23',
         name: 'Massage Room',
         desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+        exits: [],
+      items: [
+        {
+          name: 'Green Canvas Gym Bag',
+          desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+          isTakeable: true,
+          isDroppable: true,
+          descRead: false,
+          onTake: () => {
+            const room = getRoom(disk.roomId);
+            if (room.descRead === false) {
+              println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+            } room.descRead = true;
+            pressEnter('heal-club25');
+          },
+          onLook: () => {
+            takeItem('Green Canvas Gym Bag');
+            pressEnter('heal-club25');
+          }
+        },
+      ]
     },
     {
         id: 'heal-club24',

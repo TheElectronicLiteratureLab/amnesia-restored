@@ -762,25 +762,54 @@ function askXAboutY(xCharacter, yPrep, zTopic) {
 //   talkToOrAboutX('about', y);
 // };
 
-function createPhone() {
-  const rooms = testDisk.rooms;
-  const thisRoom = getRoom(disk.roomId);
-  rooms.forEach(room => {
-    let curRoom = getRoom(disk.roomId);
-    let chance = Math.floor(Math.random() * 101);
-    console.log(chance);
-    if(chance <= 15 && !thisRoom.phonesMade) {
-      curRoom.exits.push(
+
+// function arrayTest() {
+//   for(let i = 0, l = disk.rooms.length; i < l; i++){
+//     console.log(disk.rooms[i]);
+//   }
+// }
+
+function createPhone() { //create function
+  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const thisRoom = getRoom(disk.roomId); //get current room
+  for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
+    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      console.log(chance); //log the number generated
+      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+      rooms[i].exits.push( //push the following into the room's exits array
         {
-          dir: ['phone', 'telephone', 'booth'],
-          id: 'pho-boo1'
+          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+          id: 'pho-boo1' //id for phone booth
         },
-      ); curRoom.desc = `There is a phone booth on the corner.`;
+      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+      
     }
-    console.log(curRoom.id + '' + curRoom.desc);
-  })
-  thisRoom.phonesMade = true;
+  }
+  thisRoom.phonesMade = true; //dont allow the function to run again
 };
+
+// function creationPhone () {
+//   const rooms = testDisk.rooms;
+
+//   rooms.forEach(phoneCreate)
+
+//   console.log(rooms.exits)
+// };
+
+// function phoneCreate() {
+//   const room = getRoom(disk.roomId);
+//   const chance = Math.floor(Math.random() * 101);
+//   if (chance <= 15 && !room.phonesMade) {
+//     room.exits.push(
+//       {
+//         dir: ['phone', 'telephone', 'booth', 'phonebooth', 'pay phone'],
+//         id: 'pho-boo1',
+//       }
+//     ); room.desc = room.desc + `
+//     There is a phone booth on the corner.`;
+//   };
+// };
 
 // function testing() {
 //   const curRoom = getRoom(disk.roomId);

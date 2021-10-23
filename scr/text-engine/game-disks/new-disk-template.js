@@ -10,7 +10,8 @@ const testDisk = {
       
       onEnter: () => {
         pressEnter('pho-boo');
-      }
+      },
+      exits: [],
     },
     {
       id: 'pho-boo',
@@ -18,9 +19,9 @@ const testDisk = {
       desc: 'There is nothing interesting here - 1',
       phonesMade: false,
       onEnter: () => {
-        const room = getRoom(disk.roomId);
-        if (!room.phonesMade) {
-          createPhone();
+        const thisRoom = getRoom(disk.roomId);
+        if (!thisRoom.phonesMade) {
+          createPhone()
         }
         pressEnter('pho-boo2');
       },
@@ -160,7 +161,7 @@ const testDisk = {
       id: 'pho-boo1',
       name: 'Phone Booth',
       desc: 'Please dial a number',
-      isPhoneBooth: true,
+      isPhone: true,
       
       exits: [
         {
