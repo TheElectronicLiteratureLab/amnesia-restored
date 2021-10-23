@@ -5,27 +5,28 @@ const hotereviDisk = {
         {
             id: 'hote-revi', // unique ID for this room
             name: 'Hotel Room', // displayed to player
-            desc: `You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.
-            
-            The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky. You must have lain unconscious much longer than you supposed.
-            
-            You see a ***large box*** that has been placed at the foot of the freshly made bed.`,
-
-            
+            desc: ``,
+            lukecall: false,            
             onEnter: () => {
-                if(getRoom('hote-revi').visits >= 2){
+                if(getRoom('hote-revi').visits <= 0){
+                    println(`You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.
+            
+                    The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky. You must have lain unconscious much longer than you supposed.
+        
+                    The thought of time cues another awareness: you are ravenously hungry.
+                    
+                    But even as you head toward the phone to dial Room Service, you see a ***large box*** that has been placed at the foot of the freshly made bed.`);
+                } 
+
+                if(getRoom('hote-revi').visits >= 1){
                     let hotelRoom = getRoom('hote-revi');
                     hotelRoom.desc = `You're standing in your hotel room`;
                     println(hotelRoom.desc);
-                };
+                }
+        
+                const room = getRoom('hote-revi');
+                console.log(room.lukecall);
             },
-
-            onBlock: () => {
-                if(moveCount >= 4 || (prevInput === 'leave' || 'exit')){
-                    enterRoom('hote-revi-2');
-                };
-            },
-
             onLook: () => {
                 const room = getRoom('hote-revi');
 
@@ -48,55 +49,43 @@ const hotereviDisk = {
                 if(getItemInInventory('ballpoint pen')){ // if the pen is already in inventory
                     room.desc = room.desc.replace(`${penDesc}`, '');
                 };
-            }, // closes onLook function
-            
+            }, 
+            onBlock: () => {
+                const room = getRoom('hote-revi');
+
+                // needs movecount IF increased by (in emulated 20+, in manuscript Disch just says "reasonable number of moves")
+                if(room.lukecall !== false){ 
+                    enterRoom('hote-revi-5');
+                }
+            },
             items: [
                 {
+                    itemId: 'hotebox',
+                    name: ['box', 'large box'],
+                    desc: `The box measures 36" by 18" by 9" and about 12" deep. It bears the name and slogan of ***JIFFY TUX EMPORIUM, For the Man Who's Fit to Be Tied***."`,
+                    isOpen: false
+                },
+                // want an on block function to run that pushes these items when the hotebox is open === true // can't get it to work
+                {
                     itemId: 'tuxedo',
-                    name: ['tuxedo', 'tux'],
-                    desc: `It's a tux.`,
+                    name: ['tuxedo', 'tux', 'white tuxedo', 'all-white tuxedo'],
+                    desc: `It's an all-white tuxedo, together with the appropriate apputenances; frilly shirt, cummerbund, and bow tie.`,
                     top: true,
-                    bottom: true,
-                    isWearable: true,
-                    isRemovable: true
+                    bottom: true
                 },
                 {
-                    itemId: 'shirt',
-                    name: 'shirt',
-                    top: true,
-                    isWearable: true,
-                    isRemovable: true
-                },
-                {
-                    itemId: 'sweater',
-                    name: 'sweater',
-                    top: true,
-                    isWearable: true,
-                    isRemovable: true
-                },
-                {
-                    itemId: 'pants',
-                    name: ['pants', 'jeans'],
-                    bottom: true,
-                    isWearable: true,
-                    isRemovable: true
+                    itemId: 'tuxshoes',
+                    name: ['white shoes', 'leather shoes', 'patent shoes', 'shoes'],
+                    desc: `A pair of shoes, white patent leather shoes no less.`,
+                    feet: true
                 },
                 {
                     itemId: 'tophat',
-                    name: 'hat',
-                    desc: `It's a hat!`,
-                    head: true,
-                    isWearable: true,
-                    isRemovable: true
+                    name: ['top hat', 'silk hat', 'white hat', 'hat'],
+                    desc: `A white silk top hat.`,
+                    head: true
                 },
-                {
-                    itemId: 'shoes',
-                    name: 'suit shoes',
-                    desc: `It's a shoes!`,
-                    feet: true,
-                    isWearable: true,
-                    isRemovable: true
-                },
+                //
                 {
                     itemId: 'roomtv',
                     name: ['Simplex TV', 'TV', 'television', 'telly'],
@@ -288,13 +277,16 @@ const hotereviDisk = {
                     desc: '',
                     onLook: () => {
                         let bed = getItemInRoomById('bed', disk.roomId);
-                        let tuxedoDesc = `There is an all-white tuxedo, sitting on the bed.`;
-                        let sheetDesc = `There is a rumpled sheet on the bed.`
+                        let boxDesc = `There is ***large box***, sitting on the bed.`;
+                        let sheetDesc = `There is a rumpled ***sheet*** on the bed.`
 
-                        bed.desc = `It is a double bed. ${sheetDesc} A quilted bedspread is rolled up in a ball. An oversized down-filled pillow is propped against the headboard. ${tuxedoDesc}`;
+                        bed.desc = `It is a double bed. ${sheetDesc} A quilted bedspread is rolled up in a ball. An oversized down-filled pillow is propped against the headboard. ${boxDesc}`;
 
-                        if(getItemInInventory('tuxedo')){
-                            bed.desc = bed.desc.replace(`${tuxedoDesc}`, '');
+                        if(getItemInRoomById('hotebox', 'hote-revi')){
+                            let box = getItemInRoomById('hotebox', 'hote-revi');
+                            if(box.isOpen === true){
+                                boxDesc.replace('***large box***', '***large open box***');
+                            }
                         }
                         if(getItemInInventory('sheet')){
                             bed.desc = bed.desc.replace(`${sheetDesc}`, '');
@@ -310,7 +302,9 @@ const hotereviDisk = {
                     isDroppable: true,
                     onDrop: () => {
                         println(`You put the sheet back where you found it.`);
-                    }
+                    },
+                    top: true,
+                    bottom: true
                 },
                 {
                     itemId: 'closet',
@@ -339,13 +333,8 @@ const hotereviDisk = {
                 }
             ], // closes hote-revi room items 
             exits: [
-                {
-                    dir: ['bathroom'],
-                    id: 'hote-revi-1'
-                }, // leads to hotel bathroom
-                {
-                    // leads to lobby, place block that IF player tries to leave room before conversation with Luke, conversation triggers
-                },
+                {dir: ['bathroom'], id: 'hote-revi-1'}, // leads to hotel bathroom
+                {dir: ['leave', 'exit', 'leave room'], id:'hote-revi-2'}, 
                 {
                     // window exit
                 }
@@ -418,24 +407,25 @@ const hotereviDisk = {
             ],
             
             exits: [
-                {
-                    dir: ['hotel'],
-                    id: 'hote-revi' 
-                }
+                {dir: ['room'], id: 'hote-revi'}
             ]
         }, // closes hote-revi-1 room (bathroom)
         {
             id: 'hote-revi-2',
             name: 'Hotel Room',
-            desc: 'The phone rings.',
-
-            items: [
-                {
-                    itemId: 'phone',
-                    name: 'phone',
-                    onUse: () => enterRoom('hote-revi-3')
+            desc: `The phone rings.`,
+            onEnter: () => {
+                const room = getRoom('hote-revi');
+                room.lukecall = true;
+                room.exits[1].id = 'hote-revi-8';
+            },
+            onBlock: () => {
+                if (prevInput === 'answer phone' || prevInput === 'answer the phone') {
+                  enterRoom('hote-revi-3');
+                } else {
+                  println('The phone continues ringing.');
                 }
-            ]
+              }
         }, // closes hote-revi-2 (luke's phonecall)
         {
             id: 'hote-revi-3',
@@ -445,22 +435,18 @@ const hotereviDisk = {
                 println(`You go to the bedside table and answer the phone with a rather tentative "Hello?"
                 
                 "John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes." He goes on without waiting for your reply. "I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucket yet?"`);
-                pressEnter('hote-revi-4');
+            },
+            onBlock: () => {
+                if(prevInput === 'yes'){
+                    println(`"Well then, what are we waiting for? I'm paying this damned preacher by the hour, and he's going to want time and a half for overtime pretty soon. Get on down to the lobby on the double." He hangs up, and you're left thinking that getting married is almost as easy as...as putting on a suit of clothes.`);
+                } else if(prevInput === 'no'){ 
+                    println(`Well, get moving my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
+                } else {
+                    println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called ***ALICE AT THE SUNDERLAND HOTEL***. And there is the costume for the White Rabbit in the box on the bed.`);
+                }
+                enterRoom('hote-revi');
             }
         }, // closes hote-revi-3 (luke's phonecall)
-        {
-            id: 'hote-revi-4',
-            name: '',
-            desc: ``,
-            onEnter: () => {
-                //if yes
-                println(`"Well then, what are we waiting for? I'm paying this damned preacher by the hour, and he's going to want time and a half for overtime pretty soon. Get on down to the lobby on the double." He hangs up, and you're left thinking that getting married is almost as easy as...as putting on a suit of clothes.`);
-                //if no
-                println(`Well, get moving my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
-                //if any other answer
-                println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called ***ALICE AT THE SUNDERLAND HOTEL***. And there is the costume for the White Rabbit in the box on the bed.`);
-            }
-        }, // closes hote-revi-4 (luke's phonecall)
         {
             id: 'hote-revi-5',
             name: '',
@@ -476,6 +462,7 @@ const hotereviDisk = {
             desc: '',
             onEnter: () => {
                 println(`"That's right, son," he says; aiming the gun at your chest, "you just freeze, and I will explain something about my character. I have never been a man to abide dawdlers. In fact, one time in Nashville, there was this waitress who took the better part of an hour to serve me a damned hamburger. I told her I was becoming impatient, and then I told her again. And then I lost my temper. Like this!"`);
+                pressEnter('hote-revi-7');
             }
         }, // closes hote-revi-6 (death for dawdlers ending)
         {
@@ -486,9 +473,14 @@ const hotereviDisk = {
                 println(`The man shoots you twide in the chest, first through you liver and then through your heart. In the moments before your death, your killer offers some parting words of advice. "In the future, friend, don't dawdle. Dawdling never go anyone anywhere." He bends down and places your hands crosswise over the two bullet holes in your chest, straightens out your legs, and leaves the room with a tip of his Stetson.
                 
                 A fly alights on your nose. For a little white you feel the tickle of its feet, and then you're dead.`);
-                pressEnter(); // leads to end screen
+                pressEnter('end-scre'); // leads to end screen
             }
         }, // closes hote-revi-7 (death for dawdlers ending)
+        {
+            id: 'end-scre',
+            name: 'THE END',
+            desc: 'Game Over Gumshoe',
+        },
         {
             id: 'hote-revi-8',
             name: '',
@@ -511,7 +503,7 @@ const hotereviDisk = {
                     You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
                     
                     You leave the room and close the door behind you. Then you head down the corridor toward the bank of elevators. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby without stopping at any of the intervening floors.`);
-                    pressEnter('lobby');//leads to Lobby node
+                    pressEnter('lobb-1');//leads to Lobby node
                 }
             } 
         },//end of hote-revi-8 room 
