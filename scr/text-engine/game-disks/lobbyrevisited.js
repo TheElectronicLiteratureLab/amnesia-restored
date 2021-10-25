@@ -1,8 +1,8 @@
 const lobbyRevisited = {
-    roomId: 'lobb-revi', //this is the Lobby Revisited Node, entered from the Chapel node
+    roomId: 'lobb-revi', // this is the Lobby Revisited Node, entered from the Chapel node
     rooms: [
         {
-            roomId: 'lobb-revi',
+            id: 'lobb-revi',
             name: 'The Lobby',
             desc: `You are now in the lobby.`, // player is in the Elevator Alcove
             
@@ -28,22 +28,10 @@ const lobbyRevisited = {
 
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-6'
-                }, // go to reception desk
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-1'
-                }, // go to newsstand
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-6'}, // go to reception desk
+                {dir: ['s', 'south'], id: 'lobb-revi-1'}, // go to newsstand
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi room
         {
@@ -53,26 +41,20 @@ const lobbyRevisited = {
             
             items: [
                 {
-
+                    itemId: 'post',
+                    name: ['The Post', 'Post', 'Newspaper', 'Paper'],
+                    desc: '',
+                    isTakeable: true,
+                    onTake: () => println(`You pick up a copy of the Post, as though to study the picture of the slain mob boss, and when you are certain the newsstand attendant has not noticed, you roll it up and put it under your arm.`),
+                    isDroppable: true,
+                    read: true
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-13'
-                }, // go to elevator alcove
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-2'
-                }, // go to giftshop
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-13'}, // go to elevator alcove
+                {dir: ['s', 'south'], id: 'lobb-revi-2'}, // go to giftshop
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9' } // go to reception area
             ]
         },// closes lobb-revi-1 room
         {
@@ -81,22 +63,10 @@ const lobbyRevisited = {
             desc: `The giftshop is closed. The front window shows a pretty display of books, multiple copies stacked with the book propped up on a metal stand. The titles read: ***The Genocides***, ***Camp Concentration***, ***334***, and ***On Wings of Song***. All books are by the same author, Thomas M. Disch.`,
             
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-1'
-                }, // go to newsstand
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-3'
-                }, // go to second floor staircase
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-1'}, // go to newsstand
+                {dir: ['s', 'south'], id: 'lobb-revi-3'}, // go to second floor staircase
+                {dir: ['e', 'east'],block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-2 room
         {
@@ -105,22 +75,10 @@ const lobbyRevisited = {
             desc: `There is a thick velvet rope strung across the stairs closing them off, and a hand-lettered sign explaining that the Noise Abatment League has ended its sessions for the day and that the convention suites are therefore closed for the evening.`,
             
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-2'
-                }, // go to giftshop
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-4'
-                }, // go to rathskeller bar and grill
-                {
-                    dir: ['e', 'east'],
-                    block: `There is a thick velvet rope strung across the stairs closing them off. You cannot go up them.`
-                }, // cannot go up stairs
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-2'}, // go to giftshop
+                {dir: ['s', 'south'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
+                {dir: ['e', 'east'], block: `There is a thick velvet rope strung across the stairs closing them off. You cannot go up them.`}, // cannot go up stairs
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-3 room
         {
@@ -137,22 +95,10 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-3'
-                }, // go to second floor staircase
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-5'
-                }, // go to 52nd street exit
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-3'}, // go to second floor staircase
+                {dir: ['s', 'south'], id: 'lobb-revi-5'}, // go to 52nd street exit
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-4 room
         {
@@ -177,22 +123,10 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-4'
-                }, // go to rathskeller bar and grill
-                {
-                    dir: ['s', 'south'],
-                    id: ''
-                }, // exit building
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
+                {dir: ['s', 'south'], id: ''}, // exit building
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-5 room
         {
@@ -220,22 +154,10 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-7'
-                }, // go to safe deposit boxes
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-13'
-                }, // go to elevator alcove
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-7'}, // go to safe deposit boxes
+                {dir: ['s', 'south'], id: 'lobb-revi-13'}, // go to elevator alcove
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-6 room
         {
@@ -249,22 +171,10 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-8'
-                }, // go to 53rd street exit
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-6'
-                }, // go to reception desk
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
+                {dir: ['s', 'south'], id: 'lobb-revi-6'}, // go to reception desk
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-7 room
         {
@@ -281,22 +191,10 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: ''
-                }, // exit onto streets
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-7'
-                }, // go to safe deposit boxes
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: ''}, // exit onto streets
+                {dir: ['s', 'south'], id: 'lobb-revi-7'}, // go to safe deposit boxes
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi-8 room
         {
@@ -318,24 +216,11 @@ const lobbyRevisited = {
                 }     
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    block: `You can't go that way.`
+                {dir: ['n', 'north'], block: `You can't go that way.`},
+                {dir: ['s', 'south'], block: `You can't go that way.`},
+                {dir: ['e', 'east'], id: 'lobb-revi-1', // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
                 },
-                {
-                    dir: ['s', 'south'],
-                    block: `You can't go that way.`
-                },
-                {
-                    dir: ['e', 'east'],
-                    id: 'lobb-revi-1',
-
-                    // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
-                },
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-11'
-                }
+                {dir: ['w', 'west'],id: 'lobb-revi-11'}
             ]
         },// closes lobb-revi-9 room
         {
@@ -355,18 +240,9 @@ const lobbyRevisited = {
             desc: `You rise from the sofa, making the vinyl cushions sign, and walk toward the large curtained windows overlooking Fifth Avenue. Because it is dark outside and bright within the hotel, the window glass acts as yet one more mirror in the lobby's maze of mirrors.`,
             
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    block: `You can't go that way.`
-                },
-                {
-                    dir: ['s', 'south'],
-                    block: `You can't go that way.`
-                },
-                {
-                    dir: ['e', 'east'],
-                    id: 'lobb-revi-9'
-                }
+                {dir: ['n', 'north'], block: `You can't go that way.`},
+                {dir: ['s', 'south'], block: `You can't go that way.`},
+                {dir: ['e', 'east'], id: 'lobb-revi-9'}
             ]  
         }, // closes lobb-revi-11 room (windows of reception area)
         {
@@ -395,22 +271,10 @@ const lobbyRevisited = {
                 },
             ],
             exits: [
-                {
-                    dir: ['n', 'north'],
-                    id: 'lobb-revi-6'
-                }, // go to reception desk
-                {
-                    dir: ['s', 'south'],
-                    id: 'lobb-revi-1'
-                }, // go to newsstand
-                {
-                    dir: ['e', 'east'],
-                    block: `You can't go that way.`
-                }, // no where to go
-                {
-                    dir: ['w', 'west'],
-                    id: 'lobb-revi-9' 
-                } // go to reception area
+                {dir: ['n', 'north'], id: 'lobb-revi-6'}, // go to reception desk
+                {dir: ['s', 'south'], id: 'lobb-revi-1'}, // go to newsstand
+                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         }, // closes lobb-revi-13
     ], // closes lobb-revi rooms
