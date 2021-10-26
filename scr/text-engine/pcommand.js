@@ -21,7 +21,14 @@ let look = () => {
     room.onLook({disk, println});
   }
 
-  println(room.desc)
+  else if (room.desc === '' || "" || ``) {
+    println(`There's nothing interesting here.`)
+  }
+
+
+  else {
+    println(room.desc)
+  }
 };
 
 // look in the passed way
