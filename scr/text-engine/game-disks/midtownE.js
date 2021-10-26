@@ -2103,25 +2103,1534 @@ const midtownEast = {
             ]
         },
         {
-            id: '37-park',
-            name: 'E. 37th St. and Park Ave',
+            id: '36-park',
+            name: 'E. 36th St. and Park Ave',
             desc: ``,
             exits: [
                 {
                   dir: ['north'],
-                  id: '38-park',
+                  id: '37-park',
                 },
                 {
                   dir: ['south'],
-                  id: '36-park',
+                  id: '35-park',
                 },
                 {
                   dir: ['east'],
-                  id: '37-lexi',
+                  id: '36-lexi',
                 },
                 {
                   dir: ['west'],
-                  id: '37-madi'
+                  id: '36-madi'
+                },
+            ]
+        },
+        {
+            id: '35-park',
+            name: 'E. 35th St. and Park Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '36-park',
+                },
+                {
+                  dir: ['south'],
+                  id: '34-park',
+                },
+                {
+                  dir: ['east'],
+                  id: '35-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '35-madi'
+                },
+            ]
+        },
+        {
+            id: '34-park',
+            name: 'E. 34th St. and Park Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '35-park',
+                },
+                {
+                  dir: ['south'],
+                  id: '33-park',
+                },
+                {
+                  dir: ['east'],
+                  id: '34-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '34-madi'
+                },
+            ]
+        },
+        {
+            id: '34-lexi',
+            name: 'E. 34th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '35-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '33-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '34-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '34-park'
+                },
+            ]
+        },
+        {
+            id: '35-lexi',
+            name: 'E. 35th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '36-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '34-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '35-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '35-park'
+                },
+            ]
+        },
+        {
+            id: '36-lexi',
+            name: 'E. 36th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '37-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '35-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '36-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '36-park'
+                },
+            ]
+        },
+        {
+            id: '37-lexi',
+            name: 'E. 37th St. and Lexington Ave',
+            desc: `There is a luncheonette on the corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '38-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '36-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '37-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '37-park'
+                },
+                {
+                  dir: ['luncheonette', 'lunch'],
+                  id: '????'
+                }
+            ]
+        },
+        {
+            id: '38-lexi',
+            name: 'E. 38th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '39-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '37-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '38-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '38-park'
+                },
+            ]
+        },
+        {
+            id: '39-lexi',
+            name: 'E. 39th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '40-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '38-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '39-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '39-park'
+                },
+            ]
+        },
+        {
+            id: '40-lexi',
+            name: 'E. 40th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '41-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '39-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '40-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '40-park'
+                },
+            ]
+        },
+        {
+            id: '41-lexi',
+            name: 'E. 41st St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '42-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '40-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '41-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '41-park'
+                },
+            ]
+        },
+        {
+            id: '42-lexi',
+            name: 'E. 42nd St. and Lexington Ave',
+            desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '43-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '41-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '42-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '41-depe'
+                },
+            ]
+        },
+        {
+            id: '42-depe',
+            name: 'E. 2nd St. and Depew Pl.',
+            desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '44-depe',
+                },
+                {
+                  dir: ['south'],
+                  id: '',
+                  block: `You can't go that way.`
+                },
+                {
+                  dir: ['east'],
+                  id: '42-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '42-park'
+                },
+                {
+                    id: ['grand', 'central', 'station', 'subway'],
+                    id: 'gran-cent'
+                }
+            ]
+        },
+        {
+            id: '44-depe',
+            name: 'E. 44th St. and Depew Pl.',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '45-depe',
+                },
+                {
+                  dir: ['south'],
+                  id: '42-depe',
+                },
+                {
+                  dir: ['east'],
+                  id: '44-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '',
+                  block: `You can't go that way.`
+                },
+            ]
+        },
+        {
+            id: '45-depe',
+            name: 'E. 45th St. and Depew Pl.',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '46-depe',
+                },
+                {
+                  dir: ['south'],
+                  id: '44-depe',
+                },
+                {
+                  dir: ['east'],
+                  id: '45-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '45-park',
+                },
+            ]
+        },
+        {
+            id: '46-depe',
+            name: 'E. 46th St. and Depew Pl.',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '',
+                  block: `You can't go that way.`
+                },
+                {
+                  dir: ['south'],
+                  id: '45-depe',
+                },
+                {
+                  dir: ['east'],
+                  id: '46-lexi',
+                },
+                {
+                  dir: ['west'],
+                  id: '46-park',
+                },
+            ]
+        },
+        {
+            id: '43-lexi',
+            name: 'E. 43rd St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '44-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '42-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '43-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '',
+                  block: `You can't go that way.`
+                },
+            ]
+        },
+        {
+            id: '44-lexi',
+            name: 'E. 44th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '45-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '43-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '44-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '44-depe',
+                },
+            ]
+        },
+        {
+            id: '45-lexi',
+            name: 'E. 45th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '46-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '44-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '45-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '45-depe',
+                },
+            ]
+        },
+        {
+            id: '46-lexi',
+            name: 'E. 46th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '47-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '45-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '46-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '46-depe',
+                },
+            ]
+        },
+        {
+            id: '47-lexi',
+            name: 'E. 47th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '48-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '46-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '47-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '47-park',
+                },
+            ]
+        },
+        {
+            id: '48-lexi',
+            name: 'E. 48th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '49-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '47-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '48-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '48-park',
+                },
+            ]
+        },
+        {
+            id: '49-lexi',
+            name: 'E. 49th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '50-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '48-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '49-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '49-park',
+                },
+            ]
+        },
+        {
+            id: '50-lexi',
+            name: 'E. 50th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '51-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '49-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '50-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '50-park',
+                },
+            ]
+        },
+        {
+            id: '51-lexi',
+            name: 'E. 51st St. and Lexington Ave',
+            desc: `There is a subway entrance at this corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '52-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '50-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '51-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '51-park',
+                },
+                {
+                    dir: ['subway'],
+                    id: '????'
+                }
+            ]
+        },
+        {
+            id: '52-lexi',
+            name: 'E. 52nd St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '53-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '51-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '52-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '52-park',
+                },
+            ]
+        },
+        {
+            id: '53-lexi',
+            name: 'E. 53rd St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '54-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '52-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '53-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '53-park',
+                },
+            ]
+        },
+        {
+            id: '54-lexi',
+            name: 'E. 54th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '55-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '53-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '54-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '54-park',
+                },
+            ]
+        },
+        {
+            id: '55-lexi',
+            name: 'E. 55th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '56-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '54-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '55-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '55-park',
+                },
+            ]
+        },
+        {
+            id: '56-lexi',
+            name: 'E. 56th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '57-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '55-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '56-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '56-park',
+                },
+            ]
+        },
+        {
+            id: '57-lexi',
+            name: 'E. 57th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '58-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '56-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '57-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '57-park',
+                },
+            ]
+        },
+        {
+            id: '58-lexi',
+            name: 'E. 58th St. and Lexington Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '59-lexi',
+                },
+                {
+                  dir: ['south'],
+                  id: '57-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '58-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '58-park',
+                },
+            ]
+        },
+        {
+            id: '59-lexi',
+            name: 'Central Park S. and Lexington Ave',
+            desc: `There is a subway entrance at this corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '????',
+                },
+                {
+                  dir: ['south'],
+                  id: '58-lexi',
+                },
+                {
+                  dir: ['east'],
+                  id: '59-3',
+                },
+                {
+                  dir: ['west'],
+                  id: '59-park',
+                },
+            ]
+        },
+        {
+            id: '59-3',
+            name: 'Central Park S. and 3rd Ave',
+            desc: `There is a subway entrance at this corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '????',
+                },
+                {
+                  dir: ['south'],
+                  id: '58-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '59-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '59-lexi',
+                },
+            ]
+        },
+        {
+            id: '58-3',
+            name: 'E. 58th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '59-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '57-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '58-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '58-lexi',
+                },
+            ]
+        },
+        {
+            id: '57-3',
+            name: 'E. 57th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '58-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '56-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '57-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '57-lexi',
+                },
+            ]
+        },
+        {
+            id: '56-3',
+            name: 'E. 56th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '57-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '55-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '56-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '56-lexi',
+                },
+            ]
+        },
+        {
+            id: '55-3',
+            name: 'E. 55th St. and 3rd Ave',
+            desc: `There is a luncheonette on the corner`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '56-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '54-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '55-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '55-lexi',
+                },
+                {
+                    dir: ['luncheonette'],
+                    id: 'lunc'
+                }
+            ]
+        },
+        {
+            id: '54-3',
+            name: 'E. 54th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '55-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '53-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '54-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '54-lexi',
+                },
+            ]
+        },
+        {
+            id: '53-3',
+            name: 'E. 53rd St. and 3rd Ave',
+            desc: `There is a subway entrance at this corner`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '54-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '52-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '53-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '53-lexi',
+                },
+                {
+                    dir: ['subway'],
+                    id: '????'
+                }
+            ]
+        },
+        {
+            id: '52-3',
+            name: 'E. 52nd St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '53-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '51-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '52-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '52-lexi',
+                },
+            ]
+        },
+        {
+            id: '51-3',
+            name: 'E. 51st St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '52-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '50-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '51-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '51-lexi',
+                },
+            ]
+        },
+        {
+            id: '50-3',
+            name: 'E. 50th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '51-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '49-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '50-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '50-lexi',
+                },
+            ]
+        },
+        {
+            id: '49-3',
+            name: 'E. 49th St. and 3rd Ave',
+            desc: `There is a luncheonette on the corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '50-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '48-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '49-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '49-lexi',
+                },
+                {
+                    dir: ['luncheonette'],
+                    id: 'lunc'
+                }
+            ]
+        },
+        {
+            id: '48-3',
+            name: 'E. 48th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '49-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '47-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '48-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '48-lexi',
+                },
+            ]
+        },
+        {
+            id: '47-3',
+            name: 'E. 47th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '48-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '46-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '47-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '47-lexi',
+                },
+            ]
+        },
+        {
+            id: '46-3',
+            name: 'E. 46th St. and 3rd Ave',
+            desc: `There is a lunchonette on the corner.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '47-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '45-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '46-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '46-lexi',
+                },
+                {
+                    dir: ['luncheonette'],
+                    id: 'lunc'
+                }
+            ]
+        },
+        {
+            id: '45-3',
+            name: 'E. 45th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '46-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '44-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '45-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '45-lexi',
+                },
+            ]
+        },
+        {
+            id: '44-3',
+            name: 'E. 44th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '45-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '43-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '44-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '44-lexi',
+                },
+            ]
+        },
+        {
+            id: '43-3',
+            name: 'E. 43rd St. and 3rd Ave',
+            desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '44-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '42-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '43-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '43-lexi',
+                },
+                {
+                    dir: ['ford', 'foundation','building'],
+                    id: '????'
+                }
+            ]
+        },
+        {
+            id: '42-3',
+            name: 'E. 42nd St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '43-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '41-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '42-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '42-lexi',
+                },
+            ]
+        },
+        {
+            id: '41-3',
+            name: 'E. 41st St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '42-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '40-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '41-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '41-lexi',
+                },
+            ]
+        },
+        {
+            id: '40-3',
+            name: 'E. 40th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '41-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '39-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '40-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '40-lexi',
+                },
+            ]
+        },
+        {
+            id: '39-3',
+            name: 'E. 39th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '40-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '38-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '39-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '39-lexi',
+                },
+            ]
+        },
+        {
+            id: '38-3',
+            name: 'E. 38th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '39-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '37-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '38-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '38-lexi',
+                },
+            ]
+        },
+        {
+            id: '37-3',
+            name: 'E. 37th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '38-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '36-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '37-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '37-lexi',
+                },
+            ]
+        },
+        {
+            id: '36-3',
+            name: 'E. 36th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '37-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '35-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '36-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '36-lexi',
+                },
+            ]
+        },
+        {
+            id: '35-3',
+            name: 'E. 35th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '36-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '34-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '35-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '35-lexi',
+                },
+            ]
+        },
+        {
+            id: '34-3',
+            name: 'E. 34th St. and 3rd Ave',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '35-3',
+                },
+                {
+                  dir: ['south'],
+                  id: '33-3',
+                },
+                {
+                  dir: ['east'],
+                  id: '34-qout',
+                },
+                {
+                  dir: ['west'],
+                  id: '34-lexi',
+                },
+            ]
+        },
+        {
+            id: '34-qout',
+            name: 'E. 34th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '35-qout',
+                },
+                {
+                  dir: ['south'],
+                  id: '????',
+                },
+                {
+                  dir: ['east'],
+                  id: '34-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '34-3',
+                },
+            ]
+        },
+        {
+            id: '35-qout',
+            name: 'E. 35th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '36-qout',
+                },
+                {
+                  dir: ['south'],
+                  id: '34-qout',
+                },
+                {
+                  dir: ['east'],
+                  id: '35-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '35-3',
+                },
+            ]
+        },
+        {
+            id: '36-qout',
+            name: 'E. 36th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '37-qout',
+                },
+                {
+                  dir: ['south'],
+                  id: '35-qout',
+                },
+                {
+                  dir: ['east'],
+                  id: '36-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '36-3',
+                },
+            ]
+        },
+        {
+            id: '37-qout',
+            name: 'E. 36th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '38-qout',
+                },
+                {
+                  dir: ['south'],
+                  id: '36-qout',
+                },
+                {
+                  dir: ['east'],
+                  id: '37-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '37-3',
+                },
+            ]
+        },
+        {
+            id: '38-qout',
+            name: 'E. 38th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '39-qout',
+                },
+                {
+                  dir: ['south'],
+                  id: '37-qout',
+                },
+                {
+                  dir: ['east'],
+                  id: '38-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '38-3',
+                },
+            ]
+        },
+        {
+            id: '39-qout',
+            name: 'E. 39th St. and Queens Tunnel out',
+            desc: ``,
+            exits: [
+                {
+                  dir: ['north'],
+                  id: '',
+                  block: `You can't go that way.`
+                },
+                {
+                  dir: ['south'],
+                  id: '38-qout',
+                },
+                {
+                  dir: ['east'],
+                  id: '39-2',
+                },
+                {
+                  dir: ['west'],
+                  id: '39-3',
                 },
             ]
         },
