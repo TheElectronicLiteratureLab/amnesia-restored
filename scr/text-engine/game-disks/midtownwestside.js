@@ -1018,8 +1018,6 @@ const midwestside = {
 },
 //End 55th St.
 
-//-----Current Progress-----
-
 //Start 54th St.
 {
     id: '54-12',
@@ -1223,135 +1221,135 @@ const midwestside = {
     [//Can't go west
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-12'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-12'
         },
     ],
 },
 
 {
-    id: '5#-11',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-11',
+    name: 'W. 53rd St. and 11th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-11'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-10'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-12'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-11'
         },
     ],
 },
 
 {
-    id: '5#-10',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-10',
+    name: 'W. 53rd St. and 10th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-10'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-9'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-10'
         },
     ],
 },
 
 {
-    id: '5#-9',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-9',
+    name: 'W. 53rd St. and 9th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-9'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-8'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-10'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-9'
         },
     ],
 },
 
 {
-    id: '5#-8',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-8',
+    name: 'W. 53rd St. and 8th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-8'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-broa'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-9'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-8'
         },
     ],
 },
 
 {
-    id: '5#-broa',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-broa',
+    name: 'W. 53rd St. and Broadway',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-broa'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-7'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-8'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-broa'
         },
     ],
 },
@@ -1364,19 +1362,19 @@ const midwestside = {
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-7'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-amer'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-broa'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-7'
         },
         {//Subway Entrance
             dir: ['subway', 'entrance'],
@@ -1386,25 +1384,25 @@ const midwestside = {
 },
 
 {
-    id: '5#-amer',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '53-amer',
+    name: 'W. 53rd St. and Ave of Americas',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '54-amer'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '53-5'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '53-7'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '52-amer'
         },
     ],
 },
@@ -1412,193 +1410,189 @@ const midwestside = {
 
 //Start 52nd St.
 {
-    id: '5#-12',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-12',
+    name: 'W. 52nd St. and 12th Ave.',
     exit: 
-    [
+    [//Can't go west
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-12'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-12'
         },
     ],
 },
 
 {
-    id: '5#-11',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-11',
+    name: 'W. 52nd St. and 11th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-11'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-10'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-12'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-11'
         },
     ],
 },
 
 {
-    id: '5#-10',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-10',
+    name: 'W. 52nd St. and 10th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-10'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-9'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-10'
         },
     ],
 },
 
 {
-    id: '5#-9',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-9',
+    name: 'W. 52nd St. and 9th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-9'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-8'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-10'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-9'
         },
     ],
 },
 
 {
-    id: '5#-8',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-8',
+    name: 'W. 52nd St. and 8th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-8'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-broa'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-9'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-8'
         },
     ],
 },
 
 {
-    id: '5#-broa',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-broa',
+    name: 'W. 52nd St. and Broadway',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-broa'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-7'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-8'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-broa'
         },
     ],
 },
 
 {
-    id: '5#-7',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-7',
+    name: 'W. 52nd St. and 7th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-7'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-amer'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-broa'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-7'
         },
     ],
 },
 
 {
-    id: '5#-amer',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '52-amer',
+    name: 'W. 52nd St. and Ave of Americas',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '53-amer'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '52-5'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '52-7'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '51-amer'
         },
     ],
 },
@@ -1606,193 +1600,199 @@ const midwestside = {
 
 //Start 51st St.
 {
-    id: '5#-12',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-12',
+    name: 'W. 51st St. and 12th Ave.',
     exit: 
-    [
+    [//Can't go west
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-12'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-A'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-12'
         },
     ],
 },
 
 {
-    id: '5#-11',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-11',
+    name: 'W. 51st St. and 11th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-11'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-10'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-12'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-11'
         },
     ],
 },
 
 {
-    id: '5#-10',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-10',
+    name: 'W. 51st St. and 10th Ave.',
+    desc: 'There is a Chock Full-O-Nuts at this intersection.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-10'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-9'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-10'
+        },
+        {
+            dir: ['enter', 'chock', 'nuts',],
+            id: '51-10-chock'
         },
     ],
 },
 
 {
-    id: '5#-9',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-9',
+    name: 'W. 51st St. and 9th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-9'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-8'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-10'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-9'
         },
     ],
 },
 
 {
-    id: '5#-8',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-8',
+    name: 'W. 51st St. and 8th Ave.',
+    desc: 'There is a luncheonette on the corner.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-8'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-broa'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-9'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-8'
+        },
+        {
+            dir: ['enter', 'lunch', 'luncheonette',],
+            id: '51-8-lunch'
         },
     ],
 },
 
 {
-    id: '5#-broa',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-broa',
+    name: 'W. 51st St. and Broadway',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-broa'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-7'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-8'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-broa'
         },
     ],
 },
 
 {
-    id: '5#-7',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-7',
+    name: 'W. 51st St. and 7th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-7'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-amer'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-broa'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-7'
         },
     ],
 },
 
 {
-    id: '5#-amer',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '51-amer',
+    name: 'W. 51st St. and Ave of Americas',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '52-amer'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '51-5'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '51-7'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '50-amer'
         },
     ],
 },
@@ -2236,6 +2236,8 @@ const midwestside = {
 //56-7 Description
 //55-8 Greek Gyro
 //54-amer Pizzeria
+//51-10 Chock Full-O-Nuts
+//51-8 luncheonette
 
 //Subway entrances:
 //59-amst
@@ -2258,6 +2260,7 @@ const midwestside = {
 //Chock Full-O-Nuts > chock
 //Greek Gyro > gyro
 //Pizzeria > pizza
+//Luncheonette > lunch
 
 
 
