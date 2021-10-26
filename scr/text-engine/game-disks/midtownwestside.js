@@ -1800,206 +1800,247 @@ const midwestside = {
 
 //Start 50th St.
 {
-    id: '5#-12',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-12',
+    name: 'W. 50th St. and 12th Ave.',
     exit: 
-    [
+    [//Can't go west
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-12'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-12'
         },
     ],
 },
 
 {
-    id: '5#-11',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-11',
+    name: 'W. 50th St. and 11th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-11'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-10'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-12'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-11'
         },
     ],
 },
 
 {
-    id: '5#-10',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-10',
+    name: 'W. 50th St. and 10th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-10'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-9'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-10'
         },
     ],
 },
 
 {
-    id: '5#-9',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-9',
+    name: 'W. 50th St. and 9th Ave.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-9'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-8'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-10'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-9'
         },
     ],
 },
 
 {
-    id: '5#-8',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-8',
+    name: 'W. 50th St. and 8th Ave.',
+    desc: 'There is a subway entrance at this corner.', //Subway Entrance
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-8'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-broa'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-9'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-8'
+        },
+        {//Subway Entrance
+            dir: ['subway', 'entrance'],
+            id: '50-8-subway-ent'
         },
     ],
 },
 
 {
-    id: '5#-broa',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-broa',
+    name: 'W. 50th St. and Broadway',
+    desc: 'There is a subway entrance at this corner.', //Subway Entrance
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-broa'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-7'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-8'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-broa'
+        },
+        {//Subway Entrance
+            dir: ['subway', 'entrance'],
+            id: '50-broa-subway-ent'
         },
     ],
 },
 
 {
-    id: '5#-7',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-7',
+    name: 'W. 50th St. and 7th Ave.',
+    desc: 'Radio City Music Hall -- its bronze doors hiding the largest chandeliers and the best legs in the world.',
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-7'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-amer'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-broa'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-7'
         },
     ],
 },
 
 {
-    id: '5#-amer',
-    name: 'W. 5#th St. and #th Ave.',
+    id: '50-amer',
+    name: 'W. 50th St. and Ave of Americas',
+    desc: 'There is a subway entrance at this corner.', //Subway Entrance
     exit: 
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '51-amer'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
+            id: '50-5'
         },
         {
             dir: ['w', 'west'],
-            id: 'S-A'
+            id: '50-7'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '49-amer'
+        },
+        {//Subway Entrance
+            dir: ['subway', 'entrance'],
+            id: '50-amer-subway-ent'
         },
     ],
 },
 //End 50th St.
+
+//Start 49th St.
+{
+    id: '49-12',
+    name: 'W. 49th St. and 12th Ave.',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: 'S-A'
+        },
+        {
+            dir: ['e', 'east'],
+            id: 'S-A'
+        },
+        {
+            dir: ['w', 'west'],
+            id: 'S-A'
+        },
+        {
+            dir: ['s', 'south'],
+            id: 'S-A'
+        },
+    ],
+},
+
+
+//End 49th St.
+
+
 
 
 //Start Templates
 
  //Start Room Template
     {
-        id: 'St-Ave',
+        id: '#-#',
         name: 'W. #th St. and #th Ave.',
-        desc: `There is a subway entrance at this corner.`, // SUBWAY ENTERANCE
         exit: 
         [
             {
@@ -2018,215 +2059,15 @@ const midwestside = {
                 dir: ['s', 'south'],
                 id: 'S-A'
             },
-            {//Subway Entrance
-                dir: ['subway', 'entrance'],
-                id: 'S-A-subway-ent'
-            },
         ],
     },
  //End Room Template
 
- //Start Block Template
-
-//Start 5#th St.
-{
-    id: '5#-12',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-11',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-10',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-9',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-8',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-broa',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-7',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-
-{
-    id: '5#-amer',
-    name: 'W. 5#th St. and #th Ave.',
-    exit: 
-    [
-        {
-            dir: ['n', 'north'],
-            id: 'S-A'
-        },
-        {
-            dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
-        },
-        {
-            dir: ['s', 'south'],
-            id: 'S-A'
-        },
-    ],
-},
-//End 5#th St.
-
 //Still need streets 49 through 34
 
- //End Block Template
-
 //End Templates
+
+
 
 //Important rooms:
 //cent-amer Nedicks
@@ -2238,6 +2079,7 @@ const midwestside = {
 //54-amer Pizzeria
 //51-10 Chock Full-O-Nuts
 //51-8 luncheonette
+//50-7 Description
 
 //Subway entrances:
 //59-amst
@@ -2245,6 +2087,9 @@ const midwestside = {
 //57-7
 //57-amer
 //53-7
+//50-8
+//50-broa
+//50-amer
 
 
 //Naming conventions in this disk: 
