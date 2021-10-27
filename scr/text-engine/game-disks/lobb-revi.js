@@ -3,7 +3,7 @@ const lobbyRevisited = {
     onBlock: () =>{
         if(tipBellboy === false){
             // add check if movecount has increased by 2
-            enterRoom('lobb-revi-')
+            enterRoom('lobb-revi-20')
         }
     },
     rooms: [
@@ -25,36 +25,15 @@ const lobbyRevisited = {
 
                 Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
 
-                Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the late news to an empty wingback chair. Near the TV area is a large couch and table, which serves as a lounge. 
+                You're standing directly in front of the elevator alcove, across from you is the main reception area. In the far corner of the reception area a lonely TV mutely displays the late news to an empty wingback chair. Near the TV area is a large couch and table, which serves as a lounge. 
                 
                 There is also a door between the reception desk and the 53rd St. exit, that leads to a cubicle of safe deposit boxes.`;
             }, 
             
-            items: [
-                {
-                    itemId: 'elevator',
-                    name: 'elevator',
-                    desc: 'There are four elevators opening into the lobby. On the wall is a panel with an UP and DOWN button on it.',
-                    elevatorCount: 0,
-                    onBlock: () => {
-                        let elevator = getItemInRoom('elevator', 'lobb-revi-1');
-                        if(elevator.elevatorCount === 0){
-                            if(prevInput === ('press up' || 'press down' || 'down' || 'up' || 'use elevator')){
-                            println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wai tin the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
-                            if(prevInput === 'yes'){
-                                enterRoom('lobb-revi-17');
-                            } else if(prevInput === 'no'){
-                                println(`The doors of the elevator close, and you breathe a sigh of relief. You watch as the indicator lights trace the elevators ascent to the 15th floor, where it stops.`);
-                            }
-                            }
-                        }
-                    }
-                }
-            ],
             exits: [
                 {dir: ['n', 'north'], id: 'lobb-revi-6'}, // go to reception desk
                 {dir: ['s', 'south'], id: 'lobb-revi-1'}, // go to newsstand
-                {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+                {dir: ['e', 'east'], block: `lobb-revi-17`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
         },// closes lobb-revi room
@@ -146,8 +125,8 @@ const lobbyRevisited = {
                     isTakeable: true,
                     isDroppable: true,
                     onLook: () => {
-                        println(`You sit in the chair where you found the newspaper and skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold neck chains appeal to you?`);
-                        pressEnter('lobb-revi-12');
+                        println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
+                        // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you."
                     }
                 }
             ],
@@ -169,8 +148,10 @@ const lobbyRevisited = {
                     println(`As you walk pass the recpetion desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your **safe deposit box**. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope-- if she was indeed your wife-- that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
                 }
                 room.visits++;
-                if(room.visits !== 0){
-                    room.desc = room.desc.replace('', `You walk over to the registration desk, where the **clerk** is patiently going about his duties.`);
+                console.log(room.visits);
+                if(room.visits >= 2){
+                    println(`You walk over to the registration desk, where the **clerk** is patiently going about his duties.`);
+                    room.desc = room.desc.replace('', `The **clerk** is patiently going about his duties.`);
                 }
             },
             onBlock: () => {
@@ -193,7 +174,7 @@ const lobbyRevisited = {
                     desc: `It is an accordion fold map printed on stiff paper. Parklands are indicated by fuchsia, the surrounding Hudson and East Rivers by a dark shade of the green favored by mentholated cigarettes, and the city itself by a tannish gray crisscrossed by a white mesh of streets and avenues. This, then, is the haystack in which you are the needle.`, // check what the colors are on the map that Wesley is designing and match them.
                     isTakeable: true,
                     onTake: () => {
-                        println(`You take the map and slip it into your left hip pocket.`);
+                        println(`You take the map and slip it into your left hip pocket.`); 
                     },
                     onDrop: () => {
                         println(`You shouldn't drop that. It might be important.`);
@@ -201,7 +182,7 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {dir: ['n', 'north'], id: 'lobb-revi-7'}, // go to safe deposit boxes
+                {dir: ['n', 'north'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
                 {dir: ['s', 'south'], id: 'lobb-revi-13'}, // go to elevator alcove
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
@@ -210,13 +191,29 @@ const lobbyRevisited = {
         {
             id: 'lobb-revi-7',
             name: 'Safe Deposit Cubicle',
-            desc: ``,
+            desc: `The desk clerk unlocks the metal door of a cubbyhole of a room, and you follow him inside. Two of the walls are given over to steel safe deposit boxes of various sizes. There is a small table with a wooden chair by it. On the table is a computer keyboard and a small monitor, which connects by a black electric cord to a kind of dashboard projecting from the wall.
             
-            items: [
-                {
+            "What is the number of your box, Mr. Cameron?"`,
 
+            onBlock: () => {
+                if(prevInput === ['I forgot',  `I don't know`, `I can't remember`]){
+                    println(`"That's all right," the clerk says. "I can easily look up the number of the box in the register at the desk. But I hope you haven't forgetten the password. The box can't be opened unless you type in the original password you entered into the computer. Now if you'll give me just a moment to look in the register..." The clerk leaves you along for just a moment and returns to tell you that the number of your safe deposit box is 334.
+                    
+                    He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors-- so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+                    
+                    YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                    enterRoom('lobb-revi-18');
+                } else if(prevInput === '334'){
+                    println(`"Very good," says the clerk. He shows you the position of the box you've named, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors-- so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+                    
+                    YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                    enterRoom('lobb-revi-18');
+                } else {
+                    println(`"What is the number of your box, Mr. Cameron? Do you remember it?`);
+                    enterRoom('lobb-revi-18');
                 }
-            ],
+            },
+
             exits: [
                 {dir: ['n', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
                 {dir: ['s', 'south'], id: 'lobb-revi-6'}, // go to reception desk
@@ -227,19 +224,32 @@ const lobbyRevisited = {
         {
             id: 'lobb-revi-8',
             name: '53rd Street Exit',
-            desc: `You are at the 53rd Street Exit.`,
+            desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
             onLook: () => {
                 println(`Just outside the hotel a taxi has drawn up to the curb and the doorman is helping onload luggage from its trunk.`);
             },
-            
             items: [
                 {
-
+                    itemId: 'map',
+                    name: 'map',
+                    desc: `It is an accordion fold map printed on stiff paper. Parklands are indicated by fuchsia, the surrounding Hudson and East Rivers by a dark shade of the green favored by mentholated cigarettes, and the city itself by a tannish gray crisscrossed by a white mesh of streets and avenues. This, then, is the haystack in which you are the needle.`, // check what the colors are on the map that Wesley is designing and match them in the description. 
+                    isTakeable: true,
+                    onTake: () => {
+                        println(`You take the map and slip it into your left hip pocket.`);
+                    },
+                    onDrop: () => {
+                        println(`You shouldn't drop that. It might be important.`);
+                    }
+                },
+                {
+                   itemId: 'times',
+                   name: ['times', 'New York Times', 'times newsspaper'],
+                   desc: `You skim through the news and reviews and ads in the paper, looking always for some hint of who you are-- some special knowledge, some keenness of interest or hunger that would be a clue to the life you've forgotten. But all the news and reviews seem equally interesting and equally irrelevant. The baseball news evokes no sense of partisanship for one city's team more than another's. From reading through the financial pages, it seems pretty certain that you are not a banker or stockbroker, since there are many entire articles that make no sense to you at all. On the other hand, you do seem to know something about computers, to judge by your response to various ads for computer hardware and software.` 
                 }
             ],
             exits: [
                 {dir: ['n', 'north'], id: ''}, // exit onto streets
-                {dir: ['s', 'south'], id: 'lobb-revi-7'}, // go to safe deposit boxes
+                {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
@@ -303,19 +313,6 @@ const lobbyRevisited = {
             ]  
         }, // closes lobb-revi-11 room (windows of reception area)
         {
-            id: `lobb-revi-12`,
-            name: '',
-            desc: '',
-            onEnter: () => {
-                println(`This series of rather idle questions comes to an abrupt end as your turn to page 17 and see a blurry picture of your own scowling face. The hair is shorter, but there's no mistaking that face as anyone's but yours. The caption under the photo reads:
-                
-                ***SEARCH CONTINUES FOR ESCAPED CONVICT***
-                
-                Authorities in the Metropolitan area continue to look for Xaiver Hollings, wanted in connection with the slaying of a guard while Hollings escaped two months ago from the Texas State Penitentiary at Revoltillo. Hollings, sentenced to two years at hard labor for possession of illegal substances, is believed to be armed and is considered dangerous.`);
-                pressEnter('lobb-revi-5');
-            }
-        }, // closes lobb-revi-12 room (daily news continuation)
-        {
             id: 'lobb-revi-13',
             name: 'Elevator Alcove',
             desc: ``,
@@ -341,7 +338,13 @@ const lobbyRevisited = {
             onEnter: () => {
                 println(`You shake out the newspaper, uninterrupted this time.
                 
-                You read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle. As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you.`);
+                You skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold nexk chains appeal to you?
+                
+                This series of rather idle questions comes to an abrupt end as you turn to page 17 and see a blurry picture of your own scowling face. The hair is shorter, but there's no mistaking that face as anyone's but yours. The caption under the photo reads: 
+                
+                SEARCH CONTINUES FOR ESCAPED CONVICT
+                
+                Authorities in the Metropolitan area continue to look for Xaiver Hollings, wanted in connection with the slaying of a guard while Hollings escaped two months ago from the Texas State Penitentiary at Revoltillo. Hollings, sentenced to two years at hard labor for possession of illegal substances, is believed to be armed and is considered dangerous.`);
                 pressEnter('lobb-revi-1');
             }
         }, // closes lobb-revi-14 (post continuation)
@@ -387,6 +390,151 @@ const lobbyRevisited = {
                 enterRoom('lobb-revi-6');
             }
         }, // closes lobb-revi-16
+        {   
+            id: 'lobb-revi-17',
+            name: 'Elevator Alcove',
+            desc: `There are four elevators opening into the lobby. On the wall is a panel with an UP and DOWN button on it.`,
+            elevatorcount: 0,
+
+            items: [
+                {
+                    itemId: 'elevator',
+                    name: 'elevator',
+                    desc: 'There are four elevators opening into the lobby. On the wall is a panel with an UP and DOWN button on it.',
+                            
+                    onBlock: () => {
+                        let room = getRoom('lobb-revi-17')
+                            if(room.elevatorCount === 0){
+                                if(prevInput === ('press up' || 'press down' || 'down' || 'up' || 'use elevator')){
+                                    println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wai tin the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
+                                    elevatorCount++;
+                                    if(prevInput === 'yes'){
+                                        enterRoom('lobb-revi-19');
+                                    } else if(prevInput === 'no'){
+                                        println(`The doors of the elevator close, and you breathe a sigh of relief. You watch as the indicator lights trace the elevators ascent to the 15th floor, where it stops.`);
+                                    }
+                                }
+                            }
+
+                            if(room.elevatorCount !== 0){
+                                println(`You wait some time for another elevator, and when it arrives the same two policemen get out. "Just the man we were looking for," says the first policeman with satisfaction. "Cuff him Louie, and I'll read him his rights." As the policeman finishes cuffing you, your rights have been read to you. You are not actually JOhn Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                                pressEnter('deat-1'); // sends player to death and texas
+                            }
+
+                    
+                    }   
+                }
+            ],
+        }, // closes lobb-revi-17
+        {
+            id: 'lobb-revi-18',
+            name: '',
+            desc: '',
+            passwordCount: 0,
+            onBlock: () => {
+                if(prevInput === 'with god'){
+                    println(`With a click of instant recognition, the little metal door of Box 334 springs open, and a message appears on the monitor before you:
+                    
+                    YOUR SAFETY DEPOSIT BOX IS NOW OPEN FOR EXAMINATION.`);
+                } else if(passwordCount === 0 && prevInput !== 'with god'){
+                    passwordCount++;
+                    println(`There is a delicate grinding sound from the console on the wall and then the screen of the monitor flashes this message at you: 
+                    
+                    I'M SORRY. THAT IS NOT THE PASSWORD THAT WILL OPEN YOUR BOX.
+                    
+                    PLEASE TRY TO REMEMBER THE EXACT WORD OR WORDS OR NUMERALS THAT YOU CHOSE TO BE THE PASSWORD.
+                    
+                    The screen blanks out for a moment, and then offers you another opportunity:
+                    
+                    YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                } else if(passwordCount === 1 && prevInput !== 'with god'){
+                    passwordCount++;
+                    println(`The screen blanks out for a moment, and you recall having read, earlier in the day, something that may have a hint specific to your present dilemma. But what was it? Something about "doubt and uncertainty." The cursor on the monitor before winks on and off, indifferent to your dilemma:
+                    
+                    YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                } else if(passwordCount === 2 && prevInput !== 'with god'){
+                    passwordCount++;
+                    println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. the text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
+                
+                    if(prevInput === 'look at bible' && getItemInInventory('bible')){
+                        println(`You take the Bible from your gym bag and find the page of recommended texts. Those in doubt and uncertainty are advised to read John I. You turn to the Gospel according to St. John, first chapter, first verse: "In the beginning was the Word, and the word was with God, and the word was God."
+                        
+                        The monitor is still winking its cursor at you, waiting for you to fill in the blank:
+                        
+                        YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                    } else {
+                        println(`The monitor is still winking its cursor at you, waiting for you to fill in the blank:
+                        
+                        YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                    }
+                } else if(passwordCount === 3 && prevInput !== 'with god'){
+                    println(`Your fourth hunch is as wrong as the rest. The screen goes completely blank, and a buzzer softly bleeps. A moment later the desk clerk steps into the room. "I'm sorry, Mr. Cameron, but I'll have to ask you to step back out into the lobby. If you still can't remember your password, you'll have to speak with the manager tomorrow. He's the only one empowered to circumvent the password system. Sometimes these modern improvments are more trouble than they're worth." Reluctantly you return to the lobby, and the clerk locks the door to the safe deposit room.`);
+                    enterRoom('lobb-revi');
+                }
+            },
+            items: [
+                {
+                    itemId: 'safebox',
+                    name: ['safe deposit box', 'deposit box'],
+                    desc: ``,
+                    onLook: () => {
+                        const room = getRoom('lobb-revi-18');
+                        println(`You life the gray metal lid of the box. the box contains a single 5 and 1/4-inch floppy disc in a plain paper sleeve. You feel equal pangs of curiousity and of disappointment. The disc may well have the answer to your basic question of WHO AM I? But money would have been more immediately useful. You feel like a kid who's unwrapped a Christmas present and has to say thank you for new underwear.`);
+
+                        room.items.push({
+                            itemId: 'floppydisk',
+                            name: ['floppy disk', '5 and 1/4-inch floppy disk', 'disk'],
+                            isTakeable: true,
+                            onTake: () => println(`You take the disc and put it in the gym bag.`),
+                            onDrop: () => println(`You shouldn't drop that. It might be important.`)
+                        })
+                    }       
+                },
+            ],
+            exits: {dir: 'w', id: 'lobb-revi'} // can we print a line here saying `When you return to the lobby, the clerk looks up from the desk. You thank him and explain that you will have no further need for the safe deposit box.`
+        }, // closes lobb-revi-18
+        {
+            id: 'lobb-revi-19',
+            name: 'In Elevator',
+            desc: '',
+            onEnter: () => {
+                println(`You get into the elevator and the doors close. "What floor?" the first cop asks you, his hand hovering over the double row of buttons`);
+            },
+            onBlock: () => {
+                if(prevInput === ['fifteen', '15']){
+                    println(`"Pardon me," says the second cop, "but would your name be...He consults a slip of paper he takes from the jacket pocket of his uniform. "...John Cameron?"`);
+                    if(prevInput === ['yes', `I don't know`]){
+                        println(`"Well, that is a real convenience," he says. Then, turning to his partner. "Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                        pressEnter('deat-1');
+                    } else if(prevInput === 'no'){
+                        println(`"Well, then I guess your name must be Xavier Hollings, and it just so happens we've got a warrant for your arrest. Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                        pressEnter('deat-1');
+                    }
+                } else {
+                    println(`The policeman presses the button for the floor you've named, and the elevator doors close. As the elevator rises, he asks you, "Pardon me, sir, but would you name be John Cameron?"`);
+                    if(prevInput === ['yes', `I don't know`]){
+                        println(`"Well, that is a real convenience," he says. Then, turning to his partner. "Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                        pressEnter('deat-1');
+                    } else if(prevInput === 'no'){
+                        println(`"Well, then I guess your name must be Xavier Hollings, and it just so happens we've got a warrant for your arrest. Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                        pressEnter('deat-1');
+                    }
+                }
+            }
+        }, // closes lobb-revi-19
+        {
+            id: 'lobb-revi-20',
+            name: '',
+            desc: '',
+            onEnter: () => {
+                println(`A short distance away, half-concealed by one of the mirror-encased columns, is the bellboy who earlier had brought the credit-slip to your room. He sees you and raises his hand as though in greeting. Considering that you stiffed him of his tip, this seems very friendly of him, and you lift your hand to wave back. As you do so, you hear the snick and feel the embrace of handcuffs about your wrist. 
+                
+                "Xaiver Hollings," says the arresting officer, "you're under arrest. Please come with me." You realize the bellboy wasn't greeting you, but pointing you out to the pair of policemen who now escort you from the hotel. "Thanks for the tip," one of the cops says to the bellboy.
+                
+                "It's ironic," the bellboy observes in a tone of philosophic vindictiveness, "but if I'd been able to say the same thing to that cheapskate, I probably would have forgot his face right away and never have made any connection to his picture in the newpaper." The bellboy regards you with a happy sneer. "Maybe next time you're in a situation liek this, you'll rememebr to tip, huh? Schmuck!`);
+                pressEnter('deat-1');
+            }
+        }
     ], // closes lobb-revi rooms
     characters: [
         {
@@ -410,7 +558,13 @@ const lobbyRevisited = {
                 },
                 {
                     option: 'Ask clerk about **safe deposit box**.',
-                    line: `"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`,   
+                    line: `"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`, 
+                    // IF 24 hours has past change line to `"I can assure you that no one has had access to your box since you last locked it yourself. But if you would like to check for yourself, just step this way."`
+                    onBlock: () => {
+                        if(prevInput === 'follow clerk'){
+                            enterRoom('lobb-revi-7');
+                        }
+                    }  
                 },
                 {
                     option: 'Ask clerk to **see a manager**.',
@@ -419,6 +573,10 @@ const lobbyRevisited = {
                     At the other end of the counter, the bell captain signals urgently to the desk clerk, who goes off with a final cringe of apology.`,
                     prereqs: ['safe deposit box']
                 },
+                {
+                    option: 'Ask clerk about **room**.',
+                    line: `"Your room is number 1502, sir."`
+                }
            ],
         },
     ], //closes lobb-revi characters
