@@ -1,11 +1,11 @@
 const eastside = {
-    roomId: 'cent-s-5', // Starting the node with Central Park S. and 5th Ave.
+    roomId: 'cent-s5', // Starting the node with Central Park S. and 5th Ave.
     rooms: [
     {
-        id: 'cent-s-5', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+        id: 'cent-s5', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: 'Central Park S. and 5th Ave', // Displayed each time the player enters the room.
         desc: `There is a subway entrance at this corner.`, // SUBWAY ENTERANCE
-        
+        isStreet: true,
         exit: 
         [
             {
@@ -14,11 +14,11 @@ const eastside = {
             },
             {
                 dir: ['e', 'east'],
-                id: '59-mad'
+                id: '59-madi'
             },
             {
                 dir: ['w', 'west'],
-                id: 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change
+                id: '59-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change
             },
             {
                 dir: ['s', 'south'],
@@ -26,7 +26,7 @@ const eastside = {
             },
             {
                 dir: ['subway', 'entrance'],
-                id: 'centS-5-subway-ent'
+                id: 'cent-s5-subway-ent'
             },
         ],
     },
@@ -34,6 +34,7 @@ const eastside = {
         id: '60-5',
         name: 'E. 60th and 5th Ave',
         desc: ``,
+        isStreet: true,
         exit: 
         [
             {
@@ -42,7 +43,7 @@ const eastside = {
             },
             {
                 dir: ['e', 'east'],
-                id: '60-mad'
+                id: '60-madi'
             },
             {
                 dir: ['w', 'west'],
@@ -60,6 +61,7 @@ const eastside = {
             id: '61-5',
             name: 'E. 61st and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -68,7 +70,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '61-mad'
+                    id: '61-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -86,6 +88,7 @@ const eastside = {
             id: '62-5',
             name: 'E. 62nd and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -94,7 +97,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '62-mad'
+                    id: '62-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -112,6 +115,7 @@ const eastside = {
             id: '63-5',
             name: 'E. 63rd and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -120,7 +124,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '63-mad'
+                    id: '63-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -138,6 +142,7 @@ const eastside = {
             id: '64-5',
             name: 'E. 64th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -146,7 +151,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '64-mad'
+                    id: '64-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -164,6 +169,7 @@ const eastside = {
             id: '65-5',
             name: 'E. 65th and 5th Ave',
             desc: `Here you see the Temple Emanuel. It resembles an elaborately carved chunk of fog, though closer examination shows it to be of grey limestone.`,
+            isStreet: true,
             exit: 
             [
                 {
@@ -172,7 +178,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '65-mad'
+                    id: '65-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -194,6 +200,7 @@ const eastside = {
             id: '66-5',
             name: 'E. 66th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -202,7 +209,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '66-mad'
+                    id: '66-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -219,6 +226,7 @@ const eastside = {
             id: '67-5',
             name: 'E. 67th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -227,7 +235,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '67-mad'
+                    id: '67-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -244,6 +252,7 @@ const eastside = {
             id: '68-5',
             name: 'E. 68th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -252,7 +261,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '68-mad'
+                    id: '68-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -268,6 +277,7 @@ const eastside = {
             id: '69-5',
             name: 'E. 69th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -276,7 +286,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '69-mad'
+                    id: '69-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -292,6 +302,7 @@ const eastside = {
             id: '70-5',
             name: 'E. 70th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -300,7 +311,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '70-mad'
+                    id: '70-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -316,6 +327,7 @@ const eastside = {
             id: '71-5',
             name: 'E. 71st and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -324,7 +336,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '71-mad'
+                    id: '71-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -340,6 +352,7 @@ const eastside = {
             id: '72-5',
             name: 'E. 72nd and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -348,7 +361,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '72-mad'
+                    id: '72-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -364,6 +377,7 @@ const eastside = {
             id: '73-5',
             name: 'E. 73rd and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -372,7 +386,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '73-mad'
+                    id: '73-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -388,6 +402,7 @@ const eastside = {
             id: '74-5',
             name: 'E. 74th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -396,7 +411,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '74-mad'
+                    id: '74-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -412,6 +427,7 @@ const eastside = {
             id: '75-5',
             name: 'E. 75th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -420,7 +436,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '75-mad'
+                    id: '75-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -436,6 +452,7 @@ const eastside = {
             id: '76-5',
             name: 'E. 76th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -444,7 +461,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '76-mad'
+                    id: '76-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -460,6 +477,7 @@ const eastside = {
             id: '77-5',
             name: 'E. 77th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -468,7 +486,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '77-mad'
+                    id: '77-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -484,6 +502,7 @@ const eastside = {
             id: '78-5',
             name: 'E. 78th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -492,7 +511,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '78-mad'
+                    id: '78-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -508,6 +527,7 @@ const eastside = {
             id: '79-5',
             name: 'E. 79th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -516,7 +536,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '79-mad'
+                    id: '79-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -532,6 +552,7 @@ const eastside = {
             id: '80-5',
             name: 'E. 80th and 5th Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -540,7 +561,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '80-mad'
+                    id: '80-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -556,6 +577,7 @@ const eastside = {
             id: '81-5',
             name: 'E. 81st and 5th Ave',
             desc: `There's the Metropolitan Museum, three long city blocks of Greek-styled marble sheathing a few thousand years of pots, paintings, armor, and assorted gew-gaws.`,
+            isStreet: true,
             onEnter: () =>{
                 reenableInput();
             },
@@ -567,7 +589,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '81-mad'
+                    id: '81-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -596,6 +618,7 @@ const eastside = {
         {
             id: '82-5',
             name: 'E. 82nd and 5th Ave',
+            isStreet: true,
             desc: ``,
             
             exit: 
@@ -606,7 +629,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '82-mad'
+                    id: '82-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -621,6 +644,7 @@ const eastside = {
         {
             id: '83-5',
             name: 'E. 83rd and 5th Ave',
+            isStreet: true,
             desc: ``,
             
             exit: 
@@ -631,7 +655,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '83-mad'
+                    id: '83-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -646,6 +670,7 @@ const eastside = {
         {
             id: '84-5',
             name: 'E. 84th and 5th Ave',
+            isStreet: true,
             desc: ``,
             
             exit: 
@@ -656,7 +681,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '84-mad'
+                    id: '84-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -671,6 +696,7 @@ const eastside = {
         {
             id: '85-5',
             name: 'E. 85th and 5th Ave',
+            isStreet: true,
             desc: ``,
             
             exit: 
@@ -681,7 +707,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '85-mad'
+                    id: '85-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -696,6 +722,7 @@ const eastside = {
         {
             id: '86-5',
             name: 'E.86th and 5th Ave',
+            isStreet: true,
             desc: ``,
             
             exit: 
@@ -706,7 +733,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '86-mad'
+                    id: '86-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -722,7 +749,7 @@ const eastside = {
             id: '87-5',
             name: 'E.87th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -731,7 +758,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '87-mad'
+                    id: '87-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -747,6 +774,7 @@ const eastside = {
             id: '88-5',
             name: 'E.88th and 5th Ave',
             desc: `From a distance, the Guggenheim Museum might be a gigantic of modern sculpture -- perhaps some demented artist's version of a thunderstorm. Even up close, its huge spiral is enough to make you dizzy for a moment.`,
+            isStreet: true,
             onEnter: () =>{
                 reenableInput();
             }, 
@@ -758,7 +786,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '88-mad'
+                    id: '88-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -787,7 +815,7 @@ const eastside = {
             id: '89-5',
             name: 'E.89th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -796,7 +824,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '89-mad'
+                    id: '89-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -812,7 +840,7 @@ const eastside = {
             id: '90-5',
             name: 'E.90th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -821,7 +849,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '90-mad'
+                    id: '90-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -837,6 +865,7 @@ const eastside = {
             id: '91-5',
             name: 'E.91st and 5th Ave',
             desc: `Accustomed to the towering, relatively featureless blocks of Manhattan apartment houses, you are startled to see what appears to be a mansion with a generous garden. It's not a private residence, however, but the Cooper-Hewitt Museum.`,
+            isStreet: true,
             onEnter: () => {
                 reenableInput();
             },
@@ -848,7 +877,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '91-mad'
+                    id: '91-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -869,6 +898,7 @@ const eastside = {
             id: 'coo-mus', // Inside the Cooper-Hewitt Museum, brief interaction
             name: 'Museum',
             desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display.\n When you've seen enough of the display, you leave`,
+            isStreet: true,
             onEnter: () => {
                 pressEnter('91-5');
             },
@@ -877,7 +907,7 @@ const eastside = {
             id: '92-5',
             name: 'E.92nd and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -886,7 +916,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '92-mad'
+                    id: '92-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -902,7 +932,7 @@ const eastside = {
             id: '93-5',
             name: 'E.93rd and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -911,7 +941,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '93-mad'
+                    id: '93-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -927,7 +957,7 @@ const eastside = {
             id: '94-5',
             name: 'E.94th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -936,7 +966,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '94-mad'
+                    id: '94-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -952,7 +982,7 @@ const eastside = {
             id: '95-5',
             name: 'E.95th and 5th Ave',
             desc: `There is a luncheonette on the corner.`,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -961,7 +991,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '95-mad'
+                    id: '95-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -982,7 +1012,7 @@ const eastside = {
             id: '96-5',
             name: 'E.96th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -991,7 +1021,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '96-mad'
+                    id: '96-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1007,7 +1037,7 @@ const eastside = {
             id: '97-5',
             name: 'E.97th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1016,7 +1046,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '97-mad'
+                    id: '97-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1032,7 +1062,7 @@ const eastside = {
             id: '98-5',
             name: 'E.98th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1041,7 +1071,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '98-mad'
+                    id: '98-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1057,7 +1087,7 @@ const eastside = {
             id: '101-5',
             name: 'E.101st and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1066,7 +1096,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '101-mad'
+                    id: '101-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1082,7 +1112,7 @@ const eastside = {
             id: '102-5',
             name: 'E.102nd and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1091,7 +1121,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '102-mad'
+                    id: '102-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1107,7 +1137,7 @@ const eastside = {
             id: '103-5',
             name: 'E.103rd and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1116,7 +1146,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '103-mad'
+                    id: '103-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1132,7 +1162,7 @@ const eastside = {
             id: '104-5',
             name: 'E.104th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1141,7 +1171,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '104-mad'
+                    id: '104-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1157,7 +1187,7 @@ const eastside = {
             id: '105-5',
             name: 'E.105th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1166,7 +1196,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '105-mad'
+                    id: '105-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1182,7 +1212,7 @@ const eastside = {
             id: '106-5',
             name: 'E.106th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1191,7 +1221,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '106-mad'
+                    id: '106-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1207,7 +1237,7 @@ const eastside = {
             id: '107-5',
             name: 'E.107th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1216,7 +1246,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '107-mad'
+                    id: '107-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1232,7 +1262,7 @@ const eastside = {
             id: '108-5',
             name: 'E.108th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1241,7 +1271,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '108-mad'
+                    id: '108-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1257,7 +1287,7 @@ const eastside = {
             id: '109-5',
             name: 'E.109th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1266,7 +1296,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '109-mad'
+                    id: '109-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1282,7 +1312,7 @@ const eastside = {
             id: '110-5',
             name: 'E.110th and 5th Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
@@ -1292,7 +1322,7 @@ const eastside = {
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '110-mad'
+                    id: '110-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1304,17 +1334,17 @@ const eastside = {
                 },
             ],
         },
-        // MADDISON AVE STREETS
+        // madiDISON AVE STREETS
         {
-        id: '59-mad', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-        name: 'E. 59th St. and Madison Ave', // Displayed each time the player enters the room.
+        id: '59-madi', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+        name: 'E. 59th St. and madison Ave', // Displayed each time the player enters the room.
         desc: ``, 
-        
+        isStreet: true,
         exit: 
         [
             {
                 dir: ['n', 'north'],
-                id: '60-mad'
+                id: '60-madi'
             },
             {
                 dir: ['e', 'east'],
@@ -1326,19 +1356,20 @@ const eastside = {
             },
             {
                 dir: ['s', 'south'],
-                id: '58-mad'
+                id: '58-madi'
             },
         ],
     },
         {
-        id: '60-mad',
-        name: 'E. 60th and Madison Ave',
+        id: '60-madi',
+        name: 'E. 60th and madison Ave',
         desc: ``,
+        isStreet: true,
         exit: 
         [
             {
                 dir: ['n', 'north'],
-                id: '61-mad'
+                id: '61-madi'
             },
             {
                 dir: ['e', 'east'],
@@ -1350,21 +1381,22 @@ const eastside = {
             },
             {
                 dir: ['s', 'south'],
-                id: '59-mad'
+                id: '59-madi'
             },
             
         ],
       
         },
         {
-            id: '61-mad',
-            name: 'E. 61st and Madison Ave',
+            id: '61-madi',
+            name: 'E. 61st and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '62-mad'
+                    id: '62-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1376,16 +1408,17 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '60-mad'
+                    id: '60-madi'
                 },
                 
             ],
           
         },
         {
-            id: '62-mad',
-            name: 'E. 62nd and Madison Ave',
+            id: '62-madi',
+            name: 'E. 62nd and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
@@ -1402,21 +1435,22 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '61-mad'
+                    id: '61-madi'
                 },
                 
             ],
           
         },
         {
-            id: '63-mad',
-            name: 'E. 63rd and Madison Ave',
+            id: '63-madi',
+            name: 'E. 63rd and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '64-mad'
+                    id: '64-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1428,21 +1462,22 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '62-mad'
+                    id: '62-madi'
                 },
                 
             ],
           
         },
         {
-            id: '64-mad',
-            name: 'E. 64th and Madison Ave',
+            id: '64-madi',
+            name: 'E. 64th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '65-mad'
+                    id: '65-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1454,21 +1489,22 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '63-mad'
+                    id: '63-madi'
                 },
                 
             ],
           
         },
         {
-            id: '65-mad',
-            name: 'E. 65th and Madison Ave',
+            id: '65-madi',
+            name: 'E. 65th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '66-mad'
+                    id: '66-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1486,14 +1522,15 @@ const eastside = {
           
         },
         {
-            id: '66-mad',
-            name: 'E. 66th and Madison Ave',
+            id: '66-madi',
+            name: 'E. 66th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '67-mad'
+                    id: '67-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1505,20 +1542,21 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '65-mad'
+                    id: '65-madi'
                 },
             ],
           
         },
         {
-            id: '67-mad',
-            name: 'E. 67th and Madison Ave',
+            id: '67-madi',
+            name: 'E. 67th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '68-mad'
+                    id: '68-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1530,20 +1568,21 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '66-mad'
+                    id: '66-madi'
                 },
             ],
           
         },
         {
-            id: '68-mad',
-            name: 'E. 68th and Madison Ave',
+            id: '68-madi',
+            name: 'E. 68th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '69-mad'
+                    id: '69-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1555,19 +1594,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '67-mad'
+                    id: '67-madi'
                 },
             ],  
         },
         {
-            id: '69-mad',
-            name: 'E. 69th and Madison Ave',
+            id: '69-madi',
+            name: 'E. 69th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '70-mad'
+                    id: '70-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1579,19 +1619,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '68-mad'
+                    id: '68-madi'
                 },
             ],
         },
         {
-            id: '70-mad',
-            name: 'E. 70th and Madison Ave',
+            id: '70-madi',
+            name: 'E. 70th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '71-mad'
+                    id: '71-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1603,19 +1644,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '69-mad'
+                    id: '69-madi'
                 },
             ],
         },
         {
-            id: '71-mad',
-            name: 'E. 71st and Madison Ave',
+            id: '71-madi',
+            name: 'E. 71st and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '72-mad'
+                    id: '72-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1627,19 +1669,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '70-mad'
+                    id: '70-madi'
                 },
             ],
         },
         {
-            id: '72-mad',
-            name: 'E. 72nd and Madison Ave',
+            id: '72-madi',
+            name: 'E. 72nd and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '73-mad'
+                    id: '73-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1651,19 +1694,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '71-mad'
+                    id: '71-madi'
                 },
             ],
         },
         {
-            id: '73-mad',
-            name: 'E. 73rd and Madison Ave',
+            id: '73-madi',
+            name: 'E. 73rd and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '74-mad'
+                    id: '74-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1675,14 +1719,15 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '72-mad'
+                    id: '72-madi'
                 },
             ],
         },
         {
-            id: '74-mad', // Museum Spot
-            name: 'E. 74th and Madison Ave',
+            id: '74-madi', // Museum Spot
+            name: 'E. 74th and madison Ave',
             desc: `You don't even notice that you've come to the Whitney Museum till you've come to the moat, where the sidewalk looks down to the basement sculpture garden, where a boy and a girl have taken some time off from modern art to make love unseen by anyone but you.`,
+            isStreet: true,
             onEnter: () => {
                 reenableInput();
             },
@@ -1690,11 +1735,11 @@ const eastside = {
             [
                 {
                     dir: ['n', 'north'],
-                    id: '75-mad'
+                    id: '75-madi'
                 },
                 {
                     dir: ['e', 'east'],
-                    id: '74-mad'
+                    id: '74-madi'
                 },
                 {
                     dir: ['w', 'west'],
@@ -1717,18 +1762,19 @@ const eastside = {
             desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display. 
             When you've seen enough of the display, you leave.`,
             onEnter: () => {
-                pressEnter('74-mad');
+                pressEnter('74-madi');
             },
         },
         {
-            id: '75-mad',
-            name: 'E. 75th and Madison Ave',
+            id: '75-madi',
+            name: 'E. 75th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '76-mad'
+                    id: '76-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1740,19 +1786,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '74-mad'
+                    id: '74-madi'
                 },
             ],
         },
         {
-            id: '76-mad',
-            name: 'E. 76th and Madison Ave',
+            id: '76-madi',
+            name: 'E. 76th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '76-mad'
+                    id: '76-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1764,19 +1811,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '75-mad'
+                    id: '75-madi'
                 },
             ],
         },
         {
-            id: '77-mad',
-            name: 'E. 77th and Madison Ave',
+            id: '77-madi',
+            name: 'E. 77th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '78-mad'
+                    id: '78-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1788,19 +1836,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '76-mad'
+                    id: '76-madi'
                 },
             ],
         },
         {
-            id: '78-mad',
-            name: 'E. 78th and Madison Ave',
+            id: '78-madi',
+            name: 'E. 78th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '79-mad'
+                    id: '79-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1812,19 +1861,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '77-mad'
+                    id: '77-madi'
                 },
             ],
         },
         {
-            id: '79-mad',
-            name: 'E. 79th and Madison Ave',
+            id: '79-madi',
+            name: 'E. 79th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '80-mad'
+                    id: '80-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1836,19 +1886,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '78-mad'
+                    id: '78-madi'
                 },
             ],
         },
         {
-            id: '80-mad',
-            name: 'E. 80th and Madison Ave',
+            id: '80-madi',
+            name: 'E. 80th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '81-mad'
+                    id: '81-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1860,19 +1911,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '79-mad'
+                    id: '79-madi'
                 },
             ],
         },
         {
-            id: '81-mad',
-            name: 'E. 81st and Madison Ave',
+            id: '81-madi',
+            name: 'E. 81st and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '82-mad'
+                    id: '82-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1884,20 +1936,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '80-mad'
+                    id: '80-madi'
                 },
             ],
         },
         {
-            id: '82-mad',
-            name: 'E. 82nd and Madison Ave',
+            id: '82-madi',
+            name: 'E. 82nd and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '83-mad'
+                    id: '83-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1909,20 +1961,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '81-mad'
+                    id: '81-madi'
                 },
             ],
         },
         {
-            id: '83-mad',
-            name: 'E. 83rd and Madison Ave',
+            id: '83-madi',
+            name: 'E. 83rd and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '84-mad'
+                    id: '84-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1934,20 +1986,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '82-mad'
+                    id: '82-madi'
                 },
             ],
         },
         {
-            id: '84-mad',
-            name: 'E. 84th and Madison Ave',
+            id: '84-madi',
+            name: 'E. 84th and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '85-mad'
+                    id: '85-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1959,20 +2011,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '83-mad'
+                    id: '83-madi'
                 },
             ],
         },
         {
-            id: '85-mad',
-            name: 'E. 85th and Madison Ave',
+            id: '85-madi',
+            name: 'E. 85th and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '86-mad'
+                    id: '86-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -1984,20 +2036,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '84-mad'
+                    id: '84-madi'
                 },
             ],
         },
         {
-            id: '86-mad',
-            name: 'E.86th and Madison Ave',
+            id: '86-madi',
+            name: 'E.86th and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '87-mad'
+                    id: '87-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2009,20 +2061,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '85-mad'
+                    id: '85-madi'
                 },
             ],
         },
         {
-            id: '87-mad',
-            name: 'E.87th and Madison Ave',
+            id: '87-madi',
+            name: 'E.87th and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '88-mad'
+                    id: '88-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2034,19 +2086,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '86-mad'
+                    id: '86-madi'
                 },
             ],
         },
         {
-            id: '88-mad',
-            name: 'E.88th and Madison Ave',
+            id: '88-madi',
+            name: 'E.88th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '89-mad'
+                    id: '89-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2063,14 +2116,15 @@ const eastside = {
             ],
         },
         {
-            id: '89-mad',
-            name: 'E.89th and Madison Ave',
+            id: '89-madi',
+            name: 'E.89th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '90-mad'
+                    id: '90-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2082,19 +2136,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '88-mad'
+                    id: '88-madi'
                 },
             ],
         },
         {
-            id: '90-mad',
-            name: 'E.90th and Madison Ave',
+            id: '90-madi',
+            name: 'E.90th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '91-mad'
+                    id: '91-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2106,19 +2161,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '89-mad'
+                    id: '89-madi'
                 },
             ],
         },
         {
-            id: '91-mad',
-            name: 'E.91st and Madison Ave',
+            id: '91-madi',
+            name: 'E.91st and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '92-mad'
+                    id: '92-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2130,19 +2186,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '90-mad'
+                    id: '90-madi'
                 },
             ],
         },
         {
-            id: '92-mad',
-            name: 'E.92nd and Madison Ave',
-            desc: ``,    
+            id: '92-madi',
+            name: 'E.92nd and madison Ave',
+            desc: ``,
+            isStreet: true,    
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '93-mad'
+                    id: '93-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2154,19 +2211,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '91-mad'
+                    id: '91-madi'
                 },
             ],
         },
         {
-            id: '93-mad',
-            name: 'E.93rd and Madison Ave',
-            desc: ``,    
+            id: '93-madi',
+            name: 'E.93rd and madison Ave',
+            desc: ``,
+            isStreet: true,    
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '94-mad'
+                    id: '94-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2178,19 +2236,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '92-mad'
+                    id: '92-madi'
                 },
             ],
         },
         {
-            id: '94-mad',
-            name: 'E.94th and Madison Ave',
-            desc: ``,       
+            id: '94-madi',
+            name: 'E.94th and madison Ave',
+            desc: ``,
+            isStreet: true,   
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '95-mad'
+                    id: '95-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2202,19 +2261,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '93-mad'
+                    id: '93-madi'
                 },
             ],
         },
         {
-            id: '95-mad',
-            name: 'E.95th and Madison Ave',
+            id: '95-madi',
+            name: 'E.95th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '96-mad'
+                    id: '96-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2226,20 +2286,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '94-mad'
+                    id: '94-madi'
                 },
             ],
         },
         {
-            id: '96-mad',
-            name: 'E.96th and Madison Ave',
+            id: '96-madi',
+            name: 'E.96th and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '97-mad'
+                    id: '97-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2251,19 +2311,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '95-mad'
+                    id: '95-madi'
                 },
             ],
         },
         {
-            id: '97-mad',
-            name: 'E.97th and Madison Ave',
-            desc: ``,            
+            id: '97-madi',
+            name: 'E.97th and madison Ave',
+            desc: ``,   
+            isStreet: true,         
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '98-mad'
+                    id: '98-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2275,19 +2336,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '96-mad'
+                    id: '96-madi'
                 },
             ],
         },
         {
-            id: '98-mad',
-            name: 'E.98th and Madison Ave',
-            desc: ``,   
+            id: '98-madi',
+            name: 'E.98th and madison Ave',
+            desc: ``,
+            isStreet: true,   
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '101-mad'
+                    id: '101-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2299,19 +2361,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '97-mad'
+                    id: '97-madi'
                 },
             ],
         },
         {
-            id: '101-mad',
-            name: 'E.101st and Madison Ave',
-            desc: ``,        
+            id: '101-madi',
+            name: 'E.101st and madison Ave',
+            desc: ``,
+            isStreet: true,        
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '102-mad'
+                    id: '102-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2323,19 +2386,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '98-mad'
+                    id: '98-madi'
                 },
             ],
         },
         {
-            id: '102-mad',
-            name: 'E.102nd and Madison Ave',
-            desc: ``,   
+            id: '102-madi',
+            name: 'E.102nd and madison Ave',
+            desc: ``,
+            isStreet: true,   
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '103-mad'
+                    id: '103-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2347,20 +2411,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '101-mad'
+                    id: '101-madi'
                 },
             ],
         },
         {
-            id: '103-mad',
-            name: 'E.103rd and Madison Ave',
+            id: '103-madi',
+            name: 'E.103rd and madison Ave',
             desc: ``,
-            
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '104-mad'
+                    id: '104-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2372,19 +2436,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '102-mad'
+                    id: '102-madi'
                 },
             ],
         },
         {
-            id: '104-mad',
-            name: 'E.104th and Madison Ave',
-            desc: ``,           
+            id: '104-madi',
+            name: 'E.104th and madison Ave',
+            desc: ``, 
+            isStreet: true,          
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '105-mad'
+                    id: '105-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2396,19 +2461,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '103-mad'
+                    id: '103-madi'
                 },
             ],
         },
         {
-            id: '105-mad',
-            name: 'E.105th and Madison Ave',
+            id: '105-madi',
+            name: 'E.105th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '106-mad'
+                    id: '106-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2420,19 +2486,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '104-mad'
+                    id: '104-madi'
                 },
             ],
         },
         {
-            id: '106-mad',
-            name: 'E.106th and Madison Ave',
+            id: '106-madi',
+            name: 'E.106th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit:
             [
                 {
                     dir: ['n', 'north'],
-                    id: '107-mad'
+                    id: '107-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2444,19 +2511,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '105-mad'
+                    id: '105-madi'
                 },
             ],
         },
         {
-            id: '107-mad',
-            name: 'E.107th and Madison Ave',
-            desc: ``,  
+            id: '107-madi',
+            name: 'E.107th and madison Ave',
+            desc: ``, 
+            isStreet: true, 
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '108-mad'
+                    id: '108-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2468,19 +2536,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '106-mad'
+                    id: '106-madi'
                 },
             ],
         },
         {
-            id: '108-mad',
-            name: 'E.108th and Madison Ave',
+            id: '108-madi',
+            name: 'E.108th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '109-mad'
+                    id: '109-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2492,19 +2561,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '107-mad'
+                    id: '107-madi'
                 },
             ],
         },
         {
-            id: '109-mad',
-            name: 'E.109th and Madison Ave',
+            id: '109-madi',
+            name: 'E.109th and madison Ave',
             desc: ``,
+            isStreet: true,
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '110-mad'
+                    id: '110-madi'
                 },
                 {
                     dir: ['e', 'east'],
@@ -2516,19 +2586,20 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '108-mad'
+                    id: '108-madi'
                 },
             ],
         },
         {
-            id: '110-mad',
-            name: 'E.110th and Madison Ave',
-            desc: ``,     
+            id: '110-madi',
+            name: 'E.110th and madison Ave',
+            desc: ``, 
+            isStreet: true,    
             exit: 
             [
                 {
                     dir: ['n', 'north'],
-                    id: '110-mad',
+                    id: '110-madi',
                     block: 'North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasit it Horace Greely who said, "Go south, young man"?',
                 },
                 {
@@ -2541,7 +2612,7 @@ const eastside = {
                 },
                 {
                     dir: ['s', 'south'],
-                    id: '109-mad'
+                    id: '109-madi'
                 },
             ],
         },
@@ -2549,7 +2620,8 @@ const eastside = {
                 {
                     id: '59-park', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
                     name: 'E. 59th St. and Park Ave', // Displayed each time the player enters the room.
-                    desc: `There is a restaurant called Nedicks here.`,      
+                    desc: `There is a restaurant called Nedicks here.`,  
+                    isStreet: true,    
                     exit: 
                     [
                         {
@@ -2558,11 +2630,11 @@ const eastside = {
                         },
                         {
                             dir: ['e', 'east'],
-                            id: '59-lex'
+                            id: '59-lexi'
                         },
                         {
                             dir: ['w', 'west'],
-                            id: '59-mad'    
+                            id: '59-madi'    
                         },
                         {
                             dir: ['s', 'south'],
@@ -2578,6 +2650,7 @@ const eastside = {
                     id: '60-Park',
                     name: 'E. 60th and Park Ave',
                     desc: `Bloomingdales!`, // Bloomingdales!
+                    isStreet: true,
                     exit: 
                     [
                         {
@@ -2586,11 +2659,11 @@ const eastside = {
                         },
                         {
                             dir: ['e', 'east'],
-                            id: '60-lex'
+                            id: '60-lexi'
                         },
                         {
                             dir: ['w', 'west'],
-                            id: '60-mad'     
+                            id: '60-madi'     
                         },
                         {
                             dir: ['s', 'south'],
@@ -2609,6 +2682,7 @@ const eastside = {
                         id: '61-park',
                         name: 'E. 61st and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2617,11 +2691,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '61-lex'
+                                id: '61-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '61-mad'    
+                                id: '61-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2635,6 +2709,7 @@ const eastside = {
                         id: '62-park',
                         name: 'E. 62nd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2643,11 +2718,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '62-lex'
+                                id: '62-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '62-mad'     
+                                id: '62-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2661,6 +2736,7 @@ const eastside = {
                         id: '63-park',
                         name: 'E. 63rd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2669,11 +2745,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '63-lex'
+                                id: '63-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '63-mad'     
+                                id: '63-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2687,6 +2763,7 @@ const eastside = {
                         id: '64-park',
                         name: 'E. 64th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2695,11 +2772,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '64-lex'
+                                id: '64-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '64-mad'     
+                                id: '64-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2713,6 +2790,7 @@ const eastside = {
                         id: '65-park',
                         name: 'E. 65th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2721,11 +2799,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '65-lex'
+                                id: '65-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '65-mad'    
+                                id: '65-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2738,6 +2816,7 @@ const eastside = {
                         id: '66-park',
                         name: 'E. 66th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2746,11 +2825,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '66-lex'
+                                id: '66-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '66-mad'     
+                                id: '66-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2763,6 +2842,7 @@ const eastside = {
                         id: '67-park',
                         name: 'E. 67th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2771,11 +2851,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '67-lex'
+                                id: '67-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '67-mad'     
+                                id: '67-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2788,6 +2868,7 @@ const eastside = {
                         id: '68-park',
                         name: 'E. 68th and Park Ave',
                         desc: `The Union Club's grey and white exterior suggests its age.`, // Union Club
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2796,11 +2877,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '68-lex'
+                                id: '68-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '68-mad'     
+                                id: '68-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2817,6 +2898,7 @@ const eastside = {
                         id: '69-park',
                         name: 'E. 69th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2825,11 +2907,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '69-lex'
+                                id: '69-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '69-mad'     
+                                id: '69-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2841,6 +2923,7 @@ const eastside = {
                         id: '70-park',
                         name: 'E. 70th and Park Ave',
                         desc: `If it rested on its side, this building might be the steps to a giant's doorstep: standing as it is, the modern-looking structure of the Asia House.`,
+                        isStreet: true,
                         onEnter: () =>{
                             reenableInput();
                         },
@@ -2852,11 +2935,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '70-lex'
+                                id: '70-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '70-mad'     
+                                id: '70-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2881,6 +2964,7 @@ const eastside = {
                         id: '71-park',
                         name: 'E. 71st and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2889,11 +2973,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '71-lex'
+                                id: '71-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '71-mad'     
+                                id: '71-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2905,6 +2989,7 @@ const eastside = {
                         id: '72-park',
                         name: 'E. 72nd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2913,11 +2998,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '72-lex'
+                                id: '72-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '72-mad'     
+                                id: '72-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2929,6 +3014,7 @@ const eastside = {
                         id: '73-park',
                         name: 'E. 73rd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2937,11 +3023,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '73-lex'
+                                id: '73-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '73-mad'     
+                                id: '73-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2951,8 +3037,9 @@ const eastside = {
                     },
                     {
                         id: '74-park', 
-                        name: 'E. 74th and Madison Ave',
+                        name: 'E. 74th and madison Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2961,11 +3048,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '74-lex'
+                                id: '74-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '74-mad'     
+                                id: '74-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -2977,6 +3064,7 @@ const eastside = {
                         id: '75-park',
                         name: 'E. 75th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -2985,11 +3073,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '75-lex'
+                                id: '75-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '75-mad'     
+                                id: '75-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3001,6 +3089,7 @@ const eastside = {
                         id: '76-park',
                         name: 'E. 76th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3009,11 +3098,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '76-lex'
+                                id: '76-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '76-mad'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                                id: '76-madi'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3025,6 +3114,7 @@ const eastside = {
                         id: '77-park',
                         name: 'E. 77th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3033,11 +3123,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '77-lex'
+                                id: '77-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '77-mad'     
+                                id: '77-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3049,6 +3139,7 @@ const eastside = {
                         id: '78-park',
                         name: 'E. 78th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3057,11 +3148,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '78-lex'
+                                id: '78-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '78-mad'     
+                                id: '78-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3073,6 +3164,7 @@ const eastside = {
                         id: '79-park',
                         name: 'E. 79th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3081,11 +3173,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '79-lex'
+                                id: '79-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '79-mad'     
+                                id: '79-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3097,6 +3189,7 @@ const eastside = {
                         id: '80-park',
                         name: 'E. 80th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3105,11 +3198,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '80-lex'
+                                id: '80-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '80-mad'     
+                                id: '80-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3121,6 +3214,7 @@ const eastside = {
                         id: '81-park',
                         name: 'E. 81st and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3129,11 +3223,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '81-lex'
+                                id: '81-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '81-mad'    
+                                id: '81-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3145,6 +3239,7 @@ const eastside = {
                         id: '82-park',
                         name: 'E. 82nd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3153,11 +3248,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '82-lex'
+                                id: '82-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '82-mad'    
+                                id: '82-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3169,6 +3264,7 @@ const eastside = {
                         id: '83-park',
                         name: 'E. 83rd and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3177,11 +3273,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '83-lex'
+                                id: '83-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '83-mad'    
+                                id: '83-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3192,7 +3288,8 @@ const eastside = {
                     {
                         id: '84-park',
                         name: 'E. 84th and Park Ave',
-                        desc: ``,          
+                        desc: ``,  
+                        isStreet: true,        
                         exit: 
                         [
                             {
@@ -3201,11 +3298,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '84-lex'
+                                id: '84-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '84-mad'     
+                                id: '84-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3214,9 +3311,10 @@ const eastside = {
                         ],
                     },
                     {
-                        id: '85-mad',
+                        id: '85-madi',
                         name: 'E. 85th and Park Ave',
-                        desc: ``,      
+                        desc: ``,     
+                        isStreet: true, 
                         exit: 
                         [
                             {
@@ -3225,11 +3323,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '85-lex'
+                                id: '85-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '85-mad'     
+                                id: '85-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3240,7 +3338,8 @@ const eastside = {
                     {
                         id: '86-park',
                         name: 'E.86th and Park Ave',
-                        desc: ``,                    
+                        desc: ``,   
+                        isStreet: true,                 
                         exit: 
                         [
                             {
@@ -3249,11 +3348,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '86-lex'
+                                id: '86-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '86-mad'     
+                                id: '86-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3264,7 +3363,8 @@ const eastside = {
                     {
                         id: '87-park',
                         name: 'E.87th and Park Ave',
-                        desc: ``,             
+                        desc: ``,   
+                        isStreet: true,          
                         exit: 
                         [
                             {
@@ -3273,11 +3373,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '87-lex'
+                                id: '87-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '87-mad'     
+                                id: '87-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3289,6 +3389,7 @@ const eastside = {
                         id: '88-park',
                         name: 'E.88th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3297,11 +3398,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '88-lex'
+                                id: '88-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '88-mad'     
+                                id: '88-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3313,6 +3414,7 @@ const eastside = {
                         id: '89-park',
                         name: 'E.89th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3321,11 +3423,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '89-lex'
+                                id: '89-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '89-mad'  
+                                id: '89-madi'  
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3337,6 +3439,7 @@ const eastside = {
                         id: '90-park',
                         name: 'E.90th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3345,11 +3448,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '90-lex'
+                                id: '90-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '90-mad'     
+                                id: '90-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3361,6 +3464,7 @@ const eastside = {
                         id: '91-park',
                         name: 'E.91st and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3369,11 +3473,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '91-lex'
+                                id: '91-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '91-mad'     
+                                id: '91-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3384,7 +3488,8 @@ const eastside = {
                     {
                         id: '92-park',
                         name: 'E.92nd and Park Ave',
-                        desc: ``,    
+                        desc: ``,  
+                        isStreet: true,  
                         exit: 
                         [
                             {
@@ -3393,11 +3498,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '92-lex'
+                                id: '92-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '92-mad'    
+                                id: '92-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3408,7 +3513,8 @@ const eastside = {
                     {
                         id: '93-park',
                         name: 'E.93rd and Park Ave',
-                        desc: ``,    
+                        desc: ``,  
+                        isStreet: true,  
                         exit: 
                         [
                             {
@@ -3417,11 +3523,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '93-lex'
+                                id: '93-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '93-mad'     
+                                id: '93-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3432,7 +3538,8 @@ const eastside = {
                     {
                         id: '94-park',
                         name: 'E.94th and Park Ave',
-                        desc: ``,       
+                        desc: ``,   
+                        isStreet: true,    
                         exit: 
                         [
                             {
@@ -3441,11 +3548,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '94-lex'
+                                id: '94-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '94-mad'     
+                                id: '94-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3457,6 +3564,7 @@ const eastside = {
                         id: '95-park',
                         name: 'E.95th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3465,11 +3573,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '95-lex'
+                                id: '95-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '95-mad'     
+                                id: '95-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3481,6 +3589,7 @@ const eastside = {
                         id: '96-park',
                         name: 'E.96th and Park Ave',
                         desc: ``,   
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3489,11 +3598,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '96-lex'
+                                id: '96-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '96-mad'     
+                                id: '96-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3504,7 +3613,8 @@ const eastside = {
                     {
                         id: '97-park',
                         name: 'E.97th and Park Ave',
-                        desc: ``,            
+                        desc: ``,  
+                        isStreet: true,          
                         exit: 
                         [
                             {
@@ -3513,11 +3623,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '97-lex'
+                                id: '97-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '97-mad'     
+                                id: '97-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3528,7 +3638,8 @@ const eastside = {
                     {
                         id: '98-park',
                         name: 'E.98th and Park Ave',
-                        desc: ``,   
+                        desc: ``, 
+                        isStreet: true,  
                         exit: 
                         [
                             {
@@ -3537,11 +3648,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '98-lex'
+                                id: '98-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '98-mad'    
+                                id: '98-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3552,7 +3663,8 @@ const eastside = {
                     {
                         id: '101-park',
                         name: 'E.101st and Park Ave',
-                        desc: ``,        
+                        desc: ``, 
+                        isStreet: true,       
                         exit: 
                         [
                             {
@@ -3561,11 +3673,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '101-lex'
+                                id: '101-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '101-mad'     
+                                id: '101-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3577,6 +3689,7 @@ const eastside = {
                         id: '102-park',
                         name: 'E.102nd and Park Ave',
                         desc: ``,   
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3585,11 +3698,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '102-lex'
+                                id: '102-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '102-mad'     
+                                id: '102-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3601,7 +3714,7 @@ const eastside = {
                         id: '103-park',
                         name: 'E.103rd and Park Ave',
                         desc: ``,
-                        
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3610,11 +3723,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '103-lex'
+                                id: '103-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '103-mad'     
+                                id: '103-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3625,7 +3738,8 @@ const eastside = {
                     {
                         id: '104-park',
                         name: 'E.104th and Park Ave',
-                        desc: ``,           
+                        desc: ``,    
+                        isStreet: true,       
                         exit: 
                         [
                             {
@@ -3634,11 +3748,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '104-lex'
+                                id: '104-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '104-mad'     
+                                id: '104-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3650,6 +3764,7 @@ const eastside = {
                         id: '105-park',
                         name: 'E.105th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3658,11 +3773,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '105-lex'
+                                id: '105-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '105-mad'    
+                                id: '105-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3674,6 +3789,7 @@ const eastside = {
                         id: '106-park',
                         name: 'E.106th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit:
                         [
                             {
@@ -3682,11 +3798,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '106-lex'
+                                id: '106-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '106-mad'     
+                                id: '106-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3698,6 +3814,7 @@ const eastside = {
                         id: '107-park',
                         name: 'E.107th and Park Ave',
                         desc: ``,  
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3706,11 +3823,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '107-lex'
+                                id: '107-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '107-mad'    
+                                id: '107-madi'    
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3722,6 +3839,7 @@ const eastside = {
                         id: '108-park',
                         name: 'E.108th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3730,11 +3848,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '108-lex'
+                                id: '108-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '108-mad'     
+                                id: '108-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3746,6 +3864,7 @@ const eastside = {
                         id: '109-park',
                         name: 'E.109th and Park Ave',
                         desc: ``,
+                        isStreet: true,
                         exit: 
                         [
                             {
@@ -3754,11 +3873,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '109-lex'
+                                id: '109-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '109-mad'     
+                                id: '109-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
@@ -3769,7 +3888,8 @@ const eastside = {
                     {
                         id: '110-park',
                         name: 'E.110th and Park Ave',
-                        desc: ``,     
+                        desc: ``,   
+                        isStreet: true,  
                         exit: 
                         [
                             {
@@ -3779,11 +3899,11 @@ const eastside = {
                             },
                             {
                                 dir: ['e', 'east'],
-                                id: '110-lex'
+                                id: '110-lexi'
                             },
                             {
                                 dir: ['w', 'west'],
-                                id: '110-mad'     
+                                id: '110-madi'     
                             },
                             {
                                 dir: ['s', 'south'],
