@@ -2655,7 +2655,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'broad-23'
+                    id:'5-23'
                 },
                 {
                     dir:['w','west'],
@@ -2679,7 +2679,7 @@ const chelsea = {
                 //need to check where this road connects.
                 {
                     dir:['e','east'],
-                    id:'broad-25'
+                    id:'5-22'
                 },
                 {
                     dir:['w','west'],
@@ -2695,41 +2695,188 @@ const chelsea = {
             id:'6-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-20'
+                },
+                //need to check where this road connects.
+                {
+                    dir:['e','east'],
+                    id:'5-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-22'
+                }
+            ],
+            
         },
         {
             id:'6-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-21'
+                }
+            ],
         },
         {
             id:'6-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-20'
+                }
+            ],
         },
         {
             id:'6-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-19'
+                }
+            ],
         },
         {
             id:'6-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-18'
+                }
+            ],
         },
         {
             id:'6-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-17'
+                }
+            ],
         },
         {
             id:'6-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '6-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-16'
+                }
+            ],
         },
         {
             id:'6-14',
             name: 'Chelsea',
             desc:``,
+            exits:[
+                //exits neighborhood
+                {
+                    dir:['s','south'],
+                    id: '6-13'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-14'
+                },
+                {
+                    dir:['w','west'],
+                    id:'7-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'6-15'
+                }
+            ],
         },
         //Broadway
         {
@@ -2741,102 +2888,462 @@ const chelsea = {
             id:'broa-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-32'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-6'
+                }
+            ],
         },
         {
             id:'broa-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-33'
+                }
+            ],
         },
         {
             id:'broa-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-32'
+                }
+            ],
         },
         {
             id:'broa-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-31'
+                }
+            ],
         },
         {
             id:'broa-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-30'
+                }
+            ],
         },
         {
             id:'broa-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-27'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-29'
+                }
+            ],
         },
         {
             id:'broa-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-28'
+                }
+            ],
         },
         {
             id:'broa-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-27'
+                }
+            ],
         },
         {
             id:'broa-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'6-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-26'
+                }
+            ],
         },
         {
             id:'broa-5',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'broa-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-25'
+                }
+            ],
         },
         {
             id:'broa-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-24'
+                }
+            ],
         },
         {
             id:'broa-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-23'
+                }
+            ],
         },
         {
             id:'broa-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-22'
+                }
+            ],
         },
         {
             id:'broa-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-21'
+                }
+            ],
         },
         {
             id:'broa-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-20'
+                }
+            ],
         },
         {
             id:'broa-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-squa-w17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-19'
+                }
+            ],
         },
         //5th Ave
         {
             id:'5-34',
             name: 'Chelsea',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-34'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-6'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-35'
+                }
+            ],
         },
         {
             id:'5-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-32'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-34'
+                }
+            ],
         },
         {
             id:'5-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-33'
+                }
+            ],
         },
         {
             id:'5-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'park-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-32'
+                }
+            ],
         },
         {
             id:'5-30',
