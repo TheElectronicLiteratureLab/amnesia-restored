@@ -171,7 +171,7 @@ const littleItaly = {
         },
         {
             id: 'cana-cort',
-            name: 'W. Houston St. and Broadway',
+            name: 'Canal St. and Corlandnt Al.',
             desc: '',
             isStreet: true,
             exits: [
@@ -183,7 +183,7 @@ const littleItaly = {
         },
         {
             id: 'ehou-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'E. Houston and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -195,7 +195,7 @@ const littleItaly = {
         },
         {
             id: 'jers-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Jersey St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -207,7 +207,7 @@ const littleItaly = {
         },
         {
             id: 'prin-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Prince St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -219,7 +219,7 @@ const littleItaly = {
         },
         {
             id: 'spri-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Spring St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -231,7 +231,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Kenmare St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -243,7 +243,7 @@ const littleItaly = {
         },
         {
             id: 'broo-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Broome St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -255,7 +255,7 @@ const littleItaly = {
         },
         {
             id: 'gran-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Grand St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -267,7 +267,7 @@ const littleItaly = {
         },
         {
             id: 'howa-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Howard St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -279,7 +279,7 @@ const littleItaly = {
         },
         {
             id: 'cana-lafa',
-            name: 'W. Houston St. and Broadway',
+            name: 'Canal St. and Lafayette',
             desc: '',
             isStreet: true,
             exits: [
@@ -291,7 +291,7 @@ const littleItaly = {
         },
         {
             id: 'spri-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Spring St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -303,7 +303,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Kenmare St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -315,7 +315,7 @@ const littleItaly = {
         },
         {
             id: 'broo-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Broome St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -327,7 +327,7 @@ const littleItaly = {
         },
         {
             id: 'gran-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Grand St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -339,7 +339,7 @@ const littleItaly = {
         },
         {
             id: 'howa-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Howard St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -351,7 +351,7 @@ const littleItaly = {
         },
         {
             id: 'hest-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Hester St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -363,7 +363,7 @@ const littleItaly = {
         },
         {
             id: 'cana-cent',
-            name: 'W. Houston St. and Broadway',
+            name: 'Canal St. and Centre St.',
             desc: '',
             isStreet: true,
             exits: [
