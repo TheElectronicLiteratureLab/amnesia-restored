@@ -1917,7 +1917,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-34'
+                    id:'amer-34'
                 },
                 {
                     dir:['w','west'],
@@ -1941,7 +1941,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-33'
+                    id:'amer-33'
                 },
                 {
                     dir:['w','west'],
@@ -1964,7 +1964,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-32'
+                    id:'amer-32'
                 },
                 {
                     dir:['w','west'],
@@ -1987,7 +1987,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-31'
+                    id:'amer-31'
                 },
                 {
                     dir:['w','west'],
@@ -2010,7 +2010,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-30'
+                    id:'amer-30'
                 },
                 {
                     dir:['w','west'],
@@ -2033,7 +2033,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-29'
+                    id:'amer-29'
                 },
                 {
                     dir:['w','west'],
@@ -2056,7 +2056,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-28'
+                    id:'amer-28'
                 },
                 {
                     dir:['w','west'],
@@ -2079,7 +2079,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-27'
+                    id:'amer-27'
                 },
                 {
                     dir:['w','west'],
@@ -2102,7 +2102,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-26'
+                    id:'amer-26'
                 },
                 {
                     dir:['w','west'],
@@ -2125,7 +2125,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-25'
+                    id:'amer-25'
                 },
                 {
                     dir:['w','west'],
@@ -2148,7 +2148,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-24'
+                    id:'amer-24'
                 },
                 {
                     dir:['w','west'],
@@ -2171,7 +2171,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-23'
+                    id:'amer-23'
                 },
                 {
                     dir:['w','west'],
@@ -2194,7 +2194,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-22'
+                    id:'amer-22'
                 },
                 {
                     dir:['w','west'],
@@ -2217,7 +2217,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-21'
+                    id:'amer-21'
                 },
                 {
                     dir:['w','west'],
@@ -2240,7 +2240,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-20'
+                    id:'amer-20'
                 },
                 {
                     dir:['w','west'],
@@ -2263,7 +2263,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-19'
+                    id:'amer-19'
                 },
                 {
                     dir:['w','west'],
@@ -2286,7 +2286,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-18'
+                    id:'amer-18'
                 },
                 {
                     dir:['w','west'],
@@ -2309,7 +2309,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-17'
+                    id:'amer-17'
                 },
                 {
                     dir:['w','west'],
@@ -2332,7 +2332,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-16'
+                    id:'amer-16'
                 },
                 {
                     dir:['w','west'],
@@ -2355,7 +2355,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-14'
+                    id:'amer-14'
                 },
                 {
                     dir:['w','west'],
@@ -2378,7 +2378,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-14'
+                    id:'amer-14'
                 },
                 {
                     dir:['w','west'],
@@ -2390,15 +2390,15 @@ const chelsea = {
                 }
             ],
         },
-        //6th Ave
+        //6th Ave/Avenue of America
         {
-            id:'6-34',
+            id:'amer-34',
             name: 'Chelsea',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-33'
+                    id: 'amer-33'
                 },
                 {
                     dir:['e','east'],
@@ -2410,18 +2410,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-35'
+                    id:'amer-35'
                 }
             ],
         },
         {
-            id:'6-33',
+            id:'amer-33',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-32'
+                    id: 'amer-32'
                 },
                 {
                     dir:['e','east'],
@@ -2433,18 +2433,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-34'
+                    id:'amer-34'
                 }
             ],
         },
         {
-            id:'6-32',
+            id:'amer-32',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-31'
+                    id: 'amer-31'
                 },
                 {
                     dir:['e','east'],
@@ -2456,18 +2456,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-33'
+                    id:'amer-33'
                 }
             ],
         },
         {
-            id:'6-31',
+            id:'amer-31',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-30'
+                    id: 'amer-30'
                 },
                 {
                     dir:['e','east'],
@@ -2479,18 +2479,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-32'
+                    id:'amer-32'
                 }
             ],
         },
         {
-            id:'6-30',
+            id:'amer-30',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-29'
+                    id: 'amer-29'
                 },
                 {
                     dir:['e','east'],
@@ -2502,18 +2502,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-31'
+                    id:'amer-31'
                 }
             ],
         },
         {
-            id:'6-29',
+            id:'amer-29',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-28'
+                    id: 'amer-28'
                 },
                 {
                     dir:['e','east'],
@@ -2525,18 +2525,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-30'
+                    id:'amer-30'
                 }
             ],
         },
         {
-            id:'6-28',
+            id:'amer-28',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-27'
+                    id: 'amer-27'
                 },
                 {
                     dir:['e','east'],
@@ -2548,18 +2548,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-29'
+                    id:'amer-29'
                 }
             ],
         },
         {
-            id:'6-27',
+            id:'amer-27',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-26'
+                    id: 'amer-26'
                 },
                 {
                     dir:['e','east'],
@@ -2567,22 +2567,22 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'7-27'
+                    id:'amer-27'
                 },
                 {
                     dir:['n','north'],
-                    id:'6-28'
+                    id:'amer-28'
                 }
             ],
         },
         {
-            id:'6-26',
+            id:'amer-26',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-25'
+                    id: 'amer-25'
                 },
                 {
                     dir:['e','east'],
@@ -2590,22 +2590,22 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'7-26'
+                    id:'amer-26'
                 },
                 {
                     dir:['n','north'],
-                    id:'6-27'
+                    id:'amer-27'
                 }
             ],
         },
         {
-            id:'6-25',
+            id:'amer-25',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-24'
+                    id: 'amer-24'
                 },
                 {
                     dir:['e','east'],
@@ -2617,18 +2617,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-26'
+                    id:'amer-26'
                 }
             ],
         },
         {
-            id:'6-24',
+            id:'amer-24',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-23'
+                    id: 'amer-23'
                 },
                 {
                     dir:['e','east'],
@@ -2640,18 +2640,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-25'
+                    id:'amer-25'
                 }
             ],
         },
         {
-            id:'6-23',
+            id:'amer-23',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-22'
+                    id: 'amer-22'
                 },
                 {
                     dir:['e','east'],
@@ -2663,20 +2663,19 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-24'
+                    id:'amer-24'
                 }
             ],
         },
         {
-            id:'6-22',
+            id:'amer-22',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-21'
+                    id: 'amer-21'
                 },
-                //need to check where this road connects.
                 {
                     dir:['e','east'],
                     id:'5-22'
@@ -2687,20 +2686,19 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-23'
+                    id:'amer-23'
                 }
             ],
         },
         {
-            id:'6-21',
+            id:'amer-21',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-20'
+                    id: 'amer-20'
                 },
-                //need to check where this road connects.
                 {
                     dir:['e','east'],
                     id:'5-21'
@@ -2711,19 +2709,19 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-22'
+                    id:'amer-22'
                 }
             ],
             
         },
         {
-            id:'6-20',
+            id:'amer-20',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-19'
+                    id: 'amer-19'
                 },
                 {
                     dir:['e','east'],
@@ -2735,18 +2733,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-21'
+                    id:'amer-21'
                 }
             ],
         },
         {
-            id:'6-19',
+            id:'amer-19',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-18'
+                    id: 'amer-18'
                 },
                 {
                     dir:['e','east'],
@@ -2758,18 +2756,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-20'
+                    id:'amer-20'
                 }
             ],
         },
         {
-            id:'6-18',
+            id:'amer-18',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-17'
+                    id: 'amer-17'
                 },
                 {
                     dir:['e','east'],
@@ -2781,18 +2779,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-19'
+                    id:'amer-19'
                 }
             ],
         },
         {
-            id:'6-17',
+            id:'amer-17',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-16'
+                    id: 'amer-16'
                 },
                 {
                     dir:['e','east'],
@@ -2804,18 +2802,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-18'
+                    id:'amer-18'
                 }
             ],
         },
         {
-            id:'6-16',
+            id:'amer-16',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-15'
+                    id: 'amer-15'
                 },
                 {
                     dir:['e','east'],
@@ -2827,18 +2825,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-17'
+                    id:'amer-17'
                 }
             ],
         },
         {
-            id:'6-15',
+            id:'amer-15',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: '6-14'
+                    id: 'amer-14'
                 },
                 {
                     dir:['e','east'],
@@ -2850,19 +2848,19 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-16'
+                    id:'amer-16'
                 }
             ],
         },
         {
-            id:'6-14',
+            id:'amer-14',
             name: 'Chelsea',
             desc:``,
             exits:[
                 //exits neighborhood
                 {
                     dir:['s','south'],
-                    id: '6-13'
+                    id: 'amer-13'
                 },
                 {
                     dir:['e','east'],
@@ -2874,13 +2872,13 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'6-15'
+                    id:'amer-15'
                 }
             ],
         },
         //Broadway
         {
-            id:'broa-6',
+            id:'broa-amer',
             name: 'Chelsea',
             desc:``,
         },
@@ -2899,7 +2897,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-33'
+                    id:'amer-33'
                 },
                 {
                     dir:['n','north'],
@@ -2922,7 +2920,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-32'
+                    id:'amer-32'
                 },
                 {
                     dir:['n','north'],
@@ -2945,7 +2943,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-31'
+                    id:'amer-31'
                 },
                 {
                     dir:['n','north'],
@@ -2968,7 +2966,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-30'
+                    id:'amer-30'
                 },
                 {
                     dir:['n','north'],
@@ -2991,7 +2989,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-29'
+                    id:'amer-29'
                 },
                 {
                     dir:['n','north'],
@@ -3014,7 +3012,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-27'
+                    id:'amer-27'
                 },
                 {
                     dir:['n','north'],
@@ -3037,7 +3035,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-27'
+                    id:'amer-27'
                 },
                 {
                     dir:['n','north'],
@@ -3060,7 +3058,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-26'
+                    id:'amer-26'
                 },
                 {
                     dir:['n','north'],
@@ -3083,7 +3081,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'6-25'
+                    id:'amer-25'
                 },
                 {
                     dir:['n','north'],
@@ -3236,7 +3234,7 @@ const chelsea = {
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-squa-w17'
+                    id: 'unio-17-1'
                 },
                 {
                     dir:['e','east'],
@@ -3490,7 +3488,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-23'
+                    id:'amer-24'
                 },
                 {
                     dir:['w','west'],
@@ -3513,7 +3511,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-23'
+                    id:'amer-23'
                 },
                 {
                     dir:['w','west'],
@@ -3536,7 +3534,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-22'
+                    id:'amer-22'
                 },
                 {
                     dir:['w','west'],
@@ -3559,7 +3557,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-21'
+                    id:'amer-21'
                 },
                 {
                     dir:['w','west'],
@@ -3582,7 +3580,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-20'
+                    id:'amer-20'
                 },
                 {
                     dir:['w','west'],
@@ -3605,7 +3603,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-19'
+                    id:'amer-19'
                 },
                 {
                     dir:['w','west'],
@@ -3628,7 +3626,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-18'
+                    id:'amer-18'
                 },
                 {
                     dir:['w','west'],
@@ -3651,11 +3649,11 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-17'
+                    id:'amer-17'
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-17'
+                    id:'unio-17-1'
                 },
                 {
                     dir:['n','north'],
@@ -3674,11 +3672,11 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-16'
+                    id:'amer-16'
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-16'
+                    id:'unio-16-1'
                 },
                 {
                     dir:['n','north'],
@@ -3697,11 +3695,11 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-15'
+                    id:'amer-15'
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-15'
+                    id:'unio-15-1'
                 },
                 {
                     dir:['n','north'],
@@ -3720,11 +3718,11 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'6-14'
+                    id:'amer-14'
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-14'
+                    id:'unio-14-1'
                 },
                 {
                     dir:['n','north'],
@@ -3999,13 +3997,13 @@ const chelsea = {
         },
         //Union Square West and East
         {
-            id:'unio-w-17',
+            id:'unio-17-1',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-w-16'
+                    id: 'unio-16-1'
                 },
                 {
                     dir:['w','west'],
@@ -4018,7 +4016,7 @@ const chelsea = {
             ],
         },
         {
-            id:'unio-w-16',
+            id:'unio-16-1',
             name: '',
             desc:``,
             exits:[
@@ -4037,13 +4035,13 @@ const chelsea = {
             ],
         },
         {
-            id:'unio-w-15',
+            id:'unio-15-1',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-w-14'
+                    id: 'unio-14-1'
                 },
                 {
                     dir:['e','east'],
@@ -4051,12 +4049,12 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'unio-w-16'
+                    id:'unio-16-1'
                 }
             ],
         },
         {
-            id:'unio-w-14',
+            id:'unio-14-1',
             name: '',
             desc:``,
             exits:[
@@ -4066,7 +4064,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-e-14'
+                    id:'unio-14-2'
                 },
                 {
                     dir:['e','east'],
@@ -4074,22 +4072,22 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'unio-w-15'
+                    id:'unio-15-1'
                 }
             ],
         },
         {
-            id:'unio-e-17',
+            id:'unio-17-2',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-e-16'
+                    id: 'unio-16-2'
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-17'
+                    id:'unio-17-1'
                 },
                 {
                     dir:['e','east'],
@@ -4102,13 +4100,13 @@ const chelsea = {
             ],
         },
         {
-            id:'unio-e-16',
+            id:'unio-16-2',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-e-15'
+                    id: 'unio-15-2'
                 },
                 {
                     dir:['e','east'],
@@ -4116,18 +4114,18 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'unio-e-17'
+                    id:'unio-17-2'
                 }
             ],
         },
         {
-            id:'unio-e-15',
+            id:'unio-15-2',
             name: '',
             desc:``,
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-e-14'
+                    id: 'unio-14-2'
                 },
                 {
                     dir:['e','east'],
@@ -4135,12 +4133,12 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'unio-e-16'
+                    id:'unio-16-2'
                 }
             ],
         },
         {
-            id:'unio-e-14',
+            id:'unio-14-2',
             name: '',
             desc:``,
             exits:[
@@ -4150,7 +4148,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-w-14'
+                    id:'unio-14-2'
                 },
                 {
                     dir:['e','east'],
@@ -4158,7 +4156,7 @@ const chelsea = {
                 },
                 {
                     dir:['n','north'],
-                    id:'unio-e-15'
+                    id:'unio-15-2'
                 }
             ],
         },
@@ -4539,7 +4537,7 @@ const chelsea = {
             exits:[
                 {
                     dir:['s','south'],
-                    id: 'unio-e-17'
+                    id: 'unio-17-2'
                 },
                 {
                     dir:['w','west'],
@@ -5028,7 +5026,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-e-17'
+                    id:'unio-17-2'
                 },
                 {
                     dir:['e','east'],
@@ -5051,7 +5049,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-e-16'
+                    id:'unio-16-2'
                 },
                 {
                     dir:['e','east'],
@@ -5074,7 +5072,7 @@ const chelsea = {
                 },
                 {
                     dir:['w','west'],
-                    id:'unio-e-15'
+                    id:'unio-15-2'
                 },
                 {
                     dir:['e','east'],
@@ -5093,7 +5091,7 @@ const chelsea = {
             exits:[
                 {
                     dir:['w','west'],
-                    id:'unio-w-14'
+                    id:'unio-14-1'
                 },
                 {
                     dir:['e','east'],
@@ -5594,133 +5592,569 @@ const chelsea = {
             id:'2-34',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-33'
+                },
+                {
+                    dir:['e','west'],
+                    id:'1-34'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-35'
+                }
+            ],
         },
         {
             id:'2-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-32'
+                },
+                {
+                    dir:['e','west'],
+                    id:'1-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-34'
+                }
+            ],
         },
         {
             id:'2-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-33'
+                }
+            ],
         },
         {
             id:'2-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-30'
+                },
+                {
+                    dir:['e','west'],
+                    id:'1-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-32'
+                }
+            ],
         },
         {
             id:'2-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-29'
+                },
+                {
+                    dir:['e','west'],
+                    id:'1-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-31'
+                }
+            ],
         },
         {
             id:'2-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-28'
+                },
+                {
+                    dir:['e','west'],
+                    id:'1-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-30'
+                }
+            ],
         },
         {
             id:'2-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-27'
+                },
+                {
+                    dir:['e','west'],
+                    id:'car-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-29'
+                }
+            ],
         },
         {
             id:'2-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-28'
+                }
+            ],
         },
         {
             id:'2-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'car-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-27'
+                }
+            ],
         },
         {
             id:'2-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-26'
+                }
+            ],
         },
         {
             id:'2-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-23'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-25'
+                }
+            ],
         },
         {
             id:'2-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-24'
+                }
+            ],
         },
         {
             id:'2-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-23'
+                }
+            ],
         },
         {
             id:'2-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-22'
+                }
+            ],
         },
         {
             id:'2-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-21'
+                }
+            ],
         },
         {
             id:'2-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-20'
+                }
+            ],
         },
         {
             id:'2-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-19'
+                }
+            ],
         },
         {
             id:'2-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'nath-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'ruth-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-18'
+                }
+            ],
         },
         {
             id:'2-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'nath-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'ruth-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-17'
+                }
+            ],
         },        
         {
             id:'2-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '2-13'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-14'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'2-15'
+                }
+            ],
         },
         //Rutherford Plaza
         {
             id:'ruth-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'ruth-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'2-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-17'
+                },
+            ],
         },
         {
             id:'ruth-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'ruth-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'ruth-17'
+                }
+            ],
         },
         {
             id:'ruth-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['e','east'],
+                    id:'nath-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'3-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'ruth-16'
+                }
+            ],
         },
         //nathan d perlman Plaza
         {
             id:'nath-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'nath-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-17'
+                },
+            ],
         },
         {
             id:'nath-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'nath-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'1-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'ruth-17'
+                }
+            ],
         },
         {
             id:'nath-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['e','east'],
+                    id:'1-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'ruth-16'
+                }
+            ],
         },
         //Mt. Carmel Plaza
         {
@@ -5738,36 +6172,138 @@ const chelsea = {
             id:'1-34',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'fdr-34'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-35'
+                }
+            ],
         },
         {
             id:'1-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'1-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-34'
+                }
+            ],
         },
         {
             id:'1-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-33'
+                }
+            ],
         },
         {
             id:'1-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-30'
+                }
+            ],
         },
         {
             id:'1-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-29'
+                }
+            ],
         },
         {
             id:'1-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-28'
+                }
+            ],
         },
         {
             id:'1-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '1-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'1-27'
+                }
+            ],
         },
         {
             id:'1-25',
@@ -5863,3 +6399,9 @@ const chelsea = {
     ],
 
 },
+//unio-17-2: Union Square West
+//unio-17-1 Union Square East
+//gram-20-1 Gramercy West
+//gram-20-2 Gramercy East
+//6th Ave is Avenue of America---amer-34 
+//need to check on car-28 and how that is going to connect
