@@ -1,23 +1,25 @@
 const littleItaly = {
-    roomId: 'whou-broa',
+    roomId: 'hous-broa',
     rooms: [
         {
-            id: 'whou-broa',
+            id: 'hous-broa',
+            coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
                 {dir: 'south', id: 'prin-broa'},
-                {dir: 'east', id: 'ehou-cros'},
+                {dir: 'east', id: 'hous-cros'},
                 {dir: 'west', id: ''},
             ]
         },
         {
             id: 'prin-broa',
+            coord: [],
             name: 'Prince St. and Broadway',
             desc: '',
-            isStreet: true,
+            isStreet: true,            
             exits: [
                 {dir: '', id: ''},
                 {dir: '', id: ''},
@@ -27,6 +29,7 @@ const littleItaly = {
         },
         {
             id: 'spri-broa',
+            coord: [],
             name: 'Spring St. and Broadway',
             desc: '',
             isStreet: true,
@@ -39,6 +42,7 @@ const littleItaly = {
         },
         {
             id: 'broo-broa',
+            coord: [],
             name: 'Broome St. and Broadway',
             desc: '',
             isStreet: true,
@@ -51,6 +55,7 @@ const littleItaly = {
         },
         {
             id: 'gran-broa',
+            coord: [],
             name: 'Grand St. and Broadway',
             desc: '',
             isStreet: true,
@@ -63,6 +68,7 @@ const littleItaly = {
         },
         {
             id: 'howa-broa',
+            coord: [],
             name: 'Howard St. and Broadway',
             desc: '',
             isStreet: true,
@@ -75,6 +81,7 @@ const littleItaly = {
         },
         {
             id: 'cana-broa',
+            coord: [],
             name: 'Canal St. and Broadway',
             desc: '',
             isStreet: true,
@@ -86,7 +93,8 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-cros',
+            id: 'hous-cros',
+            coord: [],
             name: 'E. Houston St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -99,6 +107,7 @@ const littleItaly = {
         },
         {
             id: 'jers-cros',
+            coord: [],
             name: 'Jersey St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -111,6 +120,7 @@ const littleItaly = {
         },
         {
             id: 'prin-cros',
+            coord: [],
             name: 'Prince St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -182,7 +192,7 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-lafa',
+            id: 'hous-lafa',
             name: 'E. Houston and Lafayette',
             desc: '',
             isStreet: true,
@@ -422,7 +432,7 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-mulb',
+            id: 'hous-mulb',
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -530,7 +540,7 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-mott',
+            id: 'hous-mott',
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -626,7 +636,7 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-eliz',
+            id: 'hous-eliz',
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -698,7 +708,7 @@ const littleItaly = {
             ]
         },
         {
-            id: 'ehou-bowe',
+            id: 'hous-bowe',
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
