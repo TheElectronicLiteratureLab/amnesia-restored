@@ -3264,7 +3264,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'park-34'
+                    id:'madi-34'
                 },
                 {
                     dir:['w','west'],
@@ -3287,7 +3287,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'park-33'
+                    id:'madi-33'
                 },
                 {
                     dir:['w','west'],
@@ -3310,7 +3310,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'park-32'
+                    id:'madi-32'
                 },
                 {
                     dir:['w','west'],
@@ -3333,7 +3333,7 @@ const chelsea = {
                 },
                 {
                     dir:['e','east'],
-                    id:'park-31'
+                    id:'madi-31'
                 },
                 {
                     dir:['w','west'],
@@ -3349,498 +3349,2245 @@ const chelsea = {
             id:'5-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-31'
+                }
+            ],
         },
         {
             id:'5-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-30'
+                }
+            ],
         },
         {
             id:'5-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-27'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-29'
+                }
+            ],
         },
         {
             id:'5-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-28'
+                }
+            ],
         },
         {
             id:'5-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'madi-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-27'
+                }
+            ],
         },
         {
             id:'5-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'broa-5'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-26'
+                }
+            ],
         },
         {
             id:'5-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-23'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-5'
+                }
+            ],
         },
         {
             id:'5-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-24'
+                }
+            ],
         },
         {
             id:'5-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-23'
+                }
+            ],
         },
         {
             id:'5-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-22'
+                }
+            ],
         },
         {
             id:'5-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-21'
+                }
+            ],
         },
         {
             id:'5-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-20'
+                }
+            ],
         },
         {
             id:'5-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-19'
+                }
+            ],
+        },
+        {
+            id:'5-17',
+            name: '',
+            desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-18'
+                }
+            ],
         },
         {
             id:'5-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-17'
+                }
+            ],
         },
         {
             id:'5-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-16'
+                }
+            ],
         },
         {
             id:'5-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '5-13'
+                },
+                {
+                    dir:['e','east'],
+                    id:'6-14'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'5-15'
+                }
+            ],
         },
         //Madison Ave
         {
             id:'madi-34',
             name: 'Chelsea',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-34'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-35'
+                }
+            ],
         },
         {
             id:'madi-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-32'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-34'
+                }
+            ],
         },
         {
             id:'madi-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-33'
+                }
+            ],
         },
         {
             id:'madi-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-32'
+                }
+            ],
         },
         {
             id:'madi-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-31'
+                }
+            ],
         },
         {
             id:'madi-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-30'
+                }
+            ],
         },
         {
             id:'madi-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-27'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-29'
+                }
+            ],
         },
         {
             id:'madi-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-28'
+                }
+            ],
         },
         {
             id:'madi-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-27'
+                }
+            ],
         },
         {
             id:'madi-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-35'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-24'
+                }
+            ],
         },
         {
             id:'madi-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'madi-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-23'
+                }
+            ],
         },
         {
             id:'madi-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['e','east'],
+                    id:'broa-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'madi-24'
+                }
+            ],
         },
         //Union Square West and East
         {
             id:'unio-w-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-w-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'5-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'broa-18'
+                }
+            ],
         },
         {
             id:'unio-w-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-w-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-w-17'
+                }
+            ],
         },
         {
             id:'unio-w-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-w-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-w-16'
+                }
+            ],
         },
         {
             id:'unio-w-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'univ-13'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-e-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'5-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-w-15'
+                }
+            ],
         },
         {
             id:'unio-e-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-e-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-18'
+                }
+            ],
         },
         {
             id:'unio-e-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-e-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-e-17'
+                }
+            ],
         },
         {
             id:'unio-e-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-e-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-e-16'
+                }
+            ],
         },
         {
             id:'unio-e-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: ''
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-w-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'unio-e-15'
+                }
+            ],
         },
+        //triangular exit from the district 4th Ave and 14th.
         //Park Ave
         {
             id:'park-34',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-34'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-35'
+                }
+            ],
         },
         {
             id:'park-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-34'
+                }
+            ],
         },
         {
             id:'park-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-32'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-33'
+                }
+            ],
         },
         {
             id:'park-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-32'
+                }
+            ],
         },
         {
             id:'park-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-31'
+                }
+            ],
         },
         {
             id:'park-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-30'
+                }
+            ],
         },
         {
             id:'park-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-29'
+                }
+            ],
         },
         {
             id:'park-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-26'
+                }
+            ],
         },
         {
             id:'park-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-27'
+                }
+            ],
         },
         {
             id:'park-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-24'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-26'
+                }
+            ],
         },
         {
             id:'park-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-25'
+                }
+            ],
         },
         {
             id:'park-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'madi-23'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-24'
+                }
+            ],
         },
         {
             id:'park-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-23'
+                }
+            ],
         },
         {
             id:'park-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'gram-w-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-22'
+                }
+            ],
         },
         {
             id:'park-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'gram-w-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-21'
+                }
+            ],
         },
         {
             id:'park-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'park-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-20'
+                }
+            ],
         },
         {
             id:'park-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'unio-e-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'broa-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'park-19'
+                }
+            ],
         },
         //Lexington Ave
         {
             id:'lexi-34',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-34'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-35'
+                }
+            ],
         },
         {
             id:'lexi-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-34'
+                }
+            ],
         },
         {
             id:'lexi-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-32'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-32'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-33'
+                }
+            ],
         },
         {
             id:'lexi-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-32'
+                }
+            ],
         },
         {
             id:'lexi-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-31'
+                }
+            ],
         },
         {
             id:'lexi-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-30'
+                }
+            ],
         },
         {
             id:'lexi-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-29'
+                }
+            ],
         },
         {
             id:'lexi-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-27'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-28'
+                }
+            ],
         },
         {
             id:'lexi-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-27'
+                }
+            ],
         },
         {
             id:'lexi-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-24'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-26'
+                }
+            ],
         },
         {
             id:'lexi-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-25'
+                }
+            ],
         },
         {
             id:'lexi-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-23'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-24'
+                }
+            ],
         },
         {
             id:'lexi-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'lexi-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-23'
+                }
+            ],
         },
         {
             id:'lexi-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['w','west'],
+                    id:'gram-w-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'gram-e-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'lexi-22'
+                }
+            ],
         },
         //Gramercy Park East and West
         {
             id:'gram-w-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'gram-w-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-21'
+                },
+            ],
         },
         {
             id:'gram-w-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['w','west'],
+                    id:'park-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'gram-w-21'
+                }
+            ],
         },
         {
             id:'gram-e-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'gram-e-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'lexi-21'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-21'
+                },
+            ],
         },
         {
             id:'gram-e-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['w','west'],
+                    id:'irvi-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'gram-e-31'
+                }
+            ],
         },
         //Irving Plaza
+        {
+            id:'irvi-20',
+            name: '',
+            desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'gram-w-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'gram-e-20'
+                },
+            ],
+        },
         {
             id:'irvi-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-20'
+                }
+            ],
         },
         {
             id:'irvi-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'park-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-19'
+                }
+            ],
         },
         {
             id:'irvi-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-e-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-18'
+                }
+            ],
         },
         {
             id:'irvi-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-e-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-17'
+                }
+            ],
         },
         {
             id:'irvi-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: 'irvi-14'
+                },
+                {
+                    dir:['w','west'],
+                    id:'unio-e-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-16'
+                }
+            ],
         },
         {
             id:'irvi-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['w','west'],
+                    id:'unio-w-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'3-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'irvi-15'
+                }
+            ],
         },
         //3rd Ave
         {
             id:'3-34',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-33'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-34'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-34'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-35'
+                }
+            ],
         },
         {
             id:'3-33',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-32'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-34'
+                }
+            ],
         },
         {
             id:'3-32',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-31'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-33'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-33'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-33'
+                }
+            ],
         },
         {
             id:'3-31',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-30'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-31'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-31'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-32'
+                }
+            ],
         },
         {
             id:'3-30',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-29'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-30'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-30'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-31'
+                }
+            ],
         },
         {
             id:'3-29',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-28'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-29'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-29'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-30'
+                }
+            ],
         },
         {
             id:'3-28',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-27'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-28'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-28'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-29'
+                }
+            ],
         },
         {
             id:'3-27',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-26'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-27'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-27'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-28'
+                }
+            ],
         },
         {
             id:'3-26',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-25'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-26'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-26'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-27'
+                }
+            ],
         },
         {
             id:'3-25',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-24'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-25'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-25'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-26'
+                }
+            ],
         },
         {
             id:'3-24',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-23'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-24'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-24'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-25'
+                }
+            ],
         },
         {
             id:'3-23',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-22'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-23'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-23'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-24'
+                }
+            ],
         },
         {
             id:'3-22',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-21'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-22'
+                },
+                {
+                    dir:['e','east'],
+                    id:'lexi-22'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-23'
+                }
+            ],
         },
         {
             id:'3-21',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-20'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'grm-e-21'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-22'
+                }
+            ],
         },
         {
             id:'3-20',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-19'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-20'
+                },
+                {
+                    dir:['e','east'],
+                    id:'gram-e-20'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-21'
+                }
+            ],
         },
         {
             id:'3-19',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-18'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-19'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-19'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-20'
+                }
+            ],
         },
         {
             id:'3-18',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-17'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-18'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-18'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-19'
+                }
+            ],
         },
         {
             id:'3-17',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-16'
+                },
+                {
+                    dir:['w','west'],
+                    id:'ruth-17'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-17'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-18'
+                }
+            ],
         },
         {
             id:'3-16',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-15'
+                },
+                {
+                    dir:['w','west'],
+                    id:'ruth-16'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-16'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-17'
+                }
+            ],
         },
         {
             id:'3-15',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-14'
+                },
+                {
+                    dir:['w','west'],
+                    id:'ruth-15'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-15'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-16'
+                }
+            ],
         },
         {
             id:'3-14',
             name: '',
             desc:``,
+            exits:[
+                {
+                    dir:['s','south'],
+                    id: '3-13'
+                },
+                {
+                    dir:['w','west'],
+                    id:'2-14'
+                },
+                {
+                    dir:['e','east'],
+                    id:'irvi-14'
+                },
+                {
+                    dir:['n','north'],
+                    id:'3-15'
+                }
+            ],
         },
         //2nd Ave
         {
