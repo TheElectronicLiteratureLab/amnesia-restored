@@ -3634,6 +3634,1687 @@ const midtownEast = {
                 },
             ]
         },
+        {
+          id: '34-2',
+          name: 'E. 34th St. and 2nd Ave.',
+          desc: ``,
+          exits: [
+              {
+                dir: ['north'],
+                id: '35-2',
+              },
+              {
+                dir: ['south'],
+                id: '33-2',
+              },
+              {
+                dir: ['east'],
+                id: '34-qin',
+              },
+              {
+                dir: ['west'],
+                id: '34-qout',
+              },
+          ]
+      },
+      {
+        id: '35-2',
+        name: 'E. 35th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '36-2',
+            },
+            {
+              dir: ['south'],
+              id: '34-2',
+            },
+            {
+              dir: ['east'],
+              id: '35-qin',
+            },
+            {
+              dir: ['west'],
+              id: '35-qout',
+            },
+        ]
+      },
+      {
+        id: '36-2',
+        name: 'E. 36th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '37-2',
+            },
+            {
+              dir: ['south'],
+              id: '35-2',
+            },
+            {
+              dir: ['east'],
+              id: '36-qin',
+            },
+            {
+              dir: ['west'],
+              id: '36-qout',
+            },
+        ]
+      },
+      {
+        id: '37-2',
+        name: 'E. 37th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '38-2',
+            },
+            {
+              dir: ['south'],
+              id: '36-2',
+            },
+            {
+              dir: ['east'],
+              id: '37-qin',
+            },
+            {
+              dir: ['west'],
+              id: '37-qout',
+            },
+        ]
+      },
+      {
+        id: '38-2',
+        name: 'E. 38th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '39-2',
+            },
+            {
+              dir: ['south'],
+              id: '37-2',
+            },
+            {
+              dir: ['east'],
+              id: '38-1',
+            },
+            {
+              dir: ['west'],
+              id: '38-qout',
+            },
+        ]
+      },
+      {
+        id: '39-2',
+        name: 'E. 39th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '40-2',
+            },
+            {
+              dir: ['south'],
+              id: '38-2',
+            },
+            {
+              dir: ['east'],
+              id: '39-tudo',
+            },
+            {
+              dir: ['west'],
+              id: '39-qout',
+            },
+        ]
+      },
+      {
+        id: '40-2',
+        name: 'E. 40th St. and 2nd Ave.',
+        desc: `There is a luncheonette on the corner`,
+        exits: [
+            {
+              dir: ['north'],
+              id: '41-2',
+            },
+            {
+              dir: ['south'],
+              id: '39-2',
+            },
+            {
+              dir: ['east'],
+              id: '40-tudo',
+            },
+            {
+              dir: ['west'],
+              id: '40-3',
+            },
+            {
+              dir: ['luncheonette', 'lunch'],
+              id: '????'
+            }
+        ]
+      },
+      {
+        id: '41-2',
+        name: 'E. 41st St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '42-2',
+            },
+            {
+              dir: ['south'],
+              id: '40-2',
+            },
+            {
+              dir: ['east'],
+              id: '41-tudo',
+            },
+            {
+              dir: ['west'],
+              id: '41-3',
+            },
+        ]
+      },
+      {
+        id: '42-2',
+        name: 'E. 42nd St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '43-2',
+            },
+            {
+              dir: ['south'],
+              id: '41-2',
+            },
+            {
+              dir: ['east'],
+              id: '42-tudo',
+            },
+            {
+              dir: ['west'],
+              id: '42-3',
+            },
+        ]
+      },
+      {
+        id: '43-2',
+        name: 'E. 43rd St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '44-2',
+            },
+            {
+              dir: ['south'],
+              id: '42-2',
+            },
+            {
+              dir: ['east'],
+              id: '43-tudo',
+            },
+            {
+              dir: ['west'],
+              id: '43-3',
+            },
+        ]
+      },
+      {
+        id: '44-2',
+        name: 'E. 44th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '45-2',
+            },
+            {
+              dir: ['south'],
+              id: '43-2',
+            },
+            {
+              dir: ['east'],
+              id: '44-1',
+            },
+            {
+              dir: ['west'],
+              id: '44-3',
+            },
+        ]
+      },
+      {
+        id: '45-2',
+        name: 'E. 45th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '46-2',
+            },
+            {
+              dir: ['south'],
+              id: '44-2',
+            },
+            {
+              dir: ['east'],
+              id: '45-1',
+            },
+            {
+              dir: ['west'],
+              id: '45-3',
+            },
+        ]
+      },
+      {
+        id: '46-2',
+        name: 'E. 46th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '47-2',
+            },
+            {
+              dir: ['south'],
+              id: '45-2',
+            },
+            {
+              dir: ['east'],
+              id: '46-1',
+            },
+            {
+              dir: ['west'],
+              id: '46-3',
+            },
+        ]
+      },
+      {
+        id: '47-2',
+        name: 'E. 47th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '48-2',
+            },
+            {
+              dir: ['south'],
+              id: '46-2',
+            },
+            {
+              dir: ['east'],
+              id: '47-1',
+            },
+            {
+              dir: ['west'],
+              id: '47-3',
+            },
+        ]
+      },
+      {
+        id: '48-2',
+        name: 'E. 48th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '49-2',
+            },
+            {
+              dir: ['south'],
+              id: '47-2',
+            },
+            {
+              dir: ['east'],
+              id: '48-1',
+            },
+            {
+              dir: ['west'],
+              id: '48-3',
+            },
+        ]
+      },
+      {
+        id: '49-2',
+        name: 'E. 49th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '50-2',
+            },
+            {
+              dir: ['south'],
+              id: '48-2',
+            },
+            {
+              dir: ['east'],
+              id: '49-1',
+            },
+            {
+              dir: ['west'],
+              id: '49-3',
+            },
+        ]
+      },
+      {
+        id: '50-2',
+        name: 'E. 50th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '51-2',
+            },
+            {
+              dir: ['south'],
+              id: '49-2',
+            },
+            {
+              dir: ['east'],
+              id: '50-1',
+            },
+            {
+              dir: ['west'],
+              id: '50-3',
+            },
+        ]
+      },
+      {
+        id: '51-2',
+        name: 'E. 51st St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '52-2',
+            },
+            {
+              dir: ['south'],
+              id: '50-2',
+            },
+            {
+              dir: ['east'],
+              id: '51-1',
+            },
+            {
+              dir: ['west'],
+              id: '51-3',
+            },
+        ]
+      },
+      {
+        id: '52-2',
+        name: 'E. 52nd St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '53-2',
+            },
+            {
+              dir: ['south'],
+              id: '51-2',
+            },
+            {
+              dir: ['east'],
+              id: '52-1',
+            },
+            {
+              dir: ['west'],
+              id: '52-3',
+            },
+        ]
+      },
+      {
+        id: '53-2',
+        name: 'E. 53rd St. and 2nd Ave.',
+        desc: `There is a luncheonette on the corner.`,
+        exits: [
+            {
+              dir: ['north'],
+            id: '54-2',
+            },
+            {
+              dir: ['south'],
+              id: '52-2',
+            },
+            {
+              dir: ['east'],
+              id: '53-1',
+            },
+            {
+              dir: ['west'],
+              id: '53-3',
+            },
+        ]
+      },
+      {
+        id: '54-2',
+        name: 'E. 54th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '55-2',
+            },
+            {
+              dir: ['south'],
+              id: '53-2',
+            },
+            {
+              dir: ['east'],
+              id: '54-1',
+            },
+            {
+              dir: ['west'],
+              id: '54-3',
+            },
+        ]
+      },
+      {
+        id: '55-2',
+        name: 'E. 55th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '56-2',
+            },
+            {
+              dir: ['south'],
+              id: '54-2',
+            },
+            {
+              dir: ['east'],
+              id: '55-1',
+            },
+            {
+              dir: ['west'],
+              id: '55-3',
+            },
+        ]
+      },
+      {
+        id: '56-2',
+        name: 'E. 56th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '57-2',
+            },
+            {
+              dir: ['south'],
+              id: '55-2',
+            },
+            {
+              dir: ['east'],
+              id: '56-1',
+            },
+            {
+              dir: ['west'],
+              id: '56-3',
+            },
+        ]
+      },
+      {
+        id: '57-2',
+        name: 'E. 57th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '58-2',
+            },
+            {
+              dir: ['south'],
+              id: '56-2',
+            },
+            {
+              dir: ['east'],
+              id: '57-quen',
+            },
+            {
+              dir: ['west'],
+              id: '57-3',
+            },
+        ]
+      },
+      {
+        id: '58-2',
+        name: 'E. 58th St. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '59-2',
+            },
+            {
+              dir: ['south'],
+              id: '57-2',
+            },
+            {
+              dir: ['east'],
+              id: '58-quen',
+            },
+            {
+              dir: ['west'],
+              id: '58-3',
+            },
+        ]
+      },
+      {
+        id: '59-2',
+        name: 'Central Park S. and 2nd Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '58-2',
+            },
+            {
+              dir: ['east'],
+              id: '59-quen',
+            },
+            {
+              dir: ['west'],
+              id: '59-3',
+            },
+        ]
+      },
+      {
+        id: '59-quen',
+        name: 'E. 59th St. and Queensboro Bridge In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '58-quen',
+            },
+            {
+              dir: ['east'],
+              id: '59-1',
+            },
+            {
+              dir: ['west'],
+              id: '59-2',
+            },
+        ]
+      },
+      {
+        id: '58-quen',
+        name: 'E. 58th St. and Queensboro Bridge In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '59-quen',
+            },
+            {
+              dir: ['south'],
+              id: '57-quen',
+            },
+            {
+              dir: ['east'],
+              id: '58-1',
+            },
+            {
+              dir: ['west'],
+              id: '58-2',
+            },
+        ]
+      },
+      {
+        id: '57-quen',
+        name: 'E. 57th St. and Queensboro Bridge In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '58-quen',
+            },
+            {
+              dir: ['south'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['east'],
+              id: '57-1',
+            },
+            {
+              dir: ['west'],
+              id: '57-2',
+            },
+        ]
+      },
+      {
+        id: '59-1',
+        name: 'Central Park S. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '58-1',
+            },
+            {
+              dir: ['east'],
+              id: '59-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '59-quen',
+            },
+        ]
+      },
+      {
+        id: '58-1',
+        name: 'E. 58th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '59-1',
+            },
+            {
+              dir: ['south'],
+              id: '57-1',
+            },
+            {
+              dir: ['east'],
+              id: '58-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '58-quen',
+            },
+        ]
+      },
+      {
+        id: '57-1',
+        name: 'E. 57th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '58-1',
+            },
+            {
+              dir: ['south'],
+              id: '56-1',
+            },
+            {
+              dir: ['east'],
+              id: '57-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '57-quen',
+            },
+        ]
+      },
+      {
+        id: '56-1',
+        name: 'E. 56th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '57-1',
+            },
+            {
+              dir: ['south'],
+              id: '55-1',
+            },
+            {
+              dir: ['east'],
+              id: '56-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '56-2',
+            },
+        ]
+      },
+      {
+        id: '55-1',
+        name: 'E. 55th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+            id: '56-1',
+            },
+            {
+              dir: ['south'],
+              id: '54-1',
+            },
+            {
+              dir: ['east'],
+              id: '55-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '55-2',
+            },
+        ]
+      },
+      {
+        id: '54-1',
+        name: 'E. 54th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '55-1',
+            },
+            {
+              dir: ['south'],
+              id: '53-1',
+            },
+            {
+              dir: ['east'],
+              id: '54-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '54-2',
+            },
+        ]
+      },
+      {
+        id: '53-1',
+        name: 'E. 53rd St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '54-1',
+            },
+            {
+              dir: ['south'],
+              id: '52-1',
+            },
+            {
+              dir: ['east'],
+              id: '53-sutt',
+            },
+            {
+              dir: ['west'],
+              id: '53-2',
+            },
+        ]
+      },
+      {
+        id: '52-1',
+        name: 'E. 52nd St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '53-1',
+            },
+            {
+              dir: ['south'],
+              id: '51-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '52-2',
+            },
+        ]
+      },
+      {
+        id: '51-1',
+        name: 'E. 51st St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '52-1',
+            },
+            {
+              dir: ['south'],
+              id: '50-1',
+            },
+            {
+              dir: ['east'],
+              id: '51-beek',
+            },
+            {
+              dir: ['west'],
+              id: '51-2',
+            },
+        ]
+      },
+      {
+        id: '50-1',
+        name: 'E. 50th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '51-1',
+            },
+            {
+              dir: ['south'],
+              id: '49-1',
+            },
+            {
+              dir: ['east'],
+              id: '50-beek',
+            },
+            {
+              dir: ['west'],
+              id: '50-2',
+            },
+        ]
+      },
+      {
+        id: '49-1',
+        name: 'E. 49th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '50-1',
+            },
+            {
+              dir: ['south'],
+              id: '48-1',
+            },
+            {
+              dir: ['east'],
+              id: '49-beek',
+            },
+            {
+              dir: ['west'],
+              id: '49-2',
+            },
+        ]
+      },
+      {
+        id: '48-1',
+        name: 'E. 48th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '49-1',
+            },
+            {
+              dir: ['south'],
+              id: '47-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You Can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '48-2',
+            },
+        ]
+      },
+      {
+        id: '47-1',
+        name: 'E. 47th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '48-1',
+            },
+            {
+              dir: ['south'],
+              id: '46-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You Can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '47-2',
+            },
+        ]
+      },
+      {
+        id: '46-1',
+        name: 'E. 46th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '47-1',
+            },
+            {
+              dir: ['south'],
+              id: '45-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You Can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '46-2',
+            },
+        ]
+      },
+      {
+        id: '45-1',
+        name: 'E. 45th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '46-1',
+            },
+            {
+              dir: ['south'],
+              id: '44-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You Can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '45-2',
+            },
+        ]
+      },
+      {
+        id: '44-1',
+        name: 'E. 44th St. and 1st Ave.',
+        desc: `The great green glass slab of the UN Secretariat looms over the swooping shape of the General Assembly Building. Flags of member nations snap in the wind that comes in from the East River. For a moment you wish you could be just an ordinary tourist so you could enjoy the vista the way it deserves. But the vista includes twenty assorted policemen, and you get the feeling this is nowhere to loiter.`,
+        exits: [
+            {
+              dir: ['north'],
+              id: '45-1',
+            },
+            {
+              dir: ['south'],
+              id: '43-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You Can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '44-2',
+            },
+            {
+              dir: ['UN', 'building', 'secretariat'],
+              id: '',
+              block: 'There is no point in going there.',
+            },
+        ]
+      },
+      {
+        id: '42-1',
+        name: 'E. 42nd St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '44-1',
+            },
+            {
+              dir: ['south'],
+              id: '41-1',
+            },
+            {
+              dir: ['east'],
+              id: '42-fdrd',
+            },
+            {
+              dir: ['west'],
+              id: '42-tudo',
+            },
+        ]
+      },
+      {
+        id: '41-1',
+        name: 'E. 41st St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '42-1',
+            },
+            {
+              dir: ['south'],
+              id: '40-1',
+            },
+            {
+              dir: ['east'],
+              id: '41-fdrd',
+            },
+            {
+              dir: ['west'],
+              id: '41-tudo',
+            },
+        ]
+      },
+      {
+        id: '40-1',
+        name: 'E. 40th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '41-1',
+            },
+            {
+              dir: ['south'],
+              id: '39-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '40-tudo',
+            },
+        ]
+      },
+      {
+        id: '39-1',
+        name: 'E. 39th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '40-1',
+            },
+            {
+              dir: ['south'],
+              id: '38-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '39-tudo',
+            },
+        ]
+      },
+      {
+        id: '38-1',
+        name: 'E. 38th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '39-1',
+            },
+            {
+              dir: ['south'],
+              id: '37-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '38-2',
+            },
+        ]
+      },
+      {
+        id: '37-1',
+        name: 'E. 37th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '38-1',
+            },
+            {
+              dir: ['south'],
+              id: '36-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '37-qin',
+            },
+        ]
+      },
+      {
+        id: '36-1',
+        name: 'E. 36th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '37-1',
+            },
+            {
+              dir: ['south'],
+              id: '35-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '36-qin',
+            },
+        ]
+      },
+      {
+        id: '35-1',
+        name: 'E. 35th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '36-1',
+            },
+            {
+              dir: ['south'],
+              id: '34-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '35-qin',
+            },
+        ]
+      },
+      {
+        id: '34-1',
+        name: 'E. 34th St. and 1st Ave.',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '35-1',
+            },
+            {
+              dir: ['south'],
+              id: '33-1',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '34-qin',
+            },
+        ]
+      },
+      {
+        id: '39-tudo',
+        name: 'E. 39th St. and Tudor Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '40-tudo',
+            },
+            {
+              dir: ['south'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['east'],
+              id: '39-1',
+            },
+            {
+              dir: ['west'],
+              id: '39-2',
+            },
+        ]
+      },
+      {
+        id: '40-tudo',
+        name: 'E. 40th St. and Tudor Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '41-tudo',
+            },
+            {
+              dir: ['south'],
+              id: '39-tudo',
+            },
+            {
+              dir: ['east'],
+              id: '40-1',
+            },
+            {
+              dir: ['west'],
+              id: '40-2',
+            },
+        ]
+      },
+      {
+        id: '41-tudo',
+        name: 'E. 41st St. and Tudor Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '42-tudo',
+            },
+            {
+              dir: ['south'],
+              id: '40-tudo',
+            },
+            {
+              dir: ['east'],
+              id: '41-1',
+            },
+            {
+              dir: ['west'],
+              id: '41-2',
+            },
+        ]
+      },
+      {
+        id: '42-tudo',
+        name: 'E. 42nd St. and Tudor Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '43-tudo',
+            },
+            {
+              dir: ['south'],
+              id: '41-tudo',
+            },
+            {
+              dir: ['east'],
+              id: '42-1',
+            },
+            {
+              dir: ['west'],
+              id: '42-2',
+            },
+        ]
+      },
+      {
+        id: '43-tudo',
+        name: 'E. 40th St. and Tudor Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['south'],
+              id: '42-tudo',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['west'],
+              id: '43-2',
+            },
+        ]
+      },
+      {
+        id: '41-fdrd',
+        name: 'E. 41st St. and FDR Drive',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '????',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '41-1',
+            },
+        ]
+      },
+      {
+        id: '42-fdrd',
+        name: 'E. 42nd St. and FDR Drive',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '41-fdrd',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '42-1',
+            },
+        ]
+      },
+      {
+        id: '49-beek',
+        name: 'E. 49th St. and Beekman Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '50-beek',
+            },
+            {
+              dir: ['south'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '49-1',
+            },
+        ]
+      },
+      {
+        id: '50-beek',
+        name: 'E. 50th St. and Beekman Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '51-beek',
+            },
+            {
+              dir: ['south'],
+              id: '49-beek',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '50-1',
+            },
+        ]
+      },
+      {
+        id: '51-beek',
+        name: 'E. 51st St. and Beekman Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['south'],
+              id: '50-beek',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '51-1',
+            },
+        ]
+      },
+      {
+        id: '53-sutt',
+        name: 'E. 53rd St. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '54-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '53-1',
+            },
+        ]
+      },
+      {
+        id: '54-sutt',
+        name: 'E. 54th St. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '55-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '53-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '54-1',
+            },
+        ]
+      },
+      {
+        id: '55-sutt',
+        name: 'E. 55th St. and Sutton Place',
+        desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? 
+        
+        He carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
+        exits: [
+            {
+              dir: ['north'],
+              id: '56-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '54-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '55-1',
+            },
+            {
+              dir: ['office', 'building', 'drawers', 'drawer'],
+              id: '',
+              block: `Finally you have to ask one of the attendants of the shrine, who stands behind the marble altar to INFORMATION. He gives you a fishy look and tells you to keep moving.`
+            }
+        ]
+      },
+      {
+        id: '56-sutt',
+        name: 'E. 56th St. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '57-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '55-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '56-1',
+            },
+        ]
+      },
+      {
+        id: '57-sutt',
+        name: 'E. 57th St. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '58-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '56-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '57-1',
+            },
+        ]
+      },
+      {
+        id: '58-sutt',
+        name: 'E. 58th St. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '59-sutt',
+            },
+            {
+              dir: ['south'],
+              id: '57-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '58-1',
+            },
+        ]
+      },
+      {
+        id: '59-sutt',
+        name: 'Central Park S. and Sutton Place',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '????',
+            },
+            {
+              dir: ['south'],
+              id: '58-sutt',
+            },
+            {
+              dir: ['east'],
+              id: '',
+              block: `You can't go that way`
+            },
+            {
+              dir: ['west'],
+              id: '59-1',
+            },
+        ]
+      },
     ],
 
 }
