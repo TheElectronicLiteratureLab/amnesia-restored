@@ -232,7 +232,7 @@ const midtownEast = {
             exits: [
                 {
                   dir: ['north'],
-                  id: '???',
+                  id: '60-5',
                 },
                 {
                   dir: ['south'],
@@ -261,7 +261,7 @@ const midtownEast = {
             exits: [
                 {
                   dir: ['north'],
-                  id: '???',
+                  id: '60-madi',
                 },
                 {
                   dir: ['south'],
@@ -1582,7 +1582,7 @@ const midtownEast = {
             exits: [
                 {
                   dir: ['north'],
-                  id: '????',
+                  id: '60-park',
                 },
                 {
                   dir: ['south'],
@@ -3113,7 +3113,7 @@ const midtownEast = {
             exits: [
                 {
                   dir: ['north'],
-                  id: '????',
+                  id: '60-lexi',
                 },
                 {
                   dir: ['south'],
@@ -3138,7 +3138,7 @@ const midtownEast = {
             exits: [
                 {
                   dir: ['north'],
-                  id: '????',
+                  id: '60-3',
                 },
                 {
                   dir: ['south'],
@@ -4537,7 +4537,7 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-            id: '????',
+            id: '60-2',
             },
             {
               dir: ['south'],
@@ -4630,7 +4630,7 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-            id: '????',
+            id: '60-1',
             },
             {
               dir: ['south'],
