@@ -3,7 +3,7 @@ const littleItaly = {
     rooms: [
         {
             id: 'hous-broa',
-            coord: [],
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -16,7 +16,7 @@ const littleItaly = {
         },
         {
             id: 'prin-broa',
-            coord: [],
+			coord: [],
             name: 'Prince St. and Broadway',
             desc: '',
             isStreet: true,            
@@ -29,7 +29,7 @@ const littleItaly = {
         },
         {
             id: 'spri-broa',
-            coord: [],
+			coord: [],
             name: 'Spring St. and Broadway',
             desc: '',
             isStreet: true,
@@ -42,7 +42,7 @@ const littleItaly = {
         },
         {
             id: 'broo-broa',
-            coord: [],
+			coord: [],
             name: 'Broome St. and Broadway',
             desc: '',
             isStreet: true,
@@ -55,7 +55,7 @@ const littleItaly = {
         },
         {
             id: 'gran-broa',
-            coord: [],
+			coord: [],
             name: 'Grand St. and Broadway',
             desc: '',
             isStreet: true,
@@ -68,7 +68,7 @@ const littleItaly = {
         },
         {
             id: 'howa-broa',
-            coord: [],
+			coord: [],
             name: 'Howard St. and Broadway',
             desc: '',
             isStreet: true,
@@ -81,7 +81,7 @@ const littleItaly = {
         },
         {
             id: 'cana-broa',
-            coord: [],
+			coord: [],
             name: 'Canal St. and Broadway',
             desc: '',
             isStreet: true,
@@ -94,7 +94,7 @@ const littleItaly = {
         },
         {
             id: 'hous-cros',
-            coord: [],
+			coord: [],
             name: 'E. Houston St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -107,7 +107,7 @@ const littleItaly = {
         },
         {
             id: 'jers-cros',
-            coord: [],
+			coord: [],
             name: 'Jersey St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -120,7 +120,7 @@ const littleItaly = {
         },
         {
             id: 'prin-cros',
-            coord: [],
+			coord: [],
             name: 'Prince St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -133,6 +133,7 @@ const littleItaly = {
         },
         {
             id: 'spri-cros',
+			coord: [],
             name: 'Spring St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -145,6 +146,7 @@ const littleItaly = {
         },
         {
             id: 'broo-cros',
+			coord: [],
             name: 'Broome St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -157,6 +159,7 @@ const littleItaly = {
         },
         {
             id: 'gran-cros',
+			coord: [],
             name: 'Grand St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -169,6 +172,7 @@ const littleItaly = {
         },
         {
             id: 'howa-cros',
+			coord: [],
             name: 'Howard St. and Crosby St.',
             desc: '',
             isStreet: true,
@@ -181,6 +185,7 @@ const littleItaly = {
         },
         {
             id: 'cana-cort',
+			coord: [],
             name: 'Canal St. and Corlandnt Al.',
             desc: '',
             isStreet: true,
@@ -193,7 +198,8 @@ const littleItaly = {
         },
         {
             id: 'hous-lafa',
-            name: 'E. Houston and Lafayette',
+			coord: [],
+            name: 'E. Houston and Lafayette St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -205,7 +211,8 @@ const littleItaly = {
         },
         {
             id: 'jers-lafa',
-            name: 'Jersey St. and Lafayette',
+			coord: [],
+            name: 'Jersey St. and Lafayette St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -217,7 +224,8 @@ const littleItaly = {
         },
         {
             id: 'prin-lafa',
-            name: 'Prince St. and Lafayette',
+			coord: [],
+            name: 'Prince St. and Lafayette St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -229,7 +237,8 @@ const littleItaly = {
         },
         {
             id: 'spri-lafa',
-            name: 'Spring St. and Lafayette',
+			coord: [],
+            name: 'Spring St. and Lafayette St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -241,7 +250,8 @@ const littleItaly = {
         },
         {
             id: 'kenm-lafa',
-            name: 'Kenmare St. and Lafayette',
+			coord: [],
+            name: 'Kenmare St. and Lafayette St.',
             desc: '',
             isStreet: true,
             exits: [
@@ -253,6 +263,7 @@ const littleItaly = {
         },
         {
             id: 'broo-lafa',
+			coord: [],
             name: 'Broome St. and Lafayette',
             desc: '',
             isStreet: true,
@@ -265,6 +276,7 @@ const littleItaly = {
         },
         {
             id: 'gran-lafa',
+			coord: [],
             name: 'Grand St. and Lafayette',
             desc: '',
             isStreet: true,
@@ -277,6 +289,7 @@ const littleItaly = {
         },
         {
             id: 'howa-lafa',
+			coord: [],
             name: 'Howard St. and Lafayette',
             desc: '',
             isStreet: true,
@@ -289,6 +302,7 @@ const littleItaly = {
         },
         {
             id: 'cana-lafa',
+			coord: [],
             name: 'Canal St. and Lafayette',
             desc: '',
             isStreet: true,
@@ -301,6 +315,7 @@ const littleItaly = {
         },
         {
             id: 'spri-cent',
+			coord: [],
             name: 'Spring St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -313,6 +328,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-cent',
+			coord: [],
             name: 'Kenmare St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -325,6 +341,7 @@ const littleItaly = {
         },
         {
             id: 'broo-cent',
+			coord: [],
             name: 'Broome St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -337,6 +354,7 @@ const littleItaly = {
         },
         {
             id: 'gran-cent',
+			coord: [],
             name: 'Grand St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -349,6 +367,7 @@ const littleItaly = {
         },
         {
             id: 'howa-cent',
+			coord: [],
             name: 'Howard St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -361,6 +380,7 @@ const littleItaly = {
         },
         {
             id: 'hest-cent',
+			coord: [],
             name: 'Hester St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -373,6 +393,7 @@ const littleItaly = {
         },
         {
             id: 'cana-cent',
+			coord: [],
             name: 'Canal St. and Centre St.',
             desc: '',
             isStreet: true,
@@ -385,6 +406,7 @@ const littleItaly = {
         },
         {
             id: 'broo-baxt',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -397,6 +419,7 @@ const littleItaly = {
         },
         {
             id: 'gran-baxt',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -409,6 +432,8 @@ const littleItaly = {
         },
         {
             id: 'hest-baxt',
+			coord: [],
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -421,6 +446,7 @@ const littleItaly = {
         },
         {
             id: 'cana-baxt',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -433,6 +459,7 @@ const littleItaly = {
         },
         {
             id: 'hous-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -445,6 +472,7 @@ const littleItaly = {
         },
         {
             id: 'jers-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -457,6 +485,7 @@ const littleItaly = {
         },
         {
             id: 'prin-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -469,6 +498,7 @@ const littleItaly = {
         },
         {
             id: 'spri-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -481,6 +511,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -493,6 +524,7 @@ const littleItaly = {
         },
         {
             id: 'broo-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -505,6 +537,7 @@ const littleItaly = {
         },
         {
             id: 'gran-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -517,6 +550,7 @@ const littleItaly = {
         },
         {
             id: 'hest-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -529,6 +563,7 @@ const littleItaly = {
         },
         {
             id: 'cana-mulb',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -541,6 +576,7 @@ const littleItaly = {
         },
         {
             id: 'hous-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -553,6 +589,7 @@ const littleItaly = {
         },
         {
             id: 'prin-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -565,6 +602,7 @@ const littleItaly = {
         },
         {
             id: 'spri-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -577,6 +615,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -589,6 +628,7 @@ const littleItaly = {
         },
         {
             id: 'broo-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -601,6 +641,7 @@ const littleItaly = {
         },
         {
             id: 'gran-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -613,6 +654,7 @@ const littleItaly = {
         },
         {
             id: 'hest-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -625,6 +667,7 @@ const littleItaly = {
         },
         {
             id: 'cana-mott',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -637,6 +680,7 @@ const littleItaly = {
         },
         {
             id: 'hous-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -649,6 +693,7 @@ const littleItaly = {
         },
         {
             id: 'prin-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -661,6 +706,7 @@ const littleItaly = {
         },
         {
             id: 'spri-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -673,6 +719,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -685,6 +732,7 @@ const littleItaly = {
         },
         {
             id: 'broo-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -697,6 +745,7 @@ const littleItaly = {
         },
         {
             id: 'gran-eliz',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -709,6 +758,7 @@ const littleItaly = {
         },
         {
             id: 'hous-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -721,6 +771,7 @@ const littleItaly = {
         },
         {
             id: 'stan-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -733,6 +784,7 @@ const littleItaly = {
         },
         {
             id: 'prin-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -745,6 +797,7 @@ const littleItaly = {
         },
         {
             id: 'rivi-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -757,6 +810,7 @@ const littleItaly = {
         },
         {
             id: 'spri-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -769,6 +823,7 @@ const littleItaly = {
         },
         {
             id: 'kenm-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -781,6 +836,7 @@ const littleItaly = {
         },
         {
             id: 'broo-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
@@ -793,6 +849,7 @@ const littleItaly = {
         },
         {
             id: 'gran-bowe',
+			coord: [],
             name: 'W. Houston St. and Broadway',
             desc: '',
             isStreet: true,
