@@ -268,10 +268,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'kenm-lafa'},
+                {dir: 'south', id: 'gran-lafa'},
+                {dir: 'east', id: 'broo-cent'},
+                {dir: 'west', id: 'broo-cros'},
             ]
         },
         {
@@ -281,10 +281,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'broo-lafa'},
+                {dir: 'south', id: 'howa-lafa'},
+                {dir: 'east', id: 'gran-cent'},
+                {dir: 'west', id: 'gran-cros'},
             ]
         },
         {
@@ -294,10 +294,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'gran-lafa'},
+                {dir: 'south', id: 'cana-lafa'},
+                {dir: 'east', id: 'howa-cent'},
+                {dir: 'west', id: 'howa-cros'},
             ]
         },
         {
@@ -307,10 +307,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'howa-lafa'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'east', id: 'cana-cent'},
+                {dir: 'west', id: 'cana-cort'},
             ]
         },
         {
@@ -321,9 +321,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'south', id: 'kenm-cent'},
+                {dir: 'east', id: 'kenm-mulb'},
+                {dir: 'west', id: 'spri-lafa'},
             ]
         },
         {
@@ -333,10 +333,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'spri-cent'},
+                {dir: 'south', id: 'broo-cent'},
+                {dir: 'east', id: 'kenm-mulb'},
+                {dir: 'west', id: 'kenm-lafa'},
             ]
         },
         {
@@ -346,10 +346,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'kenm-cent'},
+                {dir: 'south', id: 'gran-cent'},
+                {dir: 'east', id: 'broo-baxt'},
+                {dir: 'west', id: 'broo-lafa'},
             ]
         },
         {
@@ -359,10 +359,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'broo-cent'},
+                {dir: 'south', id: 'howa-cent'},
+                {dir: 'east', id: 'gran-baxt'},
+                {dir: 'west', id: 'gran-lafa'},
             ]
         },
         {
@@ -372,10 +372,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'gran-cent'},
+                {dir: 'south', id: 'hest-cent'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'howa-lafa'},
             ]
         },
         {
@@ -385,9 +385,9 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
+                {dir: 'north', id: 'howa-cent'},
+                {dir: 'south', id: 'cana-cent'},
+                {dir: 'east', id: 'hest-baxt'},
                 {dir: 'west', id: ''},
             ]
         },
@@ -398,10 +398,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'hest-cent'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'east', id: 'cana-baxt'},
+                {dir: 'west', id: 'cana-lafa'},
             ]
         },
         {
@@ -412,9 +412,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'south', id: 'gran-baxt'},
+                {dir: 'east', id: 'broo-mulb'},
+                {dir: 'west', id: 'broo-cent'},
             ]
         },
         {
@@ -424,10 +424,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'broo-baxt'},
+                {dir: 'south', id: 'hest-baxt'},
+                {dir: 'east', id: 'gran-mulb'},
+                {dir: 'west', id: 'gran-cent'},
             ]
         },
         {
@@ -437,10 +437,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'gran-baxt'},
+                {dir: 'south', id: 'cana-baxt'},
+                {dir: 'east', id: 'hest-mulb'},
+                {dir: 'west', id: 'hest-cent'},
             ]
         },
         {
@@ -450,10 +450,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'hest-baxt'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'east', id: 'cana-mulb'},
+                {dir: 'west', id: 'cana-cent'},
             ]
         },
         {
@@ -464,9 +464,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'south', id: 'jers-mulb'},
+                {dir: 'east', id: 'hous-mott'},
+                {dir: 'west', id: 'hous-lafa'},
             ]
         },
         {
@@ -476,10 +476,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'hous-mulb'},
+                {dir: 'south', id: 'prin-mulb'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'jers-lafa'},
             ]
         },
         {
@@ -489,10 +489,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'jers-mulb'},
+                {dir: 'south', id: 'spri-mulb'},
+                {dir: 'east', id: 'prin-mott'},
+                {dir: 'west', id: 'prin-lafa'},
             ]
         },
         {
@@ -502,10 +502,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'prin-mulb'},
+                {dir: 'south', id: 'kenm-mulb'},
+                {dir: 'east', id: 'spri-mott'},
+                {dir: 'west', id: 'spri-cent'},
             ]
         },
         {
@@ -515,10 +515,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'spri-mulb'},
+                {dir: 'south', id: 'kenm-mulb'},
+                {dir: 'east', id: 'kenm-mott'},
+                {dir: 'west', id: 'kenm-cent'},
             ]
         },
         {
@@ -528,10 +528,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'kenm-mulb'},
+                {dir: 'south', id: 'gran-mulb'},
+                {dir: 'east', id: 'broo-mott'},
+                {dir: 'west', id: 'broo-baxt'},
             ]
         },
         {
@@ -541,10 +541,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'broo-mulb'},
+                {dir: 'south', id: 'hest-mulb'},
+                {dir: 'east', id: 'gran-mott'},
+                {dir: 'west', id: 'gran-baxt'},
             ]
         },
         {
@@ -554,10 +554,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'gran-mulb'},
+                {dir: 'south', id: 'cana-mulb'},
+                {dir: 'east', id: 'hest-mott'},
+                {dir: 'west', id: 'hest-baxt'},
             ]
         },
         {
@@ -567,10 +567,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'hest-mulb'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'east', id: 'cana-mot'},
+                {dir: 'west', id: 'cana-baxt'},
             ]
         },
         {
@@ -581,9 +581,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'south', id: 'prin-mott'},
+                {dir: 'east', id: 'hous-eliz'},
+                {dir: 'west', id: 'hous-mulb'},
             ]
         },
         {
@@ -593,10 +593,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'hous-mott'},
+                {dir: 'south', id: 'spri-mott'},
+                {dir: 'east', id: 'prin-eliz'},
+                {dir: 'west', id: 'prin-mulb'},
             ]
         },
         {
@@ -606,10 +606,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'prin-mott'},
+                {dir: 'south', id: 'kenm-mott'},
+                {dir: 'east', id: 'spri-eliz'},
+                {dir: 'west', id: 'spri-mulb'},
             ]
         },
         {
@@ -619,10 +619,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'spri-mott'},
+                {dir: 'south', id: 'broo-mott'},
+                {dir: 'east', id: 'kenm-eliz'},
+                {dir: 'west', id: 'kenm-mulb'},
             ]
         },
         {
@@ -632,10 +632,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'kenm-mott'},
+                {dir: 'south', id: 'gran-mott'},
+                {dir: 'east', id: 'broo-eliz'},
+                {dir: 'west', id: 'broo-mulb'},
             ]
         },
         {
@@ -645,10 +645,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'broo-mott'},
+                {dir: 'south', id: 'hest-mott'},
+                {dir: 'east', id: 'gran-eliz'},
+                {dir: 'west', id: 'gran-mulb'},
             ]
         },
         {
@@ -658,10 +658,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'gran-mott'},
+                {dir: 'south', id: 'cana-mott'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'hest-mulb'},
             ]
         },
         {
@@ -671,10 +671,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'hest-mott'},
                 {dir: 'south', id: ''},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'cana-mulb'},
             ]
         },
         {
@@ -685,9 +685,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'south', id: 'prin-eliz'},
+                {dir: 'east', id: 'hous-bowe'},
+                {dir: 'west', id: 'hous-mott'},
             ]
         },
         {
@@ -697,10 +697,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'hous-eliz'},
+                {dir: 'south', id: 'spri-eliz'},
+                {dir: 'east', id: 'prin-bowe'},
+                {dir: 'west', id: 'prin-mott'},
             ]
         },
         {
@@ -710,10 +710,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'prin-eliz'},
+                {dir: 'south', id: 'kenm-eliz'},
+                {dir: 'east', id: 'spri-bowe'},
+                {dir: 'west', id: 'spri-mott'},
             ]
         },
         {
@@ -723,10 +723,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'spri-eliz'},
+                {dir: 'south', id: 'broo-eliz'},
+                {dir: 'east', id: 'kenm-bowe'},
+                {dir: 'west', id: 'kenm-mott'},
             ]
         },
         {
@@ -736,10 +736,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'north', id: 'kenm-eliz'},
+                {dir: 'south', id: 'gran-eliz'},
+                {dir: 'east', id: 'broo-bowe'},
+                {dir: 'west', id: 'broo-mott'},
             ]
         },
         {
@@ -749,10 +749,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'broo-eliz'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'east', id: 'gran-bowe'},
+                {dir: 'west', id: 'gran-mott'},
             ]
         },
         {
@@ -763,9 +763,9 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'south', id: 'stan-bowe'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'hous-eliz'},
             ]
         },
         {
@@ -775,8 +775,8 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'hous-bowe'},
+                {dir: 'south', id: 'prin-bowe'},
                 {dir: 'east', id: ''},
                 {dir: 'west', id: ''},
             ]
@@ -788,10 +788,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'stan-bow'},
+                {dir: 'south', id: 'rivi-bowe'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'prin-eliz'},
             ]
         },
         {
@@ -801,8 +801,8 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'prin-bowe'},
+                {dir: 'south', id: 'spri-bowe'},
                 {dir: 'east', id: ''},
                 {dir: 'west', id: ''},
             ]
@@ -814,10 +814,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'rivi-bowe'},
+                {dir: 'south', id: 'kenm-bowe'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'spri-eliz'},
             ]
         },
         {
@@ -827,10 +827,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'spri-bowe'},
                 {dir: 'south', id: ''},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'kenm-eliz'},
             ]
         },
         {
@@ -840,10 +840,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
+                {dir: 'north', id: 'kenm-bowe'},
+                {dir: 'south', id: 'gran-bowe'},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'broo-eliz'},
             ]
         },
         {
@@ -853,10 +853,10 @@ const littleItaly = {
             desc: '',
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
+                {dir: 'north', id: 'broo-bowe'},
                 {dir: 'south', id: ''},
                 {dir: 'east', id: ''},
-                {dir: 'west', id: ''},
+                {dir: 'west', id: 'gran-eliz'},
             ]
         }
     ]
