@@ -78,9 +78,9 @@ const midtownEast = {
             ]
         },
         {
-            isStreets,
+            isStreets: true,
             coord: [],
-            hasSubway,
+            hasSubway: true,
             id: '54-5',
             name: 'W. 54th St, and 5th Ave.',
             desc: `There is a subway entrance at this corner.`,
@@ -227,7 +227,7 @@ const midtownEast = {
             coord: [],
             hasSubway: true,
             id: '59-5',
-            name: 'Central Park S. and 5th Ave',
+            name: 'Central Park S. and 5th Ave.',
             desc: `There is a subway entrance at this corner.`,
             exits: [
                 {
@@ -256,7 +256,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '59-madi',
-            name: 'E. 59th St. and Madison Ave',
+            name: 'E. 59th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -281,7 +281,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '58-madi',
-            name: 'E. 58th St. and Madison Ave',
+            name: 'E. 58th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -306,7 +306,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '57-madi',
-            name: 'E. 57th St. and Madison Ave',
+            name: 'E. 57th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -331,7 +331,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '56-madi',
-            name: 'E. 56th St. and Madison Ave',
+            name: 'E. 56th St. and Madison Ave.',
             desc: `The sign above the store's front window, written in letters that imitate a dot-matrix printout, says: User-Friendly Computer Store.`,
             exits: [
                 {
@@ -360,7 +360,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '56-madi',
-            name: 'E. 56th St. and Madison Ave',
+            name: 'E. 56th St. and Madison Ave.',
             desc: `As you come to the corner of Madison Avenue, you notice, halfway down the block a shop front that seems somehow familiar. The sign above the front window, written in letters that imitate a dot-matrix printout, says:
 
             USER-FRIENDLY
@@ -393,7 +393,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '55-madi',
-            name: 'E. 55th St. and Madison Ave',
+            name: 'E. 55th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -418,7 +418,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '54-madi',
-            name: 'E. 54th St. and Madison Ave',
+            name: 'E. 54th St. and Madison Ave.',
             desc: `There is a chock Full-O-Nuts at this intersection.`,
             exits: [
                 {
@@ -447,7 +447,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '53-madi',
-            name: 'E. 53rd St. and Madison Ave',
+            name: 'E. 53rd St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -472,7 +472,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '52-madi',
-            name: 'E. 52nd St. and Madison Ave',
+            name: 'E. 52nd St. and Madison Ave.',
             desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
             exits: [
                 {
@@ -501,7 +501,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '51-madi',
-            name: 'E. 51st St. and Madison Ave',
+            name: 'E. 51st St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -526,7 +526,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '50-madi',
-            name: 'E. 50th St. and Madison Ave',
+            name: 'E. 50th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -551,7 +551,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '49-madi',
-            name: 'E. 49th St. and Madison Ave',
+            name: 'E. 49th St. and Madison Ave.',
             desc: `There is a chock Full-O-Nuts at this intersection.`,
             exits: [
                 {
@@ -580,7 +580,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '48-madi',
-            name: 'E. 48th St. and Madison Ave',
+            name: 'E. 48th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -605,7 +605,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-madi',
-            name: 'E. 47th St. and Madison Ave',
+            name: 'E. 47th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -630,7 +630,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-madi',
-            name: 'E. 46th St. and Madison Ave',
+            name: 'E. 46th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -655,7 +655,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-madi',
-            name: 'E. 45th St. and Madison Ave',
+            name: 'E. 45th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -680,7 +680,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '44-madi',
-            name: 'E. 44th St. and Madison Ave',
+            name: 'E. 44th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -705,7 +705,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '43-madi',
-            name: 'E. 43rd St. and Madison Ave',
+            name: 'E. 43rd St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -730,7 +730,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '42-madi',
-            name: 'E. 42nd St. and Madison Ave',
+            name: 'E. 42nd St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -755,7 +755,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-madi',
-            name: 'E. 41st St. and Madison Ave',
+            name: 'E. 41st St. and Madison Ave.',
             desc: `There is a chock Full-O-Nuts at this intersection.`,
             exits: [
                 {
@@ -784,7 +784,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '40-madi',
-            name: 'E. 40th St. and Madison Ave',
+            name: 'E. 40th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -809,7 +809,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-madi',
-            name: 'E. 39th St. and Madison Ave',
+            name: 'E. 39th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -834,7 +834,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-madi',
-            name: 'E. 39th St. and Madison Ave',
+            name: 'E. 39th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -859,7 +859,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-madi',
-            name: 'E. 38th St. and Madison Ave',
+            name: 'E. 38th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -884,7 +884,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '37-madi',
-            name: 'E. 37th St. and Madison Ave',
+            name: 'E. 37th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -909,7 +909,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '36-madi',
-            name: 'E. 36th St. and Madison Ave',
+            name: 'E. 36th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -934,7 +934,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '35-madi',
-            name: 'E. 35th St. and Madison Ave',
+            name: 'E. 35th St. and Madison Ave.',
             desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
             exits: [
                 {
@@ -963,7 +963,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '34-madi',
-            name: 'E. 34th St. and Madison Ave',
+            name: 'E. 34th St. and Madison Ave.',
             desc: ``,
             exits: [
                 {
@@ -988,7 +988,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '34-5',
-            name: 'W. 34th St. and 5th Ave',
+            name: 'W. 34th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1013,7 +1013,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '35-5',
-            name: 'W. 35th St. and 5th Ave',
+            name: 'W. 35th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1038,7 +1038,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '36-5',
-            name: 'W. 36th St. and 5th Ave',
+            name: 'W. 36th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1063,7 +1063,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '37-5',
-            name: 'W. 37th St. and 5th Ave',
+            name: 'W. 37th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1088,7 +1088,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-5',
-            name: 'W. 38th St. and 5th Ave',
+            name: 'W. 38th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1113,7 +1113,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-5',
-            name: 'W. 38th St. and 5th Ave',
+            name: 'W. 38th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1138,7 +1138,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-5',
-            name: 'W. 39th St. and 5th Ave',
+            name: 'W. 39th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1163,7 +1163,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '40-5',
-            name: 'W. 40th St. and 5th Ave',
+            name: 'W. 40th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1188,7 +1188,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-5',
-            name: 'W. 41st St. and 5th Ave',
+            name: 'W. 41st St. and 5th Ave.',
             desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
             exits: [
                 {
@@ -1218,7 +1218,7 @@ const midtownEast = {
             coord: [],
             hasSubway: true,
             id: '42-5',
-            name: 'W. 42nd St. and 5th Ave',
+            name: 'W. 42nd St. and 5th Ave.',
             desc: `There is a subway entrance at this corner.`,
             exits: [
                 {
@@ -1247,7 +1247,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '43-5',
-            name: 'W. 43rd St. and 5th Ave',
+            name: 'W. 43rd St. and 5th Ave.',
             desc: `here is the Princeton Club - distinctly a members only institution.`,
             exits: [
                 {
@@ -1276,7 +1276,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '44-5',
-            name: 'W. 44th St. and 5th Ave',
+            name: 'W. 44th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1301,7 +1301,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-5',
-            name: 'W. 45th St. and 5th Ave',
+            name: 'W. 45th St. and 5th Ave.',
             desc: `An ideal spot for a would-be traveler. This block is lined with offices of Qantas, British Airways, Northwest Orient, and Aeroflot.`,
             exits: [
                 {
@@ -1330,7 +1330,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-5',
-            name: 'W. 46th St. and 5th Ave',
+            name: 'W. 46th St. and 5th Ave.',
             desc: ``,
             exits: [
                 {
@@ -1355,7 +1355,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-5',
-            name: 'W. 47th St. and 5th Ave',
+            name: 'W. 47th St. and 5th Ave.',
             desc: `You pause to consider the hollow hulk of a store that was once called Brentano's`,
             exits: [
                 {
@@ -1393,7 +1393,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '48-5',
-            name: 'W. 48th St. and 5th Ave',
+            name: 'W. 48th St. and 5th Ave.',
             desc: `Here is Barnes-Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club .`,
             exits: [
                 {
@@ -1444,7 +1444,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '49-5',
-            name: 'W. 49th St. and 5th Ave',
+            name: 'W. 49th St. and 5th Ave.',
             desc: `A statue of Atlas bearing the burden of the world reflects on your own mood as you pass the entrance to Rockefeller plaza.`,
             exits: [
                 {
@@ -1487,7 +1487,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '50-5',
-            name: 'W. 50th St. and 5th Ave',
+            name: 'W. 50th St. and 5th Ave.',
             desc: `There is a chock Full-O-Nuts at this intersection.`,
             exits: [
                 {
@@ -1516,7 +1516,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '51-5',
-            name: 'W. 51st St. and 5th Ave',
+            name: 'W. 51st St. and 5th Ave.',
             desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
             `,
             exits: [
@@ -1546,7 +1546,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '52-5',
-            name: 'W. 52nd St. and 5th Ave',
+            name: 'W. 52nd St. and 5th Ave.',
             desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
 
             There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
@@ -1577,7 +1577,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '59-park',
-            name: 'E. 59th St. and Park Ave',
+            name: 'E. 59th St. and Park Ave.',
             desc: `There is a restaurant called Nedicks here.`,
             exits: [
                 {
@@ -1606,7 +1606,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '58-park',
-            name: 'E. 58th St. and Park Ave',
+            name: 'E. 58th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1631,7 +1631,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '57-park',
-            name: 'E. 57th St. and Park Ave',
+            name: 'E. 57th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1656,7 +1656,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '56-park',
-            name: 'E. 56th St. and Park Ave',
+            name: 'E. 56th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1681,7 +1681,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '55-park',
-            name: 'E. 55th St. and Park Ave',
+            name: 'E. 55th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1706,7 +1706,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '54-park',
-            name: 'E. 54th St. and Park Ave',
+            name: 'E. 54th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1731,7 +1731,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '53-park',
-            name: 'E. 53rd St. and Park Ave',
+            name: 'E. 53rd St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1756,7 +1756,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '52-park',
-            name: 'E. 52nd St. and Park Ave',
+            name: 'E. 52nd St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1781,7 +1781,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '51-park',
-            name: 'E. 51st St. and Park Ave',
+            name: 'E. 51st St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1806,7 +1806,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '50-park',
-            name: 'E. 50th St. and Park Ave',
+            name: 'E. 50th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1831,7 +1831,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '49-park',
-            name: 'E. 49th St. and Park Ave',
+            name: 'E. 49th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1856,7 +1856,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '48-park',
-            name: 'E. 48th St. and Park Ave',
+            name: 'E. 48th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1881,7 +1881,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-park',
-            name: 'E. 47th St. and Park Ave',
+            name: 'E. 47th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -1906,7 +1906,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-vand',
-            name: 'E. 47th St. and Vanderbilt Ave',
+            name: 'E. 47th St. and Vanderbilt Ave.',
             desc: ``,
             exits: [
                 {
@@ -1932,7 +1932,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-vand',
-            name: 'E. 46th St. and Vanderbilt Ave',
+            name: 'E. 46th St. and Vanderbilt Ave.',
             desc: ``,
             exits: [
                 {
@@ -1957,7 +1957,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-vand',
-            name: 'E. 45th St. and Vanderbilt Ave',
+            name: 'E. 45th St. and Vanderbilt Ave.',
             desc: ``,
             exits: [
                 {
@@ -1982,7 +1982,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '44-vand',
-            name: 'E. 44th St. and Vanderbilt Ave',
+            name: 'E. 44th St. and Vanderbilt Ave.',
             desc: ``,
             exits: [
                 {
@@ -2007,7 +2007,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '43-vand',
-            name: 'E. 43rd St. and Vanderbilt Ave',
+            name: 'E. 43rd St. and Vanderbilt Ave.',
             desc: ``,
             exits: [
                 {
@@ -2032,7 +2032,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '42-vand',
-            name: 'E. 42nd St. and Vanderbilt Ave',
+            name: 'E. 42nd St. and Vanderbilt Ave.',
             desc: `Mobil Building – Nothing this tall could be made of silver, but you are tempted to think so. It is hard to realize that such a gleam can come from a metal as mundane as stainless steel.`,
             exits: [
                 {
@@ -2062,7 +2062,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-park',
-            name: 'E. 46th St. and Park Ave',
+            name: 'E. 46th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2087,7 +2087,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-park',
-            name: 'E. 45th St. and Park Ave',
+            name: 'E. 45th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2113,7 +2113,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '42-park',
-            name: 'E. 42nd St. and Park Ave',
+            name: 'E. 42nd St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2139,7 +2139,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-park',
-            name: 'E. 41st St. and Park Ave',
+            name: 'E. 41st St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2164,7 +2164,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-park',
-            name: 'E. 41st St. and Park Ave',
+            name: 'E. 41st St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2189,7 +2189,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '40-park',
-            name: 'E. 40th St. and Park Ave',
+            name: 'E. 40th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2214,7 +2214,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-park',
-            name: 'E. 39th St. and Park Ave',
+            name: 'E. 39th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2239,7 +2239,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-park',
-            name: 'E. 38th St. and Park Ave',
+            name: 'E. 38th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2264,7 +2264,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '37-park',
-            name: 'E. 37th St. and Park Ave',
+            name: 'E. 37th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2289,7 +2289,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '36-park',
-            name: 'E. 36th St. and Park Ave',
+            name: 'E. 36th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2314,7 +2314,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '35-park',
-            name: 'E. 35th St. and Park Ave',
+            name: 'E. 35th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2339,7 +2339,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '34-park',
-            name: 'E. 34th St. and Park Ave',
+            name: 'E. 34th St. and Park Ave.',
             desc: ``,
             exits: [
                 {
@@ -2364,7 +2364,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '34-lexi',
-            name: 'E. 34th St. and Lexington Ave',
+            name: 'E. 34th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2389,7 +2389,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '35-lexi',
-            name: 'E. 35th St. and Lexington Ave',
+            name: 'E. 35th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2414,7 +2414,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '36-lexi',
-            name: 'E. 36th St. and Lexington Ave',
+            name: 'E. 36th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2439,7 +2439,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '37-lexi',
-            name: 'E. 37th St. and Lexington Ave',
+            name: 'E. 37th St. and Lexington Ave.',
             desc: `There is a luncheonette on the corner.`,
             exits: [
                 {
@@ -2468,7 +2468,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-lexi',
-            name: 'E. 38th St. and Lexington Ave',
+            name: 'E. 38th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2493,7 +2493,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-lexi',
-            name: 'E. 39th St. and Lexington Ave',
+            name: 'E. 39th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2518,7 +2518,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '40-lexi',
-            name: 'E. 40th St. and Lexington Ave',
+            name: 'E. 40th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2543,7 +2543,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-lexi',
-            name: 'E. 41st St. and Lexington Ave',
+            name: 'E. 41st St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2568,7 +2568,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '42-lexi',
-            name: 'E. 42nd St. and Lexington Ave',
+            name: 'E. 42nd St. and Lexington Ave.',
             desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
             exits: [
                 {
@@ -2701,7 +2701,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '43-lexi',
-            name: 'E. 43rd St. and Lexington Ave',
+            name: 'E. 43rd St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2727,7 +2727,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '44-lexi',
-            name: 'E. 44th St. and Lexington Ave',
+            name: 'E. 44th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2752,7 +2752,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-lexi',
-            name: 'E. 45th St. and Lexington Ave',
+            name: 'E. 45th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2777,7 +2777,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-lexi',
-            name: 'E. 46th St. and Lexington Ave',
+            name: 'E. 46th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2802,7 +2802,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-lexi',
-            name: 'E. 47th St. and Lexington Ave',
+            name: 'E. 47th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2827,7 +2827,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '48-lexi',
-            name: 'E. 48th St. and Lexington Ave',
+            name: 'E. 48th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2852,7 +2852,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '49-lexi',
-            name: 'E. 49th St. and Lexington Ave',
+            name: 'E. 49th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2877,7 +2877,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '50-lexi',
-            name: 'E. 50th St. and Lexington Ave',
+            name: 'E. 50th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2903,7 +2903,7 @@ const midtownEast = {
             coord: [],
             hasSubway: true,
             id: '51-lexi',
-            name: 'E. 51st St. and Lexington Ave',
+            name: 'E. 51st St. and Lexington Ave.',
             desc: `There is a subway entrance at this corner.`,
             exits: [
                 {
@@ -2932,7 +2932,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '52-lexi',
-            name: 'E. 52nd St. and Lexington Ave',
+            name: 'E. 52nd St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2957,7 +2957,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '53-lexi',
-            name: 'E. 53rd St. and Lexington Ave',
+            name: 'E. 53rd St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -2982,7 +2982,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '54-lexi',
-            name: 'E. 54th St. and Lexington Ave',
+            name: 'E. 54th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -3007,7 +3007,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '55-lexi',
-            name: 'E. 55th St. and Lexington Ave',
+            name: 'E. 55th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -3032,7 +3032,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '56-lexi',
-            name: 'E. 56th St. and Lexington Ave',
+            name: 'E. 56th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -3057,7 +3057,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '57-lexi',
-            name: 'E. 57th St. and Lexington Ave',
+            name: 'E. 57th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -3082,7 +3082,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '58-lexi',
-            name: 'E. 58th St. and Lexington Ave',
+            name: 'E. 58th St. and Lexington Ave.',
             desc: ``,
             exits: [
                 {
@@ -3108,7 +3108,7 @@ const midtownEast = {
             coord: [],
             hasSubway: true,
             id: '59-lexi',
-            name: 'Central Park S. and Lexington Ave',
+            name: 'Central Park S. and Lexington Ave.',
             desc: `There is a subway entrance at this corner.`,
             exits: [
                 {
@@ -3133,7 +3133,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '59-3',
-            name: 'Central Park S. and 3rd Ave',
+            name: 'Central Park S. and 3rd Ave.',
             desc: `There is a subway entrance at this corner.`,
             exits: [
                 {
@@ -3158,7 +3158,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '58-3',
-            name: 'E. 58th St. and 3rd Ave',
+            name: 'E. 58th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3183,7 +3183,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '57-3',
-            name: 'E. 57th St. and 3rd Ave',
+            name: 'E. 57th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3208,7 +3208,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '56-3',
-            name: 'E. 56th St. and 3rd Ave',
+            name: 'E. 56th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3233,7 +3233,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '55-3',
-            name: 'E. 55th St. and 3rd Ave',
+            name: 'E. 55th St. and 3rd Ave.',
             desc: `There is a luncheonette on the corner`,
             exits: [
                 {
@@ -3262,7 +3262,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '54-3',
-            name: 'E. 54th St. and 3rd Ave',
+            name: 'E. 54th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3288,7 +3288,7 @@ const midtownEast = {
             coord: [],
             hasSubway: true,
             id: '53-3',
-            name: 'E. 53rd St. and 3rd Ave',
+            name: 'E. 53rd St. and 3rd Ave.',
             desc: `There is a subway entrance at this corner`,
             exits: [
                 {
@@ -3317,7 +3317,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '52-3',
-            name: 'E. 52nd St. and 3rd Ave',
+            name: 'E. 52nd St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3342,7 +3342,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '51-3',
-            name: 'E. 51st St. and 3rd Ave',
+            name: 'E. 51st St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3367,7 +3367,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '50-3',
-            name: 'E. 50th St. and 3rd Ave',
+            name: 'E. 50th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3392,7 +3392,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '49-3',
-            name: 'E. 49th St. and 3rd Ave',
+            name: 'E. 49th St. and 3rd Ave.',
             desc: `There is a luncheonette on the corner.`,
             exits: [
                 {
@@ -3421,7 +3421,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '48-3',
-            name: 'E. 48th St. and 3rd Ave',
+            name: 'E. 48th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3446,7 +3446,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '47-3',
-            name: 'E. 47th St. and 3rd Ave',
+            name: 'E. 47th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3471,7 +3471,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '46-3',
-            name: 'E. 46th St. and 3rd Ave',
+            name: 'E. 46th St. and 3rd Ave.',
             desc: `There is a lunchonette on the corner.`,
             exits: [
                 {
@@ -3500,7 +3500,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '45-3',
-            name: 'E. 45th St. and 3rd Ave',
+            name: 'E. 45th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3525,7 +3525,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '44-3',
-            name: 'E. 44th St. and 3rd Ave',
+            name: 'E. 44th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3550,7 +3550,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '43-3',
-            name: 'E. 43rd St. and 3rd Ave',
+            name: 'E. 43rd St. and 3rd Ave.',
             desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
             exits: [
                 {
@@ -3579,7 +3579,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '42-3',
-            name: 'E. 42nd St. and 3rd Ave',
+            name: 'E. 42nd St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3604,7 +3604,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '41-3',
-            name: 'E. 41st St. and 3rd Ave',
+            name: 'E. 41st St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3629,7 +3629,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '40-3',
-            name: 'E. 40th St. and 3rd Ave',
+            name: 'E. 40th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3654,7 +3654,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '39-3',
-            name: 'E. 39th St. and 3rd Ave',
+            name: 'E. 39th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3679,7 +3679,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '38-3',
-            name: 'E. 38th St. and 3rd Ave',
+            name: 'E. 38th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3704,7 +3704,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '37-3',
-            name: 'E. 37th St. and 3rd Ave',
+            name: 'E. 37th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3729,7 +3729,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '36-3',
-            name: 'E. 36th St. and 3rd Ave',
+            name: 'E. 36th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3754,7 +3754,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '35-3',
-            name: 'E. 35th St. and 3rd Ave',
+            name: 'E. 35th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {
@@ -3779,7 +3779,7 @@ const midtownEast = {
             isStreets: true,
             coord: [],
             id: '34-3',
-            name: 'E. 34th St. and 3rd Ave',
+            name: 'E. 34th St. and 3rd Ave.',
             desc: ``,
             exits: [
                 {

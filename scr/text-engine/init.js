@@ -20,6 +20,7 @@ let input = document.querySelector('#input');
 // add any default values to the disk
 // disk -> disk
 let init = (disk, mC) => {
+  const initializedPlay = Object.assign({}, mC);
   const initializedDisk = Object.assign({}, disk);
   initializedDisk.rooms = disk.rooms.map((room) => {
     // number of times a room has been visited
@@ -43,14 +44,6 @@ let init = (disk, mC) => {
 
   return initializedDisk;
 };
-
-let quickResponse = (e) => {
-  const ENTER = 13;
-
-  if (e.keyCode === ENTER) {
-    applyInput();
-  }
-}
 
 // register listeners for input events
 let setup = () => {
