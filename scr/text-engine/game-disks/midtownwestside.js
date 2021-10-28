@@ -151,7 +151,7 @@ const midwestside = {
     },
 //Somewhere
     {
-        id: 'cent-7',
+        id: '59-7',
         name: 'Central Park S. and 7th Ave.',
         exit: 
         [
@@ -161,7 +161,7 @@ const midwestside = {
             },
             {
                 dir: ['e', 'east'],
-                id: 'cent-amer'
+                id: '59-amer'
             },
             {
                 dir: ['w', 'west'],
@@ -175,7 +175,7 @@ const midwestside = {
     },
 //somewhere
     {
-        id: 'cent-amer',
+        id: '59-amer',
         name: 'Central Park S. and Ave of Americas',
         desc: `There is a restaurant called Nedicks here.`, // Nedicks entrance
         exit: 
@@ -186,11 +186,11 @@ const midwestside = {
             },
             {
                 dir: ['e', 'east'],
-                id: 'cent-wdri'
+                id: '59-wdri'
             },
             {
                 dir: ['w', 'west'],
-                id: 'cent-7'
+                id: '59-7'
             },
             {
                 dir: ['s', 'south'],
@@ -2012,19 +2012,193 @@ const midwestside = {
     [
         {
             dir: ['n', 'north'],
-            id: 'S-A'
+            id: '50-12'
         },
         {
             dir: ['e', 'east'],
-            id: 'S-A'
-        },
-        {
-            dir: ['w', 'west'],
-            id: 'S-A'
+            id: '49-11'
         },
         {
             dir: ['s', 'south'],
-            id: 'S-A'
+            id: '48-12'
+        },
+    ],
+},
+
+{
+    id: '49-11',
+    name: 'W. 49th St. and 11th Ave.',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-11'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-10'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-12'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-11'
+        },
+    ],
+},
+
+{
+    id: '49-10',
+    name: 'W. 49th St. and 10th Ave.',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-10'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-9'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-11'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-10'
+        },
+    ],
+},
+
+{
+    id: '49-9',
+    name: 'W. 49th St. and 9th Ave.',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-9'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-8'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-10'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-9'
+        },
+    ],
+},
+
+{
+    id: '49-8',
+    name: 'W. 49th St. and 8th Ave.',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-8'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-broa'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-9'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-8'
+        },
+    ],
+},
+
+{
+    id: '49-broa',
+    name: 'W. 49th St. and Broadway',
+    desc: `There is a restaurant called Nedicks here.`,//Restaurant Entrance
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-broa'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-7'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-8'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-broa'
+        },
+        {
+            dir: ['enter', 'restaurant', 'nedicks'],
+            id: '49-broa-nedicks'
+        },
+    ],
+},
+
+{
+    id: '49-7',
+    name: 'W. 49th St. and 7th Ave.',
+    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-7'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-amer'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-broa'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-7'
+        },
+        {//Subway Entrance
+            dir: ['subway', 'entrance'],
+            id: '49-7-subway-ent'
+        },
+    ],
+},
+
+{
+    id: '49-amer',
+    name: 'W. 49th St. and Ave of Americas',
+    exit: 
+    [
+        {
+            dir: ['n', 'north'],
+            id: '50-amer'
+        },
+        {
+            dir: ['e', 'east'],
+            id: '49-5'
+        },
+        {
+            dir: ['w', 'west'],
+            id: '49-7'
+        },
+        {
+            dir: ['s', 'south'],
+            id: '48-amer'
         },
     ],
 },
@@ -2067,7 +2241,7 @@ const midwestside = {
 
 //End Templates
 
-
+//Need to change some names, such as those used in central park, to match other sections.
 
 //Important rooms:
 //cent-amer Nedicks
