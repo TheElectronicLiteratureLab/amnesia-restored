@@ -10,19 +10,10 @@ const chelsea = {
             desc:``,
             
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-34'
-                },
+                {dir:['s','south'],id: '12-33'},
+                {dir:['e','east'],id:'11-34'},
                 //leaves neighborhood
-                {
-                    dir:['n','north'],
-                    id:'12-35'
-                }
+                {dir:['n','north'],id:'12-35'}
             ],
         },
         {
@@ -31,14 +22,8 @@ const chelsea = {
             desc:``,
 
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-33'
-                }
+                {dir:['s','south'], id: '12-30'},
+                {dir:['e','east'],id:'11-33'}
             ],
         },
         {
@@ -47,14 +32,8 @@ const chelsea = {
             desc:``,
 
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-30'
-                }
+                { dir:['s','south'],id: '12-29'},
+                {dir:['e','east'], id:'11-30'}
             ],
         },
         {
@@ -62,14 +41,8 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-29'
-                }
+                {dir:['s','south'],id: '12-28'},
+                {dir:['e','east'], id:'11-29' }
             ],
         },
         {
@@ -78,14 +51,8 @@ const chelsea = {
             desc:``,
 
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-28'
-                }
+                {dir:['s','south'],id: '12-27'},
+                {dir:['e','east'],id:'11-28'}
             ],
         },            
         {
@@ -93,14 +60,8 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-27'
-                }
+                {dir:['s','south'],id: '12-26'},
+                {dir:['e','east'],id:'11-27'}
             ],
         },
         {
@@ -108,14 +69,8 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-26'
-                }
+                {dir:['s','south'],id: '12-25'},
+                {dir:['e','east'],id:'11-26'}
             ],
         },
         {
@@ -123,14 +78,8 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '12-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-25'
-                }
+                {dir:['s','south'],id: '12-24'},
+                {dir:['e','east'],id:'11-25'}
             ],
         },
         {
@@ -138,14 +87,8 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'11-24'
-                }
+                {dir:['s','south'],id: '11-23'},
+                {dir:['e','east'],id:'11-24'}
             ],
         },
         //11th Ave.
@@ -154,23 +97,11 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-34'
-                },
+                {dir:['s','south'],id: '11-33'},
+                {dir:['e','east'],id:'10-34'},
+                {dir:['w','west'],id:'12-34'},
                 //leaves neighborhood.
-                {
-                    dir:['n','north'],
-                    id:'11-35'
-                }
+                {dir:['n','north'],id:'11-35'}
             ],
         },
         {
@@ -178,21 +109,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-34'
+                {dir:['s','south'],id: '11-33'},
+                {dir:['e','east'],id:'10-33'},
+                {dir:['w','west'],id:'12-33'},
+                {dir:['n','north'],id:'11-34'
                 }
             ],
         },
@@ -201,22 +121,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-33'
-                }
+                {dir:['s','south'],id: '11-29'},
+                {dir:['e','east'],id:'10-30'},
+                {dir:['w','west'],id:'12-30'},
+                {dir:['n','north'],id:'11-33'}
             ],
         },
         {
@@ -224,22 +132,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-30'
-                }
+                {dir:['s','south'],id: '11-28'},
+                {dir:['e','east'],id:'10-29'},
+                {dir:['w','west'],id:'12-29'},
+                {dir:['n','north'],id:'11-30'}
             ],
         },
         {
@@ -247,22 +143,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-29'
-                }
+                {dir:['s','south'],id: '11-27'},
+                {dir:['e','east'],id:'10-28'},
+                {dir:['w','west'],id:'12-28'},
+                {dir:['n','north'],id:'11-29'}
             ],
         },
         {
@@ -270,22 +154,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-28'
-                }
+                {dir:['s','south'],id: '11-26'},
+                {dir:['e','east'],id:'10-27'},
+                {dir:['w','west'],id:'12-27'},
+                {dir:['n','north'],id:'11-28'}
             ],
         },
         {
@@ -293,22 +165,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-27'
-                }
+                {dir:['s','south'],id: '11-25'},
+                {dir:['e','east'],id:'10-26'},
+                {dir:['w','west'],id:'12-26'},
+                {dir:['n','north'],id:'11-27'}
             ],
         },
         {
@@ -316,22 +176,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-26'
-                }
+                {dir:['s','south'],id: '11-24'},
+                {dir:['e','east'],id:'10-25'},
+                {dir:['w','west'],id:'12-25'},
+                {dir:['n','north'],id:'11-26'}
             ],
         },
         {
@@ -339,22 +187,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'12-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-25'
-                }
+                {dir:['s','south'],id: '11-23'},
+                {dir:['e','east'],id:'10-24'},
+                {dir:['w','west'],id:'12-24'},
+                {dir:['n','north'],id:'11-25'}
             ],
         },        
         {
@@ -362,18 +198,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-24'
-                }
+                {dir:['s','south'],id: '11-22'
+},
+                {dir:['e','east'],id:'10-23'},
+                {dir:['n','north'],id:'11-24'}
             ],
         },        
         {
@@ -381,18 +209,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-23'
-                }
+                {dir:['s','south'],id: '11-21'},
+                {dir:['e','east'],id:'10-22'},
+                {dir:['n','north'],id:'11-23'}
             ],
         },        
         {
@@ -400,18 +219,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-22'
-                }
+                {dir:['s','south'],id: '11-20'},
+                {dir:['e','east'],id:'10-21'},
+                {dir:['n','north'],id:'11-22'}
             ],
         },        
         {
@@ -419,18 +229,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-21'
-                }
+                {dir:['s','south'],id: '11-19'},
+                {dir:['e','east'],id:'10-20'},
+                {dir:['n','north'],id:'11-21'}
             ],
         },        
         {
@@ -438,18 +239,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-20'
-                }
+                {dir:['s','south'],id: '11-18'},
+                {dir:['e','east'],id:'10-19'},
+                {dir:['n','north'],id:'11-20'}
             ],
         },        
         {
@@ -457,18 +249,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-19'
-                }
+                {dir:['s','south'],id: '11-17'},
+                {dir:['e','east'],id:'10-18'},
+                {dir:['n','north'],id:'11-19'}
             ],
         },        
         {
@@ -476,18 +259,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-16'
+                {dir:['s','south'],id: '11-16' },
+                {dir:['e','east'],id:'10-17'
                 },
-                {
-                    dir:['e','east'],
-                    id:'10-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-18'
-                }
+                { dir:['n','north'],id:'11-18'}
             ],
         },        
         {
@@ -495,18 +270,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-17'
-                }
+                {dir:['s','south'],id: '11-15'},
+                { dir:['e','east'],id:'10-16'},
+                {dir:['n','north'],id:'11-17'}
             ],
         },        
         {
@@ -514,18 +280,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-16'
-                }
+                {dir:['s','south'],id: '11-14'},
+                {dir:['e','east'],id:'10-15'},
+                {dir:['n','north'],id:'11-16'}
             ],
         },        
         {
@@ -533,18 +290,9 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,         
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '11-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'10-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'11-15'
-                }
+                {dir:['s','south'],id: '11-13'},
+                {dir:['e','east'],id:'10-14'},
+                {dir:['n','north'],id:'11-15'}
             ],
         },
         //10th Ave
@@ -553,22 +301,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-35'
-                }
+                {dir:['s','south'],id: '10-33'},
+                {dir:['e','east'],id:'9-34'},
+                {dir:['w','west'],id:'11-34'},
+                {dir:['n','north'],id:'10-35'}
             ],
         },
         {
@@ -576,22 +312,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-34'
-                }
+                {dir:['s','south'],id: '10-31'},
+                {dir:['e','east'],id:'9-33'},
+                {dir:['w','west'],id:'11-33'},
+                {dir:['n','north'],id:'10-34'}
             ],
         },
         {
@@ -599,22 +323,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-33'
-                }
+                {dir:['s','south'],id: '10-30'},
+                {dir:['e','east'],id:'9-31'},
+                {dir:['w','west'],id:'11-31'},
+                {dir:['n','north'],id:'10-33'}
             ],
         },
         {
@@ -622,22 +334,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-31'
-                }
+                {dir:['s','south'],id: '10-29'},
+                {dir:['e','east'],id:'9-30'},
+                {dir:['w','west'],id:'11-30'},
+                {dir:['n','north'],id:'10-31'}
             ],
         },
         {
@@ -645,22 +345,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-30'
-                }
+                {dir:['s','south'],id: '10-28'},
+                {dir:['e','east'],id:'9-29'},
+                {dir:['w','west'],id:'11-29'},
+                {dir:['n','north'],id:'10-30'}
             ],
         },
         {
@@ -668,22 +356,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-29'
-                }
+                {dir:['s','south'],id: '10-27'},
+                {dir:['e','east'],id:'9-28'},
+                {dir:['w','west'],id:'11-28'},
+                {dir:['n','north'],id:'10-29'}
             ],
         },
         {
@@ -691,22 +367,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-28'
-                }
+                {dir:['s','south'],id: '10-26'},
+                {dir:['e','east'],id:'9-27'},
+                {dir:['w','west'],id:'11-27'},
+                {dir:['n','north'],id:'10-28'}
             ],
         },
         {
@@ -714,22 +378,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-27'
-                }
+                {dir:['s','south'],id: '10-25'},
+                {dir:['e','east'],id:'9-26'},
+                {dir:['w','west'],id:'11-26'},
+                {dir:['n','north'],id:'10-27'}
             ],
         },
         {
@@ -737,22 +389,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-26'
-                }
+                {dir:['s','south'],id: '10-24'},
+                {dir:['e','east'],id:'9-25'},
+                {dir:['w','west'],id:'11-25'},
+                {dir:['n','north'],id:'10-26'}
             ],
         },
         {
@@ -760,22 +400,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-25'
-                }
+                {dir:['s','south'],id: '10-23'},
+                {dir:['e','east'],id:'9-24'},
+                {dir:['w','west'],id:'11-24'},
+                {dir:['n','north'],id:'10-25'}
             ],
         },
         {
@@ -783,22 +411,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-24'
-                }
+                {dir:['s','south'],id: '10-22'},
+                {dir:['e','east'],id:'9-23'},
+                {dir:['w','west'],id:'11-23'},
+                {dir:['n','north'],id:'10-24'}
             ],
         },
         {
@@ -806,22 +422,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-23'
-                }
+                {dir:['s','south'],id: '10-21'},
+                {dir:['e','east'],id:'9-22'},
+                {dir:['w','west'],id:'11-22'},
+                {dir:['n','north'],id:'10-23'}
             ],
         },
         {
@@ -829,21 +433,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-22'
+                {dir:['s','south'],id: '10-20'},
+                {dir:['e','east'],id:'9-21'},
+                {dir:['w','west'],id:'11-21'},
+                {dir:['n','north'],id:'10-22'
                 }
             ],
         },
@@ -852,22 +445,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-21'
-                }
+                {dir:['s','south'],id: '10-19'},
+                {dir:['e','east'],id:'9-20'},
+                {dir:['w','west'],id:'11-20'},
+                {dir:['n','north'],id:'10-21'}
             ],
         },
         {
@@ -875,22 +456,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-20'
-                }
+                {dir:['s','south'],id: '10-18'},
+                {dir:['e','east'],id:'9-19'},
+                {dir:['w','west'],id:'11-19'},
+                {dir:['n','north'],id:'10-20'}
             ],
         },
         {
@@ -898,22 +467,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-18'
-                }
+                {dir:['s','south'],id: '10-16'},
+                {dir:['e','east'],id:'9-17'},
+                {dir:['w','west'],id:'11-17'},
+                {dir:['n','north'],id:'10-18'}
             ],
         },
         {
@@ -921,22 +478,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-17'
-                }
+                {dir:['s','south'],id: '10-15'},
+                {dir:['e','east'],id:'9-16'},
+                {dir:['w','west'],id:'11-16'},
+                {dir:['n','north'],id:'10-17'}
             ],
         },
         {
@@ -944,22 +489,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '10-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-16'
-                }
+                {dir:['s','south'],id: '10-14'},
+                {dir:['e','east'],id:'9-15'},
+                {dir:['w','west'],id:'11-15'},
+                {dir:['n','north'],id:'10-16'}
             ],
         },
         {
@@ -968,22 +501,10 @@ const chelsea = {
             desc:``,
             exits:[
                 //leaves neighborhood
-                {
-                    dir:['s','south'],
-                    id: '10-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'9-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'11-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'10-15'
-                }
+                {dir:['s','south'],id: '10-13'},
+                {dir:['e','east'],id:'9-14'},
+                {dir:['w','west'],id:'11-14'},
+                {dir:['n','north'],id:'10-15'}
             ],
         },
         //9th Ave
@@ -997,23 +518,11 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-34'
-                },
+                {dir:['s','south'],id: '9-33'},
+                {dir:['e','east'],id:'8-34'},
+                {dir:['w','west'],id:'10-34'},
                 //leaves neighborhood
-                {
-                    dir:['n','north'],
-                    id:'9-35'
-                }
+                {dir:['n','north'],id:'9-35'}
             ],
         },
         {
@@ -1021,22 +530,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-34'
-                }
+                {dir:['s','south'],id: '9-31'},
+                {dir:['e','east'],id:'8-33'},
+                {dir:['w','west'],id:'10-33'},
+                {dir:['n','north'],id:'9-34'}
             ],
         },
 
@@ -1045,22 +542,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-33'
-                }
+                {dir:['s','south'],id: '9-30'},
+                {dir:['e','east'],id:'8-31'},
+                {dir:['w','west'],id:'10-31'},
+                {dir:['n','north'],id:'9-33'}
             ],
         },
 
@@ -1069,22 +554,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-31'
-                }
+                {dir:['s','south'],id: '9-29'},
+                {dir:['e','east'],id:'8-30'},
+                {dir:['w','west'],id:'10-30'},
+                {dir:['n','north'],id:'9-31'}
             ],
         },
         {
@@ -1092,22 +565,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-30'
-                }
+                {dir:['s','south'],id: '9-28'},
+                {dir:['e','east'],id:'8-29'},
+                {dir:['w','west'],id:'10-29'},
+                {dir:['n','north'],id:'9-30'}
             ],
         },
 
@@ -1116,22 +577,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-29'
-                }
+                {dir:['s','south'],id: '9-27'},
+                {dir:['e','east'],id:'8-28'},
+                {dir:['w','west'],id:'10-28'},
+                {dir:['n','north'],id:'9-29'}
             ],
         },
         {
@@ -1139,22 +588,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'27-26'//look at map to verify
-                }
+                {dir:['s','south'],id: '9-25'},
+                {dir:['e','east'],id:'8-26'},
+                {dir:['w','west'],id:'10-26'},
+                {dir:['n','north'],id:'27-26'}
             ],
         },
 
@@ -1163,22 +600,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-26'
-                }
+                {dir:['s','south'],id: '9-24'},
+                {dir:['e','east'],id:'8-25'},
+                {dir:['w','west'],id:'10-25'},
+                {dir:['n','north'],id:'9-26'}
             ],
         },
 
@@ -1187,22 +612,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-25'
-                }
+                {dir:['s','south'],id: '9-23'},
+                {dir:['e','east'],id:'8-24'},
+                {dir:['w','west'],id:'10-24'},
+                {dir:['n','north'],id:'9-25'}
             ],
         },
 
@@ -1211,22 +624,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-24'
-                }
+                {dir:['s','south'],id: '9-22'},
+                {dir:['e','east'],id:'8-23'},
+                {dir:['w','west'],id:'10-23'},
+                {dir:['n','north'],id:'9-24'}
             ],
         },
 
@@ -1235,22 +636,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-23'
-                }
+                {dir:['s','south'],id: '9-21'},
+                {dir:['e','east'],id:'8-22'},
+                {dir:['w','west'],id:'10-22'},
+                {dir:['n','north'],id:'9-23'}
             ],
         },
 
@@ -1259,22 +648,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-22'
-                }
+                {dir:['s','south'],id: '9-20'},
+                {dir:['e','east'],id:'8-21'},
+                {dir:['w','west'],id:'10-21'},
+                {dir:['n','north'],id:'9-22'}
             ],
             
         },
@@ -1283,22 +660,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-21'
-                }
+                {dir:['s','south'],id: '9-19'},
+                {dir:['e','east'],id:'8-20'},
+                {dir:['w','west'],id:'10-20'},
+                {dir:['n','north'],id:'9-21'}
             ],
         },
 
@@ -1307,22 +672,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-20'
-                }
+                {dir:['s','south'],id: '9-18'},
+                {dir:['e','east'],id:'8-19'},
+                {dir:['w','west'],id:'10-19'},
+                {dir:['n','north'],id:'9-20'}
             ],
         },
 
@@ -1331,22 +684,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-19'
-                }
+                {dir:['s','south'],id: '9-17'},
+                {dir:['e','east'],id:'8-18'},
+                {dir:['w','west'],id:'10-18'},
+                {dir:['n','north'],id:'9-19'}
             ],
         },
         {
@@ -1354,22 +695,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-18'
-                }
+                {dir:['s','south'],id: '9-16'},
+                {dir:['e','east'],id:'8-17'},
+                {dir:['w','west'],id:'10-17'},
+                {dir:['n','north'],id:'9-18'}
             ],
         },
         {
@@ -1377,22 +706,11 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-15'
+                {dir:['s','south'],id: '9-15'},
+                {dir:['e','east'],id:'8-16'
                 },
-                {
-                    dir:['e','east'],
-                    id:'8-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-17'
-                }
+                {dir:['w','west'],id:'10-16'},
+                {dir:['n','north'],id:'9-17'}
             ],
         },
         {
@@ -1400,22 +718,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '9-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-16'
-                }
+                {dir:['s','south'],id: '9-14'},
+                {dir:['e','east'],id:'8-15'},
+                {dir:['w','west'],id:'10-15'},
+                {dir:['n','north'],id:'9-16'}
             ],
         },
         {
@@ -1424,22 +730,10 @@ const chelsea = {
             desc:``,
             exits:[
                 //leaves nighborhood
-                {
-                    dir:['s','south'],
-                    id: '9-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'8-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'10-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'9-15'
-                }
+                {dir:['s','south'],id: '9-13'},
+                {dir:['e','east'],id:'8-14'},
+                {dir:['w','west'],id:'10-14'},
+                {dir:['n','north'],id:'9-15'}
             ],
         },
         //8th Ave
@@ -1448,23 +742,11 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-34'
-                },
+                {dir:['s','south'],id: '8-33'},
+                {dir:['e','east'],id:'7-34'},
+                {dir:['w','west'],id:'9-34'},
                 //exits neighborhood
-                {
-                    dir:['n','north'],
-                    id:'8-'
-                }
+                {dir:['n','north'],id:'8-'}
             ],
         },
         {
@@ -1472,22 +754,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-34'
-                }
+                {dir:['s','south'],id: '8-32'},
+                {dir:['e','east'],id:'7-33'},
+                {dir:['w','west'],id:'9-33'},
+                {dir:['n','north'],id:'8-34'}
             ],
         },
         {
@@ -1495,22 +765,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-33'
-                }
+                {dir:['s','south'],id: '8-30'},
+                {dir:['e','east'],id:'7-31'},
+                {dir:['w','west'],id:'9-31'},
+                {dir:['n','north'],id:'8-33'}
             ],
         },
         {
@@ -1518,22 +776,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-31'
-                }
+                {dir:['s','south'],id: '8-29'},
+                {dir:['e','east'],id:'7-30'},
+                {dir:['w','west'],id:'9-30'},
+                {dir:['n','north'],id:'8-31'}
             ],
         },
         {
@@ -1541,22 +787,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-30'
-                }
+                {dir:['s','south'],id: '8-28'},
+                {dir:['e','east'],id:'7-29'},
+                {dir:['w','west'],id:'9-29'},
+                {dir:['n','north'],id:'8-30'}
             ],
         },
         {
@@ -1564,22 +798,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-29'
-                }
+                {dir:['s','south'],id: '8-27'},
+                {dir:['e','east'],id:'7-28'},
+                {dir:['w','west'],id:'9-28'},
+                {dir:['n','north'],id:'8-29'}
             ],
         },
         {
@@ -1587,22 +809,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-28'
-                }
+                {dir:['s','south'],id: '8-26'},
+                {dir:['e','east'],id:'7-27'},
+                {dir:['w','west'],id:'9-27'},
+                {dir:['n','north'],id:'8-28'}
             ],
         },
         {
@@ -1610,22 +820,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-27'
-                }
+                {dir:['s','south'],id: '8-25'},
+                {dir:['e','east'],id:'7-26'},
+                {dir:['w','west'],id:'9-26'},
+                {dir:['n','north'],id:'8-27'}
             ],
         },
         {
@@ -1633,22 +831,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-26'
-                }
+                {dir:['s','south'],id: '8-24'},
+                {dir:['e','east'],id:'7-24'},
+                {dir:['w','west'],id:'9-24'},
+                {dir:['n','north'],id:'8-26'}
             ],
         },
         {
@@ -1656,22 +842,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-25'
-                }
+                {dir:['s','south'],id: '8-23'},
+                {dir:['e','east'],id:'7-24'},
+                {dir:['w','west'],id:'9-24'},
+                {dir:['n','north'],id:'8-25'}
             ],
         },
         {
@@ -1679,22 +853,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-24'
-                }
+                {dir:['s','south'],id: '8-22'},
+                {dir:['e','east'],id:'7-23'},
+                {dir:['w','west'],id:'9-23'},
+                {dir:['n','north'],id:'8-24'}
             ],
         },
         {
@@ -1702,22 +864,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-23'
-                }
+                {dir:['s','south'],id: '8-21'},
+                {dir:['e','east'],id:'7-22'},
+                {dir:['w','west'],id:'9-22'},
+                {dir:['n','north'],id:'8-23'}
             ],
         },
         {
@@ -1725,22 +875,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-22'
-                }
+                {dir:['s','south'],id: '8-20'},
+                {dir:['e','east'],id:'7-21'},
+                {dir:['w','west'],id:'9-21'},
+                {dir:['n','north'],id:'8-22'}
             ],
         },
         {
@@ -1748,22 +886,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-21'
-                }
+                {dir:['s','south'],id: '8-19'},
+                {dir:['e','east'],id:'7-20'},
+                {dir:['w','west'],id:'9-20'},
+                {dir:['n','north'],id:'8-21'}
             ],
         },
         {
@@ -1771,22 +897,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-20'
-                }
+                {dir:['s','south'],id: '8-18'},
+                {dir:['e','east'],id:'7-19'},
+                {dir:['w','west'],id:'9-19'},
+                {dir:['n','north'],id:'8-20'}
             ],
         },
         {
@@ -1794,22 +908,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-17'
-                }
+                {dir:['s','south'],id: '8-17'},
+                {dir:['e','east'],id:'7-16'},
+                {dir:['w','west'],id:'9-16'},
+                {dir:['n','north'],id:'8-17'}
             ],
         },
         {
@@ -1817,22 +919,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-18'
-                }
+                {dir:['s','south'],id: '8-16'},
+                {dir:['e','east'],id:'7-17'},
+                {dir:['w','west'],id:'9-17'},
+                {dir:['n','north'],id:'8-18'}
             ],
         },
         {
@@ -1840,22 +930,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-17'
-                }
+                {dir:['s','south'],id: '8-15'},
+                {dir:['e','east'],id:'7-16'},
+                {dir:['w','west'],id:'9-16'},
+                {dir:['n','north'],id:'8-17'}
             ],
         },
         {
@@ -1863,22 +941,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '8-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-16'
-                }
+                {dir:['s','south'],id: '8-14'},
+                {dir:['e','east'],id:'7-15'},
+                {dir:['w','west'],id:'9-15'},
+                {dir:['n','north'],id:'8-16'}
             ],
         },
         {
@@ -1887,22 +953,10 @@ const chelsea = {
             desc:`Chelsea`,
             exits:[
                 //exits neighborhood
-                {
-                    dir:['s','south'],
-                    id: '8-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'7-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'9-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'8-15'
-                }
+                {dir:['s','south'],id: '8-13'},
+                {dir:['e','east'],id:'7-14'},
+                {dir:['w','west'],id:'9-14'},
+                {dir:['n','north'],id:'8-15'}
             ],
         },
         //7th Ave
@@ -1911,23 +965,11 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-34'
-                },
+                {dir:['s','south'],id: '7-33'},
+                {dir:['e','east'],id:'amer-34'},
+                {dir:['w','west'],id:'8-34'},
                 //exits neighborhood
-                {
-                    dir:['n','north'],
-                    id:'7-35'
-                }
+                {dir:['n','north'],id:'7-35'}
             ],
         },
         {
@@ -1935,22 +977,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-34'
-                }
+                {dir:['s','south'],id: '7-32'},
+                {dir:['e','east'],id:'amer-33'},
+                {dir:['w','west'],id:'8-33'},
+                {dir:['n','north'],id:'7-34'}
             ],
         },
         {
@@ -1958,22 +988,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-33'
-                }
+                {dir:['s','south'],id: '7-31'},
+                {dir:['e','east'],id:'amer-32'},
+                {dir:['w','west'],id:'8-32'},
+                {dir:['n','north'],id:'7-33'}
             ],
         },
         {
@@ -1981,22 +999,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-32'
-                }
+                {dir:['s','south'],id: '7-30'},
+                {dir:['e','east'],id:'amer-31'},
+                {dir:['w','west'],id:'8-31'},
+                {dir:['n','north'],id:'7-32'}
             ],
         },
         {
@@ -2004,22 +1010,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-31'
-                }
+                {dir:['s','south'],id: '7-29'},
+                {dir:['e','east'],id:'amer-30'},
+                {dir:['w','west'],id:'8-30'},
+                {dir:['n','north'],id:'7-31'}
             ],
         },
         {
@@ -2027,22 +1021,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-30'
-                }
+                {dir:['s','south'],id: '7-28'},
+                {dir:['e','east'],id:'amer-29'},
+                {dir:['w','west'],id:'8-29'},
+                {dir:['n','north'],id:'7-30'}
             ],
         },
         {
@@ -2050,22 +1032,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-29'
-                }
+                {dir:['s','south'],id: '7-27'},
+                {dir:['e','east'],id:'amer-28'},
+                {dir:['w','west'],id:'8-28'},
+                {dir:['n','north'],id:'7-29'}
             ],
         },
         {
@@ -2073,22 +1043,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-28'
-                }
+                {dir:['s','south'],id: '7-26'},
+                {dir:['e','east'],id:'amer-27'},
+                {dir:['w','west'],id:'8-27'},
+                {dir:['n','north'],id:'7-28'}
             ],
         },
         {
@@ -2096,22 +1054,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-27'
-                }
+                {dir:['s','south'],id: '7-25'},
+                {dir:['e','east'],id:'amer-26'},
+                {dir:['w','west'],id:'8-26'},
+                {dir:['n','north'],id:'7-27'}
             ],
         },
         {
@@ -2119,22 +1065,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-26'
-                }
+                {dir:['s','south'],id: '7-24'},
+                {dir:['e','east'],id:'amer-25'},
+                {dir:['w','west'],id:'8-25'},
+                {dir:['n','north'],id:'7-26'}
             ],
         },
         {
@@ -2142,22 +1076,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-25'
-                }
+                {dir:['s','south'],id: '7-23'},
+                {dir:['e','east'],id:'amer-24'},
+                {dir:['w','west'],id:'8-24'},
+                {dir:['n','north'],id:'7-25'}
             ],
         },
         {
@@ -2165,22 +1087,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-24'
-                }
+                {dir:['s','south'],id: '7-22'},
+                {dir:['e','east'],id:'amer-23'},
+                {dir:['w','west'],id:'8-23'},
+                {dir:['n','north'],id:'7-24'}
             ],
         },
         {
@@ -2188,22 +1098,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-23'
-                }
+                {dir:['s','south'],id: '7-21'},
+                {dir:['e','east'],id:'amer-22'},
+                {dir:['w','west'],id:'8-22'},
+                {dir:['n','north'],id:'7-23'}
             ],
         },
         {
@@ -2211,22 +1109,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-21'
-                }
+                {dir:['s','south'],id: '7-20'},
+                {dir:['e','east'],id:'amer-21'},
+                {dir:['w','west'],id:'8-21'},
+                {dir:['n','north'],id:'7-21'}
             ],
         },
         {
@@ -2234,22 +1120,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-21'
-                }
+                {dir:['s','south'],id: '7-19'},
+                {dir:['e','east'],id:'amer-20'},
+                {dir:['w','west'],id:'8-20'},
+                {dir:['n','north'],id:'7-21'}
             ],
         },
         {
@@ -2257,22 +1131,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-20'
-                }
+                {dir:['s','south'],id: '7-18'},
+                {dir:['e','east'],id:'amer-19'},
+                {dir:['w','west'],id:'8-19'},
+                {dir:['n','north'],id:'7-20'}
             ],
         },
         {
@@ -2280,22 +1142,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-19'
-                }
+                {dir:['s','south'],id: '7-17'},
+                {dir:['e','east'],id:'amer-18'},
+                {dir:['w','west'],id:'8-18'},
+                {dir:['n','north'],id:'7-19'}
             ],
         },
         {
@@ -2303,22 +1153,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-18'
-                }
+                {dir:['s','south'],id: '7-16'},
+                {dir:['e','east'],id:'amer-17'},
+                {dir:['w','west'],id:'8-17'},
+                {dir:['n','north'],id:'7-18'}
             ],
         },
         {
@@ -2326,22 +1164,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-17'
-                }
+                {dir:['s','south'],id: '7-15'},
+                {dir:['e','east'],id:'amer-16'},
+                {dir:['w','west'],id:'8-16'},
+                {dir:['n','north'],id:'7-17'}
             ],
         },
         {
@@ -2349,22 +1175,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-15'
-                }
+                {dir:['s','south'],id: '7-14'},
+                {dir:['e','east'],id:'amer-14'},
+                {dir:['w','west'],id:'8-14'},
+                {dir:['n','north'],id:'7-15'}
             ],
         },
         {
@@ -2372,22 +1186,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '7-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'8-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'7-15'
-                }
+                {dir:['s','south'],id: '7-13'},
+                {dir:['e','east'],id:'amer-14'},
+                {dir:['w','west'],id:'8-14'},
+                {dir:['n','north'],id:'7-15'}
             ],
         },
         //6th Ave/Avenue of America
@@ -2396,22 +1198,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-35'
-                }
+                {dir:['s','south'],id: 'amer-33'},
+                {dir:['e','east'],id:'broad-34'},
+                {dir:['w','west'],id:'7-33'},
+                {dir:['n','north'],id:'amer-35'}
             ],
         },
         {
@@ -2419,22 +1209,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-34'
-                }
+                {dir:['s','south'],id: 'amer-32'},
+                {dir:['e','east'],id:'broad-33'},
+                {dir:['w','west'],id:'7-33'},
+                {dir:['n','north'],id:'amer-34'}
             ],
         },
         {
@@ -2442,22 +1220,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-33'
-                }
+                {dir:['s','south'],id: 'amer-31'},
+                {dir:['e','east'],id:'broad-32'},
+                {dir:['w','west'],id:'7-32'},
+                {dir:['n','north'],id:'amer-33'}
             ],
         },
         {
@@ -2465,22 +1231,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-32'
-                }
+                {dir:['s','south'],id: 'amer-30'},
+                {dir:['e','east'],id:'broad-31'},
+                {dir:['w','west'],id:'7-31'},
+                {dir:['n','north'],id:'amer-32'}
             ],
         },
         {
@@ -2488,22 +1242,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-31'
-                }
+                {dir:['s','south'],id: 'amer-29'},
+                {dir:['e','east'],id:'broad-30'},
+                {dir:['w','west'],id:'7-30'},
+                {dir:['n','north'],id:'amer-31'}
             ],
         },
         {
@@ -2511,22 +1253,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-30'
-                }
+                {dir:['s','south'],id: 'amer-28'},
+                {dir:['e','east'],id:'broad-29'},
+                {dir:['w','west'],id:'7-29'},
+                {dir:['n','north'],id:'amer-30'}
             ],
         },
         {
@@ -2534,22 +1264,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-29'
-                }
+                {dir:['s','south'],id: 'amer-27'},
+                {dir:['e','east'],id:'broad-28'},
+                {dir:['w','west'],id:'7-28'},
+                {dir:['n','north'],id:'amer-29'}
             ],
         },
         {
@@ -2557,22 +1275,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-28'
-                }
+                {dir:['s','south'],id: 'amer-26'},
+                {dir:['e','east'],id:'broad-27'},
+                {dir:['w','west'],id:'amer-27'},
+                {dir:['n','north'],id:'amer-28'}
             ],
         },
         {
@@ -2580,22 +1286,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-27'
-                }
+                {dir:['s','south'],id: 'amer-25'},
+                {dir:['e','east'],id:'broad-26'},
+                {dir:['w','west'],id:'amer-26'},
+                {dir:['n','north'],id:'amer-27'}
             ],
         },
         {
@@ -2603,22 +1297,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-26'
-                }
+                {dir:['s','south'],id: 'amer-24'},
+                {dir:['e','east'],id:'broad-25'},
+                {dir:['w','west'],id:'7-25'},
+                {dir:['n','north'],id:'amer-26'}
             ],
         },
         {
@@ -2626,22 +1308,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broad-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-25'
-                }
+                {dir:['s','south'],id: 'amer-23'},
+                {dir:['e','east'],id:'broad-24'},
+                {dir:['w','west'],id:'7-24'},
+                {dir:['n','north'],id:'amer-25'}
             ],
         },
         {
@@ -2649,22 +1319,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-24'
-                }
+                {dir:['s','south'],id: 'amer-22'},
+                {dir:['e','east'],id:'5-23'},
+                {dir:['w','west'],id:'7-23'},
+                {dir:['n','north'],id:'amer-24'}
             ],
         },
         {
@@ -2672,22 +1330,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-23'
-                }
+                {dir:['s','south'],id: 'amer-21'},
+                {dir:['e','east'],id:'5-22'},
+                {dir:['w','west'],id:'7-22'},
+                {dir:['n','north'],id:'amer-23'}
             ],
         },
         {
@@ -2695,22 +1341,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-22'
-                }
+                {dir:['s','south'],id: 'amer-20'},
+                {dir:['e','east'],id:'5-21'},
+                {dir:['w','west'],id:'7-21'},
+                {dir:['n','north'],id:'amer-22'}
             ],
             
         },
@@ -2719,21 +1353,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-21'
+                {dir:['s','south'],id: 'amer-19'},
+                {dir:['e','east'],id:'5-20'},
+                {dir:['w','west'],id:'7-20'},
+                {dir:['n','north'],id:'amer-21'
                 }
             ],
         },
@@ -2742,22 +1365,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-20'
-                }
+                {dir:['s','south'],id: 'amer-18'},
+                {dir:['e','east'],id:'5-18'},
+                {dir:['w','west'],id:'7-18'},
+                {dir:['n','north'],id:'amer-20'}
             ],
         },
         {
@@ -2765,22 +1376,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-19'
-                }
+                {dir:['s','south'],id: 'amer-17'},
+                {dir:['e','east'],id:'5-18'},
+                {dir:['w','west'],id:'7-18'},
+                {dir:['n','north'],id:'amer-19'}
             ],
         },
         {
@@ -2788,22 +1387,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-18'
-                }
+                {dir:['s','south'],id: 'amer-16'},
+                {dir:['e','east'],id:'5-17'},
+                {dir:['w','west'],id:'7-17'},
+                {dir:['n','north'],id:'amer-18'}
             ],
         },
         {
@@ -2811,22 +1398,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-17'
-                }
+                {dir:['s','south'],id: 'amer-15'},
+                {dir:['e','east'],id:'5-16'},
+                {dir:['w','west'],id:'7-16'},
+                {dir:['n','north'],id:'amer-17'}
             ],
         },
         {
@@ -2834,22 +1409,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'amer-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-16'
-                }
+                {dir:['s','south'],id: 'amer-14'},
+                {dir:['e','east'],id:'5-15'},
+                {dir:['w','west'],id:'7-15'},
+                {dir:['n','north'],id:'amer-16'}
             ],
         },
         {
@@ -2858,22 +1421,10 @@ const chelsea = {
             desc:``,
             exits:[
                 //exits neighborhood
-                {
-                    dir:['s','south'],
-                    id: 'amer-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'7-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'amer-15'
-                }
+                {dir:['s','south'],id: 'amer-13'},
+                {dir:['e','east'],id:'5-14'},
+                {dir:['w','west'],id:'7-14'},
+                {dir:['n','north'],id:'amer-15'}
             ],
         },
         //Broadway
@@ -2887,22 +1438,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-6'
-                }
+                {dir:['s','south'],id: 'broa-32'},
+                {dir:['e','east'],id:'5-33'},
+                {dir:['w','west'],id:'amer-33'},
+                {dir:['n','north'],id:'broa-6'}
             ],
         },
         {
@@ -2910,22 +1449,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-33'
-                }
+                {dir:['s','south'],id: 'broa-31'},
+                {dir:['e','east'],id:'5-32'},
+                {dir:['w','west'],id:'amer-32'},
+                {dir:['n','north'],id:'broa-33'}
             ],
         },
         {
@@ -2933,22 +1460,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-32'
-                }
+                {dir:['s','south'],id: 'broa-30'},
+                {dir:['e','east'],id:'5-31'},
+                {dir:['w','west'],id:'amer-31'},
+                {dir:['n','north'],id:'broa-32'}
             ],
         },
         {
@@ -2956,22 +1471,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-31'
-                }
+                {dir:['s','south'],id: 'broa-29'},
+                {dir:['e','east'],id:'5-30'},
+                {dir:['w','west'],id:'amer-30'},
+                {dir:['n','north'],id:'broa-31'}
             ],
         },
         {
@@ -2979,22 +1482,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-30'
-                }
+                {dir:['s','south'],id: 'broa-28'},
+                {dir:['e','east'],id:'5-29'},
+                {dir:['w','west'],id:'amer-29'},
+                {dir:['n','north'],id:'broa-30'}
             ],
         },
         {
@@ -3002,21 +1493,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-29'
+                {dir:['s','south'],id: 'broa-27'},
+                {dir:['e','east'],id:'5-27'},
+                {dir:['w','west'],id:'amer-27'},
+                {dir:['n','north'],id:'broa-29'
                 }
             ],
         },
@@ -3025,22 +1505,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-28'
-                }
+                {dir:['s','south'],id: 'broa-26'},
+                {dir:['e','east'],id:'5-27'},
+                {dir:['w','west'],id:'amer-27'},
+                {dir:['n','north'],id:'broa-28'}
             ],
         },
         {
@@ -3048,22 +1516,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-27'
-                }
+                {dir:['s','south'],id: 'broa-25'},
+                {dir:['e','east'],id:'5-26'},
+                {dir:['w','west'],id:'amer-26'},
+                {dir:['n','north'],id:'broa-27'}
             ],
         },
         {
@@ -3071,22 +1527,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'amer-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-26'
-                }
+                {dir:['s','south'],id: 'broa-24'},
+                {dir:['e','east'],id:'5-25'},
+                {dir:['w','west'],id:'amer-25'},
+                {dir:['n','north'],id:'broa-26'}
             ],
         },
         {
@@ -3094,22 +1538,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'broa-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-25'
-                }
+                {dir:['s','south'],id: '5-24'},
+                {dir:['e','east'],id:'broa-23'},
+                {dir:['w','west'],id:'broa-25'},
+                {dir:['n','north'],id:'5-25'}
             ],
         },
         {
@@ -3117,22 +1549,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-24'
-                }
+                {dir:['s','south'],id: 'broa-22'},
+                {dir:['e','east'],id:'madi-23'},
+                {dir:['w','west'],id:'5-23'},
+                {dir:['n','north'],id:'5-24'}
             ],
         },
         {
@@ -3140,22 +1560,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'park-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-23'
-                }
+                {dir:['s','south'],id: 'broa-21'},
+                {dir:['e','east'],id:'park-22'},
+                {dir:['w','west'],id:'5-22'},
+                {dir:['n','north'],id:'broa-23'}
             ],
         },
         {
@@ -3163,22 +1571,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'park-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-22'
-                }
+                {dir:['s','south'],id: 'broa-20'},
+                {dir:['e','east'],id:'park-21'},
+                {dir:['w','west'],id:'5-21'},
+                {dir:['n','north'],id:'broa-22'}
             ],
         },
         {
@@ -3186,22 +1582,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'park-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-21'
-                }
+                {dir:['s','south'],id: 'broa-19'},
+                {dir:['e','east'],id:'park-20'},
+                {dir:['w','west'],id:'5-20'},
+                {dir:['n','north'],id:'broa-21'}
             ],
         },
         {
@@ -3209,22 +1593,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'park-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-20'
-                }
+                {dir:['s','south'],id: 'broa-18'},
+                {dir:['e','east'],id:'park-19'},
+                {dir:['w','west'],id:'5-19'},
+                {dir:['n','north'],id:'broa-20'}
             ],
         },
         {
@@ -3232,22 +1604,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-17-1'
-                },
-                {
-                    dir:['e','east'],
-                    id:'park-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-19'
-                }
+                {dir:['s','south'],id: 'unio-17-1'},
+                {dir:['e','east'],id:'park-18'},
+                {dir:['w','west'],id:'5-18'},
+                {dir:['n','north'],id:'broa-19'}
             ],
         },
         //5th Ave
@@ -3256,22 +1616,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-6'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-35'
-                }
+                {dir:['s','south'],id: '5-33'},
+                {dir:['e','east'],id:'madi-34'},
+                {dir:['w','west'],id:'broa-6'},
+                {dir:['n','north'],id:'5-35'}
             ],
         },
         {
@@ -3279,22 +1627,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-34'
-                }
+                {dir:['s','south'],id: '5-32'},
+                {dir:['e','east'],id:'madi-33'},
+                {dir:['w','west'],id:'broa-33'},
+                {dir:['n','north'],id:'5-34'}
             ],
         },
         {
@@ -3302,22 +1638,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-33'
-                }
+                {dir:['s','south'],id: '5-31'},
+                {dir:['e','east'],id:'madi-32'},
+                {dir:['w','west'],id:'broa-32'},
+                {dir:['n','north'],id:'5-33'}
             ],
         },
         {
@@ -3325,22 +1649,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-32'
-                }
+                {dir:['s','south'],id: '5-30'},
+                {dir:['e','east'],id:'madi-31'},
+                {dir:['w','west'],id:'broa-31'},
+                {dir:['n','north'],id:'5-32'}
             ],
         },
         {
@@ -3348,22 +1660,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-31'
-                }
+                {dir:['s','south'],id: '5-29'},
+                {dir:['e','east'],id:'madi-30'},
+                {dir:['w','west'],id:'broa-30'},
+                {dir:['n','north'],id:'5-31'}
             ],
         },
         {
@@ -3371,22 +1671,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-30'
-                }
+                {dir:['s','south'],id: '5-28'},
+                {dir:['e','east'],id:'madi-29'},
+                {dir:['w','west'],id:'broa-29'},
+                {dir:['n','north'],id:'5-30'}
             ],
         },
         {
@@ -3394,22 +1682,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-29'
-                }
+                {dir:['s','south'],id: '5-27'},
+                {dir:['e','east'],id:'madi-28'},
+                {dir:['w','west'],id:'broa-28'},
+                {dir:['n','north'],id:'5-29'}
             ],
         },
         {
@@ -3417,22 +1693,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-28'
-                }
+                {dir:['s','south'],id: '5-26'},
+                {dir:['e','east'],id:'madi-27'},
+                {dir:['w','west'],id:'broa-27'},
+                {dir:['n','north'],id:'5-28'}
             ],
         },
         {
@@ -3440,22 +1704,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'madi-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-27'
-                }
+                {dir:['s','south'],id: '5-25'},
+                {dir:['e','east'],id:'madi-26'},
+                {dir:['w','west'],id:'broa-26'},
+                {dir:['n','north'],id:'5-27'}
             ],
         },
         {
@@ -3463,18 +1715,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'broa-5'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-26'
-                }
+                {dir:['s','south'],id: 'broa-5'},
+                {dir:['w','west'],id:'broa-25'},
+                {dir:['n','north'],id:'5-26'}
             ],
         },
         {
@@ -3482,22 +1725,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-5'
-                }
+                {dir:['s','south'],id: '5-23'},
+                {dir:['e','east'],id:'amer-24'},
+                {dir:['w','west'],id:'broa-24'},
+                {dir:['n','north'],id:'broa-5'}
             ],
         },
         {
@@ -3505,22 +1736,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-24'
-                }
+                {dir:['s','south'],id: '5-22'},
+                {dir:['e','east'],id:'amer-23'},
+                {dir:['w','west'],id:'broa-23'},
+                {dir:['n','north'],id:'5-24'}
             ],
         },
         {
@@ -3528,22 +1747,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-23'
-                }
+                {dir:['s','south'],id: '5-21'},
+                {dir:['e','east'],id:'amer-22'},
+                {dir:['w','west'],id:'broa-22'},
+                {dir:['n','north'],id:'5-23'}
             ],
         },
         {
@@ -3551,22 +1758,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-22'
-                }
+                {dir:['s','south'],id: '5-20'},
+                {dir:['e','east'],id:'amer-21'},
+                {dir:['w','west'],id:'broa-21'},
+                {dir:['n','north'],id:'5-22'}
             ],
         },
         {
@@ -3574,22 +1769,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-21'
-                }
+                {dir:['s','south'],id: '5-19'},
+                {dir:['e','east'],id:'amer-20'},
+                {dir:['w','west'],id:'broa-20'},
+                {dir:['n','north'],id:'5-21'}
             ],
         },
         {
@@ -3597,22 +1780,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-20'
-                }
+                {dir:['s','south'],id: '5-18'},
+                {dir:['e','east'],id:'amer-19'},
+                {dir:['w','west'],id:'broa-19'},
+                {dir:['n','north'],id:'5-20'}
             ],
         },
         {
@@ -3620,22 +1791,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-19'
-                }
+                {dir:['s','south'],id: '5-17'},
+                {dir:['e','east'],id:'amer-18'},
+                {dir:['w','west'],id:'broa-18'},
+                {dir:['n','north'],id:'5-19'}
             ],
         },
         {
@@ -3643,22 +1802,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-17-1'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-18'
-                }
+                {dir:['s','south'],id: '5-16'},
+                {dir:['e','east'],id:'amer-17'},
+                {dir:['w','west'],id:'unio-17-1'},
+                {dir:['n','north'],id:'5-18'}
             ],
         },
         {
@@ -3666,22 +1813,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-16-1'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-17'
-                }
+                {dir:['s','south'],id: '5-15'},
+                {dir:['e','east'],id:'amer-16'},
+                {dir:['w','west'],id:'unio-16-1'},
+                {dir:['n','north'],id:'5-17'}
             ],
         },
         {
@@ -3689,22 +1824,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-15-1'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-16'
-                }
+                {dir:['s','south'],id: '5-14'},
+                {dir:['e','east'],id:'amer-15'},
+                {dir:['w','west'],id:'unio-15-1'},
+                {dir:['n','north'],id:'5-16'}
             ],
         },
         {
@@ -3712,22 +1835,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '5-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'amer-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-14-1'
-                },
-                {
-                    dir:['n','north'],
-                    id:'5-15'
-                }
+                {dir:['s','south'],id: '5-13'},
+                {dir:['e','east'],id:'amer-14'},
+                {dir:['w','west'],id:'unio-14-1'},
+                {dir:['n','north'],id:'5-15'}
             ],
         },
         //Madison Ave
@@ -3736,22 +1847,10 @@ const chelsea = {
             name: 'Chelsea',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-35'
-                }
+                {dir:['s','south'],id: 'madi-33'},
+                {dir:['e','east'],id:'5-34'},
+                {dir:['w','west'],id:'park-34'},
+                {dir:['n','north'],id:'madi-35'}
             ],
         },
         {
@@ -3759,22 +1858,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-34'
-                }
+                {dir:['s','south'],id: 'madi-32'},
+                {dir:['e','east'],id:'5-33'},
+                {dir:['w','west'],id:'park-33'},
+                {dir:['n','north'],id:'madi-34'}
             ],
         },
         {
@@ -3782,22 +1869,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-33'
-                }
+                {dir:['s','south'],id: 'madi-31'},
+                {dir:['e','east'],id:'5-32'},
+                {dir:['w','west'],id:'park-32'},
+                {dir:['n','north'],id:'madi-33'}
             ],
         },
         {
@@ -3805,22 +1880,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-32'
-                }
+                {dir:['s','south'],id: 'madi-30'},
+                {dir:['e','east'],id:'5-31'},
+                {dir:['w','west'],id:'park-31'},
+                {dir:['n','north'],id:'madi-32'}
             ],
         },
         {
@@ -3828,22 +1891,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-31'
-                }
+                {dir:['s','south'],id: 'madi-29'},
+                {dir:['e','east'],id:'5-30'},
+                {dir:['w','west'],id:'park-30'},
+                {dir:['n','north'],id:'madi-31'}
             ],
         },
         {
@@ -3851,22 +1902,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-30'
-                }
+                {dir:['s','south'],id: 'madi-28'},
+                {dir:['e','east'],id:'5-29'},
+                {dir:['w','west'],id:'park-29'},
+                {dir:['n','north'],id:'madi-30'}
             ],
         },
         {
@@ -3874,22 +1913,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-29'
-                }
+                {dir:['s','south'],id: 'madi-27'},
+                {dir:['e','east'],id:'5-28'},
+                {dir:['w','west'],id:'park-28'},
+                {dir:['n','north'],id:'madi-29'}
             ],
         },
         {
@@ -3897,22 +1924,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-28'
-                }
+                {dir:['s','south'],id: 'madi-26'},
+                {dir:['e','east'],id:'5-27'},
+                {dir:['w','west'],id:'park-27'},
+                {dir:['n','north'],id:'madi-28'}
             ],
         },
         {
@@ -3920,22 +1935,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-27'
-                }
+                {dir:['s','south'],id: 'madi-25'},
+                {dir:['e','east'],id:'5-26'},
+                {dir:['w','west'],id:'park-26'},
+                {dir:['n','north'],id:'madi-27'}
             ],
         },
         {
@@ -3943,18 +1946,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-35'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-24'
-                }
+                {dir:['s','south'],id: 'madi-26'},
+                {dir:['w','west'],id:'park-35'},
+                {dir:['n','north'],id:'madi-24'}
             ],
         },
         {
@@ -3962,18 +1956,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'madi-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-23'
-                }
+                {dir:['s','south'],id: 'madi-25'},
+                {dir:['w','west'],id:'park-24'},
+                {dir:['n','north'],id:'madi-23'}
             ],
         },
         {
@@ -3981,18 +1966,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['e','east'],
-                    id:'broa-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'madi-24'
-                }
+                {dir:['e','east'],id:'broa-23'},
+                {dir:['w','west'],id:'park-34'},
+                {dir:['n','north'],id:'madi-24'}
             ],
         },
         //Union Square West and East
@@ -4001,18 +1977,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-16-1'
-                },
-                {
-                    dir:['w','west'],
-                    id:'5-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'broa-18'
-                }
+                {dir:['s','south'],id: 'unio-16-1'},
+                {dir:['w','west'],id:'5-17'},
+                {dir:['n','north'],id:'broa-18'}
             ],
         },
         {
@@ -4020,18 +1987,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-w-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-w-17'
-                }
+                {dir:['s','south'],id: 'unio-w-15'},
+                {dir:['e','east'],id:'5-16'},
+                {dir:['n','north'],id:'unio-w-17'}
             ],
         },
         {
@@ -4039,18 +1997,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-14-1'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-16-1'
-                }
+                {dir:['s','south'],id: 'unio-14-1'},
+                {dir:['e','east'],id:'5-15'},
+                {dir:['n','north'],id:'unio-16-1'}
             ],
         },
         {
@@ -4058,22 +2007,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'univ-13'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-14-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'5-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-15-1'
-                }
+                {dir:['s','south'],id: 'univ-13'},
+                {dir:['w','west'],id:'unio-14-2'},
+                {dir:['e','east'],id:'5-14'},
+                {dir:['n','north'],id:'unio-15-1'}
             ],
         },
         {
@@ -4081,22 +2018,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-16-2'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-17-1'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-18'
-                }
+                {dir:['s','south'],id: 'unio-16-2'},
+                {dir:['w','west'],id:'unio-17-1'},
+                {dir:['e','east'],id:'irvi-17'},
+                {dir:['n','north'],id:'park-18'}
             ],
         },
         {
@@ -4104,18 +2029,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-15-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-17-2'
-                }
+                {dir:['s','south'],id: 'unio-15-2'},
+                {dir:['e','east'],id:'irvi-16'},
+                {dir:['n','north'],id:'unio-17-2'}
             ],
         },
         {
@@ -4123,18 +2039,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-14-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-16-2'
-                }
+                {dir:['s','south'],id: 'unio-14-2'},
+                {dir:['e','east'],id:'irvi-15'},
+                {dir:['n','north'],id:'unio-16-2'}
             ],
         },
         {
@@ -4142,22 +2049,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: ''
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-14-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'unio-15-2'
-                }
+                {dir:['s','south'],id: ''},
+                {dir:['w','west'],id:'unio-14-2'},
+                {dir:['e','east'],id:'irvi-14'},
+                {dir:['n','north'],id:'unio-15-2'}
             ],
         },
         //triangular exit from the district 4th Ave and 14th.
@@ -4167,22 +2062,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-34'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-35'
-                }
+                {dir:['s','south'],id: 'park-33'},
+                {dir:['w','west'],id:'madi-34'},
+                {dir:['e','east'],id:'lexi-34'},
+                {dir:['n','north'],id:'park-35'}
             ],
         },
         {
@@ -4190,22 +2073,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-34'
-                }
+                {dir:['s','south'],id: 'park-32'},
+                {dir:['w','west'],id:'madi-33'},
+                {dir:['e','east'],id:'lexi-33'},
+                {dir:['n','north'],id:'park-34'}
             ],
         },
         {
@@ -4213,22 +2084,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-33'
-                }
+                {dir:['s','south'],id: 'park-31'},
+                {dir:['w','west'],id:'madi-32'},
+                {dir:['e','east'],id:'lexi-32'},
+                {dir:['n','north'],id:'park-33'}
             ],
         },
         {
@@ -4236,22 +2095,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-32'
-                }
+                {dir:['s','south'],id: 'park-30'},
+                {dir:['w','west'],id:'madi-31'},
+                {dir:['e','east'],id:'lexi-31'},
+                {dir:['n','north'],id:'park-32'}
             ],
         },
         {
@@ -4259,22 +2106,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-31'
-                }
+                {dir:['s','south'],id: 'park-29'},
+                {dir:['w','west'],id:'madi-30'},
+                {dir:['e','east'],id:'lexi-30'},
+                {dir:['n','north'],id:'park-31'}
             ],
         },
         {
@@ -4282,22 +2117,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-30'
-                }
+                {dir:['s','south'],id: 'park-28'},
+                {dir:['w','west'],id:'madi-29'},
+                {dir:['e','east'],id:'lexi-29'},
+                {dir:['n','north'],id:'park-30'}
             ],
         },
         {
@@ -4305,22 +2128,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-29'
-                }
+                {dir:['s','south'],id: 'park-27'},
+                {dir:['w','west'],id:'madi-28'},
+                {dir:['e','east'],id:'lexi-28'},
+                {dir:['n','north'],id:'park-29'}
             ],
         },
         {
@@ -4328,22 +2139,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-26'
-                }
+                {dir:['s','south'],id: 'park-26'},
+                {dir:['w','west'],id:'madi-25'},
+                {dir:['e','east'],id:'lexi-25'},
+                {dir:['n','north'],id:'park-26'}
             ],
         },
         {
@@ -4351,22 +2150,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-27'
-                }
+                {dir:['s','south'],id: 'park-25'},
+                {dir:['w','west'],id:'madi-24'},
+                {dir:['e','east'],id:'lexi-24'},
+                {dir:['n','north'],id:'park-27'}
             ],
         },
         {
@@ -4374,22 +2161,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-26'
-                }
+                {dir:['s','south'],id: 'park-24'},
+                {dir:['w','west'],id:'madi-25'},
+                {dir:['e','east'],id:'lexi-25'},
+                {dir:['n','north'],id:'park-26'}
             ],
         },
         {
@@ -4397,22 +2172,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-25'
-                }
+                {dir:['s','south'],id: 'park-23'},
+                {dir:['w','west'],id:'madi-24'},
+                {dir:['e','east'],id:'lexi-24'},
+                {dir:['n','north'],id:'park-25'}
             ],
         },
         {
@@ -4420,22 +2183,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'madi-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-24'
-                }
+                {dir:['s','south'],id: 'park-22'},
+                {dir:['w','west'],id:'madi-23'},
+                {dir:['e','east'],id:'lexi-23'},
+                {dir:['n','north'],id:'park-24'}
             ],
         },
         {
@@ -4443,22 +2194,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-23'
-                }
+                {dir:['s','south'],id: 'park-21'},
+                {dir:['w','west'],id:'broa-22'},
+                {dir:['e','east'],id:'lexi-22'},
+                {dir:['n','north'],id:'park-23'}
             ],
         },
         {
@@ -4466,22 +2205,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'gram-w-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-22'
-                }
+                {dir:['s','south'],id: 'park-20'},
+                {dir:['w','west'],id:'broa-21'},
+                {dir:['e','east'],id:'gram-w-21'},
+                {dir:['n','north'],id:'park-22'}
             ],
         },
         {
@@ -4489,22 +2216,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'gram-w-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-21'
-                }
+                {dir:['s','south'],id: 'park-19'},
+                {dir:['w','west'],id:'broa-20'},
+                {dir:['e','east'],id:'gram-w-20'},
+                {dir:['n','north'],id:'park-21'}
             ],
         },
         {
@@ -4512,22 +2227,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'park-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-20'
-                }
+                {dir:['s','south'],id: 'park-18'},
+                {dir:['w','west'],id:'broa-19'},
+                {dir:['e','east'],id:'irvi-19'},
+                {dir:['n','north'],id:'park-20'}
             ],
         },
         {
@@ -4535,22 +2238,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'unio-17-2'
-                },
-                {
-                    dir:['w','west'],
-                    id:'broa-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'park-19'
-                }
+                {dir:['s','south'],id: 'unio-17-2'},
+                {dir:['w','west'],id:'broa-18'},
+                {dir:['e','east'],id:'irvi-34'},
+                {dir:['n','north'],id:'park-19'}
             ],
         },
         //Lexington Ave
@@ -4559,22 +2250,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-34'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-35'
-                }
+                {dir:['s','south'],id: 'lexi-33'},
+                {dir:['w','west'],id:'park-34'},
+                {dir:['e','east'],id:'3-34'},
+                {dir:['n','north'],id:'lexi-35'}
             ],
         },
         {
@@ -4582,22 +2261,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-34'
-                }
+                {dir:['s','south'],id: 'lexi-32'},
+                {dir:['w','west'],id:'park-33'},
+                {dir:['e','east'],id:'3-33'},
+                {dir:['n','north'],id:'lexi-34'}
             ],
         },
         {
@@ -4605,22 +2272,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-32'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-33'
-                }
+                {dir:['s','south'],id: 'lexi-31'},
+                {dir:['w','west'],id:'park-32'},
+                {dir:['e','east'],id:'3-32'},
+                {dir:['n','north'],id:'lexi-33'}
             ],
         },
         {
@@ -4628,22 +2283,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-32'
-                }
+                {dir:['s','south'],id: 'lexi-30'},
+                {dir:['w','west'],id:'park-31'},
+                {dir:['e','east'],id:'3-31'},
+                {dir:['n','north'],id:'lexi-32'}
             ],
         },
         {
@@ -4651,22 +2294,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-31'
-                }
+                {dir:['s','south'],id: 'lexi-29'},
+                {dir:['w','west'],id:'park-30'},
+                {dir:['e','east'],id:'3-30'},
+                {dir:['n','north'],id:'lexi-31'}
             ],
         },
         {
@@ -4674,22 +2305,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-30'
-                }
+                {dir:['s','south'],id: 'lexi-28'},
+                {dir:['w','west'],id:'park-29'},
+                {dir:['e','east'],id:'3-29'},
+                {dir:['n','north'],id:'lexi-30'}
             ],
         },
         {
@@ -4697,22 +2316,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-29'
-                }
+                {dir:['s','south'],id: 'lexi-27'},
+                {dir:['w','west'],id:'park-28'},
+                {dir:['e','east'],id:'3-28'},
+                {dir:['n','north'],id:'lexi-29'}
             ],
         },
         {
@@ -4720,22 +2327,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-28'
-                }
+                {dir:['s','south'],id: 'lexi-26'},
+                {dir:['w','west'],id:'park-27'},
+                {dir:['e','east'],id:'3-27'},
+                {dir:['n','north'],id:'lexi-28'}
             ],
         },
         {
@@ -4743,22 +2338,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-27'
-                }
+                {dir:['s','south'],id: 'lexi-25'},
+                {dir:['w','west'],id:'park-26'},
+                {dir:['e','east'],id:'3-26'},
+                {dir:['n','north'],id:'lexi-27'}
             ],
         },
         {
@@ -4766,22 +2349,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-26'
-                }
+                {dir:['s','south'],id: 'lexi-24'},
+                {dir:['w','west'],id:'park-25'},
+                {dir:['e','east'],id:'3-25'},
+                {dir:['n','north'],id:'lexi-26'}
             ],
         },
         {
@@ -4789,22 +2360,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-25'
-                }
+                {dir:['s','south'],id: 'lexi-23'},
+                {dir:['w','west'],id:'park-24'},
+                {dir:['e','east'],id:'3-24'},
+                {dir:['n','north'],id:'lexi-25'}
             ],
         },
         {
@@ -4812,22 +2371,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-24'
-                }
+                {dir:['s','south'],id: 'lexi-22'},
+                {dir:['w','west'],id:'park-23'},
+                {dir:['e','east'],id:'3-23'},
+                {dir:['n','north'],id:'lexi-24'}
             ],
         },
         {
@@ -4835,22 +2382,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'lexi-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-23'
-                }
+                {dir:['s','south'],id: 'lexi-21'},
+                {dir:['w','west'],id:'park-22'},
+                {dir:['e','east'],id:'3-22'},
+                {dir:['n','north'],id:'lexi-23'}
             ],
         },
         {
@@ -4858,18 +2393,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['w','west'],
-                    id:'gram-w-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'gram-e-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'lexi-22'
-                }
+                {dir:['w','west'],id:'gram-w-21'},
+                {dir:['e','east'],id:'gram-e-21'},
+                {dir:['n','north'],id:'lexi-22'}
             ],
         },
         //Gramercy Park East and West
@@ -4878,18 +2404,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'gram-w-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-21'
-                },
+                {dir:['s','south'],id: 'gram-w-20'},
+                {dir:['w','west'],id:'park-21'},
+                {dir:['e','east'],id:'lexi-21'},
             ],
         },
         {
@@ -4897,18 +2414,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['w','west'],
-                    id:'park-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'gram-w-21'
-                }
+                {dir:['w','west'],id:'park-20'},
+                {dir:['e','east'],id:'irvi-20'},
+                {dir:['n','north'],id:'gram-w-21'}
             ],
         },
         {
@@ -4916,18 +2424,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'gram-e-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'lexi-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-21'
-                },
+                {dir:['s','south'],id: 'gram-e-20'},
+                {dir:['w','west'],id:'lexi-21'},
+                {dir:['e','east'],id:'3-21'},
             ],
         },
         {
@@ -4935,18 +2434,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['w','west'],
-                    id:'irvi-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'gram-e-31'
-                }
+                {dir:['w','west'],id:'irvi-20'},
+                {dir:['e','east'],id:'3-20'},
+                {dir:['n','north'],id:'gram-e-31'}
             ],
         },
         //Irving Plaza
@@ -4955,18 +2445,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'gram-w-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'gram-e-20'
-                },
+                {dir:['s','south'],id: 'irvi-19'},
+                {dir:['w','west'],id:'gram-w-20'},
+                {dir:['e','east'],id:'gram-e-20'},
             ],
         },
         {
@@ -4974,22 +2455,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-20'
-                }
+                {dir:['s','south'],id: 'irvi-18'},
+                {dir:['w','west'],id:'park-19'},
+                {dir:['e','east'],id:'3-19'},
+                {dir:['n','north'],id:'irvi-20'}
             ],
         },
         {
@@ -4997,22 +2466,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'park-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-19'
-                }
+                {dir:['s','south'],id: 'irvi-17'},
+                {dir:['w','west'],id:'park-18'},
+                {dir:['e','east'],id:'3-18'},
+                {dir:['n','north'],id:'irvi-19'}
             ],
         },
         {
@@ -5020,22 +2477,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-17-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-18'
-                }
+                {dir:['s','south'],id: 'irvi-16'},
+                {dir:['w','west'],id:'unio-17-2'},
+                {dir:['e','east'],id:'3-17'},
+                {dir:['n','north'],id:'irvi-18'}
             ],
         },
         {
@@ -5043,22 +2488,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-16-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-17'
-                }
+                {dir:['s','south'],id: 'irvi-15'},
+                {dir:['w','west'],id:'unio-16-2'},
+                {dir:['e','east'],id:'3-16'},
+                {dir:['n','north'],id:'irvi-17'}
             ],
         },
         {
@@ -5066,22 +2499,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'irvi-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'unio-15-2'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-16'
-                }
+                {dir:['s','south'],id: 'irvi-14'},
+                {dir:['w','west'],id:'unio-15-2'},
+                {dir:['e','east'],id:'3-15'},
+                {dir:['n','north'],id:'irvi-16'}
             ],
         },
         {
@@ -5089,18 +2510,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['w','west'],
-                    id:'unio-14-1'
-                },
-                {
-                    dir:['e','east'],
-                    id:'3-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'irvi-15'
-                }
+                {dir:['w','west'],id:'unio-14-1'},
+                {dir:['e','east'],id:'3-14'},
+                {dir:['n','north'],id:'irvi-15'}
             ],
         },
         //3rd Ave
@@ -5109,22 +2521,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-34'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-35'
-                }
+                {dir:['s','south'],id: '3-33'},
+                {dir:['w','west'],id:'2-34'},
+                {dir:['e','east'],id:'lexi-34'},
+                {dir:['n','north'],id:'3-35'}
             ],
         },
         {
@@ -5132,22 +2532,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-34'
-                }
+                {dir:['s','south'],id: '3-32'},
+                {dir:['w','west'],id:'2-33'},
+                {dir:['e','east'],id:'lexi-33'},
+                {dir:['n','north'],id:'3-34'}
             ],
         },
         {
@@ -5155,22 +2543,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-33'
-                }
+                {dir:['s','south'],id: '3-31'},
+                {dir:['w','west'],id:'2-33'},
+                {dir:['e','east'],id:'lexi-33'},
+                {dir:['n','north'],id:'3-33'}
             ],
         },
         {
@@ -5178,22 +2554,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-31'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-32'
-                }
+                {dir:['s','south'],id: '3-30'},
+                {dir:['w','west'],id:'2-31'},
+                {dir:['e','east'],id:'lexi-31'},
+                {dir:['n','north'],id:'3-32'}
             ],
         },
         {
@@ -5201,22 +2565,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-30'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-31'
-                }
+                {dir:['s','south'],id: '3-29'},
+                {dir:['w','west'],id:'2-30'},
+                {dir:['e','east'],id:'lexi-30'},
+                {dir:['n','north'],id:'3-31'}
             ],
         },
         {
@@ -5224,22 +2576,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-29'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-30'
-                }
+                {dir:['s','south'],id: '3-28'},
+                {dir:['w','west'],id:'2-29'},
+                {dir:['e','east'],id:'lexi-29'},
+                {dir:['n','north'],id:'3-30'}
             ],
         },
         {
@@ -5247,22 +2587,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-28'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-29'
-                }
+                {dir:['s','south'],id: '3-27'},
+                {dir:['w','west'],id:'2-28'},
+                {dir:['e','east'],id:'lexi-28'},
+                {dir:['n','north'],id:'3-29'}
             ],
         },
         {
@@ -5270,22 +2598,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-27'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-28'
-                }
+                {dir:['s','south'],id: '3-26'},
+                {dir:['w','west'],id:'2-27'},
+                {dir:['e','east'],id:'lexi-27'},
+                {dir:['n','north'],id:'3-28'}
             ],
         },
         {
@@ -5293,22 +2609,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-27'
-                }
+                {dir:['s','south'],id: '3-25'},
+                {dir:['w','west'],id:'2-26'},
+                {dir:['e','east'],id:'lexi-26'},
+                {dir:['n','north'],id:'3-27'}
             ],
         },
         {
@@ -5316,22 +2620,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-24'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-26'
-                }
+                {dir:['s','south'],id: '3-24'},
+                {dir:['w','west'],id:'2-25'},
+                {dir:['e','east'],id:'lexi-25'},
+                {dir:['n','north'],id:'3-26'}
             ],
         },
         {
@@ -5339,22 +2631,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-24'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-25'
-                }
+                {dir:['s','south'],id: '3-23'},
+                {dir:['w','west'],id:'2-24'},
+                {dir:['e','east'],id:'lexi-24'},
+                {dir:['n','north'],id:'3-25'}
             ],
         },
         {
@@ -5362,22 +2642,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-24'
-                }
+                {dir:['s','south'],id: '3-22'},
+                {dir:['w','west'],id:'2-23'},
+                {dir:['e','east'],id:'lexi-23'},
+                {dir:['n','north'],id:'3-24'}
             ],
         },
         {
@@ -5385,21 +2653,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'lexi-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-23'
+                {dir:['s','south'],id: '3-21'},
+                {dir:['w','west'],id:'2-22'},
+                {dir:['e','east'],id:'lexi-22'},
+                {dir:['n','north'],id:'3-23'
                 }
             ],
         },
@@ -5408,22 +2665,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'grm-e-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-22'
-                }
+                {dir:['s','south'],id: '3-20'},
+                {dir:['w','west'],id:'2-20'},
+                {dir:['e','east'],id:'grm-e-21'},
+                {dir:['n','north'],id:'3-22'}
             ],
         },
         {
@@ -5431,21 +2676,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'gram-e-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-21'
+                {dir:['s','south'],id: '3-19'},
+                {dir:['w','west'],id:'2-20'},
+                {dir:['e','east'],id:'gram-e-20'},
+                {dir:['n','north'],id:'3-21'
                 }
             ],
         },
@@ -5454,21 +2688,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-20'
+                {dir:['s','south'],id: '3-18'},
+                {dir:['w','west'],id:'2-19'},
+                {dir:['e','east'],id:'irvi-19'},
+                {dir:['n','north'],id:'3-20'
                 }
             ],
         },
@@ -5477,22 +2700,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-19'
-                }
+                {dir:['s','south'],id: '3-17'},
+                {dir:['w','west'],id:'2-18'},
+                {dir:['e','east'],id:'irvi-18'},
+                {dir:['n','north'],id:'3-19'}
             ],
         },
         {
@@ -5500,22 +2711,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-16'
-                },
-                {
-                    dir:['w','west'],
-                    id:'ruth-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-18'
-                }
+                {dir:['s','south'],id: '3-16'},
+                {dir:['w','west'],id:'ruth-17'},
+                {dir:['e','east'],id:'irvi-17'},
+                {dir:['n','north'],id:'3-18'}
             ],
         },
         {
@@ -5523,22 +2722,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'ruth-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-17'
-                }
+                {dir:['s','south'],id: '3-15'},
+                {dir:['w','west'],id:'ruth-16'},
+                {dir:['e','east'],id:'irvi-16'},
+                {dir:['n','north'],id:'3-17'}
             ],
         },
         {
@@ -5546,22 +2733,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'ruth-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-16'
-                }
+                {dir:['s','south'],id: '3-14'},
+                {dir:['w','west'],id:'ruth-15'},
+                {dir:['e','east'],id:'irvi-15'},
+                {dir:['n','north'],id:'3-16'}
             ],
         },
         {
@@ -5569,22 +2744,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '3-13'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'irvi-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'3-15'
-                }
+                {dir:['s','south'],id: '3-13'},
+                {dir:['w','west'],id:'2-14'},
+                {dir:['e','east'],id:'irvi-14'},
+                {dir:['n','north'],id:'3-15'}
             ],
         },
         //2nd Ave
@@ -5593,22 +2756,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-33'
-                },
-                {
-                    dir:['e','west'],
-                    id:'1-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-35'
-                }
+                {dir:['s','south'],id: '2-33'},
+                {dir:['e','west'],id:'1-34'},
+                {dir:['w','west'],id:'1-34'},
+                {dir:['n','north'],id:'2-35'}
             ],
         },
         {
@@ -5616,22 +2767,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-32'
-                },
-                {
-                    dir:['e','west'],
-                    id:'1-33'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-34'
-                }
+                {dir:['s','south'],id: '2-32'},
+                {dir:['e','west'],id:'1-33'},
+                {dir:['w','west'],id:'1-33'},
+                {dir:['n','north'],id:'2-34'}
             ],
         },
         {
@@ -5639,18 +2778,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-31'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-32'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-33'
-                }
+                {dir:['s','south'],id: '2-31'},
+                {dir:['w','west'],id:'1-32'},
+                {dir:['n','north'],id:'2-33'}
             ],
         },
         {
@@ -5658,18 +2788,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-30'
-                },
-                {
-                    dir:['e','west'],
-                    id:'1-31'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-32'
-                }
+                {dir:['s','south'],id: '2-30'},
+                {dir:['e','west'],id:'1-31'},
+                {dir:['n','north'],id:'2-32'}
             ],
         },
         {
@@ -5677,22 +2798,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-29'
-                },
-                {
-                    dir:['e','west'],
-                    id:'1-30'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-31'
-                }
+                {dir:['s','south'],id: '2-29'},
+                {dir:['e','west'],id:'1-30'},
+                {dir:['w','west'],id:'1-30'},
+                {dir:['n','north'],id:'2-31'}
             ],
         },
         {
@@ -5700,22 +2809,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-28'
-                },
-                {
-                    dir:['e','west'],
-                    id:'1-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-30'
-                }
+                {dir:['s','south'],id: '2-28'},
+                {dir:['e','west'],id:'1-29'},
+                {dir:['w','west'],id:'1-29'},
+                {dir:['n','north'],id:'2-30'}
             ],
         },
         {
@@ -5723,22 +2820,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-27'
-                },
-                {
-                    dir:['e','west'],
-                    id:'car-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-29'
-                }
+                {dir:['s','south'],id: '2-27'},
+                {dir:['e','west'],id:'car-28'},
+                {dir:['w','west'],id:'3-28'},
+                {dir:['n','north'],id:'2-29'}
             ],
         },
         {
@@ -5746,22 +2831,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-26'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-28'
-                }
+                {dir:['s','south'],id: '2-26'},
+                {dir:['e','east'],id:'1-27'},
+                {dir:['w','west'],id:'3-27'},
+                {dir:['n','north'],id:'2-28'}
             ],
         },
         {
@@ -5769,22 +2842,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-25'
-                },
-                {
-                    dir:['e','east'],
-                    id:'car-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-27'
-                }
+                {dir:['s','south'],id: '2-25'},
+                {dir:['e','east'],id:'car-26'},
+                {dir:['w','west'],id:'3-26'},
+                {dir:['n','north'],id:'2-27'}
             ],
         },
         {
@@ -5792,22 +2853,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-24'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-25'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-26'
-                }
+                {dir:['s','south'],id: '2-24'},
+                {dir:['e','east'],id:'1-25'},
+                {dir:['w','west'],id:'3-25'},
+                {dir:['n','north'],id:'2-26'}
             ],
         },
         {
@@ -5815,22 +2864,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-23'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-25'
-                }
+                {dir:['s','south'],id: '2-23'},
+                {dir:['e','east'],id:'1-22'},
+                {dir:['w','west'],id:'3-22'},
+                {dir:['n','north'],id:'2-25'}
             ],
         },
         {
@@ -5838,22 +2875,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-22'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-23'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-23'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-24'
-                }
+                {dir:['s','south'],id: '2-22'},
+                {dir:['e','east'],id:'1-23'},
+                {dir:['w','west'],id:'3-23'},
+                {dir:['n','north'],id:'2-24'}
             ],
         },
         {
@@ -5861,22 +2886,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-21'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-22'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-22'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-23'
-                }
+                {dir:['s','south'],id: '2-21'},
+                {dir:['e','east'],id:'1-22'},
+                {dir:['w','west'],id:'3-22'},
+                {dir:['n','north'],id:'2-23'}
             ],
         },
         {
@@ -5884,22 +2897,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-20'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-21'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-21'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-22'
-                }
+                {dir:['s','south'],id: '2-20'},
+                {dir:['e','east'],id:'1-21'},
+                {dir:['w','west'],id:'3-21'},
+                {dir:['n','north'],id:'2-22'}
             ],
         },
         {
@@ -5907,22 +2908,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-19'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-20'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-20'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-21'
-                }
+                {dir:['s','south'],id: '2-19'},
+                {dir:['e','east'],id:'1-20'},
+                {dir:['w','west'],id:'3-20'},
+                {dir:['n','north'],id:'2-21'}
             ],
         },
         {
@@ -5930,22 +2919,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-18'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-19'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-19'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-20'
-                }
+                {dir:['s','south'],id: '2-18'},
+                {dir:['e','east'],id:'1-19'},
+                {dir:['w','west'],id:'3-19'},
+                {dir:['n','north'],id:'2-20'}
             ],
         },
         {
@@ -5953,22 +2930,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-17'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-18'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-18'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-19'
-                }
+                {dir:['s','south'],id: '2-17'},
+                {dir:['e','east'],id:'1-18'},
+                {dir:['w','west'],id:'3-18'},
+                {dir:['n','north'],id:'2-19'}
             ],
         },
         {
@@ -5976,22 +2941,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'nath-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'ruth-17'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-18'
-                }
+                {dir:['s','south'],id: '2-15'},
+                {dir:['e','east'],id:'nath-17'},
+                {dir:['w','west'],id:'ruth-17'},
+                {dir:['n','north'],id:'2-18'}
             ],
         },
         {
@@ -5999,22 +2952,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-14'
-                },
-                {
-                    dir:['e','east'],
-                    id:'nath-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'ruth-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-17'
-                }
+                {dir:['s','south'],id: '2-14'},
+                {dir:['e','east'],id:'nath-15'},
+                {dir:['w','west'],id:'ruth-15'},
+                {dir:['n','north'],id:'2-17'}
             ],
         },        
         {
@@ -6022,22 +2963,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '2-13'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-14'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-14'
-                },
-                {
-                    dir:['n','north'],
-                    id:'2-15'
-                }
+                {dir:['s','south'],id: '2-13'},
+                {dir:['e','east'],id:'1-14'},
+                {dir:['w','west'],id:'3-14'},
+                {dir:['n','north'],id:'2-15'}
             ],
         },
         //Rutherford Plaza
@@ -6046,18 +2975,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'ruth-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'2-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-17'
-                },
+                {dir:['s','south'],id: 'ruth-16'},
+                {dir:['e','east'],id:'2-17'},
+                {dir:['w','west'],id:'3-17'},
             ],
         },
         {
@@ -6065,18 +2985,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'ruth-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'ruth-17'
-                }
+                {dir:['s','south'],id: 'ruth-15'},
+                {dir:['w','west'],id:'3-16'},
+                {dir:['n','north'],id:'ruth-17'}
             ],
         },
         {
@@ -6084,18 +2995,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['e','east'],
-                    id:'nath-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'3-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'ruth-16'
-                }
+                {dir:['e','east'],id:'nath-17'},
+                {dir:['w','west'],id:'3-15'},
+                {dir:['n','north'],id:'ruth-16'}
             ],
         },
         //nathan d perlman Plaza
@@ -6104,18 +3006,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'nath-16'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-17'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-17'
-                },
+                {dir:['s','south'],id: 'nath-16'},
+                {dir:['e','east'],id:'1-17'},
+                {dir:['w','west'],id:'2-17'},
             ],
         },
         {
@@ -6123,18 +3016,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: 'nath-15'
-                },
-                {
-                    dir:['e','east'],
-                    id:'1-16'
-                },
-                {
-                    dir:['n','north'],
-                    id:'ruth-17'
-                }
+                {dir:['s','south'],id: 'nath-15'},
+                {dir:['e','east'],id:'1-16'},
+                {dir:['n','north'],id:'ruth-17'}
             ],
         },
         {
@@ -6142,18 +3026,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['e','east'],
-                    id:'1-15'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-15'
-                },
-                {
-                    dir:['n','north'],
-                    id:'ruth-16'
-                }
+                {dir:['e','east'],id:'1-15'},
+                {dir:['w','west'],id:'2-15'},
+                {dir:['n','north'],id:'ruth-16'}
             ],
         },
         //Mt. Carmel Plaza
@@ -6173,22 +3048,10 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-33'
-                },
-                {
-                    dir:['e','east'],
-                    id:'fdr-34'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-34'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-35'
-                }
+                {dir:['s','south'],id: '1-33'},
+                {dir:['e','east'],id:'fdr-34'},
+                {dir:['w','west'],id:'2-34'},
+                {dir:['n','north'],id:'1-35'}
             ],
         },
         {
@@ -6196,18 +3059,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-32'
-                },
-                {
-                    dir:['w','west'],
-                    id:'1-33'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-34'
-                }
+                {dir:['s','south'],id: '1-32'},
+                {dir:['w','west'],id:'1-33'},
+                {dir:['n','north'],id:'1-34'}
             ],
         },
         {
@@ -6215,18 +3069,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-29'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-30'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-33'
-                }
+                {dir:['s','south'],id: '1-29'},
+                {dir:['w','west'],id:'2-30'},
+                {dir:['n','north'],id:'1-33'}
             ],
         },
         {
@@ -6234,18 +3079,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-28'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-29'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-30'
-                }
+                {dir:['s','south'],id: '1-28'},
+                {dir:['w','west'],id:'2-29'},
+                {dir:['n','north'],id:'1-30'}
             ],
         },
         {
@@ -6253,18 +3089,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-27'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-28'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-29'
-                }
+                {dir:['s','south'],id: '1-27'},
+                {dir:['w','west'],id:'2-28'},
+                {dir:['n','north'],id:'1-29'}
             ],
         },
         {
@@ -6272,18 +3099,9 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-26'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-27'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-28'
-                }
+                {dir:['s','south'],id: '1-26'},
+                {dir:['w','west'],id:'2-27'},
+                {dir:['n','north'],id:'1-28'}
             ],
         },
         {
@@ -6291,110 +3109,191 @@ const chelsea = {
             name: '',
             desc:``,
             exits:[
-                {
-                    dir:['s','south'],
-                    id: '1-25'
-                },
-                {
-                    dir:['w','west'],
-                    id:'2-26'
-                },
-                {
-                    dir:['n','north'],
-                    id:'1-27'
-                }
+                {dir:['s','south'],id: '1-25'},
+                {dir:['w','west'],id:'2-26'},
+                {dir:['n','north'],id:'1-27'}
             ],
         },
         {
             id:'1-25',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-24'},
+                {dir:['w','west'],id:'2-25'},
+                {dir:['n','north'],id:'1-26'}
+            ],
         },
         {
             id:'1-24',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-23'},
+                {dir:['w','west'],id:'2-24'},
+                {dir:['n','north'],id:'1-25'}
+            ],
         },
         {
             id:'1-23',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-22'},
+                {dir:['w','west'],id:'2-23'},
+                {dir:['e','east'],id:'levy-23'},
+                {dir:['n','north'],id:'1-24'}
+            ],
         },
         {
             id:'1-22',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-21'},
+                {dir:['w','west'],id:'2-22'},
+                {dir:['e','east'],id:'pete-22'},
+                {dir:['n','north'],id:'1-23'}
+            ],
         },
         {
             id:'1-21',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-20'},
+                {dir:['w','west'],id:'2-21'},
+                {dir:['n','north'],id:'1-22'}
+            ],
         },
         {
             id:'1-20',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-19'},
+                {dir:['w','west'],id:'2-20'},
+                {dir:['n','north'],id:'1-21'}
+            ],
         },
         {
             id:'1-19',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-18'},
+                {dir:['w','west'],id:'2-19'},
+                {dir:['n','north'],id:'1-20'}
+            ],
         },
         {
             id:'1-18',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-17'},
+                {dir:['w','west'],id:'2-18'},
+                {dir:['n','north'],id:'1-19'}
+            ],
         },
         {
             id:'1-17',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-16'},
+                {dir:['w','west'],id:'nath-17'},
+                {dir:['n','north'],id:'1-18'}
+            ],
         },
         {
             id:'1-16',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-15'},
+                {dir:['w','west'],id:'nath-16'},
+                {dir:['n','north'],id:'1-17'}
+            ],
         },
         {
             id:'1-15',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-14'},
+                {dir:['w','west'],id:'nath-15'},
+                {dir:['n','north'],id:'1-15'}
+            ],
         },
         {
             id:'1-14',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: '1-13'},
+                {dir:['w','west'],id:'2-14'},
+                {dir:['n','north'],id:'1-15'}
+            ],
         },
         //Misc streets East side of map
         {
             id:'fdr-34',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: 'fdr-25'},
+                {dir:['w','west'],id:'1-34'}
+            ],
         },
         {
             id:'fdr-23',
             name: '',
             desc:``,
+            exits:[
+                {dir:['s','south'],id: 'fdr-pete'},
+                {dir:['w','west'],id:'levy-23'},
+                {dir:['n','north'],id:'fdr-25'}
+            ],
+        },
+        {
+            id:'fdr-25',
+            name:'',
+            desc:``,
+            exits:[
+                    {dir:['s','south'],id: 'fdr-23'},
+                    {dir:['w','west'],id:'levy-25'},
+                    {dir:['n','north'],id:'fdr-34'}
+            ],
         },
         {
             id:'fdr-pete',
             name: '',
             desc:``,
-        },
+            exits:[
+                {dir:['w','west'],id:'1-22'},
+                {dir:['n','north'],id:'fdr-23'}
+            ],
+        },,
         {
-            id:'pete-22',
+            id:'levy-23',
             name: '',
             desc:``,
+            exits:[
+                {dir:['n','north'],id: 'levy-25'},
+                {dir:['w','west'],id:'1-23'},
+                {dir:['e','east'],id:'fdr-23'}
+            ],
         },
         {
-            id:'pete-asse',
+            id:'levy-25',
             name: '',
             desc:``,
-        },
-        {
-            id:'asse-23',
-            name: '',
-            desc:``,
+            exits:[
+                {dir:['s','south'],id: 'levy-23'},
+                {dir:['w','west'],id:'1-25'},
+                {dir:['e','east'],id:'fdr-25'}
+            ],
         },
     ],
 
