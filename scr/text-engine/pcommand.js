@@ -769,6 +769,24 @@ let remove = (clothes) => {
 //   talkToOrAboutX('about', y);
 // };
 
+//testing function for notation
+function truFal() {
+  const room = getRoom(disk.roomId);
+
+  if (room.isStreets) {
+    console.log('this room is on the streets')
+  } else {
+    console.log('this room is not on the streets')
+  }
+
+  if (room.hasSubway) {
+    console.log('this street has a subway entrance')
+  } else {
+    console.log('this street does not have a subway entrance')
+  }
+}
+
+
 
 function createPhone() { //create function
   const rooms = hcDvDisk.rooms; //set variable to loaded disk

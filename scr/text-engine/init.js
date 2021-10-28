@@ -20,7 +20,6 @@ let input = document.querySelector('#input');
 // add any default values to the disk
 // disk -> disk
 let init = (disk, mC) => {
-  const initializedPlay = Object.assign({}, mC);
   const initializedDisk = Object.assign({}, disk);
   initializedDisk.rooms = disk.rooms.map((room) => {
     // number of times a room has been visited
