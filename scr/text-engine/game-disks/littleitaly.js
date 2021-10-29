@@ -308,7 +308,7 @@ const littleItaly = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'howa-lafa'},
-                {dir: 'south', id: ''},
+                {dir: 'south', id: 'walk-lafa'},
                 {dir: 'east', id: 'cana-cent'},
                 {dir: 'west', id: 'cana-cort'},
             ]
@@ -569,7 +569,7 @@ const littleItaly = {
             exits: [
                 {dir: 'north', id: 'hest-mulb'},
                 {dir: 'south', id: ''},
-                {dir: 'east', id: 'cana-mot'},
+                {dir: 'east', id: 'cana-mott'},
                 {dir: 'west', id: 'cana-baxt'},
             ]
         },
