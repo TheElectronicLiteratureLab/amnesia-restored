@@ -1,12 +1,12 @@
 const chelsea = {
 
-    roomId: 'chel-1',//unique room identifier
+    roomId: '12-34',//unique room identifier
     rooms: [
             
         //12th Ave
         {
             id:'12-34',
-            name: 'Chelsea',
+            name: '12th Avenue and 34th Street',
             desc:``,
             
             exits:[
@@ -18,7 +18,7 @@ const chelsea = {
         },
         {
             id:'12-33',
-            name: 'Chelsea',
+            name: '12th Avenue and 33rd Street',
             desc:``,
 
             exits:[
@@ -28,17 +28,17 @@ const chelsea = {
         },
         {
             id:'12-30',
-            name: 'Chelsea',
+            name: '12th Avenue and 32nd Street',
             desc:``,
 
             exits:[
-                { dir:['s','south'],id: '12-29'},
+                {dir:['s','south'],id: '12-29'},
                 {dir:['e','east'], id:'11-30'}
             ],
         },
         {
             id:'12-29',
-            name: 'Chelsea',
+            name: '12th Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '12-28'},
@@ -47,7 +47,7 @@ const chelsea = {
         },
         {
             id:'12-28',
-            name: 'Chelsea',
+            name: '12th Avenue and 30th Street',
             desc:``,
 
             exits:[
@@ -57,7 +57,7 @@ const chelsea = {
         },            
         {
             id:'12-27',
-            name: 'Chelsea',
+            name: '12th Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '12-26'},
@@ -66,7 +66,7 @@ const chelsea = {
         },
         {
             id:'12-26',
-            name: 'Chelsea',
+            name: '12th Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '12-25'},
@@ -75,7 +75,7 @@ const chelsea = {
         },
         {
             id:'12-25',
-            name: 'Chelsea',
+            name: '12th Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '12-24'},
@@ -84,7 +84,7 @@ const chelsea = {
         },
         {
             id:'12-24',
-            name: 'Chelsea',
+            name: '12th Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-23'},
@@ -94,7 +94,7 @@ const chelsea = {
         //11th Ave.
         {
             id:'11-34',
-            name: 'Chelsea',
+            name: '11th Aveneue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-33'},
@@ -106,7 +106,7 @@ const chelsea = {
         },
         {
             id:'11-33',
-            name: 'Chelsea',
+            name: '11th Aveneue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-33'},
@@ -118,7 +118,7 @@ const chelsea = {
         },
         {
             id:'11-30',
-            name: 'Chelsea',
+            name: '11th Aveneue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-29'},
@@ -129,7 +129,7 @@ const chelsea = {
         },
         {
             id:'11-29',
-            name: 'Chelsea',
+            name: '11th Aveneue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-28'},
@@ -140,7 +140,7 @@ const chelsea = {
         },
         {
             id:'11-28',
-            name: 'Chelsea',
+            name: '11th Aveneue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-27'},
@@ -151,7 +151,7 @@ const chelsea = {
         },
         {
             id:'11-27',
-            name: 'Chelsea',
+            name: '11th Aveneue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-26'},
@@ -162,7 +162,7 @@ const chelsea = {
         },
         {
             id:'11-26',
-            name: 'Chelsea',
+            name: '11th Aveneue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-25'},
@@ -173,7 +173,7 @@ const chelsea = {
         },
         {
             id:'11-25',
-            name: 'Chelsea',
+            name: '11th Aveneue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-24'},
@@ -184,7 +184,7 @@ const chelsea = {
         },
         {
             id:'11-24',
-            name: 'Chelsea',
+            name: '11th Aveneue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-23'},
@@ -195,7 +195,7 @@ const chelsea = {
         },        
         {
             id:'11-23',
-            name: 'Chelsea',
+            name: '11th Aveneue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-22'
@@ -206,7 +206,7 @@ const chelsea = {
         },        
         {
             id:'11-22',
-            name: 'Chelsea',
+            name: '11th Aveneue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-21'},
@@ -216,7 +216,7 @@ const chelsea = {
         },        
         {
             id:'11-21',
-            name: 'Chelsea',
+            name: '11th Aveneue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-20'},
@@ -226,7 +226,7 @@ const chelsea = {
         },        
         {
             id:'11-20',
-            name: 'Chelsea',
+            name: '11th Aveneue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-19'},
@@ -236,7 +236,7 @@ const chelsea = {
         },        
         {
             id:'11-19',
-            name: 'Chelsea',
+            name: '11th Aveneue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-18'},
@@ -246,7 +246,7 @@ const chelsea = {
         },        
         {
             id:'11-18',
-            name: 'Chelsea',
+            name: '11th Aveneue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-17'},
@@ -256,7 +256,7 @@ const chelsea = {
         },        
         {
             id:'11-17',
-            name: 'Chelsea',
+            name: '11th Aveneue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-16' },
@@ -267,7 +267,7 @@ const chelsea = {
         },        
         {
             id:'11-16',
-            name: 'Chelsea',
+            name: '11th Aveneue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-15'},
@@ -277,7 +277,7 @@ const chelsea = {
         },        
         {
             id:'11-15',
-            name: 'Chelsea',
+            name: '11th Aveneue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '11-14'},
@@ -287,7 +287,7 @@ const chelsea = {
         },        
         {
             id:'11-14',
-            name: 'Chelsea',
+            name: '11th Aveneue and 14th Street',
             desc:``,         
             exits:[
                 {dir:['s','south'],id: '11-13'},
@@ -298,7 +298,7 @@ const chelsea = {
         //10th Ave
         {
             id:'10-34',
-            name: 'Chelsea',
+            name: '10th Aveneue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-33'},
@@ -309,7 +309,7 @@ const chelsea = {
         },
         {
             id:'10-33',
-            name: '',
+            name: '10th Aveneue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-31'},
@@ -320,7 +320,7 @@ const chelsea = {
         },
         {
             id:'10-31',
-            name: '',
+            name: '10th Aveneue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-30'},
@@ -331,7 +331,7 @@ const chelsea = {
         },
         {
             id:'10-30',
-            name: '',
+            name: '10th Aveneue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-29'},
@@ -342,7 +342,7 @@ const chelsea = {
         },
         {
             id:'10-29',
-            name: '',
+            name: '10th Aveneue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-28'},
@@ -353,7 +353,7 @@ const chelsea = {
         },
         {
             id:'10-28',
-            name: '',
+            name: '10th Aveneue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-27'},
@@ -364,7 +364,7 @@ const chelsea = {
         },
         {
             id:'10-27',
-            name: '',
+            name: '10th Aveneue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-26'},
@@ -375,7 +375,7 @@ const chelsea = {
         },
         {
             id:'10-26',
-            name: '',
+            name: '10th Aveneue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-25'},
@@ -386,7 +386,7 @@ const chelsea = {
         },
         {
             id:'10-25',
-            name: '',
+            name: '10th Aveneue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-24'},
@@ -397,7 +397,7 @@ const chelsea = {
         },
         {
             id:'10-24',
-            name: '',
+            name: '10th Aveneue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-23'},
@@ -408,7 +408,7 @@ const chelsea = {
         },
         {
             id:'10-23',
-            name: '',
+            name: '10th Aveneue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-22'},
@@ -419,7 +419,7 @@ const chelsea = {
         },
         {
             id:'10-22',
-            name: '',
+            name: '10th Aveneue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-21'},
@@ -430,7 +430,7 @@ const chelsea = {
         },
         {
             id:'10-21',
-            name: '',
+            name: '10th Aveneue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-20'},
@@ -442,7 +442,7 @@ const chelsea = {
         },
         {
             id:'10-20',
-            name: '',
+            name: '10th Aveneue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-19'},
@@ -453,7 +453,7 @@ const chelsea = {
         },
         {
             id:'10-19',
-            name: '',
+            name: '10th Aveneue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-18'},
@@ -463,8 +463,19 @@ const chelsea = {
             ],
         },
         {
+            id:'10-18',
+            name: '10th Aveneue and 18th Street',
+            desc:``,
+            exits:[
+                {dir:['s','south'],id: '10-17'},
+                {dir:['e','east'],id:'9-18'},
+                {dir:['w','west'],id:'11-18'},
+                {dir:['n','north'],id:'10-19'}
+            ],
+        },
+        {
             id:'10-17',
-            name: '',
+            name: '10th Aveneue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-16'},
@@ -475,7 +486,7 @@ const chelsea = {
         },
         {
             id:'10-16',
-            name: '',
+            name: '10th Aveneue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-15'},
@@ -486,7 +497,7 @@ const chelsea = {
         },
         {
             id:'10-15',
-            name: '',
+            name: '10th Aveneue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '10-14'},
@@ -497,7 +508,7 @@ const chelsea = {
         },
         {
             id:'10-14',
-            name: 'Chelsea',
+            name: '10th Aveneue and 14th Street',
             desc:``,
             exits:[
                 //leaves neighborhood
@@ -510,12 +521,12 @@ const chelsea = {
         //9th Ave
         {
             id:'27-26',
-            name: '',
+            name: '27th Street and 26th Street',
             desc:``,
         },
         {
             id:'9-34',
-            name: 'Chelsea',
+            name: '9th Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-33'},
@@ -527,7 +538,7 @@ const chelsea = {
         },
         {
             id:'9-33',
-            name: '',
+            name: '9th Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-31'},
@@ -539,7 +550,7 @@ const chelsea = {
 
         {
             id:'9-31',
-            name: '',
+            name: '9th Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-30'},
@@ -551,7 +562,7 @@ const chelsea = {
 
         {
             id:'9-30',
-            name: '',
+            name: '9th Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-29'},
@@ -562,7 +573,7 @@ const chelsea = {
         },
         {
             id:'9-29',
-            name: '',
+            name: '9th Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-28'},
@@ -574,7 +585,7 @@ const chelsea = {
 
         {
             id:'9-28',
-            name: '',
+            name: '9th Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-27'},
@@ -585,7 +596,7 @@ const chelsea = {
         },
         {
             id:'9-26',
-            name: '',
+            name: '9th Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-25'},
@@ -597,7 +608,7 @@ const chelsea = {
 
         {
             id:'9-25',
-            name: '',
+            name: '9th Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-24'},
@@ -609,7 +620,7 @@ const chelsea = {
 
         {
             id:'9-24',
-            name: '',
+            name: '9th Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-23'},
@@ -621,7 +632,7 @@ const chelsea = {
 
         {
             id:'9-23',
-            name: '',
+            name: '9th Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-22'},
@@ -633,7 +644,7 @@ const chelsea = {
 
         {
             id:'9-22',
-            name: '',
+            name: '9th Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-21'},
@@ -645,7 +656,7 @@ const chelsea = {
 
         {
             id:'9-21',
-            name: '',
+            name: '9th Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-20'},
@@ -657,7 +668,7 @@ const chelsea = {
         },
         {
             id:'9-20',
-            name: '',
+            name: '9th Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-19'},
@@ -669,7 +680,7 @@ const chelsea = {
 
         {
             id:'9-19',
-            name: '',
+            name: '9th Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-18'},
@@ -681,7 +692,7 @@ const chelsea = {
 
         {
             id:'9-18',
-            name: '',
+            name: '9th Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-17'},
@@ -692,7 +703,7 @@ const chelsea = {
         },
         {
             id:'9-17',
-            name: '',
+            name: '9th Avenue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-16'},
@@ -703,7 +714,7 @@ const chelsea = {
         },
         {
             id:'9-16',
-            name: '',
+            name: '9th Avenue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-15'},
@@ -715,7 +726,7 @@ const chelsea = {
         },
         {
             id:'9-15',
-            name: '',
+            name: '9th Avenue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '9-14'},
@@ -726,7 +737,7 @@ const chelsea = {
         },
         {
             id:'9-14',
-            name: 'Chelsea',
+            name: '9th Avenue and 14th Street',
             desc:``,
             exits:[
                 //leaves nighborhood
@@ -739,7 +750,7 @@ const chelsea = {
         //8th Ave
         {
             id:'8-34',
-            name: 'Chelsea',
+            name: '8th Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-33'},
@@ -751,7 +762,7 @@ const chelsea = {
         },
         {
             id:'8-33',
-            name: '',
+            name: '8th Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-32'},
@@ -762,7 +773,7 @@ const chelsea = {
         },
         {
             id:'8-31',
-            name: '',
+            name: '8th Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-30'},
@@ -773,7 +784,7 @@ const chelsea = {
         },
         {
             id:'8-30',
-            name: '',
+            name: '8th Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-29'},
@@ -784,7 +795,7 @@ const chelsea = {
         },
         {
             id:'8-29',
-            name: '',
+            name: '8th Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-28'},
@@ -795,7 +806,7 @@ const chelsea = {
         },
         {
             id:'8-28',
-            name: '',
+            name: '8th Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-27'},
@@ -806,7 +817,7 @@ const chelsea = {
         },
         {
             id:'8-27',
-            name: '',
+            name: '8th Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-26'},
@@ -817,7 +828,7 @@ const chelsea = {
         },
         {
             id:'8-26',
-            name: '',
+            name: '8th Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-25'},
@@ -828,7 +839,7 @@ const chelsea = {
         },
         {
             id:'8-25',
-            name: '',
+            name: '8th Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-24'},
@@ -839,7 +850,7 @@ const chelsea = {
         },
         {
             id:'8-24',
-            name: '',
+            name: '8th Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-23'},
@@ -850,7 +861,7 @@ const chelsea = {
         },
         {
             id:'8-23',
-            name: '',
+            name: '8th Avenue and 23th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-22'},
@@ -861,7 +872,7 @@ const chelsea = {
         },
         {
             id:'8-22',
-            name: '',
+            name: '8th Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-21'},
@@ -872,7 +883,7 @@ const chelsea = {
         },
         {
             id:'8-21',
-            name: '',
+            name: '8th Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-20'},
@@ -883,7 +894,7 @@ const chelsea = {
         },
         {
             id:'8-20',
-            name: '',
+            name: '8th Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-19'},
@@ -894,7 +905,7 @@ const chelsea = {
         },
         {
             id:'8-19',
-            name: '',
+            name: '8th Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-18'},
@@ -905,7 +916,7 @@ const chelsea = {
         },
         {
             id:'8-18',
-            name: '',
+            name: '8th Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-17'},
@@ -916,7 +927,7 @@ const chelsea = {
         },
         {
             id:'8-17',
-            name: '',
+            name: '8th Avenue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-16'},
@@ -927,7 +938,7 @@ const chelsea = {
         },
         {
             id:'8-16',
-            name: '',
+            name: '8th Avenue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-15'},
@@ -938,7 +949,7 @@ const chelsea = {
         },
         {
             id:'8-15',
-            name: '',
+            name: '8th Avenue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '8-14'},
@@ -949,7 +960,7 @@ const chelsea = {
         },
         {
             id:'8-14',
-            name: '',
+            name: '8th Avenue and 14th Street',
             desc:`Chelsea`,
             exits:[
                 //exits neighborhood
@@ -962,7 +973,7 @@ const chelsea = {
         //7th Ave
         {
             id:'7-34',
-            name: 'Chelsea',
+            name: '7th Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-33'},
@@ -974,7 +985,7 @@ const chelsea = {
         },
         {
             id:'7-33',
-            name: '',
+            name: '7th Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-32'},
@@ -985,7 +996,7 @@ const chelsea = {
         },
         {
             id:'7-32',
-            name: '',
+            name: '7th Avenue and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-31'},
@@ -996,7 +1007,7 @@ const chelsea = {
         },
         {
             id:'7-31',
-            name: '',
+            name: '7th Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-30'},
@@ -1007,7 +1018,7 @@ const chelsea = {
         },
         {
             id:'7-30',
-            name: '',
+            name: '7th Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-29'},
@@ -1018,7 +1029,7 @@ const chelsea = {
         },
         {
             id:'7-29',
-            name: '',
+            name: '7th Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-28'},
@@ -1029,7 +1040,7 @@ const chelsea = {
         },
         {
             id:'7-28',
-            name: '',
+            name: '7th Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-27'},
@@ -1040,7 +1051,7 @@ const chelsea = {
         },
         {
             id:'7-27',
-            name: '',
+            name: '7th Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-26'},
@@ -1051,7 +1062,7 @@ const chelsea = {
         },
         {
             id:'7-26',
-            name: '',
+            name: '7th Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-25'},
@@ -1062,7 +1073,7 @@ const chelsea = {
         },
         {
             id:'7-25',
-            name: '',
+            name: '7th Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-24'},
@@ -1073,7 +1084,7 @@ const chelsea = {
         },
         {
             id:'7-24',
-            name: '',
+            name: '7th Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-23'},
@@ -1084,7 +1095,7 @@ const chelsea = {
         },
         {
             id:'7-23',
-            name: '',
+            name: '7th Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-22'},
@@ -1095,7 +1106,7 @@ const chelsea = {
         },
         {
             id:'7-22',
-            name: '',
+            name: '7th Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-21'},
@@ -1106,7 +1117,7 @@ const chelsea = {
         },
         {
             id:'7-21',
-            name: '',
+            name: '7th Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-20'},
@@ -1117,7 +1128,7 @@ const chelsea = {
         },
         {
             id:'7-20',
-            name: '',
+            name: '7th Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-19'},
@@ -1128,7 +1139,7 @@ const chelsea = {
         },
         {
             id:'7-19',
-            name: '',
+            name: '7th Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-18'},
@@ -1139,7 +1150,7 @@ const chelsea = {
         },
         {
             id:'7-18',
-            name: '',
+            name: '7th Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-17'},
@@ -1150,7 +1161,7 @@ const chelsea = {
         },
         {
             id:'7-17',
-            name: '',
+            name: '7th Avenue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-16'},
@@ -1161,7 +1172,7 @@ const chelsea = {
         },
         {
             id:'7-16',
-            name: '',
+            name: '7th Avenue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-15'},
@@ -1172,7 +1183,7 @@ const chelsea = {
         },
         {
             id:'7-15',
-            name: '',
+            name: '7th Avenue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-14'},
@@ -1183,7 +1194,7 @@ const chelsea = {
         },
         {
             id:'7-14',
-            name: 'Chelsea',
+            name: '7th Avenue and 14th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '7-13'},
@@ -1195,7 +1206,7 @@ const chelsea = {
         //6th Ave/Avenue of America
         {
             id:'amer-34',
-            name: 'Chelsea',
+            name: 'Avenue of America and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-33'},
@@ -1206,7 +1217,7 @@ const chelsea = {
         },
         {
             id:'amer-33',
-            name: '',
+            name: 'Avenue of America and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-32'},
@@ -1217,7 +1228,7 @@ const chelsea = {
         },
         {
             id:'amer-32',
-            name: '',
+            name: 'Avenue of America and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-31'},
@@ -1228,7 +1239,7 @@ const chelsea = {
         },
         {
             id:'amer-31',
-            name: '',
+            name: 'Avenue of America and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-30'},
@@ -1239,7 +1250,7 @@ const chelsea = {
         },
         {
             id:'amer-30',
-            name: '',
+            name: 'Avenue of America and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-29'},
@@ -1250,7 +1261,7 @@ const chelsea = {
         },
         {
             id:'amer-29',
-            name: '',
+            name: 'Avenue of America and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-28'},
@@ -1261,7 +1272,7 @@ const chelsea = {
         },
         {
             id:'amer-28',
-            name: '',
+            name: 'Avenue of America and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-27'},
@@ -1272,7 +1283,7 @@ const chelsea = {
         },
         {
             id:'amer-27',
-            name: '',
+            name: 'Avenue of America and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-26'},
@@ -1283,7 +1294,7 @@ const chelsea = {
         },
         {
             id:'amer-26',
-            name: '',
+            name: 'Avenue of America and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-25'},
@@ -1294,7 +1305,7 @@ const chelsea = {
         },
         {
             id:'amer-25',
-            name: '',
+            name: 'Avenue of America and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-24'},
@@ -1305,7 +1316,7 @@ const chelsea = {
         },
         {
             id:'amer-24',
-            name: '',
+            name: 'Avenue of America and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-23'},
@@ -1316,7 +1327,7 @@ const chelsea = {
         },
         {
             id:'amer-23',
-            name: '',
+            name: 'Avenue of America and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-22'},
@@ -1327,7 +1338,7 @@ const chelsea = {
         },
         {
             id:'amer-22',
-            name: '',
+            name: 'Avenue of America and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-21'},
@@ -1338,7 +1349,7 @@ const chelsea = {
         },
         {
             id:'amer-21',
-            name: '',
+            name: 'Avenue of America and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-20'},
@@ -1350,7 +1361,7 @@ const chelsea = {
         },
         {
             id:'amer-20',
-            name: '',
+            name: 'Avenue of America and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-19'},
@@ -1362,7 +1373,7 @@ const chelsea = {
         },
         {
             id:'amer-19',
-            name: '',
+            name: 'Avenue of America and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-18'},
@@ -1373,7 +1384,7 @@ const chelsea = {
         },
         {
             id:'amer-18',
-            name: '',
+            name: 'Avenue of America and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-17'},
@@ -1384,7 +1395,7 @@ const chelsea = {
         },
         {
             id:'amer-17',
-            name: '',
+            name: 'Avenue of America and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-16'},
@@ -1395,7 +1406,7 @@ const chelsea = {
         },
         {
             id:'amer-16',
-            name: '',
+            name: 'Avenue of America and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-15'},
@@ -1406,7 +1417,7 @@ const chelsea = {
         },
         {
             id:'amer-15',
-            name: '',
+            name: 'Avenue of America and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'amer-14'},
@@ -1417,7 +1428,7 @@ const chelsea = {
         },
         {
             id:'amer-14',
-            name: 'Chelsea',
+            name: 'Avenue of America and 14th Street',
             desc:``,
             exits:[
                 //exits neighborhood
@@ -1430,12 +1441,12 @@ const chelsea = {
         //Broadway
         {
             id:'broa-amer',
-            name: 'Chelsea',
+            name: 'Avenue of America and Broadway',
             desc:``,
         },
         {
             id:'broa-33',
-            name: '',
+            name: 'Broadway and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-32'},
@@ -1446,7 +1457,7 @@ const chelsea = {
         },
         {
             id:'broa-32',
-            name: '',
+            name: 'Broadway and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-31'},
@@ -1457,7 +1468,7 @@ const chelsea = {
         },
         {
             id:'broa-31',
-            name: '',
+            name: 'Broadway and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-30'},
@@ -1468,7 +1479,7 @@ const chelsea = {
         },
         {
             id:'broa-30',
-            name: '',
+            name: 'Broadway and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-29'},
@@ -1479,7 +1490,7 @@ const chelsea = {
         },
         {
             id:'broa-29',
-            name: '',
+            name: 'Broadway and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-28'},
@@ -1490,7 +1501,7 @@ const chelsea = {
         },
         {
             id:'broa-28',
-            name: '',
+            name: 'Broadway and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-27'},
@@ -1502,7 +1513,7 @@ const chelsea = {
         },
         {
             id:'broa-27',
-            name: '',
+            name: 'Broadway and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-26'},
@@ -1513,7 +1524,7 @@ const chelsea = {
         },
         {
             id:'broa-26',
-            name: '',
+            name: 'Broadway and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-25'},
@@ -1524,7 +1535,7 @@ const chelsea = {
         },
         {
             id:'broa-25',
-            name: '',
+            name: 'Broadway and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-24'},
@@ -1535,7 +1546,7 @@ const chelsea = {
         },
         {
             id:'broa-5',
-            name: '',
+            name: 'Broadway and 5th Avenue',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-24'},
@@ -1546,7 +1557,7 @@ const chelsea = {
         },
         {
             id:'broa-23',
-            name: '',
+            name: 'Broadway and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-22'},
@@ -1557,7 +1568,7 @@ const chelsea = {
         },
         {
             id:'broa-22',
-            name: '',
+            name: 'Broadway and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-21'},
@@ -1568,7 +1579,7 @@ const chelsea = {
         },
         {
             id:'broa-21',
-            name: '',
+            name: 'Broadway and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-20'},
@@ -1579,7 +1590,7 @@ const chelsea = {
         },
         {
             id:'broa-20',
-            name: '',
+            name: 'Broadway and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-19'},
@@ -1590,7 +1601,7 @@ const chelsea = {
         },
         {
             id:'broa-19',
-            name: '',
+            name: 'Broadway and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-18'},
@@ -1601,7 +1612,7 @@ const chelsea = {
         },
         {
             id:'broa-18',
-            name: '',
+            name: 'Broadway and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-17-1'},
@@ -1613,7 +1624,7 @@ const chelsea = {
         //5th Ave
         {
             id:'5-34',
-            name: 'Chelsea',
+            name: '5th Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-33'},
@@ -1624,7 +1635,7 @@ const chelsea = {
         },
         {
             id:'5-33',
-            name: '',
+            name: '5th Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-32'},
@@ -1635,7 +1646,7 @@ const chelsea = {
         },
         {
             id:'5-32',
-            name: '',
+            name: '5th Avenue and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-31'},
@@ -1646,7 +1657,7 @@ const chelsea = {
         },
         {
             id:'5-31',
-            name: '',
+            name: '5th Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-30'},
@@ -1657,7 +1668,7 @@ const chelsea = {
         },
         {
             id:'5-30',
-            name: '',
+            name: '5th Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-29'},
@@ -1668,7 +1679,7 @@ const chelsea = {
         },
         {
             id:'5-29',
-            name: '',
+            name: '5th Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-28'},
@@ -1679,7 +1690,7 @@ const chelsea = {
         },
         {
             id:'5-28',
-            name: '',
+            name: '5th Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-27'},
@@ -1690,7 +1701,7 @@ const chelsea = {
         },
         {
             id:'5-27',
-            name: '',
+            name: '5th Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-26'},
@@ -1701,7 +1712,7 @@ const chelsea = {
         },
         {
             id:'5-26',
-            name: '',
+            name: '5th Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-25'},
@@ -1712,7 +1723,7 @@ const chelsea = {
         },
         {
             id:'5-25',
-            name: '',
+            name: '5th Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'broa-5'},
@@ -1722,7 +1733,7 @@ const chelsea = {
         },
         {
             id:'5-24',
-            name: '',
+            name: '5th Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-23'},
@@ -1733,7 +1744,7 @@ const chelsea = {
         },
         {
             id:'5-23',
-            name: '',
+            name: '5th Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-22'},
@@ -1744,7 +1755,7 @@ const chelsea = {
         },
         {
             id:'5-22',
-            name: '',
+            name: '5th Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-21'},
@@ -1755,7 +1766,7 @@ const chelsea = {
         },
         {
             id:'5-21',
-            name: '',
+            name: '5th Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-20'},
@@ -1766,7 +1777,7 @@ const chelsea = {
         },
         {
             id:'5-20',
-            name: '',
+            name: '5th Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-19'},
@@ -1777,7 +1788,7 @@ const chelsea = {
         },
         {
             id:'5-19',
-            name: '',
+            name: '5th Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-18'},
@@ -1788,7 +1799,7 @@ const chelsea = {
         },
         {
             id:'5-18',
-            name: '',
+            name: '5th Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-17'},
@@ -1799,7 +1810,7 @@ const chelsea = {
         },
         {
             id:'5-17',
-            name: '',
+            name: '5th Avenue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-16'},
@@ -1810,7 +1821,7 @@ const chelsea = {
         },
         {
             id:'5-16',
-            name: '',
+            name: '5th Avenue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-15'},
@@ -1821,7 +1832,7 @@ const chelsea = {
         },
         {
             id:'5-15',
-            name: '',
+            name: '5th Avenue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-14'},
@@ -1832,7 +1843,7 @@ const chelsea = {
         },
         {
             id:'5-14',
-            name: '',
+            name: '5th Avenue and 14th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '5-13'},
@@ -1844,7 +1855,7 @@ const chelsea = {
         //Madison Ave
         {
             id:'madi-34',
-            name: 'Chelsea',
+            name: 'Madison Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-33'},
@@ -1855,7 +1866,7 @@ const chelsea = {
         },
         {
             id:'madi-33',
-            name: '',
+            name: 'Madison Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-32'},
@@ -1866,7 +1877,7 @@ const chelsea = {
         },
         {
             id:'madi-32',
-            name: '',
+            name: 'Madison Avenue and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-31'},
@@ -1877,7 +1888,7 @@ const chelsea = {
         },
         {
             id:'madi-31',
-            name: '',
+            name: 'Madison Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-30'},
@@ -1888,7 +1899,7 @@ const chelsea = {
         },
         {
             id:'madi-30',
-            name: '',
+            name: 'Madison Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-29'},
@@ -1899,7 +1910,7 @@ const chelsea = {
         },
         {
             id:'madi-29',
-            name: '',
+            name: 'Madison Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-28'},
@@ -1910,7 +1921,7 @@ const chelsea = {
         },
         {
             id:'madi-28',
-            name: '',
+            name: 'Madison Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-27'},
@@ -1921,7 +1932,7 @@ const chelsea = {
         },
         {
             id:'madi-27',
-            name: '',
+            name: 'Madison Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-26'},
@@ -1932,7 +1943,7 @@ const chelsea = {
         },
         {
             id:'madi-26',
-            name: '',
+            name: 'Madison Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-25'},
@@ -1943,7 +1954,7 @@ const chelsea = {
         },
         {
             id:'madi-25',
-            name: '',
+            name: 'Madison Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-26'},
@@ -1953,7 +1964,7 @@ const chelsea = {
         },
         {
             id:'madi-24',
-            name: '',
+            name: 'Madison Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'madi-25'},
@@ -1963,7 +1974,7 @@ const chelsea = {
         },
         {
             id:'madi-23',
-            name: '',
+            name: 'Madison Avenue and 23th Street',
             desc:``,
             exits:[
                 {dir:['e','east'],id:'broa-23'},
@@ -1974,7 +1985,7 @@ const chelsea = {
         //Union Square West and East
         {
             id:'unio-17-1',
-            name: '',
+            name: 'Union Sqaure West and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-16-1'},
@@ -1984,7 +1995,7 @@ const chelsea = {
         },
         {
             id:'unio-16-1',
-            name: '',
+            name: 'Union Square West and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-w-15'},
@@ -1994,7 +2005,7 @@ const chelsea = {
         },
         {
             id:'unio-15-1',
-            name: '',
+            name: 'Union Square West and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-14-1'},
@@ -2004,7 +2015,7 @@ const chelsea = {
         },
         {
             id:'unio-14-1',
-            name: '',
+            name: 'Union Square West and 14th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'univ-13'},
@@ -2015,7 +2026,7 @@ const chelsea = {
         },
         {
             id:'unio-17-2',
-            name: '',
+            name: 'Union Square East and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-16-2'},
@@ -2026,7 +2037,7 @@ const chelsea = {
         },
         {
             id:'unio-16-2',
-            name: '',
+            name: 'Union Square East and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-15-2'},
@@ -2036,7 +2047,7 @@ const chelsea = {
         },
         {
             id:'unio-15-2',
-            name: '',
+            name: 'Union Sqaure East and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-14-2'},
@@ -2046,7 +2057,7 @@ const chelsea = {
         },
         {
             id:'unio-14-2',
-            name: '',
+            name: 'Union Square East and 14th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: ''},
@@ -2059,7 +2070,7 @@ const chelsea = {
         //Park Ave
         {
             id:'park-34',
-            name: '',
+            name: 'Park Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-33'},
@@ -2070,7 +2081,7 @@ const chelsea = {
         },
         {
             id:'park-33',
-            name: '',
+            name: 'Park Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-32'},
@@ -2081,7 +2092,7 @@ const chelsea = {
         },
         {
             id:'park-32',
-            name: '',
+            name: 'Park Avenue and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-31'},
@@ -2092,7 +2103,7 @@ const chelsea = {
         },
         {
             id:'park-31',
-            name: '',
+            name: 'Park Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-30'},
@@ -2103,7 +2114,7 @@ const chelsea = {
         },
         {
             id:'park-30',
-            name: '',
+            name: 'Park Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-29'},
@@ -2114,7 +2125,7 @@ const chelsea = {
         },
         {
             id:'park-29',
-            name: '',
+            name: 'Park Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-28'},
@@ -2125,7 +2136,7 @@ const chelsea = {
         },
         {
             id:'park-28',
-            name: '',
+            name: 'Park Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-27'},
@@ -2136,7 +2147,7 @@ const chelsea = {
         },
         {
             id:'park-27',
-            name: '',
+            name: 'Park Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-26'},
@@ -2147,7 +2158,7 @@ const chelsea = {
         },
         {
             id:'park-26',
-            name: '',
+            name: 'Park Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-25'},
@@ -2158,7 +2169,7 @@ const chelsea = {
         },
         {
             id:'park-25',
-            name: '',
+            name: 'Park Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-24'},
@@ -2169,7 +2180,7 @@ const chelsea = {
         },
         {
             id:'park-24',
-            name: '',
+            name: 'Park Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-23'},
@@ -2180,7 +2191,7 @@ const chelsea = {
         },
         {
             id:'park-23',
-            name: '',
+            name: 'Park Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-22'},
@@ -2191,7 +2202,7 @@ const chelsea = {
         },
         {
             id:'park-22',
-            name: '',
+            name: 'Park Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-21'},
@@ -2202,29 +2213,29 @@ const chelsea = {
         },
         {
             id:'park-21',
-            name: '',
+            name: 'Park Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-20'},
                 {dir:['w','west'],id:'broa-21'},
-                {dir:['e','east'],id:'gram-w-21'},
+                {dir:['e','east'],id:'gram-21-1'},
                 {dir:['n','north'],id:'park-22'}
             ],
         },
         {
             id:'park-20',
-            name: '',
+            name: 'Park Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-19'},
                 {dir:['w','west'],id:'broa-20'},
-                {dir:['e','east'],id:'gram-w-20'},
+                {dir:['e','east'],id:'gram-20-1'},
                 {dir:['n','north'],id:'park-21'}
             ],
         },
         {
             id:'park-19',
-            name: '',
+            name: 'Park Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'park-18'},
@@ -2235,7 +2246,7 @@ const chelsea = {
         },
         {
             id:'park-18',
-            name: '',
+            name: 'Park Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'unio-17-2'},
@@ -2247,7 +2258,7 @@ const chelsea = {
         //Lexington Ave
         {
             id:'lexi-34',
-            name: '',
+            name: 'Lexington Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-33'},
@@ -2258,7 +2269,7 @@ const chelsea = {
         },
         {
             id:'lexi-33',
-            name: '',
+            name: 'Lexington Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-32'},
@@ -2269,7 +2280,7 @@ const chelsea = {
         },
         {
             id:'lexi-32',
-            name: '',
+            name: 'Lexington Avenue and 32nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-31'},
@@ -2280,7 +2291,7 @@ const chelsea = {
         },
         {
             id:'lexi-31',
-            name: '',
+            name: 'Lexington Avenue and 31st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-30'},
@@ -2291,7 +2302,7 @@ const chelsea = {
         },
         {
             id:'lexi-30',
-            name: '',
+            name: 'Lexington Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-29'},
@@ -2302,7 +2313,7 @@ const chelsea = {
         },
         {
             id:'lexi-29',
-            name: '',
+            name: 'Lexington Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-28'},
@@ -2313,7 +2324,7 @@ const chelsea = {
         },
         {
             id:'lexi-28',
-            name: '',
+            name: 'Lexington Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-27'},
@@ -2324,7 +2335,7 @@ const chelsea = {
         },
         {
             id:'lexi-27',
-            name: '',
+            name: 'Lexington Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-26'},
@@ -2335,7 +2346,7 @@ const chelsea = {
         },
         {
             id:'lexi-26',
-            name: '',
+            name: 'Lexington Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-25'},
@@ -2346,7 +2357,7 @@ const chelsea = {
         },
         {
             id:'lexi-25',
-            name: '',
+            name: 'Lexington Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-24'},
@@ -2357,7 +2368,7 @@ const chelsea = {
         },
         {
             id:'lexi-24',
-            name: '',
+            name: 'Lexington Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-23'},
@@ -2368,7 +2379,7 @@ const chelsea = {
         },
         {
             id:'lexi-23',
-            name: '',
+            name: 'Lexington Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-22'},
@@ -2379,7 +2390,7 @@ const chelsea = {
         },
         {
             id:'lexi-22',
-            name: '',
+            name: 'Lexington Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'lexi-21'},
@@ -2390,69 +2401,69 @@ const chelsea = {
         },
         {
             id:'lexi-21',
-            name: '',
+            name: 'Lexington Avenue and 21st Street',
             desc:``,
             exits:[
-                {dir:['w','west'],id:'gram-w-21'},
-                {dir:['e','east'],id:'gram-e-21'},
+                {dir:['w','west'],id:'gram-21-1'},
+                {dir:['e','east'],id:'gram-21-2'},
                 {dir:['n','north'],id:'lexi-22'}
             ],
         },
         //Gramercy Park East and West
         {
-            id:'gram-w-21',
-            name: '',
+            id:'gram-21-1',
+            name: 'Gramercy Park West and 21st Street',
             desc:``,
             exits:[
-                {dir:['s','south'],id: 'gram-w-20'},
+                {dir:['s','south'],id: 'gram-20-1'},
                 {dir:['w','west'],id:'park-21'},
                 {dir:['e','east'],id:'lexi-21'},
             ],
         },
         {
-            id:'gram-w-20',
-            name: '',
+            id:'gram-20-1',
+            name: 'Gramercy Park West and 20th Street',
             desc:``,
             exits:[
                 {dir:['w','west'],id:'park-20'},
                 {dir:['e','east'],id:'irvi-20'},
-                {dir:['n','north'],id:'gram-w-21'}
+                {dir:['n','north'],id:'gram-21-1'}
             ],
         },
         {
-            id:'gram-e-21',
-            name: '',
+            id:'gram-21-2',
+            name: 'Gramercy Park East and 21st Street',
             desc:``,
             exits:[
-                {dir:['s','south'],id: 'gram-e-20'},
+                {dir:['s','south'],id: 'gram-20-2'},
                 {dir:['w','west'],id:'lexi-21'},
                 {dir:['e','east'],id:'3-21'},
             ],
         },
         {
-            id:'gram-e-20',
-            name: '',
+            id:'gram-20-2',
+            name: 'Gramercy Park East and 20th Street',
             desc:``,
             exits:[
                 {dir:['w','west'],id:'irvi-20'},
                 {dir:['e','east'],id:'3-20'},
-                {dir:['n','north'],id:'gram-e-31'}
+                {dir:['n','north'],id:'gram-31-2'}
             ],
         },
         //Irving Plaza
         {
             id:'irvi-20',
-            name: '',
+            name: 'Irving Plaza and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-19'},
-                {dir:['w','west'],id:'gram-w-20'},
-                {dir:['e','east'],id:'gram-e-20'},
+                {dir:['w','west'],id:'gram-20-1'},
+                {dir:['e','east'],id:'gram-20-2'},
             ],
         },
         {
             id:'irvi-19',
-            name: '',
+            name: 'Irving Plaza and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-18'},
@@ -2463,7 +2474,7 @@ const chelsea = {
         },
         {
             id:'irvi-18',
-            name: '',
+            name: 'Irving Plaza and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-17'},
@@ -2474,7 +2485,7 @@ const chelsea = {
         },
         {
             id:'irvi-17',
-            name: '',
+            name: 'Irving Plaza and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-16'},
@@ -2485,7 +2496,7 @@ const chelsea = {
         },
         {
             id:'irvi-16',
-            name: '',
+            name: 'Irving Plaza and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-15'},
@@ -2496,7 +2507,7 @@ const chelsea = {
         },
         {
             id:'irvi-15',
-            name: '',
+            name: 'Irving Plaza and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'irvi-14'},
@@ -2507,7 +2518,7 @@ const chelsea = {
         },
         {
             id:'irvi-14',
-            name: '',
+            name: 'Irving Plaza and 14th Street',
             desc:``,
             exits:[
                 {dir:['w','west'],id:'unio-14-1'},
@@ -2518,7 +2529,7 @@ const chelsea = {
         //3rd Ave
         {
             id:'3-34',
-            name: '',
+            name: '3rd Avenue and 34th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-33'},
@@ -2529,7 +2540,7 @@ const chelsea = {
         },
         {
             id:'3-33',
-            name: '',
+            name: '3rd Avenue and 33rd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-32'},
@@ -2540,7 +2551,7 @@ const chelsea = {
         },
         {
             id:'3-32',
-            name: '',
+            name: '3rd Avenue and 32nd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-31'},
@@ -2551,7 +2562,7 @@ const chelsea = {
         },
         {
             id:'3-31',
-            name: '',
+            name: '3rd Avenue and 31st Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-30'},
@@ -2562,7 +2573,7 @@ const chelsea = {
         },
         {
             id:'3-30',
-            name: '',
+            name: '3rd Avenue and 30th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-29'},
@@ -2573,7 +2584,7 @@ const chelsea = {
         },
         {
             id:'3-29',
-            name: '',
+            name: '3rd Avenue and 29th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-28'},
@@ -2584,7 +2595,7 @@ const chelsea = {
         },
         {
             id:'3-28',
-            name: '',
+            name: '3rd Avenue and 28th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-27'},
@@ -2595,7 +2606,7 @@ const chelsea = {
         },
         {
             id:'3-27',
-            name: '',
+            name: '3rd Avenue and 27th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-26'},
@@ -2606,7 +2617,7 @@ const chelsea = {
         },
         {
             id:'3-26',
-            name: '',
+            name: '3rd Avenue and 26th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-25'},
@@ -2617,7 +2628,7 @@ const chelsea = {
         },
         {
             id:'3-25',
-            name: '',
+            name: '3rd Avenue and 25th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-24'},
@@ -2628,7 +2639,7 @@ const chelsea = {
         },
         {
             id:'3-24',
-            name: '',
+            name: '3rd Avenue and 24th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-23'},
@@ -2639,7 +2650,7 @@ const chelsea = {
         },
         {
             id:'3-23',
-            name: '',
+            name: '3rd Avenue and 23rd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-22'},
@@ -2650,7 +2661,7 @@ const chelsea = {
         },
         {
             id:'3-22',
-            name: '',
+            name: '3rd Avenue and 22nd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-21'},
@@ -2662,30 +2673,30 @@ const chelsea = {
         },
         {
             id:'3-21',
-            name: '',
+            name: '3rd Avenue and 21st Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-20'},
                 {dir:['w','west'],id:'2-20'},
-                {dir:['e','east'],id:'grm-e-21'},
+                {dir:['e','east'],id:'gram-21-2'},
                 {dir:['n','north'],id:'3-22'}
             ],
         },
         {
             id:'3-20',
-            name: '',
+            name: '3rd Avenue and 20th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-19'},
                 {dir:['w','west'],id:'2-20'},
-                {dir:['e','east'],id:'gram-e-20'},
+                {dir:['e','east'],id:'gram-20-2'},
                 {dir:['n','north'],id:'3-21'
                 }
             ],
         },
         {
             id:'3-19',
-            name: '',
+            name: '3rd Avenue and 19th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-18'},
@@ -2697,7 +2708,7 @@ const chelsea = {
         },
         {
             id:'3-18',
-            name: '',
+            name: '3rd Avenue and 18th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-17'},
@@ -2708,7 +2719,7 @@ const chelsea = {
         },
         {
             id:'3-17',
-            name: '',
+            name: '3rd Avenue and 17th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-16'},
@@ -2719,7 +2730,7 @@ const chelsea = {
         },
         {
             id:'3-16',
-            name: '',
+            name: '3rd Avenue and 16th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-15'},
@@ -2730,7 +2741,7 @@ const chelsea = {
         },
         {
             id:'3-15',
-            name: '',
+            name: '3rd Avenue and 15th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-14'},
@@ -2741,7 +2752,7 @@ const chelsea = {
         },
         {
             id:'3-14',
-            name: '',
+            name: '3rd Avenue and 14th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '3-13'},
@@ -2753,7 +2764,7 @@ const chelsea = {
         //2nd Ave
         {
             id:'2-34',
-            name: '',
+            name: '2nd Avenue and 34th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-33'},
@@ -2764,7 +2775,7 @@ const chelsea = {
         },
         {
             id:'2-33',
-            name: '',
+            name: '2nd Avenue and 33rd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-32'},
@@ -2775,7 +2786,7 @@ const chelsea = {
         },
         {
             id:'2-32',
-            name: '',
+            name: '2nd Avenue and 32nd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-31'},
@@ -2785,7 +2796,7 @@ const chelsea = {
         },
         {
             id:'2-31',
-            name: '',
+            name: '2nd Avenue and 31st Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-30'},
@@ -2795,7 +2806,7 @@ const chelsea = {
         },
         {
             id:'2-30',
-            name: '',
+            name: '2nd Avenue and 30th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-29'},
@@ -2806,7 +2817,7 @@ const chelsea = {
         },
         {
             id:'2-29',
-            name: '',
+            name: '2nd Avenue and 29th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-28'},
@@ -2817,7 +2828,7 @@ const chelsea = {
         },
         {
             id:'2-28',
-            name: '',
+            name: '2nd Avenue and 28th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-27'},
@@ -2828,7 +2839,7 @@ const chelsea = {
         },
         {
             id:'2-27',
-            name: '',
+            name: '2nd Avenue and 27th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-26'},
@@ -2839,7 +2850,7 @@ const chelsea = {
         },
         {
             id:'2-26',
-            name: '',
+            name: '2nd Avenue and 26th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-25'},
@@ -2850,7 +2861,7 @@ const chelsea = {
         },
         {
             id:'2-25',
-            name: '',
+            name: '2nd Avenue and 25th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-24'},
@@ -2861,7 +2872,7 @@ const chelsea = {
         },
         {
             id:'2-24',
-            name: '',
+            name: '2nd Avenue and 24th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-23'},
@@ -2872,7 +2883,7 @@ const chelsea = {
         },
         {
             id:'2-23',
-            name: '',
+            name: '2nd Avenue and 23rd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-22'},
@@ -2883,7 +2894,7 @@ const chelsea = {
         },
         {
             id:'2-22',
-            name: '',
+            name: '2nd Avenue and 22nd Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-21'},
@@ -2894,7 +2905,7 @@ const chelsea = {
         },
         {
             id:'2-21',
-            name: '',
+            name: '2nd Avenue and 31st Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-20'},
@@ -2905,7 +2916,7 @@ const chelsea = {
         },
         {
             id:'2-20',
-            name: '',
+            name: '2nd Avenue and 30th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-19'},
@@ -2916,7 +2927,7 @@ const chelsea = {
         },
         {
             id:'2-19',
-            name: '',
+            name: '2nd Avenue and 19th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-18'},
@@ -2927,7 +2938,7 @@ const chelsea = {
         },
         {
             id:'2-18',
-            name: '',
+            name: '2nd Avenue and 18th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-17'},
@@ -2938,7 +2949,7 @@ const chelsea = {
         },
         {
             id:'2-17',
-            name: '',
+            name: '2nd Avenue and 17th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-15'},
@@ -2949,7 +2960,7 @@ const chelsea = {
         },
         {
             id:'2-15',
-            name: '',
+            name: '2nd Avenue and 16th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-14'},
@@ -2960,7 +2971,7 @@ const chelsea = {
         },        
         {
             id:'2-14',
-            name: '',
+            name: '2nd Avenue and 14th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '2-13'},
@@ -2972,7 +2983,7 @@ const chelsea = {
         //Rutherford Plaza
         {
             id:'ruth-17',
-            name: '',
+            name: 'Rutherford Plaza and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'ruth-16'},
@@ -2982,7 +2993,7 @@ const chelsea = {
         },
         {
             id:'ruth-16',
-            name: '',
+            name: 'Rutherford Plaza and 16th Steet',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'ruth-15'},
@@ -2992,7 +3003,7 @@ const chelsea = {
         },
         {
             id:'ruth-15',
-            name: '',
+            name: 'Rutherford Plaza and 15th Street',
             desc:``,
             exits:[
                 {dir:['e','east'],id:'nath-17'},
@@ -3003,7 +3014,7 @@ const chelsea = {
         //nathan d perlman Plaza
         {
             id:'nath-17',
-            name: '',
+            name: 'Nathan D Perlman Plaza and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'nath-16'},
@@ -3013,7 +3024,7 @@ const chelsea = {
         },
         {
             id:'nath-16',
-            name: '',
+            name: 'Nathan D Perlman Plaza and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'nath-15'},
@@ -3023,7 +3034,7 @@ const chelsea = {
         },
         {
             id:'nath-15',
-            name: '',
+            name: 'Nathan D Perlman Plaza and 15th Street',
             desc:``,
             exits:[
                 {dir:['e','east'],id:'1-15'},
@@ -3034,18 +3045,18 @@ const chelsea = {
         //Mt. Carmel Plaza
         {
             id:'car-28',
-            name: '',
+            name: 'Mt. Carmel Plaza and 28th Street',
             desc:``,
         },
         {
             id:'car-26',
-            name: '',
+            name: 'My. Carmel Plaza and 26th Street',
             desc:``,
         },
         //1st Ave
         {
             id:'1-34',
-            name: '',
+            name: '1st Avenue and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-33'},
@@ -3056,7 +3067,7 @@ const chelsea = {
         },
         {
             id:'1-33',
-            name: '',
+            name: '1st Avenue and 33rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-32'},
@@ -3066,7 +3077,7 @@ const chelsea = {
         },
         {
             id:'1-30',
-            name: '',
+            name: '1st Avenue and 30th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-29'},
@@ -3076,7 +3087,7 @@ const chelsea = {
         },
         {
             id:'1-29',
-            name: '',
+            name: '1st Avenue and 29th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-28'},
@@ -3086,7 +3097,7 @@ const chelsea = {
         },
         {
             id:'1-28',
-            name: '',
+            name: '1st Avenue and 28th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-27'},
@@ -3096,7 +3107,7 @@ const chelsea = {
         },
         {
             id:'1-27',
-            name: '',
+            name: '1st Avenue and 27th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-26'},
@@ -3106,17 +3117,17 @@ const chelsea = {
         },
         {
             id:'1-26',
-            name: '',
+            name: '1st Avenue and 26th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-25'},
-                {dir:['w','west'],id:'2-26'},
+                {dir:['w','west'],id:'car-26'},
                 {dir:['n','north'],id:'1-27'}
             ],
         },
         {
             id:'1-25',
-            name: '',
+            name: '1st Avenue and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-24'},
@@ -3126,7 +3137,7 @@ const chelsea = {
         },
         {
             id:'1-24',
-            name: '',
+            name: '1st Avenue and 24th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-23'},
@@ -3136,7 +3147,7 @@ const chelsea = {
         },
         {
             id:'1-23',
-            name: '',
+            name: '1st Avenue and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-22'},
@@ -3147,7 +3158,7 @@ const chelsea = {
         },
         {
             id:'1-22',
-            name: '',
+            name: '1st Avenue and 22nd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-21'},
@@ -3158,7 +3169,7 @@ const chelsea = {
         },
         {
             id:'1-21',
-            name: '',
+            name: '1st Avenue and 21st Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-20'},
@@ -3168,7 +3179,7 @@ const chelsea = {
         },
         {
             id:'1-20',
-            name: '',
+            name: '1st Avenue and 20th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-19'},
@@ -3178,7 +3189,7 @@ const chelsea = {
         },
         {
             id:'1-19',
-            name: '',
+            name: '1st Avenue and 19th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-18'},
@@ -3188,7 +3199,7 @@ const chelsea = {
         },
         {
             id:'1-18',
-            name: '',
+            name: '1st Avenue and 18th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-17'},
@@ -3198,7 +3209,7 @@ const chelsea = {
         },
         {
             id:'1-17',
-            name: '',
+            name: '1st Avenue and 17th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-16'},
@@ -3208,7 +3219,7 @@ const chelsea = {
         },
         {
             id:'1-16',
-            name: '',
+            name: '1st Avenue and 16th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-15'},
@@ -3218,7 +3229,7 @@ const chelsea = {
         },
         {
             id:'1-15',
-            name: '',
+            name: '1st Avenue and 15th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-14'},
@@ -3228,7 +3239,7 @@ const chelsea = {
         },
         {
             id:'1-14',
-            name: '',
+            name: '1st Avenue and 14th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: '1-13'},
@@ -3239,7 +3250,7 @@ const chelsea = {
         //Misc streets East side of map
         {
             id:'fdr-34',
-            name: '',
+            name: 'FDR Drive and 34th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'fdr-25'},
@@ -3248,7 +3259,7 @@ const chelsea = {
         },
         {
             id:'fdr-23',
-            name: '',
+            name: 'FDR Drive and 23rd Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'fdr-pete'},
@@ -3258,7 +3269,7 @@ const chelsea = {
         },
         {
             id:'fdr-25',
-            name:'',
+            name:'FDR Drive and 25th Street',
             desc:``,
             exits:[
                     {dir:['s','south'],id: 'fdr-23'},
@@ -3268,7 +3279,7 @@ const chelsea = {
         },
         {
             id:'fdr-pete',
-            name: '',
+            name: 'FDR Drive and Peter Cooper Road',
             desc:``,
             exits:[
                 {dir:['w','west'],id:'1-22'},
@@ -3277,7 +3288,7 @@ const chelsea = {
         },,
         {
             id:'levy-23',
-            name: '',
+            name: 'Asser Levy Plaza and 23rd Street',
             desc:``,
             exits:[
                 {dir:['n','north'],id: 'levy-25'},
@@ -3287,7 +3298,7 @@ const chelsea = {
         },
         {
             id:'levy-25',
-            name: '',
+            name: 'Asser Levy Plaza and 25th Street',
             desc:``,
             exits:[
                 {dir:['s','south'],id: 'levy-23'},
