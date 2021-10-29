@@ -2181,7 +2181,10 @@ const midwestside = {
 
 {
     id: '49-amer',
+    coord: [],
     name: 'W. 49th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2202,39 +2205,301 @@ const midwestside = {
         },
     ],
 },
-
-
 //End 49th St.
 
+
+
+//Start 48th St.
+{
+    id: '48-12',
+    coord: [],
+    name: 'W. 48th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['s', 'south'], id:'47-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['n', 'north'], id:'49-12'},
+        {dir: ['e', 'east'], id:'48-11'},
+    ],
+},
+
+{
+    id: '48-11',
+    coord: [],
+    name: 'W. 48th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-11'},
+        {dir: ['e', 'east'], id:'48-10'},
+        {dir: ['w', 'west'], id:'48-12'},
+        {dir: ['s', 'south'], id:'47-11'},
+    ],
+},
+
+{
+    id: '48-10',
+    coord: [],
+    name: 'W. 48th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-10'},
+        {dir: ['e', 'east'], id:'48-9'},
+        {dir: ['w', 'west'], id:'48-11'},
+        {dir: ['s', 'south'], id:'47-10'},
+    ],
+},
+
+{
+    id: '48-9',
+    coord: [],
+    name: 'W. 48th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-9'},
+        {dir: ['e', 'east'], id:'48-8'},
+        {dir: ['w', 'west'], id:'48-10'},
+        {dir: ['s', 'south'], id:'47-9'},
+    ],
+},
+
+{
+    id: '48-8',
+    coord: [],
+    name: 'W. 48th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-8'},
+        {dir: ['e', 'east'], id:'48-broa'},
+        {dir: ['w', 'west'], id:'48-9'},
+        {dir: ['s', 'south'], id:'47-8'},
+    ],
+},
+
+{
+    id: '48-broa',
+    coord: [],
+    name: 'W. 48th St. and Broadway',
+    desc: 'Here is the Metropole Cafe. In the evening it is a safe haven for bare breasts and sequined hips that undulate slightly off the beat of the music.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-broa'},
+        {dir: ['e', 'east'], id:'48-7'},
+        {dir: ['w', 'west'], id:'48-8'},
+        {dir: ['s', 'south'], id:'47-broa'},
+        {dir: ['enter', 'cafe', 'metropole'], block:`There is no point to going there.`},
+    ],
+},
+
+{
+    id: '48-7',
+    coord: [],
+    name: 'W. 48th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-7'},
+        {dir: ['e', 'east'], id:'48-amer'},
+        {dir: ['w', 'west'], id:'48-broa'},
+        {dir: ['s', 'south'], id:'47-7'},
+    ],
+},
+
+{
+    id: '48-amer',
+    coord: [],
+    name: 'W. 48th St. and Ave of Americas',
+    desc: 'There is a Greek Gyro located here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'49-amer'},
+        {dir: ['e', 'east'], id:'48-5'},
+        {dir: ['w', 'west'], id:'48-7'},
+        {dir: ['s', 'south'], id:'47-amer'},
+        {dir: ['enter', 'greek', 'gyro'], id:'48-gyro'},
+    ],
+},
+//End 48th Street
+
+//Start 47th Street
+{
+    id: '47-12',
+    coord: [],
+    name: 'W. 47th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-12'},
+        {dir: ['e', 'east'], id:'47-11'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'46-12'},
+    ],
+},
+
+{
+    id: '47-11',
+    coord: [],
+    name: 'W. 47th St. and 11th Ave.',
+    desc: 'There is a luncheonette on the corner.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-11'},
+        {dir: ['e', 'east'], id:'47-10'},
+        {dir: ['w', 'west'], id:'47-12'},
+        {dir: ['s', 'south'], id:'46-11'},
+        {dir: ['enter', 'lunch', 'luncheonette'], id:'47-11-lunch'},
+    ],
+},
+
+{
+    id: '47-10',
+    coord: [],
+    name: 'W. 47th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-10'},
+        {dir: ['e', 'east'], id:'47-9'},
+        {dir: ['w', 'west'], id:'47-11'},
+        {dir: ['s', 'south'], id:'46-10'},
+    ],
+},
+
+{
+    id: '47-10',
+    coord: [],
+    name: 'W. 47th St. and 10th Ave.',
+    desc: 'There is a pizzeria here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-10'},
+        {dir: ['e', 'east'], id:'47-9'},
+        {dir: ['w', 'west'], id:'47-11'},
+        {dir: ['s', 'south'], id:'46-10'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id:'47-10-pizza'},
+    ],
+},
+
+{
+    id: '47-9',
+    coord: [],
+    name: 'W. 47th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-9'},
+        {dir: ['e', 'east'], id:'47-8'},
+        {dir: ['w', 'west'], id:'47-10'},
+        {dir: ['s', 'south'], id:'46-9'},
+    ],
+},
+
+{
+    id: '47-8',
+    coord: [],
+    name: 'W. 47th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-8'},
+        {dir: ['e', 'east'], id:'47-broa'},
+        {dir: ['w', 'west'], id:'47-9'},
+        {dir: ['s', 'south'], id:'46-8'},
+    ],
+},
+
+{
+    id: '47-broa',
+    coord: [],
+    name: 'W. 47th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-broa'},
+        {dir: ['e', 'east'], id:'47-7'},
+        {dir: ['w', 'west'], id:'47-8'},
+        {dir: ['s', 'south'], id:'46-broa'},
+    ],
+},
+
+{
+    id: '47-7',
+    coord: [],
+    name: 'W. 47th St. and 7th Ave.',
+    desc: 'There is a restaurant called Nedicks here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-7'},
+        {dir: ['e', 'east'], id:'47-amer'},
+        {dir: ['w', 'west'], id:'47-broa'},
+        {dir: ['s', 'south'], id:'46-7'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id:'47-7-nedicks'},
+    ],
+},
+
+{
+    id: '47-amer',
+    coord: [],
+    name: 'W. 47th St. and Ave of Americas',
+    desc: 'There is a pizzeria here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'48-amer'},
+        {dir: ['e', 'east'], id:'47-5'},
+        {dir: ['w', 'west'], id:'47-broa'},
+        {dir: ['s', 'south'], id:'46-amer'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id:'47-amer-pizza'},
+    ],
+},
+//End 47th Street.
 
 
 
 //Start Templates
 
  //Start Room Template
-    {
-        id: '#-#',
-        name: 'W. #th St. and #th Ave.',
-        exit: 
-        [
-            {
-                dir: ['n', 'north'],
-                id: 'S-A'
-            },
-            {
-                dir: ['e', 'east'],
-                id: 'S-A'
-            },
-            {
-                dir: ['w', 'west'],
-                id: 'S-A'
-            },
-            {
-                dir: ['s', 'south'],
-                id: 'S-A'
-            },
-        ],
-    },
+ {
+    id: '#-#',
+    coord: [],
+    name: 'W. #th St. and #th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        
+        {dir: ['n', 'north'], id:'S-A'},
+        {dir: ['e', 'east'], id:'S-A'},
+        {dir: ['w', 'west'], id:'S-A'},
+        {dir: ['s', 'south'], id:'S-A'},
+    ],
+},
  //End Room Template
 
 //Still need streets 49 through 34
@@ -2254,6 +2519,11 @@ const midwestside = {
 //51-10 Chock Full-O-Nuts
 //51-8 luncheonette
 //50-7 Description
+//48-amer Greek Gyro
+//47-11 luncheonette
+//47-9 pizzeria
+//47-7 Nedicks
+//47-amer Pizzeria
 
 //Subway entrances:
 //59-amst
