@@ -102,7 +102,7 @@ const midtownEast = {
                   id: '54-amer'
                 }, 
                 {
-                  dir: ['Subway'],
+                  dir: ['subway'],
                   id: '????',
                 },
             ]
@@ -4537,7 +4537,7 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-            id: '60-2',
+            id: 'quee-2',
             },
             {
               dir: ['south'],
@@ -4560,7 +4560,7 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-            id: '????',
+            id: '60-quee',
             },
             {
               dir: ['south'],

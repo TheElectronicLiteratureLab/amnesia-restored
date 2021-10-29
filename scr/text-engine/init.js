@@ -45,6 +45,14 @@ let init = (disk, mC) => {
   return initializedDisk;
 };
 
+let quickResponse = (e) => {
+  const ENTER = 13;
+
+  if (e.keyCode === ENTER) {
+    applyInput();
+  }
+}
+
 // register listeners for input events
 let setup = () => {
 
