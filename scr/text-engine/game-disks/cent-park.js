@@ -1,5 +1,5 @@
 const centralPark ={
-    roomId: 'amer-60',
+    roomId: '60-amer',
     rooms: [
         {
             id:'60-amer',
