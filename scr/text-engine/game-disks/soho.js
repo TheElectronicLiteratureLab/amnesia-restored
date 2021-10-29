@@ -74,8 +74,8 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
+      {dir: 'north', id: 'spri-amer'},
+      {dir: 'south', id: 'sull-amer'},
       {dir: 'east', id: ''},
       {dir: 'west', id: ''},
     ]
@@ -87,8 +87,8 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
+      {dir: 'north', id: 'spri-sull'},
+      {dir: 'south', id: 'broo-amer'},
       {dir: 'east', id: ''},
       {dir: 'west', id: ''},
     ]
@@ -100,9 +100,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
+      {dir: 'north', id: 'sull-amer'},
+      {dir: 'south', id: 'watt-amer'},
+      {dir: 'east', id: 'broo-thom'},
       {dir: 'west', id: ''},
     ]
   },
@@ -113,9 +113,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
+      {dir: 'north', id: 'broo-amer'},
+      {dir: 'south', id: 'gran-amer'},
+      {dir: 'east', id: 'watt-thom'},
       {dir: 'west', id: ''},
     ]
   },
@@ -126,8 +126,8 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
+      {dir: 'north', id: 'watt-amer'},
+      {dir: 'south', id: 'cana-amer'},
       {dir: 'east', id: ''},
       {dir: 'west', id: ''},
     ]
@@ -139,9 +139,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
+      {dir: 'north', id: 'gran-watt'},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
+      {dir: 'east', id: 'cana-thom'},
       {dir: 'west', id: ''},
     ]
   },
@@ -153,9 +153,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'king-macd'},
+      {dir: 'east', id: 'hous-sull'},
+      {dir: 'west', id: 'hous-amer'},
     ]
   },
   {
@@ -165,10 +165,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
+      {dir: 'north', id: 'hous-macd'},
+      {dir: 'south', id: 'prin-macd'},
       {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'west', id: 'king-amer'},
     ]
   },
   {
@@ -178,10 +178,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'king-macd'},
+      {dir: 'south', id: 'vand-amer'},
+      {dir: 'east', id: 'prin-sull'},
+      {dir: 'west', id: 'char-amer'},
     ]
   },
   {
@@ -192,9 +192,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-sull'},
+      {dir: 'east', id: 'hous-macd'},
+      {dir: 'west', id: 'hous-thom'},
     ]
   },
   {
@@ -204,10 +204,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'hous-sull'},
+      {dir: 'south', id: 'spri-sull'},
+      {dir: 'east', id: 'prin-thom'},
+      {dir: 'west', id: 'prin-macd'},
     ]
   },
   {
@@ -217,10 +217,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'prin-sull'},
+      {dir: 'south', id: 'sull-amer'},
+      {dir: 'east', id: 'spri-thom'},
+      {dir: 'west', id: 'spri-amer'},
     ]
   },
   {
@@ -231,9 +231,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-thom'},
+      {dir: 'east', id: 'hous-lagu'},
+      {dir: 'west', id: 'hous-sull'},
     ]
   },
   {
@@ -243,10 +243,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir:  'north', id: 'hous-thom'},
+      {dir: 'south', id: 'spri-thom'},
+      {dir: 'east', id: 'prin-broa-1'},
+      {dir: 'west', id: 'prin-sull'},
     ]
   },
   {
@@ -256,10 +256,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-thom'},
+      {dir: 'south', id: 'broo-thom'},
+      {dir: 'east', id: 'spri-broa-1'},
+      {dir: 'west', id: 'spri-sull'},
     ]
   },
   {
@@ -269,10 +269,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-thom'},
+      {dir: 'south', id: 'watt-thom'},
+      {dir: 'east', id: 'broo-broa-1'},
+      {dir: 'west', id: 'broo-amer'},
     ]
   },
   {
@@ -282,10 +282,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'broo-thom'},
+      {dir: 'south', id: 'gran-thom'},
+      {dir: 'east', id: 'watt-broa'},
+      {dir: 'west', id: 'watt-amer'},
     ]
   },
   {
@@ -295,9 +295,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
+      {dir: 'north', id: 'watt-thom'},
+      {dir: 'south', id: 'cana-thom'},
+      {dir: 'east', id: 'gran-broa-1'},
       {dir: 'west', id: ''},
     ]
   },
@@ -308,10 +308,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
+      {dir: 'north', id: 'gran-thom'},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-broa-1'},
+      {dir: 'west', id: 'cana-amer'},
     ]
   },
   {
@@ -322,9 +322,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-broa-1'},
+      {dir: 'east', id: 'hous-woos'},
+      {dir: 'west', id: 'hous-thom'},
     ]
   },
   {
@@ -334,10 +334,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'hous-lagu'},
+      {dir: 'south', id: 'spri-broa-1'},
+      {dir: 'east', id: 'prin-woos'},
+      {dir: 'west', id: 'prin-thom'},
     ]
   },
   {
@@ -347,10 +347,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'prin-broa-1'},
+      {dir: 'south', id: 'broo-broa-1'},
+      {dir: 'east', id: 'spri-woos'},
+      {dir: 'west', id: 'spri-thom'},
     ]
   },
   {
@@ -360,10 +360,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-broa-1'},
+      {dir: 'south', id: 'watt-broa'},
+      {dir: 'east', id: 'broo-woos'},
+      {dir: 'west', id: 'broo-thom'},
     ]
   },
   {
@@ -373,10 +373,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'broo-broa-1'},
+      {dir: 'south', id: 'gran-broa-1'},
+      {dir: 'west', id: 'watt-thom'},
     ]
   },
   {
@@ -386,10 +385,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'watt-broa'},
+      {dir: 'south', id: 'cana-broa-1'},
+      {dir: 'east', id: 'gran-woos'},
+      {dir: 'west', id: 'gran-thom'},
     ]
   },
   {
@@ -399,10 +398,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
+      {dir: 'north', id: 'gran-broa-1'},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-woos'},
+      {dir: 'west', id: 'cana-thom'},
     ]
   },
   {
@@ -413,9 +412,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-woos'},
+      {dir: 'east', id: 'hous-gree'},
+      {dir: 'west', id: 'hous-lagu'},
     ]
   },
   {
@@ -425,10 +424,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'hous-woos'},
+      {dir: 'south', id: 'spri-woos'},
+      {dir: 'east', id: 'prin-gree'},
+      {dir: 'west', id: 'prin-broa-1'},
     ]
   },
   {
@@ -438,10 +437,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'prin-woos'},
+      {dir: 'south', id: 'broo-woos'},
+      {dir: 'east', id: 'spri-gree'},
+      {dir: 'west', id: 'spri-broa-1'},
     ]
   },
   {
@@ -451,10 +450,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-woos'},
+      {dir: 'south', id: 'gran-woos'},
+      {dir: 'east', id: 'broo-gree'},
+      {dir: 'west', id: 'broo-broa-1'},
     ]
   },
   {
@@ -464,10 +463,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'broo-woos'},
+      {dir: 'east', id: 'gran-gree'},
+      {dir: 'west', id: 'gran-broa-1'},
     ]
   },
   {
@@ -477,10 +475,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-chur'},
+      {dir: 'west', id: 'cana-broa-1'},
     ]
   },
   {
@@ -490,10 +487,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-gree'},
+      {dir: 'west', id: 'cana-woos'},
     ]
   },
   {
@@ -504,9 +500,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-gree'},
+      {dir: 'east', id: 'hous-merc'},
+      {dir: 'west', id: 'hous-woos'},
     ]
   },
   {
@@ -516,10 +512,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'hous-gree'},
+      {dir: 'south', id: 'spri-gree'},
+      {dir: 'east', id: 'prin-merc'},
+      {dir: 'west', id: 'prin-woos'},
     ]
   },
   {
@@ -529,10 +525,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'prin-gree'},
+      {dir: 'south', id: 'broo-gree'},
+      {dir: 'east', id: 'spri-merc'},
+      {dir: 'west', id: 'spri-woos'},
     ]
   },
   {
@@ -542,10 +538,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-gree'},
+      {dir: 'south', id: 'gran-gree'},
+      {dir: 'east', id: 'broo-merc'},
+      {dir: 'west', id: 'broo-woos'},
     ]
   },
   {
@@ -555,10 +551,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'broo-gree'},
+      {dir: 'south', id: 'cana-gree'},
+      {dir: 'east', id: 'gran-merc'},
+      {dir: 'west', id: 'gran-woos'},
     ]
   },
   {
@@ -568,10 +564,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
+      {dir: 'north', id: 'gran-gree'},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-merc'},
+      {dir: 'west', id: 'cana-chur'},
     ]
   },
   {
@@ -582,9 +578,9 @@ const soho = {
     isStreet: true,
     exits: [
       {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'south', id: 'prin-merc'},
+      {dir: 'east', id: 'hous-broa'},
+      {dir: 'west', id: 'hous-gree'},
     ]
   },
   {
@@ -594,10 +590,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'hous-merc'},
+      {dir: 'south', id: 'spri-merc'},
+      {dir: 'east', id: 'prin-broa'},
+      {dir: 'west', id: 'prin-gree'},
     ]
   },
   {
@@ -607,10 +603,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'prin-merc'},
+      {dir: 'south', id: 'broo-merc'},
+      {dir: 'east', id: 'spri-broa'},
+      {dir: 'west', id: 'spri-gree'},
     ]
   },
   {
@@ -620,10 +616,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'spri-merc'},
+      {dir: 'south', id: 'gran-merc'},
+      {dir: 'east', id: 'broo-broa'},
+      {dir: 'west', id: 'broo-gree'},
     ]
   },
   {
@@ -633,10 +629,10 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'broo-merc'},
+      {dir: 'south', id: 'howa-merc'},
+      {dir: 'east', id: 'gran-broa'},
+      {dir: 'west', id: 'gran-gree'},
     ]
   },
   {
@@ -646,10 +642,9 @@ const soho = {
     desc: '',
     isStreet: true,
     exits: [
-      {dir: 'north', id: ''},
-      {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'north', id: 'gran-merc'},
+      {dir: 'south', id: 'cana-merc'},
+      {dir: 'east', id: 'howa-broa'},
     ]
   },
   {
@@ -658,11 +653,12 @@ const soho = {
     name: 'Canal St. and Mercer Ave.',
     desc: '',
     isStreet: true,
+    hasSubway: true,
     exits: [
-      {dir: 'north', id: ''},
+      {dir: 'north', id: 'howa-merc'},
       {dir: 'south', id: ''},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: ''},
+      {dir: 'east', id: 'cana-broa'},
+      {dir: 'west', id: 'cana-gree'},
     ]
   }
   ]
