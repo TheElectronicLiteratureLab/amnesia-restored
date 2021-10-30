@@ -198,7 +198,7 @@ const midwestside = {
             },
             {//Nedicks Entrance
                 dir: ['nedicks','enter',],
-                id: 'cent-amer-nedicks'
+                id: 'cent-amer-nedi'
             },
         ],
     },
@@ -2458,7 +2458,7 @@ const midwestside = {
         {dir: ['e', 'east'], id:'47-amer'},
         {dir: ['w', 'west'], id:'47-broa'},
         {dir: ['s', 'south'], id:'46-7'},
-        {dir: ['enter', 'restaurant', 'nedicks'], id:'47-7-nedicks'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id:'47-7-nedi'},
     ],
 },
 
@@ -2480,20 +2480,576 @@ const midwestside = {
 },
 //End 47th Street.
 
+//Start 46th Street.
+{
+    id: '46-12',
+    coord: [],
+    name: 'W. 46th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-12'},
+        {dir: ['e', 'east'], id:'46-11'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'45-12'},
+    ],
+},
+
+{
+    id: '46-11',
+    coord: [],
+    name: 'W. 46th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-11'},
+        {dir: ['e', 'east'], id:'46-10'},
+        {dir: ['w', 'west'], id:'46-12'},
+        {dir: ['s', 'south'], id:'45-11'},
+    ],
+},
+
+{
+    id: '46-10',
+    coord: [],
+    name: 'W. 46th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-10'},
+        {dir: ['e', 'east'], id:'46-9'},
+        {dir: ['w', 'west'], id:'46-11'},
+        {dir: ['s', 'south'], id:'45-10'},
+    ],
+},
+
+{
+    id: '46-9',
+    coord: [],
+    name: 'W. 46th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-9'},
+        {dir: ['e', 'east'], id:'46-8'},
+        {dir: ['w', 'west'], id:'46-10'},
+        {dir: ['s', 'south'], id:'45-9'},
+    ],
+},
+
+{
+    id: '46-8',
+    coord: [],
+    name: 'W. 46th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-8'},
+        {dir: ['e', 'east'], id:'46-broa'},
+        {dir: ['w', 'west'], id:'46-9'},
+        {dir: ['s', 'south'], id:'45-8'},
+    ],
+},
+
+{
+    id: '46-broa',
+    coord: [],
+    name: 'W. 46th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-broa'},
+        {dir: ['e', 'east'], id:'46-7'},
+        {dir: ['w', 'west'], id:'46-8'},
+        {dir: ['s', 'south'], id:'45-broa'},
+    ],
+},
+
+{
+    id: '46-7',
+    coord: [],
+    name: 'W. 46th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-7'},
+        {dir: ['e', 'east'], id:'46-amer'},
+        {dir: ['w', 'west'], id:'46-broa'},
+        {dir: ['s', 'south'], id:'45-7'},
+    ],
+},
+
+{
+    id: '46-amer',
+    coord: [],
+    name: 'W. 46th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'47-amer'},
+        {dir: ['e', 'east'], id:'46-5'},
+        {dir: ['w', 'west'], id:'46-7'},
+        {dir: ['s', 'south'], id:'45-amer'},
+    ],
+},
+//End 46th Street
+
+//Start 45th Street
+{
+    id: '45-12',
+    coord: [],
+    name: 'W. 45th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-12'},
+        {dir: ['e', 'east'], id:'45-11'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'44-12'},
+    ],
+},
+
+{
+    id: '45-11',
+    coord: [],
+    name: 'W. 45th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-11'},
+        {dir: ['e', 'east'], id:'45-10'},
+        {dir: ['w', 'west'], id:'45-12'},
+        {dir: ['s', 'south'], id:'44-11'},
+    ],
+},
+
+{
+    id: '45-10',
+    coord: [],
+    name: 'W. 45th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-10'},
+        {dir: ['e', 'east'], id:'45-9'},
+        {dir: ['w', 'west'], id:'45-11'},
+        {dir: ['s', 'south'], id:'44-10'},
+    ],
+},
+
+{
+    id: '45-9',
+    coord: [],
+    name: 'W. 45th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-9'},
+        {dir: ['e', 'east'], id:'45-8'},
+        {dir: ['w', 'west'], id:'45-10'},
+        {dir: ['s', 'south'], id:'44-9'},
+    ],
+},
+
+{
+    id: '45-8',
+    coord: [],
+    name: 'W. 45th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-8'},
+        {dir: ['e', 'east'], id:'45-broa'},
+        {dir: ['w', 'west'], id:'45-9'},
+        {dir: ['s', 'south'], id:'44-8'},
+    ],
+},
+
+{
+    id: '45-broa',
+    coord: [],
+    name: 'W. 45th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-broa'},
+        {dir: ['e', 'east'], id:'45-7'},
+        {dir: ['w', 'west'], id:'45-8'},
+        {dir: ['s', 'south'], id:'broa-7'},
+    ],
+},
+
+{
+    id: '45-7',
+    coord: [],
+    name: 'W. 45th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-7'},
+        {dir: ['e', 'east'], id:'45-amer'},
+        {dir: ['w', 'west'], id:'45-broa'},
+        {dir: ['s', 'south'], id:'broa-7'},
+    ],
+},
+
+{
+    id: '45-amer',
+    coord: [],
+    name: 'W. 45th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'46-amer'},
+        {dir: ['e', 'east'], id:'45-5'},
+        {dir: ['w', 'west'], id:'45-7'},
+        {dir: ['s', 'south'], id:'44-amer'},
+    ],
+},
+
+{//Important!!
+    id: 'broa-7',
+    coord: [],
+    name: 'Broadway and 7th Ave.',
+    desc: `Times Square -- where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
+    //Important!! In this section, there is a guy who says: "And a sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap?'" 
+    //The player can then respond with "no" for a response of: "The hustler leaves you and begins making his pitch to someone else halfway down the block."
+    //When the player responds yes, the game continues to a bad end, in the following room.
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-7'},
+        {dir: ['e', 'east'], id:'44-broa'},
+        {dir: ['w', 'west'], id:'45-broa'},
+        {dir: ['s', 'south'], id:'44-7'},
+        {dir: ['yes', 'okay'], id:'broa-7-A'},
+    ],
+},
+
+{//Gets arrested and sent to trial
+    id: 'broa-7-A',
+    onEnter: () => {
+      println(`That was dumb. The cops have been waiting for the last 15 minutes for someone to come along and compound the felony. A plainclothes detective flashes his badge and informs you you're under arrest.`);
+      pressEnter('deat-1');
+    },
+  },
+//End of 45th Street & broa-7
+
+//Start of 44th Street
+{
+    id: '44-henr',
+    coord: [],
+    name: 'W. 44th St. and Henry Hudson Pkwy.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'57-henr'},
+        {dir: ['e', 'east'], id:'44-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'43-henr'},
+    ],
+},
+
+{
+    id: '44-12',
+    coord: [],
+    name: 'W. 44th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-12'},
+        {dir: ['e', 'east'], id:'44-11'},
+        {dir: ['w', 'west'], id:'44-henr'},
+        {dir: ['s', 'south'], id:'43-12'},
+    ],
+},
+
+{
+    id: '44-11',
+    coord: [],
+    name: 'W. 44th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-11'},
+        {dir: ['e', 'east'], id:'44-10'},
+        {dir: ['w', 'west'], id:'44-12'},
+        {dir: ['s', 'south'], id:'43-11'},
+    ],
+},
+
+{
+    id: '44-10',
+    coord: [],
+    name: 'W. 44th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-10'},
+        {dir: ['e', 'east'], id:'44-9'},
+        {dir: ['w', 'west'], id:'44-11'},
+        {dir: ['s', 'south'], id:'43-10'},
+    ],
+},
+
+{
+    id: '44-9',
+    coord: [],
+    name: 'W. 44th St. and 9th Ave.',
+    desc: 'There is a Greek Gyro here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-9'},
+        {dir: ['e', 'east'], id:'44-8'},
+        {dir: ['w', 'west'], id:'44-10'},
+        {dir: ['s', 'south'], id:'43-9'},
+        {dir: ['enter', 'greek', 'gyro'], id:'44-9'},
+    ],
+},
+
+{
+    id: '44-8',
+    coord: [],
+    name: 'W. 44th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-8'},
+        {dir: ['e', 'east'], id:'44-7'},
+        {dir: ['w', 'west'], id:'44-9'},
+        {dir: ['s', 'south'], id:'43-8'},
+    ],
+},
+
+{
+    id: '44-7',
+    coord: [],
+    name: 'W. 44th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'broa-7'},
+        {dir: ['e', 'east'], id:'44-broa'},
+        {dir: ['w', 'west'], id:'44-8'},
+        {dir: ['s', 'south'], id:'43-7'},
+    ],
+},
+
+{
+    id: '44-broa',
+    coord: [],
+    name: 'W. 44th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'broa-7'},
+        {dir: ['e', 'east'], id:'44-amer'},
+        {dir: ['w', 'west'], id:'44-7'},
+        {dir: ['s', 'south'], id:'43-broa'},
+    ],
+},
+
+{
+    id: '44-amer',
+    coord: [],
+    name: 'W. 44th St. and Ave of Americas',
+    desc: 'The faded elegance of the Algonquin Hotel still draws the theatre and writing crowd for cocktails and meals.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'45-amer'},
+        {dir: ['e', 'east'], id:'44-5'},
+        {dir: ['w', 'west'], id:'44-broa'},
+        {dir: ['s', 'south'], id:'43-amer'},
+        {dir: ['enter', 'hotel', 'algonquin'], block:`You can’t go that way.`},
+    ],
+},
+//End 44th Street
+
+//Start 43rd Street
+{
+    id: '43-henr',
+    coord: [],
+    name: 'W. 43rd St. and Henry Hudson Pkwy.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-henr'},
+        {dir: ['e', 'east'], id:'43-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'42-henr'},
+    ],
+},
+
+{
+    id: '43-12',
+    coord: [],
+    name: 'W. 43rd St. and 12th Ave.',
+    desc: 'There is a restaurant called Nedicks here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-12'},
+        {dir: ['e', 'east'], id:'43-11'},
+        {dir: ['w', 'west'], id:'43-henr'},
+        {dir: ['s', 'south'], id:'42-12'},
+        {dir: ['enter', 'nedicks'], id:'43-12-nedi'},
+    ],
+},
+
+{
+    id: '43-11',
+    coord: [],
+    name: 'W. 43rd St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-11'},
+        {dir: ['e', 'east'], id:'43-10'},
+        {dir: ['w', 'west'], id:'43-12'},
+        {dir: ['s', 'south'], id:'42-11'},
+    ],
+},
+
+{
+    id: '43-10',
+    coord: [],
+    name: 'W. 43rd St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-10'},
+        {dir: ['e', 'east'], id:'43-9'},
+        {dir: ['w', 'west'], id:'43-11'},
+        {dir: ['s', 'south'], id:'42-10'},
+    ],
+},
+
+{
+    id: '43-9',
+    coord: [],
+    name: 'W. 43rd St. and 9th Ave.',
+    desc: 'There is a Chock Full-O-Nuts at this intersection.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-10'},
+        {dir: ['e', 'east'], id:'43-9'},
+        {dir: ['w', 'west'], id:'43-11'},
+        {dir: ['s', 'south'], id:'42-10'},
+        {dir: ['enter', 'chock', 'nuts'], id:'43-9-chock'},
+    ],
+},
+
+{
+    id: '43-8',
+    coord: [],
+    name: 'W. 43rd St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-8'},
+        {dir: ['e', 'east'], id:'43-7'},
+        {dir: ['w', 'west'], id:'43-9'},
+        {dir: ['s', 'south'], id:'42-8'},
+    ],
+},
+
+{
+    id: '43-7',
+    coord: [],
+    name: 'W. 43rd St. and 7th Ave.',
+    desc: 'There is a subway entrance at this corner.',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-7'},
+        {dir: ['e', 'east'], id:'43-broa'},
+        {dir: ['w', 'west'], id:'43-8'},
+        {dir: ['s', 'south'], id:'42-7'},
+    ],
+},
+
+{
+    id: '43-broa',
+    coord: [],
+    name: 'W. 43rd St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-broa'},
+        {dir: ['e', 'east'], id:'43-amer'},
+        {dir: ['w', 'west'], id:'43-7'},
+        {dir: ['s', 'south'], id:'42-broa'},
+    ],
+},
+
+{
+    id: '43-amer',
+    coord: [],
+    name: 'W. 43rd St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'44-amer'},
+        {dir: ['e', 'east'], id:'43-5'},
+        {dir: ['w', 'west'], id:'43-broa'},
+        {dir: ['s', 'south'], id:'42-amer'},
+    ],
+},
+
+
+//End 43rd Street
+
 
 
 //Start Templates
 
  //Start Room Template
- {
+{
     id: '#-#',
     coord: [],
     name: 'W. #th St. and #th Ave.',
     isStreet: true,
     hasSubway: false,
     exit: 
-    [
-        
+    [ 
         {dir: ['n', 'north'], id:'S-A'},
         {dir: ['e', 'east'], id:'S-A'},
         {dir: ['w', 'west'], id:'S-A'},
@@ -2524,6 +3080,10 @@ const midwestside = {
 //47-9 pizzeria
 //47-7 Nedicks
 //47-amer Pizzeria
+//broa-7 Description and death in texas
+//44-9 Greek Gyro
+//43-12 Nedicks
+//43-9 Chock Full-O-Nuts
 
 //Subway entrances:
 //59-amst
@@ -2534,6 +3094,7 @@ const midwestside = {
 //50-8
 //50-broa
 //50-amer
+//43-7
 
 
 //Naming conventions in this disk: 
@@ -2550,6 +3111,7 @@ const midwestside = {
 //Greek Gyro > gyro
 //Pizzeria > pizza
 //Luncheonette > lunch
+//Nedicks > nedi
 
 
 
