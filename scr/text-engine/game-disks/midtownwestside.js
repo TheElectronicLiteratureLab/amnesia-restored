@@ -3033,57 +3033,389 @@ const midwestside = {
         {dir: ['s', 'south'], id:'42-amer'},
     ],
 },
-
-
 //End 43rd Street
 
-
-
-//Start Templates
-
- //Start Room Template
+//Start 42nd Street
 {
-    id: '#-#',
+    id: '42-henr',
     coord: [],
-    name: 'W. #th St. and #th Ave.',
+    name: 'W. 42nd St. and Henry Hudson Pkwy.',
     isStreet: true,
     hasSubway: false,
     exit: 
-    [ 
-        {dir: ['n', 'north'], id:'S-A'},
-        {dir: ['e', 'east'], id:'S-A'},
-        {dir: ['w', 'west'], id:'S-A'},
-        {dir: ['s', 'south'], id:'S-A'},
+    [
+        {dir: ['n', 'north'], id:'43-henr'},
+        {dir: ['e', 'east'], id:'42-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'39-henr'},
     ],
 },
- //End Room Template
 
-//Still need streets 49 through 34
+{
+    id: '42-12',
+    coord: [],
+    name: 'W. 42nd St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-12'},
+        {dir: ['e', 'east'], id:'42-11'},
+        {dir: ['w', 'west'], id:'42-henr'},
+        {dir: ['s', 'south'], id:'41-12'},
+    ],
+},
 
-//End Templates
+{
+    id: '42-11',
+    coord: [],
+    name: 'W. 42nd St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-11'},
+        {dir: ['e', 'east'], id:'42-10'},
+        {dir: ['w', 'west'], id:'42-12'},
+        {dir: ['s', 'south'], id:'41-11'},
+    ],
+},
+
+{
+    id: '42-10',
+    coord: [],
+    name: 'W. 42nd St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-10'},
+        {dir: ['e', 'east'], id:'42-dyer'},
+        {dir: ['w', 'west'], id:'42-11'},
+        {dir: ['s', 'south'], id:'41-10'},
+        {dir: ['enter', 'nedicks'], id:'42-10-nedi'},
+    ],
+},
+
+{
+    id: '42-dyer',
+    coord: [],
+    name: 'W. 42nd St. and Dyer Ave.',
+    desc: 'A row of new theatres struggle desperately to surmount the general decay of the area.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], block:`You can’t go that way.`},
+        {dir: ['e', 'east'], id:'42-9'},
+        {dir: ['w', 'west'], id:'42-10'},
+        {dir: ['s', 'south'], id:'41-dyer'},
+    ],
+},
+
+{//Possible description change
+    id: '42-9',
+    coord: [],
+    name: 'W. 42nd St. and 9th Ave.',
+    desc: 'This block long stretch of 42nd St. is another one lined with movie marquee after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamourizing.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-9'},
+        {dir: ['e', 'east'], id:'42-8'},
+        {dir: ['w', 'west'], id:'42-dyer'},
+        {dir: ['s', 'south'], id:'41-9'},
+    ],
+},
+
+{
+    id: '42-8',
+    coord: [],
+    name: 'W. 42nd St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-8'},
+        {dir: ['e', 'east'], id:'42-7'},
+        {dir: ['w', 'west'], id:'42-9'},
+        {dir: ['s', 'south'], id:'41-8'},
+    ],
+},
+
+{
+    id: '42-7',
+    coord: [],
+    name: 'W. 42nd St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-7'},
+        {dir: ['e', 'east'], id:'42-broa'},
+        {dir: ['w', 'west'], id:'42-8'},
+        {dir: ['s', 'south'], id:'41-7'},
+    ],
+},
+
+{
+    id: '42-broa',
+    coord: [],
+    name: 'W. 42nd St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-broa'},
+        {dir: ['e', 'east'], id:'42-amer'},
+        {dir: ['w', 'west'], id:'42-7'},
+        {dir: ['s', 'south'], id:'41-broa'},
+    ],
+},
+
+{
+    id: '42-amer',
+    coord: [],
+    name: 'W. 42nd St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'43-amer'},
+        {dir: ['e', 'east'], id:'42-5'},
+        {dir: ['w', 'west'], id:'42-broa'},
+        {dir: ['s', 'south'], id:'41-amer'},
+    ],
+},
+//End 42nd Street
+
+//Start 41st Street
+{
+    id: '41-12',
+    coord: [],
+    name: 'W. 41st St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-12'},
+        {dir: ['e', 'east'], id:'41-11'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'40-12'},
+    ],
+},
+
+{
+    id: '41-11',
+    coord: [],
+    name: 'W. 41st St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-11'},
+        {dir: ['e', 'east'], id:'41-galv'},
+        {dir: ['w', 'west'], id:'41-12'},
+        {dir: ['s', 'south'], id:'40-11'},
+    ],
+},
+
+{
+    id: '41-galv',
+    coord: [],
+    name: 'W. 41st St. and Galvin Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], block:`You can’t go that way.`},
+        {dir: ['e', 'east'], id:'41-10'},
+        {dir: ['w', 'west'], id:'41-11'},
+        {dir: ['s', 'south'], id:'40-galv'},
+    ],
+},
+
+{
+    id: '41-10',
+    coord: [],
+    name: 'W. 41st St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-10'},
+        {dir: ['e', 'east'], id:'41-dyer'},
+        {dir: ['w', 'west'], id:'41-galv'},
+        {dir: ['s', 'south'], id:'40-10'},
+    ],
+},
+
+{
+    id: '41-dyer',
+    coord: [],
+    name: 'W. 41st St. and Dyer Ave.',
+    desc: 'There is a restaurant called Nedicks here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-dyer'},
+        {dir: ['e', 'east'], id:'41-9'},
+        {dir: ['w', 'west'], id:'41-10'},
+        {dir: ['s', 'south'], id:'bta-dyer'},
+        {dir: ['enter', 'nedicks'], id:'41-dyer-nedi'},
+    ],
+},
+
+{
+    id: '41-9',
+    coord: [],
+    name: 'W. 41st St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-9'},
+        {dir: ['e', 'east'], id:'41-8'},
+        {dir: ['w', 'west'], id:'41-dyer'},
+        {dir: ['s', 'south'], id:'bta-9'},
+    ],
+},
+
+{
+    id: '41-8',
+    coord: [],
+    name: 'W. 41st St. and 8th Ave.',
+    desc: 'The enormous Port Authority Bus Terminal is a waystop for travelers and home to the squatters who sit at its entrance.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-8'},
+        {dir: ['e', 'east'], id:'41-7'},
+        {dir: ['w', 'west'], id:'41-9'},
+        {dir: ['s', 'south'], id:'40-8'},
+    ],
+},
+
+{
+    id: '41-7',
+    coord: [],
+    name: 'W. 41st St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-7'},
+        {dir: ['e', 'east'], id:'41-broa'},
+        {dir: ['w', 'west'], id:'41-8'},
+        {dir: ['s', 'south'], id:'40-7'},
+    ],
+},
+
+{
+    id: '41-broa',
+    coord: [],
+    name: 'W. 41st St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-broa'},
+        {dir: ['e', 'east'], id:'41-amer'},
+        {dir: ['w', 'west'], id:'41-7'},
+        {dir: ['s', 'south'], id:'40-broa'},
+    ],
+},
+
+{
+    id: '41-amer',
+    coord: [],
+    name: 'W. 41st St. and Ave of Americas',
+    desc: 'There is a pizzeria here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-amer'},
+        {dir: ['e', 'east'], block:`You can’t go that way.`},
+        {dir: ['w', 'west'], id:'41-broa'},
+        {dir: ['s', 'south'], id:'40-amer'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id:'41-amer-pizza'},
+    ],
+},
+//End 41st Street
+
+//Start 40th Street
+{
+    id: '40-12',
+    coord: [],
+    name: 'W. 40th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-12'},
+        {dir: ['e', 'east'], id:'40-11'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'39-12'},
+    ],
+},
+
+//End 40th Street
+
+//Start 39th Street
+//End 39th Street
+
+//Start 38th Street
+//End 38th Street
+
+//Start 37th Street
+//End 37th Street
+
+//Start 36th Street
+//End 36th Street
+
+//Start 35th Street
+//End 35th Street
+
+//Start 34th Street
+//End 34th Street
+
+
+
+//Start Notes
 
 //Need to change some names, such as those used in central park, to match other sections.
 
 //Important rooms:
-//cent-amer Nedicks
-//57-8 Chock Full-O-Nuts
 //58-broa Description
 //57-broa Description
 //56-7 Description
+//50-7 Description
+//broa-7 Description and death in texas
+//42-9 Description !!Might want to change this description
+//41-8 Description
+
+//Restaurants:
+//cent-amer Nedicks
+//57-8 Chock Full-O-Nuts
 //55-8 Greek Gyro
 //54-amer Pizzeria
 //51-10 Chock Full-O-Nuts
 //51-8 luncheonette
-//50-7 Description
 //48-amer Greek Gyro
 //47-11 luncheonette
 //47-9 pizzeria
 //47-7 Nedicks
 //47-amer Pizzeria
-//broa-7 Description and death in texas
 //44-9 Greek Gyro
 //43-12 Nedicks
 //43-9 Chock Full-O-Nuts
+//42-10 Nedicks
+//41-dyer Nedicks
+//41-amer Pizzeria
 
 //Subway entrances:
 //59-amst
@@ -3095,6 +3427,7 @@ const midwestside = {
 //50-broa
 //50-amer
 //43-7
+//42-8
 
 
 //Naming conventions in this disk: 
@@ -3107,6 +3440,10 @@ const midwestside = {
 //Ave of Americas > amer
 //West Drive > wdri
 //Henry Hudson Pkwy > henr
+//Dyer Ave > dyer
+//Galvin Ave > galv
+//Bus Terminal Access > bta
+
 //Chock Full-O-Nuts > chock
 //Greek Gyro > gyro
 //Pizzeria > pizza
