@@ -75,6 +75,25 @@ button {
   font-size: x-large;
 }
 
+.inventorygrid {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3px;
+}
+
+.inventorygrid > div {
+  padding: 1rem;
+  border: 1px dotted #2d0140;
+}
+
+.inventorygrid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+
+
 #container-o {
   border: 0px solid black;
   width: 100%;
@@ -172,6 +191,31 @@ button {
   margin-right: auto;
   margin-left: auto;
   width: 200px;
+  display: none;
+}
+
+#inv {
+  border: 5px solid grey;
+  background: #f2ebdf;
+  color: #0d0d0d;
+  position: absolute;
+  top: 165px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+  height: 500px;
+  display: none;
+}
+
+#address {
+  border: 5px solid grey;
+  background: #f2ebdf;
+  position: absolute;
+  top: 165px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+  height: 500px;
   display: none;
 }
 
