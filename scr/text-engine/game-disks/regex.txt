@@ -1,5 +1,0 @@
-Regular Expresions for getting in different 
-//coord: [],
-Find: (id: '[a-z]*.......\n)
-Replace: $1\t\t\tcoord: [],\n
-
