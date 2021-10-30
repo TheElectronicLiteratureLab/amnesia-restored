@@ -509,10 +509,6 @@ let forward = () => {
       println(`You can't do that here.`);
     }
   }
-
-  if(disk.roomId === 'hote-revi'){
-    println(`The F button that should tune the TV to the next channel doesn't seem to be working any longer.`)
-  }
 }
 
 
@@ -629,45 +625,36 @@ if(getItemInInventory('address book')){
   };
 }
 
+/*let playerCloth = {
+  top: [],
+  bottom: [],
+  head: [],
+  feet: [],
+}*/
 
 
 
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
-  const room = getRoom('hote-revi');
 
-  // items that are worn on both the torso and legs
-  if(item.top && item.bottom && playCloth.top.length === 0 && playCloth.bottom.length === 0){
-    playCloth.top.push(item.itemId);
-    playCloth.bottom.push(item.itemId);
-    if(item.itemId === 'tuxedo' && room.lukecall !== true){
-      println(`With a sense partly of jumping off a diving board into a complete void and partly of self-amazement-- as though you were a matador getting dressed for the first time in his suit-of-lights-- you put on the white tuxedo. First the frilly shirt and the white bow tie, then the pants, which are held up by the novelty of braces instead of by a belt; then the cummerbund; white silk calf-length socks and the whiter-than-white patent leather shoes; and finally the white jacket and the white silk top hat. You step in front of the mirror to see if you look any more or less familiar- but you only look very white.`);
-    } else {
-      println(`You put on the ${clothes}.`);
-    }
-  } else if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1 && playCloth.top[0] !== item.itemId && playCloth.bottom[0] !== item.itemId){
-    if(item.itemId === 'tuxedo' && room.lukecall === true){
-      playCloth.top.splice('T-shirt');
-      playCloth.bottom.splice('jeans');
-      playCloth.feet.splice('sneakers');
-      playCloth.top.push(item.itemId);
-      playCloth.bottom.push(item.itemId);
-      println(`You're in such a state of befuddlement that you begin to put on the tuxedo over the clothes you're wearing.
-      
-      Reluctantly-- for it took so much trouble getting these clothes-- you take off the jeans, sneakers, and T-shirt that you are wearing and put them in the gym-bag, together with the change of clothes you put into the plastic bookstore bag. As you do so, the marron address book catches your eye.`);
-    } else {
-      println(`You must first remove the ${playCloth.top} and the ${playCloth.bottom} you're wearing in order to put on something else.`);
-    }
-  } else if(item.top && item.bottom && playCloth.top.length >=1 && playCloth.top[0] !== item.itemId){
-    println(`You must first remove the ${playCloth.top} you're wearing in order to put on something else.`);
-  } else if(item.top && item.bottom && playCloth.bottom.length >= 1 && playCloth.bottom[0] !== item.itemId){
-    println(`You must first remove the ${playCloth.bottom} you're wearing in order to put on something else.`);
-  } else if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.top[0] === item.itemId && playCloth.bottom[0] === item.itemId){
-    println(`You're already wearing that.`);
-  }
+  /*if(item.top && item.bottom && playerCloth.top.length === 0 && playerCloth.bottom.length === 0){
+    playerCloth.top.push(item.itemId);
+    playerCloth.bottom.push(item.itemId);
+    println(`You put on ${clothes}.`);
+  } else if(item.top && item.bottom && playerCloth.top.length >= 1 || playerCloth.bottom.length >= 1){
+    println(`You must first remove the ${playerCloth.top} you're wearing in order to put on something else.`);
+  } */
 
-  //
+  /*
+  if(item.top && item.bottom && playerCloth.top.length === 0 && playerCloth.bottom.length === 0){
+    playerCloth.top.push(itemId);
+    playerCloth.bottom.push(itemId);
+    println(`You've put on the ${clothes}`);
+  } else if (item.top && item.bottom && playerCloth.top.length >= 1 || playerCloth.bottom.length >= 1 && playerCloth.top[0] !== itemId || playerCloth.bottom[0] !== itemId){
+    println(`You must first remove the ${playerCloth.top} and ${playerCloth.bottom}  `)
+  }*/
+  
   if(item.top && !item.bottom && playCloth.top.length === 0){
     playCloth.top.push(item.itemId);
     println(`You put on ${clothes} on your torso.`);
@@ -704,7 +691,7 @@ let wear = (clothes) => {
     println(`You're already wearing that.`);
   }
   
-  if(!item.top && !item.bottom && !item.head && !item.feet){
+  if(!item.top || !item.bottom || !item.head || !item.feet){
     println(`You can't wear that.`);
   }
 } 
@@ -713,43 +700,36 @@ let wear = (clothes) => {
 let remove = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
 
-  if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
-    playCloth.top.splice(item.itemId);
-    playCloth.bottom.splice(item.itemId);
-    println(`You remove the ${clothes}.`);
-  } else if(item.top && item.bottom && playCloth.top.length === 0 && playCloth.bottom.length === 0){
-    println(`You're not wearing anything.`);
-  }
-
   if(item.top && !item.bottom && playCloth.top.length >= 1){
     playCloth.top.splice(item.itemId);
     println(`You remove the ${clothes} on your torso.`);
   } else if(item.top && !item.bottom && playCloth.top.length === 0){
-    println(`You're not wearing anything.`);
+    println(`You're not wearing anything`);
   } 
 
   if(item.bottom && !item.top && playCloth.bottom.length >= 1){
     playCloth.bottom.splice(item.itemId);
     println(`You remove the ${clothes} on your legs.`);
   } else if(item.bottom && !item.top && playCloth.bottom.length === 0){
-    println(`You're not wearing anything.`);
+    println(`You're not wearing anything`);
   } 
 
   if(item.head && playCloth.head.length >= 1){
     playCloth.head.splice(item.itemId);
     println(`You remove the ${clothes} on your head.`);
   } else if(item.head && playCloth.head.length === 0){
-    println(`You're not wearing anything.`);
+    println(`You're not wearing anything`);
   } 
 
   if(item.feet && playCloth.feet.length >= 1){
     playCloth.feet.splice(item.itemId);
     println(`You remove the ${clothes} on your feet.`);
   } else if(item.feet && playCloth.feet.length === 0){
-    println(`You're not wearing anything.`);
+    println(`You're not wearing anything`);
   } 
 
-  if(!item.top && !item.bottom && !item.head && !item.feet){
+
+  if(!item.top || !item.bottom || !item.head || !item.feet){
     println(`You can't remove that.`);
   }
 }
@@ -825,21 +805,10 @@ let open = (itemToOpen) => {
         println(`The ${item.name} is already open.`);
       }
     }
-    // Large Box (Hote-Revi)
-    else if (item.itemId === 'hotebox'){
-      if(item.isOpen !== true){
-        item.isOpen = true;
-        println(`In the box, under a layer of white tissue paper is an ***all-white tuxedo***, together with the appropriate appurtenances; frilly shirt, cummerbund, bow tie and a ***white silk top hat***. A shoe-box-sized box is lying beside the suit, containing, not surprisingly, a pair of shoes, ***white patent leather shoes*** no less. There could be only one place anyone would ever wear this outfit-- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
-        
-        But maybe they're not meant for you. Maybe they go delivered to this room by mistake. There's an easy way to find out. You slip the jacket on over your T-shirt. It fits about as well as a rented tux could be expected to. In fact, if you were wearing the shirt instead of a T-shirt, you'd almost think it was tailored.`);
-      } else {
-        println(`You've already opened that.`);
-      }
-    }
   } else if (item.itemId === 'window') {
     println('The window is sealed to keep the air-conditioned air in the hotel.');
   } else if (item.itemId === 'dresser') {
-    println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
+    println('One after the other, you look through all the dresser drawers. All you find is a leaflet advertising Acme Invisible Reweaving.');
   } else {
     println("You can't open that.");
   }
