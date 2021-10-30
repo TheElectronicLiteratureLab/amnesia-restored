@@ -1069,7 +1069,7 @@ const lowerMan = {
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'fult-will'},
-                {dir: 'south', id: 'plat-will'},
+                {dir: 'south', id: 'maid-will'},
                 {dir: 'east', id: 'john-gold'},
                 {dir: 'west', id: 'john-dutc'}
             ],
@@ -1089,16 +1089,330 @@ const lowerMan = {
             ],
         },
         {
-            id: '',
+            id: 'ann-will',
             coord: [],
-            name: '',
+            name: 'Ann St and William St.',
             desc: ``,
             isStreet: true,
             exits: [
-                {dir: 'north', id: ''},
-                {dir: 'south', id: ''},
-                {dir: 'east', id: ''},
-                {dir: 'west', id: ''}
+                {dir: 'north', id: 'beek-will'},
+                {dir: 'south', id: 'fult-will'},
+                {dir: 'east', id: 'ann-gold'},
+                {dir: 'west', id: 'ann-nass'}
+            ],
+        },
+        {
+            id: 'beek-will',
+            coord: [],
+            name: 'Beekman St. and William St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'ann-will'},
+                {dir: 'east', id: 'beek-gold'},
+                {dir: 'west', id: 'beek-nass'}
+            ],
+        },
+        {
+            id: 'john-dutc',
+            coord: [],
+            name: 'John St. and Dutch St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-dutc'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'john-will'},
+                {dir: 'west', id: 'john-nass'}
+            ],
+        },
+        {
+            id: 'fult-dutc',
+            coord: [],
+            name: 'Fulton St. and Dutch St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'john-dutc'},
+                {dir: 'east', id: 'fult-will'},
+                {dir: 'west', id: 'fult-nass'}
+            ],
+        },
+        {
+            id: 'maid-libe',
+            coord: [],
+            name: 'Maiden La. and Liberty St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'maid-will'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'libe-gold'},
+                {dir: 'west', id: 'libe-swil'}
+            ],
+        },
+        {
+            id: 'libe-gold',
+            coord: [],
+            name: 'Liberty St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'plat-gold'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'libe-pear'},
+                {dir: 'west', id: 'maid-libe'}
+            ],
+        },
+        {
+            id: 'plat-gold',
+            coord: [],
+            name: 'Platt St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'john-gold'},
+                {dir: 'south', id: 'libe-gold'},
+                {dir: 'east', id: 'plat-pear'},
+                {dir: 'west', id: 'plat-will'}
+            ],
+        },
+        {
+            id: 'john-gold',
+            coord: [],
+            name: 'John St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-gold'},
+                {dir: 'south', id: 'plat-gold'},
+                {dir: 'east', id: 'john-clif'},
+                {dir: 'west', id: 'john-will'}
+            ],
+        },
+        {
+            id: 'fult-gold',
+            coord: [],
+            name: 'Fulton St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ann-gold'},
+                {dir: 'south', id: 'john-gold'},
+                {dir: 'east', id: 'fult-clif'},
+                {dir: 'west', id: 'fult-will'}
+            ],
+        },
+        {
+            id: 'ann-gold',
+            coord: [],
+            name: 'Ann St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-gold'},
+                {dir: 'south', id: 'fult-gold'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'ann-will'}
+            ],
+        },
+        {
+            id: 'beek-gold',
+            coord: [],
+            name: 'Beekman St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spru-gold'},
+                {dir: 'south', id: 'ann-gold'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'beek-will'}
+            ],
+        },
+        {
+            id: 'spru-gold',
+            coord: [],
+            name: 'Spruce St. and Gold St.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-gold'},
+                {dir: 'south', id: 'beek-gold'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'spru-nass'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'fran-gold',
+            coord: [],
+            name: 'Frankfort St. and Gold St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'spru-gold'},
+                {dir: 'east', id: 'fran-stja'},
+                {dir: 'west', id: 'fran-park'}
+            ],
+        },
+        {
+            id: 'john-clif',
+            coord: [],
+            name: 'John St. and Cliff St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-clif'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'john-pear'},
+                {dir: 'west', id: 'john-clif'}
+            ],
+        },
+        {
+            id: 'fult-clif',
+            coord: [],
+            name: 'Fulton St. and Cliff St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-clif'},
+                {dir: 'south', id: 'john-clif'},
+                {dir: 'east', id: 'fult-pear'},
+                {dir: 'west', id: 'fult-gold'}
+            ],
+        },
+        {
+            id: 'beek-clif',
+            coord: [],
+            name: 'Beekman St. and Cliff St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'fult-clif'},
+                {dir: 'east', id: 'beek-pear'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'beav-new',
+            coord: [],
+            name: 'Beaver St. and New St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-new'},
+                {dir: 'south', id: 'mark-broa'},
+                {dir: 'east', id: 'beav-broa'},
+                {dir: 'west', id: 'beav-whit'}
+            ],
+        },
+        {
+            id: 'exch-new',
+            coord: [],
+            name: 'Exchange Pl. and New St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'new-wall'},
+                {dir: 'south', id: 'beav-new'},
+                {dir: 'east', id: 'exch-nass'},
+                {dir: 'west', id: 'exch-broa'}
+            ],
+        },
+        {
+            id: 'new-wall',
+            coord: [],
+            name: 'New St. and Wall St.',
+            desc: `The New York Stock Exchange-- where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'exch-new'},
+                {dir: 'east', id: 'wall-nass'},
+                {dir: 'west', id: 'wall-broa'},
+                {dir: 'new york stock exchange', block: `There is no point to going there.`}
+            ],
+        },
+        {
+            id: 'libe-libe',
+            coord: [],
+            name: 'Liberty St. and Liberty Pl.',
+            desc: `You stop to read the plaque fixed to the corner of the Federal Reserve Bank and are dully impressed by the information that five stories of this Renaissance palace are below street level 'with subterranean vaults resting on bedrock.'`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'maid-libe'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'libe-nass'},
+                {dir: 'west', id: 'libe-broa'},
+                {dir: 'federal reserve bank', id: 'libe-libe-1'}
+            ],
+        },
+        {
+            id: 'libe-libe-1',
+            coord: [],
+            name: 'Federal Reserve Bank Lobby',
+            desc: ``,
+            onEnter: () => {
+                println(`You walk through the smoked-glass doors, and enter a lobby decorated in stone. A security desk near the elevators makes you think twice about remaining.
+                
+                You turn away quickly and leave.`);
+                pressEnter('libe-libe');
+            }
+        },
+        {
+            id: 'maid-libe',
+            coord: [],
+            name: 'Maiden La. and Liberty Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'libe-libe'},
+                {dir: 'east', id: 'maid-nass'},
+                {dir: 'west', id: 'cort-broa'}
+            ],
+        },
+        {
+            id: 'ann-park',
+            coord: [],
+            name: 'Ann St. and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-park'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'ann-nass'},
+                {dir: 'west', id: 'vese-broa'}
+            ],
+        },
+        {
+            id: 'beek-park',
+            coord: [],
+            name: 'Beekman St. and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spru-park'},
+                {dir: 'south', id: 'ann-park'},
+                {dir: 'east', id: 'beek-nass'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'spru-park',
+            coord: [],
+            name: 'Spruce St. and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-park'},
+                {dir: 'south', id: 'beek-park'},
+                {dir: 'east', id: 'spru-nass'},
+                {dir: 'west', block: `You can't go that way.`}
             ],
         },
     ],
