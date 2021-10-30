@@ -3363,6 +3363,144 @@ const midwestside = {
     ],
 },
 
+{
+    id: '40-11',
+    coord: [],
+    name: 'W. 40th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-11'},
+        {dir: ['e', 'east'], id:'40-galv'},
+        {dir: ['w', 'west'], id:'40-12'},
+        {dir: ['s', 'south'], id:'39-11'},
+    ],
+},
+
+{
+    id: '40-galv',
+    coord: [],
+    name: 'W. 40th St. and Galvin Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-galv'},
+        {dir: ['e', 'east'], id:'40-10'},
+        {dir: ['w', 'west'], id:'40-11'},
+        {dir: ['s', 'south'], id:'39-galv'},
+    ],
+},
+
+{
+    id: '40-10',
+    coord: [],
+    name: 'W. 40th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-10'},
+        {dir: ['e', 'east'], id:'bta-40'},
+        {dir: ['w', 'west'], id:'40-galv'},
+        {dir: ['s', 'south'], id:'39-10'},
+    ],
+},
+
+//Bus Terminal Access
+{
+    id: 'bta-galv',
+    coord: [],
+    name: 'Bus Terminal Access and Galvin Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-galv'},
+        {dir: ['e', 'east'], id:'bta-10'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'39-galv'},
+    ],
+},
+
+{
+    id: 'bta-10',
+    coord: [],
+    name: 'Bus Terminal Access and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-10'},
+        {dir: ['e', 'east'], id:'bta-40'},
+        {dir: ['w', 'west'], id:'bta-galv'},
+        {dir: ['s', 'south'], id:'39-10'},
+    ],
+},
+
+{
+    id: 'bta-40',
+    coord: [],
+    name: 'Bus Terminal Access and W. 40th St.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'bta-dyer'},
+        {dir: ['e', 'east'], id:'40-dyer'},
+        {dir: ['w', 'west'], id:'40-10'},
+        {dir: ['s', 'south'], id:'bta-10'},
+    ],
+},
+
+{
+    id: 'bta-dyer',
+    coord: [],
+    name: 'Bus Terminal Access and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'bta-dyer'},
+        {dir: ['e', 'east'], id:'bta-9'},
+        {dir: ['w', 'west'], id:'bta-40'},
+        {dir: ['s', 'south'], id:'40-dyer'},
+    ],
+},
+
+{
+    id: 'bta-9',
+    coord: [],
+    name: 'Bus Terminal Access and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-9'},
+        {dir: ['e', 'east'], block:`You can’t go that way.`},
+        {dir: ['w', 'west'], id:'bta-dyer'},
+        {dir: ['s', 'south'], id:'40-9'},
+    ],
+},
+//End Bus Terminal Access
+{
+    id: '40-dyer',
+    coord: [],
+    name: 'W. 40th St. and Dyer Ave.',
+    desc: 'There is a pizzeria here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-10'},
+        {dir: ['e', 'east'], id:'bta-40'},
+        {dir: ['w', 'west'], id:'40-galv'},
+        {dir: ['s', 'south'], id:'39-10'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id:'39-10'},
+    ],
+},
+
 //End 40th Street
 
 //Start 39th Street
