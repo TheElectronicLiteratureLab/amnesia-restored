@@ -1415,5 +1415,606 @@ const lowerMan = {
                 {dir: 'west', block: `You can't go that way.`}
             ],
         },
+        {
+            id: 'wate-coen',
+            coord: [],
+            name: 'Water St. and Coenties Slip',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wate-olds'},
+                {dir: 'south', id: 'wate-broa'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'pear-ston'}
+            ],
+        },
+        {
+            id: 'wate-olds',
+            coord: [],
+            name: 'Water St. and Old Slip',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'gouv-wate'},
+                {dir: 'south', id: 'wate-coen'},
+                {dir: 'east', id: 'olds-fron'},
+                {dir: 'west', id: 'pear-olds'}
+            ],
+        },
+        {
+            id: 'gouv-wate',
+            coord: [],
+            name: 'Gouverneur La. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wall-wate'},
+                {dir: 'south', id: 'wate-olds'},
+                {dir: 'east', id: 'gouv-fron'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'wall-wate',
+            coord: [],
+            name: 'Wall St. and Water St.',
+            desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; here it's just another skyscraper.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pine-wate'},
+                {dir: 'south', id: 'gouv-wate'},
+                {dir: 'east', id: 'wall-fron'},
+                {dir: 'west', id: 'wall-pear'},
+                {dir: '100 Wall Street', id: 'wall-wate-1'}
+            ],
+        },
+        {
+            id: 'wall-wate-1',
+            coord: [],
+            name: '100 Wall Street Lobby',
+            onEnter: () => {
+                println(`You walk through the smoked-glass doors, and enter a lobby decorated in marble. A security guard near the elevators makes you think twice about remaining.
+                
+                You turn away quickly and leave.`);
+                pressEnter('wall-wate');
+            }
+        },
+        {
+            id: 'pine-wate',
+            coord: [],
+            name: 'Pine St. and Water St.',
+            desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-wate'},
+                {dir: 'south', id: 'wall-wate'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'pine-pear'}
+            ],
+        },
+        {
+            id: 'libe-wate',
+            coord: [],
+            name: 'Liberty St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'flet-wate'},
+                {dir: 'south', id: 'pine-wate'},
+                {dir: 'east', id: 'libe-fron'},
+                {dir: 'west', id: 'libe-pear'}
+            ],
+        },
+        {
+            id: 'flet-wate',
+            coord: [],
+            name: 'Fletcher St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'john-wate'},
+                {dir: 'south', id: 'libe-wate'},
+                {dir: 'east', id: 'flet-fron'},
+                {dir: 'west', id: 'flet-pear'}
+            ],
+        },
+        {
+            id: 'john-wate',
+            coord: [],
+            name: 'John St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-wate'},
+                {dir: 'south', id: 'flet-wate'},
+                {dir: 'east', id: 'john-fron'},
+                {dir: 'west', id: 'john-pear'}
+            ],
+        },
+        {
+            id: 'fult-wate',
+            coord: [],
+            name: 'Fulton St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-stja'},
+                {dir: 'south', id: 'john-wate'},
+                {dir: 'east', id: 'fult-fron'},
+                {dir: 'west', id: 'fult-pear'}
+            ],
+        },
+        {
+            id: 'beek-stja',
+            coord: [],
+            name: 'Beekman St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-stja'},
+                {dir: 'south', id: 'fult-wate'},
+                {dir: 'east', id: 'beek-wate'},
+                {dir: 'west', id: 'beek-pear'}
+            ],
+        },
+        {
+            id: 'pear-stja',
+            coord: [],
+            name: 'Pearl St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'peck-stja'},
+                {dir: 'south', id: 'beek-stja'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'beek-pear'}
+            ],
+        },
+        {
+            id: 'peck-stja',
+            coord: [],
+            name: 'Peck Slip and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-stja'},
+                {dir: 'south', id: 'pear-stja'},
+                {dir: 'east', id: 'peck-wate'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'fran-stja',
+            coord: [],
+            name: 'Frankfort St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'rbtw-stja'},
+                {dir: 'south', id: 'peck-stja'},
+                {dir: 'east', id: 'fran-wate'},
+                {dir: 'west', id: 'park-cent'}
+            ],
+        },
+        {
+            id: 'rbtw-stja',
+            coord: [],
+            name: 'Rbt Wagner Pl. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-stja'},
+                {dir: 'south', id: 'fran-stja'},
+                {dir: 'east', id: 'rbtw-sout'},
+                {dir: 'west', id: 'ave-madi'}
+            ],
+        },
+        {
+            id: 'pear-stja',
+            coord: [],
+            name: 'Pearl St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'madi-stja'},
+                {dir: 'south', id: 'rbtw-stja'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'pear-madi'}
+            ],
+        },
+        {
+            id: 'madi-stja',
+            coord: [],
+            name: 'Madison St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jame-stja'},
+                {dir: 'south', id: 'pear-stja'},
+                {dir: 'east', id: 'james-madi'},
+                {dir: 'west', id: 'pear-madi'}
+            ],
+        },
+        {
+            id: 'jame-stja',
+            coord: [],
+            name: 'James St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'oliv-stja'},
+                {dir: 'south', id: 'madi-stja'},
+                {dir: 'east', id: 'jame-madi'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'oliv-stja',
+            coord: [],
+            name: 'Oliver St. and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ebro-stja'},
+                {dir: 'south', id: 'jame-stja'},
+                {dir: 'east', id: 'oliv-henr'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'ebro-stja',
+            coord: [],
+            name: 'E. Broadway and St. James Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-stja'},
+                {dir: 'south', id: 'oliv-stja'},
+                {dir: 'east', id: 'ebro-cath'},
+                {dir: 'west', id: 'park-ebro'}
+            ],
+        },
+        {
+            id: 'pear-ston',
+            coord: [],
+            name: 'Pearl St. and Stone La.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-olds'},
+                {dir: 'south', id: 'brid-pear'},
+                {dir: 'east', id: 'wate-coen'},
+                {dir: 'west', id: 'ston-olds'}
+            ],
+        },
+        {
+            id: 'pear-olds',
+            coord: [],
+            name: 'Pearl St. and Old Slip',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hano-pear'},
+                {dir: 'south', id: 'pear-ston'},
+                {dir: 'east', id: 'wate-olds'},
+                {dir: 'west', id: 'ston-olds'}
+            ],
+        },
+        {
+            id: 'hano-pear',
+            coord: [],
+            name: 'Hanover St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wall-pear'},
+                {dir: 'south', id: 'pear-olds'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'hano-beav'}
+            ],
+        },
+        {
+            id: 'wall-pear',
+            coord: [],
+            name: 'Wall St. and Pearl St.',
+            desc: `There is a restaurant called Nedicks here.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pine-pear'},
+                {dir: 'south', id: 'hano-pear'},
+                {dir: 'east', id: 'wall-wate'},
+                {dir: 'west', id: 'wall-beav'},
+                {dir: '', id: ''} // add nedicks exit
+            ],
+        },
+        {
+            id: 'pine-pear',
+            coord: [],
+            name: 'Pine St. and Pearl St.',
+            desc: `There is a pizzeria here.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ceda-pear'},
+                {dir: 'south', id: 'wall-pear'},
+                {dir: 'east', id: 'pine-wate'},
+                {dir: 'west', id: 'pine-swil'},
+                {dir: '', id: ''} // add pizzeria exit
+            ],
+        },
+        {
+            id: 'ceda-pear',
+            coord: [],
+            name: 'Cedar St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-pear'},
+                {dir: 'south', id: 'pine-pear'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'ceda-swil'}
+            ],
+        },
+        {
+            id: 'libe-pear',
+            coord: [],
+            name: 'Liberty St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'flet-pear'},
+                {dir: 'south', id: 'ceda-pear'},
+                {dir: 'east', id: 'libe-wate'},
+                {dir: 'west', id: 'libe-gold'}
+            ],
+        },
+        {
+            id: 'flet-pear',
+            coord: [],
+            name: 'Fletcher St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'plat-pear'},
+                {dir: 'south', id: 'libe-pear'},
+                {dir: 'east', id: 'flet-wate'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'plat-pear',
+            coord: [],
+            name: 'Platt St and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'john-pear'},
+                {dir: 'south', id: 'flet-pear'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'plat-gold'}
+            ],
+        },
+        {
+            id: 'john-pear',
+            coord: [],
+            name: 'John St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-pear'},
+                {dir: 'south', id: 'plat-pear'},
+                {dir: 'east', id: 'john-wate'},
+                {dir: 'west', id: 'john-clif'}
+            ],
+        },
+        {
+            id: 'fult-pear',
+            coord: [],
+            name: 'Fulton St. and Pearl St.',
+            desc: `The stone towers of the Brooklyn Bridge come into view. The sudden sight of them is like a blast of Beethoven-- familiar but still inspiring.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-pear'},
+                {dir: 'south', id: 'john-pear'},
+                {dir: 'east', id: 'fult-wate'},
+                {dir: 'west', id: 'fult-clif'}
+            ],
+        },
+        {
+            id: 'beek-pear',
+            coord: [],
+            name: 'Beekman St. and Pearl St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-stja'},
+                {dir: 'south', id: 'fult-pear'},
+                {dir: 'east', id: 'beek-stja'},
+                {dir: 'west', id: 'beek-clif'}
+            ],
+        },
+        {
+            id: 'ston-olds',
+            coord: [],
+            name: 'Stone La. and Old Slip',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'pear-ston'},
+                {dir: 'east', id: 'pear-olds'},
+                {dir: 'west', id: 'beav-olds'}
+            ],
+        },
+        {
+            id: 'beav-olds',
+            coord: [],
+            name: 'Beaver St. and Old Slip',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hano-beav'},
+                {dir: 'south', id: 'beav-swil'},
+                {dir: 'east', id: 'ston-olds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'hano-beav',
+            coord: [],
+            name: 'Hanover St. and Beaver St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-hano'},
+                {dir: 'south', id: 'hano-pear'},
+                {dir: 'east', id: 'wall-beav'},
+                {dir: 'west', id: 'beav-olds'}
+            ],
+        },
+        {
+            id: 'exch-hano',
+            coord: [],
+            name: 'Exchange Pl and Hanover St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wall-hano'},
+                {dir: 'south', id: 'hano-beav'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'exch-swil'}
+            ],
+        },
+        {
+            id: 'wall-hano',
+            coord: [],
+            name: 'Wall St. and Hanover St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'exch-hano'},
+                {dir: 'east', id: 'wall-beav'},
+                {dir: 'west', id: 'wall-swil'}
+            ],
+        },
+        {
+            id: 'wall-beav',
+            coord: [],
+            name: 'Wall St. and Beaver St.',
+            desc: `A plaque outside Citibank informs you that this was once the most expensive building in the city. $1,800,000 was the record-setting pricetag. And that was before McKim Mead White added a Corinthian to the Ionic original of 1842.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'hano-beav'},
+                {dir: 'east', id: 'wall-pear'},
+                {dir: 'west', id: 'wall-hano'},
+                {dir: 'Citibank', id: 'wall-beav-1'}
+            ],
+        },
+        {
+            id: 'wall-beav-1',
+            coord: [],
+            name: 'Citibank Lobby',
+            desc: ``,
+            onEnter: () => {
+                println(`You walk through the heavy doors, and enter a lobby decorated in stone. A security desk near the elevators makes you think twice about remaining.
+                
+                You turn away quickly and leave.`);
+                pressEnter(`wall-beav`);
+            }
+            
+        },
+        {
+            id: 'olds-fron',
+            coord: [],
+            name: 'Old Slip and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hano-beav'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'olds-sout'},
+                {dir: 'west', id: 'wate-olds'}
+            ],
+        },
+        {
+            id: 'gouv-fron',
+            coord: [],
+            name: 'Gouverneur La. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wall-fron'},
+                {dir: 'south', id: 'olds-fron'},
+                {dir: 'east', id: 'gouv-sout'},
+                {dir: 'west', id: 'gouv-wate'}
+            ],
+        },
+        {
+            id: 'wall-fron',
+            coord: [],
+            name: 'Wall St. and Front St.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pine-fron'},
+                {dir: 'south', id: 'gouv-fron'},
+                {dir: 'east', id: 'wall-sout'},
+                {dir: 'west', id: 'wall-wate'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'pine-fron',
+            coord: [],
+            name: 'Pine St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-fron'},
+                {dir: 'south', id: 'wall-fron'},
+                {dir: 'east', id: 'pine-sout'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'libe-fron',
+            coord: [],
+            name: 'Liberty St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'flet-fron'},
+                {dir: 'south', id: 'pine-fron'},
+                {dir: 'east', id: 'libe-sout'},
+                {dir: 'west', id: 'libe-wate'}
+            ],
+        },
+        {
+            id: 'flet-fron',
+            coord: [],
+            name: 'Fletcher St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'john-fron'},
+                {dir: 'south', id: 'libe-fron'},
+                {dir: 'east', id: 'flet-sout'},
+                {dir: 'west', id: 'flet-wate'}
+            ],
+        },
+        {
+            id: 'john-fron',
+            coord: [],
+            name: 'John St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-fron'},
+                {dir: 'south', id: 'flet-fron'},
+                {dir: 'east', id: 'john-sout'},
+                {dir: 'west', id: 'john-wate'}
+            ],
+        },
     ],
 };
