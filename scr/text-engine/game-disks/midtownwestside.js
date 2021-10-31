@@ -3493,32 +3493,922 @@ const midwestside = {
     hasSubway: false,
     exit: 
     [
-        {dir: ['n', 'north'], id:'41-10'},
-        {dir: ['e', 'east'], id:'bta-40'},
-        {dir: ['w', 'west'], id:'40-galv'},
-        {dir: ['s', 'south'], id:'39-10'},
+        {dir: ['n', 'north'], id:'bta-dyer'},
+        {dir: ['e', 'east'], id:'40-9'},
+        {dir: ['w', 'west'], id:'bta-40'},
+        {dir: ['s', 'south'], id:'39-dyer'},
         {dir: ['enter', 'pizza', 'pizzeria'], id:'39-10'},
     ],
 },
 
+{
+    id: '40-9',
+    coord: [],
+    name: 'W. 40th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'bta-9'},
+        {dir: ['e', 'east'], id:'40-8'},
+        {dir: ['w', 'west'], id:'40-dyer'},
+        {dir: ['s', 'south'], id:'39-9'},
+    ],
+},
+
+{
+    id: '40-8',
+    coord: [],
+    name: 'W. 40th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-8'},
+        {dir: ['e', 'east'], id:'40-7'},
+        {dir: ['w', 'west'], id:'40-9'},
+        {dir: ['s', 'south'], id:'39-8'},
+    ],
+},
+
+{
+    id: '40-7',
+    coord: [],
+    name: 'W. 40th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-7'},
+        {dir: ['e', 'east'], id:'40-broa'},
+        {dir: ['w', 'west'], id:'40-8'},
+        {dir: ['s', 'south'], id:'39-7'},
+    ],
+},
+
+{
+    id: '40-broa',
+    coord: [],
+    name: 'W. 40th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-broa'},
+        {dir: ['e', 'east'], id:'40-amer'},
+        {dir: ['w', 'west'], id:'40-7'},
+        {dir: ['s', 'south'], id:'39-broa'},
+    ],
+},
+
+{
+    id: '40-broa',
+    coord: [],
+    name: 'W. 40th St. and Broadway',
+    desc: 'Here is a very unlikely swatch of Arcadia, a park as posh and demure as the nicest sort of cemetery. The social mix here is not so upscale as the scenery, but being about equally divided between drug pushers modeling the latest styles of sweat-suit chic and more conventionally dressed and generally older people trying to read books and newspapers.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'41-amer'},
+        {dir: ['e', 'east'], id:'40-5'},
+        {dir: ['w', 'west'], id:'40-broa'},
+        {dir: ['s', 'south'], id:'39-amer'},
+    ],
+},
 //End 40th Street
 
 //Start 39th Street
+{
+    id: '39-henr',
+    coord: [],
+    name: 'W. 39th St. and Henry Hudson Pkwy.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'42-henr'},
+        {dir: ['e', 'east'], id:'39-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'34-henr'},
+    ],
+},
+
+{
+    id: '39-12',
+    coord: [],
+    name: 'W. 39th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-12'},
+        {dir: ['e', 'east'], id:'39-11'},
+        {dir: ['w', 'west'], id:'39-henr'},
+        {dir: ['s', 'south'], id:'34-12'},
+    ],
+},
+
+{
+    id: '39-11',
+    coord: [],
+    name: 'W. 39th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-11'},
+        {dir: ['e', 'east'], id:'39-galv'},
+        {dir: ['w', 'west'], id:'39-12'},
+        {dir: ['s', 'south'], id:'38-11'},
+    ],
+},
+
+{
+    id: '39-galv',
+    coord: [],
+    name: 'W. 39th St. and Galvin Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'bta-galv'},
+        {dir: ['e', 'east'], id:'39-10'},
+        {dir: ['w', 'west'], id:'39-11'},
+        {dir: ['s', 'south'], block:`You can’t go that way.`},
+    ],
+},
+
+{
+    id: '39-10',
+    coord: [],
+    name: 'W. 39th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'bta-10'},
+        {dir: ['e', 'east'], id:'39-dyer'},
+        {dir: ['w', 'west'], id:'39-galv'},
+        {dir: ['s', 'south'], id:'38-10'},
+    ],
+},
+
+{
+    id: '39-dyer',
+    coord: [],
+    name: 'W. 39th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-dyer'},
+        {dir: ['e', 'east'], id:'39-9'},
+        {dir: ['w', 'west'], id:'39-10'},
+        {dir: ['s', 'south'], id:'linc-dyer'},
+    ],
+},
+
+{
+    id: 'linc-dyer',
+    coord: [],
+    name: 'Lincoln Tunnel and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-dyer'},
+        {dir: ['e', 'east'], block:`You can’t go that way.`},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'38-dyer'},
+    ],
+},
+
+{
+    id: '39-9',
+    coord: [],
+    name: 'W. 39th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-9'},
+        {dir: ['e', 'east'], id:'39-8'},
+        {dir: ['w', 'west'], id:'39-dyer'},
+        {dir: ['s', 'south'], id:'38-9'},
+    ],
+},
+
+{
+    id: '39-8',
+    coord: [],
+    name: 'W. 39th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-8'},
+        {dir: ['e', 'east'], id:'39-7'},
+        {dir: ['w', 'west'], id:'39-9'},
+        {dir: ['s', 'south'], id:'38-8'},
+    ],
+},
+
+{
+    id: '39-7',
+    coord: [],
+    name: 'W. 39th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-7'},
+        {dir: ['e', 'east'], id:'39-broa'},
+        {dir: ['w', 'west'], id:'39-8'},
+        {dir: ['s', 'south'], id:'38-7'},
+    ],
+},
+
+{
+    id: '39-broa',
+    coord: [],
+    name: 'W. 39th St. and Broadway',
+    desc: 'There is a Chock Full-O-Nuts at this intersection.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-broa'},
+        {dir: ['e', 'east'], id:'39-amer'},
+        {dir: ['w', 'west'], id:'39-7'},
+        {dir: ['s', 'south'], id:'38-broa'},
+        {dir: ['enter', 'chock', 'nuts'], id:'39-broa-chock'},
+    ],
+},
+
+{
+    id: '39-amer',
+    coord: [],
+    name: 'W. 39th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'40-amer'},
+        {dir: ['e', 'east'], id:'39-5'},
+        {dir: ['w', 'west'], id:'39-broa'},
+        {dir: ['s', 'south'], id:'38-amer'},
+    ],
+},
 //End 39th Street
 
 //Start 38th Street
+{
+    id: '38-11',
+    coord: [],
+    name: 'W. 38th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-11'},
+        {dir: ['e', 'east'], id:'38-10'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'37-11'},
+    ],
+},
+
+{
+    id: '38-10',
+    coord: [],
+    name: 'W. 38th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-10'},
+        {dir: ['e', 'east'], id:'38-dyer'},
+        {dir: ['w', 'west'], id:'38-11'},
+        {dir: ['s', 'south'], id:'37-10'},
+    ],
+},
+
+{
+    id: '38-dyer',
+    coord: [],
+    name: 'W. 38th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'linc-dyer'},
+        {dir: ['e', 'east'], id:'38-9'},
+        {dir: ['w', 'west'], id:'38-10'},
+        {dir: ['s', 'south'], id:'37-dyer'},
+    ],
+},
+
+{
+    id: '38-9',
+    coord: [],
+    name: 'W. 38th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-9'},
+        {dir: ['e', 'east'], id:'38-8'},
+        {dir: ['w', 'west'], id:'38-dyer'},
+        {dir: ['s', 'south'], id:'37-9'},
+    ],
+},
+
+{
+    id: '38-8',
+    coord: [],
+    name: 'W. 38th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-8'},
+        {dir: ['e', 'east'], id:'38-7'},
+        {dir: ['w', 'west'], id:'38-9'},
+        {dir: ['s', 'south'], id:'37-8'},
+    ],
+},
+
+{
+    id: '38-7',
+    coord: [],
+    name: 'W. 38th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-7'},
+        {dir: ['e', 'east'], id:'38-broa'},
+        {dir: ['w', 'west'], id:'38-8'},
+        {dir: ['s', 'south'], id:'37-7'},
+    ],
+},
+
+{
+    id: '38-broa',
+    coord: [],
+    name: 'W. 38th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-broa'},
+        {dir: ['e', 'east'], id:'38-amer'},
+        {dir: ['w', 'west'], id:'38-7'},
+        {dir: ['s', 'south'], id:'37-broa'},
+    ],
+},
+
+{
+    id: '38-amer',
+    coord: [],
+    name: 'W. 38th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-amer'},
+        {dir: ['e', 'east'], id:'38-5'},
+        {dir: ['w', 'west'], id:'38-broa'},
+        {dir: ['s', 'south'], id:'37-amer'},
+    ],
+},
 //End 38th Street
 
 //Start 37th Street
+{
+    id: '37-11',
+    coord: [],
+    name: 'W. 37th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-11'},
+        {dir: ['e', 'east'], id:'37-10'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'36-11'},
+    ],
+},
+
+{
+    id: '37-10',
+    coord: [],
+    name: 'W. 37th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-10'},
+        {dir: ['e', 'east'], id:'37-dyer'},
+        {dir: ['w', 'west'], id:'37-11'},
+        {dir: ['s', 'south'], id:'36-10'},
+    ],
+},
+
+{
+    id: '37-dyer',
+    coord: [],
+    name: 'W. 37th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-dyer'},
+        {dir: ['e', 'east'], id:'37-9'},
+        {dir: ['w', 'west'], id:'37-10'},
+        {dir: ['s', 'south'], id:'36-dyer'},
+    ],
+},
+
+{
+    id: '37-9',
+    coord: [],
+    name: 'W. 37th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-9'},
+        {dir: ['e', 'east'], id:'37-8'},
+        {dir: ['w', 'west'], id:'37-dyer'},
+        {dir: ['s', 'south'], id:'36-9'},
+    ],
+},
+
+{
+    id: '37-8',
+    coord: [],
+    name: 'W. 37th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-8'},
+        {dir: ['e', 'east'], id:'37-7'},
+        {dir: ['w', 'west'], id:'37-9'},
+        {dir: ['s', 'south'], id:'36-8'},
+    ],
+},
+
+{
+    id: '37-7',
+    coord: [],
+    name: 'W. 37th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-7'},
+        {dir: ['e', 'east'], id:'37-broa'},
+        {dir: ['w', 'west'], id:'37-8'},
+        {dir: ['s', 'south'], id:'36-7'},
+    ],
+},
+
+{
+    id: '37-broa',
+    coord: [],
+    name: 'W. 37th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-broa'},
+        {dir: ['e', 'east'], id:'37-amer'},
+        {dir: ['w', 'west'], id:'37-7'},
+        {dir: ['s', 'south'], id:'36-broa'},
+    ],
+},
+
+{
+    id: '37-amer',
+    coord: [],
+    name: 'W. 37th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'38-amer'},
+        {dir: ['e', 'east'], id:'37-5'},
+        {dir: ['w', 'west'], id:'37-broa'},
+        {dir: ['s', 'south'], id:'36-amer'},
+    ],
+},
 //End 37th Street
 
 //Start 36th Street
+{
+    id: '36-11',
+    coord: [],
+    name: 'W. 36th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-11'},
+        {dir: ['e', 'east'], id:'36-10'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'35-11'},
+    ],
+},
+
+{
+    id: '36-10',
+    coord: [],
+    name: 'W. 36th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-10'},
+        {dir: ['e', 'east'], id:'36-dyer'},
+        {dir: ['w', 'west'], id:'36-11'},
+        {dir: ['s', 'south'], id:'35-10'},
+    ],
+},
+
+{
+    id: '36-dyer',
+    coord: [],
+    name: 'W. 36th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-dyer'},
+        {dir: ['e', 'east'], id:'36-9'},
+        {dir: ['w', 'west'], id:'36-10'},
+        {dir: ['s', 'south'], id:'35-dyer'},
+    ],
+},
+
+{
+    id: '36-9',
+    coord: [],
+    name: 'W. 36th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-9'},
+        {dir: ['e', 'east'], id:'36-8'},
+        {dir: ['w', 'west'], id:'36-dyer'},
+        {dir: ['s', 'south'], id:'35-9'},
+    ],
+},
+
+{
+    id: '36-8',
+    coord: [],
+    name: 'W. 36th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-8'},
+        {dir: ['e', 'east'], id:'36-7'},
+        {dir: ['w', 'west'], id:'36-9'},
+        {dir: ['s', 'south'], id:'35-8'},
+    ],
+},
+
+{
+    id: '36-7',
+    coord: [],
+    name: 'W. 36th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-7'},
+        {dir: ['e', 'east'], id:'36-broa'},
+        {dir: ['w', 'west'], id:'36-8'},
+        {dir: ['s', 'south'], id:'35-7'},
+    ],
+},
+
+{
+    id: '36-broa',
+    coord: [],
+    name: 'W. 36th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-broa'},
+        {dir: ['e', 'east'], id:'36-amer'},
+        {dir: ['w', 'west'], id:'36-7'},
+        {dir: ['s', 'south'], id:'35-broa'},
+    ],
+},
+
+{
+    id: '36-amer',
+    coord: [],
+    name: 'W. 36th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'37-amer'},
+        {dir: ['e', 'east'], id:'36-5'},
+        {dir: ['w', 'west'], id:'36-broa'},
+        {dir: ['s', 'south'], id:'35-amer'},
+    ],
+},
 //End 36th Street
 
 //Start 35th Street
+{
+    id: '35-11',
+    coord: [],
+    name: 'W. 35th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-11'},
+        {dir: ['e', 'east'], id:'35-10'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'34-11'},
+    ],
+},
+
+{
+    id: '35-10',
+    coord: [],
+    name: 'W. 35th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-10'},
+        {dir: ['e', 'east'], id:'35-dyer'},
+        {dir: ['w', 'west'], id:'35-11'},
+        {dir: ['s', 'south'], id:'34-10'},
+    ],
+},
+
+{
+    id: '35-dyer',
+    coord: [],
+    name: 'W. 35th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-dyer'},
+        {dir: ['e', 'east'], id:'35-9'},
+        {dir: ['w', 'west'], id:'35-10'},
+        {dir: ['s', 'south'], id:'34-dyer'},
+    ],
+},
+
+{
+    id: '35-9',
+    coord: [],
+    name: 'W. 35th St. and 9th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-9'},
+        {dir: ['e', 'east'], id:'35-8'},
+        {dir: ['w', 'west'], id:'35-dyer'},
+        {dir: ['s', 'south'], id:'34-9'},
+    ],
+},
+
+{
+    id: '35-8',
+    coord: [],
+    name: 'W. 35th St. and 8th Ave.',
+    desc: `'Watch out where you're going!' You step into the gutter just in time to escape being rammed by a wheeled garment rack full of next fall's fashions.`,
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-8'},
+        {dir: ['e', 'east'], id:'35-7'},
+        {dir: ['w', 'west'], id:'35-9'},
+        {dir: ['s', 'south'], id:'34-8'},
+    ],
+},
+
+{
+    id: '35-7',
+    coord: [],
+    name: 'W. 35th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-7'},
+        {dir: ['e', 'east'], id:'35-broa'},
+        {dir: ['w', 'west'], id:'35-8'},
+        {dir: ['s', 'south'], id:'34-7'},
+    ],
+},
+
+{
+    id: '35-broa',
+    coord: [],
+    name: 'W. 35th St. and Broadway',
+    desc: `There is a Chock Full-O-Nuts at this intersection.`,
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-broa'},
+        {dir: ['e', 'east'], id:'35-amer'},
+        {dir: ['w', 'west'], id:'35-7'},
+        {dir: ['s', 'south'], id:'34-broa'},
+        {dir: ['enter', 'chock', 'nuts'], id:'35-broa-chock'},
+    ],
+},
+
+{
+    id: '35-amer',
+    coord: [],
+    name: 'W. 35th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'36-amer'},
+        {dir: ['e', 'east'], id:'35-5'},
+        {dir: ['w', 'west'], id:'35-broa'},
+        {dir: ['s', 'south'], id:'34-amer'},
+    ],
+},
 //End 35th Street
 
 //Start 34th Street
+{
+    id: '34-henr',
+    coord: [],
+    name: 'W. 34th St. and Henry Hudson Pkwy.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-henr'},
+        {dir: ['e', 'east'], id:'34-12'},
+        {dir: ['w', 'west'], block:`You can’t go that way.`},
+        {dir: ['s', 'south'], id:'23-henr'},
+    ],
+},
+
+{
+    id: '34-12',
+    coord: [],
+    name: 'W. 34th St. and 12th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'39-12'},
+        {dir: ['e', 'east'], id:'34-11'},
+        {dir: ['w', 'west'], id:'34-henr'},
+        {dir: ['s', 'south'], id:'33-12'},
+    ],
+},
+
+{
+    id: '34-11',
+    coord: [],
+    name: 'W. 34th St. and 11th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-11'},
+        {dir: ['e', 'east'], id:'34-10'},
+        {dir: ['w', 'west'], id:'34-12'},
+        {dir: ['s', 'south'], id:'33-11'},
+    ],
+},
+
+{
+    id: '34-10',
+    coord: [],
+    name: 'W. 34th St. and 10th Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-10'},
+        {dir: ['e', 'east'], id:'34-dyer'},
+        {dir: ['w', 'west'], id:'34-11'},
+        {dir: ['s', 'south'], id:'33-10'},
+    ],
+},
+
+{
+    id: '34-dyer',
+    coord: [],
+    name: 'W. 34th St. and Dyer Ave.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-dyer'},
+        {dir: ['e', 'east'], id:'34-9'},
+        {dir: ['w', 'west'], id:'34-10'},
+        {dir: ['s', 'south'], id:'33-dyer'},
+    ],
+},
+
+{
+    id: '34-9',
+    coord: [],
+    name: 'W. 34th St. and 9th Ave.',
+    desc: 'There is a restaurant called Nedicks here.',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-9'},
+        {dir: ['e', 'east'], id:'34-9'},
+        {dir: ['w', 'west'], id:'34-dyer'},
+        {dir: ['s', 'south'], id:'33-9'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id:'34-9-nedi'},
+    ],
+},
+
+{
+    id: '34-8',
+    coord: [],
+    name: 'W. 34th St. and 8th Ave.',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-8'},
+        {dir: ['e', 'east'], id:'34-7'},
+        {dir: ['w', 'west'], id:'34-9'},
+        {dir: ['s', 'south'], id:'33-8'},
+
+    ],
+},
+
+{
+    id: '34-7',
+    coord: [],
+    name: 'W. 34th St. and 7th Ave.',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-7'},
+        {dir: ['e', 'east'], id:'34-broa'},
+        {dir: ['w', 'west'], id:'34-8'},
+        {dir: ['s', 'south'], id:'33-7'},
+
+    ],
+},
+
+{
+    id: '34-broa',
+    coord: [],
+    name: 'W. 34th St. and Broadway',
+    isStreet: true,
+    hasSubway: false,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-broa'},
+        {dir: ['e', 'east'], id:'34-amer'},
+        {dir: ['w', 'west'], id:'34-7'},
+        {dir: ['s', 'south'], id:'33-broa'},
+
+    ],
+},
+
+{
+    id: '34-amer',
+    coord: [],
+    name: 'W. 34th St. and Ave of Americas',
+    isStreet: true,
+    hasSubway: true,
+    exit: 
+    [
+        {dir: ['n', 'north'], id:'35-amer'},
+        {dir: ['e', 'east'], id:'34-5'},
+        {dir: ['w', 'west'], id:'34-broa'},
+        {dir: ['s', 'south'], id:'33-amer'},
+
+    ],
+},
 //End 34th Street
 
 
@@ -3535,6 +4425,8 @@ const midwestside = {
 //broa-7 Description and death in texas
 //42-9 Description !!Might want to change this description
 //41-8 Description
+//40-broa Description
+//35-8 Description
 
 //Restaurants:
 //cent-amer Nedicks
@@ -3554,6 +4446,9 @@ const midwestside = {
 //42-10 Nedicks
 //41-dyer Nedicks
 //41-amer Pizzeria
+//39-broa Chock Full-O-Nuts
+//35-broa Chock Full-O-Nuts
+//34-9 Nedicks
 
 //Subway entrances:
 //59-amst
@@ -3566,6 +4461,9 @@ const midwestside = {
 //50-amer
 //43-7
 //42-8
+//34-8
+//34-7
+//34-amer
 
 
 //Naming conventions in this disk: 
@@ -3587,8 +4485,5 @@ const midwestside = {
 //Pizzeria > pizza
 //Luncheonette > lunch
 //Nedicks > nedi
-
-
-
     ],
 },
