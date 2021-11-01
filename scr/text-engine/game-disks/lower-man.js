@@ -144,7 +144,7 @@ const lowerMan = {
                 {dir: 'north', id: 'wall-broa'},
                 {dir: 'south', id: 'exch-broa'},
                 {dir: 'east', block: `You can't go that way.`},
-                {dir: 'west', id: 'rect-trin'}
+                {dir: 'west', id: 'rect-trin'},
                 {dir: '', id: ''} // can you go in?? American Stock Exchange check
             ],
         },
@@ -231,7 +231,7 @@ const lowerMan = {
             id: 'john-broa',
             coord: [],
             name: 'John St. and Broadway',
-            desc: `In the midst of all the Wall Street skyscrapers stands this lone nobel survivor of another ara. The plaque on the iron fence says St. Paul's Chapel is the only pre-Revolutionary War church still standing in Manhattan, and it was built when the city's population was less than 50,000.`,
+            desc: `In the midst of all the Wall Street skyscrapers stands this lone noble survivor of another era. According to the plaque on the iron fence, St. Paul's Chapel is the only pre-Revolutionary War church still standing in Manhattan, and it was built when the city's population was less than 50,000.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'fult-broa'},
@@ -258,7 +258,7 @@ const lowerMan = {
             id: 'vese-broa',
             coord: [],
             name: 'Vesey St. and Broadway',
-            desc: `You've come to a small park near the Wall Street area. At the uptown end of the park is a small palace of white marble. You join a crowd that's gathered on the steps to listen to Mayor Koch welcome a foreign dignitary to the city. He seems to look straight down at you in the crowd as he says, "I know you'll always remember your visit to New York!"
+            desc: `You've come to a small but well-tended park at the edge of the Wall Street area. At the uptown end of the park is a small palace of white marble. You join a crowd that's gathered on the steps to listen to Mayor Koch welcome a foreign dignitary to the city. He seems to look straight down at you in the crowd as he says, "I know you'll always remember your visit to New York!"
             
             The dignitary receives the keys to the city and follows Mayor Koch into the palace, which is City Hall. The crowd disperses into the surrounding streets.`,
             isStreet: true,
@@ -516,7 +516,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', id: 'pine-nass'},
                 {dir: 'south', id: 'exch-nass'},
-                {dir: 'east', id: 'wall-will'},
+                {dir: 'east', id: 'wall-swil'},
                 {dir: 'west', id: 'new-wall'}
             ],
         },
@@ -550,13 +550,14 @@ const lowerMan = {
             id: 'libe-nass',
             coord: [],
             name: 'Liberty St. and Nassau St.',
-            desc: ``,
+            desc: `You stop to read the plaque fixed to the corner of the Federal Reserve Bank and are dully impressed by the information that five stories of this Renaissance palace are below street level "with subterranean vaults resting on bedrock." In other words, the dollar is solid.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'maid-nass'},
                 {dir: 'south', id: 'ceda-nass'},
                 {dir: 'east', id: 'libe-swil'},
-                {dir: 'west', id: 'libe-libe'}
+                {dir: 'west', id: 'libe-libe'},
+                {dir: 'federal reserve bank', id: 'libe-nass-1'}
             ],
         },
         {
@@ -855,7 +856,7 @@ const lowerMan = {
             id: 'fult-sout',
             coord: [],
             name: 'Fulton St. and South St.',
-            desc: `The South Street Seaport is a tourist attraction that today at least has not attracted any tourists. The sailing boats docked along the river are equal in number to the people who've come to look at them.`,
+            desc: `The South Street Seaport is a tourist attraction that today at least has not attracted any tourists. The sailing boats docked along the river are equal in number to the people who've come to look at them, and the concession area is like a ghost town.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'beek-sout'},
@@ -1026,7 +1027,7 @@ const lowerMan = {
             id: 'libe-swil',
             coord: [],
             name: 'Liberty St. and S. William St.',
-            desc: `The welded iron sculptures of Louise Nevelson Plaza made a desperate bid for the pedestrians' attention, but most of them walk past too abstracted themselves to notice all that Abstract Art is trying so hard to do.`,
+            desc: `With the side of the Federal Reserve Bank for a backdrop, the welded iron sculptures of Louise Nevelson Plaza made a desperate bid for the pedestrians' attention, but most of them walk past too abstracted themselves to notice all that Abstract Art is trying so hard to do.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'maid-will'},
@@ -1327,7 +1328,7 @@ const lowerMan = {
             id: 'new-wall',
             coord: [],
             name: 'New St. and Wall St.',
-            desc: `The New York Stock Exchange-- where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
+            desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
             isStreet: true,
             exits: [
                 {dir: 'north', block: `You can't go that way.`},
@@ -1341,18 +1342,17 @@ const lowerMan = {
             id: 'libe-libe',
             coord: [],
             name: 'Liberty St. and Liberty Pl.',
-            desc: `You stop to read the plaque fixed to the corner of the Federal Reserve Bank and are dully impressed by the information that five stories of this Renaissance palace are below street level 'with subterranean vaults resting on bedrock.'`,
+            desc: ``,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'maid-libe'},
                 {dir: 'south', block: `You can't go that way.`},
                 {dir: 'east', id: 'libe-nass'},
                 {dir: 'west', id: 'libe-broa'},
-                {dir: 'federal reserve bank', id: 'libe-libe-1'}
             ],
         },
         {
-            id: 'libe-libe-1',
+            id: 'libe-nass-1',
             coord: [],
             name: 'Federal Reserve Bank Lobby',
             desc: ``,
@@ -1360,7 +1360,7 @@ const lowerMan = {
                 println(`You walk through the smoked-glass doors, and enter a lobby decorated in stone. A security desk near the elevators makes you think twice about remaining.
                 
                 You turn away quickly and leave.`);
-                pressEnter('libe-libe');
+                pressEnter('libe-nass');
             }
         },
         {
@@ -1483,7 +1483,7 @@ const lowerMan = {
             id: 'pine-wate',
             coord: [],
             name: 'Pine St. and Water St.',
-            desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted.`,
+            desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted-- and when it is all New York will know its weight and fortune.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'libe-wate'},
@@ -1810,7 +1810,7 @@ const lowerMan = {
             id: 'fult-pear',
             coord: [],
             name: 'Fulton St. and Pearl St.',
-            desc: `The stone towers of the Brooklyn Bridge come into view. The sudden sight of them is like a blast of Beethoven-- familiar but still inspiring.`,
+            desc: `The stone towers of the Brooklyn Bridge come into view some blocks to the north. The sudden sight of them is like a blast of Beethoven-- familiar but still inspiring.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'beek-pear'},
@@ -1901,7 +1901,7 @@ const lowerMan = {
             id: 'wall-beav',
             coord: [],
             name: 'Wall St. and Beaver St.',
-            desc: `A plaque outside Citibank informs you that this was once the most expensive building in the city. $1,800,000 was the record-setting pricetag. And that was before McKim Mead White added a Corinthian to the Ionic original of 1842.`,
+            desc: `A free-standing plaque outside Citibank informs you that this was once the most expensive building in the city. $1,800,000 was the record-setting pricetag. And that was before McKim Mead White added their own Corinthian two-cents-worth on top of the Ionic original of 1842. Very classic.`,
             isStreet: true,
             exits: [
                 {dir: 'north', block: `You can't go that way.`},
@@ -2677,7 +2677,7 @@ const lowerMan = {
             id: 'vese-chur',
             coord: [],
             name: 'Vesey St. and Church Ave.',
-            desc: `Here are the two towers of the World Trade Center. Aside from their size, there's nothing that special about them. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the champion.`,
+            desc: `There it is, or rather there they are-- the two towers of the World Trade Center. Aside from their size, there's nothing that special about it. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the all-time champion.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'barc-chur'},
@@ -2704,7 +2704,11 @@ const lowerMan = {
             id: 'park-chur',
             coord: [],
             name: 'Park Pl. and Church Ave.',
-            desc: `A tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Woolworth Building, was the tallest in the world at 792 feet.`,
+            desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was teh tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
+            
+            "And how tall is it?" on of the tourists asks him.
+            
+            "792 feet," he replies.`,
             isStreet: true,
             exits: [
                 {dir: 'north', id: 'murr-chur'},
@@ -4173,6 +4177,648 @@ const lowerMan = {
                 {dir: 'south', id: 'york-ave'},
                 {dir: 'east', block: `You can't go that way.`},
                 {dir: 'west', id: 'laig-stjo'}
+            ],
+        },
+        {
+            id: 'cham-huds',
+            coord: [],
+            name: 'Chambers St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'read-huds'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'cham-wbro'},
+                {dir: 'west', id: 'cham-gree'}
+            ],
+        },
+        {
+            id: 'read-huds',
+            coord: [],
+            name: 'Reade St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'duan-huds'},
+                {dir: 'south', id: 'cham-huds'},
+                {dir: 'east', id: 'read-wbro'},
+                {dir: 'west', id: 'read-gree'}
+            ],
+        },
+        {
+            id: 'duan-huds',
+            coord: [],
+            name: 'Duane St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'thom-huds'},
+                {dir: 'south', id: 'read-huds'},
+                {dir: 'east', id: 'duan-wbro'},
+                {dir: 'west', id: 'thom-duan'}
+            ],
+        },
+        {
+            id: 'thom-huds',
+            coord: [],
+            name: 'Thomas St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jay-huds'},
+                {dir: 'south', id: 'duan-huds'},
+                {dir: 'east', id: 'thom-wbro'},
+                {dir: 'west', id: 'thom-stap'}
+            ],
+        },
+        {
+            id: 'jay-huds',
+            coord: [],
+            name: 'Jay St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-huds'},
+                {dir: 'south', id: 'thom-huds'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'jay-stap'}
+            ],
+        },
+        {
+            id: 'wort-huds',
+            coord: [],
+            name: 'Worth St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'harr-huds'},
+                {dir: 'south', id: 'jay-huds'},
+                {dir: 'east', id: 'wort-wbro'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'harr-huds',
+            coord: [],
+            name: 'Harrison St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'leon-huds'},
+                {dir: 'south', id: 'wort-huds'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'harr-stap'}
+            ],
+        },
+        {
+            id: 'leon-huds',
+            coord: [],
+            name: 'Leonard St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-huds'},
+                {dir: 'south', id: 'harr-huds'},
+                {dir: 'east', id: 'leon-wbro'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'fran-huds',
+            coord: [],
+            name: 'Franklin St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'nmoo-huds'},
+                {dir: 'south', id: 'leon-huds'},
+                {dir: 'east', id: 'fran-vari'},
+                {dir: 'west', id: 'fran-gree'}
+            ],
+        },
+        {
+            id: 'nmoo-huds',
+            coord: [],
+            name: 'N. Moore St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beac-huds'},
+                {dir: 'south', id: 'fran-huds'},
+                {dir: 'east', id: 'nmoo-vari'},
+                {dir: 'west', id: 'nmoo-gree'}
+            ],
+        },
+        {
+            id: 'beac-huds',
+            coord: [],
+            name: 'Beach St. and Hudson Ave.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hube-huds'},
+                {dir: 'south', id: 'nmoo-huds'},
+                {dir: 'east', id: 'eric-vari'},
+                {dir: 'west', id: 'beac-coll'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'hube-huds',
+            coord: [],
+            name: 'Hubert St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-huds'},
+                {dir: 'south', id: 'beac-huds'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'hube-coll'}
+            ],
+        },
+        {
+            id: 'laig-huds',
+            coord: [],
+            name: 'Laight St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vest-huds'},
+                {dir: 'south', id: 'hube-huds'},
+                {dir: 'east', id: 'vest-laig'},
+                {dir: 'west', id: 'laig-coll'}
+            ],
+        },
+        {
+            id: 'vest-huds',
+            coord: [],
+            name: 'Vestry St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'desb-huds'},
+                {dir: 'south', id: 'laig-huds'},
+                {dir: 'east', id: 'vest-laig'},
+                {dir: 'west', id: 'vest-gree'}
+            ],
+        },
+        {
+            id: 'desb-huds',
+            coord: [],
+            name: 'Desbrosses St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-huds'},
+                {dir: 'south', id: 'vest-huds'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'desb-gree'}
+            ],
+        },
+        {
+            id: 'cana-huds',
+            coord: [],
+            name: 'Canal St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'domi-huds'},
+                {dir: 'south', id: 'desb-huds'},
+                {dir: 'east', id: 'cana-holl'},
+                {dir: 'west', id: 'cana-watt'}
+            ],
+        },
+        {
+            id: 'domi-huds',
+            coord: [],
+            name: 'Dominick Ave. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spri-huds'},
+                {dir: 'south', id: 'cana-huds'},
+                {dir: 'east', id: 'domi-vari'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'spri-huds',
+            coord: [],
+            name: 'Spring St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vand-huds'},
+                {dir: 'south', id: 'domi-huds'},
+                {dir: 'east', id: 'spri-vari'},
+                {dir: 'west', id: 'spri-renw'}
+            ],
+        },
+        {
+            id: 'vand-huds',
+            coord: [],
+            name: 'Vandam St. and Hudson Ave.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'char-huds'},
+                {dir: 'south', id: 'spri-huds'},
+                {dir: 'east', id: 'vand-vari'},
+                {dir: 'west', id: 'vand-gree'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'char-huds',
+            coord: [],
+            name: 'Charlton St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'king-huds'},
+                {dir: 'south', id: 'vand-huds'},
+                {dir: 'east', id: 'char-vari'},
+                {dir: 'west', id: 'char-gree'}
+            ],
+        },
+        {
+            id: 'king-huds',
+            coord: [],
+            name: 'King St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whou-huds'},
+                {dir: 'south', id: 'char-huds'},
+                {dir: 'east', id: 'king-vari'},
+                {dir: 'west', id: 'king-gree'}
+            ],
+        },
+        {
+            id: 'whou-huds',
+            coord: [],
+            name: 'W. Houston St. and Hudson Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'clar-huds'},
+                {dir: 'south', id: 'king-huds'},
+                {dir: 'east', id: 'whou-seve'},
+                {dir: 'west', id: 'whou-gree'}
+            ],
+        },
+        {
+            id: 'thom-duan',
+            coord: [],
+            name: 'Thomas St. and Duane St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'duan-huds'},
+                {dir: 'east', id: 'thom-stap'},
+                {dir: 'west', id: 'thom-gree'}
+            ],
+        },
+        {
+            id: 'thom-stap',
+            coord: [],
+            name: 'Thomas St. and Staple Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jay-stap'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'thom-huds'},
+                {dir: 'west', id: 'thom-duan'}
+            ],
+        },
+        {
+            id: 'jay-stap',
+            coord: [],
+            name: 'Jay St. and Staple Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'harr-stap'},
+                {dir: 'south', id: 'thom-stap'},
+                {dir: 'east', id: 'jay-huds'},
+                {dir: 'west', id: 'jay-gree'}
+            ],
+        },
+        {
+            id: 'harr-stap',
+            coord: [],
+            name: 'Harrison St. and Staple Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'jay-stap'},
+                {dir: 'east', id: 'harr-huds'},
+                {dir: 'west', id: 'harr-gree'}
+            ],
+        },
+        {
+            id: 'beac-coll',
+            coord: [],
+            name: 'Beach St. and Collister Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hube-coll'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'beac-huds'},
+                {dir: 'west', id: 'beac-gree'}
+            ],
+        },
+        {
+            id: 'hube-coll',
+            coord: [],
+            name: 'Hubert St. and Collister Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-coll'},
+                {dir: 'south', id: 'beac-coll'},
+                {dir: 'east', id: 'hube-huds'},
+                {dir: 'west', id: 'hube-gree'}
+            ],
+        },
+        {
+            id: 'laig-coll',
+            coord: [],
+            name: 'Laight St. and Collister Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'hube-coll'},
+                {dir: 'east', id: 'laig-huds'},
+                {dir: 'west', id: 'laig-gree'}
+            ],
+        },
+        {
+            id: 'vest-laig',
+            coord: [],
+            name: 'Vestry St. and Laight St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vest-huds'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'laig-vari'},
+                {dir: 'west', id: 'laig-huds'}
+            ],
+        },
+        {
+            id: 'fran-vari',
+            coord: [],
+            name: 'Franklin St. and Varick Ave.',
+            desc: `The Franklin-Varick Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'nmoo-vari'},
+                {dir: 'south', id: 'vari-wbro'},
+                {dir: 'east', id: 'fran-wbro'},
+                {dir: 'west', id: 'fran-huds'}
+            ],
+        },
+        {
+            id: 'nmoo-vari',
+            coord: [],
+            name: 'N. Moore St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'eric-vari'},
+                {dir: 'south', id: 'fran-vari'},
+                {dir: 'east', id: 'nmoo-wbro'},
+                {dir: 'west', id: 'nmoo-huds'}
+            ],
+        },
+        {
+            id: 'eric-vari',
+            coord: [],
+            name: 'Ericsson Pl. and Varick Ave.',
+            desc: `Here we have a modest concrete palazzo housing the 1st precinct of the NYPD. Two roan stallions, bearing a pair of New York's finest, canter down Varick and enter a building by a side entrance.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-vari'},
+                {dir: 'south', id: 'nmoo-vari'},
+                {dir: 'east', id: 'eric-walk'},
+                {dir: 'west', id: 'beac-huds'}
+            ],
+        },
+        {
+            id: 'laig-vari',
+            coord: [],
+            name: 'Laight St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-vari'},
+                {dir: 'south', id: 'eric-vari'},
+                {dir: 'east', id: 'laig-stjo'},
+                {dir: 'west', id: 'vest-laig'}
+            ],
+        },
+        {
+            id: 'cana-vari',
+            coord: [],
+            name: 'Canal St. and Varick Ave.',
+            desc: `The Canal-Varick Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'watt-vari'},
+                {dir: 'south', id: 'laig-vari'},
+                {dir: 'east', id: 'cana-ave'},
+                {dir: 'west', id: 'cana-watt'}
+            ],
+        },
+        {
+            id: 'watt-vari',
+            coord: [],
+            name: 'Watts St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'broo-vari'},
+                {dir: 'south', id: 'cana-vari'},
+                {dir: 'east', id: 'watt-ave'},
+                {dir: 'west', id: 'watt-holl'}
+            ],
+        },
+        {
+            id: 'broo-vari',
+            coord: [],
+            name: 'Broome St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'domi-vari'},
+                {dir: 'south', id: 'watt-vari'},
+                {dir: 'east', id: 'broo-ave'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'domi-vari',
+            coord: [],
+            name: 'Dominick Ave. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spri-vari'},
+                {dir: 'south', id: 'broo-vari'},
+                {dir: 'east', id: 'domi-ave'},
+                {dir: 'west', id: 'domi-huds'}
+            ],
+        },
+        {
+            id: 'spri-vari',
+            coord: [],
+            name: 'Spring St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vand-vari'},
+                {dir: 'south', id: 'domi-vari'},
+                {dir: 'east', id: 'spri-ave'},
+                {dir: 'west', id: 'spri-huds'}
+            ],
+        },
+        {
+            id: 'vand-vari',
+            coord: [],
+            name: 'Vandam St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'char-vari'},
+                {dir: 'south', id: 'spri-vari'},
+                {dir: 'east', id: 'vand-ave'},
+                {dir: 'west', id: 'vand-huds'}
+            ],
+        },
+        {
+            id: 'char-vari',
+            coord: [],
+            name: 'Charlton St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'king-vari'},
+                {dir: 'south', id: 'vand-vari'},
+                {dir: 'east', id: 'char-ave'},
+                {dir: 'west', id: 'char-huds'}
+            ],
+        },
+        {
+            id: 'king-vari',
+            coord: [],
+            name: 'King St. and Varick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whou-seve'},
+                {dir: 'south', id: 'char-vari'},
+                {dir: 'east', id: 'king-ave'},
+                {dir: 'west', id: 'king-huds'}
+            ],
+        },
+        {
+            id: 'eric-walk',
+            coord: [],
+            name: 'Ericsson Pl. and Walker St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'walk-wbro'},
+                {dir: 'east', id: 'eric-stjo'},
+                {dir: 'west', id: 'eric-vari'}
+            ],
+        },
+        {
+            id: 'eric-stjo',
+            coord: [],
+            name: `Ericsson Pl. and St. John's Ave.`,
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'york-stjo'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'eric-wbro'},
+                {dir: 'west', id: 'eric-walk'}
+            ],
+        },
+        {
+            id: 'york-stjo',
+            coord: [],
+            name: `York St. and St. John's Ave.`,
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-stjo'},
+                {dir: 'south', id: 'eric-stjo'},
+                {dir: 'east', id: 'york-ave'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'laig-stjo',
+            coord: [],
+            name: `Laight St. and St. John's Ave.`,
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'york-stjo'},
+                {dir: 'east', id: 'laig-ave'},
+                {dir: 'west', id: 'laig-vari'}
+            ],
+        },
+        {
+            id: 'cana-watt',
+            coord: [],
+            name: 'Canal St. and Watts St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'watt-vari'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'cana-huds'},
+                {dir: 'west', id: 'cana-holl'}
+            ],
+        },
+        {
+            id: 'cana-holl',
+            coord: [],
+            name: 'Canal St. and Holland Tunnel In',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'cana-watt'},
+                {dir: 'west', id: 'cana-huds'},
+                {dir: '', id: ''} // add lunecheonette exit
+            ],
+        },
+        {
+            id: 'watt-holl',
+            coord: [],
+            name: 'Watts St. and Holland Tunnel In',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'watt-vari'},
+                {dir: 'west', id: 'cana-huds'}
             ],
         },
     ],
