@@ -2016,5 +2016,2164 @@ const lowerMan = {
                 {dir: 'west', id: 'john-wate'}
             ],
         },
+        {
+            id: 'fult-fron',
+            coord: [],
+            name: 'Fulton St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beek-fron'},
+                {dir: 'south', id: 'john-fron'},
+                {dir: 'east', id: 'fult-sout'},
+                {dir: 'west', id: 'fult-wate'}
+            ],
+        },
+        {
+            id: 'beek-fron',
+            coord: [],
+            name: 'Beekman St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'peck-fron'},
+                {dir: 'south', id: 'fult-fron'},
+                {dir: 'east', id: 'beek-sout'},
+                {dir: 'west', id: 'beek-wate'}
+            ],
+        },
+        {
+            id: 'peck-fron',
+            coord: [],
+            name: 'Peck Slip and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'dove-fron'},
+                {dir: 'south', id: 'beek-fron'},
+                {dir: 'east', id: 'peck-sout'},
+                {dir: 'west', id: 'peck-wate'}
+            ],
+        },
+        {
+            id: 'dove-fron',
+            coord: [],
+            name: 'Dover St. and Front St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'peck-fron'},
+                {dir: 'east', id: 'dove-sout'},
+                {dir: 'west', id: 'fran-wate'}
+            ],
+        },
+        {
+            id: 'beek-wate',
+            coord: [],
+            name: 'Beekman St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'peck-wate'},
+                {dir: 'south', id: 'fult-wate'},
+                {dir: 'east', id: 'beek-fron'},
+                {dir: 'west', id: 'beek-stja'}
+            ],
+        },
+        {
+            id: 'peck-wate',
+            coord: [],
+            name: 'Peck Slip and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-wate'},
+                {dir: 'south', id: 'beek-wate'},
+                {dir: 'east', id: 'peck-fron'},
+                {dir: 'west', id: 'peck-stja'}
+            ],
+        },
+        {
+            id: 'fran-wate',
+            coord: [],
+            name: 'Frankfort St. and Water St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'peck-wate'},
+                {dir: 'east', id: 'dove-fron'},
+                {dir: 'west', id: 'fran-stja'}
+            ],
+        },
+        {
+            id: 'rbtw-sout',
+            coord: [],
+            name: 'Rbt. Wagner Pl. and South St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'sout-cath'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'rbtw-stja'}
+            ],
+        },
+        {
+            id: 'sout-cath',
+            coord: [],
+            name: 'South St. and Catherine St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wate-cath'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'sout-mark'},
+                {dir: 'west', id: 'rbtw-sout'}
+            ],
+        },
+        {
+            id: 'wate-cath',
+            coord: [],
+            name: 'Water St. and Catherine St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cher-cath'},
+                {dir: 'south', id: 'sout-cath'},
+                {dir: 'east', id: 'wate-mark'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'cher-cath',
+            coord: [],
+            name: 'Cherry St. and Catherine St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'monr-cath'},
+                {dir: 'south', id: 'wate-cath'},
+                {dir: 'east', id: 'cher-mark'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'monr-cath',
+            coord: [],
+            name: 'Monroe St. and Catherine St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'madi-cath'},
+                {dir: 'south', id: 'cher-cath'},
+                {dir: 'east', id: 'monr-mark'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'madi-cath',
+            coord: [],
+            name: 'Madison St. and Catherine St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'henr-cath'},
+                {dir: 'south', id: 'monr-cath'},
+                {dir: 'east', id: 'madi-mark'},
+                {dir: 'west', id: 'oliv-madi'}
+            ],
+        },
+        {
+            id: 'oliv-madi',
+            coord: [],
+            name: 'Oliver St. and Madison St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'oliv-henr'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'madi-cath'},
+                {dir: 'west', id: 'jame-madi'}
+            ],
+        },
+        {
+            id: 'jame-madi',
+            coord: [],
+            name: 'James St. and Madison St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jame-stja'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'oliv-madi'},
+                {dir: 'west', id: 'madi-stja'}
+            ],
+        },
+        {
+            id: 'oliv-henr',
+            coord: [],
+            name: 'Oliver St. and Henry St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'oliv-stja'},
+                {dir: 'south', id: 'oliv-madi'},
+                {dir: 'east', id: 'henr-cath'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'sout-mark',
+            coord: [],
+            name: 'South St. and Market St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wate-mark'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'sout-pike'},
+                {dir: 'west', id: 'sout-cath'}
+            ],
+        },
+        {
+            id: 'wate-mark',
+            coord: [],
+            name: 'Water St. and Market St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cher-mark'},
+                {dir: 'south', id: 'sout-mark'},
+                {dir: 'east', id: 'wate-pike'},
+                {dir: 'west', id: 'wate-cath'}
+            ],
+        },
+        {
+            id: 'cher-mark',
+            coord: [],
+            name: 'Cherry St. and Market St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'monr-mark'},
+                {dir: 'south', id: 'wate-mark'},
+                {dir: 'east', id: 'cher-pike'},
+                {dir: 'west', id: 'cher-cath'}
+            ],
+        },
+        {
+            id: 'monr-mark',
+            coord: [],
+            name: 'Monroe St. and Market St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'madi-mark'},
+                {dir: 'south', id: 'cher-mark'},
+                {dir: 'east', id: 'monr-pike'},
+                {dir: 'west', id: 'monr-cath'}
+            ],
+        },
+        {
+            id: 'madi-mark',
+            coord: [],
+            name: 'Madison St. and Market St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'henr-mark'},
+                {dir: 'south', id: 'monr-mark'},
+                {dir: 'east', id: 'fors-madi'},
+                {dir: 'west', id: 'madi-cath'}
+            ],
+        },
+        {
+            id: 'fors-madi',
+            coord: [],
+            name: 'Forsyth St. and Madison',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fors-henr'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'madi-pike'},
+                {dir: 'west', id: 'madi-mark'}
+            ],
+        },
+        {
+            id: 'broo-park',
+            coord: [],
+            name: 'Brooklyn Bridge and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ave-park'},
+                {dir: 'south', id: 'park-cent'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'cham-cent'}
+            ],
+        },
+        {
+            id: 'ave-park',
+            coord: [],
+            name: 'Ave. of Finest and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-park'},
+                {dir: 'south', id: 'broo-park'},
+                {dir: 'east', id: 'ave-madi'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'ave-madi',
+            coord: [],
+            name: 'Ave. of Finest and Madison St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-madi'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'rbtw-stja'},
+                {dir: 'west', id: 'ave-park'}
+            ],
+        },
+        {
+            id: 'pear-madi',
+            coord: [],
+            name: 'Pearl St. and Madison St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-park'},
+                {dir: 'south', id: 'pear-stja'},
+                {dir: 'east', id: 'madi-stja'},
+                {dir: 'west', id: 'ave-madi'}
+            ],
+        },
+        {
+            id: 'pear-park',
+            coord: [],
+            name: 'Pearl St. and Park Row',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'park-ebro'},
+                {dir: 'south', id: 'ave-park'},
+                {dir: 'east', id: 'pear-madi'},
+                {dir: 'west', id: 'pear-baxt'}
+            ],
+        },
+        {
+            id: 'pear-baxt',
+            coord: [],
+            name: 'Pearl St. and Baxter St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'baxt-kent'},
+                {dir: 'south', id: 'pear-park'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'pear-kent'}
+            ],
+        },
+        {
+            id: 'baxt-kent',
+            coord: [],
+            name: 'Baxter St. and Kent Pl.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-baxt'},
+                {dir: 'south', id: 'pear-baxt'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'pear-kent'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'pear-kent',
+            coord: [],
+            name: 'Pearl St. and Kent Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'baxt-kent'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'pear-baxt'},
+                {dir: 'west', id: 'pear-cent'}
+            ],
+        },
+        {
+            id: 'wort-hami',
+            coord: [],
+            name: 'Worth St. and Hamill Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'hami-cent'},
+                {dir: 'east', id: 'wort-baxt'},
+                {dir: 'west', id: 'wort-cent'}
+            ],
+        },
+        {
+            id: 'cham-elk',
+            coord: [],
+            name: 'Chambers St. and Elk St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'read-elk'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'cham-cent'},
+                {dir: 'west', id: 'cham-broa'}
+            ],
+        },
+        {
+            id: 'read-elk',
+            coord: [],
+            name: 'Reade St. and Elk St.',
+            desc: `There is a restaurant called Nedicks here.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'duan-elk'},
+                {dir: 'south', id: 'cham-elk'},
+                {dir: 'east', id: 'read-cent'},
+                {dir: 'west', id: 'read-broa'},
+                {dir: '', id: ''} // add nedicks exit
+            ],
+        },
+        {
+            id: 'duan-elk',
+            coord: [],
+            name: 'Duane St. and Elk St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'read-elk'},
+                {dir: 'east', id: 'duan-cent'},
+                {dir: 'west', id: 'duan-broa'}
+            ],
+        },
+        {
+            id: 'pear-lafa',
+            coord: [],
+            name: 'Pearl St. and Lafayette St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-lafayette'},
+                {dir: 'south', id: 'cent-lafa'},
+                {dir: 'east', id: 'pear-cent'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'wort-lafa',
+            coord: [],
+            name: 'Worth St. and Lafayette St.',
+            desc: `Koch's Florists is a brick-facade building with Van Gogh's 'Sunflowers' painted on the front window. A sign on the door says: 'Closed for Annual Summer Retreat with Roe and Harpmeister Funeral Service.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cath-lafa'},
+                {dir: 'south', id: 'pear-lafa'},
+                {dir: 'east', id: 'wort-cent'},
+                {dir: 'west', id: 'wort-broa'},
+                {dir: `Koch's Florists`, block: `It's closed, remember?`}
+            ],
+        },
+        {
+            id: 'cath-lafa',
+            coord: [],
+            name: 'Catherine La. and Lafayette St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'leon-lafa'},
+                {dir: 'south', id: 'wort-lafa'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'cath-broa'}
+            ],
+        },
+        {
+            id: 'pete-stat',
+            coord: [],
+            name: 'Peter Minuit Plaza and State St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'pear-stat'},
+                {dir: 'south', id: 'whit-pete'},
+                {dir: 'east', id: 'stat-whit'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'pear-stat',
+            coord: [],
+            name: 'Pearl St. and State St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'brid-stat'},
+                {dir: 'south', id: 'pete-stat'},
+                {dir: 'east', id: 'pear-whit'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'brid-stat',
+            coord: [],
+            name: 'Bridge St. and State St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'batt-stat'},
+                {dir: 'south', id: 'pear-stat'},
+                {dir: 'east', id: 'brid-whit'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'batt-stat',
+            coord: [],
+            name: 'Battery Pl. and State St.',
+            desc: `The Battery Pl-Bway Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'morr-broa'},
+                {dir: 'south', id: 'brid-stat'},
+                {dir: 'east', id: 'batt-whit'},
+                {dir: 'west', id: 'batt-gree'}
+            ],
+        },
+        {
+            id: 'morr-trin',
+            coord: [],
+            name: 'Morris St. and Trinity Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-trin'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'morr-broa'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'exch-trin',
+            coord: [],
+            name: 'Exchange Pl. and Trinity Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'rect-trin'},
+                {dir: 'south', id: 'morr-trin'},
+                {dir: 'east', id: 'exch-broa'},
+                {dir: 'west', id: 'exch-gree'}
+            ],
+        },
+        {
+            id: 'rect-trin',
+            coord: [],
+            name: 'Rector St. and Trinity Pl.',
+            desc: `The Rector-Trinity Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'tham-trin'},
+                {dir: 'south', id: 'exch-trin'},
+                {dir: 'east', id: 'rect-broa'},
+                {dir: 'west', id: 'rect-gree'}
+            ],
+        },
+        {
+            id: 'tham-trin',
+            coord: [],
+            name: 'Thames St. and Trinity Pl.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ceda-trin'},
+                {dir: 'south', id: 'rect-trin'},
+                {dir: 'east', id: 'tham-broa'},
+                {dir: 'west', id: 'tham-gree'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'ceda-trin',
+            coord: [],
+            name: 'Cedar St. and Trinity Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-trin'},
+                {dir: 'south', id: 'tham-trin'},
+                {dir: 'east', id: 'ceda-broa'},
+                {dir: 'west', id: 'ceda-gree'}
+            ],
+        },
+        {
+            id: 'libe-trin',
+            coord: [],
+            name: 'Liberty St. and Trinity Pl.',
+            desc: `The Liberty-Church Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'cort-trin'},
+                {dir: 'south', id: 'ceda-trin'},
+                {dir: 'east', id: 'libe-broa'},
+                {dir: 'west', id: 'libe-gree'}
+            ],
+        },
+        {
+            id: 'cort-trin',
+            coord: [],
+            name: 'Cortlandt St. and Trinity Pl.',
+            desc: `The Crtlandt-Chrch Station entrance is at this corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'dey-trin'},
+                {dir: 'south', id: 'libe-trin'},
+                {dir: 'east', id: 'cort-broa'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'dey-trin',
+            coord: [],
+            name: 'Dey St. and Trinity Pl.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fult-chur'},
+                {dir: 'south', id: 'cort-trin'},
+                {dir: 'east', id: 'john-broa'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'fult-chur',
+            coord: [],
+            name: 'Fulton St. and Church St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vese-chur'},
+                {dir: 'south', id: 'dey-trin'},
+                {dir: 'east', id: 'fult-broa'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'vese-chur',
+            coord: [],
+            name: 'Vesey St. and Church Ave.',
+            desc: `Here are the two towers of the World Trade Center. Aside from their size, there's nothing that special about them. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the champion.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'barc-chur'},
+                {dir: 'south', id: 'fult-chur'},
+                {dir: 'east', id: 'vese-broa'},
+                {dir: 'west', id: 'vese-wbro'}
+                {dir: 'world trade center', block: `There is no point to going there.`}
+            ],
+        },
+        {
+            id: 'barc-chur',
+            coord: [],
+            name: 'Barclay St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'park-chur'},
+                {dir: 'south', id: 'vese-chur'},
+                {dir: 'east', id: 'barc-broa'},
+                {dir: 'west', id: 'barc-wbro'}
+            ],
+        },
+        {
+            id: 'park-chur',
+            coord: [],
+            name: 'Park Pl. and Church Ave.',
+            desc: `A tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Woolworth Building, was the tallest in the world at 792 feet.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'murr-chur'},
+                {dir: 'south', id: 'barc-chur'},
+                {dir: 'east', id: 'park-broa'},
+                {dir: 'west', id: 'park-wbro'},
+                {dir: 'woolworth building', id: 'park-chur-1'}
+            ],
+        },
+        {
+            id: 'park-chur-1',
+            coord: [],
+            name: 'Woolworth Lobby',
+            desc: ``,
+            onEnter: () => {
+                println(`You walk through the smoked-glass doors, and enter a lobby decorated in marble. A security kiosk near the elevators makes you think twice about remaining.
+                
+                You turn away quickly and leave.`);
+                pressEnter('park-chur');
+            }
+        },
+        {
+            id: 'murr-chur',
+            coord: [],
+            name: 'Murray St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'warr-chur'},
+                {dir: 'south', id: 'park-chur'},
+                {dir: 'east', id: 'murr-broa'},
+                {dir: 'west', id: 'murr-wbro'}
+            ],
+        },
+        {
+            id: 'warr-chur',
+            coord: [],
+            name: 'Warren St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cham-chur'},
+                {dir: 'south', id: 'murr-chur'},
+                {dir: 'east', id: 'warr-broa'},
+                {dir: 'west', id: 'warr-wbro'}
+            ],
+        },
+        {
+            id: 'cham-chur',
+            coord: [],
+            name: 'Chambers St. and Church Ave.',
+            desc: `The Chambers-Church Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'read-chur'},
+                {dir: 'south', id: 'warr-chur'},
+                {dir: 'east', id: 'cham-broa'},
+                {dir: 'west', id: 'cham-wbro'}
+            ],
+        },
+        {
+            id: 'read-chur',
+            coord: [],
+            name: 'Reade St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'duan-chur'},
+                {dir: 'south', id: 'cham-chur'},
+                {dir: 'east', id: 'read-broa'},
+                {dir: 'west', id: 'read-wbro'}
+            ],
+        },
+        {
+            id: 'duan-chur',
+            coord: [],
+            name: 'Duane St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'thom-chur'},
+                {dir: 'south', id: 'read-chur'},
+                {dir: 'east', id: 'duan-broa'},
+                {dir: 'west', id: 'duan-wbro'}
+            ],
+        },
+        {
+            id: 'thom-chur',
+            coord: [],
+            name: 'Thomas St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-chur'},
+                {dir: 'south', id: 'duan-chur'},
+                {dir: 'east', id: 'thom-broa'},
+                {dir: 'west', id: 'thom-wbro'}
+            ],
+        },
+        {
+            id: 'wort-chur',
+            coord: [],
+            name: 'Worth St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'leon-chur'},
+                {dir: 'south', id: 'thom-chur'},
+                {dir: 'east', id: 'wort-broa'},
+                {dir: 'west', id: 'wort-wbro'}
+            ],
+        },
+        {
+            id: 'leon-chur',
+            coord: [],
+            name: 'Leonard St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-chur'},
+                {dir: 'south', id: 'wort-chur'},
+                {dir: 'east', id: 'leon-broa'},
+                {dir: 'west', id: 'leon-wbro'}
+            ],
+        },
+        {
+            id: 'fran-chur',
+            coord: [],
+            name: 'Franklin St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ave-chur'},
+                {dir: 'south', id: 'leon-chur'},
+                {dir: 'east', id: 'fran-broa'},
+                {dir: 'west', id: 'fran-wbro'}
+            ],
+        },
+        {
+            id: 'ave-chur',
+            coord: [],
+            name: 'Ave. of Americas and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whit-chur'},
+                {dir: 'south', id: 'fran-chur'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'whit-ave'}
+            ],
+        },
+        {
+            id: 'whit-chur',
+            coord: [],
+            name: 'White St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'walk-chur'},
+                {dir: 'south', id: 'ave-chur'},
+                {dir: 'east', id: 'whit-broa'},
+                {dir: 'west', id: 'whit-ave'}
+            ],
+        },
+        {
+            id: 'walk-chur',
+            coord: [],
+            name: 'Walker St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'lisp-chur'},
+                {dir: 'south', id: 'whit-chur'},
+                {dir: 'east', id: 'walk-broa'},
+                {dir: 'west', id: 'walk-ave'}
+            ],
+        },
+        {
+            id: 'lisp-chur',
+            coord: [],
+            name: 'Lispenard St. and Church Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-chur'},
+                {dir: 'south', id: 'walk-chur'},
+                {dir: 'east', id: 'lisp-broa'},
+                {dir: 'west', id: 'lisp-wbro'}
+            ],
+        },
+        {
+            id: 'batt-gree',
+            coord: [],
+            name: 'Battery Pl. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-gree'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'batt-stat'},
+                {dir: 'west', id: 'batt-wash'}
+            ],
+        },
+        {
+            id: 'exch-gree',
+            coord: [],
+            name: 'Exchange Pl. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'rect-gree'},
+                {dir: 'south', id: 'batt-gree'},
+                {dir: 'east', id: 'exch-trin'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'rect-gree',
+            coord: [],
+            name: 'Rector St. and Greenwich Ave.',
+            desc: `The Rector-Greenwch Station entrance is at this corner.`,
+            isStreet: true,
+            hasSubway: true,
+            exits: [
+                {dir: 'north', id: 'carl-gree'},
+                {dir: 'south', id: 'exch-gree'},
+                {dir: 'east', id: 'rect-trin'},
+                {dir: 'west', id: 'rect-wash'}
+            ],
+        },
+        {
+            id: 'carl-gree',
+            coord: [],
+            name: 'Carlisle St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'alba-gree'},
+                {dir: 'south', id: 'rect-gree'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'carl-wash'}
+            ],
+        },
+        {
+            id: 'alba-gree',
+            coord: [],
+            name: 'Albany St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'tham-gree'},
+                {dir: 'south', id: 'carl-gree'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'alba-wash'}
+            ],
+        },
+        {
+            id: 'tham-gree',
+            coord: [],
+            name: 'Thames St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ceda-gree'},
+                {dir: 'south', id: 'alba-gree'},
+                {dir: 'east', id: 'tham-trin'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'ceda-gree',
+            coord: [],
+            name: 'Cedar St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-gree'},
+                {dir: 'south', id: 'tham-gree'},
+                {dir: 'east', id: 'ceda-trin'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'libe-gree',
+            coord: [],
+            name: 'Liberty St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'ceda-gree'},
+                {dir: 'east', id: 'libe-trin'},
+                {dir: 'west', id: 'libe-wash'}
+            ],
+        },
+        {
+            id: 'whit-ave',
+            coord: [],
+            name: 'White St. and Ave. of Americas',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'walk-ave'},
+                {dir: 'south', id: 'ave-chur'},
+                {dir: 'east', id: 'whit-chur'},
+                {dir: 'west', id: 'whit-wbro'}
+            ],
+        },
+        {
+            id: 'walk-ave',
+            coord: [],
+            name: 'Walker St. and Ave. of Americas',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ave-wbro'},
+                {dir: 'south', id: 'whit-ave'},
+                {dir: 'east', id: 'walk-chur'},
+                {dir: 'west', id: 'walk-wbro'}
+            ],
+        },
+        {
+            id: 'batt-wash',
+            coord: [],
+            name: 'Battery Pl. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'morr-wash'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'batt-gree'},
+                {dir: 'west', id: 'batt-west'}
+            ],
+        },
+        {
+            id: 'morr-wash',
+            coord: [],
+            name: 'Morris St. and Washington Ave.',
+            desc: `Art Deco tiles cover the facade of the Downtown Athletic Club.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'btun-wash'},
+                {dir: 'south', id: 'batt-wash'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'morr-west'},
+                {dir: 'athletic club', block: `There is no point to going there.`}
+            ],
+        },
+        {
+            id: 'btun-wash',
+            coord: [],
+            name: 'Battery Tunnel and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-wash'},
+                {dir: 'south', id: 'morr-wash'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'btun-west'}
+            ],
+        },
+        {
+            id: 'exch-wash',
+            coord: [],
+            name: 'Exchange Pl. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'rect-wash'},
+                {dir: 'south', id: 'btun-wash'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'exch-west'}
+            ],
+        },
+        {
+            id: 'rect-wash',
+            coord: [],
+            name: 'Rector St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'carl-wash'},
+                {dir: 'south', id: 'exch-wash'},
+                {dir: 'east', id: 'rect-gree'},
+                {dir: 'west', id: 'rect-west'}
+            ],
+        },
+        {
+            id: 'carl-wash',
+            coord: [],
+            name: 'Carlisle St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'alba-wash'},
+                {dir: 'south', id: 'rect-wash'},
+                {dir: 'east', id: 'carl-gree'},
+                {dir: 'west', id: 'carl-west'}
+            ],
+        },
+        {
+            id: 'alba-wash',
+            coord: [],
+            name: 'Albany St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ceda-wash'},
+                {dir: 'south', id: 'carl-wash'},
+                {dir: 'east', id: 'alba-gree'},
+                {dir: 'west', id: 'alba-west'}
+            ],
+        },
+        {
+            id: 'ceda-wash',
+            coord: [],
+            name: 'Cedar St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-wash'},
+                {dir: 'south', id: 'alba-wash'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'ceda-west'}
+            ],
+        },
+        {
+            id: 'libe-wash',
+            coord: [],
+            name: 'Liberty St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'ceda-wash'},
+                {dir: 'east', id: 'libe-gree'},
+                {dir: 'west', id: 'libe-west'}
+            ],
+        },
+        {
+            id: 'batt-west',
+            coord: [],
+            name: 'Battery Pl. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'morr-west'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'batt-wash'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'morr-west',
+            coord: [],
+            name: 'Morris St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'btun-west'},
+                {dir: 'south', id: 'batt-west'},
+                {dir: 'east', id: 'morr-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'btun-west',
+            coord: [],
+            name: 'Battery Tunnel and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'exch-west'},
+                {dir: 'south', id: 'morr-west'},
+                {dir: 'east', id: 'btun-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'exch-west',
+            coord: [],
+            name: 'Exchange Pl. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'rect-west'},
+                {dir: 'south', id: 'btun-west'},
+                {dir: 'east', id: 'exch-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'rect-west',
+            coord: [],
+            name: 'Rector St. and West End Hwy.',
+            desc: `There is a luncheonette on this corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'carl-west'},
+                {dir: 'south', id: 'exch-west'},
+                {dir: 'east', id: 'rect-wash'},
+                {dir: 'west', block: `You can't got that way.`},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'carl-west',
+            coord: [],
+            name: 'Carlisle St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'alba-west'},
+                {dir: 'south', id: 'rect-west'},
+                {dir: 'east', id: 'carl-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'alba-west',
+            coord: [],
+            name: 'Albany St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ceda-west'},
+                {dir: 'south', id: 'carl-west'},
+                {dir: 'east', id: 'alba-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'ceda-west',
+            coord: [],
+            name: 'Cedar St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'libe-west'},
+                {dir: 'south', id: 'alba-west'},
+                {dir: 'east', id: 'ceda-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'libe-west',
+            coord: [],
+            name: 'Liberty St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vese-west'},
+                {dir: 'south', id: 'ceda-west'},
+                {dir: 'east', id: 'libe-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'vese-west',
+            coord: [],
+            name: 'Vesey St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'barc-west'},
+                {dir: 'south', id: 'libe-west'},
+                {dir: 'east', id: 'vese-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'barc-west',
+            coord: [],
+            name: 'Barclay St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'murr-west'},
+                {dir: 'south', id: 'vese-west'},
+                {dir: 'east', id: 'barc-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'murr-west',
+            coord: [],
+            name: 'Murray St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'warr-west'},
+                {dir: 'south', id: 'barc-west'},
+                {dir: 'east', id: 'murr-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'warr-west',
+            coord: [],
+            name: 'Warren St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cham-west'},
+                {dir: 'south', id: 'murr-west'},
+                {dir: 'east', id: 'warr-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'cham-west',
+            coord: [],
+            name: 'Chambers St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'harr-west'},
+                {dir: 'south', id: 'warr-west'},
+                {dir: 'east', id: 'cham-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'harr-west',
+            coord: [],
+            name: 'Harrison St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'nmoo-west'},
+                {dir: 'south', id: 'cham-west'},
+                {dir: 'east', id: 'harr-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'nmoo-west',
+            coord: [],
+            name: 'N. Moore St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beac-west'},
+                {dir: 'south', id: 'harr-west'},
+                {dir: 'east', id: 'nmoo-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'beac-west',
+            coord: [],
+            name: 'Beach St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hube-west'},
+                {dir: 'south', id: 'nmoo-west'},
+                {dir: 'east', id: 'beac-gree'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'hube-west',
+            coord: [],
+            name: 'Hubert St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-west'},
+                {dir: 'south', id: 'beac-west'},
+                {dir: 'east', id: 'hube-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'laig-west',
+            coord: [],
+            name: 'Laight St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vest-west'},
+                {dir: 'south', id: 'hube-west'},
+                {dir: 'east', id: 'laig-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'vest-west',
+            coord: [],
+            name: 'Vestry St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'desb-west'},
+                {dir: 'south', id: 'laig-west'},
+                {dir: 'east', id: 'vest-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'desb-west',
+            coord: [],
+            name: 'Desbrosses St. and West End Hwy.',
+            desc: `The view across the Hudson to New Jersey is awesome. The sweep of the sky is awesome. The river is awesome. The traffic in between you and the river is awesome. Even the seagulls, soaring over the river are awesome. You are awed.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'watt-west'},
+                {dir: 'south', id: 'vest-west'},
+                {dir: 'east', id: 'desb-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'watt-west',
+            coord: [],
+            name: 'Watts St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-west'},
+                {dir: 'south', id: 'desb-west'},
+                {dir: 'east', id: 'watt-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'cana-west',
+            coord: [],
+            name: 'Canal St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whou-west'},
+                {dir: 'south', id: 'watt-west'},
+                {dir: 'east', id: 'cana-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'whou-west',
+            coord: [],
+            name: 'W. Houston St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'clar-west'},
+                {dir: 'south', id: 'cana-west'},
+                {dir: 'east', id: 'whou-wash'},
+                {dir: 'west', block: `You can't got that way.`}
+            ],
+        },
+        {
+            id: 'vese-wash',
+            coord: [],
+            name: 'Vesey St. and Washington Ave.',
+            desc: `The New York Telephone Building is a massive and elaborate tower.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'barc-wash'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'vese-wbro'},
+                {dir: 'west', id: 'vese-west'}
+            ],
+        },
+        {
+            id: 'barc-wash',
+            coord: [],
+            name: 'Barclay St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'vese-wash'},
+                {dir: 'east', id: 'barc-gree'},
+                {dir: 'west', id: 'barc-west'}
+            ],
+        },
+        {
+            id: 'barc-gree',
+            coord: [],
+            name: 'Barclay St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'park-gree'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'barc-wbro'},
+                {dir: 'west', id: 'barc-wash'}
+            ],
+        },
+        {
+            id: 'park-gree',
+            coord: [],
+            name: 'Park Pl. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'murr-gree'},
+                {dir: 'south', id: 'barc-gree'},
+                {dir: 'east', id: 'park-wbro'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'murr-gree',
+            coord: [],
+            name: 'Murray St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'warr-gree'},
+                {dir: 'south', id: 'park-gree'},
+                {dir: 'east', id: 'murr-wbro'},
+                {dir: 'west', id: 'murr-west'}
+            ],
+        },
+        {
+            id: 'warr-gree',
+            coord: [],
+            name: 'Warren St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cham-gree'},
+                {dir: 'south', id: 'murr-gree'},
+                {dir: 'east', id: 'warr-wbro'},
+                {dir: 'west', id: 'warr-west'}
+            ],
+        },
+        {
+            id: 'cham-gree',
+            coord: [],
+            name: 'Chambers St. and Greenwich Ave.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'read-gree'},
+                {dir: 'south', id: 'warr-gree'},
+                {dir: 'east', id: 'cham-huds'},
+                {dir: 'west', id: 'cham-west'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {
+            id: 'read-gree',
+            coord: [],
+            name: 'Reade St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'thom-gree'},
+                {dir: 'south', id: 'cham-gree'},
+                {dir: 'east', id: 'read-huds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'thom-gree',
+            coord: [],
+            name: 'Thomas St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jay-gree'},
+                {dir: 'south', id: 'read-gree'},
+                {dir: 'east', id: 'thom-duan'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'jay-gree',
+            coord: [],
+            name: 'Jay St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'harr-gree'},
+                {dir: 'south', id: 'thom-gree'},
+                {dir: 'east', id: 'jay-stap'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'harr-gree',
+            coord: [],
+            name: 'Harrison St. and Greenwich Ave.',
+            desc: `Vast? Vast isn't the word for it. Ugly comes closer. Independence Plaza is a high-rise apartment complex on a scale that beggars the imagination, but that is its only relationship to the imagination. Otherwise it's just bricks and windows stacked as high as current zoning laws will allow.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-gree'},
+                {dir: 'south', id: 'jay-gree'},
+                {dir: 'east', id: 'harr-stap'},
+                {dir: 'west', id: 'harr-west'}
+            ],
+        },
+        {
+            id: 'fran-gree',
+            coord: [],
+            name: 'Franklin St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'nmoo-gree'},
+                {dir: 'south', id: 'harr-gree'},
+                {dir: 'east', id: 'fran-huds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'nmoo-gree',
+            coord: [],
+            name: 'N. Moore St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beac-gree'},
+                {dir: 'south', id: 'fran-gree'},
+                {dir: 'east', id: 'nmoo-huds'},
+                {dir: 'west', id: 'nmoo-west'}
+            ],
+        },
+        {
+            id: 'beac-gree',
+            coord: [],
+            name: 'Beach St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hube-gree'},
+                {dir: 'south', id: 'nmoo-gree'},
+                {dir: 'east', id: 'beac-coll'},
+                {dir: 'west', id: 'beac-west'}
+            ],
+        },
+        {
+            id: 'hube-gree',
+            coord: [],
+            name: 'Hubert St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-gree'},
+                {dir: 'south', id: 'beac-gree'},
+                {dir: 'east', id: 'hube-coll'},
+                {dir: 'west', id: 'hube-wash'}
+            ],
+        },
+        {
+            id: 'laig-gree',
+            coord: [],
+            name: 'Laight St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vest-gree'},
+                {dir: 'south', id: 'hube-gree'},
+                {dir: 'east', id: 'laig-coll'},
+                {dir: 'west', id: 'laig-wash'}
+            ],
+        },
+        {
+            id: 'vest-gree',
+            coord: [],
+            name: 'Vestry St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'desb-gree'},
+                {dir: 'south', id: 'laig-gree'},
+                {dir: 'east', id: 'vest-huds'},
+                {dir: 'west', id: 'vest-wash'}
+            ],
+        },
+        {
+            id: 'desb-gree',
+            coord: [],
+            name: 'Desbrosses St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'watt-gree'},
+                {dir: 'south', id: 'vest-gree'},
+                {dir: 'east', id: 'desb-huds'},
+                {dir: 'west', id: 'desb-wash'}
+            ],
+        },
+        {
+            id: 'watt-gree',
+            coord: [],
+            name: 'Watts St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-gree'},
+                {dir: 'south', id: 'desb-gree'},
+                {dir: 'east', id: 'watt-wash'},
+                {dir: 'west', id: 'cana-watt'}
+            ],
+        },
+        {
+            id: 'cana-gree',
+            coord: [],
+            name: 'Canal St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spri-gree'},
+                {dir: 'south', id: 'watt-gree'},
+                {dir: 'east', id: 'cana-renw'},
+                {dir: 'west', id: 'cana-wash'}
+            ],
+        },
+        {
+            id: 'spri-gree',
+            coord: [],
+            name: 'Spring St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vand-gree'},
+                {dir: 'south', id: 'cana-gree'},
+                {dir: 'east', id: 'spri-renw'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'vand-gree',
+            coord: [],
+            name: 'Vandam St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'char-gree'},
+                {dir: 'south', id: 'spri-gree'},
+                {dir: 'east', id: 'vand-huds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'char-gree',
+            coord: [],
+            name: 'Charlton St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'king-gree'},
+                {dir: 'south', id: 'vand-gree'},
+                {dir: 'east', id: 'char-huds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'king-gree',
+            coord: [],
+            name: 'King St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whou-gree'},
+                {dir: 'south', id: 'char-gree'},
+                {dir: 'east', id: 'king-huds'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'whou-gree',
+            coord: [],
+            name: 'W. Houston St. and Greenwich Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'clar-gree'},
+                {dir: 'south', id: 'king-gree'},
+                {dir: 'east', id: 'whou-huds'},
+                {dir: 'west', id: 'whou-wash'}
+            ],
+        },
+        {
+            id: 'hube-wash',
+            coord: [],
+            name: 'Hubert St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-wash'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'hube-gree'},
+                {dir: 'west', id: 'hube-west'}
+            ],
+        },
+        {
+            id: 'laig-wash',
+            coord: [],
+            name: 'Laight St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vest-wash'},
+                {dir: 'south', id: 'hube-wash'},
+                {dir: 'east', id: 'laig-gree'},
+                {dir: 'west', id: 'laig-west'}
+            ],
+        },
+        {
+            id: 'vest-wash',
+            coord: [],
+            name: 'Vestry St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'desb-wash'},
+                {dir: 'south', id: 'laig-wash'},
+                {dir: 'east', id: 'vest-gree'},
+                {dir: 'west', id: 'vest-west'}
+            ],
+        },
+        {
+            id: 'desb-wash',
+            coord: [],
+            name: 'Desbrosses St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'watt-wash'},
+                {dir: 'south', id: 'vest-wash'},
+                {dir: 'east', id: 'desb-gree'},
+                {dir: 'west', id: 'desb-west'}
+            ],
+        },
+        {
+            id: 'watt-wash',
+            coord: [],
+            name: 'Watts St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-wash'},
+                {dir: 'south', id: 'desb-wash'},
+                {dir: 'east', id: 'watt-gree'},
+                {dir: 'west', id: 'watt-west'}
+            ],
+        },
+        {
+            id: 'cana-wash',
+            coord: [],
+            name: 'Canal St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whou-wash'},
+                {dir: 'south', id: 'watt-wash'},
+                {dir: 'east', id: 'cana-gree'},
+                {dir: 'west', id: 'cana-west'}
+            ],
+        },
+        {
+            id: 'whou-wash',
+            coord: [],
+            name: 'W. Houston St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'clar-wash'},
+                {dir: 'south', id: 'cana-wash'},
+                {dir: 'east', id: 'whou-gree'},
+                {dir: 'west', id: 'whou-west'}
+            ],
+        },
+        {
+            id: 'cana-renw',
+            coord: [],
+            name: 'Canal St. and Renwick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'spri-renw'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'cana-watt'},
+                {dir: 'west', id: 'cana-gree'}
+            ],
+        },
+        {
+            id: 'spri-renw',
+            coord: [],
+            name: 'Spring St. and Renwick Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'cana-renw'},
+                {dir: 'east', id: 'spri-huds'},
+                {dir: 'west', id: 'spri-gree'}
+            ],
+        },
+        {
+            id: 'vese-wbro',
+            coord: [],
+            name: 'Vesey St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'barc-wbro'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'vese-chur'},
+                {dir: 'west', id: 'vese-wash'}
+            ],
+        },
+        {
+            id: 'barc-wbro',
+            coord: [],
+            name: 'Barclay St. and W. Broadway.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'park-wbro'},
+                {dir: 'south', id: 'vese-wbro'},
+                {dir: 'east', id: 'barc-chur'},
+                {dir: 'west', id: 'barc-gree'}
+            ],
+        },
+        {
+            id: 'park-wbro',
+            coord: [],
+            name: 'Park Pl. and W. Broadway',
+            desc: `There is a Chock Full-O-Nuts at this intersection.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'murr-wbro'},
+                {dir: 'south', id: 'barc-wbro'},
+                {dir: 'east', id: 'park-chur'},
+                {dir: 'west', id: 'park-gree'},
+                {dir: '', id: ''} // add chock full-o-nuts exit
+            ],
+        },
+        {
+            id: 'murr-wbro',
+            coord: [],
+            name: 'Murray St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'warr-wbro'},
+                {dir: 'south', id: 'park-wbro'},
+                {dir: 'east', id: 'murr-chur'},
+                {dir: 'west', id: 'murr-gree'}
+            ],
+        },
+        {
+            id: 'warr-wbro',
+            coord: [],
+            name: 'Warren St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cham-wbro'},
+                {dir: 'south', id: 'murr-wbro'},
+                {dir: 'east', id: 'warr-chur'},
+                {dir: 'west', id: 'warr-gree'}
+            ],
+        },
+        {
+            id: 'cham-wbro',
+            coord: [],
+            name: 'Chambers St. and W. Broadway',
+            desc: `The Chambers-W Bway Station entrance is at this corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'read-wbro'},
+                {dir: 'south', id: 'warr-wbro'},
+                {dir: 'east', id: 'cham-chur'},
+                {dir: 'west', id: 'cham-huds'}
+            ],
+        },
+        {
+            id: 'read-wbro',
+            coord: [],
+            name: 'Reade St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'duan-wbro'},
+                {dir: 'south', id: 'cham-wbro'},
+                {dir: 'east', id: 'read-huds'},
+                {dir: 'west', id: 'read-chur'}
+            ],
+        },
+        {
+            id: 'duan-wbro',
+            coord: [],
+            name: 'Duane St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'thom-wbro'},
+                {dir: 'south', id: 'read-wbro'},
+                {dir: 'east', id: 'duan-chur'},
+                {dir: 'west', id: 'duan-huds'}
+            ],
+        },
+        {
+            id: 'thom-wbro',
+            coord: [],
+            name: 'Thomas St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'wort-wbro'},
+                {dir: 'south', id: 'duan-wbro'},
+                {dir: 'east', id: 'thom-chur'},
+                {dir: 'west', id: 'thom-huds'}
+            ],
+        },
+        {
+            id: 'wort-wbro',
+            coord: [],
+            name: 'Worth St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'leon-wbro'},
+                {dir: 'south', id: 'thom-wbro'},
+                {dir: 'east', id: 'wort-chur'},
+                {dir: 'west', id: 'wort-huds'}
+            ],
+        },
+        {
+            id: 'leon-wbro',
+            coord: [],
+            name: 'Leonard St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'vari-wbro'},
+                {dir: 'south', id: 'wort-wbro'},
+                {dir: 'east', id: 'leon-chur'},
+                {dir: 'west', id: 'leon-huds'}
+            ],
+        },
+        {
+            id: 'vari-wbro',
+            coord: [],
+            name: 'Varick Ave. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'fran-wbro'},
+                {dir: 'south', id: 'leon-wbro'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'fran-vari'}
+            ],
+        },
+        {
+            id: 'fran-wbro',
+            coord: [],
+            name: 'Franklin St. and W. Broadway',
+            desc: `The spikey crown of the Statue of Liberty peeks out from the fake stone facade of a building that seems to feel overwhelmed by the surrounding warehouses and desperate for attention. The rest of Liberty, presumably, has sunk far below the pavements of Tribeca. Surrealism strikes again!`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'whit-wbro'},
+                {dir: 'south', id: 'vari-wbro'},
+                {dir: 'east', id: 'fran-chur'},
+                {dir: 'west', id: 'fran-vari'}
+            ],
+        },
+        {
+            id: 'whit-wbro',
+            coord: [],
+            name: 'White St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'nmoo-wbro'},
+                {dir: 'south', id: 'fran-wbro'},
+                {dir: 'east', id: 'whit-ave'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'nmoo-wbro',
+            coord: [],
+            name: 'N. Moore St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'walk-wbro'},
+                {dir: 'south', id: 'whit-wbro'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'nmoo-vari'}
+            ],
+        },
+        {
+            id: 'walk-wbro',
+            coord: [],
+            name: 'Walker St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'eric-wbro'},
+                {dir: 'south', id: 'nmoo-wbro'},
+                {dir: 'east', id: 'walk-ave.'},
+                {dir: 'west', id: 'eric-walk'}
+            ],
+        },
+        {
+            id: 'eric-wbro',
+            coord: [],
+            name: 'Ericsson Pl. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'ave-wbro'},
+                {dir: 'south', id: 'walk-wbro'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'eric-stjo'}
+            ],
+        },
+        {
+            id: 'ave-wbro',
+            coord: [],
+            name: 'Ave. of Americas and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'lisp-wbro'},
+                {dir: 'south', id: 'walk-wbro'},
+                {dir: 'east', id: 'walk-ave.'},
+                {dir: 'west', id: 'york-ave.'}
+            ],
+        },
+        {
+            id: 'lisp-wbro',
+            coord: [],
+            name: 'Lispenard St. and W. Broadway',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-wbro'},
+                {dir: 'south', id: 'ave-wbro'},
+                {dir: 'east', id: 'lisp-chur'},
+                {dir: 'west', block: `You can't go that way.`}
+            ],
+        },
+        {
+            id: 'york-ave',
+            coord: [],
+            name: 'York St. and Ave. of Americas',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'laig-ave.'},
+                {dir: 'south', id: 'ave-wbro'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'york-stjo'}
+            ],
+        },
+        {
+            id: 'laig-ave',
+            coord: [],
+            name: 'Laight St. and Ave. of Americas',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'cana-ave.'},
+                {dir: 'south', id: 'york-ave'},
+                {dir: 'east', block: `You can't go that way.`},
+                {dir: 'west', id: 'laig-stjo'}
+            ],
+        },
     ],
 };
