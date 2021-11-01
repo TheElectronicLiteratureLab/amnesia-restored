@@ -672,10 +672,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hous-colu' },
+                { dir: ['south'], id: 'dela-colu' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: '', block: `You can't go that way.`}, 
             ]
         },
         {
@@ -685,10 +685,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-bowe' },
+                { dir: ['south'], id: 'kenm-bowe' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
@@ -698,10 +698,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'spri-bowe' },
+                { dir: ['south'], id: 'broo-bowe' },
+                { dir: ['east'], id: 'dela-chry ' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
@@ -711,10 +711,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-chry' },
+                { dir: ['south'], id: 'broo-chry' },
+                { dir: ['east'], id: 'dela-fors' },
+                { dir: ['west'], id: 'kenm-bowe' }, 
             ]
         },
         {
@@ -724,10 +724,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-fors' },
+                { dir: ['south'], id: 'broo-fors' },
+                { dir: ['east'], id: 'dela-eldr' },
+                { dir: ['west'], id: 'dela-chry'}, 
             ]
         },
         {
@@ -737,10 +737,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-eldr' },
+                { dir: ['south'], id: 'broo-eldr' },
+                { dir: ['east'], id: 'dela-alle' },
+                { dir: ['west'], id: 'dela-fors'}, 
             ]
         },
         {
@@ -750,10 +750,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-alle' },
+                { dir: ['south'], id: 'broo-alle' },
+                { dir: ['east'], id: 'dela-orch' },
+                { dir: ['west'], id: 'dela-eldr'}, 
             ]
         },
         {
@@ -763,10 +763,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-orch' },
+                { dir: ['south'], id: 'broo-orch' },
+                { dir: ['east'], id: 'dela-ludl' },
+                { dir: ['west'], id: 'dela-alle'}, 
             ]
         },
         {
@@ -776,10 +776,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-ludl' },
+                { dir: ['south'], id: 'broo-ludl' },
+                { dir: ['east'], id: 'dela-esse' },
+                { dir: ['west'], id: 'dela-orch'}, 
             ]
         },
         {
@@ -789,10 +789,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-esse' },
+                { dir: ['south'], id: 'broo-esse' },
+                { dir: ['east'], id: 'dela-norf' },
+                { dir: ['west'], id: 'dela-ludl'}, 
             ]
         },
         {
@@ -802,10 +802,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-norf' },
+                { dir: ['south'], id: 'broo-norf' },
+                { dir: ['east'], id: 'dela-suff' },
+                { dir: ['west'], id: 'dela-esse'}, 
             ]
         },
         {
@@ -815,10 +815,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-suff' },
+                { dir: ['south'], id: 'broo-suff' },
+                { dir: ['east'], id: 'will-clin' },
+                { dir: ['west'], id: 'dela-norf'}, 
             ]
         },
         {
@@ -828,10 +828,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-clin' },
+                { dir: ['south'], id: 'will-clin' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'dela-suff'}, 
             ]
         },
         {
@@ -841,10 +841,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-atto' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'dela-ridg' },
+                { dir: ['west'], id: 'dela-clin'}, 
             ]
         },
         {
@@ -854,10 +854,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-ridg' },
+                { dir: ['south'], id: 'new-ridg' },
+                { dir: ['east'], id: 'dela-pitt' },
+                { dir: ['west'], id: 'dela-atto'}, 
             ]
         },
         {
@@ -867,10 +867,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-pitt' },
+                { dir: ['south'], id: 'new-pitt' },
+                { dir: ['east'], id: 'dela-colu' },
+                { dir: ['west'], id: 'dela-ridg'}, 
             ]
         },
         {
@@ -880,10 +880,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'rivi-colu' },
+                { dir: ['south'], id: 'new-colu' },
+                { dir: ['east'], id: 'dela-fdrd' },
+                { dir: ['west'], id: 'dela-pitt'}, 
             ]
         },
         {
@@ -893,10 +893,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hous-fdrd' },
+                { dir: ['south'], id: 'new-sout' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'dela-colu'}, 
             ]
         },
         {
@@ -906,10 +906,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-clin' },
+                { dir: ['south'], id: 'new-clin' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'dela-suff'}, 
             ]
         },
         {
@@ -919,10 +919,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'will-clin' },
+                { dir: ['south'], id: 'broo-clin' },
+                { dir: ['east'], id: 'new-ridg' },
+                { dir: ['west'], id: '', block: `You can't go that way.`}, 
             ]
         },
         {
@@ -932,10 +932,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-ridg' },
+                { dir: ['south'], id: 'broo-ridg' },
+                { dir: ['east'], id: 'new-pitt' },
+                { dir: ['west'], id: 'new-clin'}, 
             ]
         },
         {
@@ -945,10 +945,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-pitt' },
+                { dir: ['south'], id: 'broo-pitt' },
+                { dir: ['east'], id: 'new-will' },
+                { dir: ['west'], id: 'new-ridg'}, 
             ]
         },
         {
@@ -958,10 +958,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'broo-will' },
+                { dir: ['east'], id: 'new-colu' },
+                { dir: ['west'], id: 'new-pitt'}, 
             ]
         },
         {
@@ -971,10 +971,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-colu' },
+                { dir: ['south'], id: 'broo-colu' },
+                { dir: ['east'], id: 'new-lewi' },
+                { dir: ['west'], id: 'new-will'}, 
             ]
         },
         {
@@ -984,10 +984,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'gran-lewi' },
+                { dir: ['east'], id: 'new-sout' },
+                { dir: ['west'], id: 'new-colu'}, 
             ]
         },
         {
@@ -997,10 +997,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-fdrd' },
+                { dir: ['south'], id: 'gran-sout' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'new-lewi' }, 
             ]
         },
         {
@@ -1010,10 +1010,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'kenm-bowe' },
+                { dir: ['south'], id: 'gran-bowe' },
+                { dir: ['east'], id: 'broo-chry' },
+                { dir: ['west'], id: '????' }, 
             ]
         },
         {
@@ -1023,10 +1023,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-chry' },
+                { dir: ['south'], id: 'gran-chry' },
+                { dir: ['east'], id: 'broo-fors' },
+                { dir: ['west'], id: 'broo-bowe'}, 
             ]
         },
         {
@@ -1036,10 +1036,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-fors' },
+                { dir: ['south'], id: 'gran-fors' },
+                { dir: ['east'], id: 'broo-eldr' },
+                { dir: ['west'], id: 'broo-chry'}, 
             ]
         },
         {
@@ -1049,10 +1049,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-eldr' },
+                { dir: ['south'], id: 'gran-eldr' },
+                { dir: ['east'], id: 'broo-alle' },
+                { dir: ['west'], id: 'broo-fors'}, 
             ]
         },
         {
@@ -1062,10 +1062,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-alle' },
+                { dir: ['south'], id: 'gran-alle' },
+                { dir: ['east'], id: 'broo-orch' },
+                { dir: ['west'], id: 'broo-eldr'}, 
             ]
         },
         {
@@ -1075,10 +1075,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-orch' },
+                { dir: ['south'], id: 'gran-orch' },
+                { dir: ['east'], id: 'broo-ludl' },
+                { dir: ['west'], id: 'broo-alle'}, 
             ]
         },
         {
@@ -1088,10 +1088,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-ludl' },
+                { dir: ['south'], id: 'gran-ludl' },
+                { dir: ['east'], id: 'broo-esse' },
+                { dir: ['west'], id: 'broo-orch'}, 
             ]
         },
         {
@@ -1101,10 +1101,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-esse' },
+                { dir: ['south'], id: 'gran-esse' },
+                { dir: ['east'], id: 'broo-norf' },
+                { dir: ['west'], id: 'broo-ludl'}, 
             ]
         },
         {
@@ -1114,10 +1114,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-norf' },
+                { dir: ['south'], id: 'gran-norf' },
+                { dir: ['east'], id: 'broo-suff' },
+                { dir: ['west'], id: 'broo-esse'}, 
             ]
         },
         {
@@ -1127,10 +1127,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'dela-suff' },
+                { dir: ['south'], id: 'gran-suff' },
+                { dir: ['east'], id: 'broo-clin' },
+                { dir: ['west'], id: 'broo-norf'}, 
             ]
         },
         {
@@ -1140,10 +1140,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-clin' },
+                { dir: ['south'], id: 'gran-clin' },
+                { dir: ['east'], id: 'broo-ridg' },
+                { dir: ['west'], id: 'broo-suff'}, 
             ]
         },
         {
@@ -1153,10 +1153,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-ridg' },
+                { dir: ['south'], id: 'gran-ridg', },
+                { dir: ['east'], id: 'broo-pitt' },
+                { dir: ['west'], id: 'broo-clin'}, 
             ]
         },
         {
@@ -1166,10 +1166,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-pitt' },
+                { dir: ['south'], id: 'gran-pitt' },
+                { dir: ['east'], id: 'broo-will' },
+                { dir: ['west'], id: 'broo-ridg'}, 
             ]
         },
         {
@@ -1179,10 +1179,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-will' },
+                { dir: ['south'], id: 'gran-will' },
+                { dir: ['east'], id: 'broo-colu' },
+                { dir: ['west'], id: 'bro-pitt'}, 
             ]
         },
         {
@@ -1192,10 +1192,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-colu' },
+                { dir: ['south'], id: 'gran-colu' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'broo-will'}, 
             ]
         },
         {
@@ -1205,10 +1205,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-bowe' },
+                { dir: ['south'], id: 'hest-bowe' },
+                { dir: ['east'], id: 'gran-chry' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
@@ -1218,10 +1218,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-chrys' },
+                { dir: ['south'], id: 'hest-chry' },
+                { dir: ['east'], id: 'gran-fors' },
+                { dir: ['west'], id: 'gran-bowe'}, 
             ]
         },
         {
@@ -1231,10 +1231,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-fors' },
+                { dir: ['south'], id: 'hest-fors' },
+                { dir: ['east'], id: 'gran-eldr' },
+                { dir: ['west'], id: 'gran-chry'}, 
             ]
         },
         {
@@ -1244,10 +1244,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-eldr' },
+                { dir: ['south'], id: 'hest-eldr' },
+                { dir: ['east'], id: 'gran-alle' },
+                { dir: ['west'], id: 'gran-fors'}, 
             ]
         },
         {
@@ -1257,10 +1257,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-alle' },
+                { dir: ['south'], id: 'hest-alle' },
+                { dir: ['east'], id: 'gran-orch' },
+                { dir: ['west'], id: 'gran-eldr'}, 
             ]
         },
         {
@@ -1270,10 +1270,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-orch' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-ludl' },
+                { dir: ['west'], id: 'gran-alle'}, 
             ]
         },
         {
@@ -1283,10 +1283,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-ludl' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-esse' },
+                { dir: ['west'], id: 'gran-orch'}, 
             ]
         },
         {
@@ -1296,10 +1296,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-esse' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-norf' },
+                { dir: ['west'], id: 'gran-ludl'}, 
             ]
         },
         {
@@ -1309,10 +1309,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-norf' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-suff' },
+                { dir: ['west'], id: 'gran-esse'}, 
             ]
         },
         {
@@ -1322,10 +1322,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-suff' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-clin' },
+                { dir: ['west'], id: 'gran-norf'}, 
             ]
         },
         {
@@ -1335,10 +1335,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-clin' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-ridg' },
+                { dir: ['west'], id: 'gran-suff'}, 
             ]
         },
         {
@@ -1348,10 +1348,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-ridg' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-pitt' },
+                { dir: ['west'], id: 'gran-clin'}, 
             ]
         },
         {
@@ -1361,10 +1361,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-pitt' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-will' },
+                { dir: ['west'], id: 'gran-ridg'}, 
             ]
         },
         {
@@ -1374,10 +1374,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'broo-will' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gran-broa' },
+                { dir: ['west'], id: 'gran-pitt'}, 
             ]
         },
         {
@@ -1387,10 +1387,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'broa-will', },
+                { dir: ['east'], id: 'gran-colu' },
+                { dir: ['west'], id: 'gran-will'}, 
             ]
         },
         {
@@ -1400,10 +1400,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broo-colu' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'gran-henr' },
+                { dir: ['west'], id: 'gran-broa'}, 
             ]
         },
         {
@@ -1413,10 +1413,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'henr-will' },
+                { dir: ['east'], id: 'gran-jack' },
+                { dir: ['west'], id: 'gran-colu'}, 
             ]
         },
         {
@@ -1426,10 +1426,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'madi-jack' },
+                { dir: ['east'], id: 'gran-lwei' },
+                { dir: ['west'], id: 'gran-henr'}, 
             ]
         },
         {
@@ -1439,10 +1439,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-lewi' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'gran-madi' },
+                { dir: ['west'], id: 'gran-jack'}, 
             ]
         },
         {
@@ -1452,10 +1452,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'madi-jack' },
+                { dir: ['east'], id: 'gran-sout' },
+                { dir: ['west'], id: 'gran-lwei'}, 
             ]
         },
         {
@@ -1465,10 +1465,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'new-sout' },
+                { dir: ['south'], id: 'sout-jack' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'gran-madi'}, 
             ]
         },
         {
@@ -1478,10 +1478,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-bowe' },
+                { dir: ['south'], id: 'cana-bowe' },
+                { dir: ['east'], id: 'hest-chry' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
@@ -1491,10 +1491,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-chry' },
+                { dir: ['south'], id: 'cana-chry' },
+                { dir: ['east'], id: 'hest-fors' },
+                { dir: ['west'], id: 'hest-bowe'}, 
             ]
         },
         {
@@ -1504,10 +1504,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-fors' },
+                { dir: ['south'], id: 'cana-fors' },
+                { dir: ['east'], id: 'hest-eldr' },
+                { dir: ['west'], id: 'hest-chry'}, 
             ]
         },
         {
@@ -1517,10 +1517,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-eldr' },
+                { dir: ['south'], id: 'cana-eldr' },
+                { dir: ['east'], id: 'hest-alle' },
+                { dir: ['west'], id: 'hest-fors'}, 
             ]
         },
         {
@@ -1530,10 +1530,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-alle' },
+                { dir: ['south'], id: 'cana-alle' },
+                { dir: ['east'], id: 'hest-orch' },
+                { dir: ['west'], id: 'hest-eldr'}, 
             ]
         },
         {
@@ -1543,10 +1543,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-orch' },
+                { dir: ['south'], id: 'cana-orch' },
+                { dir: ['east'], id: 'hest-ludl' },
+                { dir: ['west'], id: 'hest-alle'}, 
             ]
         },
         {
@@ -1556,10 +1556,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-ludl' },
+                { dir: ['south'], id: 'cana-ludl' },
+                { dir: ['east'], id: 'hest-esse' },
+                { dir: ['west'], id: 'hest-orch'}, 
             ]
         },
         {
@@ -1569,10 +1569,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-esse' },
+                { dir: ['south'], id: 'cana-esse' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'hest-ludl'}, 
             ]
         },
         {
@@ -1582,10 +1582,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-bowe' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-chry' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
@@ -1595,10 +1595,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-chry' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-fors' },
+                { dir: ['west'], id: 'cana-bowe'}, 
             ]
         },
         {
@@ -1608,10 +1608,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-fors' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-eldr' },
+                { dir: ['west'], id: 'cana-chry'}, 
             ]
         },
         {
@@ -1621,10 +1621,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-eldr' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-alle' },
+                { dir: ['west'], id: 'cana-fors'}, 
             ]
         },
         {
@@ -1634,10 +1634,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-alle' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-orch' },
+                { dir: ['west'], id: 'cana-eldr'}, 
             ]
         },
         {
@@ -1647,10 +1647,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-orch' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-ludl' },
+                { dir: ['west'], id: 'cana-alle'}, 
             ]
         },
         {
@@ -1660,10 +1660,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-ludl' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-divi' },
+                { dir: ['west'], id: 'cana-orch'}, 
             ]
         },
         {
@@ -1673,10 +1673,10 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'hest-divi' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'cana-rutg' },
+                { dir: ['west'], id: 'cana-ludl'}, 
             ]
         },
         {
@@ -1686,29 +1686,29 @@ const lowerEast = {
             name: '',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
+                { dir: ['north'], id: 'hest-rutg' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'broa-cana' },
+                { dir: ['west'], id: 'cana-divi'}, 
             ]
         },
-        {//asking arlo about how he set up broadway
+        {
             isStreets: true,
             coord: [],
-            id: '',
+            id: 'broa-cana',
             name: '',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '' },
                 { dir: ['south'], id: '' },
                 { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['west'], id: 'cana-rutg'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
+            id: 'broa-jeff',
             name: '',
             desc: ``,
             exits: [
