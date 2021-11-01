@@ -2683,7 +2683,7 @@ const lowerMan = {
                 {dir: 'north', id: 'barc-chur'},
                 {dir: 'south', id: 'fult-chur'},
                 {dir: 'east', id: 'vese-broa'},
-                {dir: 'west', id: 'vese-wbro'}
+                {dir: 'west', id: 'vese-wbro'},
                 {dir: 'world trade center', block: `There is no point to going there.`}
             ],
         },
