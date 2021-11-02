@@ -9,9 +9,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'61-amer'},
-                {dir:['west'],id:'60-7'},
-                {dir:['South'],id:'60-amer'},
-                {dir:['east'],id:'60-5'},
+                {dir:['south'],id:'60-amer'},
+				{dir:['east'],id:'60-5'},
+				{dir:['west'],id:'60-7'},,
             ]
         },
         {
@@ -22,9 +22,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'62-amer'},
-                {dir:['west'],id:'61-7'},
-                {dir:['South'],id:'60-amer'},
-                {dir:['east'],id:'61-5'}
+                {dir:['south'],id:'60-amer'},
+				{dir:['east'],id:'61-5'},
+				{dir:['west'],id:'61-7'},
             ]
         },
         {
@@ -35,9 +35,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'63-amer'},
-                {dir:['west'],id:'62-7'},
-                {dir:['South'],id:'61-amer'},
-                {dir:['east'],id:'62-5'}
+                {dir:['south'],id:'61-amer'},
+				{dir:['east'],id:'62-5'},
+				{dir:['west'],id:'62-7'},
             ]
         },
         {
@@ -48,9 +48,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'64-amer'},
-                {dir:['west'],id:'63-7'},
-                {dir:['South'],id:'62-amer'},
-                {dir:['east'],id:'63-5'}
+                {dir:['south'],id:'62-amer'},
+				{dir:['east'],id:'63-5'},
+				{dir:['west'],id:'63-7'},
             ]
         },
         {
@@ -61,9 +61,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'65-amer'},
-                {dir:['west'],id:'64-7'},
-                {dir:['South'],id:'63-amer'},
-                {dir:['east'],id:'64-5'}
+                {dir:['south'],id:'63-amer'},
+				{dir:['east'],id:'64-5'},
+				{dir:['west'],id:'64-7'},
             ]
         },
         {
@@ -74,9 +74,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'66-amer'},
-                {dir:['west'],id:'65-7'},
-                {dir:['South'],id:'64-amer'},
-                {dir:['east'],id:'65-5'}
+                {dir:['south'],id:'64-amer'},
+				{dir:['east'],id:'65-5'},
+				{dir:['west'],id:'65-7'},
             ]
         },
         {
@@ -87,9 +87,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'67-amer'},
-                {dir:['west'],id:'66-7'},
-                {dir:['South'],id:'65-amer'},
-                {dir:['east'],id:'66-5'}
+                {dir:['south'],id:'65-amer'},
+				{dir:['east'],id:'66-5'},
+				{dir:['west'],id:'66-7'},
             ]
         },
         {
@@ -100,9 +100,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'68-amer'},
-                {dir:['west'],id:'67-7'},
-                {dir:['South'],id:'66-amer'},
-                {dir:['east'],id:'67-5'}
+                {dir:['south'],id:'66-amer'},
+				{dir:['east'],id:'67-5'},
+				{dir:['west'],id:'67-7'},
             ]
         },
         {
@@ -113,9 +113,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'69-amer'},
-                {dir:['west'],id:'68-7'},
-                {dir:['South'],id:'67-amer'},
-                {dir:['east'],id:'68-5'}
+                {dir:['south'],id:'67-amer'},
+				{dir:['east'],id:'68-5'},
+				{dir:['west'],id:'68-7'},
             ]
         },
         {
@@ -126,9 +126,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'70-amer'},
-                {dir:['west'],id:'69-7'},
-                {dir:['South'],id:'68-amer'},
-                {dir:['east'],id:'69-5'}
+                {dir:['south'],id:'68-amer'},
+				{dir:['east'],id:'69-5'},
+				{dir:['west'],id:'69-7'},
             ]
         },
         {
@@ -139,9 +139,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'71-amer'},
-                {dir:['west'],id:'70-7'},
-                {dir:['South'],id:'69-amer'},
-                {dir:['east'],id:'70-5'}
+                {dir:['south'],id:'69-amer'},
+				{dir:['east'],id:'70-5'},
+				{dir:['west'],id:'70-7'},
             ]
         },
         {
@@ -152,9 +152,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'72-amer'},
-                {dir:['west'],id:'71-7'},
-                {dir:['South'],id:'70-amer'},
-                {dir:['east'],id:'71-5'}
+                {dir:['south'],id:'70-amer'},
+				{dir:['east'],id:'71-5'},
+				{dir:['west'],id:'71-7'},
             ]
         },
         {
@@ -165,9 +165,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'73-amer'},
-                {dir:['west'],id:'72-7'},
-                {dir:['South'],id:'71-amer'},
-                {dir:['east'],id:'72-5'}
+                {dir:['south'],id:'71-amer'},
+				{dir:['east'],id:'72-5'},
+				{dir:['west'],id:'72-7'},
             ]
         },
         {
@@ -178,9 +178,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'74-amer'},
-                {dir:['west'],id:'73-7'},
-                {dir:['South'],id:'72-amer'},
-                {dir:['east'],id:'73-5'}
+                {dir:['south'],id:'72-amer'},
+				{dir:['east'],id:'73-5'},
+				{dir:['west'],id:'73-7'},
             ]
         },
         {
@@ -191,9 +191,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'75-amer'},
-                {dir:['west'],id:'74-7'},
-                {dir:['South'],id:'73-amer'},
-                {dir:['east'],id:'74-5'}
+                {dir:['south'],id:'73-amer'},
+				{dir:['east'],id:'74-5'},
+				{dir:['west'],id:'74-7'},
             ]
         },
         {
@@ -204,9 +204,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'76-amer'},
-                {dir:['west'],id:'75-7'},
-                {dir:['South'],id:'74-amer'},
-                {dir:['east'],id:'75-5'}
+                {dir:['south'],id:'74-amer'},
+				{dir:['east'],id:'75-5'},
+				{dir:['west'],id:'75-7'},
             ]
         },
         {
@@ -217,9 +217,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'77-amer'},
-                {dir:['west'],id:'76-7'},
-                {dir:['South'],id:'75-amer'},
-                {dir:['east'],id:'76-5'}
+                {dir:['south'],id:'75-amer'},
+				{dir:['east'],id:'76-5'},
+				{dir:['west'],id:'76-7'},
             ]
         },
         {
@@ -230,9 +230,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'78-amer'},
-                {dir:['west'],id:'77-7'},
-                {dir:['South'],id:'76-amer'},
-                {dir:['east'],id:'77-5'}
+                {dir:['south'],id:'76-amer'},
+				{dir:['east'],id:'77-5'},
+				{dir:['west'],id:'77-7'},
             ]
         },
         {
@@ -243,9 +243,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'79-amer'},
-                {dir:['west'],id:'78-7'},
-                {dir:['South'],id:'77-amer'},
-                {dir:['east'],id:'78-5'}
+                {dir:['south'],id:'77-amer'},
+				{dir:['east'],id:'78-5'},
+				{dir:['west'],id:'78-7'},
             ]
         },
         {
@@ -256,9 +256,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'80-amer'},
-                {dir:['west'],id:'79-7'},
-                {dir:['South'],id:'78-amer'},
-                {dir:['east'],id:'79-5'}
+                {dir:['south'],id:'78-amer'},
+				{dir:['east'],id:'79-5'},
+				{dir:['west'],id:'79-7'},
             ]
         },
         {
@@ -270,9 +270,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'81-amer'},
-                {dir:['west'],id:'80-7'},
-                {dir:['South'],id:'79-amer'},
-                {dir:['east'],id:'80-5'}
+                {dir:['south'],id:'79-amer'},
+				{dir:['east'],id:'80-5'},
+				{dir:['west'],id:'80-7'},
             ]
         },
         {
@@ -283,9 +283,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'82-amer'},
-                {dir:['west'],id:'81-7'},
-                {dir:['South'],id:'80-amer'},
-                {dir:['east'],id:'81-5'}
+                {dir:['south'],id:'80-amer'},
+				{dir:['east'],id:'81-5'},
+				{dir:['west'],id:'81-7'},
             ]
         },
         {
@@ -296,9 +296,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'83-amer'},
-                {dir:['west'],id:'82-7'},
-                {dir:['South'],id:'81-amer'},
-                {dir:['east'],id:'82-5'}
+                {dir:['south'],id:'81-amer'},
+				{dir:['east'],id:'82-5'},
+				{dir:['west'],id:'82-7'},
             ]
         },
         {
@@ -309,9 +309,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'edga-amer'},
-                {dir:['west'],id:'83-7'},
-                {dir:['South'],id:'82-amer'},
-                {dir:['east'],id:'83-5'}
+                {dir:['south'],id:'82-amer'},
+				{dir:['east'],id:'83-5'},
+				{dir:['west'],id:'83-7'},
             ]
         },
         {
@@ -323,7 +323,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'85-amer'},
                 {dir:['west'],id:'edga-7'},
-                {dir:['South'],id:'83-amer'},
+                {dir:['south'],id:'83-amer'},
                 {dir:['east'],id:'edga-5'}
             ]
         },
@@ -334,9 +334,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'86-amer'},
+                {dir:['south'],id:'edga-amer'},
+                {dir:['east'],id:'85-5'},
                 {dir:['west'],id:'85-7'},
-                {dir:['South'],id:'edga-amer'},
-                {dir:['east'],id:'85-5'}
             ]
         },
         {
@@ -347,9 +347,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'87-amer'},
-                {dir:['west'],id:'86-7'},
-                {dir:['South'],id:'85-amer'},
-                {dir:['east'],id:'86-5'}
+                {dir:['south'],id:'85-amer'},
+                {dir:['east'],id:'86-5'},
+                {dir:['west'],id:'86-7'}
             ]
         },
         {
@@ -360,9 +360,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'88-amer'},
-                {dir:['west'],id:'87-7'},
-                {dir:['South'],id:'86-amer'},
-                {dir:['east'],id:'87-5'}
+                {dir:['south'],id:'86-amer'},
+				{dir:['east'],id:'87-5'},
+				{dir:['west'],id:'87-7'},
             ]
         },
         {
@@ -373,9 +373,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'89-amer'},
-                {dir:['west'],id:'88-7'},
-                {dir:['South'],id:'87-amer'},
-                {dir:['east'],id:'88-5'}
+                {dir:['south'],id:'87-amer'},
+				{dir:['east'],id:'88-5'},
+				{dir:['west'],id:'88-7'},
             ]
         },
         {
@@ -386,9 +386,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'90-amer'},
-                {dir:['west'],id:'89-7'},
-                {dir:['South'],id:'88-amer'},
-                {dir:['east'],id:'89-5'}
+                {dir:['south'],id:'88-amer'},
+				{dir:['east'],id:'89-5'},
+				{dir:['west'],id:'89-7'},
             ]
         },
         {
@@ -399,9 +399,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'91-amer'},
-                {dir:['west'],id:'90-7'},
-                {dir:['South'],id:'899-amer'},
-                {dir:['east'],id:'90-5'}
+                {dir:['south'],id:'899-amer'},
+				{dir:['east'],id:'90-5'},
+				{dir:['west'],id:'90-7'},
             ]
         },
         {
@@ -412,9 +412,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'92-amer'},
-                {dir:['west'],id:'91-7'},
-                {dir:['South'],id:'90-amer'},
-                {dir:['east'],id:'91-5'}
+                {dir:['south'],id:'90-amer'},
+				{dir:['east'],id:'91-5'},
+				{dir:['west'],id:'91-7'},
             ]
         },
         {
@@ -425,9 +425,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'93-amer'},
-                {dir:['west'],id:'92-7'},
-                {dir:['South'],id:'91-amer'},
-                {dir:['east'],id:'92-5'}
+                {dir:['south'],id:'91-amer'},
+				{dir:['east'],id:'92-5'},
+				{dir:['west'],id:'92-7'},
             ]
         },
         {
@@ -438,9 +438,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'94-amer'},
-                {dir:['west'],id:'93-7'},
-                {dir:['South'],id:'92-amer'},
-                {dir:['east'],id:'93-5'}
+                {dir:['south'],id:'92-amer'},
+				{dir:['east'],id:'93-5'},
+				{dir:['west'],id:'93-7'},
             ]
         },
         {
@@ -451,9 +451,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'95-amer'},
-                {dir:['west'],id:'94-7'},
-                {dir:['South'],id:'93-amer'},
-                {dir:['east'],id:'94-5'}
+                {dir:['south'],id:'93-amer'},
+				{dir:['east'],id:'94-5'},
+				{dir:['west'],id:'94-7'},
             ]
         },
         {
@@ -464,9 +464,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'96-amer'},
-                {dir:['west'],id:'95-7'},
-                {dir:['South'],id:'94-amer'},
-                {dir:['east'],id:'95-5'}
+                {dir:['south'],id:'94-amer'},
+				{dir:['east'],id:'95-5'},
+				{dir:['west'],id:'95-7'},
             ]
         },
         {
@@ -477,9 +477,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'97-amer'},
-                {dir:['west'],id:'96-7'},
-                {dir:['South'],id:'95-amer'},
-                {dir:['east'],id:'96-5'}
+                {dir:['south'],id:'95-amer'},
+				{dir:['east'],id:'96-5'},
+				{dir:['west'],id:'96-7'},
             ]
         },
         {
@@ -490,9 +490,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'98-amer'},
-                {dir:['west'],id:'97-7'},
-                {dir:['South'],id:'96-amer'},
-                {dir:['east'],id:'97-5'}
+                {dir:['south'],id:'96-amer'},
+				{dir:['east'],id:'97-5'},
+				{dir:['west'],id:'97-7'},
             ]
         },
         {
@@ -503,9 +503,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'99-amer'},
-                {dir:['west'],id:'98-7'},
-                {dir:['South'],id:'97-amer'},
-                {dir:['east'],id:'98-5'}
+                {dir:['south'],id:'97-amer'},
+				{dir:['east'],id:'98-5'},
+				{dir:['west'],id:'98-7'},
             ]
         },
         {
@@ -516,9 +516,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'100-amer'},
-                {dir:['west'],id:'99-7'},
-                {dir:['South'],id:'98-amer'},
-                {dir:['east'],id:'99-5'}//blocked
+                {dir:['south'],id:'98-amer'},
+				{dir:['east'],id:'99-5'},
+				{dir:['west'],id:'99-7'},//blocked
             ]
         },
         {
@@ -529,9 +529,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'101-amer'},
-                {dir:['west'],id:'100-7'},
-                {dir:['South'],id:'99-amer'},
-                {dir:['east'],id:'100-5'}//blocked
+                {dir:['south'],id:'99-amer'},
+				{dir:['east'],id:'100-5'},
+				{dir:['west'],id:'100-7'},//blocked
             ]
         },
         {
@@ -542,9 +542,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'102-amer'},
-                {dir:['west'],id:'101-7'},
-                {dir:['South'],id:'100-amer'},
-                {dir:['east'],id:'101-5'}
+                {dir:['south'],id:'100-amer'},
+				{dir:['east'],id:'101-5'},
+				{dir:['west'],id:'101-7'},
             ]
         },
         {
@@ -555,9 +555,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'103-amer'},
-                {dir:['west'],id:'102-7'},
-                {dir:['South'],id:'101-amer'},
-                {dir:['east'],id:'102-5'}
+                {dir:['south'],id:'101-amer'},
+				{dir:['east'],id:'102-5'},
+				{dir:['west'],id:'102-7'},
             ]
         },
         {
@@ -568,9 +568,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'104-amer'},
-                {dir:['west'],id:'103-7'},
-                {dir:['South'],id:'102-amer'},
-                {dir:['east'],id:'103-5'}
+                {dir:['south'],id:'102-amer'},
+				{dir:['east'],id:'103-5'},
+				{dir:['west'],id:'103-7'},
             ]
         },
         {
@@ -581,9 +581,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'105-amer'},
-                {dir:['west'],id:'104-7'},
-                {dir:['South'],id:'103-amer'},
-                {dir:['east'],id:'104-5'}
+                {dir:['south'],id:'103-amer'},
+				{dir:['east'],id:'104-5'},
+				{dir:['west'],id:'104-7'},
             ]
         },
         {
@@ -594,9 +594,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'106-amer'},
-                {dir:['west'],id:'105-7'},
-                {dir:['South'],id:'104-amer'},
-                {dir:['east'],id:'105-5'}
+                {dir:['south'],id:'104-amer'},
+				{dir:['east'],id:'105-5'},
+				{dir:['west'],id:'105-7'},
             ]
         },
         {
@@ -607,9 +607,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'107-amer'},
-                {dir:['west'],id:'106-7'},
-                {dir:['South'],id:'105-amer'},
-                {dir:['east'],id:'106-5'}
+                {dir:['south'],id:'105-amer'},
+				{dir:['east'],id:'106-5'},
+				{dir:['west'],id:'106-7'},
             ]
         },
         {
@@ -620,9 +620,9 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['north'],id:'108-amer'},
-                {dir:['west'],id:'107-7'},
-                {dir:['South'],id:'106-amer'},
-                {dir:['east'],id:'107-5'}
+                {dir:['south'],id:'106-amer'},
+				{dir:['east'],id:'107-5'},
+				{dir:['west'],id:'107-7'},
             ]
         },
         {
@@ -634,7 +634,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'109-amer'},
                 {dir:['west'],id:'108-7'},
-                {dir:['South'],id:'107-amer'},,
+                {dir:['south'],id:'107-amer'},
                 {dir:['east'],id:'108-5'}
             ]
         },
@@ -645,7 +645,7 @@ const centralPark ={
             desc:``, 
             isStreet: true,
             exits:[
-                {dir:['South'],id:'108-amer'},
+                {dir:['south'],id:'108-amer'},
                 {dir:['west'],id:'109-7'},
                 {dir:['east'],id:'109-5'}
             ]
@@ -673,7 +673,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'62-7'},
                 {dir:['east'],id:'61-amer'},
-                {dir:['South'],id:'60-7'},
+                {dir:['south'],id:'60-7'},
                 {dir:['west'],id:'61-cent'},
             ]
         },
@@ -686,7 +686,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'63-7'},
                 {dir:['east'],id:'62-amer'},
-                {dir:['South'],id:'61-7'},
+                {dir:['south'],id:'61-7'},
                 {dir:['west'],id:'62-cent'},
             ]
         },
@@ -699,7 +699,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'64-7'},
                 {dir:['east'],id:'63-amer'},
-                {dir:['South'],id:'62-7'},
+                {dir:['south'],id:'62-7'},
                 {dir:['west'],id:'63-cent'},
             ]
         },
@@ -712,7 +712,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'65-7'},
                 {dir:['east'],id:'64-amer'},
-                {dir:['South'],id:'63-7'},
+                {dir:['south'],id:'63-7'},
                 {dir:['west'],id:'64-cent'},
             ]
         },
@@ -725,7 +725,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'66-7'},
                 {dir:['east'],id:'65-amer'},
-                {dir:['South'],id:'64-7'},
+                {dir:['south'],id:'64-7'},
                 {dir:['west'],id:'65-cent'},
             ]
         },
@@ -738,7 +738,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'67-7'},
                 {dir:['east'],id:'66-amer'},
-                {dir:['South'],id:'65-7'},
+                {dir:['south'],id:'65-7'},
                 {dir:['west'],id:'66-cent'},
             ]
         },
@@ -751,7 +751,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'68-7'},
                 {dir:['east'],id:'67-amer'},
-                {dir:['South'],id:'66-7'},
+                {dir:['south'],id:'66-7'},
                 {dir:['west'],id:'67-cent'},
             ]
         },
@@ -764,7 +764,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'69-7'},
                 {dir:['east'],id:'68-amer'},
-                {dir:['South'],id:'67-7'},
+                {dir:['south'],id:'67-7'},
                 {dir:['west'],id:'68-cent'},
             ]
         },
@@ -777,7 +777,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'70-7'},
                 {dir:['east'],id:'69-amer'},
-                {dir:['South'],id:'68-7'},
+                {dir:['south'],id:'68-7'},
                 {dir:['west'],id:'69-cent'},
             ]
         },
@@ -790,7 +790,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'71-7'},
                 {dir:['east'],id:'70-amer'},
-                {dir:['South'],id:'69-7'},
+                {dir:['south'],id:'69-7'},
                 {dir:['west'],id:'70-cent'},
             ]
         },
@@ -803,7 +803,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'72-7'},
                 {dir:['east'],id:'71-amer'},
-                {dir:['South'],id:'70-7'},
+                {dir:['south'],id:'70-7'},
                 {dir:['west'],id:'71-cent'},
             ]
         },
@@ -816,7 +816,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'73-7'},
                 {dir:['east'],id:'72-amer'},
-                {dir:['South'],id:'71-7'},
+                {dir:['south'],id:'71-7'},
                 {dir:['west'],id:'72-cent'},
             ]
         },
@@ -829,7 +829,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'74-7'},
                 {dir:['east'],id:'73-amer'},
-                {dir:['South'],id:'72-7'},
+                {dir:['south'],id:'72-7'},
                 {dir:['west'],id:'73-cent'},
             ]
         },
@@ -842,7 +842,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'75-7'},
                 {dir:['east'],id:'74-amer'},
-                {dir:['South'],id:'73-7'},
+                {dir:['south'],id:'73-7'},
                 {dir:['west'],id:'74-cent'},
             ]
         },
@@ -855,7 +855,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'76-7'},
                 {dir:['east'],id:'75-amer'},
-                {dir:['South'],id:'74-7'},
+                {dir:['south'],id:'74-7'},
                 {dir:['west'],id:'75-cent'},
             ]
         },
@@ -868,7 +868,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'77-7'},
                 {dir:['east'],id:'76-amer'},
-                {dir:['South'],id:'75-7'},
+                {dir:['south'],id:'75-7'},
                 {dir:['west'],id:'76-cent'},
             ]
         },
@@ -881,7 +881,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'78-7'},
                 {dir:['east'],id:'77-amer'},
-                {dir:['South'],id:'76-7'},
+                {dir:['south'],id:'76-7'},
                 {dir:['west'],id:'77-cent'},
             ]
         },
@@ -894,7 +894,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'80-7'},
                 {dir:['east'],id:'78-amer'},
-                {dir:['South'],id:'77-7'},
+                {dir:['south'],id:'77-7'},
                 {dir:['west'],id:'78-cent'},//blocked
             ]
         },
@@ -907,7 +907,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'80-7'},
                 {dir:['east'],id:'79-amer'},
-                {dir:['South'],id:'78-7'},
+                {dir:['south'],id:'78-7'},
                 {dir:['west'],id:'79-cent'},//blocked
             ]
         },
@@ -920,7 +920,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'81-7'},
                 {dir:['east'],id:'80-amer'},
-                {dir:['South'],id:'79-7'},
+                {dir:['south'],id:'79-7'},
                 {dir:['west'],id:'80-cent'}//blocked
             ]
         },
@@ -933,7 +933,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'82-7'},
                 {dir:['east'],id:'81-amer'},
-                {dir:['South'],id:'80-7'},
+                {dir:['south'],id:'80-7'},
                 {dir:['west'],id:'81-cent'},
             ]
         },
@@ -946,7 +946,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'83-7'},
                 {dir:['east'],id:'82-amer'},
-                {dir:['South'],id:'81-7'},
+                {dir:['south'],id:'81-7'},
                 {dir:['west'],id:'82-cent'},
             ]
         },
@@ -959,7 +959,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'edga-7'},
                 {dir:['east'],id:'83-amer'},
-                {dir:['South'],id:'82-7'},
+                {dir:['south'],id:'82-7'},
                 {dir:['west'],id:'83-cent'},
             ]
         },
@@ -972,7 +972,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'85-7'},
                 {dir:['east'],id:'edga-amer'},
-                {dir:['South'],id:'83-7'},
+                {dir:['south'],id:'83-7'},
                 {dir:['west'],id:'edga-cent'},
             ]
         },
@@ -985,7 +985,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'86-7'},
                 {dir:['east'],id:'85-amer'},
-                {dir:['South'],id:'edga-7'},
+                {dir:['south'],id:'edga-7'},
                 {dir:['west'],id:'85-cent'},
             ]
         },
@@ -998,7 +998,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'87-7'},
                 {dir:['east'],id:'86-amer'},
-                {dir:['South'],id:'85-7'},
+                {dir:['south'],id:'85-7'},
                 {dir:['west'],id:'86-cent'},
             ]
         },
@@ -1011,7 +1011,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'88-7'},
                 {dir:['east'],id:'87-amer'},
-                {dir:['South'],id:'86-7'},
+                {dir:['south'],id:'86-7'},
                 {dir:['west'],id:'87-cent'},
             ]
         },
@@ -1024,7 +1024,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'89-7'},
                 {dir:['east'],id:'88-amer'},
-                {dir:['South'],id:'87-7'},
+                {dir:['south'],id:'87-7'},
                 {dir:['west'],id:'88-cent'},
             ]
         },
@@ -1037,7 +1037,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'90-7'},
                 {dir:['east'],id:'89-amer'},
-                {dir:['South'],id:'89-7'}
+                {dir:['south'],id:'89-7'}
             ]
         },
         {
@@ -1049,7 +1049,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'91-7'},
                 {dir:['east'],id:'90-amer'},
-                {dir:['South'],id:'89-7'},
+                {dir:['south'],id:'89-7'},
                 {dir:['west'],id:'90-cent'},
             ]
         },
@@ -1062,7 +1062,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'92-7'},
                 {dir:['east'],id:'91-amer'},
-                {dir:['South'],id:'90-7'},
+                {dir:['south'],id:'90-7'},
                 {dir:['west'],id:'91-cent'},
             ]
         },
@@ -1075,7 +1075,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'93-7'},
                 {dir:['east'],id:'92-amer'},
-                {dir:['South'],id:'91-7'},
+                {dir:['south'],id:'91-7'},
                 {dir:['west'],id:'92-cent'},
             ]
         },
@@ -1088,7 +1088,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'94-7'},
                 {dir:['east'],id:'93-amer'},
-                {dir:['South'],id:'92-7'},
+                {dir:['south'],id:'92-7'},
                 {dir:['west'],id:'93-cent'},
             ]
         },
@@ -1101,7 +1101,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'95-7'},
                 {dir:['east'],id:'94-amer'},
-                {dir:['South'],id:'93-7'},
+                {dir:['south'],id:'93-7'},
                 {dir:['west'],id:'94-cent'},
             ]
         },
@@ -1114,7 +1114,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'96-7'},
                 {dir:['east'],id:'95-amer'},
-                {dir:['South'],id:'94-7'},
+                {dir:['south'],id:'94-7'},
                 {dir:['west'],id:'95-cent'},
             ]
         },
@@ -1127,7 +1127,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'97-7'},
                 {dir:['east'],id:'96-amer'},
-                {dir:['South'],id:'95-7'},
+                {dir:['south'],id:'95-7'},
                 {dir:['west'],id:'96-cent'},
             ]
         },
@@ -1140,7 +1140,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'98-7'},
                 {dir:['east'],id:'97-amer'},
-                {dir:['South'],id:'96-7'},
+                {dir:['south'],id:'96-7'},
                 {dir:['west'],id:'97-cent'},
             ]
         },
@@ -1153,7 +1153,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'99-7'},
                 {dir:['east'],id:'98-amer'},
-                {dir:['South'],id:'97-7'},
+                {dir:['south'],id:'97-7'},
                 {dir:['west'],id:'98-cent'},
             ]
         },
@@ -1166,7 +1166,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'100-7'},
                 {dir:['east'],id:'99-amer'},
-                {dir:['South'],id:'98-7'},
+                {dir:['south'],id:'98-7'},
                 {dir:['west'],id:'99-cent'},
             ]
         },
@@ -1179,7 +1179,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'101-7'},
                 {dir:['east'],id:'100-amer'},
-                {dir:['South'],id:'99-7'},
+                {dir:['south'],id:'99-7'},
                 {dir:['west'],id:'100-cent'},
             ]
         },
@@ -1192,7 +1192,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'102-7'},
                 {dir:['east'],id:'101-amer'},
-                {dir:['South'],id:'100-7'},
+                {dir:['south'],id:'100-7'},
                 {dir:['west'],id:'101-cent'},
             ]
         },
@@ -1205,7 +1205,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'103-7'},
                 {dir:['east'],id:'102-amer'},
-                {dir:['South'],id:'101-7'},
+                {dir:['south'],id:'101-7'},
                 {dir:['west'],id:'102-cent'},
             ]
         },
@@ -1218,7 +1218,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'104-7'},
                 {dir:['east'],id:'103-amer'},
-                {dir:['South'],id:'102-7'},
+                {dir:['south'],id:'102-7'},
                 {dir:['west'],id:'103-cent'},
             ]
         },
@@ -1231,7 +1231,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'105-7'},
                 {dir:['east'],id:'104-amer'},
-                {dir:['South'],id:'103-7'},
+                {dir:['south'],id:'103-7'},
                 {dir:['west'],id:'104-cent'},
             ]
         },
@@ -1244,7 +1244,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'106-7'},
                 {dir:['east'],id:'105-amer'},
-                {dir:['South'],id:'104-7'},
+                {dir:['south'],id:'104-7'},
                 {dir:['west'],id:'105-cent'},
             ]
         },
@@ -1257,7 +1257,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'107-7'},
                 {dir:['east'],id:'106-amer'},
-                {dir:['South'],id:'105-7'},
+                {dir:['south'],id:'105-7'},
                 {dir:['west'],id:'106-cent'},
             ]
         },
@@ -1270,7 +1270,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'108-7'},
                 {dir:['east'],id:'107-amer'},
-                {dir:['South'],id:'106-7'},
+                {dir:['south'],id:'106-7'},
                 {dir:['west'],id:'107-cent'},
             ]
         },
@@ -1283,7 +1283,7 @@ const centralPark ={
             exits:[
                 {dir:['north'],id:'109-7'},
                 {dir:['east'],id:'108-amer'},
-                {dir:['South'],id:'107-7'},
+                {dir:['south'],id:'107-7'},
                 {dir:['west'],id:'108-cent'},
             ]
         },
@@ -1295,22 +1295,11 @@ const centralPark ={
             isStreet: true,
             exits:[
                 {dir:['east'],id:'109-amer'},
-                {dir:['South'],id:'108-7'},
+                {dir:['south'],id:'108-7'},
                 {dir:['west'],id:'109-cent'},
             ]
         },
-
-
-
     ]
-
-
-
-
-
-
-
-
 }
 /*
 Notes:
