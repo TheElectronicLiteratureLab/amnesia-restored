@@ -46,7 +46,7 @@ const eastside = {
             },
             {
                 dir: ['w', 'west'],
-                id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change... but north more.
+                id : '60-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change... but north more.
             },
             {
                 dir: ['s', 'south'],
@@ -74,7 +74,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '61-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -102,7 +102,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '63-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -130,7 +130,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '63-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -158,7 +158,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '64-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -186,7 +186,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '65-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -218,7 +218,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '66-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -245,7 +245,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '67-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -272,7 +272,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '68-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -298,7 +298,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '69-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -324,7 +324,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '70-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -350,7 +350,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '71-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -376,7 +376,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '72-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -402,7 +402,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '73-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -428,7 +428,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '74-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -454,7 +454,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '75-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -472,7 +472,7 @@ const eastside = {
             [
                 {
                     dir: ['n', 'north'],
-                    id : '76-5'
+                    id : '77-5'
                 },
                 {
                     dir: ['e', 'east'],
@@ -480,7 +480,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '76-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -506,7 +506,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '77-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -532,7 +532,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '78-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -558,7 +558,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '79-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -584,7 +584,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '80-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -613,7 +613,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '81-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -655,7 +655,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '82-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -682,7 +682,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '83-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -709,7 +709,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : 'edga-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -736,7 +736,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '85-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -763,7 +763,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '86-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -789,7 +789,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '87-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -818,7 +818,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '88-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -858,7 +858,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '89-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -884,7 +884,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '90-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -913,7 +913,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '91-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -954,7 +954,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '92-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -980,7 +980,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '93-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1006,7 +1006,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '94-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1032,7 +1032,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '95-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1063,7 +1063,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '96-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1089,7 +1089,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '97-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1115,7 +1115,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '98-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1141,7 +1141,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '101-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1167,7 +1167,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '102-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1193,7 +1193,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '103-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1219,7 +1219,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '104-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1245,7 +1245,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '105-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1271,7 +1271,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '106-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1297,7 +1297,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '107-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1323,7 +1323,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '108-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1349,7 +1349,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '109-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
@@ -1376,7 +1376,7 @@ const eastside = {
                 },
                 {
                     dir: ['w', 'west'],
-                    id : 'some-cent'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
+                    id : '110-amer'     // Somehwere in Central Park, depending on how central park is mapped will be up to change. Even more north than the other some-cent
                 },
                 {
                     dir: ['s', 'south'],
