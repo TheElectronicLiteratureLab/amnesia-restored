@@ -21,7 +21,14 @@ let look = () => {
     room.onLook({disk, println});
   }
 
-  println(room.desc)
+  else if (room.desc === '' || "" || ``) {
+    println(`There's nothing interesting here.`)
+  }
+
+
+  else {
+    println(room.desc)
+  }
 };
 
 // look in the passed way
@@ -761,19 +768,19 @@ let remove = (clothes) => {
 
 // };
 
-function askXAboutY(xCharacter, yPrep, zTopic) {
-  const room = getRoom(disk.roomId);
-  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
+// function askXAboutY(xCharacter, yPrep, zTopic) {
+//   const room = getRoom(disk.roomId);
+//   const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
 
-  if (yPrep !== 'about') {
-    println('You can Ask x(character) about y(topic)');
-  }
+//   if (yPrep !== 'about') {
+//     println('You can Ask x(character) about y(topic)');
+//   }
   
-  if (yPrep === 'about'){
-    console.log(character.name);
-    console.log(xCharacter, zTopic);
-  }
-};
+//   if (yPrep === 'about'){
+//     console.log(character.name);
+//     console.log(xCharacter, zTopic);
+//   }
+// };
 
 //ask character about topic function
 // const askXAboutY = ([x, y]) => {
@@ -781,6 +788,28 @@ function askXAboutY(xCharacter, yPrep, zTopic) {
 //   disk.conversant = character;
 //   talkToOrAboutX('about', y);
 // };
+
+
+//Phone Booth Creation
+function createPhone() { //create function
+  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const thisRoom = getRoom(disk.roomId); //get current room
+  for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
+    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      console.log(chance); //log the number generated
+      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+      rooms[i].exits.push( //push the following into the room's exits array
+        {
+          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+          id: 'pho-boo1' //id for phone booth
+        },
+      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+      
+    }
+  }
+  thisRoom.phonesMade = true; //dont allow the function to run again
+};
 
 
 // open command
@@ -1002,7 +1031,7 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
-  {
-    ask: args => askXAboutY(args[0], args[2]),
-  },
+  // {
+  //   ask: args => askXAboutY(args[0], args[2]),
+  // },
 ];

@@ -1,14 +1,32 @@
 // This simple game disk can be used as a starting point to create a new adventure.
 // Change anything you want, add new rooms, etc.
 const hcDvDisk = {
-  roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
+  roomId: 'starting', // Set this to the ID of the room you want the player to start in.
   rooms: [
+    {
+      id: 'starting',
+      name: 'Hotel Corridor',
+      desc: `about to step into health club`,
+      onEnter: () => {
+        pressEnter('heal-club');
+      },
+      exits: [],
+    },
     {
       id: 'heal-club', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Health Club Reception Room', // Displayed each time the player enters the room.
       desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be “Back in 10 Minutes.”
       
-      The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
+      The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`,
+      
+      phonesMade: false,
+      onEnter: () => {
+        reenableInput();
+        const thisRoom = getRoom(disk.roomId);
+        if (!thisRoom.phonesMade) {
+          createPhone();
+        }
+      },
       exits: [
         {
           dir: ['left', 'dolls', 'girls', 'girls', `women's`, 'womens'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
@@ -83,7 +101,8 @@ const hcDvDisk = {
       With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
       onEnter: () => {
         pressEnter('deat-1')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club5',
@@ -128,7 +147,8 @@ const hcDvDisk = {
       
       onEnter: () => {
         pressEnter('heal-club12')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club12',
@@ -137,7 +157,8 @@ const hcDvDisk = {
 
       onEnter: () => {
         pressEnter('heal-club13')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club13',
@@ -182,17 +203,20 @@ const hcDvDisk = {
     {
       id: 'heal-club7',
       name: `Men's Locker Room`,
-      desc: 'massage'
+      desc: 'massage',
+      exits: [],
     },
     {
       id: 'heal-club9',
       name: `Men's Locker Room`,
       desc: 'showers',
+      exits: [],
     },
     {
       id: 'heal-club10',
       name: `Men's Locker Room`,
-      desc: `weight room`
+      desc: `weight room`,
+      exits: [],
     },
     {
       id: 'heal-club8',
@@ -203,6 +227,7 @@ const hcDvDisk = {
       onEnter: () => {
         pressEnter('heal-club11');
       },
+      exits: [],
     },
     {
       id: 'heal-club11',
@@ -211,7 +236,8 @@ const hcDvDisk = {
       You are experiencing . . . DEJA-VU!`,
       onEnter: () => {
         pressEnter('deja-vu');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu', 
@@ -220,7 +246,8 @@ const hcDvDisk = {
       
       onEnter: () => {
           pressEnter('deja-vu1');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu1',
@@ -234,7 +261,8 @@ const hcDvDisk = {
               println(`'${prevInput}'`);
           }
           enterRoom('deja-vu2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu2',
@@ -242,7 +270,8 @@ const hcDvDisk = {
       desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.`,
         onEnter: () => {
             pressEnter('deja-vu3');
-        }
+        },
+        exits: [],
       
     },
     {
@@ -262,6 +291,7 @@ const hcDvDisk = {
                 enterRoom('deja-vu4');
             };
         },
+        exits: [],
     },
     {
       id: 'deja-vu4',
@@ -270,7 +300,8 @@ const hcDvDisk = {
 
       onEnter: () => {
           pressEnter('deja-vu5');
-      }
+      },
+      exits: [],
       
     },
     {
@@ -289,7 +320,8 @@ const hcDvDisk = {
         if (room.count === 5){
             enterRoom('deja-vu6')
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu7',
@@ -301,6 +333,7 @@ const hcDvDisk = {
       onEnter: () => {
         pressEnter('deja-vu8')
       },
+      exits: [],
     },
     {
         id: 'deja-vu8',
@@ -309,7 +342,8 @@ const hcDvDisk = {
 
         oneEnter: () => {
             pressEnter('deja-vu5')
-        }
+        },
+        exits: [],
 
     },
     {
@@ -318,7 +352,8 @@ const hcDvDisk = {
       desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
       onEnter: () => {
           pressEnter('heal-club14')
-      }
+      },
+      exits: [],
     },
     //BELOW HERE IS AFTER DEJA-VU
     {
@@ -328,7 +363,8 @@ const hcDvDisk = {
       A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.`,
       onEnter: () => {
           pressEnter('heal-club15')
-      }
+      },
+      exits: [],
     },
     {
         id: 'heal-club15',
@@ -337,7 +373,8 @@ const hcDvDisk = {
         “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t.”`,
         onEnter: () => {
             pressEnter('heal-club16');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club16',
@@ -345,7 +382,8 @@ const hcDvDisk = {
         desc: `He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
         onEnter: () => {
             pressEnter('heal-club17');
-        }
+        },
+        exits: [],
     },
     {
       id: 'heal-club17',
@@ -354,6 +392,7 @@ const hcDvDisk = {
       onEnter: () => {
           pressEnter('heal-club18');
       },
+      exits: [],
     },
     {
         id: 'heal-club18',
@@ -361,7 +400,8 @@ const hcDvDisk = {
         desc: `The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper,`,
         onEnter: () => {
             pressEnter('heal-club19')
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club19',
@@ -373,7 +413,8 @@ const hcDvDisk = {
         “It was on the floor of the sauna.”`,
         onEnter: () => {
             pressEnter('heal-club20');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club20',
@@ -383,7 +424,8 @@ const hcDvDisk = {
         You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.`,
         onEnter: () => {
             pressEnter('heal-club21');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club21',
@@ -393,7 +435,8 @@ const hcDvDisk = {
         You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym bag in the other.`,
         onEnter: () => {
             pressEnter('heal-club22')
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club22',
@@ -408,17 +451,40 @@ const hcDvDisk = {
             } else {
                 enterRoom('heal-club24');
             }
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club23',
         name: 'Massage Room',
         desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+      exits: [],
+      items: [
+        {
+          name: 'Green Canvas Gym Bag',
+          desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+          isTakeable: true,
+          isDroppable: true,
+          descRead: false,
+          onTake: () => {
+            const room = getRoom(disk.roomId);
+            if (room.descRead === false) {
+              println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+            } room.descRead = true;
+            pressEnter('heal-club25');
+          },
+          onLook: () => {
+            takeItem('Green Canvas Gym Bag');
+            pressEnter('heal-club25');
+          }
+        },
+      ]
     },
     {
         id: 'heal-club24',
         name: 'Massage Room',
         desc: `The masseur lays his hand on your shoulder. “Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
+      exits: [],
         items: [
           {
             name: 'Green Canvas Gym Bag',
@@ -474,7 +540,8 @@ const hcDvDisk = {
           },
         ])
         pressEnter('heal-club26');
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club26',
@@ -491,7 +558,8 @@ const hcDvDisk = {
         }else {
           enterRoom('heal-club27');
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club27',
@@ -499,7 +567,8 @@ const hcDvDisk = {
       desc: `The masseur seems relieved when you follow Buddy out. He has been given your satchel, the plastic bookbag, and a pass key to Room 1502. You take the elevator down to 15, and Buddy leads the way to your room.`,
       onEnter: () => {
         pressEnter('heal-club28');
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club28',
@@ -509,7 +578,8 @@ const hcDvDisk = {
       You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
       onEnter: () => {
         pressEnter('hote-revi');
-      }
+      },
+      exits: [],
     }
   ],
 };
