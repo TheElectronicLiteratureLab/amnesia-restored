@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div id="map" style="width: 70%; height: 50%; background: #ffffff;"></div>
+    <div id="map" style="width: 70%; height: 50%; background: #32302f;"></div>
   </div>
   
   
@@ -78,8 +78,8 @@
   L.tileLayer('map/{z}/{x}/{y}.png', {
     continuousWorld: false,
     noWrap: true,	
-    minZoom: 3,
-    maxZoom: 6,
+    minZoom: 1,
+    maxZoom: 5,
   }).addTo(map);
 //Coordinate Finder
   var marker = L.marker([0, 0], {

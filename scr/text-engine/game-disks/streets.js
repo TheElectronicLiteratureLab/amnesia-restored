@@ -5109,7 +5109,7 @@ const streets = {
       isStreet: true,
       exits: [
         {dir: 'north', id: '6-fdrd'},
-        {dir: 'south', id: '', block: `You can't go that way.`},
+        {dir: 'south', id: ''},
         {dir: 'east', id: '', block: `You can't go that way.`},
         {dir: 'west', id: 'hous-mang'},
       ]
@@ -5130,7 +5130,7 @@ const streets = {
     {
       id: '10-erdr',
       coord: [],
-      name: 'E. 15th St. and East River Dr.',
+      name: 'E. 10th St. and East River Dr.',
       desc: '',
       isStreet: true,
       exits: [

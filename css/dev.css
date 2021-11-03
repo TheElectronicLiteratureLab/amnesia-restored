@@ -188,8 +188,7 @@ button {
   border: 5px solid grey;
   position: absolute;
   top: 165px;
-  margin-right: auto;
-  margin-left: auto;
+  right: 140px;
   width: 200px;
   display: none;
 }
