@@ -307,14 +307,27 @@ let talkToOrAboutX = (preposition, x) => {
 };
 
 //ask character about topic function
+// const askXAboutY = (x, y) => {
+//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+//   const topics = character.topics;
+//   if ( x === character.name && y === topics.id ){
+//     println(topics.id.desc)
+//   }
+// };
+
 const askXAboutY = (x, y) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  const topics = character.topics;
+  const character = getCharacter(x, getCharacterinRoom(disk.roomId));
   disk.conversant = character;
-  if (y === topics.option) {
-    
-  }
+  console.log(disk.conversant);
+  talkToOrAboutX('about', y);
 };
+
+function askTesting(xCharacter) {
+  const character = getCharacter(xCharacter, getCharactersInRoom(disk.roomId));
+  disk.conversant = character;
+  console.log(character);
+  console.log(disk.conversant);
+}
 
 
 //completely omit the talk function, only have ask
@@ -1011,6 +1024,7 @@ let commands = [
     devcom4: x => setFatigue(x),
     wear: wear,
     remove: remove,
+    asking: args => askTesting(args),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

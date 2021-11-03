@@ -73,7 +73,7 @@ const midtownEast = {
                 }, 
                 {
                   dir: ['Sunderland', 'hotel'],
-                  id: '????',
+                  id: 'lobb-revi',
                 },
             ]
         },
@@ -1268,7 +1268,7 @@ const midtownEast = {
                 },
                 {
                   dir: ['Princeton', 'Health', 'Club',],
-                  id: '????',
+                  id: 'prin-club',
                 },
             ]
         },
@@ -1377,7 +1377,7 @@ const midtownEast = {
                 {
                   dir: [`Brentano's`, `Brentano`, `Brentanos`],
                   id: 'bren',
-                  block: '????'
+                  block: 'There is no point to going there.'
                 }
             ]
         },
@@ -3813,7 +3813,8 @@ const midtownEast = {
                 },
                 {
                   dir: ['south'],
-                  id: '????',
+                  id: '',
+                  block: `You can't go that way.`
                 },
                 {
                   dir: ['east'],
@@ -5207,12 +5208,35 @@ const midtownEast = {
             },
             {
               dir: ['east'],
+              id: '34-fdrd',
+            },
+            {
+              dir: ['west'],
+              id: '34-qin',
+            },
+        ]
+      },
+      {
+        id: '34-fdrd',
+        name: 'E. 34th St. and FDR Drive',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '41-fdrd',
+            },
+            {
+              dir: ['south'],
+              id: '25-fdrd',
+            },
+            {
+              dir: ['east'],
               id: '',
               block: `You can't go that way.`
             },
             {
               dir: ['west'],
-              id: '34-qin',
+              id: '34-1',
             },
         ]
       },
@@ -5341,11 +5365,11 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-              id: '????',
+              id: '42-fdrd',
             },
             {
               dir: ['south'],
-              id: '????',
+              id: '34-fdrd',
             },
             {
               dir: ['east'],
@@ -5365,7 +5389,8 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-              id: '????',
+              id: '',
+              block: `You can't go that way.`
             },
             {
               dir: ['south'],
@@ -5615,7 +5640,7 @@ const midtownEast = {
         exits: [
             {
               dir: ['north'],
-              id: '????',
+              id: '60-york',
             },
             {
               dir: ['south'],
@@ -5629,6 +5654,108 @@ const midtownEast = {
             {
               dir: ['west'],
               id: '59-1',
+            },
+        ]
+      },
+      {
+        isStreets: true,
+        coord: [],
+        id: '34-qin',
+        name: 'E. 34th St. and Queens Tunnel In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '35-qin',
+            },
+            {
+              dir: ['south'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['east'],
+              id: '34-1',
+            },
+            {
+              dir: ['west'],
+              id: '34-2',
+            },
+        ]
+      },
+      {
+        isStreets: true,
+        coord: [],
+        id: '35-qin',
+        name: 'E. 35th St. and Queens Tunnel In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '36-qin',
+            },
+            {
+              dir: ['south'],
+              id: '34-qin',
+            },
+            {
+              dir: ['east'],
+              id: '35-1',
+            },
+            {
+              dir: ['west'],
+              id: '35-2',
+            },
+        ]
+      },
+      {
+        isStreets: true,
+        coord: [],
+        id: '36-qin',
+        name: 'E. 36th St. and Queens Tunnel In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '37-qin',
+            },
+            {
+              dir: ['south'],
+              id: '35-qin',
+            },
+            {
+              dir: ['east'],
+              id: '36-1',
+            },
+            {
+              dir: ['west'],
+              id: '36-2',
+            },
+        ]
+      },
+      {
+        isStreets: true,
+        coord: [],
+        id: '37-qin',
+        name: 'E. 37th St. and Queens Tunnel In',
+        desc: ``,
+        exits: [
+            {
+              dir: ['north'],
+              id: '',
+              block: `You can't go that way.`
+            },
+            {
+              dir: ['south'],
+              id: '36-qin',
+            },
+            {
+              dir: ['east'],
+              id: '37-1',
+            },
+            {
+              dir: ['west'],
+              id: '37-2',
             },
         ]
       },
