@@ -6,7 +6,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-bowe',
-            name: '',
+            name: 'E. Houston St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -19,7 +19,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-chry',
-            name: '',
+            name: 'E. Houston St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -32,7 +32,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-fors',
-            name: '',
+            name: 'E. Houston St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -45,7 +45,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-eldr',
-            name: '',
+            name: 'E. Houston St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -58,7 +58,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-alle',
-            name: '',
+            name: 'E. Houston St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -71,7 +71,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-orch',
-            name: '',
+            name: 'E. Houston St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -84,7 +84,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-1',
-            name: '',
+            name: 'E. Houston St. and E. 1st St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -97,7 +97,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-ludl',
-            name: '',
+            name: 'E. Houston St. and Ludlow St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -110,7 +110,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-esse',
-            name: '',
+            name: 'E. Houston St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -123,7 +123,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-norf',
-            name: '',
+            name: 'E. Houston St. and Norfolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -136,7 +136,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-suff',
-            name: '',
+            name: 'E. Houston St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -149,7 +149,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-clin',
-            name: '',
+            name: 'E. Houston St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -162,7 +162,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-atto',
-            name: '',
+            name: 'E. Houston St. and Attorney St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -175,7 +175,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-ridg',
-            name: '',
+            name: 'E. Houston St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -188,7 +188,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-2',
-            name: '',
+            name: 'E. Houston St. and E 2nd St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -201,7 +201,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-pitt',
-            name: '',
+            name: 'E. Houston St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -214,7 +214,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-colu',
-            name: '',
+            name: 'E. Houston St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -227,7 +227,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-baru',
-            name: '',
+            name: 'E. Houston St. and Baruch P1.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -240,7 +240,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-mang',
-            name: '',
+            name: 'E. Houston St. and Mangin St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -253,7 +253,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-fdrd',
-            name: '',
+            name: 'E. Houston St. and FDR Drive',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '????' },
@@ -266,7 +266,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-bowe',
-            name: '',
+            name: 'Stanton St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-bowe' },
@@ -279,12 +279,12 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-chry',
-            name: '',
+            name: 'Stanton St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-chry' },
                 { dir: ['south'], id: 'rivi-chry' },
-                { dir: ['east'], id: 'stan-fors' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
                 { dir: ['west'], id: 'stan-bowe'}, 
             ]
         },
@@ -292,20 +292,20 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-fors',
-            name: '',
+            name: 'Stanton St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-fors' },
                 { dir: ['south'], id: 'rivi-fors' },
                 { dir: ['east'], id: 'stan-eldr' },
-                { dir: ['west'], id: 'stan-chry'}, 
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
             id: 'stan-eldr',
-            name: '',
+            name: 'Stanton St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-eldr' },
@@ -318,7 +318,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-alle',
-            name: '',
+            name: 'Stanton St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-alle' },
@@ -331,7 +331,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-orch',
-            name: '',
+            name: 'Stanton St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-orch' },
@@ -344,7 +344,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-ludl',
-            name: '',
+            name: 'Stanton St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-ludl' },
@@ -357,7 +357,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-esse',
-            name: '',
+            name: 'Stanton St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-esse' },
@@ -370,7 +370,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-norf',
-            name: '',
+            name: 'Stanton St. and Norfolk St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-norf' },
@@ -383,7 +383,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-suff',
-            name: '',
+            name: 'Stanton St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-suff' },
@@ -396,7 +396,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-clin',
-            name: '',
+            name: 'Stanton St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-clin' },
@@ -409,7 +409,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-atto',
-            name: '',
+            name: 'Stanton St. and Attorney St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-atto' },
@@ -422,7 +422,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-ridg',
-            name: '',
+            name: 'Stanton St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-ridg' },
@@ -435,7 +435,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'stan-pitt',
-            name: '',
+            name: 'Stanton St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-pitt' },
@@ -448,7 +448,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-baru',
-            name: '',
+            name: 'New St. and Baruch P1.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-baru' },
@@ -461,7 +461,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-mang',
-            name: '',
+            name: 'New St. and Mangin St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-mang' },
@@ -474,7 +474,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'prin-bowe',
-            name: '',
+            name: 'Prince St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-bowe' },
@@ -487,12 +487,12 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-bowe',
-            name: '',
+            name: 'Rivington St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'prin-bowe' },
                 { dir: ['south'], id: 'spri-bowe' },
-                { dir: ['east'], id: 'rivi-chrys' },
+                { dir: ['east'], id: 'rivi-chry' },
                 { dir: ['west'], id: '????'}, 
             ]
         },
@@ -500,12 +500,12 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-chry',
-            name: '',
+            name: 'Rivington St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-chry' },
                 { dir: ['south'], id: 'dela-chry' },
-                { dir: ['east'], id: 'rivi-fors' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
                 { dir: ['west'], id: 'rivi-bowe'}, 
             ]
         },
@@ -513,20 +513,20 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-fors',
-            name: '',
+            name: 'Rivington St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-fors' },
                 { dir: ['south'], id: 'dela-fors' },
                 { dir: ['east'], id: 'rivi-eldr' },
-                { dir: ['west'], id: 'rivi-chrys'}, 
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
             id: 'rivi-eldr',
-            name: '',
+            name: 'Rivington St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-eldr' },
@@ -539,7 +539,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-alle',
-            name: '',
+            name: 'Rivington St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-alle' },
@@ -552,7 +552,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-orch',
-            name: '',
+            name: 'Rivington St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-orch' },
@@ -565,7 +565,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-ludl',
-            name: '',
+            name: 'Rivington St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-ludl' },
@@ -578,7 +578,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-esse',
-            name: '',
+            name: 'Rivington St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-esse' },
@@ -591,7 +591,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-norf',
-            name: '',
+            name: 'Rivington St. and Norfolk St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-norf' },
@@ -604,7 +604,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-suff',
-            name: '',
+            name: 'Rivington St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-suff' },
@@ -617,7 +617,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-clin',
-            name: '',
+            name: 'Rivington St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-clin' },
@@ -630,7 +630,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-atto',
-            name: '',
+            name: 'Rivington St. and Attorney St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-atto' },
@@ -643,7 +643,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-ridg',
-            name: '',
+            name: 'Rivington St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-ridg' },
@@ -656,7 +656,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-pitt',
-            name: '',
+            name: 'Rivington St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'stan-pitt' },
@@ -669,7 +669,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'rivi-colu',
-            name: '',
+            name: 'Rivington St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-colu' },
@@ -682,7 +682,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'spri-bowe',
-            name: '',
+            name: 'Spring St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-bowe' },
@@ -695,7 +695,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'kenm-bowe',
-            name: '',
+            name: 'Kenmare St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'spri-bowe' },
@@ -708,7 +708,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-chry',
-            name: '',
+            name: 'Delancy St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-chry' },
@@ -721,7 +721,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-fors',
-            name: '',
+            name: 'Delancy St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-fors' },
@@ -734,7 +734,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-eldr',
-            name: '',
+            name: 'Delancy St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-eldr' },
@@ -747,7 +747,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-alle',
-            name: '',
+            name: 'Delancy St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-alle' },
@@ -760,7 +760,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-orch',
-            name: '',
+            name: 'Delancy St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-orch' },
@@ -773,7 +773,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-ludl',
-            name: '',
+            name: 'Delancy St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-ludl' },
@@ -786,7 +786,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-esse',
-            name: '',
+            name: 'Delancy St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-esse' },
@@ -799,7 +799,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-norf',
-            name: '',
+            name: 'Delancy St. and Norfolk St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-norf' },
@@ -812,7 +812,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-suff',
-            name: '',
+            name: 'Delancy St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-suff' },
@@ -825,7 +825,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-clin',
-            name: '',
+            name: 'Delancy St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-clin' },
@@ -838,7 +838,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-atto',
-            name: '',
+            name: 'Delancy St. and Attorney St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-atto' },
@@ -851,7 +851,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-ridg',
-            name: '',
+            name: 'Delancy St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-ridg' },
@@ -864,7 +864,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-pitt',
-            name: '',
+            name: 'Delancy St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-pitt' },
@@ -877,7 +877,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-colu',
-            name: '',
+            name: 'Delancy St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'rivi-colu' },
@@ -890,7 +890,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'dela-fdrd',
-            name: '',
+            name: 'Delancy St. and ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hous-fdrd' },
@@ -903,7 +903,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'will-clin',
-            name: '',
+            name: 'Williamsburg Brg. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-clin' },
@@ -916,7 +916,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-clin',
-            name: '',
+            name: 'New St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'will-clin' },
@@ -929,7 +929,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-ridg',
-            name: '',
+            name: 'New St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-ridg' },
@@ -942,7 +942,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-pitt',
-            name: '',
+            name: 'New St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-pitt' },
@@ -955,7 +955,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-will',
-            name: '',
+            name: 'New St. and Willet St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -968,7 +968,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-colu',
-            name: '',
+            name: 'New St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-colu' },
@@ -981,7 +981,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-lewi',
-            name: '',
+            name: 'New St. and Lewis St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -994,7 +994,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'new-sout',
-            name: '',
+            name: 'New St. and South St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-fdrd' },
@@ -1007,7 +1007,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-bowe',
-            name: '',
+            name: 'Broome St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'kenm-bowe' },
@@ -1020,7 +1020,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-chry',
-            name: '',
+            name: 'Broome St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-chry' },
@@ -1033,7 +1033,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-fors',
-            name: '',
+            name: 'Broome St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-fors' },
@@ -1046,7 +1046,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-eldr',
-            name: '',
+            name: 'Broome St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-eldr' },
@@ -1059,7 +1059,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-alle',
-            name: '',
+            name: 'Broome St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-alle' },
@@ -1072,7 +1072,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-orch',
-            name: '',
+            name: 'Broome St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-orch' },
@@ -1085,7 +1085,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-ludl',
-            name: '',
+            name: 'Broome St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-ludl' },
@@ -1098,7 +1098,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-esse',
-            name: '',
+            name: 'Broome St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-esse' },
@@ -1111,7 +1111,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-norf',
-            name: '',
+            name: 'Broome St. and Norfolk St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-norf' },
@@ -1124,7 +1124,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-suff',
-            name: '',
+            name: 'Broome St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'dela-suff' },
@@ -1137,7 +1137,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-clin',
-            name: '',
+            name: 'Broome St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-clin' },
@@ -1150,7 +1150,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-ridg',
-            name: '',
+            name: 'Broome St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-ridg' },
@@ -1163,7 +1163,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-pitt',
-            name: '',
+            name: 'Broome St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-pitt' },
@@ -1176,7 +1176,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-will',
-            name: '',
+            name: 'Broome St. and Willet St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-will' },
@@ -1189,7 +1189,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broo-colu',
-            name: '',
+            name: 'Broome St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-colu' },
@@ -1202,7 +1202,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-bowe',
-            name: '',
+            name: 'Grand St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-bowe' },
@@ -1215,7 +1215,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-chry',
-            name: '',
+            name: 'Grand St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-chrys' },
@@ -1228,7 +1228,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-fors',
-            name: '',
+            name: 'Grand St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-fors' },
@@ -1241,7 +1241,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-eldr',
-            name: '',
+            name: 'Grand St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-eldr' },
@@ -1254,7 +1254,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-alle',
-            name: '',
+            name: 'Grand St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-alle' },
@@ -1267,7 +1267,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-orch',
-            name: '',
+            name: 'Grand St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-orch' },
@@ -1280,7 +1280,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-ludl',
-            name: '',
+            name: 'Grand St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-ludl' },
@@ -1293,7 +1293,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-esse',
-            name: '',
+            name: 'Grand St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-esse' },
@@ -1306,7 +1306,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-norf',
-            name: '',
+            name: 'Grand St. and Norfolk St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-norf' },
@@ -1319,7 +1319,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-suff',
-            name: '',
+            name: 'Grand St. and Suffolk St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-suff' },
@@ -1332,7 +1332,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-clin',
-            name: '',
+            name: 'Grand St. and Clinton St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-clin' },
@@ -1345,7 +1345,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-ridg',
-            name: '',
+            name: 'Grand St. and Ridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-ridg' },
@@ -1358,7 +1358,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-pitt',
-            name: '',
+            name: 'Grand St. and Pitt St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-pitt' },
@@ -1371,7 +1371,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-will',
-            name: '',
+            name: 'Grand St. and Willet St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-will' },
@@ -1384,7 +1384,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-broa',
-            name: '',
+            name: 'Grand St. and ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -1397,7 +1397,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-colu',
-            name: '',
+            name: 'Grand St. and Columbia St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'broo-colu' },
@@ -1410,7 +1410,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-henr',
-            name: '',
+            name: 'Grand St. and ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -1423,7 +1423,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-jack',
-            name: '',
+            name: 'Grand St. and Jackson St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -1435,8 +1435,8 @@ const lowerEast = {
         {
             isStreets: true,
             coord: [],
-            id: 'gran-lwei',
-            name: '',
+            id: 'gran-lewi',
+            name: 'Grand St. and Lewis St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-lewi' },
@@ -1449,7 +1449,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-madi',
-            name: '',
+            name: 'Grand St. and ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '', block: `You can't go that way.` },
@@ -1462,7 +1462,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'gran-sout',
-            name: '',
+            name: 'Grand St. and South St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'new-sout' },
@@ -1475,7 +1475,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-bowe',
-            name: '',
+            name: 'Hester St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-bowe' },
@@ -1488,7 +1488,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-chry',
-            name: '',
+            name: 'Hester St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-chry' },
@@ -1501,7 +1501,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-fors',
-            name: '',
+            name: 'Hester St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-fors' },
@@ -1514,7 +1514,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-eldr',
-            name: '',
+            name: 'Hester St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-eldr' },
@@ -1527,7 +1527,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-alle',
-            name: '',
+            name: 'Hester St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-alle' },
@@ -1540,7 +1540,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-orch',
-            name: '',
+            name: 'Hester St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-orch' },
@@ -1553,7 +1553,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-ludl',
-            name: '',
+            name: 'Hester St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-ludl' },
@@ -1566,7 +1566,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hest-esse',
-            name: '',
+            name: 'Hester St. and Essex St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gran-esse' },
@@ -1579,7 +1579,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-bowe',
-            name: '',
+            name: 'Canal St. and Bowery St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-bowe' },
@@ -1592,7 +1592,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-chry',
-            name: '',
+            name: 'Canal St. and Chrystie Ave.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-chry' },
@@ -1605,7 +1605,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-fors',
-            name: '',
+            name: 'Canal St. and Forsyth St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-fors' },
@@ -1618,7 +1618,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-eldr',
-            name: '',
+            name: 'Canal St. and Eldridge St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-eldr' },
@@ -1631,7 +1631,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-alle',
-            name: '',
+            name: 'Canal St. and Allen St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-alle' },
@@ -1644,7 +1644,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-orch',
-            name: '',
+            name: 'Canal St. and Orchard St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-orch' },
@@ -1657,7 +1657,7 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-ludl',
-            name: '',
+            name: 'Canal St. and Ludlow St. ',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-ludl' },
@@ -1670,10 +1670,10 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-divi',
-            name: '',
+            name: 'Canal St. and Division St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: 'hest-divi' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: '????' },
                 { dir: ['east'], id: 'cana-rutg' },
                 { dir: ['west'], id: 'cana-ludl'}, 
@@ -1683,11 +1683,11 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'cana-rutg',
-            name: '',
+            name: 'Canal St. and Rutgers St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-rutg' },
-                { dir: ['south'], id: '' },
+                { dir: ['south'], id: '????' },
                 { dir: ['east'], id: 'broa-cana' },
                 { dir: ['west'], id: 'cana-divi'}, 
             ]
@@ -1696,12 +1696,12 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broa-cana',
-            name: '',
+            name: 'E. Broadway and Canal St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'henr-rutg' },
+                { dir: ['east'], id: 'broa-jeff' },
                 { dir: ['west'], id: 'cana-rutg'}, 
             ]
         },
@@ -1709,731 +1709,510 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'broa-jeff',
-            name: '',
+            name: 'E. Broadway and Jefferson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'henr-jeff', },
+                { dir: ['east'], id: 'broa-clin' },
+                { dir: ['west'], id: 'broa-cana'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'broa-clin',
+            name: 'E. Broadway and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-clin' },
+                { dir: ['south'], id: 'henr-clin' },
+                { dir: ['east'], id: 'broa-mont' },
+                { dir: ['west'], id: 'broa-jeff'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'broa-mont',
+            name: 'E. Broadway and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'henr-mont' },
+                { dir: ['east'], id: 'broa-pitt' },
+                { dir: ['west'], id: 'broa-clin'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'broa-pitt',
+            name: 'E. Broadway and Pitt St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-pitt' },
+                { dir: ['south'], id: 'henr-pitt' },
+                { dir: ['east'], id: 'broa-will' },
+                { dir: ['west'], id: 'broa-mont'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'broa-will',
+            name: 'E. Broadway and Willet St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'henr-will' },
+                { dir: ['east'], id: 'gran-broa' },
+                { dir: ['west'], id: 'broa-pitt'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-pike',
+            name: 'Henry St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '????' },
+                { dir: ['south'], id: 'madi-pike' },
+                { dir: ['east'], id: 'henr-rutg' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-rutg',
+            name: 'Henry St. and Rutgers St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-cana' },
+                { dir: ['south'], id: 'madi-rutg' },
+                { dir: ['east'], id: 'henr-jeff' },
+                { dir: ['west'], id: 'henr-pike'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-jeff',
+            name: 'Henry St. and Jefferson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-jeff' },
+                { dir: ['south'], id: 'madi-jeff' },
+                { dir: ['east'], id: 'henr-clin' },
+                { dir: ['west'], id: 'henr-rutg'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-clin',
+            name: 'Henry St. and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-clin' },
+                { dir: ['south'], id: 'madi-clin' },
+                { dir: ['east'], id: 'henr-mont' },
+                { dir: ['west'], id: 'henr-jeff'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-mont',
+            name: 'Henry St. and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-mont' },
+                { dir: ['south'], id: 'madi-mont' },
+                { dir: ['east'], id: 'henr-pitt' },
+                { dir: ['west'], id: 'henr-clin'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-pitt',
+            name: 'Henry St. and Pitt St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-pitt' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'henr-will' },
+                { dir: ['west'], id: 'henr-mont'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'henr-will',
+            name: 'Henry St. and Willet St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'broa-will' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'gran-henr' },
+                { dir: ['west'], id: 'henr-pitt'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-pike',
+            name: 'Madison St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'henr-pike' },
+                { dir: ['south'], id: 'monr-pike' },
+                { dir: ['east'], id: 'madi-rutg' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-rutg',
+            name: 'Madison St. and Rutgers St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'henr-rutg' },
+                { dir: ['south'], id: 'cherr-rutg' },
+                { dir: ['east'], id: 'madi-jeff' },
+                { dir: ['west'], id: 'madi-pike'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-jeff',
+            name: 'Madison St. and Jefferson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'henr-jeff' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'madi-clin' },
+                { dir: ['west'], id: 'madi-rutg'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-clin',
+            name: 'Madison St. and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'henr-clin' },
+                { dir: ['south'], id: 'cherr-clin' },
+                { dir: ['east'], id: 'madi-mont' },
+                { dir: ['west'], id: 'madi-jeff'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-mont',
+            name: 'Madison St. and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'henr-mont' },
+                { dir: ['south'], id: 'cherr-mont' },
+                { dir: ['east'], id: 'madi-gouv' },
+                { dir: ['west'], id: 'madi-clin'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-gouv',
+            name: 'Madison St. and Gouverneur St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way` },
+                { dir: ['south'], id: 'gouv-gouvS' },
+                { dir: ['east'], id: 'madi-jack' },
+                { dir: ['west'], id: 'madi-mont'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'madi-jack',
+            name: 'Madison St. and Jackson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-jack' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'gran-madi' },
+                { dir: ['west'], id: 'madi-gouv'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'monr-pike',
+            name: 'Madison St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'madi-pike' },
+                { dir: ['south'], id: 'cherr-pike' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'cherr-pike',
+            name: 'Cherry St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'monr-pike' },
+                { dir: ['south'], id: 'wate-pike' },
+                { dir: ['east'], id: 'cherr-rutg' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'cherr-rutg',
+            name: 'Cherry St. and Rutgers St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'madi-rutg' },
+                { dir: ['south'], id: 'wate-rutg' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'cherr-pike' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'cherr-clin',
+            name: 'Cherry St. and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'madi-clin' },
+                { dir: ['south'], id: 'sout-clin' },
+                { dir: ['east'], id: 'cherr-mont' },
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'cherr-mont',
+            name: 'Cherry St. and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'madi-mont' },
+                { dir: ['south'], id: 'gouv-mont' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'cherr-clin' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'wate-pike',
+            name: 'Water St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'cherr-pike' },
+                { dir: ['south'], id: 'sout-pike' },
+                { dir: ['east'], id: 'wate-rutg' },
+                { dir: ['west'], id: '????' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'wate-rutg',
+            name: 'Water St. and Rutgers St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'cherr-rutg' },
+                { dir: ['south'], id: 'sout-rutg' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'wate-pike' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-pike',
+            name: 'South St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'wate-pike' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'sout-rutg' },
+                { dir: ['west'], id: '????'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-rutg',
+            name: 'South St. and Rutgers St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'wate-rutg' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'sout-clin' },
+                { dir: ['west'], id: 'sout-pike'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-clin',
+            name: 'South St. and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'cherr-clin' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'sout-mont' },
+                { dir: ['west'], id: 'sout-rutg' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-mont',
+            name: 'South St. and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gouv-mont' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'sout-gouv' },
+                { dir: ['west'], id: 'sout-clin' }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'gouv-mont',
+            name: 'Gouverneur Gdns. and Montgomery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'cherr-mont' },
+                { dir: ['south'], id: 'sout-mont' },
+                { dir: ['east'], id: 'gouv-gouvW' },
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'gouv-gouvW',
+            name: 'Gouverneur Gdns. and Gouverneur Slip W',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: '', block: `You can't go that way.` },
+                { dir: ['south'], id: 'sout-gouv' },
+                { dir: ['east'], id: 'gouv-gouvS' },
+                { dir: ['west'], id: 'gouv-mont'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'gouv-gouvS',
+            name: 'Gouverneur Gdns. and Gouverneur St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: '' },
                 { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['east'], id: 'gouv-gouvE' },
+                { dir: ['west'], id: 'gouv-gouvW'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'gouv-gouvE',
+            name: 'Gouverneur Gdns. and Gouverneur Slip E',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'madi-gouv' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'gouv-jack' },
+                { dir: ['west'], id: 'gouv-gouvS'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'gouv-jack',
+            name: 'Gouverneur Gdns. and Jackson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'sout-jack2' },
+                { dir: ['south'], id: 'sout-jack1' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'gouv-gouvE'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-gouvW',
+            name: 'South St. and Gouverneur Slip W',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gouv-gouvW' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: 'sout-gouvE' },
+                { dir: ['west'], id: 'sout-mont'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-gouvE',
+            name: 'South St. and Gouverneur Slip E',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gouv-gouvE' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
+                { dir: ['east'], id: 'sout-jack1' },
+                { dir: ['west'], id: 'sout-gouvW'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-jack1',
+            name: 'South St. and Jackson St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gouv-jack' },
+                { dir: ['south'], id: '????' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
+                { dir: ['west'], id: 'sout-gouvE'}, 
             ]
         },
         {
             isStreets: true,
             coord: [],
-            id: '',
-            name: '',
+            id: 'sout-jack2',
+            name: 'South St. and Jackson St. Ste. #2',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['north'], id: 'gran-sout' },
+                { dir: ['south'], id: 'gouv-jack' },
+                { dir: ['east'], id: '????' },
+                { dir: ['west'], id: 'madi-jack'}, 
             ]
         },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        {
-            isStreets: true,
-            coord: [],
-            id: '',
-            name: '',
-            desc: ``,
-            exits: [
-                { dir: ['north'], id: '' },
-                { dir: ['south'], id: '' },
-                { dir: ['east'], id: '' },
-                { dir: ['west'], id: ''}, 
-            ]
-        },
-        
+                
     ]
     
 }

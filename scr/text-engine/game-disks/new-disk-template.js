@@ -4,172 +4,44 @@ const testDisk = {
   roomId: 'starting', 
   rooms: [
     {
-      id: 'starting',
-      name: 'sunderland hotel',
-      desc: `You are leaving the hotel and going to the streets`,
-      
-      onEnter: () => {
-        pressEnter('pho-boo');
-      },
-      exits: [],
+
+    }
+  ],
+  Characters: [
+    {
+      name: 'Hogan',
+      topics: [
+        {
+          id: 'javascript',
+          desc: 'Hogan knows javascript fairly well but would rather work in a game development environment'
+        },
+        {
+          id: 'C#',
+          desc: 'C# is probably his favorite way to work, Hogan thinks Unity is fun'
+        },
+        {
+          id: ['HTML', 'CSS'],
+          desc: 'Hogan would rather jump off a cliff than engage in web development.'
+        }
+      ]
     },
     {
-      id: 'pho-boo',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 1',
-      phonesMade: false,
-      onEnter: () => {
-        const thisRoom = getRoom(disk.roomId);
-        if (!thisRoom.phonesMade) {
-          createPhone()
-        }
-        pressEnter('pho-boo2');
-      },
-      
-      exits: [
+      name: 'Ahria',
+      topics: [
         {
-          dir: ['left', 'east',],
-          id: 'pho-boo2'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo2',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 2',
-      onEnter: () => {
-        pressEnter('pho-boo3');
-      },
-      exits: [
+          id: 'javascript',
+          desc: 'I dont know what Ahria knows about javascript'
+        },
         {
-          dir: ['left', 'east',],
-          id: 'pho-boo3'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo3',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 3',
-      onEnter: () => {
-        pressEnter('pho-boo4');
-      },
-      exits: [
+          id: 'C#',
+          desc: 'I think she likes C# an awful lot'
+        },
         {
-          dir: ['left', 'east',],
-          id: 'pho-boo4'
+          id: ['HTML', 'CSS'],
+          desc: 'unsure of her feelings on html/css'
         }
-      ],
+      ]
     },
-    {
-      id: 'pho-boo4',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 4',
-      onEnter: () => {
-        pressEnter('pho-boo5');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo5'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo5',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 5',
-      onEnter: () => {
-        pressEnter('pho-boo6');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo6'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo6',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 6',
-      onEnter: () => {
-        pressEnter('pho-boo7');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo7'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo7',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 7',
-      onEnter: () => {
-        pressEnter('pho-boo8');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo8'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo8',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 8',
-      onEnter: () => {
-        pressEnter('pho-boo9');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo9'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo9',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 9',
-      onEnter: () => {
-        pressEnter('pho-boo10');
-      },
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo10'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo10',
-      name: 'Streets of Manhattan',
-      desc: 'There is nothing interesting here - 10',
-      
-      exits: [
-        {
-          dir: ['left', 'east',],
-          id: 'pho-boo'
-        }
-      ],
-    },
-    {
-      id: 'pho-boo1',
-      name: 'Phone Booth',
-      desc: 'Please dial a number',
-      isPhone: true,
-      
-      exits: [
-        {
-          dir: ['leave'],
-          id: 'pho-boo2'
-        }
-      ],
-    },
-  ]
+  ] 
 };
 

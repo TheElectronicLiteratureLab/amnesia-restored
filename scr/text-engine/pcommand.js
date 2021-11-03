@@ -306,10 +306,27 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
+//ask character about topic function
+const askXAboutY = (x, y) => {
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+  const topics = character.topics;
+  disk.conversant = character;
+  if (y === topics.option) {
+    
+  }
+};
+
+
+//completely omit the talk function, only have ask
+//chracters set up so that on ask something happens, keywords are then ran through the characters list of conversation topics and if one is hit it prints that desc of that topic 
+//maybe not on ask, that makes it seem too much like an onblock. have it be an input that if it is only "ask" then line prints of 'you can ask someone about a topic'. have topic be stylized how we want it too so it matches up with the stylization of the keywords
+//function then would be ask character about topic, parses if character is in room, if not it says character is not available, if they are then it parses the topic against the characters topic list, if true it prints the topic desc
+//keywords are to be highlighted like how we imagined. as that runs along side the already established get keyword functionality
+//
 
 
 // list takeable items in room
-let take = () => {
+function take() {
   const room = getRoom(disk.roomId);
   const items = (room.items || []).filter(item => item.isTakeable && !item.isHidden);
 
@@ -320,7 +337,7 @@ let take = () => {
 
   println(`The following items can be taken:`);
   items.forEach(item => println(`${bullet} ${getName(item.name)}`));
-};
+}
 
 // take the item with the given name
 // string -> nothing
@@ -761,33 +778,8 @@ let remove = (clothes) => {
   }
 }
 
-//ask character about topic function
 
-// function askAbout(xCharacter, yTopic) {
-//   const room = getRoom(disk.roomId);
 
-// };
-
-// function askXAboutY(xCharacter, yPrep, zTopic) {
-//   const room = getRoom(disk.roomId);
-//   const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
-
-//   if (yPrep !== 'about') {
-//     println('You can Ask x(character) about y(topic)');
-//   }
-  
-//   if (yPrep === 'about'){
-//     console.log(character.name);
-//     console.log(xCharacter, zTopic);
-//   }
-// };
-
-//ask character about topic function
-// const askXAboutY = ([x, y]) => {
-//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-//   disk.conversant = character;
-//   talkToOrAboutX('about', y);
-// };
 
 
 //Phone Booth Creation
@@ -942,6 +934,14 @@ function setFatigue(amount) {
 
 // jump command
 
+
+
+const chracterGet = (x) => {
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+  console.log(character);
+  
+}
+
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
 // e.g. index 0 means no parameters ("help"), index 1 means 1 parameter ("go north"), etc.
@@ -1031,7 +1031,8 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
-  // {
-  //   ask: args => askXAboutY(args[0], args[2]),
-  // },
+  {
+    ask: args => askXAboutY(args[0], args[2]),
+  },
 ];
+
