@@ -226,7 +226,7 @@ let addItem = (itemId, roomId) => {
 
 // retrieves a keyword from a topic
 // topic -> string
-let getKeywordFromTopic = (topic) => {
+function getKeywordFromTopic(topic) {
   if (topic.keyword) {
     return topic.keyword;
   }
@@ -241,7 +241,7 @@ let getKeywordFromTopic = (topic) => {
     .toLowerCase();
 
   return keyword;
-};
+}
 
 // determine whether the passed conversation includes a topic with the passed keyword
 // conversation, string -> boolean
