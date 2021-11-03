@@ -50,6 +50,24 @@
       <button>MENU</button>
     </div>
 
+    <div id="address">ADDRESS</div>
+    <div id="inv">INV
+      <div class="inventorygrid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+      </div>
+    </div>
+
     <div id="map" style="width: 70%; height: 50%; background: #ffffff;"></div>
   </div>
   
@@ -74,7 +92,7 @@
 //Markers
 
 
-
+//MAP BUTTON
 const targetDiv = document.getElementById("map");
   const btn = document.getElementById("mapbutton");
   btn.onclick = function () {
@@ -85,7 +103,27 @@ const targetDiv = document.getElementById("map");
   }
 };
 
+//INVENTORY BUTTON
+const invDiv = document.getElementById("inv");
+  const invBtn = document.getElementById("invbutton");
+  invBtn.onclick = function () {
+  if (invDiv.style.display !== "none") {
+    invDiv.style.display = "none";
+  } else {
+    invDiv.style.display = "block";
+  }
+};
 
+//ADDRESS BUTTON
+const addrDiv = document.getElementById("address");
+  const addrBtn = document.getElementById("addrbutton");
+  addrBtn.onclick = function () {
+  if (addrDiv.style.display !== "none") {
+    addrDiv.style.display = "none";
+  } else {
+    addrDiv.style.display = "block";
+  }
+};
 </script>
 
 
@@ -99,8 +137,8 @@ const targetDiv = document.getElementById("map");
   <script src='scr/text-engine/playercharacter.js'></script>
 
   <!-- Include game data ('disk') -->
-  <script src="scr/text-engine/game-disks/demo-disk.js"></script>
+  <script src="scr/text-engine/game-disks/streets.js"></script>
 
 <!-- Load disk into engine -->
-<script>loadDisk(demoDisk);</script>
+<script>loadDisk(streets);</script>
 </body>

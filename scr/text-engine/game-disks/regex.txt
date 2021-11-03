@@ -1,0 +1,7 @@
+Regular Expresions for getting in different 
+//coord: [],
+Find: (id: '[a-z]*.......\n)
+Replace: $1\t\t\tcoord: [],\n
+
+Adding in th to st.
+(([0-9][4-9])|([0-9]0)) St.

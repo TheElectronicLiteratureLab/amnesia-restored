@@ -472,6 +472,66 @@ const amnesiaRestored = {
       ]
     },
     {
+      id: 'hote-bath-1',
+      name: 'Bathroom',
+      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretneding to be marble, **a tiled shower**, **a toilet**, a towel rack with a **large towel**. But no clothes.`, 
+      onEnter: () => {
+          const room = getRoom('hote-bath-1');
+          if(getItemInInventory('towel')){ //if the towel is already in inventory
+              room.desc = room.desc.replace(` with a **large towel**.`, '.');
+          };
+      },
+      items: [
+          {
+              name: ['sink', 'pink sink'], 
+              desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
+              /*item: {
+                      name: ['soap', 'cake of soap'],
+                      desc: `It smells like lemon.`,
+                      isTakeable: true,
+                      onTake: () => {
+                          println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
+                          const sink = getItemInRoom('sink', 'hote-revi-1');
+                          sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
+                      },
+                      onUse: () => {
+                          println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you've never worn one?`); //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
+                      },
+                  }, //end of sink items*/ //currently can't have an item property on item object.
+
+          },
+          {
+              name: ['tiled shower', 'shower'],
+              desc: `The tiled shower is equipped with hot and cold water knobs, and a water conserving shower head.`,
+              onUse: () => println(`You remove any clothing you have on. 
+              
+              You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleaniness is next to godliness after all.`),
+          },
+          {
+              name: 'toilet',
+              desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face -- looking very sheepish.`,
+              onUse: () => println(`That's done. Now flush. Very good. Evidently your toilet training has not been neglected.`),
+          },
+          {
+              name: ['towel', 'large towel'],
+              desc: `It is a large fluffy towel.`,
+              isTakeable: true,
+              onTake: () => {
+                  println('You take the towel'); //appears in inventory as 'towel'
+                  const bathroom = getRoom('hote-bath-1');
+                  bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
+              },
+              //can WEAR towel.
+          },
+      ], //end of bathroom items
+      exits: [
+          {
+              dir: ['leave'], //rename
+              id: 'hote-room-8'
+          },
+      ],//end of hote-revi-1 exits
+  }, //end of hote-revi-1 room
+    {
       id: 'hote-room-9',
       name: '',
       desc: '',
