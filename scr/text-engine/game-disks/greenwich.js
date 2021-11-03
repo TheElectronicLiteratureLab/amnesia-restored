@@ -2476,5 +2476,462 @@ const greenwich = {
                 {dir: 'west', id: '13-12'} 
             ],
         },
+        {   
+            id: 'clar-wash',
+            coord: [],
+            name: 'Clarkson St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'lero-wash'},
+                {dir: 'south', id: 'whou-wash'},
+                {dir: 'east', id: 'clar-gree'}, 
+                {dir: 'west', id: 'clar-west'} 
+            ],
+        },
+        {   
+            id: 'lero-wash',
+            coord: [],
+            name: 'Leroy St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'mort-wash'},
+                {dir: 'south', id: 'clar-wash'},
+                {dir: 'east', id: 'lero-gree'}, 
+                {dir: 'west', id: 'lero-west'} 
+            ],
+        },
+        {   
+            id: 'mort-wash',
+            coord: [],
+            name: 'Morton St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'mort-west'},
+                {dir: 'south', id: 'lero-wash'},
+                {dir: 'east', id: 'mort-gree'}, 
+                {dir: 'west', id: 'barr-wash'} 
+            ],
+        },
+        {   
+            id: 'barr-wash',
+            coord: [],
+            name: 'Barrow St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'chri-wash'},
+                {dir: 'south', id: 'mort-wash'},
+                {dir: 'east', id: 'barr-gree'}, 
+                {dir: 'west', id: 'barr-west'} 
+            ],
+        },
+        {   
+            id: 'chri-wash',
+            coord: [],
+            name: 'Christopher St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '10-wash'},
+                {dir: 'south', id: 'barr-wash'},
+                {dir: 'east', id: 'chri-gree'}, 
+                {dir: 'west', id: 'chri-west'} 
+            ],
+        },
+        {   
+            id: '10-wash',
+            coord: [],
+            name: 'W. 10th St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'char-wash'},
+                {dir: 'south', id: 'chri-wash'},
+                {dir: 'east', id: '10-gree'}, 
+                {dir: 'west', id: '10-west'} 
+            ],
+        },
+        {   
+            id: 'char-wash',
+            coord: [],
+            name: 'Charles St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'perr-wash'},
+                {dir: 'south', id: '10-wash'},
+                {dir: 'east', id: 'char-gree'}, 
+                {dir: 'west', id: 'char-west'} 
+            ],
+        },
+        {   
+            id: 'perr-wash',
+            coord: [],
+            name: 'Perry St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '11-wash'},
+                {dir: 'south', id: 'char-wash'},
+                {dir: 'east', id: 'perr-gree'}, 
+                {dir: 'west', id: 'perr-west'} 
+            ],
+        },
+        {   
+            id: '11-wash',
+            coord: [],
+            name: 'W. 11th St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'bank-wash'},
+                {dir: 'south', id: 'perr-wash'},
+                {dir: 'east', id: '11-gree'}, 
+                {dir: 'west', id: '11-west'} 
+            ],
+        },
+        {   
+            id: 'bank-wash',
+            coord: [],
+            name: 'Bank St. and Washington St.',
+            desc: `There is a luncheonette on the corner.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beth-wash'},
+                {dir: 'south', id: '11-wash'},
+                {dir: 'east', id: 'bank-gree'}, 
+                {dir: 'west', id: 'bank-west'},
+                {dir: '', id: ''} // add luncheonette exit
+            ],
+        },
+        {   
+            id: 'beth-wash',
+            coord: [],
+            name: 'Bethune Ave. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '12-wash'},
+                {dir: 'south', id: 'bank-wash'},
+                {dir: 'east', id: 'beth-gree'}, 
+                {dir: 'west', id: 'beth-west'} 
+            ],
+        },
+        {   
+            id: '12-wash',
+            coord: [],
+            name: 'W. 12th St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jane-wash'},
+                {dir: 'south', id: 'beth-wash'},
+                {dir: 'east', id: '12-gree'}, 
+                {dir: 'west', id: '12-west'} 
+            ],
+        },
+        {   
+            id: 'jane-wash',
+            coord: [],
+            name: 'Jane St. and Washington St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hora-wash'},
+                {dir: 'south', id: '12-wash'},
+                {dir: 'east', id: 'jane-gree'}, 
+                {dir: 'west', id: 'jane-west'} 
+            ],
+        },
+        {   
+            id: 'hora-wash',
+            coord: [],
+            name: 'Horatio St. and Washington St.',
+            desc: `There is a pizzeria here.`,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'gans-wash'},
+                {dir: 'south', id: 'jane-wash'},
+                {dir: 'east', id: 'hora-gree'}, 
+                {dir: 'west', id: 'hora-west'},
+                {dir: '', id: ''} // add pizzeria exit 
+            ],
+        },
+        {   
+            id: 'gans-wash',
+            coord: [],
+            name: 'Gansevoort St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'litt-wash'},
+                {dir: 'south', id: 'bank-4'},
+                {dir: 'east', id: 'gans-litt'}, 
+                {dir: 'west', id: 'gans-west'} 
+            ],
+        },
+        {   
+            id: 'litt-wash',
+            coord: [],
+            name: 'Little W. 12th St. and Washington Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', block: `You can't go that way.`},
+                {dir: 'south', id: 'gans-wash'},
+                {dir: 'east', id: 'gans-litt'}, 
+                {dir: 'west', id: 'litt-west'} 
+            ],
+        },
+        {   
+            id: 'gans-litt',
+            coord: [],
+            name: 'Gansevoort St. and Little W. 12th St.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'litt-wash'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: 'gans-gree'}, 
+                {dir: 'west', id: 'gans-wash'} 
+            ],
+        },
+        {   
+            id: '13-12',
+            coord: [],
+            name: 'W. 13th St. and 12th Ave.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '14-12'},
+                {dir: 'south', block: `You can't go that way.`},
+                {dir: 'east', id: '13-9'}, 
+                {dir: 'west', id: '13-west'} 
+            ],
+        },
+        {   
+            id: 'clar-west',
+            coord: [],
+            name: 'Clarkson St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'lero-west'},
+                {dir: 'south', id: 'whou-west'},
+                {dir: 'east', id: 'clar-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'lero-west',
+            coord: [],
+            name: 'Leroy St. and West End Hwy',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'mort-west'},
+                {dir: 'south', id: 'clar-west'},
+                {dir: 'east', id: 'lero-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'mort-west',
+            coord: [],
+            name: 'Morton St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'barr-west'},
+                {dir: 'south', id: 'lero-west'},
+                {dir: 'east', id: 'mort-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'barr-west',
+            coord: [],
+            name: 'Barrow St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'chri-west'},
+                {dir: 'south', id: 'mort-west'},
+                {dir: 'east', id: 'barr-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'chri-west',
+            coord: [],
+            name: 'Christopher St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '10-west'},
+                {dir: 'south', id: 'barr-west'},
+                {dir: 'east', id: 'chri-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: '10-west',
+            coord: [],
+            name: 'W. 10th St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'char-west'},
+                {dir: 'south', id: 'chri-west'},
+                {dir: 'east', id: '10-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'char-west',
+            coord: [],
+            name: 'Charles St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'perr-west'},
+                {dir: 'south', id: '10-west'},
+                {dir: 'east', id: 'char-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'perr-west',
+            coord: [],
+            name: 'Perry St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '11-west'},
+                {dir: 'south', id: 'char-west'},
+                {dir: 'east', id: 'perr-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: '11-west',
+            coord: [],
+            name: 'W. 11th St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'bank-west'},
+                {dir: 'south', id: 'perr-west'},
+                {dir: 'east', id: '11-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'bank-west',
+            coord: [],
+            name: 'Bank St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'beth-west'},
+                {dir: 'south', id: '11-west'},
+                {dir: 'east', id: 'bank-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'beth-west',
+            coord: [],
+            name: 'Bethune Ave. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '12-west'},
+                {dir: 'south', id: 'bank-west'},
+                {dir: 'east', id: 'beth-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: '12-west',
+            coord: [],
+            name: 'W. 12th St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'jane-west'},
+                {dir: 'south', id: 'beth-west'},
+                {dir: 'east', id: '12-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'jane-west',
+            coord: [],
+            name: 'Jane St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'hora-west'},
+                {dir: 'south', id: '12-west'},
+                {dir: 'east', id: 'jane-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'hora-west',
+            coord: [],
+            name: 'Horatio St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'gans-west'},
+                {dir: 'south', id: 'jane-west'},
+                {dir: 'east', id: 'hora-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'gans-west',
+            coord: [],
+            name: 'Gansevoort St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: 'litt-west'},
+                {dir: 'south', id: 'hora-west'},
+                {dir: 'east', id: 'gans-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: 'litt-west',
+            coord: [],
+            name: 'Little W. 12th St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '13-west'},
+                {dir: 'south', id: 'gans-west'},
+                {dir: 'east', id: 'litt-wash'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
+        {   
+            id: '13-west',
+            coord: [],
+            name: 'W. 13th St. and West End Hwy.',
+            desc: ``,
+            isStreet: true,
+            exits: [
+                {dir: 'north', id: '14-west'},
+                {dir: 'south', id: 'litt-west'},
+                {dir: 'east', id: '13-12'}, 
+                {dir: 'west', block: `You can't go that way.`} 
+            ],
+        },
     ],
 };
