@@ -1,0 +1,6 @@
+const streets = {
+  roomId: '',
+  rooms: [
+    
+  ]
+}
