@@ -5,201 +5,126 @@ const midwestside = {
 //Begin 59th St.
     {
         id: '59-12',
+        coord: [],
         name: 'W. 59th St. and 12th Ave.',
+        isStreet: true,
+        hasSubway: false,
         exit: 
-        [//Can't go North or West
-            {
-                dir: ['e', 'east'],
-                id: '59-wend'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-12'
-            },
+        [
+            {dir: ['n', 'north'], block:`You can’t go that way.`},
+            {dir: ['e', 'east'], id:'59-wend'},
+            {dir: ['w', 'west'], block:`You can’t go that way.`},
+            {dir: ['s', 'south'], id:'58-12'},
         ],
     },
 
     {
         id: '59-wend',
+        coord: [],
         name: 'W. 59th St. and West End Ave.',
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
-            {
-                dir: ['n', 'north'],
-                id: '60-wend'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-amst'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-12'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-11'
-            },
-            {//Subway Entrance
-                dir: ['subway', 'entrance'],
-                id: 'S-A-subway-ent'
-            },
+            {dir: ['n', 'north'], id:'60-wend'},
+            {dir: ['e', 'east'], id:'59-amst'},
+            {dir: ['w', 'west'], id:'59-12'},
+            {dir: ['s', 'south'], id:'58-11'},
         ],
     },
 
     {
         id: '59-amst',
+        coord: [],
         name: 'W. 59th St. and Amsterdam Ave.',
-        desc: `There is a subway entrance at this corner.`, // SUBWAY ENTERANCE
-        
+        desc: `There is a subway entrance at this corner.`,
+        isStreet: true,
+        hasSubway: true,
         exit: 
         [
-            {
-                dir: ['n', 'north'],
-                id: '60-amst'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-colu'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-wend'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-10'
-            },
-            {//Subway Entrance
-                dir: ['subway', 'entrance'],
-                id: '59-amst-subway-ent'
-            },
+            {dir: ['n', 'north'], id:'60-amst'},
+            {dir: ['e', 'east'], id:'59-colu'},
+            {dir: ['w', 'west'], id:'59-wend'},
+            {dir: ['s', 'south'], id:'58-10'},
+            {dir: ['subway', 'entrance'], id:'59-amst-subway-ent'},
         ],
     },
 
     {
         id: '59-colu',
+        coord: [],
         name: 'W. 59th St. and Columbus Ave.',
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
-            {
-                dir: ['n', 'north'],
-                id: '60-colu'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-broa'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-amst'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-9'
-            },
+            {dir: ['n', 'north'], id:'60-colu'},
+            {dir: ['e', 'east'], id:'59-broa'},
+            {dir: ['w', 'west'], id:'59-amst'},
+            {dir: ['s', 'south'], id:'58-9'},
         ],
     },
 
     {
         id: '59-broa',
-        name: 'W. 59th St. and Broadway',   
+        coord: [],
+        name: 'W. 59th St. and Broadway',
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
-            {
-                dir: ['n', 'north'],
-                id: '60-broa'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-cent'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-colu'
-            },
-            {
-                dir: ['s', 'south'],
-                id: 'broa-8'
-            },
+            {dir: ['n', 'north'], id:'60-broa'},
+            {dir: ['e', 'east'], id:'59-cent'},
+            {dir: ['w', 'west'], id:'59-colu'},
+            {dir: ['s', 'south'], id:'broa-8'},
         ],
     },
 
     {
         id: '59-cent',
-        name: 'W. 59th St. and Central Pk. W.',  
+        coord: [],
+        name: 'W. 59th St. and Central Pk. W.',
         desc: `The monument to Christopher Columbus surveys a large undistinguished building called the Coliseum, which shows no signs of its Roman heritage.`, 
+        isStreet: true,
+        hasSubway: false,
         exit: 
-        [
-            {//Game takes you to 61st and Central Park W. Sort-of checks out on the map
-                dir: ['n', 'north'],
-                id: '61-cent'
-            },
-            {
-                dir: ['e', 'east'],
-                id: 'cent-7'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-broa'
-            },
-            {
-                dir: ['s', 'south'],
-                id: 'broa-8'
-            },
+        [//Game takes you to 61st and Central Park W. Sort-of checks out on the map
+            {dir: ['n', 'north'], id:'61-cent'},
+            {dir: ['e', 'east'], id:'cent-7'},
+            {dir: ['w', 'west'], id:'59-broa'},
+            {dir: ['s', 'south'], id:'broa-8'},
         ],
     },
-//Somewhere
+
     {
         id: '59-7',
+        coord: [],
         name: 'Central Park S. and 7th Ave.',
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
-            {//Somewhere in central park
-                dir: ['n', 'north'],
-                id: 'S-A'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-amer'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-cent'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-7'
-            },
+            {dir: ['n', 'north'], id:'S-A'}, //Somewhere in central park
+            {dir: ['e', 'east'], id:'59-amer'},
+            {dir: ['w', 'west'], id:'59-cent'},
+            {dir: ['s', 'south'], id:'58-7'},
         ],
     },
-//somewhere
+
     {
         id: '59-amer',
+        coord: [],
         name: 'Central Park S. and Ave of Americas',
-        desc: `There is a restaurant called Nedicks here.`, // Nedicks entrance
+        desc: `There is a restaurant called Nedicks here.`,
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
-            {//Somewhere in Central Park
-                dir: ['n', 'north'],
-                id: 'S-A'
-            },
-            {
-                dir: ['e', 'east'],
-                id: '59-wdri'
-            },
-            {
-                dir: ['w', 'west'],
-                id: '59-7'
-            },
-            {
-                dir: ['s', 'south'],
-                id: '58-amer'
-            },
-            {//Nedicks Entrance
-                dir: ['nedicks','enter',],
-                id: 'cent-amer-nedi'
-            },
+            {dir: ['n', 'north'], id:'S-A'}, //Somewhere in central park
+            {dir: ['e', 'east'], id:'59-wdri'},
+            {dir: ['w', 'west'], id:'59-7'},
+            {dir: ['s', 'south'], id:'58-amer'},
+            {dir: ['nedicks','enter', 'restaurant'], id: 'cent-amer-nedi'},
         ],
     },
 //End 59th St.
@@ -208,6 +133,9 @@ const midwestside = {
     {
         id: '58-12',
         name: 'W. 58th St. and 12th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [//Can't go West
             {
@@ -228,6 +156,9 @@ const midwestside = {
     {
         id: '58-11',
         name: 'W. 58th St. and 11th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -252,6 +183,9 @@ const midwestside = {
     {
         id: '58-10',
         name: 'W. 58th St. and 10th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -276,6 +210,9 @@ const midwestside = {
     {
         id: '58-9',
         name: 'W. 58th St. and 9th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -300,7 +237,10 @@ const midwestside = {
     {
         id: 'broa-8',
         name: 'Broadway and 8th Ave.',
-        desc: `There is a subway entrance at this corner.`, // SUBWAY ENTERANCE
+        desc: `There is a subway entrance at this corner.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: true,
         exit: 
         [
             {
@@ -329,6 +269,9 @@ const midwestside = {
     {
         id: '58-8',
         name: 'W. 58th St. and 8th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -354,6 +297,9 @@ const midwestside = {
         id: '58-broa',
         name: 'W. 58th St. and Broadway',
         desc: `Cars spin around on Columbus Circle like atomic particles in a particle accelerator, while pedestrians scamper for safety as best they can. Clearly, this is an experiment designed to control the city's expanding population.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -378,6 +324,9 @@ const midwestside = {
     {
         id: '58-7',
         name: 'W. 58th St. and 7th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -402,6 +351,9 @@ const midwestside = {
     {
         id: '58-amer',
         name: 'W. 58th St. and Ave of Americas',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -428,6 +380,9 @@ const midwestside = {
     {
         id: '57-henr',
         name: 'W. 57th St. and Henry Hudson Pkwy.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [//Can't go west
             {
@@ -448,6 +403,9 @@ const midwestside = {
     {
         id: '57-12',
         name: 'W. 57th St. and 12th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -472,6 +430,9 @@ const midwestside = {
     {
         id: '57-11',
         name: 'W. 57th St. and 11th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -496,6 +457,9 @@ const midwestside = {
     {
         id: '57-10',
         name: 'W. 57th St. and 10th Ave.',
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -544,7 +508,10 @@ const midwestside = {
     {
         id: '57-8',
         name: 'W. 57th St. and 8th Ave.',
-        desc: `There is a Chock Full-O-Nuts at this intersection.`, // Restaurant entrance
+        desc: `There is a Chock Full-O-Nuts at this intersection.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -574,6 +541,9 @@ const midwestside = {
         id: '57-broa',
         name: 'W. 57th St. and Broadway',
         desc: `At street level Carnegie Hall is basically a row of posters announcing its upcoming events, which this week include a concert of Puccini arias by Linda Ronstadt, the Tuscon Festival Ballet's performance of Twyla Tharp's SWAN LAKE, the Canadian Youth Philharmonic in an all-Beethoven program, and a poetry reading by Allen Ginzberg.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: false,
         exit: 
         [
             {
@@ -598,7 +568,10 @@ const midwestside = {
     {
         id: '57-7',
         name: 'W. 57th St. and 7th Ave.',
-        desc: `There is a subway entrance at this corner.`, //Subway entrance
+        desc: `There is a subway entrance at this corner.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: true,
         exit: 
         [
             {
@@ -627,7 +600,10 @@ const midwestside = {
     {
         id: '57-amer',
         name: 'W. 57th St. and Ave of Americas',
-        desc: `There is a subway entrance at this corner.`, //Subway entrance
+        desc: `There is a subway entrance at this corner.`,
+        coord: [],
+        isStreet: true,
+        hasSubway: true,
         exit: 
         [
             {
@@ -659,6 +635,9 @@ const midwestside = {
 {
     id: '56-11',
     name: 'W. 56th St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go West
         {
@@ -679,6 +658,9 @@ const midwestside = {
 {
     id: '56-10',
     name: 'W. 56th St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -703,6 +685,9 @@ const midwestside = {
 {
     id: '56-9',
     name: 'W. 56th St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -727,6 +712,9 @@ const midwestside = {
 {
     id: '56-8',
     name: 'W. 56th St. and 8th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -751,6 +739,9 @@ const midwestside = {
 {
     id: '56-broa',
     name: 'W. 56th St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -776,6 +767,9 @@ const midwestside = {
     id: '56-7',
     name: 'W. 56th St. and 7th Ave.',
     desc: `The block from 55th to 56th is taken up by the Omni Park Central Hotel which you seem to remember by another name, though you can't remember what it was.`,
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Player cannot enter Omni Park Central Hotel
         {
@@ -800,6 +794,9 @@ const midwestside = {
 {
     id: '56-amer',
     name: 'W. 56th St. and Ave of Americas',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -826,6 +823,9 @@ const midwestside = {
 {
     id: '55-12',
     name: 'W. 55th St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go West
         {//Goes straight from 55th to 57th
@@ -847,6 +847,9 @@ const midwestside = {
 {
     id: '55-11',
     name: 'W. 55th St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -871,6 +874,9 @@ const midwestside = {
 {
     id: '55-10',
     name: 'W. 55th St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -895,6 +901,9 @@ const midwestside = {
 {
     id: '55-9',
     name: 'W. 55th St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -919,7 +928,10 @@ const midwestside = {
 {
     id: '55-8',
     name: 'W. 55th St. and 8th Ave.',
-    desc: `There is a Greek Gyro located here.`, // Restaurant entrance
+    desc: `There is a Greek Gyro located here.`,
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -948,6 +960,9 @@ const midwestside = {
 {
     id: '55-broa',
     name: 'W. 55th St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -972,6 +987,9 @@ const midwestside = {
 {
     id: '55-7',
     name: 'W. 55th St. and 7th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -996,6 +1014,9 @@ const midwestside = {
 {
     id: '55-amer',
     name: 'W. 55th St. and Ave of America',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1022,6 +1043,9 @@ const midwestside = {
 {
     id: '54-12',
     name: 'W. 54th St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go west
         {
@@ -1042,6 +1066,9 @@ const midwestside = {
 {
     id: '54-11',
     name: 'W. 54th St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1066,6 +1093,9 @@ const midwestside = {
 {
     id: '54-10',
     name: 'W. 54th St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1090,6 +1120,9 @@ const midwestside = {
 {
     id: '54-9',
     name: 'W. 54th St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1114,8 +1147,11 @@ const midwestside = {
 {
     id: '54-8',
     name: 'W. 54th St. and 8th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
-    [//I found a tenement here
+    [
         {
             dir: ['n', 'north'],
             id: '55-8'
@@ -1138,6 +1174,9 @@ const midwestside = {
 {
     id: '54-broa',
     name: 'W. 54th St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1162,6 +1201,9 @@ const midwestside = {
 {
     id: '54-7',
     name: 'W. 54th St. and 7th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1186,7 +1228,10 @@ const midwestside = {
 {
     id: '54-amer',
     name: 'W. 54th St. and Ave of Americas',
-    desc: `There is a pizzeria here.`,//Restaurant Entrance
+    desc: `There is a pizzeria here.`,
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1217,6 +1262,9 @@ const midwestside = {
 {
     id: '53-12',
     name: 'W. 53rd St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go west
         {
@@ -1237,6 +1285,9 @@ const midwestside = {
 {
     id: '53-11',
     name: 'W. 53rd St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1261,6 +1312,9 @@ const midwestside = {
 {
     id: '53-10',
     name: 'W. 53rd St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1285,6 +1339,9 @@ const midwestside = {
 {
     id: '53-9',
     name: 'W. 53rd St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1309,6 +1366,9 @@ const midwestside = {
 {
     id: '53-8',
     name: 'W. 53rd St. and 8th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1333,6 +1393,9 @@ const midwestside = {
 {
     id: '53-broa',
     name: 'W. 53rd St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1357,7 +1420,10 @@ const midwestside = {
 {
     id: '53-7',
     name: 'W. 53rd St. and 7th Ave.',
-    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    desc: 'There is a subway entrance at this corner.',
+    coord: [],
+    isStreet: true,
+    hasSubway: true,
     exit: 
     [
         {
@@ -1386,6 +1452,9 @@ const midwestside = {
 {
     id: '53-amer',
     name: 'W. 53rd St. and Ave of Americas',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1412,6 +1481,9 @@ const midwestside = {
 {
     id: '52-12',
     name: 'W. 52nd St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go west
         {
@@ -1432,6 +1504,9 @@ const midwestside = {
 {
     id: '52-11',
     name: 'W. 52nd St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1456,6 +1531,9 @@ const midwestside = {
 {
     id: '52-10',
     name: 'W. 52nd St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1480,6 +1558,9 @@ const midwestside = {
 {
     id: '52-9',
     name: 'W. 52nd St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1504,6 +1585,9 @@ const midwestside = {
 {
     id: '52-8',
     name: 'W. 52nd St. and 8th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1528,6 +1612,9 @@ const midwestside = {
 {
     id: '52-broa',
     name: 'W. 52nd St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1552,6 +1639,9 @@ const midwestside = {
 {
     id: '52-7',
     name: 'W. 52nd St. and 7th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1576,6 +1666,9 @@ const midwestside = {
 {
     id: '52-amer',
     name: 'W. 52nd St. and Ave of Americas',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1602,6 +1695,9 @@ const midwestside = {
 {
     id: '51-12',
     name: 'W. 51st St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go west
         {
@@ -1622,6 +1718,9 @@ const midwestside = {
 {
     id: '51-11',
     name: 'W. 51st St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1647,6 +1746,9 @@ const midwestside = {
     id: '51-10',
     name: 'W. 51st St. and 10th Ave.',
     desc: 'There is a Chock Full-O-Nuts at this intersection.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1675,6 +1777,9 @@ const midwestside = {
 {
     id: '51-9',
     name: 'W. 51st St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1700,6 +1805,9 @@ const midwestside = {
     id: '51-8',
     name: 'W. 51st St. and 8th Ave.',
     desc: 'There is a luncheonette on the corner.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1728,6 +1836,9 @@ const midwestside = {
 {
     id: '51-broa',
     name: 'W. 51st St. and Broadway',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1752,6 +1863,9 @@ const midwestside = {
 {
     id: '51-7',
     name: 'W. 51st St. and 7th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1776,6 +1890,9 @@ const midwestside = {
 {
     id: '51-amer',
     name: 'W. 51st St. and Ave of Americas',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1802,6 +1919,9 @@ const midwestside = {
 {
     id: '50-12',
     name: 'W. 50th St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [//Can't go west
         {
@@ -1822,6 +1942,9 @@ const midwestside = {
 {
     id: '50-11',
     name: 'W. 50th St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1846,6 +1969,9 @@ const midwestside = {
 {
     id: '50-10',
     name: 'W. 50th St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1870,6 +1996,9 @@ const midwestside = {
 {
     id: '50-9',
     name: 'W. 50th St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1894,7 +2023,10 @@ const midwestside = {
 {
     id: '50-8',
     name: 'W. 50th St. and 8th Ave.',
-    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    desc: 'There is a subway entrance at this corner.',
+    coord: [],
+    isStreet: true,
+    hasSubway: true,
     exit: 
     [
         {
@@ -1923,7 +2055,10 @@ const midwestside = {
 {
     id: '50-broa',
     name: 'W. 50th St. and Broadway',
-    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    desc: 'There is a subway entrance at this corner.',
+    coord: [],
+    isStreet: true,
+    hasSubway: true,
     exit: 
     [
         {
@@ -1953,6 +2088,9 @@ const midwestside = {
     id: '50-7',
     name: 'W. 50th St. and 7th Ave.',
     desc: 'Radio City Music Hall -- its bronze doors hiding the largest chandeliers and the best legs in the world.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -1977,7 +2115,10 @@ const midwestside = {
 {
     id: '50-amer',
     name: 'W. 50th St. and Ave of Americas',
-    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    desc: 'There is a subway entrance at this corner.',
+    coord: [],
+    isStreet: true,
+    hasSubway: true,
     exit: 
     [
         {
@@ -2008,6 +2149,9 @@ const midwestside = {
 {
     id: '49-12',
     name: 'W. 49th St. and 12th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2028,6 +2172,9 @@ const midwestside = {
 {
     id: '49-11',
     name: 'W. 49th St. and 11th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2052,6 +2199,9 @@ const midwestside = {
 {
     id: '49-10',
     name: 'W. 49th St. and 10th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2076,6 +2226,9 @@ const midwestside = {
 {
     id: '49-9',
     name: 'W. 49th St. and 9th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2100,6 +2253,9 @@ const midwestside = {
 {
     id: '49-8',
     name: 'W. 49th St. and 8th Ave.',
+    coord: [],
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
         {
@@ -2123,59 +2279,35 @@ const midwestside = {
 
 {
     id: '49-broa',
+    coord: [],
     name: 'W. 49th St. and Broadway',
-    desc: `There is a restaurant called Nedicks here.`,//Restaurant Entrance
+    desc: 'There is a restaurant called Nedicks here.',
+    isStreet: true,
+    hasSubway: false,
     exit: 
     [
-        {
-            dir: ['n', 'north'],
-            id: '50-broa'
-        },
-        {
-            dir: ['e', 'east'],
-            id: '49-7'
-        },
-        {
-            dir: ['w', 'west'],
-            id: '49-8'
-        },
-        {
-            dir: ['s', 'south'],
-            id: '48-broa'
-        },
-        {
-            dir: ['enter', 'restaurant', 'nedicks'],
-            id: '49-broa-nedicks'
-        },
+        {dir: ['n', 'north'], id:'50-broa'},
+        {dir: ['e', 'east'], id:'49-7'},
+        {dir: ['w', 'west'], id:'49-8'},
+        {dir: ['s', 'south'], id:'48-broa'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id:'49-broa-nedicks'},
     ],
 },
 
 {
     id: '49-7',
+    coord: [],
     name: 'W. 49th St. and 7th Ave.',
-    desc: 'There is a subway entrance at this corner.', //Subway Entrance
+    desc: 'There is a subway entrance at this corner.',
+    isStreet: true,
+    hasSubway: true,
     exit: 
     [
-        {
-            dir: ['n', 'north'],
-            id: '50-7'
-        },
-        {
-            dir: ['e', 'east'],
-            id: '49-amer'
-        },
-        {
-            dir: ['w', 'west'],
-            id: '49-broa'
-        },
-        {
-            dir: ['s', 'south'],
-            id: '48-7'
-        },
-        {//Subway Entrance
-            dir: ['subway', 'entrance'],
-            id: '49-7-subway-ent'
-        },
+        {dir: ['n', 'north'], id:'50-7'},
+        {dir: ['e', 'east'], id:'49-amer'},
+        {dir: ['w', 'west'], id:'49-broa'},
+        {dir: ['s', 'south'], id:'48-7'},
+        {dir: ['subway', 'entrance'], id:'49-7-subway-ent'},
     ],
 },
 
@@ -2187,22 +2319,10 @@ const midwestside = {
     hasSubway: false,
     exit: 
     [
-        {
-            dir: ['n', 'north'],
-            id: '50-amer'
-        },
-        {
-            dir: ['e', 'east'],
-            id: '49-5'
-        },
-        {
-            dir: ['w', 'west'],
-            id: '49-7'
-        },
-        {
-            dir: ['s', 'south'],
-            id: '48-amer'
-        },
+        {dir: ['s', 'south'], id:'48-amer'},
+        {dir: ['w', 'west'], id:'49-7'},
+        {dir: ['n', 'north'], id:'50-amer'},
+        {dir: ['e', 'east'], id:'49-5'},
     ],
 },
 //End 49th St.
@@ -4406,7 +4526,6 @@ const midwestside = {
         {dir: ['e', 'east'], id:'34-5'},
         {dir: ['w', 'west'], id:'34-broa'},
         {dir: ['s', 'south'], id:'33-amer'},
-
     ],
 },
 //End 34th Street
