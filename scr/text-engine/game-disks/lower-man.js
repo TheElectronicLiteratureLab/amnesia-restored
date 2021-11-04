@@ -4686,7 +4686,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', id: 'vand-vari'},
                 {dir: 'south', id: 'domi-vari'},
-                {dir: 'east', id: 'spri-ave'},
+                {dir: 'east', id: 'spri-amer'},
                 {dir: 'west', id: 'spri-huds'}
             ],
         },
@@ -4699,7 +4699,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', id: 'char-vari'},
                 {dir: 'south', id: 'spri-vari'},
-                {dir: 'east', id: 'vand-ave'},
+                {dir: 'east', id: 'vand-amer'},
                 {dir: 'west', id: 'vand-huds'}
             ],
         },
@@ -4712,7 +4712,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', id: 'king-vari'},
                 {dir: 'south', id: 'vand-vari'},
-                {dir: 'east', id: 'char-ave'},
+                {dir: 'east', id: 'char-amer'},
                 {dir: 'west', id: 'char-huds'}
             ],
         },
@@ -4725,7 +4725,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', id: 'whou-seve'},
                 {dir: 'south', id: 'char-vari'},
-                {dir: 'east', id: 'king-ave'},
+                {dir: 'east', id: 'king-amer'},
                 {dir: 'west', id: 'king-huds'}
             ],
         },
@@ -4777,7 +4777,7 @@ const lowerMan = {
             exits: [
                 {dir: 'north', block: `You can't go that way.`},
                 {dir: 'south', id: 'york-stjo'},
-                {dir: 'east', id: 'laig-ave'},
+                {dir: 'east', id: 'laig-amer'},
                 {dir: 'west', id: 'laig-vari'}
             ],
         },
