@@ -73,8 +73,6 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 let enterRoom = (id) => {
   const room = getRoom(id);
 
-  
-
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
     return;
@@ -103,13 +101,23 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
+  const room2 = getRoom(disk.roomId);
+  if ( room2.isStreets === true ) {
+    
+  }
+
 };
+
+
 let response = (e) => {
   const ENTER = 13;
 
   if (e.keyCode === ENTER) {
     applyInput();
   }
+
+  
+
 };
 
 

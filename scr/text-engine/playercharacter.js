@@ -16,7 +16,7 @@ let playCloth = {
   };
   
 
-const playerc ={
+const playerC ={
 
     id: 'playChar',
     clothes: playCloth,

@@ -316,7 +316,7 @@ let talkToOrAboutX = (preposition, x) => {
 // };
 
 const askXAboutY = (x, y) => {
-  const character = getCharacter(x, getCharacterinRoom(disk.roomId));
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
   disk.conversant = character;
   console.log(disk.conversant);
   talkToOrAboutX('about', y);
@@ -945,15 +945,30 @@ function setFatigue(amount) {
   );
 };
 
+
+//spawn tenement function
+function spawnTenement() {
+  const room = getRoom(disk.roomId);
+  const hotel = getRoom('lobb-revi');
+  const enteredStreets = getRoom('53-5');
+  const count = moveCount - enteredStreets.curMoveCount;
+
+  const a = room.coords[0] - hotel.coords[0];
+  const b = room.coords[1] - hotel.coords[1];
+
+  const c = Math.sqrt( a*a + b*b );
+
+  if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && tenementSpawned === false ) {
+    const chance = Math.floor(Math.random() * 101);
+    if ( chance <= 24 ) {
+      
+    }
+  }
+
+};
+
 // jump command
 
-
-
-const chracterGet = (x) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  console.log(character);
-  
-}
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters

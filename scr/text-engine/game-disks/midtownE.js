@@ -54,6 +54,10 @@ const midtownEast = {
             id: '53-5',
             name: 'W. 53rd St, and 5th Ave.',
             desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
+            onEnter: () => {
+              const room = getRoom(disk.roomId);
+              room.curMoveCount = moveCount;
+            },
             exits: [
                 {
                   dir: ['north'], 

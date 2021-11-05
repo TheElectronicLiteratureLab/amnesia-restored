@@ -9,10 +9,10 @@ const lowerEast = {
             name: 'E. Houston St. and Bowery St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '1-bowe' },
                 { dir: ['south'], id: 'stan-bowe' },
                 { dir: ['east'], id: 'hous-chry' },
-                { dir: ['west'], id: ''}, 
+                { dir: ['west'], id: 'hous-eliz'}, 
             ]
         },
         {
@@ -22,7 +22,7 @@ const lowerEast = {
             name: 'E. Houston St. and Chrystie Ave.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '1-chry' },
                 { dir: ['south'], id: 'stan-chry' },
                 { dir: ['east'], id: 'hou-fors' },
                 { dir: ['west'], id: 'hous-bowe'}, 
@@ -35,7 +35,7 @@ const lowerEast = {
             name: 'E. Houston St. and Forsyth St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-fors' },
                 { dir: ['east'], id: 'hous-eldr' },
                 { dir: ['west'], id: 'hous-chry'}, 
@@ -48,7 +48,7 @@ const lowerEast = {
             name: 'E. Houston St. and Eldridge St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-fors' },
                 { dir: ['east'], id: 'hous-alle' },
                 { dir: ['west'], id: 'hous-fors'}, 
@@ -61,7 +61,7 @@ const lowerEast = {
             name: 'E. Houston St. and Allen St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '1-alle' },
                 { dir: ['south'], id: 'stan-alle' },
                 { dir: ['east'], id: 'hous-orch' },
                 { dir: ['west'], id: 'hous-eldr'}, 
@@ -74,7 +74,7 @@ const lowerEast = {
             name: 'E. Houston St. and Orchard St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-orch' },
                 { dir: ['east'], id: 'hous-1' },
                 { dir: ['west'], id: 'hous-alle'}, 
@@ -87,7 +87,7 @@ const lowerEast = {
             name: 'E. Houston St. and E. 1st St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '1-1' },
                 { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'hous-ludl' },
                 { dir: ['west'], id: 'hous-orch'}, 
@@ -100,7 +100,7 @@ const lowerEast = {
             name: 'E. Houston St. and Ludlow St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-ludl' },
                 { dir: ['east'], id: 'hous-esse' },
                 { dir: ['west'], id: 'hous-1'}, 
@@ -113,7 +113,7 @@ const lowerEast = {
             name: 'E. Houston St. and Essex St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '2-avea' },
                 { dir: ['south'], id: 'stan-esse' },
                 { dir: ['east'], id: 'hous-norf' },
                 { dir: ['west'], id: 'hous-ludl'}, 
@@ -126,7 +126,7 @@ const lowerEast = {
             name: 'E. Houston St. and Norfolk St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-norf' },
                 { dir: ['east'], id: 'hous-suff' },
                 { dir: ['west'], id: 'hous-esse'}, 
@@ -139,7 +139,7 @@ const lowerEast = {
             name: 'E. Houston St. and Suffolk St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-suff' },
                 { dir: ['east'], id: 'hous-clin' },
                 { dir: ['west'], id: 'hous-norf'}, 
@@ -152,7 +152,7 @@ const lowerEast = {
             name: 'E. Houston St. and Clinton St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '2-aveb' },
                 { dir: ['south'], id: 'stan-clin' },
                 { dir: ['east'], id: 'hous-atto' },
                 { dir: ['west'], id: 'hous-suff'}, 
@@ -165,7 +165,7 @@ const lowerEast = {
             name: 'E. Houston St. and Attorney St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-atto' },
                 { dir: ['east'], id: 'hous-ridg' },
                 { dir: ['west'], id: 'hous-clin'}, 
@@ -178,7 +178,7 @@ const lowerEast = {
             name: 'E. Houston St. and Ridge St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'stan-ridg' },
                 { dir: ['east'], id: 'hous-2' },
                 { dir: ['west'], id: 'hous-atto'}, 
@@ -191,7 +191,7 @@ const lowerEast = {
             name: 'E. Houston St. and E 2nd St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '2-aveb' },
                 { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'hous-pitt' },
                 { dir: ['west'], id: 'hous-ridg'}, 
@@ -204,7 +204,7 @@ const lowerEast = {
             name: 'E. Houston St. and Pitt St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '3-avec' },
                 { dir: ['south'], id: 'stan-pitt' },
                 { dir: ['east'], id: 'hous-colu' },
                 { dir: ['west'], id: 'hous-2'}, 
@@ -217,7 +217,7 @@ const lowerEast = {
             name: 'E. Houston St. and Columbia St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '3-aved' },
                 { dir: ['south'], id: 'rivi-colu' },
                 { dir: ['east'], id: 'hous-baru' },
                 { dir: ['west'], id: 'hous-pitt'}, 
@@ -227,10 +227,10 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'hous-baru',
-            name: 'E. Houston St. and Baruch P1.',
+            name: 'E. Houston St. and Baruch Pl.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'new-baru' },
                 { dir: ['east'], id: 'hous-mang' },
                 { dir: ['west'], id: 'hous-colu'}, 
@@ -243,7 +243,7 @@ const lowerEast = {
             name: 'E. Houston St. and Mangin St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '', block: `You can't go that way.` },
                 { dir: ['south'], id: 'new-mang' },
                 { dir: ['east'], id: 'hous-fdrd' },
                 { dir: ['west'], id: 'hous-baru'}, 
@@ -256,7 +256,7 @@ const lowerEast = {
             name: 'E. Houston St. and FDR Drive',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: '6-fdrd' },
                 { dir: ['south'], id: 'dela-fdrd' },
                 { dir: ['east'], id: '', block: `You can't go that way.` },
                 { dir: ['west'], id: 'hous-mang'}, 
@@ -272,7 +272,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'hous-bowe' },
                 { dir: ['south'], id: 'prin-bowe' },
                 { dir: ['east'], id: 'stan-chry' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
@@ -480,7 +480,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'stan-bowe' },
                 { dir: ['south'], id: 'rivi-bowe' },
                 { dir: ['east'], id: '', block: `You can't go that way.` },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'prin-eliz'}, 
             ]
         },
         {
@@ -493,7 +493,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'prin-bowe' },
                 { dir: ['south'], id: 'spri-bowe' },
                 { dir: ['east'], id: 'rivi-chry' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: '', block: `You can't go that way.` }, 
             ]
         },
         {
@@ -688,7 +688,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'rivi-bowe' },
                 { dir: ['south'], id: 'kenm-bowe' },
                 { dir: ['east'], id: '', block: `You can't go that way.` },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'spri-eliz'}, 
             ]
         },
         {
@@ -701,7 +701,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'spri-bowe' },
                 { dir: ['south'], id: 'broo-bowe' },
                 { dir: ['east'], id: 'dela-chry ' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'kenm-eliz'}, 
             ]
         },
         {
@@ -1013,7 +1013,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'kenm-bowe' },
                 { dir: ['south'], id: 'gran-bowe' },
                 { dir: ['east'], id: 'broo-chry' },
-                { dir: ['west'], id: '????' }, 
+                { dir: ['west'], id: 'broo-eliz' }, 
             ]
         },
         {
@@ -1208,7 +1208,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'broo-bowe' },
                 { dir: ['south'], id: 'hest-bowe' },
                 { dir: ['east'], id: 'gran-chry' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'gran-eliz'}, 
             ]
         },
         {
@@ -1481,7 +1481,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'gran-bowe' },
                 { dir: ['south'], id: 'cana-bowe' },
                 { dir: ['east'], id: 'hest-chry' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'hest-eliz'}, 
             ]
         },
         {
@@ -1583,9 +1583,9 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-bowe' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: 'baya-bowe' },
                 { dir: ['east'], id: 'cana-chry' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'cana-eliz'}, 
             ]
         },
         {
@@ -1596,7 +1596,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'hest-chry' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'cana-fors' },
                 { dir: ['west'], id: 'cana-bowe'}, 
             ]
@@ -1777,10 +1777,10 @@ const lowerEast = {
             name: 'Henry St. and Pike St.',
             desc: ``,
             exits: [
-                { dir: ['north'], id: '????' },
+                { dir: ['north'], id: 'broa-pike' },
                 { dir: ['south'], id: 'madi-pike' },
                 { dir: ['east'], id: 'henr-rutg' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'fors-henr'}, 
             ]
         },
         {
@@ -1871,7 +1871,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'henr-pike' },
                 { dir: ['south'], id: 'monr-pike' },
                 { dir: ['east'], id: 'madi-rutg' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'fors-madi'}, 
             ]
         },
         {
@@ -1956,13 +1956,13 @@ const lowerEast = {
             isStreets: true,
             coord: [],
             id: 'monr-pike',
-            name: 'Madison St. and Pike St.',
+            name: 'Monroe St. and Pike St.',
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'madi-pike' },
                 { dir: ['south'], id: 'cherr-pike' },
                 { dir: ['east'], id: '', block: `You can't go that way.` },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'monr-chry'}, 
             ]
         },
         {
@@ -1975,7 +1975,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'monr-pike' },
                 { dir: ['south'], id: 'wate-pike' },
                 { dir: ['east'], id: 'cherr-rutg' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'cherr-chry'}, 
             ]
         },
         {
@@ -2027,7 +2027,7 @@ const lowerEast = {
                 { dir: ['north'], id: 'cherr-pike' },
                 { dir: ['south'], id: 'sout-pike' },
                 { dir: ['east'], id: 'wate-rutg' },
-                { dir: ['west'], id: '????' }, 
+                { dir: ['west'], id: 'wate-chry' }, 
             ]
         },
         {
@@ -2051,9 +2051,9 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'wate-pike' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: 'chry-erdr' },
                 { dir: ['east'], id: 'sout-rutg' },
-                { dir: ['west'], id: '????'}, 
+                { dir: ['west'], id: 'cout-chry'}, 
             ]
         },
         {
@@ -2064,7 +2064,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'wate-rutg' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'sout-clin' },
                 { dir: ['west'], id: 'sout-pike'}, 
             ]
@@ -2077,7 +2077,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'cherr-clin' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'sout-mont' },
                 { dir: ['west'], id: 'sout-rutg' }, 
             ]
@@ -2090,7 +2090,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gouv-mont' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'sout-gouv' },
                 { dir: ['west'], id: 'sout-clin' }, 
             ]
@@ -2168,7 +2168,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gouv-gouvW' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: 'sout-gouvE' },
                 { dir: ['west'], id: 'sout-mont'}, 
             ]
@@ -2194,7 +2194,7 @@ const lowerEast = {
             desc: ``,
             exits: [
                 { dir: ['north'], id: 'gouv-jack' },
-                { dir: ['south'], id: '????' },
+                { dir: ['south'], id: '', block: `You can't go that way.` },
                 { dir: ['east'], id: '', block: `You can't go that way.` },
                 { dir: ['west'], id: 'sout-gouvE'}, 
             ]
@@ -2208,7 +2208,7 @@ const lowerEast = {
             exits: [
                 { dir: ['north'], id: 'gran-sout' },
                 { dir: ['south'], id: 'gouv-jack' },
-                { dir: ['east'], id: '????' },
+                { dir: ['east'], id: '', block: `You can't go that way.` },
                 { dir: ['west'], id: 'madi-jack'}, 
             ]
         },
