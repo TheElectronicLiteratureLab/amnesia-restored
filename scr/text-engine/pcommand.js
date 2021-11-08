@@ -388,7 +388,7 @@ let takeItem = (itemName) => {
 };
 
 
-// drop item from inventory
+// drop item from inventory basically just reversed the take item function above.
 let dropItem = (itemName) => {
   const room = getRoom(disk.roomId);
   const findItem = item => objectHasName(item, itemName);
@@ -918,52 +918,66 @@ let close = (itemToOpen) => {
   }
 }
 
-function teleport (place) {
-  enterRoom(place);
-  println(`
-  Player Teleported to ${place}`);
-}
 
-function setMoney(amount) {
-  playMon = amount;
-  println(`
-    Player Money now set to ${amount}`
-  );
-};
+//dev command functions 
 
-function setHunger(amount) {
-  playHung = amount;
-  println(`
-    Player Hunger now set to ${amount}`
-  );
-};
+  //teleport to certain room
+  function teleport (place) {
+    enterRoom(place);
+    println(`
+    Player Teleported to ${place}`);
+  };
 
-function setFatigue(amount) {
-  playFat = amount;
-  println(`
-    Player fatigue now set to ${amount}`
-  );
-};
+  //set the money to certain ammount
+  function setMoney(amount) {
+    playMon = amount;
+    println(`
+    Player Money now set to ${amount}`);
+  };
+
+  //set hunger to certain amount
+  function setHunger(amount) {
+    playHung = amount;
+    println(`
+    Player Hunger now set to ${amount}`);
+  };
+
+  //set fatigue to certain amount
+  function setFatigue(amount) {
+    playFat = amount;
+    println(`
+    Player fatigue now set to ${amount}`);
+  };
 
 
 //spawn tenement function
 function spawnTenement() {
-  const room = getRoom(disk.roomId);
-  const hotel = getRoom('lobb-revi');
-  const enteredStreets = getRoom('53-5');
-  const count = moveCount - enteredStreets.curMoveCount;
+  const room = getRoom(disk.roomId); //get current room
+  const hotel = getRoom('lobb-revi'); //get hotel room
+  const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
+  const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
 
-  const a = room.coords[0] - hotel.coords[0];
-  const b = room.coords[1] - hotel.coords[1];
+    //distance formula
+      const a = room.coords[0] - hotel.coords[0];
+      const b = room.coords[1] - hotel.coords[1];
+      const c = Math.sqrt( (a*a) + (b*b) );
 
-  const c = Math.sqrt( a*a + b*b );
-
-  if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && tenementSpawned === false ) {
-    const chance = Math.floor(Math.random() * 101);
-    if ( chance <= 24 ) {
-      
-    }
-  }
+  
+      //if count is greater than or equal to 11 and 
+      //if the distance betweem player and hotel is greater than or equal to 11 and
+      //the room description is empty, aka no place of interest, or restaurant, or phone and
+      //if the tenement hasn't already been spawned then
+        if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
+          const chance = Math.floor(Math.random() * 101); //generate random number between 0-100
+          console.log(chance); //log what number was generated
+          if ( chance <= 24 ) { //25% chance of spawning the tenement if the conditions above were met.
+              room.exits.push( //push the tenement into the current rooms array of exits
+                { dir: ['tenement'], id: 'tene' }, 
+              ); 
+              tenementSpawned = true; //set value so that function wont run again
+              println(`there is an abandoned tenement here on ${room.name}`); //tell player the tenement is here
+            }
+        }
 
 };
 

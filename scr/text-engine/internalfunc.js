@@ -72,6 +72,7 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 // string -> nothing
 let enterRoom = (id) => {
   const room = getRoom(id);
+  const lastRoom = getRoom(disk.roomId);//get the id of the current room before transitioning. 
 
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
@@ -101,9 +102,9 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
-  const room2 = getRoom(disk.roomId);
-  if ( room2.isStreets === true ) {
-    
+  const room2 = getRoom(disk.roomId); //get new room on entry
+  if ( room2.isStreets && !tenementSpawned ) { //if the new room is a street room and the tenement hasnt spawned yet
+    spawnTenement(); //try and spawn the tenement
   }
 
 };
