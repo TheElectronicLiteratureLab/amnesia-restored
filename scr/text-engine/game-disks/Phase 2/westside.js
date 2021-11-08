@@ -1730,7 +1730,7 @@ const westside = {
       exits: [
         {dir: 'north', id: 'broa-colu'},
         {dir: 'south', id: '63-broa'},
-        {dir: 'east', id: '64-cprk'},
+        {dir: 'east', id: '64-cpkw'},
         {dir: 'west', id: '64-colu'},
       ]
     },
@@ -1743,7 +1743,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '64-broa'},
         {dir: 'south', id: '62-broa'},
-        {dir: 'east', id: '63-cprk'},
+        {dir: 'east', id: '63-cpkw'},
         {dir: 'west', id: '63-colu'},
       ]
     },
@@ -1756,7 +1756,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '63-broa'},
         {dir: 'south', id: '61-broa'},
-        {dir: 'east', id: '62-cprk'},
+        {dir: 'east', id: '62-cpkw'},
         {dir: 'west', id: '62-colu'},
       ]
     },
@@ -1769,7 +1769,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '62-broa'},
         {dir: 'south', id: '60-broa'},
-        {dir: 'east', id: '61-cprk'},
+        {dir: 'east', id: '61-cpkw'},
         {dir: 'west', id: '61-colu'},
       ]
     },
@@ -1795,7 +1795,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '60-broa'},
         {dir: 'south', id: 'broa-8'},
-        {dir: 'east', id: '59-cprk'},
+        {dir: 'east', id: '59-cpkw'},
         {dir: 'west', id: '59-colu'},
       ]
     },
@@ -2588,7 +2588,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '100-colu'},
         {dir: 'south', id: '96-colu'},
-        {dir: 'east', id: '97-cprk'},
+        {dir: 'east', id: '97-cpkw'},
         {dir: 'west', id: '97-amst'},
       ]
     },
@@ -2601,7 +2601,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '97-colu'},
         {dir: 'south', id: '95-colu'},
-        {dir: 'east', id: '96-cprk'},
+        {dir: 'east', id: '96-cpkw'},
         {dir: 'west', id: '96-amst'},
       ]
     },
@@ -2614,7 +2614,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '96-colu'},
         {dir: 'south', id: '94-colu'},
-        {dir: 'east', id: '95-cprk'},
+        {dir: 'east', id: '95-cpkw'},
         {dir: 'west', id: '95-amst'},
       ]
     },
@@ -2627,7 +2627,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '95-colu'},
         {dir: 'south', id: '93-colu'},
-        {dir: 'east', id: '94-cprk'},
+        {dir: 'east', id: '94-cpkw'},
         {dir: 'west', id: '94-amst'},
       ]
     },
@@ -2640,7 +2640,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '94-colu'},
         {dir: 'south', id: '92-colu'},
-        {dir: 'east', id: '93-cprk'},
+        {dir: 'east', id: '93-cpkw'},
         {dir: 'west', id: '93-amst'},
       ]
     },
@@ -2653,7 +2653,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '93-colu'},
         {dir: 'south', id: '91-colu'},
-        {dir: 'east', id: '92-cprk'},
+        {dir: 'east', id: '92-cpkw'},
         {dir: 'west', id: '92-amst'},
       ]
     },
@@ -2666,7 +2666,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '92-colu'},
         {dir: 'south', id: '90-colu'},
-        {dir: 'east', id: '91-cprk'},
+        {dir: 'east', id: '91-cpkw'},
         {dir: 'west', id: '91-amst'},
       ]
     },
@@ -2679,7 +2679,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '91-colu'},
         {dir: 'south', id: '89-colu'},
-        {dir: 'east', id: '90-cprk'},
+        {dir: 'east', id: '90-cpkw'},
         {dir: 'west', id: '90-amst'},
       ]
     },
@@ -2692,7 +2692,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '90-colu'},
         {dir: 'south', id: '88-colu'},
-        {dir: 'east', id: '89-cprk'},
+        {dir: 'east', id: '89-cpkw'},
         {dir: 'west', id: '89-amst'},
       ]
     },
@@ -2705,7 +2705,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '89-colu'},
         {dir: 'south', id: '87-colu'},
-        {dir: 'east', id: '88-cprk'},
+        {dir: 'east', id: '88-cpkw'},
         {dir: 'west', id: '88-amst'},
       ]
     },
@@ -2718,7 +2718,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '88-colu'},
         {dir: 'south', id: '86-colu'},
-        {dir: 'east', id: '87-cprk'},
+        {dir: 'east', id: '87-cpkw'},
         {dir: 'west', id: '87-amst'},
       ]
     },
@@ -2731,7 +2731,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '87-colu'},
         {dir: 'south', id: '85-colu'},
-        {dir: 'east', id: '86-cprk'},
+        {dir: 'east', id: '86-cpkw'},
         {dir: 'west', id: '86-amst'},
       ]
     },
@@ -2744,7 +2744,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '86-colu'},
         {dir: 'south', id: 'epoe-colu'},
-        {dir: 'east', id: '85-cprk'},
+        {dir: 'east', id: '85-cpkw'},
         {dir: 'west', id: '85-amst'},
       ]
     },
@@ -2757,7 +2757,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '85-colu'},
         {dir: 'south', id: '83-colu'},
-        {dir: 'east', id: 'epoe-cprk'},
+        {dir: 'east', id: 'epoe-cpkw'},
         {dir: 'west', id: 'epoe-amst'},
       ]
     },
@@ -2770,7 +2770,7 @@ const westside = {
       exits: [
         {dir: 'north', id: 'epoe-colu'},
         {dir: 'south', id: '82-colu'},
-        {dir: 'east', id: '83-cprk'},
+        {dir: 'east', id: '83-cpkw'},
         {dir: 'west', id: '83-amst'},
       ]
     },
@@ -2783,7 +2783,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '83-colu'},
         {dir: 'south', id: '81-colu'},
-        {dir: 'east', id: '82-cprk'},
+        {dir: 'east', id: '82-cpkw'},
         {dir: 'west', id: '82-amst'},
       ]
     },
@@ -2796,7 +2796,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '82-colu'},
         {dir: 'south', id: '80-colu'},
-        {dir: 'east', id: '81-cprk'},
+        {dir: 'east', id: '81-cpkw'},
         {dir: 'west', id: '81-amst'},
       ]
     },
@@ -2848,7 +2848,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '78-colu'},
         {dir: 'south', id: '76-colu'},
-        {dir: 'east', id: '77-cprk'},
+        {dir: 'east', id: '77-cpkw'},
         {dir: 'west', id: '77-amst'},
       ]
     },
@@ -2861,7 +2861,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '77-colu'},
         {dir: 'south', id: '75-colu'},
-        {dir: 'east', id: '76-cprk'},
+        {dir: 'east', id: '76-cpkw'},
         {dir: 'west', id: '77-amst'},
       ]
     },
@@ -2874,7 +2874,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '76-colu'},
         {dir: 'south', id: '74-colu'},
-        {dir: 'east', id: '75-cprk'},
+        {dir: 'east', id: '75-cpkw'},
         {dir: 'west', id: '75-amst'},
       ]
     },
@@ -2887,7 +2887,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '75-colu'},
         {dir: 'south', id: '73-colu'},
-        {dir: 'east', id: '74-cprk'},
+        {dir: 'east', id: '74-cpkw'},
         {dir: 'west', id: '74-amst'},
       ]
     },
@@ -2900,7 +2900,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '74-colu'},
         {dir: 'south', id: '72-colu'},
-        {dir: 'east', id: '73-cprk'},
+        {dir: 'east', id: '73-cpkw'},
         {dir: 'west', id: '73-amst'},
         {dir: 'alley', id: '', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
       ]
@@ -2914,7 +2914,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '73-colu'},
         {dir: 'south', id: '71-colu'},
-        {dir: 'east', id: '72-cprk'},
+        {dir: 'east', id: '72-cpkw'},
         {dir: 'west', id: '72-amst'},
       ]
     },
@@ -2927,7 +2927,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '72-colu'},
         {dir: 'south', id: '70-colu'},
-        {dir: 'east', id: '71-cprk'},
+        {dir: 'east', id: '71-cpkw'},
         {dir: 'west', id: '71-amst'},
       ]
     },
@@ -2940,7 +2940,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '71-colu'},
         {dir: 'south', id: '69-colu'},
-        {dir: 'east', id: '71-cprk'},
+        {dir: 'east', id: '71-cpkw'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
@@ -2953,7 +2953,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '70-colu'},
         {dir: 'south', id: '68-colu'},
-        {dir: 'east', id: '69-cprk'},
+        {dir: 'east', id: '69-cpkw'},
         {dir: 'west', id: '69-broa'},
       ]
     },
@@ -2966,7 +2966,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '69-colu'},
         {dir: 'south', id: '67-colu'},
-        {dir: 'east', id: '68-cprk'},
+        {dir: 'east', id: '68-cpkw'},
         {dir: 'west', id: '68-broa'},
       ]
     },
@@ -2979,7 +2979,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '68-colu'},
         {dir: 'south', id: '66-colu'},
-        {dir: 'east', id: '67-cprk'},
+        {dir: 'east', id: '67-cpkw'},
         {dir: 'west', id: '67-broa'},
       ]
     },
@@ -2992,7 +2992,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '67'},
         {dir: 'south', id: '65'},
-        {dir: 'east', id: '66-cprk'},
+        {dir: 'east', id: '66-cpkw'},
         {dir: 'west', id: '66-broa'},
       ]
     },
@@ -3005,7 +3005,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '66-colu'},
         {dir: 'south', id: 'broa-colu'},
-        {dir: 'east', id: '65-cprk'},
+        {dir: 'east', id: '65-cpkw'},
         {dir: 'west', id: '65-broa'},
       ]
     },
@@ -3109,7 +3109,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-manh'},
-        {dir: 'east', id: '110-cprk'},
+        {dir: 'east', id: '110-cpkw'},
         {dir: 'west', id: '110-colu'},
       ]
     },
@@ -3122,7 +3122,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '110-manh'},
         {dir: 'south', id: '108-manh'},
-        {dir: 'east', id: '109-cprk'},
+        {dir: 'east', id: '109-cpkw'},
         {dir: 'west', id: '109-colu'},
       ]
     },
@@ -3135,7 +3135,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '109-manh'},
         {dir: 'south', id: '107-manh'},
-        {dir: 'east', id: '108-cprk'},
+        {dir: 'east', id: '108-cpkw'},
         {dir: 'west', id: '108-colu'},
       ]
     },
@@ -3148,7 +3148,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '108-manh'},
         {dir: 'south', id: '106-manh'},
-        {dir: 'east', id: '107-cprk'},
+        {dir: 'east', id: '107-cpkw'},
         {dir: 'west', id: '107-colu'},
       ]
     },
@@ -3161,7 +3161,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '107-manh'},
         {dir: 'south', id: '105-manh'},
-        {dir: 'east', id: '106-cprk'},
+        {dir: 'east', id: '106-cpkw'},
         {dir: 'west', id: '106-colu'},
       ]
     },
@@ -3174,7 +3174,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '106-manh'},
         {dir: 'south', id: '104-manh'},
-        {dir: 'east', id: '105-cprk'},
+        {dir: 'east', id: '105-cpkw'},
         {dir: 'west', id: '105-colu'},
       ]
     },
@@ -3187,7 +3187,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '105-manh'},
         {dir: 'south', id: '103-manh'},
-        {dir: 'east', id: '104-cprk'},
+        {dir: 'east', id: '104-cpkw'},
         {dir: 'west', id: '104-colu'},
       ]
     },
@@ -3200,7 +3200,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '104-manh'},
         {dir: 'south', id: '102-manh'},
-        {dir: 'east', id: '103-cprk'},
+        {dir: 'east', id: '103-cpkw'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
@@ -3213,7 +3213,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '103-manh'},
         {dir: 'south', id: '101-manh'},
-        {dir: 'east', id: '102-cprk'},
+        {dir: 'east', id: '102-cpkw'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
@@ -3226,7 +3226,7 @@ const westside = {
       exits: [
         {dir: 'north', id: '102-manh'},
         {dir: 'south', id: '100-manh'},
-        {dir: 'east', id: '101-cprk'},
+        {dir: 'east', id: '101-cpkw'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
@@ -3239,206 +3239,206 @@ const westside = {
       exits: [
         {dir: 'north', id: '101-manh'},
         {dir: 'south', id: '', block: `You can't go that way.`},
-        {dir: 'east', id: '100-cprk'},
+        {dir: 'east', id: '100-cpkw'},
         {dir: 'west', id: '100-colu'},
       ]
     },  {
-      id: '110-cprk',
+      id: '110-cpkw',
       coord: [],
       name: 'W. 110th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
         {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-        {dir: 'south', id: '109-cprk'},
+        {dir: 'south', id: '109-cpkw'},
         {dir: 'east', id: '110-'},
         {dir: 'west', id: '110-manh'},
       ]
     },
     {
-      id: '109-cprk',
+      id: '109-cpkw',
       coord: [],
       name: 'W. 109th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '110-cprk'},
-        {dir: 'south', id: '108-cprk'},
+        {dir: 'north', id: '110-cpkw'},
+        {dir: 'south', id: '108-cpkw'},
         {dir: 'east', id: '109'},
         {dir: 'west', id: '109-manh'},
       ]
     },
     {
-      id: '108-cprk',
+      id: '108-cpkw',
       coord: [],
       name: 'W. 108th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '109-cprk'},
-        {dir: 'south', id: '107-cprk'},
+        {dir: 'north', id: '109-cpkw'},
+        {dir: 'south', id: '107-cpkw'},
         {dir: 'east', id: '108-'},
         {dir: 'west', id: '108-manh'},
       ]
     },
     {
-      id: '107-cprk',
+      id: '107-cpkw',
       coord: [],
       name: 'W. 107th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '108-cprk'},
-        {dir: 'south', id: '106-cprk'},
+        {dir: 'north', id: '108-cpkw'},
+        {dir: 'south', id: '106-cpkw'},
         {dir: 'east', id: '107-'},
         {dir: 'west', id: '107-manh'},
       ]
     },
     {
-      id: '106-cprk',
+      id: '106-cpkw',
       coord: [],
       name: 'W. 106th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '107-cprk'},
-        {dir: 'south', id: '105-cprk'},
+        {dir: 'north', id: '107-cpkw'},
+        {dir: 'south', id: '105-cpkw'},
         {dir: 'east', id: '106-'},
         {dir: 'west', id: '106-manh'},
       ]
     },
     {
-      id: '105-cprk',
+      id: '105-cpkw',
       coord: [],
       name: 'W. 105th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '106-cprk'},
-        {dir: 'south', id: '104-cprk'},
+        {dir: 'north', id: '106-cpkw'},
+        {dir: 'south', id: '104-cpkw'},
         {dir: 'east', id: '105-'},
         {dir: 'west', id: '105-manh'},
       ]
     },
     {
-      id: '104-cprk',
+      id: '104-cpkw',
       coord: [],
       name: 'W. 104th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '105-cprk'},
-        {dir: 'south', id: '103-cprk'},
+        {dir: 'north', id: '105-cpkw'},
+        {dir: 'south', id: '103-cpkw'},
         {dir: 'east', id: '104-'},
         {dir: 'west', id: '104-manh'},
       ]
     },
     {
-      id: '103-cprk',
+      id: '103-cpkw',
       coord: [],
       name: 'W. 103rd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '104-cprk'},
-        {dir: 'south', id: '102-cprk'},
+        {dir: 'north', id: '104-cpkw'},
+        {dir: 'south', id: '102-cpkw'},
         {dir: 'east', id: '103-'},
         {dir: 'west', id: '103-manh'},
       ]
     },
     {
-      id: '102-cprk',
+      id: '102-cpkw',
       coord: [],
       name: 'W. 102nd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '103-cprk'},
-        {dir: 'south', id: '101-cprk'},
+        {dir: 'north', id: '103-cpkw'},
+        {dir: 'south', id: '101-cpkw'},
         {dir: 'east', id: '102-'},
         {dir: 'west', id: '102-manh'},
       ]
     },
     {
-      id: '101-cprk',
+      id: '101-cpkw',
       coord: [],
       name: 'W. 101st St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '102-cprk'},
-        {dir: 'south', id: '100-cprk'},
+        {dir: 'north', id: '102-cpkw'},
+        {dir: 'south', id: '100-cpkw'},
         {dir: 'east', id: '101-'},
         {dir: 'west', id: '101-manh'},
       ]
     },
     {
-      id: '100-cprk',
+      id: '100-cpkw',
       coord: [],
       name: 'W. 100th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '101-cprk'},
-        {dir: 'south', id: '99-cprk'},
+        {dir: 'north', id: '101-cpkw'},
+        {dir: 'south', id: '99-cpkw'},
         {dir: 'east', id: '100-'},
         {dir: 'west', id: '100-manh'},
       ]
     },
     {
-      id: '99-cprk',
+      id: '99-cpkw',
       coord: [],
       name: 'W. 99th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '100-cprk'},
-        {dir: 'south', id: '98-cprk'},
+        {dir: 'north', id: '100-cpkw'},
+        {dir: 'south', id: '98-cpkw'},
         {dir: 'east', id: '99-'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
     {
-      id: '98-cprk',
+      id: '98-cpkw',
       coord: [],
       name: 'W. 98th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '99-cprk'},
-        {dir: 'south', id: '97-cprk'},
+        {dir: 'north', id: '99-cpkw'},
+        {dir: 'south', id: '97-cpkw'},
         {dir: 'east', id: '98-'},
         {dir: 'west', id: '', block: `You can't go that way.`},
       ]
     },
     {
-      id: '97-cprk',
+      id: '97-cpkw',
       coord: [],
       name: 'W. 97th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '98-cprk'},
-        {dir: 'south', id: '96-cprk'},
+        {dir: 'north', id: '98-cpkw'},
+        {dir: 'south', id: '96-cpkw'},
         {dir: 'east', id: '97-'},
         {dir: 'west', id: '97-colu'},
       ]
     },
     {
-      id: '96-cprk',
+      id: '96-cpkw',
       coord: [],
       name: 'W. 96th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '97-cprk'},
-        {dir: 'south', id: '95-cprk'},
+        {dir: 'north', id: '97-cpkw'},
+        {dir: 'south', id: '95-cpkw'},
         {dir: 'east', id: '96-'},
         {dir: 'west', id: '96-colu'},
       ]
     },
     {
-      id: '95-cprk',
+      id: '95-cpkw',
       coord: [],
       name: 'W. 95th St. and Central Park W.',
       desc: '',
@@ -3451,371 +3451,371 @@ const westside = {
       ]
     },
     {
-      id: '94-cprk',
+      id: '94-cpkw',
       coord: [],
       name: 'W. 94th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '95-cprk'},
-        {dir: 'south', id: '93-cprk'},
+        {dir: 'north', id: '95-cpkw'},
+        {dir: 'south', id: '93-cpkw'},
         {dir: 'east', id: '94-'},
         {dir: 'west', id: '94-colu'},
       ]
     },
     {
-      id: '93-cprk',
+      id: '93-cpkw',
       coord: [],
       name: 'W. 93rd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '94-cprk'},
-        {dir: 'south', id: '92-cprk'},
+        {dir: 'north', id: '94-cpkw'},
+        {dir: 'south', id: '92-cpkw'},
         {dir: 'east', id: '93-'},
         {dir: 'west', id: '93-colu'},
       ]
     },
     {
-      id: '92-cprk',
+      id: '92-cpkw',
       coord: [],
       name: 'W. 92nd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '93-cprk'},
-        {dir: 'south', id: '91-cprk'},
+        {dir: 'north', id: '93-cpkw'},
+        {dir: 'south', id: '91-cpkw'},
         {dir: 'east', id: '92-'},
         {dir: 'west', id: '92-colu'},
       ]
     },
     {
-      id: '91-cprk',
+      id: '91-cpkw',
       coord: [],
       name: 'W. 91st St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '92-cprk'},
-        {dir: 'south', id: '90-cprk'},
+        {dir: 'north', id: '92-cpkw'},
+        {dir: 'south', id: '90-cpkw'},
         {dir: 'east', id: '91-'},
         {dir: 'west', id: '91-colu'},
       ]
     },
     {
-      id: '90-cprk',
+      id: '90-cpkw',
       coord: [],
       name: 'W. 90th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '91-cprk'},
-        {dir: 'south', id: '89-cprk'},
+        {dir: 'north', id: '91-cpkw'},
+        {dir: 'south', id: '89-cpkw'},
         {dir: 'east', id: '90-'},
         {dir: 'west', id: '90-colu'},
       ]
     },
     {
-      id: '89-cprk',
+      id: '89-cpkw',
       coord: [],
       name: 'W. 89th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '90-cprk'},
-        {dir: 'south', id: '88-cprk'},
+        {dir: 'north', id: '90-cpkw'},
+        {dir: 'south', id: '88-cpkw'},
         {dir: 'east', id: '89-'},
         {dir: 'west', id: '89-colu'},
       ]
     },
     {
-      id: '88-cprk',
+      id: '88-cpkw',
       coord: [],
       name: 'W. 88th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '89-cprk'},
-        {dir: 'south', id: '87-cprk'},
+        {dir: 'north', id: '89-cpkw'},
+        {dir: 'south', id: '87-cpkw'},
         {dir: 'east', id: '88-'},
         {dir: 'west', id: '88-colu'},
       ]
     },
     {
-      id: '87-cprk',
+      id: '87-cpkw',
       coord: [],
       name: 'W. 87th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '88-cprk'},
-        {dir: 'south', id: '86-cprk'},
+        {dir: 'north', id: '88-cpkw'},
+        {dir: 'south', id: '86-cpkw'},
         {dir: 'east', id: '87-'},
         {dir: 'west', id: '87-colu'},
       ]
     },
     {
-      id: '86-cprk',
+      id: '86-cpkw',
       coord: [],
       name: 'W. 86th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '87-cprk'},
-        {dir: 'south', id: '85-cprk'},
+        {dir: 'north', id: '87-cpkw'},
+        {dir: 'south', id: '85-cpkw'},
         {dir: 'east', id: '86-'},
         {dir: 'west', id: '86-colu'},
       ]
     },
     {
-      id: '85-cprk',
+      id: '85-cpkw',
       coord: [],
       name: 'W. 85th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '86-cprk'},
-        {dir: 'south', id: 'epoe-cprk'},
+        {dir: 'north', id: '86-cpkw'},
+        {dir: 'south', id: 'epoe-cpkw'},
         {dir: 'east', id: '85-'},
         {dir: 'west', id: '85-colu'},
       ]
     },
     {
-      id: 'epoe-cprk',
+      id: 'epoe-cpkw',
       coord: [],
       name: 'Edgar Allen Poe St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '85-cprk'},
-        {dir: 'south', id: '83-cprk'},
+        {dir: 'north', id: '85-cpkw'},
+        {dir: 'south', id: '83-cpkw'},
         {dir: 'east', id: '84-'},
         {dir: 'west', id: '84-colu'},
       ]
     },
     {
-      id: '83-cprk',
+      id: '83-cpkw',
       coord: [],
       name: 'W. 83rd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'epoe-cprk'},
-        {dir: 'south', id: '82-cprk'},
+        {dir: 'north', id: 'epoe-cpkw'},
+        {dir: 'south', id: '82-cpkw'},
         {dir: 'east', id: '83-'},
         {dir: 'west', id: '83-colu'},
       ]
     },
     {
-      id: '82-cprk',
+      id: '82-cpkw',
       coord: [],
       name: 'W. 82nd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '83-cprk'},
-        {dir: 'south', id: '81-cprk'},
+        {dir: 'north', id: '83-cpkw'},
+        {dir: 'south', id: '81-cpkw'},
         {dir: 'east', id: '82-'},
         {dir: 'west', id: '82-colu'},
       ]
     },
     {
-      id: '81-cprk',
+      id: '81-cpkw',
       coord: [],
       name: 'W. 81st St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '82-cprk'},
-        {dir: 'south', id: '80-cprk'},
+        {dir: 'north', id: '82-cpkw'},
+        {dir: 'south', id: '80-cpkw'},
         {dir: 'east', id: '81-'},
         {dir: 'west', id: '81-colu'},
       ]
     },
     {
-      id: '77-cprk',
+      id: '77-cpkw',
       coord: [],
       name: 'W. 77th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '78-cprk'},
-        {dir: 'south', id: '76-cprk'},
+        {dir: 'north', id: '78-cpkw'},
+        {dir: 'south', id: '76-cpkw'},
         {dir: 'east', id: '77-'},
         {dir: 'west', id: '77-colu'},
       ]
     },
     {
-      id: '76-cprk',
+      id: '76-cpkw',
       coord: [],
       name: 'W. 76th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '77-cprk'},
-        {dir: 'south', id: '75-cprk'},
+        {dir: 'north', id: '77-cpkw'},
+        {dir: 'south', id: '75-cpkw'},
         {dir: 'east', id: '76-'},
         {dir: 'west', id: '76-colu'},
       ]
     },
     {
-      id: '75-cprk',
+      id: '75-cpkw',
       coord: [],
       name: 'W. 75th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '76-cprk'},
-        {dir: 'south', id: '74-cprk'},
+        {dir: 'north', id: '76-cpkw'},
+        {dir: 'south', id: '74-cpkw'},
         {dir: 'east', id: '75-'},
         {dir: 'west', id: '75-colu'},
       ]
     },
     {
-      id: '74-cprk',
+      id: '74-cpkw',
       coord: [],
       name: 'W. 74th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '75-cprk'},
-        {dir: 'south', id: '73-cprk'},
+        {dir: 'north', id: '75-cpkw'},
+        {dir: 'south', id: '73-cpkw'},
         {dir: 'east', id: '74-'},
         {dir: 'west', id: '74-colu'},
       ]
     },
     {
-      id: '73-cprk',
+      id: '73-cpkw',
       coord: [],
       name: 'W. 73rd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '74-cprk'},
-        {dir: 'south', id: '72-cprk'},
+        {dir: 'north', id: '74-cpkw'},
+        {dir: 'south', id: '72-cpkw'},
         {dir: 'east', id: '73-'},
         {dir: 'west', id: '73-colu'},
       ]
     },
     {
-      id: '72-cprk',
+      id: '72-cpkw',
       coord: [],
       name: 'W. 72nd St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '73-cprk'},
-        {dir: 'south', id: '71-cprk'},
+        {dir: 'north', id: '73-cpkw'},
+        {dir: 'south', id: '71-cpkw'},
         {dir: 'east', id: '72-'},
         {dir: 'west', id: '72-colu'},
       ]
     },
     {
-      id: '71-cprk',
+      id: '71-cpkw',
       coord: [],
       name: 'W. 71st St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '72-cprk'},
-        {dir: 'south', id: '70-cprk'},
+        {dir: 'north', id: '72-cpkw'},
+        {dir: 'south', id: '70-cpkw'},
         {dir: 'east', id: '71-'},
         {dir: 'west', id: '71-colu'},
       ]
     },
     {
-      id: '70-cprk',
+      id: '70-cpkw',
       coord: [],
       name: 'W. 70th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '71-cprk'},
-        {dir: 'south', id: '69-cprk'},
+        {dir: 'north', id: '71-cpkw'},
+        {dir: 'south', id: '69-cpkw'},
         {dir: 'east', id: '70-'},
         {dir: 'west', id: '70-colu'},
       ]
     },
     {
-      id: '69-cprk',
+      id: '69-cpkw',
       coord: [],
       name: 'W. 69th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '70-cprk'},
-        {dir: 'south', id: '68-cprk'},
+        {dir: 'north', id: '70-cpkw'},
+        {dir: 'south', id: '68-cpkw'},
         {dir: 'east', id: '69-'},
         {dir: 'west', id: '69-colu'},
       ]
     },
     {
-      id: '68-cprk',
+      id: '68-cpkw',
       coord: [],
       name: 'W. 68th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '69-cprk'},
-        {dir: 'south', id: '67-cprk'},
+        {dir: 'north', id: '69-cpkw'},
+        {dir: 'south', id: '67-cpkw'},
         {dir: 'east', id: '68-'},
         {dir: 'west', id: '68-colu'},
       ]
     },
     {
-      id: '67-cprk',
+      id: '67-cpkw',
       coord: [],
       name: 'W. 67th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '68-cprk'},
-        {dir: 'south', id: '66-cprk'},
+        {dir: 'north', id: '68-cpkw'},
+        {dir: 'south', id: '66-cpkw'},
         {dir: 'east', id: '67-'},
         {dir: 'west', id: '67-colu'},
       ]
     },
     {
-      id: '66-cprk',
+      id: '66-cpkw',
       coord: [],
       name: 'W. 66th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '67-cprk'},
-        {dir: 'south', id: '65-cprk'},
+        {dir: 'north', id: '67-cpkw'},
+        {dir: 'south', id: '65-cpkw'},
         {dir: 'east', id: '66-'},
         {dir: 'west', id: '66-colu'},
       ]
     },
     {
-      id: '65-cprk',
+      id: '65-cpkw',
       coord: [],
       name: 'W. 65th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '66-cprk'},
-        {dir: 'south', id: '64-cprk'},
+        {dir: 'north', id: '66-cpkw'},
+        {dir: 'south', id: '64-cpkw'},
         {dir: 'east', id: '65-'},
         {dir: 'west', id: '65-colu'},
       ]
     },
     {
-      id: '64-cprk',
+      id: '64-cpkw',
       coord: [],
       name: 'W. 64th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '65-cprk'},
+        {dir: 'north', id: '65-cpkw'},
         {dir: 'south', id: '63'},
         {dir: 'east', id: '64-'},
         {dir: 'west', id: '64-broa'},
       ]
     },
     {
-      id: '63-cprk',
+      id: '63-cpkw',
       coord: [],
       name: 'W. 63rd St. and Central Park W.',
       desc: '',
@@ -3828,7 +3828,7 @@ const westside = {
       ]
     },
     {
-      id: '62-cprk',
+      id: '62-cpkw',
       coord: [],
       name: 'W. 62nd St. and Central Park W.',
       desc: '',
@@ -3841,7 +3841,7 @@ const westside = {
       ]
     },
     {
-      id: '61-cprk',
+      id: '61-cpkw',
       coord: [],
       name: 'W. 61st St. and Central Park W.',
       desc: '',
@@ -3854,13 +3854,13 @@ const westside = {
       ]
     },
     {
-      id: '59-cprk',
+      id: '59-cpkw',
       coord: [],
       name: 'W. 59th St. and Central Park W.',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '60-cprk'},
+        {dir: 'north', id: '60-cpkw'},
         {dir: 'south', id: '58-8'},
         {dir: 'east', id: '59-'},
         {dir: 'west', id: '59-broa'},
