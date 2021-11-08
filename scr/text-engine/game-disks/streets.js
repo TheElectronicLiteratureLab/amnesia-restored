@@ -876,7 +876,7 @@ const streets = {
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '', block: `You can't go that way.`},
+        {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: 'walk-cort'},
         {dir: 'east', id: 'cana-lafa'},
         {dir: 'west', id: 'cana-broa'},
@@ -1832,7 +1832,7 @@ const streets = {
         {dir: 'north', id: 'cana-mulb'},
         {dir: 'south', id: 'baya-mulb'},
         {dir: 'east', id: 'walk-baxt'},
-        {dir: 'west', id: '', block: `You can't go that way.`},
+        {dir: 'west', block: `You can't go that way.`},
       ]
     },
     {
@@ -2245,7 +2245,7 @@ const streets = {
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '', block: `You can't go that way.`},
+        {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: 'broa-mark'},
         {dir: 'east', id: 'fors-divi'},
         {dir: 'west', id: 'divi-cath'},
@@ -18251,7 +18251,7 @@ const streets = {
     },
     {
       id: '59-cent',
-      name: 'W. 59th St. and Central Pk. W.',  
+      name: 'W. 59th St. and Central Park W.',  
       desc: `The monument to Christopher Columbus surveys a large undistinguished building called the Coliseum, which shows no signs of its Roman heritage.`, 
       exits: [
         {dir: 'north', id: '61-cent'},
@@ -20618,6838 +20618,8142 @@ const streets = {
      /*********************/
     /* Midtown East Side */
    /*********************/
-   {
-    id: 'hote-exit',
-    coord: [],
-    name: 'Sunderland Hotel Lobby',
-    desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
-    isStreets: true,
-    onEnter: () => {
-      pressEnter('hote-exit1');
+    {
+      id: 'hote-exit',
+      coord: [],
+      name: 'Sunderland Hotel Lobby',
+      desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
+      isStreets: true,
+      onEnter: () => {
+        pressEnter('hote-exit1');
+      },
+      exits: []
     },
-    exits: []
-  },
-  {
-    id: 'hote-exit1',
-    coord: [],
-    name: 'Sunderland Hotel Lobby',
-    desc: `Here it is already night time, but the sidewalks are still teeming with people, and the streets are heavily trafficked, and bright with the sum-total wattage of so many streetlights, headlights, and lighted signs. In the windows of the darkened shopfronts, you see yourself mirrored and feel an utterly inappropiate glow of vanity.
-          
-          The white tux makes you look like a refugee from the chorus line of a Thirties musical comedy, and in a peculiar way it serves as camouflage. People stare, but they're staring at the tux, not at you.`,
-    onEnter: () => {
-      pressEnter('hote-exit2');
+    {
+      id: 'hote-exit1',
+      coord: [],
+      name: 'Sunderland Hotel Lobby',
+      desc: `Here it is already night time, but the sidewalks are still teeming with people, and the streets are heavily trafficked, and bright with the sum-total wattage of so many streetlights, headlights, and lighted signs. In the windows of the darkened shopfronts, you see yourself mirrored and feel an utterly inappropiate glow of vanity.
+            
+            The white tux makes you look like a refugee from the chorus line of a Thirties musical comedy, and in a peculiar way it serves as camouflage. People stare, but they're staring at the tux, not at you.`,
+      onEnter: () => {
+        pressEnter('hote-exit2');
+      },
+      exits: []
     },
-    exits: []
-  },
-  {
-    id: 'hote-exit2',
-    coord: [],
-    name: 'Sunderland Hotel Lobby',
-    desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
-    isStreets: true,
-    onEnter: () => {
-      pressEnter('hote-exit3');
+    {
+      id: 'hote-exit2',
+      coord: [],
+      name: 'Sunderland Hotel Lobby',
+      desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
+      isStreets: true,
+      onEnter: () => {
+        pressEnter('hote-exit3');
+      },
+      exits: []
     },
-    exits: []
-  },
-  {
-    id: 'hote-exit3',
-    coord: [],
-    name: 'Sunderland Hotel Lobby',
-    desc:`At the corner you watch a blind man with a tin cup slowly progress down Fifth Avenue, rattling coins at the milling pedestrians. Most of them are too caught up in their own business even to notice the blind man. A few do see him and veer widely around him, as though fearing the rattle of his cup
-          
-          A black man pauses, considers, digs into his pocket, and drops a quarter in the cup. He notices you watching this act of charity, and as he walks by you a moment later, he says, "There but for the grace of God, eh?"
-          
-          You nod your head thoughtfully.`,
-    onEnter: () => {
-      pressEnter('53-5');
+    {
+      id: 'hote-exit3',
+      coord: [],
+      name: 'Sunderland Hotel Lobby',
+      desc:`At the corner you watch a blind man with a tin cup slowly progress down Fifth Avenue, rattling coins at the milling pedestrians. Most of them are too caught up in their own business even to notice the blind man. A few do see him and veer widely around him, as though fearing the rattle of his cup
+            
+            A black man pauses, considers, digs into his pocket, and drops a quarter in the cup. He notices you watching this act of charity, and as he walks by you a moment later, he says, "There but for the grace of God, eh?"
+            
+            You nod your head thoughtfully.`,
+      onEnter: () => {
+        pressEnter('53-5');
+      },
+      exits: []
     },
-    exits: []
-  },
-  {
-    id: '53-5',
-    coord: [],
-    name: 'W. 53rd St, and 5th Ave.',
-    desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-5'},
-      {dir: 'south', id: '52-5'},
-      {dir: 'east', id: '53-madi'},
-      {dir: 'west', id: '53-amer'}, 
-      {dir: ['Sunderland', 'hotel'], id: '????'},
-    ]
-  },
-  {
-    id: '54-5',
-    coord: [],
-    name: 'W. 54th St, and 5th Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '55-5'},
-      {dir: 'south', id: '53-5'},
-      {dir: 'east', id: '54-madi'},
-      {dir: 'west', id: '54-amer'}, 
-      {dir: ['subway'], id: '????'},
-    ]
-  },
-  {
-    id: '55-5',
-    coord: [],
-    name: 'W. 55th St, and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-5'},
-      {dir: 'south', id: '54-5'},
-      {dir: 'east', id: '55-madi'},
-      {dir: 'west', id: '55-amer'}, 
-    ]
-  },
-  {
-    id: '56-5',
-    coord: [],
-    name: 'W. 56th St, and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-5'},
-      {dir: 'south', id: '55-5'},
-      {dir: 'east', id: '56-madi'},
-      {dir: 'west', id: '56-amer'}, 
-    ]
-  },
-  {
-    id: '57-5',
-    coord: [],
-    name: 'W. 57th St, and 5th Ave.',
-    desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-5'},
-      {dir: 'south', id: '56-5'},
-      {dir: 'east', id: '57-madi'},
-      {dir: 'west', id: '57-amer'}, 
-    ]
-  },
-  {
-    id: '58-5',
-    coord: [],
-    name: 'W. 58th St, and 5th Ave.',
-    desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-5'},
-      {dir: 'south', id: '57-5'},
-      {dir: 'east', id: '58-madi'},
-      {dir: 'west', id: '58-amer'},
-      {dir: ['plaza', 'hotel'], id: 'plaz-hote'}
-    ]
-  },
-  {
-    id: 'plaz-hote',
-    coord: [],
-    name: 'Lobby of the Plaza Hotel',
-    desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don’t. You ignore the voice deep inside and leave with a sigh of regret.`,
-    isStreets: true,
-    exits:[],
-    onEnter: () => {
-      pressEnter('58-5')
-    },
-  },
-  {
-    id: '59-5',
-    coord: [],
-    name: 'Central Park S. and 5th Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '60-5'},
-      {dir: 'south', id: '58-5'},
-      {dir: 'east', id: '59-madi'},
-      {dir: 'west', id: '59-amer'},
-      {dir: ['subway'], id: '???'}
-    ]
-  },
-  {
-    id: '59-madi',
-    coord: [],
-    name: 'E. 59th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '60-madi'},
-      {dir: 'south', id: '58-madi'},
-      {dir: 'east', id: '59-park'},
-      {dir: 'west', id: '59-5'},
-    ]
-  },
-  {
-    id: '58-madi',
-    coord: [],
-    name: 'E. 58th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-madi'},
-      {dir: 'south', id: '57-madi'},
-      {dir: 'east', id: '58-park'},
-      {dir: 'west', id: '58-5'},
-    ]
-  },
-  {
-    id: '57-madi',
-    coord: [],
-    name: 'E. 57th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-madi'},
-      {dir: 'south', id: '56-madi'},
-      {dir: 'east', id: '57-park'},
-      {dir: 'west', id: '57-5'},
-    ]
-  },
-  {
-    id: '56-madi',
-    coord: [],
-    name: 'E. 56th St. and Madison Ave.',
-    desc: `The sign above the store's front window, written in letters that imitate a dot-matrix printout, says: User-Friendly Computer Store.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-madi'},
-      {dir: 'south', id: '55-madi'},
-      {dir: 'east', id: '56-park'},
-      {dir: 'west', id: '56-5'},
-      {dir: ['computer', 'store'], id: 'user-frie'}
-    ]
-  },
-  {
-    id: '56-madi',
-    coord: [],
-    name: 'E. 56th St. and Madison Ave.',
-    desc: `As you come to the corner of Madison Avenue, you notice, halfway down the block a shop front that seems somehow familiar. The sign above the front window, written in letters that imitate a dot-matrix printout, says:
-
-          USER-FRIENDLY
-
-          COMPUTER STORE.`,
-    exits: [
-      {dir: 'north', id: '57-madi'},
-      {dir: 'south', id: '55-madi'},
-      {dir: 'east', id: '56-park'},
-      {dir: 'west', id: '56-5'},
-      {dir: ['computer', 'store', 'user', 'friendly'], id: 'user-frie'}
-    ]
-  },
-  {
-    id: '55-madi',
-    coord: [],
-    name: 'E. 55th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-madi'},
-      {dir: 'south', id: '54-madi'},
-      {dir: 'east', id: '55-park'},
-      {dir: 'west', id: '55-5'},
-    ]
-  },
-  {
-    id: '54-madi',
-    coord: [],
-    name: 'E. 54th St. and Madison Ave.',
-    desc: `There is a chock Full-O-Nuts at this intersection.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-madi'},
-      {dir: 'south', id: '53-madi'},
-      {dir: 'east', id: '54-park'},
-      {dir: 'west', id: '54-5'},
-      {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
-    ]
-  },
-  {
-    id: '53-madi',
-    coord: [],
-    name: 'E. 53rd St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-madi'},
-      {dir: 'south', id: '52-madi'},
-      {dir: 'east', id: '53-park'},
-      {dir: 'west', id: '53-5'},
-    ]
-  },
-  {
-    id: '52-madi',
-    coord: [],
-    name: 'E. 52nd St. and Madison Ave.',
-    desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-madi'},
-      {dir: 'south', id: '51-madi'},
-      {dir: 'east', id: '52-park'},
-      {dir: 'west', id: '52-5'},
-      {dir: ['park', 'plaza'], id: 'park-plaz'},
-    ]
-  },
-  {
-    id: '51-madi',
-    coord: [],
-    name: 'E. 51st St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '52-madi'},
-      {dir: 'south', id: '50-madi'},
-      {dir: 'east', id: '51-park'},
-      {dir: 'west', id: '51-5'},
-    ]
-  },
-  {
-    id: '50-madi',
-    coord: [],
-    name: 'E. 50th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-madi'},
-      {dir: 'south', id: '49-madi'},
-      {dir: 'east', id: '50-park'},
-      {dir: 'west', id: '50-5'},
-    ]
-  },
-  {
-    id: '49-madi',
-    coord: [],
-    name: 'E. 49th St. and Madison Ave.',
-    desc: `There is a chock Full-O-Nuts at this intersection.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-madi'},
-      {dir: 'south', id: '48-madi'},
-      {dir: 'east', id: '49-park'},
-      {dir: 'west', id: '49-5'},
-      {dir: ['chock', 'full-o-nuts',], id: 'choc-nuts'}
-    ]
-  },
-  {
-    id: '48-madi',
-    coord: [],
-    name: 'E. 48th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-madi'},
-      {dir: 'south', id: '47-madi'},
-      {dir: 'east', id: '48-park'},
-      {dir: 'west', id: '48-5'},
-    ]
-  },
-  {
-    id: '47-madi',
-    coord: [],
-    name: 'E. 47th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-madi'},
-      {dir: 'south', id: '46-madi'},
-      {dir: 'east', id: '47-vand'},
-      {dir: 'west', id: '47-5'},
-    ]
-  },
-  {
-    id: '46-madi',
-    coord: [],
-    name: 'E. 46th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-madi'},
-      {dir: 'south', id: '45-madi'},
-      {dir: 'east', id: '46-vand'},
-      {dir: 'west', id: '46-5'},
-    ]
-  },
-  {
-    id: '45-madi',
-    coord: [],
-    name: 'E. 45th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-madi'},
-      {dir: 'south', id: '44-madi'},
-      {dir: 'east', id: '45-vand'},
-      {dir: 'west', id: '45-5'},
-    ]
-  },
-  {
-    id: '44-madi',
-    coord: [],
-    name: 'E. 44th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-madi'},
-      {dir: 'south', id: '43-madi'},
-      {dir: 'east', id: '44-vand'},
-      {dir: 'west', id: '44-5'},
-    ]
-  },
-  {
-    id: '43-madi',
-    coord: [],
-    name: 'E. 43rd St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-madi'},
-      {dir: 'south', id: '42-madi'},
-      {dir: 'east', id: '43-vand'},
-      {dir: 'west', id: '43-5'},
-    ]
-  },
-  {
-    id: '42-madi',
-    coord: [],
-    name: 'E. 42nd St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-madi'},
-      {dir: 'south', id: '41-madi'},
-      {dir: 'east', id: '42-vand'},
-      {dir: 'west', id: '42-5'},
-    ]
-  },
-  {
-    id: '41-madi',
-    coord: [],
-    name: 'E. 41st St. and Madison Ave.',
-    desc: `There is a chock Full-O-Nuts at this intersection.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-madi'},
-      {dir: 'south', id: '40-madi'},
-      {dir: 'east', id: '41-park'},
-      {dir: 'west', id: '41-5'},
-      {dir: ['chock', 'full-o-nuts', 'enter'], id: 'choc-nuts'}
-    ]
-  },
-  {
-    id: '40-madi',
-    coord: [],
-    name: 'E. 40th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-madi'},
-      {dir: 'south', id: '39-madi'},
-      {dir: 'east', id: '40-park'},
-      {dir: 'west', id: '40-5'},
-    ]
-  },
-  {
-    id: '39-madi',
-    coord: [],
-    name: 'E. 39th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-madi'},
-      {dir: 'south', id: '38-madi'},
-      {dir: 'east', id: '39-park'},
-      {dir: 'west', id: '39-5'},
-    ]
-  },
-  {
-    id: '39-madi',
-    coord: [],
-    name: 'E. 39th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-madi'},
-      {dir: 'south', id: '38-madi'},
-      {dir: 'east', id: '39-park'},
-      {dir: 'west', id: '39-5'},
-    ]
-  },
-  {
-    id: '38-madi',
-    coord: [],
-    name: 'E. 38th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-madi'},
-      {dir: 'south', id: '37-madi'},
-      {dir: 'east', id: '38-park'},
-      {dir: 'west', id: '38-5'},
-    ]
-  },
-  {
-    id: '37-madi',
-    coord: [],
-    name: 'E. 37th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-madi'},
-      {dir: 'south', id: '36-madi'},
-      {dir: 'east', id: '37-park'},
-      {dir: 'west', id: '37-5'},
-    ]
-  },
-  {
-    id: '36-madi',
-    coord: [],
-    name: 'E. 36th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-madi'},
-      {dir: 'south', id: '35-madi'},
-      {dir: 'east', id: '36-park'},
-      {dir: 'west', id: '36-5'},
-    ]
-  },
-  {
-    id: '35-madi',
-    coord: [],
-    name: 'E. 35th St. and Madison Ave.',
-    desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-madi'},
-      {dir: 'south', id: '34-madi'},
-      {dir: 'east', id: '35-park'},
-      {dir: 'west', id: '35-5'},
-      {dir: [`Altman's`,], id: '????'},
-    ]
-  },
-  {
-    id: '34-madi',
-    coord: [],
-    name: 'E. 34th St. and Madison Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-madi'},
-      {dir: 'south', id: '33-madi'},
-      {dir: 'east', id: '34-park'},
-      {dir: 'west', id: '34-5'},
-    ]
-  },
-  {
-    id: '34-5',
-    coord: [],
-    name: 'W. 34th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-5'},
-      {dir: 'south', id: '33-5'},
-      {dir: 'east', id: '34-madi'},
-      {dir: 'west', id: '34-amer'},
-    ]
-  },
-  {
-    id: '35-5',
-    coord: [],
-    name: 'W. 35th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-5'},
-      {dir: 'south', id: '34-5'},
-      {dir: 'east', id: '35-madi'},
-      {dir: 'west', id: '35-amer'},
-    ]
-  },
-  {
-    id: '36-5',
-    coord: [],
-    name: 'W. 36th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-5'},
-      {dir: 'south', id: '35-5'},
-      {dir: 'east', id: '36-madi'},
-      {dir: 'west', id: '36-amer'},
-    ]
-  },
-  {
-    id: '37-5',
-    coord: [],
-    name: 'W. 37th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-5'},
-      {dir: 'south', id: '36-5'},
-      {dir: 'east', id: '37-madi'},
-      {dir: 'west', id: '37-amer'},
-    ]
-  },
-  {
-    id: '38-5',
-    coord: [],
-    name: 'W. 38th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-5'},
-      {dir: 'south', id: '37-5'},
-      {dir: 'east', id: '38-madi'},
-      {dir: 'west', id: '38-amer'},
-    ]
-  },
-  {
-    id: '38-5',
-    coord: [],
-    name: 'W. 38th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-5'},
-      {dir: 'south', id: '37-5'},
-      {dir: 'east', id: '38-madi'},
-      {dir: 'west', id: '38-amer'},
-    ]
-  },
-  {
-    id: '39-5',
-    coord: [],
-    name: 'W. 39th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-5'},
-      {dir: 'south', id: '38-5'},
-      {dir: 'east', id: '39-madi'},
-      {dir: 'west', id: '39-amer'},
-    ]
-  },
-  {
-    id: '40-5',
-    coord: [],
-    name: 'W. 40th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-5'},
-      {dir: 'south', id: '39-5'},
-      {dir: 'east', id: '40-madi'},
-      {dir: 'west', id: '40-amer'},
-    ]
-  },
-  {
-    id: '41-5',
-    coord: [],
-    name: 'W. 41st St. and 5th Ave.',
-    desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-5'},
-      {dir: 'south', id: '40-5'},
-      {dir: 'east', id: '41-madi'},
-      {dir: 'west', id: '41-amer'},
-      {dir: ['public', 'library',], id: 'publ-libr'}
-    ]
-  },
-  {
-    id: '42-5',
-    coord: [],
-    name: 'W. 42nd St. and 5th Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '43-5'},
-      {dir: 'south', id: '41-5'},
-      {dir: 'east', id: '42-madi'},
-      {dir: 'west', id: '42-amer'},
-      {dir: ['Subway'], id: '????'},
-    ]
-  },
-  {
-    id: '43-5',
-    coord: [],
-    name: 'W. 43rd St. and 5th Ave.',
-    desc: `here is the Princeton Club - distinctly a members only institution.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-5'},
-      {dir: 'south', id: '42-5'},
-      {dir: 'east', id: '43-madi'},
-      {dir: 'west', id: '43-amer'},
-      {dir: ['Princeton', 'Health', 'Club',], id: '????'},
-    ]
-  },
-  {
-    id: '44-5',
-    coord: [],
-    name: 'W. 44th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-5'},
-      {dir: 'south', id: '43-5'},
-      {dir: 'east', id: '44-madi'},
-      {dir: 'west', id: '44-amer'},
-    ]
-  },
-  {
-    id: '45-5',
-    coord: [],
-    name: 'W. 45th St. and 5th Ave.',
-    desc: `An ideal spot for a would-be traveler. This block is lined with offices of Qantas, British Airways, Northwest Orient, and Aeroflot.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-5'},
-      {dir: 'south', id: '44-5'},
-      {dir: 'east', id: '45-madi'},
-      {dir: 'west', id: '45-amer'},
-      {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
-    ]
-  },
-  {
-    id: '46-5',
-    coord: [],
-    name: 'W. 46th St. and 5th Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-5'},
-      {dir: 'south', id: '45-5'},
-      {dir: 'east', id: '46-madi'},
-      {dir: 'west', id: '46-amer'},
-    ]
-  },
-  {
-    id: '47-5',
-    coord: [],
-    name: 'W. 47th St. and 5th Ave.',
-    desc: `You pause to consider the hollow hulk of a store that was once called Brentano's`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-5'},
-      {dir: 'south', id: '46-5'},
-      {dir: 'east', id: '47-madi'},
-      {dir: 'west', id: '47-amer'},
-      {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: '????'}
-    ]
-  },
-  {
-    id: 'bren',
-    coord: [],
-    name: '',
-    desc: ``,
-    isStreets: true,
-    exits:[]
-  },
-  {
-    id: '48-5',
-    coord: [],
-    name: 'W. 48th St. and 5th Ave.',
-    desc: `Here is Barnes-Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club .`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-5'},
-      {dir: 'south', id: '47-5'},
-      {dir: 'east', id: '48-madi'},
-      {dir: 'west', id: '48-amer'},
-      {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: '????'},
-      {dir: [`scriber's`, 'scribners'], id: 'scri',coord: [], block: '????'}
-    ]
-  },
-  {
-    id: 'barn-nobl',
-    coord: [],
-    name: '',
-    desc: ``,
-    isStreets: true,
-    exits:[]
-  },
-  {
-    id: 'scri',
-    coord: [],
-    name: '',
-    desc: ``,
-    isStreets: true,
-    exits:[]
-  },
-  {
-    id: '49-5',
-    coord: [],
-    name: 'W. 49th St. and 5th Ave.',
-    desc: `A statue of Atlas bearing the burden of the world reflects on your own mood as you pass the entrance to Rockefeller plaza.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-5'},
-      {dir: 'south', id: '48-5'},
-      {dir: 'east', id: '48-madi'},
-      {dir: 'west', id: '48-amer'},
-      {dir: [`rockefeller`, `plaza`], id: 'rock-plaz', block: '????'}
-    ]
-  },
-  {
-    id: 'rock-plaz',
-    coord: [],
-    name: 'Office Building Lobby',
-    desc: `You walk through the revolving doors, and enter a lobby decorated in marble. A security check-point near the elevators makes you think twice about remaining. 
-          
-          you turn away quickly and leave`,
-    onEnter: () => {
-      pressEnter('49-5')
-    }, 
-    exits:[]
-  },
-  {
-    id: '50-5',
-    coord: [],
-    name: 'W. 50th St. and 5th Ave.',
-    desc: `There is a chock Full-O-Nuts at this intersection.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-5'},
-      {dir: 'south', id: '49-5'},
-      {dir: 'east', id: '50-madi'},
-      {dir: 'west', id: '50-amer'},
-      {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
-    ]
-  },
-  {
-    id: '51-5',
-    coord: [],
-    name: 'W. 51st St. and 5th Ave.',
-    desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
-          `,
-    exits: [
-      {dir: 'north', id: '52-5'},
-      {dir: 'south', id: '50-5'},
-      {dir: 'east', id: '51-madi'},
-      {dir: 'west', id: '51-amer'},
-      {
-                  dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'],
-                  id: '????'}
-    ]
-  },
-  {
-    id: '52-5',
-    coord: [],
-    name: 'W. 52nd St. and 5th Ave.',
-    desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
-
-          There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
-    exits: [
-      {dir: 'north', id: '53-5'},
-      {dir: 'south', id: '51-5'},
-      {dir: 'east', id: '51-madi'},
-      {dir: 'west', id: '51-amer'},
-      {dir: ['21', 'club'], id: '????'}
-    ]
-  },
-  {
-    id: '59-park',
-    coord: [],
-    name: 'E. 59th St. and Park Ave.',
-    desc: `There is a restaurant called Nedicks here.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '60-park'},
-      {dir: 'south', id: '58-park'},
-      {dir: 'east', id: '59-lexi'},
-      {dir: 'west', id: '59-madi'},
-      {dir: ['nedick', 'restaurant', `nedick's`], id: 'nedi'}
-    ]
-  },
-  {
-    id: '58-park',
-    coord: [],
-    name: 'E. 58th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-park'},
-      {dir: 'south', id: '57-park'},
-      {dir: 'east', id: '58-lexi'},
-      {dir: 'west', id: '58-madi'},
-    ]
-  },
-  {
-    id: '57-park',
-    coord: [],
-    name: 'E. 57th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-park'},
-      {dir: 'south', id: '56-park'},
-      {dir: 'east', id: '57-lexi'},
-      {dir: 'west', id: '57-madi'},
-    ]
-  },
-  {
-    id: '56-park',
-    coord: [],
-    name: 'E. 56th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-park'},
-      {dir: 'south', id: '55-park'},
-      {dir: 'east', id: '56-lexi'},
-      {dir: 'west', id: '56-madi'},
-    ]
-  },
-  {
-    id: '55-park',
-    coord: [],
-    name: 'E. 55th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-park'},
-      {dir: 'south', id: '54-park'},
-      {dir: 'east', id: '55-lexi'},
-      {dir: 'west', id: '55-madi'},
-    ]
-  },
-  {
-    id: '54-park',
-    coord: [],
-    name: 'E. 54th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-park'},
-      {dir: 'south', id: '53-park'},
-      {dir: 'east', id: '54-lexi'},
-      {dir: 'west', id: '54-madi'},
-    ]
-  },
-  {
-    id: '53-park',
-    coord: [],
-    name: 'E. 53rd St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-park'},
-      {dir: 'south', id: '52-park'},
-      {dir: 'east', id: '53-lexi'},
-      {dir: 'west', id: '53-madi'},
-    ]
-  },
-  {
-    id: '52-park',
-    coord: [],
-    name: 'E. 52nd St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-park'},
-      {dir: 'south', id: '51-park'},
-      {dir: 'east', id: '52-lexi'},
-      {dir: 'west', id: '52-madi'},
-    ]
-  },
-  {
-    id: '51-park',
-    coord: [],
-    name: 'E. 51st St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '52-park'},
-      {dir: 'south', id: '50-park'},
-      {dir: 'east', id: '51-lexi'},
-      {dir: 'west', id: '51-madi'},
-    ]
-  },
-  {
-    id: '50-park',
-    coord: [],
-    name: 'E. 50th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-park'},
-      {dir: 'south', id: '49-park'},
-      {dir: 'east', id: '50-lexi'},
-      {dir: 'west', id: '50-madi'},
-    ]
-  },
-  {
-    id: '49-park',
-    coord: [],
-    name: 'E. 49th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-park'},
-      {dir: 'south', id: '48-park'},
-      {dir: 'east', id: '49-lexi'},
-      {dir: 'west', id: '49-madi'},
-    ]
-  },
-  {
-    id: '48-park',
-    coord: [],
-    name: 'E. 48th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-park'},
-      {dir: 'south', id: '47-park'},
-      {dir: 'east', id: '48-lexi'},
-      {dir: 'west', id: '48-madi'},
-    ]
-  },
-  {
-    id: '47-park',
-    coord: [],
-    name: 'E. 47th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-park'},
-      {dir: 'south', id: '46-park'},
-      {dir: 'east', id: '47-lexi'},
-      {dir: 'west', id: '47-vand'},
-    ]
-  },
-  {
-    id: '47-vand',
-    coord: [],
-    name: 'E. 47th St. and Vanderbilt Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '46-vand'},
-      {dir: 'east', id: '47-park'},
-      {dir: 'west', id: '47-madi'},
-    ]
-  },
-  {
-    id: '46-vand',
-    coord: [],
-    name: 'E. 46th St. and Vanderbilt Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-vand'},
-      {dir: 'south', id: '45-vand'},
-      {dir: 'east', id: '46-park'},
-      {dir: 'west', id: '46-madi'},
-    ]
-  },
-  {
-    id: '45-vand',
-    coord: [],
-    name: 'E. 45th St. and Vanderbilt Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-vand'},
-      {dir: 'south', id: '44-vand'},
-      {dir: 'east', id: '45-park'},
-      {dir: 'west', id: '45-madi'},
-    ]
-  },
-  {
-    id: '44-vand',
-    coord: [],
-    name: 'E. 44th St. and Vanderbilt Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-vand'},
-      {dir: 'south', id: '43-vand'},
-      {dir: 'east', id: '44-park'},
-      {dir: 'west', id: '44-madi'},
-    ]
-  },
-  {
-    id: '43-vand',
-    coord: [],
-    name: 'E. 43rd St. and Vanderbilt Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-vand'},
-      {dir: 'south', id: '42-vand'},
-      {dir: 'east', id: '43-park'},
-      {dir: 'west', id: '43-madi'},
-    ]
-  },
-  {
-    id: '42-vand',
-    coord: [],
-    name: 'E. 42nd St. and Vanderbilt Ave.',
-    desc: `Mobil Building – Nothing this tall could be made of silver, but you are tempted to think so. It is hard to realize that such a gleam can come from a metal as mundane as stainless steel.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-vand'},
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', id: '42-park'},
-      {dir: 'west', id: '42-madi'},
-      {dir: ['mobil', 'building'], id: '????'}
-    ]
-  },
-  {
-    id: '46-park',
-    coord: [],
-    name: 'E. 46th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-park'},
-      {dir: 'south', id: '45-park'},
-      {dir: 'east', id: '46-depe'},
-      {dir: 'west', id: '46-vand'},
-    ]
-  },
-  {
-    id: '45-park',
-    coord: [],
-    name: 'E. 45th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-park'},
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', id: '45-depe'},
-      {dir: 'west', id: '45-vand'},
-    ]
-  },
-  {
-    id: '42-park',
-    coord: [],
-    name: 'E. 42nd St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '41-park'},
-      {dir: 'east', id: '42-depe'},
-      {dir: 'west', id: '42-vand'},
-    ]
-  },
-  {
-    id: '41-park',
-    coord: [],
-    name: 'E. 41st St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-park'},
-      {dir: 'south', id: '40-park'},
-      {dir: 'east', id: '41-lexi'},
-      {dir: 'west', id: '41-madi'},
-    ]
-  },
-  {
-    id: '41-park',
-    coord: [],
-    name: 'E. 41st St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-park'},
-      {dir: 'south', id: '40-park'},
-      {dir: 'east', id: '41-lexi'},
-      {dir: 'west', id: '41-madi'},
-    ]
-  },
-  {
-    id: '40-park',
-    coord: [],
-    name: 'E. 40th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-park'},
-      {dir: 'south', id: '39-park'},
-      {dir: 'east', id: '40-lexi'},
-      {dir: 'west', id: '40-madi'},
-    ]
-  },
-  {
-    id: '39-park',
-    coord: [],
-    name: 'E. 39th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-park'},
-      {dir: 'south', id: '38-park'},
-      {dir: 'east', id: '39-lexi'},
-      {dir: 'west', id: '39-madi'},
-    ]
-  },
-  {
-    id: '38-park',
-    coord: [],
-    name: 'E. 38th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-park'},
-      {dir: 'south', id: '37-park'},
-      {dir: 'east', id: '38-lexi'},
-      {dir: 'west', id: '38-madi'},
-    ]
-  },
-  {
-    id: '37-park',
-    coord: [],
-    name: 'E. 37th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-park'},
-      {dir: 'south', id: '36-park'},
-      {dir: 'east', id: '37-lexi'},
-      {dir: 'west', id: '37-madi'},
-    ]
-  },
-  {
-    id: '36-park',
-    coord: [],
-    name: 'E. 36th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-park'},
-      {dir: 'south', id: '35-park'},
-      {dir: 'east', id: '36-lexi'},
-      {dir: 'west', id: '36-madi'},
-    ]
-  },
-  {
-    id: '35-park',
-    coord: [],
-    name: 'E. 35th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-park'},
-      {dir: 'south', id: '34-park'},
-      {dir: 'east', id: '35-lexi'},
-      {dir: 'west', id: '35-madi'},
-    ]
-  },
-  {
-    id: '34-park',
-    coord: [],
-    name: 'E. 34th St. and Park Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-park'},
-      {dir: 'south', id: '33-park'},
-      {dir: 'east', id: '34-lexi'},
-      {dir: 'west', id: '34-madi'},
-    ]
-  },
-  {
-    id: '34-lexi',
-    coord: [],
-    name: 'E. 34th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-lexi'},
-      {dir: 'south', id: '33-lexi'},
-      {dir: 'east', id: '34-3'},
-      {dir: 'west', id: '34-park'},
-    ]
-  },
-  {
-    id: '35-lexi',
-    coord: [],
-    name: 'E. 35th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-lexi'},
-      {dir: 'south', id: '34-lexi'},
-      {dir: 'east', id: '35-3'},
-      {dir: 'west', id: '35-park'},
-    ]
-  },
-  {
-    id: '36-lexi',
-    coord: [],
-    name: 'E. 36th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-lexi'},
-      {dir: 'south', id: '35-lexi'},
-      {dir: 'east', id: '36-3'},
-      {dir: 'west', id: '36-park'},
-    ]
-  },
-  {
-    id: '37-lexi',
-    coord: [],
-    name: 'E. 37th St. and Lexington Ave.',
-    desc: `There is a luncheonette on the corner.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-lexi'},
-      {dir: 'south', id: '36-lexi'},
-      {dir: 'east', id: '37-3'},
-      {dir: 'west', id: '37-park'},
-      {dir: ['luncheonette', 'lunch'], id: '????'}
-    ]
-  },
-  {
-    id: '38-lexi',
-    coord: [],
-    name: 'E. 38th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-lexi'},
-      {dir: 'south', id: '37-lexi'},
-      {dir: 'east', id: '38-3'},
-      {dir: 'west', id: '38-park'},
-    ]
-  },
-  {
-    id: '39-lexi',
-    coord: [],
-    name: 'E. 39th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-lexi'},
-      {dir: 'south', id: '38-lexi'},
-      {dir: 'east', id: '39-3'},
-      {dir: 'west', id: '39-park'},
-    ]
-  },
-  {
-    id: '40-lexi',
-    coord: [],
-    name: 'E. 40th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-lexi'},
-      {dir: 'south', id: '39-lexi'},
-      {dir: 'east', id: '40-3'},
-      {dir: 'west', id: '40-park'},
-    ]
-  },
-  {
-    id: '41-lexi',
-    coord: [],
-    name: 'E. 41st St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-lexi'},
-      {dir: 'south', id: '40-lexi'},
-      {dir: 'east', id: '41-3'},
-      {dir: 'west', id: '41-park'},
-    ]
-  },
-  {
-    id: '42-lexi',
-    coord: [],
-    name: 'E. 42nd St. and Lexington Ave.',
-    desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-lexi'},
-      {dir: 'south', id: '41-lexi'},
-      {dir: 'east', id: '42-3'},
-      {dir: 'west', id: '41-depe'},
-    ]
-  },
-  {
-    id: '42-depe',
-    coord: [],
-    name: 'E. 2nd St. and Depew Pl.',
-    desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-depe'},
-      {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
-      {dir: 'east', id: '42-lexi'},
-      {dir: 'west', id: '42-park'},
-      {id: ['grand', 'central', 'station', 'subway'], id: 'gran-cent'}
-    ]
-  },
-  {
-    id: '44-depe',
-    coord: [],
-    name: 'E. 44th St. and Depew Pl.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-depe'},
-      {dir: 'south', id: '42-depe'},
-      {dir: 'east', id: '44-lexi'},
-      {dir: 'west', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '45-depe',
-    coord: [],
-    name: 'E. 45th St. and Depew Pl.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-depe'},
-      {dir: 'south', id: '44-depe'},
-      {dir: 'east', id: '45-lexi'},
-      {dir: 'west', id: '45-park'},
-    ]
-  },
-  {
-    id: '46-depe',
-    coord: [],
-    name: 'E. 46th St. and Depew Pl.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '45-depe'},
-      {dir: 'east', id: '46-lexi'},
-      {dir: 'west', id: '46-park'},
-    ]
-  },
-  {
-    id: '43-lexi',
-    coord: [],
-    name: 'E. 43rd St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-lexi'},
-      {dir: 'south', id: '42-lexi'},
-      {dir: 'east', id: '43-3'},
-      {dir: 'west', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '44-lexi',
-    coord: [],
-    name: 'E. 44th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-lexi'},
-      {dir: 'south', id: '43-lexi'},
-      {dir: 'east', id: '44-3'},
-      {dir: 'west', id: '44-depe'},
-    ]
-  },
-  {
-    id: '45-lexi',
-    coord: [],
-    name: 'E. 45th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-lexi'},
-      {dir: 'south', id: '44-lexi'},
-      {dir: 'east', id: '45-3'},
-      {dir: 'west', id: '45-depe'},
-    ]
-  },
-  {
-    id: '46-lexi',
-    coord: [],
-    name: 'E. 46th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-lexi'},
-      {dir: 'south', id: '45-lexi'},
-      {dir: 'east', id: '46-3'},
-      {dir: 'west', id: '46-depe'},
-    ]
-  },
-  {
-    id: '47-lexi',
-    coord: [],
-    name: 'E. 47th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-lexi'},
-      {dir: 'south', id: '46-lexi'},
-      {dir: 'east', id: '47-3'},
-      {dir: 'west', id: '47-park'},
-    ]
-  },
-  {
-    id: '48-lexi',
-    coord: [],
-    name: 'E. 48th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-lexi'},
-      {dir: 'south', id: '47-lexi'},
-      {dir: 'east', id: '48-3'},
-      {dir: 'west', id: '48-park'},
-    ]
-  },
-  {
-    id: '49-lexi',
-    coord: [],
-    name: 'E. 49th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-lexi'},
-      {dir: 'south', id: '48-lexi'},
-      {dir: 'east', id: '49-3'},
-      {dir: 'west', id: '49-park'},
-    ]
-  },
-  {
-    id: '50-lexi',
-    coord: [],
-    name: 'E. 50th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-lexi'},
-      {dir: 'south', id: '49-lexi'},
-      {dir: 'east', id: '50-3'},
-      {dir: 'west', id: '50-park'},
-    ]
-  },
-  {
-    id: '51-lexi',
-    coord: [],
-    name: 'E. 51st St. and Lexington Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '52-lexi'},
-      {dir: 'south', id: '50-lexi'},
-      {dir: 'east', id: '51-3'},
-      {dir: 'west', id: '51-park'},
-      {dir: ['subway'], id: '????'}
-    ]
-  },
-  {
-    id: '52-lexi',
-    coord: [],
-    name: 'E. 52nd St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-lexi'},
-      {dir: 'south', id: '51-lexi'},
-      {dir: 'east', id: '52-3'},
-      {dir: 'west', id: '52-park'},
-    ]
-  },
-  {
-    id: '53-lexi',
-    coord: [],
-    name: 'E. 53rd St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-lexi'},
-      {dir: 'south', id: '52-lexi'},
-      {dir: 'east', id: '53-3'},
-      {dir: 'west', id: '53-park'},
-    ]
-  },
-  {
-    id: '54-lexi',
-    coord: [],
-    name: 'E. 54th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-lexi'},
-      {dir: 'south', id: '53-lexi'},
-      {dir: 'east', id: '54-3'},
-      {dir: 'west', id: '54-park'},
-    ]
-  },
-  {
-    id: '55-lexi',
-    coord: [],
-    name: 'E. 55th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-lexi'},
-      {dir: 'south', id: '54-lexi'},
-      {dir: 'east', id: '55-3'},
-      {dir: 'west', id: '55-park'},
-    ]
-  },
-  {
-    id: '56-lexi',
-    coord: [],
-    name: 'E. 56th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-lexi'},
-      {dir: 'south', id: '55-lexi'},
-      {dir: 'east', id: '56-3'},
-      {dir: 'west', id: '56-park'},
-    ]
-  },
-  {
-    id: '57-lexi',
-    coord: [],
-    name: 'E. 57th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-lexi'},
-      {dir: 'south', id: '56-lexi'},
-      {dir: 'east', id: '57-3'},
-      {dir: 'west', id: '57-park'},
-    ]
-  },
-  {
-    id: '58-lexi',
-    coord: [],
-    name: 'E. 58th St. and Lexington Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-lexi'},
-      {dir: 'south', id: '57-lexi'},
-      {dir: 'east', id: '58-3'},
-      {dir: 'west', id: '58-park'},
-    ]
-  },
-  {
-    id: '59-lexi',
-    coord: [],
-    name: 'Central Park S. and Lexington Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '60-lexi'},
-      {dir: 'south', id: '58-lexi'},
-      {dir: 'east', id: '59-3'},
-      {dir: 'west', id: '59-park'},
-    ]
-  },
-  {
-    id: '59-3',
-    coord: [],
-    name: 'Central Park S. and 3rd Ave.',
-    desc: `There is a subway entrance at this corner.`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '60-3'},
-      {dir: 'south', id: '58-3'},
-      {dir: 'east', id: '59-2'},
-      {dir: 'west', id: '59-lexi'},
-    ]
-  },
-  {
-    id: '58-3',
-    coord: [],
-    name: 'E. 58th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-3'},
-      {dir: 'south', id: '57-3'},
-      {dir: 'east', id: '58-2'},
-      {dir: 'west', id: '58-lexi'},
-    ]
-  },
-  {
-    id: '57-3',
-    coord: [],
-    name: 'E. 57th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-3'},
-      {dir: 'south', id: '56-3'},
-      {dir: 'east', id: '57-2'},
-      {dir: 'west', id: '57-lexi'},
-    ]
-  },
-  {
-    id: '56-3',
-    coord: [],
-    name: 'E. 56th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-3'},
-      {dir: 'south', id: '55-3'},
-      {dir: 'east', id: '56-2'},
-      {dir: 'west', id: '56-lexi'},
-    ]
-  },
-  {
-    id: '55-3',
-    coord: [],
-    name: 'E. 55th St. and 3rd Ave.',
-    desc: `There is a luncheonette on the corner`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-3'},
-      {dir: 'south', id: '54-3'},
-      {dir: 'east', id: '55-2'},
-      {dir: 'west', id: '55-lexi'},
-      {dir: ['luncheonette'], id: 'lunc'}
-    ]
-  },
-  {
-    id: '54-3',
-    coord: [],
-    name: 'E. 54th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-3'},
-      {dir: 'south', id: '53-3'},
-      {dir: 'east', id: '54-2'},
-      {dir: 'west', id: '54-lexi'},
-    ]
-  },
-  {
-    id: '53-3',
-    coord: [],
-    name: 'E. 53rd St. and 3rd Ave.',
-    desc: `There is a subway entrance at this corner`,
-    isStreets: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '54-3'},
-      {dir: 'south', id: '52-3'},
-      {dir: 'east', id: '53-2'},
-      {dir: 'west', id: '53-lexi'},
-      {dir: ['subway'], id: '????'}
-    ]
-  },
-  {
-    id: '52-3',
-    coord: [],
-    name: 'E. 52nd St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-3'},
-      {dir: 'south', id: '51-3'},
-      {dir: 'east', id: '52-2'},
-      {dir: 'west', id: '52-lexi'},
-    ]
-  },
-  {
-    id: '51-3',
-    coord: [],
-    name: 'E. 51st St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '52-3'},
-      {dir: 'south', id: '50-3'},
-      {dir: 'east', id: '51-2'},
-      {dir: 'west', id: '51-lexi'},
-    ]
-  },
-  {
-    id: '50-3',
-    coord: [],
-    name: 'E. 50th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-3'},
-      {dir: 'south', id: '49-3'},
-      {dir: 'east', id: '50-2'},
-      {dir: 'west', id: '50-lexi'},
-    ]
-  },
-  {
-    id: '49-3',
-    coord: [],
-    name: 'E. 49th St. and 3rd Ave.',
-    desc: `There is a luncheonette on the corner.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-3'},
-      {dir: 'south', id: '48-3'},
-      {dir: 'east', id: '49-2'},
-      {dir: 'west', id: '49-lexi'},
-      {dir: ['luncheonette'], id: 'lunc'}
-    ]
-  },
-  {
-    id: '48-3',
-    coord: [],
-    name: 'E. 48th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-3'},
-      {dir: 'south', id: '47-3'},
-      {dir: 'east', id: '48-2'},
-      {dir: 'west', id: '48-lexi'},
-    ]
-  },
-  {
-    id: '47-3',
-    coord: [],
-    name: 'E. 47th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-3'},
-      {dir: 'south', id: '46-3'},
-      {dir: 'east', id: '47-2'},
-      {dir: 'west', id: '47-lexi'},
-    ]
-  },
-  {
-    id: '46-3',
-    coord: [],
-    name: 'E. 46th St. and 3rd Ave.',
-    desc: `There is a lunchonette on the corner.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-3'},
-      {dir: 'south', id: '45-3'},
-      {dir: 'east', id: '46-2'},
-      {dir: 'west', id: '46-lexi'},
-      {dir: ['luncheonette'], id: 'lunc'}
-    ]
-  },
-  {
-    id: '45-3',
-    coord: [],
-    name: 'E. 45th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-3'},
-      {dir: 'south', id: '44-3'},
-      {dir: 'east', id: '45-2'},
-      {dir: 'west', id: '45-lexi'},
-    ]
-  },
-  {
-    id: '44-3',
-    coord: [],
-    name: 'E. 44th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-3'},
-      {dir: 'south', id: '43-3'},
-      {dir: 'east', id: '44-2'},
-      {dir: 'west', id: '44-lexi'},
-    ]
-  },
-  {
-    id: '43-3',
-    coord: [],
-    name: 'E. 43rd St. and 3rd Ave.',
-    desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-3'},
-      {dir: 'south', id: '42-3'},
-      {dir: 'east', id: '43-2'},
-      {dir: 'west', id: '43-lexi'},
-      {dir: ['ford', 'foundation','building'], id: '????'}
-    ]
-  },
-  {
-    id: '42-3',
-    coord: [],
-    name: 'E. 42nd St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-3'},
-      {dir: 'south', id: '41-3'},
-      {dir: 'east', id: '42-2'},
-      {dir: 'west', id: '42-lexi'},
-    ]
-  },
-  {
-    id: '41-3',
-    coord: [],
-    name: 'E. 41st St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-3'},
-      {dir: 'south', id: '40-3'},
-      {dir: 'east', id: '41-2'},
-      {dir: 'west', id: '41-lexi'},
-    ]
-  },
-  {
-    id: '40-3',
-    coord: [],
-    name: 'E. 40th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-3'},
-      {dir: 'south', id: '39-3'},
-      {dir: 'east', id: '40-2'},
-      {dir: 'west', id: '40-lexi'},
-    ]
-  },
-  {
-    id: '39-3',
-    coord: [],
-    name: 'E. 39th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-3'},
-      {dir: 'south', id: '38-3'},
-      {dir: 'east', id: '39-qout'},
-      {dir: 'west', id: '39-lexi'},
-    ]
-  },
-  {
-    id: '38-3',
-    coord: [],
-    name: 'E. 38th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-3'},
-      {dir: 'south', id: '37-3'},
-      {dir: 'east', id: '38-qout'},
-      {dir: 'west', id: '38-lexi'},
-    ]
-  },
-  {
-    id: '37-3',
-    coord: [],
-    name: 'E. 37th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-3'},
-      {dir: 'south', id: '36-3'},
-      {dir: 'east', id: '37-qout'},
-      {dir: 'west', id: '37-lexi'},
-    ]
-  },
-  {
-    id: '36-3',
-    coord: [],
-    name: 'E. 36th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-3'},
-      {dir: 'south', id: '35-3'},
-      {dir: 'east', id: '36-qout'},
-      {dir: 'west', id: '36-lexi'},
-    ]
-  },
-  {
-    id: '35-3',
-    coord: [],
-    name: 'E. 35th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-3'},
-      {dir: 'south', id: '34-3'},
-      {dir: 'east', id: '35-qout'},
-      {dir: 'west', id: '35-lexi'},
-    ]
-  },
-  {
-    id: '34-3',
-    coord: [],
-    name: 'E. 34th St. and 3rd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-3'},
-      {dir: 'south', id: '33-3'},
-      {dir: 'east', id: '34-qout'},
-      {dir: 'west', id: '34-lexi'},
-    ]
-  },
-  {
-    id: '35-qout',
-    coord: [],
-    name: 'E. 35th St. and Queens Tunnel out',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-qout'},
-      {dir: 'south', id: '34-qout'},
-      {dir: 'east', id: '35-2'},
-      {dir: 'west', id: '35-3'},
-    ]
-  },
-  {
-    id: '36-qout',
-    coord: [],
-    name: 'E. 36th St. and Queens Tunnel out',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-qout'},
-      {dir: 'south', id: '35-qout'},
-      {dir: 'east', id: '36-2'},
-      {dir: 'west', id: '36-3'},
-    ]
-  },
-  {
-    id: '37-qout',
-    coord: [],
-    name: 'E. 36th St. and Queens Tunnel out',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-qout'},
-      {dir: 'south', id: '36-qout'},
-      {dir: 'east', id: '37-2'},
-      {dir: 'west', id: '37-3'},
-    ]
-  },
-  {
-    id: '38-qout',
-    coord: [],
-    name: 'E. 38th St. and Queens Tunnel out',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-qout'},
-      {dir: 'south', id: '37-qout'},
-      {dir: 'east', id: '38-2'},
-      {dir: 'west', id: '38-3'},
-    ]
-  },
-  {
-    id: '39-qout',
-    coord: [],
-    name: 'E. 39th St. and Queens Tunnel out',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '38-qout'},
-      {dir: 'east', id: '39-2'},
-      {dir: 'west', id: '39-3'},
-    ]
-  },
-  {
-    id: '34-2',
-    coord: [],
-    name: 'E. 34th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '35-2'},
-      {dir: 'south', id: '33-2'},
-      {dir: 'east', id: '34-qin'},
-      {dir: 'west', id: '34-qout'},
-    ]
-  },
-  {
-    id: '35-2',
-    coord: [],
-    name: 'E. 35th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', d: '36-2'},
-      {dir: 'south', id: '34-2'},
-      {dir: 'east', id: '35-qin'},
-      {dir: 'west', id: '35-qout'},
-    ]
-  },
-  {
-    id: '36-2',
-    coord: [],
-    name: 'E. 36th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-2'},
-      {dir: 'south', id: '35-2'},
-      {dir: 'east', id: '36-qin'},
-      {dir: 'west', id: '36-qout'},
-    ]
-  },
-  {
-    id: '37-2',
-    coord: [],
-    name: 'E. 37th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-2'},
-      {dir: 'south', id: '36-2'},
-      {dir: 'east', id: '37-qin'},
-      {dir: 'west', id: '37-qout'},
-    ]
-  },
-  {
-    id: '38-2',
-    coord: [],
-    name: 'E. 38th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-2'},
-      {dir: 'south', id: '37-2'},
-      {dir: 'east', id: '38-1'},
-      {dir: 'west', id: '38-qout'},
-    ]
-  },
-  {
-    id: '39-2',
-    coord: [],
-    name: 'E. 39th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-2'},
-      {dir: 'south', id: '38-2'},
-      {dir: 'east', id: '39-tudo'},
-      {dir: 'west', id: '39-qout'},
-    ]
-  },
-  {
-    id: '40-2',
-    coord: [],
-    name: 'E. 40th St. and 2nd Ave.',
-    desc: `There is a luncheonette on the corner`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-2'},
-      {dir: 'south', id: '39-2'},
-      {dir: 'east', id: '40-tudo'},
-      {dir: 'west', id: '40-3'},
-      {dir: ['luncheonette', 'lunch'], id: '????'}
+    {
+      id: '53-5',
+      coord: [],
+      name: 'W. 53rd St, and 5th Ave.',
+      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-5'},
+        {dir: 'south', id: '52-5'},
+        {dir: 'east', id: '53-madi'},
+        {dir: 'west', id: '53-amer'}, 
+        {dir: ['Sunderland', 'hotel'], id: '????'},
       ]
-  },
-  {
-    id: '41-2',
-    coord: [],
-    name: 'E. 41st St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-2'},
-      {dir: 'south', id: '40-2'},
-      {dir: 'east', id: '41-tudo'},
-      {dir: 'west', id: '41-3'},
-    ]
-  },
-  {
-    id: '42-2',
-    coord: [],
-    name: 'E. 42nd St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-2'},
-      {dir: 'south', id: '41-2'},
-      {dir: 'east', id: '42-tudo'},
-      {dir: 'west', id: '42-3'},
-    ]
-  },
-  {
-    id: '43-2',
-    coord: [],
-    name: 'E. 43rd St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-2'},
-      {dir: 'south', id: '42-2'},
-      {dir: 'east', id: '43-tudo'},
-      {dir: 'west', id: '43-3'},
-    ]
-  },
-  {
-    id: '44-2',
-    coord: [],
-    name: 'E. 44th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-2'},
-      {dir: 'south', id: '43-2'},
-      {dir: 'east', id: '44-1'},
-      {dir: 'west', id: '44-3'},
-    ]
-  },
-  {
-    id: '45-2',
-    coord: [],
-    name: 'E. 45th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-2'},
-      {dir: 'south', id: '44-2'},
-      {dir: 'east', id: '45-1'},
-      {dir: 'west', id: '45-3'},
-    ]
-  },
-  {
-    id: '46-2',
-    coord: [],
-    name: 'E. 46th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-2'},
-      {dir: 'south', id: '45-2'},
-      {dir: 'east', id: '46-1'},
-      {dir: 'west', id: '46-3'},
-    ]
-  },
-  {
-    id: '47-2',
-    coord: [],
-    name: 'E. 47th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-2'},,
-      {dir: 'south', id: '46-2'},
-      {dir: 'east', id: '47-1'},
-      {dir: 'west', id: '47-3'},
-    ]
-  },
-  {
-    id: '48-2',
-    coord: [],
-    name: 'E. 48th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-2'},,
-      {dir: 'south', id: '47-2'},
-      {dir: 'east', id: '48-1'},
-      {dir: 'west', id: '48-3'},
-    ]
-  },
-  {
-    id: '49-2',
-    coord: [],
-    name: 'E. 49th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-2'},,
-      {dir: 'south', id: '48-2'},
-      {dir: 'east', id: '49-1'},
-      {dir: 'west', id: '49-3'},
-    ]
-  },
-  {
-    id: '50-2',
-    coord: [],
-    name: 'E. 50th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-2'},,
-      {dir: 'south', id: '49-2'},
-      {dir: 'east', id: '50-1'},
-      {dir: 'west', id: '50-3'},
-    ]
-  },
-  {
-    id: '51-2',
-    coord: [],
-    name: 'E. 51st St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '52-2'},,
-      {dir: 'south', id: '50-2'},
-      {dir: 'east', id: '51-1'},
-      {dir: 'west', id: '51-3'},
-    ]
-  },
-  {
-    id: '52-2',
-    coord: [],
-    name: 'E. 52nd St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-2'},,
-      {dir: 'south', id: '51-2'},
-      {dir: 'east', id: '52-1'},
-      {dir: 'west', id: '52-3'},
-    ]
-  },
-  {
-    id: '53-2',
-    coord: [],
-    name: 'E. 53rd St. and 2nd Ave.',
-    desc: `There is a luncheonette on the corner.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-2'},,
-      {dir: 'south', id: '52-2'},
-      {dir: 'east', id: '53-1'},
-      {dir: 'west', id: '53-3'},
-    ]
-  },
-  {
-    id: '54-2',
-    coord: [],
-    name: 'E. 54th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-2'},,
-      {dir: 'south', id: '53-2'},
-      {dir: 'east', id: '54-1'},
-      {dir: 'west', id: '54-3'},
-    ]
-  },
-  {
-    id: '55-2',
-    coord: [],
-    name: 'E. 55th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-2'},,
-      {dir: 'south', id: '54-2'},
-      {dir: 'east', id: '55-1'},
-      {dir: 'west', id: '55-3'},
-    ]
-  },
-  {
-    id: '56-2',
-    coord: [],
-    name: 'E. 56th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-2'},,
-      {dir: 'south', id: '55-2'},
-      {dir: 'east', id: '56-1'},
-      {dir: 'west', id: '56-3'},
-    ]
-  },
-  {
-    id: '57-2',
-    coord: [],
-    name: 'E. 57th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-2'},,
-      {dir: 'south', id: '56-2'},
-      {dir: 'east', id: '57-quen'},
-      {dir: 'west', id: '57-3'},
-    ]
-  },
-  {
-    id: '58-2',
-    coord: [],
-    name: 'E. 58th St. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-2'},,
-      {dir: 'south', id: '57-2'},
-      {dir: 'east', id: '58-quen'},
-      {dir: 'west', id: '58-3'},
-    ]
-  },
-  {
-    id: '59-2',
-    coord: [],
-    name: 'Central Park S. and 2nd Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: 'quee-2'},,
-      {dir: 'south', id: '58-2'},
-      {dir: 'east', id: '59-quen'},
-      {dir: 'west', id: '59-3'},
-    ]
-  },
-  {
-    id: '59-quen',
-    coord: [],
-    name: 'E. 59th St. and Queensboro Bridge In',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '60-quee'},,
-      {dir: 'south', id: '58-quen'},
-      {dir: 'east', id: '59-1'},
-      {dir: 'west', id: '59-2'},
-    ]
-  },
-  {
-    id: '58-quen',
-    coord: [],
-    name: 'E. 58th St. and Queensboro Bridge In',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-quen'},,
-      {dir: 'south', id: '57-quen'},
-      {dir: 'east', id: '58-1'},
-      {dir: 'west', id: '58-2'},
-    ]
-  },
-  {
-    id: '57-quen',
-    coord: [],
-    name: 'E. 57th St. and Queensboro Bridge In',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-quen'},,
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', id: '57-1'},
-      {dir: 'west', id: '57-2'},
-    ]
-  },
-  {
-    id: '59-1',
-    coord: [],
-    name: 'Central Park S. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '60-1'},,
-      {dir: 'south', id: '58-1'},
-      {dir: 'east', id: '59-sutt'},
-      {dir: 'west', id: '59-quen'},
-    ]
-  },
-  {
-    id: '58-1',
-    coord: [],
-    name: 'E. 58th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-1'},,
-      {dir: 'south', id: '57-1'},
-      {dir: 'east', id: '58-sutt'},
-      {dir: 'west', id: '58-quen'},
-    ]
-  },
-  {
-    id: '57-1',
-    coord: [],
-    name: 'E. 57th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-1'},,
-      {dir: 'south', id: '56-1'},
-      {dir: 'east', id: '57-sutt'},
-      {dir: 'west', id: '57-quen'},
-    ]
-  },
-  {
-    id: '56-1',
-    coord: [],
-    name: 'E. 56th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-1'},,
-      {dir: 'south', id: '55-1'},
-      {dir: 'east', id: '56-sutt'},
-      {dir: 'west', id: '56-2'},
-    ]
-  },
-  {
-    id: '55-1',
-    coord: [],
-    name: 'E. 55th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '56-1'},,
-      {dir: 'south', id: '54-1'},
-      {dir: 'east', id: '55-sutt'},
-      {dir: 'west', id: '55-2'},
-    ]
-  },
-  {
-    id: '54-1',
-    coord: [],
-    name: 'E. 54th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-1'},
-      {dir: 'south', id: '53-1'},
-      {dir: 'east', id: '54-sutt'},
-      {dir: 'west', id: '54-2'},
-    ]
-  },
-  {
-    id: '53-1',
-    coord: [],
-    name: 'E. 53rd St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-1'},
-      {dir: 'south', id: '52-1'},
-      {dir: 'east', id: '53-sutt'},
-      {dir: 'west', id: '53-2'},
-    ]
-  },
-  {
-    id: '52-1',
-    coord: [],
-    name: 'E. 52nd St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '53-1'},
-      {dir: 'south', id: '51-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '52-2'},
-    ]
-  },
-  {
-    id: '51-1',
-    coord: [],
-    name: 'E. 51st St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '52-1'},
-      {dir: 'south', id: '50-1'},
-      {dir: 'east', id: '51-beek'},
-      {dir: 'west', id: '51-2'},
-    ]
-  },
-  {
-    id: '50-1',
-    coord: [],
-    name: 'E. 50th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-1'},
-      {dir: 'south', id: '49-1'},
-      {dir: 'east', id: '50-beek'},
-      {dir: 'west', id: '50-2'},
-    ]
-  },
-  {
-    id: '49-1',
-    coord: [],
-    name: 'E. 49th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-1'},
-      {dir: 'south', id: '48-1'},
-      {dir: 'east', id: '49-beek'},
-      {dir: 'west', id: '49-2'},
-    ]
-  },
-  {
-    id: '48-1',
-    coord: [],
-    name: 'E. 48th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '49-1'},
-      {dir: 'south', id: '47-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '48-2'},
-    ]
-  },
-  {
-    id: '47-1',
-    coord: [],
-    name: 'E. 47th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '48-1'},
-      {dir: 'south', id: '46-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '47-2'},
-    ]
-  },
-  {
-    id: '46-1',
-    coord: [],
-    name: 'E. 46th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '47-1'},
-      {dir: 'south', id: '45-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '46-2'},
-    ]
-  },
-  {
-    id: '45-1',
-    coord: [],
-    name: 'E. 45th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '46-1'},
-      {dir: 'south', id: '44-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '45-2'},
-    ]
-  },
-  {
-    id: '44-1',
-    coord: [],
-    name: 'E. 44th St. and 1st Ave.',
-    desc: `The great green glass slab of the UN Secretariat looms over the swooping shape of the General Assembly Building. Flags of member nations snap in the wind that comes in from the East River. For a moment you wish you could be just an ordinary tourist so you could enjoy the vista the way it deserves. But the vista includes twenty assorted policemen, and you get the feeling this is nowhere to loiter.`,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '45-1'},
-      {dir: 'south', id: '43-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '44-2'},
-      {dir: ['UN', 'building', 'secretariat'], block: 'There is no point in going there.',
-          },
-    ]
-  },
-  {
-    id: '42-1',
-    coord: [],
-    name: 'E. 42nd St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '44-1'},
-      {dir: 'south', id: '41-1'},
-      {dir: 'east', id: '42-fdrd'},
-      {dir: 'west', id: '42-tudo'},
-    ]
-  },
-  {
-    id: '41-1',
-    coord: [],
-    name: 'E. 41st St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-1'},
-      {dir: 'south', id: '40-1'},
-      {dir: 'east', id: '41-fdrd'},
-      {dir: 'west', id: '41-tudo'},
-    ]
-  },
-  {
-    id: '40-1',
-    coord: [],
-    name: 'E. 40th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-1'},
-      {dir: 'south', id: '39-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '40-tudo'},
-    ]
-  },
-  {
-    id: '39-1',
-    coord: [],
-    name: 'E. 39th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-1'},
-      {dir: 'south', id: '38-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '39-tudo'},
-    ]
-  },
-  {
-    id: '38-1',
-    coord: [],
-    name: 'E. 38th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '39-1'},
-      {dir: 'south', id: '37-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '38-2'},
-    ]
-  },
-  {
-    id: '37-1',
-    coord: [],
-    name: 'E. 37th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '38-1'},
-      {dir: 'south', id: '36-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '37-qin'},
-    ]
-  },
-  {
-    id: '36-1',
-    coord: [],
-    name: 'E. 36th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '37-1'},
-      {dir: 'south', id: '35-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '36-qin'},
-    ]
-  },
-  {
-    id: '35-1',
-    coord: [],
-    name: 'E. 35th St. and 1st Ave.',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '36-1'},
-      {dir: 'south', id: '34-1'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '35-qin'},
-    ]
-  },
-  {
-    id: '39-tudo',
-    coord: [],
-    name: 'E. 39th St. and Tudor Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '40-tudo'},
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', id: '39-1'},
-      {dir: 'west', id: '39-2'},
-    ]
-  },
-  {
-    id: '40-tudo',
-    coord: [],
-    name: 'E. 40th St. and Tudor Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '41-tudo'},
-      {dir: 'south', id: '39-tudo'},
-      {dir: 'east', id: '40-1'},
-      {dir: 'west', id: '40-2'},
-    ]
-  },
-  {
-    id: '41-tudo',
-    coord: [],
-    name: 'E. 41st St. and Tudor Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '42-tudo'},
-      {dir: 'south', id: '40-tudo'},
-      {dir: 'east', id: '41-1'},
-      {dir: 'west', id: '41-2'},
-    ]
-  },
-  {
-    id: '42-tudo',
-    coord: [],
-    name: 'E. 42nd St. and Tudor Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '43-tudo'},
-      {dir: 'south', id: '41-tudo'},
-      {dir: 'east', id: '42-1'},
-      {dir: 'west', id: '42-2'},
-    ]
-  },
-  {
-    id: '43-tudo',
-    coord: [],
-    name: 'E. 40th St. and Tudor Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '42-tudo'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '43-2'},
-    ]
-  },
-  {
-    id: '41-fdrd',
-    coord: [],
-    name: 'E. 41st St. and FDR Drive',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '????'},
-      {dir: 'south', id: '????'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '41-1'},
-    ]
-  },
-  {
-    id: '42-fdrd',
-    coord: [],
-    name: 'E. 42nd St. and FDR Drive',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '????'},
-      {dir: 'south', id: '41-fdrd'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '42-1'},
-    ]
-  },
-  {
-    id: '49-beek',
-    coord: [],
-    name: 'E. 49th St. and Beekman Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '50-beek'},
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '49-1'},
-    ]
-  },
-  {
-    id: '50-beek',
-    coord: [],
-    name: 'E. 50th St. and Beekman Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '51-beek'},
-      {dir: 'south', id: '49-beek'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '50-1'},
-    ]
-  },
-  {
-    id: '51-beek',
-    coord: [],
-    name: 'E. 51st St. and Beekman Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', block: `You can't go that way.`},
-      {dir: 'south', id: '50-beek'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '51-1'},
-    ]
-  },
-  {
-    id: '53-sutt',
-    coord: [],
-    name: 'E. 53rd St. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '54-sutt'},
-      {dir: 'south', block: `You can't go that way.`},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '53-1'},
-    ]
-  },
-  {
-    id: '54-sutt',
-    coord: [],
-    name: 'E. 54th St. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '55-sutt'},
-      {dir: 'south', id: '53-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '54-1'},
-    ]
-  },
-  {
-    id: '55-sutt',
-    coord: [],
-    name: 'E. 55th St. and Sutton Place',
-    desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
-    exits: [
-      {dir: 'north', id: '56-sutt'},
-      {dir: 'south', id: '54-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '55-1'},
-      {dir: ['office', 'building', 'drawers', 'drawer'], block: `Finally you have to ask one of the attendants of the shrine, who stands behind the marble altar to INFORMATION. He gives you a fishy look and tells you to keep moving.`}
+    },
+    {
+      id: '54-5',
+      coord: [],
+      name: 'W. 54th St, and 5th Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '55-5'},
+        {dir: 'south', id: '53-5'},
+        {dir: 'east', id: '54-madi'},
+        {dir: 'west', id: '54-amer'}, 
+        {dir: ['subway'], id: '????'},
       ]
-  },
-  {
-    id: '56-sutt',
-    coord: [],
-    name: 'E. 56th St. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '57-sutt'},
-      {dir: 'south', id: '55-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '56-1'},
-    ]
-  },
-  {
-    id: '57-sutt',
-    coord: [],
-    name: 'E. 57th St. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '58-sutt'},
-      {dir: 'south', id: '56-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '57-1'},
-    ]
-  },
-  {
-    id: '58-sutt',
-    coord: [],
-    name: 'E. 58th St. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '59-sutt'},
-      {dir: 'south', id: '57-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '58-1'},
-    ]
-  },
-  {
-    id: '59-sutt',
-    coord: [],
-    name: 'Central Park S. and Sutton Place',
-    desc: ``,
-    isStreets: true,
-    exits: [
-      {dir: 'north', id: '????'},
-      {dir: 'south', id: '58-sutt'},
-      {dir: 'east', block: `You can't go that way.`},
-      {dir: 'west', id: '59-1'},
-    ]
-  },
+    },
+    {
+      id: '55-5',
+      coord: [],
+      name: 'W. 55th St, and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-5'},
+        {dir: 'south', id: '54-5'},
+        {dir: 'east', id: '55-madi'},
+        {dir: 'west', id: '55-amer'}, 
+      ]
+    },
+    {
+      id: '56-5',
+      coord: [],
+      name: 'W. 56th St, and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-5'},
+        {dir: 'south', id: '55-5'},
+        {dir: 'east', id: '56-madi'},
+        {dir: 'west', id: '56-amer'}, 
+      ]
+    },
+    {
+      id: '57-5',
+      coord: [],
+      name: 'W. 57th St, and 5th Ave.',
+      desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-5'},
+        {dir: 'south', id: '56-5'},
+        {dir: 'east', id: '57-madi'},
+        {dir: 'west', id: '57-amer'}, 
+      ]
+    },
+    {
+      id: '58-5',
+      coord: [],
+      name: 'W. 58th St, and 5th Ave.',
+      desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-5'},
+        {dir: 'south', id: '57-5'},
+        {dir: 'east', id: '58-madi'},
+        {dir: 'west', id: '58-amer'},
+        {dir: ['plaza', 'hotel'], id: 'plaz-hote'}
+      ]
+    },
+    {
+      id: 'plaz-hote',
+      coord: [],
+      name: 'Lobby of the Plaza Hotel',
+      desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don’t. You ignore the voice deep inside and leave with a sigh of regret.`,
+      isStreets: true,
+      exits:[],
+      onEnter: () => {
+        pressEnter('58-5')
+      },
+    },
+    {
+      id: '59-5',
+      coord: [],
+      name: 'Central Park S. and 5th Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '60-5'},
+        {dir: 'south', id: '58-5'},
+        {dir: 'east', id: '59-madi'},
+        {dir: 'west', id: '59-amer'},
+        {dir: ['subway'], id: '???'}
+      ]
+    },
+    {
+      id: '59-madi',
+      coord: [],
+      name: 'E. 59th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '60-madi'},
+        {dir: 'south', id: '58-madi'},
+        {dir: 'east', id: '59-park'},
+        {dir: 'west', id: '59-5'},
+      ]
+    },
+    {
+      id: '58-madi',
+      coord: [],
+      name: 'E. 58th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-madi'},
+        {dir: 'south', id: '57-madi'},
+        {dir: 'east', id: '58-park'},
+        {dir: 'west', id: '58-5'},
+      ]
+    },
+    {
+      id: '57-madi',
+      coord: [],
+      name: 'E. 57th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-madi'},
+        {dir: 'south', id: '56-madi'},
+        {dir: 'east', id: '57-park'},
+        {dir: 'west', id: '57-5'},
+      ]
+    },
+    {
+      id: '56-madi',
+      coord: [],
+      name: 'E. 56th St. and Madison Ave.',
+      desc: `The sign above the store's front window, written in letters that imitate a dot-matrix printout, says: User-Friendly Computer Store.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-madi'},
+        {dir: 'south', id: '55-madi'},
+        {dir: 'east', id: '56-park'},
+        {dir: 'west', id: '56-5'},
+        {dir: ['computer', 'store'], id: 'user-frie'}
+      ]
+    },
+    {
+      id: '56-madi',
+      coord: [],
+      name: 'E. 56th St. and Madison Ave.',
+      desc: `As you come to the corner of Madison Avenue, you notice, halfway down the block a shop front that seems somehow familiar. The sign above the front window, written in letters that imitate a dot-matrix printout, says:
+
+            USER-FRIENDLY
+
+            COMPUTER STORE.`,
+      exits: [
+        {dir: 'north', id: '57-madi'},
+        {dir: 'south', id: '55-madi'},
+        {dir: 'east', id: '56-park'},
+        {dir: 'west', id: '56-5'},
+        {dir: ['computer', 'store', 'user', 'friendly'], id: 'user-frie'}
+      ]
+    },
+    {
+      id: '55-madi',
+      coord: [],
+      name: 'E. 55th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-madi'},
+        {dir: 'south', id: '54-madi'},
+        {dir: 'east', id: '55-park'},
+        {dir: 'west', id: '55-5'},
+      ]
+    },
+    {
+      id: '54-madi',
+      coord: [],
+      name: 'E. 54th St. and Madison Ave.',
+      desc: `There is a chock Full-O-Nuts at this intersection.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-madi'},
+        {dir: 'south', id: '53-madi'},
+        {dir: 'east', id: '54-park'},
+        {dir: 'west', id: '54-5'},
+        {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
+      ]
+    },
+    {
+      id: '53-madi',
+      coord: [],
+      name: 'E. 53rd St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-madi'},
+        {dir: 'south', id: '52-madi'},
+        {dir: 'east', id: '53-park'},
+        {dir: 'west', id: '53-5'},
+      ]
+    },
+    {
+      id: '52-madi',
+      coord: [],
+      name: 'E. 52nd St. and Madison Ave.',
+      desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-madi'},
+        {dir: 'south', id: '51-madi'},
+        {dir: 'east', id: '52-park'},
+        {dir: 'west', id: '52-5'},
+        {dir: ['park', 'plaza'], id: 'park-plaz'},
+      ]
+    },
+    {
+      id: '51-madi',
+      coord: [],
+      name: 'E. 51st St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '52-madi'},
+        {dir: 'south', id: '50-madi'},
+        {dir: 'east', id: '51-park'},
+        {dir: 'west', id: '51-5'},
+      ]
+    },
+    {
+      id: '50-madi',
+      coord: [],
+      name: 'E. 50th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-madi'},
+        {dir: 'south', id: '49-madi'},
+        {dir: 'east', id: '50-park'},
+        {dir: 'west', id: '50-5'},
+      ]
+    },
+    {
+      id: '49-madi',
+      coord: [],
+      name: 'E. 49th St. and Madison Ave.',
+      desc: `There is a chock Full-O-Nuts at this intersection.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-madi'},
+        {dir: 'south', id: '48-madi'},
+        {dir: 'east', id: '49-park'},
+        {dir: 'west', id: '49-5'},
+        {dir: ['chock', 'full-o-nuts',], id: 'choc-nuts'}
+      ]
+    },
+    {
+      id: '48-madi',
+      coord: [],
+      name: 'E. 48th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-madi'},
+        {dir: 'south', id: '47-madi'},
+        {dir: 'east', id: '48-park'},
+        {dir: 'west', id: '48-5'},
+      ]
+    },
+    {
+      id: '47-madi',
+      coord: [],
+      name: 'E. 47th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-madi'},
+        {dir: 'south', id: '46-madi'},
+        {dir: 'east', id: '47-vand'},
+        {dir: 'west', id: '47-5'},
+      ]
+    },
+    {
+      id: '46-madi',
+      coord: [],
+      name: 'E. 46th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-madi'},
+        {dir: 'south', id: '45-madi'},
+        {dir: 'east', id: '46-vand'},
+        {dir: 'west', id: '46-5'},
+      ]
+    },
+    {
+      id: '45-madi',
+      coord: [],
+      name: 'E. 45th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-madi'},
+        {dir: 'south', id: '44-madi'},
+        {dir: 'east', id: '45-vand'},
+        {dir: 'west', id: '45-5'},
+      ]
+    },
+    {
+      id: '44-madi',
+      coord: [],
+      name: 'E. 44th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-madi'},
+        {dir: 'south', id: '43-madi'},
+        {dir: 'east', id: '44-vand'},
+        {dir: 'west', id: '44-5'},
+      ]
+    },
+    {
+      id: '43-madi',
+      coord: [],
+      name: 'E. 43rd St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-madi'},
+        {dir: 'south', id: '42-madi'},
+        {dir: 'east', id: '43-vand'},
+        {dir: 'west', id: '43-5'},
+      ]
+    },
+    {
+      id: '42-madi',
+      coord: [],
+      name: 'E. 42nd St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-madi'},
+        {dir: 'south', id: '41-madi'},
+        {dir: 'east', id: '42-vand'},
+        {dir: 'west', id: '42-5'},
+      ]
+    },
+    {
+      id: '41-madi',
+      coord: [],
+      name: 'E. 41st St. and Madison Ave.',
+      desc: `There is a chock Full-O-Nuts at this intersection.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-madi'},
+        {dir: 'south', id: '40-madi'},
+        {dir: 'east', id: '41-park'},
+        {dir: 'west', id: '41-5'},
+        {dir: ['chock', 'full-o-nuts', 'enter'], id: 'choc-nuts'}
+      ]
+    },
+    {
+      id: '40-madi',
+      coord: [],
+      name: 'E. 40th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-madi'},
+        {dir: 'south', id: '39-madi'},
+        {dir: 'east', id: '40-park'},
+        {dir: 'west', id: '40-5'},
+      ]
+    },
+    {
+      id: '39-madi',
+      coord: [],
+      name: 'E. 39th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-madi'},
+        {dir: 'south', id: '38-madi'},
+        {dir: 'east', id: '39-park'},
+        {dir: 'west', id: '39-5'},
+      ]
+    },
+    {
+      id: '39-madi',
+      coord: [],
+      name: 'E. 39th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-madi'},
+        {dir: 'south', id: '38-madi'},
+        {dir: 'east', id: '39-park'},
+        {dir: 'west', id: '39-5'},
+      ]
+    },
+    {
+      id: '38-madi',
+      coord: [],
+      name: 'E. 38th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-madi'},
+        {dir: 'south', id: '37-madi'},
+        {dir: 'east', id: '38-park'},
+        {dir: 'west', id: '38-5'},
+      ]
+    },
+    {
+      id: '37-madi',
+      coord: [],
+      name: 'E. 37th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-madi'},
+        {dir: 'south', id: '36-madi'},
+        {dir: 'east', id: '37-park'},
+        {dir: 'west', id: '37-5'},
+      ]
+    },
+    {
+      id: '36-madi',
+      coord: [],
+      name: 'E. 36th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-madi'},
+        {dir: 'south', id: '35-madi'},
+        {dir: 'east', id: '36-park'},
+        {dir: 'west', id: '36-5'},
+      ]
+    },
+    {
+      id: '35-madi',
+      coord: [],
+      name: 'E. 35th St. and Madison Ave.',
+      desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-madi'},
+        {dir: 'south', id: '34-madi'},
+        {dir: 'east', id: '35-park'},
+        {dir: 'west', id: '35-5'},
+        {dir: [`Altman's`,], id: '????'},
+      ]
+    },
+    {
+      id: '34-madi',
+      coord: [],
+      name: 'E. 34th St. and Madison Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-madi'},
+        {dir: 'south', id: '33-madi'},
+        {dir: 'east', id: '34-park'},
+        {dir: 'west', id: '34-5'},
+      ]
+    },
+    {
+      id: '34-5',
+      coord: [],
+      name: 'W. 34th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-5'},
+        {dir: 'south', id: '33-5'},
+        {dir: 'east', id: '34-madi'},
+        {dir: 'west', id: '34-amer'},
+      ]
+    },
+    {
+      id: '35-5',
+      coord: [],
+      name: 'W. 35th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-5'},
+        {dir: 'south', id: '34-5'},
+        {dir: 'east', id: '35-madi'},
+        {dir: 'west', id: '35-amer'},
+      ]
+    },
+    {
+      id: '36-5',
+      coord: [],
+      name: 'W. 36th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-5'},
+        {dir: 'south', id: '35-5'},
+        {dir: 'east', id: '36-madi'},
+        {dir: 'west', id: '36-amer'},
+      ]
+    },
+    {
+      id: '37-5',
+      coord: [],
+      name: 'W. 37th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-5'},
+        {dir: 'south', id: '36-5'},
+        {dir: 'east', id: '37-madi'},
+        {dir: 'west', id: '37-amer'},
+      ]
+    },
+    {
+      id: '38-5',
+      coord: [],
+      name: 'W. 38th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-5'},
+        {dir: 'south', id: '37-5'},
+        {dir: 'east', id: '38-madi'},
+        {dir: 'west', id: '38-amer'},
+      ]
+    },
+    {
+      id: '38-5',
+      coord: [],
+      name: 'W. 38th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-5'},
+        {dir: 'south', id: '37-5'},
+        {dir: 'east', id: '38-madi'},
+        {dir: 'west', id: '38-amer'},
+      ]
+    },
+    {
+      id: '39-5',
+      coord: [],
+      name: 'W. 39th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-5'},
+        {dir: 'south', id: '38-5'},
+        {dir: 'east', id: '39-madi'},
+        {dir: 'west', id: '39-amer'},
+      ]
+    },
+    {
+      id: '40-5',
+      coord: [],
+      name: 'W. 40th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-5'},
+        {dir: 'south', id: '39-5'},
+        {dir: 'east', id: '40-madi'},
+        {dir: 'west', id: '40-amer'},
+      ]
+    },
+    {
+      id: '41-5',
+      coord: [],
+      name: 'W. 41st St. and 5th Ave.',
+      desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-5'},
+        {dir: 'south', id: '40-5'},
+        {dir: 'east', id: '41-madi'},
+        {dir: 'west', id: '41-amer'},
+        {dir: ['public', 'library',], id: 'publ-libr'}
+      ]
+    },
+    {
+      id: '42-5',
+      coord: [],
+      name: 'W. 42nd St. and 5th Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '43-5'},
+        {dir: 'south', id: '41-5'},
+        {dir: 'east', id: '42-madi'},
+        {dir: 'west', id: '42-amer'},
+        {dir: ['Subway'], id: '????'},
+      ]
+    },
+    {
+      id: '43-5',
+      coord: [],
+      name: 'W. 43rd St. and 5th Ave.',
+      desc: `here is the Princeton Club - distinctly a members only institution.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-5'},
+        {dir: 'south', id: '42-5'},
+        {dir: 'east', id: '43-madi'},
+        {dir: 'west', id: '43-amer'},
+        {dir: ['Princeton', 'Health', 'Club',], id: '????'},
+      ]
+    },
+    {
+      id: '44-5',
+      coord: [],
+      name: 'W. 44th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-5'},
+        {dir: 'south', id: '43-5'},
+        {dir: 'east', id: '44-madi'},
+        {dir: 'west', id: '44-amer'},
+      ]
+    },
+    {
+      id: '45-5',
+      coord: [],
+      name: 'W. 45th St. and 5th Ave.',
+      desc: `An ideal spot for a would-be traveler. This block is lined with offices of Qantas, British Airways, Northwest Orient, and Aeroflot.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-5'},
+        {dir: 'south', id: '44-5'},
+        {dir: 'east', id: '45-madi'},
+        {dir: 'west', id: '45-amer'},
+        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
+      ]
+    },
+    {
+      id: '46-5',
+      coord: [],
+      name: 'W. 46th St. and 5th Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-5'},
+        {dir: 'south', id: '45-5'},
+        {dir: 'east', id: '46-madi'},
+        {dir: 'west', id: '46-amer'},
+      ]
+    },
+    {
+      id: '47-5',
+      coord: [],
+      name: 'W. 47th St. and 5th Ave.',
+      desc: `You pause to consider the hollow hulk of a store that was once called Brentano's`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-5'},
+        {dir: 'south', id: '46-5'},
+        {dir: 'east', id: '47-madi'},
+        {dir: 'west', id: '47-amer'},
+        {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: '????'}
+      ]
+    },
+    {
+      id: 'bren',
+      coord: [],
+      name: '',
+      desc: ``,
+      isStreets: true,
+      exits:[]
+    },
+    {
+      id: '48-5',
+      coord: [],
+      name: 'W. 48th St. and 5th Ave.',
+      desc: `Here is Barnes-Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club .`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-5'},
+        {dir: 'south', id: '47-5'},
+        {dir: 'east', id: '48-madi'},
+        {dir: 'west', id: '48-amer'},
+        {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: '????'},
+        {dir: [`scriber's`, 'scribners'], id: 'scri',coord: [], block: '????'}
+      ]
+    },
+    {
+      id: 'barn-nobl',
+      coord: [],
+      name: '',
+      desc: ``,
+      isStreets: true,
+      exits:[]
+    },
+    {
+      id: 'scri',
+      coord: [],
+      name: '',
+      desc: ``,
+      isStreets: true,
+      exits:[]
+    },
+    {
+      id: '49-5',
+      coord: [],
+      name: 'W. 49th St. and 5th Ave.',
+      desc: `A statue of Atlas bearing the burden of the world reflects on your own mood as you pass the entrance to Rockefeller plaza.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-5'},
+        {dir: 'south', id: '48-5'},
+        {dir: 'east', id: '48-madi'},
+        {dir: 'west', id: '48-amer'},
+        {dir: [`rockefeller`, `plaza`], id: 'rock-plaz', block: '????'}
+      ]
+    },
+    {
+      id: 'rock-plaz',
+      coord: [],
+      name: 'Office Building Lobby',
+      desc: `You walk through the revolving doors, and enter a lobby decorated in marble. A security check-point near the elevators makes you think twice about remaining. 
+            
+            you turn away quickly and leave`,
+      onEnter: () => {
+        pressEnter('49-5')
+      }, 
+      exits:[]
+    },
+    {
+      id: '50-5',
+      coord: [],
+      name: 'W. 50th St. and 5th Ave.',
+      desc: `There is a chock Full-O-Nuts at this intersection.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-5'},
+        {dir: 'south', id: '49-5'},
+        {dir: 'east', id: '50-madi'},
+        {dir: 'west', id: '50-amer'},
+        {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
+      ]
+    },
+    {
+      id: '51-5',
+      coord: [],
+      name: 'W. 51st St. and 5th Ave.',
+      desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
+            `,
+      exits: [
+        {dir: 'north', id: '52-5'},
+        {dir: 'south', id: '50-5'},
+        {dir: 'east', id: '51-madi'},
+        {dir: 'west', id: '51-amer'},
+        {
+                    dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'],
+                    id: '????'}
+      ]
+    },
+    {
+      id: '52-5',
+      coord: [],
+      name: 'W. 52nd St. and 5th Ave.',
+      desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
+
+            There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
+      exits: [
+        {dir: 'north', id: '53-5'},
+        {dir: 'south', id: '51-5'},
+        {dir: 'east', id: '51-madi'},
+        {dir: 'west', id: '51-amer'},
+        {dir: ['21', 'club'], id: '????'}
+      ]
+    },
+    {
+      id: '59-park',
+      coord: [],
+      name: 'E. 59th St. and Park Ave.',
+      desc: `There is a restaurant called Nedicks here.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '60-park'},
+        {dir: 'south', id: '58-park'},
+        {dir: 'east', id: '59-lexi'},
+        {dir: 'west', id: '59-madi'},
+        {dir: ['nedick', 'restaurant', `nedick's`], id: 'nedi'}
+      ]
+    },
+    {
+      id: '58-park',
+      coord: [],
+      name: 'E. 58th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-park'},
+        {dir: 'south', id: '57-park'},
+        {dir: 'east', id: '58-lexi'},
+        {dir: 'west', id: '58-madi'},
+      ]
+    },
+    {
+      id: '57-park',
+      coord: [],
+      name: 'E. 57th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-park'},
+        {dir: 'south', id: '56-park'},
+        {dir: 'east', id: '57-lexi'},
+        {dir: 'west', id: '57-madi'},
+      ]
+    },
+    {
+      id: '56-park',
+      coord: [],
+      name: 'E. 56th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-park'},
+        {dir: 'south', id: '55-park'},
+        {dir: 'east', id: '56-lexi'},
+        {dir: 'west', id: '56-madi'},
+      ]
+    },
+    {
+      id: '55-park',
+      coord: [],
+      name: 'E. 55th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-park'},
+        {dir: 'south', id: '54-park'},
+        {dir: 'east', id: '55-lexi'},
+        {dir: 'west', id: '55-madi'},
+      ]
+    },
+    {
+      id: '54-park',
+      coord: [],
+      name: 'E. 54th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-park'},
+        {dir: 'south', id: '53-park'},
+        {dir: 'east', id: '54-lexi'},
+        {dir: 'west', id: '54-madi'},
+      ]
+    },
+    {
+      id: '53-park',
+      coord: [],
+      name: 'E. 53rd St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-park'},
+        {dir: 'south', id: '52-park'},
+        {dir: 'east', id: '53-lexi'},
+        {dir: 'west', id: '53-madi'},
+      ]
+    },
+    {
+      id: '52-park',
+      coord: [],
+      name: 'E. 52nd St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-park'},
+        {dir: 'south', id: '51-park'},
+        {dir: 'east', id: '52-lexi'},
+        {dir: 'west', id: '52-madi'},
+      ]
+    },
+    {
+      id: '51-park',
+      coord: [],
+      name: 'E. 51st St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '52-park'},
+        {dir: 'south', id: '50-park'},
+        {dir: 'east', id: '51-lexi'},
+        {dir: 'west', id: '51-madi'},
+      ]
+    },
+    {
+      id: '50-park',
+      coord: [],
+      name: 'E. 50th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-park'},
+        {dir: 'south', id: '49-park'},
+        {dir: 'east', id: '50-lexi'},
+        {dir: 'west', id: '50-madi'},
+      ]
+    },
+    {
+      id: '49-park',
+      coord: [],
+      name: 'E. 49th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-park'},
+        {dir: 'south', id: '48-park'},
+        {dir: 'east', id: '49-lexi'},
+        {dir: 'west', id: '49-madi'},
+      ]
+    },
+    {
+      id: '48-park',
+      coord: [],
+      name: 'E. 48th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-park'},
+        {dir: 'south', id: '47-park'},
+        {dir: 'east', id: '48-lexi'},
+        {dir: 'west', id: '48-madi'},
+      ]
+    },
+    {
+      id: '47-park',
+      coord: [],
+      name: 'E. 47th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-park'},
+        {dir: 'south', id: '46-park'},
+        {dir: 'east', id: '47-lexi'},
+        {dir: 'west', id: '47-vand'},
+      ]
+    },
+    {
+      id: '47-vand',
+      coord: [],
+      name: 'E. 47th St. and Vanderbilt Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '46-vand'},
+        {dir: 'east', id: '47-park'},
+        {dir: 'west', id: '47-madi'},
+      ]
+    },
+    {
+      id: '46-vand',
+      coord: [],
+      name: 'E. 46th St. and Vanderbilt Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-vand'},
+        {dir: 'south', id: '45-vand'},
+        {dir: 'east', id: '46-park'},
+        {dir: 'west', id: '46-madi'},
+      ]
+    },
+    {
+      id: '45-vand',
+      coord: [],
+      name: 'E. 45th St. and Vanderbilt Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-vand'},
+        {dir: 'south', id: '44-vand'},
+        {dir: 'east', id: '45-park'},
+        {dir: 'west', id: '45-madi'},
+      ]
+    },
+    {
+      id: '44-vand',
+      coord: [],
+      name: 'E. 44th St. and Vanderbilt Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-vand'},
+        {dir: 'south', id: '43-vand'},
+        {dir: 'east', id: '44-park'},
+        {dir: 'west', id: '44-madi'},
+      ]
+    },
+    {
+      id: '43-vand',
+      coord: [],
+      name: 'E. 43rd St. and Vanderbilt Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-vand'},
+        {dir: 'south', id: '42-vand'},
+        {dir: 'east', id: '43-park'},
+        {dir: 'west', id: '43-madi'},
+      ]
+    },
+    {
+      id: '42-vand',
+      coord: [],
+      name: 'E. 42nd St. and Vanderbilt Ave.',
+      desc: `Mobil Building – Nothing this tall could be made of silver, but you are tempted to think so. It is hard to realize that such a gleam can come from a metal as mundane as stainless steel.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-vand'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '42-park'},
+        {dir: 'west', id: '42-madi'},
+        {dir: ['mobil', 'building'], id: '????'}
+      ]
+    },
+    {
+      id: '46-park',
+      coord: [],
+      name: 'E. 46th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-park'},
+        {dir: 'south', id: '45-park'},
+        {dir: 'east', id: '46-depe'},
+        {dir: 'west', id: '46-vand'},
+      ]
+    },
+    {
+      id: '45-park',
+      coord: [],
+      name: 'E. 45th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-park'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '45-depe'},
+        {dir: 'west', id: '45-vand'},
+      ]
+    },
+    {
+      id: '42-park',
+      coord: [],
+      name: 'E. 42nd St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '41-park'},
+        {dir: 'east', id: '42-depe'},
+        {dir: 'west', id: '42-vand'},
+      ]
+    },
+    {
+      id: '41-park',
+      coord: [],
+      name: 'E. 41st St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-park'},
+        {dir: 'south', id: '40-park'},
+        {dir: 'east', id: '41-lexi'},
+        {dir: 'west', id: '41-madi'},
+      ]
+    },
+    {
+      id: '41-park',
+      coord: [],
+      name: 'E. 41st St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-park'},
+        {dir: 'south', id: '40-park'},
+        {dir: 'east', id: '41-lexi'},
+        {dir: 'west', id: '41-madi'},
+      ]
+    },
+    {
+      id: '40-park',
+      coord: [],
+      name: 'E. 40th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-park'},
+        {dir: 'south', id: '39-park'},
+        {dir: 'east', id: '40-lexi'},
+        {dir: 'west', id: '40-madi'},
+      ]
+    },
+    {
+      id: '39-park',
+      coord: [],
+      name: 'E. 39th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-park'},
+        {dir: 'south', id: '38-park'},
+        {dir: 'east', id: '39-lexi'},
+        {dir: 'west', id: '39-madi'},
+      ]
+    },
+    {
+      id: '38-park',
+      coord: [],
+      name: 'E. 38th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-park'},
+        {dir: 'south', id: '37-park'},
+        {dir: 'east', id: '38-lexi'},
+        {dir: 'west', id: '38-madi'},
+      ]
+    },
+    {
+      id: '37-park',
+      coord: [],
+      name: 'E. 37th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-park'},
+        {dir: 'south', id: '36-park'},
+        {dir: 'east', id: '37-lexi'},
+        {dir: 'west', id: '37-madi'},
+      ]
+    },
+    {
+      id: '36-park',
+      coord: [],
+      name: 'E. 36th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-park'},
+        {dir: 'south', id: '35-park'},
+        {dir: 'east', id: '36-lexi'},
+        {dir: 'west', id: '36-madi'},
+      ]
+    },
+    {
+      id: '35-park',
+      coord: [],
+      name: 'E. 35th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-park'},
+        {dir: 'south', id: '34-park'},
+        {dir: 'east', id: '35-lexi'},
+        {dir: 'west', id: '35-madi'},
+      ]
+    },
+    {
+      id: '34-park',
+      coord: [],
+      name: 'E. 34th St. and Park Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-park'},
+        {dir: 'south', id: '33-park'},
+        {dir: 'east', id: '34-lexi'},
+        {dir: 'west', id: '34-madi'},
+      ]
+    },
+    {
+      id: '34-lexi',
+      coord: [],
+      name: 'E. 34th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-lexi'},
+        {dir: 'south', id: '33-lexi'},
+        {dir: 'east', id: '34-3'},
+        {dir: 'west', id: '34-park'},
+      ]
+    },
+    {
+      id: '35-lexi',
+      coord: [],
+      name: 'E. 35th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-lexi'},
+        {dir: 'south', id: '34-lexi'},
+        {dir: 'east', id: '35-3'},
+        {dir: 'west', id: '35-park'},
+      ]
+    },
+    {
+      id: '36-lexi',
+      coord: [],
+      name: 'E. 36th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-lexi'},
+        {dir: 'south', id: '35-lexi'},
+        {dir: 'east', id: '36-3'},
+        {dir: 'west', id: '36-park'},
+      ]
+    },
+    {
+      id: '37-lexi',
+      coord: [],
+      name: 'E. 37th St. and Lexington Ave.',
+      desc: `There is a luncheonette on the corner.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-lexi'},
+        {dir: 'south', id: '36-lexi'},
+        {dir: 'east', id: '37-3'},
+        {dir: 'west', id: '37-park'},
+        {dir: ['luncheonette', 'lunch'], id: '????'}
+      ]
+    },
+    {
+      id: '38-lexi',
+      coord: [],
+      name: 'E. 38th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-lexi'},
+        {dir: 'south', id: '37-lexi'},
+        {dir: 'east', id: '38-3'},
+        {dir: 'west', id: '38-park'},
+      ]
+    },
+    {
+      id: '39-lexi',
+      coord: [],
+      name: 'E. 39th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-lexi'},
+        {dir: 'south', id: '38-lexi'},
+        {dir: 'east', id: '39-3'},
+        {dir: 'west', id: '39-park'},
+      ]
+    },
+    {
+      id: '40-lexi',
+      coord: [],
+      name: 'E. 40th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-lexi'},
+        {dir: 'south', id: '39-lexi'},
+        {dir: 'east', id: '40-3'},
+        {dir: 'west', id: '40-park'},
+      ]
+    },
+    {
+      id: '41-lexi',
+      coord: [],
+      name: 'E. 41st St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-lexi'},
+        {dir: 'south', id: '40-lexi'},
+        {dir: 'east', id: '41-3'},
+        {dir: 'west', id: '41-park'},
+      ]
+    },
+    {
+      id: '42-lexi',
+      coord: [],
+      name: 'E. 42nd St. and Lexington Ave.',
+      desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-lexi'},
+        {dir: 'south', id: '41-lexi'},
+        {dir: 'east', id: '42-3'},
+        {dir: 'west', id: '41-depe'},
+      ]
+    },
+    {
+      id: '42-depe',
+      coord: [],
+      name: 'E. 2nd St. and Depew Pl.',
+      desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-depe'},
+        {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
+        {dir: 'east', id: '42-lexi'},
+        {dir: 'west', id: '42-park'},
+        {id: ['grand', 'central', 'station', 'subway'], id: 'gran-cent'}
+      ]
+    },
+    {
+      id: '44-depe',
+      coord: [],
+      name: 'E. 44th St. and Depew Pl.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-depe'},
+        {dir: 'south', id: '42-depe'},
+        {dir: 'east', id: '44-lexi'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '45-depe',
+      coord: [],
+      name: 'E. 45th St. and Depew Pl.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-depe'},
+        {dir: 'south', id: '44-depe'},
+        {dir: 'east', id: '45-lexi'},
+        {dir: 'west', id: '45-park'},
+      ]
+    },
+    {
+      id: '46-depe',
+      coord: [],
+      name: 'E. 46th St. and Depew Pl.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '45-depe'},
+        {dir: 'east', id: '46-lexi'},
+        {dir: 'west', id: '46-park'},
+      ]
+    },
+    {
+      id: '43-lexi',
+      coord: [],
+      name: 'E. 43rd St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-lexi'},
+        {dir: 'south', id: '42-lexi'},
+        {dir: 'east', id: '43-3'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '44-lexi',
+      coord: [],
+      name: 'E. 44th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-lexi'},
+        {dir: 'south', id: '43-lexi'},
+        {dir: 'east', id: '44-3'},
+        {dir: 'west', id: '44-depe'},
+      ]
+    },
+    {
+      id: '45-lexi',
+      coord: [],
+      name: 'E. 45th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-lexi'},
+        {dir: 'south', id: '44-lexi'},
+        {dir: 'east', id: '45-3'},
+        {dir: 'west', id: '45-depe'},
+      ]
+    },
+    {
+      id: '46-lexi',
+      coord: [],
+      name: 'E. 46th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-lexi'},
+        {dir: 'south', id: '45-lexi'},
+        {dir: 'east', id: '46-3'},
+        {dir: 'west', id: '46-depe'},
+      ]
+    },
+    {
+      id: '47-lexi',
+      coord: [],
+      name: 'E. 47th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-lexi'},
+        {dir: 'south', id: '46-lexi'},
+        {dir: 'east', id: '47-3'},
+        {dir: 'west', id: '47-park'},
+      ]
+    },
+    {
+      id: '48-lexi',
+      coord: [],
+      name: 'E. 48th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-lexi'},
+        {dir: 'south', id: '47-lexi'},
+        {dir: 'east', id: '48-3'},
+        {dir: 'west', id: '48-park'},
+      ]
+    },
+    {
+      id: '49-lexi',
+      coord: [],
+      name: 'E. 49th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-lexi'},
+        {dir: 'south', id: '48-lexi'},
+        {dir: 'east', id: '49-3'},
+        {dir: 'west', id: '49-park'},
+      ]
+    },
+    {
+      id: '50-lexi',
+      coord: [],
+      name: 'E. 50th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-lexi'},
+        {dir: 'south', id: '49-lexi'},
+        {dir: 'east', id: '50-3'},
+        {dir: 'west', id: '50-park'},
+      ]
+    },
+    {
+      id: '51-lexi',
+      coord: [],
+      name: 'E. 51st St. and Lexington Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '52-lexi'},
+        {dir: 'south', id: '50-lexi'},
+        {dir: 'east', id: '51-3'},
+        {dir: 'west', id: '51-park'},
+        {dir: ['subway'], id: '????'}
+      ]
+    },
+    {
+      id: '52-lexi',
+      coord: [],
+      name: 'E. 52nd St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-lexi'},
+        {dir: 'south', id: '51-lexi'},
+        {dir: 'east', id: '52-3'},
+        {dir: 'west', id: '52-park'},
+      ]
+    },
+    {
+      id: '53-lexi',
+      coord: [],
+      name: 'E. 53rd St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-lexi'},
+        {dir: 'south', id: '52-lexi'},
+        {dir: 'east', id: '53-3'},
+        {dir: 'west', id: '53-park'},
+      ]
+    },
+    {
+      id: '54-lexi',
+      coord: [],
+      name: 'E. 54th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-lexi'},
+        {dir: 'south', id: '53-lexi'},
+        {dir: 'east', id: '54-3'},
+        {dir: 'west', id: '54-park'},
+      ]
+    },
+    {
+      id: '55-lexi',
+      coord: [],
+      name: 'E. 55th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-lexi'},
+        {dir: 'south', id: '54-lexi'},
+        {dir: 'east', id: '55-3'},
+        {dir: 'west', id: '55-park'},
+      ]
+    },
+    {
+      id: '56-lexi',
+      coord: [],
+      name: 'E. 56th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-lexi'},
+        {dir: 'south', id: '55-lexi'},
+        {dir: 'east', id: '56-3'},
+        {dir: 'west', id: '56-park'},
+      ]
+    },
+    {
+      id: '57-lexi',
+      coord: [],
+      name: 'E. 57th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-lexi'},
+        {dir: 'south', id: '56-lexi'},
+        {dir: 'east', id: '57-3'},
+        {dir: 'west', id: '57-park'},
+      ]
+    },
+    {
+      id: '58-lexi',
+      coord: [],
+      name: 'E. 58th St. and Lexington Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-lexi'},
+        {dir: 'south', id: '57-lexi'},
+        {dir: 'east', id: '58-3'},
+        {dir: 'west', id: '58-park'},
+      ]
+    },
+    {
+      id: '59-lexi',
+      coord: [],
+      name: 'Central Park S. and Lexington Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '60-lexi'},
+        {dir: 'south', id: '58-lexi'},
+        {dir: 'east', id: '59-3'},
+        {dir: 'west', id: '59-park'},
+      ]
+    },
+    {
+      id: '59-3',
+      coord: [],
+      name: 'Central Park S. and 3rd Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '60-3'},
+        {dir: 'south', id: '58-3'},
+        {dir: 'east', id: '59-2'},
+        {dir: 'west', id: '59-lexi'},
+      ]
+    },
+    {
+      id: '58-3',
+      coord: [],
+      name: 'E. 58th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-3'},
+        {dir: 'south', id: '57-3'},
+        {dir: 'east', id: '58-2'},
+        {dir: 'west', id: '58-lexi'},
+      ]
+    },
+    {
+      id: '57-3',
+      coord: [],
+      name: 'E. 57th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-3'},
+        {dir: 'south', id: '56-3'},
+        {dir: 'east', id: '57-2'},
+        {dir: 'west', id: '57-lexi'},
+      ]
+    },
+    {
+      id: '56-3',
+      coord: [],
+      name: 'E. 56th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-3'},
+        {dir: 'south', id: '55-3'},
+        {dir: 'east', id: '56-2'},
+        {dir: 'west', id: '56-lexi'},
+      ]
+    },
+    {
+      id: '55-3',
+      coord: [],
+      name: 'E. 55th St. and 3rd Ave.',
+      desc: `There is a luncheonette on the corner`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-3'},
+        {dir: 'south', id: '54-3'},
+        {dir: 'east', id: '55-2'},
+        {dir: 'west', id: '55-lexi'},
+        {dir: ['luncheonette'], id: 'lunc'}
+      ]
+    },
+    {
+      id: '54-3',
+      coord: [],
+      name: 'E. 54th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-3'},
+        {dir: 'south', id: '53-3'},
+        {dir: 'east', id: '54-2'},
+        {dir: 'west', id: '54-lexi'},
+      ]
+    },
+    {
+      id: '53-3',
+      coord: [],
+      name: 'E. 53rd St. and 3rd Ave.',
+      desc: `There is a subway entrance at this corner`,
+      isStreets: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '54-3'},
+        {dir: 'south', id: '52-3'},
+        {dir: 'east', id: '53-2'},
+        {dir: 'west', id: '53-lexi'},
+        {dir: ['subway'], id: '????'}
+      ]
+    },
+    {
+      id: '52-3',
+      coord: [],
+      name: 'E. 52nd St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-3'},
+        {dir: 'south', id: '51-3'},
+        {dir: 'east', id: '52-2'},
+        {dir: 'west', id: '52-lexi'},
+      ]
+    },
+    {
+      id: '51-3',
+      coord: [],
+      name: 'E. 51st St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '52-3'},
+        {dir: 'south', id: '50-3'},
+        {dir: 'east', id: '51-2'},
+        {dir: 'west', id: '51-lexi'},
+      ]
+    },
+    {
+      id: '50-3',
+      coord: [],
+      name: 'E. 50th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-3'},
+        {dir: 'south', id: '49-3'},
+        {dir: 'east', id: '50-2'},
+        {dir: 'west', id: '50-lexi'},
+      ]
+    },
+    {
+      id: '49-3',
+      coord: [],
+      name: 'E. 49th St. and 3rd Ave.',
+      desc: `There is a luncheonette on the corner.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-3'},
+        {dir: 'south', id: '48-3'},
+        {dir: 'east', id: '49-2'},
+        {dir: 'west', id: '49-lexi'},
+        {dir: ['luncheonette'], id: 'lunc'}
+      ]
+    },
+    {
+      id: '48-3',
+      coord: [],
+      name: 'E. 48th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-3'},
+        {dir: 'south', id: '47-3'},
+        {dir: 'east', id: '48-2'},
+        {dir: 'west', id: '48-lexi'},
+      ]
+    },
+    {
+      id: '47-3',
+      coord: [],
+      name: 'E. 47th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-3'},
+        {dir: 'south', id: '46-3'},
+        {dir: 'east', id: '47-2'},
+        {dir: 'west', id: '47-lexi'},
+      ]
+    },
+    {
+      id: '46-3',
+      coord: [],
+      name: 'E. 46th St. and 3rd Ave.',
+      desc: `There is a lunchonette on the corner.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-3'},
+        {dir: 'south', id: '45-3'},
+        {dir: 'east', id: '46-2'},
+        {dir: 'west', id: '46-lexi'},
+        {dir: ['luncheonette'], id: 'lunc'}
+      ]
+    },
+    {
+      id: '45-3',
+      coord: [],
+      name: 'E. 45th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-3'},
+        {dir: 'south', id: '44-3'},
+        {dir: 'east', id: '45-2'},
+        {dir: 'west', id: '45-lexi'},
+      ]
+    },
+    {
+      id: '44-3',
+      coord: [],
+      name: 'E. 44th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-3'},
+        {dir: 'south', id: '43-3'},
+        {dir: 'east', id: '44-2'},
+        {dir: 'west', id: '44-lexi'},
+      ]
+    },
+    {
+      id: '43-3',
+      coord: [],
+      name: 'E. 43rd St. and 3rd Ave.',
+      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-3'},
+        {dir: 'south', id: '42-3'},
+        {dir: 'east', id: '43-2'},
+        {dir: 'west', id: '43-lexi'},
+        {dir: ['ford', 'foundation','building'], id: '????'}
+      ]
+    },
+    {
+      id: '42-3',
+      coord: [],
+      name: 'E. 42nd St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-3'},
+        {dir: 'south', id: '41-3'},
+        {dir: 'east', id: '42-2'},
+        {dir: 'west', id: '42-lexi'},
+      ]
+    },
+    {
+      id: '41-3',
+      coord: [],
+      name: 'E. 41st St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-3'},
+        {dir: 'south', id: '40-3'},
+        {dir: 'east', id: '41-2'},
+        {dir: 'west', id: '41-lexi'},
+      ]
+    },
+    {
+      id: '40-3',
+      coord: [],
+      name: 'E. 40th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-3'},
+        {dir: 'south', id: '39-3'},
+        {dir: 'east', id: '40-2'},
+        {dir: 'west', id: '40-lexi'},
+      ]
+    },
+    {
+      id: '39-3',
+      coord: [],
+      name: 'E. 39th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-3'},
+        {dir: 'south', id: '38-3'},
+        {dir: 'east', id: '39-qout'},
+        {dir: 'west', id: '39-lexi'},
+      ]
+    },
+    {
+      id: '38-3',
+      coord: [],
+      name: 'E. 38th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-3'},
+        {dir: 'south', id: '37-3'},
+        {dir: 'east', id: '38-qout'},
+        {dir: 'west', id: '38-lexi'},
+      ]
+    },
+    {
+      id: '37-3',
+      coord: [],
+      name: 'E. 37th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-3'},
+        {dir: 'south', id: '36-3'},
+        {dir: 'east', id: '37-qout'},
+        {dir: 'west', id: '37-lexi'},
+      ]
+    },
+    {
+      id: '36-3',
+      coord: [],
+      name: 'E. 36th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-3'},
+        {dir: 'south', id: '35-3'},
+        {dir: 'east', id: '36-qout'},
+        {dir: 'west', id: '36-lexi'},
+      ]
+    },
+    {
+      id: '35-3',
+      coord: [],
+      name: 'E. 35th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-3'},
+        {dir: 'south', id: '34-3'},
+        {dir: 'east', id: '35-qout'},
+        {dir: 'west', id: '35-lexi'},
+      ]
+    },
+    {
+      id: '34-3',
+      coord: [],
+      name: 'E. 34th St. and 3rd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-3'},
+        {dir: 'south', id: '33-3'},
+        {dir: 'east', id: '34-qout'},
+        {dir: 'west', id: '34-lexi'},
+      ]
+    },
+    {
+      id: '35-qout',
+      coord: [],
+      name: 'E. 35th St. and Queens Tunnel out',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-qout'},
+        {dir: 'south', id: '34-qout'},
+        {dir: 'east', id: '35-2'},
+        {dir: 'west', id: '35-3'},
+      ]
+    },
+    {
+      id: '36-qout',
+      coord: [],
+      name: 'E. 36th St. and Queens Tunnel out',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-qout'},
+        {dir: 'south', id: '35-qout'},
+        {dir: 'east', id: '36-2'},
+        {dir: 'west', id: '36-3'},
+      ]
+    },
+    {
+      id: '37-qout',
+      coord: [],
+      name: 'E. 36th St. and Queens Tunnel out',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-qout'},
+        {dir: 'south', id: '36-qout'},
+        {dir: 'east', id: '37-2'},
+        {dir: 'west', id: '37-3'},
+      ]
+    },
+    {
+      id: '38-qout',
+      coord: [],
+      name: 'E. 38th St. and Queens Tunnel out',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-qout'},
+        {dir: 'south', id: '37-qout'},
+        {dir: 'east', id: '38-2'},
+        {dir: 'west', id: '38-3'},
+      ]
+    },
+    {
+      id: '39-qout',
+      coord: [],
+      name: 'E. 39th St. and Queens Tunnel out',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '38-qout'},
+        {dir: 'east', id: '39-2'},
+        {dir: 'west', id: '39-3'},
+      ]
+    },
+    {
+      id: '34-2',
+      coord: [],
+      name: 'E. 34th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '35-2'},
+        {dir: 'south', id: '33-2'},
+        {dir: 'east', id: '34-qin'},
+        {dir: 'west', id: '34-qout'},
+      ]
+    },
+    {
+      id: '35-2',
+      coord: [],
+      name: 'E. 35th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', d: '36-2'},
+        {dir: 'south', id: '34-2'},
+        {dir: 'east', id: '35-qin'},
+        {dir: 'west', id: '35-qout'},
+      ]
+    },
+    {
+      id: '36-2',
+      coord: [],
+      name: 'E. 36th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-2'},
+        {dir: 'south', id: '35-2'},
+        {dir: 'east', id: '36-qin'},
+        {dir: 'west', id: '36-qout'},
+      ]
+    },
+    {
+      id: '37-2',
+      coord: [],
+      name: 'E. 37th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-2'},
+        {dir: 'south', id: '36-2'},
+        {dir: 'east', id: '37-qin'},
+        {dir: 'west', id: '37-qout'},
+      ]
+    },
+    {
+      id: '38-2',
+      coord: [],
+      name: 'E. 38th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-2'},
+        {dir: 'south', id: '37-2'},
+        {dir: 'east', id: '38-1'},
+        {dir: 'west', id: '38-qout'},
+      ]
+    },
+    {
+      id: '39-2',
+      coord: [],
+      name: 'E. 39th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-2'},
+        {dir: 'south', id: '38-2'},
+        {dir: 'east', id: '39-tudo'},
+        {dir: 'west', id: '39-qout'},
+      ]
+    },
+    {
+      id: '40-2',
+      coord: [],
+      name: 'E. 40th St. and 2nd Ave.',
+      desc: `There is a luncheonette on the corner`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-2'},
+        {dir: 'south', id: '39-2'},
+        {dir: 'east', id: '40-tudo'},
+        {dir: 'west', id: '40-3'},
+        {dir: ['luncheonette', 'lunch'], id: '????'}
+        ]
+    },
+    {
+      id: '41-2',
+      coord: [],
+      name: 'E. 41st St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-2'},
+        {dir: 'south', id: '40-2'},
+        {dir: 'east', id: '41-tudo'},
+        {dir: 'west', id: '41-3'},
+      ]
+    },
+    {
+      id: '42-2',
+      coord: [],
+      name: 'E. 42nd St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-2'},
+        {dir: 'south', id: '41-2'},
+        {dir: 'east', id: '42-tudo'},
+        {dir: 'west', id: '42-3'},
+      ]
+    },
+    {
+      id: '43-2',
+      coord: [],
+      name: 'E. 43rd St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-2'},
+        {dir: 'south', id: '42-2'},
+        {dir: 'east', id: '43-tudo'},
+        {dir: 'west', id: '43-3'},
+      ]
+    },
+    {
+      id: '44-2',
+      coord: [],
+      name: 'E. 44th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-2'},
+        {dir: 'south', id: '43-2'},
+        {dir: 'east', id: '44-1'},
+        {dir: 'west', id: '44-3'},
+      ]
+    },
+    {
+      id: '45-2',
+      coord: [],
+      name: 'E. 45th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-2'},
+        {dir: 'south', id: '44-2'},
+        {dir: 'east', id: '45-1'},
+        {dir: 'west', id: '45-3'},
+      ]
+    },
+    {
+      id: '46-2',
+      coord: [],
+      name: 'E. 46th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-2'},
+        {dir: 'south', id: '45-2'},
+        {dir: 'east', id: '46-1'},
+        {dir: 'west', id: '46-3'},
+      ]
+    },
+    {
+      id: '47-2',
+      coord: [],
+      name: 'E. 47th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-2'},
+        {dir: 'south', id: '46-2'},
+        {dir: 'east', id: '47-1'},
+        {dir: 'west', id: '47-3'},
+      ]
+    },
+    {
+      id: '48-2',
+      coord: [],
+      name: 'E. 48th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-2'},
+        {dir: 'south', id: '47-2'},
+        {dir: 'east', id: '48-1'},
+        {dir: 'west', id: '48-3'},
+      ]
+    },
+    {
+      id: '49-2',
+      coord: [],
+      name: 'E. 49th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-2'},
+        {dir: 'south', id: '48-2'},
+        {dir: 'east', id: '49-1'},
+        {dir: 'west', id: '49-3'},
+      ]
+    },
+    {
+      id: '50-2',
+      coord: [],
+      name: 'E. 50th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-2'},
+        {dir: 'south', id: '49-2'},
+        {dir: 'east', id: '50-1'},
+        {dir: 'west', id: '50-3'},
+      ]
+    },
+    {
+      id: '51-2',
+      coord: [],
+      name: 'E. 51st St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '52-2'},
+        {dir: 'south', id: '50-2'},
+        {dir: 'east', id: '51-1'},
+        {dir: 'west', id: '51-3'},
+      ]
+    },
+    {
+      id: '52-2',
+      coord: [],
+      name: 'E. 52nd St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-2'},
+        {dir: 'south', id: '51-2'},
+        {dir: 'east', id: '52-1'},
+        {dir: 'west', id: '52-3'},
+      ]
+    },
+    {
+      id: '53-2',
+      coord: [],
+      name: 'E. 53rd St. and 2nd Ave.',
+      desc: `There is a luncheonette on the corner.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-2'},
+        {dir: 'south', id: '52-2'},
+        {dir: 'east', id: '53-1'},
+        {dir: 'west', id: '53-3'},
+      ]
+    },
+    {
+      id: '54-2',
+      coord: [],
+      name: 'E. 54th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-2'},
+        {dir: 'south', id: '53-2'},
+        {dir: 'east', id: '54-1'},
+        {dir: 'west', id: '54-3'},
+      ]
+    },
+    {
+      id: '55-2',
+      coord: [],
+      name: 'E. 55th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-2'},
+        {dir: 'south', id: '54-2'},
+        {dir: 'east', id: '55-1'},
+        {dir: 'west', id: '55-3'},
+      ]
+    },
+    {
+      id: '56-2',
+      coord: [],
+      name: 'E. 56th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-2'},
+        {dir: 'south', id: '55-2'},
+        {dir: 'east', id: '56-1'},
+        {dir: 'west', id: '56-3'},
+      ]
+    },
+    {
+      id: '57-2',
+      coord: [],
+      name: 'E. 57th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-2'},
+        {dir: 'south', id: '56-2'},
+        {dir: 'east', id: '57-quen'},
+        {dir: 'west', id: '57-3'},
+      ]
+    },
+    {
+      id: '58-2',
+      coord: [],
+      name: 'E. 58th St. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-2'},
+        {dir: 'south', id: '57-2'},
+        {dir: 'east', id: '58-quen'},
+        {dir: 'west', id: '58-3'},
+      ]
+    },
+    {
+      id: '59-2',
+      coord: [],
+      name: 'Central Park S. and 2nd Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: 'quee-2'},
+        {dir: 'south', id: '58-2'},
+        {dir: 'east', id: '59-quen'},
+        {dir: 'west', id: '59-3'},
+      ]
+    },
+    {
+      id: '59-quen',
+      coord: [],
+      name: 'E. 59th St. and Queensboro Bridge In',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '60-quee'},
+        {dir: 'south', id: '58-quen'},
+        {dir: 'east', id: '59-1'},
+        {dir: 'west', id: '59-2'},
+      ]
+    },
+    {
+      id: '58-quen',
+      coord: [],
+      name: 'E. 58th St. and Queensboro Bridge In',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-quen'},
+        {dir: 'south', id: '57-quen'},
+        {dir: 'east', id: '58-1'},
+        {dir: 'west', id: '58-2'},
+      ]
+    },
+    {
+      id: '57-quen',
+      coord: [],
+      name: 'E. 57th St. and Queensboro Bridge In',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-quen'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '57-1'},
+        {dir: 'west', id: '57-2'},
+      ]
+    },
+    {
+      id: '59-1',
+      coord: [],
+      name: 'Central Park S. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '60-1'},
+        {dir: 'south', id: '58-1'},
+        {dir: 'east', id: '59-sutt'},
+        {dir: 'west', id: '59-quen'},
+      ]
+    },
+    {
+      id: '58-1',
+      coord: [],
+      name: 'E. 58th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-1'},
+        {dir: 'south', id: '57-1'},
+        {dir: 'east', id: '58-sutt'},
+        {dir: 'west', id: '58-quen'},
+      ]
+    },
+    {
+      id: '57-1',
+      coord: [],
+      name: 'E. 57th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-1'},
+        {dir: 'south', id: '56-1'},
+        {dir: 'east', id: '57-sutt'},
+        {dir: 'west', id: '57-quen'},
+      ]
+    },
+    {
+      id: '56-1',
+      coord: [],
+      name: 'E. 56th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-1'},
+        {dir: 'south', id: '55-1'},
+        {dir: 'east', id: '56-sutt'},
+        {dir: 'west', id: '56-2'},
+      ]
+    },
+    {
+      id: '55-1',
+      coord: [],
+      name: 'E. 55th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '56-1'},
+        {dir: 'south', id: '54-1'},
+        {dir: 'east', id: '55-sutt'},
+        {dir: 'west', id: '55-2'},
+      ]
+    },
+    {
+      id: '54-1',
+      coord: [],
+      name: 'E. 54th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-1'},
+        {dir: 'south', id: '53-1'},
+        {dir: 'east', id: '54-sutt'},
+        {dir: 'west', id: '54-2'},
+      ]
+    },
+    {
+      id: '53-1',
+      coord: [],
+      name: 'E. 53rd St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-1'},
+        {dir: 'south', id: '52-1'},
+        {dir: 'east', id: '53-sutt'},
+        {dir: 'west', id: '53-2'},
+      ]
+    },
+    {
+      id: '52-1',
+      coord: [],
+      name: 'E. 52nd St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '53-1'},
+        {dir: 'south', id: '51-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '52-2'},
+      ]
+    },
+    {
+      id: '51-1',
+      coord: [],
+      name: 'E. 51st St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '52-1'},
+        {dir: 'south', id: '50-1'},
+        {dir: 'east', id: '51-beek'},
+        {dir: 'west', id: '51-2'},
+      ]
+    },
+    {
+      id: '50-1',
+      coord: [],
+      name: 'E. 50th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-1'},
+        {dir: 'south', id: '49-1'},
+        {dir: 'east', id: '50-beek'},
+        {dir: 'west', id: '50-2'},
+      ]
+    },
+    {
+      id: '49-1',
+      coord: [],
+      name: 'E. 49th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-1'},
+        {dir: 'south', id: '48-1'},
+        {dir: 'east', id: '49-beek'},
+        {dir: 'west', id: '49-2'},
+      ]
+    },
+    {
+      id: '48-1',
+      coord: [],
+      name: 'E. 48th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '49-1'},
+        {dir: 'south', id: '47-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '48-2'},
+      ]
+    },
+    {
+      id: '47-1',
+      coord: [],
+      name: 'E. 47th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '48-1'},
+        {dir: 'south', id: '46-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '47-2'},
+      ]
+    },
+    {
+      id: '46-1',
+      coord: [],
+      name: 'E. 46th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '47-1'},
+        {dir: 'south', id: '45-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '46-2'},
+      ]
+    },
+    {
+      id: '45-1',
+      coord: [],
+      name: 'E. 45th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '46-1'},
+        {dir: 'south', id: '44-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '45-2'},
+      ]
+    },
+    {
+      id: '44-1',
+      coord: [],
+      name: 'E. 44th St. and 1st Ave.',
+      desc: `The great green glass slab of the UN Secretariat looms over the swooping shape of the General Assembly Building. Flags of member nations snap in the wind that comes in from the East River. For a moment you wish you could be just an ordinary tourist so you could enjoy the vista the way it deserves. But the vista includes twenty assorted policemen, and you get the feeling this is nowhere to loiter.`,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '45-1'},
+        {dir: 'south', id: '43-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '44-2'},
+        {dir: ['UN', 'building', 'secretariat'], block: 'There is no point in going there.',
+            },
+      ]
+    },
+    {
+      id: '42-1',
+      coord: [],
+      name: 'E. 42nd St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '44-1'},
+        {dir: 'south', id: '41-1'},
+        {dir: 'east', id: '42-fdrd'},
+        {dir: 'west', id: '42-tudo'},
+      ]
+    },
+    {
+      id: '41-1',
+      coord: [],
+      name: 'E. 41st St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-1'},
+        {dir: 'south', id: '40-1'},
+        {dir: 'east', id: '41-fdrd'},
+        {dir: 'west', id: '41-tudo'},
+      ]
+    },
+    {
+      id: '40-1',
+      coord: [],
+      name: 'E. 40th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-1'},
+        {dir: 'south', id: '39-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '40-tudo'},
+      ]
+    },
+    {
+      id: '39-1',
+      coord: [],
+      name: 'E. 39th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-1'},
+        {dir: 'south', id: '38-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '39-tudo'},
+      ]
+    },
+    {
+      id: '38-1',
+      coord: [],
+      name: 'E. 38th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '39-1'},
+        {dir: 'south', id: '37-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '38-2'},
+      ]
+    },
+    {
+      id: '37-1',
+      coord: [],
+      name: 'E. 37th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '38-1'},
+        {dir: 'south', id: '36-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '37-qin'},
+      ]
+    },
+    {
+      id: '36-1',
+      coord: [],
+      name: 'E. 36th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '37-1'},
+        {dir: 'south', id: '35-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '36-qin'},
+      ]
+    },
+    {
+      id: '35-1',
+      coord: [],
+      name: 'E. 35th St. and 1st Ave.',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '36-1'},
+        {dir: 'south', id: '34-1'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '35-qin'},
+      ]
+    },
+    {
+      id: '39-tudo',
+      coord: [],
+      name: 'E. 39th St. and Tudor Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '40-tudo'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '39-1'},
+        {dir: 'west', id: '39-2'},
+      ]
+    },
+    {
+      id: '40-tudo',
+      coord: [],
+      name: 'E. 40th St. and Tudor Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '41-tudo'},
+        {dir: 'south', id: '39-tudo'},
+        {dir: 'east', id: '40-1'},
+        {dir: 'west', id: '40-2'},
+      ]
+    },
+    {
+      id: '41-tudo',
+      coord: [],
+      name: 'E. 41st St. and Tudor Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '42-tudo'},
+        {dir: 'south', id: '40-tudo'},
+        {dir: 'east', id: '41-1'},
+        {dir: 'west', id: '41-2'},
+      ]
+    },
+    {
+      id: '42-tudo',
+      coord: [],
+      name: 'E. 42nd St. and Tudor Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '43-tudo'},
+        {dir: 'south', id: '41-tudo'},
+        {dir: 'east', id: '42-1'},
+        {dir: 'west', id: '42-2'},
+      ]
+    },
+    {
+      id: '43-tudo',
+      coord: [],
+      name: 'E. 40th St. and Tudor Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '42-tudo'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '43-2'},
+      ]
+    },
+    {
+      id: '41-fdrd',
+      coord: [],
+      name: 'E. 41st St. and FDR Drive',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '????'},
+        {dir: 'south', id: '????'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '41-1'},
+      ]
+    },
+    {
+      id: '42-fdrd',
+      coord: [],
+      name: 'E. 42nd St. and FDR Drive',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '????'},
+        {dir: 'south', id: '41-fdrd'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '42-1'},
+      ]
+    },
+    {
+      id: '49-beek',
+      coord: [],
+      name: 'E. 49th St. and Beekman Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '50-beek'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '49-1'},
+      ]
+    },
+    {
+      id: '50-beek',
+      coord: [],
+      name: 'E. 50th St. and Beekman Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '51-beek'},
+        {dir: 'south', id: '49-beek'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '50-1'},
+      ]
+    },
+    {
+      id: '51-beek',
+      coord: [],
+      name: 'E. 51st St. and Beekman Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '50-beek'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '51-1'},
+      ]
+    },
+    {
+      id: '53-sutt',
+      coord: [],
+      name: 'E. 53rd St. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '54-sutt'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '53-1'},
+      ]
+    },
+    {
+      id: '54-sutt',
+      coord: [],
+      name: 'E. 54th St. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '55-sutt'},
+        {dir: 'south', id: '53-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '54-1'},
+      ]
+    },
+    {
+      id: '55-sutt',
+      coord: [],
+      name: 'E. 55th St. and Sutton Place',
+      desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
+      exits: [
+        {dir: 'north', id: '56-sutt'},
+        {dir: 'south', id: '54-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '55-1'},
+        {dir: ['office', 'building', 'drawers', 'drawer'], block: `Finally you have to ask one of the attendants of the shrine, who stands behind the marble altar to INFORMATION. He gives you a fishy look and tells you to keep moving.`}
+        ]
+    },
+    {
+      id: '56-sutt',
+      coord: [],
+      name: 'E. 56th St. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '57-sutt'},
+        {dir: 'south', id: '55-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '56-1'},
+      ]
+    },
+    {
+      id: '57-sutt',
+      coord: [],
+      name: 'E. 57th St. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '58-sutt'},
+        {dir: 'south', id: '56-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '57-1'},
+      ]
+    },
+    {
+      id: '58-sutt',
+      coord: [],
+      name: 'E. 58th St. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '59-sutt'},
+        {dir: 'south', id: '57-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '58-1'},
+      ]
+    },
+    {
+      id: '59-sutt',
+      coord: [],
+      name: 'Central Park S. and Sutton Place',
+      desc: ``,
+      isStreets: true,
+      exits: [
+        {dir: 'north', id: '????'},
+        {dir: 'south', id: '58-sutt'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '59-1'},
+      ]
+    },
+      /************/
+    /* Westside */
     /************/
-   /* Westside */
-  /************/
-  {
-    id: '96-hhpw',
-    coord: [],
-    name: 'W. 96th St. and Henry Hudson Parkway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `You can't go that way.`},
-      {dir: 'south', id: '79-hhpw'},
-      {dir: 'east', id: '96-rive'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '79-hhpw',
-    coord: [],
-    name: 'W. 79th St. and Henry Hudson Parkway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-hhpw'},
-      {dir: 'south', id: '72-hhpw'},
-      {dir: 'east', id: '79-rive'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '72-hhpw',
-    coord: [],
-    name: 'W. 72nd St. and Henry Hudson Parkway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-hhpw'},
-      {dir: 'south', id: '57-hhpw'},
-      {dir: 'east', id: '72-rive'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  //Riverside Drive
-  {
-    id: '110-rive',
-    coord: [],
-    name: 'W. 110th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-rive'},
-      {dir: 'east', id: '110-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '109-rive',
-    coord: [],
-    name: 'W. 109th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-rive'},
-      {dir: 'south', id: '108-rive'},
-      {dir: 'east', id: '109-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '108-rive',
-    coord: [],
-    name: 'W. 108th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-rive'},
-      {dir: 'south', id: '107-rive'},
-      {dir: 'east', id: '108-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '107-rive',
-    coord: [],
-    name: 'W. 107th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-rive'},
-      {dir: 'south', id: '106-rive'},
-      {dir: 'east', id: '107-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '106-rive',
-    coord: [],
-    name: 'W. 106th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-rive'},
-      {dir: 'south', id: '106-rive'},
-      {dir: 'east', id: '106-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '105-rive',
-    coord: [],
-    name: 'W. 105th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-rive'},
-      {dir: 'south', id: '104-rive'},
-      {dir: 'east', id: '105-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '104-rive',
-    coord: [],
-    name: 'W. 104th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-rive'},
-      {dir: 'south', id: '103-rive'},
-      {dir: 'east', id: '104-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '103-rive',
-    coord: [],
-    name: 'W. 103th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-rive'},
-      {dir: 'south', id: '102-rive'},
-      {dir: 'east', id: '103-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '102-rive',
-    coord: [],
-    name: 'W. 102nd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-rive'},
-      {dir: 'south', id: '101-rive'},
-      {dir: 'east', id: '102-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '101-rive',
-    coord: [],
-    name: 'W. 101st St. and Riverside Dr. ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-rive'},
-      {dir: 'south', id: '100-rive'},
-      {dir: 'east', id: '101-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '100-rive',
-    coord: [],
-    name: 'W. 100th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-rive'},
-      {dir: 'south', id: '99-rive'},
-      {dir: 'east', id: '100-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '99-rive',
-    coord: [],
-    name: 'W. 99th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-rive'},
-      {dir: 'south', id: '98-rive'},
-      {dir: 'east', id: '99-rive'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '98-rive',
-    coord: [],
-    name: 'W. 98th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '99-rive'},
-      {dir: 'south', id: '97-rive'},
-      {dir: 'east', id: '98-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '97-rive',
-    coord: [],
-    name: 'W. 97th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '98-rive'},
-      {dir: 'south', id: '96-rive'},
-      {dir: 'east', id: '97-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '96-rive',
-    coord: [],
-    name: 'W. 96th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '97-rive'},
-      {dir: 'south', id: '95-rive'},
-      {dir: 'east', id: '96-wend'},
-      {dir: 'west', id: '96-hhpw'},
-    ]
-  },
-  {
-    id: '95-rive',
-    coord: [],
-    name: 'W. 95th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-rive'},
-      {dir: 'south', id: '94-rive'},
-      {dir: 'east', id: '95-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '94-rive',
-    coord: [],
-    name: 'W. 94th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-rive'},
-      {dir: 'south', id: '93-rive'},
-      {dir: 'east', id: '94-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '93-rive',
-    coord: [],
-    name: 'W. 93rd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-rive'},
-      {dir: 'south', id: '92-rive'},
-      {dir: 'east', id: '93-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '92-rive',
-    coord: [],
-    name: 'W. 92nd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-rive'},
-      {dir: 'south', id: '91-rive'},
-      {dir: 'east', id: '92-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '91-rive',
-    coord: [],
-    name: 'W. 91st St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-rive'},
-      {dir: 'south', id: '90-rive'},
-      {dir: 'east', id: '91-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '90-rive',
-    coord: [],
-    name: 'W. 90th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-rive'},
-      {dir: 'south', id: '89-rive'},
-      {dir: 'east', id: '90-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '89-rive',
-    coord: [],
-    name: 'W. 89th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-rive'},
-      {dir: 'south', id: '88-rive'},
-      {dir: 'east', id: '89-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '88-rive',
-    coord: [],
-    name: 'W. 88th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-rive'},
-      {dir: 'south', id: '87-rive'},
-      {dir: 'east', id: '88-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '87-rive',
-    coord: [],
-    name: 'W. 87th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-rive'},
-      {dir: 'south', id: '86-rive'},
-      {dir: 'east', id: '87-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '86-rive',
-    coord: [],
-    name: 'W. 86th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-rive'},
-      {dir: 'south', id: '85-rive'},
-      {dir: 'east', id: '86-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '85-rive',
-    coord: [],
-    name: 'W. 85th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-rive'},
-      {dir: 'south', id: 'epoe-rive'},
-      {dir: 'east', id: ''},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: 'epoe-rive',
-    coord: [],
-    name: 'Edgar Allen Poe St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-rive'},
-      {dir: 'south', id: '83-rive'},
-      {dir: 'east', id: 'epoe-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '83-rive',
-    coord: [],
-    name: 'W. 83rd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'epoe-rive'},
-      {dir: 'south', id: '82-rive'},
-      {dir: 'east', id: '83-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '82-rive',
-    coord: [],
-    name: 'W. 82nd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-rive'},
-      {dir: 'south', id: '81-rive'},
-      {dir: 'east', id: '82-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '81-rive',
-    coord: [],
-    name: 'W. 81st St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-rive'},
-      {dir: 'south', id: '80-rive'},
-      {dir: 'east', id: '81-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '80-rive',
-    coord: [],
-    name: 'W. 80th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '81-rive'},
-      {dir: 'south', id: '79-rive'},
-      {dir: 'east', id: '80-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '79-rive',
-    coord: [],
-    name: 'W. 79th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '80-rive'},
-      {dir: 'south', id: '78-rive'},
-      {dir: 'east', id: '79-wend'},
-      {dir: 'west', id: '79-hhpw'},
-    ]
-  },
-  {
-    id: '78-rive',
-    coord: [],
-    name: 'W. 78th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-rive'},
-      {dir: 'south', id: '77-rive'},
-      {dir: 'east', id: '78-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '77-rive',
-    coord: [],
-    name: 'W. 77th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-rive'},
-      {dir: 'south', id: '76-rive'},
-      {dir: 'east', id: '77-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '76-rive',
-    coord: [],
-    name: 'W. 76th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-rive'},
-      {dir: 'south', id: '75-rive'},
-      {dir: 'east', id: '76-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '75-rive',
-    coord: [],
-    name: 'W. 75th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-rive'},
-      {dir: 'south', id: '74-rive'},
-      {dir: 'east', id: '75-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '74-rive',
-    coord: [],
-    name: 'W. 74th St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-rive'},
-      {dir: 'south', id: '73-rive'},
-      {dir: 'east', id: '74-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '73-rive',
-    coord: [],
-    name: 'W. 73rd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-rive'},
-      {dir: 'south', id: '72-rive'},
-      {dir: 'east', id: '73-wend'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '72-rive',
-    coord: [],
-    name: 'W. 72nd St. and Riverside Dr.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-rive'},
-      {dir: 'south', id: '', block: `You can't go that way.`},
-      {dir: 'east', id: '72-wend'},
-      {dir: 'west', id: '72-hhpw'},
-    ]
-  },
-  {
-    id: '105-wend',
-    coord: [],
-    name: 'W. 105th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'wend-broa'},
-      {dir: 'south', id: '104-wend'},
-      {dir: 'east', id: '105-broa'},
-      {dir: 'west', id: '105-rive'},
-    ]
-  },
-  {
-    id: '104-wend',
-    coord: [],
-    name: 'W. 104th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-wend'},
-      {dir: 'south', id: '103-wend'},
-      {dir: 'east', id: '104-broa'},
-      {dir: 'west', id: '104-rive'},
-    ]
-  },
-  {
-    id: '103-wend',
-    coord: [],
-    name: 'W. 103rd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-wend'},
-      {dir: 'south', id: '102-wend'},
-      {dir: 'east', id: '103-broa'},
-      {dir: 'west', id: '103-rive'},
-    ]
-  },
-  {
-    id: '102-wend',
-    coord: [],
-    name: 'W. 102nd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-wend'},
-      {dir: 'south', id: '105-wend'},
-      {dir: 'east', id: '102-broa'},
-      {dir: 'west', id: '102-rive'},
-    ]
-  },
-  {
-    id: '101-wend',
-    coord: [],
-    name: 'W. 101st St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-wend'},
-      {dir: 'south', id: '100-wend'},
-      {dir: 'east', id: '101-broa'},
-      {dir: 'west', id: '101-rive'},
-    ]
-  },
-  {
-    id: '100-wend',
-    coord: [],
-    name: 'W. 100th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-wend'},
-      {dir: 'south', id: '99-wend'},
-      {dir: 'east', id: '100-broa'},
-      {dir: 'west', id: '100-rive'},
-    ]
-  },
-  {
-    id: '99-wend',
-    coord: [],
-    name: 'W. 99th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-wend'},
-      {dir: 'south', id: '98-wend'},
-      {dir: 'east', id: '99-broa'},
-      {dir: 'west', id: '99-rive'},
-    ]
-  },
-  {
-    id: '98-wend',
-    coord: [],
-    name: 'W. 98th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '99-wend'},
-      {dir: 'south', id: '97-wend'},
-      {dir: 'east', id: '98-broa'},
-      {dir: 'west', id: '98-rive'},
-    ]
-  },
-  {
-    id: '97-wend',
-    coord: [],
-    name: 'W. 97th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '98-wend'},
-      {dir: 'south', id: '96-wend'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '97-rive'},
-    ]
-  },
-  {
-    id: '96-wend',
-    coord: [],
-    name: 'W. 96th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '97-wend'},
-      {dir: 'south', id: '95-wend'},
-      {dir: 'east', id: '96-broa'},
-      {dir: 'west', id: '96-rive'},
-    ]
-  },
-  {
-    id: '95-wend',
-    coord: [],
-    name: 'W. 95th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-wend'},
-      {dir: 'south', id: '94-wend'},
-      {dir: 'east', id: '95-broa'},
-      {dir: 'west', id: '95-rive'},
-    ]
-  },
-  {
-    id: '94-wend',
-    coord: [],
-    name: 'W. 94th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-wend'},
-      {dir: 'south', id: '93-wend'},
-      {dir: 'east', id: '94-broa'},
-      {dir: 'west', id: '94-rive'},
-    ]
-  },
-  {
-    id: '93-wend',
-    coord: [],
-    name: 'W. 93rd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-wend'},
-      {dir: 'south', id: '92-wend'},
-      {dir: 'east', id: '93-broa'},
-      {dir: 'west', id: '93-rive'},
-    ]
-  },
-  {
-    id: '92-wend',
-    coord: [],
-    name: 'W. 92nd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-wend'},
-      {dir: 'south', id: '91-wend'},
-      {dir: 'east', id: '92-broa'},
-      {dir: 'west', id: '92-rive'},
-    ]
-  },
-  {
-    id: '91-wend',
-    coord: [],
-    name: 'W. 91st St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-wend'},
-      {dir: 'south', id: '90-wend'},
-      {dir: 'east', id: '91-broa'},
-      {dir: 'west', id: '91-rive'},
-    ]
-  },
-  {
-    id: '90-wend',
-    coord: [],
-    name: 'W. 90th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-wend'},
-      {dir: 'south', id: '89-wend'},
-      {dir: 'east', id: '90-broa'},
-      {dir: 'west', id: '90-rive'},
-    ]
-  },
-  {
-    id: '89-wend',
-    coord: [],
-    name: 'W. 89th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-wend'},
-      {dir: 'south', id: '88-wend'},
-      {dir: 'east', id: '89-broa'},
-      {dir: 'west', id: '89-rive'},
-    ]
-  },
-  {
-    id: '88-wend',
-    coord: [],
-    name: 'W. 88th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-wend'},
-      {dir: 'south', id: '87-wend'},
-      {dir: 'east', id: '88-broa'},
-      {dir: 'west', id: '88-rive'},
-    ]
-  },
-  {
-    id: '87-wend',
-    coord: [],
-    name: 'W. 87th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-wend'},
-      {dir: 'south', id: '86-wend'},
-      {dir: 'east', id: '87-broa'},
-      {dir: 'west', id: '87-rive'},
-    ]
-  },
-  {
-    id: '86-wend',
-    coord: [],
-    name: 'W. 86th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-wend'},
-      {dir: 'south', id: '85-wend'},
-      {dir: 'east', id: '86-broa'},
-      {dir: 'west', id: '86-rive'},
-    ]
-  },
-  {
-    id: '85-wend',
-    coord: [],
-    name: 'W. 85th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-wend'},
-      {dir: 'south', id: '86-wend'},
-      {dir: 'east', id: '85-broa'},
-      {dir: 'west', id: '85-rive'},
-    ]
-  },
-  {
-    id: 'epoe-wend',
-    coord: [],
-    name: 'Edgar Allen Poe St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-wend'},
-      {dir: 'south', id: '83-wend'},
-      {dir: 'east', id: 'epoe-broa'},
-      {dir: 'west', id: 'epoe-rive'},
-    ]
-  },
-  {
-    id: '83-wend',
-    coord: [],
-    name: 'W. 83rd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'epoe-wend'},
-      {dir: 'south', id: '82-wend'},
-      {dir: 'east', id: '83-broa'},
-      {dir: 'west', id: '83-rive'},
-    ]
-  },
-  {
-    id: '82-wend',
-    coord: [],
-    name: 'W. 82nd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-wend'},
-      {dir: 'south', id: '81-wend'},
-      {dir: 'east', id: '82-broa'},
-      {dir: 'west', id: '82-rive'},
-    ]
-  },
-  {
-    id: '81-wend',
-    coord: [],
-    name: 'W. 81st St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-wend'},
-      {dir: 'south', id: '80-wend'},
-      {dir: 'east', id: '81-broa'},
-      {dir: 'west', id: '81-rive'},
-    ]
-  },
-  {
-    id: '80-wend',
-    coord: [],
-    name: 'W. 80th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '81-wend'},
-      {dir: 'south', id: '79-wend'},
-      {dir: 'east', id: '80-broa'},
-      {dir: 'west', id: '80-rive'},
-    ]
-  },
-  {
-    id: '79-wend',
-    coord: [],
-    name: 'W. 79th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '80-wend'},
-      {dir: 'south', id: '78-wend'},
-      {dir: 'east', id: '79-broa'},
-      {dir: 'west', id: '79-rive'},
-    ]
-  },
-  {
-    id: '78-wend',
-    coord: [],
-    name: 'W. 78th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-wend'},
-      {dir: 'south', id: '77-wend'},
-      {dir: 'east', id: '78-broa'},
-      {dir: 'west', id: '78-rive'},
-    ]
-  },
-  {
-    id: '77-wend',
-    coord: [],
-    name: 'W. 77th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-wend'},
-      {dir: 'south', id: '76-wend'},
-      {dir: 'east', id: '77-broa'},
-      {dir: 'west', id: '77-rive'},
-    ]
-  },
-  {
-    id: '76-wend',
-    coord: [],
-    name: 'W. 76th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-wend'},
-      {dir: 'south', id: '75-wend'},
-      {dir: 'east', id: '76-broa'},
-      {dir: 'west', id: '76-rive'},
-    ]
-  },
-  {
-    id: '75-wend',
-    coord: [],
-    name: 'W. 75th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-wend'},
-      {dir: 'south', id: '74-wend'},
-      {dir: 'east', id: '75-broa'},
-      {dir: 'west', id: '75-rive'},
-    ]
-  },
-  {
-    id: '74-wend',
-    coord: [],
-    name: 'W. 74th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-wend'},
-      {dir: 'south', id: '73-wend'},
-      {dir: 'east', id: '74-broa'},
-      {dir: 'west', id: '74-rive'},
-    ]
-  },
-  {
-    id: '73-wend',
-    coord: [],
-    name: 'W. 73rd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-wend'},
-      {dir: 'south', id: '72-wend'},
-      {dir: 'east', id: '73-broa'},
-      {dir: 'west', id: '73-rive'},
-    ]
-  },
-  {
-    id: '72-wend',
-    coord: [],
-    name: 'W. 72nd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-wend'},
-      {dir: 'south', id: '71-wend'},
-      {dir: 'east', id: '72-broa'},
-      {dir: 'west', id: '72-rive'},
-    ]
-  },
-  {
-    id: '71-wend',
-    coord: [],
-    name: 'W. 71st St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '72-wend'},
-      {dir: 'south', id: '70-wend'},
-      {dir: 'east', id: '71-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '70-wend',
-    coord: [],
-    name: 'W. 70th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '71-wend'},
-      {dir: 'south', id: '69-wend'},
-      {dir: 'east', id: '70-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '66-wend',
-    coord: [],
-    name: 'W. 66th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '70-wend'},
-      {dir: 'south', id: '65-wend'},
-      {dir: 'east', id: '66-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '65-wend',
-    coord: [],
-    name: 'W. 65th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '66-wend'},
-      {dir: 'south', id: '64-wend'},
-      {dir: 'east', id: '65-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '64-wend',
-    coord: [],
-    name: 'W. 64th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '65-wend'},
-      {dir: 'south', id: '63-wend'},
-      {dir: 'east', id: '64-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '63-wend',
-    coord: [],
-    name: 'W. 63rd St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '64-wend'},
-      {dir: 'south', id: '61-wend'},
-      {dir: 'east', id: '63-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '61-wend',
-    coord: [],
-    name: 'W. 61st St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '63-wend'},
-      {dir: 'south', id: '60-wend'},
-      {dir: 'east', id: '61-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '60-wend',
-    coord: [],
-    name: 'W. 60th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '61-wend'},
-      {dir: 'south', id: '59-wend'},
-      {dir: 'east', id: '60-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '59-wend',
-    coord: [],
-    name: 'W. 59th St. and West End Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '60-wend'},
-      {dir: 'south', id: '58-wend'},
-      {dir: 'east', id: '59-amst'},
-      {dir: 'west', id: '59-12'},
-    ]
-  },
-  {
-    id: '110-broa',
-    coord: [],
-    name: 'W. 110th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-broa'},
-      {dir: 'east', id: '110-amst'},
-      {dir: 'west', id: '110-rive'},
-    ]
-  },
-  {
-    id: '109-broa',
-    coord: [],
-    name: 'W. 109th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-broa'},
-      {dir: 'south', id: '108-broa'},
-      {dir: 'east', id: '109-amst'},
-      {dir: 'west', id: '109-rive'},
-    ]
-  },
-  {
-    id: '108-broa',
-    coord: [],
-    name: 'W. 108th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-broa'},
-      {dir: 'south', id: '107-broa'},
-      {dir: 'east', id: '108-amst'},
-      {dir: 'west', id: '108-rive'},
-    ]
-  },
-  {
-    id: '107-broa',
-    coord: [],
-    name: 'W. 107th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-broa'},
-      {dir: 'south', id: '106-broa'},
-      {dir: 'east', id: '107-amst'},
-      {dir: 'west', id: '107-rive'},
-    ]
-  },
-  {
-    id: '106-broa',
-    coord: [],
-    name: 'W. 106th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-broa'},
-      {dir: 'south', id: '105-broa'},
-      {dir: 'east', id: '106-amst'},
-      {dir: 'west', id: '106-rive'},
-    ]
-  },
-  //COME BACK HERE
-  {
-    id: 'wend-broa',
-    coord: [],
-    name: 'West End Ave. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-broa'},
-      {dir: 'south', id: '105-wend'},
-      {dir: 'east', id: '105-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '105-broa',
-    coord: [],
-    name: 'W. 105th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'wend-broa'},
-      {dir: 'south', id: '104-broa'},
-      {dir: 'east', id: '105-amst'},
-      {dir: 'west', id: '105-wend'},
-    ]
-  },
-  {
-    id: '104-broa',
-    coord: [],
-    name: 'W. 104th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-broa'},
-      {dir: 'south', id: '103-broa'},
-      {dir: 'east', id: '104-amst'},
-      {dir: 'west', id: '104-wend'},
-    ]
-  },
-  {
-    id: '103-broa',
-    coord: [],
-    name: 'W. 103rd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-broa'},
-      {dir: 'south', id: '102-broa'},
-      {dir: 'east', id: '103-amst'},
-      {dir: 'west', id: '103-wend'},
-    ]
-  },
-  {
-    id: '102-broa',
-    coord: [],
-    name: 'W. 102nd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-broa'},
-      {dir: 'south', id: '101-broa'},
-      {dir: 'east', id: '102-amst'},
-      {dir: 'west', id: '102-wend'},
-    ]
-  },
-  {
-    id: '101-broa',
-    coord: [],
-    name: 'W. 101st St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-broa'},
-      {dir: 'south', id: '100-broa'},
-      {dir: 'east', id: '101-amst'},
-      {dir: 'west', id: '101-wend'},
-    ]
-  },
-  {
-    id: '100-broa',
-    coord: [],
-    name: 'W. 100th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-broa'},
-      {dir: 'south', id: '99-broa'},
-      {dir: 'east', id: '100-amst'},
-      {dir: 'west', id: '100-wend'},
-    ]
-  },
-  {
-    id: '99-broa',
-    coord: [],
-    name: 'W. 99th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-broa'},
-      {dir: 'south', id: '98-broa'},
-      {dir: 'east', id: '99-amst'},
-      {dir: 'west', id: '99-wend'},
-    ]
-  },
-  {
-    id: '98-broa',
-    coord: [],
-    name: 'W. 98th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '99-broa'},
-      {dir: 'south', id: '97-broa'},
-      {dir: 'east', id: '98-amst'},
-      {dir: 'west', id: '98-wend'},
-    ]
-  },
-  {
-    id: '97-broa',
-    coord: [],
-    name: 'W. 97th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '98-broa'},
-      {dir: 'south', id: '96-broa'},
-      {dir: 'east', id: '97-amst'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '96-broa',
-    coord: [],
-    name: 'W. 96th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '97-broa'},
-      {dir: 'south', id: '95-broa'},
-      {dir: 'east', id: '96-amst'},
-      {dir: 'west', id: '96-wend'},
-    ]
-  },
-  {
-    id: '95-broa',
-    coord: [],
-    name: 'W. 95th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-broa'},
-      {dir: 'south', id: '94-broa'},
-      {dir: 'east', id: '95-amst'},
-      {dir: 'west', id: '95-wend'},
-    ]
-  },
-  {
-    id: '94-broa',
-    coord: [],
-    name: 'W. 94th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-broa'},
-      {dir: 'south', id: '93-broa'},
-      {dir: 'east', id: '94-amst'},
-      {dir: 'west', id: '94-wend'},
-    ]
-  },
-  {
-    id: '93-broa',
-    coord: [],
-    name: 'W. 93rd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-broa'},
-      {dir: 'south', id: '92-broa'},
-      {dir: 'east', id: '93-amst'},
-      {dir: 'west', id: '93-wend'},
-    ]
-  },
-  {
-    id: '92-broa',
-    coord: [],
-    name: 'W. 92nd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-broa'},
-      {dir: 'south', id: '91-broa'},
-      {dir: 'east', id: '92-amst'},
-      {dir: 'west', id: '92-wend'},
-    ]
-  },
-  {
-    id: '91-broa',
-    coord: [],
-    name: 'W. 91st St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-broa'},
-      {dir: 'south', id: '90-broa'},
-      {dir: 'east', id: '91-amst'},
-      {dir: 'west', id: '91-wend'},
-    ]
-  },
-  {
-    id: '90-broa',
-    coord: [],
-    name: 'W. 90th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-broa'},
-      {dir: 'south', id: '89-broa'},
-      {dir: 'east', id: '90-amst'},
-      {dir: 'west', id: '90-wend'},
-    ]
-  },
-  {
-    id: '89-broa',
-    coord: [],
-    name: 'W. 89th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-broa'},
-      {dir: 'south', id: '88-broa'},
-      {dir: 'east', id: '89-amst'},
-      {dir: 'west', id: '89-wend'},
-    ]
-  },
-  {
-    id: '88-broa',
-    coord: [],
-    name: 'W. 88th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-broa'},
-      {dir: 'south', id: '87-broa'},
-      {dir: 'east', id: '88-amst'},
-      {dir: 'west', id: '88-wend'},
-    ]
-  },
-  {
-    id: '87-broa',
-    coord: [],
-    name: 'W. 87th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-broa'},
-      {dir: 'south', id: '86-broa'},
-      {dir: 'east', id: '87-amst'},
-      {dir: 'west', id: '87-wend'},
-    ]
-  },
-  {
-    id: '86-broa',
-    coord: [],
-    name: 'W. 86th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-broa'},
-      {dir: 'south', id: '85-broa'},
-      {dir: 'east', id: '86-amst'},
-      {dir: 'west', id: '86-wend'},
-    ]
-  },
-  {
-    id: '85-broa',
-    coord: [],
-    name: 'W. 85th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-broa'},
-      {dir: 'south', id: '84-broa'},
-      {dir: 'east', id: '85-amst'},
-      {dir: 'west', id: '85-wend'},
-    ]
-  },
-  {
-    id: '84-broa',
-    coord: [],
-    name: 'W. 84th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-broa'},
-      {dir: 'south', id: '83-broa'},
-      {dir: 'east', id: '84-amst'},
-      {dir: 'west', id: '84-wend'},
-    ]
-  },
-  {
-    id: '83-broa',
-    coord: [],
-    name: 'W. 83rd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '84-broa'},
-      {dir: 'south', id: '82-broa'},
-      {dir: 'east', id: '83-amst'},
-      {dir: 'west', id: '83-wend'},
-    ]
-  },
-  {
-    id: '82-broa',
-    coord: [],
-    name: 'W. 82nd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-broa'},
-      {dir: 'south', id: '81-broa'},
-      {dir: 'east', id: '82-amst'},
-      {dir: 'west', id: '82-wend'},
-    ]
-  },
-  {
-    id: '81-broa',
-    coord: [],
-    name: 'W. 81st St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-broa'},
-      {dir: 'south', id: '80-broa'},
-      {dir: 'east', id: '81-amst'},
-      {dir: 'west', id: '81-wend'},
-    ]
-  },
-  {
-    id: '80-broa',
-    coord: [],
-    name: 'W. 80th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '81-broa'},
-      {dir: 'south', id: '79-broa'},
-      {dir: 'east', id: '80-amst'},
-      {dir: 'west', id: '80-wend'},
-    ]
-  },
-  {
-    id: '79-broa',
-    coord: [],
-    name: 'W. 79th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '80-broa'},
-      {dir: 'south', id: '78-broa'},
-      {dir: 'east', id: '79-amst'},
-      {dir: 'west', id: '79-wend'},
-    ]
-  },
-  {
-    id: '78-broa',
-    coord: [],
-    name: 'W. 78th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-broa'},
-      {dir: 'south', id: '77-broa'},
-      {dir: 'east', id: '78-amst'},
-      {dir: 'west', id: '78-wend'},
-    ]
-  },
-  {
-    id: '77-broa',
-    coord: [],
-    name: 'W. 77th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-broa'},
-      {dir: 'south', id: '76-broa'},
-      {dir: 'east', id: '77-amst'},
-      {dir: 'west', id: '77-wend'},
-    ]
-  },
-  {
-    id: '76-broa',
-    coord: [],
-    name: 'W. 76th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-broa'},
-      {dir: 'south', id: '75-broa'},
-      {dir: 'east', id: '76-amst'},
-      {dir: 'west', id: '76-wend'},
-    ]
-  },
-  {
-    id: '75-broa',
-    coord: [],
-    name: 'W. 75th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-broa'},
-      {dir: 'south', id: '74-broa'},
-      {dir: 'east', id: '75-amst'},
-      {dir: 'west', id: '75-wend'},
-    ]
-  },
-  {
-    id: '74-broa',
-    coord: [],
-    name: 'W. 74th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-broa'},
-      {dir: 'south', id: '73-broa'},
-      {dir: 'east', id: '74-amst'},
-      {dir: 'west', id: '74-wend'},
-    ]
-  },
-  {
-    id: '73-broa',
-    coord: [],
-    name: 'W. 73rd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-broa'},
-      {dir: 'south', id: '72-broa'},
-      {dir: 'east', id: '73-amst'},
-      {dir: 'west', id: '73-wend'},
-    ]
-  },
-  {
-    id: '72-broa',
-    coord: [],
-    name: 'W. 72nd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-broa'},
-      {dir: 'south', id: '71-broa'},
-      {dir: 'east', id: '72-amst'},
-      {dir: 'west', id: '72-wend'},
-    ]
-  },
-  {
-    id: '71-broa',
-    coord: [],
-    name: 'W. 71st St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '72-broa'},
-      {dir: 'south', id: 'broa-amst'},
-      {dir: 'east', id: '71-amst'},
-      {dir: 'west', id: '71-wend'},
-    ]
-  },
-  {
-    id: '70-broa',
-    coord: [],
-    name: 'W. 70th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `You can't go that way.`},
-      {dir: 'south', id: '69-broa'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '70-amst'},
-    ]
-  },
-  {
-    id: '69-broa',
-    coord: [],
-    name: 'W. 69th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '70-broa'},
-      {dir: 'south', id: '68-broa'},
-      {dir: 'east', id: '69-colu'},
-      {dir: 'west', id: '69-amst'},
-    ]
-  },
-  {
-    id: '68-broa',
-    coord: [],
-    name: 'W. 68th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '69-broa'},
-      {dir: 'south', id: '67-broa'},
-      {dir: 'east', id: '68-colu'},
-      {dir: 'west', id: '68-amst'},
-    ]
-  },
-  {
-    id: '67-broa',
-    coord: [],
-    name: 'W. 67th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '68-broa'},
-      {dir: 'south', id: '66-broa'},
-      {dir: 'east', id: '68-colu'},
-      {dir: 'west', id: '68-amst'},
-    ]
-  },
-  {
-    id: '66-broa',
-    coord: [],
-    name: 'W. 66th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '67-broa'},
-      {dir: 'south', id: '65-broa'},
-      {dir: 'east', id: '66-colu'},
-      {dir: 'west', id: '66-amst'},
-    ]
-  },
-  {
-    id: '65-broa',
-    coord: [],
-    name: 'W. 65th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    hasSubway: true,
-    exits: [
-      {dir: 'north', id: '66-broa'},
-      {dir: 'south', id: 'broa-colu'},
-      {dir: 'east', id: '65-colu'},
-      {dir: 'west', id: '65-amst'},
-    ]
-  },
-  {
-    id: '64-broa',
-    coord: [],
-    name: 'W. 64th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'broa-colu'},
-      {dir: 'south', id: '63-broa'},
-      {dir: 'east', id: '64-cpkw'},
-      {dir: 'west', id: '64-colu'},
-    ]
-  },
-  {
-    id: '63-broa',
-    coord: [],
-    name: 'W. 64th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '64-broa'},
-      {dir: 'south', id: '62-broa'},
-      {dir: 'east', id: '63-cpkw'},
-      {dir: 'west', id: '63-colu'},
-    ]
-  },
-  {
-    id: '62-broa',
-    coord: [],
-    name: 'W. 62nd St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '63-broa'},
-      {dir: 'south', id: '61-broa'},
-      {dir: 'east', id: '62-cpkw'},
-      {dir: 'west', id: '62-colu'},
-    ]
-  },
-  {
-    id: '61-broa',
-    coord: [],
-    name: 'W. 61st St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '62-broa'},
-      {dir: 'south', id: '60-broa'},
-      {dir: 'east', id: '61-cpkw'},
-      {dir: 'west', id: '61-colu'},
-    ]
-  },
-  {
-    id: '60-broa',
-    coord: [],
-    name: 'W. 60th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '61-broa'},
-      {dir: 'south', id: '59-broa'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '60'},
-    ]
-  },
-  {
-    id: '59-broa',
-    coord: [],
-    name: 'W. 59th St. and Broadway',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '60-broa'},
-      {dir: 'south', id: 'broa-8'},
-      {dir: 'east', id: '59-cpkw'},
-      {dir: 'west', id: '59-colu'},
-    ]
-  },
-  {
-    id: '110-amst',
-    coord: [],
-    name: 'W. 110th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-amst'},
-      {dir: 'east', id: '110-colu'},
-      {dir: 'west', id: '110-broa'},
-    ]
-  },
-  {
-    id: '109-amst',
-    coord: [],
-    name: 'W. 109th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-amst'},
-      {dir: 'south', id: '108-amst'},
-      {dir: 'east', id: '109-colu'},
-      {dir: 'west', id: '109-broa'},
-    ]
-  },
-  {
-    id: '108-amst',
-    coord: [],
-    name: 'W. 108th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-amst'},
-      {dir: 'south', id: '107-amst'},
-      {dir: 'east', id: '108-colu'},
-      {dir: 'west', id: '108-broa'},
-    ]
-  },
-  {
-    id: '107-amst',
-    coord: [],
-    name: 'W. 107th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-amst'},
-      {dir: 'south', id: '106-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '107-broa'},
-    ]
-  },
-  {
-    id: '106-amst',
-    coord: [],
-    name: 'W. 106th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-amst'},
-      {dir: 'south', id: '105-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '106-broa'},
-    ]
-  },
-  {
-    id: '105-amst',
-    coord: [],
-    name: 'W. 105th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-amst'},
-      {dir: 'south', id: '104-amst'},
-      {dir: 'east', id: '105-colu'},
-      {dir: 'west', id: '105-broa'},
-    ]
-  },
-  {
-    id: '104-amst',
-    coord: [],
-    name: 'W. 104th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-amst'},
-      {dir: 'south', id: '103-amst'},
-      {dir: 'east', id: '104-colu'},
-      {dir: 'west', id: '104-broa'},
-    ]
-  },
-  {
-    id: '103-amst',
-    coord: [],
-    name: 'W. 103rd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-amst'},
-      {dir: 'south', id: '102-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '103-broa'},
-    ]
-  },
-  {
-    id: '102-amst',
-    coord: [],
-    name: 'W. 102nd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-amst'},
-      {dir: 'south', id: '101-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '102-broa'},
-    ]
-  },
-  {
-    id: '101-amst',
-    coord: [],
-    name: 'W. 101st St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-amst'},
-      {dir: 'south', id: '100-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '101-broa'},
-    ]
-  },
-  {
-    id: '100-amst',
-    coord: [],
-    name: 'W. 100th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-amst'},
-      {dir: 'south', id: '99-amst'},
-      {dir: 'east', id: '100-colu'},
-      {dir: 'west', id: '100-broa'},
-    ]
-  },
-  {
-    id: '99-amst',
-    coord: [],
-    name: 'W. 99th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-amst'},
-      {dir: 'south', id: '98-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '99-broa'},
-    ]
-  },
-  {
-    id: '98-amst',
-    coord: [],
-    name: 'W. 98th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '99-amst'},
-      {dir: 'south', id: '97-amst'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '98-broa'},
-    ]
-  },
-  {
-    id: '97-amst',
-    coord: [],
-    name: 'W. 97th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '98-amst'},
-      {dir: 'south', id: '96-amst'},
-      {dir: 'east', id: '97-colu'},
-      {dir: 'west', id: '97-broa'},
-    ]
-  },
-  {
-    id: '96-amst',
-    coord: [],
-    name: 'W. 96th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '97-amst'},
-      {dir: 'south', id: '95-amst'},
-      {dir: 'east', id: '96-colu'},
-      {dir: 'west', id: '96-broa'},
-    ]
-  },
-  {
-    id: '95-amst',
-    coord: [],
-    name: 'W. 95th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-amst'},
-      {dir: 'south', id: '94-amst'},
-      {dir: 'east', id: '95-colu'},
-      {dir: 'west', id: '95-broa'},
-    ]
-  },
-  {
-    id: '94-amst',
-    coord: [],
-    name: 'W. 94th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-amst'},
-      {dir: 'south', id: '93-amst'},
-      {dir: 'east', id: '94-colu'},
-      {dir: 'west', id: '94-broa'},
-    ]
-  },
-  {
-    id: '93-amst',
-    coord: [],
-    name: 'W. 93rd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-amst'},
-      {dir: 'south', id: '92-amst'},
-      {dir: 'east', id: '93-colu'},
-      {dir: 'west', id: '93-broa'},
-    ]
-  },
-  {
-    id: '92-amst',
-    coord: [],
-    name: 'W.  St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-amst'},
-      {dir: 'south', id: '91-amst'},
-      {dir: 'east', id: '92-colu'},
-      {dir: 'west', id: '92-broa'},
-    ]
-  },
-  {
-    id: '91-amst',
-    coord: [],
-    name: 'W. 91st St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-amst'},
-      {dir: 'south', id: '90-amst'},
-      {dir: 'east', id: '91-colu'},
-      {dir: 'west', id: '91-broa'},
-    ]
-  },
-  {
-    id: '90-amst',
-    coord: [],
-    name: 'W. 90th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-amst'},
-      {dir: 'south', id: '89-amst'},
-      {dir: 'east', id: '90-colu'},
-      {dir: 'west', id: '90-broa'},
-    ]
-  },
-  {
-    id: '89-amst',
-    coord: [],
-    name: 'W. 89th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-amst'},
-      {dir: 'south', id: '88-amst'},
-      {dir: 'east', id: '89-colu'},
-      {dir: 'west', id: '89-broa'},
-    ]
-  },
-  {
-    id: '88-amst',
-    coord: [],
-    name: 'W. 88th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-amst'},
-      {dir: 'south', id: '87-amst'},
-      {dir: 'east', id: '88-colu'},
-      {dir: 'west', id: '88-broa'},
-    ]
-  },
-  {
-    id: '87-amst',
-    coord: [],
-    name: 'W. 87th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-amst'},
-      {dir: 'south', id: '86-amst'},
-      {dir: 'east', id: '87-colu'},
-      {dir: 'west', id: '87-broa'},
-    ]
-  },
-  {
-    id: '86-amst',
-    coord: [],
-    name: 'W. 86th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-amst'},
-      {dir: 'south', id: '85-amst'},
-      {dir: 'east', id: '86-colu'},
-      {dir: 'west', id: '86-broa'},
-    ]
-  },
-  {
-    id: '85-amst',
-    coord: [],
-    name: 'W. 85th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-amst'},
-      {dir: 'south', id: 'epoe-amst'},
-      {dir: 'east', id: '85-colu'},
-      {dir: 'west', id: '85-broa'},
-    ]
-  },
-  {
-    id: 'epoe-amst',
-    coord: [],
-    name: 'Edgar Allen Poe St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-amst'},
-      {dir: 'south', id: '83-amst'},
-      {dir: 'east', id: 'epoe-colu'},
-      {dir: 'west', id: 'epoe-broa'},
-    ]
-  },
-  {
-    id: '83-amst',
-    coord: [],
-    name: 'W. 83rd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'epoe-amst'},
-      {dir: 'south', id: '82-amst'},
-      {dir: 'east', id: '83-colu'},
-      {dir: 'west', id: '83-broa'},
-    ]
-  },
-  {
-    id: '82-amst',
-    coord: [],
-    name: 'W. 82nd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-amst'},
-      {dir: 'south', id: '81-amst'},
-      {dir: 'east', id: '82-colu'},
-      {dir: 'west', id: '82-broa'},
-    ]
-  },
-  {
-    id: '81-amst',
-    coord: [],
-    name: 'W. 81st St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-amst'},
-      {dir: 'south', id: '80-amst'},
-      {dir: 'east', id: '81-colu'},
-      {dir: 'west', id: '81-broa'},
-    ]
-  },
-  {
-    id: '80-amst',
-    coord: [],
-    name: 'W. 80th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '81-amst'},
-      {dir: 'south', id: '79-amst'},
-      {dir: 'east', id: '80-colu'},
-      {dir: 'west', id: '80-broa'},
-    ]
-  },
-  {
-    id: '79-amst',
-    coord: [],
-    name: 'W. 79th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '80-amst'},
-      {dir: 'south', id: '78-amst'},
-      {dir: 'east', id: '79-colu'},
-      {dir: 'west', id: '79-broa'},
-    ]
-  },
-  {
-    id: '78-amst',
-    coord: [],
-    name: 'W. 78th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-amst'},
-      {dir: 'south', id: '77-amst'},
-      {dir: 'east', id: '78-colu'},
-      {dir: 'west', id: '78-broa'},
-    ]
-  },
-  {
-    id: '77-amst',
-    coord: [],
-    name: 'W. 77th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-amst'},
-      {dir: 'south', id: '76-amst'},
-      {dir: 'east', id: '77-colu'},
-      {dir: 'west', id: '77-broa'},
-    ]
-  },
-  {
-    id: '76-amst',
-    coord: [],
-    name: 'W. 76th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-amst'},
-      {dir: 'south', id: '75-amst'},
-      {dir: 'east', id: '76-colu'},
-      {dir: 'west', id: '76-broa'},
-    ]
-  },
-  {
-    id: '75-amst',
-    coord: [],
-    name: 'W. 75th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-amst'},
-      {dir: 'south', id: '74-amst'},
-      {dir: 'east', id: '75-colu'},
-      {dir: 'west', id: '75-broa'},
-    ]
-  },
-  {
-    id: '74-amst',
-    coord: [],
-    name: 'W. 74th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-amst'},
-      {dir: 'south', id: '73-amst'},
-      {dir: 'east', id: '74-colu'},
-      {dir: 'west', id: '74-broa'},
-    ]
-  },
-  {
-    id: '73-amst',
-    coord: [],
-    name: 'W. 73rd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-amst'},
-      {dir: 'south', id: '72-amst'},
-      {dir: 'east', id: '73-colu'},
-      {dir: 'west', id: '73-broa'},
-    ]
-  },
-  {
-    id: '72-amst',
-    coord: [],
-    name: 'W. 72nd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-amst'},
-      {dir: 'south', id: '71-amst'},
-      {dir: 'east', id: '72-colu'},
-      {dir: 'west', id: '72-broa'},
-    ]
-  },
-  {
-    id: '71-amst',
-    coord: [],
-    name: 'W. 71st St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '72-amst'},
-      {dir: 'south', id: 'broa-amst'},
-      {dir: 'east', id: '71-colu'},
-      {dir: 'west', id: '71-broa'},
-    ]
-  },
-  {
-    id: 'broa-amst',
-    coord: [],
-    name: 'Broadway and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '71-amst'},
-      {dir: 'south', id: '70-amst'},
-      {dir: 'east', id: '70-broa'},
-      {dir: 'west', id: '71-broa'},
-    ]
-  },
-  {
-    id: '70-amst',
-    coord: [],
-    name: 'W. 70th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '-amst'},
-      {dir: 'south', id: '69-amst'},
-      {dir: 'east', id: '70-broa'},
-      {dir: 'west', id: '70-wend'},
-    ]
-  },
-  {
-    id: '69-amst',
-    coord: [],
-    name: 'W. 69th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '70-amst'},
-      {dir: 'south', id: '68-amst'},
-      {dir: 'east', id: '69-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '68-amst',
-    coord: [],
-    name: 'W. 68th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '69-amst'},
-      {dir: 'south', id: '67-amst'},
-      {dir: 'east', id: '68-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '67-amst',
-    coord: [],
-    name: 'W. 67th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '68-amst'},
-      {dir: 'south', id: '66-amst'},
-      {dir: 'east', id: '67-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '66-amst',
-    coord: [],
-    name: 'W. 66th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '67-amst'},
-      {dir: 'south', id: '65-amst'},
-      {dir: 'east', id: '66-broa'},
-      {dir: 'west', id: '66-wend'},
-    ]
-  },
-  {
-    id: '65-amst',
-    coord: [],
-    name: 'W. 65th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '66-amst'},
-      {dir: 'south', id: '64-amst'},
-      {dir: 'east', id: '65-broa'},
-      {dir: 'west', id: '65-wend'},
-    ]
-  },
-  {
-    id: '64-amst',
-    coord: [],
-    name: 'W. 64th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '65-amst'},
-      {dir: 'south', id: '62-amst'},
-      {dir: 'east', id: '64-colu'},
-      {dir: 'west', id: '64-wend'},
-    ]
-  },
-  {
-    id: '62-amst',
-    coord: [],
-    name: 'W. 62nd St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '64-amst'},
-      {dir: 'south', id: '61-amst'},
-      {dir: 'east', id: '62-colu'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '61-amst',
-    coord: [],
-    name: 'W. 61st St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '62-amst'},
-      {dir: 'south', id: '60-amst'},
-      {dir: 'east', id: '61-colu'},
-      {dir: 'west', id: '61-wend'},
-    ]
-  },
-  {
-    id: '60-amst',
-    coord: [],
-    name: 'W. 60th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '61-amst'},
-      {dir: 'south', id: '59-amst'},
-      {dir: 'east', id: '60-colu'},
-      {dir: 'west', id: '60-wend'},
-    ]
-  },
-  {
-    id: '59-amst',
-    coord: [],
-    name: 'W. 59th St. and Amsterdam Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '60-amst'},
-      {dir: 'south', id: '58-10'},
-      {dir: 'east', id: '59-colu'},
-      {dir: 'west', id: '59-wend'},
-    ]
-  },
-  {
-    id: '110-colu',
-    coord: [],
-    name: 'W. 110th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-colu'},
-      {dir: 'east', id: '110-manh'},
-      {dir: 'west', id: '110-amst'},
-    ]
-  },
-  {
-    id: '109-colu',
-    coord: [],
-    name: 'W. 109th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-colu'},
-      {dir: 'south', id: '108-colu'},
-      {dir: 'east', id: '109-manh'},
-      {dir: 'west', id: '109-amst'},
-    ]
-  },
-  {
-    id: '108-colu',
-    coord: [],
-    name: 'W. 108th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-colu'},
-      {dir: 'south', id: '107-colu'},
-      {dir: 'east', id: '108-manh'},
-      {dir: 'west', id: '108-amst'},
-    ]
-  },
-  {
-    id: '107-colu',
-    coord: [],
-    name: 'W. 107th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-colu'},
-      {dir: 'south', id: '106-colu'},
-      {dir: 'east', id: '107-manh'},
-      {dir: 'west', id: '107-amst'},
-    ]
-  },
-  {
-    id: '106-colu',
-    coord: [],
-    name: 'W. 106th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-colu'},
-      {dir: 'south', id: '105-colu'},
-      {dir: 'east', id: '106-manh'},
-      {dir: 'west', id: '106-amst'},
-    ]
-  },
-  {
-    id: '105-colu',
-    coord: [],
-    name: 'W. 105th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-colu'},
-      {dir: 'south', id: '104-colu'},
-      {dir: 'east', id: '105-manh'},
-      {dir: 'west', id: '105-amst'},
-    ]
-  },
-  {
-    id: '104-colu',
-    coord: [],
-    name: 'W. 104th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-colu'},
-      {dir: 'south', id: '100-colu'},
-      {dir: 'east', id: '104-manh'},
-      {dir: 'west', id: '104-amst'},
-    ]
-  },
-  {
-    id: '100-colu',
-    coord: [],
-    name: 'W. 100th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-colu'},
-      {dir: 'south', id: '97-colu'},
-      {dir: 'east', id: '100-manh'},
-      {dir: 'west', id: '100-amst'},
-    ]
-  },
-  {
-    id: '97-colu',
-    coord: [],
-    name: 'W. 97th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-colu'},
-      {dir: 'south', id: '96-colu'},
-      {dir: 'east', id: '97-cpkw'},
-      {dir: 'west', id: '97-amst'},
-    ]
-  },
-  {
-    id: '96-colu',
-    coord: [],
-    name: 'W. 96th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '97-colu'},
-      {dir: 'south', id: '95-colu'},
-      {dir: 'east', id: '96-cpkw'},
-      {dir: 'west', id: '96-amst'},
-    ]
-  },
-  {
-    id: '95-colu',
-    coord: [],
-    name: 'W. 95th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96-colu'},
-      {dir: 'south', id: '94-colu'},
-      {dir: 'east', id: '95-cpkw'},
-      {dir: 'west', id: '95-amst'},
-    ]
-  },
-  {
-    id: '94-colu',
-    coord: [],
-    name: 'W. 94th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-colu'},
-      {dir: 'south', id: '93-colu'},
-      {dir: 'east', id: '94-cpkw'},
-      {dir: 'west', id: '94-amst'},
-    ]
-  },
-  {
-    id: '93-colu',
-    coord: [],
-    name: 'W. 93rd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-colu'},
-      {dir: 'south', id: '92-colu'},
-      {dir: 'east', id: '93-cpkw'},
-      {dir: 'west', id: '93-amst'},
-    ]
-  },
-  {
-    id: '92-colu',
-    coord: [],
-    name: 'W. 92nd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-colu'},
-      {dir: 'south', id: '91-colu'},
-      {dir: 'east', id: '92-cpkw'},
-      {dir: 'west', id: '92-amst'},
-    ]
-  },
-  {
-    id: '91-colu',
-    coord: [],
-    name: 'W. 91st St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-colu'},
-      {dir: 'south', id: '90-colu'},
-      {dir: 'east', id: '91-cpkw'},
-      {dir: 'west', id: '91-amst'},
-    ]
-  },
-  {
-    id: '90-colu',
-    coord: [],
-    name: 'W. 90th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-colu'},
-      {dir: 'south', id: '89-colu'},
-      {dir: 'east', id: '90-cpkw'},
-      {dir: 'west', id: '90-amst'},
-    ]
-  },
-  {
-    id: '89-colu',
-    coord: [],
-    name: 'W. 89th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-colu'},
-      {dir: 'south', id: '88-colu'},
-      {dir: 'east', id: '89-cpkw'},
-      {dir: 'west', id: '89-amst'},
-    ]
-  },
-  {
-    id: '88-colu',
-    coord: [],
-    name: 'W. 88th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-colu'},
-      {dir: 'south', id: '87-colu'},
-      {dir: 'east', id: '88-cpkw'},
-      {dir: 'west', id: '88-amst'},
-    ]
-  },
-  {
-    id: '87-colu',
-    coord: [],
-    name: 'W. 87th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-colu'},
-      {dir: 'south', id: '86-colu'},
-      {dir: 'east', id: '87-cpkw'},
-      {dir: 'west', id: '87-amst'},
-    ]
-  },
-  {
-    id: '86-colu',
-    coord: [],
-    name: 'W. 86th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-colu'},
-      {dir: 'south', id: '85-colu'},
-      {dir: 'east', id: '86-cpkw'},
-      {dir: 'west', id: '86-amst'},
-    ]
-  },
-  {
-    id: '85-colu',
-    coord: [],
-    name: 'W. 85th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-colu'},
-      {dir: 'south', id: 'epoe-colu'},
-      {dir: 'east', id: '85-cpkw'},
-      {dir: 'west', id: '85-amst'},
-    ]
-  },
-  {
-    id: 'epoe-colu',
-    coord: [],
-    name: 'Edgar Allen Poe St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-colu'},
-      {dir: 'south', id: '83-colu'},
-      {dir: 'east', id: 'epoe-cpkw'},
-      {dir: 'west', id: 'epoe-amst'},
-    ]
-  },
-  {
-    id: '83-colu',
-    coord: [],
-    name: 'W. 83rd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'epoe-colu'},
-      {dir: 'south', id: '82-colu'},
-      {dir: 'east', id: '83-cpkw'},
-      {dir: 'west', id: '83-amst'},
-    ]
-  },
-  {
-    id: '82-colu',
-    coord: [],
-    name: 'W. 82nd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-colu'},
-      {dir: 'south', id: '81-colu'},
-      {dir: 'east', id: '82-cpkw'},
-      {dir: 'west', id: '82-amst'},
-    ]
-  },
-  {
-    id: '81-colu',
-    coord: [],
-    name: 'W. 81st St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-colu'},
-      {dir: 'south', id: '80-colu'},
-      {dir: 'east', id: '81-cpkw'},
-      {dir: 'west', id: '81-amst'},
-    ]
-  },
-  {
-    id: '80-colu',
-    coord: [],
-    name: 'W. 80th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '81-colu'},
-      {dir: 'south', id: '79-colu'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '80-amst'},
-    ]
-  },
-  {
-    id: '79-colu',
-    coord: [],
-    name: 'W. 79th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '80-colu'},
-      {dir: 'south', id: '78-colu'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '79-amst'},
-    ]
-  },
-  {
-    id: '78-colu',
-    coord: [],
-    name: 'W. 78th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '79-colu'},
-      {dir: 'south', id: '77-colu'},
-      {dir: 'east', id: '', block: `You can't go that way.`},
-      {dir: 'west', id: '78-amst'},
-    ]
-  },
-  {
-    id: '77-colu',
-    coord: [],
-    name: 'W. 77th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-colu'},
-      {dir: 'south', id: '76-colu'},
-      {dir: 'east', id: '77-cpkw'},
-      {dir: 'west', id: '77-amst'},
-    ]
-  },
-  {
-    id: '76-colu',
-    coord: [],
-    name: 'W. 76th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-colu'},
-      {dir: 'south', id: '75-colu'},
-      {dir: 'east', id: '76-cpkw'},
-      {dir: 'west', id: '77-amst'},
-    ]
-  },
-  {
-    id: '75-colu',
-    coord: [],
-    name: 'W. 75th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-colu'},
-      {dir: 'south', id: '74-colu'},
-      {dir: 'east', id: '75-cpkw'},
-      {dir: 'west', id: '75-amst'},
-    ]
-  },
-  {
-    id: '74-colu',
-    coord: [],
-    name: 'W. 74th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-colu'},
-      {dir: 'south', id: '73-colu'},
-      {dir: 'east', id: '74-cpkw'},
-      {dir: 'west', id: '74-amst'},
-    ]
-  },
-  {
-    id: '73-colu',
-    coord: [],
-    name: 'W. 73rd St. and Columbus Ave.',
-    desc: 'You see an alley here that seems to be used for making deliveries to the Dakota.',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-colu'},
-      {dir: 'south', id: '72-colu'},
-      {dir: 'east', id: '73-cpkw'},
-      {dir: 'west', id: '73-amst'},
-      {dir: 'alley', id: '', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
-    ]
-  },
-  {
-    id: '72-colu',
-    coord: [],
-    name: 'W. 72nd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-colu'},
-      {dir: 'south', id: '71-colu'},
-      {dir: 'east', id: '72-cpkw'},
-      {dir: 'west', id: '72-amst'},
-    ]
-  },
-  {
-    id: '71-colu',
-    coord: [],
-    name: 'W. 71st St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '72-colu'},
-      {dir: 'south', id: '70-colu'},
-      {dir: 'east', id: '71-cpkw'},
-      {dir: 'west', id: '71-amst'},
-    ]
-  },
-  {
-    id: '70-colu',
-    coord: [],
-    name: 'W. 70th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '71-colu'},
-      {dir: 'south', id: '69-colu'},
-      {dir: 'east', id: '71-cpkw'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '69-colu',
-    coord: [],
-    name: 'W. 69th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '70-colu'},
-      {dir: 'south', id: '68-colu'},
-      {dir: 'east', id: '69-cpkw'},
-      {dir: 'west', id: '69-broa'},
-    ]
-  },
-  {
-    id: '68-colu',
-    coord: [],
-    name: 'W. 68th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '69-colu'},
-      {dir: 'south', id: '67-colu'},
-      {dir: 'east', id: '68-cpkw'},
-      {dir: 'west', id: '68-broa'},
-    ]
-  },
-  {
-    id: '67-colu',
-    coord: [],
-    name: 'W. 67th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '68-colu'},
-      {dir: 'south', id: '66-colu'},
-      {dir: 'east', id: '67-cpkw'},
-      {dir: 'west', id: '67-broa'},
-    ]
-  },
-  {
-    id: '66-colu',
-    coord: [],
-    name: 'W. 66th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '67'},
-      {dir: 'south', id: '65'},
-      {dir: 'east', id: '66-cpkw'},
-      {dir: 'west', id: '66-broa'},
-    ]
-  },
-  {
-    id: '65-colu',
-    coord: [],
-    name: 'W. 65th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '66-colu'},
-      {dir: 'south', id: 'broa-colu'},
-      {dir: 'east', id: '65-cpkw'},
-      {dir: 'west', id: '65-broa'},
-    ]
-  },
-  {
-    id: 'broa-colu',
-    coord: [],
-    name: 'Broadway and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '65-colu'},
-      {dir: 'south', id: '64-colu'},
-      {dir: 'east', id: '64-broa'},
-      {dir: 'west', id: '65-broa'},
-    ]
-  },
-  {
-    id: '64-colu',
-    coord: [],
-    name: 'W. 64th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'broa-colu'},
-      {dir: 'south', id: '63-colu'},
-      {dir: 'east', id: '64-broa'},
-      {dir: 'west', id: '64-amst'},
-    ]
-  },
-  {
-    id: '63-colu',
-    coord: [],
-    name: 'W. 63rd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '64-colu'},
-      {dir: 'south', id: '62-colu'},
-      {dir: 'east', id: '63-broa'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '62-colu',
-    coord: [],
-    name: 'W. 62nd St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '63-colu'},
-      {dir: 'south', id: '61-colu'},
-      {dir: 'east', id: '62-broa'},
-      {dir: 'west', id: '62-amst'},
-    ]
-  },
-  {
-    id: '61-colu',
-    coord: [],
-    name: 'W. 61st St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '62-colu'},
-      {dir: 'south', id: '60-colu'},
-      {dir: 'east', id: '61-broa'},
-      {dir: 'west', id: '61-amst'},
-    ]
-  },
-  {
-    id: '60-colu',
-    coord: [],
-    name: 'W. 60th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '61-colu'},
-      {dir: 'south', id: '59-colu'},
-      {dir: 'east', id: '60-broa'},
-      {dir: 'west', id: '60-amst'},
-    ]
-  },
-  {
-    id: '59-colu',
-    coord: [],
-    name: 'W. 59th St. and Columbus Ave.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '60-colu'},
-      {dir: 'south', id: '58-9'},
-      {dir: 'east', id: '59-broa'},
-      {dir: 'west', id: '59-amst'},
-    ]
-  },
-  {
-    id: '110-manh',
-    coord: [],
-    name: 'W. 110th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-manh'},
-      {dir: 'east', id: '110-cpkw'},
-      {dir: 'west', id: '110-colu'},
-    ]
-  },
-  {
-    id: '109-manh',
-    coord: [],
-    name: 'W.  St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-manh'},
-      {dir: 'south', id: '108-manh'},
-      {dir: 'east', id: '109-cpkw'},
-      {dir: 'west', id: '109-colu'},
-    ]
-  },
-  {
-    id: '108-manh',
-    coord: [],
-    name: 'W. 108th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-manh'},
-      {dir: 'south', id: '107-manh'},
-      {dir: 'east', id: '108-cpkw'},
-      {dir: 'west', id: '108-colu'},
-    ]
-  },
-  {
-    id: '107-manh',
-    coord: [],
-    name: 'W. 107th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-manh'},
-      {dir: 'south', id: '106-manh'},
-      {dir: 'east', id: '107-cpkw'},
-      {dir: 'west', id: '107-colu'},
-    ]
-  },
-  {
-    id: '106-manh',
-    coord: [],
-    name: 'W. 106th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-manh'},
-      {dir: 'south', id: '105-manh'},
-      {dir: 'east', id: '106-cpkw'},
-      {dir: 'west', id: '106-colu'},
-    ]
-  },
-  {
-    id: '105-manh',
-    coord: [],
-    name: 'W. 105th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-manh'},
-      {dir: 'south', id: '104-manh'},
-      {dir: 'east', id: '105-cpkw'},
-      {dir: 'west', id: '105-colu'},
-    ]
-  },
-  {
-    id: '104-manh',
-    coord: [],
-    name: 'W. 104th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-manh'},
-      {dir: 'south', id: '103-manh'},
-      {dir: 'east', id: '104-cpkw'},
-      {dir: 'west', id: '104-colu'},
-    ]
-  },
-  {
-    id: '103-manh',
-    coord: [],
-    name: 'W. 103rd St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-manh'},
-      {dir: 'south', id: '102-manh'},
-      {dir: 'east', id: '103-cpkw'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '102-manh',
-    coord: [],
-    name: 'W. 102nd St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-manh'},
-      {dir: 'south', id: '101-manh'},
-      {dir: 'east', id: '102-cpkw'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '101-manh',
-    coord: [],
-    name: 'W. 101st St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-manh'},
-      {dir: 'south', id: '100-manh'},
-      {dir: 'east', id: '101-cpkw'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '100-manh',
-    coord: [],
-    name: 'W. 100th St. and ',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-manh'},
-      {dir: 'south', id: '', block: `You can't go that way.`},
-      {dir: 'east', id: '100-cpkw'},
-      {dir: 'west', id: '100-colu'},
-    ]
-  },  {
-    id: '110-cpkw',
-    coord: [],
-    name: 'W. 110th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-      {dir: 'south', id: '109-cpkw'},
-      {dir: 'east', id: '110-'},
-      {dir: 'west', id: '110-manh'},
-    ]
-  },
-  {
-    id: '109-cpkw',
-    coord: [],
-    name: 'W. 109th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '110-cpkw'},
-      {dir: 'south', id: '108-cpkw'},
-      {dir: 'east', id: '109'},
-      {dir: 'west', id: '109-manh'},
-    ]
-  },
-  {
-    id: '108-cpkw',
-    coord: [],
-    name: 'W. 108th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '109-cpkw'},
-      {dir: 'south', id: '107-cpkw'},
-      {dir: 'east', id: '108-'},
-      {dir: 'west', id: '108-manh'},
-    ]
-  },
-  {
-    id: '107-cpkw',
-    coord: [],
-    name: 'W. 107th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '108-cpkw'},
-      {dir: 'south', id: '106-cpkw'},
-      {dir: 'east', id: '107-'},
-      {dir: 'west', id: '107-manh'},
-    ]
-  },
-  {
-    id: '106-cpkw',
-    coord: [],
-    name: 'W. 106th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '107-cpkw'},
-      {dir: 'south', id: '105-cpkw'},
-      {dir: 'east', id: '106-'},
-      {dir: 'west', id: '106-manh'},
-    ]
-  },
-  {
-    id: '105-cpkw',
-    coord: [],
-    name: 'W. 105th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '106-cpkw'},
-      {dir: 'south', id: '104-cpkw'},
-      {dir: 'east', id: '105-'},
-      {dir: 'west', id: '105-manh'},
-    ]
-  },
-  {
-    id: '104-cpkw',
-    coord: [],
-    name: 'W. 104th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '105-cpkw'},
-      {dir: 'south', id: '103-cpkw'},
-      {dir: 'east', id: '104-'},
-      {dir: 'west', id: '104-manh'},
-    ]
-  },
-  {
-    id: '103-cpkw',
-    coord: [],
-    name: 'W. 103rd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '104-cpkw'},
-      {dir: 'south', id: '102-cpkw'},
-      {dir: 'east', id: '103-'},
-      {dir: 'west', id: '103-manh'},
-    ]
-  },
-  {
-    id: '102-cpkw',
-    coord: [],
-    name: 'W. 102nd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '103-cpkw'},
-      {dir: 'south', id: '101-cpkw'},
-      {dir: 'east', id: '102-'},
-      {dir: 'west', id: '102-manh'},
-    ]
-  },
-  {
-    id: '101-cpkw',
-    coord: [],
-    name: 'W. 101st St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '102-cpkw'},
-      {dir: 'south', id: '100-cpkw'},
-      {dir: 'east', id: '101-'},
-      {dir: 'west', id: '101-manh'},
-    ]
-  },
-  {
-    id: '100-cpkw',
-    coord: [],
-    name: 'W. 100th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '101-cpkw'},
-      {dir: 'south', id: '99-cpkw'},
-      {dir: 'east', id: '100-'},
-      {dir: 'west', id: '100-manh'},
-    ]
-  },
-  {
-    id: '99-cpkw',
-    coord: [],
-    name: 'W. 99th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '100-cpkw'},
-      {dir: 'south', id: '98-cpkw'},
-      {dir: 'east', id: '99-'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '98-cpkw',
-    coord: [],
-    name: 'W. 98th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '99-cpkw'},
-      {dir: 'south', id: '97-cpkw'},
-      {dir: 'east', id: '98-'},
-      {dir: 'west', id: '', block: `You can't go that way.`},
-    ]
-  },
-  {
-    id: '97-cpkw',
-    coord: [],
-    name: 'W. 97th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '98-cpkw'},
-      {dir: 'south', id: '96-cpkw'},
-      {dir: 'east', id: '97-'},
-      {dir: 'west', id: '97-colu'},
-    ]
-  },
-  {
-    id: '96-cpkw',
-    coord: [],
-    name: 'W. 96th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '97-cpkw'},
-      {dir: 'south', id: '95-cpkw'},
-      {dir: 'east', id: '96-'},
-      {dir: 'west', id: '96-colu'},
-    ]
-  },
-  {
-    id: '95-cpkw',
-    coord: [],
-    name: 'W. 95th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '96'},
-      {dir: 'south', id: '94'},
-      {dir: 'east', id: '95-'},
-      {dir: 'west', id: '95-colu'},
-    ]
-  },
-  {
-    id: '94-cpkw',
-    coord: [],
-    name: 'W. 94th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '95-cpkw'},
-      {dir: 'south', id: '93-cpkw'},
-      {dir: 'east', id: '94-'},
-      {dir: 'west', id: '94-colu'},
-    ]
-  },
-  {
-    id: '93-cpkw',
-    coord: [],
-    name: 'W. 93rd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '94-cpkw'},
-      {dir: 'south', id: '92-cpkw'},
-      {dir: 'east', id: '93-'},
-      {dir: 'west', id: '93-colu'},
-    ]
-  },
-  {
-    id: '92-cpkw',
-    coord: [],
-    name: 'W. 92nd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '93-cpkw'},
-      {dir: 'south', id: '91-cpkw'},
-      {dir: 'east', id: '92-'},
-      {dir: 'west', id: '92-colu'},
-    ]
-  },
-  {
-    id: '91-cpkw',
-    coord: [],
-    name: 'W. 91st St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '92-cpkw'},
-      {dir: 'south', id: '90-cpkw'},
-      {dir: 'east', id: '91-'},
-      {dir: 'west', id: '91-colu'},
-    ]
-  },
-  {
-    id: '90-cpkw',
-    coord: [],
-    name: 'W. 90th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '91-cpkw'},
-      {dir: 'south', id: '89-cpkw'},
-      {dir: 'east', id: '90-'},
-      {dir: 'west', id: '90-colu'},
-    ]
-  },
-  {
-    id: '89-cpkw',
-    coord: [],
-    name: 'W. 89th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '90-cpkw'},
-      {dir: 'south', id: '88-cpkw'},
-      {dir: 'east', id: '89-'},
-      {dir: 'west', id: '89-colu'},
-    ]
-  },
-  {
-    id: '88-cpkw',
-    coord: [],
-    name: 'W. 88th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '89-cpkw'},
-      {dir: 'south', id: '87-cpkw'},
-      {dir: 'east', id: '88-'},
-      {dir: 'west', id: '88-colu'},
-    ]
-  },
-  {
-    id: '87-cpkw',
-    coord: [],
-    name: 'W. 87th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '88-cpkw'},
-      {dir: 'south', id: '86-cpkw'},
-      {dir: 'east', id: '87-'},
-      {dir: 'west', id: '87-colu'},
-    ]
-  },
-  {
-    id: '86-cpkw',
-    coord: [],
-    name: 'W. 86th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '87-cpkw'},
-      {dir: 'south', id: '85-cpkw'},
-      {dir: 'east', id: '86-'},
-      {dir: 'west', id: '86-colu'},
-    ]
-  },
-  {
-    id: '85-cpkw',
-    coord: [],
-    name: 'W. 85th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '86-cpkw'},
-      {dir: 'south', id: 'epoe-cpkw'},
-      {dir: 'east', id: '85-'},
-      {dir: 'west', id: '85-colu'},
-    ]
-  },
-  {
-    id: 'epoe-cpkw',
-    coord: [],
-    name: 'Edgar Allen Poe St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '85-cpkw'},
-      {dir: 'south', id: '83-cpkw'},
-      {dir: 'east', id: '84-'},
-      {dir: 'west', id: '84-colu'},
-    ]
-  },
-  {
-    id: '83-cpkw',
-    coord: [],
-    name: 'W. 83rd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: 'epoe-cpkw'},
-      {dir: 'south', id: '82-cpkw'},
-      {dir: 'east', id: '83-'},
-      {dir: 'west', id: '83-colu'},
-    ]
-  },
-  {
-    id: '82-cpkw',
-    coord: [],
-    name: 'W. 82nd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '83-cpkw'},
-      {dir: 'south', id: '81-cpkw'},
-      {dir: 'east', id: '82-'},
-      {dir: 'west', id: '82-colu'},
-    ]
-  },
-  {
-    id: '81-cpkw',
-    coord: [],
-    name: 'W. 81st St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '82-cpkw'},
-      {dir: 'south', id: '80-cpkw'},
-      {dir: 'east', id: '81-'},
-      {dir: 'west', id: '81-colu'},
-    ]
-  },
-  {
-    id: '77-cpkw',
-    coord: [],
-    name: 'W. 77th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '78-cpkw'},
-      {dir: 'south', id: '76-cpkw'},
-      {dir: 'east', id: '77-'},
-      {dir: 'west', id: '77-colu'},
-    ]
-  },
-  {
-    id: '76-cpkw',
-    coord: [],
-    name: 'W. 76th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '77-cpkw'},
-      {dir: 'south', id: '75-cpkw'},
-      {dir: 'east', id: '76-'},
-      {dir: 'west', id: '76-colu'},
-    ]
-  },
-  {
-    id: '75-cpkw',
-    coord: [],
-    name: 'W. 75th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '76-cpkw'},
-      {dir: 'south', id: '74-cpkw'},
-      {dir: 'east', id: '75-'},
-      {dir: 'west', id: '75-colu'},
-    ]
-  },
-  {
-    id: '74-cpkw',
-    coord: [],
-    name: 'W. 74th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '75-cpkw'},
-      {dir: 'south', id: '73-cpkw'},
-      {dir: 'east', id: '74-'},
-      {dir: 'west', id: '74-colu'},
-    ]
-  },
-  {
-    id: '73-cpkw',
-    coord: [],
-    name: 'W. 73rd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '74-cpkw'},
-      {dir: 'south', id: '72-cpkw'},
-      {dir: 'east', id: '73-'},
-      {dir: 'west', id: '73-colu'},
-    ]
-  },
-  {
-    id: '72-cpkw',
-    coord: [],
-    name: 'W. 72nd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '73-cpkw'},
-      {dir: 'south', id: '71-cpkw'},
-      {dir: 'east', id: '72-'},
-      {dir: 'west', id: '72-colu'},
-    ]
-  },
-  {
-    id: '71-cpkw',
-    coord: [],
-    name: 'W. 71st St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '72-cpkw'},
-      {dir: 'south', id: '70-cpkw'},
-      {dir: 'east', id: '71-'},
-      {dir: 'west', id: '71-colu'},
-    ]
-  },
-  {
-    id: '70-cpkw',
-    coord: [],
-    name: 'W. 70th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '71-cpkw'},
-      {dir: 'south', id: '69-cpkw'},
-      {dir: 'east', id: '70-'},
-      {dir: 'west', id: '70-colu'},
-    ]
-  },
-  {
-    id: '69-cpkw',
-    coord: [],
-    name: 'W. 69th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '70-cpkw'},
-      {dir: 'south', id: '68-cpkw'},
-      {dir: 'east', id: '69-'},
-      {dir: 'west', id: '69-colu'},
-    ]
-  },
-  {
-    id: '68-cpkw',
-    coord: [],
-    name: 'W. 68th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '69-cpkw'},
-      {dir: 'south', id: '67-cpkw'},
-      {dir: 'east', id: '68-'},
-      {dir: 'west', id: '68-colu'},
-    ]
-  },
-  {
-    id: '67-cpkw',
-    coord: [],
-    name: 'W. 67th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '68-cpkw'},
-      {dir: 'south', id: '66-cpkw'},
-      {dir: 'east', id: '67-'},
-      {dir: 'west', id: '67-colu'},
-    ]
-  },
-  {
-    id: '66-cpkw',
-    coord: [],
-    name: 'W. 66th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '67-cpkw'},
-      {dir: 'south', id: '65-cpkw'},
-      {dir: 'east', id: '66-'},
-      {dir: 'west', id: '66-colu'},
-    ]
-  },
-  {
-    id: '65-cpkw',
-    coord: [],
-    name: 'W. 65th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '66-cpkw'},
-      {dir: 'south', id: '64-cpkw'},
-      {dir: 'east', id: '65-'},
-      {dir: 'west', id: '65-colu'},
-    ]
-  },
-  {
-    id: '64-cpkw',
-    coord: [],
-    name: 'W. 64th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '65-cpkw'},
-      {dir: 'south', id: '63'},
-      {dir: 'east', id: '64-'},
-      {dir: 'west', id: '64-broa'},
-    ]
-  },
-  {
-    id: '63-cpkw',
-    coord: [],
-    name: 'W. 63rd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '64'},
-      {dir: 'south', id: '62'},
-      {dir: 'east', id: '63-'},
-      {dir: 'west', id: '63-broa'},
-    ]
-  },
-  {
-    id: '62-cpkw',
-    coord: [],
-    name: 'W. 62nd St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '63'},
-      {dir: 'south', id: '61'},
-      {dir: 'east', id: '62-'},
-      {dir: 'west', id: '62-broa'},
-    ]
-  },
-  {
-    id: '61-cpkw',
-    coord: [],
-    name: 'W. 61st St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '62'},
-      {dir: 'south', id: '60'},
-      {dir: 'east', id: '61-'},
-      {dir: 'west', id: '61-broa'},
-    ]
-  },
-  {
-    id: '59-cpkw',
-    coord: [],
-    name: 'W. 59th St. and Central Park W.',
-    desc: '',
-    isStreet: true,
-    exits: [
-      {dir: 'north', id: '60-cpkw'},
-      {dir: 'south', id: '58-8'},
-      {dir: 'east', id: '59-'},
-      {dir: 'west', id: '59-broa'},
-    ]
-  },
-  
+    {
+      id: '96-hhpw',
+      coord: [],
+      name: 'W. 96th St. and Henry Hudson Parkway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '79-hhpw'},
+        {dir: 'east', id: '96-rive'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '79-hhpw',
+      coord: [],
+      name: 'W. 79th St. and Henry Hudson Parkway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-hhpw'},
+        {dir: 'south', id: '72-hhpw'},
+        {dir: 'east', id: '79-rive'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '72-hhpw',
+      coord: [],
+      name: 'W. 72nd St. and Henry Hudson Parkway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-hhpw'},
+        {dir: 'south', id: '57-hhpw'},
+        {dir: 'east', id: '72-rive'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    //Riverside Drive
+    {
+      id: '110-rive',
+      coord: [],
+      name: 'W. 110th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-rive'},
+        {dir: 'east', id: '110-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '109-rive',
+      coord: [],
+      name: 'W. 109th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-rive'},
+        {dir: 'south', id: '108-rive'},
+        {dir: 'east', id: '109-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '108-rive',
+      coord: [],
+      name: 'W. 108th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-rive'},
+        {dir: 'south', id: '107-rive'},
+        {dir: 'east', id: '108-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '107-rive',
+      coord: [],
+      name: 'W. 107th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-rive'},
+        {dir: 'south', id: '106-rive'},
+        {dir: 'east', id: '107-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '106-rive',
+      coord: [],
+      name: 'W. 106th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-rive'},
+        {dir: 'south', id: '106-rive'},
+        {dir: 'east', id: '106-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '105-rive',
+      coord: [],
+      name: 'W. 105th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-rive'},
+        {dir: 'south', id: '104-rive'},
+        {dir: 'east', id: '105-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '104-rive',
+      coord: [],
+      name: 'W. 104th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-rive'},
+        {dir: 'south', id: '103-rive'},
+        {dir: 'east', id: '104-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '103-rive',
+      coord: [],
+      name: 'W. 103th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-rive'},
+        {dir: 'south', id: '102-rive'},
+        {dir: 'east', id: '103-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '102-rive',
+      coord: [],
+      name: 'W. 102nd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-rive'},
+        {dir: 'south', id: '101-rive'},
+        {dir: 'east', id: '102-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '101-rive',
+      coord: [],
+      name: 'W. 101st St. and Riverside Dr. ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-rive'},
+        {dir: 'south', id: '100-rive'},
+        {dir: 'east', id: '101-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '100-rive',
+      coord: [],
+      name: 'W. 100th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-rive'},
+        {dir: 'south', id: '99-rive'},
+        {dir: 'east', id: '100-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '99-rive',
+      coord: [],
+      name: 'W. 99th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-rive'},
+        {dir: 'south', id: '98-rive'},
+        {dir: 'east', id: '99-rive'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '98-rive',
+      coord: [],
+      name: 'W. 98th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '99-rive'},
+        {dir: 'south', id: '97-rive'},
+        {dir: 'east', id: '98-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '97-rive',
+      coord: [],
+      name: 'W. 97th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '98-rive'},
+        {dir: 'south', id: '96-rive'},
+        {dir: 'east', id: '97-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '96-rive',
+      coord: [],
+      name: 'W. 96th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '97-rive'},
+        {dir: 'south', id: '95-rive'},
+        {dir: 'east', id: '96-wend'},
+        {dir: 'west', id: '96-hhpw'},
+      ]
+    },
+    {
+      id: '95-rive',
+      coord: [],
+      name: 'W. 95th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-rive'},
+        {dir: 'south', id: '94-rive'},
+        {dir: 'east', id: '95-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '94-rive',
+      coord: [],
+      name: 'W. 94th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-rive'},
+        {dir: 'south', id: '93-rive'},
+        {dir: 'east', id: '94-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '93-rive',
+      coord: [],
+      name: 'W. 93rd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-rive'},
+        {dir: 'south', id: '92-rive'},
+        {dir: 'east', id: '93-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '92-rive',
+      coord: [],
+      name: 'W. 92nd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-rive'},
+        {dir: 'south', id: '91-rive'},
+        {dir: 'east', id: '92-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '91-rive',
+      coord: [],
+      name: 'W. 91st St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-rive'},
+        {dir: 'south', id: '90-rive'},
+        {dir: 'east', id: '91-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '90-rive',
+      coord: [],
+      name: 'W. 90th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-rive'},
+        {dir: 'south', id: '89-rive'},
+        {dir: 'east', id: '90-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '89-rive',
+      coord: [],
+      name: 'W. 89th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-rive'},
+        {dir: 'south', id: '88-rive'},
+        {dir: 'east', id: '89-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '88-rive',
+      coord: [],
+      name: 'W. 88th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-rive'},
+        {dir: 'south', id: '87-rive'},
+        {dir: 'east', id: '88-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '87-rive',
+      coord: [],
+      name: 'W. 87th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-rive'},
+        {dir: 'south', id: '86-rive'},
+        {dir: 'east', id: '87-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '86-rive',
+      coord: [],
+      name: 'W. 86th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-rive'},
+        {dir: 'south', id: '85-rive'},
+        {dir: 'east', id: '86-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '85-rive',
+      coord: [],
+      name: 'W. 85th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-rive'},
+        {dir: 'south', id: 'epoe-rive'},
+        {dir: 'east', id: ''},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: 'epoe-rive',
+      coord: [],
+      name: 'Edgar Allen Poe St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-rive'},
+        {dir: 'south', id: '83-rive'},
+        {dir: 'east', id: 'epoe-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '83-rive',
+      coord: [],
+      name: 'W. 83rd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'epoe-rive'},
+        {dir: 'south', id: '82-rive'},
+        {dir: 'east', id: '83-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '82-rive',
+      coord: [],
+      name: 'W. 82nd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-rive'},
+        {dir: 'south', id: '81-rive'},
+        {dir: 'east', id: '82-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '81-rive',
+      coord: [],
+      name: 'W. 81st St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-rive'},
+        {dir: 'south', id: '80-rive'},
+        {dir: 'east', id: '81-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '80-rive',
+      coord: [],
+      name: 'W. 80th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '81-rive'},
+        {dir: 'south', id: '79-rive'},
+        {dir: 'east', id: '80-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '79-rive',
+      coord: [],
+      name: 'W. 79th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '80-rive'},
+        {dir: 'south', id: '78-rive'},
+        {dir: 'east', id: '79-wend'},
+        {dir: 'west', id: '79-hhpw'},
+      ]
+    },
+    {
+      id: '78-rive',
+      coord: [],
+      name: 'W. 78th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-rive'},
+        {dir: 'south', id: '77-rive'},
+        {dir: 'east', id: '78-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '77-rive',
+      coord: [],
+      name: 'W. 77th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-rive'},
+        {dir: 'south', id: '76-rive'},
+        {dir: 'east', id: '77-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '76-rive',
+      coord: [],
+      name: 'W. 76th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-rive'},
+        {dir: 'south', id: '75-rive'},
+        {dir: 'east', id: '76-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '75-rive',
+      coord: [],
+      name: 'W. 75th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-rive'},
+        {dir: 'south', id: '74-rive'},
+        {dir: 'east', id: '75-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '74-rive',
+      coord: [],
+      name: 'W. 74th St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-rive'},
+        {dir: 'south', id: '73-rive'},
+        {dir: 'east', id: '74-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '73-rive',
+      coord: [],
+      name: 'W. 73rd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-rive'},
+        {dir: 'south', id: '72-rive'},
+        {dir: 'east', id: '73-wend'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '72-rive',
+      coord: [],
+      name: 'W. 72nd St. and Riverside Dr.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-rive'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '72-wend'},
+        {dir: 'west', id: '72-hhpw'},
+      ]
+    },
+    {
+      id: '105-wend',
+      coord: [],
+      name: 'W. 105th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'wend-broa'},
+        {dir: 'south', id: '104-wend'},
+        {dir: 'east', id: '105-broa'},
+        {dir: 'west', id: '105-rive'},
+      ]
+    },
+    {
+      id: '104-wend',
+      coord: [],
+      name: 'W. 104th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-wend'},
+        {dir: 'south', id: '103-wend'},
+        {dir: 'east', id: '104-broa'},
+        {dir: 'west', id: '104-rive'},
+      ]
+    },
+    {
+      id: '103-wend',
+      coord: [],
+      name: 'W. 103rd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-wend'},
+        {dir: 'south', id: '102-wend'},
+        {dir: 'east', id: '103-broa'},
+        {dir: 'west', id: '103-rive'},
+      ]
+    },
+    {
+      id: '102-wend',
+      coord: [],
+      name: 'W. 102nd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-wend'},
+        {dir: 'south', id: '105-wend'},
+        {dir: 'east', id: '102-broa'},
+        {dir: 'west', id: '102-rive'},
+      ]
+    },
+    {
+      id: '101-wend',
+      coord: [],
+      name: 'W. 101st St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-wend'},
+        {dir: 'south', id: '100-wend'},
+        {dir: 'east', id: '101-broa'},
+        {dir: 'west', id: '101-rive'},
+      ]
+    },
+    {
+      id: '100-wend',
+      coord: [],
+      name: 'W. 100th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-wend'},
+        {dir: 'south', id: '99-wend'},
+        {dir: 'east', id: '100-broa'},
+        {dir: 'west', id: '100-rive'},
+      ]
+    },
+    {
+      id: '99-wend',
+      coord: [],
+      name: 'W. 99th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-wend'},
+        {dir: 'south', id: '98-wend'},
+        {dir: 'east', id: '99-broa'},
+        {dir: 'west', id: '99-rive'},
+      ]
+    },
+    {
+      id: '98-wend',
+      coord: [],
+      name: 'W. 98th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '99-wend'},
+        {dir: 'south', id: '97-wend'},
+        {dir: 'east', id: '98-broa'},
+        {dir: 'west', id: '98-rive'},
+      ]
+    },
+    {
+      id: '97-wend',
+      coord: [],
+      name: 'W. 97th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '98-wend'},
+        {dir: 'south', id: '96-wend'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '97-rive'},
+      ]
+    },
+    {
+      id: '96-wend',
+      coord: [],
+      name: 'W. 96th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '97-wend'},
+        {dir: 'south', id: '95-wend'},
+        {dir: 'east', id: '96-broa'},
+        {dir: 'west', id: '96-rive'},
+      ]
+    },
+    {
+      id: '95-wend',
+      coord: [],
+      name: 'W. 95th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-wend'},
+        {dir: 'south', id: '94-wend'},
+        {dir: 'east', id: '95-broa'},
+        {dir: 'west', id: '95-rive'},
+      ]
+    },
+    {
+      id: '94-wend',
+      coord: [],
+      name: 'W. 94th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-wend'},
+        {dir: 'south', id: '93-wend'},
+        {dir: 'east', id: '94-broa'},
+        {dir: 'west', id: '94-rive'},
+      ]
+    },
+    {
+      id: '93-wend',
+      coord: [],
+      name: 'W. 93rd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-wend'},
+        {dir: 'south', id: '92-wend'},
+        {dir: 'east', id: '93-broa'},
+        {dir: 'west', id: '93-rive'},
+      ]
+    },
+    {
+      id: '92-wend',
+      coord: [],
+      name: 'W. 92nd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-wend'},
+        {dir: 'south', id: '91-wend'},
+        {dir: 'east', id: '92-broa'},
+        {dir: 'west', id: '92-rive'},
+      ]
+    },
+    {
+      id: '91-wend',
+      coord: [],
+      name: 'W. 91st St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-wend'},
+        {dir: 'south', id: '90-wend'},
+        {dir: 'east', id: '91-broa'},
+        {dir: 'west', id: '91-rive'},
+      ]
+    },
+    {
+      id: '90-wend',
+      coord: [],
+      name: 'W. 90th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-wend'},
+        {dir: 'south', id: '89-wend'},
+        {dir: 'east', id: '90-broa'},
+        {dir: 'west', id: '90-rive'},
+      ]
+    },
+    {
+      id: '89-wend',
+      coord: [],
+      name: 'W. 89th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-wend'},
+        {dir: 'south', id: '88-wend'},
+        {dir: 'east', id: '89-broa'},
+        {dir: 'west', id: '89-rive'},
+      ]
+    },
+    {
+      id: '88-wend',
+      coord: [],
+      name: 'W. 88th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-wend'},
+        {dir: 'south', id: '87-wend'},
+        {dir: 'east', id: '88-broa'},
+        {dir: 'west', id: '88-rive'},
+      ]
+    },
+    {
+      id: '87-wend',
+      coord: [],
+      name: 'W. 87th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-wend'},
+        {dir: 'south', id: '86-wend'},
+        {dir: 'east', id: '87-broa'},
+        {dir: 'west', id: '87-rive'},
+      ]
+    },
+    {
+      id: '86-wend',
+      coord: [],
+      name: 'W. 86th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-wend'},
+        {dir: 'south', id: '85-wend'},
+        {dir: 'east', id: '86-broa'},
+        {dir: 'west', id: '86-rive'},
+      ]
+    },
+    {
+      id: '85-wend',
+      coord: [],
+      name: 'W. 85th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-wend'},
+        {dir: 'south', id: '86-wend'},
+        {dir: 'east', id: '85-broa'},
+        {dir: 'west', id: '85-rive'},
+      ]
+    },
+    {
+      id: 'epoe-wend',
+      coord: [],
+      name: 'Edgar Allen Poe St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-wend'},
+        {dir: 'south', id: '83-wend'},
+        {dir: 'east', id: 'epoe-broa'},
+        {dir: 'west', id: 'epoe-rive'},
+      ]
+    },
+    {
+      id: '83-wend',
+      coord: [],
+      name: 'W. 83rd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'epoe-wend'},
+        {dir: 'south', id: '82-wend'},
+        {dir: 'east', id: '83-broa'},
+        {dir: 'west', id: '83-rive'},
+      ]
+    },
+    {
+      id: '82-wend',
+      coord: [],
+      name: 'W. 82nd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-wend'},
+        {dir: 'south', id: '81-wend'},
+        {dir: 'east', id: '82-broa'},
+        {dir: 'west', id: '82-rive'},
+      ]
+    },
+    {
+      id: '81-wend',
+      coord: [],
+      name: 'W. 81st St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-wend'},
+        {dir: 'south', id: '80-wend'},
+        {dir: 'east', id: '81-broa'},
+        {dir: 'west', id: '81-rive'},
+      ]
+    },
+    {
+      id: '80-wend',
+      coord: [],
+      name: 'W. 80th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '81-wend'},
+        {dir: 'south', id: '79-wend'},
+        {dir: 'east', id: '80-broa'},
+        {dir: 'west', id: '80-rive'},
+      ]
+    },
+    {
+      id: '79-wend',
+      coord: [],
+      name: 'W. 79th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '80-wend'},
+        {dir: 'south', id: '78-wend'},
+        {dir: 'east', id: '79-broa'},
+        {dir: 'west', id: '79-rive'},
+      ]
+    },
+    {
+      id: '78-wend',
+      coord: [],
+      name: 'W. 78th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-wend'},
+        {dir: 'south', id: '77-wend'},
+        {dir: 'east', id: '78-broa'},
+        {dir: 'west', id: '78-rive'},
+      ]
+    },
+    {
+      id: '77-wend',
+      coord: [],
+      name: 'W. 77th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-wend'},
+        {dir: 'south', id: '76-wend'},
+        {dir: 'east', id: '77-broa'},
+        {dir: 'west', id: '77-rive'},
+      ]
+    },
+    {
+      id: '76-wend',
+      coord: [],
+      name: 'W. 76th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-wend'},
+        {dir: 'south', id: '75-wend'},
+        {dir: 'east', id: '76-broa'},
+        {dir: 'west', id: '76-rive'},
+      ]
+    },
+    {
+      id: '75-wend',
+      coord: [],
+      name: 'W. 75th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-wend'},
+        {dir: 'south', id: '74-wend'},
+        {dir: 'east', id: '75-broa'},
+        {dir: 'west', id: '75-rive'},
+      ]
+    },
+    {
+      id: '74-wend',
+      coord: [],
+      name: 'W. 74th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-wend'},
+        {dir: 'south', id: '73-wend'},
+        {dir: 'east', id: '74-broa'},
+        {dir: 'west', id: '74-rive'},
+      ]
+    },
+    {
+      id: '73-wend',
+      coord: [],
+      name: 'W. 73rd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-wend'},
+        {dir: 'south', id: '72-wend'},
+        {dir: 'east', id: '73-broa'},
+        {dir: 'west', id: '73-rive'},
+      ]
+    },
+    {
+      id: '72-wend',
+      coord: [],
+      name: 'W. 72nd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-wend'},
+        {dir: 'south', id: '71-wend'},
+        {dir: 'east', id: '72-broa'},
+        {dir: 'west', id: '72-rive'},
+      ]
+    },
+    {
+      id: '71-wend',
+      coord: [],
+      name: 'W. 71st St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '72-wend'},
+        {dir: 'south', id: '70-wend'},
+        {dir: 'east', id: '71-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '70-wend',
+      coord: [],
+      name: 'W. 70th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '71-wend'},
+        {dir: 'south', id: '69-wend'},
+        {dir: 'east', id: '70-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '66-wend',
+      coord: [],
+      name: 'W. 66th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '70-wend'},
+        {dir: 'south', id: '65-wend'},
+        {dir: 'east', id: '66-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '65-wend',
+      coord: [],
+      name: 'W. 65th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '66-wend'},
+        {dir: 'south', id: '64-wend'},
+        {dir: 'east', id: '65-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '64-wend',
+      coord: [],
+      name: 'W. 64th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '65-wend'},
+        {dir: 'south', id: '63-wend'},
+        {dir: 'east', id: '64-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '63-wend',
+      coord: [],
+      name: 'W. 63rd St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '64-wend'},
+        {dir: 'south', id: '61-wend'},
+        {dir: 'east', id: '63-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '61-wend',
+      coord: [],
+      name: 'W. 61st St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '63-wend'},
+        {dir: 'south', id: '60-wend'},
+        {dir: 'east', id: '61-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '60-wend',
+      coord: [],
+      name: 'W. 60th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '61-wend'},
+        {dir: 'south', id: '59-wend'},
+        {dir: 'east', id: '60-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '59-wend',
+      coord: [],
+      name: 'W. 59th St. and West End Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '60-wend'},
+        {dir: 'south', id: '58-wend'},
+        {dir: 'east', id: '59-amst'},
+        {dir: 'west', id: '59-12'},
+      ]
+    },
+    {
+      id: '110-broa',
+      coord: [],
+      name: 'W. 110th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-broa'},
+        {dir: 'east', id: '110-amst'},
+        {dir: 'west', id: '110-rive'},
+      ]
+    },
+    {
+      id: '109-broa',
+      coord: [],
+      name: 'W. 109th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-broa'},
+        {dir: 'south', id: '108-broa'},
+        {dir: 'east', id: '109-amst'},
+        {dir: 'west', id: '109-rive'},
+      ]
+    },
+    {
+      id: '108-broa',
+      coord: [],
+      name: 'W. 108th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-broa'},
+        {dir: 'south', id: '107-broa'},
+        {dir: 'east', id: '108-amst'},
+        {dir: 'west', id: '108-rive'},
+      ]
+    },
+    {
+      id: '107-broa',
+      coord: [],
+      name: 'W. 107th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-broa'},
+        {dir: 'south', id: '106-broa'},
+        {dir: 'east', id: '107-amst'},
+        {dir: 'west', id: '107-rive'},
+      ]
+    },
+    {
+      id: '106-broa',
+      coord: [],
+      name: 'W. 106th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-broa'},
+        {dir: 'south', id: '105-broa'},
+        {dir: 'east', id: '106-amst'},
+        {dir: 'west', id: '106-rive'},
+      ]
+    },
+    //COME BACK HERE
+    {
+      id: 'wend-broa',
+      coord: [],
+      name: 'West End Ave. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-broa'},
+        {dir: 'south', id: '105-wend'},
+        {dir: 'east', id: '105-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '105-broa',
+      coord: [],
+      name: 'W. 105th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'wend-broa'},
+        {dir: 'south', id: '104-broa'},
+        {dir: 'east', id: '105-amst'},
+        {dir: 'west', id: '105-wend'},
+      ]
+    },
+    {
+      id: '104-broa',
+      coord: [],
+      name: 'W. 104th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-broa'},
+        {dir: 'south', id: '103-broa'},
+        {dir: 'east', id: '104-amst'},
+        {dir: 'west', id: '104-wend'},
+      ]
+    },
+    {
+      id: '103-broa',
+      coord: [],
+      name: 'W. 103rd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-broa'},
+        {dir: 'south', id: '102-broa'},
+        {dir: 'east', id: '103-amst'},
+        {dir: 'west', id: '103-wend'},
+      ]
+    },
+    {
+      id: '102-broa',
+      coord: [],
+      name: 'W. 102nd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-broa'},
+        {dir: 'south', id: '101-broa'},
+        {dir: 'east', id: '102-amst'},
+        {dir: 'west', id: '102-wend'},
+      ]
+    },
+    {
+      id: '101-broa',
+      coord: [],
+      name: 'W. 101st St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-broa'},
+        {dir: 'south', id: '100-broa'},
+        {dir: 'east', id: '101-amst'},
+        {dir: 'west', id: '101-wend'},
+      ]
+    },
+    {
+      id: '100-broa',
+      coord: [],
+      name: 'W. 100th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-broa'},
+        {dir: 'south', id: '99-broa'},
+        {dir: 'east', id: '100-amst'},
+        {dir: 'west', id: '100-wend'},
+      ]
+    },
+    {
+      id: '99-broa',
+      coord: [],
+      name: 'W. 99th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-broa'},
+        {dir: 'south', id: '98-broa'},
+        {dir: 'east', id: '99-amst'},
+        {dir: 'west', id: '99-wend'},
+      ]
+    },
+    {
+      id: '98-broa',
+      coord: [],
+      name: 'W. 98th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '99-broa'},
+        {dir: 'south', id: '97-broa'},
+        {dir: 'east', id: '98-amst'},
+        {dir: 'west', id: '98-wend'},
+      ]
+    },
+    {
+      id: '97-broa',
+      coord: [],
+      name: 'W. 97th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '98-broa'},
+        {dir: 'south', id: '96-broa'},
+        {dir: 'east', id: '97-amst'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '96-broa',
+      coord: [],
+      name: 'W. 96th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '97-broa'},
+        {dir: 'south', id: '95-broa'},
+        {dir: 'east', id: '96-amst'},
+        {dir: 'west', id: '96-wend'},
+      ]
+    },
+    {
+      id: '95-broa',
+      coord: [],
+      name: 'W. 95th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-broa'},
+        {dir: 'south', id: '94-broa'},
+        {dir: 'east', id: '95-amst'},
+        {dir: 'west', id: '95-wend'},
+      ]
+    },
+    {
+      id: '94-broa',
+      coord: [],
+      name: 'W. 94th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-broa'},
+        {dir: 'south', id: '93-broa'},
+        {dir: 'east', id: '94-amst'},
+        {dir: 'west', id: '94-wend'},
+      ]
+    },
+    {
+      id: '93-broa',
+      coord: [],
+      name: 'W. 93rd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-broa'},
+        {dir: 'south', id: '92-broa'},
+        {dir: 'east', id: '93-amst'},
+        {dir: 'west', id: '93-wend'},
+      ]
+    },
+    {
+      id: '92-broa',
+      coord: [],
+      name: 'W. 92nd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-broa'},
+        {dir: 'south', id: '91-broa'},
+        {dir: 'east', id: '92-amst'},
+        {dir: 'west', id: '92-wend'},
+      ]
+    },
+    {
+      id: '91-broa',
+      coord: [],
+      name: 'W. 91st St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-broa'},
+        {dir: 'south', id: '90-broa'},
+        {dir: 'east', id: '91-amst'},
+        {dir: 'west', id: '91-wend'},
+      ]
+    },
+    {
+      id: '90-broa',
+      coord: [],
+      name: 'W. 90th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-broa'},
+        {dir: 'south', id: '89-broa'},
+        {dir: 'east', id: '90-amst'},
+        {dir: 'west', id: '90-wend'},
+      ]
+    },
+    {
+      id: '89-broa',
+      coord: [],
+      name: 'W. 89th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-broa'},
+        {dir: 'south', id: '88-broa'},
+        {dir: 'east', id: '89-amst'},
+        {dir: 'west', id: '89-wend'},
+      ]
+    },
+    {
+      id: '88-broa',
+      coord: [],
+      name: 'W. 88th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-broa'},
+        {dir: 'south', id: '87-broa'},
+        {dir: 'east', id: '88-amst'},
+        {dir: 'west', id: '88-wend'},
+      ]
+    },
+    {
+      id: '87-broa',
+      coord: [],
+      name: 'W. 87th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-broa'},
+        {dir: 'south', id: '86-broa'},
+        {dir: 'east', id: '87-amst'},
+        {dir: 'west', id: '87-wend'},
+      ]
+    },
+    {
+      id: '86-broa',
+      coord: [],
+      name: 'W. 86th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-broa'},
+        {dir: 'south', id: '85-broa'},
+        {dir: 'east', id: '86-amst'},
+        {dir: 'west', id: '86-wend'},
+      ]
+    },
+    {
+      id: '85-broa',
+      coord: [],
+      name: 'W. 85th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-broa'},
+        {dir: 'south', id: '84-broa'},
+        {dir: 'east', id: '85-amst'},
+        {dir: 'west', id: '85-wend'},
+      ]
+    },
+    {
+      id: '84-broa',
+      coord: [],
+      name: 'W. 84th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-broa'},
+        {dir: 'south', id: '83-broa'},
+        {dir: 'east', id: '84-amst'},
+        {dir: 'west', id: '84-wend'},
+      ]
+    },
+    {
+      id: '83-broa',
+      coord: [],
+      name: 'W. 83rd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '84-broa'},
+        {dir: 'south', id: '82-broa'},
+        {dir: 'east', id: '83-amst'},
+        {dir: 'west', id: '83-wend'},
+      ]
+    },
+    {
+      id: '82-broa',
+      coord: [],
+      name: 'W. 82nd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-broa'},
+        {dir: 'south', id: '81-broa'},
+        {dir: 'east', id: '82-amst'},
+        {dir: 'west', id: '82-wend'},
+      ]
+    },
+    {
+      id: '81-broa',
+      coord: [],
+      name: 'W. 81st St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-broa'},
+        {dir: 'south', id: '80-broa'},
+        {dir: 'east', id: '81-amst'},
+        {dir: 'west', id: '81-wend'},
+      ]
+    },
+    {
+      id: '80-broa',
+      coord: [],
+      name: 'W. 80th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '81-broa'},
+        {dir: 'south', id: '79-broa'},
+        {dir: 'east', id: '80-amst'},
+        {dir: 'west', id: '80-wend'},
+      ]
+    },
+    {
+      id: '79-broa',
+      coord: [],
+      name: 'W. 79th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '80-broa'},
+        {dir: 'south', id: '78-broa'},
+        {dir: 'east', id: '79-amst'},
+        {dir: 'west', id: '79-wend'},
+      ]
+    },
+    {
+      id: '78-broa',
+      coord: [],
+      name: 'W. 78th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-broa'},
+        {dir: 'south', id: '77-broa'},
+        {dir: 'east', id: '78-amst'},
+        {dir: 'west', id: '78-wend'},
+      ]
+    },
+    {
+      id: '77-broa',
+      coord: [],
+      name: 'W. 77th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-broa'},
+        {dir: 'south', id: '76-broa'},
+        {dir: 'east', id: '77-amst'},
+        {dir: 'west', id: '77-wend'},
+      ]
+    },
+    {
+      id: '76-broa',
+      coord: [],
+      name: 'W. 76th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-broa'},
+        {dir: 'south', id: '75-broa'},
+        {dir: 'east', id: '76-amst'},
+        {dir: 'west', id: '76-wend'},
+      ]
+    },
+    {
+      id: '75-broa',
+      coord: [],
+      name: 'W. 75th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-broa'},
+        {dir: 'south', id: '74-broa'},
+        {dir: 'east', id: '75-amst'},
+        {dir: 'west', id: '75-wend'},
+      ]
+    },
+    {
+      id: '74-broa',
+      coord: [],
+      name: 'W. 74th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-broa'},
+        {dir: 'south', id: '73-broa'},
+        {dir: 'east', id: '74-amst'},
+        {dir: 'west', id: '74-wend'},
+      ]
+    },
+    {
+      id: '73-broa',
+      coord: [],
+      name: 'W. 73rd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-broa'},
+        {dir: 'south', id: '72-broa'},
+        {dir: 'east', id: '73-amst'},
+        {dir: 'west', id: '73-wend'},
+      ]
+    },
+    {
+      id: '72-broa',
+      coord: [],
+      name: 'W. 72nd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-broa'},
+        {dir: 'south', id: '71-broa'},
+        {dir: 'east', id: '72-amst'},
+        {dir: 'west', id: '72-wend'},
+      ]
+    },
+    {
+      id: '71-broa',
+      coord: [],
+      name: 'W. 71st St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '72-broa'},
+        {dir: 'south', id: 'broa-amst'},
+        {dir: 'east', id: '71-amst'},
+        {dir: 'west', id: '71-wend'},
+      ]
+    },
+    {
+      id: '70-broa',
+      coord: [],
+      name: 'W. 70th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `You can't go that way.`},
+        {dir: 'south', id: '69-broa'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '70-amst'},
+      ]
+    },
+    {
+      id: '69-broa',
+      coord: [],
+      name: 'W. 69th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '70-broa'},
+        {dir: 'south', id: '68-broa'},
+        {dir: 'east', id: '69-colu'},
+        {dir: 'west', id: '69-amst'},
+      ]
+    },
+    {
+      id: '68-broa',
+      coord: [],
+      name: 'W. 68th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '69-broa'},
+        {dir: 'south', id: '67-broa'},
+        {dir: 'east', id: '68-colu'},
+        {dir: 'west', id: '68-amst'},
+      ]
+    },
+    {
+      id: '67-broa',
+      coord: [],
+      name: 'W. 67th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '68-broa'},
+        {dir: 'south', id: '66-broa'},
+        {dir: 'east', id: '68-colu'},
+        {dir: 'west', id: '68-amst'},
+      ]
+    },
+    {
+      id: '66-broa',
+      coord: [],
+      name: 'W. 66th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '67-broa'},
+        {dir: 'south', id: '65-broa'},
+        {dir: 'east', id: '66-colu'},
+        {dir: 'west', id: '66-amst'},
+      ]
+    },
+    {
+      id: '65-broa',
+      coord: [],
+      name: 'W. 65th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      hasSubway: true,
+      exits: [
+        {dir: 'north', id: '66-broa'},
+        {dir: 'south', id: 'broa-colu'},
+        {dir: 'east', id: '65-colu'},
+        {dir: 'west', id: '65-amst'},
+      ]
+    },
+    {
+      id: '64-broa',
+      coord: [],
+      name: 'W. 64th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'broa-colu'},
+        {dir: 'south', id: '63-broa'},
+        {dir: 'east', id: '64-cpkw'},
+        {dir: 'west', id: '64-colu'},
+      ]
+    },
+    {
+      id: '63-broa',
+      coord: [],
+      name: 'W. 64th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '64-broa'},
+        {dir: 'south', id: '62-broa'},
+        {dir: 'east', id: '63-cpkw'},
+        {dir: 'west', id: '63-colu'},
+      ]
+    },
+    {
+      id: '62-broa',
+      coord: [],
+      name: 'W. 62nd St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '63-broa'},
+        {dir: 'south', id: '61-broa'},
+        {dir: 'east', id: '62-cpkw'},
+        {dir: 'west', id: '62-colu'},
+      ]
+    },
+    {
+      id: '61-broa',
+      coord: [],
+      name: 'W. 61st St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '62-broa'},
+        {dir: 'south', id: '60-broa'},
+        {dir: 'east', id: '61-cpkw'},
+        {dir: 'west', id: '61-colu'},
+      ]
+    },
+    {
+      id: '60-broa',
+      coord: [],
+      name: 'W. 60th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '61-broa'},
+        {dir: 'south', id: '59-broa'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '60'},
+      ]
+    },
+    {
+      id: '59-broa',
+      coord: [],
+      name: 'W. 59th St. and Broadway',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '60-broa'},
+        {dir: 'south', id: 'broa-8'},
+        {dir: 'east', id: '59-cpkw'},
+        {dir: 'west', id: '59-colu'},
+      ]
+    },
+    {
+      id: '110-amst',
+      coord: [],
+      name: 'W. 110th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-amst'},
+        {dir: 'east', id: '110-colu'},
+        {dir: 'west', id: '110-broa'},
+      ]
+    },
+    {
+      id: '109-amst',
+      coord: [],
+      name: 'W. 109th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-amst'},
+        {dir: 'south', id: '108-amst'},
+        {dir: 'east', id: '109-colu'},
+        {dir: 'west', id: '109-broa'},
+      ]
+    },
+    {
+      id: '108-amst',
+      coord: [],
+      name: 'W. 108th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-amst'},
+        {dir: 'south', id: '107-amst'},
+        {dir: 'east', id: '108-colu'},
+        {dir: 'west', id: '108-broa'},
+      ]
+    },
+    {
+      id: '107-amst',
+      coord: [],
+      name: 'W. 107th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-amst'},
+        {dir: 'south', id: '106-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '107-broa'},
+      ]
+    },
+    {
+      id: '106-amst',
+      coord: [],
+      name: 'W. 106th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-amst'},
+        {dir: 'south', id: '105-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '106-broa'},
+      ]
+    },
+    {
+      id: '105-amst',
+      coord: [],
+      name: 'W. 105th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-amst'},
+        {dir: 'south', id: '104-amst'},
+        {dir: 'east', id: '105-colu'},
+        {dir: 'west', id: '105-broa'},
+      ]
+    },
+    {
+      id: '104-amst',
+      coord: [],
+      name: 'W. 104th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-amst'},
+        {dir: 'south', id: '103-amst'},
+        {dir: 'east', id: '104-colu'},
+        {dir: 'west', id: '104-broa'},
+      ]
+    },
+    {
+      id: '103-amst',
+      coord: [],
+      name: 'W. 103rd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-amst'},
+        {dir: 'south', id: '102-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '103-broa'},
+      ]
+    },
+    {
+      id: '102-amst',
+      coord: [],
+      name: 'W. 102nd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-amst'},
+        {dir: 'south', id: '101-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '102-broa'},
+      ]
+    },
+    {
+      id: '101-amst',
+      coord: [],
+      name: 'W. 101st St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-amst'},
+        {dir: 'south', id: '100-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '101-broa'},
+      ]
+    },
+    {
+      id: '100-amst',
+      coord: [],
+      name: 'W. 100th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-amst'},
+        {dir: 'south', id: '99-amst'},
+        {dir: 'east', id: '100-colu'},
+        {dir: 'west', id: '100-broa'},
+      ]
+    },
+    {
+      id: '99-amst',
+      coord: [],
+      name: 'W. 99th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-amst'},
+        {dir: 'south', id: '98-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '99-broa'},
+      ]
+    },
+    {
+      id: '98-amst',
+      coord: [],
+      name: 'W. 98th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '99-amst'},
+        {dir: 'south', id: '97-amst'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '98-broa'},
+      ]
+    },
+    {
+      id: '97-amst',
+      coord: [],
+      name: 'W. 97th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '98-amst'},
+        {dir: 'south', id: '96-amst'},
+        {dir: 'east', id: '97-colu'},
+        {dir: 'west', id: '97-broa'},
+      ]
+    },
+    {
+      id: '96-amst',
+      coord: [],
+      name: 'W. 96th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '97-amst'},
+        {dir: 'south', id: '95-amst'},
+        {dir: 'east', id: '96-colu'},
+        {dir: 'west', id: '96-broa'},
+      ]
+    },
+    {
+      id: '95-amst',
+      coord: [],
+      name: 'W. 95th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-amst'},
+        {dir: 'south', id: '94-amst'},
+        {dir: 'east', id: '95-colu'},
+        {dir: 'west', id: '95-broa'},
+      ]
+    },
+    {
+      id: '94-amst',
+      coord: [],
+      name: 'W. 94th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-amst'},
+        {dir: 'south', id: '93-amst'},
+        {dir: 'east', id: '94-colu'},
+        {dir: 'west', id: '94-broa'},
+      ]
+    },
+    {
+      id: '93-amst',
+      coord: [],
+      name: 'W. 93rd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-amst'},
+        {dir: 'south', id: '92-amst'},
+        {dir: 'east', id: '93-colu'},
+        {dir: 'west', id: '93-broa'},
+      ]
+    },
+    {
+      id: '92-amst',
+      coord: [],
+      name: 'W.  St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-amst'},
+        {dir: 'south', id: '91-amst'},
+        {dir: 'east', id: '92-colu'},
+        {dir: 'west', id: '92-broa'},
+      ]
+    },
+    {
+      id: '91-amst',
+      coord: [],
+      name: 'W. 91st St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-amst'},
+        {dir: 'south', id: '90-amst'},
+        {dir: 'east', id: '91-colu'},
+        {dir: 'west', id: '91-broa'},
+      ]
+    },
+    {
+      id: '90-amst',
+      coord: [],
+      name: 'W. 90th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-amst'},
+        {dir: 'south', id: '89-amst'},
+        {dir: 'east', id: '90-colu'},
+        {dir: 'west', id: '90-broa'},
+      ]
+    },
+    {
+      id: '89-amst',
+      coord: [],
+      name: 'W. 89th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-amst'},
+        {dir: 'south', id: '88-amst'},
+        {dir: 'east', id: '89-colu'},
+        {dir: 'west', id: '89-broa'},
+      ]
+    },
+    {
+      id: '88-amst',
+      coord: [],
+      name: 'W. 88th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-amst'},
+        {dir: 'south', id: '87-amst'},
+        {dir: 'east', id: '88-colu'},
+        {dir: 'west', id: '88-broa'},
+      ]
+    },
+    {
+      id: '87-amst',
+      coord: [],
+      name: 'W. 87th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-amst'},
+        {dir: 'south', id: '86-amst'},
+        {dir: 'east', id: '87-colu'},
+        {dir: 'west', id: '87-broa'},
+      ]
+    },
+    {
+      id: '86-amst',
+      coord: [],
+      name: 'W. 86th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-amst'},
+        {dir: 'south', id: '85-amst'},
+        {dir: 'east', id: '86-colu'},
+        {dir: 'west', id: '86-broa'},
+      ]
+    },
+    {
+      id: '85-amst',
+      coord: [],
+      name: 'W. 85th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-amst'},
+        {dir: 'south', id: 'epoe-amst'},
+        {dir: 'east', id: '85-colu'},
+        {dir: 'west', id: '85-broa'},
+      ]
+    },
+    {
+      id: 'epoe-amst',
+      coord: [],
+      name: 'Edgar Allen Poe St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-amst'},
+        {dir: 'south', id: '83-amst'},
+        {dir: 'east', id: 'epoe-colu'},
+        {dir: 'west', id: 'epoe-broa'},
+      ]
+    },
+    {
+      id: '83-amst',
+      coord: [],
+      name: 'W. 83rd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'epoe-amst'},
+        {dir: 'south', id: '82-amst'},
+        {dir: 'east', id: '83-colu'},
+        {dir: 'west', id: '83-broa'},
+      ]
+    },
+    {
+      id: '82-amst',
+      coord: [],
+      name: 'W. 82nd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-amst'},
+        {dir: 'south', id: '81-amst'},
+        {dir: 'east', id: '82-colu'},
+        {dir: 'west', id: '82-broa'},
+      ]
+    },
+    {
+      id: '81-amst',
+      coord: [],
+      name: 'W. 81st St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-amst'},
+        {dir: 'south', id: '80-amst'},
+        {dir: 'east', id: '81-colu'},
+        {dir: 'west', id: '81-broa'},
+      ]
+    },
+    {
+      id: '80-amst',
+      coord: [],
+      name: 'W. 80th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '81-amst'},
+        {dir: 'south', id: '79-amst'},
+        {dir: 'east', id: '80-colu'},
+        {dir: 'west', id: '80-broa'},
+      ]
+    },
+    {
+      id: '79-amst',
+      coord: [],
+      name: 'W. 79th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '80-amst'},
+        {dir: 'south', id: '78-amst'},
+        {dir: 'east', id: '79-colu'},
+        {dir: 'west', id: '79-broa'},
+      ]
+    },
+    {
+      id: '78-amst',
+      coord: [],
+      name: 'W. 78th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-amst'},
+        {dir: 'south', id: '77-amst'},
+        {dir: 'east', id: '78-colu'},
+        {dir: 'west', id: '78-broa'},
+      ]
+    },
+    {
+      id: '77-amst',
+      coord: [],
+      name: 'W. 77th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-amst'},
+        {dir: 'south', id: '76-amst'},
+        {dir: 'east', id: '77-colu'},
+        {dir: 'west', id: '77-broa'},
+      ]
+    },
+    {
+      id: '76-amst',
+      coord: [],
+      name: 'W. 76th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-amst'},
+        {dir: 'south', id: '75-amst'},
+        {dir: 'east', id: '76-colu'},
+        {dir: 'west', id: '76-broa'},
+      ]
+    },
+    {
+      id: '75-amst',
+      coord: [],
+      name: 'W. 75th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-amst'},
+        {dir: 'south', id: '74-amst'},
+        {dir: 'east', id: '75-colu'},
+        {dir: 'west', id: '75-broa'},
+      ]
+    },
+    {
+      id: '74-amst',
+      coord: [],
+      name: 'W. 74th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-amst'},
+        {dir: 'south', id: '73-amst'},
+        {dir: 'east', id: '74-colu'},
+        {dir: 'west', id: '74-broa'},
+      ]
+    },
+    {
+      id: '73-amst',
+      coord: [],
+      name: 'W. 73rd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-amst'},
+        {dir: 'south', id: '72-amst'},
+        {dir: 'east', id: '73-colu'},
+        {dir: 'west', id: '73-broa'},
+      ]
+    },
+    {
+      id: '72-amst',
+      coord: [],
+      name: 'W. 72nd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-amst'},
+        {dir: 'south', id: '71-amst'},
+        {dir: 'east', id: '72-colu'},
+        {dir: 'west', id: '72-broa'},
+      ]
+    },
+    {
+      id: '71-amst',
+      coord: [],
+      name: 'W. 71st St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '72-amst'},
+        {dir: 'south', id: 'broa-amst'},
+        {dir: 'east', id: '71-colu'},
+        {dir: 'west', id: '71-broa'},
+      ]
+    },
+    {
+      id: 'broa-amst',
+      coord: [],
+      name: 'Broadway and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '71-amst'},
+        {dir: 'south', id: '70-amst'},
+        {dir: 'east', id: '70-broa'},
+        {dir: 'west', id: '71-broa'},
+      ]
+    },
+    {
+      id: '70-amst',
+      coord: [],
+      name: 'W. 70th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '-amst'},
+        {dir: 'south', id: '69-amst'},
+        {dir: 'east', id: '70-broa'},
+        {dir: 'west', id: '70-wend'},
+      ]
+    },
+    {
+      id: '69-amst',
+      coord: [],
+      name: 'W. 69th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '70-amst'},
+        {dir: 'south', id: '68-amst'},
+        {dir: 'east', id: '69-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '68-amst',
+      coord: [],
+      name: 'W. 68th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '69-amst'},
+        {dir: 'south', id: '67-amst'},
+        {dir: 'east', id: '68-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '67-amst',
+      coord: [],
+      name: 'W. 67th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '68-amst'},
+        {dir: 'south', id: '66-amst'},
+        {dir: 'east', id: '67-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '66-amst',
+      coord: [],
+      name: 'W. 66th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '67-amst'},
+        {dir: 'south', id: '65-amst'},
+        {dir: 'east', id: '66-broa'},
+        {dir: 'west', id: '66-wend'},
+      ]
+    },
+    {
+      id: '65-amst',
+      coord: [],
+      name: 'W. 65th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '66-amst'},
+        {dir: 'south', id: '64-amst'},
+        {dir: 'east', id: '65-broa'},
+        {dir: 'west', id: '65-wend'},
+      ]
+    },
+    {
+      id: '64-amst',
+      coord: [],
+      name: 'W. 64th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '65-amst'},
+        {dir: 'south', id: '62-amst'},
+        {dir: 'east', id: '64-colu'},
+        {dir: 'west', id: '64-wend'},
+      ]
+    },
+    {
+      id: '62-amst',
+      coord: [],
+      name: 'W. 62nd St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '64-amst'},
+        {dir: 'south', id: '61-amst'},
+        {dir: 'east', id: '62-colu'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '61-amst',
+      coord: [],
+      name: 'W. 61st St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '62-amst'},
+        {dir: 'south', id: '60-amst'},
+        {dir: 'east', id: '61-colu'},
+        {dir: 'west', id: '61-wend'},
+      ]
+    },
+    {
+      id: '60-amst',
+      coord: [],
+      name: 'W. 60th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '61-amst'},
+        {dir: 'south', id: '59-amst'},
+        {dir: 'east', id: '60-colu'},
+        {dir: 'west', id: '60-wend'},
+      ]
+    },
+    {
+      id: '59-amst',
+      coord: [],
+      name: 'W. 59th St. and Amsterdam Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '60-amst'},
+        {dir: 'south', id: '58-10'},
+        {dir: 'east', id: '59-colu'},
+        {dir: 'west', id: '59-wend'},
+      ]
+    },
+    {
+      id: '110-colu',
+      coord: [],
+      name: 'W. 110th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-colu'},
+        {dir: 'east', id: '110-manh'},
+        {dir: 'west', id: '110-amst'},
+      ]
+    },
+    {
+      id: '109-colu',
+      coord: [],
+      name: 'W. 109th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-colu'},
+        {dir: 'south', id: '108-colu'},
+        {dir: 'east', id: '109-manh'},
+        {dir: 'west', id: '109-amst'},
+      ]
+    },
+    {
+      id: '108-colu',
+      coord: [],
+      name: 'W. 108th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-colu'},
+        {dir: 'south', id: '107-colu'},
+        {dir: 'east', id: '108-manh'},
+        {dir: 'west', id: '108-amst'},
+      ]
+    },
+    {
+      id: '107-colu',
+      coord: [],
+      name: 'W. 107th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-colu'},
+        {dir: 'south', id: '106-colu'},
+        {dir: 'east', id: '107-manh'},
+        {dir: 'west', id: '107-amst'},
+      ]
+    },
+    {
+      id: '106-colu',
+      coord: [],
+      name: 'W. 106th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-colu'},
+        {dir: 'south', id: '105-colu'},
+        {dir: 'east', id: '106-manh'},
+        {dir: 'west', id: '106-amst'},
+      ]
+    },
+    {
+      id: '105-colu',
+      coord: [],
+      name: 'W. 105th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-colu'},
+        {dir: 'south', id: '104-colu'},
+        {dir: 'east', id: '105-manh'},
+        {dir: 'west', id: '105-amst'},
+      ]
+    },
+    {
+      id: '104-colu',
+      coord: [],
+      name: 'W. 104th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-colu'},
+        {dir: 'south', id: '100-colu'},
+        {dir: 'east', id: '104-manh'},
+        {dir: 'west', id: '104-amst'},
+      ]
+    },
+    {
+      id: '100-colu',
+      coord: [],
+      name: 'W. 100th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-colu'},
+        {dir: 'south', id: '97-colu'},
+        {dir: 'east', id: '100-manh'},
+        {dir: 'west', id: '100-amst'},
+      ]
+    },
+    {
+      id: '97-colu',
+      coord: [],
+      name: 'W. 97th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-colu'},
+        {dir: 'south', id: '96-colu'},
+        {dir: 'east', id: '97-cpkw'},
+        {dir: 'west', id: '97-amst'},
+      ]
+    },
+    {
+      id: '96-colu',
+      coord: [],
+      name: 'W. 96th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '97-colu'},
+        {dir: 'south', id: '95-colu'},
+        {dir: 'east', id: '96-cpkw'},
+        {dir: 'west', id: '96-amst'},
+      ]
+    },
+    {
+      id: '95-colu',
+      coord: [],
+      name: 'W. 95th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-colu'},
+        {dir: 'south', id: '94-colu'},
+        {dir: 'east', id: '95-cpkw'},
+        {dir: 'west', id: '95-amst'},
+      ]
+    },
+    {
+      id: '94-colu',
+      coord: [],
+      name: 'W. 94th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-colu'},
+        {dir: 'south', id: '93-colu'},
+        {dir: 'east', id: '94-cpkw'},
+        {dir: 'west', id: '94-amst'},
+      ]
+    },
+    {
+      id: '93-colu',
+      coord: [],
+      name: 'W. 93rd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-colu'},
+        {dir: 'south', id: '92-colu'},
+        {dir: 'east', id: '93-cpkw'},
+        {dir: 'west', id: '93-amst'},
+      ]
+    },
+    {
+      id: '92-colu',
+      coord: [],
+      name: 'W. 92nd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-colu'},
+        {dir: 'south', id: '91-colu'},
+        {dir: 'east', id: '92-cpkw'},
+        {dir: 'west', id: '92-amst'},
+      ]
+    },
+    {
+      id: '91-colu',
+      coord: [],
+      name: 'W. 91st St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-colu'},
+        {dir: 'south', id: '90-colu'},
+        {dir: 'east', id: '91-cpkw'},
+        {dir: 'west', id: '91-amst'},
+      ]
+    },
+    {
+      id: '90-colu',
+      coord: [],
+      name: 'W. 90th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-colu'},
+        {dir: 'south', id: '89-colu'},
+        {dir: 'east', id: '90-cpkw'},
+        {dir: 'west', id: '90-amst'},
+      ]
+    },
+    {
+      id: '89-colu',
+      coord: [],
+      name: 'W. 89th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-colu'},
+        {dir: 'south', id: '88-colu'},
+        {dir: 'east', id: '89-cpkw'},
+        {dir: 'west', id: '89-amst'},
+      ]
+    },
+    {
+      id: '88-colu',
+      coord: [],
+      name: 'W. 88th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-colu'},
+        {dir: 'south', id: '87-colu'},
+        {dir: 'east', id: '88-cpkw'},
+        {dir: 'west', id: '88-amst'},
+      ]
+    },
+    {
+      id: '87-colu',
+      coord: [],
+      name: 'W. 87th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-colu'},
+        {dir: 'south', id: '86-colu'},
+        {dir: 'east', id: '87-cpkw'},
+        {dir: 'west', id: '87-amst'},
+      ]
+    },
+    {
+      id: '86-colu',
+      coord: [],
+      name: 'W. 86th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-colu'},
+        {dir: 'south', id: '85-colu'},
+        {dir: 'east', id: '86-cpkw'},
+        {dir: 'west', id: '86-amst'},
+      ]
+    },
+    {
+      id: '85-colu',
+      coord: [],
+      name: 'W. 85th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-colu'},
+        {dir: 'south', id: 'epoe-colu'},
+        {dir: 'east', id: '85-cpkw'},
+        {dir: 'west', id: '85-amst'},
+      ]
+    },
+    {
+      id: 'epoe-colu',
+      coord: [],
+      name: 'Edgar Allen Poe St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-colu'},
+        {dir: 'south', id: '83-colu'},
+        {dir: 'east', id: 'epoe-cpkw'},
+        {dir: 'west', id: 'epoe-amst'},
+      ]
+    },
+    {
+      id: '83-colu',
+      coord: [],
+      name: 'W. 83rd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'epoe-colu'},
+        {dir: 'south', id: '82-colu'},
+        {dir: 'east', id: '83-cpkw'},
+        {dir: 'west', id: '83-amst'},
+      ]
+    },
+    {
+      id: '82-colu',
+      coord: [],
+      name: 'W. 82nd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-colu'},
+        {dir: 'south', id: '81-colu'},
+        {dir: 'east', id: '82-cpkw'},
+        {dir: 'west', id: '82-amst'},
+      ]
+    },
+    {
+      id: '81-colu',
+      coord: [],
+      name: 'W. 81st St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-colu'},
+        {dir: 'south', id: '80-colu'},
+        {dir: 'east', id: '81-cpkw'},
+        {dir: 'west', id: '81-amst'},
+      ]
+    },
+    {
+      id: '80-colu',
+      coord: [],
+      name: 'W. 80th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '81-colu'},
+        {dir: 'south', id: '79-colu'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '80-amst'},
+      ]
+    },
+    {
+      id: '79-colu',
+      coord: [],
+      name: 'W. 79th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '80-colu'},
+        {dir: 'south', id: '78-colu'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '79-amst'},
+      ]
+    },
+    {
+      id: '78-colu',
+      coord: [],
+      name: 'W. 78th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '79-colu'},
+        {dir: 'south', id: '77-colu'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '78-amst'},
+      ]
+    },
+    {
+      id: '77-colu',
+      coord: [],
+      name: 'W. 77th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-colu'},
+        {dir: 'south', id: '76-colu'},
+        {dir: 'east', id: '77-cpkw'},
+        {dir: 'west', id: '77-amst'},
+      ]
+    },
+    {
+      id: '76-colu',
+      coord: [],
+      name: 'W. 76th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-colu'},
+        {dir: 'south', id: '75-colu'},
+        {dir: 'east', id: '76-cpkw'},
+        {dir: 'west', id: '77-amst'},
+      ]
+    },
+    {
+      id: '75-colu',
+      coord: [],
+      name: 'W. 75th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-colu'},
+        {dir: 'south', id: '74-colu'},
+        {dir: 'east', id: '75-cpkw'},
+        {dir: 'west', id: '75-amst'},
+      ]
+    },
+    {
+      id: '74-colu',
+      coord: [],
+      name: 'W. 74th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-colu'},
+        {dir: 'south', id: '73-colu'},
+        {dir: 'east', id: '74-cpkw'},
+        {dir: 'west', id: '74-amst'},
+      ]
+    },
+    {
+      id: '73-colu',
+      coord: [],
+      name: 'W. 73rd St. and Columbus Ave.',
+      desc: 'You see an alley here that seems to be used for making deliveries to the Dakota.',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-colu'},
+        {dir: 'south', id: '72-colu'},
+        {dir: 'east', id: '73-cpkw'},
+        {dir: 'west', id: '73-amst'},
+        {dir: 'alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
+      ]
+    },
+    {
+      id: '72-colu',
+      coord: [],
+      name: 'W. 72nd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-colu'},
+        {dir: 'south', id: '71-colu'},
+        {dir: 'east', id: '72-cpkw'},
+        {dir: 'west', id: '72-amst'},
+      ]
+    },
+    {
+      id: '71-colu',
+      coord: [],
+      name: 'W. 71st St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '72-colu'},
+        {dir: 'south', id: '70-colu'},
+        {dir: 'east', id: '71-cpkw'},
+        {dir: 'west', id: '71-amst'},
+      ]
+    },
+    {
+      id: '70-colu',
+      coord: [],
+      name: 'W. 70th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '71-colu'},
+        {dir: 'south', id: '69-colu'},
+        {dir: 'east', id: '71-cpkw'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '69-colu',
+      coord: [],
+      name: 'W. 69th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '70-colu'},
+        {dir: 'south', id: '68-colu'},
+        {dir: 'east', id: '69-cpkw'},
+        {dir: 'west', id: '69-broa'},
+      ]
+    },
+    {
+      id: '68-colu',
+      coord: [],
+      name: 'W. 68th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '69-colu'},
+        {dir: 'south', id: '67-colu'},
+        {dir: 'east', id: '68-cpkw'},
+        {dir: 'west', id: '68-broa'},
+      ]
+    },
+    {
+      id: '67-colu',
+      coord: [],
+      name: 'W. 67th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '68-colu'},
+        {dir: 'south', id: '66-colu'},
+        {dir: 'east', id: '67-cpkw'},
+        {dir: 'west', id: '67-broa'},
+      ]
+    },
+    {
+      id: '66-colu',
+      coord: [],
+      name: 'W. 66th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '67'},
+        {dir: 'south', id: '65'},
+        {dir: 'east', id: '66-cpkw'},
+        {dir: 'west', id: '66-broa'},
+      ]
+    },
+    {
+      id: '65-colu',
+      coord: [],
+      name: 'W. 65th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '66-colu'},
+        {dir: 'south', id: 'broa-colu'},
+        {dir: 'east', id: '65-cpkw'},
+        {dir: 'west', id: '65-broa'},
+      ]
+    },
+    {
+      id: 'broa-colu',
+      coord: [],
+      name: 'Broadway and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '65-colu'},
+        {dir: 'south', id: '64-colu'},
+        {dir: 'east', id: '64-broa'},
+        {dir: 'west', id: '65-broa'},
+      ]
+    },
+    {
+      id: '64-colu',
+      coord: [],
+      name: 'W. 64th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'broa-colu'},
+        {dir: 'south', id: '63-colu'},
+        {dir: 'east', id: '64-broa'},
+        {dir: 'west', id: '64-amst'},
+      ]
+    },
+    {
+      id: '63-colu',
+      coord: [],
+      name: 'W. 63rd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '64-colu'},
+        {dir: 'south', id: '62-colu'},
+        {dir: 'east', id: '63-broa'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '62-colu',
+      coord: [],
+      name: 'W. 62nd St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '63-colu'},
+        {dir: 'south', id: '61-colu'},
+        {dir: 'east', id: '62-broa'},
+        {dir: 'west', id: '62-amst'},
+      ]
+    },
+    {
+      id: '61-colu',
+      coord: [],
+      name: 'W. 61st St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '62-colu'},
+        {dir: 'south', id: '60-colu'},
+        {dir: 'east', id: '61-broa'},
+        {dir: 'west', id: '61-amst'},
+      ]
+    },
+    {
+      id: '60-colu',
+      coord: [],
+      name: 'W. 60th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '61-colu'},
+        {dir: 'south', id: '59-colu'},
+        {dir: 'east', id: '60-broa'},
+        {dir: 'west', id: '60-amst'},
+      ]
+    },
+    {
+      id: '59-colu',
+      coord: [],
+      name: 'W. 59th St. and Columbus Ave.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '60-colu'},
+        {dir: 'south', id: '58-9'},
+        {dir: 'east', id: '59-broa'},
+        {dir: 'west', id: '59-amst'},
+      ]
+    },
+    {
+      id: '110-manh',
+      coord: [],
+      name: 'W. 110th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-manh'},
+        {dir: 'east', id: '110-cpkw'},
+        {dir: 'west', id: '110-colu'},
+      ]
+    },
+    {
+      id: '109-manh',
+      coord: [],
+      name: 'W.  St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-manh'},
+        {dir: 'south', id: '108-manh'},
+        {dir: 'east', id: '109-cpkw'},
+        {dir: 'west', id: '109-colu'},
+      ]
+    },
+    {
+      id: '108-manh',
+      coord: [],
+      name: 'W. 108th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-manh'},
+        {dir: 'south', id: '107-manh'},
+        {dir: 'east', id: '108-cpkw'},
+        {dir: 'west', id: '108-colu'},
+      ]
+    },
+    {
+      id: '107-manh',
+      coord: [],
+      name: 'W. 107th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-manh'},
+        {dir: 'south', id: '106-manh'},
+        {dir: 'east', id: '107-cpkw'},
+        {dir: 'west', id: '107-colu'},
+      ]
+    },
+    {
+      id: '106-manh',
+      coord: [],
+      name: 'W. 106th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-manh'},
+        {dir: 'south', id: '105-manh'},
+        {dir: 'east', id: '106-cpkw'},
+        {dir: 'west', id: '106-colu'},
+      ]
+    },
+    {
+      id: '105-manh',
+      coord: [],
+      name: 'W. 105th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-manh'},
+        {dir: 'south', id: '104-manh'},
+        {dir: 'east', id: '105-cpkw'},
+        {dir: 'west', id: '105-colu'},
+      ]
+    },
+    {
+      id: '104-manh',
+      coord: [],
+      name: 'W. 104th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-manh'},
+        {dir: 'south', id: '103-manh'},
+        {dir: 'east', id: '104-cpkw'},
+        {dir: 'west', id: '104-colu'},
+      ]
+    },
+    {
+      id: '103-manh',
+      coord: [],
+      name: 'W. 103rd St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-manh'},
+        {dir: 'south', id: '102-manh'},
+        {dir: 'east', id: '103-cpkw'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '102-manh',
+      coord: [],
+      name: 'W. 102nd St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-manh'},
+        {dir: 'south', id: '101-manh'},
+        {dir: 'east', id: '102-cpkw'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '101-manh',
+      coord: [],
+      name: 'W. 101st St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-manh'},
+        {dir: 'south', id: '100-manh'},
+        {dir: 'east', id: '101-cpkw'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '100-manh',
+      coord: [],
+      name: 'W. 100th St. and ',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-manh'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '100-cpkw'},
+        {dir: 'west', id: '100-colu'},
+      ]
+    },  {
+      id: '110-cpkw',
+      coord: [],
+      name: 'W. 110th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'south', id: '109-cpkw'},
+        {dir: 'east', id: '110-7'},
+        {dir: 'west', id: '110-manh'},
+      ]
+    },
+    {
+      id: '109-cpkw',
+      coord: [],
+      name: 'W. 109th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '110-cpkw'},
+        {dir: 'south', id: '108-cpkw'},
+        {dir: 'east', id: '109-7'},
+        {dir: 'west', id: '109-manh'},
+      ]
+    },
+    {
+      id: '108-cpkw',
+      coord: [],
+      name: 'W. 108th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '109-cpkw'},
+        {dir: 'south', id: '107-cpkw'},
+        {dir: 'east', id: '108-7'},
+        {dir: 'west', id: '108-manh'},
+      ]
+    },
+    {
+      id: '107-cpkw',
+      coord: [],
+      name: 'W. 107th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '108-cpkw'},
+        {dir: 'south', id: '106-cpkw'},
+        {dir: 'east', id: '107-7'},
+        {dir: 'west', id: '107-manh'},
+      ]
+    },
+    {
+      id: '106-cpkw',
+      coord: [],
+      name: 'W. 106th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '107-cpkw'},
+        {dir: 'south', id: '105-cpkw'},
+        {dir: 'east', id: '106-7'},
+        {dir: 'west', id: '106-manh'},
+      ]
+    },
+    {
+      id: '105-cpkw',
+      coord: [],
+      name: 'W. 105th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '106-cpkw'},
+        {dir: 'south', id: '104-cpkw'},
+        {dir: 'east', id: '105-7'},
+        {dir: 'west', id: '105-manh'},
+      ]
+    },
+    {
+      id: '104-cpkw',
+      coord: [],
+      name: 'W. 104th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '105-cpkw'},
+        {dir: 'south', id: '103-cpkw'},
+        {dir: 'east', id: '104-7'},
+        {dir: 'west', id: '104-manh'},
+      ]
+    },
+    {
+      id: '103-cpkw',
+      coord: [],
+      name: 'W. 103rd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '104-cpkw'},
+        {dir: 'south', id: '102-cpkw'},
+        {dir: 'east', id: '103-7'},
+        {dir: 'west', id: '103-manh'},
+      ]
+    },
+    {
+      id: '102-cpkw',
+      coord: [],
+      name: 'W. 102nd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '103-cpkw'},
+        {dir: 'south', id: '101-cpkw'},
+        {dir: 'east', id: '102-7'},
+        {dir: 'west', id: '102-manh'},
+      ]
+    },
+    {
+      id: '101-cpkw',
+      coord: [],
+      name: 'W. 101st St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '102-cpkw'},
+        {dir: 'south', id: '100-cpkw'},
+        {dir: 'east', id: '101-7'},
+        {dir: 'west', id: '101-manh'},
+      ]
+    },
+    {
+      id: '100-cpkw',
+      coord: [],
+      name: 'W. 100th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '101-cpkw'},
+        {dir: 'south', id: '99-cpkw'},
+        {dir: 'east', id: '100-7'},
+        {dir: 'west', id: '100-manh'},
+      ]
+    },
+    {
+      id: '99-cpkw',
+      coord: [],
+      name: 'W. 99th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '100-cpkw'},
+        {dir: 'south', id: '98-cpkw'},
+        {dir: 'east', id: '99-7'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '98-cpkw',
+      coord: [],
+      name: 'W. 98th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '99-cpkw'},
+        {dir: 'south', id: '97-cpkw'},
+        {dir: 'east', id: '98-7'},
+        {dir: 'west', block: `You can't go that way.`},
+      ]
+    },
+    {
+      id: '97-cpkw',
+      coord: [],
+      name: 'W. 97th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '98-cpkw'},
+        {dir: 'south', id: '96-cpkw'},
+        {dir: 'east', id: '97-7'},
+        {dir: 'west', id: '97-colu'},
+      ]
+    },
+    {
+      id: '96-cpkw',
+      coord: [],
+      name: 'W. 96th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '97-cpkw'},
+        {dir: 'south', id: '95-cpkw'},
+        {dir: 'east', id: '96-7'},
+        {dir: 'west', id: '96-colu'},
+      ]
+    },
+    {
+      id: '95-cpkw',
+      coord: [],
+      name: 'W. 95th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '96-cpkw'},
+        {dir: 'south', id: '94-cpkw'},
+        {dir: 'east', id: '95-7'},
+        {dir: 'west', id: '95-colu'},
+      ]
+    },
+    {
+      id: '94-cpkw',
+      coord: [],
+      name: 'W. 94th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '95-cpkw'},
+        {dir: 'south', id: '93-cpkw'},
+        {dir: 'east', id: '94-7'},
+        {dir: 'west', id: '94-colu'},
+      ]
+    },
+    {
+      id: '93-cpkw',
+      coord: [],
+      name: 'W. 93rd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '94-cpkw'},
+        {dir: 'south', id: '92-cpkw'},
+        {dir: 'east', id: '93-7'},
+        {dir: 'west', id: '93-colu'},
+      ]
+    },
+    {
+      id: '92-cpkw',
+      coord: [],
+      name: 'W. 92nd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '93-cpkw'},
+        {dir: 'south', id: '91-cpkw'},
+        {dir: 'east', id: '92-7'},
+        {dir: 'west', id: '92-colu'},
+      ]
+    },
+    {
+      id: '91-cpkw',
+      coord: [],
+      name: 'W. 91st St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '92-cpkw'},
+        {dir: 'south', id: '90-cpkw'},
+        {dir: 'east', id: '91-7'},
+        {dir: 'west', id: '91-colu'},
+      ]
+    },
+    {
+      id: '90-cpkw',
+      coord: [],
+      name: 'W. 90th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '91-cpkw'},
+        {dir: 'south', id: '89-cpkw'},
+        {dir: 'east', id: '90-7'},
+        {dir: 'west', id: '90-colu'},
+      ]
+    },
+    {
+      id: '89-cpkw',
+      coord: [],
+      name: 'W. 89th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '90-cpkw'},
+        {dir: 'south', id: '88-cpkw'},
+        {dir: 'east', id: '89-7'},
+        {dir: 'west', id: '89-colu'},
+      ]
+    },
+    {
+      id: '88-cpkw',
+      coord: [],
+      name: 'W. 88th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '89-cpkw'},
+        {dir: 'south', id: '87-cpkw'},
+        {dir: 'east', id: '88-7'},
+        {dir: 'west', id: '88-colu'},
+      ]
+    },
+    {
+      id: '87-cpkw',
+      coord: [],
+      name: 'W. 87th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '88-cpkw'},
+        {dir: 'south', id: '86-cpkw'},
+        {dir: 'east', id: '87-7'},
+        {dir: 'west', id: '87-colu'},
+      ]
+    },
+    {
+      id: '86-cpkw',
+      coord: [],
+      name: 'W. 86th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '87-cpkw'},
+        {dir: 'south', id: '85-cpkw'},
+        {dir: 'east', id: '86-7'},
+        {dir: 'west', id: '86-colu'},
+      ]
+    },
+    {
+      id: '85-cpkw',
+      coord: [],
+      name: 'W. 85th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '86-cpkw'},
+        {dir: 'south', id: 'epoe-cpkw'},
+        {dir: 'east', id: '85-7'},
+        {dir: 'west', id: '85-colu'},
+      ]
+    },
+    {
+      id: 'epoe-cpkw',
+      coord: [],
+      name: 'Edgar Allen Poe St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '85-cpkw'},
+        {dir: 'south', id: '83-cpkw'},
+        {dir: 'east', id: '84-7'},
+        {dir: 'west', id: '84-colu'},
+      ]
+    },
+    {
+      id: '83-cpkw',
+      coord: [],
+      name: 'W. 83rd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'epoe-cpkw'},
+        {dir: 'south', id: '82-cpkw'},
+        {dir: 'east', id: '83-7'},
+        {dir: 'west', id: '83-colu'},
+      ]
+    },
+    {
+      id: '82-cpkw',
+      coord: [],
+      name: 'W. 82nd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '83-cpkw'},
+        {dir: 'south', id: '81-cpkw'},
+        {dir: 'east', id: '82-7'},
+        {dir: 'west', id: '82-colu'},
+      ]
+    },
+    {
+      id: '81-cpkw',
+      coord: [],
+      name: 'W. 81st St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '82-cpkw'},
+        {dir: 'south', id: '80-cpkw'},
+        {dir: 'east', id: '81-7'},
+        {dir: 'west', id: '81-colu'},
+      ]
+    },
+    {
+      id: '77-cpkw',
+      coord: [],
+      name: 'W. 77th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '78-cpkw'},
+        {dir: 'south', id: '76-cpkw'},
+        {dir: 'east', id: '77-7'},
+        {dir: 'west', id: '77-colu'},
+      ]
+    },
+    {
+      id: '76-cpkw',
+      coord: [],
+      name: 'W. 76th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '77-cpkw'},
+        {dir: 'south', id: '75-cpkw'},
+        {dir: 'east', id: '76-7'},
+        {dir: 'west', id: '76-colu'},
+      ]
+    },
+    {
+      id: '75-cpkw',
+      coord: [],
+      name: 'W. 75th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '76-cpkw'},
+        {dir: 'south', id: '74-cpkw'},
+        {dir: 'east', id: '75-7'},
+        {dir: 'west', id: '75-colu'},
+      ]
+    },
+    {
+      id: '74-cpkw',
+      coord: [],
+      name: 'W. 74th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '75-cpkw'},
+        {dir: 'south', id: '73-cpkw'},
+        {dir: 'east', id: '74-7'},
+        {dir: 'west', id: '74-colu'},
+      ]
+    },
+    {
+      id: '73-cpkw',
+      coord: [],
+      name: 'W. 73rd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '74-cpkw'},
+        {dir: 'south', id: '72-cpkw'},
+        {dir: 'east', id: '73-7'},
+        {dir: 'west', id: '73-colu'},
+      ]
+    },
+    {
+      id: '72-cpkw',
+      coord: [],
+      name: 'W. 72nd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '73-cpkw'},
+        {dir: 'south', id: '71-cpkw'},
+        {dir: 'east', id: '72-7'},
+        {dir: 'west', id: '72-colu'},
+      ]
+    },
+    {
+      id: '71-cpkw',
+      coord: [],
+      name: 'W. 71st St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '72-cpkw'},
+        {dir: 'south', id: '70-cpkw'},
+        {dir: 'east', id: '71-7'},
+        {dir: 'west', id: '71-colu'},
+      ]
+    },
+    {
+      id: '70-cpkw',
+      coord: [],
+      name: 'W. 70th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '71-cpkw'},
+        {dir: 'south', id: '69-cpkw'},
+        {dir: 'east', id: '70-7'},
+        {dir: 'west', id: '70-colu'},
+      ]
+    },
+    {
+      id: '69-cpkw',
+      coord: [],
+      name: 'W. 69th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '70-cpkw'},
+        {dir: 'south', id: '68-cpkw'},
+        {dir: 'east', id: '69-7'},
+        {dir: 'west', id: '69-colu'},
+      ]
+    },
+    {
+      id: '68-cpkw',
+      coord: [],
+      name: 'W. 68th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '69-cpkw'},
+        {dir: 'south', id: '67-cpkw'},
+        {dir: 'east', id: '68-7'},
+        {dir: 'west', id: '68-colu'},
+      ]
+    },
+    {
+      id: '67-cpkw',
+      coord: [],
+      name: 'W. 67th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '68-cpkw'},
+        {dir: 'south', id: '66-cpkw'},
+        {dir: 'east', id: '67-7'},
+        {dir: 'west', id: '67-colu'},
+      ]
+    },
+    {
+      id: '66-cpkw',
+      coord: [],
+      name: 'W. 66th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '67-cpkw'},
+        {dir: 'south', id: '65-cpkw'},
+        {dir: 'east', id: '66-7'},
+        {dir: 'west', id: '66-colu'},
+      ]
+    },
+    {
+      id: '65-cpkw',
+      coord: [],
+      name: 'W. 65th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '66-cpkw'},
+        {dir: 'south', id: '64-cpkw'},
+        {dir: 'east', id: '65-7'},
+        {dir: 'west', id: '65-colu'},
+      ]
+    },
+    {
+      id: '64-cpkw',
+      coord: [],
+      name: 'W. 64th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '65-cpkw'},
+        {dir: 'south', id: '63-cpkw'},
+        {dir: 'east', id: '64-7'},
+        {dir: 'west', id: '64-broa'},
+      ]
+    },
+    {
+      id: '63-cpkw',
+      coord: [],
+      name: 'W. 63rd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '64-cpkw'},
+        {dir: 'south', id: '62-cpkw'},
+        {dir: 'east', id: '63-7'},
+        {dir: 'west', id: '63-broa'},
+      ]
+    },
+    {
+      id: '62-cpkw',
+      coord: [],
+      name: 'W. 62nd St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '63-cpkw'},
+        {dir: 'south', id: '61-cpkw'},
+        {dir: 'east', id: '62-7'},
+        {dir: 'west', id: '62-broa'},
+      ]
+    },
+    {
+      id: '61-cpkw',
+      coord: [],
+      name: 'W. 61st St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '62-cpkw'},
+        {dir: 'south', id: '60-cpkw'},
+        {dir: 'east', id: '61-7'},
+        {dir: 'west', id: '61-broa'},
+      ]
+    },
+    {
+      id: '59-cpkw',
+      coord: [],
+      name: 'W. 59th St. and Central Park W.',
+      desc: '',
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: '60-cpkw'},
+        {dir: 'south', id: '58-8'},
+        {dir: 'east', id: '59-7'},
+        {dir: 'west', id: '59-broa'},
+      ]
+    },
+    /****************/
+   /* Central Park */
+  /****************/
+      {
+      id:'60-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`According to the plaque in front of it this is a genuine Egyptian obelisk. It even has its own name -- Cleopatra's Needle.`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '61-amer'},
+        {dir: 'south', id: '60-amer'},
+				{dir: 'east', id: '60-5'},
+				{dir: 'west', id: '60-7'},
+      ]
+    },
+    {
+      id:'61-amer',
+      name:'Somewhere in Central Park',
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '62-amer'},
+        {dir: 'south', id: '60-amer'},
+				{dir: 'east', id: '61-5'},
+				{dir: 'west', id: '61-7'},
+      ]
+    },
+    {
+      id:'62-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '63-amer'},
+        {dir: 'south', id: '61-amer'},
+				{dir: 'east', id: '62-5'},
+				{dir: 'west', id: '62-7'},
+      ]
+    },
+    {
+      id:'63-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`You've entered the Central Park zoo. All of the cages are empty. The thought of prison suddenly takes over your imagination completely... There's Fifth Avenue just beyond the entrance to the zoo.`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '64-amer'},
+        {dir: 'south', id: '62-amer'},
+				{dir: 'east', id: '63-5'},
+				{dir: 'west', id: '63-7'},
+      ]
+    },
+    {
+      id:'64-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '65-amer'},
+        {dir: 'south', id: '63-amer'},
+				{dir: 'east', id: '64-5'},
+				{dir: 'west', id: '64-7'},
+      ]
+    },
+    {
+      id:'65-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '66-amer'},
+        {dir: 'south', id: '64-amer'},
+				{dir: 'east', id: '65-5'},
+				{dir: 'west', id: '65-7'},
+      ]
+    },
+    {
+      id:'66-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '67-amer'},
+        {dir: 'south', id: '65-amer'},
+				{dir: 'east', id: '66-5'},
+				{dir: 'west', id: '66-7'},
+      ]
+    },
+    {
+      id:'67-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '68-amer'},
+        {dir: 'south', id: '66-amer'},
+				{dir: 'east', id: '67-5'},
+				{dir: 'west', id: '67-7'},
+      ]
+    },
+    {
+      id:'68-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '69-amer'},
+        {dir: 'south', id: '67-amer'},
+				{dir: 'east', id: '68-5'},
+				{dir: 'west', id: '68-7'},
+      ]
+    },
+    {
+      id:'69-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '70-amer'},
+        {dir: 'south', id: '68-amer'},
+				{dir: 'east', id: '69-5'},
+				{dir: 'west', id: '69-7'},
+      ]
+    },
+    {
+      id:'70-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '71-amer'},
+        {dir: 'south', id: '69-amer'},
+				{dir: 'east', id: '70-5'},
+				{dir: 'west', id: '70-7'},
+      ]
+    },
+    {
+      id:'71-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '72-amer'},
+        {dir: 'south', id: '70-amer'},
+				{dir: 'east', id: '71-5'},
+				{dir: 'west', id: '71-7'},
+      ]
+    },
+    {
+      id:'72-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '73-amer'},
+        {dir: 'south', id: '71-amer'},
+				{dir: 'east', id: '72-5'},
+				{dir: 'west', id: '72-7'},
+      ]
+    },
+    {
+      id:'73-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '74-amer'},
+        {dir: 'south', id: '72-amer'},
+				{dir: 'east', id: '73-5'},
+				{dir: 'west', id: '73-7'},
+      ]
+    },
+    {
+      id:'74-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '75-amer'},
+        {dir: 'south', id: '73-amer'},
+				{dir: 'east', id: '74-5'},
+				{dir: 'west', id: '74-7'},
+      ]
+    },
+    {
+      id:'75-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '76-amer'},
+        {dir: 'south', id: '74-amer'},
+				{dir: 'east', id: '75-5'},
+				{dir: 'west', id: '75-7'},
+      ]
+    },
+    {
+      id:'76-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '77-amer'},
+        {dir: 'south', id: '75-amer'},
+				{dir: 'east', id: '76-5'},
+				{dir: 'west', id: '76-7'},
+      ]
+    },
+    {
+      id:'77-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '78-amer'},
+        {dir: 'south', id: '76-amer'},
+				{dir: 'east', id: '77-5'},
+				{dir: 'west', id: '77-7'},
+      ]
+    },
+    {
+      id:'78-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '79-amer'},
+        {dir: 'south', id: '77-amer'},
+				{dir: 'east', id: '78-5'},
+				{dir: 'west', id: '78-7'},
+      ]
+    },
+    {
+      id:'79-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '80-amer'},
+        {dir: 'south', id: '78-amer'},
+				{dir: 'east', id: '79-5'},
+				{dir: 'west', id: '79-7'},
+      ]
+    },
+    {
+      id:'80-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`You see an empty bandshell with rows of empty green benches facing it attentively.\nMonday 2:00PM\n
+            You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '81-amer'},
+        {dir: 'south', id: '79-amer'},
+				{dir: 'east', id: '80-5'},
+				{dir: 'west', id: '80-7'},
+      ]
+    },
+    {
+      id:'81-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '82-amer'},
+        {dir: 'south', id: '80-amer'},
+				{dir: 'east', id: '81-5'},
+				{dir: 'west', id: '81-7'},
+      ]
+    },
+    {
+      id:'82-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '83-amer'},
+        {dir: 'south', id: '81-amer'},
+				{dir: 'east', id: '82-5'},
+				{dir: 'west', id: '82-7'},
+      ]
+    },
+    {
+      id:'83-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: 'epoe-amer'},
+        {dir: 'south', id: '82-amer'},
+        {dir: 'east', id: '83-5'},
+				{dir: 'west', id: '83-7'},
+      ]
+    },
+    {
+      id:'epoe-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike -- all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '85-amer'},
+        {dir: 'south', id: '83-amer'},
+        {dir: 'east', id: 'epoe-5'},
+        {dir: 'west', id: 'epoe-7'}
+      ]
+    },
+    {
+      id:'85-amer',
+      name:'Somewhere in Central Park',
+      coord:[],
+      desc:``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '86-amer'},
+        {dir: 'south', id: 'epoe-amer'},
+        {dir: 'east', id: '85-5'},
+        {dir: 'west', id: '85-7'},
+      ]
+    },
+    {
+      id:'86-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '87-amer'},
+        {dir: 'south', id: '85-amer'},
+        {dir: 'east', id: '86-5'},
+        {dir: 'west', id: '86-7'}
+      ]
+    },
+    {
+      id:'87-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '88-amer'},
+        {dir: 'south', id: '86-amer'},
+				{dir: 'east', id: '87-5'},
+				{dir: 'west', id: '87-7'},
+      ]
+    },
+    {
+      id:'88-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '89-amer'},
+        {dir: 'south', id: '87-amer'},
+				{dir: 'east', id: '88-5'},
+				{dir: 'west', id: '88-7'},
+      ]
+    },
+    {
+      id:'89-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '90-amer'},
+        {dir: 'south', id: '88-amer'},
+				{dir: 'east', id: '89-5'},
+				{dir: 'west', id: '89-7'},
+      ]
+    },
+    {
+      id:'90-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '91-amer'},
+        {dir: 'south', id: '899-amer'},
+				{dir: 'east', id: '90-5'},
+				{dir: 'west', id: '90-7'},
+      ]
+    },
+    {
+      id:'91-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '92-amer'},
+        {dir: 'south', id: '90-amer'},
+				{dir: 'east', id: '91-5'},
+				{dir: 'west', id: '91-7'},
+      ]
+    },
+    {
+      id:'92-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '93-amer'},
+        {dir: 'south', id: '91-amer'},
+				{dir: 'east', id: '92-5'},
+				{dir: 'west', id: '92-7'},
+      ]
+    },
+    {
+      id:'93-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '94-amer'},
+        {dir: 'south', id: '92-amer'},
+				{dir: 'east', id: '93-5'},
+				{dir: 'west', id: '93-7'},
+      ]
+    },
+    {
+      id:'94-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '95-amer'},
+        {dir: 'south', id: '93-amer'},
+				{dir: 'east', id: '94-5'},
+				{dir: 'west', id: '94-7'},
+      ]
+    },
+    {
+      id:'95-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '96-amer'},
+        {dir: 'south', id: '94-amer'},
+				{dir: 'east', id: '95-5'},
+				{dir: 'west', id: '95-7'},
+      ]
+    },
+    {
+      id:'96-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '97-amer'},
+        {dir: 'south', id: '95-amer'},
+				{dir: 'east', id: '96-5'},
+				{dir: 'west', id: '96-7'},
+      ]
+    },
+    {
+      id:'97-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '98-amer'},
+        {dir: 'south', id: '96-amer'},
+				{dir: 'east', id: '97-5'},
+				{dir: 'west', id: '97-7'},
+      ]
+    },
+    {
+      id:'98-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '99-amer'},
+        {dir: 'south', id: '97-amer'},
+				{dir: 'east', id: '98-5'},
+				{dir: 'west', id: '98-7'},
+      ]
+    },
+    {
+      id:'99-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '100-amer'},
+        {dir: 'south', id: '98-amer'},
+				{dir: 'east', id: '99-5'},
+				{dir: 'west', id: '99-7'},//blocked
+      ]
+    },
+    {
+      id:'100-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '101-amer'},
+        {dir: 'south', id: '99-amer'},
+				{dir: 'east', id: '100-5'},
+				{dir: 'west', id: '100-7'},//blocked
+      ]
+    },
+    {
+      id:'101-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '102-amer'},
+        {dir: 'south', id: '100-amer'},
+				{dir: 'east', id: '101-5'},
+				{dir: 'west', id: '101-7'},
+      ]
+    },
+    {
+      id:'102-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '103-amer'},
+        {dir: 'south', id: '101-amer'},
+				{dir: 'east', id: '102-5'},
+				{dir: 'west', id: '102-7'},
+      ]
+    },
+    {
+      id:'103-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '104-amer'},
+        {dir: 'south', id: '102-amer'},
+				{dir: 'east', id: '103-5'},
+				{dir: 'west', id: '103-7'},
+      ]
+    },
+    {
+      id:'104-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '105-amer'},
+        {dir: 'south', id: '103-amer'},
+				{dir: 'east', id: '104-5'},
+				{dir: 'west', id: '104-7'},
+      ]
+    },
+    {
+      id:'105-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '106-amer'},
+        {dir: 'south', id: '104-amer'},
+				{dir: 'east', id: '105-5'},
+				{dir: 'west', id: '105-7'},
+      ]
+    },
+    {
+      id:'106-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '107-amer'},
+        {dir: 'south', id: '105-amer'},
+				{dir: 'east', id: '106-5'},
+				{dir: 'west', id: '106-7'},
+      ]
+    },
+    {
+      id:'107-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '108-amer'},
+        {dir: 'south', id: '106-amer'},
+				{dir: 'east', id: '107-5'},
+				{dir: 'west', id: '107-7'},
+      ]
+    },
+    {
+      id:'108-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '109-amer'},
+        {dir: 'south', id: '107-amer'},
+        {dir: 'east', id: '108-5'},
+        {dir: 'west', id: '108-7'}
+      ]
+    },
+    {
+      id:'109-amer',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: ''},
+        {dir: 'south', id: '108-amer'},
+        {dir: 'east', id: '109-5'},
+        {dir: 'west', id: '109-7'}
+      ]
+    },
+        //7th Avenue
+    {
+      id:'60-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '61-7'},
+        {dir: 'south', id: '59-7'},
+        {dir: 'east', id: '60-amer'},
+        {dir: 'west', id: ''}
+                //west to 60-cpkw is blocked
+      ]
+    },
+    {
+      id:'61-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '62-7'},
+        {dir: 'south', id: '60-7'},
+        {dir: 'east', id: '61-amer'},
+        {dir: 'west', id: '61-cpkw'}
+      ]
+    },
+    {
+      id:'62-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '63-7'},
+        {dir: 'south', id: '61-7'},
+        {dir: 'east', id: '62-amer'},
+        {dir: 'west', id: '62-cpkw'},
+      ]
+    },
+    {
+      id:'63-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '64-7'},
+        {dir: 'south', id: '62-7'},
+        {dir: 'east', id: '63-amer'},
+        {dir: 'west', id: '63-cpkw'},
+      ]
+    },
+    {
+      id:'64-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '65-7'},
+        {dir: 'south', id: '63-7'},
+        {dir: 'east', id: '64-amer'},
+        {dir: 'west', id: '64-cpkw'},
+      ]
+    },
+    {
+      id:'65-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '66-7'},
+        {dir: 'south', id: '64-7'},
+        {dir: 'east', id: '65-amer'},
+        {dir: 'west', id: '65-cpkw'},
+      ]
+    },
+    {
+      id:'66-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '67-7'},
+        {dir: 'south', id: '65-7'},
+        {dir: 'east', id: '66-amer'},
+        {dir: 'west', id: '66-cpkw'},
+      ]
+    },
+    {
+      id:'67-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '68-7'},
+        {dir: 'south', id: '66-7'},
+        {dir: 'east', id: '67-amer'},
+        {dir: 'west', id: '67-cpkw'},
+      ]
+    },
+    {
+      id:'68-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '69-7'},
+        {dir: 'south', id: '67-7'},
+        {dir: 'east', id: '68-amer'},
+        {dir: 'west', id: '68-cpkw'},
+      ]
+    },
+    {
+      id:'69-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '70-7'},
+        {dir: 'south', id: '68-7'},
+        {dir: 'east', id: '69-amer'},
+        {dir: 'west', id: '69-cpkw'},
+      ]
+    },
+    {
+      id:'70-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`You come upon an avenue of weathered bronze statues of famous long-ago statesmen, generals, and public benefactors. All have become victims of history's king-size amnesia. Or maybe American History was never your subject.`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '71-7'},
+        {dir: 'south', id: '69-7'},
+        {dir: 'east', id: '70-amer'},
+        {dir: 'west', id: '70-cpkw'},
+      ]
+    },
+    {
+      id:'71-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`"Strawberry Fields forever..."`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '72-7'},
+        {dir: 'south', id: '70-7'},
+        {dir: 'east', id: '71-amer'},
+        {dir: 'west', id: '71-cpkw'},
+      ]
+    },
+    {
+      id:'72-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '73-7'},
+        {dir: 'south', id: '71-7'},
+        {dir: 'east', id: '72-amer'},
+        {dir: 'west', id: '72-cpkw'},
+      ]
+    },
+    {
+      id:'73-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '74-7'},
+        {dir: 'south', id: '72-7'},
+        {dir: 'east', id: '73-amer'},
+        {dir: 'west', id: '73-cpkw'},
+      ]
+    },
+    {
+      id:'74-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '75-7'},
+        {dir: 'south', id: '73-7'},
+        {dir: 'east', id: '74-amer'},
+        {dir: 'west', id: '74-cpkw'},
+      ]
+    },
+    {
+      id:'75-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '76-7'},
+        {dir: 'south', id: '74-7'},
+        {dir: 'east', id: '75-amer'},
+        {dir: 'west', id: '75-cpkw'},
+      ]
+    },
+    {
+      id:'76-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '77-7'},
+        {dir: 'south', id: '75-7'},
+        {dir: 'east', id: '76-amer'},
+        {dir: 'west', id: '76-cpkw'},
+      ]
+    },
+    {
+      id:'77-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '78-7'},
+        {dir: 'south', id: '76-7'},
+        {dir: 'east', id: '77-amer'},
+        {dir: 'west', id: '77-cpkw'},
+      ]
+    },
+    {
+      id:'78-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '80-7'},
+        {dir: 'south', id: '77-7'},
+        {dir: 'east', id: '78-amer'},
+        {dir: 'west', id: '78-cpkw'},//blocked
+      ]
+    },
+    {
+      id:'79-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '80-7'},
+        {dir: 'south', id: '78-7'},
+        {dir: 'east', id: '79-amer'},
+        {dir: 'west', id: '79-cpkw'},//blocked
+      ]
+    },
+    {
+      id:'80-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '81-7'},
+        {dir: 'south', id: '79-7'},
+        {dir: 'east', id: '80-amer'},
+        {dir: 'west', id: '80-cpkw'}//blocked
+      ]
+    },
+    {
+      id:'81-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '82-7'},
+        {dir: 'south', id: '80-7'},
+        {dir: 'east', id: '81-amer'},
+        {dir: 'west', id: '81-cpkw'},
+      ]
+    },
+    {
+      id:'82-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '83-7'},
+        {dir: 'south', id: '81-7'},
+        {dir: 'east', id: '82-amer'},
+        {dir: 'west', id: '82-cpkw'},
+      ]
+    },
+    {
+      id:'83-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: 'epoe-7'},
+        {dir: 'south', id: '82-7'},
+        {dir: 'east', id: '83-amer'},
+        {dir: 'west', id: '83-cpkw'},
+      ]
+    },
+    {
+      id:'epoe-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:`A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike -- all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '85-7'},
+        {dir: 'south', id: '83-7'},
+        {dir: 'east', id: 'epoe-amer'},
+        {dir: 'west', id: 'epoe-cpkw'},
+      ]
+    },
+    {
+      id:'85-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '86-7'},
+        {dir: 'south', id: 'epoe-7'},
+        {dir: 'east', id: '85-amer'},
+        {dir: 'west', id: '85-cpkw'},
+      ]
+    },
+    {
+      id:'86-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '87-7'},
+        {dir: 'south', id: '85-7'},
+        {dir: 'east', id: '86-amer'},
+        {dir: 'west', id: '86-cpkw'},
+      ]
+    },
+    {
+      id:'87-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '88-7'},
+        {dir: 'south', id: '86-7'},
+        {dir: 'east', id: '87-amer'},
+        {dir: 'west', id: '87-cpkw'},
+      ]
+    },
+    {
+      id:'88-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '89-7'},
+        {dir: 'south', id: '87-7'},
+        {dir: 'east', id: '88-amer'},
+        {dir: 'west', id: '88-cpkw'},
+      ]
+    },
+    {
+      id:'89-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '90-7'},
+        {dir: 'east', id: '89-amer'},
+        {dir: 'south', id: '89-7'}
+      ]
+    },
+    {
+      id:'90-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '91-7'},
+        {dir: 'south', id: '89-7'},
+        {dir: 'east', id: '90-amer'},
+        {dir: 'west', id: '90-cpkw'},
+      ]
+    },
+    {
+      id:'91-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '92-7'},
+        {dir: 'south', id: '90-7'},
+        {dir: 'east', id: '91-amer'},
+        {dir: 'west', id: '91-cpkw'},
+      ]
+    },
+    {
+      id:'92-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '93-7'},
+        {dir: 'south', id: '91-7'},
+        {dir: 'east', id: '92-amer'},
+        {dir: 'west', id: '92-cpkw'},
+      ]
+    },
+    {
+      id:'93-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '94-7'},
+        {dir: 'south', id: '92-7'},
+        {dir: 'east', id: '93-amer'},
+        {dir: 'west', id: '93-cpkw'},
+      ]
+    },
+    {
+      id:'94-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '95-7'},
+        {dir: 'south', id: '93-7'},
+        {dir: 'east', id: '94-amer'},
+        {dir: 'west', id: '94-cpkw'},
+      ]
+    },
+    {
+      id:'95-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '96-7'},
+        {dir: 'south', id: '94-7'},
+        {dir: 'east', id: '95-amer'},
+        {dir: 'west', id: '95-cpkw'},
+      ]
+    },
+    {
+      id:'96-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '97-7'},
+        {dir: 'south', id: '95-7'},
+        {dir: 'east', id: '96-amer'},
+        {dir: 'west', id: '96-cpkw'},
+      ]
+    },
+    {
+      id:'97-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '98-7'},
+        {dir: 'south', id: '96-7'},
+        {dir: 'east', id: '97-amer'},
+        {dir: 'west', id: '97-cpkw'},
+      ]
+    },
+    {
+      id:'98-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '99-7'},
+        {dir: 'south', id: '97-7'},
+        {dir: 'east', id: '98-amer'},
+        {dir: 'west', id: '98-cpkw'},
+      ]
+    },
+    {
+      id:'99-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '100-7'},
+        {dir: 'south', id: '98-7'},
+        {dir: 'east', id: '99-amer'},
+        {dir: 'west', id: '99-cpkw'},
+      ]
+    },
+    {
+      id:'100-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '101-7'},
+        {dir: 'south', id: '99-7'},
+        {dir: 'east', id: '100-amer'},
+        {dir: 'west', id: '100-cpkw'},
+      ]
+    },
+    {
+      id:'101-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '102-7'},
+        {dir: 'south', id: '100-7'},
+        {dir: 'east', id: '101-amer'},
+        {dir: 'west', id: '101-cpkw'},
+      ]
+    },
+    {
+      id:'102-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '103-7'},
+        {dir: 'south', id: '101-7'},
+        {dir: 'east', id: '102-amer'},
+        {dir: 'west', id: '102-cpkw'},
+      ]
+    },
+    {
+      id:'103-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '104-7'},
+        {dir: 'south', id: '102-7'},
+        {dir: 'east', id: '103-amer'},
+        {dir: 'west', id: '103-cpkw'},
+      ]
+    },
+    {
+      id:'104-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '105-7'},
+        {dir: 'south', id: '103-7'},
+        {dir: 'east', id: '104-amer'},
+        {dir: 'west', id: '104-cpkw'},
+      ]
+    },
+    {
+      id:'105-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '106-7'},
+        {dir: 'south', id: '104-7'},
+        {dir: 'east', id: '105-amer'},
+        {dir: 'west', id: '105-cpkw'},
+      ]
+    },
+    {
+      id:'106-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '107-7'},
+        {dir: 'south', id: '105-7'},
+        {dir: 'east', id: '106-amer'},
+        {dir: 'west', id: '106-cpkw'},
+      ]
+    },
+    {
+      id:'107-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '108-7'},
+        {dir: 'south', id: '106-7'},
+        {dir: 'east', id: '107-amer'},
+        {dir: 'west', id: '107-cpkw'},
+      ]
+    },
+    {
+      id:'108-7',
+      name:'Somewhere in Central Park', 
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '109-7'},
+        {dir: 'south', id: '107-7'},
+        {dir: 'east', id: '108-amer'},
+        {dir: 'west', id: '108-cpkw'}
+      ]
+    },
+    {
+      id:'109-7',
+      name:'Somewhere in Central Park',
+      coord:[],
+      desc:``, 
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: ''},
+        {dir: 'south', id: '108-7'},
+        {dir: 'east', id: '109-amer'},
+        {dir: 'west', id: '109-cpkw'}
+      ]
+    },
   ]
 }
