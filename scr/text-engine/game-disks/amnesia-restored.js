@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -8,7 +8,8 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         pressEnter(`amne-intr`);
-      }
+      },
+      exits: [],
     },
     {
       id: 'amne-intr', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
@@ -24,6 +25,7 @@ const amnesiaRestored = {
         setTimeout(() => {  println("Slowly, as you lie there on the cool bedspread, it dawns on you that you have absolutely no idea where you are. A hotel room, by the look of it. But with the curtains drawn, you don't know in what city, or even what country.\n\n\n"); }, 4000);
         setTimeout(() => {  pressEnter('amne-intr-1');}, 4100);  
       },
+      exits: [],
     },
     {
       id: 'amne-intr-1',
@@ -36,6 +38,7 @@ const amnesiaRestored = {
         setTimeout(() => {  println("\n**AMNESIA**", "intro"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-2'));}, 1150);
       },
+      exits: [],
     },
     {
       id: 'amne-intr-2',
@@ -58,7 +61,8 @@ const amnesiaRestored = {
         println("Lead Promotioner: Sydney Brower");
         println("Special Thanks: Washington State University Vancouver, Greg, Sarah, more, more, more");
         pressEnter('hote-room-1');
-      }
+      },
+      exits: [],
     },
     //**********************************************************/
     //                     Hotel Room 1502                     /
@@ -72,6 +76,7 @@ const amnesiaRestored = {
         println(`What's a person to do in such a situation? \n\nWhat YOU do is...`);
         reenableInput();
       },
+      exits: [],
       items: [
         {
           name: 'up',
@@ -89,6 +94,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Your hair--is it light or dark?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'light'){
           hairColor = 'dark';
@@ -116,6 +122,7 @@ const amnesiaRestored = {
         println('Long or short?');
         console.log(hairColor);
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'long'){
           hairLength = 'short';
@@ -141,6 +148,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Do you have a beard? Or a mustache? or neither?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'beard'){
           hairFace = 'a mustache';
@@ -172,6 +180,7 @@ const amnesiaRestored = {
       onEnter: () => {
         println('What is the color of your eyes?');
       },
+      exits: [],
       onBlock: () => {
         if (prevInput === 'blue'){
           hairColor = 'brown';
@@ -201,7 +210,8 @@ const amnesiaRestored = {
       onEnter: () => {
         println(`You could hardly be more completely mistaken! For when you look in the mirror, the stranger you see there has ${hairLength}, ${hairColor} hair. He has ${hairFace}. And his eyes are emphatically ${eyeColor}.`);
         pressEnter('hote-room-7');
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-7',
@@ -214,6 +224,7 @@ const amnesiaRestored = {
         //reenableInput();
         pressEnter('hote-room-8');
       },
+      exits: [],
     },
     {
       id: 'hote-room-8', // The main room you can start exploring
@@ -535,7 +546,8 @@ const amnesiaRestored = {
         } else {
           println('The phone continues ringing.');
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-10',
@@ -550,7 +562,8 @@ const amnesiaRestored = {
         } else {
           println(`I'm sorry come again?`);
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-11',
@@ -567,7 +580,8 @@ const amnesiaRestored = {
         } else {
           println(`I'm sorry come again?`);
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-12',
@@ -584,7 +598,8 @@ const amnesiaRestored = {
         } else {
           println(`I'm sorry come again?`);
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-13',
@@ -598,7 +613,8 @@ const amnesiaRestored = {
         }
 
         pressEnter('hote-room-15');
-      }
+      },
+      exits: [],
     },
     {
       id: 'hote-room-14',
@@ -608,6 +624,7 @@ const amnesiaRestored = {
         println(`"No? But I have the slip already made up. If you wish to make some other arrangement I'll have to ask you to come down to the Registration desk now. Can you do that? \n\nYou can't, of course, not without proper clothing. So you tell her to put it on your VISA card, and that settles that."`);
         pressEnter('hote-room-15');
       },
+      exits: [],
     },
     {
       id: 'hote-room-15',
@@ -623,6 +640,7 @@ const amnesiaRestored = {
         println('You try several practice signatures.');
         pressEnter('hote-room-16');
       },
+      exits: [],
     },
     {
       id: 'hote-room-16',
@@ -633,6 +651,7 @@ const amnesiaRestored = {
         println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
+      exits: [],
     },
     {
       id: 'hote-room-17',
@@ -653,7 +672,8 @@ const amnesiaRestored = {
         } else {
           println('Yes or No?');
         }
-      }
+      },
+      exits: [],
     },
     
     //**********************************************************/
@@ -1006,6 +1026,7 @@ const amnesiaRestored = {
       id:'hote-revi-2',
       name: '',
       desc:`The phone rings.`,
+      exits: [],
       
       items: [
           {
@@ -1022,7 +1043,8 @@ const amnesiaRestored = {
       onEnter: () => {
           println(`You go to the dresser and answer the phone with a rather tentative "Hello?"`);
           pressEnter('hote-revi-4');
-      }
+      },
+      exits: [],
 
   }, //end of hote-revi-3 room (conversation w/Luke on phone)
   {
@@ -1041,6 +1063,7 @@ const amnesiaRestored = {
           }
           pressEnter('hote-revi-1');
       },
+      exits: [],
   },//end of hote-revi-4 room (conversation w/Luke on phone)
   {
       id: 'hote-revi-5',
@@ -1049,7 +1072,8 @@ const amnesiaRestored = {
       onEnter: () => {
           println(`You hear a key being fitted into the lock of the door and feel-- too late-- a sense of urgency. A man enters the room, dressed like a Texas businessman in a suit and tie with boots and a Stetson. The gun in his hand, however, is not consistent with his western theme, being a very modest .38 caliber pistol.`);
           pressEnter('hote-revi-6');
-      }
+      },
+      exits: [],
   },//end of hote-revi-5 room (death for dawdlers ending)
   {
       id: 'hote-revi-6',
@@ -1058,7 +1082,8 @@ const amnesiaRestored = {
       onEnter: () => {
           println(`"That's right, son," he says; aiming the gun at your chest, "you just freeze, and I will explain something about my character. I have never been a man to abide dawdlers. In fact, one time in Nashville, there was this waitress who took the better part of an hour to serve me a damned hamburger. I told her I was becoming impatient, and then I told her again. And then I lost my temper. Like this!`);
           pressEnter('hote-revi-7');
-      }
+      },
+      exits: [],
   },//end of hote-revi-6 room (death for dawdlers ending)
   {
       id: 'hote-revi-7',
@@ -1069,7 +1094,8 @@ const amnesiaRestored = {
           
           A fly alights on your nose. For a little while you feel the tickle of its feet, and then you're dead.`);
           pressEnter('');//leads to end screen
-      }
+      },
+      exits: [],
   },//end of hote-revi-7 room (death for dawdlers ending)
   {
       id: 'hote-revi-8',
@@ -1095,7 +1121,8 @@ const amnesiaRestored = {
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
             pressEnter('lobby');//leads to Lobby node
         }
-      } 
+      },
+      exits: [],
     },
     //**********************************************************/
     //                      The Nightmare                      /
@@ -1545,10 +1572,12 @@ const amnesiaRestored = {
       onEnter: () => {
           getInput();
           if(getInput === ['no','ride escalator','refuse']){
-              enterRoom('nigh-sale13')}
-          else(getInput === ['follow security officer'])
-              {enterRoom('nigh-sale14')}
+            enterRoom('nigh-sale13')
+          }if(getInput === ['follow security officer']) {
+            enterRoom('nigh-sale14')
           }
+      },
+      exits: [],
     },
     {
       id:'nigh-sale13',
@@ -1639,12 +1668,14 @@ const amnesiaRestored = {
               enterRoom('nigh-sale19')
           }
 
-        }
+        },
+        exits: [],
   },
   {
       id:'nigh-sale19',
       name: '',
       desc:`You open a fifth box, which seems too small to contain your head. But there it is, still alive! Its eyes look up to you gratefully. Its lips smile. And then, with horror, you realize your mistake. This isn’t your own head. It’s an identical head that’s been substituted for your own. This head belongs to ... to … His name is on the tip of your tongue. But of course, without a head you are also without a tongue. You wake, gasping for breath, and instantly the nightmare fades from your memory.`,
+      exits: [],
       //exit nightmare node
   },
     //**********************************************************/
@@ -1657,16 +1688,18 @@ const amnesiaRestored = {
       onEnter: () =>{
           pressEnter('hell-2');
           
-      }
       },
-      {
+      exits: [],
+    },
+    {
       id: 'hell-2',
       name: '',
       desc: `Every few years a kind of canoe comes up to the shore, and an old man with a long white beard and eyes that glow like a battery-operated jack-o-lantern offers the waiting throng a chance to get into the canoe and be taken to the seat of the Last Judgement. But first, you have to tell him your name. And you--and all these others--are the poor souls who died in a state of amnesia. You can’t remember your names, and you can’t get either to heaven or to hell until this old geezer, whose name is Charon, has checked you off his list. Each time he returns you have one chance to tell him what you think your name might be.`,
       onEnter: () =>{
           pressEnter('hell-3');
       },
-  },
+      exits: [],
+    },
       {
       id: 'hell-3',
       name: '',
@@ -1689,7 +1722,7 @@ const amnesiaRestored = {
         },
        ],
       },
-  {
+    {
       id: 'hell-4',
       name: '',
       desc: `Charon examines your card, scratches his head, and hands it back. “So tell me, Xavier,” he says, “what’s your middle name?”`,
@@ -1706,7 +1739,8 @@ const amnesiaRestored = {
       desc: `"Sorry, that's not right. Better luck next time."”`,
       onEnter: () =>{
           pressEnter(loadDisk(gameOver));
-      }
+      },
+      exits: [],
     },
     {
       id: 'hell-6',
@@ -1907,6 +1941,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('corridor-1509outside');
       },
+      exits: [],
     },
     {
       id: 'corridor-1509outside',
@@ -2118,7 +2153,8 @@ const amnesiaRestored = {
       
       onEnter: () => {
           pressEnter('deat-1');
-      }
+      },
+      exits: [],
     },
     {
       id: 'corridor-elevator2', // Player presses 2
@@ -2190,6 +2226,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-214', // 
@@ -2454,6 +2491,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-314', // 
@@ -2723,6 +2761,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-414', // 
@@ -3245,6 +3284,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-614', // 
@@ -3503,6 +3543,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-714', // 
@@ -3761,6 +3802,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-814', // 
@@ -4019,6 +4061,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-914', // 
@@ -4277,6 +4320,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1014', // 
@@ -4535,6 +4579,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1114', // 
@@ -4799,6 +4844,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1214', // 
@@ -5063,6 +5109,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1314', // 
@@ -5332,6 +5379,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1414', // 
@@ -5590,6 +5638,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1614', // 
@@ -5848,6 +5897,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1714', // 
@@ -6106,6 +6156,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1814', // 
@@ -6364,6 +6415,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('deat-1)');
       },
+      exits: [],
     },
     {
       id: 'corridor-1914', // 
@@ -6561,7 +6613,8 @@ const amnesiaRestored = {
       You realize that any further resistance is useless, and you submit to being led by the two security guards down the entire length of the staircase to the hotel's sub-basement, where you await the arrival of the police in a room the size of a broom closet.`,
       onEnter: () => {
           pressEnter('deat-1'); // proceed to death and texas
-      }
+      },
+      exits: [],
     },
     {
       id: 'corridor-stairwell15', // Stairway on 15th floor
@@ -6589,6 +6642,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('corridor-rooftop');
       },
+      exits: [],
     },
     {
       id: 'corridor-elevatorph', // Player presses ph, to the health club
@@ -6597,6 +6651,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('corridor-rooftop');
       },
+      exits: [],
     },
     {
       id: 'corridor-rooftop',
@@ -6637,6 +6692,7 @@ const amnesiaRestored = {
      onEnter: () =>{
          pressEnter('nightmare'); // change to whatever the room id of the nightmare is
      },
+     exits: [],
     },
     {
       id: 'nyu-medical1', // After the nightmare, proceeding to death and texas
@@ -6660,6 +6716,7 @@ const amnesiaRestored = {
      onEnter: () =>{
          pressEnter('deat-1'); 
      },
+     exits: [],
   },
   {
       id: 'nyu-medical3', // Proceed to Death and Texas
@@ -6668,6 +6725,7 @@ const amnesiaRestored = {
      onEnter: () =>{
          pressEnter('deat-1'); 
      },
+     exits: [],
   },
     //**********************************************************/
     //                Sunderland Health Club                   /
@@ -6752,7 +6810,8 @@ const amnesiaRestored = {
       With a single, simple flowing motion remarkable in a woman of such size and strength, she springs up and lays you flat with a judicious karate chop to the side of your neck.`,
       onEnter: () => {
         pressEnter('heal-club29')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club29',
@@ -6764,7 +6823,8 @@ const amnesiaRestored = {
       (2) that you are awaiting extradition to Texas on a murder charge.`,
       onEnter: () => {
         pressEnter('deat-1');
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club5',
@@ -6809,7 +6869,8 @@ const amnesiaRestored = {
       
       onEnter: () => {
         pressEnter('heal-club12')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club12',
@@ -6818,7 +6879,8 @@ const amnesiaRestored = {
 
       onEnter: () => {
         pressEnter('heal-club13')
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club13',
@@ -6863,17 +6925,20 @@ const amnesiaRestored = {
     {
       id: 'heal-club7',
       name: `Men's Locker Room`,
-      desc: 'massage'
+      desc: 'massage',
+      exits: [],
     },
     {
       id: 'heal-club9',
       name: `Men's Locker Room`,
       desc: 'showers',
+      exits: [],
     },
     {
       id: 'heal-club10',
       name: `Men's Locker Room`,
-      desc: `weight room`
+      desc: `weight room`,
+      exits: [],
     },
     {
       id: 'heal-club8',
@@ -6884,6 +6949,7 @@ const amnesiaRestored = {
       onEnter: () => {
         pressEnter('heal-club11');
       },
+      exits: [],
     },
     {
       id: 'heal-club11',
@@ -6892,7 +6958,8 @@ const amnesiaRestored = {
       You are experiencing . . . DEJA-VU!`,
       onEnter: () => {
         pressEnter('deja-vu');
-      }
+      },
+      exits: [],
     },
     //**********************************************************/
     //                       Deja Vu                           /
@@ -6904,7 +6971,8 @@ const amnesiaRestored = {
       
       onEnter: () => {
           pressEnter('deja-vu1');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu1',
@@ -6918,7 +6986,8 @@ const amnesiaRestored = {
               println(`'${prevInput}'`);
           }
           enterRoom('deja-vu2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deja-vu2',
@@ -6926,7 +6995,8 @@ const amnesiaRestored = {
       desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.`,
         onEnter: () => {
             pressEnter('deja-vu3');
-        }
+        },
+        exits: [],
       
     },
     {
@@ -6938,6 +7008,7 @@ const amnesiaRestored = {
         onEnter: () => {
             reenableInput();
         },
+        exits: [],
 
         onBlock: () => {
             if (prevInput === 'please sir') {
@@ -6954,7 +7025,8 @@ const amnesiaRestored = {
 
       onEnter: () => {
           pressEnter('deja-vu5');
-      }
+      },
+      exits: [],
       
     },
     {
@@ -6965,6 +7037,7 @@ const amnesiaRestored = {
       onEnter: () => {
           reenableInput();
       },
+      exits: [],
       onBlock: () => {
         let room = getRoom('deja-vu5');
         println('There is no way out');
@@ -6985,6 +7058,7 @@ const amnesiaRestored = {
       onEnter: () => {
         pressEnter('deja-vu8')
       },
+      exits: [],
     },
     {
         id: 'deja-vu8',
@@ -6993,7 +7067,8 @@ const amnesiaRestored = {
 
         onEnter: () => {
             pressEnter('deja-vu5')
-        }
+        },
+        exits: [],
 
     },
     {
@@ -7002,7 +7077,8 @@ const amnesiaRestored = {
       desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
       onEnter: () => {
           pressEnter('heal-club14')
-      }
+      },
+      exits: [],
     },
     //**********************************************************/
     //        EXIT FROM DEJA-VU to Sunderland Health Club      /
@@ -7014,7 +7090,8 @@ const amnesiaRestored = {
       A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.`,
       onEnter: () => {
           pressEnter('heal-club15')
-      }
+      },
+      exits: [],
     },
     {
         id: 'heal-club15',
@@ -7023,7 +7100,8 @@ const amnesiaRestored = {
         “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t.”`,
         onEnter: () => {
             pressEnter('heal-club16');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club16',
@@ -7031,7 +7109,8 @@ const amnesiaRestored = {
         desc: `He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
         onEnter: () => {
             pressEnter('heal-club17');
-        }
+        },
+        exits: [],
     },
     {
       id: 'heal-club17',
@@ -7040,6 +7119,7 @@ const amnesiaRestored = {
       onEnter: () => {
           pressEnter('heal-club18');
       },
+      exits: [],
     },
     {
         id: 'heal-club18',
@@ -7047,7 +7127,8 @@ const amnesiaRestored = {
         desc: `The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper,`,
         onEnter: () => {
             pressEnter('heal-club19')
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club19',
@@ -7059,7 +7140,8 @@ const amnesiaRestored = {
         “It was on the floor of the sauna.”`,
         onEnter: () => {
             pressEnter('heal-club20');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club20',
@@ -7069,7 +7151,8 @@ const amnesiaRestored = {
         You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.`,
         onEnter: () => {
             pressEnter('heal-club21');
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club21',
@@ -7079,7 +7162,8 @@ const amnesiaRestored = {
         You listen to the unmistakable crunch of steel through steel, and a moment later the masseur returns with a pair of metal cutters in one hand and a green canvas gym bag in the other.`,
         onEnter: () => {
             pressEnter('heal-club22')
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club22',
@@ -7094,12 +7178,34 @@ const amnesiaRestored = {
             } else {
                 enterRoom('heal-club24');
             }
-        }
+        },
+        exits: [],
     },
     {
         id: 'heal-club23',
         name: 'Massage Room',
         desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+        exits: [],
+      items: [
+        {
+          name: 'Green Canvas Gym Bag',
+          desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+          isTakeable: true,
+          isDroppable: true,
+          descRead: false,
+          onTake: () => {
+            const room = getRoom(disk.roomId);
+            if (room.descRead === false) {
+              println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+            } room.descRead = true;
+            pressEnter('heal-club25');
+          },
+          onLook: () => {
+            takeItem('Green Canvas Gym Bag');
+            pressEnter('heal-club25');
+          }
+        },
+      ]
     },
     {
         id: 'heal-club24',
@@ -7125,7 +7231,8 @@ const amnesiaRestored = {
               pressEnter('heal-club25');
             }
           },
-        ]
+        ],
+        exits: [],
     },
     {
       id: 'heal-club25',
@@ -7161,7 +7268,8 @@ const amnesiaRestored = {
           },
         ])
         pressEnter('heal-club26');
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club26',
@@ -7178,7 +7286,8 @@ const amnesiaRestored = {
         }else {
           enterRoom('heal-club27');
         }
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club27',
@@ -7186,7 +7295,8 @@ const amnesiaRestored = {
       desc: `The masseur seems relieved when you follow Buddy out. He has been given your satchel, the plastic bookbag, and a pass key to Room 1502. You take the elevator down to 15, and Buddy leads the way to your room.`,
       onEnter: () => {
         pressEnter('heal-club28');
-      }
+      },
+      exits: [],
     },
     {
       id: 'heal-club28',
@@ -7196,7 +7306,8 @@ const amnesiaRestored = {
       You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
       onEnter: () => {
         pressEnter('hote-revi');
-      }
+      },
+      exits: [],
     },
     //**********************************************************/
     //                   Death and Texas                       /
@@ -7306,7 +7417,8 @@ const amnesiaRestored = {
       desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
       onEnter: () => {
           pressEnter('deat-f5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-f5', // after Kiss, hug, or touch  Denise if firing squad selected
@@ -7314,7 +7426,8 @@ const amnesiaRestored = {
       desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
       onEnter: () => {
           pressEnter('deat-f9');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-f6', // if BITE/SPIT or any obscenity at Denise if firing squad selected
@@ -7322,7 +7435,8 @@ const amnesiaRestored = {
       desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f10');
-    }
+      },
+      exits: [],
     },
     {
       id: 'deat-f7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if firing squad selected
@@ -7330,7 +7444,8 @@ const amnesiaRestored = {
       desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f9');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-f8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
@@ -7338,7 +7453,8 @@ const amnesiaRestored = {
       desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f9');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-f9', // Proceeding to last meal node if firing squad selected
@@ -7347,7 +7463,8 @@ const amnesiaRestored = {
       onEnter: () => {
         pressEnter('deat-f10');
         reenableInput();
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-le3', // if the player chooses lethal injection
@@ -7387,7 +7504,8 @@ const amnesiaRestored = {
     desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
     onEnter: () => {
         pressEnter('deat-le5');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-le5', // after Kiss, hug, or touch  Denise if lethal injection selected
@@ -7395,7 +7513,8 @@ const amnesiaRestored = {
     desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
     onEnter: () => {
         pressEnter('deat-le9');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-le6', // if BITE/SPIT or any obscenity at Denise if lethal injection selected
@@ -7403,7 +7522,8 @@ const amnesiaRestored = {
     desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le10');
-  }
+    },
+    exits: [],
   },
   {
     id: 'deat-le7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if lethal injection selected
@@ -7411,7 +7531,8 @@ const amnesiaRestored = {
     desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le9');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-le8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
@@ -7419,7 +7540,8 @@ const amnesiaRestored = {
     desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le9');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-le9', // Proceeding to last meal node if firing squad selected
@@ -7427,7 +7549,8 @@ const amnesiaRestored = {
     desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le10');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-le10', // last meal node if lethal injection squad
@@ -7683,7 +7806,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
@@ -7691,7 +7815,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
@@ -7699,7 +7824,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letar1', // If none or go away, lethal injection & no meal selected
@@ -7707,7 +7833,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letar2', // lethal injection & no meal cont
@@ -7716,7 +7843,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letar3', //  lethal injection & no meal cont
@@ -7724,7 +7852,8 @@ const amnesiaRestored = {
       desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letar4', //  lethal injection & no meal cont
@@ -7733,7 +7862,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letar5', // lethal injection & no meal cont
@@ -7741,7 +7871,8 @@ const amnesiaRestored = {
       desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letarj', // If JEWISH, lethal injection & no meal selected
@@ -7749,7 +7880,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
@@ -7757,7 +7889,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
@@ -7765,7 +7898,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lesp1', // If none or go away, lethal injection & Steak and Potatoes
@@ -7773,7 +7907,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lesp2', // lethal injection & steak and potatoes
@@ -7782,7 +7917,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lesp3', //  lethal injection & steak and potatoes
@@ -7790,7 +7926,8 @@ const amnesiaRestored = {
       desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lesp4', //  lethal injection & steak and potatoes
@@ -7799,7 +7936,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lesp5', // lethal injection & steak and potatoes
@@ -7807,7 +7945,8 @@ const amnesiaRestored = {
       desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lespj', // If JEWISH, lethal injection & steak and potatoes
@@ -7815,7 +7954,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lespc', // If CATHOLIC & lethal injection & steak and potatoes
@@ -7823,7 +7963,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lespp', // If Protestant & lethal injection & steak and potatoes
@@ -7831,7 +7972,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebr1', // If none or go away, lethal injection & Barbecue Ribs
@@ -7839,7 +7981,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebr2', // lethal injection & Barbecue Ribs
@@ -7848,7 +7991,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebr3', //  lethal injection & Barbecue Ribs
@@ -7856,7 +8000,8 @@ const amnesiaRestored = {
       desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebr4', //  lethal injection & Barbecue Ribs
@@ -7865,7 +8010,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebr5', // lethal injection & Barbecue Ribs
@@ -7873,7 +8019,8 @@ const amnesiaRestored = {
       desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebrj', // If JEWISH, lethal injection & Barbecue Ribs
@@ -7881,7 +8028,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebrc', // If CATHOLIC & lethal injection & Barbecue Ribs
@@ -7889,7 +8037,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lebrp', // If Protestant & lethal injection & Barbecue Ribs
@@ -7897,7 +8046,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lert1', // If none or go away, lethal injection & Roasted Turkey
@@ -7905,7 +8055,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lert2', // lethal injection & roasted turkey
@@ -7914,7 +8065,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lert3', //  lethal injection & roasted turkey
@@ -7922,7 +8074,8 @@ const amnesiaRestored = {
       desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lert4', //  lethal injection & roasted turkey
@@ -7931,7 +8084,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lert5', // lethal injection & roasted turkey
@@ -7939,7 +8093,8 @@ const amnesiaRestored = {
       desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lertj', // If JEWISH, lethal injection & roasted turkey
@@ -7947,7 +8102,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lertc', // If CATHOLIC & lethal injection & roasted turkey
@@ -7955,7 +8111,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lertp', // If Protestant & lethal injection & roasted turkey
@@ -7963,7 +8120,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
@@ -7971,7 +8129,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
@@ -7979,7 +8138,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
@@ -7987,7 +8147,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftar1', // If none or go away, firing squad & no meal selected
@@ -7995,7 +8156,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftar2', // firing squad & no meal cont
@@ -8004,7 +8166,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftar3', //  lethal injection & no meal cont
@@ -8021,7 +8184,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftar5', // firing squad & no meal cont
@@ -8029,7 +8193,8 @@ const amnesiaRestored = {
       desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
@@ -8037,7 +8202,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
@@ -8045,7 +8211,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
@@ -8053,7 +8220,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fsp1', // If none or go away, firing squad & Steak and Potatoes
@@ -8061,7 +8229,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fsp2', // firing squad & steak and potatoes
@@ -8070,7 +8239,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fsp3', //  firing squad & steak and potatoes
@@ -8078,7 +8248,8 @@ const amnesiaRestored = {
       desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fsp4', //  firing squad & steak and potatoes
@@ -8087,7 +8258,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fsp5', // firing squad & steak and potatoes
@@ -8095,7 +8267,8 @@ const amnesiaRestored = {
       desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fspj', // If JEWISH, firing squad & steak and potatoes
@@ -8103,7 +8276,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fspc', // If CATHOLIC & firing squad & steak and potatoes
@@ -8111,7 +8285,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fspp', // If Protestant & firing squad & steak and potatoes
@@ -8119,7 +8294,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbr1', // If none or go away, firing squad & Barbecue Ribs
@@ -8127,7 +8303,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbr2', // firing squad & Barbecue Ribs
@@ -8136,7 +8313,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbr3', //  firing squad & Barbecue Ribs
@@ -8144,7 +8322,8 @@ const amnesiaRestored = {
       desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbr4', //  firing squad & Barbecue Ribs
@@ -8153,7 +8332,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbr5', // firing squad & Barbecue Ribs
@@ -8161,7 +8341,8 @@ const amnesiaRestored = {
       desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbrj', // If JEWISH, firing squad & Barbecue Ribs
@@ -8169,7 +8350,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbrc', // If CATHOLIC & firing squad& Barbecue Ribs
@@ -8177,7 +8359,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbrp', // If Protestant & firing squad & Barbecue Ribs
@@ -8185,7 +8368,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frt1', // If none or go away, firing squad& Roasted Turkey
@@ -8193,7 +8377,8 @@ const amnesiaRestored = {
       desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frt2', // firing squad & roasted turkey
@@ -8202,7 +8387,8 @@ const amnesiaRestored = {
       Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt3');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frt3', //  firing squad & roasted turkey
@@ -8210,7 +8396,8 @@ const amnesiaRestored = {
       desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt4');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frt4', //  firing squad & roasted turkey
@@ -8219,7 +8406,8 @@ const amnesiaRestored = {
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert5');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frt5', // firing squad & roasted turkey
@@ -8227,7 +8415,8 @@ const amnesiaRestored = {
       desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frtj', // If JEWISH, firing squad & roasted turkey
@@ -8235,7 +8424,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-lertc', // If CATHOLIC & firing squad & roasted turkey
@@ -8243,7 +8433,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-frtp', // If Protestant & firing squad & roasted turkey
@@ -8251,7 +8442,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt2');
-      }
+      },
+      exits: [],
     },
     {
       id: 'deat-fbad', // If you swear at the guard firing squad
@@ -8259,7 +8451,8 @@ const amnesiaRestored = {
       desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fgo');
-      }
+      },
+      exits: [],
     },
   {
     id: 'deat-lebad', // if you swear at the guard lethal injection
@@ -8267,7 +8460,8 @@ const amnesiaRestored = {
     desc: 'The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.', // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-fgo');
-    }
+    },
+    exits: [],
   },
   {
     id: 'deat-lelw', // Last Words lethal injection route
@@ -8324,7 +8518,7 @@ const amnesiaRestored = {
     The marksmen laugh appreciatively at his joke.
     They take aim. You close your eyes. The order to Fire! is given.
     You die.`, // Displayed when the player first enters the room.
-    // Go to Game Over
+    exits: [],// Go to Game Over
   },
   {
     id: 'deat-lego', // If lethal injection
@@ -8342,6 +8536,7 @@ const amnesiaRestored = {
     onBlock: () => {
       enterRoom(`deat-ledie`);
     },
+    exits: [],
   },
   {
     id: 'deat-ledie', // If lethal injection

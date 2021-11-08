@@ -15,6 +15,7 @@
   
   <!-- Addtional Scripts -->
   <script src="scr/leaflet.js"></script>
+  <script src="scr/jquery/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -68,18 +69,21 @@
       </div>
     </div>
 
-    <div id="map" style="width: 70%; height: 50%; background: #ffffff;"></div>
+    <div id="map" style="width: 70%; height: 50%; background: #32302f;"></div>
   </div>
   
   
   <script type="text/javascript">
 //Creating the Map
-  var map = L.map('map').setView([0, 0], 0);
+  //var map = L.map('map').setView([0, 0], 0);
+  var map = L.map('map', {center:[29.0, 76.776695], zoom:2});
+  map.invalidateSize();
+  setTimeout(function(){ map.invalidateSize(true)}, 300);
   L.tileLayer('map/{z}/{x}/{y}.png', {
     continuousWorld: false,
     noWrap: true,	
-    minZoom: 3,
-    maxZoom: 6,
+    minZoom: 1,
+    maxZoom: 5,
   }).addTo(map);
 //Coordinate Finder
   var marker = L.marker([0, 0], {
@@ -93,15 +97,21 @@
 
 
 //MAP BUTTON
-const targetDiv = document.getElementById("map");
+/*const targetDiv = document.getElementById("map");
   const btn = document.getElementById("mapbutton");
   btn.onclick = function () {
   if (targetDiv.style.display !== "none") {
     targetDiv.style.display = "none";
   } else {
     targetDiv.style.display = "block";
+    map.invalidateSize();
   }
-};
+};*/
+
+$("#mapbutton").click(function() {
+  $("#map").toggle();
+  map.invalidateSize();
+})
 
 //INVENTORY BUTTON
 const invDiv = document.getElementById("inv");
@@ -137,8 +147,8 @@ const addrDiv = document.getElementById("address");
   <script src='scr/text-engine/playercharacter.js'></script>
 
   <!-- Include game data ('disk') -->
-  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+  <script src="scr/text-engine/game-disks/streets.js"></script>
 
 <!-- Load disk into engine -->
-<script>loadDisk(amnesiaRestored);</script>
+<script>loadDisk(streets);</script>
 </body>

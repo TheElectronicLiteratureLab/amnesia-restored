@@ -21,7 +21,14 @@ let look = () => {
     room.onLook({disk, println});
   }
 
-  println(room.desc)
+  else if (room.desc === '' || "" || ``) {
+    println(`There's nothing interesting here.`)
+  }
+
+
+  else {
+    println(room.desc)
+  }
 };
 
 // look in the passed way
@@ -299,10 +306,27 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
+//ask character about topic function
+const askXAboutY = (x, y) => {
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+  const topics = character.topics;
+  disk.conversant = character;
+  if (y === topics.option) {
+    
+  }
+};
+
+
+//completely omit the talk function, only have ask
+//chracters set up so that on ask something happens, keywords are then ran through the characters list of conversation topics and if one is hit it prints that desc of that topic 
+//maybe not on ask, that makes it seem too much like an onblock. have it be an input that if it is only "ask" then line prints of 'you can ask someone about a topic'. have topic be stylized how we want it too so it matches up with the stylization of the keywords
+//function then would be ask character about topic, parses if character is in room, if not it says character is not available, if they are then it parses the topic against the characters topic list, if true it prints the topic desc
+//keywords are to be highlighted like how we imagined. as that runs along side the already established get keyword functionality
+//
 
 
 // list takeable items in room
-let take = () => {
+function take() {
   const room = getRoom(disk.roomId);
   const items = (room.items || []).filter(item => item.isTakeable && !item.isHidden);
 
@@ -313,7 +337,7 @@ let take = () => {
 
   println(`The following items can be taken:`);
   items.forEach(item => println(`${bullet} ${getName(item.name)}`));
-};
+}
 
 // take the item with the given name
 // string -> nothing
@@ -608,27 +632,21 @@ if(getItemInInventory('address book')){
   if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
     const num = number;
     let id;
-   
-  
     for(let i = 0; i < numbers.length; i++){
       if(numbers[i].num === num){
         id = numbers[i].roomid;
       } 
     }
-
     if(!id){
       println(`This number doesn't exist.`)
     }
-
     if(id){
       enterRoom(id);
     }
-
   } else {
     println(`With what phone?`);
   };
 }
-
 
 
 
@@ -754,33 +772,30 @@ let remove = (clothes) => {
   }
 }
 
-//ask character about topic function
 
-// function askAbout(xCharacter, yTopic) {
-//   const room = getRoom(disk.roomId);
 
-// };
 
-function askXAboutY(xCharacter, yPrep, zTopic) {
-  const room = getRoom(disk.roomId);
-  const character = getCharacter(xCharacter, getCharactersInRoom(room.id));
 
-  if (yPrep !== 'about') {
-    println('You can Ask x(character) about y(topic)');
+//Phone Booth Creation
+function createPhone() { //create function
+  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const thisRoom = getRoom(disk.roomId); //get current room
+  for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
+    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      console.log(chance); //log the number generated
+      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+      rooms[i].exits.push( //push the following into the room's exits array
+        {
+          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+          id: 'pho-boo1' //id for phone booth
+        },
+      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+      
+    }
   }
-  
-  if (yPrep === 'about'){
-    console.log(character.name);
-    console.log(xCharacter, zTopic);
-  }
+  thisRoom.phonesMade = true; //dont allow the function to run again
 };
-
-//ask character about topic function
-// const askXAboutY = ([x, y]) => {
-//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-//   disk.conversant = character;
-//   talkToOrAboutX('about', y);
-// };
 
 
 // open command
@@ -884,6 +899,26 @@ let close = (itemToOpen) => {
   }
 }
 
+// read command 
+let read = (item) => {
+  if(getItemInInventory(item)){
+    const invItem = getItemInInventory(item);
+    if(invItem.passage){
+      println(invItem.passage);
+    } else {
+      println(`You can't read that.`)
+    }
+  }
+  const roomItem = getItemInRoom(item, disk.roomId);
+  if(roomItem.passage){
+    println(roomItem.passage);
+  }
+  if(!roomItem.passage){
+    println(`There's nothing to read.`);
+  }
+}
+
+
 function teleport (place) {
   enterRoom(place);
   println(`
@@ -912,6 +947,14 @@ function setFatigue(amount) {
 };
 
 // jump command
+
+
+
+const chracterGet = (x) => {
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
+  console.log(character);
+  
+}
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -982,6 +1025,7 @@ let commands = [
     devcom4: x => setFatigue(x),
     wear: wear,
     remove: remove,
+    read: read,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
@@ -1006,3 +1050,4 @@ let commands = [
     ask: args => askXAboutY(args[0], args[2]),
   },
 ];
+

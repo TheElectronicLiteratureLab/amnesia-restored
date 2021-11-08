@@ -73,8 +73,6 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 let enterRoom = (id) => {
   const room = getRoom(id);
 
-  
-
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
     return;
@@ -94,6 +92,7 @@ let enterRoom = (id) => {
   // room.visits++;
 
   disk.roomId = id;
+  console.log(room.exits);
 
   if (typeof room.onEnter === 'function') {
     room.onEnter({disk, println, getRoom, enterRoom});
@@ -226,7 +225,7 @@ let addItem = (itemId, roomId) => {
 
 // retrieves a keyword from a topic
 // topic -> string
-let getKeywordFromTopic = (topic) => {
+function getKeywordFromTopic(topic) {
   if (topic.keyword) {
     return topic.keyword;
   }
@@ -241,7 +240,7 @@ let getKeywordFromTopic = (topic) => {
     .toLowerCase();
 
   return keyword;
-};
+}
 
 // determine whether the passed conversation includes a topic with the passed keyword
 // conversation, string -> boolean
