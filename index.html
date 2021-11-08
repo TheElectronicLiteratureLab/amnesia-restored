@@ -15,6 +15,7 @@
   
   <!-- Addtional Scripts -->
   <script src="scr/leaflet.js"></script>
+  <script src="scr/jquery/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -96,7 +97,7 @@
 
 
 //MAP BUTTON
-const targetDiv = document.getElementById("map");
+/*const targetDiv = document.getElementById("map");
   const btn = document.getElementById("mapbutton");
   btn.onclick = function () {
   if (targetDiv.style.display !== "none") {
@@ -105,7 +106,12 @@ const targetDiv = document.getElementById("map");
     targetDiv.style.display = "block";
     map.invalidateSize();
   }
-};
+};*/
+
+$("#mapbutton").click(function() {
+  $("#map").toggle();
+  map.invalidateSize();
+})
 
 //INVENTORY BUTTON
 const invDiv = document.getElementById("inv");
