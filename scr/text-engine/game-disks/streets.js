@@ -885,7 +885,7 @@ const streets = {
     {
       id: 'hous-lafa',
       coord: [],
-      name: 'E. Houston and Lafayette St.',
+      name: 'E. Houston St. and Lafayette St.',
       desc: '',
       isStreet: true,
       exits: [
@@ -10496,7 +10496,7 @@ const streets = {
     {
       id: 'gran-henr',
       coord: [],
-      name: 'Grand St. and ',
+      name: 'Grand St. and Henry St.',
       desc: ``,
       isStreets: true,
       exits: [
@@ -14085,7 +14085,7 @@ const streets = {
     {
       id: '23-hhpw',
       coord: [],
-      name: '',
+      name: 'W. 23rd St. and Henry Hudson Pkwy.',
       desc: '',
       isStreet: true,
       exits: [
@@ -14098,7 +14098,7 @@ const streets = {
     {
       id: '15-hhpw',
       coord: [],
-      name: '',
+      name: 'W. 15th St. and Henry Hudson Pkwy.',
       desc: '',
       isStreet: true,
       exits: [
@@ -14359,19 +14359,6 @@ const streets = {
     },
         //11th Ave.
     {
-      id: '34-11',
-      coord: [],
-      name: 'W. 34th St. and 11th Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-11'},
-        {dir: 'south', id: '33-11'},
-        {dir: 'east', id: '34-10'},
-        {dir: 'west', id: '34-12'}
-      ],
-    },
-    {
       id: '33-11',
       coord: [],
       name: 'W. 33rd St. and 11th Ave.',
@@ -14516,19 +14503,6 @@ const streets = {
       ],
     },
         //10th Ave
-    {
-      id: '34-10',
-      coord: [],
-      name: 'W. 34th St. and 10th Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-10'},
-        {dir: 'south', id: '33-10'},
-        {dir: 'east', id: '34-9'},
-        {dir: 'west', id: '34-11'},
-      ],
-    },
     {
       id: '33-10',
       coord: [],
@@ -14814,34 +14788,7 @@ const streets = {
         {dir: 'east', id: '14-9'},
         {dir: 'west', id: '14-12'},
       ],
-    },
-        //9th Ave
-    {
-      id: '34-dyer',
-      coord: [],
-      name: 'W. 34th St. and Dyer Ave.',
-      desc: '',
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: '35-dyer'},
-        {dir: 'south', block: `You can't go that way.`},
-        {dir: 'east', id: '34-9'},
-        {dir: 'west', id: '34-10'},
-      ]
-    },        
-    {
-      id: '34-9',
-      coord: [],
-      name: 'W. 34th St. and 9th Ave.',
-      desc: `There is a restaurant called Nedicks here.`,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-9'},
-        {dir: 'south', id: '33-9'},
-        {dir: 'east', id: '34-8'},
-        {dir: 'west', id: '34-dyer'}
-      ],
-    },
+    },       
     {
       id: '33-9',
       coord: [],
@@ -15099,19 +15046,6 @@ const streets = {
     },
         //8th Ave
     {
-      id: '34-8',
-      coord: [],
-      name: 'W. 34th St. and 8th Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-8'},
-        {dir: 'south', id: '33-8'},
-        {dir: 'east', id: '34-7'},
-        {dir: 'west', id: '34-9'}
-      ],
-    },
-    {
       id: '33-8',
       coord: [],
       name: 'W. 33rd St. and 8th Ave.',
@@ -15361,19 +15295,6 @@ const streets = {
       ],
     },
         //7th Ave
-    {
-      id: '34-7',
-      coord: [],
-      name: 'W. 34th St. and 7th Ave.',
-      desc: `The 34 ST-7 AV Station entrance is at this corner.`,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-7'},
-        {dir: 'south', id: '33-7'},
-        {dir: 'east', id: '34-broa'},
-        {dir: 'west', id: '34-8'}
-      ],
-    },
     {
       id: '33-7',
       coord: [],
@@ -16163,7 +16084,7 @@ const streets = {
     {
       id: '17-broa',
       coord: [],
-      name: 'W. 17th St. and Broadway',
+      name: 'E. 17th St. and Broadway',
       desc: '',
       isStreet: true,
       exits: [
@@ -16624,7 +16545,7 @@ const streets = {
     {
       id: '17-usqw',
       coord: [],
-      name: 'W. 17th St. and Union Square W.',
+      name: 'E. 17th St. and Union Square W.',
       desc: ``,
       isStreet: true,
       exits:[
@@ -16957,7 +16878,7 @@ const streets = {
       isStreet: true,
       exits:[
         {dir: 'north', id: '19-park'},
-        {dir: 'south', id: '17-unio-2'},
+        {dir: 'south', id: '17-usqe'},
         {dir: 'east', id: '18-irvi'},
         {dir: 'west', id: '18-broa'}
       ],
@@ -17301,7 +17222,7 @@ const streets = {
       exits:[
         {dir: 'north', id: '35-3'},
         {dir: 'south', id: '33-3'},
-        {dir: 'east', id: '34-qtou'},
+        {dir: 'east', id: '34-qout'},
         {dir: 'west', id: '34-lexi'}
       ],
     },
@@ -17576,8 +17497,8 @@ const streets = {
       exits:[
         {dir: 'north', id: '35-2'},
         {dir: 'south', id: '33-2'},
-        {dir: 'east', id: '34-qtin'},
-        {dir: 'west', id: '34-qtou'},
+        {dir: 'east', id: '34-qin'},
+        {dir: 'west', id: '34-qout'},
       ],
     },
     {
@@ -18143,31 +18064,70 @@ const streets = {
     },
         //Misc streets E. side of map
     {
-      id: '34-qtou',
+      id: '34-qout',
       coord: [],
       name: 'E. 34th St. and Queens Tunnel OUT',
       desc: ``,
       isStreet: true,
       exits:[
-        {dir: 'north', id: '35-qtou'},
+        {dir: 'north', id: '35-qout'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '34-2' },
         {dir: 'west', id: '34-3'}
       ],
     },
     {
-      id: '34-qtin',
+      id: '34-qin',
       coord: [],
       name: 'E. 34th St. and Queens Tunnel IN',
       desc: ``,
       isStreet: true,
       exits:[
-        {dir: 'north', id: '35-qtin'},
+        {dir: 'north', id: '35-qin'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '34-1'},
         {dir: 'west', id: '34-2'}
       ],
     },
+    {
+      id: '35-qin',
+      coord: [],
+      name: 'E. 35th St. and Queens Tunnel IN',
+      desc: ``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: '36-qin'},
+        {dir: 'south', id: `34-qin`},
+        {dir: 'east', id: '35-1'},
+        {dir: 'west', id: '35-2'}
+      ],
+    },
+    {
+      id: '36-qin',
+      coord: [],
+      name: 'E. 36th St. and Queens Tunnel IN',
+      desc: ``,
+      isStreet: true,
+      exits:[
+        {dir: 'north', id: 'qtin'},
+        {dir: 'south', id: `35-qin`},
+        {dir: 'east', id: '36-1'},
+        {dir: 'west', id: '36-2'}
+      ],
+    },
+    {
+    id: 'qtin',
+    coord: [],
+    name: 'QUEENS TUNNEL IN',
+    desc: ``,
+    isStreet: true,
+    exits:[
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '36-qin'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', block: `You can't go that way.`}
+    ],
+  },
     {
       id: '34-fdrd',
       coord: [],
@@ -18177,7 +18137,7 @@ const streets = {
       exits:[
         {dir: 'north', id: '41-fdrd'},
         {dir: 'south', id: '25-fdrd'},
-        {dir: 'east', id: `You can't go that way.`},
+        {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '34-1'}
       ],
     },
@@ -18232,6 +18192,5395 @@ const streets = {
         {dir: 'west', id: '23-1'},
         {dir: 'east', id: '23-fdrd'}
       ],
-    }
+    },
+      /***********/
+     /* Chelsea */
+    /***********/
+    {
+      id: '59-12',
+      name: 'W. 59th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: ''},
+        {dir: 'south', id: '58-12'},
+        {dir: 'east', id: '59-wend'},
+        {dir: 'west', id: ''}
+      ],
+    },
+    {
+      id: '59-wend',
+      name: 'W. 59th St. and West End Ave.',
+      exits: [
+        {dir: 'north', id: '60-wend'},
+        {dir: 'south', id: '58-11'},
+        {dir: 'east', id: '59-amst'},
+        {dir: 'west', id: '59-12'},
+        {dir: ['subway', 'entrance'], id: 'S-A-subway-ent'},
+      ],
+    },
+    {
+      id: '59-amst',
+      name: 'W. 59th St. and Amsterdam Ave.',
+      desc: `There is a subway entrance at this corner.`, // SUBWAY ENT
+      exits: [
+        {dir: 'north', id: '60-amst'},
+        {dir: 'south', id: '58-10'},
+        {dir: 'east', id: '59-colu'},
+        {dir: 'west', id: '59-wend'},
+        {dir: ['subway', 'entrance'], id: '59-amst-subway-ent'},
+      ],
+    },
+    {
+      id: '59-colu',
+      name: 'W. 59th St. and Columbus Ave.',
+      exits: [
+        {dir: 'north', id: '60-colu'},
+        {dir: 'south', id: '58-9'},
+        {dir: 'east', id: '59-broa'},
+        {dir: 'west', id: '59-amst'},
+      ],
+    },
+    {
+      id: '59-broa',
+      name: 'W. 59th St. and Broadway',   
+      exits: [
+        {dir: 'north', id: '60-broa'},
+        {dir: 'south', id: 'broa-8'},
+        {dir: 'east', id: '59-cent'},
+        {dir: 'west', id: '59-colu'},
+      ],
+    },
+    {
+      id: '59-cent',
+      name: 'W. 59th St. and Central Pk. W.',  
+      desc: `The monument to Christopher Columbus surveys a large undistinguished building called the Coliseum, which shows no signs of its Roman heritage.`, 
+      exits: [
+        {dir: 'north', id: '61-cent'},
+        {dir: 'south', id: 'broa-8'},
+        {dir: 'east', id: 'cent-7'},
+        {dir: 'west', id: '59-broa'},
+      ],
+    },
+    {
+      id: '59-7',
+      name: 'Central Park S. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: 'S-A'},
+        {dir: 'south', id: '58-7'},
+        {dir: 'east', id: '59-amer'},
+        {dir: 'west', id: '59-cent'},  
+    ],
+    },
+    {
+      id: '59-amer',
+      name: 'Central Park S. and Ave of Americas',
+      desc: `There is a restaurant called Nedicks here.`, // Nedicks entrance
+      exits: [
+        {dir: 'north', id: 'S-A'},
+        {dir: 'south', id: '58-amer'},
+        {dir: 'east', id: '59-wdri'},
+        {dir: 'west', id: '59-7'},
+        {dir: ['nedicks','enter',], id: 'cent-amer-nedi'},
+      ],
+    },
+//Begin 58th St.
+    {
+      id: '58-12',
+      name: 'W. 58th St. and 12th Ave.',
+      exits: [//Can't go West
+        {dir: 'north', id: '59-12'},
+        {dir: 'east', id: '58-11'},
+        {dir: 'south', id: '57-12'},
+      ],
+    },
+    {
+      id: '58-11',
+      name: 'W. 58th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '59-wend'},
+        {dir: 'south', id: '57-11'},
+        {dir: 'east', id: '58-10'},
+        {dir: 'west', id: '58-12'},
+      ],
+    },
+    {
+      id: '58-10',
+      name: 'W. 58th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '59-amst'},
+        {dir: 'south', id: '57-10'},
+        {dir: 'east', id: '58-9'},
+        {dir: 'west', id: '58-11'},  
+      ],
+    },
+    {
+      id: '58-9',
+      name: 'W. 58th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '59-colu'},
+        {dir: 'south', id: '57-9'},
+        {dir: 'east', id: '58-8'},
+        {dir: 'west', id: '58-10'},
+      ],
+    },
+    {
+      id: 'broa-8',
+      name: 'Broadway and 8th Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      exits: [
+        {dir: 'north', id: '59-cent'},
+        {dir: 'south', id: '58-8'},
+        {dir: 'east', id: '58-broa'},
+        {dir: 'west', id: '59-broa'},
+        {dir: ['subway', 'entrance'], id: 'broa-8-subway-ent'},
+      ],
+    },
+    {
+      id: '58-8',
+      name: 'W. 58th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: 'broa-8'},
+        {dir: 'south', id: '57-8'},
+        {dir: 'east', id: '58-broa'},
+        {dir: 'west', id: '58-9'},
+      ],
+    },
+    {
+      id: '58-broa',
+      name: 'W. 58th St. and Broadway',
+      desc: `Cars spin around on Columbus Circle like atomic particles in a particle accelerator, while pedestrians scamper for safety as best they can. Clearly, this is an experiment designed to control the city's expanding population.`,
+      exits: [
+        {dir: 'north', id: 'broa-8'},
+        {dir: 'south', id: '57-broa'},
+        {dir: 'east', id: '58-7'},
+        {dir: 'west', id: '58-8'},
+      ],
+    },
+    {
+      id: '58-7',
+      name: 'W. 58th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: 'cent-7'},
+        {dir: 'south', id: '57-7'},
+        {dir: 'east', id: '58-amer'},
+        {dir: 'west', id: '58-broa'},
+      ],
+    },
+    {
+      id: '58-amer',
+      name: 'W. 58th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: 'cent-amer'},
+        {dir: 'south', id: '57-amer'},
+        {dir: 'east', id: '58-wdri'},
+        {dir: 'west', id: '58-7'},
+      ],
+    },//End 58th St.
+
+//Start 57th St.
+    {
+      id: '57-hhpw',
+      name: 'W. 57th St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '72-hhpw'},
+        {dir: 'south', id: '44-hhpw'},
+        {dir: 'east', id: '57-12'},
+        {dir: 'west', block: `You can't go that way.`}
+      ],
+    },
+    {
+      id: '57-12',
+      name: 'W. 57th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '58-12'},
+        {dir: 'south', id: '55-12'},        
+        {dir: 'east', id: '57-11'},
+        {dir: 'west', id: '57-hhpw'}
+      ],
+    },
+    {
+      id: '57-11',
+      name: 'W. 57th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '58-11'},
+        {dir: 'south', id: '56-11'},
+        {dir: 'east', id: '57-10'},
+        {dir: 'west', id: '57-12'},
+      ],
+    },
+    {
+      id: '57-10',
+      name: 'W. 57th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '58-10'},
+        {dir: 'south', id: '56-10'},
+        {dir: 'east', id: '57-9'},
+        {dir: 'west', id: '57-11'},
+      ],
+    },
+    {
+      id: '57-9',
+      name: 'W. 57th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '58-9'},
+        {dir: 'south', id: '56-9'},
+        {dir: 'east', id: '57-8'},
+        {dir: 'west', id: '57-10'},
+      ],
+    },
+    {
+      id: '57-8',
+      name: 'W. 57th St. and 8th Ave.',
+      desc: `There is a Chock Full-O-Nuts at this intersection.`, // Restaurant entrance
+      exits: [
+        {dir: 'north', id: '58-8'},
+        {dir: 'south', id: '56-8'},
+        {dir: 'east', id: '57-broa'},
+        {dir: 'west', id: '57-9'},
+        {dir: ['enter', 'chock'], id: '57-8-chock'},
+      ],
+    },
+    {
+      id: '57-broa',
+      name: 'W. 57th St. and Broadway',
+      desc: `At street level Carnegie Hall is basically a row of posters announcing its upcoming events, which this week include a concert of Puccini arias by Linda Ronstadt, the Tuscon Festival Ballet's performance of Twyla Tharp's SWAN LAKE, the Canadian Youth Philharmonic in an all-Beethoven program, and a poetry reading by Allen Ginzberg.`,
+      exits: [
+        {dir: 'north', id: '58-broa'},
+        {dir: 'south', id: '56-broa'},
+        {dir: 'east', id: '57-7'},
+        {dir: 'west', id: '57-8'},
+      ],
+    },
+    {
+      id: '57-7',
+      name: 'W. 57th St. and 7th Ave.',
+      desc: `There is a subway entrance at this corner.`, //Subway entrance
+      exits: [
+        {dir: 'north', id: '58-7'},
+        {dir: 'south', id: '56-7'},
+        {dir: 'east', id: '57-amer'},
+        {dir: 'west', id: '57-broa'},
+        {dir: ['subway', 'entrance'], id: '57-7-subway-ent'},
+      ],
+    },
+    {
+      id: '57-amer',
+      name: 'W. 57th St. and Ave of Americas',
+      desc: `There is a subway entrance at this corner.`, //Subway entrance
+      exits: [
+        {dir: 'north', id: '58-amer'},
+        {dir: 'south', id: '56-amer'},
+        {dir: 'east', id: '57-5'},
+        {dir: 'west', id: '57-7'},
+        {dir: ['subway', 'entrance'], id: '57-amer-subway-ent'},
+        ],
+    },
+//Start 56th St.
+//There is no 56-12
+    {
+      id: '56-11',
+      name: 'W. 56th St. and 11th Ave.',
+      exits: [//Can't go West
+        {dir: 'north', id: '57-1'},
+        {dir: 'east', id: '56-10'},
+        {dir: 'south', id: '55-11'},
+      ],
+    },
+    {
+      id: '56-10',
+      name: 'W. 56th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '57-10'},
+        {dir: 'south', id: '55-10'},
+        {dir: 'east', id: '56-9'},
+        {dir: 'west', id: '56-11'},
+      ],
+    },
+    {
+      id: '56-9',
+      name: 'W. 56th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '57-9'},
+        {dir: 'south', id: '55-9'},
+        {dir: 'east', id: '56-8'},
+        {dir: 'west', id: '56-10'},
+      ],
+    },
+    {
+      id: '56-8',
+      name: 'W. 56th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '57-8'},
+        {dir: 'south', id: '55-8'},
+        {dir: 'east', id: '56-broa'},
+        {dir: 'west', id: '56-9'},
+      ],
+    },
+    {
+      id: '56-broa',
+      name: 'W. 56th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '57-broa'},
+        {dir: 'south', id: '55-broa'},
+        {dir: 'east', id: '56-7'},
+        {dir: 'west', id: '56-8'},
+      ],
+    },
+    {
+      id: '56-7',
+      name: 'W. 56th St. and 7th Ave.',
+      desc: `The block from 55th to 56th is taken up by the Omni Park Central Hotel which you seem to remember by another name, though you can't remember what it was.`,
+      exits: [//Player cannot enter Omni Park Central Hotel
+        {dir: 'north', id: '57-7'},
+        {dir: 'south', id: '55-7'},
+        {dir: 'east', id: '56-amer'},
+        {dir: 'west', id: '56-broa'},
+      ],
+    },
+    {
+      id: '56-amer',
+      name: 'W. 56th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '57-amer'},
+        {dir: 'south', id: '55-amer'},
+        {dir: 'east', id: '56-5'},
+        {dir: 'west', id: '56-7'},
+      ],
+    },//End 56th St.
+
+//Start 55th St.
+    {
+      id: '55-12',
+      name: 'W. 55th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '57-12'},
+        {dir: 'east', id: '55-11'},
+        {dir: 'south', id: '54-12'},
+      ],
+    },
+    {
+      id: '55-11',
+      name: 'W. 55th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '56-11'},
+        {dir: 'south', id: '54-11'},
+        {dir: 'east', id: '55-10'},
+        {dir: 'west', id: '55-12'}, 
+      ],
+    },
+    {
+      id: '55-10',
+      name: 'W. 55th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '56-10'},
+        {dir: 'south', id: '54-10'},
+        {dir: 'east', id: '55-9'},
+        {dir: 'west', id: '55-11'},
+      ],
+    },
+    {
+      id: '55-9',
+      name: 'W. 55th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '56-9'},
+        {dir: 'south', id: '54-9'},
+        {dir: 'east', id: '55-8'},
+        {dir: 'west', id: '55-10'},
+      ],
+    },
+    {
+      id: '55-8',
+      name: 'W. 55th St. and 8th Ave.',
+      desc: `There is a Greek Gyro located here.`, // Restaurant entrance
+      exits: [
+        {dir: 'north', id: '56-8'},
+        {dir: 'south', id: '54-8'},
+        {dir: 'east', id: '55-broa'},
+        {dir: 'west', id: '55-9'},
+        {dir: ['enter', 'greek', 'gyro'], id: '55-8-gyro'},
+      ],
+    },
+    {
+      id: '55-broa',
+      name: 'W. 55th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '56-broa'},
+        {dir: 'south', id: '54-broa'},
+        {dir: 'east', id: '55-7'},
+        {dir: 'west', id: '55-8'},
+      ],
+    },
+    {
+      id: '55-7',
+      name: 'W. 55th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '56-7'},
+        {dir: 'south', id: '54-7'},
+        {dir: 'east', id: '5-amer'},
+        {dir: 'west', id: '55-broa'},
+      ],
+    },
+    {
+      id: '55-amer',
+      name: 'W. 55th St. and Ave of America',
+      exits: [
+        {dir: 'north', id: '56-amer'},
+        {dir: 'south', id: '54-amer'},
+        {dir: 'east', id: '55-5'},
+        {dir: 'west', id: '55-7'},
+      ],
+    },//End 55th St.
+
+//Start 54th St.
+    {
+      id: '54-12',
+      name: 'W. 54th St. and 12th Ave.',
+      exits: [//Can't go west
+        {dir: 'north', id: '55-12'},
+        {dir: 'east', id: '54-11'},
+        {dir: 'south', id: '53-12'},
+      ],
+    },
+    {
+      id: '54-11',
+      name: 'W. 54th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '55-11'},
+        {dir: 'south', id: '53-11'},
+        {dir: 'east', id: '54-10'},
+        {dir: 'west', id: '54-12'},
+      ],
+    },
+    {
+      id: '54-10',
+      name: 'W. 54th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '55-10'},
+        {dir: 'south', id: '53-10'},
+        {dir: 'east', id: '54-9'},
+        {dir: 'west', id: '54-11'},
+      ],
+    },
+    {
+      id: '54-9',
+      name: 'W. 54th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '55-9'},
+        {dir: 'south', id: '53-9'},
+        {dir: 'east', id: '54-8'},
+        {dir: 'west', id: '54-10'},
+      ],
+    },
+    {
+      id: '54-8',
+      name: 'W. 54th St. and 8th Ave.',
+      exits: [//I found a tenement here
+        {dir: 'north', id: '55-8'},
+        {dir: 'south', id: '53-8'},
+        {dir: 'east', id: '54-broa'},
+        {dir: 'west', id: '54-9'},
+      ],
+    },
+    {
+      id: '54-broa',
+      name: 'W. 54th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '55-broa'},
+        {dir: 'south', id: '53-broa'},
+        {dir: 'east', id: '54-7'},
+        {dir: 'west', id: '54-8'},
+      ],
+    },
+    {
+      id: '54-7',
+      name: 'W. 54th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '55-7'},
+        {dir: 'south', id: '53-7'},
+        {dir: 'east', id: '54-amer'},
+        {dir: 'west', id: '54-broa'},
+      ],
+    },
+    {
+      id: '54-amer',
+      name: 'W. 54th St. and Ave of Americas',
+      desc: `There is a pizzeria here.`,//Restaurant Entrance
+      exits: [
+        {dir: 'north', id: '55-amer'},
+        {dir: 'south', id: '53-amer'},
+        {dir: 'east', id: '54-5'},
+        {dir: 'west', id: '54-7'},
+        {dir: ['enter', 'pizzeria', 'pizza',], id: '54-amer-pizza'},
+      ],
+    },//End 54th St.
+
+//Start 53rd St.
+    {
+      id: '53-12',
+      name: 'W. 53rd St. and 12th Ave.',
+      exits: [//Can't go west
+        {dir: 'north', id: '54-12'},
+        {dir: 'east', id: '53-11'},
+        {dir: 'south', id: '52-12'},
+      ],
+    },
+    {
+      id: '53-11',
+      name: 'W. 53rd St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '54-11'},
+        {dir: 'south', id: '52-11'},
+        {dir: 'east', id: '53-10'},
+        {dir: 'west', id: '53-12'},
+      ],
+    },
+    {
+      id: '53-10',
+      name: 'W. 53rd St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '54-10'},
+        {dir: 'south', id: '52-10'},
+        {dir: 'east', id: '53-9'},
+        {dir: 'west', id: '53-11'},
+      ],
+    },
+    {
+      id: '53-9',
+      name: 'W. 53rd St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '54-9'},
+        {dir: 'south', id: '52-9'},
+        {dir: 'east', id: '53-8'},
+        {dir: 'west', id: '53-10'},
+      ],
+    },
+    {
+      id: '53-8',
+      name: 'W. 53rd St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '54-8'},
+        {dir: 'south', id: '52-8'},
+        {dir: 'east', id: '53-broa'},
+        {dir: 'west', id: '53-9'},
+      ],
+    },
+    {
+      id: '53-broa',
+      name: 'W. 53rd St. and Broadway',
+      exits: [
+        {dir: 'north', id: '54-broa'},
+        {dir: 'south', id: '52-broa'},
+        {dir: 'east', id: '53-7'},
+        {dir: 'west', id: '53-8'},
+      ],
+    },
+    {
+      id: '53-7',
+      name: 'W. 53rd St. and 7th Ave.',
+      desc: 'There is a subway entrance at this corner.', //Subway Entrance
+      exits: [
+        {dir: 'north', id: '54-7'},
+        {dir: 'south', id: '52-7'},
+        {dir: 'east', id: '53-amer'},
+        {dir: 'west', id: '53-broa'},
+        {dir: ['subway', 'entrance'], id: '53-7-subway-ent'},
+      ],
+    },
+    {
+      id: '53-amer',
+      name: 'W. 53rd St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '54-amer'},
+        {dir: 'south', id: '52-amer'},
+        {dir: 'east', id: '53-5'},
+        {dir: 'west', id: '53-7'},
+      ],
+    },
+
+//Start 52nd St.
+    {
+      id: '52-12',
+      name: 'W. 52nd St. and 12th Ave.',
+      exits: [//Can't go west
+        {dir: 'north', id: '53-12'},
+        {dir: 'east', id: '52-11'},
+        {dir: 'south', id: '51-12'},
+      ],
+    },
+    {
+      id: '52-11',
+      name: 'W. 52nd St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '53-11'},
+        {dir: 'south', id: '51-11'},
+        {dir: 'east', id: '52-10'},
+        {dir: 'west', id: '52-12'},
+      ],
+    },
+    {
+      id: '52-10',
+      name: 'W. 52nd St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '53-10'},
+        {dir: 'south', id: '51-10'},
+        {dir: 'east', id: '52-9'},
+        {dir: 'west', id: '52-11'},
+      ],
+    },
+    {
+      id: '52-9',
+      name: 'W. 52nd St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '53-9'},
+        {dir: 'south', id: '51-9'},
+        {dir: 'east', id: '52-8'},
+        {dir: 'west', id: '52-10'},
+      ],
+    },
+    {
+      id: '52-8',
+      name: 'W. 52nd St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '53-8'},
+        {dir: 'south', id: '51-8'},
+        {dir: 'east', id: '52-broa'},
+        {dir: 'west', id: '52-9'},
+      ],
+    },
+    {
+      id: '52-broa',
+      name: 'W. 52nd St. and Broadway',
+      exits: [
+        {dir: 'north', id: '53-broa'},
+        {dir: 'south', id: '51-broa'},
+        {dir: 'east', id: '52-7'},
+        {dir: 'west', id: '52-8'},
+      ],
+    },
+    {
+      id: '52-7',
+      name: 'W. 52nd St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '53-7'},
+        {dir: 'south', id: '51-7'},
+        {dir: 'east', id: '52-amer'},
+        {dir: 'west', id: '52-broa'},
+      ],
+    },
+    {
+      id: '52-amer',
+      name: 'W. 52nd St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '53-amer'},
+        {dir: 'south', id: '51-amer'},
+        {dir: 'east', id: '52-5'},
+        {dir: 'west', id: '52-7'},
+      ],
+    },//End 52nd St.
+
+//Start 51st St.
+    {
+      id: '51-12',
+      name: 'W. 51st St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '52-12'},
+        {dir: 'east', id: '51-A'},
+        {dir: 'south', id: '50-12'},
+      ],
+    },
+    {
+      id: '51-11',
+      name: 'W. 51st St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '52-11'},
+        {dir: 'south', id: '50-11'},
+        {dir: 'east', id: '51-10'},
+        {dir: 'west', id: '51-12'},
+      ],
+    },
+    {
+      id: '51-10',
+      name: 'W. 51st St. and 10th Ave.',
+      desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      exits: [
+        {dir: 'north', id: '52-10'},
+        {dir: 'south', id: '50-10'},
+        {dir: 'east', id: '51-9'},
+        {dir: 'west', id: '51-11'},
+        {dir: ['enter', 'chock', 'nuts',], id: '51-10-chock'},
+      ],
+    },
+    {
+      id: '51-9',
+      name: 'W. 51st St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '52-9'},
+        {dir: 'south', id: '50-9'},
+        {dir: 'east', id: '51-8'},
+        {dir: 'west', id: '51-10'},
+      ],
+    },
+    {
+      id: '51-8',
+      name: 'W. 51st St. and 8th Ave.',
+      desc: 'There is a luncheonette on the corner.',
+      exits: [
+        {dir: 'north', id: '52-8'},
+        {dir: 'south', id: '50-8'},
+        {dir: 'east', id: '51-broa'},
+        {dir: 'west', id: '51-9'},
+        {dir: ['enter', 'lunch', 'luncheonette',], id: '51-8-lunch'},
+      ],
+    },
+    {
+      id: '51-broa',
+      name: 'W. 51st St. and Broadway',
+      exits: [
+        {dir: 'north', id: '52-broa'},
+        {dir: 'south', id: '50-broa'},
+        {dir: 'east', id: '51-7'},
+        {dir: 'west', id: '51-8'},
+      ],
+    },
+    {
+      id: '51-7',
+      name: 'W. 51st St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '52-7'},
+        {dir: 'south', id: '50-7'},
+        {dir: 'east', id: '51-amer'},
+        {dir: 'west', id: '51-broa'},
+      ],
+    },
+    {
+      id: '51-amer',
+      name: 'W. 51st St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '52-amer'},
+        {dir: 'south', id: '50-amer'},
+        {dir: 'east', id: '51-5'},
+        {dir: 'west', id: '51-7'},
+      ],
+    },//End 51st St.
+
+//Start 50th St.
+    {
+      id: '50-12',
+      name: 'W. 50th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '51-12'},
+        {dir: 'south', id: '49-12'},
+        {dir: 'east', id: '50-11'},
+      ],
+    },
+    {
+      id: '50-11',
+      name: 'W. 50th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '51-11'},
+        {dir: 'south', id: '49-11'},
+        {dir: 'east', id: '50-10'},
+        {dir: 'west', id: '50-12'},
+      ],
+    },
+    {
+      id: '50-10',
+      name: 'W. 50th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '51-10'},
+        {dir: 'south', id: '49-10'},
+        {dir: 'east', id: '50-9'},
+        {dir: 'west', id: '50-11'},
+      ],
+    },
+    {
+      id: '50-9',
+      name: 'W. 50th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '51-9'},
+        {dir: 'south', id: '49-9'},
+        {dir: 'east', id: '50-8'},
+        {dir: 'west', id: '50-10'},
+      ],
+    },
+    {
+      id: '50-8',
+      name: 'W. 50th St. and 8th Ave.',
+      desc: 'There is a subway entrance at this corner.',
+      exits: [
+        {dir: 'north', id: '51-8'},
+        {dir: 'south', id: '49-8'},
+        {dir: 'east', id: '50-broa'},
+        {dir: 'west', id: '50-9'},
+        {dir: ['subway', 'entrance'], id: '50-8-subway-ent'},
+      ],
+    },
+    {
+      id: '50-broa',
+      name: 'W. 50th St. and Broadway',
+      desc: 'There is a subway entrance at this corner.',
+      exits: [
+        {dir: 'north', id: '51-broa'},
+        {dir: 'south', id: '49-broa'},
+        {dir: 'east', id: '50-7'},
+        {dir: 'west', id: '50-8'},
+        {dir: ['subway', 'entrance'], id: '50-broa-subway-ent'},
+      ],
+    },
+    {
+      id: '50-7',
+      name: 'W. 50th St. and 7th Ave.',
+      desc: 'Radio City Music Hall -- its bronze doors hiding the largest chandeliers and the best legs in the world.',
+      exits: [
+        {dir: 'north', id: '51-7'},
+        {dir: 'south', id: '49-7'},
+        {dir: 'east', id: '50-amer'},
+        {dir: 'west', id: '50-broa'},
+      ],
+    },
+    {
+      id: '50-amer',
+      name: 'W. 50th St. and Ave of Americas',
+      desc: 'There is a subway entrance at this corner.', //Subway Entrance
+      exits: [
+        {dir: 'north', id: '51-amer'},
+        {dir: 'south', id: '49-amer'},
+        {dir: 'east', id: '50-5'},
+        {dir: 'west', id: '50-7'},
+        {dir: ['subway', 'entrance'], id: '50-amer-subway-ent'},
+      ],
+    },//End 50th St.
+
+//Start 49th St.
+    {
+      id: '49-12',
+      name: 'W. 49th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '50-12'},
+        {dir: 'east', id: '49-11'},
+        {dir: 'south', id: '48-12'},
+      ],
+    },
+    {
+      id: '49-11',
+      name: 'W. 49th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '50-11'},
+        {dir: 'south', id: '48-11'},
+        {dir: 'east', id: '49-10'},
+        {dir: 'west', id: '49-12'},
+      ],
+    },
+    {
+      id: '49-10',
+      name: 'W. 49th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '50-10'},
+        {dir: 'south', id: '48-10'},
+        {dir: 'east', id: '49-9'},
+        {dir: 'west', id: '49-11'},
+      ],
+    },
+    {
+      id: '49-9',
+      name: 'W. 49th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '50-9'},
+        {dir: 'south', id: '48-9'},
+        {dir: 'east', id: '49-8'},
+        {dir: 'west', id: '49-10'},
+      ],
+    },
+    {
+      id: '49-8',
+      name: 'W. 49th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '50-8'},
+        {dir: 'south', id: '48-8'},
+        {dir: 'east', id: '49-broa'},
+        {dir: 'west', id: '49-9'},
+      ],
+    },
+    {
+      id: '49-broa',
+      name: 'W. 49th St. and Broadway',
+      desc: `There is a restaurant called Nedicks here.`,//Restaurant Entrance
+      exits: [
+        {dir: 'north', id: '50-broa'},
+        {dir: 'south', id: '48-broa'},
+        {dir: 'east', id: '49-7'},
+        {dir: 'west', id: '49-8'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id: '49-broa-nedicks'},
+      ],
+    },
+    {
+      id: '49-7',
+      name: 'W. 49th St. and 7th Ave.',
+      desc: 'There is a subway entrance at this corner.', //Subway Entrance
+      exits: [
+        {dir: 'north', id: '50-7'},
+        {dir: 'south', id: '48-7'},
+        {dir: 'east', id: '49-amer'},
+        {dir: 'west', id: '49-broa'},
+        {//Subway Entrance
+            dir: ['subway', 'entrance'], id: '49-7-subway-ent'},
+      ],
+    },
+    {
+      id: '49-amer',
+      name: 'W. 49th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '50-amer'},
+        {dir: 'south', id: '48-amer'},
+        {dir: 'east', id: '49-5'},
+        {dir: 'west', id: '49-7'},
+      ],
+    },
+
+//Start 48th St.
+    {
+      id: '48-12',
+      name: 'W. 48th St. and 12th Ave.',
+      exits: [
+        {dir: 'south', id: '47-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'north', id: '49-12'},
+        {dir: 'east', id: '48-11'},
+      ],
+    },
+    {
+      id: '48-11',
+      name: 'W. 48th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '49-11'},
+        {dir: 'south', id: '47-11'},
+        {dir: 'east', id: '48-10'},
+        {dir: 'west', id: '48-12'},
+      ],
+    },
+    {
+      id: '48-10',
+      name: 'W. 48th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '49-10'},
+        {dir: 'south', id: '47-10'},
+        {dir: 'east', id: '48-9'},
+        {dir: 'west', id: '48-11'},
+      ],
+    },
+    {
+      id: '48-9',
+      name: 'W. 48th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '49-9'},
+        {dir: 'south', id: '47-9'},
+        {dir: 'east', id: '48-8'},
+        {dir: 'west', id: '48-10'},
+      ],
+    },
+    {
+      id: '48-8',
+      name: 'W. 48th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '49-8'},
+        {dir: 'south', id: '47-8'},
+        {dir: 'east', id: '48-broa'},
+        {dir: 'west', id: '48-9'},
+      ],
+    },
+    {
+      id: '48-broa',
+      name: 'W. 48th St. and Broadway',
+      desc: 'Here is the Metropole Cafe. In the evening it is a safe haven for bare breasts and sequined hips that undulate slightly off the beat of the music.',
+      exits: [
+        {dir: 'north', id: '49-broa'},
+        {dir: 'south', id: '47-broa'},
+        {dir: 'east', id: '48-7'},
+        {dir: 'west', id: '48-8'},
+        {dir: ['enter', 'cafe', 'metropole'], block:`There is no point to going there.`},
+      ],
+    },
+    {
+      id: '48-7',
+      name: 'W. 48th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '49-7'},
+        {dir: 'south', id: '47-7'},
+        {dir: 'east', id: '48-amer'},
+        {dir: 'west', id: '48-broa'},
+      ],
+    },
+    {
+      id: '48-amer',
+      name: 'W. 48th St. and Ave of Americas',
+      desc: 'There is a Greek Gyro located here.',
+      exits: [
+        {dir: 'north', id: '49-amer'},
+        {dir: 'south', id: '47-amer'},
+        {dir: 'east', id: '48-5'},
+        {dir: 'west', id: '48-7'},
+        {dir: ['enter', 'greek', 'gyro'], id: '48-gyro'},
+      ],
+    },//End 48th Street
+
+//Start 47th Street
+    {
+      id: '47-12',
+      name: 'W. 47th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '48-12'},
+        {dir: 'south', id: '46-12'},
+        {dir: 'east', id: '47-11'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '47-11',
+      name: 'W. 47th St. and 11th Ave.',
+      desc: 'There is a luncheonette on the corner.',
+      exits: [
+        {dir: 'north', id: '48-11'},
+        {dir: 'south', id: '46-11'},
+        {dir: 'east', id: '47-10'},
+        {dir: 'west', id: '47-12'},
+        {dir: ['enter', 'lunch', 'luncheonette'], id: '47-11-lunch'},
+      ],
+    },
+    {
+      id: '47-10',
+      name: 'W. 47th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '48-10'},
+        {dir: 'south', id: '46-10'},
+        {dir: 'east', id: '47-9'},
+        {dir: 'west', id: '47-11'},
+      ],
+    },
+    {
+      id: '47-10',
+      name: 'W. 47th St. and 10th Ave.',
+      desc: 'There is a pizzeria here.',
+      exits: [
+        {dir: 'north', id: '48-10'},
+        {dir: 'south', id: '46-10'},
+        {dir: 'east', id: '47-9'},
+        {dir: 'west', id: '47-11'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id: '47-10-pizza'},
+      ],
+    },
+    {
+      id: '47-9',
+      name: 'W. 47th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '48-9'},
+        {dir: 'south', id: '46-9'},
+        {dir: 'east', id: '47-8'},
+        {dir: 'west', id: '47-10'},
+      ],
+    },
+    {
+      id: '47-8',
+      name: 'W. 47th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '48-8'},
+        {dir: 'south', id: '46-8'},
+        {dir: 'east', id: '47-broa'},
+        {dir: 'west', id: '47-9'},
+      ],
+    },
+    {
+      id: '47-broa',
+      name: 'W. 47th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '48-broa'},
+        {dir: 'south', id: '46-broa'},
+        {dir: 'east', id: '47-7'},
+        {dir: 'west', id: '47-8'},
+      ],
+    },
+    {
+      id: '47-7',
+      name: 'W. 47th St. and 7th Ave.',
+      desc: 'There is a restaurant called Nedicks here.',
+      exits: [
+        {dir: 'north', id: '48-7'},
+        {dir: 'south', id: '46-7'},
+        {dir: 'east', id: '47-amer'},
+        {dir: 'west', id: '47-broa'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id: '47-7-nedi'},
+      ],
+    },
+    {
+      id: '47-amer',
+      name: 'W. 47th St. and Ave of Americas',
+      desc: 'There is a pizzeria here.',
+      exits: [
+        {dir: 'north', id: '48-amer'},
+        {dir: 'south', id: '46-amer'},
+        {dir: 'east', id: '47-5'},
+        {dir: 'west', id: '47-broa'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id: '47-amer-pizza'},
+      ],
+    },
+
+//Start 46th Street.
+{
+      id: '46-12',
+      name: 'W. 46th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '47-12'},
+        {dir: 'south', id: '45-12'},
+        {dir: 'east', id: '46-11'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '46-11',
+      name: 'W. 46th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '47-11'},
+        {dir: 'south', id: '45-11'},
+        {dir: 'east', id: '46-10'},
+        {dir: 'west', id: '46-12'},
+      ],
+    },
+    {
+      id: '46-10',
+      name: 'W. 46th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '47-10'},
+        {dir: 'south', id: '45-10'},
+        {dir: 'east', id: '46-9'},
+        {dir: 'west', id: '46-11'},
+      ],
+    },
+    {
+      id: '46-9',
+      name: 'W. 46th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '47-9'},
+        {dir: 'south', id: '45-9'},
+        {dir: 'east', id: '46-8'},
+        {dir: 'west', id: '46-10'},
+      ],
+    },
+    {
+      id: '46-8',
+      name: 'W. 46th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '47-8'},
+        {dir: 'south', id: '45-8'},
+        {dir: 'east', id: '46-broa'},
+        {dir: 'west', id: '46-9'},
+      ],
+    },
+    {
+      id: '46-broa',
+      name: 'W. 46th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '47-broa'},
+        {dir: 'south', id: '45-broa'},
+        {dir: 'east', id: '46-7'},
+        {dir: 'west', id: '46-8'},
+      ],
+    },
+    {
+      id: '46-7',
+      name: 'W. 46th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '47-7'},
+        {dir: 'south', id: '45-7'},
+        {dir: 'east', id: '46-amer'},
+        {dir: 'west', id: '46-broa'},
+      ],
+    },
+    {
+      id: '46-amer',
+      name: 'W. 46th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '47-amer'},
+        {dir: 'south', id: '45-amer'},
+        {dir: 'east', id: '46-5'},
+        {dir: 'west', id: '46-7'},
+      ],
+    },
+
+//Start 45th Street
+    {
+      id: '45-12',
+      name: 'W. 45th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '46-12'},
+        {dir: 'south', id: '44-12'},
+        {dir: 'east', id: '45-11'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '45-11',
+      name: 'W. 45th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '46-11'},
+        {dir: 'south', id: '44-11'},
+        {dir: 'east', id: '45-10'},
+        {dir: 'west', id: '45-12'},
+      ],
+    },
+    {
+      id: '45-10',
+      name: 'W. 45th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '46-10'},
+        {dir: 'south', id: '44-10'},
+        {dir: 'east', id: '45-9'},
+        {dir: 'west', id: '45-11'},
+      ],
+    },
+    {
+      id: '45-9',
+      name: 'W. 45th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '46-9'},
+        {dir: 'south', id: '44-9'},
+        {dir: 'east', id: '45-8'},
+        {dir: 'west', id: '45-10'},
+      ],
+    },
+    {
+      id: '45-8',
+      name: 'W. 45th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '46-8'},
+        {dir: 'south', id: '44-8'},
+        {dir: 'east', id: '45-broa'},
+        {dir: 'west', id: '45-9'},
+      ],
+    },
+    {
+      id: '45-broa',
+      name: 'W. 45th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '46-broa'},
+        {dir: 'south', id: 'broa-7'},
+        {dir: 'east', id: '45-7'},
+        {dir: 'west', id: '45-8'},
+      ],
+    },
+    {
+      id: '45-7',
+      name: 'W. 45th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '46-7'},
+        {dir: 'south', id: 'broa-7'},
+        {dir: 'east', id: '45-amer'},
+        {dir: 'west', id: '45-broa'},
+      ],
+    },
+    {
+      id: '45-amer',
+      name: 'W. 45th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '46-amer'},
+        {dir: 'south', id: '44-amer'},
+        {dir: 'east', id: '45-5'},
+        {dir: 'west', id: '45-7'},
+      ],
+    },
+    {//Important!!
+      id: 'broa-7',
+      name: 'Broadway and 7th Ave.',
+      desc: `Times Square -- where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
+    //Important!! In this section, there is a guy who says: "And a sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap?'" 
+    //The player can then respond with "no" for a response of: "The hustler leaves you and begins making his pitch to someone else halfway down the block."
+    //When the player responds yes, the game continues to a bad end, in the following room.
+    isStreet: true,
+      exits: [
+        {dir: 'north', id: '45-7'},
+        {dir: 'south', id: '44-7'},
+        {dir: 'east', id: '44-broa'},
+        {dir: 'west', id: '45-broa'},
+        {dir: ['yes', 'okay'], id: 'broa-7-A'},
+      ],
+    },
+    {//Gets arrested and sent to trial
+      id: 'broa-7-A',
+      onEnter: () => {
+        println(`That was dumb. The cops have been waiting for the last 15 minutes for someone to come along and compound the felony. A plainclothes detective flashes his badge and informs you you're under arrest.`);
+        pressEnter('deat-1');
+    },
+      },//End of 45th Street & broa-7
+
+//Start of 44th Street
+    {
+      id: '44-hhpw',
+      name: 'W. 44th St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '57-hhpw'},
+        {dir: 'south', id: '43-hhpw'},
+        {dir: 'east', id: '44-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '44-12',
+      name: 'W. 44th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '45-12'},
+        {dir: 'south', id: '43-12'},
+        {dir: 'east', id: '44-11'},
+        {dir: 'west', id: '44-hhpw'},
+      ],
+    },
+    {
+      id: '44-11',
+      name: 'W. 44th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '45-11'},
+        {dir: 'south', id: '43-11'},
+        {dir: 'east', id: '44-10'},
+        {dir: 'west', id: '44-12'},
+      ],
+    },
+    {
+      id: '44-10',
+      name: 'W. 44th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '45-10'},
+        {dir: 'south', id: '43-10'},
+        {dir: 'east', id: '44-9'},
+        {dir: 'west', id: '44-11'},
+      ],
+    },
+    {
+      id: '44-9',
+      name: 'W. 44th St. and 9th Ave.',
+      desc: 'There is a Greek Gyro here.',
+      exits: [
+        {dir: 'north', id: '45-9'},
+        {dir: 'south', id: '43-9'},
+        {dir: 'east', id: '44-8'},
+        {dir: 'west', id: '44-10'},
+        {dir: ['enter', 'greek', 'gyro'], id: '44-9'},
+      ],
+    },
+    {
+      id: '44-8',
+      name: 'W. 44th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '45-8'},
+        {dir: 'south', id: '43-8'},
+        {dir: 'east', id: '44-7'},
+        {dir: 'west', id: '44-9'},
+      ],
+    },
+    {
+      id: '44-7',
+      name: 'W. 44th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: 'broa-7'},
+        {dir: 'south', id: '43-7'},
+        {dir: 'east', id: '44-broa'},
+        {dir: 'west', id: '44-8'},
+      ],
+    },
+    {
+      id: '44-broa',
+      name: 'W. 44th St. and Broadway',
+      exits: [
+        {dir: 'north', id: 'broa-7'},
+        {dir: 'south', id: '43-broa'},
+        {dir: 'east', id: '44-amer'},
+        {dir: 'west', id: '44-7'},
+      ],
+    },
+    {
+      id: '44-amer',
+      name: 'W. 44th St. and Ave of Americas',
+      desc: 'The faded elegance of the Algonquin Hotel still draws the theatre and writing crowd for cocktails and meals.',
+      exits: [
+        {dir: 'north', id: '45-amer'},
+        {dir: 'south', id: '43-amer'},
+        {dir: 'east', id: '44-5'},
+        {dir: 'west', id: '44-broa'},
+        {dir: ['enter', 'hotel', 'algonquin'], block:`You can’t go that way.`},
+      ],
+    },//End 44th Street
+
+//Start 43rd Street
+    {
+      id: '43-hhpw',
+      name: 'W. 43rd St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '44-hhpw'},
+        {dir: 'south', id: '42-hhpw'},
+        {dir: 'east', id: '43-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '43-12',
+      name: 'W. 43rd St. and 12th Ave.',
+      desc: 'There is a restaurant called Nedicks here.',
+      exits: [
+        {dir: 'north', id: '44-12'},
+        {dir: 'south', id: '42-12'},
+        {dir: 'east', id: '43-11'},
+        {dir: 'west', id: '43-hhpw'},
+        {dir: ['enter', 'nedicks'], id: '43-12-nedi'},
+      ],
+    },
+    {
+      id: '43-11',
+      name: 'W. 43rd St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '44-11'},
+        {dir: 'south', id: '42-11'},
+        {dir: 'east', id: '43-10'},
+        {dir: 'west', id: '43-12'},
+      ],
+    },
+    {
+      id: '43-10',
+      name: 'W. 43rd St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '44-10'},
+        {dir: 'south', id: '42-10'},
+        {dir: 'east', id: '43-9'},
+        {dir: 'west', id: '43-11'},
+      ],
+    },
+    {
+      id: '43-9',
+      name: 'W. 43rd St. and 9th Ave.',
+      desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      exits: [
+        {dir: 'north', id: '44-10'},
+        {dir: 'south', id: '42-10'},
+        {dir: 'east', id: '43-9'},
+        {dir: 'west', id: '43-11'},
+        {dir: ['enter', 'chock', 'nuts'], id: '43-9-chock'},
+      ],
+    },
+    {
+      id: '43-8',
+      name: 'W. 43rd St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '44-8'},
+        {dir: 'south', id: '42-8'},
+        {dir: 'east', id: '43-7'},
+        {dir: 'west', id: '43-9'},
+      ],
+    },
+    {
+      id: '43-7',
+      name: 'W. 43rd St. and 7th Ave.',
+      desc: 'There is a subway entrance at this corner.',
+      exits: [
+        {dir: 'north', id: '44-7'},
+        {dir: 'south', id: '42-7'},
+        {dir: 'east', id: '43-broa'},
+        {dir: 'west', id: '43-8'},
+      ],
+    },
+    {
+      id: '43-broa',
+      name: 'W. 43rd St. and Broadway',
+      exits: [
+        {dir: 'north', id: '44-broa'},
+        {dir: 'south', id: '42-broa'},
+        {dir: 'east', id: '43-amer'},
+        {dir: 'west', id: '43-7'},
+      ],
+    },
+    {
+      id: '43-amer',
+      name: 'W. 43rd St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '44-amer'},
+        {dir: 'south', id: '42-amer'},
+        {dir: 'east', id: '43-5'},
+        {dir: 'west', id: '43-broa'},
+      ],
+    },//End 43rd Street
+
+//Start 42nd Street
+    {
+      id: '42-hhpw',
+      name: 'W. 42nd St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '43-hhpw'},
+        {dir: 'south', id: '39-hhpw'},
+        {dir: 'east', id: '42-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '42-12',
+      name: 'W. 42nd St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '43-12'},
+        {dir: 'south', id: '41-12'},
+        {dir: 'east', id: '42-11'},
+        {dir: 'west', id: '42-hhpw'},
+      ],
+    },
+    {
+      id: '42-11',
+      name: 'W. 42nd St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '43-11'},
+        {dir: 'south', id: '41-11'},
+        {dir: 'east', id: '42-10'},
+        {dir: 'west', id: '42-12'},
+      ],
+    },
+    {
+      id: '42-10',
+      name: 'W. 42nd St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '43-10'},
+        {dir: 'south', id: '41-10'},
+        {dir: 'east', id: '42-dyer'},
+        {dir: 'west', id: '42-11'},
+        {dir: ['enter', 'nedicks'], id: '42-10-nedi'},
+      ],
+    },
+    {
+      id: '42-dyer',
+      name: 'W. 42nd St. and Dyer Ave.',
+      desc: 'A row of new theatres struggle desperately to surmount the general decay of the area.',
+      exits: [
+        {dir: 'north', block:`You can’t go that way.`},
+        {dir: 'east', id: '42-9'},
+        {dir: 'west', id: '42-10'},
+        {dir: 'south', id: '41-dyer'},
+      ],
+    },
+    {//Possible description change
+      id: '42-9',
+      name: 'W. 42nd St. and 9th Ave.',
+      desc: 'This block long stretch of 42nd St. is another one lined with movie marquee after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamourizing.',
+      exits: [
+        {dir: 'north', id: '43-9'},
+        {dir: 'south', id: '41-9'},
+        {dir: 'east', id: '42-8'},
+        {dir: 'west', id: '42-dyer'},
+      ],
+    },
+    {
+      id: '42-8',
+      name: 'W. 42nd St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '43-8'},
+        {dir: 'south', id: '41-8'},
+        {dir: 'east', id: '42-7'},
+        {dir: 'west', id: '42-9'},
+      ],
+    },
+    {
+      id: '42-7',
+      name: 'W. 42nd St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '43-7'},
+        {dir: 'south', id: '41-7'},
+        {dir: 'east', id: '42-broa'},
+        {dir: 'west', id: '42-8'},
+      ],
+    },
+    {
+      id: '42-broa',
+      name: 'W. 42nd St. and Broadway',
+      exits: [
+        {dir: 'north', id: '43-broa'},
+        {dir: 'south', id: '41-broa'},
+        {dir: 'east', id: '42-amer'},
+        {dir: 'west', id: '42-7'},
+      ],
+    },
+    {
+      id: '42-amer',
+      name: 'W. 42nd St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '43-amer'},
+        {dir: 'south', id: '41-amer'},
+        {dir: 'east', id: '42-5'},
+        {dir: 'west', id: '42-broa'},
+      ],
+    },//End 42nd Street
+
+//Start 41st Street
+    {
+      id: '41-12',
+      name: 'W. 41st St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '42-12'},
+        {dir: 'south', id: '40-12'},
+        {dir: 'east', id: '41-11'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '41-11',
+      name: 'W. 41st St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '42-11'},
+        {dir: 'south', id: '40-11'},
+        {dir: 'east', id: '41-galv'},
+        {dir: 'west', id: '41-12'},
+      ],
+    },
+    {
+      id: '41-galv',
+      name: 'W. 41st St. and Galvin Ave.',
+      exits: [
+        {dir: 'north', block:`You can’t go that way.`},
+        {dir: 'east', id: '41-10'},
+        {dir: 'west', id: '41-11'},
+        {dir: 'south', id: '40-galv'},
+      ],
+    },
+    {
+      id: '41-10',
+      name: 'W. 41st St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '42-10'},
+        {dir: 'south', id: '40-10'},
+        {dir: 'east', id: '41-dyer'},
+        {dir: 'west', id: '41-galv'},
+      ],
+    },
+    {
+      id: '41-dyer',
+      name: 'W. 41st St. and Dyer Ave.',
+      desc: 'There is a restaurant called Nedicks here.',
+      exits: [
+        {dir: 'north', id: '42-dyer'},
+        {dir: 'south', id: 'bta-dyer'},
+        {dir: 'east', id: '41-9'},
+        {dir: 'west', id: '41-10'},
+        {dir: ['enter', 'nedicks'], id: '41-dyer-nedi'},
+      ],
+    },
+    {
+      id: '41-9',
+      name: 'W. 41st St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '42-9'},
+        {dir: 'south', id: 'bta-9'},
+        {dir: 'east', id: '41-8'},
+        {dir: 'west', id: '41-dyer'},
+      ],
+    },
+    {
+      id: '41-8',
+      name: 'W. 41st St. and 8th Ave.',
+      desc: 'The enormous Port Authority Bus Terminal is a waystop for travelers and home to the squatters who sit at its entrance.',
+      exits: [
+        {dir: 'north', id: '42-8'},
+        {dir: 'south', id: '40-8'},
+        {dir: 'east', id: '41-7'},
+        {dir: 'west', id: '41-9'},
+      ],
+    },
+    {
+      id: '41-7',
+      name: 'W. 41st St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '42-7'},
+        {dir: 'south', id: '40-7'},
+        {dir: 'east', id: '41-broa'},
+        {dir: 'west', id: '41-8'},
+      ],
+    },
+    {
+      id: '41-broa',
+      name: 'W. 41st St. and Broadway',
+      exits: [
+        {dir: 'north', id: '42-broa'},
+        {dir: 'south', id: '40-broa'},
+        {dir: 'east', id: '41-amer'},
+        {dir: 'west', id: '41-7'},
+      ],
+    },
+    {
+      id: '41-amer',
+      name: 'W. 41st St. and Ave of Americas',
+      desc: 'There is a pizzeria here.',
+      exits: [
+        {dir: 'north', id: '42-amer'},
+        {dir: 'south', id: '40-amer'},
+        {dir: 'east', block:`You can’t go that way.`},
+        {dir: 'west', id: '41-broa'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id: '41-amer-pizza'},
+      ],
+    },
+//Start 40th Street
+    {
+      id: '40-12',
+      name: 'W. 40th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '41-12'},
+        {dir: 'south', id: '39-12'},
+        {dir: 'east', id: '40-11'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '40-11',
+      name: 'W. 40th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '41-11'},
+        {dir: 'south', id: '39-11'},
+        {dir: 'east', id: '40-galv'},
+        {dir: 'west', id: '40-12'},
+      ],
+    },
+    {
+      id: '40-galv',
+      name: 'W. 40th St. and Galvin Ave.',
+      exits: [
+        {dir: 'north', id: '41-galv'},
+        {dir: 'south', id: '39-galv'},
+        {dir: 'east', id: '40-10'},
+        {dir: 'west', id: '40-11'},
+      ],
+    },
+    {
+      id: '40-10',
+      name: 'W. 40th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '41-10'},
+        {dir: 'south', id: '39-10'},
+        {dir: 'east', id: 'bta-40'},
+        {dir: 'west', id: '40-galv'},
+      ],
+    },//Bus Terminal Access
+    {
+      id: 'bta-galv',
+      name: 'Bus Terminal Access and Galvin Ave.',
+      exits: [
+        {dir: 'north', id: '40-galv'},
+        {dir: 'south', id: '39-galv'},
+        {dir: 'east', id: 'bta-10'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: 'bta-10',
+      name: 'Bus Terminal Access and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '40-10'},
+        {dir: 'south', id: '39-10'},
+        {dir: 'east', id: 'bta-40'},
+        {dir: 'west', id: 'bta-galv'},
+      ],
+    },
+    {
+      id: 'bta-40',
+      name: 'Bus Terminal Access and W. 40th St.',
+      exits: [
+        {dir: 'north', id: 'bta-dyer'},
+        {dir: 'south', id: 'bta-10'},
+        {dir: 'east', id: '40-dyer'},
+        {dir: 'west', id: '40-10'},
+      ],
+    },
+    {
+      id: 'bta-dyer',
+      name: 'Bus Terminal Access and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: 'bta-dyer'},
+        {dir: 'south', id: '40-dyer'},
+        {dir: 'east', id: 'bta-9'},
+        {dir: 'west', id: 'bta-40'},
+      ],
+    },
+    {
+      id: 'bta-9',
+      name: 'Bus Terminal Access and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '41-9'},
+        {dir: 'south', id: '40-9'},
+        {dir: 'east', block:`You can’t go that way.`},
+        {dir: 'west', id: 'bta-dyer'},
+      ],
+    },//End Bus Terminal Access
+{
+      id: '40-dyer',
+      name: 'W. 40th St. and Dyer Ave.',
+      desc: 'There is a pizzeria here.',
+      exits: [
+        {dir: 'north', id: 'bta-dyer'},
+        {dir: 'south', id: '39-dyer'},
+        {dir: 'east', id: '40-9'},
+        {dir: 'west', id: 'bta-40'},
+        {dir: ['enter', 'pizza', 'pizzeria'], id: '39-10'},
+      ],
+    },
+    {
+      id: '40-9',
+      name: 'W. 40th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: 'bta-9'},
+        {dir: 'south', id: '39-9'},
+        {dir: 'east', id: '40-8'},
+        {dir: 'west', id: '40-dyer'},
+      ],
+    },
+    {
+      id: '40-8',
+      name: 'W. 40th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '41-8'},
+        {dir: 'south', id: '39-8'},
+        {dir: 'east', id: '40-7'},
+        {dir: 'west', id: '40-9'},
+      ],
+    },
+    {
+      id: '40-7',
+      name: 'W. 40th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '41-7'},
+        {dir: 'south', id: '39-7'},
+        {dir: 'east', id: '40-broa'},
+        {dir: 'west', id: '40-8'},
+      ],
+    },
+    {
+      id: '40-broa',
+      name: 'W. 40th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '41-broa'},
+        {dir: 'south', id: '39-broa'},
+        {dir: 'east', id: '40-amer'},
+        {dir: 'west', id: '40-7'},
+      ],
+    },
+    {
+      id: '40-broa',
+      name: 'W. 40th St. and Broadway',
+      desc: 'Here is a very unlikely swatch of Arcadia, a park as posh and demure as the nicest sort of cemetery. The social mix here is not so upscale as the scenery, but being about equally divided between drug pushers modeling the latest styles of sweat-suit chic and more conventionally dressed and generally older people trying to read books and newspapers.',
+      exits: [
+        {dir: 'north', id: '41-amer'},
+        {dir: 'south', id: '39-amer'},
+        {dir: 'east', id: '40-5'},
+        {dir: 'west', id: '40-broa'},
+      ],
+    },//End 40th Street
+
+//Start 39th Street
+    {
+      id: '39-hhpw',
+      name: 'W. 39th St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '42-hhpw'},
+        {dir: 'south', id: '34-hhpw'},
+        {dir: 'east', id: '39-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '39-12',
+      name: 'W. 39th St. and 12th Ave.',
+      exits: [
+        {dir: 'north', id: '40-12'},
+        {dir: 'south', id: '34-12'},
+        {dir: 'east', id: '39-11'},
+        {dir: 'west', id: '39-hhpw'},
+      ],
+    },
+    {
+      id: '39-11',
+      name: 'W. 39th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '40-11'},
+        {dir: 'south', id: '38-11'},
+        {dir: 'east', id: '39-galv'},
+        {dir: 'west', id: '39-12'},
+      ],
+    },
+    {
+      id: '39-galv',
+      name: 'W. 39th St. and Galvin Ave.',
+      exits: [
+        {dir: 'north', id: 'bta-galv'},
+        {dir: 'east', id: '39-10'},
+        {dir: 'west', id: '39-11'},
+        {dir: 'south', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '39-10',
+      name: 'W. 39th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: 'bta-10'},
+        {dir: 'south', id: '38-10'},
+        {dir: 'east', id: '39-dyer'},
+        {dir: 'west', id: '39-galv'},
+      ],
+    },
+    {
+      id: '39-dyer',
+      name: 'W. 39th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '40-dyer'},
+        {dir: 'south', id: 'linc-dyer'},
+        {dir: 'east', id: '39-9'},
+        {dir: 'west', id: '39-10'},
+      ],
+    },
+    {
+      id: 'linc-dyer',
+      name: 'Lincoln Tunnel and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '39-dyer'},
+        {dir: 'south', id: '38-dyer'},
+        {dir: 'east', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '39-9',
+      name: 'W. 39th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '40-9'},
+        {dir: 'south', id: '38-9'},
+        {dir: 'east', id: '39-8'},
+        {dir: 'west', id: '39-dyer'},
+      ],
+    },
+    {
+      id: '39-8',
+      name: 'W. 39th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '40-8'},
+        {dir: 'south', id: '38-8'},
+        {dir: 'east', id: '39-7'},
+        {dir: 'west', id: '39-9'},
+      ],
+    },
+    {
+      id: '39-7',
+      name: 'W. 39th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '40-7'},
+        {dir: 'south', id: '38-7'},
+        {dir: 'east', id: '39-broa'},
+        {dir: 'west', id: '39-8'},
+      ],
+    },
+    {
+      id: '39-broa',
+      name: 'W. 39th St. and Broadway',
+      desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      exits: [
+        {dir: 'north', id: '40-broa'},
+        {dir: 'south', id: '38-broa'},
+        {dir: 'east', id: '39-amer'},
+        {dir: 'west', id: '39-7'},
+        {dir: ['enter', 'chock', 'nuts'], id: '39-broa-chock'},
+      ],
+    },
+    {
+      id: '39-amer',
+      name: 'W. 39th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '40-amer'},
+        {dir: 'south', id: '38-amer'},
+        {dir: 'east', id: '39-5'},
+        {dir: 'west', id: '39-broa'},
+      ],
+    },
+//Start 38th Street
+    {
+      id: '38-11',
+      name: 'W. 38th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '39-11'},
+        {dir: 'south', id: '37-11'},
+        {dir: 'east', id: '38-10'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '38-10',
+      name: 'W. 38th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '39-10'},
+        {dir: 'south', id: '37-10'},
+        {dir: 'east', id: '38-dyer'},
+        {dir: 'west', id: '38-11'},
+      ],
+    },
+    {
+      id: '38-dyer',
+      name: 'W. 38th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: 'linc-dyer'},
+        {dir: 'south', id: '37-dyer'},
+        {dir: 'east', id: '38-9'},
+        {dir: 'west', id: '38-10'},
+      ],
+    },
+    {
+      id: '38-9',
+      name: 'W. 38th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '39-9'},
+        {dir: 'south', id: '37-9'},
+        {dir: 'east', id: '38-8'},
+        {dir: 'west', id: '38-dyer'},
+      ],
+    },
+    {
+      id: '38-8',
+      name: 'W. 38th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '39-8'},
+        {dir: 'south', id: '37-8'},
+        {dir: 'east', id: '38-7'},
+        {dir: 'west', id: '38-9'},
+      ],
+    },
+    {
+      id: '38-7',
+      name: 'W. 38th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '39-7'},
+        {dir: 'south', id: '37-7'},
+        {dir: 'east', id: '38-broa'},
+        {dir: 'west', id: '38-8'},
+      ],
+    },
+    {
+      id: '38-broa',
+      name: 'W. 38th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '39-broa'},
+        {dir: 'south', id: '37-broa'},
+        {dir: 'east', id: '38-amer'},
+        {dir: 'west', id: '38-7'},
+      ],
+    },
+    {
+      id: '38-amer',
+      name: 'W. 38th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '39-amer'},
+        {dir: 'south', id: '37-amer'},
+        {dir: 'east', id: '38-5'},
+        {dir: 'west', id: '38-broa'},
+      ],
+    },
+
+//Start 37th Street
+    {
+      id: '37-11',
+      name: 'W. 37th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '38-11'},
+        {dir: 'south', id: '36-11'},
+        {dir: 'east', id: '37-10'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '37-10',
+      name: 'W. 37th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '38-10'},
+        {dir: 'south', id: '36-10'},
+        {dir: 'east', id: '37-dyer'},
+        {dir: 'west', id: '37-11'},
+      ],
+    },
+    {
+      id: '37-dyer',
+      name: 'W. 37th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '38-dyer'},
+        {dir: 'south', id: '36-dyer'},
+        {dir: 'east', id: '37-9'},
+        {dir: 'west', id: '37-10'},
+      ],
+    },
+    {
+      id: '37-9',
+      name: 'W. 37th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '38-9'},
+        {dir: 'south', id: '36-9'},
+        {dir: 'east', id: '37-8'},
+        {dir: 'west', id: '37-dyer'},
+      ],
+    },
+    {
+      id: '37-8',
+      name: 'W. 37th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '38-8'},
+        {dir: 'south', id: '36-8'},
+        {dir: 'east', id: '37-7'},
+        {dir: 'west', id: '37-9'},
+      ],
+    },
+    {
+      id: '37-7',
+      name: 'W. 37th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '38-7'},
+        {dir: 'south', id: '36-7'},
+        {dir: 'east', id: '37-broa'},
+        {dir: 'west', id: '37-8'},
+      ],
+    },
+    {
+      id: '37-broa',
+      name: 'W. 37th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '38-broa'},
+        {dir: 'south', id: '36-broa'},
+        {dir: 'east', id: '37-amer'},
+        {dir: 'west', id: '37-7'},
+      ],
+    },
+    {
+      id: '37-amer',
+      name: 'W. 37th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '38-amer'},
+        {dir: 'south', id: '36-amer'},
+        {dir: 'east', id: '37-5'},
+        {dir: 'west', id: '37-broa'},
+      ],
+    },
+
+//Start 36th Street
+    {
+      id: '36-11',
+      name: 'W. 36th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '37-11'},
+        {dir: 'south', id: '35-11'},
+        {dir: 'east', id: '36-10'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '36-10',
+      name: 'W. 36th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '37-10'},
+        {dir: 'south', id: '35-10'},
+        {dir: 'east', id: '36-dyer'},
+        {dir: 'west', id: '36-11'},
+      ],
+    },
+    {
+      id: '36-dyer',
+      name: 'W. 36th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '37-dyer'},
+        {dir: 'south', id: '35-dyer'},
+        {dir: 'east', id: '36-9'},
+        {dir: 'west', id: '36-10'},
+      ],
+    },
+    {
+      id: '36-9',
+      name: 'W. 36th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '37-9'},
+        {dir: 'south', id: '35-9'},
+        {dir: 'east', id: '36-8'},
+        {dir: 'west', id: '36-dyer'},
+      ],
+    },
+    {
+      id: '36-8',
+      name: 'W. 36th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '37-8'},
+        {dir: 'south', id: '35-8'},
+        {dir: 'east', id: '36-7'},
+        {dir: 'west', id: '36-9'},
+      ],
+    },
+    {
+      id: '36-7',
+      name: 'W. 36th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '37-7'},
+        {dir: 'south', id: '35-7'},
+        {dir: 'east', id: '36-broa'},
+        {dir: 'west', id: '36-8'},
+      ],
+    },
+    {
+      id: '36-broa',
+      name: 'W. 36th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '37-broa'},
+        {dir: 'south', id: '35-broa'},
+        {dir: 'east', id: '36-amer'},
+        {dir: 'west', id: '36-7'},
+      ],
+    },
+    {
+      id: '36-amer',
+      name: 'W. 36th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '37-amer'},
+        {dir: 'south', id: '35-amer'},
+        {dir: 'east', id: '36-5'},
+        {dir: 'west', id: '36-broa'},
+      ],
+    },
+
+//Start 35th Street
+    {
+      id: '35-11',
+      name: 'W. 35th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '36-11'},
+        {dir: 'south', id: '34-11'},
+        {dir: 'east', id: '35-10'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '35-10',
+      name: 'W. 35th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '36-10'},
+        {dir: 'south', id: '34-10'},
+        {dir: 'east', id: '35-dyer'},
+        {dir: 'west', id: '35-11'},
+      ],
+    },
+    {
+      id: '35-dyer',
+      name: 'W. 35th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '36-dyer'},
+        {dir: 'south', id: '34-dyer'},
+        {dir: 'east', id: '35-9'},
+        {dir: 'west', id: '35-10'},
+      ],
+    },
+    {
+      id: '35-9',
+      name: 'W. 35th St. and 9th Ave.',
+      exits: [
+        {dir: 'north', id: '36-9'},
+        {dir: 'south', id: '34-9'},
+        {dir: 'east', id: '35-8'},
+        {dir: 'west', id: '35-dyer'},
+      ],
+    },
+    {
+      id: '35-8',
+      name: 'W. 35th St. and 8th Ave.',
+      desc: `'Watch out where you're going!' You step into the gutter just in time to escape being rammed by a wheeled garment rack full of next fall's fashions.`,
+      exits: [
+        {dir: 'north', id: '36-8'},
+        {dir: 'south', id: '34-8'},
+        {dir: 'east', id: '35-7'},
+        {dir: 'west', id: '35-9'},
+      ],
+    },
+    {
+      id: '35-7',
+      name: 'W. 35th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '36-7'},
+        {dir: 'south', id: '34-7'},
+        {dir: 'east', id: '35-broa'},
+        {dir: 'west', id: '35-8'},
+      ],
+    },
+    {
+      id: '35-broa',
+      name: 'W. 35th St. and Broadway',
+      desc: `There is a Chock Full-O-Nuts at this intersection.`,
+      exits: [
+        {dir: 'north', id: '36-broa'},
+        {dir: 'south', id: '34-broa'},
+        {dir: 'east', id: '35-amer'},
+        {dir: 'west', id: '35-7'},
+        {dir: ['enter', 'chock', 'nuts'], id: '35-broa-chock'},
+      ],
+    },
+    {
+      id: '35-amer',
+      name: 'W. 35th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '36-amer'},
+        {dir: 'south', id: '34-amer'},
+        {dir: 'east', id: '35-5'},
+        {dir: 'west', id: '35-broa'},
+      ],
+    },
+
+//Start 34th Street
+    {
+      id: '34-hhpw',
+      name: 'W. 34th St. and Henry Hudson Pkwy.',
+      exits: [
+        {dir: 'north', id: '39-hhpw'},
+        {dir: 'south', id: '23-hhpw'},
+        {dir: 'east', id: '34-12'},
+        {dir: 'west', block:`You can’t go that way.`},
+      ],
+    },
+    {
+      id: '34-11',
+      name: 'W. 34th St. and 11th Ave.',
+      exits: [
+        {dir: 'north', id: '35-11'},
+        {dir: 'south', id: '33-11'},
+        {dir: 'east', id: '34-10'},
+        {dir: 'west', id: '34-12'},
+      ],
+    },
+    {
+      id: '34-10',
+      name: 'W. 34th St. and 10th Ave.',
+      exits: [
+        {dir: 'north', id: '35-10'},
+        {dir: 'south', id: '33-10'},
+        {dir: 'east', id: '34-dyer'},
+        {dir: 'west', id: '34-11'},
+      ],
+    },
+    {
+      id: '34-dyer',
+      name: 'W. 34th St. and Dyer Ave.',
+      exits: [
+        {dir: 'north', id: '35-dyer'},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'east', id: '34-9'},
+        {dir: 'west', id: '34-10'},
+      ],
+    },
+    {
+      id: '34-9',
+      name: 'W. 34th St. and 9th Ave.',
+      desc: 'There is a restaurant called Nedicks here.',
+      exits: [
+        {dir: 'north', id: '35-9'},
+        {dir: 'south', id: '33-9'},
+        {dir: 'east', id: '34-8'},
+        {dir: 'west', id: '34-dyer'},
+        {dir: ['enter', 'restaurant', 'nedicks'], id: '34-9-nedi'},
+      ],
+    },
+    {
+      id: '34-8',
+      name: 'W. 34th St. and 8th Ave.',
+      exits: [
+        {dir: 'north', id: '35-8'},
+        {dir: 'south', id: '33-8'},
+        {dir: 'east', id: '34-7'},
+        {dir: 'west', id: '34-9'},
+      ],
+    },
+    {
+      id: '34-7',
+      name: 'W. 34th St. and 7th Ave.',
+      exits: [
+        {dir: 'north', id: '35-7'},
+        {dir: 'south', id: '33-7'},
+        {dir: 'east', id: '34-broa'},
+        {dir: 'west', id: '34-8'},
+      ],
+    },
+    {
+      id: '34-broa',
+      name: 'W. 34th St. and Broadway',
+      exits: [
+        {dir: 'north', id: '35-broa'},
+        {dir: 'south', id: '33-broa'},
+        {dir: 'east', id: '34-amer'},
+        {dir: 'west', id: '34-7'},
+      ],
+    },
+    {
+      id: '34-amer',
+      name: 'W. 34th St. and Ave of Americas',
+      exits: [
+        {dir: 'north', id: '35-amer'},
+        {dir: 'south', id: '33-amer'},
+        {dir: 'east', id: '34-5'},
+        {dir: 'west', id: '34-broa'},
+      ],
+    },
+     /*********************/
+    /* Midtown East Side */
+   /*********************/
+   {
+    id: 'hote-exit',
+    coord: [],
+    name: 'Sunderland Hotel Lobby',
+    desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
+    isStreets: true,
+    onEnter: () => {
+      pressEnter('hote-exit1');
+    },
+    exits: []
+  },
+  {
+    id: 'hote-exit1',
+    coord: [],
+    name: 'Sunderland Hotel Lobby',
+    desc: `Here it is already night time, but the sidewalks are still teeming with people, and the streets are heavily trafficked, and bright with the sum-total wattage of so many streetlights, headlights, and lighted signs. In the windows of the darkened shopfronts, you see yourself mirrored and feel an utterly inappropiate glow of vanity.
+          
+          The white tux makes you look like a refugee from the chorus line of a Thirties musical comedy, and in a peculiar way it serves as camouflage. People stare, but they're staring at the tux, not at you.`,
+    onEnter: () => {
+      pressEnter('hote-exit2');
+    },
+    exits: []
+  },
+  {
+    id: 'hote-exit2',
+    coord: [],
+    name: 'Sunderland Hotel Lobby',
+    desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
+    isStreets: true,
+    onEnter: () => {
+      pressEnter('hote-exit3');
+    },
+    exits: []
+  },
+  {
+    id: 'hote-exit3',
+    coord: [],
+    name: 'Sunderland Hotel Lobby',
+    desc:`At the corner you watch a blind man with a tin cup slowly progress down Fifth Avenue, rattling coins at the milling pedestrians. Most of them are too caught up in their own business even to notice the blind man. A few do see him and veer widely around him, as though fearing the rattle of his cup
+          
+          A black man pauses, considers, digs into his pocket, and drops a quarter in the cup. He notices you watching this act of charity, and as he walks by you a moment later, he says, "There but for the grace of God, eh?"
+          
+          You nod your head thoughtfully.`,
+    onEnter: () => {
+      pressEnter('53-5');
+    },
+    exits: []
+  },
+  {
+    id: '53-5',
+    coord: [],
+    name: 'W. 53rd St, and 5th Ave.',
+    desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-5'},
+      {dir: 'south', id: '52-5'},
+      {dir: 'east', id: '53-madi'},
+      {dir: 'west', id: '53-amer'}, 
+      {dir: ['Sunderland', 'hotel'], id: '????'},
+    ]
+  },
+  {
+    id: '54-5',
+    coord: [],
+    name: 'W. 54th St, and 5th Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '55-5'},
+      {dir: 'south', id: '53-5'},
+      {dir: 'east', id: '54-madi'},
+      {dir: 'west', id: '54-amer'}, 
+      {dir: ['subway'], id: '????'},
+    ]
+  },
+  {
+    id: '55-5',
+    coord: [],
+    name: 'W. 55th St, and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-5'},
+      {dir: 'south', id: '54-5'},
+      {dir: 'east', id: '55-madi'},
+      {dir: 'west', id: '55-amer'}, 
+    ]
+  },
+  {
+    id: '56-5',
+    coord: [],
+    name: 'W. 56th St, and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-5'},
+      {dir: 'south', id: '55-5'},
+      {dir: 'east', id: '56-madi'},
+      {dir: 'west', id: '56-amer'}, 
+    ]
+  },
+  {
+    id: '57-5',
+    coord: [],
+    name: 'W. 57th St, and 5th Ave.',
+    desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-5'},
+      {dir: 'south', id: '56-5'},
+      {dir: 'east', id: '57-madi'},
+      {dir: 'west', id: '57-amer'}, 
+    ]
+  },
+  {
+    id: '58-5',
+    coord: [],
+    name: 'W. 58th St, and 5th Ave.',
+    desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-5'},
+      {dir: 'south', id: '57-5'},
+      {dir: 'east', id: '58-madi'},
+      {dir: 'west', id: '58-amer'},
+      {dir: ['plaza', 'hotel'], id: 'plaz-hote'}
+    ]
+  },
+  {
+    id: 'plaz-hote',
+    coord: [],
+    name: 'Lobby of the Plaza Hotel',
+    desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don’t. You ignore the voice deep inside and leave with a sigh of regret.`,
+    isStreets: true,
+    exits:[],
+    onEnter: () => {
+      pressEnter('58-5')
+    },
+  },
+  {
+    id: '59-5',
+    coord: [],
+    name: 'Central Park S. and 5th Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '60-5'},
+      {dir: 'south', id: '58-5'},
+      {dir: 'east', id: '59-madi'},
+      {dir: 'west', id: '59-amer'},
+      {dir: ['subway'], id: '???'}
+    ]
+  },
+  {
+    id: '59-madi',
+    coord: [],
+    name: 'E. 59th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '60-madi'},
+      {dir: 'south', id: '58-madi'},
+      {dir: 'east', id: '59-park'},
+      {dir: 'west', id: '59-5'},
+    ]
+  },
+  {
+    id: '58-madi',
+    coord: [],
+    name: 'E. 58th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-madi'},
+      {dir: 'south', id: '57-madi'},
+      {dir: 'east', id: '58-park'},
+      {dir: 'west', id: '58-5'},
+    ]
+  },
+  {
+    id: '57-madi',
+    coord: [],
+    name: 'E. 57th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-madi'},
+      {dir: 'south', id: '56-madi'},
+      {dir: 'east', id: '57-park'},
+      {dir: 'west', id: '57-5'},
+    ]
+  },
+  {
+    id: '56-madi',
+    coord: [],
+    name: 'E. 56th St. and Madison Ave.',
+    desc: `The sign above the store's front window, written in letters that imitate a dot-matrix printout, says: User-Friendly Computer Store.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-madi'},
+      {dir: 'south', id: '55-madi'},
+      {dir: 'east', id: '56-park'},
+      {dir: 'west', id: '56-5'},
+      {dir: ['computer', 'store'], id: 'user-frie'}
+    ]
+  },
+  {
+    id: '56-madi',
+    coord: [],
+    name: 'E. 56th St. and Madison Ave.',
+    desc: `As you come to the corner of Madison Avenue, you notice, halfway down the block a shop front that seems somehow familiar. The sign above the front window, written in letters that imitate a dot-matrix printout, says:
+
+          USER-FRIENDLY
+
+          COMPUTER STORE.`,
+    exits: [
+      {dir: 'north', id: '57-madi'},
+      {dir: 'south', id: '55-madi'},
+      {dir: 'east', id: '56-park'},
+      {dir: 'west', id: '56-5'},
+      {dir: ['computer', 'store', 'user', 'friendly'], id: 'user-frie'}
+    ]
+  },
+  {
+    id: '55-madi',
+    coord: [],
+    name: 'E. 55th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-madi'},
+      {dir: 'south', id: '54-madi'},
+      {dir: 'east', id: '55-park'},
+      {dir: 'west', id: '55-5'},
+    ]
+  },
+  {
+    id: '54-madi',
+    coord: [],
+    name: 'E. 54th St. and Madison Ave.',
+    desc: `There is a chock Full-O-Nuts at this intersection.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-madi'},
+      {dir: 'south', id: '53-madi'},
+      {dir: 'east', id: '54-park'},
+      {dir: 'west', id: '54-5'},
+      {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
+    ]
+  },
+  {
+    id: '53-madi',
+    coord: [],
+    name: 'E. 53rd St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-madi'},
+      {dir: 'south', id: '52-madi'},
+      {dir: 'east', id: '53-park'},
+      {dir: 'west', id: '53-5'},
+    ]
+  },
+  {
+    id: '52-madi',
+    coord: [],
+    name: 'E. 52nd St. and Madison Ave.',
+    desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-madi'},
+      {dir: 'south', id: '51-madi'},
+      {dir: 'east', id: '52-park'},
+      {dir: 'west', id: '52-5'},
+      {dir: ['park', 'plaza'], id: 'park-plaz'},
+    ]
+  },
+  {
+    id: '51-madi',
+    coord: [],
+    name: 'E. 51st St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '52-madi'},
+      {dir: 'south', id: '50-madi'},
+      {dir: 'east', id: '51-park'},
+      {dir: 'west', id: '51-5'},
+    ]
+  },
+  {
+    id: '50-madi',
+    coord: [],
+    name: 'E. 50th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-madi'},
+      {dir: 'south', id: '49-madi'},
+      {dir: 'east', id: '50-park'},
+      {dir: 'west', id: '50-5'},
+    ]
+  },
+  {
+    id: '49-madi',
+    coord: [],
+    name: 'E. 49th St. and Madison Ave.',
+    desc: `There is a chock Full-O-Nuts at this intersection.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-madi'},
+      {dir: 'south', id: '48-madi'},
+      {dir: 'east', id: '49-park'},
+      {dir: 'west', id: '49-5'},
+      {dir: ['chock', 'full-o-nuts',], id: 'choc-nuts'}
+    ]
+  },
+  {
+    id: '48-madi',
+    coord: [],
+    name: 'E. 48th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-madi'},
+      {dir: 'south', id: '47-madi'},
+      {dir: 'east', id: '48-park'},
+      {dir: 'west', id: '48-5'},
+    ]
+  },
+  {
+    id: '47-madi',
+    coord: [],
+    name: 'E. 47th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-madi'},
+      {dir: 'south', id: '46-madi'},
+      {dir: 'east', id: '47-vand'},
+      {dir: 'west', id: '47-5'},
+    ]
+  },
+  {
+    id: '46-madi',
+    coord: [],
+    name: 'E. 46th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-madi'},
+      {dir: 'south', id: '45-madi'},
+      {dir: 'east', id: '46-vand'},
+      {dir: 'west', id: '46-5'},
+    ]
+  },
+  {
+    id: '45-madi',
+    coord: [],
+    name: 'E. 45th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-madi'},
+      {dir: 'south', id: '44-madi'},
+      {dir: 'east', id: '45-vand'},
+      {dir: 'west', id: '45-5'},
+    ]
+  },
+  {
+    id: '44-madi',
+    coord: [],
+    name: 'E. 44th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-madi'},
+      {dir: 'south', id: '43-madi'},
+      {dir: 'east', id: '44-vand'},
+      {dir: 'west', id: '44-5'},
+    ]
+  },
+  {
+    id: '43-madi',
+    coord: [],
+    name: 'E. 43rd St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-madi'},
+      {dir: 'south', id: '42-madi'},
+      {dir: 'east', id: '43-vand'},
+      {dir: 'west', id: '43-5'},
+    ]
+  },
+  {
+    id: '42-madi',
+    coord: [],
+    name: 'E. 42nd St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-madi'},
+      {dir: 'south', id: '41-madi'},
+      {dir: 'east', id: '42-vand'},
+      {dir: 'west', id: '42-5'},
+    ]
+  },
+  {
+    id: '41-madi',
+    coord: [],
+    name: 'E. 41st St. and Madison Ave.',
+    desc: `There is a chock Full-O-Nuts at this intersection.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-madi'},
+      {dir: 'south', id: '40-madi'},
+      {dir: 'east', id: '41-park'},
+      {dir: 'west', id: '41-5'},
+      {dir: ['chock', 'full-o-nuts', 'enter'], id: 'choc-nuts'}
+    ]
+  },
+  {
+    id: '40-madi',
+    coord: [],
+    name: 'E. 40th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-madi'},
+      {dir: 'south', id: '39-madi'},
+      {dir: 'east', id: '40-park'},
+      {dir: 'west', id: '40-5'},
+    ]
+  },
+  {
+    id: '39-madi',
+    coord: [],
+    name: 'E. 39th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-madi'},
+      {dir: 'south', id: '38-madi'},
+      {dir: 'east', id: '39-park'},
+      {dir: 'west', id: '39-5'},
+    ]
+  },
+  {
+    id: '39-madi',
+    coord: [],
+    name: 'E. 39th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-madi'},
+      {dir: 'south', id: '38-madi'},
+      {dir: 'east', id: '39-park'},
+      {dir: 'west', id: '39-5'},
+    ]
+  },
+  {
+    id: '38-madi',
+    coord: [],
+    name: 'E. 38th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-madi'},
+      {dir: 'south', id: '37-madi'},
+      {dir: 'east', id: '38-park'},
+      {dir: 'west', id: '38-5'},
+    ]
+  },
+  {
+    id: '37-madi',
+    coord: [],
+    name: 'E. 37th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-madi'},
+      {dir: 'south', id: '36-madi'},
+      {dir: 'east', id: '37-park'},
+      {dir: 'west', id: '37-5'},
+    ]
+  },
+  {
+    id: '36-madi',
+    coord: [],
+    name: 'E. 36th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-madi'},
+      {dir: 'south', id: '35-madi'},
+      {dir: 'east', id: '36-park'},
+      {dir: 'west', id: '36-5'},
+    ]
+  },
+  {
+    id: '35-madi',
+    coord: [],
+    name: 'E. 35th St. and Madison Ave.',
+    desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-madi'},
+      {dir: 'south', id: '34-madi'},
+      {dir: 'east', id: '35-park'},
+      {dir: 'west', id: '35-5'},
+      {dir: [`Altman's`,], id: '????'},
+    ]
+  },
+  {
+    id: '34-madi',
+    coord: [],
+    name: 'E. 34th St. and Madison Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-madi'},
+      {dir: 'south', id: '33-madi'},
+      {dir: 'east', id: '34-park'},
+      {dir: 'west', id: '34-5'},
+    ]
+  },
+  {
+    id: '34-5',
+    coord: [],
+    name: 'W. 34th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-5'},
+      {dir: 'south', id: '33-5'},
+      {dir: 'east', id: '34-madi'},
+      {dir: 'west', id: '34-amer'},
+    ]
+  },
+  {
+    id: '35-5',
+    coord: [],
+    name: 'W. 35th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-5'},
+      {dir: 'south', id: '34-5'},
+      {dir: 'east', id: '35-madi'},
+      {dir: 'west', id: '35-amer'},
+    ]
+  },
+  {
+    id: '36-5',
+    coord: [],
+    name: 'W. 36th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-5'},
+      {dir: 'south', id: '35-5'},
+      {dir: 'east', id: '36-madi'},
+      {dir: 'west', id: '36-amer'},
+    ]
+  },
+  {
+    id: '37-5',
+    coord: [],
+    name: 'W. 37th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-5'},
+      {dir: 'south', id: '36-5'},
+      {dir: 'east', id: '37-madi'},
+      {dir: 'west', id: '37-amer'},
+    ]
+  },
+  {
+    id: '38-5',
+    coord: [],
+    name: 'W. 38th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-5'},
+      {dir: 'south', id: '37-5'},
+      {dir: 'east', id: '38-madi'},
+      {dir: 'west', id: '38-amer'},
+    ]
+  },
+  {
+    id: '38-5',
+    coord: [],
+    name: 'W. 38th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-5'},
+      {dir: 'south', id: '37-5'},
+      {dir: 'east', id: '38-madi'},
+      {dir: 'west', id: '38-amer'},
+    ]
+  },
+  {
+    id: '39-5',
+    coord: [],
+    name: 'W. 39th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-5'},
+      {dir: 'south', id: '38-5'},
+      {dir: 'east', id: '39-madi'},
+      {dir: 'west', id: '39-amer'},
+    ]
+  },
+  {
+    id: '40-5',
+    coord: [],
+    name: 'W. 40th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-5'},
+      {dir: 'south', id: '39-5'},
+      {dir: 'east', id: '40-madi'},
+      {dir: 'west', id: '40-amer'},
+    ]
+  },
+  {
+    id: '41-5',
+    coord: [],
+    name: 'W. 41st St. and 5th Ave.',
+    desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-5'},
+      {dir: 'south', id: '40-5'},
+      {dir: 'east', id: '41-madi'},
+      {dir: 'west', id: '41-amer'},
+      {dir: ['public', 'library',], id: 'publ-libr'}
+    ]
+  },
+  {
+    id: '42-5',
+    coord: [],
+    name: 'W. 42nd St. and 5th Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '43-5'},
+      {dir: 'south', id: '41-5'},
+      {dir: 'east', id: '42-madi'},
+      {dir: 'west', id: '42-amer'},
+      {dir: ['Subway'], id: '????'},
+    ]
+  },
+  {
+    id: '43-5',
+    coord: [],
+    name: 'W. 43rd St. and 5th Ave.',
+    desc: `here is the Princeton Club - distinctly a members only institution.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-5'},
+      {dir: 'south', id: '42-5'},
+      {dir: 'east', id: '43-madi'},
+      {dir: 'west', id: '43-amer'},
+      {dir: ['Princeton', 'Health', 'Club',], id: '????'},
+    ]
+  },
+  {
+    id: '44-5',
+    coord: [],
+    name: 'W. 44th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-5'},
+      {dir: 'south', id: '43-5'},
+      {dir: 'east', id: '44-madi'},
+      {dir: 'west', id: '44-amer'},
+    ]
+  },
+  {
+    id: '45-5',
+    coord: [],
+    name: 'W. 45th St. and 5th Ave.',
+    desc: `An ideal spot for a would-be traveler. This block is lined with offices of Qantas, British Airways, Northwest Orient, and Aeroflot.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-5'},
+      {dir: 'south', id: '44-5'},
+      {dir: 'east', id: '45-madi'},
+      {dir: 'west', id: '45-amer'},
+      {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
+    ]
+  },
+  {
+    id: '46-5',
+    coord: [],
+    name: 'W. 46th St. and 5th Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-5'},
+      {dir: 'south', id: '45-5'},
+      {dir: 'east', id: '46-madi'},
+      {dir: 'west', id: '46-amer'},
+    ]
+  },
+  {
+    id: '47-5',
+    coord: [],
+    name: 'W. 47th St. and 5th Ave.',
+    desc: `You pause to consider the hollow hulk of a store that was once called Brentano's`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-5'},
+      {dir: 'south', id: '46-5'},
+      {dir: 'east', id: '47-madi'},
+      {dir: 'west', id: '47-amer'},
+      {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: '????'}
+    ]
+  },
+  {
+    id: 'bren',
+    coord: [],
+    name: '',
+    desc: ``,
+    isStreets: true,
+    exits:[]
+  },
+  {
+    id: '48-5',
+    coord: [],
+    name: 'W. 48th St. and 5th Ave.',
+    desc: `Here is Barnes-Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club .`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-5'},
+      {dir: 'south', id: '47-5'},
+      {dir: 'east', id: '48-madi'},
+      {dir: 'west', id: '48-amer'},
+      {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: '????'},
+      {dir: [`scriber's`, 'scribners'], id: 'scri',coord: [], block: '????'}
+    ]
+  },
+  {
+    id: 'barn-nobl',
+    coord: [],
+    name: '',
+    desc: ``,
+    isStreets: true,
+    exits:[]
+  },
+  {
+    id: 'scri',
+    coord: [],
+    name: '',
+    desc: ``,
+    isStreets: true,
+    exits:[]
+  },
+  {
+    id: '49-5',
+    coord: [],
+    name: 'W. 49th St. and 5th Ave.',
+    desc: `A statue of Atlas bearing the burden of the world reflects on your own mood as you pass the entrance to Rockefeller plaza.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-5'},
+      {dir: 'south', id: '48-5'},
+      {dir: 'east', id: '48-madi'},
+      {dir: 'west', id: '48-amer'},
+      {dir: [`rockefeller`, `plaza`], id: 'rock-plaz', block: '????'}
+    ]
+  },
+  {
+    id: 'rock-plaz',
+    coord: [],
+    name: 'Office Building Lobby',
+    desc: `You walk through the revolving doors, and enter a lobby decorated in marble. A security check-point near the elevators makes you think twice about remaining. 
+          
+          you turn away quickly and leave`,
+    onEnter: () => {
+      pressEnter('49-5')
+    }, 
+    exits:[]
+  },
+  {
+    id: '50-5',
+    coord: [],
+    name: 'W. 50th St. and 5th Ave.',
+    desc: `There is a chock Full-O-Nuts at this intersection.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-5'},
+      {dir: 'south', id: '49-5'},
+      {dir: 'east', id: '50-madi'},
+      {dir: 'west', id: '50-amer'},
+      {dir: ['chock', 'full-o-nuts'], id: 'choc-nuts'}
+    ]
+  },
+  {
+    id: '51-5',
+    coord: [],
+    name: 'W. 51st St. and 5th Ave.',
+    desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
+          `,
+    exits: [
+      {dir: 'north', id: '52-5'},
+      {dir: 'south', id: '50-5'},
+      {dir: 'east', id: '51-madi'},
+      {dir: 'west', id: '51-amer'},
+      {
+                  dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'],
+                  id: '????'}
+    ]
+  },
+  {
+    id: '52-5',
+    coord: [],
+    name: 'W. 52nd St. and 5th Ave.',
+    desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
+
+          There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
+    exits: [
+      {dir: 'north', id: '53-5'},
+      {dir: 'south', id: '51-5'},
+      {dir: 'east', id: '51-madi'},
+      {dir: 'west', id: '51-amer'},
+      {dir: ['21', 'club'], id: '????'}
+    ]
+  },
+  {
+    id: '59-park',
+    coord: [],
+    name: 'E. 59th St. and Park Ave.',
+    desc: `There is a restaurant called Nedicks here.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '60-park'},
+      {dir: 'south', id: '58-park'},
+      {dir: 'east', id: '59-lexi'},
+      {dir: 'west', id: '59-madi'},
+      {dir: ['nedick', 'restaurant', `nedick's`], id: 'nedi'}
+    ]
+  },
+  {
+    id: '58-park',
+    coord: [],
+    name: 'E. 58th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-park'},
+      {dir: 'south', id: '57-park'},
+      {dir: 'east', id: '58-lexi'},
+      {dir: 'west', id: '58-madi'},
+    ]
+  },
+  {
+    id: '57-park',
+    coord: [],
+    name: 'E. 57th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-park'},
+      {dir: 'south', id: '56-park'},
+      {dir: 'east', id: '57-lexi'},
+      {dir: 'west', id: '57-madi'},
+    ]
+  },
+  {
+    id: '56-park',
+    coord: [],
+    name: 'E. 56th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-park'},
+      {dir: 'south', id: '55-park'},
+      {dir: 'east', id: '56-lexi'},
+      {dir: 'west', id: '56-madi'},
+    ]
+  },
+  {
+    id: '55-park',
+    coord: [],
+    name: 'E. 55th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-park'},
+      {dir: 'south', id: '54-park'},
+      {dir: 'east', id: '55-lexi'},
+      {dir: 'west', id: '55-madi'},
+    ]
+  },
+  {
+    id: '54-park',
+    coord: [],
+    name: 'E. 54th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-park'},
+      {dir: 'south', id: '53-park'},
+      {dir: 'east', id: '54-lexi'},
+      {dir: 'west', id: '54-madi'},
+    ]
+  },
+  {
+    id: '53-park',
+    coord: [],
+    name: 'E. 53rd St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-park'},
+      {dir: 'south', id: '52-park'},
+      {dir: 'east', id: '53-lexi'},
+      {dir: 'west', id: '53-madi'},
+    ]
+  },
+  {
+    id: '52-park',
+    coord: [],
+    name: 'E. 52nd St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-park'},
+      {dir: 'south', id: '51-park'},
+      {dir: 'east', id: '52-lexi'},
+      {dir: 'west', id: '52-madi'},
+    ]
+  },
+  {
+    id: '51-park',
+    coord: [],
+    name: 'E. 51st St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '52-park'},
+      {dir: 'south', id: '50-park'},
+      {dir: 'east', id: '51-lexi'},
+      {dir: 'west', id: '51-madi'},
+    ]
+  },
+  {
+    id: '50-park',
+    coord: [],
+    name: 'E. 50th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-park'},
+      {dir: 'south', id: '49-park'},
+      {dir: 'east', id: '50-lexi'},
+      {dir: 'west', id: '50-madi'},
+    ]
+  },
+  {
+    id: '49-park',
+    coord: [],
+    name: 'E. 49th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-park'},
+      {dir: 'south', id: '48-park'},
+      {dir: 'east', id: '49-lexi'},
+      {dir: 'west', id: '49-madi'},
+    ]
+  },
+  {
+    id: '48-park',
+    coord: [],
+    name: 'E. 48th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-park'},
+      {dir: 'south', id: '47-park'},
+      {dir: 'east', id: '48-lexi'},
+      {dir: 'west', id: '48-madi'},
+    ]
+  },
+  {
+    id: '47-park',
+    coord: [],
+    name: 'E. 47th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-park'},
+      {dir: 'south', id: '46-park'},
+      {dir: 'east', id: '47-lexi'},
+      {dir: 'west', id: '47-vand'},
+    ]
+  },
+  {
+    id: '47-vand',
+    coord: [],
+    name: 'E. 47th St. and Vanderbilt Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '46-vand'},
+      {dir: 'east', id: '47-park'},
+      {dir: 'west', id: '47-madi'},
+    ]
+  },
+  {
+    id: '46-vand',
+    coord: [],
+    name: 'E. 46th St. and Vanderbilt Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-vand'},
+      {dir: 'south', id: '45-vand'},
+      {dir: 'east', id: '46-park'},
+      {dir: 'west', id: '46-madi'},
+    ]
+  },
+  {
+    id: '45-vand',
+    coord: [],
+    name: 'E. 45th St. and Vanderbilt Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-vand'},
+      {dir: 'south', id: '44-vand'},
+      {dir: 'east', id: '45-park'},
+      {dir: 'west', id: '45-madi'},
+    ]
+  },
+  {
+    id: '44-vand',
+    coord: [],
+    name: 'E. 44th St. and Vanderbilt Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-vand'},
+      {dir: 'south', id: '43-vand'},
+      {dir: 'east', id: '44-park'},
+      {dir: 'west', id: '44-madi'},
+    ]
+  },
+  {
+    id: '43-vand',
+    coord: [],
+    name: 'E. 43rd St. and Vanderbilt Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-vand'},
+      {dir: 'south', id: '42-vand'},
+      {dir: 'east', id: '43-park'},
+      {dir: 'west', id: '43-madi'},
+    ]
+  },
+  {
+    id: '42-vand',
+    coord: [],
+    name: 'E. 42nd St. and Vanderbilt Ave.',
+    desc: `Mobil Building – Nothing this tall could be made of silver, but you are tempted to think so. It is hard to realize that such a gleam can come from a metal as mundane as stainless steel.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-vand'},
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', id: '42-park'},
+      {dir: 'west', id: '42-madi'},
+      {dir: ['mobil', 'building'], id: '????'}
+    ]
+  },
+  {
+    id: '46-park',
+    coord: [],
+    name: 'E. 46th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-park'},
+      {dir: 'south', id: '45-park'},
+      {dir: 'east', id: '46-depe'},
+      {dir: 'west', id: '46-vand'},
+    ]
+  },
+  {
+    id: '45-park',
+    coord: [],
+    name: 'E. 45th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-park'},
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', id: '45-depe'},
+      {dir: 'west', id: '45-vand'},
+    ]
+  },
+  {
+    id: '42-park',
+    coord: [],
+    name: 'E. 42nd St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '41-park'},
+      {dir: 'east', id: '42-depe'},
+      {dir: 'west', id: '42-vand'},
+    ]
+  },
+  {
+    id: '41-park',
+    coord: [],
+    name: 'E. 41st St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-park'},
+      {dir: 'south', id: '40-park'},
+      {dir: 'east', id: '41-lexi'},
+      {dir: 'west', id: '41-madi'},
+    ]
+  },
+  {
+    id: '41-park',
+    coord: [],
+    name: 'E. 41st St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-park'},
+      {dir: 'south', id: '40-park'},
+      {dir: 'east', id: '41-lexi'},
+      {dir: 'west', id: '41-madi'},
+    ]
+  },
+  {
+    id: '40-park',
+    coord: [],
+    name: 'E. 40th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-park'},
+      {dir: 'south', id: '39-park'},
+      {dir: 'east', id: '40-lexi'},
+      {dir: 'west', id: '40-madi'},
+    ]
+  },
+  {
+    id: '39-park',
+    coord: [],
+    name: 'E. 39th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-park'},
+      {dir: 'south', id: '38-park'},
+      {dir: 'east', id: '39-lexi'},
+      {dir: 'west', id: '39-madi'},
+    ]
+  },
+  {
+    id: '38-park',
+    coord: [],
+    name: 'E. 38th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-park'},
+      {dir: 'south', id: '37-park'},
+      {dir: 'east', id: '38-lexi'},
+      {dir: 'west', id: '38-madi'},
+    ]
+  },
+  {
+    id: '37-park',
+    coord: [],
+    name: 'E. 37th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-park'},
+      {dir: 'south', id: '36-park'},
+      {dir: 'east', id: '37-lexi'},
+      {dir: 'west', id: '37-madi'},
+    ]
+  },
+  {
+    id: '36-park',
+    coord: [],
+    name: 'E. 36th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-park'},
+      {dir: 'south', id: '35-park'},
+      {dir: 'east', id: '36-lexi'},
+      {dir: 'west', id: '36-madi'},
+    ]
+  },
+  {
+    id: '35-park',
+    coord: [],
+    name: 'E. 35th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-park'},
+      {dir: 'south', id: '34-park'},
+      {dir: 'east', id: '35-lexi'},
+      {dir: 'west', id: '35-madi'},
+    ]
+  },
+  {
+    id: '34-park',
+    coord: [],
+    name: 'E. 34th St. and Park Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-park'},
+      {dir: 'south', id: '33-park'},
+      {dir: 'east', id: '34-lexi'},
+      {dir: 'west', id: '34-madi'},
+    ]
+  },
+  {
+    id: '34-lexi',
+    coord: [],
+    name: 'E. 34th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-lexi'},
+      {dir: 'south', id: '33-lexi'},
+      {dir: 'east', id: '34-3'},
+      {dir: 'west', id: '34-park'},
+    ]
+  },
+  {
+    id: '35-lexi',
+    coord: [],
+    name: 'E. 35th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-lexi'},
+      {dir: 'south', id: '34-lexi'},
+      {dir: 'east', id: '35-3'},
+      {dir: 'west', id: '35-park'},
+    ]
+  },
+  {
+    id: '36-lexi',
+    coord: [],
+    name: 'E. 36th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-lexi'},
+      {dir: 'south', id: '35-lexi'},
+      {dir: 'east', id: '36-3'},
+      {dir: 'west', id: '36-park'},
+    ]
+  },
+  {
+    id: '37-lexi',
+    coord: [],
+    name: 'E. 37th St. and Lexington Ave.',
+    desc: `There is a luncheonette on the corner.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-lexi'},
+      {dir: 'south', id: '36-lexi'},
+      {dir: 'east', id: '37-3'},
+      {dir: 'west', id: '37-park'},
+      {dir: ['luncheonette', 'lunch'], id: '????'}
+    ]
+  },
+  {
+    id: '38-lexi',
+    coord: [],
+    name: 'E. 38th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-lexi'},
+      {dir: 'south', id: '37-lexi'},
+      {dir: 'east', id: '38-3'},
+      {dir: 'west', id: '38-park'},
+    ]
+  },
+  {
+    id: '39-lexi',
+    coord: [],
+    name: 'E. 39th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-lexi'},
+      {dir: 'south', id: '38-lexi'},
+      {dir: 'east', id: '39-3'},
+      {dir: 'west', id: '39-park'},
+    ]
+  },
+  {
+    id: '40-lexi',
+    coord: [],
+    name: 'E. 40th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-lexi'},
+      {dir: 'south', id: '39-lexi'},
+      {dir: 'east', id: '40-3'},
+      {dir: 'west', id: '40-park'},
+    ]
+  },
+  {
+    id: '41-lexi',
+    coord: [],
+    name: 'E. 41st St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-lexi'},
+      {dir: 'south', id: '40-lexi'},
+      {dir: 'east', id: '41-3'},
+      {dir: 'west', id: '41-park'},
+    ]
+  },
+  {
+    id: '42-lexi',
+    coord: [],
+    name: 'E. 42nd St. and Lexington Ave.',
+    desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-lexi'},
+      {dir: 'south', id: '41-lexi'},
+      {dir: 'east', id: '42-3'},
+      {dir: 'west', id: '41-depe'},
+    ]
+  },
+  {
+    id: '42-depe',
+    coord: [],
+    name: 'E. 2nd St. and Depew Pl.',
+    desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-depe'},
+      {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
+      {dir: 'east', id: '42-lexi'},
+      {dir: 'west', id: '42-park'},
+      {id: ['grand', 'central', 'station', 'subway'], id: 'gran-cent'}
+    ]
+  },
+  {
+    id: '44-depe',
+    coord: [],
+    name: 'E. 44th St. and Depew Pl.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-depe'},
+      {dir: 'south', id: '42-depe'},
+      {dir: 'east', id: '44-lexi'},
+      {dir: 'west', block: `You can't go that way.`},
+    ]
+  },
+  {
+    id: '45-depe',
+    coord: [],
+    name: 'E. 45th St. and Depew Pl.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-depe'},
+      {dir: 'south', id: '44-depe'},
+      {dir: 'east', id: '45-lexi'},
+      {dir: 'west', id: '45-park'},
+    ]
+  },
+  {
+    id: '46-depe',
+    coord: [],
+    name: 'E. 46th St. and Depew Pl.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '45-depe'},
+      {dir: 'east', id: '46-lexi'},
+      {dir: 'west', id: '46-park'},
+    ]
+  },
+  {
+    id: '43-lexi',
+    coord: [],
+    name: 'E. 43rd St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-lexi'},
+      {dir: 'south', id: '42-lexi'},
+      {dir: 'east', id: '43-3'},
+      {dir: 'west', block: `You can't go that way.`},
+    ]
+  },
+  {
+    id: '44-lexi',
+    coord: [],
+    name: 'E. 44th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-lexi'},
+      {dir: 'south', id: '43-lexi'},
+      {dir: 'east', id: '44-3'},
+      {dir: 'west', id: '44-depe'},
+    ]
+  },
+  {
+    id: '45-lexi',
+    coord: [],
+    name: 'E. 45th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-lexi'},
+      {dir: 'south', id: '44-lexi'},
+      {dir: 'east', id: '45-3'},
+      {dir: 'west', id: '45-depe'},
+    ]
+  },
+  {
+    id: '46-lexi',
+    coord: [],
+    name: 'E. 46th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-lexi'},
+      {dir: 'south', id: '45-lexi'},
+      {dir: 'east', id: '46-3'},
+      {dir: 'west', id: '46-depe'},
+    ]
+  },
+  {
+    id: '47-lexi',
+    coord: [],
+    name: 'E. 47th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-lexi'},
+      {dir: 'south', id: '46-lexi'},
+      {dir: 'east', id: '47-3'},
+      {dir: 'west', id: '47-park'},
+    ]
+  },
+  {
+    id: '48-lexi',
+    coord: [],
+    name: 'E. 48th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-lexi'},
+      {dir: 'south', id: '47-lexi'},
+      {dir: 'east', id: '48-3'},
+      {dir: 'west', id: '48-park'},
+    ]
+  },
+  {
+    id: '49-lexi',
+    coord: [],
+    name: 'E. 49th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-lexi'},
+      {dir: 'south', id: '48-lexi'},
+      {dir: 'east', id: '49-3'},
+      {dir: 'west', id: '49-park'},
+    ]
+  },
+  {
+    id: '50-lexi',
+    coord: [],
+    name: 'E. 50th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-lexi'},
+      {dir: 'south', id: '49-lexi'},
+      {dir: 'east', id: '50-3'},
+      {dir: 'west', id: '50-park'},
+    ]
+  },
+  {
+    id: '51-lexi',
+    coord: [],
+    name: 'E. 51st St. and Lexington Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '52-lexi'},
+      {dir: 'south', id: '50-lexi'},
+      {dir: 'east', id: '51-3'},
+      {dir: 'west', id: '51-park'},
+      {dir: ['subway'], id: '????'}
+    ]
+  },
+  {
+    id: '52-lexi',
+    coord: [],
+    name: 'E. 52nd St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-lexi'},
+      {dir: 'south', id: '51-lexi'},
+      {dir: 'east', id: '52-3'},
+      {dir: 'west', id: '52-park'},
+    ]
+  },
+  {
+    id: '53-lexi',
+    coord: [],
+    name: 'E. 53rd St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-lexi'},
+      {dir: 'south', id: '52-lexi'},
+      {dir: 'east', id: '53-3'},
+      {dir: 'west', id: '53-park'},
+    ]
+  },
+  {
+    id: '54-lexi',
+    coord: [],
+    name: 'E. 54th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-lexi'},
+      {dir: 'south', id: '53-lexi'},
+      {dir: 'east', id: '54-3'},
+      {dir: 'west', id: '54-park'},
+    ]
+  },
+  {
+    id: '55-lexi',
+    coord: [],
+    name: 'E. 55th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-lexi'},
+      {dir: 'south', id: '54-lexi'},
+      {dir: 'east', id: '55-3'},
+      {dir: 'west', id: '55-park'},
+    ]
+  },
+  {
+    id: '56-lexi',
+    coord: [],
+    name: 'E. 56th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-lexi'},
+      {dir: 'south', id: '55-lexi'},
+      {dir: 'east', id: '56-3'},
+      {dir: 'west', id: '56-park'},
+    ]
+  },
+  {
+    id: '57-lexi',
+    coord: [],
+    name: 'E. 57th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-lexi'},
+      {dir: 'south', id: '56-lexi'},
+      {dir: 'east', id: '57-3'},
+      {dir: 'west', id: '57-park'},
+    ]
+  },
+  {
+    id: '58-lexi',
+    coord: [],
+    name: 'E. 58th St. and Lexington Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-lexi'},
+      {dir: 'south', id: '57-lexi'},
+      {dir: 'east', id: '58-3'},
+      {dir: 'west', id: '58-park'},
+    ]
+  },
+  {
+    id: '59-lexi',
+    coord: [],
+    name: 'Central Park S. and Lexington Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '60-lexi'},
+      {dir: 'south', id: '58-lexi'},
+      {dir: 'east', id: '59-3'},
+      {dir: 'west', id: '59-park'},
+    ]
+  },
+  {
+    id: '59-3',
+    coord: [],
+    name: 'Central Park S. and 3rd Ave.',
+    desc: `There is a subway entrance at this corner.`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '60-3'},
+      {dir: 'south', id: '58-3'},
+      {dir: 'east', id: '59-2'},
+      {dir: 'west', id: '59-lexi'},
+    ]
+  },
+  {
+    id: '58-3',
+    coord: [],
+    name: 'E. 58th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-3'},
+      {dir: 'south', id: '57-3'},
+      {dir: 'east', id: '58-2'},
+      {dir: 'west', id: '58-lexi'},
+    ]
+  },
+  {
+    id: '57-3',
+    coord: [],
+    name: 'E. 57th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-3'},
+      {dir: 'south', id: '56-3'},
+      {dir: 'east', id: '57-2'},
+      {dir: 'west', id: '57-lexi'},
+    ]
+  },
+  {
+    id: '56-3',
+    coord: [],
+    name: 'E. 56th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-3'},
+      {dir: 'south', id: '55-3'},
+      {dir: 'east', id: '56-2'},
+      {dir: 'west', id: '56-lexi'},
+    ]
+  },
+  {
+    id: '55-3',
+    coord: [],
+    name: 'E. 55th St. and 3rd Ave.',
+    desc: `There is a luncheonette on the corner`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-3'},
+      {dir: 'south', id: '54-3'},
+      {dir: 'east', id: '55-2'},
+      {dir: 'west', id: '55-lexi'},
+      {dir: ['luncheonette'], id: 'lunc'}
+    ]
+  },
+  {
+    id: '54-3',
+    coord: [],
+    name: 'E. 54th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-3'},
+      {dir: 'south', id: '53-3'},
+      {dir: 'east', id: '54-2'},
+      {dir: 'west', id: '54-lexi'},
+    ]
+  },
+  {
+    id: '53-3',
+    coord: [],
+    name: 'E. 53rd St. and 3rd Ave.',
+    desc: `There is a subway entrance at this corner`,
+    isStreets: true,
+    hasSubway: true,
+    exits: [
+      {dir: 'north', id: '54-3'},
+      {dir: 'south', id: '52-3'},
+      {dir: 'east', id: '53-2'},
+      {dir: 'west', id: '53-lexi'},
+      {dir: ['subway'], id: '????'}
+    ]
+  },
+  {
+    id: '52-3',
+    coord: [],
+    name: 'E. 52nd St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-3'},
+      {dir: 'south', id: '51-3'},
+      {dir: 'east', id: '52-2'},
+      {dir: 'west', id: '52-lexi'},
+    ]
+  },
+  {
+    id: '51-3',
+    coord: [],
+    name: 'E. 51st St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '52-3'},
+      {dir: 'south', id: '50-3'},
+      {dir: 'east', id: '51-2'},
+      {dir: 'west', id: '51-lexi'},
+    ]
+  },
+  {
+    id: '50-3',
+    coord: [],
+    name: 'E. 50th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-3'},
+      {dir: 'south', id: '49-3'},
+      {dir: 'east', id: '50-2'},
+      {dir: 'west', id: '50-lexi'},
+    ]
+  },
+  {
+    id: '49-3',
+    coord: [],
+    name: 'E. 49th St. and 3rd Ave.',
+    desc: `There is a luncheonette on the corner.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-3'},
+      {dir: 'south', id: '48-3'},
+      {dir: 'east', id: '49-2'},
+      {dir: 'west', id: '49-lexi'},
+      {dir: ['luncheonette'], id: 'lunc'}
+    ]
+  },
+  {
+    id: '48-3',
+    coord: [],
+    name: 'E. 48th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-3'},
+      {dir: 'south', id: '47-3'},
+      {dir: 'east', id: '48-2'},
+      {dir: 'west', id: '48-lexi'},
+    ]
+  },
+  {
+    id: '47-3',
+    coord: [],
+    name: 'E. 47th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-3'},
+      {dir: 'south', id: '46-3'},
+      {dir: 'east', id: '47-2'},
+      {dir: 'west', id: '47-lexi'},
+    ]
+  },
+  {
+    id: '46-3',
+    coord: [],
+    name: 'E. 46th St. and 3rd Ave.',
+    desc: `There is a lunchonette on the corner.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-3'},
+      {dir: 'south', id: '45-3'},
+      {dir: 'east', id: '46-2'},
+      {dir: 'west', id: '46-lexi'},
+      {dir: ['luncheonette'], id: 'lunc'}
+    ]
+  },
+  {
+    id: '45-3',
+    coord: [],
+    name: 'E. 45th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-3'},
+      {dir: 'south', id: '44-3'},
+      {dir: 'east', id: '45-2'},
+      {dir: 'west', id: '45-lexi'},
+    ]
+  },
+  {
+    id: '44-3',
+    coord: [],
+    name: 'E. 44th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-3'},
+      {dir: 'south', id: '43-3'},
+      {dir: 'east', id: '44-2'},
+      {dir: 'west', id: '44-lexi'},
+    ]
+  },
+  {
+    id: '43-3',
+    coord: [],
+    name: 'E. 43rd St. and 3rd Ave.',
+    desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-3'},
+      {dir: 'south', id: '42-3'},
+      {dir: 'east', id: '43-2'},
+      {dir: 'west', id: '43-lexi'},
+      {dir: ['ford', 'foundation','building'], id: '????'}
+    ]
+  },
+  {
+    id: '42-3',
+    coord: [],
+    name: 'E. 42nd St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-3'},
+      {dir: 'south', id: '41-3'},
+      {dir: 'east', id: '42-2'},
+      {dir: 'west', id: '42-lexi'},
+    ]
+  },
+  {
+    id: '41-3',
+    coord: [],
+    name: 'E. 41st St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-3'},
+      {dir: 'south', id: '40-3'},
+      {dir: 'east', id: '41-2'},
+      {dir: 'west', id: '41-lexi'},
+    ]
+  },
+  {
+    id: '40-3',
+    coord: [],
+    name: 'E. 40th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-3'},
+      {dir: 'south', id: '39-3'},
+      {dir: 'east', id: '40-2'},
+      {dir: 'west', id: '40-lexi'},
+    ]
+  },
+  {
+    id: '39-3',
+    coord: [],
+    name: 'E. 39th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-3'},
+      {dir: 'south', id: '38-3'},
+      {dir: 'east', id: '39-qout'},
+      {dir: 'west', id: '39-lexi'},
+    ]
+  },
+  {
+    id: '38-3',
+    coord: [],
+    name: 'E. 38th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-3'},
+      {dir: 'south', id: '37-3'},
+      {dir: 'east', id: '38-qout'},
+      {dir: 'west', id: '38-lexi'},
+    ]
+  },
+  {
+    id: '37-3',
+    coord: [],
+    name: 'E. 37th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-3'},
+      {dir: 'south', id: '36-3'},
+      {dir: 'east', id: '37-qout'},
+      {dir: 'west', id: '37-lexi'},
+    ]
+  },
+  {
+    id: '36-3',
+    coord: [],
+    name: 'E. 36th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-3'},
+      {dir: 'south', id: '35-3'},
+      {dir: 'east', id: '36-qout'},
+      {dir: 'west', id: '36-lexi'},
+    ]
+  },
+  {
+    id: '35-3',
+    coord: [],
+    name: 'E. 35th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-3'},
+      {dir: 'south', id: '34-3'},
+      {dir: 'east', id: '35-qout'},
+      {dir: 'west', id: '35-lexi'},
+    ]
+  },
+  {
+    id: '34-3',
+    coord: [],
+    name: 'E. 34th St. and 3rd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-3'},
+      {dir: 'south', id: '33-3'},
+      {dir: 'east', id: '34-qout'},
+      {dir: 'west', id: '34-lexi'},
+    ]
+  },
+  {
+    id: '35-qout',
+    coord: [],
+    name: 'E. 35th St. and Queens Tunnel out',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-qout'},
+      {dir: 'south', id: '34-qout'},
+      {dir: 'east', id: '35-2'},
+      {dir: 'west', id: '35-3'},
+    ]
+  },
+  {
+    id: '36-qout',
+    coord: [],
+    name: 'E. 36th St. and Queens Tunnel out',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-qout'},
+      {dir: 'south', id: '35-qout'},
+      {dir: 'east', id: '36-2'},
+      {dir: 'west', id: '36-3'},
+    ]
+  },
+  {
+    id: '37-qout',
+    coord: [],
+    name: 'E. 36th St. and Queens Tunnel out',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-qout'},
+      {dir: 'south', id: '36-qout'},
+      {dir: 'east', id: '37-2'},
+      {dir: 'west', id: '37-3'},
+    ]
+  },
+  {
+    id: '38-qout',
+    coord: [],
+    name: 'E. 38th St. and Queens Tunnel out',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-qout'},
+      {dir: 'south', id: '37-qout'},
+      {dir: 'east', id: '38-2'},
+      {dir: 'west', id: '38-3'},
+    ]
+  },
+  {
+    id: '39-qout',
+    coord: [],
+    name: 'E. 39th St. and Queens Tunnel out',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '38-qout'},
+      {dir: 'east', id: '39-2'},
+      {dir: 'west', id: '39-3'},
+    ]
+  },
+  {
+    id: '34-2',
+    coord: [],
+    name: 'E. 34th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '35-2'},
+      {dir: 'south', id: '33-2'},
+      {dir: 'east', id: '34-qin'},
+      {dir: 'west', id: '34-qout'},
+    ]
+  },
+  {
+    id: '35-2',
+    coord: [],
+    name: 'E. 35th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', d: '36-2'},
+      {dir: 'south', id: '34-2'},
+      {dir: 'east', id: '35-qin'},
+      {dir: 'west', id: '35-qout'},
+    ]
+  },
+  {
+    id: '36-2',
+    coord: [],
+    name: 'E. 36th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-2'},
+      {dir: 'south', id: '35-2'},
+      {dir: 'east', id: '36-qin'},
+      {dir: 'west', id: '36-qout'},
+    ]
+  },
+  {
+    id: '37-2',
+    coord: [],
+    name: 'E. 37th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-2'},
+      {dir: 'south', id: '36-2'},
+      {dir: 'east', id: '37-qin'},
+      {dir: 'west', id: '37-qout'},
+    ]
+  },
+  {
+    id: '38-2',
+    coord: [],
+    name: 'E. 38th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-2'},
+      {dir: 'south', id: '37-2'},
+      {dir: 'east', id: '38-1'},
+      {dir: 'west', id: '38-qout'},
+    ]
+  },
+  {
+    id: '39-2',
+    coord: [],
+    name: 'E. 39th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-2'},
+      {dir: 'south', id: '38-2'},
+      {dir: 'east', id: '39-tudo'},
+      {dir: 'west', id: '39-qout'},
+    ]
+  },
+  {
+    id: '40-2',
+    coord: [],
+    name: 'E. 40th St. and 2nd Ave.',
+    desc: `There is a luncheonette on the corner`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-2'},
+      {dir: 'south', id: '39-2'},
+      {dir: 'east', id: '40-tudo'},
+      {dir: 'west', id: '40-3'},
+      {dir: ['luncheonette', 'lunch'], id: '????'}
+      ]
+  },
+  {
+    id: '41-2',
+    coord: [],
+    name: 'E. 41st St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-2'},
+      {dir: 'south', id: '40-2'},
+      {dir: 'east', id: '41-tudo'},
+      {dir: 'west', id: '41-3'},
+    ]
+  },
+  {
+    id: '42-2',
+    coord: [],
+    name: 'E. 42nd St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-2'},
+      {dir: 'south', id: '41-2'},
+      {dir: 'east', id: '42-tudo'},
+      {dir: 'west', id: '42-3'},
+    ]
+  },
+  {
+    id: '43-2',
+    coord: [],
+    name: 'E. 43rd St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-2'},
+      {dir: 'south', id: '42-2'},
+      {dir: 'east', id: '43-tudo'},
+      {dir: 'west', id: '43-3'},
+    ]
+  },
+  {
+    id: '44-2',
+    coord: [],
+    name: 'E. 44th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-2'},
+      {dir: 'south', id: '43-2'},
+      {dir: 'east', id: '44-1'},
+      {dir: 'west', id: '44-3'},
+    ]
+  },
+  {
+    id: '45-2',
+    coord: [],
+    name: 'E. 45th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-2'},
+      {dir: 'south', id: '44-2'},
+      {dir: 'east', id: '45-1'},
+      {dir: 'west', id: '45-3'},
+    ]
+  },
+  {
+    id: '46-2',
+    coord: [],
+    name: 'E. 46th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-2'},
+      {dir: 'south', id: '45-2'},
+      {dir: 'east', id: '46-1'},
+      {dir: 'west', id: '46-3'},
+    ]
+  },
+  {
+    id: '47-2',
+    coord: [],
+    name: 'E. 47th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-2'},,
+      {dir: 'south', id: '46-2'},
+      {dir: 'east', id: '47-1'},
+      {dir: 'west', id: '47-3'},
+    ]
+  },
+  {
+    id: '48-2',
+    coord: [],
+    name: 'E. 48th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-2'},,
+      {dir: 'south', id: '47-2'},
+      {dir: 'east', id: '48-1'},
+      {dir: 'west', id: '48-3'},
+    ]
+  },
+  {
+    id: '49-2',
+    coord: [],
+    name: 'E. 49th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-2'},,
+      {dir: 'south', id: '48-2'},
+      {dir: 'east', id: '49-1'},
+      {dir: 'west', id: '49-3'},
+    ]
+  },
+  {
+    id: '50-2',
+    coord: [],
+    name: 'E. 50th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-2'},,
+      {dir: 'south', id: '49-2'},
+      {dir: 'east', id: '50-1'},
+      {dir: 'west', id: '50-3'},
+    ]
+  },
+  {
+    id: '51-2',
+    coord: [],
+    name: 'E. 51st St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '52-2'},,
+      {dir: 'south', id: '50-2'},
+      {dir: 'east', id: '51-1'},
+      {dir: 'west', id: '51-3'},
+    ]
+  },
+  {
+    id: '52-2',
+    coord: [],
+    name: 'E. 52nd St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-2'},,
+      {dir: 'south', id: '51-2'},
+      {dir: 'east', id: '52-1'},
+      {dir: 'west', id: '52-3'},
+    ]
+  },
+  {
+    id: '53-2',
+    coord: [],
+    name: 'E. 53rd St. and 2nd Ave.',
+    desc: `There is a luncheonette on the corner.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-2'},,
+      {dir: 'south', id: '52-2'},
+      {dir: 'east', id: '53-1'},
+      {dir: 'west', id: '53-3'},
+    ]
+  },
+  {
+    id: '54-2',
+    coord: [],
+    name: 'E. 54th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-2'},,
+      {dir: 'south', id: '53-2'},
+      {dir: 'east', id: '54-1'},
+      {dir: 'west', id: '54-3'},
+    ]
+  },
+  {
+    id: '55-2',
+    coord: [],
+    name: 'E. 55th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-2'},,
+      {dir: 'south', id: '54-2'},
+      {dir: 'east', id: '55-1'},
+      {dir: 'west', id: '55-3'},
+    ]
+  },
+  {
+    id: '56-2',
+    coord: [],
+    name: 'E. 56th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-2'},,
+      {dir: 'south', id: '55-2'},
+      {dir: 'east', id: '56-1'},
+      {dir: 'west', id: '56-3'},
+    ]
+  },
+  {
+    id: '57-2',
+    coord: [],
+    name: 'E. 57th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-2'},,
+      {dir: 'south', id: '56-2'},
+      {dir: 'east', id: '57-quen'},
+      {dir: 'west', id: '57-3'},
+    ]
+  },
+  {
+    id: '58-2',
+    coord: [],
+    name: 'E. 58th St. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-2'},,
+      {dir: 'south', id: '57-2'},
+      {dir: 'east', id: '58-quen'},
+      {dir: 'west', id: '58-3'},
+    ]
+  },
+  {
+    id: '59-2',
+    coord: [],
+    name: 'Central Park S. and 2nd Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: 'quee-2'},,
+      {dir: 'south', id: '58-2'},
+      {dir: 'east', id: '59-quen'},
+      {dir: 'west', id: '59-3'},
+    ]
+  },
+  {
+    id: '59-quen',
+    coord: [],
+    name: 'E. 59th St. and Queensboro Bridge In',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '60-quee'},,
+      {dir: 'south', id: '58-quen'},
+      {dir: 'east', id: '59-1'},
+      {dir: 'west', id: '59-2'},
+    ]
+  },
+  {
+    id: '58-quen',
+    coord: [],
+    name: 'E. 58th St. and Queensboro Bridge In',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-quen'},,
+      {dir: 'south', id: '57-quen'},
+      {dir: 'east', id: '58-1'},
+      {dir: 'west', id: '58-2'},
+    ]
+  },
+  {
+    id: '57-quen',
+    coord: [],
+    name: 'E. 57th St. and Queensboro Bridge In',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-quen'},,
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', id: '57-1'},
+      {dir: 'west', id: '57-2'},
+    ]
+  },
+  {
+    id: '59-1',
+    coord: [],
+    name: 'Central Park S. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '60-1'},,
+      {dir: 'south', id: '58-1'},
+      {dir: 'east', id: '59-sutt'},
+      {dir: 'west', id: '59-quen'},
+    ]
+  },
+  {
+    id: '58-1',
+    coord: [],
+    name: 'E. 58th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-1'},,
+      {dir: 'south', id: '57-1'},
+      {dir: 'east', id: '58-sutt'},
+      {dir: 'west', id: '58-quen'},
+    ]
+  },
+  {
+    id: '57-1',
+    coord: [],
+    name: 'E. 57th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-1'},,
+      {dir: 'south', id: '56-1'},
+      {dir: 'east', id: '57-sutt'},
+      {dir: 'west', id: '57-quen'},
+    ]
+  },
+  {
+    id: '56-1',
+    coord: [],
+    name: 'E. 56th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-1'},,
+      {dir: 'south', id: '55-1'},
+      {dir: 'east', id: '56-sutt'},
+      {dir: 'west', id: '56-2'},
+    ]
+  },
+  {
+    id: '55-1',
+    coord: [],
+    name: 'E. 55th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '56-1'},,
+      {dir: 'south', id: '54-1'},
+      {dir: 'east', id: '55-sutt'},
+      {dir: 'west', id: '55-2'},
+    ]
+  },
+  {
+    id: '54-1',
+    coord: [],
+    name: 'E. 54th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-1'},
+      {dir: 'south', id: '53-1'},
+      {dir: 'east', id: '54-sutt'},
+      {dir: 'west', id: '54-2'},
+    ]
+  },
+  {
+    id: '53-1',
+    coord: [],
+    name: 'E. 53rd St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-1'},
+      {dir: 'south', id: '52-1'},
+      {dir: 'east', id: '53-sutt'},
+      {dir: 'west', id: '53-2'},
+    ]
+  },
+  {
+    id: '52-1',
+    coord: [],
+    name: 'E. 52nd St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '53-1'},
+      {dir: 'south', id: '51-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '52-2'},
+    ]
+  },
+  {
+    id: '51-1',
+    coord: [],
+    name: 'E. 51st St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '52-1'},
+      {dir: 'south', id: '50-1'},
+      {dir: 'east', id: '51-beek'},
+      {dir: 'west', id: '51-2'},
+    ]
+  },
+  {
+    id: '50-1',
+    coord: [],
+    name: 'E. 50th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-1'},
+      {dir: 'south', id: '49-1'},
+      {dir: 'east', id: '50-beek'},
+      {dir: 'west', id: '50-2'},
+    ]
+  },
+  {
+    id: '49-1',
+    coord: [],
+    name: 'E. 49th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-1'},
+      {dir: 'south', id: '48-1'},
+      {dir: 'east', id: '49-beek'},
+      {dir: 'west', id: '49-2'},
+    ]
+  },
+  {
+    id: '48-1',
+    coord: [],
+    name: 'E. 48th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '49-1'},
+      {dir: 'south', id: '47-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '48-2'},
+    ]
+  },
+  {
+    id: '47-1',
+    coord: [],
+    name: 'E. 47th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '48-1'},
+      {dir: 'south', id: '46-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '47-2'},
+    ]
+  },
+  {
+    id: '46-1',
+    coord: [],
+    name: 'E. 46th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '47-1'},
+      {dir: 'south', id: '45-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '46-2'},
+    ]
+  },
+  {
+    id: '45-1',
+    coord: [],
+    name: 'E. 45th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '46-1'},
+      {dir: 'south', id: '44-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '45-2'},
+    ]
+  },
+  {
+    id: '44-1',
+    coord: [],
+    name: 'E. 44th St. and 1st Ave.',
+    desc: `The great green glass slab of the UN Secretariat looms over the swooping shape of the General Assembly Building. Flags of member nations snap in the wind that comes in from the East River. For a moment you wish you could be just an ordinary tourist so you could enjoy the vista the way it deserves. But the vista includes twenty assorted policemen, and you get the feeling this is nowhere to loiter.`,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '45-1'},
+      {dir: 'south', id: '43-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '44-2'},
+      {dir: ['UN', 'building', 'secretariat'], block: 'There is no point in going there.',
+          },
+    ]
+  },
+  {
+    id: '42-1',
+    coord: [],
+    name: 'E. 42nd St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '44-1'},
+      {dir: 'south', id: '41-1'},
+      {dir: 'east', id: '42-fdrd'},
+      {dir: 'west', id: '42-tudo'},
+    ]
+  },
+  {
+    id: '41-1',
+    coord: [],
+    name: 'E. 41st St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-1'},
+      {dir: 'south', id: '40-1'},
+      {dir: 'east', id: '41-fdrd'},
+      {dir: 'west', id: '41-tudo'},
+    ]
+  },
+  {
+    id: '40-1',
+    coord: [],
+    name: 'E. 40th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-1'},
+      {dir: 'south', id: '39-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '40-tudo'},
+    ]
+  },
+  {
+    id: '39-1',
+    coord: [],
+    name: 'E. 39th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-1'},
+      {dir: 'south', id: '38-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '39-tudo'},
+    ]
+  },
+  {
+    id: '38-1',
+    coord: [],
+    name: 'E. 38th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '39-1'},
+      {dir: 'south', id: '37-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '38-2'},
+    ]
+  },
+  {
+    id: '37-1',
+    coord: [],
+    name: 'E. 37th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '38-1'},
+      {dir: 'south', id: '36-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '37-qin'},
+    ]
+  },
+  {
+    id: '36-1',
+    coord: [],
+    name: 'E. 36th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '37-1'},
+      {dir: 'south', id: '35-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '36-qin'},
+    ]
+  },
+  {
+    id: '35-1',
+    coord: [],
+    name: 'E. 35th St. and 1st Ave.',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '36-1'},
+      {dir: 'south', id: '34-1'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '35-qin'},
+    ]
+  },
+  {
+    id: '39-tudo',
+    coord: [],
+    name: 'E. 39th St. and Tudor Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '40-tudo'},
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', id: '39-1'},
+      {dir: 'west', id: '39-2'},
+    ]
+  },
+  {
+    id: '40-tudo',
+    coord: [],
+    name: 'E. 40th St. and Tudor Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '41-tudo'},
+      {dir: 'south', id: '39-tudo'},
+      {dir: 'east', id: '40-1'},
+      {dir: 'west', id: '40-2'},
+    ]
+  },
+  {
+    id: '41-tudo',
+    coord: [],
+    name: 'E. 41st St. and Tudor Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '42-tudo'},
+      {dir: 'south', id: '40-tudo'},
+      {dir: 'east', id: '41-1'},
+      {dir: 'west', id: '41-2'},
+    ]
+  },
+  {
+    id: '42-tudo',
+    coord: [],
+    name: 'E. 42nd St. and Tudor Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '43-tudo'},
+      {dir: 'south', id: '41-tudo'},
+      {dir: 'east', id: '42-1'},
+      {dir: 'west', id: '42-2'},
+    ]
+  },
+  {
+    id: '43-tudo',
+    coord: [],
+    name: 'E. 40th St. and Tudor Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '42-tudo'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '43-2'},
+    ]
+  },
+  {
+    id: '41-fdrd',
+    coord: [],
+    name: 'E. 41st St. and FDR Drive',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '????'},
+      {dir: 'south', id: '????'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '41-1'},
+    ]
+  },
+  {
+    id: '42-fdrd',
+    coord: [],
+    name: 'E. 42nd St. and FDR Drive',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '????'},
+      {dir: 'south', id: '41-fdrd'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '42-1'},
+    ]
+  },
+  {
+    id: '49-beek',
+    coord: [],
+    name: 'E. 49th St. and Beekman Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '50-beek'},
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '49-1'},
+    ]
+  },
+  {
+    id: '50-beek',
+    coord: [],
+    name: 'E. 50th St. and Beekman Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '51-beek'},
+      {dir: 'south', id: '49-beek'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '50-1'},
+    ]
+  },
+  {
+    id: '51-beek',
+    coord: [],
+    name: 'E. 51st St. and Beekman Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', block: `You can't go that way.`},
+      {dir: 'south', id: '50-beek'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '51-1'},
+    ]
+  },
+  {
+    id: '53-sutt',
+    coord: [],
+    name: 'E. 53rd St. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '54-sutt'},
+      {dir: 'south', block: `You can't go that way.`},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '53-1'},
+    ]
+  },
+  {
+    id: '54-sutt',
+    coord: [],
+    name: 'E. 54th St. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '55-sutt'},
+      {dir: 'south', id: '53-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '54-1'},
+    ]
+  },
+  {
+    id: '55-sutt',
+    coord: [],
+    name: 'E. 55th St. and Sutton Place',
+    desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
+    exits: [
+      {dir: 'north', id: '56-sutt'},
+      {dir: 'south', id: '54-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '55-1'},
+      {dir: ['office', 'building', 'drawers', 'drawer'], block: `Finally you have to ask one of the attendants of the shrine, who stands behind the marble altar to INFORMATION. He gives you a fishy look and tells you to keep moving.`}
+      ]
+  },
+  {
+    id: '56-sutt',
+    coord: [],
+    name: 'E. 56th St. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '57-sutt'},
+      {dir: 'south', id: '55-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '56-1'},
+    ]
+  },
+  {
+    id: '57-sutt',
+    coord: [],
+    name: 'E. 57th St. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '58-sutt'},
+      {dir: 'south', id: '56-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '57-1'},
+    ]
+  },
+  {
+    id: '58-sutt',
+    coord: [],
+    name: 'E. 58th St. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '59-sutt'},
+      {dir: 'south', id: '57-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '58-1'},
+    ]
+  },
+  {
+    id: '59-sutt',
+    coord: [],
+    name: 'Central Park S. and Sutton Place',
+    desc: ``,
+    isStreets: true,
+    exits: [
+      {dir: 'north', id: '????'},
+      {dir: 'south', id: '58-sutt'},
+      {dir: 'east', block: `You can't go that way.`},
+      {dir: 'west', id: '59-1'},
+    ]
+  },
   ]
 }

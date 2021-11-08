@@ -103,6 +103,7 @@ const targetDiv = document.getElementById("map");
     targetDiv.style.display = "none";
   } else {
     targetDiv.style.display = "block";
+    map.invalidateSize();
   }
 };
 
