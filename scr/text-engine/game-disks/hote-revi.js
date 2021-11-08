@@ -123,7 +123,7 @@ const hotereviDisk = {
                     desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for thos ewith special needs. the list of texxts commended to 'those in doubt and uncertainty' has been crossed out, and above the deleted citations of chapter and verse someone had written '**John 1**'.
                     
                     If you remember **John 1** rightly, it seems oddly irrevlevant to the needs of those in doubt. But never mind.`,
-                    passage: `You open the Bible to the beginning of the Gospel according to St. John. The text is what you remembered it to be -- "In the beginning was the Word, and the Word was ***with God***, and the Word was God.'`, //displayed on read function
+                    passage: `You open the Bible to the beginning of the Gospel according to St. John. The text is what you remembered it to be -- "In the beginning was the Word, and the Word was ***with God***, and the Word was God."`, //displayed on read function
                     isTakeable: true,
                     onDrop: () => {
                         println(`You shouldn't drop that. It might be important.`);
@@ -220,7 +220,7 @@ const hotereviDisk = {
                 {
                     itemId: 'roomphone',
                     name: ['phone', 'telephone'],
-                    desc: `On the beside tabel there is a dial phone that rests on top of a shiny cardboard brochure that bears the message: "Welcome to ***The Sunderland Hotel***-- Your Gateway to the Wonderland of Manhattan!"`,
+                    desc: `On the beside table there is a dial phone that rests on top of a shiny cardboard brochure that bears the message: "Welcome to ***The Sunderland Hotel***-- Your Gateway to the Wonderland of Manhattan!"`,
                     onUse: () => {
                         println(`To use the phone, type DIAL followed by the hotel number you wish to dial.`);
                     }

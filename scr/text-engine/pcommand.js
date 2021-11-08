@@ -632,27 +632,21 @@ if(getItemInInventory('address book')){
   if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
     const num = number;
     let id;
-   
-  
     for(let i = 0; i < numbers.length; i++){
       if(numbers[i].num === num){
         id = numbers[i].roomid;
       } 
     }
-
     if(!id){
       println(`This number doesn't exist.`)
     }
-
     if(id){
       enterRoom(id);
     }
-
   } else {
     println(`With what phone?`);
   };
 }
-
 
 
 
@@ -905,6 +899,26 @@ let close = (itemToOpen) => {
   }
 }
 
+// read command 
+let read = (item) => {
+  if(getItemInInventory(item)){
+    const invItem = getItemInInventory(item);
+    if(invItem.passage){
+      println(invItem.passage);
+    } else {
+      println(`You can't read that.`)
+    }
+  }
+  const roomItem = getItemInRoom(item, disk.roomId);
+  if(roomItem.passage){
+    println(roomItem.passage);
+  }
+  if(!roomItem.passage){
+    println(`There's nothing to read.`);
+  }
+}
+
+
 function teleport (place) {
   enterRoom(place);
   println(`
@@ -1011,6 +1025,7 @@ let commands = [
     devcom4: x => setFatigue(x),
     wear: wear,
     remove: remove,
+    read: read,
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
