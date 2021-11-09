@@ -259,7 +259,7 @@ let talkToOrAboutX = (preposition, x) => {
     // initialize the chat log if there isn't one yet
     character.chatLog = character.chatLog || [];
     disk.conversant = character;
-    listTopics(topics);
+    //listTopics(topics);
   } else if (preposition === 'about') {
     if (!disk.conversant) {
       println(`You need to be in a conversation to talk about something.`);
@@ -296,7 +296,7 @@ let talkToOrAboutX = (preposition, x) => {
         topics = typeof character.topics === 'function'
           ? character.topics({println, room})
           : character.topics;
-        listTopics(character);
+        //listTopics(character);
       }
     } else {
       println(`That person is no longer available for conversation.`);
@@ -306,36 +306,15 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
-//ask character about topic function
-// const askXAboutY = (x, y) => {
-//   const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-//   const topics = character.topics;
-//   if ( x === character.name && y === topics.id ){
-//     println(topics.id.desc)
-//   }
-// };
 
-const askXAboutY = (x, y) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  disk.conversant = character;
-  console.log(disk.conversant);
-  talkToOrAboutX('about', y);
+//ask function
+const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+  disk.conversant = character; //set the character to who you're talking to
+  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+  talkToOrAboutX('about', y); //execute asking them the thing
 };
 
-function askTesting(xCharacter) {
-  const character = getCharacter(xCharacter, getCharactersInRoom(disk.roomId));
-  disk.conversant = character;
-  console.log(character);
-  console.log(disk.conversant);
-}
-
-
-//completely omit the talk function, only have ask
-//chracters set up so that on ask something happens, keywords are then ran through the characters list of conversation topics and if one is hit it prints that desc of that topic 
-//maybe not on ask, that makes it seem too much like an onblock. have it be an input that if it is only "ask" then line prints of 'you can ask someone about a topic'. have topic be stylized how we want it too so it matches up with the stylization of the keywords
-//function then would be ask character about topic, parses if character is in room, if not it says character is not available, if they are then it parses the topic against the characters topic list, if true it prints the topic desc
-//keywords are to be highlighted like how we imagined. as that runs along side the already established get keyword functionality
-//
 
 
 // list takeable items in room
@@ -1075,7 +1054,7 @@ let commands = [
     turn: args => turnOffOn(args[0], args[1])
   },
   {
-    ask: args => askXAboutY(args[0], args[2]),
+    ask: askXAboutY,
   },
 ];
 
