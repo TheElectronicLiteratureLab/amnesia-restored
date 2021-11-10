@@ -29,16 +29,19 @@
     
     <div id="container-o">
       <div id="currroom">CURRENT ROOM</div>
-      <div id="output"></div>
-      <!-- Player input -->
-      <div class="input"><span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
-
+      <div id="playerio">
+        <div id="map"></div>
+        <div id="output"></div>
+        <!-- Player input -->
+        <div class="input"><span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
+      </div>
+      
       <div class="statusbar">
-        <div class="nested" id="hunger">
+        <div id="hunger">
           <div>img</div>
           <div>HUNGER</div>
         </div>
-        <div class="nested" id="fatigue">
+        <div id="fatigue">
           <div>img</div>
           <div>FATIGUE</div>
         </div>
@@ -47,8 +50,10 @@
       </div>
     </div>
     
-    <div class="nested" id="menubutton">
-      <button>MENU</button>
+    <div class="sidebar" id="menubutton">
+      <button>SAVE</button>
+      <button>SETTINGS</button>
+      <button>HELP</button>
     </div>
 
     <div id="address">ADDRESS</div>
@@ -69,7 +74,7 @@
       </div>
     </div>
 
-    <div id="map" style="width: 70%; height: 50%; background: #32302f;"></div>
+    
   </div>
   
   
@@ -111,6 +116,8 @@
 $("#mapbutton").click(function() {
   $("#map").toggle();
   map.invalidateSize();
+  $("#output").toggle();
+  $(".input").toggle();
 })
 
 //INVENTORY BUTTON

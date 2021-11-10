@@ -8,7 +8,7 @@ let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
-  println(`> ${input}`);
+  println(`${input}`, 'noborder');
   prevInput = input;
   console.log(inputs);
   const val = input.toLowerCase();

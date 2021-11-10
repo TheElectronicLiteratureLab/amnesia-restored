@@ -1195,7 +1195,6 @@ const amnesiaRestored = {
               dir:['thing'],
               id:'nigh-9',
           },
-          
       ],
     },
     {

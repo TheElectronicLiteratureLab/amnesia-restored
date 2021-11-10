@@ -1,6 +1,6 @@
 // render output, with optional class
 // (string | array | fn -> string) -> nothing
-let println = (line, className) => {
+let println = (line, className = "border") => {
   // bail if string is null or undefined
   if (!line) {
     return;
