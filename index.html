@@ -30,7 +30,7 @@
     <div id="container-o">
       <div id="currroom">CURRENT ROOM</div>
       <div id="playerio">
-        <div id="map"></div>
+        <div id="map" style="background-color: #32302f"></div>
         <div id="output"></div>
         <!-- Player input -->
         <div class="input"><span class="ml-2" id="arrow">> </span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
@@ -87,8 +87,8 @@
   L.tileLayer('map/{z}/{x}/{y}.png', {
     continuousWorld: false,
     noWrap: true,	
-    minZoom: 1,
-    maxZoom: 5,
+    minZoom: 2,
+    maxZoom: 6,
   }).addTo(map);
 //Coordinate Finder
   var marker = L.marker([0, 0], {
