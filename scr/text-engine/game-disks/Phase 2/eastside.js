@@ -1270,7 +1270,7 @@ const eastside = {
       ],
     }, 
     {
-      id: '60-Park',
+      id: '60-park',
       name: 'E. 60th and Park Ave',
       desc: `Bloomingdales!`,         // Bloomingdales!
       isStreet: true,
