@@ -234,6 +234,19 @@ button {
   display: none;
 }
 
+#xStreetIndex {
+  border: 5px solid grey;
+  background: #f2ebdf;
+  position: absolute;
+  top: 165px;
+  left: 160px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  height: 500px;
+  display: none;
+}
+
 /*Classes meant for ingame println function*/
 .enter {
   text-align: center;
