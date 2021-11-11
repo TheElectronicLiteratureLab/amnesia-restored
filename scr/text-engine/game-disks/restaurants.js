@@ -37,8 +37,8 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "tuna"){
-          orderTotal + 2.75;
-          energyTotal + 28;
+          orderTotal =+ 2.75;
+          energyTotal =+ 28;
           println('One charlie is ready to go. \n Anything else?');
           
         }else if(prevInput ==='ham'){
