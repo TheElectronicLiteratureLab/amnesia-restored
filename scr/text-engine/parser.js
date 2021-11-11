@@ -13,7 +13,7 @@ let applyInput = (input) => {
   console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
-  
+  console.log(playerMarker.getLatLng());
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
     if (cmd) {

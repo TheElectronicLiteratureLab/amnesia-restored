@@ -1,5 +1,6 @@
 const streets = {
-  roomId: 'hous-broa',
+  roomId: '110-rive',
+  currPos: [],
   rooms: [
 
             /*********************/
@@ -700,7 +701,7 @@ const streets = {
     /**************/
     {
       id: 'hous-broa',
-      coord: [],
+      coord: [-54.735, 3.091],
       name: 'W. Houston St. and Broadway',
       desc: '',
       isStreet: true,
@@ -23665,7 +23666,7 @@ const streets = {
     //Riverside Drive
     {
       id: '110-rive',
-      coord: [],
+      coord: [80.909, -53.202],
       name: 'W. 110th St. and Riverside Dr.',
       desc: '',
       isStreet: true,
@@ -23678,7 +23679,7 @@ const streets = {
     },
     {
       id: '109-rive',
-      coord: [],
+      coord: [80.597, -53.202],
       name: 'W. 109th St. and Riverside Dr.',
       desc: '',
       isStreet: true,
@@ -23691,7 +23692,7 @@ const streets = {
     },
     {
       id: '108-rive',
-      coord: [],
+      coord: [80.299, -53.202],
       name: 'W. 108th St. and Riverside Dr.',
       desc: '',
       isStreet: true,

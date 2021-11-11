@@ -127,8 +127,6 @@ function goDir(dir) {
     return;
   }
 
-  
-
   if (nextRoom.block) {
     println(nextRoom.block);
     return;

@@ -81,25 +81,23 @@
   <script type="text/javascript">
 //Creating the Map
   //var map = L.map('map').setView([0, 0], 0);
-  var map = L.map('map', {center:[29.0, 76.776695], zoom:2});
+  var map = L.map('map', {center:[0, 0], zoom: 4, attributionControl: false});
   map.invalidateSize();
   setTimeout(function(){ map.invalidateSize(true)}, 300);
   L.tileLayer('map/{z}/{x}/{y}.png', {
     continuousWorld: false,
     noWrap: true,	
-    minZoom: 2,
+    minZoom: 3,
     maxZoom: 6,
   }).addTo(map);
 //Coordinate Finder
-  var marker = L.marker([0, 0], {
-    draggable: true,
-  }).addTo(map);
+  var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
   marker.bindPopup('LatLng Marker').openPopup();
   marker.on('dragend', function(e) {
     marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
   });
-//Markers
 
+//Markers are located in a separate JavaScript file for more modularity, cleanliness, and readability.
 
 //MAP BUTTON
 /*const targetDiv = document.getElementById("map");
@@ -114,10 +112,11 @@
 };*/
 
 $("#mapbutton").click(function() {
-  $("#map").toggle();
+  $("#map").slideToggle();
   map.invalidateSize();
-  $("#output").toggle();
-  $(".input").toggle();
+  $("#output").slideToggle();
+  $(".input").slideToggle();
+  setTimeout(function(){ map.invalidateSize()}, 400);
 })
 
 //INVENTORY BUTTON
@@ -153,9 +152,11 @@ const addrDiv = document.getElementById("address");
   <script src="scr/text-engine/internalfunc.js"></script>
   <script src='scr/text-engine/playercharacter.js'></script>
 
+
   <!-- Include game data ('disk') -->
   <script src="scr/text-engine/game-disks/streets.js"></script>
 
 <!-- Load disk into engine -->
 <script>loadDisk(streets);</script>
+<script src='scr/text-engine/markers.js'></script>
 </body>
