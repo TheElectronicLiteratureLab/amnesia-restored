@@ -1,6 +1,6 @@
 // render output, with optional class
 // (string | array | fn -> string) -> nothing
-let println = (line, className) => {
+let println = (line, className = "border") => {
   // bail if string is null or undefined
   if (!line) {
     return;
@@ -72,6 +72,7 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 // string -> nothing
 let enterRoom = (id) => {
   const room = getRoom(id);
+  const lastRoom = getRoom(disk.roomId);//get the id of the current room before transitioning. 
 
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
@@ -92,7 +93,7 @@ let enterRoom = (id) => {
   // room.visits++;
 
   disk.roomId = id;
-  console.log(room.exits);
+  disk.currPos = room.coord;
 
   if (typeof room.onEnter === 'function') {
     room.onEnter({disk, println, getRoom, enterRoom});
@@ -102,13 +103,23 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
+  const room2 = getRoom(disk.roomId); //get new room on entry
+  if ( room2.isStreets && !tenementSpawned ) { //if the new room is a street room and the tenement hasnt spawned yet
+    spawnTenement(); //try and spawn the tenement
+  }
+
 };
+
+
 let response = (e) => {
   const ENTER = 13;
 
   if (e.keyCode === ENTER) {
     applyInput();
   }
+
+  
+
 };
 
 
