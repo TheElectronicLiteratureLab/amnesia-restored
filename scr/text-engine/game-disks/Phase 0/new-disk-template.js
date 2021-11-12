@@ -4,12 +4,65 @@ const testDisk = {
   roomId: 'starting', 
   rooms: [
     {
-
-    }
+      isStreets: true,
+      coord: [],
+      hasSubway: true,
+      id: 'starting',
+      name: 'W. 54th St, and 5th Ave.',
+      desc: `There is a subway entrance at this corner.`,
+      exits: [
+          {
+            dir: ['north'],
+            id: '55-5',
+          },
+          {
+            dir: ['south'],
+            id: '53-5'
+          },
+          {
+            dir: ['east'],
+            id: '54-madi',
+          },
+          {
+            dir: ['west'],
+            id: '54-amer'
+          }, 
+          {
+            dir: ['subway'],
+            id: '????',
+          },
+      ]
+  },
+  {
+    isStreets: true,
+    coord: [],
+    id: '36-3',
+    name: 'E. 36th St. and 3rd Ave.',
+    desc: ``,
+    exits: [
+        {
+          dir: ['north'],
+          id: '37-3',
+        },
+        {
+          dir: ['south'],
+          id: '35-3',
+        },
+        {
+          dir: ['east'],
+          id: '36-qout',
+        },
+        {
+          dir: ['west'],
+          id: '36-lexi',
+        },
+    ]
+},
   ],
   Characters: [
     {
       name: 'Hogan',
+      roomId: 'starting',
       topics: [
         {
           id: 'javascript',
@@ -27,6 +80,7 @@ const testDisk = {
     },
     {
       name: 'Ahria',
+      roomId: 'starting',
       topics: [
         {
           id: 'javascript',
