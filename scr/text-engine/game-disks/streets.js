@@ -21052,21 +21052,6 @@ const streets = {
       },
     },
     {
-      id: '59-5',
-      coord: [],
-      name: 'Central Park S. and 5th Ave.',
-      desc: `There is a subway entrance at this corner.`,
-      isStreet: true,
-      hasSubway: true,
-      exits: [
-        {dir: 'north', id: '60-5'},
-        {dir: 'south', id: '58-5'},
-        {dir: 'east', id: '59-madi'},
-        {dir: 'west', id: '59-wdri'},
-        {dir: ['subway'], id: '???'}
-      ]
-    },
-    {
       id: '59-madi',
       coord: [],
       name: 'E. 59th St. and Madison Ave.',
@@ -29138,7 +29123,7 @@ const streets = {
     /* Eastside */ 
    /************/
     {
-      id: 'cpks-5',
+      id: '59-5',
       coord: [],
       name: 'Central Park S. and 5th Ave',
       desc: `There is a subway entrance at this corner.`,
