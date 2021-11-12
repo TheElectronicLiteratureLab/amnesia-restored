@@ -945,11 +945,27 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
   }
 };
 
+//x street indexer encounter functionality
+function xStreetEvent () {
+  let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
+  let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
+
+
+  console.log(aveNameNumber);
+  console.log(xStreetName[aveNameNumber]);
+  console.log(addressNumber);
+
+  if (addressNumber >= 0 && addressNumber <= 199) {
+    
+  }
+  
+};
+
 function teleport (place) {
   enterRoom(place);
   println(`
   Player Teleported to ${place}`);
-}
+};
 
 function setMoney(amount) {
   playMon = amount;
