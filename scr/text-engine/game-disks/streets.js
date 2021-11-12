@@ -1,5 +1,5 @@
 const streets = {
-  roomId: '110-rive',
+  roomId: '53-5',
   currPos: [],
   rooms: [
 
@@ -20964,6 +20964,9 @@ const streets = {
       name: 'W. 53rd St, and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '54-5'},
         {dir: 'south', id: '52-5'},
@@ -21032,6 +21035,9 @@ const streets = {
       name: 'W. 58th St. and 5th Ave.',
       desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
       isStreet: true,
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '59-5'},
         {dir: 'south', id: '57-5'},

@@ -917,11 +917,55 @@ let read = (item) => {
 }
 
 
+//x street indexer functionality
+const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
+
+xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+  const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
+  const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
+  const streetNumber = aStreetNumber.value; //get the value of the street number drop down
+  const crossStreet = bCrossStreet.value; //get the value of the street name drop down
+
+  let cOutput = document.getElementById('result'); //reference the result
+  let y; //variable for index
+
+//iterate through the street name array and set a variable to the proper index number 
+  for (let j = 0, k = xStreetName.length; j < k; j++) { 
+    if (crossStreet === xStreetName[j]) {
+      y = j;
+    }
+  }
+
+//iterate through the street number array and use the variable above to get the proper value. 
+  for(let i = 0, l = xStreetNumber.length; i < l; i++) {
+    if (streetNumber === xStreetNumber[i].name) {
+      cOutput.value = xStreetNumber[i].value[y];
+
+    }
+  }
+};
+
+//x street indexer encounter functionality
+function xStreetEvent () {
+  let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
+  let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
+
+
+  console.log(aveNameNumber);
+  console.log(xStreetName[aveNameNumber]);
+  console.log(addressNumber);
+
+  if (addressNumber >= 0 && addressNumber <= 199) {
+    
+  }
+  
+};
+
 function teleport (place) {
   enterRoom(place);
   println(`
   Player Teleported to ${place}`);
-}
+};
 
 function setMoney(amount) {
   playMon = amount;
@@ -944,15 +988,11 @@ function setFatigue(amount) {
   );
 };
 
+
+
 // jump command
 
 
-
-const chracterGet = (x) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  console.log(character);
-  
-}
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
