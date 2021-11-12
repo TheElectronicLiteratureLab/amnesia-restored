@@ -73,7 +73,7 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 let enterRoom = (id) => {
   const room = getRoom(id);
 
-  console.log(room.coord);
+  //console.log(room.coord);
 
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);

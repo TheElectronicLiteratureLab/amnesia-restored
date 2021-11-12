@@ -1,5 +1,5 @@
 const eastside = {
-  roomId:: 'cent-s5',   // Starting the node with Central Park S. and 5th Ave.
+  roomId:'cent-s5',   // Starting the node with Central Park S. and 5th Ave.
   room: [
     {
       id: 'cent-s5',
@@ -865,7 +865,7 @@ const eastside = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '76-madi'},
+        {dir: 'north', id: '77-madi'},
         {dir: 'south', id: '75-madi'},
         {dir: 'east', id: '76-park'},
         {dir: 'west', id: '76-5'},
