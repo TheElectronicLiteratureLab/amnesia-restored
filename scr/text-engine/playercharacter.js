@@ -31,6 +31,7 @@ const playerc ={
 
 };
 
+//x street indexer stuff
 const xStreetNumber = [
   {name: '0-199', value: [104,29,23,16,46,67,14,84,110,121,82,12,90,10,65] },
   {name: '200-299', value: [68,30,89,32,106,58,47,40,36,98,81,80,107,95,122] }, 
