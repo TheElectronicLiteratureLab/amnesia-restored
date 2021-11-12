@@ -59,11 +59,11 @@
 
     <div id="address">ADDRESS</div>
 
-    <div id='xStreetIndex'>X STREET INDEXER
+    <div id='xStreetIndex'>
       <form>
         <label for="x-Streets">Choose A Number and Cross Street</label>
         <select name="Street Number" id="streetNumber">
-          <option value="0-199">0-199</option>
+          <option value='0-199'>0-199</option>
           <option value="200-299">200-299</option>
           <option value="300-399">300-399</option>
           <option value="400-499">400-499</option>
@@ -96,11 +96,11 @@
         </select>
 
         <select name="Cross Street" id="crossStreet">
-          <option value="Riverside">Riverside</option>
-          <option value="Park">Park</option>
-          <option value="Madison">Madison</option>
-          <option value="Lexington">Lexington</option>
-          <option value="Broadway">Broadway</option>
+          <option value="riverside">Riverside</option>
+          <option value="park">Park</option>
+          <option value="madison">Madison</option>
+          <option value="lexington">Lexington</option>
+          <option value="broadway">Broadway</option>
           <option value="10th">10th</option>
           <option value="9th">9th</option>
           <option value="8th">8th</option>
@@ -112,8 +112,13 @@
           <option value="2nd">2nd</option>
           <option value="1st">1st</option>
         </select>
-        <input type="submit" value="Submit">
+
+        <input type="text" id="result">
+
+        <!-- <input type="submit" value="Submit"> -->
       </form>
+
+      <button id="submitButton">Go!</button>
       
     </div>
 
@@ -204,7 +209,7 @@ const addrDiv = document.getElementById("address");
 };
 
 
-//x street indexer button
+//x street indexer open button
 const xStreetDiv = document.getElementById("xStreetIndex");
   const xStreetBtn = document.getElementById("xstreetbutton");
   xStreetBtn.onclick = function () {
@@ -214,6 +219,9 @@ const xStreetDiv = document.getElementById("xStreetIndex");
     xStreetDiv.style.display = "block";
   }
 };
+
+//x street indexer submit button
+
 
 
 </script>
