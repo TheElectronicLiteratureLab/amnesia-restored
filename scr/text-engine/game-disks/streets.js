@@ -29139,7 +29139,7 @@ const streets = {
     {
       id: '60-5',
       coord: [],
-      name: 'E. 60th and 5th Ave',
+      name: 'E. 60th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29204,7 +29204,9 @@ const streets = {
     {
       id: '65-5',
       coord: [],
-      name: 'E. 65th and 5th Ave',
+      name: 'E. 65th St. and 5th Ave.',
+      desc: `Here you see the Temple Emanuel. It resembles an elaborately carved chunk of fog, though closer examination shows it to be of grey limestone.`,
+      isStreet: true,
       exits: [
         {dir: 'north', id: '66-5'},
         {dir: 'east', id: '65-madi'},
@@ -29410,7 +29412,7 @@ const streets = {
     {
       id: '81-5',
       coord: [],
-      name: 'E. 81st and 5th Ave',
+      name: 'E. 81st St. and 5th Ave.',
       desc: `There's the Metropolitan Museum, three long city blocks of Greek-styled marble sheathing a few thousand years of pots, paintings, armor, and assorted gew-gaws.`,
       isStreet: true,
       onEnter : () =>{
@@ -34507,10 +34509,6 @@ const streets = {
     }, 
     {
       id: '102-fdrd',
-      coord: [],
-      name: 'E. 102nd St. and FDR Drive',
-      desc: ``,
-      isStreet: true,
       exits: [
         {dir: 'north', id: '105-fdrd'},
         {dir: 'south', id: '100-fdrd'},
