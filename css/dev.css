@@ -218,6 +218,20 @@ button {
   display: none;
 }
 
+#dialPad {
+  display: none;
+  position: absolute;
+  left: 100vh;
+  bottom: 35vh;
+  width: 25%;
+  margin: 0px;
+}
+
+#dialKeys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 /*Classes meant for ingame println function*/
 .enter {
   text-align: center;

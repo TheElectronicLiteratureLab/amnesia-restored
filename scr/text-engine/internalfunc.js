@@ -273,3 +273,75 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
+
+let dialNum = (num) => {
+  println('dialing ' + num);
+  reenableInput();
+  /*const room = getRoom(disk.roomId);
+  let numbers = [
+      { num: '3', roomid: 'phone-1'}, // front desk
+      { num: '4', roomid: 'phone-2'}, // room service
+      { num: '5', roomid: 'phone-3'}, // valet
+      { num: '6', roomid: 'phone-4'}, // bellman
+      { num: '7', roomid: 'phone-5'}, // security
+      { num: '8-', roomid: 'phone-6'}, // other rooms
+      { num: '9-', roomid: 'phone-7'}, // outside calls
+      { num: '911', roomid: 'phone-8'} // 911
+  ];
+
+
+// if brochure === in inventory push numbers
+  if(getItemInInventory('brochure')){
+    numbers.push(
+      { num: '555-1188', roomid: 'phone-9'}, // Rod & Harpmeister Funeral Service
+      { num: '555-7656', roomid: 'phone-10'}, // Rolo's Pizzeria
+      { num: '555-7673', roomid: 'phone-11'} // Koch's Florists
+    );
+  }
+
+
+// if address book === in inventory push numbers
+if(getItemInInventory('address book')){
+  numbers.push(
+    { num: '555-1314', roomid: 'phone-12'}, // JA
+    { num: '555-1315', roomid: 'phone-13'}, // Wit's End
+    { num: '555-2712', roomid: 'phone-14'}, // FBI
+    { num: '555-2259', roomid: 'phone-15'}, // E.H.
+    { num: '555-2577', roomid: 'phone-16'}, // Lila T.
+    { num: '555-2783', roomid: 'phone-17'}, // Sue G.
+    { num: '555-4312', roomid: 'phone-18'}, // Chelsea H.
+    { num: '555-4365', roomid: 'phone-19'}, // Sex
+    { num: '555-4685', roomid: 'phone-20'}, // Kvetch
+    { num: '555-5436', roomid: 'phone-21'}, // AA
+    { num: '555-5643', roomid: 'phone-22'}, // Interlude
+    { num: '555-6200', roomid: 'phone-23'}, // TTTT
+    { num: '555-8422', roomid: 'phone-24'}, // Drugs
+    { num: '555-8749', roomid: 'phone-25'}, // R + J
+    { num: '555-8876', roomid: 'phone-26'}, // J.L.
+    { num: '571-7171', roomid: 'phone-27'}, // Soft
+    { num: '976-1212', roomid: 'phone-28'} // F
+  );
+}
+
+// after Bette's phonecall with Denise's Number push number
+// { num: '555-5413', roomid: 'phone-29'}
+
+  // checks to see if you're in a room with a phone
+  if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
+    const num = number;
+    let id;
+    for(let i = 0; i < numbers.length; i++){
+      if(numbers[i].num === num){
+        id = numbers[i].roomid;
+      } 
+    }
+    if(!id){
+      println(`This number doesn't exist.`)
+    }
+    if(id){
+      enterRoom(id);
+    }
+  } else {
+    println(`With what phone?`);
+  };*/
+}

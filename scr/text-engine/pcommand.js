@@ -577,8 +577,89 @@ let turnOffOn = (toggle, itemId) => {
   }
 }
 
+let dial = () => {
+  const firstDial = false;
+  //let num = document.getElementById("input").value;
+  document.getElementById("dialPad").style.display = "block";
+  document.querySelector('input').disabled = true;
+
+  let number;
+  window.addEventListener("keydown", checkKeyPressed, false);
+
+  function checkKeyPressed(evt){
+      // number keys 0-9
+      if(evt.keyCode === 48){
+          number = 0;
+          numdialKey();
+      }
+      if(evt.keyCode === 49){
+          number = 1;
+          numdialKey();
+      }
+      if(evt.keyCode === 50){
+          number = 2;
+          numdialKey();
+      }
+      if(evt.keyCode === 51){
+          number = 3;
+          numdialKey();
+      }
+      if(evt.keyCode === 52){
+          number = 4;
+          numdialKey();
+      }
+      if(evt.keyCode === 53){
+          number = 5;
+          numdialKey();
+      }
+      if(evt.keyCode === 54){
+          number = 6;
+          numdialKey();
+      }
+      if(evt.keyCode === 55){
+          number = 7;
+          numdialKey();
+      }
+      if(evt.keyCode === 56){
+          number = 8;
+          numdialKey();
+      }
+      if(evt.keyCode === 57){
+          number = 9;
+          numdialKey();
+      }
+      // enter key
+      if(evt.keyCode === 13){
+          enterNum();
+      }
+      // backspace
+      if(evt.keyCode === 8){
+          deleteNum();
+      }
+      if(evt.keyCode == 46){
+          deleteNum();
+      }
+  }
+  
+  let numdialKey = () => {
+      document.getElementById("input").value = document.getElementById("input").value + number;
+  }
+
+  // this is where the dial argument would be called...
+  let enterNum = () => {
+      dialNum(document.getElementById("input").value);
+      window.removeEventListener("keydown", checkKeyPressed, false);
+      document.getElementById("dialPad").style.display = "none";
+  }
+ 
+  let deleteNum = () => {
+      document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
+  }
+}
+
 // dial command
-let dial = (number) => { 
+/*
+let dialNum = (number) => { 
   const room = getRoom(disk.roomId);
   let numbers = [
       { num: '3', roomid: 'phone-1'}, // front desk
@@ -648,7 +729,7 @@ if(getItemInInventory('address book')){
   };
 }
 
-
+*/
 
 // wear command
 let wear = (clothes) => {
@@ -992,6 +1073,7 @@ let commands = [
     restore: load,
     forward,
     f: forward,
+    dial,
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -1018,7 +1100,6 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
-    dial: dial,
     devcom1: x => teleport(x),
     devcom2: args => setMoney(args),
     devcom3: x => setHunger(x),
