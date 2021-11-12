@@ -20961,7 +20961,7 @@ const streets = {
     {
       id: '53-5',
       coord: [],
-      name: 'W. 53rd St, and 5th Ave.',
+      name: 'W. 53rd St. and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
       onEnter: () => {
@@ -20978,7 +20978,7 @@ const streets = {
     {
       id: '54-5',
       coord: [],
-      name: 'W. 54th St, and 5th Ave.',
+      name: 'W. 54th St. and 5th Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
       hasSubway: true,
@@ -20993,7 +20993,7 @@ const streets = {
     {
       id: '55-5',
       coord: [],
-      name: 'W. 55th St, and 5th Ave.',
+      name: 'W. 55th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -21006,7 +21006,7 @@ const streets = {
     {
       id: '56-5',
       coord: [],
-      name: 'W. 56th St, and 5th Ave.',
+      name: 'W. 56th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -21019,7 +21019,7 @@ const streets = {
     {
       id: '57-5',
       coord: [],
-      name: 'W. 57th St, and 5th Ave.',
+      name: 'W. 57th St. and 5th Ave.',
       desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
       isStreet: true,
       exits: [
