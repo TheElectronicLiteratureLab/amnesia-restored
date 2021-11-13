@@ -15,16 +15,17 @@ let setPlayerMarker = (e) => {
   const ENTER = 13;
   
   if (e.keyCode === ENTER) {
+    println(console.log(disk.currPos));
     console.log(disk.currPos);
     if (disk.currPos.length !== 0) {
       let room = getRoom(disk.roomId);
       //playerPopup.setContent('Hello World!');
       //playerMarker.bindPopup(playerPopup);
       //playerMarker.openPopup();
-      playerMarker.setLatLng(disk.currPos).bindPopup(room.name, {offset: L.point(-46, 5)}).openPopup().update();
+      playerMarker.setLatLng(disk.currPos).bindPopup(room.name, {offset: L.point(-46, 5), className: 'popup'}).openPopup().update();
       playerMarker.on('click', function(e) {
         playerMarker.unbindPopup();
-        playerMarker.bindPopup(room.name).openPopup();
+        playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
       });
       //playerMarker.getPopup().setContent(room.name).openPopup().update();
       console.log('Moving Player...' + disk.currPos);
