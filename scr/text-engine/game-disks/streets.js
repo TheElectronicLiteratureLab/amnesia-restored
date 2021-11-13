@@ -31,7 +31,7 @@ const streets = {
     },
     {
       id: 'whou-7',
-      coord: [],
+      coord: [-55.603, -16.611],
       name: 'W. Houston St. and 7th Ave. S.',
       desc: '',
       isStreet: true,
@@ -45,7 +45,7 @@ const streets = {
     },
     {
       id: 'king-amer',
-      coord: [],
+      coord: [-55.616, -11.251],
       name: 'King St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -58,7 +58,7 @@ const streets = {
     },
     {
       id: 'char-amer',
-      coord: [],
+      coord: [-56.813, -10.833],
       name: 'Charlton St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -71,7 +71,7 @@ const streets = {
     },
     {
       id: 'vand-amer',
-      coord: [],
+      coord: [-57.915, -10.371],
       name: 'Vandam St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -84,7 +84,7 @@ const streets = {
     },
     {
       id: 'spri-amer',
-      coord: [],
+      coord: [-58.946, -9.961],
       name: 'Spring St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -98,7 +98,7 @@ const streets = {
     },
     {
       id: 'domi-amer',
-      coord: [],
+      coord: [-59.900, -9.551],
       name: 'Dominick Ave. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -111,7 +111,7 @@ const streets = {
     },
     {
       id: 'sull-amer',
-      coord: [],
+      coord: [-60.475, -8.980],
       name: 'Sullivan St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -124,7 +124,7 @@ const streets = {
     },
     {
       id: 'broo-amer',
-      coord: [],
+      coord: [-60.834, -9.112],
       name: 'Broome St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -137,7 +137,7 @@ const streets = {
     },
     {
       id: 'watt-amer',
-      coord: [],
+      coord: [-61.547, -8.789],
       name: 'Watts St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -150,7 +150,7 @@ const streets = {
     },
     {
       id: 'gran-amer',
-      coord: [],
+      coord: [-62.380, -8.423],
       name: 'Grand St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -163,7 +163,7 @@ const streets = {
     },
     {
       id: 'cana-amer',
-      coord: [],
+      coord: [-63.513, -7.639],
       name: 'Canal St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -189,7 +189,7 @@ const streets = {
     },
     {
       id: 'king-macd',
-      coord: [],
+      coord: [-55.607, -10.298],
       name: 'King St. and MacDougal Ave.',
       desc: '',
       isStreet: true,
@@ -202,7 +202,7 @@ const streets = {
     },
     {
       id: 'prin-macd',
-      coord: [],
+      coord: [-56.845, -10.393],
       name: 'Prince St. and MacDougal Ave.',
       desc: '',
       isStreet: true,
@@ -215,7 +215,7 @@ const streets = {
     },
     {
       id: 'hous-sull',
-      coord: [],
+      coord: [-54.542, -8.350],
       name: 'W. Houston St. and Sullivan St.',
       desc: '',
       isStreet: true,
@@ -228,7 +228,7 @@ const streets = {
     },
     {
       id: 'prin-sull',
-      coord: [],
+      coord: [-56.861, -8.584],
       name: 'Prince St. and Sullivan St.',
       desc: '',
       isStreet: true,
@@ -241,7 +241,7 @@ const streets = {
     },
     {
       id: 'spri-sull',
-      coord: [],
+      coord: [-58.969, -8.796],
       name: 'Spring St. and Sullivan St.',
       desc: '',
       isStreet: true,
@@ -254,7 +254,7 @@ const streets = {
     },
     {
       id: 'hous-thom',
-      coord: [],
+      coord: [-54.559, -6.643],
       name: 'W. Houston St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -267,7 +267,7 @@ const streets = {
     },
     {
       id: 'prin-thom',
-      coord: [],
+      coord: [-56.869, -6.834],
       name: 'Prince St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -280,7 +280,7 @@ const streets = {
     },
     {
       id: 'spri-thom',
-      coord: [],
+      coord: [-59.003, -7.024],
       name: 'Spring St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -293,7 +293,7 @@ const streets = {
     },
     {
       id: 'broo-thom',
-      coord: [],
+      coord: [-60.877, -7.192],
       name: 'Broome St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -306,20 +306,20 @@ const streets = {
     },
     {
       id: 'watt-thom',
-      coord: [],
+      coord: [-61.309, -7.251],
       name: 'Watts St. and Thompson St.',
       desc: '',
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-thom'},
         {dir: 'south', id: 'gran-thom'},
-        {dir: 'east', id: 'watt-broa'},
+        {dir: 'east', id: 'watt-wbro'},
         {dir: 'west', id: 'watt-amer'},
       ]
     },
     {
       id: 'gran-thom',
-      coord: [],
+      coord: [-62.394, -7.324],
       name: 'Grand St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -332,7 +332,7 @@ const streets = {
     },
     {
       id: 'cana-thom',
-      coord: [],
+      coord: [-63.552, -7.346],
       name: 'Canal St. and Thompson St.',
       desc: '',
       isStreet: true,
@@ -345,7 +345,7 @@ const streets = {
     },
     {
       id: 'hous-lagu',
-      coord: [],
+      coord: [-54.589, -4.658],
       name: 'W. Houston St. and LaGuardia Pl.',
       desc: '',
       isStreet: true,
@@ -358,7 +358,7 @@ const streets = {
     },
     {
       id: 'prin-wbro',
-      coord: [],
+      coord: [-56.909, -4.863],
       name: 'Prince St. and W. Broadway',
       desc: '',
       isStreet: true,
@@ -371,7 +371,7 @@ const streets = {
     },
     {
       id: 'spri-wbro',
-      coord: [],
+      coord: [-59.074, -5.068],
       name: 'Spring St. and W. Broadway',
       desc: '',
       isStreet: true,
@@ -384,20 +384,20 @@ const streets = {
     },
     {
       id: 'broo-wbro',
-      coord: [],
+      coord: [-60.970, -5.295],
       name: 'Broome St. and W. Broadway',
       desc: '',
       isStreet: true,
       exits: [
         {dir: 'north', id: 'spri-wbro'},
-        {dir: 'south', id: 'watt-broa'},
+        {dir: 'south', id: 'watt-wbro'},
         {dir: 'east', id: 'broo-woos'},
         {dir: 'west', id: 'broo-thom'},
       ]
     },
     {
-      id: 'watt-broa',
-      coord: [],
+      id: 'watt-wbro',
+      coord: [-61.101, -5.280],
       name: 'Watts St. and W. Broadway',
       desc: '',
       isStreet: true,
@@ -410,12 +410,12 @@ const streets = {
     },
     {
       id: 'gran-wbro',
-      coord: [],
+      coord: [-62.451, -5.486],
       name: 'Grand St. and W. Broadway',
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'watt-broa'},
+        {dir: 'north', id: 'watt-wbro'},
         {dir: 'south', id: 'cana-wbro'},
         {dir: 'east', id: 'gran-woos'},
         {dir: 'west', id: 'gran-thom'},
@@ -423,7 +423,7 @@ const streets = {
     },
     {
       id: 'cana-wbro',
-      coord: [],
+      coord: [-63.753, -5.574],
       name: 'Canal St. and W. Broadway',
       desc: '',
       isStreet: true,
@@ -436,7 +436,7 @@ const streets = {
     },
     {
       id: 'hous-woos',
-      coord: [],
+      coord: [-54.652, -2.966],
       name: 'W. Houston St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -449,7 +449,7 @@ const streets = {
     },
     {
       id: 'prin-woos',
-      coord: [],
+      coord: [-56.957, -3.084],
       name: 'Prince St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -462,7 +462,7 @@ const streets = {
     },
     {
       id: 'spri-woos',
-      coord: [],
+      coord: [-59.127, -3.303],
       name: 'Spring St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -475,7 +475,7 @@ const streets = {
     },
     {
       id: 'broo-woos',
-      coord: [],
+      coord: [-60.990, -3.494],
       name: 'Broome St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -488,7 +488,7 @@ const streets = {
     },
     {
       id: 'gran-woos',
-      coord: [],
+      coord: [-62.492, -3.582],
       name: 'Grand St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -501,7 +501,7 @@ const streets = {
     },
     {
       id: 'cana-woos',
-      coord: [],
+      coord: [-63.950, -3.713],
       name: 'Canal St. and Wooster Ave.',
       desc: '',
       isStreet: true,
@@ -514,7 +514,7 @@ const streets = {
     },
     {
       id: 'cana-chur',
-      coord: [],
+      coord: [-64.130, -2.695],
       name: 'Canal St. and Church Ave.',
       desc: '',
       isStreet: true,
@@ -527,7 +527,7 @@ const streets = {
     },
     {
       id: 'hous-gree',
-      coord: [],
+      coord: [-54.661, -1.003],
       name: 'W. Houston St. and Green Ave.',
       desc: '',
       isStreet: true,
@@ -540,7 +540,7 @@ const streets = {
     },
     {
       id: 'prin-gree',
-      coord: [],
+      coord: [-56.989, -1.150],
       name: 'Prince St. and Green Ave.',
       desc: '',
       isStreet: true,
@@ -553,7 +553,7 @@ const streets = {
     },
     {
       id: 'spri-gree',
-      coord: [],
+      coord: [-59.172, 1.370],
       name: 'Spring St. and Green Ave.',
       desc: '',
       isStreet: true,
@@ -566,7 +566,7 @@ const streets = {
     },
     {
       id: 'broo-gree',
-      coord: [],
+      coord: [-61.055, -1.545],
       name: 'Broome St. and Green Ave.',
       desc: '',
       isStreet: true,
@@ -579,7 +579,7 @@ const streets = {
     },
     {
       id: 'gran-gree',
-      coord: [],
+      coord: [-62.543, -1.677],
       name: 'Grand St. and Green Ave.',
       desc: '',
       isStreet: true,
@@ -592,7 +592,7 @@ const streets = {
     },
     {
       id: 'cana-gree',
-      coord: [],
+      coord: [-64.216, -1.868],
       name: 'Canal St. and Green Ave.',
       desc: 'The Museum of Holography',
       isStreet: true,
@@ -605,7 +605,7 @@ const streets = {
     },
     {
       id: 'hous-merc',
-      coord: [],
+      coord: [-54.712, 1.208],
       name: 'W. Houston St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -618,7 +618,7 @@ const streets = {
     },
     {
       id: 'prin-merc',
-      coord: [],
+      coord: [-56.997, 0.945],
       name: 'Prince St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -631,7 +631,7 @@ const streets = {
     },
     {
       id: 'spri-merc',
-      coord: [],
+      coord: [-59.217, 0.681],
       name: 'Spring St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -644,7 +644,7 @@ const streets = {
     },
     {
       id: 'broo-merc',
-      coord: [],
+      coord: [-61.062, 0.417],
       name: 'Broome St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -657,7 +657,7 @@ const streets = {
     },
     {
       id: 'gran-merc',
-      coord: [],
+      coord: [-62.610, 0.227],
       name: 'Grand St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -670,7 +670,7 @@ const streets = {
     },
     {
       id: 'howa-merc',
-      coord: [],
+      coord: [-63.921, 0.037],
       name: 'Howard St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -683,7 +683,7 @@ const streets = {
     },
     {
       id: 'cana-merc',
-      coord: [],
+      coord: [-64.419, -0.037],
       name: 'Canal St. and Mercer Ave.',
       desc: '',
       isStreet: true,
@@ -714,7 +714,7 @@ const streets = {
     },
     {
       id: 'prin-broa',
-      coord: [],
+      coord: [-57.061, 2.790],
       name: 'Prince St. and Broadway',
       desc: '',
       isStreet: true,  
@@ -727,7 +727,7 @@ const streets = {
     },
     {
       id: 'spri-broa',
-      coord: [],
+      coord: [-59.201, 2.585],
       name: 'Spring St. and Broadway',
       desc: '',
       isStreet: true,
@@ -740,7 +740,7 @@ const streets = {
     },
     {
       id: 'broo-broa',
-      coord: [],
+      coord: [-61.150, 2.278],
       name: 'Broome St. and Broadway',
       desc: '',
       isStreet: true,
@@ -753,7 +753,7 @@ const streets = {
     },
     {
       id: 'gran-broa',
-      coord: [],
+      coord: [-62.651, 2.080],
       name: 'Grand St. and Broadway',
       desc: '',
       isStreet: true,
@@ -766,7 +766,7 @@ const streets = {
     },
     {
       id: 'howa-broa',
-      coord: [],
+      coord: [-63.960, 1.904],
       name: 'Howard St. and Broadway',
       desc: '',
       isStreet: true,
@@ -779,7 +779,7 @@ const streets = {
     },
     {
       id: 'cana-broa',
-      coord: [],
+      coord: [-64.618, 1.736],
       name: 'Canal St. and Broadway',
       desc: '',
       isStreet: true,
@@ -8730,7 +8730,7 @@ const streets = {
     },
     {
       id: 'lisp-wbro',
-      coord: [],
+      coord: [-64.821, -5.720],
       name: 'Lispenard St. and W. Broadway',
       desc: ``,
       isStreet: true,
