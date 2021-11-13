@@ -1,5 +1,5 @@
 const streets = {
-  roomId: '53-5',
+  roomId: 'hous-amer',
   currPos: [],
   rooms: [
 
@@ -18,7 +18,7 @@ const streets = {
     /********/
     {
       id: 'hous-amer',
-      coord: [],
+      coord: [-54.454, -11.697],
       name: 'W. Houston St. and Ave. of Americas',
       desc: '',
       isStreet: true,
@@ -176,7 +176,7 @@ const streets = {
     },
     {
       id: 'hous-macd',
-      coord: [],
+      coord: [-54.504, -10.194],
       name: 'W. Houston St. and MacDougal Ave.',
       desc: '',
       isStreet: true,
@@ -20960,7 +20960,7 @@ const streets = {
     },
     {
       id: '53-5',
-      coord: [],
+      coord: [32.732, -6.902],
       name: 'W. 53rd St. and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
@@ -21446,7 +21446,7 @@ const streets = {
     },
     {
       id: '35-5',
-      coord: [],
+      coord: [1.784, -6.296],
       name: 'W. 35th St. and 5th Ave.',
       desc: ``,
       isStreet: true,

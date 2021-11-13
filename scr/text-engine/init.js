@@ -50,9 +50,9 @@ let quickResponse = (e) => {
 
   if (e.keyCode === ENTER) {
     applyInput();
+    
   }
 }
-
 // register listeners for input events
 let setup = () => {
 
