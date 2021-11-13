@@ -45,15 +45,15 @@ let println = (line, className = 'app') => {
    
 
 
-  var app = document.querySelector('.app');
+  // var app = document.querySelector('.app');
 
-  var typewriter = new Typewriter(app, {
-    delay: 50,
+  // var typewriter = new Typewriter(app, {
+  //   delay: 50,
 
-  });
+  // });
 
-  typewriter.typeString(str)
-    .start();
+  // typewriter.typeString(str)
+  //   .start();
 
     
   
