@@ -792,7 +792,7 @@ const streets = {
     },
     {
       id: 'hous-cros',
-      coord: [],
+      coord: [-54.699, 50.084],
       name: 'E. Houston St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -805,7 +805,7 @@ const streets = {
     },
     {
       id: 'jers-cros',
-      coord: [],
+      coord: [-55.982, 5.002],
       name: 'Jersey St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -818,7 +818,7 @@ const streets = {
     },
     {
       id: 'prin-cros',
-      coord: [],
+      coord: [-57.096, 4.871],
       name: 'Prince St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -831,7 +831,7 @@ const streets = {
     },
     {
       id: 'spri-cros',
-      coord: [],
+      coord: [-59.329, 4.600],
       name: 'Spring St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -844,7 +844,7 @@ const streets = {
     },
     {
       id: 'broo-cros',
-      coord: [],
+      coord: [-61.263, 4.351],
       name: 'Broome St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -857,7 +857,7 @@ const streets = {
     },
     {
       id: 'gran-cros',
-      coord: [],
+      coord: [-62.741, 4.211],
       name: 'Grand St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -870,7 +870,7 @@ const streets = {
     },
     {
       id: 'howa-cros',
-      coord: [],
+      coord: [-64.014, 4.080],
       name: 'Howard St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -883,7 +883,7 @@ const streets = {
     },
     {
       id: 'cana-cort',
-      coord: [],
+      coord: [-64.855, 3.611],
       name: 'Canal St. and Corlandnt Al.',
       desc: '',
       isStreet: true,
@@ -896,7 +896,7 @@ const streets = {
     },
     {
       id: 'hous-lafa',
-      coord: [],
+      coord: [-54.640, 6.395],
       name: 'E. Houston St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -909,7 +909,7 @@ const streets = {
     },
     {
       id: 'jers-lafa',
-      coord: [],
+      coord: [-56.027, 6.248],
       name: 'Jersey St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -922,7 +922,7 @@ const streets = {
     },
     {
       id: 'prin-lafa',
-      coord: [],
+      coord: [-57.108, 6.160],
       name: 'Prince St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -935,7 +935,7 @@ const streets = {
     },
     {
       id: 'spri-lafa',
-      coord: [],
+      coord: [-59.322, 6.379],
       name: 'Spring St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -948,7 +948,7 @@ const streets = {
     },
     {
       id: 'kenm-lafa',
-      coord: [],
+      coord: [-60.634, 6.313],
       name: 'Kenmare St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -961,7 +961,7 @@ const streets = {
     },
     {
       id: 'broo-lafa',
-      coord: [],
+      coord: [-61.291, 6.284],
       name: 'Broome St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -974,7 +974,7 @@ const streets = {
     },
     {
       id: 'gran-lafa',
-      coord: [],
+      coord: [-62.795, 6.108],
       name: 'Grand St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -987,7 +987,7 @@ const streets = {
     },
     {
       id: 'howa-lafa',
-      coord: [],
+      coord: [-64.104, 5.947],
       name: 'Howard St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -1000,7 +1000,7 @@ const streets = {
     },
     {
       id: 'cana-lafa',
-      coord: [],
+      coord: [-65.100, 5.793],
       name: 'Canal St. and Lafayette St.',
       desc: '',
       isStreet: true,
@@ -1013,7 +1013,7 @@ const streets = {
     },
     {
       id: 'spri-cent',
-      coord: [],
+      coord: [-59.359, 6.775],
       name: 'Spring St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1026,7 +1026,7 @@ const streets = {
     },
     {
       id: 'kenm-cent',
-      coord: [],
+      coord: [-60.482, 7.317],
       name: 'Kenmare St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1039,7 +1039,7 @@ const streets = {
     },
     {
       id: 'broo-cent',
-      coord: [],
+      coord: [-61.309, 7.727],
       name: 'Broome St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1052,7 +1052,7 @@ const streets = {
     },
     {
       id: 'gran-cent',
-      coord: [],
+      coord: [-62.825, 7.625],
       name: 'Grand St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1065,7 +1065,7 @@ const streets = {
     },
     {
       id: 'howa-cent',
-      coord: [],
+      coord: [-64.101, 7.566],
       name: 'Howard St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1078,7 +1078,7 @@ const streets = {
     },
     {
       id: 'hest-cent',
-      coord: [],
+      coord: [-64.429, 7.545],
       name: 'Hester St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1091,7 +1091,7 @@ const streets = {
     },
     {
       id: 'cana-cent',
-      coord: [],
+      coord: [-65.281, 7.486],
       name: 'Canal St. and Centre St.',
       desc: '',
       isStreet: true,
@@ -1104,7 +1104,7 @@ const streets = {
     },
     {
       id: 'broo-baxt',
-      coord: [],
+      coord: [-61.341, 8.752],
       name: 'Broome St. and Baxter St.',
       desc: '',
       isStreet: true,
@@ -1117,7 +1117,7 @@ const streets = {
     },
     {
       id: 'gran-baxt',
-      coord: [],
+      coord: [-62.842, 8.899],
       name: 'Grand St. and Baxter St.',
       desc: '',
       isStreet: true,
@@ -1130,7 +1130,7 @@ const streets = {
     },
     {
       id: 'hest-baxt',
-      coord: [],
+      coord: [-64.384, 9.089],
       name: 'Hester St. and Baxter St.',
       desc: '',
       isStreet: true,
@@ -1143,7 +1143,7 @@ const streets = {
     },
     {
       id: 'cana-baxt',
-      coord: [],
+      coord: [-65.446, 9.236],
       name: 'Canal St. and Baxter St.',
       desc: '',
       isStreet: true,
@@ -1156,7 +1156,7 @@ const streets = {
     },
     {
       id: 'hous-mulb',
-      coord: [],
+      coord: [-54.610, 7.045],
       name: 'E. Houston St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1169,7 +1169,7 @@ const streets = {
     },
     {
       id: 'jers-mulb',
-      coord: [],
+      coord: [-56.043, 7.537],
       name: 'Jersey St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1182,7 +1182,7 @@ const streets = {
     },
     {
       id: 'prin-mulb',
-      coord: [],
+      coord: [-57.144, 7.976],
       name: 'Prince St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1195,7 +1195,7 @@ const streets = {
     },
     {
       id: 'spri-mulb',
-      coord: [],
+      coord: [-59.307, 8.958],
       name: 'Spring St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1208,7 +1208,7 @@ const streets = {
     },
     {
       id: 'kenm-mulb',
-      coord: [],
+      coord: [-60.414, 9.448],
       name: 'Kenmare St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1221,7 +1221,7 @@ const streets = {
     },
     {
       id: 'broo-mulb',
-      coord: [],
+      coord: [-61.319, 9.815],
       name: 'Broome St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1234,7 +1234,7 @@ const streets = {
     },
     {
       id: 'gran-mulb',
-      coord: [],
+      coord: [-62.802, 10.357],
       name: 'Grand St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1247,7 +1247,7 @@ const streets = {
     },
     {
       id: 'hest-mulb',
-      coord: [],
+      coord: [-64.372, 10.767],
       name: 'Hester St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1260,7 +1260,7 @@ const streets = {
     },
     {
       id: 'cana-mulb',
-      coord: [],
+      coord: [-65.710, 11.016],
       name: 'Canal St. and Mulberry St.',
       desc: '',
       isStreet: true,
@@ -1273,7 +1273,7 @@ const streets = {
     },
     {
       id: 'hous-mott',
-      coord: [],
+      coord: [-54.525, 8.818],
       name: 'E. Houston St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1286,7 +1286,7 @@ const streets = {
     },
     {
       id: 'prin-mott',
-      coord: [],
+      coord: [-57.172, 9.873],
       name: 'Prince St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1299,7 +1299,7 @@ const streets = {
     },
     {
       id: 'spri-mott',
-      coord: [],
+      coord: [-59.344, 10.781],
       name: 'Spring St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1312,7 +1312,7 @@ const streets = {
     },
     {
       id: 'kenm-mott',
-      coord: [],
+      coord: [-60.338, 11.228],
       name: 'Kenmare St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1325,7 +1325,7 @@ const streets = {
     },
     {
       id: 'broo-mott',
-      coord: [],
+      coord: [-61.386, 11.741],
       name: 'Broome St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1338,7 +1338,7 @@ const streets = {
     },
     {
       id: 'gran-mott',
-      coord: [],
+      coord: [-62.771, 12.400],
       name: 'Grand St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1351,7 +1351,7 @@ const streets = {
     },
     {
       id: 'hest-mott',
-      coord: [],
+      coord: [-64.368, 12.693],
       name: 'Hester St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1364,7 +1364,7 @@ const streets = {
     },
     {
       id: 'cana-mott',
-      coord: [],
+      coord: [-65.646, 13.000],
       name: 'Canal St. and Mott St.',
       desc: '',
       isStreet: true,
@@ -1377,7 +1377,7 @@ const streets = {
     },
     {
       id: 'hous-eliz',
-      coord: [],
+      coord: [-54.444, 10.553],
       name: 'E. Houston St and Elizabeth St.',
       desc: '',
       isStreet: true,

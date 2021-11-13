@@ -158,9 +158,14 @@
 //Coordinate Finder
   var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
   marker.bindPopup('LatLng Marker').openPopup();
-  marker.on('dragend', function(e) {
-    marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+  marker.on('drag', function(e) {
+    marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
+    //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+    marker.on('dragend', function(e) {
+    navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
+  })
   });
+
 
 //Markers are located in a separate JavaScript file for more modularity, cleanliness, and readability.
 //let playerMarker = L.marker([2, 2], {draggable: true}).addTo(map).bindPopup('LatLng:').openPopup();
