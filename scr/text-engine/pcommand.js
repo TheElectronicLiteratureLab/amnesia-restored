@@ -257,7 +257,7 @@ let talkToOrAboutX = (preposition, x) => {
     // initialize the chat log if there isn't one yet
     character.chatLog = character.chatLog || [];
     disk.conversant = character;
-    listTopics(topics);
+    //listTopics(topics);
   } else if (preposition === 'about') {
     if (!disk.conversant) {
       println(`You need to be in a conversation to talk about something.`);
@@ -294,7 +294,7 @@ let talkToOrAboutX = (preposition, x) => {
         topics = typeof character.topics === 'function'
           ? character.topics({println, room})
           : character.topics;
-        listTopics(character);
+        //listTopics(character);
       }
     } else {
       println(`That person is no longer available for conversation.`);
@@ -304,23 +304,15 @@ let talkToOrAboutX = (preposition, x) => {
   }
 };
 
-//ask character about topic function
-const askXAboutY = (x, y) => {
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId));
-  const topics = character.topics;
-  disk.conversant = character;
-  if (y === topics.option) {
-    
-  }
+
+//ask function
+const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+  disk.conversant = character; //set the character to who you're talking to
+  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+  talkToOrAboutX('about', y); //execute asking them the thing
 };
 
-
-//completely omit the talk function, only have ask
-//chracters set up so that on ask something happens, keywords are then ran through the characters list of conversation topics and if one is hit it prints that desc of that topic 
-//maybe not on ask, that makes it seem too much like an onblock. have it be an input that if it is only "ask" then line prints of 'you can ask someone about a topic'. have topic be stylized how we want it too so it matches up with the stylization of the keywords
-//function then would be ask character about topic, parses if character is in room, if not it says character is not available, if they are then it parses the topic against the characters topic list, if true it prints the topic desc
-//keywords are to be highlighted like how we imagined. as that runs along side the already established get keyword functionality
-//
 
 
 // list takeable items in room
@@ -373,7 +365,7 @@ let takeItem = (itemName) => {
 };
 
 
-// drop item from inventory
+// drop item from inventory basically just reversed the take item function above.
 let dropItem = (itemName) => {
   const room = getRoom(disk.roomId);
   const findItem = item => objectHasName(item, itemName);
@@ -967,31 +959,69 @@ function teleport (place) {
   Player Teleported to ${place}`);
 };
 
-function setMoney(amount) {
-  playMon = amount;
-  println(`
-    Player Money now set to ${amount}`
-  );
+//dev command functions 
+
+  //teleport to certain room
+  function teleport (place) {
+    enterRoom(place);
+    println(`
+    Player Teleported to ${place}`);
+  };
+
+  //set the money to certain ammount
+  function setMoney(amount) {
+    playMon = amount;
+    println(`
+    Player Money now set to ${amount}`);
+  };
+
+  //set hunger to certain amount
+  function setHunger(amount) {
+    playHung = amount;
+    println(`
+    Player Hunger now set to ${amount}`);
+  };
+
+  //set fatigue to certain amount
+  function setFatigue(amount) {
+    playFat = amount;
+    println(`
+    Player fatigue now set to ${amount}`);
+  };
+
+
+//spawn tenement function
+function spawnTenement() {
+  const room = getRoom(disk.roomId); //get current room
+  const hotel = getRoom('lobb-revi'); //get hotel room
+  const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
+  const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
+
+    //distance formula
+      const a = room.coords[0] - hotel.coords[0];
+      const b = room.coords[1] - hotel.coords[1];
+      const c = Math.sqrt( (a*a) + (b*b) );
+
+  
+      //if count is greater than or equal to 11 and 
+      //if the distance betweem player and hotel is greater than or equal to 11 and
+      //the room description is empty, aka no place of interest, or restaurant, or phone and
+      //if the tenement hasn't already been spawned then
+        if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
+          const chance = Math.floor(Math.random() * 101); //generate random number between 0-100
+          console.log(chance); //log what number was generated
+          if ( chance <= 24 ) { //25% chance of spawning the tenement if the conditions above were met.
+              room.exits.push( //push the tenement into the current rooms array of exits
+                { dir: ['tenement'], id: 'tene' }, 
+              ); 
+              tenementSpawned = true; //set value so that function wont run again
+              println(`there is an abandoned tenement here on ${room.name}`); //tell player the tenement is here
+            }
+        }
+
 };
-
-function setHunger(amount) {
-  playHung = amount;
-  println(`
-    Player Hunger now set to ${amount}`
-  );
-};
-
-function setFatigue(amount) {
-  playFat = amount;
-  println(`
-    Player fatigue now set to ${amount}`
-  );
-};
-
-
 
 // jump command
-
 
 
 // objects with methods for handling commands
@@ -1064,6 +1094,7 @@ let commands = [
     wear: wear,
     remove: remove,
     read: read,
+    asking: args => askTesting(args),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
@@ -1085,7 +1116,7 @@ let commands = [
     turn: args => turnOffOn(args[0], args[1])
   },
   {
-    ask: args => askXAboutY(args[0], args[2]),
+    ask: askXAboutY,
   },
 ];
 

@@ -13,9 +13,10 @@ let applyInput = (input) => {
   console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
-  //console.log(playerMarker.getLatLng());
+ // console.log(playerMarker.getLatLng());
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
+    //moveCount++;
     if (cmd) {
       cmd(arg);
       moveCount++;
@@ -29,6 +30,7 @@ let applyInput = (input) => {
     }
     else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
+      //moveCount--;
     }
   };
 
