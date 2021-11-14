@@ -97,7 +97,6 @@ button {
 }
 
 
-
 #container-o {
   border: 0px solid pink;
   width: 100%;
@@ -136,6 +135,7 @@ button {
 }
 
 #playerio {
+  border: 1px double #2d0140;
   background: #0d0d0d;
   height: 570px;
 }
@@ -246,7 +246,21 @@ button {
   height: 500px;
   display: none;
 }
+* { box-sizing: border-box; }
 
+.container {
+	width: 350px;
+	margin: 100px auto;
+}
+
+.dial {
+	width: 350px;
+	height: 350px;
+	background: yellow;
+	border-radius: 50%;
+	border: 175px solid black;
+	border-color: red green blue yellow;
+}
 /*Classes meant for in game println function*/
 .enter {
   text-align: center;
@@ -258,7 +272,12 @@ button {
 }
 
 #output div.noborder {
-  border-left: 3px solid #707070;
   background: #707070;
   width: fit-content;
+}
+
+/*Classes meant for map styling*/
+.popup .leaflet-popup-tip, .popup .leaflet-popup-content-wrapper{
+  background: #2d0140;
+  color: #ad3121;
 }
