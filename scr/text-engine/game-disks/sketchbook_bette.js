@@ -110,10 +110,16 @@ const sketchbook ={
             name:'',
             desc:`A few people glance your sign as they pass by, but none even slow down. `,
             //need to add a function to choose between two random text options and the two random sitters.\
-            exits:[
-                {dir:[''],id:'book-11'},
-                {dir:[''],id:'book-'}
-            ]
+            onBlock: () => {
+                randomRoom = () => {
+                    roomNumber = Math.floor(Math.random() * 2);
+                    if(roomNumber === 2){
+                      enterRoom('book-21')}
+                    else{
+                      enterRoom('book-25')
+                    }
+                  }
+            }
         },
         {
             id:'book-11',
@@ -150,6 +156,16 @@ const sketchbook ={
             name:'',
             desc:`'What in the hell is this!' he says indignantly. Is this your idea of a practical joke? Well, it's not funny, not funny at all.' He gets up from the bench and totters off in a huff.`,
             //activates the other portrait scene or activates Bette's Protrait
+            onBlock: () => {
+                randomRoom = () => {
+                    roomNumber = Math.floor(Math.random() * 2);
+                    if(roomNumber === 2){
+                      enterRoom('book-21')}
+                    else{
+                      enterRoom('book-25')
+                    }
+                  }
+            }
         },
         {
             id:'book-15',
@@ -166,6 +182,16 @@ const sketchbook ={
             name:'',
             desc:`'Why, it looks just like me!' he says admiringly. 'Maybe you went a bit overboard on the wrinkles, but you did the eyes just the way they were! Here's your money,' He takes $5 from his wallet and gives it to you in exchange for the rolled-up sketch. 'Thank you young fella, this will make a fine souvenir of New York City,' he says as he leaves the park.`,
             //activates the other portrait scene or Bette's portrait
+            onBlock: () => {
+                randomRoom = () => {
+                    roomNumber = Math.floor(Math.random() * 2);
+                    if(roomNumber === 2){
+                      enterRoom('book-21')}
+                    else{
+                      enterRoom('book-25')
+                    }
+                  }
+            }
         },
         {
             id:'book-17',
@@ -199,8 +225,17 @@ const sketchbook ={
         {
             id:'book-19',
             name:'',
-            desc:`The urban cowboy considers whether to take this as an insult, then spits neatly at a nearby pigeon, and saunters off in the direction of the chess tables, out of your sight.`
-            //Activate next protrait or Bette's Protrait
+            desc:`The urban cowboy considers whether to take this as an insult, then spits neatly at a nearby pigeon, and saunters off in the direction of the chess tables, out of your sight.`,
+            onBlock: () => {
+                randomRoom = () => {
+                    roomNumber = Math.floor(Math.random() * 2);
+                    if(roomNumber === 2){
+                      enterRoom('book-21')}
+                    else{
+                      enterRoom('book-25')
+                    }
+                  }
+            }
         },
         {
             id:'book-20',
