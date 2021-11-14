@@ -14081,7 +14081,7 @@ const streets = {
     },
     {   
       id: '14-west',
-      coord: [],
+      coord: [-35.996, -41.607],
       name: 'W. 14th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -14097,7 +14097,7 @@ const streets = {
     /***********/
     {
       id: '34-hhpw',
-      coord: [],
+      coord: [-2.504, -53.508],
       name: 'W. 34th Ave. and Henry Hudson Pkwy.',
       desc: '',
       isStreet: true,
@@ -14110,7 +14110,7 @@ const streets = {
     },
     {
       id: '23-hhpw',
-      coord: [],
+      coord: [-21.759, -50.687],
       name: 'W. 23rd St. and Henry Hudson Pkwy.',
       desc: '',
       isStreet: true,
@@ -14123,7 +14123,7 @@ const streets = {
     },
     {
       id: '15-hhpw',
-      coord: [],
+      coord: [-34.336, -42.684],
       name: 'W. 15th St. and Henry Hudson Pkwy.',
       desc: '',
       isStreet: true,
@@ -14138,7 +14138,7 @@ const streets = {
     //12th Ave
     {
       id: '34-12',
-      coord: [],
+      coord: [-2.456, -52.413],
       name: 'W. 34th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14151,7 +14151,7 @@ const streets = {
     },
     {
       id: '33-12',
-      coord: [],
+      coord: [-4.316, -52.431],
       name: 'W. 33rd St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14164,7 +14164,7 @@ const streets = {
     },
     {
       id: '30-12',
-      coord: [],
+      coord: [-9.583, -52.150],
       name: 'W. 30th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14177,7 +14177,7 @@ const streets = {
     },
     {
       id: '29-12',
-      coord: [],
+      coord: [-11.325, -52.000],
       name: 'W. 29th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14190,7 +14190,7 @@ const streets = {
     },
     {
       id: '28-12',
-      coord: [],
+      coord: [-13.146, -51.789],
       name: 'W. 28th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14203,7 +14203,7 @@ const streets = {
     },      
     {
       id: '27-12',
-      coord: [],
+      coord: [-14.796, -51.504],
       name: 'W. 27th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14216,7 +14216,7 @@ const streets = {
     },
     {
       id: '26-12',
-      coord: [],
+      coord: [-16.573, -51.130],
       name: 'W. 26th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14229,7 +14229,7 @@ const streets = {
     },
     {
       id: '24-12',
-      coord: [],
+      coord: [-19.994, -50.054],
       name: 'W. 24th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14242,7 +14242,7 @@ const streets = {
     },
     {
       id: '23-12',
-      coord: [],
+      coord: [-21.821, -49.329],
       name: 'W. 23rd St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -14255,7 +14255,7 @@ const streets = {
     },
     {
       id: '22-12',
-      coord: [],
+      coord: [-23.645, -47.395],
       name: 'W. 22nd St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14268,7 +14268,7 @@ const streets = {
     },
     {
       id: '11-12',
-      coord: [],
+      coord: [-24.127, -46.956],
       name: '11th Ave. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14281,7 +14281,7 @@ const streets = {
     },
     {
       id: '21-12',
-      coord: [],
+      coord: [-24.986, -46.561],
       name: 'W. 21st St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14294,7 +14294,7 @@ const streets = {
     },
     {
       id: '20-12',
-      coord: [],
+      coord: [-26.804, -45.572],
       name: 'W. 20th St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14307,7 +14307,7 @@ const streets = {
     },
     {
       id: '19-12',
-      coord: [],
+      coord: [-28.420, -44.715],
       name: 'W. 19th St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14320,7 +14320,7 @@ const streets = {
     },
     {
       id: '18-12',
-      coord: [],
+      coord: [-30.050, -43.771],
       name: 'W. 18th St. and 12 Ave.',
       desc: '',
       isStreet: true,
@@ -14333,7 +14333,7 @@ const streets = {
     },
     {
       id: '17-12',
-      coord: [],
+      coord: [-31.560, -43.001],
       name: 'W. 17th St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14346,7 +14346,7 @@ const streets = {
     },
     {
       id: '16-12',
-      coord: [],
+      coord: [-33.082, -42.188],
       name: 'W. 16th St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14359,7 +14359,7 @@ const streets = {
     },
     {
       id: '15-12',
-      coord: [],
+      coord: [-34.271, -41.529],
       name: 'W. 15th St. and 12th Ave.',
       desc: '',
       isStreet: true,
@@ -14372,7 +14372,7 @@ const streets = {
     },
     {
       id: '14-12',
-      coord: [],
+      coord: [-35.925, -40.584],
       name: 'W. 14th St. and 12th Ave.',
       desc: '',
       isStreet: true,
