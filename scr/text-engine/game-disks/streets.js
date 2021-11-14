@@ -20662,7 +20662,6 @@ const streets = {
       coord: [],
       name: 'Sunderland Hotel Lobby',
       desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
-      isStreet: true,
       onEnter: () => {
         pressEnter('hote-exit1');
       },
@@ -20685,7 +20684,6 @@ const streets = {
       coord: [],
       name: 'Sunderland Hotel Lobby',
       desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
-      isStreet: true,
       onEnter: () => {
         pressEnter('hote-exit3');
       },
