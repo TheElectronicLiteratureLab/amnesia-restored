@@ -20958,7 +20958,7 @@ const streets = {
     },
     {
       id: '53-5',
-      coord: [32.732, -6.902],
+      coord: [32.787, -6.877],
       name: 'W. 53rd St. and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
@@ -20975,7 +20975,7 @@ const streets = {
     },
     {
       id: '54-5',
-      coord: [],
+      coord: [34.216, -6.943],
       name: 'W. 54th St. and 5th Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -20990,7 +20990,7 @@ const streets = {
     },
     {
       id: '55-5',
-      coord: [],
+      coord: [35.782, -6.965],
       name: 'W. 55th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21003,7 +21003,7 @@ const streets = {
     },
     {
       id: '56-5',
-      coord: [],
+      coord: [37.265, -6.987],
       name: 'W. 56th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21016,7 +21016,7 @@ const streets = {
     },
     {
       id: '57-5',
-      coord: [],
+      coord: [38.959, -6.987],
       name: 'W. 57th St. and 5th Ave.',
       desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
       isStreet: true,
@@ -21029,7 +21029,7 @@ const streets = {
     },
     {
       id: '58-5',
-      coord: [],
+      coord: [40.581, -7.031],
       name: 'W. 58th St. and 5th Ave.',
       desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
       isStreet: true,
@@ -21057,7 +21057,7 @@ const streets = {
     },
     {
       id: '59-madi',
-      coord: [],
+      coord: [42.196, -2.726],
       name: 'E. 59th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21070,7 +21070,7 @@ const streets = {
     },
     {
       id: '58-madi',
-      coord: [],
+      coord: [40.647, -2.703],
       name: 'E. 58th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21083,7 +21083,7 @@ const streets = {
     },
     {
       id: '57-madi',
-      coord: [],
+      coord: [38.994, -2.681],
       name: 'E. 57th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21096,21 +21096,7 @@ const streets = {
     },
     {
       id: '56-madi',
-      coord: [],
-      name: 'E. 56th St. and Madison Ave.',
-      desc: `The sign above the store's front window, written in letters that imitate a dot-matrix printout, says: User-Friendly Computer Store.`,
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: '57-madi'},
-        {dir: 'south', id: '55-madi'},
-        {dir: 'east', id: '56-park'},
-        {dir: 'west', id: '56-5'},
-        {dir: ['computer', 'store'], id: 'user-frie'}
-      ]
-    },
-    {
-      id: '56-madi',
-      coord: [],
+      coord: [37.265, -2.637],
       name: 'E. 56th St. and Madison Ave.',
       desc: `As you come to the corner of Madison Avenue, you notice, halfway down the block a shop front that seems somehow familiar. The sign above the front window, written in letters that imitate a dot-matrix printout, says:
 
@@ -21127,7 +21113,7 @@ const streets = {
     },
     {
       id: '55-madi',
-      coord: [],
+      coord: [35.818, -2.615],
       name: 'E. 55th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21140,7 +21126,7 @@ const streets = {
     },
     {
       id: '54-madi',
-      coord: [],
+      coord: [34.325, -2.593],
       name: 'E. 54th St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       isStreet: true,
@@ -21154,7 +21140,7 @@ const streets = {
     },
     {
       id: '53-madi',
-      coord: [],
+      coord: [32.806, -2.571],
       name: 'E. 53rd St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21167,7 +21153,7 @@ const streets = {
     },
     {
       id: '52-madi',
-      coord: [],
+      coord: [31.297, -2.505],
       name: 'E. 52nd St. and Madison Ave.',
       desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
       isStreet: true,
@@ -21181,7 +21167,7 @@ const streets = {
     },
     {
       id: '51-madi',
-      coord: [],
+      coord: [29.593, -2.483],
       name: 'E. 51st St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21194,7 +21180,7 @@ const streets = {
     },
     {
       id: '50-madi',
-      coord: [],
+      coord: [28.072, -2.461],
       name: 'E. 50th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21207,7 +21193,7 @@ const streets = {
     },
     {
       id: '49-madi',
-      coord: [],
+      coord: [26.352, -2.439],
       name: 'E. 49th St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       isStreet: true,
@@ -21221,7 +21207,7 @@ const streets = {
     },
     {
       id: '48-madi',
-      coord: [],
+      coord: [24.647, -2.351],
       name: 'E. 48th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21234,7 +21220,7 @@ const streets = {
     },
     {
       id: '47-madi',
-      coord: [],
+      coord: [22.979, -2.351],
       name: 'E. 47th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21247,7 +21233,7 @@ const streets = {
     },
     {
       id: '46-madi',
-      coord: [],
+      coord: [21.085, -2.307],
       name: 'E. 46th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21260,7 +21246,7 @@ const streets = {
     },
     {
       id: '45-madi',
-      coord: [],
+      coord: [19.145, -2.307],
       name: 'E. 45th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21273,7 +21259,7 @@ const streets = {
     },
     {
       id: '44-madi',
-      coord: [],
+      coord: [17.225, -2.263],
       name: 'E. 44th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21286,7 +21272,7 @@ const streets = {
     },
     {
       id: '43-madi',
-      coord: [],
+      coord: [15.454, -2.241],
       name: 'E. 43rd St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21299,7 +21285,7 @@ const streets = {
     },
     {
       id: '42-madi',
-      coord: [],
+      coord: [13.432, -2.219],
       name: 'E. 42nd St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21312,7 +21298,7 @@ const streets = {
     },
     {
       id: '41-madi',
-      coord: [],
+      coord: [11.372, -2.175],
       name: 'E. 41st St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       isStreet: true,
@@ -21326,7 +21312,7 @@ const streets = {
     },
     {
       id: '40-madi',
-      coord: [],
+      coord: [9.362, -2.153],
       name: 'E. 40th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21339,20 +21325,7 @@ const streets = {
     },
     {
       id: '39-madi',
-      coord: [],
-      name: 'E. 39th St. and Madison Ave.',
-      desc: ``,
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: '40-madi'},
-        {dir: 'south', id: '38-madi'},
-        {dir: 'east', id: '39-park'},
-        {dir: 'west', id: '39-5'},
-      ]
-    },
-    {
-      id: '39-madi',
-      coord: [],
+      coord: [7.624, -2.131],
       name: 'E. 39th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21365,7 +21338,7 @@ const streets = {
     },
     {
       id: '38-madi',
-      coord: [],
+      coord: [5.507, -2.109],
       name: 'E. 38th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21378,7 +21351,7 @@ const streets = {
     },
     {
       id: '37-madi',
-      coord: [],
+      coord: [3.667, -2.087],
       name: 'E. 37th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21391,7 +21364,7 @@ const streets = {
     },
     {
       id: '36-madi',
-      coord: [],
+      coord: [1.845, -2.043],
       name: 'E. 36th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21404,7 +21377,7 @@ const streets = {
     },
     {
       id: '35-madi',
-      coord: [],
+      coord: [0.110, -2.000],
       name: 'E. 35th St. and Madison Ave.',
       desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
       isStreet: true,
@@ -21418,7 +21391,7 @@ const streets = {
     },
     {
       id: '34-madi',
-      coord: [],
+      coord: [-1.801, -1.978],
       name: 'E. 34th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -21431,7 +21404,7 @@ const streets = {
     },
     {
       id: '34-5',
-      coord: [],
+      coord: [-1.867, -6.239],
       name: 'W. 34th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21444,7 +21417,7 @@ const streets = {
     },
     {
       id: '35-5',
-      coord: [1.784, -6.296],
+      coord: [0.066, -6.283],
       name: 'W. 35th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21457,7 +21430,7 @@ const streets = {
     },
     {
       id: '36-5',
-      coord: [],
+      coord: [1.779, -6.305],
       name: 'W. 36th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21470,7 +21443,7 @@ const streets = {
     },
     {
       id: '37-5',
-      coord: [],
+      coord: [3.557, -6.327],
       name: 'W. 37th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21483,20 +21456,7 @@ const streets = {
     },
     {
       id: '38-5',
-      coord: [],
-      name: 'W. 38th St. and 5th Ave.',
-      desc: ``,
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: '39-5'},
-        {dir: 'south', id: '37-5'},
-        {dir: 'east', id: '38-madi'},
-        {dir: 'west', id: '38-amer'},
-      ]
-    },
-    {
-      id: '38-5',
-      coord: [],
+      coord: [5.529, -6.371],
       name: 'W. 38th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21509,7 +21469,7 @@ const streets = {
     },
     {
       id: '39-5',
-      coord: [],
+      coord: [7.537, -6.437],
       name: 'W. 39th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21522,7 +21482,7 @@ const streets = {
     },
     {
       id: '40-5',
-      coord: [],
+      coord: [9.232, -6.437],
       name: 'W. 40th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21535,7 +21495,7 @@ const streets = {
     },
     {
       id: '41-5',
-      coord: [],
+      coord: [11.351, -6.459],
       name: 'W. 41st St. and 5th Ave.',
       desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
       isStreet: true,
@@ -21549,7 +21509,7 @@ const streets = {
     },
     {
       id: '42-5',
-      coord: [],
+      coord: [13.368, -6.525],
       name: 'W. 42nd St. and 5th Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -21564,7 +21524,7 @@ const streets = {
     },
     {
       id: '43-5',
-      coord: [],
+      coord: [15.390, -6.546],
       name: 'W. 43rd St. and 5th Ave.',
       desc: `here is the Princeton Club - distinctly a members only institution.`,
       isStreet: true,
@@ -21578,7 +21538,7 @@ const streets = {
     },
     {
       id: '44-5',
-      coord: [],
+      coord: [17.183, -6.568],
       name: 'W. 44th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21591,7 +21551,7 @@ const streets = {
     },
     {
       id: '45-5',
-      coord: [],
+      coord: [19.083, -6.634],
       name: 'W. 45th St. and 5th Ave.',
       desc: `An ideal spot for a would-be traveler. This block is lined with offices of Qantas, British Airways, Northwest Orient, and Aeroflot.`,
       isStreet: true,
@@ -21605,7 +21565,7 @@ const streets = {
     },
     {
       id: '46-5',
-      coord: [],
+      coord: [21.085, -6.656],
       name: 'W. 46th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21618,7 +21578,7 @@ const streets = {
     },
     {
       id: '47-5',
-      coord: [],
+      coord: [22.877, -6.700],
       name: 'W. 47th St. and 5th Ave.',
       desc: `You pause to consider the hollow hulk of a store that was once called Brentano's`,
       isStreet: true,
@@ -21627,20 +21587,12 @@ const streets = {
         {dir: 'south', id: '46-5'},
         {dir: 'east', id: '47-madi'},
         {dir: 'west', id: '47-amer'},
-        {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: '????'}
+        {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: 'You have no reason to go there.'}
       ]
     },
     {
-      id: 'bren',
-      coord: [],
-      name: '',
-      desc: ``,
-      isStreet: true,
-      exits:[]
-    },
-    {
       id: '48-5',
-      coord: [],
+      coord: [24.527, -6.700],
       name: 'W. 48th St. and 5th Ave.',
       desc: `Here is Barnes-Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club .`,
       isStreet: true,
@@ -21671,7 +21623,7 @@ const streets = {
     },
     {
       id: '49-5',
-      coord: [],
+      coord: [26.274, -6.744],
       name: 'W. 49th St. and 5th Ave.',
       desc: `A statue of Atlas bearing the burden of the world reflects on your own mood as you pass the entrance to Rockefeller plaza.`,
       isStreet: true,
@@ -21697,7 +21649,7 @@ const streets = {
     },
     {
       id: '50-5',
-      coord: [],
+      coord: [28.053, -6.788],
       name: 'W. 50th St. and 5th Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       isStreet: true,
@@ -21711,7 +21663,7 @@ const streets = {
     },
     {
       id: '51-5',
-      coord: [],
+      coord: [29.535, -6.832],
       name: 'W. 51st St. and 5th Ave.',
       desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
             `,
@@ -21727,7 +21679,7 @@ const streets = {
     },
     {
       id: '52-5',
-      coord: [],
+      coord: [31.222, -6.876],
       name: 'W. 52nd St. and 5th Ave.',
       desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
 
@@ -21742,7 +21694,7 @@ const streets = {
     },
     {
       id: '58-park',
-      coord: [],
+      coord: [40.681, 1.099],
       name: 'E. 58th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21755,7 +21707,7 @@ const streets = {
     },
     {
       id: '57-park',
-      coord: [],
+      coord: [38.994, 1.143],
       name: 'E. 57th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21768,7 +21720,7 @@ const streets = {
     },
     {
       id: '56-park',
-      coord: [],
+      coord: [37.300, 1.186],
       name: 'E. 56th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21781,7 +21733,7 @@ const streets = {
     },
     {
       id: '55-park',
-      coord: [],
+      coord: [35.747, 1.186],
       name: 'E. 55th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21794,7 +21746,7 @@ const streets = {
     },
     {
       id: '54-park',
-      coord: [],
+      coord: [34.271, 1.274],
       name: 'E. 54th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21807,7 +21759,7 @@ const streets = {
     },
     {
       id: '53-park',
-      coord: [],
+      coord: [32.806, 1.318],
       name: 'E. 53rd St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21820,7 +21772,7 @@ const streets = {
     },
     {
       id: '52-park',
-      coord: [],
+      coord: [31.316, 1.318],
       name: 'E. 52nd St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21833,7 +21785,7 @@ const streets = {
     },
     {
       id: '51-park',
-      coord: [],
+      coord: [29.612, 1.362],
       name: 'E. 51st St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21846,7 +21798,7 @@ const streets = {
     },
     {
       id: '50-park',
-      coord: [],
+      coord: [28.091, 1.384],
       name: 'E. 50th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21859,7 +21811,7 @@ const streets = {
     },
     {
       id: '49-park',
-      coord: [],
+      coord: [26.412, 1.406],
       name: 'E. 49th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21872,7 +21824,7 @@ const streets = {
     },
     {
       id: '48-park',
-      coord: [],
+      coord: [24.667, 1.450],
       name: 'E. 48th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21885,7 +21837,7 @@ const streets = {
     },
     {
       id: '47-park',
-      coord: [],
+      coord: [23.019, 1.494],
       name: 'E. 47th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21898,7 +21850,7 @@ const streets = {
     },
     {
       id: '47-vand',
-      coord: [],
+      coord: [22.938, -0.439],
       name: 'E. 47th St. and Vanderbilt Ave.',
       desc: ``,
       isStreet: true,
@@ -21911,7 +21863,7 @@ const streets = {
     },
     {
       id: '46-vand',
-      coord: [],
+      coord: [21.085, -0.395],
       name: 'E. 46th St. and Vanderbilt Ave.',
       desc: ``,
       isStreet: true,
@@ -21924,7 +21876,7 @@ const streets = {
     },
     {
       id: '45-vand',
-      coord: [],
+      coord: [19.104, -0.373],
       name: 'E. 45th St. and Vanderbilt Ave.',
       desc: ``,
       isStreet: true,
@@ -21937,7 +21889,7 @@ const streets = {
     },
     {
       id: '44-vand',
-      coord: [],
+      coord: [17.204, -0.351],
       name: 'E. 44th St. and Vanderbilt Ave.',
       desc: ``,
       isStreet: true,
@@ -21950,7 +21902,7 @@ const streets = {
     },
     {
       id: '43-vand',
-      coord: [],
+      coord: [15.411, -0.351],
       name: 'E. 43rd St. and Vanderbilt Ave.',
       desc: ``,
       isStreet: true,
@@ -21963,7 +21915,7 @@ const streets = {
     },
     {
       id: '42-vand',
-      coord: [],
+      coord: [13.518, -0.285],
       name: 'E. 42nd St. and Vanderbilt Ave.',
       desc: `Mobil Building – Nothing this tall could be made of silver, but you are tempted to think so. It is hard to realize that such a gleam can come from a metal as mundane as stainless steel.`,
       isStreet: true,
@@ -21977,7 +21929,7 @@ const streets = {
     },
     {
       id: '46-park',
-      coord: [],
+      coord: [21.146, 1.538],
       name: 'E. 46th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -21990,7 +21942,7 @@ const streets = {
     },
     {
       id: '45-park',
-      coord: [],
+      coord: [19.166, 1.604],
       name: 'E. 45th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22003,7 +21955,7 @@ const streets = {
     },
     {
       id: '42-park',
-      coord: [],
+      coord: [13.454, 1.582],
       name: 'E. 42nd St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22016,20 +21968,7 @@ const streets = {
     },
     {
       id: '41-park',
-      coord: [],
-      name: 'E. 41st St. and Park Ave.',
-      desc: ``,
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: '42-park'},
-        {dir: 'south', id: '40-park'},
-        {dir: 'east', id: '41-lexi'},
-        {dir: 'west', id: '41-madi'},
-      ]
-    },
-    {
-      id: '41-park',
-      coord: [],
+      coord: [11.415, 1.648],
       name: 'E. 41st St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22042,7 +21981,7 @@ const streets = {
     },
     {
       id: '40-park',
-      coord: [],
+      coord: [9.406, 1.648],
       name: 'E. 40th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22055,7 +21994,7 @@ const streets = {
     },
     {
       id: '39-park',
-      coord: [],
+      coord: [7.646, 1.736],
       name: 'E. 39th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22068,7 +22007,7 @@ const streets = {
     },
     {
       id: '38-park',
-      coord: [],
+      coord: [5.594, 1.736],
       name: 'E. 38th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22081,7 +22020,7 @@ const streets = {
     },
     {
       id: '37-park',
-      coord: [],
+      coord: [3.667, 1.780],
       name: 'E. 37th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22094,7 +22033,7 @@ const streets = {
     },
     {
       id: '36-park',
-      coord: [],
+      coord: [1.889, 1.802],
       name: 'E. 36th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22107,7 +22046,7 @@ const streets = {
     },
     {
       id: '35-park',
-      coord: [],
+      coord: [0.198, 1.824],
       name: 'E. 35th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22120,7 +22059,7 @@ const streets = {
     },
     {
       id: '34-park',
-      coord: [],
+      coord: [-1.714, 1.889],
       name: 'E. 34th St. and Park Ave.',
       desc: ``,
       isStreet: true,
@@ -22133,7 +22072,7 @@ const streets = {
     },
     {
       id: '34-lexi',
-      coord: [],
+      coord: [-1.692, 5.557],
       name: 'E. 34th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22146,7 +22085,7 @@ const streets = {
     },
     {
       id: '35-lexi',
-      coord: [],
+      coord: [0.242, 5.513],
       name: 'E. 35th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22159,7 +22098,7 @@ const streets = {
     },
     {
       id: '36-lexi',
-      coord: [],
+      coord: [1.955, 5.491],
       name: 'E. 36th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22172,7 +22111,7 @@ const streets = {
     },
     {
       id: '37-lexi',
-      coord: [],
+      coord: [3.711, 5.470],
       name: 'E. 37th St. and Lexington Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -22186,7 +22125,7 @@ const streets = {
     },
     {
       id: '38-lexi',
-      coord: [],
+      coord: [5.638, 5.448],
       name: 'E. 38th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22199,7 +22138,7 @@ const streets = {
     },
     {
       id: '39-lexi',
-      coord: [],
+      coord: [7.711, 5.426],
       name: 'E. 39th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22212,7 +22151,7 @@ const streets = {
     },
     {
       id: '40-lexi',
-      coord: [],
+      coord: [9.449, 5.360],
       name: 'E. 40th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22225,7 +22164,7 @@ const streets = {
     },
     {
       id: '41-lexi',
-      coord: [],
+      coord: [11.502, 5.338],
       name: 'E. 41st St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22238,7 +22177,7 @@ const streets = {
     },
     {
       id: '42-lexi',
-      coord: [],
+      coord: [13.496, 5.294],
       name: 'E. 42nd St. and Lexington Ave.',
       desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
       isStreet: true,
@@ -22251,7 +22190,7 @@ const streets = {
     },
     {
       id: '42-depe',
-      coord: [],
+      coord: [13.518, 3.493],
       name: 'E. 2nd St. and Depew Pl.',
       desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
       isStreet: true,
@@ -22265,7 +22204,7 @@ const streets = {
     },
     {
       id: '44-depe',
-      coord: [],
+      coord: [17.225, 3.449],
       name: 'E. 44th St. and Depew Pl.',
       desc: ``,
       isStreet: true,
@@ -22278,7 +22217,7 @@ const streets = {
     },
     {
       id: '45-depe',
-      coord: [],
+      coord: [19.187, 3.405],
       name: 'E. 45th St. and Depew Pl.',
       desc: ``,
       isStreet: true,
@@ -22291,7 +22230,7 @@ const streets = {
     },
     {
       id: '46-depe',
-      coord: [],
+      coord: [21.146, 3.383],
       name: 'E. 46th St. and Depew Pl.',
       desc: ``,
       isStreet: true,
@@ -22304,7 +22243,7 @@ const streets = {
     },
     {
       id: '43-lexi',
-      coord: [],
+      coord: [15.496, 5.294],
       name: 'E. 43rd St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22317,7 +22256,7 @@ const streets = {
     },
     {
       id: '44-lexi',
-      coord: [],
+      coord: [17.225, 5.251],
       name: 'E. 44th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22330,7 +22269,7 @@ const streets = {
     },
     {
       id: '45-lexi',
-      coord: [],
+      coord: [19.207, 5.230],
       name: 'E. 45th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22343,7 +22282,7 @@ const streets = {
     },
     {
       id: '46-lexi',
-      coord: [],
+      coord: [21.166, 5.186],
       name: 'E. 46th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22356,7 +22295,7 @@ const streets = {
     },
     {
       id: '47-lexi',
-      coord: [],
+      coord: [23.019, 5.164],
       name: 'E. 47th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22369,7 +22308,7 @@ const streets = {
     },
     {
       id: '48-lexi',
-      coord: [],
+      coord: [24.667, 5.120],
       name: 'E. 48th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22382,7 +22321,7 @@ const streets = {
     },
     {
       id: '49-lexi',
-      coord: [],
+      coord: [26.431, 5.076],
       name: 'E. 49th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22395,7 +22334,7 @@ const streets = {
     },
     {
       id: '50-lexi',
-      coord: [],
+      coord: [28.130, 5.054],
       name: 'E. 50th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22408,7 +22347,7 @@ const streets = {
     },
     {
       id: '51-lexi',
-      coord: [],
+      coord: [29.669, 5.010],
       name: 'E. 51st St. and Lexington Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -22423,7 +22362,7 @@ const streets = {
     },
     {
       id: '52-lexi',
-      coord: [],
+      coord: [31.372, 4.944],
       name: 'E. 52nd St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22436,7 +22375,7 @@ const streets = {
     },
     {
       id: '53-lexi',
-      coord: [],
+      coord: [32.898, 4.878],
       name: 'E. 53rd St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22449,7 +22388,7 @@ const streets = {
     },
     {
       id: '54-lexi',
-      coord: [],
+      coord: [34.343, 4.878],
       name: 'E. 54th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22462,7 +22401,7 @@ const streets = {
     },
     {
       id: '55-lexi',
-      coord: [],
+      coord: [35.853, 4.856],
       name: 'E. 55th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22475,7 +22414,7 @@ const streets = {
     },
     {
       id: '56-lexi',
-      coord: [],
+      coord: [37.388, 4.812],
       name: 'E. 56th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22488,7 +22427,7 @@ const streets = {
     },
     {
       id: '57-lexi',
-      coord: [],
+      coord: [39.045, 4.768],
       name: 'E. 57th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22501,7 +22440,7 @@ const streets = {
     },
     {
       id: '58-lexi',
-      coord: [],
+      coord: [40.731, 4.746],
       name: 'E. 58th St. and Lexington Ave.',
       desc: ``,
       isStreet: true,
@@ -22514,7 +22453,7 @@ const streets = {
     },
     {
       id: '59-lexi',
-      coord: [],
+      coord: [42.245, 4.724],
       name: 'E. 59th St. and Lexington Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -29128,7 +29067,7 @@ const streets = {
    /************/
     {
       id: '59-5',
-      coord: [],
+      coord: [42.131, -7.119],
       name: 'Central Park S. and 5th Ave',
       desc: `There is a subway entrance at this corner.`,
       hSubway: true,
