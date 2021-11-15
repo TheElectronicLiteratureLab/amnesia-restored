@@ -2769,7 +2769,7 @@ const streets = {
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '13-4'},
+        {dir: 'north', id: '13-4-1'},
         {dir: 'south', id: '11-4'},
         {dir: 'east', id: '12-3'},
         {dir: 'west', id: '12-broa'},
@@ -7948,7 +7948,7 @@ const streets = {
     },
     {
       id: 'whou-west',
-      coord: [],
+      coord: [-57.821, -27.465],
       name: 'W. Houston St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -8274,7 +8274,7 @@ const streets = {
     },
     {
       id: 'whou-gree-1',
-      coord: [],
+      coord: [-56.943, -23.156],
       name: 'W. Houston St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8953,7 +8953,7 @@ const streets = {
     },
     {
       id: 'whou-huds',
-      coord: [],
+      coord: [-56.367, -20.347],
       name: 'W. Houston St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -12483,7 +12483,7 @@ const streets = {
       exits: [
         {dir: 'north', id: '7-wave'},
         {dir: 'south', id: '10-wave'},
-        {dir: 'east', id: 'char-gree'}, 
+        {dir: 'east', id: 'char-gree-1'}, 
         {dir: 'west', id: 'char-7'} 
       ],
     },
@@ -12533,14 +12533,14 @@ const streets = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'char-gree'},
+        {dir: 'north', id: 'char-gree-1'},
         {dir: 'south', id: 'chri-gree'},
         {dir: 'east', id: '10-amer'}, 
         {dir: 'west', id: '10-wave'} 
       ],
     },
     {   
-      id: 'char-gree',
+      id: 'char-gree-1',
       coord: [-42.115, -16.582],
       name: 'Charles St. and Greenwich Ave.',
       desc: ``,
@@ -12560,14 +12560,14 @@ const streets = {
       isStreet: true,
       exits: [
         {dir: 'north', id: '7-gree'},
-        {dir: 'south', id: 'char-gree'},
+        {dir: 'south', id: 'char-gree-1'},
         {dir: 'east', block: `You can't go that way.`}, 
         {dir: 'west', id: 'perr-7'} 
       ],
     },
     {   //todo: map fix, husdson st needs to be moved over one street.
       id: 'clar-huds',
-      coord: [],
+      coord: [-55.410, -20.992],
       name: 'Clarkson St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12580,7 +12580,7 @@ const streets = {
     },
     {   
       id: 'stlu-huds',
-      coord: [],
+      coord: [-54.282, -21.830],
       name: 'St. Lukes Pl. and Hudson St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -12594,7 +12594,7 @@ const streets = {
     },
     {   
       id: 'mort-huds',
-      coord: [],
+      coord: [-53.270, -22.628],
       name: 'Morton St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12607,7 +12607,7 @@ const streets = {
     },
     {   
       id: 'barr-huds',
-      coord: [],
+      coord: [-52.246, -23.273],
       name: 'Barrow St. and Hudson St.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
@@ -12621,7 +12621,7 @@ const streets = {
     },
     {   //todo: map fix
       id: 'grov-huds',
-      coord: [],
+      coord: [-51.008, -24.084],
       name: 'Grove St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12634,7 +12634,7 @@ const streets = {
     },
     {   
       id: 'chri-huds',
-      coord: [],
+      coord: [-50.107, -24.806],
       name: 'Christopher St. and Hudson St.',
       desc: `The Theatre of Silliness is housed in a building of whitewashed concrete blocks without windows. To the side of the entrance is a peeling poster that asks:
       
@@ -12653,7 +12653,7 @@ const streets = {
         {dir: 'north', id: '10-huds'},
         {dir: 'south', id: 'grov-huds'},
         {dir: 'east', id: 'chri-bedf'}, 
-        {dir: 'west', id: 'chri-gree'},
+        {dir: 'west', id: 'chri-gree-1'},
         {dir: 'theatre of silliness', id: 'chri-huds-1'}
       ],
     },
@@ -12668,20 +12668,20 @@ const streets = {
     },
     {   
       id: '10-huds',
-      coord: [],
+      coord: [-49.167, -25.375],
       name: 'W. 10th St. and Hudson St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'char-huds'},
+        {dir: 'north', id: 'char-huds-1'},
         {dir: 'south', id: 'chri-huds'},
         {dir: 'east', id: '10-blee'}, 
-        {dir: 'west', id: '10-gree'} 
+        {dir: 'west', id: '10-gree-1'} 
       ],
     },
     {   
-      id: 'char-huds',
-      coord: [],
+      id: 'char-huds-1',
+      coord: [-47.940, -26.166],
       name: 'Charles St. and Hudson St.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
@@ -12689,26 +12689,26 @@ const streets = {
         {dir: 'north', id: 'perr-huds'},
         {dir: 'south', id: '10-huds'},
         {dir: 'east', id: 'char-blee'}, 
-        {dir: 'west', id: 'char-gree'},
+        {dir: 'west', id: 'char-gree-2'},
         {dir: '', id: ''} // add pizzeria exit
       ],
     },
     {   
       id: 'perr-huds',
-      coord: [],
+      coord: [-46.544, -27.016],
       name: 'Perry St. and Hudson St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: '11-huds'},
-        {dir: 'south', id: 'char-huds'},
+        {dir: 'south', id: 'char-huds-1'},
         {dir: 'east', id: 'perr-blee'}, 
-        {dir: 'west', id: 'perr-gree'} 
+        {dir: 'west', id: 'perr-gree-1'} 
       ],
     },
     {   
       id: '11-huds',
-      coord: [],
+      coord: [-45.501, -27.654],
       name: 'W. 11th St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12716,12 +12716,12 @@ const streets = {
         {dir: 'north', id: 'bank-huds'},
         {dir: 'south', id: 'perr-huds'},
         {dir: 'east', id: '11-blee'}, 
-        {dir: 'west', id: '11-gree'} 
+        {dir: 'west', id: '11-gree-1'} 
       ],
     },
     {   
       id: 'bank-huds',
-      coord: [],
+      coord: [-44.295, -28.311],
       name: 'Bank St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12729,12 +12729,12 @@ const streets = {
         {dir: 'north', id: 'beth-huds'},
         {dir: 'south', id: '11-huds'},
         {dir: 'east', id: 'bank-8'}, 
-        {dir: 'west', id: 'bank-gree'} 
+        {dir: 'west', id: 'bank-gree-1'} 
       ],
     },
     {   
       id: 'beth-huds',
-      coord: [],
+      coord: [-43.277, -28.889],
       name: 'Bethune Ave. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12747,7 +12747,7 @@ const streets = {
     },
     {   
       id: '12-huds',
-      coord: [],
+      coord: [-41.798, -29.732],
       name: 'W. 12th St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12755,12 +12755,12 @@ const streets = {
         {dir: 'north', id: 'jane-huds'},
         {dir: 'south', id: 'beth-huds'},
         {dir: 'east', id: '12-8'}, 
-        {dir: 'west', id: '12-gree'} 
+        {dir: 'west', id: '12-gree-1'} 
       ],
     },
     {   
       id: 'jane-huds',
-      coord: [],
+      coord: [-40.835, -30.339],
       name: 'Jane St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12768,12 +12768,12 @@ const streets = {
         {dir: 'north', id: 'hora-huds'},
         {dir: 'south', id: '12-huds'},
         {dir: 'east', id: 'jane-4'}, 
-        {dir: 'west', id: 'jane-gree'} 
+        {dir: 'west', id: 'jane-gree-1'} 
       ],
     },
     {   
       id: 'hora-huds',
-      coord: [],
+      coord: [-39.568, -31.058],
       name: 'Horatio St. and Hudson St.',
       desc: ``,
       isStreet: true,
@@ -12781,12 +12781,12 @@ const streets = {
         {dir: 'north', id: 'gans-huds'},
         {dir: 'south', id: 'jane-huds'},
         {dir: 'east', id: 'hora-4'}, 
-        {dir: 'west', id: 'hora-gree'} 
+        {dir: 'west', id: 'hora-gree-1'} 
       ],
     },
     {   
       id: 'gans-huds',
-      coord: [],
+      coord: [-38.576, -31.579],
       name: 'Gansevoort St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -12794,12 +12794,12 @@ const streets = {
         {dir: 'north', id: '13-huds'},
         {dir: 'south', id: 'hora-huds'},
         {dir: 'east', id: '13-gans'}, 
-        {dir: 'west', id: 'gans-gree'} 
+        {dir: 'west', id: 'gans-gree-1'} 
       ],
     },
     {   
       id: '13-huds',
-      coord: [],
+      coord: [-37.465, -32.166],
       name: 'W. 13th St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -12812,7 +12812,7 @@ const streets = {
     },
     {   
       id: 'mort-bedf',
-      coord: [-51.663, -18.717],
+      coord: [-51.678, -18.610],
       name: 'Morton St. and Bedford Ave.',
       desc: ``,
       isStreet: true,
@@ -12825,7 +12825,7 @@ const streets = {
     },
     {   
       id: 'comm-bedf',
-      coord: [-51.224, -19.620],
+      coord: [-51.246, -19.656],
       name: 'Commerce St. and Bedford Ave.',
       desc: ``,
       isStreet: true,
@@ -12938,7 +12938,7 @@ const streets = {
         {dir: 'north', id: 'perr-blee'},
         {dir: 'south', id: '10-blee'},
         {dir: 'east', id: 'char-4'}, 
-        {dir: 'west', id: 'char-huds'} 
+        {dir: 'west', id: 'char-huds-1'} 
       ],
     },
     {   
@@ -13002,7 +13002,7 @@ const streets = {
       exits: [
         {dir: 'north', id: '4-8'},
         {dir: 'south', id: 'blee-8'},
-        {dir: 'east', id: '12-4'}, 
+        {dir: 'east', id: '12-4-1'}, 
         {dir: 'west', id: '12-huds'},
         {dir: '', id: ''} // add luncheonette exit 
       ],
@@ -13016,7 +13016,7 @@ const streets = {
       exits: [
         {dir: 'north', id: 'jane-8'},
         {dir: 'south', id: '12-8'},
-        {dir: 'east', id: '12-4'}, 
+        {dir: 'east', id: '12-4-1'}, 
         {dir: 'west', id: 'jane-4'} 
       ],
     },
@@ -13056,7 +13056,7 @@ const streets = {
         {dir: 'north', id: '14-8'},
         {dir: 'south', id: 'hora-8'},
         {dir: 'east', id: 'hora-13'}, 
-        {dir: 'west', id: '13-4'} 
+        {dir: 'west', id: '13-4-1'} 
       ],
     },
     {   
@@ -13118,14 +13118,14 @@ const streets = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '12-4'},
+        {dir: 'north', id: '12-4-1'},
         {dir: 'south', id: '4-11'},
         {dir: 'east', id: 'bank-wave'}, 
         {dir: 'west', id: 'bank-blee'} 
       ],
     },
     {   
-      id: '12-4',
+      id: '12-4-1',
       coord: [-40.404, -26.515],
       name: 'W. 12th St. and W. 4th St.',
       desc: ``,
@@ -13166,7 +13166,7 @@ const streets = {
     },
     {   
       id: 'bank-wave',
-      coord: [],
+      coord: [-40.316, -22.213],
       name: 'Bank St. and Waverly Pl.',
       desc: ``,
       isStreet: true,
@@ -13179,7 +13179,7 @@ const streets = {
     },
     {   
       id: '11-gree',
-      coord: [],
+      coord: [-40.703, -19.680],
       name: 'W. 11th St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -13192,7 +13192,7 @@ const streets = {
     },
     {   
       id: 'bank-gree',
-      coord: [],
+      coord: [-39.795, -21.550],
       name: 'Bank St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -13205,7 +13205,7 @@ const streets = {
     },
     {   
       id: '12-gree',
-      coord: [],
+      coord: [-38.947, -23.171],
       name: 'W. 12th St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -13213,12 +13213,12 @@ const streets = {
         {dir: 'north', id: 'jane-gree'},
         {dir: 'south', id: 'bank-gree'},
         {dir: 'east', id: '12-7'}, 
-        {dir: 'west', id: '12-4'} 
+        {dir: 'west', id: '12-4-1'} 
       ],
     },
     {   
       id: 'jane-gree',
-      coord: [],
+      coord: [-38.362, -24.437],
       name: 'Jane St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -13231,7 +13231,7 @@ const streets = {
     },
     {   
       id: 'hora-gree',
-      coord: [],
+      coord: [-37.515, -26.148],
       name: 'Horatio Ave. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -13244,7 +13244,7 @@ const streets = {
     },
     {   
       id: 'hora-13',
-      coord: [],
+      coord: [-37.341, -26.303],
       name: 'Horatio Ave. and W. 13th St.',
       desc: ``,
       isStreet: true,
@@ -13257,7 +13257,7 @@ const streets = {
     },
     {   
       id: 'barr-comm',
-      coord: [],
+      coord: [-51.678, -21.596],
       name: 'Barrow St. and Commerce St.',
       desc: ``,
       isStreet: true,
@@ -13270,7 +13270,7 @@ const streets = {
     },
     {   
       id: 'bank-8',
-      coord: [],
+      coord: [-43.863, -28.223],
       name: 'Bank St. and 8th Ave.',
       desc: ``,
       isStreet: true,
@@ -13283,7 +13283,7 @@ const streets = {
     },
     {   
       id: 'jane-4',
-      coord: [],
+      coord: [-39.631, -27.328],
       name: 'Jane St. and W. 4th St.',
       desc: ``,
       isStreet: true,
@@ -13296,20 +13296,20 @@ const streets = {
     },
     {   
       id: 'hora-4',
-      coord: [],
+      coord: [-38.447, -28.482],
       name: 'Horatio St. and W. 4th St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '13-4'},
+        {dir: 'north', id: '13-4-1'},
         {dir: 'south', id: 'jane-4'},
         {dir: 'east', id: 'hora-8'}, 
         {dir: 'west', id: 'hora-huds'} 
       ],
     },
     {   
-      id: '13-4',
-      coord: [],
+      id: '13-4-1',
+      coord: [-37.409, -26.587],
       name: 'W. 13th St. and W. 4th St.',
       desc: ``,
       isStreet: true,
@@ -13322,26 +13322,26 @@ const streets = {
     },
     {   
       id: '13-gans',
-      coord: [],
+      coord: [-37.409, -29.068],
       name: 'W. 13th St. and Gansevoort St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: 'gans-huds'},
-        {dir: 'east', id: '13-4'}, 
+        {dir: 'east', id: '13-4-1'}, 
         {dir: 'west', id: '13-huds'} 
       ],
     },
     {   
       id: 'clar-gree',
-      coord: [],
+      coord: [-56.026, -23.740],
       name: 'Clarkson St. and Greenwich St.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'lero-gree'},
-        {dir: 'south', id: 'whou-gree'},
+        {dir: 'south', id: 'whou-gree-1'},
         {dir: 'east', id: 'clar-huds'}, 
         {dir: 'west', id: 'clar-wash'},
         {dir: '', id: ''} // add pizzeria exit
@@ -13349,7 +13349,7 @@ const streets = {
     },
     {   
       id: 'lero-gree',
-      coord: [],
+      coord: [-54.907, -24.395],
       name: 'Leroy St. and Greenwich St.',
       desc: ``,
       isStreet: true,
@@ -13362,7 +13362,7 @@ const streets = {
     },
     {   
       id: 'mort-gree',
-      coord: [],
+      coord: [-53.817, -25.021],
       name: 'Morton St. and Greenwich St.',
       desc: ``,
       isStreet: true,
@@ -13375,12 +13375,12 @@ const streets = {
     },
     {   
       id: 'barr-gree',
-      coord: [],
+      coord: [-52.766, -25.602],
       name: 'Barrow St. and Greenwich St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'chri-gree'},
+        {dir: 'north', id: 'chri-gree-1'},
         {dir: 'south', id: 'mort-gree'},
         {dir: 'east', id: 'barr-huds'}, 
         {dir: 'west', id: 'barr-wash'},
@@ -13388,164 +13388,164 @@ const streets = {
       ],
     },
     {   
-      id: 'chri-gree',
-      coord: [],
+      id: 'chri-gree-1',
+      coord: [-51.000, -26.558],
       name: 'Christopher St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '10-gree'},
+        {dir: 'north', id: '10-gree-1'},
         {dir: 'south', id: 'barr-gree'},
         {dir: 'east', id: 'chri-huds'}, 
         {dir: 'west', id: 'chri-wash'} 
       ],
     },
     {   
-      id: '10-gree',
-      coord: [],
+      id: '10-gree-1',
+      coord: [-50.110, -27.045],
       name: 'W. 10th St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'char-gree'},
-        {dir: 'south', id: 'chri-gree'},
+        {dir: 'north', id: 'char-gree-2'},
+        {dir: 'south', id: 'chri-gree-1'},
         {dir: 'east', id: '10-huds'}, 
         {dir: 'west', id: '10-wash'} 
       ],
     },
     {   
-      id: 'char-gree',
-      coord: [],
+      id: 'char-gree-2',
+      coord: [-48.799, -27.735],
       name: 'Charles St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'perr-gree'},
-        {dir: 'south', id: '10-gree'},
-        {dir: 'east', id: 'char-huds'}, 
+        {dir: 'north', id: 'perr-gree-1'},
+        {dir: 'south', id: '10-gree-1'},
+        {dir: 'east', id: 'char-huds-1'}, 
         {dir: 'west', id: 'char-wash'} 
       ],
     },
     {   
-      id: 'perr-gree',
-      coord: [],
+      id: 'perr-gree-1',
+      coord: [-47.420, -28.435],
       name: 'Perry St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '11-gree'},
-        {dir: 'south', id: 'char-gree'},
+        {dir: 'north', id: '11-gree-1'},
+        {dir: 'south', id: 'char-gree-2'},
         {dir: 'east', id: 'perr-huds'}, 
         {dir: 'west', id: 'perr-wash'} 
       ],
     },
     {   
-      id: '11-gree',
-      coord: [],
+      id: '11-gree-1',
+      coord: [-46.278, -28.993],
       name: 'W. 11th St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'bank-gree'},
-        {dir: 'south', id: 'perr-gree'},
+        {dir: 'north', id: 'bank-gree-1'},
+        {dir: 'south', id: 'perr-gree-1'},
         {dir: 'east', id: '11-huds'}, 
         {dir: 'west', id: '11-wash'} 
       ],
     },
     {   
-      id: 'bank-gree',
-      coord: [],
+      id: 'bank-gree-1',
+      coord: [-45.036, -29.522],
       name: 'Bank St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'beth-gree'},
-        {dir: 'south', id: '11-gree'},
+        {dir: 'south', id: '11-gree-1'},
         {dir: 'east', id: 'bank-huds'}, 
         {dir: 'west', id: 'bank-wash'} 
       ],
     },
     {   
       id: 'beth-gree',
-      coord: [],
+      coord: [-43.739, -30.139],
       name: 'Bethune Ave. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '12-gree'},
-        {dir: 'south', id: 'bank-gree'},
+        {dir: 'north', id: '12-gree-1'},
+        {dir: 'south', id: 'bank-gree-1'},
         {dir: 'east', id: 'beth-huds'}, 
         {dir: 'west', id: 'beth-wash'} 
       ],
     },
     {   
-      id: '12-gree',
-      coord: [],
+      id: '12-gree-1',
+      coord: [-42.255, -30.804],
       name: 'W. 12th St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'jane-gree'},
+        {dir: 'north', id: 'jane-gree-1'},
         {dir: 'south', id: 'beth-gree'},
         {dir: 'east', id: '12-huds'}, 
         {dir: 'west', id: '12-wash'} 
       ],
     },
     {   
-      id: 'jane-gree',
-      coord: [],
+      id: 'jane-gree-1',
+      coord: [-41.290, -31.438],
       name: 'Jane St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'hora-gree'},
-        {dir: 'south', id: '12-gree'},
+        {dir: 'north', id: 'hora-gree-1'},
+        {dir: 'south', id: '12-gree-1'},
         {dir: 'east', id: 'jane-huds'}, 
         {dir: 'west', id: 'jane-wash'} 
       ],
     },
     {   
-      id: 'hora-gree',
-      coord: [],
+      id: 'hora-gree-1',
+      coord: [-40.080, -32.328],
       name: 'Horatio St. and Greenwich St.',
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'gans-gree'},
-        {dir: 'south', id: 'jane-gree'},
+        {dir: 'north', id: 'gans-gree-1'},
+        {dir: 'south', id: 'jane-gree-1'},
         {dir: 'east', id: 'hora-huds'}, 
         {dir: 'west', id: 'hora-wash'} 
       ],
     },
     {   
-      id: 'gans-gree',
-      coord: [],
+      id: 'gans-gree-1',
+      coord: [-39.144, -32.881],
       name: 'Gansevoort St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: '13-9'},
-        {dir: 'south', id: 'hora-gree'},
+        {dir: 'south', id: 'hora-gree-1'},
         {dir: 'east', id: 'gans-huds'}, 
         {dir: 'west', id: 'gans-litt'} 
       ],
     },
     {   
       id: '13-9',
-      coord: [],
+      coord: [-37.384, -33.036],
       name: 'W. 13th St. and 9th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: '14-9'},
-        {dir: 'south', id: 'gans-gree'},
+        {dir: 'south', id: 'gans-gree-1'},
         {dir: 'east', id: '13-huds'}, 
         {dir: 'west', id: '13-12'} 
       ],
     },
     {   
       id: 'clar-wash',
-      coord: [],
+      coord: [-56.348, -25.321],
       name: 'Clarkson St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13558,7 +13558,7 @@ const streets = {
     },
     {   
       id: 'lero-wash',
-      coord: [],
+      coord: [-55.249, -26.060],
       name: 'Leroy St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13571,7 +13571,7 @@ const streets = {
     },
     {   
       id: 'mort-wash',
-      coord: [],
+      coord: [-54.194, -26.764],
       name: 'Morton St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13584,7 +13584,7 @@ const streets = {
     },
     {   
       id: 'barr-wash',
-      coord: [],
+      coord: [-53.132, -27.429],
       name: 'Barrow St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13597,86 +13597,86 @@ const streets = {
     },
     {   
       id: 'chri-wash',
-      coord: [],
+      coord: [-51.880, -28.202],
       name: 'Christopher St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: '10-wash'},
         {dir: 'south', id: 'barr-wash'},
-        {dir: 'east', id: 'chri-gree'}, 
+        {dir: 'east', id: 'chri-gree-1'}, 
         {dir: 'west', id: 'chri-west'} 
       ],
     },
     {   
       id: '10-wash',
-      coord: [],
+      coord: [-51.065, -28.837],
       name: 'W. 10th St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'char-wash'},
         {dir: 'south', id: 'chri-wash'},
-        {dir: 'east', id: '10-gree'}, 
+        {dir: 'east', id: '10-gree-1'}, 
         {dir: 'west', id: '10-west'} 
       ],
     },
     {   
       id: 'char-wash',
-      coord: [],
+      coord: [-49.912, -29.705],
       name: 'Charles St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'perr-wash'},
         {dir: 'south', id: '10-wash'},
-        {dir: 'east', id: 'char-gree'}, 
+        {dir: 'east', id: 'char-gree-2'}, 
         {dir: 'west', id: 'char-west'} 
       ],
     },
     {   
       id: 'perr-wash',
-      coord: [],
+      coord: [-48.677, -30.635],
       name: 'Perry St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: '11-wash'},
         {dir: 'south', id: 'char-wash'},
-        {dir: 'east', id: 'perr-gree'}, 
+        {dir: 'east', id: 'perr-gree-1'}, 
         {dir: 'west', id: 'perr-west'} 
       ],
     },
     {   
       id: '11-wash',
-      coord: [],
+      coord: [-47.613, -31.330],
       name: 'W. 11th St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'bank-wash'},
         {dir: 'south', id: 'perr-wash'},
-        {dir: 'east', id: '11-gree'}, 
+        {dir: 'east', id: '11-gree-1'}, 
         {dir: 'west', id: '11-west'} 
       ],
     },
     {   
       id: 'bank-wash',
-      coord: [],
+      coord: [-46.527, -32.143],
       name: 'Bank St. and Washington St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'beth-wash'},
         {dir: 'south', id: '11-wash'},
-        {dir: 'east', id: 'bank-gree'}, 
+        {dir: 'east', id: 'bank-gree-1'}, 
         {dir: 'west', id: 'bank-west'},
         {dir: '', id: ''} // add luncheonette exit
       ],
     },
     {   
       id: 'beth-wash',
-      coord: [],
+      coord: [-44.917, -33.313],
       name: 'Bethune Ave. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13689,60 +13689,60 @@ const streets = {
     },
     {   
       id: '12-wash',
-      coord: [],
+      coord: [-43.613, -34.270],
       name: 'W. 12th St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'jane-wash'},
         {dir: 'south', id: 'beth-wash'},
-        {dir: 'east', id: '12-gree'}, 
+        {dir: 'east', id: '12-gree-1'}, 
         {dir: 'west', id: '12-west'} 
       ],
     },
     {   
       id: 'jane-wash',
-      coord: [],
+      coord: [-42.667, -34.958],
       name: 'Jane St. and Washington St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'hora-wash'},
         {dir: 'south', id: '12-wash'},
-        {dir: 'east', id: 'jane-gree'}, 
+        {dir: 'east', id: 'jane-gree-1'}, 
         {dir: 'west', id: 'jane-west'} 
       ],
     },
     {   
       id: 'hora-wash',
-      coord: [],
+      coord: [-41.533, -35.765],
       name: 'Horatio St. and Washington St.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'gans-wash'},
         {dir: 'south', id: 'jane-wash'},
-        {dir: 'east', id: 'hora-gree'}, 
+        {dir: 'east', id: 'hora-gree-1'}, 
         {dir: 'west', id: 'hora-west'},
         {dir: '', id: ''} // add pizzeria exit 
       ],
     },
     {   
       id: 'gans-wash',
-      coord: [],
+      coord: [-40.543, -36.416],
       name: 'Gansevoort St. and Washington Ave.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'litt-wash'},
-        {dir: 'south', id: 'bank-4'},
+        {dir: 'south', id: 'hora-wash'},
         {dir: 'east', id: 'gans-litt'}, 
         {dir: 'west', id: 'gans-west'} 
       ],
     },
     {   
       id: 'litt-wash',
-      coord: [],
+      coord: [-39.057, -37.413],
       name: 'Little W. 12th St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -13755,20 +13755,20 @@ const streets = {
     },
     {   
       id: 'gans-litt',
-      coord: [],
+      coord: [-39.008, -33.144],
       name: 'Gansevoort St. and Little W. 12th St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'litt-wash'},
         {dir: 'south', block: `You can't go that way.`},
-        {dir: 'east', id: 'gans-gree'}, 
+        {dir: 'east', id: 'gans-gree-1'}, 
         {dir: 'west', id: 'gans-wash'} 
       ],
     },
-    {   
+    {   //todo: map fix
       id: '13-12',
-      coord: [],
+      coord: [-37.464, -39.700],
       name: 'W. 13th St. and 12th Ave.',
       desc: ``,
       isStreet: true,
@@ -13781,7 +13781,7 @@ const streets = {
     },
     {   
       id: 'clar-west',
-      coord: [],
+      coord: [-56.965, -28.233],
       name: 'Clarkson St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13794,7 +13794,7 @@ const streets = {
     },
     {   
       id: 'lero-west',
-      coord: [],
+      coord: [-55.967, -29.240],
       name: 'Leroy St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13807,7 +13807,7 @@ const streets = {
     },
     {   
       id: 'mort-west',
-      coord: [],
+      coord: [-54.963, -30.051],
       name: 'Morton St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13820,7 +13820,7 @@ const streets = {
     },
     {   
       id: 'barr-west',
-      coord: [],
+      coord: [-53.832, -30.894],
       name: 'Barrow St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13833,7 +13833,7 @@ const streets = {
     },
     {   
       id: 'chri-west',
-      coord: [],
+      coord: [-53.342, -31.235],
       name: 'Christopher St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13846,7 +13846,7 @@ const streets = {
     },
     {   
       id: '10-west',
-      coord: [],
+      coord: [-52.646, -31.892],
       name: 'W. 10th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13859,7 +13859,7 @@ const streets = {
     },
     {   
       id: 'char-west',
-      coord: [],
+      coord: [-51.544, -32.782],
       name: 'Charles St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13872,7 +13872,7 @@ const streets = {
     },
     {   
       id: 'perr-west',
-      coord: [],
+      coord: [-50.369, -33.725],
       name: 'Perry St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13885,7 +13885,7 @@ const streets = {
     },
     {   
       id: '11-west',
-      coord: [],
+      coord: [-49.253, -34.445],
       name: 'W. 11th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13898,7 +13898,7 @@ const streets = {
     },
     {   
       id: 'bank-west',
-      coord: [],
+      coord: [-48.283, -35.132],
       name: 'Bank St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13911,7 +13911,7 @@ const streets = {
     },
     {   
       id: 'beth-west',
-      coord: [],
+      coord: [-46.230, -36.792],
       name: 'Bethune Ave. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13924,7 +13924,7 @@ const streets = {
     },
     {   
       id: '12-west',
-      coord: [],
+      coord: [-45.006, -37.665],
       name: 'W. 12th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13937,7 +13937,7 @@ const streets = {
     },
     {   
       id: 'jane-west',
-      coord: [],
+      coord: [-43.970, -38.332],
       name: 'Jane St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13950,7 +13950,7 @@ const streets = {
     },
     {   
       id: 'hora-west',
-      coord: [],
+      coord: [-42.763, -38.825],
       name: 'Horatio St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13963,7 +13963,7 @@ const streets = {
     },
     {   
       id: 'gans-west',
-      coord: [],
+      coord: [-41.574, -39.105],
       name: 'Gansevoort St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13976,7 +13976,7 @@ const streets = {
     },
     {   
       id: 'litt-west',
-      coord: [],
+      coord: [-39.096, -40.118],
       name: 'Little W. 12th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -13989,7 +13989,7 @@ const streets = {
     },
     {   
       id: '13-west',
-      coord: [],
+      coord: [-37.465, -40.821],
       name: 'W. 13th St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -15230,7 +15230,7 @@ const streets = {
       hasSubway: true,
       exits: [
         {dir: 'north', id: '15-8'},
-        {dir: 'south', id: '13'},
+        {dir: 'south', id: '13-4-1'},
         {dir: 'east', id: '14-7'},
         {dir: 'west', id: '14-9'},
       ],
@@ -15477,10 +15477,10 @@ const streets = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '15-7'},
+        {dir: 'north', id: '16-7'},
         {dir: 'south', id: '14-7'},
-        {dir: 'east', id: '14-amer'},
-        {dir: 'west', id: '14-8'},
+        {dir: 'east', id: '15-amer'},
+        {dir: 'west', id: '15-8'},
       ],
     },
     {
@@ -20047,6 +20047,17 @@ const streets = {
         {dir: 'east', id: '40-broa'},
         {dir: 'west', id: '40-8'},
       ],
+    },
+    {
+      id: '40-amer',
+      coord: [],
+      name: 'W. 40th St. and Ave. of Americas',
+      exits: [
+        {dir: 'north', id: '41-amer'},
+        {dir: 'south', id: '39-amer'},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', id: '40-broa'},
+      ]
     },
     {
       id: '40-broa',

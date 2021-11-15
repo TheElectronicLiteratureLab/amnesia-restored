@@ -19,8 +19,10 @@
 
 </head>
 <body>
-  <div class="game">
+  <div id="map" style="background-color: #32302f"></div>
     <!-- Game content -->
+  <div class="game">
+    
     <div class="sidebar">
       <button id="invbutton">INVENTORY</button>
       <button id="addrbutton">ADDRESS BOOK</button>
@@ -186,7 +188,7 @@ $("#mapbutton").click(function() {
   $("#map").slideToggle();
   map.invalidateSize();
   $("#output").slideToggle();
-  $(".input").slideToggle();
+  //$(".input").slideToggle();
   setTimeout(function(){ map.invalidateSize()}, 400);
 })
 
