@@ -159,8 +159,10 @@ let numdialKey = () => {
 }
 
 let enterNum = () => {
+  let num = document.getElementById("input").value;
+  dialNum(num);
   document.getElementById("dialPad").style.display = "none";
-  dialNum(document.getElementById("input").value);
+  document.getElementById("input").value = '';
 }
        
 let deleteNum = () => {

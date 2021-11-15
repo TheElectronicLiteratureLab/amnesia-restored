@@ -578,82 +578,80 @@ let turnOffOn = (toggle, itemId) => {
 }
 
 let dial = () => {
-  const firstDial = false;
-  //let num = document.getElementById("input").value;
-  document.getElementById("dialPad").style.display = "block";
-  document.querySelector('input').disabled = true;
-
-  let number;
-  window.addEventListener("keydown", checkKeyPressed, false);
-
-  function checkKeyPressed(evt){
-      // number keys 0-9
+  const room = getRoom(disk.roomId);
+  console.log(room.id);
+  if(room.id == 'hote-room' || 'hote-revi' || 'bett-apar'){
+    println('true');
+    /*const firstdial = false;
+    document.getElementById('dialPad').style.display = "block";
+    document.querySelector('input').disabled = true;
+    let number;
+    window.addEventListener("keydown", checkKeyPressed, false);
+    function checkKeyPressed(evt){
       if(evt.keyCode === 48){
-          number = 0;
-          numdialKey();
+        number = 0;
+        numdialKey();
       }
       if(evt.keyCode === 49){
-          number = 1;
-          numdialKey();
+        number = 1;
+        numdialKey();
       }
       if(evt.keyCode === 50){
-          number = 2;
-          numdialKey();
+        number = 2;
+        numdialKey();
       }
       if(evt.keyCode === 51){
-          number = 3;
-          numdialKey();
+        number = 3;
+        numdialKey();
       }
       if(evt.keyCode === 52){
-          number = 4;
-          numdialKey();
+        number = 4;
+        numdialKey();
       }
       if(evt.keyCode === 53){
-          number = 5;
-          numdialKey();
+        number = 5;
+        numdialKey();
       }
       if(evt.keyCode === 54){
-          number = 6;
-          numdialKey();
+        number = 6;
+        numdialKey();
       }
       if(evt.keyCode === 55){
-          number = 7;
-          numdialKey();
+        number = 7;
+        numdialKey();
       }
       if(evt.keyCode === 56){
-          number = 8;
-          numdialKey();
+        number = 8;
+        numdialKey();
       }
       if(evt.keyCode === 57){
-          number = 9;
-          numdialKey();
+        number = 9;
+        numdialKey();
       }
-      // enter key
       if(evt.keyCode === 13){
-          enterNum();
+        enterNum();
       }
-      // backspace
       if(evt.keyCode === 8){
-          deleteNum();
+        deleteNum();
       }
       if(evt.keyCode == 46){
-          deleteNum();
+        deleteNum();
       }
-  }
-  
-  let numdialKey = () => {
+    }
+    let numdialKey = () => {
       document.getElementById("input").value = document.getElementById("input").value + number;
-  }
-
-  // this is where the dial argument would be called...
-  let enterNum = () => {
-      dialNum(document.getElementById("input").value);
+    }
+    let enterNum = () => {
+      let num = document.getElementById("input").value;
+      dialNum(num);
       window.removeEventListener("keydown", checkKeyPressed, false);
       document.getElementById("dialPad").style.display = "none";
-  }
- 
-  let deleteNum = () => {
+    }
+    let deleteNum = () => {
       document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
+    }*/
+  } else {
+    println(`With what phone?`);
   }
 }
 
