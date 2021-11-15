@@ -145,13 +145,13 @@ const sketchbook ={
                 randomRoom = () => {
                     roomNumber = Math.floor(Math.random() * 4);
                     if(roomNumber === 1){
-                        enterRoom('')
+                        pressEnter('')
                     }if(roomNumber === 2){
-                        enterRoom('')
+                        pressEnter('')
                     }if(roomNumber === 3){
-                        enterRoom('')
+                        pressEnter('')
                     }if(roomNumber === 4){
-                        enterRoom('')
+                        pressEnter('')
                     }
                   }
                 }
@@ -160,7 +160,7 @@ const sketchbook ={
                 const room1 = getRoom('book-12');
                 const room2 = getRoom('book-18');
                 if(room1.visits >=1 && room2.visits >=1){
-                    enterRoom('')
+                    pressEnter('')
                 }
             }
         },
@@ -292,10 +292,9 @@ const sketchbook ={
             desc:`His first reaction to your portrait is ill-concealed dismay, but then he picks up the sketchpad to study it more carefully. 'Well, pardner, I could wish I had a different shape of chin, but I reckon that's my own lookout. The drawin' itself ain't half bad. Here.' He peels off a single ten dollar bill from a thick roll. 'Keep the change. Ya look like you can use it.' He takes the sketch and walks off, fingering his flabby chin with a thoughtful expression.`,
             //Next Portrait or Bette's Portrait.
             OnEnter: () => {
-                println(``)
-                pressEnter('book-11')
                 Const.room = getRoom(disk.roomId);
                 room.visits++ ;
+                pressEnter('book-11')
                 },               
         },
         {
@@ -322,44 +321,169 @@ const sketchbook ={
             desc:`He reacts to your portrait with a derisive snort. 'Well, pardner, I'll give ya this. Ya can draw hats real purty, but ya got a lot to learn about drawin' faces. Here's for the paper.' he peels off a single dollar bill from a thick roll. 'Adios, pardner, and vaya con dios!' You pocket the dollar bill, chagrined but not angry. You know he was right.`,
             //Bette's portrait or the other portrait.
             OnEnter: () => {
-                println(``)
-                pressEnter('book-11')
                 Const.room = getRoom(disk.roomId);
                 room.visits++ ;
-                },  
+                pressEnter('book-11')
+                },
+
         },
+        //third sketch: the Dowager
         {
             id:'book-27',
             name:'',
-            desc:``,
-            onEnter: () => {
-                println(`While you are waiting for another customer, you become awake that you are being scrutinized intently by a woman standing some twenty feet away.\n She comes closer. You smile, and that seems to stop her in her tracks.`)
-                pressEnter('book-28')
-            }
+            desc:`Just when your patience is about to be exhausted, a woman stops to read your sign. She is tastefully dressed and has a wistful, worldly-wise smile. Her age could be anywhere from 40 to 60. “My portrait,” she says, more to herself than to you. “It’s been years since anyone has done my portrait. But why not. It wouldn’t do to appear at the reception too early. Here.” She looks inside her alligator handbag and takes out [amount of money on sign]. She hands you the money and sits at the other end of the bench. “You may begin,” she says, “but please, young man-–be kind.”`,
+            exits: [
+                {dir:['ask' || 'tell'],id:'book-28'},
+                {dir:['take'],id:'book-29'},
+                {dir:['draw' ||'sketch'],id:'book-30'}
+            ]
         },
         {
             id:'book-28',
+            name:'',
+            desc:`The woman looks at you indignantly, takes back the money she put down before you, and says, as she walks off, “Really, young man, I was not paying for your ... companionship!”`,
+            onEnter: () => {
+                Const.room = getRoom(disk.roomId);
+                room.visits++ ;
+                pressEnter('book-11')
+            }
+        },
+        {
+            id:'book-29',
+            name:'',
+            desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
+            exits:[
+                {dir:['draw' ||'sketch'],id:'book-30'} 
+            ]
+        },
+        {
+            id:'book-30',
+            name:'',
+            desc:`You feel an almost voluptuous pleasure in drawing her face, as though it were not your charcoal moving across the rough paper but your fingers caressing her pallid brow, feeling the rondure of her high cheekbone, following the elegant curve of her long neck. And her lips! the sweetness of that half-smile! And the eyes, those gray liquid eyes, there’s no way you can ever capture their beauty. At last, you admit defeat and tell her you are done. She rises from the bench. “Thank you,” she says, “that was most pleasant.” She begins to walk away. “You are forgetting your portrait!” you call after her. She waves her hand dismissively. “It is much better like this, young man. I’m past the age when mirrors, or portraits, are of interest. But I still enjoy the attention. Good-bye.” `,
+            OnEnter: () => {
+                Const.room = getRoom(disk.roomId);
+                room.visits++ ;
+                pressEnter('book-11')
+                },
+        },
+         //skecch 4: the Bald Man
+        {
+            id:'book-31',
+            name:'',
+            desc:`After only a short wait, a young man in a seersucker suit stops to read your sign. He seems to be only in his early twenties, but he is almost totally bald. Only a fringe of wispy, mouse-colored hair remains. He starts to walk away, hesitates, returns, and asks in an embarrassed whisper, “Could you do my portrait ... and show me with a full head of hair?”
+            `,
+            exits:[
+                {dir:['no','go away'],id:'book-32'},
+                {dir:['take'],id:'book-33'},
+                {dir:['yes','how long','what style'],id:'book-34'},
+                {dir:['draw' ||'sketch'],id:'book-35'}
+            ]
+        },
+        {
+            id:'book-32',
+            name:'',
+            desc:`The young man blushes violently and hurries away.`,
+            OnEnter: () => {
+                Const.room = getRoom(disk.roomId);
+                room.visits++ ;
+                pressEnter('book-11')
+                },
+        },
+        {
+            id:'book-33',
+            name:'',
+            desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
+            exits:[
+                {dir:['draw' ||'sketch'],id:'book-35'}
+            ]
+        },
+        {
+            id:'book-34',
+            name:'',
+            desc:`He blushes and takes a seat on the bench. “Just an average kind of haircut, ‘sort of like Johnny Carson, okay? And do it as quick as you can. This is embarrassing.”`,
+            exits:[
+                {dir:['draw' ||'sketch'],id:'book-35'}
+            ]
+        },
+        {
+            id:'book-35',
+            name:'',
+            desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it’s remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
+            exits:[
+                {dir:['show','give'],id:'book-36'}
+            ]
+        },
+        {
+            id:'book-36',
+            name:'',
+            desc:`He looks at his remodeled face in respectful silence and then says, “Thank you.” He takes a handkerchief from the breast pocket of his suit and wipes a tear from the corner of each eye. He takes $10 from his billfold and gives it to you in exchange for the portrait, which he again studies intently. “You’ve convinced me,” he says, as he goes off, “to invest in a hairpiece. Thank you.”`,
+            OnEnter: () => {
+                Const.room = getRoom(disk.roomId);
+                room.visits++ ;
+                pressEnter('book-11')
+                },
+        },
+        //Bette's Scene
+        {
+            id:'book-37',
+            name:'',
+            desc:`You flip the pages of the sketchpad back so as once more to display the hand lettered sign and prop it against the back of the park bench. As you do so, you become aware that you are being scrutinized intently by a woman standing some twenty feet away. Hoping for another customer, you angle the hand lettered sign in her direction:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$10\n\nShe approaches closer. You smile, and that seems to stop her in her tracks.`,
+            exits:[
+                {dir:['look'],id:'book-39'},
+                {dir:['great','hello','hi'],id:'book-38'},
+                {dir:['ask','tell'],id:'book-40'}
+            ]
+        },
+        {
+            id:'book-38',
             name:'',
             desc:`You say hello. At your words of greeting, she smiles uncertainly and comes a few steps nearer the bench.\n'You...draw portraits?' she asks in the tone of voice of someone first arriving at Oz.`,
             onEnter: () => {
                 reenableInput();
             },
             exits:[
-                {dir:['yes'],id:'book-29'},
-                {dir:['no'],id:'book-30'}
+                {dir:['yes'],id:'book-40'},
+                {dir:['no'],id:'book-41'},
+                {dir:['ask','tell'],id:'book-40'}//nned to fix navigation here.
             ]
         },
         {
-            id:'book-29',
+            id:'book-39',
+            name:'',
+            desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her--and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
+            `,
+            exits:[
+                {dir:['look'],id:'book-39'},
+                {dir:['great','hello','hi'],id:'book-38'},
+                {dir:['ask','tell'],id:'book-40'}
+            ]
+        },
+        {
+            id:'book-40',
+            name:'',
+            desc:`You have said scarcely three words to her, when she cuts you short by raising her finger to her lips in a sign of silence. “No, please, don’t talk. Just draw me, if you would. Please.”
+            `,
+            onBlock: () => {
+                if(prevInput === 'yes' || 'yeah'){
+                    enterRoom('book-41')
+                }else if(prevInput === 'no' || 'nope'){
+                    enterRoom('book-42')
+                }else{
+                    println(`You almost speak again but feel compelled to honor her request for silence.`)
+                }
+            }
+        },
+        {
+            id:'book-41',
             name:'',
             desc:``,
             onEnter: () => {
                 println(`She sits at the other end of the bench and regards you wonderingly. 'Very well, then draw me. I will sit here and not says a word.' She takes off the camera that she had been carrying by a strap round her neck and places it beside her on the bench.`);
-                pressEnter('book-31')
+                pressEnter('book-43')
             }
         },
         {
-            id:'book-30',
+            id:'book-42',
             name:'',
             desc:``,
             onEnter: () => {
@@ -368,49 +492,81 @@ const sketchbook ={
             }
         },
         {
-            id:'book-31',
+            id:'book-43',
             name:'',
             desc:``,
             onEnter: () => {
                 println(`You open the sketchpad to a fresh sheet and take the stick of charcoal in your right hand. You notice that your hand is trembling, and that your forehead has broken out in a cold sweat. You look at the woman before you and feel an indescribable sweetness.`),
-                pressEnter('book-32')
+                pressEnter('book-44')
             }
         },
         {
-            id:'room-32',
+            id:'room-44',
             name:'',
-            desc:``,
-            onEnter: () => {
-                println(`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`),
-                pressEnter('book-33')
+            desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+            onBlock: () => {
+                if(prevInput === 'embrace' || 'kiss' || 'hug' || 'I love you'){
+                    enterRoom('book-45')
+                }else{
+                    println(`Come on, this is no moment for talk. The lady is crying out for affection. Show a little tenderness!`)
+                }
             }
         },
         {
-            id:'book-33',
+            id:'book-45',
             name:'',
-            desc:``,
-            onEnter: () => {
-                println(`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.' `),
-                pressEnter('book-34')
+            desc:`You melt in her arms like butter in a microwave. You fuse in a kiss. You love her, whoever she is, and you tell her so, and she says she loves you. That she should be feeling the same way about you is too good to be true. Your heart’s a radio blasting out love songs. The whole world should know about this, and a good section of Washington Square is getting a chance to.\n\nShe falls limp in your arms, and sighs with the bliss of releasing a tension too long sustained.\n\nYou realize you still don’t know her name.
+            `,
+            onBlock: () => {
+                if([prevInput === 'ask name' || 'what is your name']){
+                    enterRoom('book-46')
+                }else if(prevInput === 'tell about amnesia' || 'explain amnesia'){
+                    enterRoom('book-47')
+                }else{
+                    println(`Can you rephrase that please?`)
+                }
             }
         },
         {
-            id:'book-34',
+            id:'book-45',
             name:'',
-            desc:``,
-            onEnter: () => {
-                println(`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n
-                She stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`)
-                pressEnter('book-35')
+            desc:`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.'`,
+            onBlock: () => {
+                if(prevInput === 'tell about amnesia' || 'explain amnesia'){
+                    enterRoom('book-46')
+                }else{
+                    println(`Can you rephrase that please?`)
+                }
             }
         },
         {
-            id:'book-35',
+            id:'book-46',
+            name:'',
+            desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don’t for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you’ve been the victim of some kind of plot. But it’s also clear that it’s dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`,
+            onBlock: () => {
+                if(prevInput === 'take her hand'||'grab her hand'||'go with'||'follow'){
+                    enterRoom('book-48')
+                }else{
+                    enterRoom('book-46')
+                }
+            }
+        },
+        {
+            id:'book-47',
             name:'',
             desc:``,
             onEnter: () => {
-                println(`She takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
+                println(`“Let’s talk at my place, darling,” Bette insists. “I’ll worry till we’re by ourselves.”\n\nShe takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
                 'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight -- for the second time!'`),
+                pressEnter('')//enters Noblese Lobby
+            }
+        },
+        {
+            id:'book-48',
+            name:'',
+            desc:``,
+            onEnter: () => {
+                println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What’s so wonderful,” she says as the taxi arrives at her address, “is that you’ve fallen in love with me at first sight--for the second time!”`),
                 pressEnter('')//enters Noblese Lobby
             }
         }
