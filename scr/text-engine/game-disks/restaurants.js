@@ -7,16 +7,8 @@ const luncheonette = { // Luncheonette Room
   COFFEE    08 energy
   BURGER    16 energy
   */
-  roomId: 'testing', // Set this to the ID of the room you want the player to start in.
+  roomId: 'lunch-intro', // Set this to the ID of the room you want the player to start in.
   rooms: [
-    {
-      id: 'testing',
-      name: 'testing',
-      desc: 'This is for testing',
-      onEnter: () => {
-        pressEnter('lunch-intro');
-      }
-    },
     {
       id: 'lunch-intro', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Luncheonette', // Displayed each time the player enters the room.
@@ -115,14 +107,14 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'lunch-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Luncheonette', // Displayed each time the player enters the room.
-      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with $${playMon}\n
+      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
       \n
       Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
       onEnter: () => 
       {
         orderTotal = 0; // Clearing this variable
         energyTotal = 0; // Clearing the variable 
-        pressEnter('prevroomid'); // Replace with the last room visited secret formula
+        pressEnter(room.enteredFrom); // Replace with the last room visited secret formula
       }
     },
     {
@@ -142,9 +134,10 @@ const luncheonette = { // Luncheonette Room
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
         {
+          const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);a
         },
     },
     {
@@ -156,6 +149,9 @@ const luncheonette = { // Luncheonette Room
       onEnter: () => 
         {
         pressEnter('nedick-buyscreen');
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          console.log(room.enteredFrom);
         },
     },
     {
@@ -177,33 +173,33 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "hotdog"){
-          orderTotal + 1.40;
-          energyTotal + 28;
+          orderTotal += 1.40;
+          energyTotal += 28;
           println('One dog is ready to go. \n Anything else?');
           
         }else if(prevInput ==='burger'){
-          orderTotal + 1.98;
-          energyTotal + 26;
+          orderTotal += 1.98;
+          energyTotal += 26;
           println('One hamburger coming right up. \n Anything else?');
           
         }else if(prevInput ==='tuna'){
-          orderTotal + 2.75;
-          energyTotal + 8;
+          orderTotal += 2.75;
+          energyTotal += 8;
           println('One charlie is on its way. \n Anything else?');
           
         }else if(prevInput ==='orange'){
-          orderTotal + 0.65;
-          energyTotal + 8;
+          orderTotal += 0.65;
+          energyTotal += 8;
           println('One bug juice is on its way. \n Anything else?');
           
         }else if(prevInput ==='coffee'){
-          orderTotal + 0.45;
-          energyTotal + 8;
+          orderTotal += 0.45;
+          energyTotal += 8;
           println('One java coming right up. \n Anything else?');
           
         }else if(prevInput ==='coke'){
-          orderTotal + 0.85;
-          energyTotal + 16;
+          orderTotal += 0.85;
+          energyTotal += 16;
           println('One down is ready to go. \n Anything else?');
           
         }else if(prevInput ==='leave'){
@@ -220,12 +216,12 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'nedick-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Nedick's`, // Displayed each time the player enters the room.
-      desc: `The attendant totals up your purchase on the register, and it comes to $${orderTotal}.`,
+      desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`,
       onEnter: () => 
         {
           if(orderTotal <= playMon){ // Subtracting
-          playMon - orderTotal;
-          playHung + energyTotal;
+          playMon -= orderTotal;
+          playHung += energyTotal;
         pressEnter('nedick-payscreen');
           }else{
             pressEnter('nedick-nomon'); // if you have no money
@@ -235,14 +231,15 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'nedick-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Nedick's`, // Displayed each time the player enters the room.
-      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with $${playMon}\n
+      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
       \n
       Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
       onEnter: () => 
       {
-        orderTotal = 0; // Clearing this variable
-        energyTotal = 0; // Clearing the variable 
-        pressEnter('prevroomid'); // Replace with the last room visited secret formula
+        const room = getRoom('nedick-intro');
+          orderTotal = 0; // Clearing this variable
+          energyTotal = 0; // Clearing the variable 
+          pressEnter(room.enteredFrom);
       }
     },
     {
@@ -251,9 +248,10 @@ const luncheonette = { // Luncheonette Room
       desc: `You leave the restaurant`,
       onEnter: () => 
         {
+          const room = getRoom('nedick-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -262,9 +260,10 @@ const luncheonette = { // Luncheonette Room
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
         {
+          const room = getRoom('nedick-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -276,6 +275,9 @@ const luncheonette = { // Luncheonette Room
       onEnter: () => 
         {
         pressEnter('pizza-buyscreen');
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          console.log(room.enteredFrom);
         },
     },
     {
@@ -296,28 +298,28 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "slice"){
-          orderTotal + 1.40;
-          energyTotal + 28;
+          orderTotal += 1.40;
+          energyTotal += 28;
           println('One pizza slice is ready to go. \n Anything else?');
           
         }else if(prevInput ==='calzone'){
-          orderTotal + 1.98;
-          energyTotal + 26;
+          orderTotal += 1.98;
+          energyTotal += 26;
           println('One calzone coming right up. \n Anything else?');
           
         }else if(prevInput ==='rootbeer'){
-          orderTotal + 2.75;
-          energyTotal + 8;
+          orderTotal += 2.75;
+          energyTotal += 8;
           println('One rootbeer is on its way. \n Anything else?');
           
         }else if(prevInput ==='coke'){
-          orderTotal + 0.65;
-          energyTotal + 8;
+          orderTotal += 0.65;
+          energyTotal += 8;
           println('One coke is on its way. \n Anything else?');
           
         }else if(prevInput ==='7up'){
-          orderTotal + 0.45;
-          energyTotal + 8;
+          orderTotal += 0.45;
+          energyTotal += 8;
           println('One 7UP is on its way. \n Anything else?');
           
         }else if(prevInput ==='leave'){
@@ -334,12 +336,12 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'pizza-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Pizzeria`, // Displayed each time the player enters the room.
-      desc: `The attendant totals up your purchase on the register, and it comes to $${orderTotal}.`,
+      desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
       onEnter: () => 
         {
           if(orderTotal <= playMon){ // Subtracting
-          playMon - orderTotal;
-          playHung + energyTotal;
+          playMon -= orderTotal;
+          playHung += energyTotal;
         pressEnter('pizza-payscreen');
           }else{
             pressEnter('pizza-nomon'); // if you have no money
@@ -349,14 +351,15 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'pizza-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Pizzeria`, // Displayed each time the player enters the room.
-      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with $${playMon}\n
+      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
       \n
       Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
       onEnter: () => 
       {
-        orderTotal = 0; // Clearing this variable
-        energyTotal = 0; // Clearing the variable 
-        pressEnter('prevroomid'); // Replace with the last room visited secret formula
+        const room = getRoom('pizza-intro');
+          orderTotal = 0; // Clearing this variable
+          energyTotal = 0; // Clearing the variable 
+          pressEnter(room.enteredFrom);
       }
     },
     {
@@ -365,9 +368,10 @@ const luncheonette = { // Luncheonette Room
       desc: `You leave the restaurant`,
       onEnter: () => 
         {
+          const room = getRoom('pizza-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -376,9 +380,10 @@ const luncheonette = { // Luncheonette Room
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
         {
+          const room = getRoom('pizza-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -392,6 +397,9 @@ const luncheonette = { // Luncheonette Room
       onEnter: () => 
         {
         pressEnter('nuts-buyscreen');
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          console.log(room.enteredFrom);
         },
     },
     {
@@ -413,33 +421,33 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "frankfurter"){
-          orderTotal + 1.40;
-          energyTotal + 28;
+          orderTotal += 1.40;
+          energyTotal += 28;
           println('One frank is ready to go. \n Anything else?');
           
         }else if(prevInput ==='burger'){
-          orderTotal + 1.95;
-          energyTotal + 26;
+          orderTotal += 1.95;
+          energyTotal += 26;
           println('One burger coming right up. \n Anything else?');
           
         }else if(prevInput ==='cheese'){
-          orderTotal + 1.00;
-          energyTotal + 8;
+          orderTotal += 1.00;
+          energyTotal += 8;
           println('One cheese sandwich is on its way. \n Anything else?');
           
         }else if(prevInput ==='coke'){
-          orderTotal + 0.85;
-          energyTotal + 8;
+          orderTotal += 0.85;
+          energyTotal += 8;
           println('One coke is on its way. \n Anything else?');
           
         }else if(prevInput ==='donut'){
-          orderTotal + 0.75;
-          energyTotal + 8;
+          orderTotal += 0.75;
+          energyTotal += 8;
           println('One donut is on its way. \n Anything else?');
           
         }else if(prevInput ==='coffee'){
-          orderTotal + 0.45;
-          energyTotal + 8;
+          orderTotal += 0.45;
+          energyTotal += 8;
           println('One coffee is on its way. \n Anything else?');
           
         }else if(prevInput ==='leave'){
@@ -456,12 +464,12 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'nuts-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-      desc: `The attendant totals up your purchase on the register, and it comes to $${orderTotal}.`,
+      desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
       onEnter: () => 
         {
           if(orderTotal <= playMon){ // Subtracting
-          playMon - orderTotal;
-          playHung + energyTotal;
+          playMon -= orderTotal;
+          playHung += energyTotal;
         pressEnter('nuts-payscreen');
           }else{
             pressEnter('nuts-nomon'); // if you have no money
@@ -471,14 +479,15 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'nuts-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with $${playMon}\n
+      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
       \n
       Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
       onEnter: () => 
       {
-        orderTotal = 0; // Clearing this variable
-        energyTotal = 0; // Clearing the variable 
-        pressEnter('prevroomid'); // Replace with the last room visited secret formula
+        const room = getRoom('nuts-intro');
+          orderTotal = 0; // Clearing this variable
+          energyTotal = 0; // Clearing the variable 
+          pressEnter(room.enteredFrom);
       }
     },
     {
@@ -487,9 +496,10 @@ const luncheonette = { // Luncheonette Room
       desc: `You leave the restaurant`,
       onEnter: () => 
         {
+          const room = getRoom('nuts-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -498,9 +508,10 @@ const luncheonette = { // Luncheonette Room
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
         {
+          const room = getRoom('nuts-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -511,6 +522,9 @@ const luncheonette = { // Luncheonette Room
       onEnter: () => 
         {
         pressEnter('gyro-buyscreen');
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          console.log(room.enteredFrom);
         },
     },
     {
@@ -531,28 +545,28 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "gyro"){
-          orderTotal + 1.85;
-          energyTotal + 21;
+          orderTotal += 1.85;
+          energyTotal += 21;
           println('One gyro is ready to go. \n Anything else?');
           
         }else if(prevInput ==='souvlaki'){
-          orderTotal + 1.95;
-          energyTotal + 23;
+          orderTotal += 1.95;
+          energyTotal += 23;
           println('One souvlaki coming right up. \n Anything else?');
           
         }else if(prevInput ==='baklava'){
-          orderTotal + 1.50;
-          energyTotal + 11;
+          orderTotal += 1.50;
+          energyTotal += 11;
           println('One cheese sandwich is on its way. \n Anything else?');
           
         }else if(prevInput ==='pepsi'){
-          orderTotal + 0.85;
-          energyTotal + 6;
+          orderTotal += 0.85;
+          energyTotal += 6;
           println('One pepsi is on its way. \n Anything else?');
           
         }else if(prevInput ==='coffee'){
-          orderTotal + 0.45;
-          energyTotal + 8;
+          orderTotal += 0.45;
+          energyTotal += 8;
           println('One coffee is on its way. \n Anything else?');
           
         }else if(prevInput ==='leave'){
@@ -569,12 +583,12 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'gyro-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Greek Gyro`, // Displayed each time the player enters the room.
-      desc: `The attendant totals up your purchase on the register, and it comes to $${orderTotal}.`,
+      desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
       onEnter: () => 
         {
           if(orderTotal <= playMon){ // Subtracting
-          playMon - orderTotal;
-          playHung + energyTotal;
+          playMon -= orderTotal;
+          playHung += energyTotal;
         pressEnter('gyro-payscreen');
           }else{
             pressEnter('gyro-nomon'); // if you have no money
@@ -584,14 +598,15 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'gyro-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: `Greek Gyro`, // Displayed each time the player enters the room.
-      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with $${playMon}\n
+      desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
       \n
       Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
       onEnter: () => 
       {
+        const room = getRoom('lunch-intro');
         orderTotal = 0; // Clearing this variable
         energyTotal = 0; // Clearing the variable 
-        pressEnter('prevroomid'); // Replace with the last room visited secret formula
+        pressEnter(room.enteredFrom);
       }
     },
     {
@@ -600,9 +615,10 @@ const luncheonette = { // Luncheonette Room
       desc: `You leave the restaurant without waiting for the food you have ordered. The greasy spoon motif of this place must not appeal to you.`,
       onEnter: () => 
         {
+          const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     {
@@ -611,9 +627,10 @@ const luncheonette = { // Luncheonette Room
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
         {
+          const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom);
         },
     },
     ],
