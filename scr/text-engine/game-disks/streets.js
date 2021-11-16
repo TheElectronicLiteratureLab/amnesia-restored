@@ -11136,7 +11136,7 @@ const streets = {
     },
     {   
       id: 'wash-merc',
-      coord: [-49.012, 1.820],
+      coord: [-47.779, 1.906],
       name: 'Washington Pl. and Mercer Ave.',
       desc: ``,
       isStreet: true,
@@ -11361,7 +11361,7 @@ const streets = {
     },
     {   
       id: 'whou-macd',
-      coord: [],
+      coord: [-54.526, -10.193],
       name: 'W. Houston St. and MacDougal Ave.',
       desc: ``,
       isStreet: true,
@@ -18048,7 +18048,7 @@ const streets = {
     /*********************/
     {
       id: '59-12',
-      coord: [],
+      coord: [41.725, -53.492],
       name: 'W. 59th St. and 12th Ave.',
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -18058,35 +18058,23 @@ const streets = {
       ],
     },
     {
-      id: '59-wend',
-      coord: [],
-      name: 'W. 59th St. and West End Ave.',
-      exits: [
-        {dir: 'north', id: '60-wend'},
-        {dir: 'south', id: '58-11'},
-        {dir: 'east', id: '59-amst'},
-        {dir: 'west', id: '59-12'},
-        {dir: ['subway', 'entrance'], id: 'S-A-subway-ent'},
-      ],
-    },
-    {
       id: '59-7',
-      coord: [],
+      coord: [41.936, -21.279],
       name: 'Central Park S. and 7th Ave.',
       exits: [
-        {dir: 'north', id: 'S-A'},
+        {dir: 'north', id: '60-7'},
         {dir: 'south', id: '58-7'},
         {dir: 'east', id: '59-amer'},
-        {dir: 'west', id: '59-cent'},  
+        {dir: 'west', id: '59-cpkw'},  
     ],
     },
     {
       id: '59-amer',
-      coord: [],
+      coord: [42.048, -14.661],
       name: 'Central Park S. and Ave. of Americas',
       desc: `There is a restaurant called Nedicks here.`, // Nedicks entrance
       exits: [
-        {dir: 'north', id: 'S-A'},
+        {dir: 'north', id: '60-amer'},
         {dir: 'south', id: '58-amer'},
         {dir: 'east', id: '59-wdri'},
         {dir: 'west', id: '59-7'},
@@ -18096,7 +18084,7 @@ const streets = {
 //Begin 58th St.
     {
       id: '58-12',
-      coord: [],
+      coord: [40.216, -53.513],
       name: 'W. 58th St. and 12th Ave.',
       exits: [//Can't go West
         {dir: 'north', id: '59-12'},
@@ -18107,7 +18095,7 @@ const streets = {
     },
     {
       id: '58-11',
-      coord: [],
+      coord: [40.233, -48.030],
       name: 'W. 58th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '59-wend'},
@@ -18118,7 +18106,7 @@ const streets = {
     },
     {
       id: '58-10',
-      coord: [],
+      coord: [40.338, -41.116],
       name: 'W. 58th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '59-amst'},
@@ -18129,7 +18117,7 @@ const streets = {
     },
     {
       id: '58-9',
-      coord: [],
+      coord: [40.392, -34.256],
       name: 'W. 58th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '59-colu'},
@@ -18140,11 +18128,11 @@ const streets = {
     },
     {
       id: 'broa-8',
-      coord: [],
+      coord: [40.679, -27.796],
       name: 'Broadway and 8th Ave.',
       desc: `There is a subway entrance at this corner.`,
       exits: [
-        {dir: 'north', id: '59-cent'},
+        {dir: 'north', id: '59-cpkw'},
         {dir: 'south', id: '58-8'},
         {dir: 'east', id: '58-broa'},
         {dir: 'west', id: '59-broa'},
@@ -18153,7 +18141,7 @@ const streets = {
     },
     {
       id: '58-8',
-      coord: [],
+      coord: [40.392, -27.895],
       name: 'W. 58th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: 'broa-8'},
@@ -18164,7 +18152,7 @@ const streets = {
     },
     {
       id: '58-broa',
-      coord: [],
+      coord: [40.491, -27.146],
       name: 'W. 58th St. and Broadway',
       desc: `Cars spin around on Columbus Circle like atomic particles in a particle accelerator, while pedestrians scamper for safety as best they can. Clearly, this is an experiment designed to control the city's expanding population.`,
       exits: [
@@ -18176,7 +18164,7 @@ const streets = {
     },
     {
       id: '58-7',
-      coord: [],
+      coord: [40.514, -21.229],
       name: 'W. 58th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: 'cent-7'},
@@ -18187,7 +18175,7 @@ const streets = {
     },
     {
       id: '58-amer',
-      coord: [],
+      coord: [40.539, -14.587],
       name: 'W. 58th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '59-amer'},
@@ -18199,7 +18187,7 @@ const streets = {
 //End 58th St.
     {
       id: '58-wdri',
-      coord: [],
+      coord: [40.624, -8.405],
       name: 'W. 58th St. and West Drive',
       exits: [
         {dir: 'north', id: '59-wdri'},
@@ -18210,7 +18198,7 @@ const streets = {
     },
     {
       id: '59-wdri',
-      coord: [],
+      coord: [42.090, -8.386],
       name: 'Central Park S. and West Drive',
       desc: `The imposing statue of General W.T. Sherman surveys the elegant square of Grand Army Plaza. To the north, the grand old lady, the Sherry Netherland, nestles romantically with its mate, the Pierre. Across the street, couples purchase a romantic interlude on a horse-drawn carriage. The horses and the driver seem immensely bored by it all.`,
       exits: [
@@ -18224,7 +18212,7 @@ const streets = {
 //Start 57th St.
     {
       id: '57-hhpw',
-      coord: [],
+      coord: [38.565, -54.376],
       name: 'W. 57th St. and Henry Hudson Pkwy.',
       exits: [
         {dir: 'north', id: '72-hhpw'},
@@ -18235,7 +18223,7 @@ const streets = {
     },
     {
       id: '57-12',
-      coord: [],
+      coord: [38.565, -53.415],
       name: 'W. 57th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '58-12'},
@@ -18246,7 +18234,7 @@ const streets = {
     },
     {
       id: '57-11',
-      coord: [],
+      coord: [38.599, -48.002],
       name: 'W. 57th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '58-11'},
@@ -18257,7 +18245,7 @@ const streets = {
     },
     {
       id: '57-10',
-      coord: [],
+      coord: [38.647, -41.124],
       name: 'W. 57th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '58-10'},
@@ -18268,7 +18256,7 @@ const streets = {
     },
     {
       id: '57-9',
-      coord: [],
+      coord: [38.723, -34.227],
       name: 'W. 57th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '58-9'},
@@ -18279,7 +18267,7 @@ const streets = {
     },
     {
       id: '57-8',
-      coord: [],
+      coord: [38.766, -27.768],
       name: 'W. 57th St. and 8th Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`, // Restaurant entrance
       exits: [
@@ -18292,7 +18280,7 @@ const streets = {
     },
     {
       id: '57-broa',
-      coord: [],
+      coord: [38.784, -25.194],
       name: 'W. 57th St. and Broadway',
       desc: `At street level Carnegie Hall is basically a row of posters announcing its upcoming events, which this week include a concert of Puccini arias by Linda Ronstadt, the Tuscon Festival Ballet's performance of Twyla Tharp's SWAN LAKE, the Canadian Youth Philharmonic in an all-Beethoven program, and a poetry reading by Allen Ginzberg.`,
       exits: [
@@ -18304,7 +18292,7 @@ const streets = {
     },
     {
       id: '57-7',
-      coord: [],
+      coord: [38.822, -21.202],
       name: 'W. 57th St. and 7th Ave.',
       desc: `There is a subway entrance at this corner.`, //Subway entrance
       exits: [
@@ -18317,7 +18305,7 @@ const streets = {
     },
     {
       id: '57-amer',
-      coord: [],
+      coord: [38.903, -14.557],
       name: 'W. 57th St. and Ave. of Americas',
       desc: `There is a subway entrance at this corner.`, //Subway entrance
       exits: [
@@ -18329,10 +18317,9 @@ const streets = {
         ],
     },
 //Start 56th St.
-//There is no 56-12
     {
       id: '56-11',
-      coord: [],
+      coord: [36.829, -47.991],
       name: 'W. 56th St. and 11th Ave.',
       exits: [//Can't go West
         {dir: 'north', id: '57-1'},
@@ -18342,7 +18329,7 @@ const streets = {
     },
     {
       id: '56-10',
-      coord: [],
+      coord: [36.990, -41.058],
       name: 'W. 56th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '57-10'},
@@ -18353,7 +18340,7 @@ const streets = {
     },
     {
       id: '56-9',
-      coord: [],
+      coord: [37.033, -34.211],
       name: 'W. 56th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '57-9'},
@@ -18364,7 +18351,7 @@ const streets = {
     },
     {
       id: '56-8',
-      coord: [],
+      coord: [37.085, -27.731],
       name: 'W. 56th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '57-8'},
@@ -18375,7 +18362,7 @@ const streets = {
     },
     {
       id: '56-broa',
-      coord: [],
+      coord: [37.109, -24.795],
       name: 'W. 56th St. and Broadway',
       exits: [
         {dir: 'north', id: '57-broa'},
@@ -18386,7 +18373,7 @@ const streets = {
     },
     {
       id: '56-7',
-      coord: [],
+      coord: [37.136, -21.122],
       name: 'W. 56th St. and 7th Ave.',
       desc: `The block from 55th to 56th is taken up by the Omni Park Central Hotel which you seem to remember by another name, though you can't remember what it was.`,
       exits: [//Player cannot enter Omni Park Central Hotel
@@ -18398,7 +18385,7 @@ const streets = {
     },
     {
       id: '56-amer',
-      coord: [],
+      coord: [37.175, -14.519],
       name: 'W. 56th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '57-amer'},
@@ -18406,22 +18393,22 @@ const streets = {
         {dir: 'east', id: '56-5'},
         {dir: 'west', id: '56-7'},
       ],
-    },//End 56th St.
-
+    },
 //Start 55th St.
     {
       id: '55-12',
-      coord: [],
+      coord: [35.314, -51.682],
       name: 'W. 55th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '57-12'},
-        {dir: 'east', id: '55-11'},
         {dir: 'south', id: '54-12'},
+        {dir: 'east', id: '55-11'},
+        {dir: 'west', block: `You can't go that way.`},
       ],
     },
     {
       id: '55-11',
-      coord: [],
+      coord: [35.348, -47.968],
       name: 'W. 55th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '56-11'},
@@ -18432,7 +18419,7 @@ const streets = {
     },
     {
       id: '55-10',
-      coord: [],
+      coord: [35.390, -41.041],
       name: 'W. 55th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '56-10'},
@@ -18443,7 +18430,7 @@ const streets = {
     },
     {
       id: '55-9',
-      coord: [],
+      coord: [35.491, -34.152],
       name: 'W. 55th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '56-9'},
@@ -18454,7 +18441,7 @@ const streets = {
     },
     {
       id: '55-8',
-      coord: [],
+      coord: [35.554, -27.674],
       name: 'W. 55th St. and 8th Ave.',
       desc: `There is a Greek Gyro located here.`, // Restaurant entrance
       exits: [
@@ -18467,7 +18454,7 @@ const streets = {
     },
     {
       id: '55-broa',
-      coord: [],
+      coord: [35.554, -24.491],
       name: 'W. 55th St. and Broadway',
       exits: [
         {dir: 'north', id: '56-broa'},
@@ -18478,7 +18465,7 @@ const streets = {
     },
     {
       id: '55-7',
-      coord: [],
+      coord: [35.616, -21.082],
       name: 'W. 55th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '56-7'},
@@ -18489,7 +18476,7 @@ const streets = {
     },
     {
       id: '55-amer',
-      coord: [],
+      coord: [35.648, -14.452],
       name: 'W. 55th St. and Ave of America',
       exits: [
         {dir: 'north', id: '56-amer'},
@@ -18497,22 +18484,22 @@ const streets = {
         {dir: 'east', id: '55-5'},
         {dir: 'west', id: '55-7'},
       ],
-    },//End 55th St.
-
+    },
 //Start 54th St.
     {
       id: '54-12',
-      coord: [],
+      coord: [33.759, -51.698],
       name: 'W. 54th St. and 12th Ave.',
-      exits: [//Can't go west
+      exits: [
         {dir: 'north', id: '55-12'},
-        {dir: 'east', id: '54-11'},
         {dir: 'south', id: '53-12'},
+        {dir: 'east', id: '54-11'},
+        {dir: 'west', block: `You can't go that way.`},
       ],
     },
     {
       id: '54-11',
-      coord: [],
+      coord: [33.792, -47.946],
       name: 'W. 54th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '55-11'},
@@ -18523,7 +18510,7 @@ const streets = {
     },
     {
       id: '54-10',
-      coord: [],
+      coord: [33.867, -40.987],
       name: 'W. 54th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '55-10'},
@@ -18534,7 +18521,7 @@ const streets = {
     },
     {
       id: '54-9',
-      coord: [],
+      coord: [33.954, -34.143],
       name: 'W. 54th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '55-9'},
@@ -18545,7 +18532,7 @@ const streets = {
     },
     {
       id: '54-8',
-      coord: [],
+      coord: [33.987, -27.616],
       name: 'W. 54th St. and 8th Ave.',
       exits: [//I found a tenement here
         {dir: 'north', id: '55-8'},
@@ -18556,7 +18543,7 @@ const streets = {
     },
     {
       id: '54-broa',
-      coord: [],
+      coord: [34.069, -24.179],
       name: 'W. 54th St. and Broadway',
       exits: [
         {dir: 'north', id: '55-broa'},
@@ -18567,7 +18554,7 @@ const streets = {
     },
     {
       id: '54-7',
-      coord: [],
+      coord: [34.067, -21.091],
       name: 'W. 54th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '55-7'},
@@ -18578,7 +18565,7 @@ const streets = {
     },
     {
       id: '54-amer',
-      coord: [],
+      coord: [34.149, -14.430],
       name: 'W. 54th St. and Ave. of Americas',
       desc: `There is a pizzeria here.`,//Restaurant Entrance
       exits: [
@@ -18588,12 +18575,11 @@ const streets = {
         {dir: 'west', id: '54-7'},
         {dir: ['enter', 'pizzeria', 'pizza',], id: '54-amer-pizza'},
       ],
-    },//End 54th St.
-
+    },
 //Start 53rd St.
     {
       id: '53-12',
-      coord: [],
+      coord: [32.282, -51.668],
       name: 'W. 53rd St. and 12th Ave.',
       exits: [//Can't go west
         {dir: 'north', id: '54-12'},
@@ -18603,7 +18589,7 @@ const streets = {
     },
     {
       id: '53-11',
-      coord: [],
+      coord: [32.299, -47.916],
       name: 'W. 53rd St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '54-11'},
@@ -18614,7 +18600,7 @@ const streets = {
     },
     {
       id: '53-10',
-      coord: [],
+      coord: [32.431, -40.940],
       name: 'W. 53rd St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '54-10'},
@@ -18625,7 +18611,7 @@ const streets = {
     },
     {
       id: '53-9',
-      coord: [],
+      coord: [32.496, -34.107],
       name: 'W. 53rd St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '54-9'},
@@ -18636,7 +18622,7 @@ const streets = {
     },
     {
       id: '53-8',
-      coord: [],
+      coord: [32.567, -27.609],
       name: 'W. 53rd St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '54-8'},
@@ -18647,7 +18633,7 @@ const streets = {
     },
     {
       id: '53-broa',
-      coord: [],
+      coord: [32.590, -23.989],
       name: 'W. 53rd St. and Broadway',
       exits: [
         {dir: 'north', id: '54-broa'},
@@ -18658,7 +18644,7 @@ const streets = {
     },
     {
       id: '53-7',
-      coord: [],
+      coord: [32.610, -21.049],
       name: 'W. 53rd St. and 7th Ave.',
       desc: 'There is a subway entrance at this corner.', //Subway Entrance
       exits: [
@@ -18671,7 +18657,7 @@ const streets = {
     },
     {
       id: '53-amer',
-      coord: [],
+      coord: [32.683, -14.418],
       name: 'W. 53rd St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '54-amer'},
@@ -18684,7 +18670,7 @@ const streets = {
 //Start 52nd St.
     {
       id: '52-12',
-      coord: [],
+      coord: [30.687, -51.601],
       name: 'W. 52nd St. and 12th Ave.',
       exits: [//Can't go west
         {dir: 'north', id: '53-12'},
@@ -18694,7 +18680,7 @@ const streets = {
     },
     {
       id: '52-11',
-      coord: [],
+      coord: [30.728, -47.907],
       name: 'W. 52nd St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '53-11'},
@@ -18705,7 +18691,7 @@ const streets = {
     },
     {
       id: '52-10',
-      coord: [],
+      coord: [30.779, -40.892],
       name: 'W. 52nd St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '53-10'},
@@ -18716,7 +18702,7 @@ const streets = {
     },
     {
       id: '52-9',
-      coord: [],
+      coord: [30.887, -34.088],
       name: 'W. 52nd St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '53-9'},
@@ -18727,7 +18713,7 @@ const streets = {
     },
     {
       id: '52-8',
-      coord: [],
+      coord: [30.939, -27.524],
       name: 'W. 52nd St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '53-8'},
@@ -18738,7 +18724,7 @@ const streets = {
     },
     {
       id: '52-broa',
-      coord: [],
+      coord: [31.006, -23.769],
       name: 'W. 52nd St. and Broadway',
       exits: [
         {dir: 'north', id: '53-broa'},
@@ -18749,7 +18735,7 @@ const streets = {
     },
     {
       id: '52-7',
-      coord: [],
+      coord: [31.046, -21.016],
       name: 'W. 52nd St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '53-7'},
@@ -18760,7 +18746,7 @@ const streets = {
     },
     {
       id: '52-amer',
-      coord: [],
+      coord: [31.121, -14.383],
       name: 'W. 52nd St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '53-amer'},
@@ -18768,12 +18754,11 @@ const streets = {
         {dir: 'east', id: '52-5'},
         {dir: 'west', id: '52-7'},
       ],
-    },//End 52nd St.
-
+    },
 //Start 51st St.
     {
       id: '51-12',
-      coord: [],
+      coord: [29.042, -51.577],
       name: 'W. 51st St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '52-12'},
@@ -18783,7 +18768,7 @@ const streets = {
     },
     {
       id: '51-11',
-      coord: [],
+      coord: [29.087, -47.834],
       name: 'W. 51st St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '52-11'},
@@ -18794,7 +18779,7 @@ const streets = {
     },
     {
       id: '51-10',
-      coord: [],
+      coord: [29.166, -40.880],
       name: 'W. 51st St. and 10th Ave.',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
       exits: [
@@ -18807,7 +18792,7 @@ const streets = {
     },
     {
       id: '51-9',
-      coord: [],
+      coord: [29.240, -34.034],
       name: 'W. 51st St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '52-9'},
@@ -18818,7 +18803,7 @@ const streets = {
     },
     {
       id: '51-8',
-      coord: [],
+      coord: [29.266, -27.493],
       name: 'W. 51st St. and 8th Ave.',
       desc: 'There is a luncheonette on the corner.',
       exits: [
@@ -18831,7 +18816,7 @@ const streets = {
     },
     {
       id: '51-broa',
-      coord: [],
+      coord: [29.318, -23.632],
       name: 'W. 51st St. and Broadway',
       exits: [
         {dir: 'north', id: '52-broa'},
@@ -18842,7 +18827,7 @@ const streets = {
     },
     {
       id: '51-7',
-      coord: [],
+      coord: [29.407, -20.937],
       name: 'W. 51st St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '52-7'},
@@ -18853,7 +18838,7 @@ const streets = {
     },
     {
       id: '51-amer',
-      coord: [],
+      coord: [29.475, -14.340],
       name: 'W. 51st St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '52-amer'},
@@ -18861,12 +18846,11 @@ const streets = {
         {dir: 'east', id: '51-5'},
         {dir: 'west', id: '51-7'},
       ],
-    },//End 51st St.
-
+    },
 //Start 50th St.
     {
       id: '50-12',
-      coord: [],
+      coord: [27.518, -51.557],
       name: 'W. 50th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '51-12'},
@@ -18876,7 +18860,7 @@ const streets = {
     },
     {
       id: '50-11',
-      coord: [],
+      coord: [27.498, -47.844],
       name: 'W. 50th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '51-11'},
@@ -18887,7 +18871,7 @@ const streets = {
     },
     {
       id: '50-10',
-      coord: [],
+      coord: [27.585, -40.848],
       name: 'W. 50th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '51-10'},
@@ -18898,7 +18882,7 @@ const streets = {
     },
     {
       id: '50-9',
-      coord: [],
+      coord: [27.677, -34.059],
       name: 'W. 50th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '51-9'},
@@ -18909,7 +18893,7 @@ const streets = {
     },
     {
       id: '50-8',
-      coord: [],
+      coord: [27.774, -27.450],
       name: 'W. 50th St. and 8th Ave.',
       desc: 'There is a subway entrance at this corner.',
       exits: [
@@ -18922,7 +18906,7 @@ const streets = {
     },
     {
       id: '50-broa',
-      coord: [],
+      coord: [27.836, -23.529],
       name: 'W. 50th St. and Broadway',
       desc: 'There is a subway entrance at this corner.',
       exits: [
@@ -18935,7 +18919,7 @@ const streets = {
     },
     {
       id: '50-7',
-      coord: [],
+      coord: [27.827, -20.911],
       name: 'W. 50th St. and 7th Ave.',
       desc: 'Radio City Music Hall -- its bronze doors hiding the largest chandeliers and the best legs in the world.',
       exits: [
@@ -18947,7 +18931,7 @@ const streets = {
     },
     {
       id: '50-amer',
-      coord: [],
+      coord: [27.939, -14.272],
       name: 'W. 50th St. and Ave. of Americas',
       desc: 'The 50 ST-6 AV Station Entrance is at this corner.',
       exits: [
@@ -18957,12 +18941,11 @@ const streets = {
         {dir: 'west', id: '50-7'},
         {dir: ['subway', 'entrance'], id: '50-amer-subway-ent'},
       ],
-    },//End 50th St.
-
+    },
 //Start 49th St.
     {
       id: '49-12',
-      coord: [],
+      coord: [25.756, -51.471],
       name: 'W. 49th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '50-12'},
@@ -18972,7 +18955,7 @@ const streets = {
     },
     {
       id: '49-11',
-      coord: [],
+      coord: [25.770, -47.815],
       name: 'W. 49th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '50-11'},
@@ -18983,7 +18966,7 @@ const streets = {
     },
     {
       id: '49-10',
-      coord: [],
+      coord: [25.880, -40.806],
       name: 'W. 49th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '50-10'},
@@ -18994,7 +18977,7 @@ const streets = {
     },
     {
       id: '49-9',
-      coord: [],
+      coord: [25.949, -33.972],
       name: 'W. 49th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '50-9'},
@@ -19005,7 +18988,7 @@ const streets = {
     },
     {
       id: '49-8',
-      coord: [],
+      coord: [26.045, -27.384],
       name: 'W. 49th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '50-8'},
@@ -19016,7 +18999,7 @@ const streets = {
     },
     {
       id: '49-broa',
-      coord: [],
+      coord: [26.081, -23.360],
       name: 'W. 49th St. and Broadway',
       desc: `There is a restaurant called Nedicks here.`,//Restaurant Entrance
       exits: [
@@ -19029,7 +19012,7 @@ const streets = {
     },
     {
       id: '49-7',
-      coord: [],
+      coord: [26.109, -20.854],
       name: 'W. 49th St. and 7th Ave.',
       desc: 'There is a subway entrance at this corner.', //Subway Entrance
       exits: [
@@ -19043,7 +19026,7 @@ const streets = {
     },
     {
       id: '49-amer',
-      coord: [],
+      coord: [26.209, -14.256],
       name: 'W. 49th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '50-amer'},
@@ -19056,7 +19039,7 @@ const streets = {
 //Start 48th St.
     {
       id: '48-12',
-      coord: [],
+      coord: [24.075, -51.452],
       name: 'W. 48th St. and 12th Ave.',
       exits: [
         {dir: 'south', id: '47-12'},
@@ -19067,7 +19050,7 @@ const streets = {
     },
     {
       id: '48-11',
-      coord: [],
+      coord: [24.139, -47.776],
       name: 'W. 48th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '49-11'},
@@ -19078,7 +19061,7 @@ const streets = {
     },
     {
       id: '48-10',
-      coord: [],
+      coord: [24.193, -40.754],
       name: 'W. 48th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '49-10'},
@@ -19089,7 +19072,7 @@ const streets = {
     },
     {
       id: '48-9',
-      coord: [],
+      coord: [24.268, -33.974],
       name: 'W. 48th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '49-9'},
@@ -19100,7 +19083,7 @@ const streets = {
     },
     {
       id: '48-8',
-      coord: [],
+      coord: [24.373, -27.342],
       name: 'W. 48th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '49-8'},
@@ -19111,7 +19094,7 @@ const streets = {
     },
     {
       id: '48-broa',
-      coord: [],
+      coord: [24.371, -23.014],
       name: 'W. 48th St. and Broadway',
       desc: 'Here is the Metropole Cafe. In the evening it is a safe haven for bare breasts and sequined hips that undulate slightly off the beat of the music.',
       exits: [
@@ -19124,7 +19107,7 @@ const streets = {
     },
     {
       id: '48-7',
-      coord: [],
+      coord: [24.418, -20.857],
       name: 'W. 48th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '49-7'},
@@ -19135,7 +19118,7 @@ const streets = {
     },
     {
       id: '48-amer',
-      coord: [],
+      coord: [24.487, -14.259],
       name: 'W. 48th St. and Ave. of Americas',
       desc: 'There is a Greek Gyro located here.',
       exits: [
@@ -19145,12 +19128,11 @@ const streets = {
         {dir: 'west', id: '48-7'},
         {dir: ['enter', 'greek', 'gyro'], id: '48-gyro'},
       ],
-    },//End 48th Street
-
+    },
 //Start 47th Street
     {
       id: '47-12',
-      coord: [],
+      coord: [22.384, -51.437],
       name: 'W. 47th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '48-12'},
@@ -19161,7 +19143,7 @@ const streets = {
     },
     {
       id: '47-11',
-      coord: [],
+      coord: [22.412, -47.739],
       name: 'W. 47th St. and 11th Ave.',
       desc: 'There is a luncheonette on the corner.',
       exits: [
@@ -19174,18 +19156,7 @@ const streets = {
     },
     {
       id: '47-10',
-      coord: [],
-      name: 'W. 47th St. and 10th Ave.',
-      exits: [
-        {dir: 'north', id: '48-10'},
-        {dir: 'south', id: '46-10'},
-        {dir: 'east', id: '47-9'},
-        {dir: 'west', id: '47-11'},
-      ],
-    },
-    {
-      id: '47-10',
-      coord: [],
+      coord: [22.499, -40.766],
       name: 'W. 47th St. and 10th Ave.',
       desc: 'There is a pizzeria here.',
       exits: [
@@ -19198,7 +19169,7 @@ const streets = {
     },
     {
       id: '47-9',
-      coord: [],
+      coord: [22.620, -33.955],
       name: 'W. 47th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '48-9'},
@@ -19209,7 +19180,7 @@ const streets = {
     },
     {
       id: '47-8',
-      coord: [],
+      coord: [22.638, -27.325],
       name: 'W. 47th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '48-8'},
@@ -19220,7 +19191,7 @@ const streets = {
     },
     {
       id: '47-broa',
-      coord: [],
+      coord: [22.687, -22.447],
       name: 'W. 47th St. and Broadway',
       exits: [
         {dir: 'north', id: '48-broa'},
@@ -19231,7 +19202,7 @@ const streets = {
     },
     {
       id: '47-7',
-      coord: [],
+      coord: [22.736, -20.836],
       name: 'W. 47th St. and 7th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
       exits: [
@@ -19244,7 +19215,7 @@ const streets = {
     },
     {
       id: '47-amer',
-      coord: [],
+      coord: [22.791, -14.212],
       name: 'W. 47th St. and Ave. of Americas',
       desc: 'There is a pizzeria here.',
       exits: [
@@ -19255,11 +19226,10 @@ const streets = {
         {dir: ['enter', 'pizza', 'pizzeria'], id: '47-amer-pizza'},
       ],
     },
-
 //Start 46th Street.
 {
       id: '46-12',
-      coord: [],
+      coord: [20.535, -51.380],
       name: 'W. 46th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '47-12'},
@@ -19270,7 +19240,7 @@ const streets = {
     },
     {
       id: '46-11',
-      coord: [],
+      coord: [20.572, -47.689],
       name: 'W. 46th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '47-11'},
@@ -19281,7 +19251,7 @@ const streets = {
     },
     {
       id: '46-10',
-      coord: [],
+      coord: [20.649, -40.721],
       name: 'W. 46th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '47-10'},
@@ -19292,7 +19262,7 @@ const streets = {
     },
     {
       id: '46-9',
-      coord: [],
+      coord: [20.699, -33.923],
       name: 'W. 46th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '47-9'},
@@ -19303,7 +19273,7 @@ const streets = {
     },
     {
       id: '46-8',
-      coord: [],
+      coord: [20.803, -27.242],
       name: 'W. 46th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '47-8'},
@@ -19314,7 +19284,7 @@ const streets = {
     },
     {
       id: '46-broa',
-      coord: [],
+      coord: [20.919, -21.745],
       name: 'W. 46th St. and Broadway',
       exits: [
         {dir: 'north', id: '47-broa'},
@@ -19325,7 +19295,7 @@ const streets = {
     },
     {
       id: '46-7',
-      coord: [],
+      coord: [20.927, -20.767],
       name: 'W. 46th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '47-7'},
@@ -19336,7 +19306,7 @@ const streets = {
     },
     {
       id: '46-amer',
-      coord: [],
+      coord: [20.989, -14.159],
       name: 'W. 46th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '47-amer'},
@@ -19345,11 +19315,10 @@ const streets = {
         {dir: 'west', id: '46-7'},
       ],
     },
-
 //Start 45th Street
     {
       id: '45-12',
-      coord: [],
+      coord: [18.583, -51.332],
       name: 'W. 45th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '46-12'},
@@ -19360,7 +19329,7 @@ const streets = {
     },
     {
       id: '45-11',
-      coord: [],
+      coord: [18.564, -47.645],
       name: 'W. 45th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '46-11'},
@@ -19371,7 +19340,7 @@ const streets = {
     },
     {
       id: '45-10',
-      coord: [],
+      coord: [18.703, -40.686],
       name: 'W. 45th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '46-10'},
@@ -19382,7 +19351,7 @@ const streets = {
     },
     {
       id: '45-9',
-      coord: [],
+      coord: [18.799, -33.876],
       name: 'W. 45th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '46-9'},
@@ -19393,7 +19362,7 @@ const streets = {
     },
     {
       id: '45-8',
-      coord: [],
+      coord: [18.844, -27.221],
       name: 'W. 45th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '46-8'},
@@ -19404,7 +19373,7 @@ const streets = {
     },
     {
       id: '45-broa',
-      coord: [],
+      coord: [18.899, -21.237],
       name: 'W. 45th St. and Broadway',
       exits: [
         {dir: 'north', id: '46-broa'},
@@ -19415,7 +19384,7 @@ const streets = {
     },
     {
       id: '45-7',
-      coord: [],
+      coord: [18.885, -20.803],
       name: 'W. 45th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '46-7'},
@@ -19426,7 +19395,7 @@ const streets = {
     },
     {
       id: '45-amer',
-      coord: [],
+      coord: [18.986, -14.135],
       name: 'W. 45th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '46-amer'},
@@ -19437,7 +19406,7 @@ const streets = {
     },
     {//Important!!
       id: 'broa-7',
-      coord: [],
+      coord: [18.846, -20.827],
       name: 'Broadway and 7th Ave.',
       desc: `Times Square -- where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
     //Important!! In this section, there is a guy who says: "And a sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap?'" 
@@ -19457,13 +19426,12 @@ const streets = {
       onEnter: () => {
         println(`That was dumb. The cops have been waiting for the last 15 minutes for someone to come along and compound the felony. A plainclothes detective flashes his badge and informs you you're under arrest.`);
         pressEnter('deat-1');
+      },
     },
-      },//End of 45th Street & broa-7
-
 //Start of 44th Street
     {
       id: '44-hhpw',
-      coord: [],
+      coord: [16.559, -53.048],
       name: 'W. 44th St. and Henry Hudson Pkwy.',
       exits: [
         {dir: 'north', id: '57-hhpw'},
@@ -19474,7 +19442,7 @@ const streets = {
     },
     {
       id: '44-12',
-      coord: [],
+      coord: [16.588, -51.812],
       name: 'W. 44th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '45-12'},
@@ -19485,7 +19453,7 @@ const streets = {
     },
     {
       id: '44-11',
-      coord: [],
+      coord: [16.614, -47.616],
       name: 'W. 44th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '45-11'},
@@ -19496,7 +19464,7 @@ const streets = {
     },
     {
       id: '44-10',
-      coord: [],
+      coord: [16.716, -40.607],
       name: 'W. 44th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '45-10'},
@@ -19507,7 +19475,7 @@ const streets = {
     },
     {
       id: '44-9',
-      coord: [],
+      coord: [16.836, -33.861],
       name: 'W. 44th St. and 9th Ave.',
       desc: 'There is a Greek Gyro here.',
       exits: [
@@ -19520,7 +19488,7 @@ const streets = {
     },
     {
       id: '44-8',
-      coord: [],
+      coord: [16.893, -27.091],
       name: 'W. 44th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '45-8'},
@@ -19531,7 +19499,7 @@ const streets = {
     },
     {
       id: '44-7',
-      coord: [],
+      coord: [16.938, -20.677],
       name: 'W. 44th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: 'broa-7'},
@@ -19542,7 +19510,7 @@ const streets = {
     },
     {
       id: '44-broa',
-      coord: [],
+      coord: [16.938, -20.250],
       name: 'W. 44th St. and Broadway',
       exits: [
         {dir: 'north', id: 'broa-7'},
@@ -19553,7 +19521,7 @@ const streets = {
     },
     {
       id: '44-amer',
-      coord: [],
+      coord: [17.025, -14.099],
       name: 'W. 44th St. and Ave. of Americas',
       desc: 'The faded elegance of the Algonquin Hotel still draws the theatre and writing crowd for cocktails and meals.',
       exits: [
@@ -19563,12 +19531,11 @@ const streets = {
         {dir: 'west', id: '44-broa'},
         {dir: ['enter', 'hotel', 'algonquin'], block:`You can’t go that way.`},
       ],
-    },//End 44th Street
-
+    },
 //Start 43rd Street
     {
       id: '43-hhpw',
-      coord: [],
+      coord: [14.671, -53.456],
       name: 'W. 43rd St. and Henry Hudson Pkwy.',
       exits: [
         {dir: 'north', id: '44-hhpw'},
@@ -19579,7 +19546,7 @@ const streets = {
     },
     {
       id: '43-12',
-      coord: [],
+      coord: [14.725, -52.284],
       name: 'W. 43rd St. and 12th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
       exits: [
@@ -19592,7 +19559,7 @@ const streets = {
     },
     {
       id: '43-11',
-      coord: [],
+      coord: [14.809, -47.616],
       name: 'W. 43rd St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '44-11'},
@@ -19603,7 +19570,7 @@ const streets = {
     },
     {
       id: '43-10',
-      coord: [],
+      coord: [14.879, -40.576],
       name: 'W. 43rd St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '44-10'},
@@ -19614,7 +19581,7 @@ const streets = {
     },
     {
       id: '43-9',
-      coord: [],
+      coord: [15.001, -33.816],
       name: 'W. 43rd St. and 9th Ave.',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
       exits: [
@@ -19627,7 +19594,7 @@ const streets = {
     },
     {
       id: '43-8',
-      coord: [],
+      coord: [15.088, -27.065],
       name: 'W. 43rd St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '44-8'},
@@ -19638,7 +19605,7 @@ const streets = {
     },
     {
       id: '43-7',
-      coord: [],
+      coord: [15.209, -20.636],
       name: 'W. 43rd St. and 7th Ave.',
       desc: 'There is a subway entrance at this corner.',
       exits: [
@@ -19650,7 +19617,7 @@ const streets = {
     },
     {
       id: '43-broa',
-      coord: [],
+      coord: [15.186, -19.687],
       name: 'W. 43rd St. and Broadway',
       exits: [
         {dir: 'north', id: '44-broa'},
@@ -19661,7 +19628,7 @@ const streets = {
     },
     {
       id: '43-amer',
-      coord: [],
+      coord: [15.260, -14.041],
       name: 'W. 43rd St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '44-amer'},
@@ -19669,12 +19636,11 @@ const streets = {
         {dir: 'east', id: '43-5'},
         {dir: 'west', id: '43-broa'},
       ],
-    },//End 43rd Street
-
+    },
 //Start 42nd Street
     {
       id: '42-hhpw',
-      coord: [],
+      coord: [12.724, -53.812],
       name: 'W. 42nd St. and Henry Hudson Pkwy.',
       exits: [
         {dir: 'north', id: '43-hhpw'},
@@ -19685,7 +19651,7 @@ const streets = {
     },
     {
       id: '42-12',
-      coord: [],
+      coord: [12.744, -52.730],
       name: 'W. 42nd St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '43-12'},
@@ -19696,7 +19662,7 @@ const streets = {
     },
     {
       id: '42-11',
-      coord: [],
+      coord: [12.880, -47.564],
       name: 'W. 42nd St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '43-11'},
@@ -19707,7 +19673,7 @@ const streets = {
     },
     {
       id: '42-10',
-      coord: [],
+      coord: [12.915, -40.559],
       name: 'W. 42nd St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '43-10'},
@@ -19719,7 +19685,7 @@ const streets = {
     },
     {
       id: '42-dyer',
-      coord: [],
+      coord: [12.954, -37.318],
       name: 'W. 42nd St. and Dyer Ave.',
       desc: 'A row of new theatres struggle desperately to surmount the general decay of the area.',
       exits: [
@@ -19731,7 +19697,7 @@ const streets = {
     },
     {//Possible description change
       id: '42-9',
-      coord: [],
+      coord: [13.036, -33.781],
       name: 'W. 42nd St. and 9th Ave.',
       desc: 'This block long stretch of 42nd St. is another one lined with movie marquee after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamourizing.',
       exits: [
@@ -19743,7 +19709,7 @@ const streets = {
     },
     {
       id: '42-8',
-      coord: [],
+      coord: [13.062, -27.010],
       name: 'W. 42nd St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '43-8'},
@@ -19754,7 +19720,7 @@ const streets = {
     },
     {
       id: '42-7',
-      coord: [],
+      coord: [13.140, -20.602],
       name: 'W. 42nd St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '43-7'},
@@ -19765,7 +19731,7 @@ const streets = {
     },
     {
       id: '42-broa',
-      coord: [],
+      coord: [13.179, -19.091],
       name: 'W. 42nd St. and Broadway',
       exits: [
         {dir: 'north', id: '43-broa'},
@@ -19776,7 +19742,7 @@ const streets = {
     },
     {
       id: '42-amer',
-      coord: [],
+      coord: [13.213, -14.028],
       name: 'W. 42nd St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '43-amer'},
@@ -19784,12 +19750,11 @@ const streets = {
         {dir: 'east', id: '42-5'},
         {dir: 'west', id: '42-broa'},
       ],
-    },//End 42nd Street
-
+    },
 //Start 41st Street
     {
       id: '41-12',
-      coord: [],
+      coord: [10.672, -52.697],
       name: 'W. 41st St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '42-12'},
@@ -19800,7 +19765,7 @@ const streets = {
     },
     {
       id: '41-11',
-      coord: [],
+      coord: [10.722, -47.559],
       name: 'W. 41st St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '42-11'},
@@ -19811,7 +19776,7 @@ const streets = {
     },
     {
       id: '41-galv',
-      coord: [],
+      coord: [10.716, -43.135],
       name: 'W. 41st St. and Galvin Ave.',
       exits: [
         {dir: 'north', block:`You can’t go that way.`},
@@ -19822,7 +19787,7 @@ const streets = {
     },
     {
       id: '41-10',
-      coord: [],
+      coord: [10.796, -40.521],
       name: 'W. 41st St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '42-10'},
@@ -19833,7 +19798,7 @@ const streets = {
     },
     {
       id: '41-dyer',
-      coord: [],
+      coord: [10.879, -37.247],
       name: 'W. 41st St. and Dyer Ave.',
       desc: 'There is a restaurant called Nedicks here.',
       exits: [
@@ -19846,7 +19811,7 @@ const streets = {
     },
     {
       id: '41-9',
-      coord: [],
+      coord: [10.892, -33.772],
       name: 'W. 41st St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '42-9'},
@@ -19857,7 +19822,7 @@ const streets = {
     },
     {
       id: '41-8',
-      coord: [],
+      coord: [10.966, -26.960],
       name: 'W. 41st St. and 8th Ave.',
       desc: 'The enormous Port Authority Bus Terminal is a waystop for travelers and home to the squatters who sit at its entrance.',
       exits: [
@@ -19869,7 +19834,7 @@ const streets = {
     },
     {
       id: '41-7',
-      coord: [],
+      coord: [11.045, -20.566],
       name: 'W. 41st St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '42-7'},
@@ -19880,7 +19845,7 @@ const streets = {
     },
     {
       id: '41-broa',
-      coord: [],
+      coord: [11.123, -18.357],
       name: 'W. 41st St. and Broadway',
       exits: [
         {dir: 'north', id: '42-broa'},
@@ -19891,7 +19856,7 @@ const streets = {
     },
     {
       id: '41-amer',
-      coord: [],
+      coord: [11.092, -13.987],
       name: 'W. 41st St. and Ave. of Americas',
       desc: 'There is a pizzeria here.',
       exits: [
@@ -19905,7 +19870,7 @@ const streets = {
 //Start 40th Street
     {
       id: '40-12',
-      coord: [],
+      coord: [8.726, -52.700],
       name: 'W. 40th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '41-12'},
@@ -19916,7 +19881,7 @@ const streets = {
     },
     {
       id: '40-11',
-      coord: [],
+      coord: [8.819, -47.514],
       name: 'W. 40th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '41-11'},
@@ -19927,29 +19892,29 @@ const streets = {
     },
     {
       id: '40-galv',
-      coord: [],
+      coord: [8.801, -44.198],
       name: 'W. 40th St. and Galvin Ave.',
       exits: [
         {dir: 'north', id: '41-galv'},
-        {dir: 'south', id: '39-galv'},
+        {dir: 'south', id: 'bta-galv'},
         {dir: 'east', id: '40-10'},
         {dir: 'west', id: '40-11'},
       ],
     },
     {
       id: '40-10',
-      coord: [],
+      coord: [8.881, -40.451],
       name: 'W. 40th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '41-10'},
-        {dir: 'south', id: '39-10'},
+        {dir: 'south', id: 'bta-10'},
         {dir: 'east', id: 'bta-40'},
         {dir: 'west', id: '40-galv'},
       ],
     },//Bus Terminal Access
     {
       id: 'bta-galv',
-      coord: [],
+      coord: [7.935, -45.053],
       name: 'Bus Terminal Access and Galvin Ave.',
       exits: [
         {dir: 'north', id: '40-galv'},
@@ -19960,7 +19925,7 @@ const streets = {
     },
     {
       id: 'bta-10',
-      coord: [],
+      coord: [7.857, -40.456],
       name: 'Bus Terminal Access and 10th Ave.',
       exits: [
         {dir: 'north', id: '40-10'},
@@ -19971,7 +19936,7 @@ const streets = {
     },
     {
       id: 'bta-40',
-      coord: [],
+      coord: [8.845, -38.161],
       name: 'Bus Terminal Access and W. 40th St.',
       exits: [
         {dir: 'north', id: 'bta-dyer'},
@@ -19982,10 +19947,10 @@ const streets = {
     },
     {
       id: 'bta-dyer',
-      coord: [],
+      coord: [9.831, -37.277],
       name: 'Bus Terminal Access and Dyer Ave.',
       exits: [
-        {dir: 'north', id: 'bta-dyer'},
+        {dir: 'north', id: '41-dyer'},
         {dir: 'south', id: '40-dyer'},
         {dir: 'east', id: 'bta-9'},
         {dir: 'west', id: 'bta-40'},
@@ -19993,7 +19958,7 @@ const streets = {
     },
     {
       id: 'bta-9',
-      coord: [],
+      coord: [9.986, -33.776],
       name: 'Bus Terminal Access and 9th Ave.',
       exits: [
         {dir: 'north', id: '41-9'},
@@ -20004,7 +19969,7 @@ const streets = {
     },//End Bus Terminal Access
 {
       id: '40-dyer',
-      coord: [],
+      coord: [8.835, -37.225],
       name: 'W. 40th St. and Dyer Ave.',
       desc: 'There is a pizzeria here.',
       exits: [
@@ -20017,7 +19982,7 @@ const streets = {
     },
     {
       id: '40-9',
-      coord: [],
+      coord: [8.881, -33.771],
       name: 'W. 40th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: 'bta-9'},
@@ -20028,7 +19993,7 @@ const streets = {
     },
     {
       id: '40-8',
-      coord: [],
+      coord: [9.067, -26.915],
       name: 'W. 40th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '41-8'},
@@ -20039,35 +20004,13 @@ const streets = {
     },
     {
       id: '40-7',
-      coord: [],
+      coord: [9.129, -20.519],
       name: 'W. 40th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '41-7'},
         {dir: 'south', id: '39-7'},
         {dir: 'east', id: '40-broa'},
         {dir: 'west', id: '40-8'},
-      ],
-    },
-    {
-      id: '40-amer',
-      coord: [],
-      name: 'W. 40th St. and Ave. of Americas',
-      exits: [
-        {dir: 'north', id: '41-amer'},
-        {dir: 'south', id: '39-amer'},
-        {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: '40-broa'},
-      ]
-    },
-    {
-      id: '40-broa',
-      coord: [],
-      name: 'W. 40th St. and Broadway',
-      exits: [
-        {dir: 'north', id: '41-broa'},
-        {dir: 'south', id: '39-broa'},
-        {dir: 'east', id: '40-amer'},
-        {dir: 'west', id: '40-7'},
       ],
     },
     {
@@ -20081,34 +20024,32 @@ const streets = {
         {dir: 'east', id: '40-5'},
         {dir: 'west', id: '40-broa'},
       ],
-    },//End 40th Street
-
-//Start 39th Street
+    },
     {
-      id: '39-hhpw',
-      coord: [],
-      name: 'W. 39th St. and Henry Hudson Pkwy.',
+      id: '40-amer',
+      coord: [9.161, -13.997],
+      name: 'W. 40th St. and Ave. of Americas',
       exits: [
-        {dir: 'north', id: '42-hhpw'},
-        {dir: 'south', id: '34-hhpw'},
-        {dir: 'east', id: '39-12'},
-        {dir: 'west', block:`You can’t go that way.`},
-      ],
+        {dir: 'north', id: '41-amer'},
+        {dir: 'south', id: '39-amer'},
+        {dir: 'east', id: '40-5'},
+        {dir: 'west', id: '40-broa'},
+      ]
     },
     {
       id: '39-12',
-      coord: [],
+      coord: [6.874, -52.650],
       name: 'W. 39th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '40-12'},
         {dir: 'south', id: '34-12'},
         {dir: 'east', id: '39-11'},
-        {dir: 'west', id: '39-hhpw'},
+        {dir: 'west', block: `You can't go that way.`},
       ],
     },
     {
       id: '39-11',
-      coord: [],
+      coord: [6.940, -47.446],
       name: 'W. 39th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '40-11'},
@@ -20119,7 +20060,7 @@ const streets = {
     },
     {
       id: '39-galv',
-      coord: [],
+      coord: [6.938, -46.808],
       name: 'W. 39th St. and Galvin Ave.',
       exits: [
         {dir: 'north', id: 'bta-galv'},
@@ -20130,7 +20071,7 @@ const streets = {
     },
     {
       id: '39-10',
-      coord: [],
+      coord: [6.992, -40.454],
       name: 'W. 39th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: 'bta-10'},
@@ -20141,7 +20082,7 @@ const streets = {
     },
     {
       id: '39-dyer',
-      coord: [],
+      coord: [7.097, -37.203],
       name: 'W. 39th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: '40-dyer'},
@@ -20152,18 +20093,18 @@ const streets = {
     },
     {
       id: 'linc-dyer',
-      coord: [],
+      coord: [5.968, -37.176],
       name: 'Lincoln Tunnel and Dyer Ave.',
       exits: [
         {dir: 'north', id: '39-dyer'},
         {dir: 'south', id: '38-dyer'},
-        {dir: 'east', block:`You can’t go that way.`},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'east', block: `You can’t go that way.`},
+        {dir: 'west', block: `You can’t go that way.`},
       ],
     },
     {
       id: '39-9',
-      coord: [],
+      coord: [7.126, -33.723],
       name: 'W. 39th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '40-9'},
@@ -20174,7 +20115,7 @@ const streets = {
     },
     {
       id: '39-8',
-      coord: [],
+      coord: [7.222, -26.859],
       name: 'W. 39th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '40-8'},
@@ -20185,7 +20126,7 @@ const streets = {
     },
     {
       id: '39-7',
-      coord: [],
+      coord: [7.344, -20.486],
       name: 'W. 39th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '40-7'},
@@ -20196,7 +20137,7 @@ const streets = {
     },
     {
       id: '39-broa',
-      coord: [],
+      coord: [7.312, -17.081],
       name: 'W. 39th St. and Broadway',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
       exits: [
@@ -20209,7 +20150,7 @@ const streets = {
     },
     {
       id: '39-amer',
-      coord: [],
+      coord: [7.383, -13.886],
       name: 'W. 39th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '40-amer'},
@@ -20221,7 +20162,7 @@ const streets = {
 //Start 38th Street
     {
       id: '38-11',
-      coord: [],
+      coord: [4.847, -47.371],
       name: 'W. 38th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '39-11'},
@@ -20232,7 +20173,7 @@ const streets = {
     },
     {
       id: '38-10',
-      coord: [],
+      coord: [4.961, -40.424],
       name: 'W. 38th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '39-10'},
@@ -20243,7 +20184,7 @@ const streets = {
     },
     {
       id: '38-dyer',
-      coord: [],
+      coord: [4.961, -37.150],
       name: 'W. 38th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: 'linc-dyer'},
@@ -20254,7 +20195,7 @@ const streets = {
     },
     {
       id: '38-9',
-      coord: [],
+      coord: [5.018, -33.701],
       name: 'W. 38th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '39-9'},
@@ -20265,7 +20206,7 @@ const streets = {
     },
     {
       id: '38-8',
-      coord: [],
+      coord: [5.150, -26.826],
       name: 'W. 38th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '39-8'},
@@ -20276,7 +20217,7 @@ const streets = {
     },
     {
       id: '38-7',
-      coord: [],
+      coord: [5.250, -20.466],
       name: 'W. 38th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '39-7'},
@@ -20287,7 +20228,7 @@ const streets = {
     },
     {
       id: '38-broa',
-      coord: [],
+      coord: [5.298, -16.446],
       name: 'W. 38th St. and Broadway',
       exits: [
         {dir: 'north', id: '39-broa'},
@@ -20298,7 +20239,7 @@ const streets = {
     },
     {
       id: '38-amer',
-      coord: [],
+      coord: [5.328, -13.867],
       name: 'W. 38th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '39-amer'},
@@ -20311,7 +20252,7 @@ const streets = {
 //Start 37th Street
     {
       id: '37-11',
-      coord: [],
+      coord: [3.093, -47.298],
       name: 'W. 37th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '38-11'},
@@ -20322,7 +20263,7 @@ const streets = {
     },
     {
       id: '37-10',
-      coord: [],
+      coord: [3.196, -40.379],
       name: 'W. 37th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '38-10'},
@@ -20333,7 +20274,7 @@ const streets = {
     },
     {
       id: '37-dyer',
-      coord: [],
+      coord: [3.252, -37.117],
       name: 'W. 37th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: '38-dyer'},
@@ -20344,7 +20285,7 @@ const streets = {
     },
     {
       id: '37-9',
-      coord: [],
+      coord: [3.290, -33.632],
       name: 'W. 37th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '38-9'},
@@ -20355,7 +20296,7 @@ const streets = {
     },
     {
       id: '37-8',
-      coord: [],
+      coord: [3.361, -26.798],
       name: 'W. 37th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '38-8'},
@@ -20366,7 +20307,7 @@ const streets = {
     },
     {
       id: '37-7',
-      coord: [],
+      coord: [3.426, -20.389],
       name: 'W. 37th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '38-7'},
@@ -20377,7 +20318,7 @@ const streets = {
     },
     {
       id: '37-broa',
-      coord: [],
+      coord: [3.483, -15.867],
       name: 'W. 37th St. and Broadway',
       exits: [
         {dir: 'north', id: '38-broa'},
@@ -20388,7 +20329,7 @@ const streets = {
     },
     {
       id: '37-amer',
-      coord: [],
+      coord: [3.496, -13.831],
       name: 'W. 37th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '38-amer'},
@@ -20401,7 +20342,7 @@ const streets = {
 //Start 36th Street
     {
       id: '36-11',
-      coord: [],
+      coord: [1.248, -47.252],
       name: 'W. 36th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '37-11'},
@@ -20412,7 +20353,7 @@ const streets = {
     },
     {
       id: '36-10',
-      coord: [],
+      coord: [1.351, -40.339],
       name: 'W. 36th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '37-10'},
@@ -20423,7 +20364,7 @@ const streets = {
     },
     {
       id: '36-dyer',
-      coord: [],
+      coord: [1.397, -37.062],
       name: 'W. 36th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: '37-dyer'},
@@ -20434,7 +20375,7 @@ const streets = {
     },
     {
       id: '36-9',
-      coord: [],
+      coord: [1.447, -33.616],
       name: 'W. 36th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '37-9'},
@@ -20445,7 +20386,7 @@ const streets = {
     },
     {
       id: '36-8',
-      coord: [],
+      coord: [1.547, -26.749],
       name: 'W. 36th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '37-8'},
@@ -20456,7 +20397,7 @@ const streets = {
     },
     {
       id: '36-7',
-      coord: [],
+      coord: [1.607, -20.377],
       name: 'W. 36th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '37-7'},
@@ -20467,7 +20408,7 @@ const streets = {
     },
     {
       id: '36-broa',
-      coord: [],
+      coord: [1.719, -15.265],
       name: 'W. 36th St. and Broadway',
       exits: [
         {dir: 'north', id: '37-broa'},
@@ -20478,7 +20419,7 @@ const streets = {
     },
     {
       id: '36-amer',
-      coord: [],
+      coord: [1.712, -13.777],
       name: 'W. 36th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '37-amer'},
@@ -20491,7 +20432,7 @@ const streets = {
 //Start 35th Street
     {
       id: '35-11',
-      coord: [],
+      coord: [-0.453, -47.193],
       name: 'W. 35th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '36-11'},
@@ -20502,7 +20443,7 @@ const streets = {
     },
     {
       id: '35-10',
-      coord: [],
+      coord: [-0.341, -40.294],
       name: 'W. 35th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '36-10'},
@@ -20513,7 +20454,7 @@ const streets = {
     },
     {
       id: '35-dyer',
-      coord: [],
+      coord: [-0.297, -37.028],
       name: 'W. 35th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: '36-dyer'},
@@ -20524,7 +20465,7 @@ const streets = {
     },
     {
       id: '35-9',
-      coord: [],
+      coord: [-0.294, -33.594],
       name: 'W. 35th St. and 9th Ave.',
       exits: [
         {dir: 'north', id: '36-9'},
@@ -20535,7 +20476,7 @@ const streets = {
     },
     {
       id: '35-8',
-      coord: [],
+      coord: [-0.175, -26.736],
       name: 'W. 35th St. and 8th Ave.',
       desc: `'Watch out where you're going!' You step into the gutter just in time to escape being rammed by a wheeled garment rack full of next fall's fashions.`,
       exits: [
@@ -20547,7 +20488,7 @@ const streets = {
     },
     {
       id: '35-7',
-      coord: [],
+      coord: [-0.101, -20.320],
       name: 'W. 35th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '36-7'},
@@ -20558,7 +20499,7 @@ const streets = {
     },
     {
       id: '35-broa',
-      coord: [],
+      coord: [-0.019, -14.719],
       name: 'W. 35th St. and Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       exits: [
@@ -20571,7 +20512,7 @@ const streets = {
     },
     {
       id: '35-amer',
-      coord: [],
+      coord: [0.004, -13.758],
       name: 'W. 35th St. and Ave. of Americas',
       exits: [
         {dir: 'north', id: '36-amer'},
@@ -20583,9 +20524,9 @@ const streets = {
 
 //Start 34th Street
     {
-      id: '34-hhpw',
-      coord: [],
-      name: 'W. 34th St. and Henry Hudson Pkwy.',
+      id: '34-12',
+      coord: [-2.416, -52.434],
+      name: 'W. 34th St. and 12th Ave.',
       exits: [
         {dir: 'north', id: '39-hhpw'},
         {dir: 'south', id: '23-hhpw'},
@@ -20595,7 +20536,7 @@ const streets = {
     },
     {
       id: '34-11',
-      coord: [],
+      coord: [-2.334, -47.124],
       name: 'W. 34th St. and 11th Ave.',
       exits: [
         {dir: 'north', id: '35-11'},
@@ -20606,7 +20547,7 @@ const streets = {
     },
     {
       id: '34-10',
-      coord: [],
+      coord: [-2.200, -40.297],
       name: 'W. 34th St. and 10th Ave.',
       exits: [
         {dir: 'north', id: '35-10'},
@@ -20617,7 +20558,7 @@ const streets = {
     },
     {
       id: '34-dyer',
-      coord: [],
+      coord: [-2.163, -36.993],
       name: 'W. 34th St. and Dyer Ave.',
       exits: [
         {dir: 'north', id: '35-dyer'},
@@ -20628,7 +20569,7 @@ const streets = {
     },
     {
       id: '34-9',
-      coord: [],
+      coord: [-2.174, -33.571],
       name: 'W. 34th St. and 9th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
       exits: [
@@ -20641,7 +20582,7 @@ const streets = {
     },
     {
       id: '34-8',
-      coord: [],
+      coord: [-2.046, -26.712],
       name: 'W. 34th St. and 8th Ave.',
       exits: [
         {dir: 'north', id: '35-8'},
@@ -20652,7 +20593,7 @@ const streets = {
     },
     {
       id: '34-7',
-      coord: [],
+      coord: [-1.984, -20.303],
       name: 'W. 34th St. and 7th Ave.',
       exits: [
         {dir: 'north', id: '35-7'},
@@ -20663,7 +20604,7 @@ const streets = {
     },
     {
       id: '34-broa',
-      coord: [],
+      coord: [-1.939, -14.174],
       name: 'W. 34th St. and Broadway',
       exits: [
         {dir: 'north', id: '35-broa'},
@@ -34259,7 +34200,7 @@ const streets = {
     }, 
     {
       id: '97-fdrd',
-      coord: [],
+      coord: [75.925, 21.290],
       name: 'E. 97th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34272,7 +34213,7 @@ const streets = {
     }, 
     {
       id: '98-fdrd',
-      coord: [],
+      coord: [76.383, 21.681],
       name: 'E. 98th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34285,7 +34226,7 @@ const streets = {
     }, 
     {
       id: '99-fdrd',
-      coord: [],
+      coord: [76.851, 22.014],
       name: 'E. 99th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34298,7 +34239,7 @@ const streets = {
     }, 
     {
       id: '100-fdrd',
-      coord: [],
+      coord: [77.241, 22.268],
       name: 'E. 100th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34311,6 +34252,10 @@ const streets = {
     }, 
     {
       id: '102-fdrd',
+      coord: [78.069, 22.721],
+      name: 'E. 102nd St. and FDR Drive',
+      desc: ``,
+      isStreet: true,
       exits: [
         {dir: 'north', id: '105-fdrd'},
         {dir: 'south', id: '100-fdrd'},
@@ -34320,7 +34265,7 @@ const streets = {
     }, 
     {
       id: '105-fdrd',
-      coord: [],
+      coord: [79.247, 23.089],
       name: 'E. 105th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34333,7 +34278,7 @@ const streets = {
     }, 
     {
       id: '106-fdrd',
-      coord: [],
+      coord: [79.562, 23.109],
       name: 'E. 106th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -34343,19 +34288,6 @@ const streets = {
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '106-1'},
       ],
-    }, 
-    {
-      id: '110-fdrd',
-      coord: [],
-      name: 'E. 110th St. and FDR Drive',
-      desc: ``,
-      isStreet: true,
-      exits: [
-        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
-        {dir: 'south', id: '106-fdrd'},
-        {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: '110-1'},
-      ],
-    },
+    }
   ]
 }
