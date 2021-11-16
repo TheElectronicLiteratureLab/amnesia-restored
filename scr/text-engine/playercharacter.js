@@ -22,7 +22,8 @@ let playCloth = {
     head: [],
     feet: [],
   };
-  
+
+let lastRoom;
 
 const playerc ={
 

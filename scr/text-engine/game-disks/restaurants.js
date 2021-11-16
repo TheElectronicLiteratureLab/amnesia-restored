@@ -7,8 +7,16 @@ const luncheonette = { // Luncheonette Room
   COFFEE    08 energy
   BURGER    16 energy
   */
-  roomId: 'lunch-intro', // Set this to the ID of the room you want the player to start in.
+  roomId: 'testing', // Set this to the ID of the room you want the player to start in.
   rooms: [
+    {
+      id: 'testing',
+      name: 'testing',
+      desc: 'This is for testing',
+      onEnter: () => {
+        pressEnter('lunch-intro');
+      }
+    },
     {
       id: 'lunch-intro', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Luncheonette', // Displayed each time the player enters the room.
@@ -16,7 +24,10 @@ const luncheonette = { // Luncheonette Room
         Small square napkins stand erect in a spring-loaded dispenser. At the moment you are the only customer.`,
       onEnter: () => 
         {
-        pressEnter('lunch-buyscreen');
+          pressEnter('lunch-buyscreen');
+          const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          console.log(room.enteredFrom);
         },
     },
     {
@@ -73,10 +84,8 @@ const luncheonette = { // Luncheonette Room
           println('One hamburger is ready to go. \n Anything else?');
           console.log("Order Total: " + orderTotal);
           console.log("Energy Total: " + energyTotal);
-        }else if(prevInput ==='leave'){
-          enterRoom('lunch-leave')
-          console.log("Order Total: " + orderTotal);
-          console.log("Energy Total: " + energyTotal);
+        } else if (prevInput === 'leave') {
+          enterRoom('lunch-leave');
         }
       },
       exits: 
@@ -121,10 +130,10 @@ const luncheonette = { // Luncheonette Room
       name: 'Luncheonette', // Displayed each time the player enters the room.
       desc: `You leave the restaurant`,
       onEnter: () => 
-        {
+        { const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(prevroomid); // Replace with the last room visited secret formula
+          pressEnter(room.enteredFrom); // Replace with the last room visited secret formula
         },
     },
     {
