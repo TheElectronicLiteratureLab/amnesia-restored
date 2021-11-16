@@ -17882,7 +17882,7 @@ const streets = {
         //1st Ave
     {
       id: '34-1',
-      coord: [],
+      coord: [-1.450, 19.996],
       name: 'E. 34th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -22615,7 +22615,7 @@ const streets = {
     },
     {
       id: '48-3',
-      coord: [],
+      coord: [24.747, 8.899],
       name: 'E. 48th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22628,7 +22628,7 @@ const streets = {
     },
     {
       id: '47-3',
-      coord: [],
+      coord: [23.080, 8.899],
       name: 'E. 47th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22641,7 +22641,7 @@ const streets = {
     },
     {
       id: '46-3',
-      coord: [],
+      coord: [21.228, 8.965],
       name: 'E. 46th St. and 3rd Ave.',
       desc: `There is a lunchonette on the corner.`,
       isStreet: true,
@@ -22655,7 +22655,7 @@ const streets = {
     },
     {
       id: '45-3',
-      coord: [],
+      coord: [19.249, 8.987],
       name: 'E. 45th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22668,7 +22668,7 @@ const streets = {
     },
     {
       id: '44-3',
-      coord: [],
+      coord: [17.309, 9.031],
       name: 'E. 44th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22681,7 +22681,7 @@ const streets = {
     },
     {
       id: '43-3',
-      coord: [],
+      coord: [15.496, 9.075],
       name: 'E. 43rd St. and 3rd Ave.',
       desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
       isStreet: true,
@@ -22695,7 +22695,7 @@ const streets = {
     },
     {
       id: '42-3',
-      coord: [],
+      coord: [13.539, 9.119],
       name: 'E. 42nd St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22708,7 +22708,7 @@ const streets = {
     },
     {
       id: '41-3',
-      coord: [],
+      coord: [11.545, 9.141],
       name: 'E. 41st St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22721,7 +22721,7 @@ const streets = {
     },
     {
       id: '40-3',
-      coord: [],
+      coord: [9.492, 9.185],
       name: 'E. 40th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22734,7 +22734,7 @@ const streets = {
     },
     {
       id: '39-3',
-      coord: [],
+      coord: [7.755, 9.229],
       name: 'E. 39th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22747,7 +22747,7 @@ const streets = {
     },
     {
       id: '38-3',
-      coord: [],
+      coord: [5.725, 9.251],
       name: 'E. 38th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22760,7 +22760,7 @@ const streets = {
     },
     {
       id: '37-3',
-      coord: [],
+      coord: [3.755, 9.317],
       name: 'E. 37th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22773,7 +22773,7 @@ const streets = {
     },
     {
       id: '36-3',
-      coord: [],
+      coord: [1.999, 9.339],
       name: 'E. 36th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22786,7 +22786,7 @@ const streets = {
     },
     {
       id: '35-3',
-      coord: [],
+      coord: [0.286, 9.383],
       name: 'E. 35th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22799,7 +22799,7 @@ const streets = {
     },
     {
       id: '34-3',
-      coord: [],
+      coord: [-1.626, 9.426],
       name: 'E. 34th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22812,7 +22812,7 @@ const streets = {
     },
     {
       id: '35-qout',
-      coord: [],
+      coord: [0.286, 10.789],
       name: 'E. 35th St. and Queens Tunnel out',
       desc: ``,
       isStreet: true,
@@ -22825,7 +22825,7 @@ const streets = {
     },
     {
       id: '36-qout',
-      coord: [],
+      coord: [2.043, 10.745],
       name: 'E. 36th St. and Queens Tunnel out',
       desc: ``,
       isStreet: true,
@@ -22838,8 +22838,8 @@ const streets = {
     },
     {
       id: '37-qout',
-      coord: [],
-      name: 'E. 36th St. and Queens Tunnel out',
+      coord: [3.755, 10.723],
+      name: 'E. 37th St. and Queens Tunnel out',
       desc: ``,
       isStreet: true,
       exits: [
@@ -22851,7 +22851,7 @@ const streets = {
     },
     {
       id: '38-qout',
-      coord: [],
+      coord: [5.725, 10.679],
       name: 'E. 38th St. and Queens Tunnel out',
       desc: ``,
       isStreet: true,
@@ -22864,7 +22864,7 @@ const streets = {
     },
     {
       id: '39-qout',
-      coord: [],
+      coord: [7.798, 10.657],
       name: 'E. 39th St. and Queens Tunnel out',
       desc: ``,
       isStreet: true,
@@ -22877,7 +22877,7 @@ const streets = {
     },
     {
       id: '34-2',
-      coord: [],
+      coord: [-1.582, 14.899],
       name: 'E. 34th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22890,7 +22890,7 @@ const streets = {
     },
     {
       id: '35-2',
-      coord: [],
+      coord: [0.264, 14.855],
       name: 'E. 35th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22903,7 +22903,7 @@ const streets = {
     },
     {
       id: '36-2',
-      coord: [],
+      coord: [2.065, 14.855],
       name: 'E. 36th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22916,7 +22916,7 @@ const streets = {
     },
     {
       id: '37-2',
-      coord: [],
+      coord: [3.864, 14.855],
       name: 'E. 37th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22929,7 +22929,7 @@ const streets = {
     },
     {
       id: '38-2',
-      coord: [],
+      coord: [5.747, 14.767],
       name: 'E. 38th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22942,7 +22942,7 @@ const streets = {
     },
     {
       id: '39-2',
-      coord: [],
+      coord: [7.798, 14.724],
       name: 'E. 39th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22955,7 +22955,7 @@ const streets = {
     },
     {
       id: '40-2',
-      coord: [],
+      coord: [9.536, 14.724],
       name: 'E. 40th St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner`,
       isStreet: true,
@@ -22969,7 +22969,7 @@ const streets = {
     },
     {
       id: '41-2',
-      coord: [],
+      coord: [11.566, 14.680],
       name: 'E. 41st St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22982,7 +22982,7 @@ const streets = {
     },
     {
       id: '42-2',
-      coord: [],
+      coord: [13.625, 14.656],
       name: 'E. 42nd St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -22995,7 +22995,7 @@ const streets = {
     },
     {
       id: '43-2',
-      coord: [],
+      coord: [15.538, 14.634],
       name: 'E. 43rd St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23008,7 +23008,7 @@ const streets = {
     },
     {
       id: '44-2',
-      coord: [],
+      coord: [17.372, 14.590],
       name: 'E. 44th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23021,7 +23021,7 @@ const streets = {
     },
     {
       id: '45-2',
-      coord: [],
+      coord: [19.332, 14.524],
       name: 'E. 45th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23034,7 +23034,7 @@ const streets = {
     },
     {
       id: '46-2',
-      coord: [],
+      coord: [21.310, 14.480],
       name: 'E. 46th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23047,7 +23047,7 @@ const streets = {
     },
     {
       id: '47-2',
-      coord: [],
+      coord: [23.161, 14.436],
       name: 'E. 47th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23060,7 +23060,7 @@ const streets = {
     },
     {
       id: '48-2',
-      coord: [],
+      coord: [24.827, 14.370],
       name: 'E. 48th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23073,7 +23073,7 @@ const streets = {
     },
     {
       id: '49-2',
-      coord: [],
+      coord: [26.589, 14.348],
       name: 'E. 49th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23086,7 +23086,7 @@ const streets = {
     },
     {
       id: '50-2',
-      coord: [],
+      coord: [28.304, 14.282],
       name: 'E. 50th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23099,7 +23099,7 @@ const streets = {
     },
     {
       id: '51-2',
-      coord: [],
+      coord: [29.783, 14.216],
       name: 'E. 51st St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23112,7 +23112,7 @@ const streets = {
     },
     {
       id: '52-2',
-      coord: [],
+      coord: [31.485, 14.172],
       name: 'E. 52nd St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23125,7 +23125,7 @@ const streets = {
     },
     {
       id: '53-2',
-      coord: [],
+      coord: [33.009, 14.150],
       name: 'E. 53rd St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -23138,7 +23138,7 @@ const streets = {
     },
     {
       id: '54-2',
-      coord: [],
+      coord: [34.452, 14.062],
       name: 'E. 54th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23151,7 +23151,7 @@ const streets = {
     },
     {
       id: '55-2',
-      coord: [],
+      coord: [35.925, 14.040],
       name: 'E. 55th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23164,7 +23164,7 @@ const streets = {
     },
     {
       id: '56-2',
-      coord: [],
+      coord: [37.475, 13.952],
       name: 'E. 56th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23177,7 +23177,7 @@ const streets = {
     },
     {
       id: '57-2',
-      coord: [],
+      coord: [39.147, 13.908],
       name: 'E. 57th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23190,7 +23190,7 @@ const streets = {
     },
     {
       id: '58-2',
-      coord: [],
+      coord: [40.814, 13.864],
       name: 'E. 58th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23203,7 +23203,7 @@ const streets = {
     },
     {
       id: '59-2',
-      coord: [],
+      coord: [42.326, 13.798],
       name: 'E. 59th St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
@@ -23216,7 +23216,7 @@ const streets = {
     },
     {
       id: '59-quen',
-      coord: [],
+      coord: [42.310, 15.601],
       name: 'E. 59th St. and Queensboro Bridge In',
       desc: ``,
       isStreet: true,
@@ -23229,7 +23229,7 @@ const streets = {
     },
     {
       id: '58-quen',
-      coord: [],
+      coord: [40.747, 15.623],
       name: 'E. 58th St. and Queensboro Bridge In',
       desc: ``,
       isStreet: true,
@@ -23242,7 +23242,7 @@ const streets = {
     },
     {
       id: '57-quen',
-      coord: [],
+      coord: [39.198, 15.711],
       name: 'E. 57th St. and Queensboro Bridge In',
       desc: ``,
       isStreet: true,
@@ -23255,7 +23255,7 @@ const streets = {
     },
     {
       id: '59-1',
-      coord: [],
+      coord: [42.391, 18.853],
       name: 'E. 59th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23268,7 +23268,7 @@ const streets = {
     },
     {
       id: '58-1',
-      coord: [],
+      coord: [40.847, 18.918],
       name: 'E. 58th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23281,7 +23281,7 @@ const streets = {
     },
     {
       id: '57-1',
-      coord: [],
+      coord: [39.130, 18.962],
       name: 'E. 57th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23294,7 +23294,7 @@ const streets = {
     },
     {
       id: '56-1',
-      coord: [],
+      coord: [37.510, 19.028],
       name: 'E. 56th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23307,7 +23307,7 @@ const streets = {
     },
     {
       id: '55-1',
-      coord: [],
+      coord: [36.014, 19.050],
       name: 'E. 55th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23320,7 +23320,7 @@ const streets = {
     },
     {
       id: '54-1',
-      coord: [],
+      coord: [34.470, 19.072],
       name: 'E. 54th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23333,7 +23333,7 @@ const streets = {
     },
     {
       id: '53-1',
-      coord: [],
+      coord: [33.064, 19.116],
       name: 'E. 53rd St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23346,7 +23346,7 @@ const streets = {
     },
     {
       id: '52-1',
-      coord: [],
+      coord: [31.560, 19.160],
       name: 'E. 52nd St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23359,7 +23359,7 @@ const streets = {
     },
     {
       id: '51-1',
-      coord: [],
+      coord: [29.822, 19.204],
       name: 'E. 51st St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23372,7 +23372,7 @@ const streets = {
     },
     {
       id: '50-1',
-      coord: [],
+      coord: [28.343, 19.226],
       name: 'E. 50th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23385,7 +23385,7 @@ const streets = {
     },
     {
       id: '49-1',
-      coord: [],
+      coord: [26.608, 19.292],
       name: 'E. 49th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23398,7 +23398,7 @@ const streets = {
     },
     {
       id: '48-1',
-      coord: [],
+      coord: [24.847, 19.314],
       name: 'E. 48th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23411,7 +23411,7 @@ const streets = {
     },
     {
       id: '47-1',
-      coord: [],
+      coord: [23.221, 19.358],
       name: 'E. 47th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23424,7 +23424,7 @@ const streets = {
     },
     {
       id: '46-1',
-      coord: [],
+      coord: [21.392, 19.424],
       name: 'E. 46th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23437,7 +23437,7 @@ const streets = {
     },
     {
       id: '45-1',
-      coord: [],
+      coord: [19.394, 19.468],
       name: 'E. 45th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23450,7 +23450,7 @@ const streets = {
     },
     {
       id: '44-1',
-      coord: [],
+      coord: [17.414, 19.490],
       name: 'E. 44th St. and 1st Ave.',
       desc: `The great green glass slab of the UN Secretariat looms over the swooping shape of the General Assembly Building. Flags of member nations snap in the wind that comes in from the East River. For a moment you wish you could be just an ordinary tourist so you could enjoy the vista the way it deserves. But the vista includes twenty assorted policemen, and you get the feeling this is nowhere to loiter.`,
       isStreet: true,
@@ -23465,7 +23465,7 @@ const streets = {
     },
     {
       id: '42-1',
-      coord: [],
+      coord: [13.710, 19.622],
       name: 'E. 42nd St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23478,7 +23478,7 @@ const streets = {
     },
     {
       id: '41-1',
-      coord: [],
+      coord: [11.695, 19.666],
       name: 'E. 41st St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23491,7 +23491,7 @@ const streets = {
     },
     {
       id: '40-1',
-      coord: [],
+      coord: [9.622, 19.732],
       name: 'E. 40th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23504,7 +23504,7 @@ const streets = {
     },
     {
       id: '39-1',
-      coord: [],
+      coord: [7.863, 19.754],
       name: 'E. 39th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23517,7 +23517,7 @@ const streets = {
     },
     {
       id: '38-1',
-      coord: [],
+      coord: [5.922, 19.820],
       name: 'E. 38th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23530,7 +23530,7 @@ const streets = {
     },
     {
       id: '37-1',
-      coord: [],
+      coord: [3.930, 19.864],
       name: 'E. 37th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23543,7 +23543,7 @@ const streets = {
     },
     {
       id: '36-1',
-      coord: [],
+      coord: [2.175, 19.908],
       name: 'E. 36th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
@@ -23556,7 +23556,7 @@ const streets = {
     },
     {
       id: '35-1',
-      coord: [],
+      coord: [0.439, 19.930],
       name: 'E. 35th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
