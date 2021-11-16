@@ -4774,14 +4774,14 @@ const streets = {
       isStreet: true,
       hasSubway: true,
       exits: [
-        {dir: 'north', id: 'prow-ebro'},
+        {dir: 'north', id: 'park-broa'},
         {dir: 'south', id: 'vese-broa'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'barc-chur'}
       ],
     },
     {
-      id: 'prow-ebro',
+      id: 'park-broa',
       coord: [-72.694, -0.305],
       name: 'Park Pl. and Broadway',
       desc: `The Park Pl-Broadwy Station entrance is at this corner.`,
@@ -4802,7 +4802,7 @@ const streets = {
       isStreet: true,
       exits: [
         {dir: 'north', id: 'warr-broa'},
-        {dir: 'south', id: 'prow-ebro'},
+        {dir: 'south', id: 'park-broa'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'murr-chur'}
       ],
@@ -5731,7 +5731,7 @@ const streets = {
     },
     {
       id: 'spru-gold',
-      coord: [],
+      coord: [-73.403, 9.580],
       name: 'Spruce St. and Gold St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -5745,7 +5745,7 @@ const streets = {
     },
     {
       id: 'fran-gold',
-      coord: [],
+      coord: [-72.777, 10.239],
       name: 'Frankfort St. and Gold St.',
       desc: ``,
       isStreet: true,
@@ -5758,7 +5758,7 @@ const streets = {
     },
     {
       id: 'john-clif',
-      coord: [],
+      coord: [-75.331, 9.185],
       name: 'John St. and Cliff St.',
       desc: ``,
       isStreet: true,
@@ -5771,7 +5771,7 @@ const streets = {
     },
     {
       id: 'fult-clif',
-      coord: [],
+      coord: [-74.828, 10.591],
       name: 'Fulton St. and Cliff St.',
       desc: ``,
       isStreet: true,
@@ -5784,7 +5784,7 @@ const streets = {
     },
     {
       id: 'beek-clif',
-      coord: [],
+      coord: [-74.337, 11.975],
       name: 'Beekman St. and Cliff St.',
       desc: ``,
       isStreet: true,
@@ -5797,7 +5797,7 @@ const streets = {
     },
     {
       id: 'beav-new',
-      coord: [],
+      coord: [-78.349, 0.549],
       name: 'Beaver St. and New St.',
       desc: ``,
       isStreet: true,
@@ -5810,7 +5810,7 @@ const streets = {
     },
     {
       id: 'exch-new',
-      coord: [],
+      coord: [-77.447, 0.066],
       name: 'Exchange Pl. and New St.',
       desc: ``,
       isStreet: true,
@@ -5823,7 +5823,7 @@ const streets = {
     },
     {
       id: 'new-wall',
-      coord: [],
+      coord: [-76.866, -0.220],
       name: 'New St. and Wall St.',
       desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
       isStreet: true,
@@ -5837,7 +5837,7 @@ const streets = {
     },
     {
       id: 'libe-libe',
-      coord: [],
+      coord: [-75.661, 1.077],
       name: 'Liberty St. and Liberty Pl.',
       desc: ``,
       isStreet: true,
@@ -5862,7 +5862,7 @@ const streets = {
     },
     {
       id: 'maid-libe',
-      coord: [],
+      coord: [-75.236, 1.318],
       name: 'Maiden La. and Liberty Pl.',
       desc: ``,
       isStreet: true,
@@ -5875,7 +5875,7 @@ const streets = {
     },
     {
       id: 'ann-park',
-      coord: [],
+      coord: [-74.001, 6.350],
       name: 'Ann St. and Park Row',
       desc: ``,
       isStreet: true,
@@ -5888,7 +5888,7 @@ const streets = {
     },
     {
       id: 'beek-park',
-      coord: [],
+      coord: [-73.603, 6.548],
       name: 'Beekman St. and Park Row',
       desc: ``,
       isStreet: true,
@@ -5901,7 +5901,7 @@ const streets = {
     },
     {
       id: 'spru-park',
-      coord: [],
+      coord: [-73.125, 7.031],
       name: 'Spruce St. and Park Row',
       desc: ``,
       isStreet: true,
@@ -5914,7 +5914,7 @@ const streets = {
     },
     {
       id: 'wate-coen',
-      coord: [],
+      coord: [-78.806, 6.724],
       name: 'Water St. and Coenties Slip',
       desc: ``,
       isStreet: true,
@@ -5927,7 +5927,7 @@ const streets = {
     },
     {
       id: 'wate-olds',
-      coord: [],
+      coord: [-78.116, 8.416],
       name: 'Water St. and Old Slip',
       desc: ``,
       isStreet: true,
@@ -5940,7 +5940,7 @@ const streets = {
     },
     {
       id: 'gouv-wate',
-      coord: [],
+      coord: [-77.646, 9.360],
       name: 'Gouverneur La. and Water St.',
       desc: ``,
       isStreet: true,
@@ -5953,7 +5953,7 @@ const streets = {
     },
     {
       id: 'wall-wate',
-      coord: [],
+      coord: [-77.341, 9.888],
       name: 'Wall St. and Water St.',
       desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; here it's just another skyscraper.`,
       isStreet: true,
@@ -5978,7 +5978,7 @@ const streets = {
     },
     {
       id: 'pine-wate',
-      coord: [],
+      coord: [-76.871, 10.657],
       name: 'Pine St. and Water St.',
       desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted-- and when it is all New York will know its weight and fortune.`,
       isStreet: true,
@@ -5991,7 +5991,7 @@ const streets = {
     },
     {
       id: 'libe-wate',
-      coord: [],
+      coord: [-76.378, 11.338],
       name: 'Liberty St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6004,7 +6004,7 @@ const streets = {
     },
     {
       id: 'flet-wate',
-      coord: [],
+      coord: [-76.153, 11.646],
       name: 'Fletcher St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6017,7 +6017,7 @@ const streets = {
     },
     {
       id: 'john-wate',
-      coord: [],
+      coord: [-75.705, 12.261],
       name: 'John St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6030,7 +6030,7 @@ const streets = {
     },
     {
       id: 'fult-wate',
-      coord: [],
+      coord: [-75.163, 12.920],
       name: 'Fulton St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6043,7 +6043,7 @@ const streets = {
     },
     {
       id: 'beek-stja',
-      coord: [],
+      coord: [-74.596, 13.623],
       name: 'Beekman St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6056,7 +6056,7 @@ const streets = {
     },
     {
       id: 'pear-stja',
-      coord: [],
+      coord: [-74.224, 13.953],
       name: 'Pearl St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6069,7 +6069,7 @@ const streets = {
     },
     {
       id: 'peck-stja',
-      coord: [],
+      coord: [-73.874, 14.238],
       name: 'Peck Slip and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6082,7 +6082,7 @@ const streets = {
     },
     {
       id: 'fran-stja',
-      coord: [],
+      coord: [-73.119, 14.810],
       name: 'Frankfort St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6095,8 +6095,8 @@ const streets = {
     },
     {
       id: 'rbtw-stja',
-      coord: [],
-      name: 'Rbt Wagner Pl. and St. James Pl.',
+      coord: [-72.382, 15.249],
+      name: 'Robert Wagner Pl. and St. James Pl.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -6108,7 +6108,7 @@ const streets = {
     },
     {
       id: 'pear-stja',
-      coord: [],
+      coord: [-71.601, 15.557],
       name: 'Pearl St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6121,7 +6121,7 @@ const streets = {
     },
     {
       id: 'madi-stja',
-      coord: [],
+      coord: [-70.540, 16.018],
       name: 'Madison St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6134,7 +6134,7 @@ const streets = {
     },
     {
       id: 'jame-stja',
-      coord: [],
+      coord: [-69.855, 16.304],
       name: 'James St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6147,7 +6147,7 @@ const streets = {
     },
     {
       id: 'oliv-stja',
-      coord: [],
+      coord: [-68.943, 16.699],
       name: 'Oliver St. and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6160,7 +6160,7 @@ const streets = {
     },
     {
       id: 'ebro-stja',
-      coord: [],
+      coord: [-68.856, 16.699],
       name: 'E. Broadway and St. James Pl.',
       desc: ``,
       isStreet: true,
@@ -6173,7 +6173,7 @@ const streets = {
     },
     {
       id: 'pear-ston',
-      coord: [],
+      coord: [-78.845, 4.438],
       name: 'Pearl St. and Stone La.',
       desc: ``,
       isStreet: true,
@@ -6186,7 +6186,7 @@ const streets = {
     },
     {
       id: 'pear-olds',
-      coord: [],
+      coord: [-77.998, 7.075],
       name: 'Pearl St. and Old Slip',
       desc: ``,
       isStreet: true,
@@ -6199,7 +6199,7 @@ const streets = {
     },
     {
       id: 'hano-pear',
-      coord: [],
+      coord: [-77.646, 7.778],
       name: 'Hanover St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6212,7 +6212,7 @@ const streets = {
     },
     {
       id: 'wall-pear',
-      coord: [],
+      coord: [-77.245, 8.481],
       name: 'Wall St. and Pearl St.',
       desc: `There is a restaurant called Nedicks here.`,
       isStreet: true,
@@ -6226,7 +6226,7 @@ const streets = {
     },
     {
       id: 'pine-pear',
-      coord: [],
+      coord: [-76.801, 8.789],
       name: 'Pine St. and Pearl St.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
@@ -6240,7 +6240,7 @@ const streets = {
     },
     {
       id: 'ceda-pear',
-      coord: [],
+      coord: [-76.522, 9.031],
       name: 'Cedar St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6253,7 +6253,7 @@ const streets = {
     },
     {
       id: 'libe-pear',
-      coord: [],
+      coord: [-76.253, 9.229],
       name: 'Liberty St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6266,7 +6266,7 @@ const streets = {
     },
     {
       id: 'flet-pear',
-      coord: [],
+      coord: [-76.011, 9.492],
       name: 'Fletcher St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6279,7 +6279,7 @@ const streets = {
     },
     {
       id: 'plat-pear',
-      coord: [],
+      coord: [-75.775, 9.998],
       name: 'Platt St and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6292,7 +6292,7 @@ const streets = {
     },
     {
       id: 'john-pear',
-      coord: [],
+      coord: [-75.508, 10.701],
       name: 'John St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6305,7 +6305,7 @@ const streets = {
     },
     {
       id: 'fult-pear',
-      coord: [],
+      coord: [-75.005, 11.887],
       name: 'Fulton St. and Pearl St.',
       desc: `The stone towers of the Brooklyn Bridge come into view some blocks to the north. The sudden sight of them is like a blast of Beethoven-- familiar but still inspiring.`,
       isStreet: true,
@@ -6318,7 +6318,7 @@ const streets = {
     },
     {
       id: 'beek-pear',
-      coord: [],
+      coord: [-74.520, 13.140],
       name: 'Beekman St. and Pearl St.',
       desc: ``,
       isStreet: true,
@@ -6331,7 +6331,7 @@ const streets = {
     },
     {
       id: 'ston-olds',
-      coord: [],
+      coord: [-77.916, 6.394],
       name: 'Stone La. and Old Slip',
       desc: ``,
       isStreet: true,
@@ -6344,7 +6344,7 @@ const streets = {
     },
     {
       id: 'beav-olds',
-      coord: [],
+      coord: [-77.740, 4.966],
       name: 'Beaver St. and Old Slip',
       desc: ``,
       isStreet: true,
@@ -6357,7 +6357,7 @@ const streets = {
     },
     {
       id: 'hano-beav',
-      coord: [],
+      coord: [-77.409, 6.899],
       name: 'Hanover St. and Beaver St.',
       desc: ``,
       isStreet: true,
@@ -6370,7 +6370,7 @@ const streets = {
     },
     {
       id: 'exch-hano',
-      coord: [],
+      coord: [-77.322, 6.592],
       name: 'Exchange Pl and Hanover St.',
       desc: ``,
       isStreet: true,
@@ -6383,7 +6383,7 @@ const streets = {
     },
     {
       id: 'wall-hano',
-      coord: [],
+      coord: [-77.108, 6.108],
       name: 'Wall St. and Hanover St.',
       desc: ``,
       isStreet: true,
@@ -6396,7 +6396,7 @@ const streets = {
     },
     {
       id: 'wall-beav',
-      coord: [],
+      coord: [-77.196, 7.910],
       name: 'Wall St. and Beaver St.',
       desc: `A free-standing plaque outside Citibank informs you that this was once the most expensive building in the city. $1,800,000 was the record-setting pricetag. And that was before McKim Mead White added their own Corinthian two-cents-worth on top of the Ionic original of 1842. Very classic.`,
       isStreet: true,
@@ -6423,7 +6423,7 @@ const streets = {
     },
     {
       id: 'olds-fron',
-      coord: [],
+      coord: [-78.207, 9.712],
       name: 'Old Slip and Front St.',
       desc: ``,
       isStreet: true,
@@ -6436,7 +6436,7 @@ const streets = {
     },
     {
       id: 'gouv-fron',
-      coord: [],
+      coord: [-77.740, 10.547],
       name: 'Gouverneur La. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6449,7 +6449,7 @@ const streets = {
     },
     {
       id: 'wall-fron',
-      coord: [],
+      coord: [-77.418, 11.074],
       name: 'Wall St. and Front St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -6463,7 +6463,7 @@ const streets = {
     },
     {
       id: 'pine-fron',
-      coord: [],
+      coord: [-76.940, 11.909],
       name: 'Pine St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6476,7 +6476,7 @@ const streets = {
     },
     {
       id: 'libe-fron',
-      coord: [],
+      coord: [-76.455, 12.744],
       name: 'Liberty St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6489,7 +6489,7 @@ const streets = {
     },
     {
       id: 'flet-fron',
-      coord: [],
+      coord: [-76.248, 13.008],
       name: 'Fletcher St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6502,7 +6502,7 @@ const streets = {
     },
     {
       id: 'john-fron',
-      coord: [],
+      coord: [-75.867, 13.579],
       name: 'John St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6515,7 +6515,7 @@ const streets = {
     },
     {
       id: 'fult-fron',
-      coord: [],
+      coord: [-75.365, 14.326],
       name: 'Fulton St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6528,7 +6528,7 @@ const streets = {
     },
     {
       id: 'beek-fron',
-      coord: [],
+      coord: [-74.822, 14.766],
       name: 'Beekman St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6541,7 +6541,7 @@ const streets = {
     },
     {
       id: 'peck-fron',
-      coord: [],
+      coord: [-74.086, 16.172],
       name: 'Peck Slip and Front St.',
       desc: ``,
       isStreet: true,
@@ -6554,7 +6554,7 @@ const streets = {
     },
     {
       id: 'dove-fron',
-      coord: [],
+      coord: [-73.428, 17.424],
       name: 'Dover St. and Front St.',
       desc: ``,
       isStreet: true,
@@ -6567,7 +6567,7 @@ const streets = {
     },
     {
       id: 'beek-wate',
-      coord: [],
+      coord: [-74.613, 13.601],
       name: 'Beekman St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6580,7 +6580,7 @@ const streets = {
     },
     {
       id: 'peck-wate',
-      coord: [],
+      coord: [-73.880, 14.238],
       name: 'Peck Slip and Water St.',
       desc: ``,
       isStreet: true,
@@ -6593,7 +6593,7 @@ const streets = {
     },
     {
       id: 'fran-wate',
-      coord: [],
+      coord: [-73.112, 14.832],
       name: 'Frankfort St. and Water St.',
       desc: ``,
       isStreet: true,
@@ -6606,8 +6606,8 @@ const streets = {
     },
     {
       id: 'rbtw-sout',
-      coord: [],
-      name: 'Rbt. Wagner Pl. and South St.',
+      coord: [-73.023, 21.555],
+      name: 'Robert Wagner Pl. and South St.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -6619,7 +6619,7 @@ const streets = {
     },
     {
       id: 'sout-cath',
-      coord: [],
+      coord: [-71.525, 25.422],
       name: 'South St. and Catherine St.',
       desc: ``,
       isStreet: true,
@@ -6632,7 +6632,7 @@ const streets = {
     },
     {
       id: 'wate-cath',
-      coord: [],
+      coord: [-71.088, 24.390],
       name: 'Water St. and Catherine St.',
       desc: ``,
       isStreet: true,
@@ -6645,7 +6645,7 @@ const streets = {
     },
     {
       id: 'cher-cath',
-      coord: [],
+      coord: [-70.693, 23.357],
       name: 'Cherry St. and Catherine St.',
       desc: ``,
       isStreet: true,
@@ -6658,7 +6658,7 @@ const streets = {
     },
     {
       id: 'monr-cath',
-      coord: [],
+      coord: [-69.968, 21.533],
       name: 'Monroe St. and Catherine St.',
       desc: ``,
       isStreet: true,
@@ -6671,7 +6671,7 @@ const streets = {
     },
     {
       id: 'madi-cath',
-      coord: [],
+      coord: [-69.496, 20.369],
       name: 'Madison St. and Catherine St.',
       desc: ``,
       isStreet: true,
@@ -6684,7 +6684,7 @@ const streets = {
     },
     {
       id: 'oliv-madi',
-      coord: [],
+      coord: [-69.862, 18.809],
       name: 'Oliver St. and Madison St.',
       desc: ``,
       isStreet: true,
@@ -6697,7 +6697,7 @@ const streets = {
     },
     {
       id: 'jame-madi',
-      coord: [],
+      coord: [-70.237, 17.249],
       name: 'James St. and Madison St.',
       desc: ``,
       isStreet: true,
@@ -6710,7 +6710,7 @@ const streets = {
     },
     {
       id: 'oliv-henr',
-      coord: [],
+      coord: [-69.380, 17.886],
       name: 'Oliver St. and Henry St.',
       desc: ``,
       isStreet: true,
@@ -6723,7 +6723,7 @@ const streets = {
     },
     {
       id: 'sout-mark',
-      coord: [],
+      coord: [-70.627, 28.828],
       name: 'South St. and Market St.',
       desc: ``,
       isStreet: true,
@@ -6736,7 +6736,7 @@ const streets = {
     },
     {
       id: 'wate-mark',
-      coord: [],
+      coord: [-70.163, 27.883],
       name: 'Water St. and Market St.',
       desc: ``,
       isStreet: true,
@@ -6749,7 +6749,7 @@ const streets = {
     },
     {
       id: 'cher-mark',
-      coord: [],
+      coord: [-69.718, 26.917],
       name: 'Cherry St. and Market St.',
       desc: ``,
       isStreet: true,
@@ -6762,7 +6762,7 @@ const streets = {
     },
     {
       id: 'monr-mark',
-      coord: [],
+      coord: [-69.014, 25.444],
       name: 'Monroe St. and Market St.',
       desc: ``,
       isStreet: true,
@@ -6775,7 +6775,7 @@ const streets = {
     },
     {
       id: 'madi-mark',
-      coord: [],
+      coord: [-68.480, 24.390],
       name: 'Madison St. and Market St.',
       desc: ``,
       isStreet: true,
@@ -6788,7 +6788,7 @@ const streets = {
     },
     {
       id: 'fors-madi',
-      coord: [],
+      coord: [-67.917, 26.521],
       name: 'Forsyth St. and Madison St.',
       desc: ``,
       isStreet: true,
@@ -6801,7 +6801,7 @@ const streets = {
     },
     {
       id: 'broo-park',
-      coord: [],
+      coord: [-72.209, 8.679],
       name: 'Brooklyn Bridge and Park Row',
       desc: ``,
       isStreet: true,
@@ -6814,7 +6814,7 @@ const streets = {
     },
     {
       id: 'ave-park',
-      coord: [],
+      coord: [-71.159, 9.844],
       name: 'Ave. of Finest and Park Row',
       desc: ``,
       isStreet: true,
@@ -6827,7 +6827,7 @@ const streets = {
     },
     {
       id: 'ave-madi',
-      coord: [],
+      coord: [-71.781, 11.052],
       name: 'Ave. of Finest St. and Madison St.',
       desc: ``,
       isStreet: true,
@@ -6840,7 +6840,7 @@ const streets = {
     },
     {
       id: 'pear-madi',
-      coord: [],
+      coord: [-71.195, 13.293],
       name: 'Pearl St. and Madison St.',
       desc: ``,
       isStreet: true,
@@ -6853,7 +6853,7 @@ const streets = {
     },
     {
       id: 'pear-park',
-      coord: [],
+      coord: [-70.341, 12.019],
       name: 'Pearl St. and Park Row',
       desc: ``,
       isStreet: true,
@@ -6866,7 +6866,7 @@ const streets = {
     },
     {
       id: 'pear-baxt',
-      coord: [],
+      coord: [-69.519, 11.118],
       name: 'Pearl St. and Baxter St.',
       desc: ``,
       isStreet: true,
@@ -6879,7 +6879,7 @@ const streets = {
     },
     {
       id: 'baxt-kent',
-      coord: [],
+      coord: [-69.427, 11.030],
       name: 'Baxter St. and Kent Pl.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -6893,7 +6893,7 @@ const streets = {
     },
     {
       id: 'pear-kent',
-      coord: [],
+      coord: [-69.930, 9.316],
       name: 'Pearl St. and Kent Pl.',
       desc: ``,
       isStreet: true,
@@ -6919,7 +6919,7 @@ const streets = {
     },
     {
       id: 'cham-elk',
-      coord: [],
+      coord: [-71.088, 4.219],
       name: 'Chambers St. and Elk St.',
       desc: ``,
       isStreet: true,
@@ -6932,7 +6932,7 @@ const streets = {
     },
     {
       id: 'read-elk',
-      coord: [],
+      coord: [-70.598, 4.263],
       name: 'Reade St. and Elk St.',
       desc: `There is a restaurant called Nedicks here.`,
       isStreet: true,
@@ -6946,7 +6946,7 @@ const streets = {
     },
     {
       id: 'duan-elk',
-      coord: [],
+      coord: [-70.058, 4.351],
       name: 'Duane St. and Elk St.',
       desc: ``,
       isStreet: true,
@@ -6959,7 +6959,7 @@ const streets = {
     },
     {
       id: 'pear-lafa',
-      coord: [],
+      coord: [-69.657, 5.889],
       name: 'Pearl St. and Lafayette St.',
       desc: ``,
       isStreet: true,
@@ -6972,7 +6972,7 @@ const streets = {
     },
     {
       id: 'wort-lafa',
-      coord: [],
+      coord: [-68.816, 4.988],
       name: 'Worth St. and Lafayette St.',
       desc: `Koch's Florists is a brick-facade building with Van Gogh's 'Sunflowers' painted on the front window. A sign on the door says: 'Closed for Annual Summer Retreat with Roe and Harpmeister Funeral Service.`,
       isStreet: true,
@@ -6986,7 +6986,7 @@ const streets = {
     },
     {
       id: 'cath-lafa',
-      coord: [],
+      coord: [-68.472, 5.054],
       name: 'Catherine La. and Lafayette St.',
       desc: ``,
       isStreet: true,
@@ -6999,7 +6999,7 @@ const streets = {
     },
     {
       id: 'pete-stat',
-      coord: [],
+      coord: [-79.762, 0.439],
       name: 'Peter Minuit Plaza and State St.',
       desc: ``,
       isStreet: true,
@@ -7012,7 +7012,7 @@ const streets = {
     },
     {
       id: 'pear-stat',
-      coord: [],
+      coord: [-79.553, -0.549],
       name: 'Pearl St. and State St.',
       desc: ``,
       isStreet: true,
@@ -7025,7 +7025,7 @@ const streets = {
     },
     {
       id: 'brid-stat',
-      coord: [],
+      coord: [-79.331, -0.989],
       name: 'Bridge St. and State St.',
       desc: ``,
       isStreet: true,
@@ -7038,7 +7038,7 @@ const streets = {
     },
     {
       id: 'batt-stat',
-      coord: [],
+      coord: [-78.815, -2.153],
       name: 'Battery Pl. and State St.',
       desc: `The Battery Pl-Bway Station entrance is at this corner.`,
       isStreet: true,
@@ -7052,7 +7052,7 @@ const streets = {
     },
     {
       id: 'morr-trin',
-      coord: [],
+      coord: [-77.989, -4.395],
       name: 'Morris St. and Trinity Pl.',
       desc: ``,
       isStreet: true,
@@ -7065,7 +7065,7 @@ const streets = {
     },
     {
       id: 'exch-trin',
-      coord: [],
+      coord: [-77.518, -3.713],
       name: 'Exchange Pl. and Trinity Pl.',
       desc: ``,
       isStreet: true,
@@ -7078,7 +7078,7 @@ const streets = {
     },
     {
       id: 'rect-trin',
-      coord: [],
+      coord: [-77.074, -3.713],
       name: 'Rector St. and Trinity Pl.',
       desc: `The Rector-Trinity Station entrance is at this corner.`,
       isStreet: true,
@@ -7092,7 +7092,7 @@ const streets = {
     },
     {
       id: 'tham-trin',
-      coord: [],
+      coord: [-76.211, -3.801],
       name: 'Thames St. and Trinity Pl.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -7106,7 +7106,7 @@ const streets = {
     },
     {
       id: 'ceda-trin',
-      coord: [],
+      coord: [-75.952, -3.801],
       name: 'Cedar St. and Trinity Pl.',
       desc: ``,
       isStreet: true,
@@ -7119,7 +7119,7 @@ const streets = {
     },
     {
       id: 'libe-trin',
-      coord: [],
+      coord: [-75.629, -3.801],
       name: 'Liberty St. and Trinity Pl.',
       desc: `The Liberty-Church Station entrance is at this corner.`,
       isStreet: true,
@@ -7133,7 +7133,7 @@ const streets = {
     },
     {
       id: 'cort-trin',
-      coord: [],
+      coord: [-75.186, -3.845],
       name: 'Cortlandt St. and Trinity Pl.',
       desc: `The Crtlandt-Chrch Station entrance is at this corner.`,
       isStreet: true,
@@ -7146,7 +7146,7 @@ const streets = {
     },
     {
       id: 'dey-trin',
-      coord: [],
+      coord: [-74.660, -3.867],
       name: 'Dey St. and Trinity Pl.',
       desc: ``,
       isStreet: true,
@@ -7159,7 +7159,7 @@ const streets = {
     },
     {
       id: 'fult-chur',
-      coord: [],
+      coord: [-74.290, -3.889],
       name: 'Fulton St. and Church St.',
       desc: ``,
       isStreet: true,
@@ -7172,7 +7172,7 @@ const streets = {
     },
     {
       id: 'vese-chur',
-      coord: [],
+      coord: [-73.757, -3.889],
       name: 'Vesey St. and Church Ave.',
       desc: `There it is, or rather there they are-- the two towers of the World Trade Center. Aside from their size, there's nothing that special about it. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the all-time champion.`,
       isStreet: true,
@@ -7186,7 +7186,7 @@ const streets = {
     },
     {
       id: 'barc-chur',
-      coord: [],
+      coord: [-73.176, -3.779],
       name: 'Barclay St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7199,7 +7199,7 @@ const streets = {
     },
     {
       id: 'park-chur',
-      coord: [],
+      coord: [-72.666, -3.735],
       name: 'Park Pl. and Church Ave.',
       desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was teh tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
         
@@ -7229,7 +7229,7 @@ const streets = {
     },
     {
       id: 'murr-chur',
-      coord: [],
+      coord: [-72.101, -3.604],
       name: 'Murray St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7242,7 +7242,7 @@ const streets = {
     },
     {
       id: 'warr-chur',
-      coord: [],
+      coord: [-71.574, -3.538],
       name: 'Warren St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7255,7 +7255,7 @@ const streets = {
     },
     {
       id: 'cham-chur',
-      coord: [],
+      coord: [-70.981, -3.472],
       name: 'Chambers St. and Church Ave.',
       desc: `The Chambers-Church Station entrance is at this corner.`,
       isStreet: true,
@@ -7269,7 +7269,7 @@ const streets = {
     },
     {
       id: 'read-chur',
-      coord: [],
+      coord: [-70.452, -3.384],
       name: 'Reade St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7282,7 +7282,7 @@ const streets = {
     },
     {
       id: 'duan-chur',
-      coord: [],
+      coord: [-69.908, -3.340],
       name: 'Duane St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7295,7 +7295,7 @@ const streets = {
     },
     {
       id: 'thom-chur',
-      coord: [],
+      coord: [-69.334, -3.274],
       name: 'Thomas St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7308,7 +7308,7 @@ const streets = {
     },
     {
       id: 'wort-chur',
-      coord: [],
+      coord: [-68.681, -3.186],
       name: 'Worth St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7321,7 +7321,7 @@ const streets = {
     },
     {
       id: 'leon-chur',
-      coord: [],
+      coord: [-67.917, -3.076],
       name: 'Leonard St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7334,7 +7334,7 @@ const streets = {
     },
     {
       id: 'fran-chur',
-      coord: [],
+      coord: [-67.281, -3.010],
       name: 'Franklin St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7347,7 +7347,7 @@ const streets = {
     },
     {
       id: 'amer-chur',
-      coord: [],
+      coord: [-67.110, -3.010],
       name: 'Ave. of Americas and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7360,7 +7360,7 @@ const streets = {
     },
     {
       id: 'whit-chur',
-      coord: [],
+      coord: [-66.478, -2.922],
       name: 'White St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7373,7 +7373,7 @@ const streets = {
     },
     {
       id: 'walk-chur',
-      coord: [],
+      coord: [-65.658, -2.834],
       name: 'Walker St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7386,7 +7386,7 @@ const streets = {
     },
     {
       id: 'lisp-chur',
-      coord: [],
+      coord: [-64.877, -2.725],
       name: 'Lispenard St. and Church Ave.',
       desc: ``,
       isStreet: true,
@@ -7399,7 +7399,7 @@ const streets = {
     },
     {
       id: 'batt-gree',
-      coord: [],
+      coord: [-78.921, -3.340],
       name: 'Battery Pl. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7412,7 +7412,7 @@ const streets = {
     },
     {
       id: 'exch-gree',
-      coord: [],
+      coord: [-77.552, -4.790],
       name: 'Exchange Pl. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7425,7 +7425,7 @@ const streets = {
     },
     {
       id: 'rect-gree',
-      coord: [],
+      coord: [-77.098, -5.142],
       name: 'Rector St. and Greenwich Ave.',
       desc: `The Rector-Greenwch Station entrance is at this corner.`,
       isStreet: true,
@@ -7439,7 +7439,7 @@ const streets = {
     },
     {
       id: 'carl-gree',
-      coord: [],
+      coord: [-76.750, -5.405],
       name: 'Carlisle St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7452,7 +7452,7 @@ const streets = {
     },
     {
       id: 'alba-gree',
-      coord: [],
+      coord: [-76.424, -5.669],
       name: 'Albany St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7465,7 +7465,7 @@ const streets = {
     },
     {
       id: 'tham-gree',
-      coord: [],
+      coord: [-76.169, -5.823],
       name: 'Thames St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7478,7 +7478,7 @@ const streets = {
     },
     {
       id: 'ceda-gree',
-      coord: [],
+      coord: [-75.910, -5.999],
       name: 'Cedar St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7491,7 +7491,7 @@ const streets = {
     },
     {
       id: 'libe-gree',
-      coord: [],
+      coord: [-75.590, -6.218],
       name: 'Liberty St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -7504,7 +7504,7 @@ const streets = {
     },
     {
       id: 'whit-amer',
-      coord: [],
+      coord: [-66.443, -3.955],
       name: 'White St. and Ave. of Americas',
       desc: ``,
       isStreet: true,
@@ -7517,7 +7517,7 @@ const streets = {
     },
     {
       id: 'walk-amer',
-      coord: [],
+      coord: [-65.622, -4.966],
       name: 'Walker St. and Ave. of Americas',
       desc: ``,
       isStreet: true,
@@ -7530,7 +7530,7 @@ const streets = {
     },
     {
       id: 'batt-wash',
-      coord: [],
+      coord: [-79.080, -5.142],
       name: 'Battery Pl. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7543,7 +7543,7 @@ const streets = {
     },
     {
       id: 'morr-wash',
-      coord: [],
+      coord: [-78.171, -5.977],
       name: 'Morris St. and Washington Ave.',
       desc: `Art Deco tiles cover the facade of the Downtown Athletic Club.`,
       isStreet: true,
@@ -7557,7 +7557,7 @@ const streets = {
     },
     {
       id: 'btun-wash',
-      coord: [],
+      coord: [-78.682, -5.625],
       name: 'Battery Tunnel and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7570,7 +7570,7 @@ const streets = {
     },
     {
       id: 'exch-wash',
-      coord: [],
+      coord: [-77.571, -6.548],
       name: 'Exchange Pl. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7583,7 +7583,7 @@ const streets = {
     },
     {
       id: 'rect-wash',
-      coord: [],
+      coord: [-77.128, -6.899],
       name: 'Rector St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7596,7 +7596,7 @@ const streets = {
     },
     {
       id: 'carl-wash',
-      coord: [],
+      coord: [-76.771, -7.207],
       name: 'Carlisle St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7609,7 +7609,7 @@ const streets = {
     },
     {
       id: 'alba-wash',
-      coord: [],
+      coord: [-76.383, -7.515],
       name: 'Albany St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7622,7 +7622,7 @@ const streets = {
     },
     {
       id: 'ceda-wash',
-      coord: [],
+      coord: [-75.931, -7.910],
       name: 'Cedar St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7635,7 +7635,7 @@ const streets = {
     },
     {
       id: 'libe-wash',
-      coord: [],
+      coord: [-75.563, -8.130],
       name: 'Liberty St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7648,7 +7648,7 @@ const streets = {
     },
     {
       id: 'batt-west',
-      coord: [],
+      coord: [-79.204, -6.724],
       name: 'Battery Pl. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7661,7 +7661,7 @@ const streets = {
     },
     {
       id: 'morr-west',
-      coord: [],
+      coord: [-78.251, -8.130],
       name: 'Morris St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7674,7 +7674,7 @@ const streets = {
     },
     {
       id: 'btun-west',
-      coord: [],
+      coord: [-77.870, -8.701],
       name: 'Battery Tunnel and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7687,7 +7687,7 @@ const streets = {
     },
     {
       id: 'exch-west',
-      coord: [],
+      coord: [-77.608, -9.097],
       name: 'Exchange Pl. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7700,7 +7700,7 @@ const streets = {
     },
     {
       id: 'rect-west',
-      coord: [],
+      coord: [-77.167, -9.712],
       name: 'Rector St. and West End Hwy.',
       desc: `There is a luncheonette on this corner.`,
       isStreet: true,
@@ -7714,7 +7714,7 @@ const streets = {
     },
     {
       id: 'carl-west',
-      coord: [],
+      coord: [-76.781, -10.195],
       name: 'Carlisle St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7727,7 +7727,7 @@ const streets = {
     },
     {
       id: 'alba-west',
-      coord: [],
+      coord: [-76.321, -10.811],
       name: 'Albany St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7740,7 +7740,7 @@ const streets = {
     },
     {
       id: 'ceda-west',
-      coord: [],
+      coord: [-75.877, -11.338],
       name: 'Cedar St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7753,7 +7753,7 @@ const streets = {
     },
     {
       id: 'libe-west',
-      coord: [],
+      coord: [-75.541, -11.777],
       name: 'Liberty St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7766,7 +7766,7 @@ const streets = {
     },
     {
       id: 'vese-west',
-      coord: [],
+      coord: [-73.591, -13.975],
       name: 'Vesey St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7779,7 +7779,7 @@ const streets = {
     },
     {
       id: 'barc-west',
-      coord: [],
+      coord: [-73.035, -14.546],
       name: 'Barclay St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7792,7 +7792,7 @@ const streets = {
     },
     {
       id: 'murr-west',
-      coord: [],
+      coord: [-71.965, -15.645],
       name: 'Murray St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7805,7 +7805,7 @@ const streets = {
     },
     {
       id: 'warr-west',
-      coord: [],
+      coord: [-71.399, -16.260],
       name: 'Warren St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7818,7 +7818,7 @@ const streets = {
     },
     {
       id: 'cham-west',
-      coord: [],
+      coord: [-70.787, -16.831],
       name: 'Chambers St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7831,7 +7831,7 @@ const streets = {
     },
     {
       id: 'harr-west',
-      coord: [],
+      coord: [-69.163, -18.325],
       name: 'Harrison St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7844,7 +7844,7 @@ const streets = {
     },
     {
       id: 'nmoo-west',
-      coord: [],
+      coord: [-68.139, -19.336],
       name: 'N. Moore St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7857,7 +7857,7 @@ const streets = {
     },
     {
       id: 'beac-west',
-      coord: [],
+      coord: [-67.382, -19.885],
       name: 'Beach St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7870,7 +7870,7 @@ const streets = {
     },
     {
       id: 'hube-west',
-      coord: [],
+      coord: [-66.688, -20.522],
       name: 'Hubert St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7883,7 +7883,7 @@ const streets = {
     },
     {
       id: 'laig-west',
-      coord: [],
+      coord: [-65.884, -21.116],
       name: 'Laight St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7896,7 +7896,7 @@ const streets = {
     },
     {
       id: 'vest-west',
-      coord: [],
+      coord: [-65.192, -21.687],
       name: 'Vestry St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7909,7 +7909,7 @@ const streets = {
     },
     {
       id: 'desb-west',
-      coord: [],
+      coord: [-64.454, -22.280],
       name: 'Desbrosses St. and West End Hwy.',
       desc: `The view across the Hudson to New Jersey is awesome. The sweep of the sky is awesome. The river is awesome. The traffic in between you and the river is awesome. Even the seagulls, soaring over the river are awesome. You are awed.`,
       isStreet: true,
@@ -7922,7 +7922,7 @@ const streets = {
     },
     {
       id: 'watt-west',
-      coord: [],
+      coord: [-63.695, -22.896],
       name: 'Watts St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7935,7 +7935,7 @@ const streets = {
     },
     {
       id: 'cana-west',
-      coord: [],
+      coord: [-61.512, -24.565],
       name: 'Canal St. and West End Hwy.',
       desc: ``,
       isStreet: true,
@@ -7961,7 +7961,7 @@ const streets = {
     },
     {
       id: 'vese-wash',
-      coord: [],
+      coord: [-73.640, -10.151],
       name: 'Vesey St. and Washington Ave.',
       desc: `The New York Telephone Building is a massive and elaborate tower.`,
       isStreet: true,
@@ -7974,7 +7974,7 @@ const streets = {
     },
     {
       id: 'barc-wash',
-      coord: [],
+      coord: [-73.074, -10.767],
       name: 'Barclay St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -7987,7 +7987,7 @@ const streets = {
     },
     {
       id: 'barc-gree',
-      coord: [],
+      coord: [-73.087, -8.745],
       name: 'Barclay St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8000,7 +8000,7 @@ const streets = {
     },
     {
       id: 'park-gree',
-      coord: [],
+      coord: [-72.594, -9.185],
       name: 'Park Pl. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8013,7 +8013,7 @@ const streets = {
     },
     {
       id: 'murr-gree',
-      coord: [],
+      coord: [-72.047, -9.800],
       name: 'Murray St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8026,7 +8026,7 @@ const streets = {
     },
     {
       id: 'warr-gree',
-      coord: [],
+      coord: [-71.483, -10.327],
       name: 'Warren St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8039,7 +8039,7 @@ const streets = {
     },
     {
       id: 'cham-gree',
-      coord: [],
+      coord: [-70.830, -10.854],
       name: 'Chambers St. and Greenwich Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -8053,7 +8053,7 @@ const streets = {
     },
     {
       id: 'read-gree',
-      coord: [],
+      coord: [-70.304, -11.338],
       name: 'Reade St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8066,7 +8066,7 @@ const streets = {
     },
     {
       id: 'thom-gree',
-      coord: [],
+      coord: [-69.672, -11.909],
       name: 'Thomas St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8079,7 +8079,7 @@ const streets = {
     },
     {
       id: 'jay-gree',
-      coord: [],
+      coord: [-69.178, -12.437],
       name: 'Jay St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8092,7 +8092,7 @@ const streets = {
     },
     {
       id: 'harr-gree',
-      coord: [],
+      coord: [-68.641, -12.964],
       name: 'Harrison St. and Greenwich Ave.',
       desc: `Vast? Vast isn't the word for it. Ugly comes closer. Independence Plaza is a high-rise apartment complex on a scale that beggars the imagination, but that is its only relationship to the imagination. Otherwise it's just bricks and windows stacked as high as current zoning laws will allow.`,
       isStreet: true,
@@ -8105,7 +8105,7 @@ const streets = {
     },
     {
       id: 'fran-gree',
-      coord: [],
+      coord: [-67.876, -13.579],
       name: 'Franklin St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8118,7 +8118,7 @@ const streets = {
     },
     {
       id: 'nmoo-gree',
-      coord: [],
+      coord: [-67.323, -14.150],
       name: 'N. Moore St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8131,7 +8131,7 @@ const streets = {
     },
     {
       id: 'beac-gree',
-      coord: [],
+      coord: [-66.653, -14.897],
       name: 'Beach St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8144,7 +8144,7 @@ const streets = {
     },
     {
       id: 'hube-gree',
-      coord: [],
+      coord: [-65.893, -15.601],
       name: 'Hubert St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8157,7 +8157,7 @@ const streets = {
     },
     {
       id: 'laig-gree',
-      coord: [],
+      coord: [-65.165, -16.348],
       name: 'Laight St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8170,7 +8170,7 @@ const streets = {
     },
     {
       id: 'vest-gree',
-      coord: [],
+      coord: [-64.435, -17.007],
       name: 'Vestry St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8183,7 +8183,7 @@ const streets = {
     },
     {
       id: 'desb-gree',
-      coord: [],
+      coord: [-63.685, -17.754],
       name: 'Desbrosses St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8196,7 +8196,7 @@ const streets = {
     },
     {
       id: 'watt-gree',
-      coord: [],
+      coord: [-63.035, -18.325],
       name: 'Watts St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8209,7 +8209,7 @@ const streets = {
     },
     {
       id: 'cana-gree-1',
-      coord: [],
+      coord: [-62.145, -19.116],
       name: 'Canal St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8222,7 +8222,7 @@ const streets = {
     },
     {
       id: 'spri-gree-1',
-      coord: [],
+      coord: [-60.759, -20.259],
       name: 'Spring St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8235,7 +8235,7 @@ const streets = {
     },
     {
       id: 'vand-gree',
-      coord: [],
+      coord: [-59.933, -20.962],
       name: 'Vandam St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8248,7 +8248,7 @@ const streets = {
     },
     {
       id: 'char-gree',
-      coord: [],
+      coord: [-58.973, -21.665],
       name: 'Charlton St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8261,7 +8261,7 @@ const streets = {
     },
     {
       id: 'king-gree',
-      coord: [],
+      coord: [-57.868, -22.412],
       name: 'King St. and Greenwich Ave.',
       desc: ``,
       isStreet: true,
@@ -8287,7 +8287,7 @@ const streets = {
     },
     {
       id: 'hube-wash',
-      coord: [],
+      coord: [-66.231, -17.578],
       name: 'Hubert St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8300,7 +8300,7 @@ const streets = {
     },
     {
       id: 'laig-wash',
-      coord: [],
+      coord: [-65.477, -18.325],
       name: 'Laight St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8313,7 +8313,7 @@ const streets = {
     },
     {
       id: 'vest-wash',
-      coord: [],
+      coord: [-64.774, -18.896],
       name: 'Vestry St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8326,7 +8326,7 @@ const streets = {
     },
     {
       id: 'desb-wash',
-      coord: [],
+      coord: [-63.976, -19.468],
       name: 'Desbrosses St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8339,7 +8339,7 @@ const streets = {
     },
     {
       id: 'watt-wash',
-      coord: [],
+      coord: [-63.273, -19.995],
       name: 'Watts St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8352,7 +8352,7 @@ const streets = {
     },
     {
       id: 'cana-wash',
-      coord: [],
+      coord: [-61.856, -21.138],
       name: 'Canal St. and Washington Ave.',
       desc: ``,
       isStreet: true,
@@ -8365,7 +8365,7 @@ const streets = {
     },
     {
       id: 'whou-wash',
-      coord: [],
+      coord: [-57.232, -24.697],
       name: 'W. Houston St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -8378,7 +8378,7 @@ const streets = {
     },
     {
       id: 'cana-renw',
-      coord: [],
+      coord: [-62.390, -17.139],
       name: 'Canal St. and Renwick Ave.',
       desc: ``,
       isStreet: true,
@@ -8391,7 +8391,7 @@ const streets = {
     },
     {
       id: 'spri-renw',
-      coord: [],
+      coord: [-60.522, -18.721],
       name: 'Spring St. and Renwick Ave.',
       desc: ``,
       isStreet: true,
@@ -8404,7 +8404,7 @@ const streets = {
     },
     {
       id: 'vese-wbro',
-      coord: [],
+      coord: [-73.677, -7.515],
       name: 'Vesey St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8417,7 +8417,7 @@ const streets = {
     },
     {
       id: 'barc-wbro',
-      coord: [],
+      coord: [-73.125, -6.943],
       name: 'Barclay St. and W. Broadway.',
       desc: ``,
       isStreet: true,
@@ -8430,7 +8430,7 @@ const streets = {
     },
     {
       id: 'park-wbro',
-      coord: [],
+      coord: [-72.620, -6.855],
       name: 'Park Pl. and W. Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
       isStreet: true,
@@ -8444,7 +8444,7 @@ const streets = {
     },
     {
       id: 'murr-wbro',
-      coord: [],
+      coord: [-72.074, -6.812],
       name: 'Murray St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8457,7 +8457,7 @@ const streets = {
     },
     {
       id: 'warr-wbro',
-      coord: [],
+      coord: [-71.539, -6.724],
       name: 'Warren St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8470,7 +8470,7 @@ const streets = {
     },
     {
       id: 'cham-wbro',
-      coord: [],
+      coord: [-70.902, -6.636],
       name: 'Chambers St. and W. Broadway',
       desc: `The Chambers-W Bway Station entrance is at this corner.`,
       isStreet: true,
@@ -8483,7 +8483,7 @@ const streets = {
     },
     {
       id: 'read-wbro',
-      coord: [],
+      coord: [-70.393, -6.548],
       name: 'Reade St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8496,7 +8496,7 @@ const streets = {
     },
     {
       id: 'duan-wbro',
-      coord: [],
+      coord: [-69.855, -6.460],
       name: 'Duane St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8509,7 +8509,7 @@ const streets = {
     },
     {
       id: 'thom-wbro',
-      coord: [],
+      coord: [-69.272, -6.372],
       name: 'Thomas St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8522,7 +8522,7 @@ const streets = {
     },
     {
       id: 'wort-wbro',
-      coord: [],
+      coord: [-68.609, -6.240],
       name: 'Worth St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8535,7 +8535,7 @@ const streets = {
     },
     {
       id: 'leon-wbro',
-      coord: [],
+      coord: [-67.859, -6.152],
       name: 'Leonard St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8548,7 +8548,7 @@ const streets = {
     },
     {
       id: 'vari-wbro',
-      coord: [],
+      coord: [-67.626, -6.196],
       name: 'Varick Ave. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8561,7 +8561,7 @@ const streets = {
     },
     {
       id: 'fran-wbro',
-      coord: [],
+      coord: [-67.204, -6.064],
       name: 'Franklin St. and W. Broadway',
       desc: `The spikey crown of the Statue of Liberty peeks out from the fake stone facade of a building that seems to feel overwhelmed by the surrounding warehouses and desperate for attention. The rest of Liberty, presumably, has sunk far below the pavements of Tribeca. Surrealism strikes again!`,
       isStreet: true,
@@ -8574,7 +8574,7 @@ const streets = {
     },
     {
       id: 'whit-wbro',
-      coord: [],
+      coord: [-66.390, -5.977],
       name: 'White St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8587,7 +8587,7 @@ const streets = {
     },
     {
       id: 'nmoo-wbro',
-      coord: [],
+      coord: [-66.089, -5.933],
       name: 'N. Moore St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8600,7 +8600,7 @@ const streets = {
     },
     {
       id: 'walk-wbro',
-      coord: [],
+      coord: [-65.586, -5.845],
       name: 'Walker St. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8613,7 +8613,7 @@ const streets = {
     },
     {
       id: 'eric-wbro',
-      coord: [],
+      coord: [-65.183, -5.845],
       name: 'Ericsson Pl. and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8626,7 +8626,7 @@ const streets = {
     },
     {
       id: 'amer-wbro',
-      coord: [],
+      coord: [-64.942, -5.801],
       name: 'Ave. of Americas and W. Broadway',
       desc: ``,
       isStreet: true,
@@ -8652,7 +8652,7 @@ const streets = {
     },
     {
       id: 'york-amer',
-      coord: [],
+      coord: [-64.187, -6.724],
       name: 'York St. and Ave. of Americas',
       desc: ``,
       isStreet: true,
@@ -8665,7 +8665,7 @@ const streets = {
     },
     {
       id: 'laig-amer',
-      coord: [],
+      coord: [-63.685, -7.295],
       name: 'Laight St. and Ave. of Americas',
       desc: ``,
       isStreet: true,
@@ -8678,7 +8678,7 @@ const streets = {
     },
     {
       id: 'cham-huds',
-      coord: [],
+      coord: [-70.780, -6.877],
       name: 'Chambers St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8691,7 +8691,7 @@ const streets = {
     },
     {
       id: 'read-huds',
-      coord: [],
+      coord: [-70.378, -7.229],
       name: 'Reade St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8704,7 +8704,7 @@ const streets = {
     },
     {
       id: 'duan-huds',
-      coord: [],
+      coord: [-69.809, -7.910],
       name: 'Duane St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8717,7 +8717,7 @@ const streets = {
     },
     {
       id: 'thom-huds',
-      coord: [],
+      coord: [-69.217, -8.525],
       name: 'Thomas St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8730,7 +8730,7 @@ const streets = {
     },
     {
       id: 'jay-huds',
-      coord: [],
+      coord: [-68.792, -9.119],
       name: 'Jay St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8743,7 +8743,7 @@ const streets = {
     },
     {
       id: 'wort-huds',
-      coord: [],
+      coord: [-68.576, -9.316],
       name: 'Worth St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8756,7 +8756,7 @@ const streets = {
     },
     {
       id: 'harr-huds',
-      coord: [],
+      coord: [-68.278, -9.690],
       name: 'Harrison St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8769,7 +8769,7 @@ const streets = {
     },
     {
       id: 'leon-huds',
-      coord: [],
+      coord: [-67.784, -10.151],
       name: 'Leonard St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8782,7 +8782,7 @@ const streets = {
     },
     {
       id: 'fran-huds',
-      coord: [],
+      coord: [-67.433, -10.613],
       name: 'Franklin St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8795,7 +8795,7 @@ const streets = {
     },
     {
       id: 'nmoo-huds',
-      coord: [],
+      coord: [-66.878, -11.140],
       name: 'N. Moore St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8808,7 +8808,7 @@ const streets = {
     },
     {
       id: 'beac-huds',
-      coord: [],
+      coord: [-66.134, -11.931],
       name: 'Beach St. and Hudson Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -8822,7 +8822,7 @@ const streets = {
     },
     {
       id: 'hube-huds',
-      coord: [],
+      coord: [-65.440, -12.634],
       name: 'Hubert St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8835,7 +8835,7 @@ const streets = {
     },
     {
       id: 'laig-huds',
-      coord: [],
+      coord: [-64.662, -13.315],
       name: 'Laight St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8848,7 +8848,7 @@ const streets = {
     },
     {
       id: 'vest-huds',
-      coord: [],
+      coord: [-63.957, -13.997],
       name: 'Vestry St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8861,7 +8861,7 @@ const streets = {
     },
     {
       id: 'desb-huds',
-      coord: [],
+      coord: [-63.194, -14.722],
       name: 'Desbrosses St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8874,7 +8874,7 @@ const streets = {
     },
     {
       id: 'cana-huds',
-      coord: [],
+      coord: [-62.563, -15.249],
       name: 'Canal St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8887,7 +8887,7 @@ const streets = {
     },
     {
       id: 'domi-huds',
-      coord: [],
+      coord: [-61.122, -16.523],
       name: 'Dominick Ave. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8900,7 +8900,7 @@ const streets = {
     },
     {
       id: 'spri-huds',
-      coord: [],
+      coord: [-60.240, -17.314],
       name: 'Spring St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8913,7 +8913,7 @@ const streets = {
     },
     {
       id: 'vand-huds',
-      coord: [],
+      coord: [-59.378, -17.996],
       name: 'Vandam St. and Hudson Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -8927,7 +8927,7 @@ const streets = {
     },
     {
       id: 'char-huds',
-      coord: [],
+      coord: [-58.367, -18.765],
       name: 'Charlton St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8940,7 +8940,7 @@ const streets = {
     },
     {
       id: 'king-huds',
-      coord: [],
+      coord: [-57.291, -19.600],
       name: 'King St. and Hudson Ave.',
       desc: ``,
       isStreet: true,
@@ -8966,7 +8966,7 @@ const streets = {
     },
     {
       id: 'thom-duan',
-      coord: [],
+      coord: [-69.287, -8.833],
       name: 'Thomas St. and Duane St.',
       desc: ``,
       isStreet: true,
@@ -8979,7 +8979,7 @@ const streets = {
     },
     {
       id: 'thom-stap',
-      coord: [],
+      coord: [-69.488, -10.437],
       name: 'Thomas St. and Staple Ave.',
       desc: ``,
       isStreet: true,
@@ -8992,7 +8992,7 @@ const streets = {
     },
     {
       id: 'jay-stap',
-      coord: [],
+      coord: [-69.006, -10.876],
       name: 'Jay St. and Staple Ave.',
       desc: ``,
       isStreet: true,
@@ -9005,7 +9005,7 @@ const streets = {
     },
     {
       id: 'harr-stap',
-      coord: [],
+      coord: [-68.480, -11.426],
       name: 'Harrison St. and Staple Ave.',
       desc: ``,
       isStreet: true,
@@ -9018,7 +9018,7 @@ const streets = {
     },
     {
       id: 'beac-coll',
-      coord: [],
+      coord: [-66.408, -13.623],
       name: 'Beach St. and Collister Ave.',
       desc: ``,
       isStreet: true,
@@ -9031,7 +9031,7 @@ const streets = {
     },
     {
       id: 'hube-coll',
-      coord: [],
+      coord: [-65.713, -14.282],
       name: 'Hubert St. and Collister Ave.',
       desc: ``,
       isStreet: true,
@@ -9044,7 +9044,7 @@ const streets = {
     },
     {
       id: 'laig-coll',
-      coord: [],
+      coord: [-64.942, -14.963],
       name: 'Laight St. and Collister Ave.',
       desc: ``,
       isStreet: true,
@@ -9057,7 +9057,7 @@ const streets = {
     },
     {
       id: 'vest-laig',
-      coord: [],
+      coord: [-64.793, -16.875],
       name: 'Vestry St. and Laight St.',
       desc: ``,
       isStreet: true,
@@ -9070,7 +9070,7 @@ const streets = {
     },
     {
       id: 'fran-vari',
-      coord: [],
+      coord: [-66.913, -7.097],
       name: 'Franklin St. and Varick Ave.',
       desc: `The Franklin-Varick Station entrance is at this corner.`,
       isStreet: true,
@@ -9084,7 +9084,7 @@ const streets = {
     },
     {
       id: 'nmoo-vari',
-      coord: [],
+      coord: [-66.355, -7.668],
       name: 'N. Moore St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9097,7 +9097,7 @@ const streets = {
     },
     {
       id: 'eric-vari',
-      coord: [],
+      coord: [-65.568, -8.394],
       name: 'Ericsson Pl. and Varick Ave.',
       desc: `Here we have a modest concrete palazzo housing the 1st precinct of the NYPD. Two roan stallions, bearing a pair of New York's finest, canter down Varick and enter a building by a side entrance.`,
       isStreet: true,
@@ -9110,7 +9110,7 @@ const streets = {
     },
     {
       id: 'laig-vari',
-      coord: [],
+      coord: [-64.082, -9.822],
       name: 'Laight St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9123,7 +9123,7 @@ const streets = {
     },
     {
       id: 'cana-vari',
-      coord: [],
+      coord: [-63.627, -7.163],
       name: 'Canal St. and Varick Ave.',
       desc: `The Canal-Varick Station entrance is at this corner.`,
       isStreet: true,
@@ -9137,7 +9137,7 @@ const streets = {
     },
     {
       id: 'watt-vari',
-      coord: [],
+      coord: [-61.980, -11.624],
       name: 'Watts St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9150,7 +9150,7 @@ const streets = {
     },
     {
       id: 'broo-vari',
-      coord: [],
+      coord: [-61.334, -12.151],
       name: 'Broome St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9163,7 +9163,7 @@ const streets = {
     },
     {
       id: 'domi-vari',
-      coord: [],
+      coord: [-60.501, -12.876],
       name: 'Dominick Ave. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9176,7 +9176,7 @@ const streets = {
     },
     {
       id: 'spri-vari',
-      coord: [],
+      coord: [-59.557, -13.601],
       name: 'Spring St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9189,7 +9189,7 @@ const streets = {
     },
     {
       id: 'vand-vari',
-      coord: [],
+      coord: [-58.677, -14.304],
       name: 'Vandam St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9202,7 +9202,7 @@ const streets = {
     },
     {
       id: 'char-vari',
-      coord: [],
+      coord: [-57.634, -15.073],
       name: 'Charlton St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9215,7 +9215,7 @@ const streets = {
     },
     {
       id: 'king-vari',
-      coord: [],
+      coord: [-56.584, -15.908],
       name: 'King St. and Varick Ave.',
       desc: ``,
       isStreet: true,
@@ -9228,7 +9228,7 @@ const streets = {
     },
     {
       id: 'eric-walk',
-      coord: [],
+      coord: [-65.513, -7.954],
       name: 'Ericsson Pl. and Walker St.',
       desc: ``,
       isStreet: true,
@@ -9241,7 +9241,7 @@ const streets = {
     },
     {
       id: 'eric-stjo',
-      coord: [],
+      coord: [-65.385, -7.207],
       name: `Ericsson Pl. and St. John's Ave.`,
       desc: ``,
       isStreet: true,
@@ -9254,7 +9254,7 @@ const streets = {
     },
     {
       id: 'york-stjo',
-      coord: [],
+      coord: [-64.397, -8.130],
       name: `York St. and St. John's Ave.`,
       desc: ``,
       isStreet: true,
@@ -9267,7 +9267,7 @@ const streets = {
     },
     {
       id: 'laig-stjo',
-      coord: [],
+      coord: [-63.879, -8.613],
       name: `Laight St. and St. John's Ave.`,
       desc: ``,
       isStreet: true,
@@ -9280,7 +9280,7 @@ const streets = {
     },
     {
       id: 'cana-watt',
-      coord: [],
+      coord: [-62.533, -16.128],
       name: 'Canal St. and Watts St.',
       desc: ``,
       isStreet: true,
@@ -9293,7 +9293,7 @@ const streets = {
     },
     {
       id: 'cana-holl',
-      coord: [],
+      coord: [-62.390, -14.897],
       name: 'Canal St. and Holland Tunnel In',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -9307,7 +9307,7 @@ const streets = {
     },
     {
       id: 'cana-watt-1',
-      coord: [],
+      coord: [-62.634, -16.172],
       name: 'Canal St. and Watts St.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -9321,7 +9321,7 @@ const streets = {
     },
     {
       id: 'watt-holl',
-      coord: [],
+      coord: [-62.309, -14.634],
       name: 'Watts St. and Holland Tunnel In',
       desc: ``,
       isStreet: true,
