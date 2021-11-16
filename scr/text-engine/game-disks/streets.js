@@ -714,7 +714,7 @@ const streets = {
     },
     {
       id: 'ehou-cros',
-      coord: [-54.699, 50.084],
+      coord: [-54.697, 5.074],
       name: 'E. Houston St. and Crosby St.',
       desc: '',
       isStreet: true,
@@ -8365,7 +8365,7 @@ const streets = {
     },
     {
       id: 'whou-wash',
-      coord: [],
+      coord: [-57.298, -24.708],
       name: 'W. Houston St. and Washington St.',
       desc: ``,
       isStreet: true,
@@ -13576,10 +13576,10 @@ const streets = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'mort-west'},
+        {dir: 'north', id: 'barr-wash'},
         {dir: 'south', id: 'lero-wash'},
         {dir: 'east', id: 'mort-gree'}, 
-        {dir: 'west', id: 'barr-wash'} 
+        {dir: 'west', id: 'mort-west'} 
       ],
     },
     {   
@@ -15176,7 +15176,7 @@ const streets = {
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '17-8'},
+        {dir: 'north', id: '19-8'},
         {dir: 'south', id: '17-8'},
         {dir: 'east', id: '16-7'},
         {dir: 'west', id: '16-9'},
@@ -28741,7 +28741,7 @@ const streets = {
    /************/
     {
       id: '59-5',
-      coord: [],
+      coord: [42.143, -7.057],
       name: 'Central Park S. and 5th Ave',
       desc: `There is a subway entrance at this corner.`,
       hSubway: true,
@@ -28755,7 +28755,7 @@ const streets = {
     },
     {
       id: '60-5',
-      coord: [],
+      coord: [43.595, -7.265],
       name: 'E. 60th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28768,7 +28768,7 @@ const streets = {
     },
     {
       id: '61-5',
-      coord: [],
+      coord: [44.996, -7.314],
       name: 'E. 61st St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28781,7 +28781,7 @@ const streets = {
     },
     {
       id: '62-5',
-      coord: [],
+      coord: [46.407, -7.316],
       name: 'E. 62nd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28794,7 +28794,7 @@ const streets = {
     },
     {
       id: '63-5',
-      coord: [],
+      coord: [47.640, -7.330],
       name: 'E. 63rd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28807,7 +28807,7 @@ const streets = {
     },
     {
       id: '64-5',
-      coord: [],
+      coord: [48.832, -7.371],
       name: 'E. 64th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28820,7 +28820,7 @@ const streets = {
     },
     {
       id: '65-5',
-      coord: [],
+      coord: [50.144, -7.386],
       name: 'E. 65th St. and 5th Ave.',
       desc: `Here you see the Temple Emanuel. It resembles an elaborately carved chunk of fog, though closer examination shows it to be of grey limestone.`,
       isStreet: true,
@@ -28833,7 +28833,7 @@ const streets = {
     },
     {
       id: '66-5',
-      coord: [],
+      coord: [51.381, -7.419],
       name: 'E. 66th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28846,7 +28846,7 @@ const streets = {
     },
     {
       id: '67-5',
-      coord: [],
+      coord: [52.625, -7.376],
       name: 'E. 67th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28859,7 +28859,7 @@ const streets = {
     },
     {
       id: '68-5',
-      coord: [],
+      coord: [53.768, -7.402],
       name: 'E. 68th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28872,7 +28872,7 @@ const streets = {
     },
     {
       id: '69-5',
-      coord: [],
+      coord: [54.860, -7.411],
       name: 'E. 69th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28885,7 +28885,7 @@ const streets = {
     }, 
     {
       id: '70-5',
-      coord: [],
+      coord: [55.822, -7.430],
       name: 'E. 70th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28898,7 +28898,7 @@ const streets = {
     }, 
     {
       id: '71-5',
-      coord: [],
+      coord: [56.900, -7.427],
       name: 'E. 71st St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28911,7 +28911,7 @@ const streets = {
     }, 
     {
       id: '72-5',
-      coord: [],
+      coord: [58.062, -7.437],
       name: 'E. 72nd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28924,7 +28924,7 @@ const streets = {
     }, 
     {
       id: '73-5',
-      coord: [],
+      coord: [59.071, -7.428],
       name: 'E. 73rd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28937,7 +28937,7 @@ const streets = {
     }, 
     {
       id: '74-5',
-      coord: [],
+      coord: [59.893, -7.499],
       name: 'E. 74th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28950,7 +28950,7 @@ const streets = {
     }, 
     {
       id: '75-5',
-      coord: [],
+      coord: [60.885, -7.481],
       name: 'E. 75th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28963,7 +28963,7 @@ const streets = {
     }, 
     {
       id: '76-5',
-      coord: [],
+      coord: [61.838, -7.523],
       name: 'E. 76th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28976,7 +28976,7 @@ const streets = {
     }, 
     {
       id: '77-5',
-      coord: [],
+      coord: [62.813, -7.546],
       name: 'E. 77th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -28989,7 +28989,7 @@ const streets = {
     }, 
     {
       id: '78-5',
-      coord: [],
+      coord: [63.633, -7.548],
       name: 'E. 78th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29002,7 +29002,7 @@ const streets = {
     }, 
     {
       id: '79-5',
-      coord: [],
+      coord: [64.562, -7.537],
       name: 'E. 79th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29015,7 +29015,7 @@ const streets = {
     }, 
     {
       id: '80-5',
-      coord: [],
+      coord: [65.437, -7.576],
       name: 'E. 80th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29028,7 +29028,7 @@ const streets = {
     }, 
     {
       id: '81-5',
-      coord: [],
+      coord: [66.185, -7.590],
       name: 'E. 81st St. and 5th Ave.',
       desc: `There's the Metropolitan Museum, three long city blocks of Greek-styled marble sheathing a few thousand years of pots, paintings, armor, and assorted gew-gaws.`,
       isStreet: true,
@@ -29053,7 +29053,7 @@ const streets = {
     },
     {
       id: '82-5',
-      coord: [],
+      coord: [66.990, -7.600],
       name: 'E. 82nd St. and 5th Ave.',
       isStreet: true,
       desc: ``,
@@ -29066,7 +29066,7 @@ const streets = {
     }, 
     {
       id: '83-5',
-      coord: [],
+      coord: [67.724, -7.639],
       name: 'E. 83rd St. and 5th Ave.',
       isStreet: true,
       desc: ``,
@@ -29079,7 +29079,7 @@ const streets = {
     }, 
     {
       id: '84-5',
-      coord: [],
+      coord: [68.437, -7.611],
       name: 'E. 84th St. and 5th Ave.',
       isStreet: true,
       desc: ``,
@@ -29092,7 +29092,7 @@ const streets = {
     }, 
     {
       id: '85-5',
-      coord: [],
+      coord: [69.189, -7.646],
       name: 'E. 85th St. and 5th Ave.',
       isStreet: true,
       desc: ``,
@@ -29105,7 +29105,7 @@ const streets = {
     }, 
     {
       id: '86-5',
-      coord: [],
+      coord: [69.815, -7.637],
       name: 'E. 86th St. and 5th Ave',
       isStreet: true,
       desc: ``,
@@ -29118,7 +29118,7 @@ const streets = {
     }, 
     {
       id: '87-5',
-      coord: [],
+      coord: [70.539, -7.660],
       name: 'E. 87th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29131,7 +29131,7 @@ const streets = {
     }, 
     {
       id: '88-5',
-      coord: [],
+      coord: [71.166, -7.697],
       name: 'E. 88th St. and 5th Ave.',
       desc: `From a distance, the Guggenheim Museum might be a gigantic of modern sculpture -- perhaps some demented artist's version of a thunderstorm. Even up close, its huge spiral is enough to make you dizzy for a moment.`,
       isStreet: true,
@@ -29156,7 +29156,7 @@ const streets = {
     },
     {
       id: '89-5',
-      coord: [],
+      coord: [71.769, -7.720],
       name: 'E. 89th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29169,7 +29169,7 @@ const streets = {
     }, 
     {
       id: '90-5',
-      coord: [],
+      coord: [72.296, -7.702],
       name: 'E. 90th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29182,7 +29182,7 @@ const streets = {
     }, 
     {
       id: '91-5',
-      coord: [],
+      coord: [72.885, -7.739],
       name: 'E. 91st St. and 5th Ave.',
       desc: `Accustomed to the towering, relatively featureless blocks of Manhattan apartment houses, you are startled to see what appears to be a mansion with a generous garden. It's not a private residence, however, but the Cooper-Hewitt Museum.`,
       isStreet: true,
@@ -29208,7 +29208,7 @@ const streets = {
     },
     {
       id: '92-5',
-      coord: [],
+      coord: [73.416, -7.762],
       name: 'E. 92nd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29221,7 +29221,7 @@ const streets = {
     }, 
     {
       id: '93-5',
-      coord: [],
+      coord: [73.937, -7.786],
       name: 'E. 93rd St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29234,7 +29234,7 @@ const streets = {
     }, 
     {
       id: '94-5',
-      coord: [],
+      coord: [74.430, -7.768],
       name: 'E. 94th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -29247,7 +29247,7 @@ const streets = {
     }, 
     {
       id: '95-5',
-      coord: [],
+      coord: [74.962, -7.777],
       name: 'E. 95th St. and 5th Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
@@ -29262,7 +29262,7 @@ const streets = {
 // LUNCHEONETTE GOES HERE * DEPENDING ON HOW WE HANDLE IT
     {
       id: '96-5',
-      coord: [],
+      coord: [75.467, -7.804],
       name: 'E. 96th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
