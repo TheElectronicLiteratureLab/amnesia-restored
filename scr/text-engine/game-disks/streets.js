@@ -22467,7 +22467,7 @@ const streets = {
     },
     {
       id: '59-3',
-      coord: [],
+      coord: [42.294, 8.459],
       name: 'E. 59th St. and 3rd Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -22481,7 +22481,7 @@ const streets = {
     },
     {
       id: '58-3',
-      coord: [],
+      coord: [40.747, 8.525],
       name: 'E. 58th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22494,7 +22494,7 @@ const streets = {
     },
     {
       id: '57-3',
-      coord: [],
+      coord: [39.079, 8.569],
       name: 'E. 57th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22507,7 +22507,7 @@ const streets = {
     },
     {
       id: '56-3',
-      coord: [],
+      coord: [37.423, 8.613],
       name: 'E. 56th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22520,7 +22520,7 @@ const streets = {
     },
     {
       id: '55-3',
-      coord: [],
+      coord: [35.907, 8.613],
       name: 'E. 55th St. and 3rd Ave.',
       desc: `There is a luncheonette on the corner`,
       isStreet: true,
@@ -22534,7 +22534,7 @@ const streets = {
     },
     {
       id: '54-3',
-      coord: [],
+      coord: [34.434, 8.701],
       name: 'E. 54th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22547,7 +22547,7 @@ const streets = {
     },
     {
       id: '53-3',
-      coord: [],
+      coord: [32.953, 8.723],
       name: 'E. 53rd St. and 3rd Ave.',
       desc: `There is a subway entrance at this corner`,
       isStreet: true,
@@ -22562,7 +22562,7 @@ const streets = {
     },
     {
       id: '52-3',
-      coord: [],
+      coord: [31.410, 8.767],
       name: 'E. 52nd St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22575,7 +22575,7 @@ const streets = {
     },
     {
       id: '51-3',
-      coord: [],
+      coord: [29.726, 8.767],
       name: 'E. 51st St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22588,7 +22588,7 @@ const streets = {
     },
     {
       id: '50-3',
-      coord: [],
+      coord: [28.227, 8.811],
       name: 'E. 50th St. and 3rd Ave.',
       desc: ``,
       isStreet: true,
@@ -22601,7 +22601,7 @@ const streets = {
     },
     {
       id: '49-3',
-      coord: [],
+      coord: [26.490, 8.833],
       name: 'E. 49th St. and 3rd Ave.',
       desc: `There is a luncheonette on the corner.`,
       isStreet: true,
