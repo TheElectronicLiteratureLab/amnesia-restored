@@ -1,6 +1,6 @@
 // render output, with optional class
 // (string | array | fn -> string) -> nothing
-let println = (line, className = "border") => {
+let println = (line, className = 'app') => {
   // bail if string is null or undefined
   if (!line) {
     return;
@@ -39,9 +39,24 @@ let println = (line, className = "border") => {
     str = str.replace('\n', '<br>');
   }
 
-  output.appendChild(newLine).innerHTML = str;
+    output.appendChild(newLine).innerHTML = str;
+    output.scrollTo(0, output.scrollHeight);
   //output.scrollTo(0, document.body.scrollHeight);
-  output.scrollTo(0, output.scrollHeight);
+   
+
+
+  // var app = document.querySelector('.app');
+
+  // var typewriter = new Typewriter(app, {
+  //   delay: 50,
+
+  // });
+
+  // typewriter.typeString(str)
+  //   .start();
+
+    
+  
 };
 
 // get random array element
