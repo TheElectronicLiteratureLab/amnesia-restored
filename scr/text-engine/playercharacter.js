@@ -1,3 +1,9 @@
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2
+});
+
 let time = new Date('May 4, 1986 09:05:00')
 let playFat = 100;
 let playHung = 100;
@@ -7,8 +13,8 @@ let charScore = 0;
 let survScore = 0;
 let totalScore = (detScore + charScore + survScore);
 let moveCount = 0;
-let orderTotal = 0; // Creating a variable to store the order total
-let energyTotal = 0; // The total amount of energy gained from their order
+let orderTotal = 0.00; // Creating a variable to store the order total
+let energyTotal = 0.00; // The total amount of energy gained from their order
 let playCoord = [];
 let playCloth = {
     top: [],

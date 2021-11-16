@@ -38,38 +38,45 @@ const luncheonette = { // Luncheonette Room
       {
 
         if(prevInput === "tuna"){
-          orderTotal + 2.75;
-          energyTotal + 28;
-          println('One charlie is ready to go. \n \n Anything else?');
-          
+          orderTotal += 2.75;
+          energyTotal += 28;
+          println('One charlie is ready to go. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='ham'){
-          orderTotal + 2.75;
-          energyTotal + 26;
-          println('One kosher special coming right up. \n \n Anything else?');
-          
+          orderTotal += 2.75;
+          energyTotal += 26;
+          println('One kosher special coming right up. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='tea'){
-          orderTotal + 0.45;
-          energyTotal + 8;
-          println('One tea is on its way. \n \nAnything else?');
-          
+          orderTotal += 0.45;
+          energyTotal += 8;
+          println('One tea is on its way. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='coffee'){
-          orderTotal + 0.45;
-          energyTotal + 8;
-          println('One coffee is on its way. \n \n Anything else?');
-          
+          orderTotal += 0.45;
+          energyTotal += 8;
+          println('One coffee is on its way. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='pepsi'){
-          orderTotal + 0.85;
-          energyTotal + 8;
-          println('One pepsi is on its way. \n \nAnything else?');
-          
+          orderTotal += 0.85;
+          energyTotal += 8;
+          println('One pepsi is on its way. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='burger'){
-          orderTotal + 0.85;
-          energyTotal + 16;
-          println('One hamburger is ready to go. \n \nAnything else?');
-          
+          orderTotal += 0.85;
+          energyTotal += 16;
+          println('One hamburger is ready to go. \n Anything else?');
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }else if(prevInput ==='leave'){
           enterRoom('lunch-leave')
-
+          console.log("Order Total: " + orderTotal);
+          console.log("Energy Total: " + energyTotal);
         }
       },
       exits: 
@@ -81,17 +88,19 @@ const luncheonette = { // Luncheonette Room
     {
       id: 'lunch-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Luncheonette', // Displayed each time the player enters the room.
-      desc: `The attendant totals up your purchase on the register, and it comes to $${orderTotal}.`,
+      desc: ``,
       onEnter: () => 
         {
-          
-          if(playMon >= orderTotal){ // Subtracting
-          playMon - orderTotal;
-          playHung + energyTotal;
-          pressEnter('lunch-payscreen');
+          println(formatter.format(orderTotal).toString());
+          if(orderTotal <= playMon){ // Subtracting
+          playMon -= orderTotal;
+          playHung += energyTotal;
+          console.log(playMon);
+        pressEnter('lunch-payscreen');
           }else{
             pressEnter('lunch-nomon'); // if you have no money
           }
+          println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
         },
     },
     {
