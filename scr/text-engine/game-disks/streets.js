@@ -16149,7 +16149,7 @@ const streets = {
         //5th Ave
     {
       id: '34-5',
-      coord: [],
+      coord: [-1.845, -6.240],
       name: 'W. 34th St. and 5th Ave.',
       desc: ``,
       isStreet: true,
@@ -21602,7 +21602,7 @@ const streets = {
         {dir: 'east', id: '48-madi'},
         {dir: 'west', id: '48-amer'},
         {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: '????'},
-        {dir: [`scriber's`, 'scribners'], id: 'scri',coord: [], block: '????'}
+        {dir: [`scriber's`, 'scribners'], id: 'scri', block: '????'}
       ]
     },
     {
@@ -23569,7 +23569,7 @@ const streets = {
     },
     {
       id: '39-tudo',
-      coord: [],
+      coord: [7.907, 16.040],
       name: 'E. 39th St. and Tudor Place',
       desc: ``,
       isStreet: true,
@@ -23582,7 +23582,7 @@ const streets = {
     },
     {
       id: '40-tudo',
-      coord: [],
+      coord: [9.557, 16.018],
       name: 'E. 40th St. and Tudor Place',
       desc: ``,
       isStreet: true,
@@ -23595,7 +23595,7 @@ const streets = {
     },
     {
       id: '41-tudo',
-      coord: [],
+      coord: [11.652, 15.974],
       name: 'E. 41st St. and Tudor Place',
       desc: ``,
       isStreet: true,
@@ -23608,7 +23608,7 @@ const streets = {
     },
     {
       id: '42-tudo',
-      coord: [],
+      coord: [13.667, 16.018],
       name: 'E. 42nd St. and Tudor Place',
       desc: ``,
       isStreet: true,
@@ -23621,7 +23621,7 @@ const streets = {
     },
     {
       id: '43-tudo',
-      coord: [],
+      coord: [15.517, 15.996],
       name: 'E. 40th St. and Tudor Place',
       desc: ``,
       isStreet: true,
@@ -23634,7 +23634,7 @@ const streets = {
     },
     {
       id: '41-fdrd',
-      coord: [],
+      coord: [11.652, 23.778],
       name: 'E. 41st St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -23647,7 +23647,7 @@ const streets = {
     },
     {
       id: '42-fdrd',
-      coord: [],
+      coord: [13.667, 24.042],
       name: 'E. 42nd St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -23660,7 +23660,7 @@ const streets = {
     },
     {
       id: '49-beek',
-      coord: [],
+      coord: [26.687, 23.335],
       name: 'E. 49th St. and Beekman Place',
       desc: ``,
       isStreet: true,
@@ -23673,7 +23673,7 @@ const streets = {
     },
     {
       id: '50-beek',
-      coord: [],
+      coord: [28.420, 23.313],
       name: 'E. 50th St. and Beekman Place',
       desc: ``,
       isStreet: true,
@@ -23686,7 +23686,7 @@ const streets = {
     },
     {
       id: '51-beek',
-      coord: [],
+      coord: [29.860, 23.269],
       name: 'E. 51st St. and Beekman Place',
       desc: ``,
       isStreet: true,
@@ -23699,7 +23699,7 @@ const streets = {
     },
     {
       id: '53-sutt',
-      coord: [],
+      coord: [33.119, 24.280],
       name: 'E. 53rd St. and Sutton Place',
       desc: ``,
       isStreet: true,
@@ -23712,7 +23712,7 @@ const streets = {
     },
     {
       id: '54-sutt',
-      coord: [],
+      coord: [34.543, 24.214],
       name: 'E. 54th St. and Sutton Place',
       desc: ``,
       isStreet: true,
@@ -23725,7 +23725,7 @@ const streets = {
     },
     {
       id: '55-sutt',
-      coord: [],
+      coord: [35.996, 24.170],
       name: 'E. 55th St. and Sutton Place',
       desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
       exits: [
@@ -23738,7 +23738,7 @@ const streets = {
     },
     {
       id: '56-sutt',
-      coord: [],
+      coord: [37.579, 24.126],
       name: 'E. 56th St. and Sutton Place',
       desc: ``,
       isStreet: true,
@@ -23751,7 +23751,7 @@ const streets = {
     },
     {
       id: '57-sutt',
-      coord: [],
+      coord: [39.215, 24.082],
       name: 'E. 57th St. and Sutton Place',
       desc: ``,
       isStreet: true,
@@ -23764,7 +23764,7 @@ const streets = {
     },
     {
       id: '58-sutt',
-      coord: [],
+      coord: [40.864, 24.016],
       name: 'E. 58th St. and Sutton Place',
       desc: ``,
       isStreet: true,
@@ -23777,7 +23777,7 @@ const streets = {
     },
     {
       id: '59-sutt',
-      coord: [],
+      coord: [42.456, 23.972],
       name: 'E. 59th St. and Sutton Place',
       desc: ``,
       isStreet: true,
