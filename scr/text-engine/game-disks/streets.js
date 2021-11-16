@@ -16425,7 +16425,7 @@ const streets = {
         //Madison Ave
     {
       id: '34-madi',
-      coord: [],
+      coord: [-1.736, -1.978],
       name: 'E. 34th St. and Madison Ave.',
       desc: ``,
       isStreet: true,
@@ -16701,19 +16701,6 @@ const streets = {
 
     //Park Ave
     {
-      id: '34-park',
-      coord: [],
-      name: 'E. 34th St. and Park Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-park'},
-        {dir: 'south', id: '33-park'},
-        {dir: 'east', id: '34-lexi'},
-        {dir: 'west', id: '34-madi'}
-      ],
-    },
-    {
       id: '33-park',
       coord: [],
       name: 'E. 33rd St. and Park Ave.',
@@ -16923,19 +16910,7 @@ const streets = {
       ],
     },
         //Lexington Ave
-    {
-      id: '34-lexi',
-      coord: [],
-      name: 'E. 34th St. and Lexington Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-lexi'},
-        {dir: 'south', id: '33-lexi'},
-        {dir: 'east', id: '34-3'},
-        {dir: 'west', id: '34-park'}
-      ],
-    },
+
     {
       id: '33-lexi',
       coord: [],
@@ -17253,19 +17228,6 @@ const streets = {
     },
         //3rd Ave
     {
-      id: '34-3',
-      coord: [],
-      name: 'E. 34th St. and 3rd Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-3'},
-        {dir: 'south', id: '33-3'},
-        {dir: 'east', id: '34-qout'},
-        {dir: 'west', id: '34-lexi'}
-      ],
-    },
-    {
       id: '33-3',
       coord: [],
       name: 'E. 33rd St. and 3rd Ave.',
@@ -17527,19 +17489,6 @@ const streets = {
       ],
     },
         //2nd Ave
-    {
-      id: '34-2',
-      coord: [],
-      name: 'E. 34th St. and 2nd Ave.',
-      desc: ``,
-      isStreet: true,
-      exits:[
-        {dir: 'north', id: '35-2'},
-        {dir: 'south', id: '33-2'},
-        {dir: 'east', id: '34-qin'},
-        {dir: 'west', id: '34-qout'},
-      ],
-    },
     {
       id: '33-2',
       coord: [],
@@ -18104,7 +18053,7 @@ const streets = {
         //Misc streets E. side of map
     {
       id: '34-qout',
-      coord: [],
+      coord: [-1.582, 10.903],
       name: 'E. 34th St. and Queens Tunnel OUT',
       desc: ``,
       isStreet: true,
@@ -18117,7 +18066,7 @@ const streets = {
     },
     {
       id: '34-qin',
-      coord: [],
+      coord: [-1.450, 16.350],
       name: 'E. 34th St. and Queens Tunnel IN',
       desc: ``,
       isStreet: true,
@@ -18130,7 +18079,7 @@ const streets = {
     },
     {
       id: '35-qin',
-      coord: [],
+      coord: [0.374, 16.172],
       name: 'E. 35th St. and Queens Tunnel IN',
       desc: ``,
       isStreet: true,
@@ -18143,7 +18092,7 @@ const streets = {
     },
     {
       id: '36-qin',
-      coord: [],
+      coord: [2.087, 16.194],
       name: 'E. 36th St. and Queens Tunnel IN',
       desc: ``,
       isStreet: true,
@@ -18156,7 +18105,7 @@ const streets = {
     },
     {
     id: 'qtin',
-    coord: [],
+    coord: [2.987, 16.172],
     name: 'QUEENS TUNNEL IN',
     desc: ``,
     isStreet: true,
@@ -18169,7 +18118,7 @@ const streets = {
   },
     {
       id: '34-fdrd',
-      coord: [],
+      coord: [-1.538, 23.206],
       name: 'E. 34th St. and FDR Drive',
       desc: ``,
       isStreet: true,
@@ -30420,7 +30369,7 @@ const streets = {
 // PARK AVE STREETS
     {
       id: '59-park',
-      coord: [],
+      coord: [42.229, 1.077],
       name: 'E. 59th St. and Park Ave.',
       desc: `There is a restaurant called Nedicks here.`,
       isStreet: true,
