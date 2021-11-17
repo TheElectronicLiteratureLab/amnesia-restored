@@ -768,7 +768,7 @@ let remove = (clothes) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const rooms = streets.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
     let chance = Math.floor(Math.random() * 101); //roll random number 0-100
