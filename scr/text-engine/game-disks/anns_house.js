@@ -107,11 +107,12 @@ const anns_house = {
             name:'',
             desc:`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`,
             onBlock: () => {
-                if(prevInput === 'take cookie'){
+                //might be better to use the onTake function here.
+                if(prevInput === 'grab cookie'){
                     enterRoom('ann-12');
-                }else if(prevInput === 'take chocolate cookie'){
+                }else if(prevInput === 'grab chocolate cookie'){
                     enterRoom('ann-12');
-                }else if(prevInput ==='take sprinkle cookie'){
+                }else if(prevInput ==='grab sprinkle cookie'){
                     enterRoom('ann-12');
                 }else{
                     println(`Can you rephrase that please?`);
