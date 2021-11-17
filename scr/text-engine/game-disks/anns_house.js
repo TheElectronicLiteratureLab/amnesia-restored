@@ -7,35 +7,41 @@ const anns_house = {
             desc:`You find 25 West 19th Street in the middle of the block on the uptown side of the street.`,
             exits: [
                 {dir:['look'],id:'ann-2'},
-                {dir:['enter'],id:'ann-3'}
-            ]
+                {dir:['brownstone','building'],id:'ann-3'}
+            ],
         },
         {
             id:'ann-2',
             name:'',
             desc:`25 West 11th St. is a five-story brownstone about thirty feet wide that stands between a parking lot and a taller but almost equally narrow office building. Its first story is occupied by a beauty salon in a state of advanced redecoration. A broad flight of steps, flanked by wrought-iron balustrades, mounts steeply to the carved entrance portico. To the right of the entrance is a wide bay formed by two large plate-glass windows hung with white lace curtains.`,
             exits:[
-                {dir:['enter'],id:'ann-3'}
-            ]
+                {dir:['brownstone','building'],id:'ann-3'}
+            ],
         },
         {
             id:'ann-3',
             name:'',
             desc:`You climb the steps to the entrance portico, where there is a row of doorbells each with a plastic nameplate beside it. The nameplate for the topmost doorbell reads NEW THEATER OF SILLINESS.`,
             exits:[
-                {dir:['ring'],id:'ann-4'}
-            ]
+                {dir:['doorbell'],id:'ann-4'}
+            ],
         },
         {
             id:'ann-4',
             name:'',
             desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
             //there is supposed to be a timer to get the player to enter the input in a limited amount of time. Does the engine we use allow that?
+            onEnter: () => {
+                pressEnter('ann-6');
+            },
         },
         {
             id:'ann-5',
             name:'',
             desc:`You try to open the door but you’re too late; the buzzer’s stopped buzzing.`,
+            exits:[
+                {dir:['doorbell'],id:'ann-4'},
+            ],
         },
         {
             id:'ann-6',
@@ -45,43 +51,38 @@ const anns_house = {
                 reenableInput();
             },
             onBlock: () => {
-                if(prevInput === 'John' || 'John Cameron'){
+                if(prevInput === 'john'){
+                    enterRoom('ann-7');
+                }else if(prevInput === 'john cameron'){
                     enterRoom('ann-7')
-                }else(
-                    enterRoom('ann-8')
-                )
-            }
+                }
+                else{
+                    enterRoom('ann-8');
+                }
+            },
         },
         {
-            id:'ann-7',
+            id:'ann-7', 
             name:'',
             desc:`“Oh, John, how nice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
-            onBlock: () => {
-                if(prevInput === 'climb' || 'go upstairs'){
-                    enterRoom('ann-9')
-                }else{
-                    println(`Can you rephrase that please?`)
-                }
-            }
+            exits: [
+                {dir:['upstairs','climb'],id:'ann-9'},
+            ],
         },
         {
             id:'ann-8',
             name:'',
             desc:`“Oh, John, you can’t fool me, I know your voice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
-            onBlock: () => {
-                if(prevInput === 'climb' || 'go upstairs'){
-                    enterRoom('ann-9')
-                }else{
-                    println(`Can you rephrase that please?`)
-                }
-            }
+            exits: [
+                {dir:['upstairs','climb'],id:'ann-9'},
+            ],
         },
         {
             id:'ann-9',
             name:'',
-            desc:`You climb the stairs to the second f1oor landing, where the door to apartment B has been left ajar.`,
+            desc:`You climb the stairs to the second floor landing, where the door to apartment B has been left ajar.`,
             exits:[
-                {dir:['enter'],id:'ann-10'}
+                {dir:['apartment','room'],id:'ann-10'},
             ]
         },
         {
@@ -89,24 +90,24 @@ const anns_house = {
             name:'',
             desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won’t be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
             onBlock: () => {
-                if(prevInput === 'look Cecily' || 'look at Cecily'){
-                    enterRoom('ann-11')
+                if(prevInput === 'look Cecily' || prevInput === 'look at Cecily'){
+                    enterRoom('ann-11');
                 }else{
-                    println(`Can you rephrase that please?`)
+                    println(`Can you rephrase that please?`);
                 }
-            }
+            },
         },
         {
             id:'ann-11',
             name:'',
             desc:`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`,
             onBlock: () => {
-                if(prevInput === 'take cookie'|| 'take chocolate cookie' || 'take sprinkle cookie'){
-                    enterRoom('ann-12')
+                if(prevInput === 'take cookie'|| prevInput === 'take chocolate cookie' || prevInput === 'take sprinkle cookie'){
+                    enterRoom('ann-12');
                 }else{
-                    println(`Can you rephrase that please?`)
+                    println(`Can you rephrase that please?`);
                 }
-            }
+            },
         },
         {
             id:'ann-12',
@@ -114,8 +115,7 @@ const anns_house = {
             desc:``,
             onEnter: () => {
                 println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.
-                “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”
-                `)
+                “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`)
                 reenableInput();
             },
             exits:[
@@ -140,7 +140,7 @@ const anns_house = {
             name:'',
             desc:`Cecily stamps her foot with beguiling petulance. “The riddles have to come first. That is the rule. Now, here is the first riddle.\n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
             onBlock: () => {
-                if(prevInput === '1' || 'one'){
+                if(prevInput === '1' || prevInput === 'one'){
                     enterRoom('ann-17')
                 }else{
                     enterRoom('ann-16')
@@ -152,7 +152,7 @@ const anns_house = {
             name:'',
             desc:`“Very well! Here is the first riddle. She closes her eyes for better concentration, and recites: \n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
             onBlock: () => {
-                if(prevInput === '1' || 'one'){
+                if(prevInput === '1' || prevInput === 'one'){
                     enterRoom('ann-17')
                 }else{
                     enterRoom('ann-16')
@@ -164,7 +164,7 @@ const anns_house = {
             name:'',
             desc:`“You’re wrong!” Cecily shrieks gleefully. “You’re wrong, you’re wrong, you’re wrong! There’s only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don’t be disappointed. Okay, here’s one that’s even harder: \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
             onBlock: () => {
-                if(prevInput === 'ann' || 'anne'){
+                if(prevInput === 'ann' || prevInput === 'anne'){
                     enterRoom('ann-19')
                 }else{
                     enterRoom('ann-18')
@@ -176,7 +176,7 @@ const anns_house = {
             name:'',
             desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I’ll ask you one from another book then. \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
             onBlock: () => {
-                if(prevInput === 'ann' || 'anne'){
+                if(prevInput === 'ann' || prevInput ==='anne'){
                     enterRoom('ann-19')
                 }else{
                     enterRoom('ann-18')
@@ -188,9 +188,9 @@ const anns_house = {
             name:'',
             desc:`“You’re wrong! You’re wrong, you’re wrong, you’re wrong. The right answer is Ann, the same as Mummy’s name. Silk AN’ satin, gold AN’ velvet, get it? Well, you’re no good at riddles, I can see that. I’ll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don’t care.”`,
             onBlock: () => {
-                if(prevInput === 'ask Cecily about ann' || 'ask Cecily about mother'){
+                if(prevInput === 'ask Cecily about ann' || prevInput === 'ask Cecily about mother'){
                     enterRoom('ann-20')
-                }else if(prevInput === 'look room' || 'look bookshelves'){
+                }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
                     enterRoom('ann-21')
                 }else{
                     println(`Can you rephrase that please?`)
