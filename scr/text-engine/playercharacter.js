@@ -14,7 +14,7 @@ let playCloth = {
     head: [],
     feet: [],
   };
-  
+let firstDial = false;
 
 const playerc ={
 

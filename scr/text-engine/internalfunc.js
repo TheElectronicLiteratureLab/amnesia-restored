@@ -341,3 +341,43 @@ let callNum = (num) => {
   }
 };
 
+let numdialButton = (clicked_id) => {
+  let x = document.getElementById(clicked_id).innerHTML;
+  document.getElementById("input").value = document.getElementById("input").value + x;
+}
+
+function enterBtnClick () {
+  e = $.Event('keyup');
+  e.keyCode= 13; // enter
+  $('input').trigger(e);
+  applyInput();
+}
+
+let enterNum = () => {
+  const enterButton = document.getElementById("enterkey");
+  enterButton.addEventListener("click", enterBtnClick());
+  document.getElementById("dialPad").style.display = "none";
+  firstDial = true;
+  document.getElementById("tutorial").style.display = "none";
+
+}
+       
+let deleteNum = () => {
+  document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
+}
+
+let closeDial = () => {
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("input").value = '';
+  reenableInput();
+}
+
+let openTutorial = () => {
+  let x = document.getElementById("tutorial");
+  if(x.style.display === "none"){
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
