@@ -109,8 +109,9 @@ let response = (e) => {
 
   if (e.keyCode === ENTER) {
     applyInput();
-  }
+  } 
 };
+
 
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
@@ -275,14 +276,9 @@ let endConversation = () => {
   disk.conversation = undefined;
 };
 
-let dialNum = (num) => {
-  println('dialing ' + num + '...');
-  console.log(num);
-  reenableInput();
-  setTimeout(callNum(num), 3000);
-};
-
 let callNum = (num) => {
+  reenableInput();
+  const room = getRoom(disk.roomId);
   let id;
   let numbers = [
     {number:'3', roomid:'phone-1'},
@@ -322,8 +318,13 @@ let callNum = (num) => {
       {number:'976-1212', roomid:'phone-28'}
     );
   }
-  // add Bette's phone number number:'', roomid:'phone-29'
-  // add denise's phone number after Bette's phonecall number:'555-5413', roomid:'phone-30'
+
+  if(room.id === 'bett-apar'){
+    numbers.push(
+      {number:'555-0042', roomid:'phone-29'},
+      {number:'555-5413', roomid:'phone-30'}
+    );
+  }
 
   for(let i = 0; i < numbers.length; i++){
     if(numbers[i].number === num){
@@ -331,10 +332,12 @@ let callNum = (num) => {
     };
   }
 
-  if(!id){
-    println(`This number doesn't exist`);
-  }
   if(id){
     enterRoom(id);
   }
+
+  if(!id){
+    println(`This number doesn't exist.`)
+  }
 };
+

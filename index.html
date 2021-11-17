@@ -15,6 +15,7 @@
   
   <!-- Addtional Scripts -->
   <script src="scr/leaflet.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -148,7 +149,7 @@ const addrDiv = document.getElementById("address");
   }
 };
 
-// dial 
+// DIAL 
 let numdialButton = (clicked_id) => {
   let x = document.getElementById(clicked_id).innerHTML;
   document.getElementById("input").value = document.getElementById("input").value + x;
@@ -158,11 +159,18 @@ let numdialKey = () => {
   document.getElementById("input").value = document.getElementById("input").value + number;
 }
 
+function enterBtnClick () {
+  e = $.Event('keyup');
+  e.keyCode= 13; // enter
+  $('input').trigger(e);
+  applyInput();
+  console.log('triggered');
+}
+
 let enterNum = () => {
-  let num = document.getElementById("input").value;
-  dialNum(num);
+  const enterButton = document.getElementById("enterkey");
+  enterButton.addEventListener("click", enterBtnClick());
   document.getElementById("dialPad").style.display = "none";
-  document.getElementById("input").value = '';
 }
        
 let deleteNum = () => {

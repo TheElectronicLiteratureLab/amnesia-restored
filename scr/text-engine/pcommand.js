@@ -579,13 +579,13 @@ let turnOffOn = (toggle, itemId) => {
 
 let dial = () => {
   const room = getRoom(disk.roomId);
-  console.log(room.id);
-  if(room.id == 'hote-room' || 'hote-revi' || 'bett-apar'){
-    println('true');
-    /*const firstdial = false;
+  console.log(room);
+  if(room.id === 'hote-room' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1'){
+    document.getElementById("input").value = document.getElementById("input").value + 'dialing ';
+    let firstDial = false;
+    let number;
     document.getElementById('dialPad').style.display = "block";
     document.querySelector('input').disabled = true;
-    let number;
     window.addEventListener("keydown", checkKeyPressed, false);
     function checkKeyPressed(evt){
       if(evt.keyCode === 48){
@@ -642,18 +642,18 @@ let dial = () => {
       document.getElementById("input").value = document.getElementById("input").value + number;
     }
     let enterNum = () => {
-      let num = document.getElementById("input").value;
-      dialNum(num);
-      window.removeEventListener("keydown", checkKeyPressed, false);
       document.getElementById("dialPad").style.display = "none";
+      window.removeEventListener("keydown", checkKeyPressed, false);
     }
     let deleteNum = () => {
       document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
-    }*/
+    }
   } else {
-    println(`With what phone?`);
+    println(`With what phone?`)
   }
 }
+
+
 
 // dial command
 /*
@@ -1105,6 +1105,7 @@ let commands = [
     wear: wear,
     remove: remove,
     read: read,
+    dialing: x => callNum(x),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
