@@ -32,7 +32,16 @@ const anns_house = {
             desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
             //there is supposed to be a timer to get the player to enter the input in a limited amount of time. Does the engine we use allow that?
             onEnter: () => {
-                pressEnter('ann-6');
+                annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
+            },
+            onBlock: () => {
+                
+                if(prevInput === 'open'){
+                    clearTimeout(annTimer);
+                    enterRoom('ann-6');
+                }else{
+                    println(`try again`);
+                }
             },
         },
         {
@@ -89,12 +98,8 @@ const anns_house = {
             id:'ann-10',
             name:'',
             desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won’t be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
-            onBlock: () => {
-                if(prevInput === 'look Cecily' || prevInput === 'look at Cecily'){
-                    enterRoom('ann-11');
-                }else{
-                    println(`Can you rephrase that please?`);
-                }
+            onLook: () => {
+                enterRoom('ann-11');
             },
         },
         {
@@ -102,7 +107,11 @@ const anns_house = {
             name:'',
             desc:`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`,
             onBlock: () => {
-                if(prevInput === 'take cookie'|| prevInput === 'take chocolate cookie' || prevInput === 'take sprinkle cookie'){
+                if(prevInput === 'take cookie'){
+                    enterRoom('ann-12');
+                }else if(prevInput === 'take chocolate cookie'){
+                    enterRoom('ann-12');
+                }else if(prevInput ==='take sprinkle cookie'){
                     enterRoom('ann-12');
                 }else{
                     println(`Can you rephrase that please?`);
@@ -114,8 +123,7 @@ const anns_house = {
             name:'',
             desc:``,
             onEnter: () => {
-                println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.
-                “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`)
+                println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.\n\n“Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`)
                 reenableInput();
             },
             exits:[

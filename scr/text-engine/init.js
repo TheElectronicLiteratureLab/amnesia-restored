@@ -14,6 +14,9 @@ let inputsPos = 0;
 // define list style
 let bullet = '•';
 
+//specific timer var for anns house
+let annTimer;
+
 // reference to the input element
 let input = document.querySelector('#input');
 
