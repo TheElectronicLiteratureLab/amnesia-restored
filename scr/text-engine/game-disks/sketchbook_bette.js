@@ -143,15 +143,17 @@ const sketchbook ={
             onEnter: () => {
                 pressEnter();{
                 randomRoom = () => {
-                    roomNumber = Math.floor(Math.random() * 4);
-                    if(roomNumber === 1){
-                        pressEnter('')
-                    }if(roomNumber === 2){
-                        pressEnter('')
-                    }if(roomNumber === 3){
-                        pressEnter('')
-                    }if(roomNumber === 4){
-                        pressEnter('')
+                    roomNumber = Math.floor(Math.random() * 3);
+                    if(roomNumber === 0){
+                        enterRoom('');
+                    }else if(roomNumber === 1){
+                        enterRoom('');
+                    }else if(roomNumber === 2){
+                        enterRoom('');
+                    }else if(roomNumber === 3){
+                        enterRoom('');
+                    }else{
+                        println('what are numbers?');
                     }
                   }
                 }
