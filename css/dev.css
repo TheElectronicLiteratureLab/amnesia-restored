@@ -248,20 +248,30 @@ button {
 }
 * { box-sizing: border-box; }
 
-.container {
-	width: 350px;
-	margin: 100px auto;
+#dialPad {
+  display: none;
+  position: absolute;
+  left: 100vh;
+  bottom: 35vh;
+  width: 25%;
+  margin: 0px;
 }
 
-.dial {
-	width: 350px;
-	height: 350px;
-	background: yellow;
-	border-radius: 50%;
-	border: 175px solid black;
-	border-color: red green blue yellow;
+#dialKeys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-/*Classes meant for in game println function*/
+
+#tutorial {
+  display: none;
+  position: absolute;
+  left: 100vh;
+  bottom: 20vh;
+  width: 25%;
+  margin: 0px;
+}
+
+/*Classes meant for ingame println function*/
 .enter {
   text-align: center;
 }

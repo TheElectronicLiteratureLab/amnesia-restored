@@ -567,78 +567,86 @@ let turnOffOn = (toggle, itemId) => {
   }
 }
 
-// dial command
-let dial = (number) => { 
+let dial = () => {
   const room = getRoom(disk.roomId);
-  let numbers = [
-      { num: '3', roomid: 'phone-1'}, // front desk
-      { num: '4', roomid: 'phone-2'}, // room service
-      { num: '5', roomid: 'phone-3'}, // valet
-      { num: '6', roomid: 'phone-4'}, // bellman
-      { num: '7', roomid: 'phone-5'}, // security
-      { num: '8-', roomid: 'phone-6'}, // other rooms
-      { num: '9-', roomid: 'phone-7'}, // outside calls
-      { num: '911', roomid: 'phone-8'} // 911
-  ];
 
-
-// if brochure === in inventory push numbers
-  if(getItemInInventory('brochure')){
-    numbers.push(
-      { num: '555-1188', roomid: 'phone-9'}, // Rod & Harpmeister Funeral Service
-      { num: '555-7656', roomid: 'phone-10'}, // Rolo's Pizzeria
-      { num: '555-7673', roomid: 'phone-11'} // Koch's Florists
-    );
+  if(firstDial === false){
+    document.getElementById("tutorial").style.display = "block";
   }
-
-
-// if address book === in inventory push numbers
-if(getItemInInventory('address book')){
-  numbers.push(
-    { num: '555-1314', roomid: 'phone-12'}, // JA
-    { num: '555-1315', roomid: 'phone-13'}, // Wit's End
-    { num: '555-2712', roomid: 'phone-14'}, // FBI
-    { num: '555-2259', roomid: 'phone-15'}, // E.H.
-    { num: '555-2577', roomid: 'phone-16'}, // Lila T.
-    { num: '555-2783', roomid: 'phone-17'}, // Sue G.
-    { num: '555-4312', roomid: 'phone-18'}, // Chelsea H.
-    { num: '555-4365', roomid: 'phone-19'}, // Sex
-    { num: '555-4685', roomid: 'phone-20'}, // Kvetch
-    { num: '555-5436', roomid: 'phone-21'}, // AA
-    { num: '555-5643', roomid: 'phone-22'}, // Interlude
-    { num: '555-6200', roomid: 'phone-23'}, // TTTT
-    { num: '555-8422', roomid: 'phone-24'}, // Drugs
-    { num: '555-8749', roomid: 'phone-25'}, // R + J
-    { num: '555-8876', roomid: 'phone-26'}, // J.L.
-    { num: '571-7171', roomid: 'phone-27'}, // Soft
-    { num: '976-1212', roomid: 'phone-28'} // F
-  );
-}
-
-// after Bette's phonecall with Denise's Number push number
-// { num: '555-5413', roomid: 'phone-29'}
-
-  // checks to see if you're in a room with a phone
-  if(room.id === 'hote-room' || 'hote-revi' || 'bett-apar'){ // add telephone booths on streets
-    const num = number;
-    let id;
-    for(let i = 0; i < numbers.length; i++){
-      if(numbers[i].num === num){
-        id = numbers[i].roomid;
-      } 
+  
+  if(room.id === 'hote-room' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+    document.getElementById("input").value = document.getElementById("input").value + 'dialing ';
+    let number;
+    document.getElementById('dialPad').style.display = "block";
+    document.querySelector('input').disabled = true;
+    function checkKeyPressed(evt){
+      if(evt.keyCode === 48){
+        number = 0;
+        numdialKey();
+      }
+      if(evt.keyCode === 49){
+        number = 1;
+        numdialKey();
+      }
+      if(evt.keyCode === 50){
+        number = 2;
+        numdialKey();
+      }
+      if(evt.keyCode === 51){
+        number = 3;
+        numdialKey();
+      }
+      if(evt.keyCode === 52){
+        number = 4;
+        numdialKey();
+      }
+      if(evt.keyCode === 53){
+        number = 5;
+        numdialKey();
+      }
+      if(evt.keyCode === 54){
+        number = 6;
+        numdialKey();
+      }
+      if(evt.keyCode === 55){
+        number = 7;
+        numdialKey();
+      }
+      if(evt.keyCode === 56){
+        number = 8;
+        numdialKey();
+      }
+      if(evt.keyCode === 57){
+        number = 9;
+        numdialKey();
+      }
+      if(evt.keyCode === 13){
+        enterNum();
+        window.removeEventListener("keydown", checkKeyPressed, false);
+      }
+      if(evt.keyCode === 8){
+        deleteNum();
+      }
+      if(evt.keyCode == 46){
+        deleteNum();
+      }
     }
-    if(!id){
-      println(`This number doesn't exist.`)
+    window.addEventListener("keydown", checkKeyPressed, false);
+    let numdialKey = () => {
+      document.getElementById("input").value = document.getElementById("input").value + number;
     }
-    if(id){
-      enterRoom(id);
+
+    let deleteNum = () => {
+      document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
     }
   } else {
-    println(`With what phone?`);
-  };
+    println(`With what phone?`)
+  }
 }
 
-
+let dialing = () => {
+  println(`Nope`)
+}
 
 // wear command
 let wear = (clothes) => {
@@ -1060,6 +1068,8 @@ let commands = [
     restore: load,
     forward,
     f: forward,
+    dial,
+    dialing,
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -1086,7 +1096,6 @@ let commands = [
     t: x => talkToOrAboutX('to', x), // IF standard shortcut for talk
     open: x => open(x),
     close: x => close(x),
-    dial: dial,
     devcom1: x => teleport(x),
     devcom2: args => setMoney(args),
     devcom3: x => setHunger(x),
@@ -1095,6 +1104,7 @@ let commands = [
     remove: remove,
     read: read,
     asking: args => askTesting(args),
+    dialing: x => callNum(x),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

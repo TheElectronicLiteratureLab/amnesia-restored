@@ -125,7 +125,6 @@ let enterRoom = (id) => {
 
 };
 
-
 let response = (e) => {
   const ENTER = 13;
 
@@ -136,6 +135,7 @@ let response = (e) => {
   
 
 };
+
 
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
@@ -299,3 +299,109 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
+
+let callNum = (num) => {
+  reenableInput();
+  const room = getRoom(disk.roomId);
+  let id;
+  let numbers = [
+    {number:'3', roomid:'phone-1'},
+    {number:'4', roomid:'phone-2'},
+    {number:'5', roomid:'phone-3'},
+    {number:'6', roomid:'phone-4'},
+    {number:'7', roomid:'phone-5'},
+    {number:'8', roomid:'phone-6'},
+    {number:'9', roomid:'phone-7'},
+    {number:'911', roomid:'phone-8'}
+  ];
+  if(getItemInInventoryById('brochure')){
+    numbers.push(
+      {number:'555-1188', roomid:'phone-9'},
+      {number:'555-7656', roomid:'phone-10'},
+      {number:'555-7653', roomid:'phone-11'}
+    );
+  }
+  if(getItemInInventoryById('address book')){
+    numbers.push(
+      {number:'555-1314', roomid:'phone-12'},
+      {number:'555-1315', roomid:'phone-13'},
+      {number:'555-2712', roomid:'phone-14'},
+      {number:'555-2259', roomid:'phone-15'},
+      {number:'555-2577', roomid:'phone-16'},
+      {number:'555-2783', roomid:'phone-17'}, 
+      {number:'555-4312', roomid:'phone-18'},
+      {number:'555-4365', roomid:'phone-19'},
+      {number:'555-4685', roomid:'phone-20'},
+      {number:'555-5436', roomid:'phone-21'},
+      {number:'555-5643', roomid:'phone-22'},
+      {number:'555-6200', roomid:'phone-23'},
+      {number:'555-8422', roomid:'phone-24'},
+      {number:'555-8749', roomid:'phone-25'},
+      {number:'555-8876', roomid:'phone-26'},
+      {number:'571-7171', roomid:'phone-27'},
+      {number:'976-1212', roomid:'phone-28'}
+    );
+  }
+
+  if(room.id === 'bett-apar'){
+    numbers.push(
+      {number:'555-0042', roomid:'phone-29'},
+      {number:'555-5413', roomid:'phone-30'}
+    );
+  }
+
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i].number === num){
+      id = numbers[i].roomid;
+    };
+  }
+
+  if(id){
+    enterRoom(id);
+  }
+
+  if(!id){
+    println(`This number doesn't exist.`)
+  }
+};
+
+let numdialButton = (clicked_id) => {
+  let x = document.getElementById(clicked_id).innerHTML;
+  document.getElementById("input").value = document.getElementById("input").value + x;
+}
+
+function enterBtnClick () {
+  e = $.Event('keyup');
+  e.keyCode= 13; // enter
+  $('input').trigger(e);
+  applyInput();
+}
+
+let enterNum = () => {
+  const enterButton = document.getElementById("enterkey");
+  enterButton.addEventListener("click", enterBtnClick());
+  document.getElementById("dialPad").style.display = "none";
+  firstDial = true;
+  document.getElementById("tutorial").style.display = "none";
+
+}
+       
+let deleteNum = () => {
+  document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
+}
+
+let closeDial = () => {
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("input").value = '';
+  reenableInput();
+}
+
+let openTutorial = () => {
+  let x = document.getElementById("tutorial");
+  if(x.style.display === "none"){
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
