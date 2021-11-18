@@ -85,9 +85,11 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 
 // move the player into room with passed ID
 // string -> nothing
+
 let enterRoom = (id) => {
   const room = getRoom(id);
-  const lastRoom = getRoom(disk.roomId);//get the id of the current room before transitioning. 
+  lastRoom = getRoom(disk.roomId);
+  
 
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);

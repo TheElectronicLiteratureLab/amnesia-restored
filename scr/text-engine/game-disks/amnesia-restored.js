@@ -1846,11 +1846,34 @@ const amnesiaRestored = {
       exits: [
        {
           dir: ['east', 'right'], 
-          id: 'corridor-1509',
+          id: 'corridor-1504',
        },
        {
           dir: ['west', 'left'], 
           id: 'corridor-1502',
+      },
+      {
+          dir: ['stairs', 'stairwell'], 
+          id: 'corridor-stairwell15',
+      },
+      {
+          dir: ['elevator'], 
+          id: 'corridor-elevator15',
+        },
+      ],
+    },
+    {
+      id: 'corridor-1504',
+      name: '15th Floor Hallway',
+      desc: `To your west are the doors for rooms 1504 through 1501, and beyond them, the stairway. On either side are the doors to room 1505 and 1506`,
+      exits: [
+       {
+          dir: ['east', 'right'], 
+          id: 'corridor-1509',
+       },
+       {
+          dir: ['west', 'left'], 
+          id: 'corridor-1503',
       },
       {
           dir: ['stairs', 'stairwell'], 
