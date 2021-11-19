@@ -1079,6 +1079,8 @@ let commands = [
     steak: args => goDir(args), 
     roasted: args => goDir(args),
     barbecue: args => goDir(args),
+    ring: args => goDir(args),
+    enter: args => goDir(args),
     look: lookThusly,
     head: goDir,
     go: goDir,
