@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amnesia Restored</title>
+</head>
+<body>
+    <div id="game-container">
+    <!-- Title Screen -->
+        <div id="title-screen">
+            <img id="Amnesia-Restored-Logo-Gif" src="" alt="animated Amnesia: Restored logo">
+            <h2>"Laughter is just a slowed down scream of terror." - Thomas M. Disch</h2>
+            <button class="game-button" id="new-game-button" onclick="newGame()">NEW GAME</button>
+            <button class="game-button" id="load-game-button" onclick="loadGameScreen()">LOAD GAME</button>
+        </div>
+
+    <!-- New Game Screen -->
+    <!-- XD shows this is slightly transparent on top of Title Screen -->
+        <div id="option-screen">
+            <h2>Select your game options</h2>
+            <div id="difficulty-options">
+                <h3>DIFFICULTY</h3>
+                <h4>Story Mode</h4>
+                <h4>Normal Mode</h4>
+                <h4>Classic Mode</h4>
+                <p id="difficulty-options-descriptions"></p>
+            </div>
+
+            <div id="visual-mode-options">
+                <h3>VISUAL MODE</h3>
+                <h4>Restored</h4>
+                <h4>Apple lle</h4>
+                <h4>Commodore</h4>
+                <h4>IBM</h4>
+                <p id="visual-mode-options-descriptions"></p>
+            </div>
+
+            <button class="game-button" id="begin-game-button" onclick="beginGame()">BEGIN GAME</button>
+        </div>
+
+    <!-- Load Game Screen -->
+        <div id="load-screen">
+            <h2>Load a previously saved game.</h2>
+            <h4 id="saved-date"></h4>
+            <h4 id="saved-time"></h4>
+            <button class="game-button" id="begin-game-button" onclick="beginGame()">BEGIN GAME</button>
+        </div>
+
+
+    <!-- Game Screen -->
+        <div id="game-screen">
+            <div id="room-title">
+                <h1 id="currroom"></h1>
+            </div>
+
+            <div id="left-side-clickables">
+                <div id="inventory-clickable">
+                    <button id="inventory-button" onclick="invDisplay()">Inv</button>
+                </div>
+                
+                <div id="address-book-clickable">
+                    <button id="address-book-button" onclick="addDisplay()">Add</button>
+                </div>
+                
+                <div id="map-clickable">
+                    <button id="map-button" onclick="mapDisplay()">Map</button>
+                </div>
+
+                <div id="info-clickable">
+                    <button id="info-button" onclick="infoDisplay()">Info</button>
+                </div>
+            </div>
+            
+            <div id="input-output-container">
+                <div id="output"></div>
+                <div id="input"></div>
+            </div>
+
+            <div id="right-side-clickables">
+                <div id="save-clickable">
+                    <button id="save-button" onclick="saveGame()">Save</button>
+                </div>
+
+                <div id="mode-clickable">
+                    <button id="mode-button" onclick="modeDisplay()">Mode</button>
+                </div>
+
+                <div id="achievements-clickable">
+                    <button id="achieve-button" onclick="modeDisplay()">Achieve</button>
+                </div>
+
+                <div id="help-clickable">
+                    <button id="help-button" onclick="helpDisplay()">Help</button>
+                </div>
+            </div>
+
+            <div id="game-ui-bar">
+                <div id="hunger-bar">
+                    <h3>HUNGER</h3>
+                </div>
+
+                <div id="fatigue-bar">
+                    <h3>FATIGUE</h3>
+                </div>
+
+                <div id="money-counter">
+                    <h2 id="money"></h2>
+                </div>
+
+                <div id="time-display">
+                    <h2 id="time"></h2>
+                </div>
+            </div>
+
+        </div> <!-- close game-screen div -->
+
+
+    </div>
+</body>
+</html>
