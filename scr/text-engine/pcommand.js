@@ -953,12 +953,6 @@ function xStreetEvent () {
   
 };
 
-function teleport (place) {
-  enterRoom(place);
-  println(`
-  Player Teleported to ${place}`);
-};
-
 //dev command functions 
 
   //teleport to certain room
