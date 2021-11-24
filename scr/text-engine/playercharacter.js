@@ -40,6 +40,19 @@ const playerC ={
 
 };
 
+//variables needed for updating time, also have them start at the starting point
+let xMinutes = 1;
+let yHours = 8;
+let zDays = 0;
+let qMeridiem = 0
+
+//variables needed for beg command
+let caughtCoords1;
+let caughtCoords2;
+let policeCaught = false;
+
+
+//difficulty levels stuff
 const difficultyLevels = ['easy', 'medium', 'hard']; 
 let difficulty = difficultyLevels[1];
 
