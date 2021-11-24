@@ -309,16 +309,6 @@ let talkToOrAboutX = (preposition, x) => {
 };
 
 
-//ask function
-const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
-  disk.conversant = character; //set the character to who you're talking to
-  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
-  talkToOrAboutX('about', y); //execute asking them the thing
-};
-
-
-
 // list takeable items in room
 function take() {
   const room = getRoom(disk.roomId);
@@ -369,35 +359,7 @@ let takeItem = (itemName) => {
 };
 
 
-// drop item from inventory basically just reversed the take item function above.
-let dropItem = (itemName) => {
-  const room = getRoom(disk.roomId);
-  const findItem = item => objectHasName(item, itemName);
-  let itemIndex = disk.inventory.findIndex(findItem);
-  const item = getItemInInventory(itemName);
-  
-  if (typeof itemIndex === 'number' && itemIndex > -1){
-    if (item.isDroppable) {
-      room.items.push(item)
-      disk.inventory.splice(itemIndex, 1);
-      if (typeof itemIndex === 'function') {
-        item.onDrop({disk, println, room, getRoom, enterRoom, item});
-      } else {
-        println(`You dropped the ${getName(item.name)}.`);
-      }
-    } else {
-      if (typeof item.onDrop === 'function') {
-        item.onDrop({disk, println, room, getRoom, enterRoom, item});
-      } else {
-        println(item.block || `You can't drop that.`);
-      }
-    }
-  }
-  if (!item) {
-    println(`You can't drop what you don't have.`);
-    return;
-  }
-};
+
 
 // list useable items in room and inventory
 let use = () => {
@@ -895,6 +857,13 @@ let read = (item) => {
   }
 }
 
+
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//            HOGANS WORKSPACE BELOW          \\
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 //Phone Booth Creation
 function createPhone() { //create function
   const rooms = hcDvDisk.rooms; //set variable to loaded disk
@@ -1023,7 +992,13 @@ function spawnTenement() {
 
 };
 
-
+//ask function
+const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+  disk.conversant = character; //set the character to who you're talking to
+  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+  talkToOrAboutX('about', y); //execute asking them the thing
+};
 
 //passing time function
 const incrementTime = () => {
@@ -1169,7 +1144,35 @@ const begLootTable = () => {
   }
 }
 
-
+// drop item from inventory basically just reversed the take item function above.
+let dropItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasName(item, itemName);
+  let itemIndex = disk.inventory.findIndex(findItem);
+  const item = getItemInInventory(itemName);
+  
+  if (typeof itemIndex === 'number' && itemIndex > -1){
+    if (item.isDroppable) {
+      room.items.push(item)
+      disk.inventory.splice(itemIndex, 1);
+      if (typeof itemIndex === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(`You dropped the ${getName(item.name)}.`);
+      }
+    } else {
+      if (typeof item.onDrop === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(item.block || `You can't drop that.`);
+      }
+    }
+  }
+  if (!item) {
+    println(`You can't drop what you don't have.`);
+    return;
+  }
+};
 
 // jump command
 
