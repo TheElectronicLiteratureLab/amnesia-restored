@@ -860,7 +860,7 @@ let read = (item) => {
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//            HOGANS WORKSPACE BELOW          \\
+//           HOGANS WORKSPACE BELOW           \\
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1174,8 +1174,11 @@ let dropItem = (itemName) => {
   }
 };
 
-// jump command
-
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//           HOGANS WORKSPACE ABOVE           \\
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
