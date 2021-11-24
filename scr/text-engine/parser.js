@@ -14,6 +14,8 @@ let applyInput = (input) => {
   const val = input.toLowerCase();
   setInput(''); // reset input field
  // console.log(playerMarker.getLatLng());
+
+
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
     //moveCount++;
@@ -64,6 +66,10 @@ let applyInput = (input) => {
   } else {
     exec(commands[arguments.length][command], arguments);
   }
+
+
+  updatePlayerStats();
+
 };
 
 // allows wrapping text in special characters so println can convert them to HTML tags

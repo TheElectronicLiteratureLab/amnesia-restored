@@ -109,6 +109,7 @@ let getExitDir = (dir, exits) => exits.find(exit =>
     : exit.dir === dir
 );
 
+let zI = 0;
 // go the passed direction
 // string -> nothing
 function goDir(dir) {
@@ -133,6 +134,9 @@ function goDir(dir) {
   }
 
   enterRoom(nextRoom.id);
+
+  minutes[zI ++];
+
 }
 //testing some things to further parse input
 let inputRead = () => {
@@ -1022,6 +1026,31 @@ function spawnTenement() {
         }
 
 };
+
+let z = 0;
+let q = 0;
+//set ui element to show hunger and fatigue
+const updatePlayerStats = () => {
+
+  let dumbMinutes = minutes[zI];
+  let dumbHours = hours[q];
+  let dumbAmPm = amPm[0];
+
+  document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+  document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+  document.getElementById('time').innerHTML = `${dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+
+  console.log(hungerNumber);
+  console.log(fatigueNumber);
+
+  console.log(minutes[z]);
+  
+
+
+};
+
+
 
 // jump command
 

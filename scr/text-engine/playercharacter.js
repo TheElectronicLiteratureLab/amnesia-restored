@@ -4,7 +4,6 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 });
 
-let time = new Date('May 4, 1986 09:05:00')
 let playFat = 100;
 let playHung = 100;
 let playMon = 25.00; // Setting to 25 for testing purposes
@@ -76,3 +75,8 @@ const xStreetNumber = [
 ]
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st']
+
+const minutes = ['05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '00'];
+const hours = ['9','10','11','12', '1', '2', '3', '4', '5', '6', '7', '8' ];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const amPm = ['AM', 'PM']
