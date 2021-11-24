@@ -6,7 +6,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 let playFat = 100;
 let playHung = 100;
-let playMon = 25.00; // Setting to 25 for testing purposes
+let playMon = 1.00; // Setting to 25 for testing purposes
 let detScore = 0;
 let charScore = 0;
 let survScore = 0;
@@ -76,7 +76,7 @@ const xStreetNumber = [
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st']
 
-const minutes = ['05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '00'];
-const hours = ['9','10','11','12', '1', '2', '3', '4', '5', '6', '7', '8' ];
+const minutes = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'];
+const hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11','12'];
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const amPm = ['AM', 'PM']

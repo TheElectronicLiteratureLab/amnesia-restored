@@ -235,7 +235,7 @@ const amnesiaRestored = {
         document.getElementById('hungerNumber').innerHTML = `${playHung}`;
         document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
         document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-        document.getElementById('time').innerHTML = `${hours[0] + ':' + minutes[0] + ' ' + amPm[0]}`;
+        document.getElementById('time').innerHTML = `${days[zDays] + ' ' + hours[yHours] + ':' + minutes[xMinutes] + ' ' + amPm[qMeridiem]}`;
         addItem('xindexer');
         reenableInput();
       },

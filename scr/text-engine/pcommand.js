@@ -109,7 +109,6 @@ let getExitDir = (dir, exits) => exits.find(exit =>
     : exit.dir === dir
 );
 
-let zI = 0;
 // go the passed direction
 // string -> nothing
 function goDir(dir) {
@@ -135,7 +134,8 @@ function goDir(dir) {
 
   enterRoom(nextRoom.id);
 
-  minutes[zI ++];
+  updatePlayerStats();
+
 
 }
 //testing some things to further parse input
@@ -1027,19 +1027,46 @@ function spawnTenement() {
 
 };
 
-let z = 0;
-let q = 0;
+let xMinutes = 1;
+let yHours = 8;
+let zDays = 0;
+let qMeridiem = 0
 //set ui element to show hunger and fatigue
 const updatePlayerStats = () => {
 
-  let dumbMinutes = minutes[zI];
-  let dumbHours = hours[q];
-  let dumbAmPm = amPm[0];
+  xMinutes++;
+
+  if(xMinutes >= 12 ) {
+    xMinutes = 0;
+    yHours++;
+  }
+
+  if(yHours >= 12) {
+    yHours = 0;
+
+    if(qMeridiem === 1) {
+      qMeridiem--;
+    }
+
+    else {
+      qMeridiem++;
+    }
+    
+  }
+
+  if(zDays >= 7) {
+    zDays = 0;
+  }
+
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
 
   document.getElementById('hungerNumber').innerHTML = `${playHung}`;
   document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-  document.getElementById('time').innerHTML = `${dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 
   console.log(hungerNumber);
   console.log(fatigueNumber);

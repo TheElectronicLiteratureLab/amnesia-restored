@@ -67,9 +67,6 @@ let applyInput = (input) => {
     exec(commands[arguments.length][command], arguments);
   }
 
-
-  updatePlayerStats();
-
 };
 
 // allows wrapping text in special characters so println can convert them to HTML tags
