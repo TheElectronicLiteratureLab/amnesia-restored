@@ -25,12 +25,10 @@ let applyInput = (input) => {
       console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-    } 
-    else if (typeof room.onBlock === 'function') {
-      room.onBlock({disk, println, getRoom, enterRoom,});
-      return;
-    }
-    else {
+    } else if (typeof room.onBlock === 'function') { //check if inside the room there is an onBlock function
+      room.onBlock({disk, println, getRoom, enterRoom,}); //run the code if there is
+      return; //stop running this function after the onBlock is executed
+    } else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
       //moveCount--;
     }
