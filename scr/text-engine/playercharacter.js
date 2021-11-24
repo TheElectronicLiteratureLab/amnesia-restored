@@ -6,7 +6,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 let playFat = 100;
 let playHung = 100;
-let playMon = 1.00; // Setting to 25 for testing purposes
+let playMon = 1.00; 
 let detScore = 0;
 let charScore = 0;
 let survScore = 0;
@@ -39,6 +39,9 @@ const playerC ={
     pCoords: playCoord
 
 };
+
+const difficultyLevels = ['easy', 'medium', 'hard']; 
+let difficulty = difficultyLevels[1];
 
 //x street indexer stuff
 const xStreetNumber = [

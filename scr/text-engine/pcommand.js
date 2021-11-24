@@ -134,7 +134,7 @@ function goDir(dir) {
 
   enterRoom(nextRoom.id);
 
-  updatePlayerStats();
+  //updatePlayerStats();
 
 
 }
@@ -1002,6 +1002,7 @@ function spawnTenement() {
   const hotel = getRoom('lobb-revi'); //get hotel room
   const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
+  let distance;
 
     //distance formula
       const a = room.coords[0] - hotel.coords[0];
@@ -1013,7 +1014,7 @@ function spawnTenement() {
       //if the distance betweem player and hotel is greater than or equal to 11 and
       //the room description is empty, aka no place of interest, or restaurant, or phone and
       //if the tenement hasn't already been spawned then
-        if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
+        if( count >= 11 && distance >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
           const chance = Math.floor(Math.random() * 101); //generate random number between 0-100
           console.log(chance); //log what number was generated
           if ( chance <= 24 ) { //25% chance of spawning the tenement if the conditions above were met.
@@ -1021,7 +1022,7 @@ function spawnTenement() {
                 { dir: ['tenement'], id: 'tene' }, 
               ); 
               tenementSpawned = true; //set value so that function wont run again
-              println(`there is an abandoned tenement here on ${room.name}`); //tell player the tenement is here
+              println(`there is an abandoned tenement here on the corner of  ${room.name}`); //tell player the tenement is here
             }
         }
 
@@ -1032,7 +1033,7 @@ let yHours = 8;
 let zDays = 0;
 let qMeridiem = 0
 //set ui element to show hunger and fatigue
-const updatePlayerStats = () => {
+const incrementTime = () => {
 
   xMinutes++;
 
@@ -1046,6 +1047,7 @@ const updatePlayerStats = () => {
 
     if(qMeridiem === 1) {
       qMeridiem--;
+      zDays++;
     }
 
     else {
@@ -1067,15 +1069,165 @@ const updatePlayerStats = () => {
   document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+};
 
-  console.log(hungerNumber);
-  console.log(fatigueNumber);
-
-  console.log(minutes[z]);
+let caughtCoords1;
+let caughtCoords2;
+let policeCaught = false;
+const beg = () => {
+  const curRoom = getRoom(disk.roomId); //get current room
+  const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
+  console.log(chance1 + ' rolled for chance to be caught');
   
 
+  if(curRoom.isStreet){//if tha player is on the streets
+    
+    if (chance1 <= 20 && !policeCaught) { //if you got caught and you haven't been caught before
+      policeCaught = true;
+      caughtCoords1 = curRoom.coord;
+      console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
+      //enterRoom('beg-poli'); //enter the room where the police catch you
+      println(`We'll give you a warning this time.`)
+    
+    
+    
+    } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
+      begLootTable(); //roll on loot table
 
-};
+    
+    
+    
+    } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
+      caughtCoords2 = curRoom.coord;
+      console.log(caughtCoords2 + ' thesen are the coordinates in which player was caught again.')
+      
+      const a = caughtCoords1[0] - caughtCoords2[0];
+      const b = caughtCoords1[1] - caughtCoords2[1];
+      const distance = Math.sqrt( (a*a) + (b*b) );
+
+
+      if(distance >= 20) { 
+        policeCaught = false;
+        console.log('caught but changed neighborhoods');
+        begLootTable();
+
+      } else if (distance <= 19) {
+        println(`We already gave you a warning, come with us.`)
+      }
+
+    
+    
+    
+    } else if (chance1 >= 20 && policeCaught) {
+      console.log(`caught once but succeeded 80% check`);
+      begLootTable();
+
+
+
+    }else {
+      console.log(`Beg Command Malfunctioning`)
+    }
+
+
+  } else {
+    println(`You can't beg when you aren't on the streets.`)
+  }
+
+}
+
+// const distanceFormula = (x, y) => {
+
+//   const a = x[0]-y[0];
+//   const b = x[1]-y[1];
+//   distance = Math.sqrt( (a*a) + (b*b) );
+//   console.log(distance + ' far away from first place player got caught');
+
+// }
+
+const begLootTable = () => {
+  const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
+  console.log(chance2 + ' is what was rolled for loot chance')
+
+  if (difficulty === 'medium'){
+    if (chance2 <= 15) { //chance to get nothing
+      println(`People shy away when you ask for money, you weren't able to get anything.`);
+    
+    } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (71 <= chance2 <= 90) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (91 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    }
+  } else if (difficulty === 'easy') {
+    if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (56 <= chance2 <= 85) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (86 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    }
+  } else if (difficulty === 'hard') {
+    if (chance2 <= 20) { //chance to get nothing
+      println(`People shy away when you ask for money, you weren't able to get anything.`);
+    
+    } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (76 <= chance2 <= 95) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    } else if (96 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+
+      playMon = playMon + dollarAmount;
+
+    }
+  } else {
+    println(`Oops something went wrong`);
+  }
+
+}
 
 
 
@@ -1120,6 +1272,7 @@ let commands = [
     f: forward,
     dial,
     dialing,
+    beg,
   },
   // one argument (e.g. "go north", "take book")
   {
