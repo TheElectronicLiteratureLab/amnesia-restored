@@ -1028,108 +1028,87 @@ function spawnTenement() {
 
 };
 
+//variables needed for updating time, also have them start at the starting point
 let xMinutes = 1;
 let yHours = 8;
 let zDays = 0;
 let qMeridiem = 0
-//set ui element to show hunger and fatigue
+
+//passing time function
 const incrementTime = () => {
+  xMinutes++; //increase the index of minutes array
 
-  xMinutes++;
-
-  if(xMinutes >= 12 ) {
-    xMinutes = 0;
-    yHours++;
+  if(xMinutes >= 12 ) { //if index ever goes above length of minutes array 
+    xMinutes = 0; //set index back to beginning
+    yHours++;//then increment the hours index
   }
-
-  if(yHours >= 12) {
-    yHours = 0;
-
-    if(qMeridiem === 1) {
-      qMeridiem--;
-      zDays++;
+  if(yHours >= 12) { //if index ever goes above length of hours array
+    yHours = 0; //set index back to beginning 
+      if(qMeridiem === 1) { //if it is PM 
+      qMeridiem--;//set it back to Am
+      zDays++; //incremenent days array
+    } else {
+      qMeridiem++; //set it to PM
     }
-
-    else {
-      qMeridiem++;
-    }
-    
+  }
+  if(zDays >= 7) { //if index every goes above length of days array
+    zDays = 0; //set it back to sunday
   }
 
-  if(zDays >= 7) {
-    zDays = 0;
-  }
+  //UPDATE THE UI ELEMENTS 
+    let dumbMinutes = minutes[xMinutes];
+    let dumbHours = hours[yHours];
+    let dumbDays = days[zDays];
+    let dumbAmPm = amPm[qMeridiem];
 
-  let dumbMinutes = minutes[xMinutes];
-  let dumbHours = hours[yHours];
-  let dumbDays = days[zDays];
-  let dumbAmPm = amPm[qMeridiem];
-
-  document.getElementById('hungerNumber').innerHTML = `${playHung}`;
-  document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
-  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+    document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+    document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
+//variables needed for beg command
 let caughtCoords1;
 let caughtCoords2;
 let policeCaught = false;
+
+//beg command
 const beg = () => {
   const curRoom = getRoom(disk.roomId); //get current room
   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
   console.log(chance1 + ' rolled for chance to be caught');
-  
-
   if(curRoom.isStreet){//if tha player is on the streets
-    
     if (chance1 <= 20 && !policeCaught) { //if you got caught and you haven't been caught before
       policeCaught = true;
       caughtCoords1 = curRoom.coord;
       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`We'll give you a warning this time.`)
-    
-    
-    
     } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
       begLootTable(); //roll on loot table
-
-    
-    
-    
     } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
-      caughtCoords2 = curRoom.coord;
+      caughtCoords2 = curRoom.coord; //generate coordinates of current room
       console.log(caughtCoords2 + ' thesen are the coordinates in which player was caught again.')
       
+      //distance formula
       const a = caughtCoords1[0] - caughtCoords2[0];
       const b = caughtCoords1[1] - caughtCoords2[1];
       const distance = Math.sqrt( (a*a) + (b*b) );
 
-
-      if(distance >= 20) { 
+      if(distance >= 20) { //if player has moved far enough from where initially caught;
         policeCaught = false;
         console.log('caught but changed neighborhoods');
         begLootTable();
-
-      } else if (distance <= 19) {
+      } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
         println(`We already gave you a warning, come with us.`)
       }
-
-    
-    
-    
-    } else if (chance1 >= 20 && policeCaught) {
+    } else if (chance1 >= 20 && policeCaught) { //if player has been caught but passed the check
       console.log(`caught once but succeeded 80% check`);
       begLootTable();
-
-
-
-    }else {
+    }else { //debug purposes
       console.log(`Beg Command Malfunctioning`)
     }
-
-
-  } else {
+  } else { //if player isn't on the streets
     println(`You can't beg when you aren't on the streets.`)
   }
 
@@ -1144,89 +1123,62 @@ const beg = () => {
 
 // }
 
+//loot table for beg command
 const begLootTable = () => {
   const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
   console.log(chance2 + ' is what was rolled for loot chance')
 
-  if (difficulty === 'medium'){
+  if (difficulty === 'medium'){ // 
     if (chance2 <= 15) { //chance to get nothing
       println(`People shy away when you ask for money, you weren't able to get anything.`);
-    
     } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
-
-      println(`You were able to get ${formatter.format(dollarAmount)}`);
-
-      playMon = playMon + dollarAmount;
-
+      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
+      playMon = playMon + dollarAmount;//add amount to player inventory
     } else if (71 <= chance2 <= 90) { //chance to get between 1.26 & 1.75
       const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     } else if (91 <= chance2 <= 100) { //chance to get between 1.76-2.00
       const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     }
+  
   } else if (difficulty === 'easy') {
     if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     } else if (56 <= chance2 <= 85) { //chance to get between 1.26 & 1.75
       const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     } else if (86 <= chance2 <= 100) { //chance to get between 1.76-2.00
       const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     }
+
   } else if (difficulty === 'hard') {
     if (chance2 <= 20) { //chance to get nothing
       println(`People shy away when you ask for money, you weren't able to get anything.`);
-    
     } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     } else if (76 <= chance2 <= 95) { //chance to get between 1.26 & 1.75
       const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     } else if (96 <= chance2 <= 100) { //chance to get between 1.76-2.00
       const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
-
       println(`You were able to get ${formatter.format(dollarAmount)}`);
-
       playMon = playMon + dollarAmount;
-
     }
   } else {
     println(`Oops something went wrong`);
   }
-
 }
 
 
