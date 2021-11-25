@@ -1,0 +1,235 @@
+html {
+   color: white;
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
+
+#game-container {
+   height: 100%;
+}
+
+.game-button {
+   background-color: black;
+   border: 2px solid purple;
+   color: white;
+   border-radius: 16px;
+   transition-duration: 0.4s;
+   padding: 10px 20px;
+   width: 200px;
+}
+
+.game-button:hover {
+   background-color: purple;
+}
+
+.game-item-1 {
+   grid-column: 1 / span 4;
+   grid-row-start: 1;
+   grid-row-end: 2;
+   background-color: blue;
+}
+
+.game-item-2 {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   grid-row-start: 2;
+   grid-row-end: 3;
+   background-color: blueviolet;
+}
+
+.game-item-3 {
+   grid-column-start: 2;
+   grid-column-end: 3;
+   grid-row-start: 2;
+   grid-row-end: 3;
+   background-color: black;
+   position: relative;
+}
+.game-item-4 {
+   grid-column-start: 3;
+   grid-column-end: 4;
+   grid-row-start: 2;
+   grid-row-end: 3;
+   background-color: cadetblue;
+}
+
+.game-item-5 {
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 3;
+   grid-row-end: 4;
+   background-color: darkcyan;
+}
+
+.mode:hover {
+   text-decoration: underline;
+   text-decoration-color: red;
+   text-decoration-style: solid;
+   text-decoration-thickness: 3px;
+}
+
+/* game-title */
+
+#game-title {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 15% 70% 15%;
+}
+
+#title-screen {
+   display: grid;
+   height: 100%;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 80% 20%;
+   grid-column-gap: 8%;
+}
+
+#title-img{
+   grid-column: 1 / span 2;
+   justify-self: center;
+   align-self: center;
+   width: 70%;
+}
+
+#new-game-button {
+
+   justify-self: right;
+   align-self: center;
+}
+
+#load-game-button {
+   align-self: center;
+}
+
+/* game-options */
+
+#game-options {
+   height: 80vh;
+   display: none;
+   grid-template-columns: 10% 80% 10%;
+   grid-template-rows: 15% 70% 15%;
+}
+
+#screen-container {
+   position: relative;
+   height: 100%;
+}
+
+#title-screen-static {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 80% 20%;
+   height: 100%;
+   grid-column-gap: 8%;
+   width: 100%;
+   position: absolute;
+}
+
+#amnesia-restored-logo-gif-static {
+   grid-column: 1 / span 2;
+   width: 70%;
+   height: 70%;
+   justify-self: center;
+   align-self: center;
+}
+
+#new-game-button-static {
+   justify-self: right;
+   align-self: center;
+}
+
+#load-game-button-static {
+   align-self: center;
+}
+
+#options-screen {
+   display: grid;
+   grid-template-columns: 100%;
+   grid-template-rows: 25% 25% 25% 25%;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.9);
+   position: absolute;
+}
+
+#options-screen-title {
+   justify-self: center;
+   align-self: center;
+}
+
+#difficulty-options {
+   display: grid;
+   grid-template-columns: 25% 25% 25% 25%;
+   grid-template-rows: 1fr 1fr;
+}
+
+#difficulty-title {
+   justify-self: center;
+}
+
+#difficulty-options-descriptions {
+   grid-column: 2 / span 5;
+}
+
+#visual-mode-options {
+   display: grid;
+   grid-template-columns:  25% 18.75% 18.75% 18.75% 18.75%;
+   grid-template-rows: 1fr 1fr;
+}
+
+#visual-title {
+   justify-self: center;
+}
+
+#visual-mode-options-descriptions {
+   grid-column: 2 / span 5;
+}
+
+#begin-game-button {
+   justify-self: center;
+   align-self: center;
+}
+
+
+/* game */
+
+#game {
+   height: 80vh;
+   display: none;
+   grid-template-columns: 10% 80% 10%;
+   grid-template-rows: 15% 70% 15%;
+}
+
+   /* game clickables */
+
+   .clickable-container {
+      position: relative;
+      width: 100%;
+   }
+
+   .clickable-container img {
+      width: 100%;
+   }
+
+   .clickable-container .iconbtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0);
+      padding: 12px 24px;
+      border: none;
+      text-align: center;
+   }
+
+#left-side-clickables {
+   display: grid;
+   grid-template-rows: 25% 25% 25% 25%;
+   height: 100%;
+  
+}
