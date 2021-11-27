@@ -1,5 +1,7 @@
 // global variables 
 
+
+
 let difficulty;
 let styling;
 
