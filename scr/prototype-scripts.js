@@ -1,3 +1,7 @@
+
+
+
+
 // global variables 
 
 
@@ -41,6 +45,7 @@ let displayDesc = (id) => {
     document.getElementById(id).style.textDecorationThickness = '3px';
 
     difficulty = id;
+    console.log(difficulty);
 }
 
 let visualDesc = (id) => {
@@ -61,9 +66,33 @@ let visualDesc = (id) => {
     }
     a.innerHTML = c;
     styling = id;
+    console.log(styling);
 }
 
 let beginGame = () => {
     document.getElementById("game").style.display = "grid";
     document.getElementById("game-options").style.display = "none";
+}
+
+let x = false;
+
+let display = (id) => {
+    console.log(x);
+
+    if(x == false){
+        document.getElementById(id).style.display = "block";
+        x = true;
+    } else if(x == true){
+        document.getElementById(id).style.display = "none";
+        x = false;
+    }
+    
+}
+
+let displayNone = (id) => {
+    document.getElementById(id).style.display = "none";
+}
+
+let openItem = (id) => {
+    document.getElementById(id).style.display = "grid";
 }

@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amnesia Restored</title>
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" href="scr/leaflet.css">
+    
+
+    <!-- Addtional Scripts -->
+  <script src="scr/leaflet.js"></script>
+  <script src="scr/jquery/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     </head>
 <body>
     <!-- black portion of game fixed size, fixed height -->
-
+    <div id="map" style="background-color: #32302f"></div>
     <!-- this is the game -->
     <div id="game-container">
        <div id="game-title">
@@ -19,7 +28,7 @@
             <div class="game-item-3">
                 <div id="title-screen">
                     <div id="title-img">
-                        <img id="amnesia-restored-logo-gif" src="" alt="animated Amnesia: Restored logo">
+                        <img id="amnesia-restored-logo-gif" src="scr/images/logo/image-logo-bannerblack2.jpg" alt="animated Amnesia: Restored logo">
                     </div>
                     <div id="game-button-container">
                         <div id="new-game-button">
@@ -44,43 +53,28 @@
             <div class="game-item-2">
             </div>
             <div class="game-item-3">
-                <div id="screen-container">
-                    <div id="title-screen-static">
-                        <div id="title-img-static">
-                            <img id="amnesia-restored-logo-static" src="scr/images/logo/image-logo-bannerblack2.jpg" alt="animated Amnesia: Restored logo">
-                        </div>
-                        <div id="game-button-container-static">
-                            <div id="new-game-button-static">
-                                <button class="game-button" onclick="newGame()">NEW GAME</button>
-                            </div>
-                            <div id="load-game-button-static">
-                                <button class="game-button" onclick="loadGameScreen()">LOAD GAME</button>
-                            </div>
-                        </div>
+                <div id="options-screen">
+                    <div id="options-title">
+                        <h2>Select Your Game Options</h2>
+                    </div>
+                    <div id="difficulty-options">
+                        <h3 id="difficulty-title">DIFFICULTY</h3>
+                        <h4 class="mode" id="story-mode" onclick="displayDesc(this.id)">Story Mode</h4>
+                        <h4 class="mode" id="normal-mode" onclick="displayDesc(this.id)">Normal Mode</h4>
+                        <h4 class="mode" id="classic-mode" onclick="displayDesc(this.id)">Classic Mode</h4>
+                        <p id="difficulty-options-descriptions"></p>
+                    </div>
+                    <div id="visuals-options">
+                        <h3 id="visuals-title">VISUAL MODE</h3>
+                        <h4 class="mode" id="restored-mode" onclick="visualDesc(this.id)">Restored</h4>
+                        <h4 class="mode" id="apple-mode" onclick="visualDesc(this.id)">Apple lle</h4>
+                        <h4 class="mode" id="comm-mode" onclick="visualDesc(this.id)">Commodore 64</h4>
+                        <h4 class="mode" id="IBM-mode" onclick="visualDesc(this.id)">IBM</h4>
+                        <p id="visual-mode-options-descriptions"></p>
                     </div>
 
-
-                    <div id="options-screen">
-                        <h2 id="options-screen-title">Select Your Game Options</h2>
-                        <div id="difficulty-options">
-                            <h3 id="difficulty-title">DIFFICULTY</h3>
-                            <h4 class="mode" id="story-mode" onclick="displayDesc(this.id)">Story Mode</h4>
-                            <h4 class="mode" id="normal-mode" onclick="displayDesc(this.id)">Normal Mode</h4>
-                            <h4 class="mode" id="classic-mode" onclick="displayDesc(this.id)">Classic Mode</h4>
-                            <p id="difficulty-options-descriptions"></p>
-                        </div> 
-
-                        <div id="visual-mode-options">
-                            <h3 id="visual-title">VISUAL MODE</h3>
-                            <h4 class="mode" id="restored-mode" onclick="visualDesc(this.id)">Restored</h4>
-                            <h4 class="mode" id="apple-mode" onclick="visualDesc(this.id)">Apple lle</h4>
-                            <h4 class="mode" id="comm-mode" onclick="visualDesc(this.id)">Commodore 64</h4>
-                            <h4 class="mode" id="IBM-mode" onclick="visualDesc(this.id)">IBM</h4>
-                            <p id="visual-mode-options-descriptions"></p>
-                        </div>
-                        <div id="begin-game-button">
-                            <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
-                        </div>
+                    <div id="begin-game-button">
+                        <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
                     </div>
                 </div>
             </div>
@@ -93,37 +87,105 @@
         <div id="game">
             <div class="game-item-1">
                 <div id="room-title">
-                    <h1 id="currroom">Hotel Room</h1>
+                    <h1 id="currroom"></h1>
                 </div>
             </div>
             <div class="game-item-2">
                 <div id="left-side-clickables">
                     <div class="clickable-container" id="inventory-clickable">
-                        <img src="scr/images/icons/button-icon.png">
-                        <button class="iconbtn" id="inventory-button" onclick="invDisplay()">Inv</button>
+                       
+                        <button class="iconbtn" id="inventory-button" onclick="display('inventory-display')">Inv</button>
                     </div>
                     
                     <div class="clickable-container" id="address-book-clickable">
-                        <img src="scr/images/icons/button-icon.png">
-                        <button class="iconbtn" id="address-book-button" onclick="addDisplay()">Add</button>
+                        
+                        <button class="iconbtn" id="address-book-button" onclick="display('address-display')">Add</button>
                     </div>
                     
                     <div class="clickable-container" id="map-clickable">
-                        <img src="scr/images/icons/button-icon.png">
-                        <button class="iconbtn" id="map-button" onclick="mapDisplay()">Map</button>
+                        
+                        <button class="iconbtn" id="map-button" onclick="display('map-display')">Map</button>
                     </div>
             
                     <div class="clickable-container" id="info-clickable">
-                        <img src="scr/images/icons/button-icon.png">
-                        <button class="iconbtn" id="info-button" onclick="infoDisplay()">Info</button>
+                        
+                        <button class="iconbtn" id="info-button" onclick="display('info-display')">Info</button>
                     </div>
                 </div>
             </div>
-            <div class="game-item-3">
+            <div class="game-item-3"> 
                     <div class="container" id="input-output-container">
                         <div id="output"></div>
-                        <div id="input"></div>
+                        <!-- Player input -->
+                        <div class="input"><span class="ml-2" id="arrow">></span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
                     </div>
+
+                    <!-- clickables elements -->
+
+                    <!-- left side clickables -->
+
+                    <div id="inventory-display" class="clickables-left">
+                        <button class="x-button" onclick="displayNone('inventory-display')">X</button>
+                        <h2 id="inventory-display-title">Inventory</h2>
+                        <div id="inventory">
+                            <img class="inventory-img" alt="invetory item small icon">
+                            <h3 onclick="openItem('inventory-item-display')">Item Name</h3>
+                        </div>
+                    </div>
+
+                    <div id="inventory-item-display">
+                        <h2 id="item-name">Item Name</h2>
+                        <img id="item-img" alt="item image">
+                        <p id="item-description">Item description</p>
+                        <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button>
+                    </div>
+
+                    <div id="address-display" class="clickables-left">
+                        <button class="x-button" onclick="displayNone('address-display')">X</button>
+                        <h2 id="address-display-title">Address Book</h2>
+                        <div id="addresses">
+                        </div>
+                    </div>
+
+                    <!--
+                    <div id="map-display">
+                        <button class="x-button" onclick="displayNone('map-display')">X</button>
+                        <h2 id="map-display-title">Map</h2>
+                        <div id="map">
+                        </div>
+                    </div>
+                    -->
+
+                    <div id="info-display" class="clickables-left">
+                        <button class="x-button" onclick="displayNone('info-display')">X</button>
+                        <h2 id="info-display-title">Info</h2>
+                        <div id="info">
+                        </div>
+                    </div>
+
+                    <!-- right side clickables -->
+
+                    <div id="mode-display" class="clickables-right">
+                        <button class="x-button" onclick="displayNone('mode-display')">X</button>
+                        <h2 id="mode-display-title">Mode</h2>
+                        <div id="mode">
+                        </div>
+                    </div>
+
+                    <div id="achieve-display" class="clickables-right">
+                        <button class="x-button" onclick="displayNone('achieve-display')">X</button>
+                        <h2 id="achieve-display-title">Achievements</h2>
+                        <div id="achieve">
+                        </div>
+                    </div>
+
+                    <div id="help-display" class="clickables-right">
+                        <button class="x-button" onclick="displayNone('help-display')">X</button>
+                        <h2 id="help-display-title">Command Guide</h2>
+                        <div id="help">
+                        </div>
+                    </div>
+
             </div>
             <div class="game-item-4">
                 <div id="right-side-clickables">
@@ -132,42 +194,114 @@
                     </div>
             
                     <div id="mode-clickable">
-                        <button id="mode-button" onclick="modeDisplay()">Mode</button>
+                        <button id="mode-button" onclick="display('mode-display')">Mode</button>
                     </div>
             
                     <div id="achievements-clickable">
-                        <button id="achieve-button" onclick="modeDisplay()">Achieve</button>
+                        <button id="achieve-button" onclick="display('achieve-display')">Achieve</button>
                     </div>
             
                     <div id="help-clickable">
-                        <button id="help-button" onclick="helpDisplay()">Help</button>
+                        <button id="help-button" onclick="display('help-display')">Help</button>
                     </div>
                 </div>
             </div>
             <div class="game-item-5">
                 <div id="game-ui-bar">
-                    <div id="hunger-bar">
+                    <div id=hunger>
+                        <div id="hunger-bar-progress">
+                            <div id="hunger-bar"></div>
+                        </div>
                         <h3>HUNGER</h3>
                     </div>
             
-                    <div id="fatigue-bar">
+                    <div id="fatigue">
+                        <div id="fatigue-bar-progress">
+                            <div id="fatigue-bar"></div>
+                        </div>
                         <h3>FATIGUE</h3>
                     </div>
             
                     <div id="money-counter">
-                        <h2 id="money"></h2>
+                        <h2 id="money">$1,203</h2>
                     </div>
             
                     <div id="time-display">
-                        <h2 id="time"></h2>
+                        <h2 id="time">12:32 A.M.</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div> <!-- close game container -->
 
+    <script type="text/javascript">
+        //Creating the Map
+          //var map = L.map('map').setView([0, 0], 0);
+          var map = L.map('map', {center:[0, 0], zoom: 4, attributionControl: false});
+          map.invalidateSize();
+          setTimeout(function(){ map.invalidateSize(true)}, 300);
+          L.tileLayer('map/{z}/{x}/{y}.png', {
+            continuousWorld: false,
+            noWrap: true,	
+            minZoom: 3,
+            maxZoom: 6,
+          }).addTo(map);
+        
+        //Coordinate Finder
+          var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
+          marker.bindPopup('LatLng Marker').openPopup();
+          marker.on('drag', function(e) {
+            marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
+            //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+            marker.on('dragend', function(e) {
+            navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
+          })
+          });
+        
+        
+        //Markers are located in a separate JavaScript file for more modularity, cleanliness, and readability.
+        //let playerMarker = L.marker([2, 2], {draggable: true}).addTo(map).bindPopup('LatLng:').openPopup();
+        
+        //MAP BUTTON
+        /*const targetDiv = document.getElementById("map");
+          const btn = document.getElementById("mapbutton");
+          btn.onclick = function () {
+          if (targetDiv.style.display !== "none") {
+            targetDiv.style.display = "none";
+          } else {
+            targetDiv.style.display = "block";
+            map.invalidateSize();
+          }
+        };*/
+        
+        $("#mapbutton").click(function() {
+          $("#map").slideToggle();
+          map.invalidateSize();
+          $("#output").slideToggle();
+          //$(".input").slideToggle();
+          setTimeout(function(){ map.invalidateSize()}, 400);
+        })
+</script>        
+
     <!-- Scripts (Including Engines)-->
     <script src="scr/prototype-scripts.js"></script>
 
+   
+
+    <!-- Include game engine -->
+  <!-- Be sure to load in dependencies first -->
+  <script src="scr/text-engine/parser.js"></script>
+  <script src="scr/text-engine/init.js"></script>
+  <script src="scr/text-engine/pcommand.js"></script>
+  <script src="scr/text-engine/internalfunc.js"></script>
+  <script src='scr/text-engine/playercharacter.js'></script>
+
+
+  <!-- Include game data ('disk') -->
+  <script src="scr/text-engine/game-disks/streets.js"></script>
+
+<!-- Load disk into engine -->
+<script>loadDisk(streets);</script>
+<script src='scr/text-engine/markers.js'></script>
 </body>
 </html>
