@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amnesia Restored</title>
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
-    <link rel="stylesheet" href="scr/leaflet.css">
+
     
 
     <!-- Addtional Scripts -->
-  <script src="scr/leaflet.js"></script>
+  
   <script src="scr/jquery/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     </head>
 <body>
     <!-- black portion of game fixed size, fixed height -->
-    <div id="map" style="background-color: #32302f"></div>
+    
     <!-- this is the game -->
     <div id="game-container">
        <div id="game-title">
@@ -128,20 +127,31 @@
                     <!-- left side clickables -->
 
                     <div id="inventory-display" class="clickables-left">
-                        <button class="x-button" onclick="displayNone('inventory-display')">X</button>
+                        <button class="x-button" onclick="displayNone('inventory-display', 'inventory-item-display', 'inventory-xIndex-display')">X</button>
                         <h2 id="inventory-display-title">Inventory</h2>
                         <div id="inventory">
-                            <img class="inventory-img" alt="invetory item small icon">
-                            <h3 onclick="openItem('inventory-item-display')">Item Name</h3>
+                            <!-- 
+                            <img class="inventory-img" alt="icon">
+                            <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
                         </div>
                     </div>
 
                     <div id="inventory-item-display">
                         <h2 id="item-name">Item Name</h2>
-                        <img id="item-img" alt="item image">
-                        <p id="item-description">Item description</p>
-                        <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button>
+                        <img id="item-img" src="" alt="item image">
+                        <div id="item-description"></div>
+                        <!-- 
+                            * right now there is not a use for this feature 11-29-2021
+                            <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button> 
+                        -->
                     </div>
+
+                    <div id="inventory-xIndex-display">
+                        <h2 id="item-name">Item Name</h2>
+                        <img id="item-img" src="" alt="item image">
+                    </div>
+
+                    
 
                     <div id="address-display" class="clickables-left">
                         <button class="x-button" onclick="displayNone('address-display')">X</button>
@@ -237,57 +247,10 @@
         </div>
     </div> <!-- close game container -->
 
-    <script type="text/javascript">
-        //Creating the Map
-          //var map = L.map('map').setView([0, 0], 0);
-          var map = L.map('map', {center:[0, 0], zoom: 4, attributionControl: false});
-          map.invalidateSize();
-          setTimeout(function(){ map.invalidateSize(true)}, 300);
-          L.tileLayer('map/{z}/{x}/{y}.png', {
-            continuousWorld: false,
-            noWrap: true,	
-            minZoom: 3,
-            maxZoom: 6,
-          }).addTo(map);
-        
-        //Coordinate Finder
-          var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
-          marker.bindPopup('LatLng Marker').openPopup();
-          marker.on('drag', function(e) {
-            marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
-            //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
-            marker.on('dragend', function(e) {
-            navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
-          })
-          });
-        
-        
-        //Markers are located in a separate JavaScript file for more modularity, cleanliness, and readability.
-        //let playerMarker = L.marker([2, 2], {draggable: true}).addTo(map).bindPopup('LatLng:').openPopup();
-        
-        //MAP BUTTON
-        /*const targetDiv = document.getElementById("map");
-          const btn = document.getElementById("mapbutton");
-          btn.onclick = function () {
-          if (targetDiv.style.display !== "none") {
-            targetDiv.style.display = "none";
-          } else {
-            targetDiv.style.display = "block";
-            map.invalidateSize();
-          }
-        };*/
-        
-        $("#mapbutton").click(function() {
-          $("#map").slideToggle();
-          map.invalidateSize();
-          $("#output").slideToggle();
-          //$(".input").slideToggle();
-          setTimeout(function(){ map.invalidateSize()}, 400);
-        })
-</script>        
+    
 
     <!-- Scripts (Including Engines)-->
-    <script src="scr/prototype-scripts.js"></script>
+   
 
    
 
@@ -295,16 +258,17 @@
   <!-- Be sure to load in dependencies first -->
   <script src="scr/text-engine/parser.js"></script>
   <script src="scr/text-engine/init.js"></script>
+  <script src="scr/prototype-scripts.js"></script>
   <script src="scr/text-engine/pcommand.js"></script>
   <script src="scr/text-engine/internalfunc.js"></script>
   <script src='scr/text-engine/playercharacter.js'></script>
 
 
   <!-- Include game data ('disk') -->
-  <script src="scr/text-engine/game-disks/streets.js"></script>
+  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
 
 <!-- Load disk into engine -->
-<script>loadDisk(streets);</script>
-<script src='scr/text-engine/markers.js'></script>
+<script>loadDisk(amnesiaRestored);</script>
+
 </body>
 </html>

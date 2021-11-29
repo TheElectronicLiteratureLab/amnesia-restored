@@ -119,6 +119,8 @@ const hotereviDisk = {
                 },
                 {
                     itemId: 'bible',
+                    icon: 'img/png/bible-icon.png',
+                    gif: 'img/gifs/bible.gif',
                     name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
                     desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for thos ewith special needs. the list of texxts commended to 'those in doubt and uncertainty' has been crossed out, and above the deleted citations of chapter and verse someone had written '**John 1**'.
                     

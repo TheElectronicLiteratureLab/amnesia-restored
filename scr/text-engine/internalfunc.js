@@ -1,6 +1,6 @@
 // render output, with optional class
 // (string | array | fn -> string) -> nothing
-let println = (line, className = 'app') => {
+let println = (line, className) => {
   // bail if string is null or undefined
   if (!line) {
     return;
@@ -54,9 +54,104 @@ let println = (line, className = 'app') => {
 
   // typewriter.typeString(str)
   //   .start();
+};
 
-    
-  
+let listX = (iconPath, line, className, idName) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#inventory');
+  const newLine = document.createElement('div');
+  newLine.setAttribute("id", idName);
+  newLine.setAttribute("onclick", "openItem('inventory-xIndex-display', this.id)");
+  const itemTitle = document.createElement('h3');
+  const icon = document.createElement("img");
+  icon.src = iconPath;
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  output.appendChild(newLine);
+  newLine.appendChild(icon);
+  newLine.appendChild(itemTitle).innerHTML = str;
+};
+
+let listInv = (iconPath, line, className, idName) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#inventory');
+  const newLine = document.createElement('div');
+  newLine.setAttribute("id", idName);
+  newLine.setAttribute("onclick", "openItem('inventory-item-display', this.id)");
+  const itemTitle = document.createElement('h3');
+  const icon = document.createElement("img");
+  icon.src = iconPath;
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  output.appendChild(newLine);
+  newLine.appendChild(icon);
+  newLine.appendChild(itemTitle).innerHTML = str;
+};
+
+let printInvDesc = (line, className) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#item-description');
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  // support for markdown-like bold, italic, underline & strikethrough tags
+  if (className !== 'img') {
+    str = addStyleTags(str, '__', 'u');
+    str = addStyleTags(str, '**', 'b');
+    str = addStyleTags(str, '*', 'i');
+    str = addStyleTags(str, '~~', 'strike');
+  }
+
+  // maintain line breaks
+  while (str.includes('\n')) {
+    str = str.replace('\n', '<br>');
+  }
+
+    output.innerHTML = str;
 };
 
 // get random array element

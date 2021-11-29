@@ -282,10 +282,34 @@ img {
 
 #inventory {
    display: grid;
-   grid-template-columns: .5fr 1fr;
+   grid-template-columns: 1fr;
+}
+
+.clickItemInv {
+   display: grid;
+   grid-template-columns: .5fr .5fr;
+}
+
+.clickItemInv img {
+   width: 20%;
 }
 
 #inventory-item-display {
+   position: absolute;
+   left: 25.1%;
+   display: none;
+   background-color: rgba(121, 121, 121, 0.945);
+   width: 40%;
+   height: 100%;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: .2fr .6fr .15fr .10fr;
+}
+
+#inventory-item-display img {
+   width: 50%;
+}
+
+#inventory-xIndex-display {
    position: absolute;
    left: 25.1%;
    display: none;
@@ -308,6 +332,7 @@ img {
 #item-description {
    grid-column: 1 / span 2;
    grid: 3 / span 1;
+   overflow-y: scroll;
 }
 
 #use-item-button {
@@ -334,3 +359,5 @@ img {
    background: #2d0140;
    color: #ad3121;
 }
+
+

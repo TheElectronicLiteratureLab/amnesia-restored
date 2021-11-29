@@ -72,6 +72,8 @@ let visualDesc = (id) => {
 let beginGame = () => {
     document.getElementById("game").style.display = "grid";
     document.getElementById("game-options").style.display = "none";
+
+    console.log(playHung);
 }
 
 let x = false;
@@ -89,12 +91,25 @@ let display = (id) => {
     
 }
 
-let displayNone = (id) => {
-    document.getElementById(id).style.display = "none";
+let displayNone = (inv, item, xIndex) => {
+    document.getElementById(inv).style.display = "none";
+    document.getElementById(item).style.display = "none";
+    document.getElementById(xIndex).style.display = "none";
 }
 
-let openItem = (id) => {
+let openItem = (id, name) => {
+    // still need to add in check for if item clicked is xindexer so divs don't overlap
     document.getElementById(id).style.display = "grid";
+    
+    let inv = disk.inventory;
+    inv.forEach(e => {
+        if(e.itemId === name){
+            document.getElementById("item-name").innerHTML = e.name[0];
+            document.getElementById("item-img").src = e.gif;
+            printInvDesc(e.desc);
+            console.log(e.onUse);
+        }
+    })
 }
 
 // status bars

@@ -1,15 +1,23 @@
 // list player inventory
 let inv = () => {
+  document.getElementById("inventory").innerHTML = "";
   const items = disk.inventory.filter(item => !item.isHidden);
 
   if (!items.length) {
-    println(`You don't have any items in your inventory.`);
-    return;
+    document.getElementById("inventory-display").style.display = "block";
   }
 
-  println(`You have the following items in your inventory:`);
   items.forEach(item => {
-    println(`${bullet} ${getName(item.name)}`);
+    document.getElementById("inventory-display").style.display = "block";
+    if(item.itemId === 'xindexer'){
+      // pulls up xindexer interactive div
+      listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
+    } else {
+      listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
+    }
+    /*
+    document.getElementById("inventory-display").style.display = "block";
+    listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);*/
   });
 };
 
@@ -920,7 +928,7 @@ let read = (item) => {
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
-xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+/*xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
   const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
   const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
   const streetNumber = aStreetNumber.value; //get the value of the street number drop down
@@ -943,7 +951,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
     }
   }
-};
+};*/
 
 //x street indexer encounter functionality
 function xStreetEvent () {
