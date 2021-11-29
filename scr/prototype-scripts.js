@@ -96,3 +96,12 @@ let displayNone = (id) => {
 let openItem = (id) => {
     document.getElementById(id).style.display = "grid";
 }
+
+// status bars
+
+let hunBar = () => {
+    let x = playHung;
+
+    document.getElementById("hunger-bar").style.width = `${x}` + '%';
+
+}

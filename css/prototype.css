@@ -252,7 +252,7 @@ img {
 
 #hunger-bar {
    width: 50%;
-   height: 30px;
+   height: 15px;
    background-color: red;
    border-radius: 16px;
 }
@@ -265,7 +265,7 @@ img {
 
 #fatigue-bar {
    width: 50%;
-   height: 30px;
+   height: 15px;
    background-color: plum;
    border-radius: 16px;
 }
