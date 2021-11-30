@@ -1,5 +1,5 @@
 const streets = {
-  roomId: '53-5',
+  roomId: 'tene-3',
   currPos: [],
   rooms: [
 
@@ -34269,7 +34269,7 @@ const streets = {
       name: 'Living Room',
       desc: `You are in the living room.`,
       exits: [
-        {dir: 'north', id:'', block: `tene-3`},
+        {dir: 'north', id:'tene-3',},
         {dir: 'south', id:'', block: `You can't go that way.`},
         {dir: 'east', block: `tene-1`},
         {dir: 'west', id: ``, block: `You can't go that way.`},
@@ -34279,6 +34279,7 @@ const streets = {
       id: 'tene-3',
       coord: [],
       name: 'Bedroom',
+      hasBed: true,
       desc: `You are in the room with the mattress on the floor.
       
       One door leads to the south and to the living room, and another leads further north to the back of the apartment.`,

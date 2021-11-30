@@ -70,6 +70,7 @@ const amnesiaRestored = {
     {
       id: 'hote-room-1',
       name: 'Hotel Room',
+      hasBed: true,
       desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`,
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
@@ -687,6 +688,7 @@ const amnesiaRestored = {
     {
       id: 'hote-revi', //unique ID for this room
       name: 'Hotel Room', //room name (displayed to player)
+      hasBed: true,
       desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky.
       
       You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
@@ -1135,7 +1137,15 @@ const amnesiaRestored = {
     {
       id: 'nigh-1',
       name:'Nightmare',
+      hasEntered: false,
       desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
+
+      onEnter: () => {
+        reenableInput();
+        const room = getRoom('nigh-1');
+
+        room.hasEntered = true;
+      },
 
       exits:[
           {
@@ -1681,6 +1691,17 @@ const amnesiaRestored = {
       desc:`You open a fifth box, which seems too small to contain your head. But there it is, still alive! Its eyes look up to you gratefully. Its lips smile. And then, with horror, you realize your mistake. This isn’t your own head. It’s an identical head that’s been substituted for your own. This head belongs to ... to … His name is on the tip of your tongue. But of course, without a head you are also without a tongue. You wake, gasping for breath, and instantly the nightmare fades from your memory.`,
       exits: [],
       //exit nightmare node
+  },
+  {
+    id: 'nigh-2nd',
+    name: 'You are dreaming.',
+    desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” 
+    
+    You decide to ignore the voice this time.`,
+    onEnter: () => {
+      pressEnter(lastRoom.id);
+    },
+    exits: [],
   },
     //**********************************************************/
     //                Suicide at the Sunderland                /
