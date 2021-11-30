@@ -1093,14 +1093,6 @@ const beg = () => {
 
 }
 
-// const distanceFormula = (x, y) => {
-
-//   const a = x[0]-y[0];
-//   const b = x[1]-y[1];
-//   distance = Math.sqrt( (a*a) + (b*b) );
-//   console.log(distance + ' far away from first place player got caught');
-
-// }
 
 //loot table for beg command
 const begLootTable = () => {
@@ -1189,6 +1181,11 @@ let dropItem = (itemName) => {
     return;
   }
 };
+
+//save load
+//sleep function
+//random events (x indexer, wacky wanderer, kid with rag, flavor text)
+//player score
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
