@@ -1206,8 +1206,6 @@ const sleepFunction = () => {
     println(`You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” 
     
     You decide to ignore the voice this time.`);
-    println(`You find yourself once again on the cool bedspread`);
-    pressEnter('hote-room-1');
   } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
     println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
     pressEnter('nigh-1');
