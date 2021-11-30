@@ -1002,7 +1002,7 @@ function spawnTenement() {
                //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
               room.desc = `The abandoned tenement is here`; //tell player the tenement is here
-              println(room.desc);
+              println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
 
@@ -1197,24 +1197,31 @@ let dropItem = (itemName) => {
 const sleepFunction = () => {
   const room = getRoom(disk.roomId);
   const nightmareRoom = getRoom('nigh-1');
+  const nightmareRoom2 = getRoom('nigh2-1');
 
   if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
     println(`You roll over and decide to fall back asleep.`);
     pressEnter('nigh-1');
   } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
     println(`You roll over and decide to fall back asleep.`);
-    println(`You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” 
-    
-    You decide to ignore the voice this time.`);
+    pressEnter('nigh-2nd');
   } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
     println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
     pressEnter('nigh-1');
   } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
     println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
-    println(`You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” 
-    
-    You decide to ignore the voice this time.`);
-    println(`You wake up and find yourself back in room 1502.`)
+    pressEnter('nigh-2nd');
+  } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed) {
+    println(`You lie down on tghe charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
+    pressEnter('nigh2-1');
+  } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed){
+    enterRoom('nigh2-4');
+  } else if (!room.hasBed && room.isStreet) {
+    println(`Napping in the city isn't possible.`)
+  } else if (!room.hasBed) {
+    println(`You need a bed to sleep.`);
+  } else {
+    console.log('sleep function malfunctioning.');
   }
 
 };

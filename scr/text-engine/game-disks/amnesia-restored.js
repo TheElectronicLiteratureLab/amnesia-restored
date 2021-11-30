@@ -698,7 +698,9 @@ const amnesiaRestored = {
               let hotelRoom = getRoom('hote-revi');
               hotelRoom.desc = `You're standing in your hotel room`;
               println(hotelRoom.desc);
-          }
+          };
+
+          reenableInput();
       },
       onLook: () => {
           const room = getRoom('hote-revi');
