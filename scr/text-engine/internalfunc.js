@@ -120,10 +120,8 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
-  const room2 = getRoom(disk.roomId); //get new room on entry
-  if ( room2.isStreets && !tenementSpawned ) { //if the new room is a street room and the tenement hasnt spawned yet
-    spawnTenement(); //try and spawn the tenement
-  }
+  spawnTenement();
+  console.log('trying to spawn the tenement');
 
 };
 
