@@ -40,6 +40,8 @@ const playerC ={
 
 };
 
+let tenementSpawned = false;
+
 //variables needed for updating time, also have them start at the starting point
 let xMinutes = 1;
 let yHours = 8;

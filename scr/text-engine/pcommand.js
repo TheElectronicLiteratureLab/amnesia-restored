@@ -963,30 +963,50 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 //spawn tenement function
 function spawnTenement() {
   const room = getRoom(disk.roomId); //get current room
-  const hotel = getRoom('lobb-revi'); //get hotel room
   const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
-  let distance;
+
+  const tenement = getRoom('tene'); //get the tenement rooms
+  const tenement2 = getRoom('tene-1');
+  const tenement3 = getRoom('tene-2');
+  const tenement4 = getRoom('tene-3');
+  const tenement5 = getRoom('tene-4');
+  const tenement6 = getRoom('tene-5');
+  const tenement7 = getRoom('tene-6');
+
+
+  //put the tenement rooms into an array
+  const tenementArray = [tenement, tenement2, tenement3, tenement4, tenement5, tenement6, tenement7];
+
 
     //distance formula
-      const a = room.coords[0] - hotel.coords[0];
-      const b = room.coords[1] - hotel.coords[1];
+      const a = room.coord[0] - enteredStreets.coord[0];
+      const b = room.coord[1] - enteredStreets.coord[1];
       const c = Math.sqrt( (a*a) + (b*b) );
 
   
       //if count is greater than or equal to 11 and 
-      //if the distance betweem player and hotel is greater than or equal to 11 and
+      //if the distance between player and hotel is greater than or equal to 11 and
       //the room description is empty, aka no place of interest, or restaurant, or phone and
       //if the tenement hasn't already been spawned then
-        if( count >= 11 && distance >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
+        if( count >= 11 && c >= 15 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
           const chance = Math.floor(Math.random() * 101); //generate random number between 0-100
-          console.log(chance); //log what number was generated
+          console.log('the chance was ' + chance); //log what number was generated
           if ( chance <= 24 ) { //25% chance of spawning the tenement if the conditions above were met.
               room.exits.push( //push the tenement into the current rooms array of exits
-                { dir: ['tenement'], id: 'tene' }, 
+                { dir: ['abandoned','tenement', 'abandonedtenement', 'abandoned tenement'], id: 'tene' }, 
               ); 
+              for (let i = 0; i < tenementArray.length; i++) { //iterate through the tenement rooms
+                tenementArray[i].coord = room.coord; //set all of the coords of the rooms to the current street corners coords
+                console.log('the tenement coords are ' + tenementArray[i].coord);
+              };
+              tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
+               //push that rooms id into an exit south of the tenement entrance
+
+                console.log('the room which the tenement is on is ' + room.id);
               tenementSpawned = true; //set value so that function wont run again
-              println(`there is an abandoned tenement here on the corner of  ${room.name}`); //tell player the tenement is here
+              room.desc = `The abandoned tenement is here`; //tell player the tenement is here
+              println(room.desc);
             }
         }
 

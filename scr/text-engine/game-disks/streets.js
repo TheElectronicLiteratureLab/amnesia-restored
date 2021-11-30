@@ -20647,8 +20647,15 @@ const streets = {
       name: 'W. 53rd St. and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
+      curMoveCount: 0,
       onEnter: () => {
         reenableInput();
+
+        const room = getRoom(disk.roomId);
+
+        room.curMoveCount = moveCount;
+
+
       },
       exits: [
         {dir: 'north', id: '54-5'},
@@ -34231,6 +34238,106 @@ const streets = {
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '106-1'},
       ],
-    }
+    },
+    {
+      id: 'tene',
+      coord: [],
+      name: 'Tenement Entrance',
+      desc: `You are in the vestibule of the tenement.`,
+      exits: [
+        {dir: 'north', id:'tene-1'},
+        {dir: 'south', id:''},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: '', block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-1',
+      coord: [],
+      name: 'Tenement Hallway',
+      desc: `You are in the hallway of the abandoned tenement.`,
+      exits: [
+        {dir: 'north', id:'', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
+        {dir: 'south', id:'tene'},
+        {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
+        {dir: 'west', id: `tene-2`},
+      ],
+    },
+    {
+      id: 'tene-2',
+      coord: [],
+      name: 'Living Room',
+      desc: `You are in the living room.`,
+      exits: [
+        {dir: 'north', id:'', block: `tene-3`},
+        {dir: 'south', id:'', block: `You can't go that way.`},
+        {dir: 'east', block: `tene-1`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-3',
+      coord: [],
+      name: 'Bedroom',
+      desc: `You are in the room with the mattress on the floor.
+      
+      One door leads to the south and to the living room, and another leads further north to the back of the apartment.`,
+      exits: [
+        {dir: 'north', id:`tene-4`},
+        {dir: 'south', id:'tene-2'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-4',
+      coord: [],
+      name: 'Back Room',
+      hasEntered: false,
+      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. Ther is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+        pressEnter('tene-5')
+
+        room.hasEntered = true;
+      },
+      exits: [
+      ],
+    },
+    {
+      id: 'tene-5',
+      coord: [],
+      name: 'Back Room',
+      desc: `The shattered bottles outside the window trigger just the shadow of a memory -- your hands deftly mixing the contents of an odd collection of bottles over a rickety oval table in a hot, dirty room. You hold a flask up to the light and start to shout excitedly to the empty room.`,
+      onEnter: () => {
+        const backRoom = getRoom('tene-4');
+        if (backRoom.hasEntered) {
+          reenableInput();
+        } else {
+          pressEnter('tene-6')
+        }
+      },
+      exits: [
+        {dir: 'north', id:``, block: `You can't go that way.`},
+        {dir: 'south', id:'tene-3'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-6',
+      coord: [],
+      name: 'Back Room',
+      desc: `But before you can grasp at the heart of your exultation, it fades into the drab reality of the tenement walls, leaving you as confused and dejected as before.`,
+      onEnter: () => {
+        reenableInput()
+      },
+      exits: [
+        {dir: 'north', id:``, block: `You can't go that way.`},
+        {dir: 'south', id:'tene-3'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
   ]
 }
