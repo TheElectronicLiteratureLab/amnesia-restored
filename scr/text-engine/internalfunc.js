@@ -215,7 +215,11 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
-  spawnTenement();
+  const isStreetRoom = getRoom(disk.roomId);
+
+  if (isStreemRoom.isStreet){
+    spawnTenement();
+  }
   console.log('trying to spawn the tenement');
 
 };
