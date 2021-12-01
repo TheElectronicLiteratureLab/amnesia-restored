@@ -1,5 +1,5 @@
 const streets = {
-  roomId: 'whou-amer',
+  roomId: 'tene-3',
   currPos: [],
   rooms: [
 
@@ -20647,8 +20647,15 @@ const streets = {
       name: 'W. 53rd St. and 5th Ave.',
       desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
       isStreet: true,
+      curMoveCount: 0,
       onEnter: () => {
         reenableInput();
+
+        const room = getRoom(disk.roomId);
+
+        room.curMoveCount = moveCount;
+
+
       },
       exits: [
         {dir: 'north', id: '54-5'},
@@ -34231,6 +34238,273 @@ const streets = {
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '106-1'},
       ],
-    }
+    },
+    {
+      id: 'tene',
+      coord: [],
+      hasEntered: false,
+      name: 'Tenement Entrance',
+      desc: `You mount the steps and squeeze round the door that hanges twisted from a single hinge.
+      
+          You find yourself in a cramped vestibule. The building once held (by a count of the gutted mailboxes) twelve apartments. The inner doorway of the vestibule stands wide open, allowing a very dim view of a narrow, shadowy hallway.`,
+
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+
+        if(!room.hasEntered){
+          room.desc = `You are in the vestibule of the tenement.`
+          room.hasEntered = true;
+        } else {
+          return;
+        };
+
+        
+      },
+      onLook: () => {
+        println(` You find yourself in a cramped vestibule. The building once held (by a count of the gutted mailboxes) twelve apartments. The inner doorway of the vestibule stands wide open, allowing a very dim view of a narrow, shadowy hallway.`);
+      },
+      exits: [
+        {dir: 'north', id:'tene-1'},
+        {dir: 'south', id:''},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: '', block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-1',
+      coord: [],
+      hasEntered: false,
+      name: 'Tenement Hallway',
+      desc: `You go through the open door and enter the narrow, shadowy hallway. There is a smell of must and wet ashes. Your feeling you've been here is now almost a certainty.`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+
+        if(!room.hasEntered){
+          room.desc = `You are in the hallway of the abandoned tenement.`
+          room.hasEntered = true;
+        } else {
+          return;
+        };
+
+      },
+      exits: [
+        {dir: 'north', id:'', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
+        {dir: 'south', id:'tene'},
+        {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
+        {dir: 'west', id: `tene-2`},
+      ],
+    },
+    {
+      id: 'tene-2',
+      coord: [],
+      hasEntered: false,
+      name: 'Living Room',
+      desc: `You enter what must have once been a railroad flat. The room is empty, except for a ruined television set, it's shattered screen spread across the warped linoleum floor like silvery autumn leaves. 
+      
+          A pair of windows that once looked out on the street have been covered over by sheet metal, but there are smaller windows looking onto an airshaft, and these admit a murky fraction of the outside light. You can faintly see a doorway leading to the north, and the hall doorway to the east.`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+
+        if(!room.hasEntered){
+          room.desc = `You are in the living room.`
+          room.hasEntered = true;
+        } else {
+          return;
+        };
+      },
+      exits: [
+        {dir: 'north', id:'tene-3',},
+        {dir: 'south', id:'', block: `You can't go that way.`},
+        {dir: 'east', block: `tene-1`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-3',
+      coord: [],
+      name: 'Bedroom',
+      hasBed: true,
+      desc: `You enter what must have been the bedroom of this apartment. You see a rectangle of greyness on the floor. You test it with the toe of your shoe. At least this is a room with a bed or the remains of one. 
+      
+        One door leads to the south and to the living room, and another leads further north to the back of the apartment.`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+
+        if(!room.hasEntered){
+          room.desc = `You are in the room with the mattress on the floor.
+      
+        One door leads to the south and to the living room, and another leads further north to the back of the apartment.`;
+          room.hasEntered = true;
+        } else if (lastRoom.id === 'nigh2-3' || lastRoom.id === 'nigh2-5') {
+          reenableInput();
+          println('You get up from the mattress feeling stiff, but reasonably rested.');
+          incrementDay();
+        } else {
+          return;
+        };
+      },
+      exits: [
+        {dir: 'north', id:`tene-4`},
+        {dir: 'south', id:'tene-2'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-4',
+      coord: [],
+      name: 'Back Room',
+      hasEntered: false,
+      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. Ther is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+        pressEnter('tene-5')
+
+        room.hasEntered = true;
+      },
+      exits: [
+      ],
+    },
+    {
+      id: 'tene-5',
+      coord: [],
+      name: 'Back Room',
+      desc: `The shattered bottles outside the window trigger just the shadow of a memory -- your hands deftly mixing the contents of an odd collection of bottles over a rickety oval table in a hot, dirty room. You hold a flask up to the light and start to shout excitedly to the empty room.`,
+      onEnter: () => {
+        const backRoom = getRoom('tene-4');
+        if (backRoom.hasEntered) {
+          reenableInput();
+        } else {
+          pressEnter('tene-6')
+        }
+      },
+      exits: [
+        {dir: 'north', id:``, block: `You can't go that way.`},
+        {dir: 'south', id:'tene-3'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'tene-6',
+      coord: [],
+      name: 'Back Room',
+      desc: `But before you can grasp at the heart of your exultation, it fades into the drab reality of the tenement walls, leaving you as confused and dejected as before.`,
+      onEnter: () => {
+        reenableInput()
+      },
+      exits: [
+        {dir: 'north', id:``, block: `You can't go that way.`},
+        {dir: 'south', id:'tene-3'},
+        {dir: 'east', id: '', block: `You can't go that way.`},
+        {dir: 'west', id: ``, block: `You can't go that way.`},
+      ],
+    },
+    {
+      id: 'nigh2-1',
+      coord: [],
+      hasEntered: false,
+      name: 'Bedroom',
+      desc: `In the last hour of the night you have a dream, and when you wake, to the first gray monochromes of dawn, you try to remember what you'd dreamt, for you know that the dream explained why this building inspired such a sense of deja vu. All you can remember, however, if a woman's face.`,
+      onEnter: () => {
+        const room = getRoom('nigh2-1');
+
+        if(!room.hasEntered) {
+          room.hasEntered = true;
+        }
+
+        pressEnter('nigh2-2');
+      },
+      exits: [],
+    },
+    {
+      id: 'nigh2-2',
+      coord: [],
+      name: 'Bedroom',
+      desc: `She smiled and spoke some words -- was one of them "Cheese?" -- and just as you were about to kiss her you awoke. So beautiful! The curve of her lips, the arch of her brow, the radiance of her hair, that smile: Perfection! You hope that the dream arose from some memory of the life you've lived, not from your imagination, for if there is such a woman in the world, then your life has a long-term purpose: love.`,
+      onEnter: () => {
+        pressEnter('nigh2-3');
+      },
+      exits: [],
+    },
+    {
+      id: 'nigh2-3',
+      coord: [],
+      name: 'Bedroom',
+      desc: `the light of another day reveals the dismal reality of your waking life.`,
+      onEnter: () => {
+        pressEnter('tene-3');
+      },
+      exits: [],
+    },
+    {
+      id: 'nigh2-4',
+      coord: [],
+      name: 'Bedroom',
+      desc: `You do not find it as easy to sleep here as you did the first time. The smell of the mattress, the rustling of rats in the rubble, and sheer anxiety keep you awake. But at last you fall into a light doze, and again you dream of the woman you dreamt of last night, and again she smiles at you, and calls you by name: "John! John, where are you?`,
+      onEnter: () => {
+        pressEnter('nigh2-5');
+      },
+      exits: [],
+    },
+    {
+      id: 'nigh2-5',
+      coord: [],
+      name: 'Bedroom',
+      desc: `You awake, aching with the need to tell her you are here beside her and always will be. Then the feeling fades, and the mists of your amnesia erase her beauty.`,
+      onEnter: () => {
+        incrementDay();
+        pressEnter('tene-3');
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `On the grass, or on a bench?`,
+      onEnter: () => {
+        const room = getRoom(disk.RoomId);
+
+        room.enteredFrom = lastRoom.id;
+      },
+      onBlock: () => {
+        if (prevInput === 'grass'){
+          enterRoom('cent-slee2');
+        } else if (prevInput === 'bench') {
+          const room = getRoom(disk.roomId);
+          println(`The bench is hard and not designed for reclining. You try one position after another, but your discomfort keeps you from sleep.`);
+          enterRoom(room.enteredFrom);
+        } else {
+          println(`That doesn't look to be a place you can sleep.
+          
+          On the grass or on a bench?`);
+
+        }
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee2',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `You find a spot of ground where the grass is long and thick and free of rocks. You fall into a dreamless sleep.`,
+      onEnter: () => {
+        pressEnter('cent-slee3');
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee3',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `you are awakened by birdsong. Your clothes are damp with dew, and your muscles are sore from sleeping on the ground. You stretch your ams, and brush off your clothes as the first dog-walkers appear.`,
+      onEnter: () => {
+        incrementDay();
+        const room = getRoom('cent-slee')
+        pressEnter(room.enteredFrom);
+      },
+      exits: [],
+    },
   ]
 }
