@@ -1052,8 +1052,13 @@ const incrementTime = () => {
 const incrementDay = () => {
   xMinutes = 1;
   yHours = 8;
-  zDays = zdays + 1;
   qMeridiem = 0
+
+  if (zDays <= 7) {
+    zDays++;
+  } else {
+    zDays = 0;
+  }
 
   playFat = 100;
 
@@ -1066,7 +1071,23 @@ const incrementDay = () => {
   document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
-}
+};
+
+const incrementHour = () => {
+  if (yHours <= 11) {
+    yHours++;
+  } else {
+    yHours = 0;
+  }
+
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
+
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+
+};
 
 
 //beg command
