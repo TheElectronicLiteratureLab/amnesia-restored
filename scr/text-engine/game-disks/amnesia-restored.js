@@ -700,6 +700,8 @@ const amnesiaRestored = {
               println(hotelRoom.desc);
           };
 
+          if (lastRoom.id === '')
+
           reenableInput();
       },
       onLook: () => {

@@ -34335,9 +34335,10 @@ const streets = {
       
         One door leads to the south and to the living room, and another leads further north to the back of the apartment.`;
           room.hasEntered = true;
-        } else if (lastRoom.id === 'nigh2-3') {
+        } else if (lastRoom.id === 'nigh2-3' || lastRoom.id === 'nigh2-5') {
           reenableInput();
-          println('You get up from the mattress feeling stiff, but reasonably rested.')
+          println('You get up from the mattress feeling stiff, but reasonably rested.');
+          incrementDay();
         } else {
           return;
         };
@@ -34452,7 +34453,56 @@ const streets = {
       name: 'Bedroom',
       desc: `You awake, aching with the need to tell her you are here beside her and always will be. Then the feeling fades, and the mists of your amnesia erase her beauty.`,
       onEnter: () => {
+        incrementDay();
         pressEnter('tene-3');
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `On the grass, or on a bench?`,
+      onEnter: () => {
+        const room = getRoom(disk.RoomId);
+
+        room.enteredFrom = lastRoom.id;
+      },
+      onBlock: () => {
+        if (prevInput === 'grass'){
+          enterRoom('cent-slee2');
+        } else if (prevInput === 'bench') {
+          const room = getRoom(disk.roomId);
+          println(`The bench is hard and not designed for reclining. You try one position after another, but your discomfort keeps you from sleep.`);
+          enterRoom(room.enteredFrom);
+        } else {
+          println(`That doesn't look to be a place you can sleep.
+          
+          On the grass or on a bench?`);
+
+        }
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee2',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `You find a spot of ground where the grass is long and thick and free of rocks. You fall into a dreamless sleep.`,
+      onEnter: () => {
+        pressEnter('cent-slee3');
+      },
+      exits: [],
+    },
+    {
+      id: 'cent-slee3',
+      coord: [],
+      name: 'Somewhere in Central Park',
+      desc: `you are awakened by birdsong. Your clothes are damp with dew, and your muscles are sore from sleeping on the ground. You stretch your ams, and brush off your clothes as the first dog-walkers appear.`,
+      onEnter: () => {
+        incrementDay();
+        const room = getRoom('cent-slee')
+        pressEnter(room.enteredFrom);
       },
       exits: [],
     },

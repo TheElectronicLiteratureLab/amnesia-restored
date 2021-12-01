@@ -1049,6 +1049,24 @@ const incrementTime = () => {
     document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
+const incrementDay = () => {
+  xMinutes = 1;
+  yHours = 8;
+  zDays = zdays + 1;
+  qMeridiem = 0
+
+  playFat = 100;
+
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
+
+  document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+  document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+}
 
 
 //beg command
@@ -1186,9 +1204,9 @@ let dropItem = (itemName) => {
 
 
 //sleep function
-//check if bed is in room
-//check what room is in, different happenings for hotel or tenement or central park 
-//(check if name = somewhere in central park)
+//check if bed is in room --
+//check what room is in, different happenings for hotel or tenement or central park --
+//(check if name = somewhere in central park) 
 //check if nightmare has happened and if so do something different
 //check if fatigue is is low enough
 //reset time back to 9:05am but have it progress to the next day 
@@ -1199,31 +1217,43 @@ const sleepFunction = () => {
   const nightmareRoom = getRoom('nigh-1');
   const nightmareRoom2 = getRoom('nigh2-1');
 
-  if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
-    println(`You roll over and decide to fall back asleep.`);
-    pressEnter('nigh-1');
-  } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
-    println(`You roll over and decide to fall back asleep.`);
-    pressEnter('nigh-2nd');
-  } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
-    println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
-    pressEnter('nigh-1');
-  } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
-    println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
-    pressEnter('nigh-2nd');
-  } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed) {
-    println(`You lie down on tghe charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
-    pressEnter('nigh2-1');
-  } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed){
-    enterRoom('nigh2-4');
-  } else if (!room.hasBed && room.isStreet) {
-    println(`Napping in the city isn't possible.`)
-  } else if (!room.hasBed) {
-    println(`You need a bed to sleep.`);
-  } else {
-    console.log('sleep function malfunctioning.');
-  }
 
+      if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+        println(`You roll over and decide to fall back asleep.`);
+        pressEnter('nigh-1');
+      } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
+        println(`You roll over and decide to fall back asleep.`);
+        pressEnter('nigh-2nd');
+      } else if (room.name === 'Somewhere in Central Park' && playFat <= 40) {
+        enterRoom('cent-slee');
+      } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
+        println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        pressEnter('nigh-1');
+      } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
+        println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        pressEnter('nigh-2nd');
+      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat <= 40) {
+        println(`You lie down on the charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
+        pressEnter('nigh2-1');
+      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
+        enterRoom('nigh2-4');
+      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (!room.hasBed && room.isStreet) {
+        println(`Napping in the city isn't possible.`)
+      } else if (!room.hasBed && !room.isStreet) {
+        println(`You need a bed to sleep.`);
+      } else {
+        console.log('sleep function malfunctioning.');
+      } 
+    // } else {
+    //   println(`You don't feel tired enough to sleep yet.`)
+    // }
+    
 };
 
 
@@ -1277,6 +1307,7 @@ let commands = [
     dial,
     dialing,
     beg,
+    sleep: sleepFunction,
   },
   // one argument (e.g. "go north", "take book")
   {
