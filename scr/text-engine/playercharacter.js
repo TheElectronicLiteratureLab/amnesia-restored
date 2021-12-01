@@ -6,7 +6,9 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 let playFat = 100;
 let playHung = 100;
+
 let playMon = 1.00; 
+
 let detScore = 0;
 let charScore = 0;
 let survScore = 0;
