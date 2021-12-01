@@ -18,10 +18,10 @@ let applyInput = (input) => {
 
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
-    //moveCount++;
     if (cmd) {
       cmd(arg);
       moveCount++;
+      incrementTime();
       console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
@@ -30,7 +30,6 @@ let applyInput = (input) => {
       return; //stop running this function after the onBlock is executed
     } else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
-      //moveCount--;
     }
   };
 
