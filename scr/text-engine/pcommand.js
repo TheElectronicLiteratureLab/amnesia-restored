@@ -1054,10 +1054,10 @@ const incrementDay = () => {
   yHours = 8;
   qMeridiem = 0
 
-  if (zDays <= 7) {
-    zDays++;
-  } else {
+  if (zDays >= 7) {
     zDays = 0;
+  } else {
+    zDays++;
   }
 
   playFat = 100;
@@ -1074,10 +1074,10 @@ const incrementDay = () => {
 };
 
 const incrementHour = () => {
-  if (yHours <= 11) {
-    yHours++;
-  } else {
+  if (yHours >= 12) {
     yHours = 0;
+  } else {
+    yHours++;
   }
 
   let dumbMinutes = minutes[xMinutes];
