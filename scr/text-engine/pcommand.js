@@ -1049,19 +1049,24 @@ const incrementTime = () => {
     document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
-const incrementDay = () => {
-  xMinutes = 1;
-  yHours = 8;
+//increment day function
+const incrementDay = () => { 
+  xMinutes = 1; //reset these back to default position
+  yHours = 8; 
   qMeridiem = 0
 
+//if the days index ever gets 7 or above reset it back to zero 
   if (zDays >= 7) {
     zDays = 0;
-  } else {
+  } else { //else increment the days
     zDays++;
   }
 
+  //set player fatigue to max
   playFat = 100;
 
+
+//update all the UI elements to match properly
   let dumbMinutes = minutes[xMinutes];
   let dumbHours = hours[yHours];
   let dumbDays = days[zDays];
@@ -1073,13 +1078,16 @@ const incrementDay = () => {
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
+
+//increment hour function
 const incrementHour = () => {
-  if (yHours >= 12) {
+  if (yHours >= 12) { //if the hours every get to 12 or higher reset it back to 0
     yHours = 0;
   } else {
-    yHours++;
+    yHours++; //else increment the days
   }
 
+//update the ui elements to match properly
   let dumbMinutes = minutes[xMinutes];
   let dumbHours = hours[yHours];
   let dumbDays = days[zDays];
@@ -1221,64 +1229,78 @@ let dropItem = (itemName) => {
   }
 };
 
-//save load
-
-
 //sleep function
-//check if bed is in room --
-//check what room is in, different happenings for hotel or tenement or central park --
-//(check if name = somewhere in central park) 
-//check if nightmare has happened and if so do something different
-//check if fatigue is is low enough
-//reset time back to 9:05am but have it progress to the next day 
-//update the player ui
-//print out the proper dream sequence stuff or enter them into the right room
 const sleepFunction = () => {
-  const room = getRoom(disk.roomId);
-  const nightmareRoom = getRoom('nigh-1');
-  const nightmareRoom2 = getRoom('nigh2-1');
+  const room = getRoom(disk.roomId); //get the current room
+  const nightmareRoom = getRoom('nigh-1'); //get the first nightmare room
+  const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
 
-
+      //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
       if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+        //print this line and then
         println(`You roll over and decide to fall back asleep.`);
+        //enter the nightmare room
         pressEnter('nigh-1');
+      //else if the current room is the first hotel room and the player has had a nightmare and the room has a bed then
       } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
+        //print this line and then
         println(`You roll over and decide to fall back asleep.`);
+        //enter the already had a nightmare room
         pressEnter('nigh-2nd');
+      //else if the player is in central park and their fatigure is less than 40
       } else if (room.name === 'Somewhere in Central Park' && playFat <= 40) {
+        //enter room of central park sleeping
         enterRoom('cent-slee');
+      //else if the player is in central park and their fatigue is more than 40
       } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
+        //print this line of not letting the player sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the hotel room revisited and haven't gotten a nightmare yet and the room has a bed
       } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
+        //print this line
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        //enter the proper room
         pressEnter('nigh-1');
+      //else if youre in the hotel room revisited and have gotten the nightmare and the room has a bed
       } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
+        //print this line 
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        //enter the proper room
         pressEnter('nigh-2nd');
+      //else if youre in the tenement and havent gotten the second nightmare and the room has a bed and the player fatigue is less than 40 
       } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat <= 40) {
+        //print this line
         println(`You lie down on the charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
+        //enter proper room
         pressEnter('nigh2-1');
+      //else if youre in the tenement, you havent gotten the second nightmare, the room has a bed, and the player fatigure is more than 40
       } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
+        //print this line & dont let them sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the tenement, you have gotten the second nightmare, the room has a bed, and the fatigue is less than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
+        //enter proper room
         enterRoom('nigh2-4');
+      //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
+        //print this line and dont let them sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if the room doesnt have a bed and the room is on the streets
       } else if (!room.hasBed && room.isStreet) {
+        //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
+      //else if the room doesnt have a bed and the room is not on the streets
       } else if (!room.hasBed && !room.isStreet) {
+        //print this line dont let them sleep
         println(`You need a bed to sleep.`);
+      //else console log this if stuff is broken.
       } else {
         console.log('sleep function malfunctioning.');
-      } 
-    // } else {
-    //   println(`You don't feel tired enough to sleep yet.`)
-    // }
-    
+      }     
 };
 
 
-
+//save load
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
 //player score
 //difficulty level tie ins
