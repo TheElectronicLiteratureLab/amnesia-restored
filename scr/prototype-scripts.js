@@ -18,6 +18,9 @@ let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classi
 let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commodore 64 visual experience with a modern interface.`;
 let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM PC visual experience with a modern interface.`;
 
+
+
+
 // button scripts
 let newGame = () => {
     document.getElementById("game-options").style.display = "grid";
@@ -76,18 +79,27 @@ let beginGame = () => {
     console.log(playHung);
 }
 
-let x = false;
+
 
 let display = (id) => {
-    console.log(x);
+    
 
-    if(x == false){
+    if(document.getElementById(id).style.display === "none"){
+        document.getElementById(id).style.display = "block";
+    } else {
+        document.getElementById(id).style.display = "none";
+        document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-xIndex-display").style.display = "none";
+    }
+    /*console.log(x);
+
+    if(x === false){
         document.getElementById(id).style.display = "block";
         x = true;
-    } else if(x == true){
+    } else if(x === true){
         document.getElementById(id).style.display = "none";
         x = false;
-    }
+    }*/
     
 }
 
@@ -98,8 +110,29 @@ let displayNone = (inv, item, xIndex) => {
 }
 
 let openItem = (id, name) => {
+
+    if(name !== 'xindexer'){
+        document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById(id).style.display = "grid";
+    
+        let inv = disk.inventory;
+        inv.forEach(e => {
+            if(e.itemId === name){
+                document.getElementById("item-name").innerHTML = e.name[0];
+                document.getElementById("item-img").src = e.gif;
+                printInvDesc(e.desc);
+            }
+        })
+    } 
+
+    if(name === 'xindexer'){
+        console.log('true');
+        document.getElementById("inventory-xIndex-display").style.display = "grid";
+        document.getElementById("inventory-item-display").style.display = "none";
+    }
+    
     // still need to add in check for if item clicked is xindexer so divs don't overlap
-    document.getElementById(id).style.display = "grid";
+    /*document.getElementById(id).style.display = "grid";
     
     let inv = disk.inventory;
     inv.forEach(e => {
@@ -109,7 +142,7 @@ let openItem = (id, name) => {
             printInvDesc(e.desc);
             console.log(e.onUse);
         }
-    })
+    })*/
 }
 
 // status bars

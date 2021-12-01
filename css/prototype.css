@@ -280,6 +280,18 @@ img {
    height: 100%;
 }
 
+#intentory-display {
+   display: none;
+}
+
+#address-display {
+   display: none;
+}
+
+#info-display {
+   display: none;
+}
+
 #inventory {
    display: grid;
    grid-template-columns: 1fr;
@@ -349,15 +361,16 @@ img {
    height: 100%;
 }
 
-#map-display {
+#mode-display {
    display: none;
-   position: absolute;
-   height: 100%;
 }
 
-.popup .leaflet-popup-tip, .popup .leaflet-popup-content-wrapper{
-   background: #2d0140;
-   color: #ad3121;
+#achieve-display {
+   display: none;
+}
+
+#help-display {
+   display: none;
 }
 
 
