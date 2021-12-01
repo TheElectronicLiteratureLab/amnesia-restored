@@ -182,11 +182,14 @@ button {
 .statusbar {
   border: 0px solid #707070;
   color: #f2ebdf;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   margin-top: 2%;
   padding: 10px;
+}
+
+#statusBar {
+  display: none;
 }
 
 .statusbar div {
@@ -199,6 +202,7 @@ button {
   text-align: left;
     margin: auto;
 }
+
 
 #map {
   position: relative;

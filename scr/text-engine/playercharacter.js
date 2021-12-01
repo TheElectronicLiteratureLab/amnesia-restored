@@ -4,10 +4,11 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 });
 
-let time = new Date('May 4, 1986 09:05:00')
 let playFat = 100;
 let playHung = 100;
-let playMon = 25.00; // Setting to 25 for testing purposes
+
+let playMon = 1.00; 
+
 let detScore = 0;
 let charScore = 0;
 let survScore = 0;
@@ -40,6 +41,24 @@ const playerC ={
     pCoords: playCoord
 
 };
+
+let tenementSpawned = false;
+
+//variables needed for updating time, also have them start at the starting point
+let xMinutes = 1;
+let yHours = 8;
+let zDays = 0;
+let qMeridiem = 0
+
+//variables needed for beg command
+let caughtCoords1;
+let caughtCoords2;
+let policeCaught = false;
+
+
+//difficulty levels stuff
+const difficultyLevels = ['easy', 'medium', 'hard']; 
+let difficulty = difficultyLevels[1];
 
 //x street indexer stuff
 const xStreetNumber = [
@@ -76,3 +95,8 @@ const xStreetNumber = [
 ]
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st']
+
+const minutes = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'];
+const hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11','12'];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const amPm = ['AM', 'PM']
