@@ -42,17 +42,17 @@
         <div class="input"><span class="ml-2" id="arrow">></span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
       </div>
       
-      <div class="statusbar">
+      <div class="statusbar" id='statusBar'>
         <div id="hunger">
-          <div>img</div>
+          <div id='hungerNumber'></div>
           <div>HUNGER</div>
         </div>
         <div id="fatigue">
-          <div>img</div>
+          <div id='fatigueNumber'></div>
           <div>FATIGUE</div>
         </div>
-        <div id="money">MONEY</div>
-        <div id="time">TIME</div>
+        <div id="money"></div>
+        <div id="time"></div>
       </div>
     </div>
     
@@ -253,7 +253,6 @@ const xStreetDiv = document.getElementById("xStreetIndex");
   }
 };
 
-//x street indexer submit button
 // DIAL
 /*
 let numdialButton = (clicked_id) => {
@@ -318,6 +317,9 @@ let openTutorial = () => {
   <script src="scr/text-engine/game-disks/newyorksociety.js"></script>
 
 <!-- Load disk into engine -->
+
+
 <script>loadDisk(nyhistorical );</script>
 <script src='scr/text-engine/markers.js'></script>
+
 </body>

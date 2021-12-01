@@ -141,6 +141,10 @@ function goDir(dir) {
   }
 
   enterRoom(nextRoom.id);
+
+  //updatePlayerStats();
+
+
 }
 //testing some things to further parse input
 let inputRead = () => {
@@ -313,16 +317,6 @@ let talkToOrAboutX = (preposition, x) => {
 };
 
 
-//ask function
-const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
-  disk.conversant = character; //set the character to who you're talking to
-  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
-  talkToOrAboutX('about', y); //execute asking them the thing
-};
-
-
-
 // list takeable items in room
 function take() {
   const room = getRoom(disk.roomId);
@@ -373,35 +367,7 @@ let takeItem = (itemName) => {
 };
 
 
-// drop item from inventory basically just reversed the take item function above.
-let dropItem = (itemName) => {
-  const room = getRoom(disk.roomId);
-  const findItem = item => objectHasName(item, itemName);
-  let itemIndex = disk.inventory.findIndex(findItem);
-  const item = getItemInInventory(itemName);
-  
-  if (typeof itemIndex === 'number' && itemIndex > -1){
-    if (item.isDroppable) {
-      room.items.push(item)
-      disk.inventory.splice(itemIndex, 1);
-      if (typeof itemIndex === 'function') {
-        item.onDrop({disk, println, room, getRoom, enterRoom, item});
-      } else {
-        println(`You dropped the ${getName(item.name)}.`);
-      }
-    } else {
-      if (typeof item.onDrop === 'function') {
-        item.onDrop({disk, println, room, getRoom, enterRoom, item});
-      } else {
-        println(item.block || `You can't drop that.`);
-      }
-    }
-  }
-  if (!item) {
-    println(`You can't drop what you don't have.`);
-    return;
-  }
-};
+
 
 // list useable items in room and inventory
 let use = () => {
@@ -779,31 +745,6 @@ let remove = (clothes) => {
 }
 
 
-
-
-
-//Phone Booth Creation
-function createPhone() { //create function
-  const rooms = hcDvDisk.rooms; //set variable to loaded disk
-  const thisRoom = getRoom(disk.roomId); //get current room
-  for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
-    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
-      console.log(chance); //log the number generated
-      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
-      rooms[i].exits.push( //push the following into the room's exits array
-        {
-          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
-          id: 'pho-boo1' //id for phone booth
-        },
-      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
-      
-    }
-  }
-  thisRoom.phonesMade = true; //dont allow the function to run again
-};
-
-
 // open command
 let open = (itemToOpen) => {
   //println(itemToOpen);
@@ -925,6 +866,33 @@ let read = (item) => {
 }
 
 
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//           HOGANS WORKSPACE BELOW           \\
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//Phone Booth Creation
+function createPhone() { //create function
+  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const thisRoom = getRoom(disk.roomId); //get current room
+  for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
+    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      console.log(chance); //log the number generated
+      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+      rooms[i].exits.push( //push the following into the room's exits array
+        {
+          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+          id: 'pho-boo1' //id for phone booth
+        },
+      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+      
+    }
+  }
+  thisRoom.phonesMade = true; //dont allow the function to run again
+};
+
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
@@ -954,26 +922,20 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
 };*/
 
 //x street indexer encounter functionality
-function xStreetEvent () {
-  let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
-  let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
+// function xStreetEvent () {
+//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
+//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
 
 
-  console.log(aveNameNumber);
-  console.log(xStreetName[aveNameNumber]);
-  console.log(addressNumber);
+//   console.log(aveNameNumber);
+//   console.log(xStreetName[aveNameNumber]);
+//   console.log(addressNumber);
 
-  if (addressNumber >= 0 && addressNumber <= 199) {
+//   if (addressNumber >= 0 && addressNumber <= 199) {
     
-  }
+//   }
   
-};
-
-function teleport (place) {
-  enterRoom(place);
-  println(`
-  Player Teleported to ${place}`);
-};
+// };
 
 //dev command functions 
 
@@ -1009,36 +971,310 @@ function teleport (place) {
 //spawn tenement function
 function spawnTenement() {
   const room = getRoom(disk.roomId); //get current room
-  const hotel = getRoom('lobb-revi'); //get hotel room
   const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
 
+  const tenement = getRoom('tene'); //get the tenement rooms
+  const tenement2 = getRoom('tene-1');
+  const tenement3 = getRoom('tene-2');
+  const tenement4 = getRoom('tene-3');
+  const tenement5 = getRoom('tene-4');
+  const tenement6 = getRoom('tene-5');
+  const tenement7 = getRoom('tene-6');
+
+
+  //put the tenement rooms into an array
+  const tenementArray = [tenement, tenement2, tenement3, tenement4, tenement5, tenement6, tenement7];
+
+
     //distance formula
-      const a = room.coords[0] - hotel.coords[0];
-      const b = room.coords[1] - hotel.coords[1];
+      const a = room.coord[0] - enteredStreets.coord[0];
+      const b = room.coord[1] - enteredStreets.coord[1];
       const c = Math.sqrt( (a*a) + (b*b) );
 
   
       //if count is greater than or equal to 11 and 
-      //if the distance betweem player and hotel is greater than or equal to 11 and
+      //if the distance between player and hotel is greater than or equal to 11 and
       //the room description is empty, aka no place of interest, or restaurant, or phone and
       //if the tenement hasn't already been spawned then
-        if( count >= 11 && c >= 11 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
+        if( room.isStreet && count >= 11 && c >= 15 && (room.desc === '' || "" || ``) && !tenementSpawned) { 
           const chance = Math.floor(Math.random() * 101); //generate random number between 0-100
-          console.log(chance); //log what number was generated
-          if ( chance <= 24 ) { //25% chance of spawning the tenement if the conditions above were met.
+          if ( chance <= 29 ) { //25% chance of spawning the tenement if the conditions above were met.
               room.exits.push( //push the tenement into the current rooms array of exits
-                { dir: ['tenement'], id: 'tene' }, 
+                { dir: ['abandoned','tenement', 'abandonedtenement', 'abandoned tenement'], id: 'tene' }, 
               ); 
+              for (let i = 0; i < tenementArray.length; i++) { //iterate through the tenement rooms
+                tenementArray[i].coord = room.coord; //set all of the coords of the rooms to the current street corners coords
+              };
+              tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
+               //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
-              println(`there is an abandoned tenement here on ${room.name}`); //tell player the tenement is here
+              room.desc = `The abandoned tenement is here`; //tell player the tenement is here
+              println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
 
 };
 
-// jump command
+//ask function
+const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
+  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+  disk.conversant = character; //set the character to who you're talking to
+  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+  talkToOrAboutX('about', y); //execute asking them the thing
+};
 
+//passing time function
+const incrementTime = () => {
+  xMinutes++; //increase the index of minutes array
+
+  if(xMinutes >= 12 ) { //if index ever goes above length of minutes array 
+    xMinutes = 0; //set index back to beginning
+    yHours++;//then increment the hours index
+  }
+  if(yHours >= 12) { //if index ever goes above length of hours array
+    yHours = 0; //set index back to beginning 
+      if(qMeridiem === 1) { //if it is PM 
+      qMeridiem--;//set it back to Am
+      zDays++; //incremenent days array
+    } else {
+      qMeridiem++; //set it to PM
+    }
+  }
+  if(zDays >= 7) { //if index every goes above length of days array
+    zDays = 0; //set it back to sunday
+  }
+
+  //UPDATE THE UI ELEMENTS 
+    let dumbMinutes = minutes[xMinutes];
+    let dumbHours = hours[yHours];
+    let dumbDays = days[zDays];
+    let dumbAmPm = amPm[qMeridiem];
+
+    document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+    document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+};
+
+const incrementDay = () => {
+  xMinutes = 1;
+  yHours = 8;
+  zDays = zdays + 1;
+  qMeridiem = 0
+
+  playFat = 100;
+
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
+
+  document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+  document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+}
+
+
+//beg command
+const beg = () => {
+  const curRoom = getRoom(disk.roomId); //get current room
+  const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
+  console.log(chance1 + ' rolled for chance to be caught');
+  if(curRoom.isStreet){//if tha player is on the streets
+    if (chance1 <= 20 && !policeCaught) { //if you got caught and you haven't been caught before
+      policeCaught = true;
+      caughtCoords1 = curRoom.coord;
+      console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
+      //enterRoom('beg-poli'); //enter the room where the police catch you
+      println(`We'll give you a warning this time.`)
+    } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
+      begLootTable(); //roll on loot table
+    } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
+      caughtCoords2 = curRoom.coord; //generate coordinates of current room
+      console.log(caughtCoords2 + ' thesen are the coordinates in which player was caught again.')
+      
+      //distance formula
+      const a = caughtCoords1[0] - caughtCoords2[0];
+      const b = caughtCoords1[1] - caughtCoords2[1];
+      const distance = Math.sqrt( (a*a) + (b*b) );
+
+      if(distance >= 20) { //if player has moved far enough from where initially caught;
+        policeCaught = false;
+        console.log('caught but changed neighborhoods');
+        begLootTable();
+      } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
+        println(`We already gave you a warning, come with us.`)
+      }
+    } else if (chance1 >= 20 && policeCaught) { //if player has been caught but passed the check
+      console.log(`caught once but succeeded 80% check`);
+      begLootTable();
+    }else { //debug purposes
+      console.log(`Beg Command Malfunctioning`)
+    }
+  } else { //if player isn't on the streets
+    println(`You can't beg when you aren't on the streets.`)
+  }
+
+}
+
+
+//loot table for beg command
+const begLootTable = () => {
+  const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
+  console.log(chance2 + ' is what was rolled for loot chance')
+
+  if (difficulty === 'medium'){ // 
+    if (chance2 <= 15) { //chance to get nothing
+      println(`People shy away when you ask for money, you weren't able to get anything.`);
+    } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
+      playMon = playMon + dollarAmount;//add amount to player inventory
+    } else if (71 <= chance2 <= 90) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    } else if (91 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    }
+  
+  } else if (difficulty === 'easy') {
+    if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    } else if (56 <= chance2 <= 85) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    } else if (86 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    }
+
+  } else if (difficulty === 'hard') {
+    if (chance2 <= 20) { //chance to get nothing
+      println(`People shy away when you ask for money, you weren't able to get anything.`);
+    } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.25
+      const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    } else if (76 <= chance2 <= 95) { //chance to get between 1.26 & 1.75
+      const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    } else if (96 <= chance2 <= 100) { //chance to get between 1.76-2.00
+      const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      playMon = playMon + dollarAmount;
+    }
+  } else { // debug purposes
+    println(`Oops something went wrong`);
+  }
+}
+
+// drop item from inventory basically just reversed the take item function above.
+let dropItem = (itemName) => {
+  const room = getRoom(disk.roomId);
+  const findItem = item => objectHasName(item, itemName);
+  let itemIndex = disk.inventory.findIndex(findItem);
+  const item = getItemInInventory(itemName);
+  
+  if (typeof itemIndex === 'number' && itemIndex > -1){
+    if (item.isDroppable) {
+      room.items.push(item)
+      disk.inventory.splice(itemIndex, 1);
+      if (typeof itemIndex === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(`You dropped the ${getName(item.name)}.`);
+      }
+    } else {
+      if (typeof item.onDrop === 'function') {
+        item.onDrop({disk, println, room, getRoom, enterRoom, item});
+      } else {
+        println(item.block || `You can't drop that.`);
+      }
+    }
+  }
+  if (!item) {
+    println(`You can't drop what you don't have.`);
+    return;
+  }
+};
+
+//save load
+
+
+//sleep function
+//check if bed is in room --
+//check what room is in, different happenings for hotel or tenement or central park --
+//(check if name = somewhere in central park) 
+//check if nightmare has happened and if so do something different
+//check if fatigue is is low enough
+//reset time back to 9:05am but have it progress to the next day 
+//update the player ui
+//print out the proper dream sequence stuff or enter them into the right room
+const sleepFunction = () => {
+  const room = getRoom(disk.roomId);
+  const nightmareRoom = getRoom('nigh-1');
+  const nightmareRoom2 = getRoom('nigh2-1');
+
+
+      if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+        println(`You roll over and decide to fall back asleep.`);
+        pressEnter('nigh-1');
+      } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
+        println(`You roll over and decide to fall back asleep.`);
+        pressEnter('nigh-2nd');
+      } else if (room.name === 'Somewhere in Central Park' && playFat <= 40) {
+        enterRoom('cent-slee');
+      } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
+        println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        pressEnter('nigh-1');
+      } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
+        println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        pressEnter('nigh-2nd');
+      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat <= 40) {
+        println(`You lie down on the charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
+        pressEnter('nigh2-1');
+      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
+        enterRoom('nigh2-4');
+      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
+        println(`You don't feel tired enough to sleep yet.`);
+      } else if (!room.hasBed && room.isStreet) {
+        println(`Napping in the city isn't possible.`)
+      } else if (!room.hasBed && !room.isStreet) {
+        println(`You need a bed to sleep.`);
+      } else {
+        console.log('sleep function malfunctioning.');
+      } 
+    // } else {
+    //   println(`You don't feel tired enough to sleep yet.`)
+    // }
+    
+};
+
+
+
+//random events (x indexer, wacky wanderer, kid with rag, flavor text)
+//player score
+//difficulty level tie ins
+
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//           HOGANS WORKSPACE ABOVE           \\
+////////////////////////////////////////////////
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // objects with methods for handling commands
 // the array should be ordered by increasing number of accepted parameters
@@ -1078,6 +1314,8 @@ let commands = [
     f: forward,
     dial,
     dialing,
+    beg,
+    sleep: sleepFunction,
   },
   // one argument (e.g. "go north", "take book")
   {
