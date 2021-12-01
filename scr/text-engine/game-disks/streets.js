@@ -27085,8 +27085,11 @@ const streets = {
       id: '76-cpkw',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: '',
+      desc: `The granite facade of the New York Historical Society stretches from 76th to 77th St. in a single crisp classical gestalt. Ionic columns rise from a fortress-like base, at the center of which the museum's small entry looks like an afterthought, as though the architect only reluctantly has conceded the possibility that people might go in and out`,
       isStreet: true,
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '77-cpkw'},
         {dir: 'south', id: '75-cpkw'},

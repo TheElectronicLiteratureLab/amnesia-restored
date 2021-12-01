@@ -84,7 +84,7 @@ const luncheonette = { // Luncheonette Room
       [
         {dir: 'no', id: 'lunch-total'},
         {dir: 'leave', id: 'lunch-leave'},
-      ]
+      ],
     },
     {
       id: 'lunch-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
