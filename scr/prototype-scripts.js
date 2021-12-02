@@ -6,7 +6,7 @@
 
 
 
-let difficulty;
+let difficultyChoice;
 let styling;
 
 
@@ -23,67 +23,96 @@ let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM
 
 // button scripts
 let newGame = () => {
-    document.getElementById("game-options").style.display = "grid";
     document.getElementById("game-title").style.display = "none";
+    document.getElementById("game-options").style.display = "grid";
+}
+
+let loadGame = () => {
+    document.getElementById("game-title").style.display = "none";
+    document.getElementById("game-load").style.display = "grid";
 }
 
 let displayDesc = (id) => {
     let x = document.getElementById("difficulty-options-descriptions");
     let y = [
-        ["story-mode", storyDesc],
-        ["normal-mode", normalDesc],
-        ["classic-mode", classicDesc],
+        ["story-mode", storyDesc, difficultyLevels[0]],
+        ["normal-mode", normalDesc, difficultyLevels[1]],
+        ["classic-mode", classicDesc, difficultyLevels[2]],
     ]
     let z;
+    let a;
     let i;
     for(i = 0; i < y.length; i++){
         if(id === y[i][0]){
             z = y[i][1];
+            a = y[i][2];
         }
     }
     x.innerHTML = z;
-    document.getElementById(id).style.textDecoration = 'underline';
-    document.getElementById(id).style.textDecorationColor = 'red';
-    document.getElementById(id).style.textDecorationStyle = 'solid';
-    document.getElementById(id).style.textDecorationThickness = '3px';
-
-    difficulty = id;
+    difficulty = a;
     console.log(difficulty);
 }
 
 let visualDesc = (id) => {
+    
+    
     let a = document.getElementById("visual-mode-options-descriptions");
     let b = [
-        ["restored-mode", restoredDesc],
-        ["apple-mode", appleDesc],
-        ["comm-mode", commDesc],
-        ["IBM-mode", IBMDesc]
+        ["restored-mode", restoredDesc, 'restored'],
+        ["apple-mode", appleDesc, 'apple'],
+        ["comm-mode", commDesc, 'commodore'],
+        ["IBM-mode", IBMDesc, 'IBM']
     ]
     let c;
+    let d;
     let i;
 
     for(i = 0; i < b.length; i++){
         if(id === b[i][0]){
             c = b[i][1];
+            d = b[i][2];
         }
     }
     a.innerHTML = c;
-    styling = id;
+    styling = d;
     console.log(styling);
 }
 
 let beginGame = () => {
-    document.getElementById("game").style.display = "grid";
     document.getElementById("game-options").style.display = "none";
-
+    document.getElementById("game-load").style.display = "none";
+    document.getElementById("game").style.display = "grid";
     console.log(playHung);
 }
 
+let clickOn = false;
+let invOn = false;
+let addOn = false;
 
-
-let display = (id) => {
+let displayToggle = (id) => {
     
 
+    
+    if(invOn === true){
+        document.getElementById("inventory-display").style.display = "none";
+        document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-xIndex-display").style.display = "none";
+        invOn = false;
+    } else if (addOn === true){
+        document.getElementById("address-display").style.display = "none";
+        addOn = false;
+    } else {
+        document.getElementById(id).style.display = "block";
+        if(id === "inventory-display"){
+            invOn = true;
+        }
+    }
+
+    
+
+
+    
+    /*
     if(document.getElementById(id).style.display === "none"){
         document.getElementById(id).style.display = "block";
     } else {

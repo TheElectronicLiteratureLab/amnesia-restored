@@ -29,12 +29,15 @@
                     <div id="title-img">
                         <img id="amnesia-restored-logo-gif" src="scr/images/logo/image-logo-bannerblack2.jpg" alt="animated Amnesia: Restored logo">
                     </div>
+                    <div id="tagline">
+                        <h2>The Original Adventure Game by Thomas M. Disch</h2>
+                    </div>
                     <div id="game-button-container">
                         <div id="new-game-button">
                             <button class="game-button" onclick="newGame()">NEW GAME</button>
                         </div>
                         <div id="load-game-button">
-                            <button class="game-button" onclick="loadGameScreen()">LOAD GAME</button>
+                            <button class="game-button" onclick="loadGame()">LOAD GAME</button>
                         </div>
                     </div>
                 </div>
@@ -52,8 +55,6 @@
             <div class="game-item-2">
             </div>
             <div class="game-item-3">
-                
-
                 <div id="options-screen">
                     <div id="options-title">
                         <h2>Select Your Game Options</h2>
@@ -73,12 +74,53 @@
                         <h4 class="mode" id="IBM-mode" onclick="visualDesc(this.id)">IBM</h4>
                         <p id="visual-mode-options-descriptions"></p>
                     </div>
-
                     <div id="begin-game-button">
                         <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
                     </div>
                 </div>
-            
+            </div>
+            <div class="game-item-4">
+            </div>
+            <div class="game-item-5">
+            </div>
+        </div>
+
+        <div id="game-load">
+            <div class="game-item-1">
+            </div>
+            <div class="game-item-2">
+            </div>
+            <div class="game-item-3">
+                <div id="load-screen">
+                    <div id="load-title">
+                        <h2>Load a previously saved game.</h2>
+                    </div>
+                    <div id="load-saves">
+                        <div class="saves" id="first-save-container">
+                            <h4 class="saves-date" id="first-save-date"></h4>
+                            <h4 class="saves-time" id="first-save-time"></h4>
+                        </div>
+                        <div class="saves" id="second-save-container">
+                            <h4 class="saves-date" id="second-save-date"></h4>
+                            <h4 class="saves-time" id="second-save-time"></h4>
+                        </div>
+                        <div class="saves" id="third-save-container">
+                            <h4 class="saves-date" id="third-save-date"></h4>
+                            <h4 class="saves-time" id="third-save-time"></h4>
+                        </div>
+                        <div class="saves" id="fourth-save-container">
+                            <h4 class="saves-date" id="fourth-save-date"></h4>
+                            <h4 class="saves-time" id="fourth-save-time"></h4>
+                        </div>
+                        <div class="saves" id="fifth-save-container">
+                            <h4 class="saves-date" id="fifth-save-date"></h4>
+                            <h4 class="saves-time" id="fifth-save-time"></h4>
+                        </div>
+                    </div>
+                    <div id="load-begin-game-button">
+                        <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
+                    </div>
+                </div>
             </div>
             <div class="game-item-4">
             </div>
@@ -95,22 +137,22 @@
             <div class="game-item-2">
                 <div id="left-side-clickables">
                     <div class="clickable-container" id="inventory-clickable">
-                       
-                        <button class="iconbtn" id="inventory-button" onclick="display('inventory-display')">Inv</button>
+                        <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
+                        <button class="iconbtn" id="inventory-button" onclick="displayToggle('inventory-display', invOn)">Inv</button>
                     </div>
                     
                     <div class="clickable-container" id="address-book-clickable">
-                        
-                        <button class="iconbtn" id="address-book-button" onclick="display('address-display')">Add</button>
+                        <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
+                        <button class="iconbtn" id="address-book-button" onclick="displayToggle('address-display')">Add</button>
                     </div>
                     
                     <div class="clickable-container" id="map-clickable">
-                        
+                        <!-- icon insert <img class="clickable-image" id="map-icon" src=""> -->
                         <button class="iconbtn" id="map-button" onclick="display('map-display')">Map</button>
                     </div>
             
                     <div class="clickable-container" id="info-clickable">
-                        
+                        <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
                         <button class="iconbtn" id="info-button" onclick="display('info-display')">Info</button>
                     </div>
                 </div>
@@ -121,11 +163,8 @@
                         <!-- Player input -->
                         <div class="input"><span class="ml-2" id="arrow">></span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
                     </div>
-
                     <!-- clickables elements -->
-
                     <!-- left side clickables -->
-
                     <div id="inventory-display" class="clickables-left">
                         <button class="x-button" onclick="displayNone('inventory-display', 'inventory-item-display', 'inventory-xIndex-display')">X</button>
                         <h2 id="inventory-display-title">Inventory</h2>
@@ -135,7 +174,6 @@
                             <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
                         </div>
                     </div>
-
                     <div id="inventory-item-display">
                         <h2 id="item-name">Item Name</h2>
                         <img id="item-img" src="" alt="item image">
@@ -145,21 +183,16 @@
                             <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button> 
                         -->
                     </div>
-
                     <div id="inventory-xIndex-display">
                         <h2 id="item-name">X-Indexer</h2>
                         <img id="item-img" src="" alt="item image">
                     </div>
-
-                    
-
                     <div id="address-display" class="clickables-left">
                         <button class="x-button" onclick="displayNone('address-display')">X</button>
                         <h2 id="address-display-title">Address Book</h2>
                         <div id="addresses">
                         </div>
                     </div>
-
                     <!--
                     <div id="map-display">
                         <button class="x-button" onclick="displayNone('map-display')">X</button>
@@ -168,7 +201,6 @@
                         </div>
                     </div>
                     -->
-
                     <div id="info-display" class="clickables-left">
                         <button class="x-button" onclick="displayNone('info-display')">X</button>
                         <h2 id="info-display-title">Info</h2>
@@ -177,44 +209,44 @@
                     </div>
 
                     <!-- right side clickables -->
-
                     <div id="mode-display" class="clickables-right">
                         <button class="x-button" onclick="displayNone('mode-display')">X</button>
                         <h2 id="mode-display-title">Mode</h2>
                         <div id="mode">
                         </div>
                     </div>
-
                     <div id="achieve-display" class="clickables-right">
                         <button class="x-button" onclick="displayNone('achieve-display')">X</button>
                         <h2 id="achieve-display-title">Achievements</h2>
                         <div id="achieve">
                         </div>
                     </div>
-
                     <div id="help-display" class="clickables-right">
                         <button class="x-button" onclick="displayNone('help-display')">X</button>
                         <h2 id="help-display-title">Command Guide</h2>
                         <div id="help">
                         </div>
                     </div>
-
             </div>
             <div class="game-item-4">
                 <div id="right-side-clickables">
                     <div id="save-clickable">
+                        <!-- icon insert <img class="clickable-image" id="save-icon" src=""> -->
                         <button id="save-button" onclick="saveGame()">Save</button>
                     </div>
             
                     <div id="mode-clickable">
+                        <!-- icon insert <img class="clickable-image" id="mode-icon" src=""> -->
                         <button id="mode-button" onclick="display('mode-display')">Mode</button>
                     </div>
             
                     <div id="achievements-clickable">
+                        <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
                         <button id="achieve-button" onclick="display('achieve-display')">Achieve</button>
                     </div>
             
                     <div id="help-clickable">
+                        <!-- icon insert <img class="clickable-image" id="help-icon" src=""> -->
                         <button id="help-button" onclick="display('help-display')">Help</button>
                     </div>
                 </div>
@@ -227,18 +259,15 @@
                         </div>
                         <h3>HUNGER</h3>
                     </div>
-            
                     <div id="fatigue">
                         <div id="fatigue-bar-progress">
                             <div id="fatigue-bar"></div>
                         </div>
                         <h3>FATIGUE</h3>
                     </div>
-            
                     <div id="money-counter">
                         <h2 id="money">$1,203</h2>
                     </div>
-            
                     <div id="time-display">
                         <h2 id="time">12:32 A.M.</h2>
                     </div>
@@ -250,25 +279,21 @@
     
 
     <!-- Scripts (Including Engines)-->
-   
-
-   
-
     <!-- Include game engine -->
-  <!-- Be sure to load in dependencies first -->
-  <script src="scr/text-engine/parser.js"></script>
-  <script src="scr/text-engine/init.js"></script>
-  <script src="scr/prototype-scripts.js"></script>
-  <script src="scr/text-engine/pcommand.js"></script>
-  <script src="scr/text-engine/internalfunc.js"></script>
-  <script src='scr/text-engine/playercharacter.js'></script>
+    <!-- Be sure to load in dependencies first -->
+    <script src="scr/text-engine/parser.js"></script>
+    <script src="scr/text-engine/init.js"></script>
+    <script src="scr/prototype-scripts.js"></script>
+    <script src="scr/text-engine/pcommand.js"></script>
+    <script src="scr/text-engine/internalfunc.js"></script>
+    <script src='scr/text-engine/playercharacter.js'></script>
 
 
-  <!-- Include game data ('disk') -->
-  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+    <!-- Include game data ('disk') -->
+    <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
 
-<!-- Load disk into engine -->
-<script>loadDisk(amnesiaRestored);</script>
+    <!-- Load disk into engine -->
+    <script>loadDisk(amnesiaRestored);</script>
 
 </body>
 </html>

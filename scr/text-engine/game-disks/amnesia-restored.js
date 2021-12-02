@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-7', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [],
   rooms: [
     {
@@ -232,11 +232,12 @@ const amnesiaRestored = {
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {
+        /*
         document.getElementById('statusBar').style.display = 'grid';
         document.getElementById('hungerNumber').innerHTML = `${playHung}`;
         document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
         document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-        document.getElementById('time').innerHTML = `${days[zDays] + ' ' + hours[yHours] + ':' + minutes[xMinutes] + ' ' + amPm[qMeridiem]}`;
+        document.getElementById('time').innerHTML = `${days[zDays] + ' ' + hours[yHours] + ':' + minutes[xMinutes] + ' ' + amPm[qMeridiem]}`; */
         addItem('xindexer');
         reenableInput();
       },

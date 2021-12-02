@@ -215,7 +215,7 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
-  spawnTenement();
+  //spawnTenement();
   console.log('trying to spawn the tenement');
 
 };
