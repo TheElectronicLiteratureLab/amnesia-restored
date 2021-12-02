@@ -1276,22 +1276,10 @@ const randomText = () => {
       //have to workshop this a bit\\
 //instead of the exit thing maybe it's an onBlock that suddenly only takes that variable as an input to progress and if it isnt that then the player gets a warning... etc..
 //onblock then puts player back on corner where they came from. via lastRoom variable. 
-
-
-// function xStreetEvent () {
-//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
-//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
-
-
-//   console.log(aveNameNumber);
-//   console.log(xStreetName[aveNameNumber]);
-//   console.log(addressNumber);
-
-//   if (addressNumber >= 0 && addressNumber <= 199) {
-    
-//   }
+function xStreetEvent () {
   
-// };
+  
+};
 
 //player score\\
 //difficulty level tie ins\\
