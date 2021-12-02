@@ -217,7 +217,7 @@ let enterRoom = (id) => {
 
   const isStreetRoom = getRoom(disk.roomId);
 
-  if (isStreemRoom.isStreet){
+  if (isStreetRoom.isStreet){
     spawnTenement();
   }
   console.log('trying to spawn the tenement');

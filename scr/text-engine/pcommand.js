@@ -1125,6 +1125,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   
   } else if (difficulty === 'easy') {
     if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
@@ -1140,6 +1141,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
 
   } else if (difficulty === 'hard') {
     if (chance2 <= 20) { //chance to get nothing
@@ -1157,10 +1159,17 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   } else { // debug purposes
     println(`Oops something went wrong`);
   }
 }
+
+const giveMoney = (amount) => {
+  playMon = playMon + amount
+
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+};
 
 // drop item from inventory basically just reversed the take item function above.
 let dropItem = (itemName) => {
@@ -1264,7 +1273,7 @@ const randomText = () => {
 
 
 //x street indexer encounter functionality
-//x street encounter has to happen in separate room, functionality would push and exit with direction of output into the rooms exits array.
+//x street encounter has to happen in separate room, functionality would push an exit with direction of output into the rooms exits array.
 //reverse engineer the output function for the x street indexer to create the variable outputs here
 //roll number for the index of the steet number array, dependent on [0] in that array generate the street number 
 //ex: '0-199' have number 1-199 generated || 1400-1499 have a number 1400-1499 generated 
@@ -1275,11 +1284,51 @@ const randomText = () => {
       //maybe have a check about what room the player is in, if it is the x street room then break apart the input?
       //have to workshop this a bit\\
 //instead of the exit thing maybe it's an onBlock that suddenly only takes that variable as an input to progress and if it isnt that then the player gets a warning... etc..
-//onblock then puts player back on corner where they came from. via lastRoom variable. 
-function xStreetEvent () {
+//happens in "same" room, maybe have it be a character? I think a new room makes more sense though, could just clone the name from the room where entered?
+
+
+
+const xStreetEvent = () => {
+  const i1 = Math.floor(Math.random() * 31); //need number 0-30
+  const i2 = Math.floor(Math.random() * 15);//need number 0-14
+
+  const a = parseInt(xStreetNumber[i1].name);
+
+  if (a === 0) { //if the variable is 0 
+    encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
+  } else { //if the variable is not zero
+     encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
+  } 
   
+  encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
+
+  console.log(`can you help me find ${encounterStreetNumber} ${encounterStreetName}?`);
+
+  encounterAnswer = xStreetNumber[i1].value[i2];
+
+  xStreetC = encounterStreetNumber % 10; 
+
+  if(xStreetC === 1) {
+    xStreetD = `${encounterAnswer}st`;
+  } else if (xStreetC === 2) {
+    xStreetD = `${encounterAnswer}nd`;
+  } else if (xStreetC === 3) {
+    xStreetD = `${encounterAnswer}rd`
+  } else {
+    xStreetD = `${encounterAnswer}th`
+  };
+
+  console.log(xStreetD);
+
+  const room = getRoom('xStreet-6');
+
+  room.desc = `Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+
+  enterRoom('xStreet');
   
 };
+//encounter needs to happen on 2nd move after leaving hotel then not sure when after that
+
 
 //player score\\
 //difficulty level tie ins\\
