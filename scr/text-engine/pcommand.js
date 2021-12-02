@@ -1273,61 +1273,47 @@ const randomText = () => {
 
 
 //x street indexer encounter functionality
-//x street encounter has to happen in separate room, functionality would push an exit with direction of output into the rooms exits array.
-//reverse engineer the output function for the x street indexer to create the variable outputs here
-//roll number for the index of the steet number array, dependent on [0] in that array generate the street number 
-//ex: '0-199' have number 1-199 generated || 1400-1499 have a number 1400-1499 generated 
-//then set to variable
-//roll number for the index of the street name array, assign that string in the array to a variable 
-//find the proper answer to the interaction dependent on the variables above then assign answer to variable
-//push exit into x street room that is that variable (unsure of how to add the proper suffix to it in the parser)
-      //maybe have a check about what room the player is in, if it is the x street room then break apart the input?
-      //have to workshop this a bit\\
-//instead of the exit thing maybe it's an onBlock that suddenly only takes that variable as an input to progress and if it isnt that then the player gets a warning... etc..
-//happens in "same" room, maybe have it be a character? I think a new room makes more sense though, could just clone the name from the room where entered?
-
-
-
 const xStreetEvent = () => {
   const i1 = Math.floor(Math.random() * 31); //need number 0-30
   const i2 = Math.floor(Math.random() * 15);//need number 0-14
 
-  const a = parseInt(xStreetNumber[i1].name);
+  //get an integer from a string within the numbers array based on the random number above
+  const a = parseInt(xStreetNumber[i1].name); 
 
-  if (a === 0) { //if the variable is 0 
+  if (a === 0) { //if the integer is zero
     encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
-  } else { //if the variable is not zero
+  } else { //if the integer is anything else
      encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
   } 
   
   encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
 
-  console.log(`can you help me find ${encounterStreetNumber} ${encounterStreetName}?`);
+  encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
 
-  encounterAnswer = xStreetNumber[i1].value[i2];
+  
+  xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
 
-  xStreetC = encounterStreetNumber % 10; 
-
-  if(xStreetC === 1) {
-    xStreetD = `${encounterAnswer}st`;
-  } else if (xStreetC === 2) {
-    xStreetD = `${encounterAnswer}nd`;
-  } else if (xStreetC === 3) {
-    xStreetD = `${encounterAnswer}rd`
-  } else {
-    xStreetD = `${encounterAnswer}th`
+  if(xStreetC === 1) { //if that last digit is 1
+    xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 2) { //if that last digit is 2
+    xStreetD = `${encounterAnswer}nd`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 3) { //if that last digit is 3
+    xStreetD = `${encounterAnswer}rd` //provide another answer to the player based on proper suffix
+  } else { //since all the other digits have the same suffix 
+    xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
   };
 
-  console.log(xStreetD);
+  const room = getRoom('xStreet-6'); //get the room with the answer onBlock
 
-  const room = getRoom('xStreet-6');
 
+  //set that room description to the following based on the encounter variables generated above
   room.desc = `Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
 
+  //enter the x street encounter room chain
   enterRoom('xStreet');
   
 };
-//encounter needs to happen on 2nd move after leaving hotel then not sure when after that
+//encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
 
 
 //player score\\
