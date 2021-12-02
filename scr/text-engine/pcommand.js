@@ -921,22 +921,6 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
   }
 };*/
 
-//x street indexer encounter functionality
-// function xStreetEvent () {
-//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
-//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
-
-
-//   console.log(aveNameNumber);
-//   console.log(xStreetName[aveNameNumber]);
-//   console.log(addressNumber);
-
-//   if (addressNumber >= 0 && addressNumber <= 199) {
-    
-//   }
-  
-// };
-
 //dev command functions 
 
   //teleport to certain room
@@ -1265,10 +1249,52 @@ const sleepFunction = () => {
 };
 
 
+//save load
+
 
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
-//player score
-//difficulty level tie ins
+//dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
+//different arrays for different neighborhoods with different flavor texts, also for the x street
+//x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
+
+
+const randomText = () => {
+
+};
+
+
+//x street indexer encounter functionality
+//x street encounter has to happen in separate room, functionality would push and exit with direction of output into the rooms exits array.
+//reverse engineer the output function for the x street indexer to create the variable outputs here
+//roll number for the index of the steet number array, dependent on [0] in that array generate the street number 
+//ex: '0-199' have number 1-199 generated || 1400-1499 have a number 1400-1499 generated 
+//then set to variable
+//roll number for the index of the street name array, assign that string in the array to a variable 
+//find the proper answer to the interaction dependent on the variables above then assign answer to variable
+//push exit into x street room that is that variable (unsure of how to add the proper suffix to it in the parser)
+      //maybe have a check about what room the player is in, if it is the x street room then break apart the input?
+      //have to workshop this a bit\\
+//instead of the exit thing maybe it's an onBlock that suddenly only takes that variable as an input to progress and if it isnt that then the player gets a warning... etc..
+//onblock then puts player back on corner where they came from. via lastRoom variable. 
+
+
+// function xStreetEvent () {
+//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
+//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
+
+
+//   console.log(aveNameNumber);
+//   console.log(xStreetName[aveNameNumber]);
+//   console.log(addressNumber);
+
+//   if (addressNumber >= 0 && addressNumber <= 199) {
+    
+//   }
+  
+// };
+
+//player score\\
+//difficulty level tie ins\\
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
