@@ -34574,6 +34574,10 @@ const streets = {
 
         room1.enteredFrom = lastRoom.id;
 
+        lastRoom.onEnter = () => {
+          reenableInput();
+        }
+
         for (let i = 0; i < theseRooms.length; i++) {
           theseRooms[i].coord = lastRoom.coord;
           theseRooms[i].name = lastRoom.name;

@@ -1297,7 +1297,7 @@ const xStreetEvent = () => {
   };
   const room = getRoom('xStreet-6'); //get the room with the answer onBlock
   //set that room description to the following based on the encounter variables generated above
-  room.desc = `Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+  room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
   //enter the x street encounter room chain
   enterRoom('xStreet');
 };
