@@ -99,6 +99,7 @@ let encounterStreetName;
 let encounterAnswer;
 let xStreetC;
 let xStreetD; 
+let firstEncounter = false;
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st'];
 

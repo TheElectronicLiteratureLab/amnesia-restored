@@ -18633,13 +18633,11 @@ const streets = {
     {
       id: '53-amer',
       coord: [32.683, -14.418],
-      firstXStreet: false,
       name: 'W. 53rd St. and Ave. of Americas',
       onEnter: () => {
-        const room = getRoom(disk.roomId);
 
-        if(!room.firstXStreet) {
-          room.firstXStreet = true;
+        if(!firstEncounter) {
+          firstEncounter = true;
 
           xStreetEvent();
         } else {
@@ -20680,7 +20678,6 @@ const streets = {
     {
       id: '54-5',
       coord: [34.216, -6.943],
-      firstXStreet: false,
       name: 'W. 54th St. and 5th Ave.',
       desc: `There is a subway entrance at this corner.`,
       isStreet: true,
@@ -20688,8 +20685,8 @@ const streets = {
       onEnter: () => {
         const room = getRoom(disk.roomId);
 
-        if(!room.firstXStreet) {
-          room.firstXStreet = true;
+        if(!firstEncounter) {
+          firstEncounter = true;
 
           xStreetEvent();
         } else {
@@ -20857,16 +20854,13 @@ const streets = {
     {
       id: '53-madi',
       coord: [32.806, -2.571],
-      firstXStreet: false,
       name: 'E. 53rd St. and Madison Ave.',
       desc: ``,
       isStreet: true,
       onEnter: () => {
-        const room = getRoom(disk.roomId);
 
-        if(!room.firstXStreet) {
-          room.firstXStreet = true;
-
+        if(!firstEncounter) {
+          firstEncounter = true;
           xStreetEvent();
         } else {
           return;
@@ -21395,7 +21389,6 @@ const streets = {
     {
       id: '52-5',
       coord: [31.222, -6.876],
-      firstXStreet: false,
       name: 'W. 52nd St. and 5th Ave.',
       desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
 
@@ -21403,8 +21396,8 @@ const streets = {
       onEnter: () => {
         const room = getRoom(disk.roomId);
 
-        if(!room.firstXStreet) {
-          room.firstXStreet = true;
+        if(firstEncounter) {
+          firstEncounter = true;
 
           xStreetEvent();
         } else {
@@ -34574,7 +34567,7 @@ const streets = {
 
         room1.enteredFrom = lastRoom.id;
 
-        lastRoom.onEnter = () => {
+        lastRoom.onEnter = () => { 
           reenableInput();
         }
 
@@ -34664,26 +34657,3 @@ const streets = {
     },
   ]
 }
-
-//A confused-looking young man with a sparse moustache comes up to you. 
-
-  //'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to 1041 lexington Avenue'.
-      //[press enter]
-  
-  //You realize you have the little round X-Street Indexer supplied you by the Sunderland for just this very purpose, and immediately refer to it to answer the man's question. After twirling the dials for a moment, you tell him the cross street is: 
-
-  //------------correct one
-    //'Gosh, Thanks!' he says, slipping you a dollar bill as he hurries off. You try calling after him to come back, but he is lost around a corner, and to pursue him would be fruitless.
-//[press enter]
-
-    //And yet you wish you could, because somewhere out of your atrophied memory has come a realization of sublime accuracy: the cross-street you gave him was completely incorrect. You feel guilty about taking his dollar, but you need it pretty badly right now and after a moment's hesitation bury it deep inside your pocket.
-//[press enter]
-
-  //------------incorrect one 
-    //'That doesn't sound right,' he says. 'Do you want to try doing that again?'
-  //------------incorrect again
-//kicks you back to the street corner out of the room and printsln
-      //The man's eyes go wide, like trap doors opening beneath your feet, sending you tumbling, falling wildly into darkness. In one glimpse back up at the world of the living, you see his face looking down at you and the pistol in his hand, and hear his voice saying, with an odd far-away echo: 
-
-      //'You shouldn't have tried to trick me . . .'
-//[press enter] -- GAME OVER
