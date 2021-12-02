@@ -265,13 +265,35 @@ const nyhistorical = {
             hasEntered: false,
             desc: `The lamps are beautiful in the self-evident way that a sunset is beautiful, or a coral reef, or water over rock. Each mortised piece of glass has its own focused loveliness, as a single flower does, or a single jewel. En masse, their effect is indescribable.`,
             onEnter: () => {
-                const room = getRoom('nyhist-alice-3');
-                if (!room.hasEntered){
-                    room.hasEntered = true;
-                    pressEnter('nyhist-alice-4');
-                }else{
-                pressEnter('nyhist-alice-revisted');
+                reenableInput();
+                const room = getRoom('nyhist-alice-3')
+                if (room.hasEntered){
+                    pressEnter('nyhist-alice-revisted');
                 }
+            },
+            onBlock: () => {
+                if(prevInput === "wait"){
+                incrementHour();
+                println(`You wait for an hour. Strangely, you don't feel any impatience, for the Tiffany lamps are an endless source of wonder.`);
+                }
+                if (qMeridiem === 1){
+                    console.log(qMeridiem);
+                    enterRoom('nyhist-alice-5');
+                }else if(yHours === 0){
+                    console.log(yHours);
+                    enterRoom('nyhist-alice-5');
+                }else if(yHours === 1){
+                    console.log(yHours);     
+                    enterRoom('nyhist-alice-5');
+                }else if(yHours === 2){
+                    console.log(yHours);     
+                    enterRoom('nyhist-alice-5');
+                }else{
+                    console.log(yHours);
+                }
+                if(prevInput === "leave"){
+                    enterRoom('nyhist-leave');
+               }
             },
         },
         {
@@ -283,24 +305,438 @@ const nyhistorical = {
             },
         },
         {
-            id: 'nyhist-alice-4', // New York Historical 2nd floor
+            id: 'nyhist-leave', //If the player already visited the previous room, and therefore already talked with Alice.
             name: 'N.Y. Historical Society', 
-            hasEntered: false,
-            desc: `You wait for fifteen minutes. Strangely, you don't feel any impatience, for the Tiffany lamps are an endless source of wonder.`,
+            desc: `You leave the New York Historical Society.`,
             onEnter: () => {
-                if (qMeridiem = 1 && (yHours === 0 || 1 || 12)){
-                    room.hasEntered=true;
-                    pressEnter('nyhist-alice-5');
-                }
+                pressEnter('76-cpkw');
             },
         },
         {
             id: 'nyhist-alice-5', // New York Historical 2nd floor
             name: 'N.Y. Historical Society', 
-            hasEntered: false,
             desc: `You begin to feel as you did on entering the sauna, a giddiness and trembling, a sense of your mind speeding away from your will's control with a purpose all on its own. But you don't faint.`,
             onEnter: () => {
-                pressEnter('nyhist-alice-5');
+                const room = getRoom('nyhist-alice-3') // Marking the intro room as visited, so that once we finish this sequence they can't repeat it.
+                room.hasEntered = true;
+                pressEnter('nyhist-alice-6');
+            },
+        },
+        {
+            id: 'nyhist-alice-6', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `You just stand there spellbound, until you hear, close at hand, a voice that whispers, 'John, darling John.' You turn around. It is Alice. 'Do you remember,' she asks you, 'the first time that I brought you here?'`,
+            onLook: () => {
+                const room = getRoom('nyhist-alice-6');
+                room.desc = `"Don't be a pain in my side, John. Do you remember the first time I brought you here?'`;
+            },
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === "yes"){
+                    enterRoom('nyhist-alice-7');
+                }else if(prevInput === "no"){
+                    enterRoom('nyhist-alice-7');
+                }else{
+                    println(`"Don't be a pain in my side, John. Do you remember the first time I brought you here?'`);
+                }
+            },
+        },
+        {
+            id: 'nyhist-alice-7', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `We kissed beside this very lamp that you've been standing here staring at so long. And the vow we swore.\n 
+
+            She places her hands, gently, on your shoulders, and tilts her head back, closing her eyes as she does so. She waits for your kiss.`,
+            onEnter: () => {
+                pressEnter('nyhist-alice-8');
+            },
+        },
+        {
+            id: 'nyhist-alice-8', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `You kiss her and she yields to your lips.\n 
+            'Does that mean what I hope it does?' She asks you when she has caught her breath. 'Will you marry me now?'`,
+            onEnter: () => {
+               reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === "yes"){
+                    enterRoom('nyhist-sheep-1'); // heading to the sheep ending
+                }else if(prevInput === "no"){
+                    enterRoom('nyhist-ask-1');
+                }else{
+                    enterRoom('nyhist-ask-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-sheep-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'Oh darling,' she whispers, 'we'll be so happy.`,
+            onEnter: () => {
+                pressEnter('nyhist-sheep-2');
+            },
+        },
+        {
+            id: 'nyhist-sheep-2', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'Once you've decided to put your fate in Alice's hands, everything moves forward with a dreamlike ease and smoothness and speed. You're married that afternoon before a justice of the peace, and that evening you board a Qantas jet for Melbourne, Australia.`,
+            onEnter: () => {
+                pressEnter('sheep-ending'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-ask-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `If looks could kill, the Neustadt Collection would just have acquired a corpse.\n
+
+            'Damn you, John. I guess you're too confused to think straight. Let's talk it out. Ask me what you need to know.'`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'luke'){
+                    enterRoom('nyhist-luke-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-ask-2', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"Maybe Xavier Hollings is only a role you've played, one among many -- though I doubt that any of your other roles paid so well. It all started about a year ago when the real Xavier Hollings got busted for drugs. Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him -- and serve his time, if you had to. `,
+            onEnter: () => {
+                pressEnter('nyhist-ask-3'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-ask-3', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"You took his place, and got sentenced to five years at Revoltillo. The idea for the switch came from when you'd been at college together and you'd substituted for him at some exams. Your physical resemblance must have been uncanny, but I've never laid eyes on the real Xavier Hollings."`,
+            onEnter: () => {
+                pressEnter('nyhist-ask-4'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-ask-4', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"As soon as you went to prison, he had to go into hiding, and then, when you escaped, killing a guard in the process, he was in a fix. And very pissed off with you, I would think. Anyhow now you know as much as I do about it. And you may appreciate a little better the wisdom of emigrating to Australia. How about it? Does a sheep ranch look more appealing now?"`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === 'yes'){
+                    enterRoom('nyhist-sheep-1'); // takes you to sheep ending
+                }else{
+                    enterRoom('nyhist-ask-5');
+                }
+            },
+        },
+        {
+            id: 'nyhist-ask-5', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'Well, John, you cannot blame a girl for trying, says Alice, as tears begin to well up the recesses of her eyes.`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'luke'){
+                    enterRoom('nyhist-luke-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-zane-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `She looks stunned at your question. 'How did you learn about -- ' Her surprise narrows to suspicion. 'Your memory is starting to come back, isn't it?' `,
+            onEnter: () => {
+                pressEnter('nyhist-zane-2'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-zane-2', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `When you deny this, she takes a deep breath, squares her shoulders, and says, 'I promised myself I'd never tell you this, but I guess there's no point now in trying to spare you. You are Zane Bester. You got into the mess you're in now about a year ago when a man named Xavier Hollings, an old college buddy of yours, went down to Texas and got busted for drugs.`,
+            onEnter: () => {
+                pressEnter('nyhist-zane-3'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-zane-3', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him -- and serve his time, if you had to. `,
+            onEnter: () => {
+                pressEnter('nyhist-zane-4'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-zane-4', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `You took his place, and got sentenced to five years at Revoltillo. The idea for the switch came from when you'd been at college together and you'd substituted for him at some exams. Your physical resemblance must have been uncanny, but I've never laid eyes on the real Xavier Hollings.`,
+            onEnter: () => {
+                pressEnter('nyhist-zane-5'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-zane-4', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `As soon as you went to prison, he had to go into hiding, and then, when you escaped, killing a guard in the process, he was in a fix. And very pissed off with you, I would think. Anyhow now you know as much as I do about it. And you may appreciate a little better the wisdom of emigrating to Australia. How about it? Does a sheep ranch look more appealing now?`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === 'yes'){
+                    enterRoom('nyhist-sheep-1'); // takes you to sheep ending
+                }else{
+                    enterRoom('nyhist-ask-6');
+                }
+            },
+        },
+        {
+            id: 'nyhist-ask-6', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'Well, John, you cannot blame a girl for trying, says Alice, as tears begin to well up the recesses of her eyes.`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === 'luke'){
+                    enterRoom('nyhist-luke-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-luke-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'He isn't really my father. I guess you sensed that, didn't you? I don't know that much more about him-- and I don't want to. The shotgun wedding scenario was all his idea. \n
+
+            He said that with your amnesia getting worse every day that only an overt threat would get you moving. I was reluctant, but I went along with the idea for your sake, John. You've got to believe that.'`,
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-amnesia-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"You were already beginning to suffer the effects of it when we met, back in February. You told me then that you sort of enjoyed not having an identity. You said it was like skinny-dipping."`,
+            onEnter: () => {
+                pressEnter('nyhist-amnesia-2'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-amnesia-2', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"It was only when you started forgetting things that happened in the last week, or last night, that you started to worry, Some mornings I'd have to explain the whole situation to you like you were an actor coming in to audition for a part. At first I didn't believe you. I thought the amnesia was just a put-on, like your cock-and-bull story about being a helicopter pilot."`,
+            onEnter: () => {
+                reenableInput();
+            },
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'luke'){
+                    enterRoom('nyhist-luke-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-murder-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"First you were busted for drugs, now you're wanted for murder! That's the real reason for going to Australia. I can't tell you any more about your escape or the guard you killed. Anyhow by the time we met you only had a couple of memories left from that whole time. Something about a bowl of chili with a dead tarantula in it."`,
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'Who am I?'){
+                    enterRoom('nyhist-who-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-who-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"Who are you? Why you're whoever you say you are. John Cameron, the last time I heard. I hope you're not tired of that identity already."`,
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'ann'){
+                    enterRoom('nyhist-ann-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-ann-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `"I don't know the woman from Eve. I found a letter she'd written to you once inside a desk drawer. I remember the name on the letterhead. Out of jealousy, I suppose. When we parted company in the chapel, I left notes for you everywhere I could think that you might show up. And the one I left with Ann was the one that got through."`,
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-lila-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `Alice pretends to take an interest in one of the lamps, avoiding your gaze. I can't really say I know anyone by that name.`,
+            onBlock: () => {
+                if(prevInput === 'xavier'){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput ==="hollings"){
+                    enterRoom('nyhist-ask-2');
+                }else if(prevInput === "zane"){
+                    enterRoom('nyhist-zane-1');
+                }else if(prevInput === 'amneisa'){
+                    enterRoom('nyhist-amnesia-1');
+                }else if(prevInput === 'murder'){
+                    enterRoom('nyhist-murder-1');
+                }else if(prevInput === 'lila'){
+                    enterRoom('nyhist-lila-1');
+                }else{
+                    enterRoom('nyhist-denise-1');
+                }
+            },
+        },
+        {
+            id: 'nyhist-denise-1', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `Alice ignores your question and gives you a cutting look. `,
+            onEnter: () => {
+                pressEnter('nyhist-denise-2'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-denise-2', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `'All these questions, questions, questions are getting us nowhere. You really never loved anyone but...'\n
+
+            She hesitates and then smiles. \m
+            
+            '...Denise. Good-bye and good riddance!' There are tears in her eyes as she turns and leaves the hall. `,
+            onEnter: () => {
+                pressEnter('nyhist-denise-3'); //Goes directly to sheep ending
+            },
+        },
+        {
+            id: 'nyhist-denise-3', // New York Historical 2nd floor
+            name: 'N.Y. Historical Society', 
+            desc: `You follow Alice, from a distance, down the staircase and out of the museum. She turns right and heads around a corner. You quicken your pace, but when you reach the corner she's turned, there is no sign of her anywhere in the street.`,
+            onEnter: () => {
+                pressEnter('76-cpkw'); //Goes directly to sheep ending
             },
         },
     ],

@@ -48,7 +48,7 @@ let tenementSpawned = false;
 let xMinutes = 1;
 let yHours = 8;
 let zDays = 0;
-let qMeridiem = 0
+let qMeridiem = 0;
 
 //variables needed for beg command
 let caughtCoords1;

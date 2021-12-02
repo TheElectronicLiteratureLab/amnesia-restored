@@ -969,7 +969,7 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
 
 
 //spawn tenement function
-function spawnTenement() {
+/* function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
   const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
@@ -1015,7 +1015,7 @@ function spawnTenement() {
         }
 
 };
-
+*/
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
   const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
