@@ -138,22 +138,22 @@
                 <div id="left-side-clickables">
                     <div class="clickable-container" id="inventory-clickable">
                         <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
-                        <button class="iconbtn" id="inventory-button" onclick="displayToggle('inventory-display', invOn)">Inv</button>
+                        <button class="iconbtn" id="inventory-button" onclick="displayToggle('inventory-display', 'inventory')">Inv</button>
                     </div>
                     
                     <div class="clickable-container" id="address-book-clickable">
                         <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
-                        <button class="iconbtn" id="address-book-button" onclick="displayToggle('address-display')">Add</button>
+                        <button class="iconbtn" id="address-book-button" onclick="displayToggle('address-display', 'address')">Add</button>
                     </div>
                     
                     <div class="clickable-container" id="map-clickable">
                         <!-- icon insert <img class="clickable-image" id="map-icon" src=""> -->
-                        <button class="iconbtn" id="map-button" onclick="display('map-display')">Map</button>
+                        <button class="iconbtn" id="map-button" onclick="displayToggle('map-display', 'map')">Map</button>
                     </div>
             
                     <div class="clickable-container" id="info-clickable">
                         <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
-                        <button class="iconbtn" id="info-button" onclick="display('info-display')">Info</button>
+                        <button class="iconbtn" id="info-button" onclick="displayToggle('info-display', 'info')">Info</button>
                     </div>
                 </div>
             </div>
@@ -237,17 +237,17 @@
             
                     <div id="mode-clickable">
                         <!-- icon insert <img class="clickable-image" id="mode-icon" src=""> -->
-                        <button id="mode-button" onclick="display('mode-display')">Mode</button>
+                        <button id="mode-button" onclick="displayToggle('mode-display', 'mode')">Mode</button>
                     </div>
             
                     <div id="achievements-clickable">
                         <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
-                        <button id="achieve-button" onclick="display('achieve-display')">Achieve</button>
+                        <button id="achieve-button" onclick="displayToggle('achieve-display', 'achieve')">Achieve</button>
                     </div>
             
                     <div id="help-clickable">
                         <!-- icon insert <img class="clickable-image" id="help-icon" src=""> -->
-                        <button id="help-button" onclick="display('help-display')">Help</button>
+                        <button id="help-button" onclick="displayToggle('help-display', 'help')">Help</button>
                     </div>
                 </div>
             </div>

@@ -156,8 +156,6 @@ img {
    grid-column: 1 / span 4;
 }
 
-
-
 .mode {
    justify-self: right;
 }
@@ -317,7 +315,6 @@ img {
 /* clickable elements styles */
 
 .clickables-left{
-   display: none;
    position: absolute;
    background-color: rgba(121, 121, 121, 0.945);
    border-right: 2px solid plum;
@@ -325,7 +322,7 @@ img {
    height: 100%;
 }
 
-#intentory-display {
+#inventory-display {
    display: none;
 }
 
@@ -390,11 +387,6 @@ img {
    grid-column: 1 / span 2;
    grid: 3 / span 1;
    overflow-y: scroll;
-}
-
-#use-item-button {
-   grid-column: 2 / span 1;
-   justify-self: right;
 }
 
 .clickables-right {

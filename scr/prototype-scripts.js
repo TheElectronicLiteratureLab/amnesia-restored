@@ -54,8 +54,6 @@ let displayDesc = (id) => {
 }
 
 let visualDesc = (id) => {
-    
-    
     let a = document.getElementById("visual-mode-options-descriptions");
     let b = [
         ["restored-mode", restoredDesc, 'restored'],
@@ -85,50 +83,223 @@ let beginGame = () => {
     console.log(playHung);
 }
 
-let clickOn = false;
 let invOn = false;
 let addOn = false;
+let mapOn = false;
+let infoOn = false;
+let modeOn = false;
+let achieveOn = false;
+let helpOn = false;
 
-let displayToggle = (id) => {
-    
 
-    
-    if(invOn === true){
-        document.getElementById("inventory-display").style.display = "none";
-        document.getElementById("inventory-item-display").style.display = "none";
-        document.getElementById("inventory-xIndex-display").style.display = "none";
-        invOn = false;
-    } else if (addOn === true){
-        document.getElementById("address-display").style.display = "none";
-        addOn = false;
-    } else {
-        document.getElementById(id).style.display = "block";
-        if(id === "inventory-display"){
-            invOn = true;
+let displayToggle = (id, name) => {
+   let x = document.getElementById(id);
+   displayCheck(id, name);
+   
+   if(!x.style.display || x.style.display === "none"){
+        x.style.display = "block";
+   } else {
+        x.style.display = "none";
+   }
+}
+
+let displayCheck = (id, name) => {
+    if(name === 'inventory'){
+        invOn = true;
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(infoOn === true){
+            document.getElementById("inf0-display").style.display = "none";
+            infoOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("acieve-display").style.display = "none";
+            achieveOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
         }
     }
 
-    
-
-
-    
-    /*
-    if(document.getElementById(id).style.display === "none"){
-        document.getElementById(id).style.display = "block";
-    } else {
-        document.getElementById(id).style.display = "none";
-        document.getElementById("inventory-item-display").style.display = "none";
-        document.getElementById("inventory-xIndex-display").style.display = "none";
+    if(name === "address"){
+        addOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(infoOn === true){
+            document.getElementById("info-display").style.display = "none";
+            infoOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("achieve-display").style.display = "none";
+            achieveOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
+        }
     }
-    /*console.log(x);
 
-    if(x === false){
-        document.getElementById(id).style.display = "block";
-        x = true;
-    } else if(x === true){
-        document.getElementById(id).style.display = "none";
-        x = false;
-    }*/
+    if(name === "map"){
+        mapOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(infoOn === true){
+            document.getElementById("info-display").style.display = "none";
+            infoOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("achieve-display").style.display = "none";
+            achieveOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
+        }
+    }
+
+    if(name === "info"){
+        infoOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("achieve-display").style.display = "none";
+            achieveOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
+        }
+    }
+
+    if(name === "mode"){
+        modeOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(infoOn === true){
+            document.getElementById("info-display").style.display = "none";
+            infoOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("achieve-display").style.display = "none";
+            achieveOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
+        }
+    }
+
+    if(name === "achieve"){
+        achieveOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(infoOn === true){
+            document.getElementById("info-display").style.display = "none";
+            infoOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(helpOn === true){
+            document.getElementById("help-display").style.display = "none";
+            helpOn = false;
+        }
+    }
+
+    if(name === "help"){
+        helpOn = true;
+        if(invOn === true){
+            document.getElementById("inventory-display").style.display = "none";
+            invOn = false;
+        }
+        if(addOn === true){
+            document.getElementById("address-display").style.display = "none";
+            addOn = false;
+        } 
+        if(mapOn === true){
+            document.getElementById("map-display").style.display = "none";
+            mapOn = false;
+        }
+        if(infoOn === true){
+            document.getElementById("info-display").style.display = "none";
+            infoOn = false;
+        }
+        if(modeOn === true){
+            document.getElementById("mode-display").style.display = "none";
+            modeOn = false;
+        }
+        if(achieveOn === true){
+            document.getElementById("help-display").style.display = "none";
+            achieveOn = false;
+        }
+    }
+
     
 }
 
