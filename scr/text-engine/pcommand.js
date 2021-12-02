@@ -1276,23 +1276,16 @@ const randomText = () => {
 const xStreetEvent = () => {
   const i1 = Math.floor(Math.random() * 31); //need number 0-30
   const i2 = Math.floor(Math.random() * 15);//need number 0-14
-
   //get an integer from a string within the numbers array based on the random number above
   const a = parseInt(xStreetNumber[i1].name); 
-
   if (a === 0) { //if the integer is zero
     encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
   } else { //if the integer is anything else
      encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
   } 
-  
   encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
-
   encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
-
-  
   xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
-
   if(xStreetC === 1) { //if that last digit is 1
     xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
   } else if (xStreetC === 2) { //if that last digit is 2
@@ -1302,16 +1295,11 @@ const xStreetEvent = () => {
   } else { //since all the other digits have the same suffix 
     xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
   };
-
   const room = getRoom('xStreet-6'); //get the room with the answer onBlock
-
-
   //set that room description to the following based on the encounter variables generated above
   room.desc = `Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
-
   //enter the x street encounter room chain
   enterRoom('xStreet');
-  
 };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
 
