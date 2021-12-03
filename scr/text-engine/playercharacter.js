@@ -69,7 +69,7 @@ const xStreetNumber = [
   {name: '500-599', value: [14,84,110,121,82,12,90,10,65,44,93,52,9,78,38] },
   {name: '600-699', value: [47,40,36,98,81,80,107,95,122,22,64,109,94,72,51] },
   {name: '700-799', value: [121,82,12,90,10,65,44,93,512,9,78,38,11,96,39] },
-  {name: '800-899', value: [98,81,80,107,985,122,22,64,109,94,72,51,13,56,6] },
+  {name: '800-899', value: [98,81,80,107,98,122,22,64,109,94,72,51,13,56,6] },
   {name: '900-999', value: [90,10,65,44,93,52,9,78,38,11,96,39,119,75,43] },
   {name: '1000-1099', value: [107,95,122,22,64,109,94,72,51,13,56,6,41,83,74] },
   {name: '1100-1199', value: [44,93,52,9,78,38,11,96,39,119,75,43,34,4,126] },
@@ -92,10 +92,21 @@ const xStreetNumber = [
   {name: '2800-2899', value: [124,117,17,25,5,86,68,30,89,32,106,58,47,40,36] },
   {name: '2900-2999', value: [87,2,114,104,29,23,16,46,67,14,84,110,121,82,12] },
   {name: '3000-3099', value: [25,5,86,68,30,89,32,106,58,47,40,36,98,81,80] },
-]
+];
 
-const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st']
+let encounterStreetNumber;
+let encounterStreetName;
+let encounterAnswer;
+let xStreetC;
+let xStreetD; 
+let firstEncounter = false;
 
+const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st'];
+
+const xStreetNameComplete = ['Riverside drive','Park Avenue','Madison Avenue','Lexington Avenue','Broadway','10th Avenue','9th Avenue','8th Avenue','7th Avenue','6th Avenue','5th Avenue','4th Avenue','3rd Avenue','2nd Avenue','1st Avenue'];
+
+
+//time stuff
 const minutes = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'];
 const hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11','12'];
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

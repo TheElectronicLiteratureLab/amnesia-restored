@@ -871,7 +871,7 @@ let read = (item) => {
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //           HOGANS WORKSPACE BELOW           \\
 ////////////////////////////////////////////////
-//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 //Phone Booth Creation
 function createPhone() { //create function
@@ -897,7 +897,7 @@ function createPhone() { //create function
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
-/*xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
   const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
   const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
   const streetNumber = aStreetNumber.value; //get the value of the street number drop down
@@ -920,23 +920,7 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
 
     }
   }
-};*/
-
-//x street indexer encounter functionality
-// function xStreetEvent () {
-//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
-//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
-
-
-//   console.log(aveNameNumber);
-//   console.log(xStreetName[aveNameNumber]);
-//   console.log(addressNumber);
-
-//   if (addressNumber >= 0 && addressNumber <= 199) {
-    
-//   }
-  
-// };
+};
 
 //dev command functions 
 
@@ -1058,14 +1042,24 @@ const incrementTime = () => {
     document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
-const incrementDay = () => {
-  xMinutes = 1;
-  yHours = 8;
-  zDays = zdays + 1;
+//increment day function
+const incrementDay = () => { 
+  xMinutes = 1; //reset these back to default position
+  yHours = 8; 
   qMeridiem = 0
 
+//if the days index ever gets 7 or above reset it back to zero 
+  if (zDays >= 7) {
+    zDays = 0;
+  } else { //else increment the days
+    zDays++;
+  }
+
+  //set player fatigue to max
   playFat = 100;
 
+
+//update all the UI elements to match properly
   let dumbMinutes = minutes[xMinutes];
   let dumbHours = hours[yHours];
   let dumbDays = days[zDays];
@@ -1075,7 +1069,26 @@ const incrementDay = () => {
   document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
-}
+};
+
+
+//increment hour function
+const incrementHour = () => {
+  if (yHours >= 12) { //if the hours every get to 12 or higher reset it back to 0
+    yHours = 0;
+  } else {
+    yHours++; //else increment the days
+  }
+
+//update the ui elements to match properly
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
+
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+
+};
 
 
 //beg command
@@ -1142,6 +1155,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   
   } else if (difficulty === 'easy') {
     if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
@@ -1157,6 +1171,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
 
   } else if (difficulty === 'hard') {
     if (chance2 <= 20) { //chance to get nothing
@@ -1174,10 +1189,17 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   } else { // debug purposes
     println(`Oops something went wrong`);
   }
 }
+
+const giveMoney = (amount) => {
+  playMon = playMon + amount
+
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+};
 
 // drop item from inventory basically just reversed the take item function above.
 let dropItem = (itemName) => {
@@ -1209,67 +1231,125 @@ let dropItem = (itemName) => {
   }
 };
 
-//save load
-
-
 //sleep function
-//check if bed is in room --
-//check what room is in, different happenings for hotel or tenement or central park --
-//(check if name = somewhere in central park) 
-//check if nightmare has happened and if so do something different
-//check if fatigue is is low enough
-//reset time back to 9:05am but have it progress to the next day 
-//update the player ui
-//print out the proper dream sequence stuff or enter them into the right room
 const sleepFunction = () => {
-  const room = getRoom(disk.roomId);
-  const nightmareRoom = getRoom('nigh-1');
-  const nightmareRoom2 = getRoom('nigh2-1');
+  const room = getRoom(disk.roomId); //get the current room
+  const nightmareRoom = getRoom('nigh-1'); //get the first nightmare room
+  const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
 
-
+      //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
       if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+        //print this line and then
         println(`You roll over and decide to fall back asleep.`);
+        //enter the nightmare room
         pressEnter('nigh-1');
+      //else if the current room is the first hotel room and the player has had a nightmare and the room has a bed then
       } else if (room.id === 'hote-room-1' && nightmareRoom.hasEntered && room.hasBed) {
+        //print this line and then
         println(`You roll over and decide to fall back asleep.`);
+        //enter the already had a nightmare room
         pressEnter('nigh-2nd');
+      //else if the player is in central park and their fatigure is less than 40
       } else if (room.name === 'Somewhere in Central Park' && playFat <= 40) {
+        //enter room of central park sleeping
         enterRoom('cent-slee');
+      //else if the player is in central park and their fatigue is more than 40
       } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
+        //print this line of not letting the player sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the hotel room revisited and haven't gotten a nightmare yet and the room has a bed
       } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
+        //print this line
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        //enter the proper room
         pressEnter('nigh-1');
+      //else if youre in the hotel room revisited and have gotten the nightmare and the room has a bed
       } else if (room.id === 'hote-revi' && nightmareRoom.hasEntered && room.hasBed) {
+        //print this line 
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
+        //enter the proper room
         pressEnter('nigh-2nd');
+      //else if youre in the tenement and havent gotten the second nightmare and the room has a bed and the player fatigue is less than 40 
       } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat <= 40) {
+        //print this line
         println(`You lie down on the charred and moldy mattress, close your eyes, and fall asleep almost instantly.`);
+        //enter proper room
         pressEnter('nigh2-1');
+      //else if youre in the tenement, you havent gotten the second nightmare, the room has a bed, and the player fatigure is more than 40
       } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
+        //print this line & dont let them sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the tenement, you have gotten the second nightmare, the room has a bed, and the fatigue is less than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
+        //enter proper room
         enterRoom('nigh2-4');
+      //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
+        //print this line and dont let them sleep
         println(`You don't feel tired enough to sleep yet.`);
+      //else if the room doesnt have a bed and the room is on the streets
       } else if (!room.hasBed && room.isStreet) {
+        //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
+      //else if the room doesnt have a bed and the room is not on the streets
       } else if (!room.hasBed && !room.isStreet) {
+        //print this line dont let them sleep
         println(`You need a bed to sleep.`);
+      //else console log this if stuff is broken.
       } else {
         console.log('sleep function malfunctioning.');
-      } 
-    // } else {
-    //   println(`You don't feel tired enough to sleep yet.`)
-    // }
-    
+      }     
 };
 
 
+//save load
+
 
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
-//player score
-//difficulty level tie ins
+//dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
+//different arrays for different neighborhoods with different flavor texts, also for the x street
+//x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
+
+
+const randomText = () => {
+
+};
+
+
+//x street indexer encounter functionality
+const xStreetEvent = () => {
+  const i1 = Math.floor(Math.random() * 31); //need number 0-30
+  const i2 = Math.floor(Math.random() * 15);//need number 0-14
+  //get an integer from a string within the numbers array based on the random number above
+  const a = parseInt(xStreetNumber[i1].name); 
+  if (a === 0) { //if the integer is zero
+    encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
+  } else { //if the integer is anything else
+     encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
+  } 
+  encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
+  encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
+  xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
+  if(xStreetC === 1) { //if that last digit is 1
+    xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 2) { //if that last digit is 2
+    xStreetD = `${encounterAnswer}nd`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 3) { //if that last digit is 3
+    xStreetD = `${encounterAnswer}rd` //provide another answer to the player based on proper suffix
+  } else { //since all the other digits have the same suffix 
+    xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
+  };
+  const room = getRoom('xStreet-6'); //get the room with the answer onBlock
+  //set that room description to the following based on the encounter variables generated above
+  room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+  //enter the x street encounter room chain
+  enterRoom('xStreet');
+};
+//encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
+
+
+//player score\\
+//difficulty level tie ins\\
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
