@@ -1,8 +1,11 @@
 /* across screen styles */
 
 html {
-   color: white;
    font-size: 1em;
+}
+
+body {
+   background-image: url(../img/png/newyork.png);
 }
 
 img {
@@ -37,7 +40,7 @@ img {
 }
 
 .game-item-1 {
-   background-color: purple;
+   background-color: transparent;
    height: 100%;
    grid-column: 2 / span 1;
    grid-row: 1 / span 1;
@@ -67,7 +70,7 @@ img {
 }
 
 .game-item-5 {
-   background-color: royalblue;
+   background-color: transparent;
    grid-column: 2 / span 1;
    grid-row: 3 / span 1;
 }
