@@ -34610,6 +34610,7 @@ const streets = {
               room.wrongAnswer = true;
               println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
             } else {
+              room.wrongAnswer = false;
               enterRoom('xStreet-5');
             }
           }
