@@ -23,7 +23,7 @@ img {
 .game-button {
    background-color: #0E0E0F;
    border: 2px solid plum;
-   color: white;
+   color: #E4E4E4;
    border-radius: 16px;
    transition-duration: 0.4s;
    padding: 10px 20px;
@@ -265,14 +265,31 @@ img {
    height: 100%;
 }
 
+/* width */
+#output::-webkit-scrollbar {
+   width: 15px;
+}
+   
+/* Track */
+ #output::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 5px #0E0E0F;
+   border-radius: 10px;
+}
+   
+/* Handle */
+#output::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
 .input {
    grid-column: 2 / span 1;
    grid-row: 3 / span 1;
-   border-top: .5px solid white;
+   border-top: .5px solid #E4E4E4;
 }
  
 #input {
-   color: white;
+   color: #E4E4E4;
    background: transparent;
    font-size: 1.5em;
    border: none;
@@ -282,7 +299,7 @@ img {
  
 #arrow {
    font-size: 1.5em;
-   color: white;
+   color: #E4E4E4;
    padding-right: 10px;
 }
  
@@ -301,41 +318,60 @@ img {
    height: 100%;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
+   padding-top: 4%;
 }
 
 #hunger-bar-progress {
-   width: 100%;
-   background-color: grey;
+   width: 85%;
+   background-color: #494959;
    border-radius: 16px;
 }
 
 #hunger-bar {
    width: 50%;
    height: 15px;
-   background-color: red;
+   background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }
 
 #fatigue-bar-progress {
-   width: 100%;
-   background-color: grey;
+   width: 85%;
+   background-color: #494959;
    border-radius: 16px;
 }
 
 #fatigue-bar {
    width: 50%;
    height: 15px;
-   background-color: plum;
+   background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }
 /* clickable elements styles */
 
 .clickables-left{
    position: absolute;
-   background-color: rgba(121, 121, 121, 0.945);
-   border-right: 2px solid plum;
+   background: transparent linear-gradient(151deg, rgba(73,73,89,.95) 0%, rgba(15,15,18,.95) 100%) 0% 0% no-repeat padding-box;
+   border-right: 2px solid #9C4FEC;
    width: 25%;
    height: 100%;
+}
+
+/* width */
+.clickables-left > *::-webkit-scrollbar {
+   width: 10px;
+}
+   
+/* Track */
+.clickables-left > *::-webkit-scrollbar-track {
+   background: #0E0E0F;
+   box-shadow: inset 0 0 5px #0E0E0F;
+   border-radius: 10px;
+}
+   
+/* Handle */
+.clickables-left >*::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
 }
 
 .clickable-container {
@@ -347,7 +383,7 @@ img {
 .iconbtn {
    width: 35%;
    height: 35%;
-   max-width: 50px;
+   max-width: 40px;
    background-color: transparent;
    border: none;
    cursor: pointer;
@@ -494,11 +530,29 @@ img {
 .clickables-right {
    display: none;
    position: absolute;
-   border-left: 2px solid plum;
+   border-left: 2px solid #9C4FEC;
    right: 0px;
-   background-color: rgba(121, 121, 121, 0.945);
+   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
    width: 25%;
    height: 100%;
+}
+
+/* width */
+.clickables-right > *::-webkit-scrollbar {
+   width: 10px;
+}
+   
+/* Track */
+.clickables-right > *::-webkit-scrollbar-track {
+   background: #0E0E0F;
+   box-shadow: inset 0 0 5px #0E0E0F;
+   border-radius: 10px;
+}
+   
+/* Handle */
+.clickables-right >*::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
 }
 
 #mode-display {
