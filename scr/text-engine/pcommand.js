@@ -1163,7 +1163,7 @@ const begLootTable = () => {
   } else { // debug purposes
     println(`Oops something went wrong`);
   }
-}
+};
 
 const giveMoney = (amount) => {
   playMon = playMon + amount
@@ -1259,14 +1259,15 @@ const sleepFunction = () => {
 
 
 //save load
+//player score\\
+//difficulty level tie ins\\
 
 
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
+//random event on enter 
 //dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
 //different arrays for different neighborhoods with different flavor texts, also for the x street
 //x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
-
-
 const randomText = () => {
 
 };
@@ -1303,9 +1304,6 @@ const xStreetEvent = () => {
 };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
 
-
-//player score\\
-//difficulty level tie ins\\
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
