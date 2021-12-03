@@ -38,7 +38,7 @@ img {
 }
 
 .game-item-2 {
-   background-color: blueviolet;
+   background-color: transparent;
    grid-column: 1 / span 1;
    grid-row: 2 / span 1;
    
@@ -53,7 +53,7 @@ img {
 }
 
 .game-item-4 {
-   background-color: rebeccapurple;
+   background-color: transparent;
    grid-column: 3 / span 1;
    grid-row: 2 / span 1;
    
@@ -320,6 +320,20 @@ img {
    border-right: 2px solid plum;
    width: 25%;
    height: 100%;
+}
+
+.clickable-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.iconbtn {
+   width: 50px;
+   height: 50px;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
 }
 
 #inventory-display {
