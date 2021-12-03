@@ -334,6 +334,76 @@ img {
    background-color: transparent;
    border: none;
    cursor: pointer;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   transition: background .3s;
+}
+
+/* left side clickable icons */
+#inventory-button {
+   background-image: url(../img/png/icon-inventory-purple.png);
+}
+
+#inventory-button:hover {
+   background-image: url(../img/png/icon-inventory-red.png);
+}
+
+#address-book-button {
+   background-image: url(../img/png/icon-address-purple.png);
+}
+
+#address-book-button:hover {
+   background-image: url(../img/png/icon-address-red.png);
+}
+
+#map-button {
+   background-image: url(../img/png/icon-map-purple.png);
+}
+
+#map-button:hover {
+   background-image: url(../img/png/icon-map-red.png);
+}
+
+#info-button {
+   background-image: url(../img/png/icon-info-purple.png);
+}
+
+#info-button:hover {
+   background-image: url(../img/png/icon-info-red.png);
+}
+
+/* right side clickable icons */
+#save-button {
+   background-image: url(../img/png/icon-save-purple.png);
+}
+
+#save-button:hover {
+   background-image: url(../img/png/icon-save-red.png);
+}
+
+#mode-button {
+   background-image: url(../img/png/icon-mode-purple.png);
+}
+
+#mode-button:hover {
+   background-image: url(../img/png/icon-mode-red.png);
+}
+
+#achieve-button {
+   background-image: url(../img/png/icon-achieve-purple.png);
+}
+
+#achieve-button:hover {
+   background-image: url(../img/png/icon-achieve-red.png);
+}
+
+#help-button {
+   background-image: url(../img/png/icon-help-purple.png);
+}
+
+#help-button:hover {
+   background-image: url(../img/png/icon-help-red.png);
 }
 
 #inventory-display {
