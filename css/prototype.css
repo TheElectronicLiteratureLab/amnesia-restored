@@ -10,8 +10,15 @@ img {
    height: auto;
 }
 
+#game-container {
+   font-family: 'Montserrat', sans-serif;
+   color: #E4E4E4;
+   font-size: 16px;
+   line-height: 1.5;
+}
+
 .game-button {
-   background-color: black;
+   background-color: #0E0E0F;
    border: 2px solid plum;
    color: white;
    border-radius: 16px;
@@ -45,7 +52,7 @@ img {
 }
 
 .game-item-3 {
-   background-color: black;
+   background-color: #0E0E0F;
    grid-column: 2 / span 1;
    grid-row: 2 / span 1;
    height: 100%;
@@ -221,6 +228,12 @@ img {
 }
 
 #currroom {
+   font-family: mostra-nuova, sans-serif;
+   font-size: 4em;
+   letter-spacing: 4px;
+   margin: 0;
+   font-weight: 300;
+   text-transform: uppercase;
    justify-self: center;
    align-self: flex-end;
 }
@@ -242,7 +255,7 @@ img {
 }
 
 #output {
-   grid-column: 2 / span 1;
+   grid-column: 2 / span 2;
    grid-row: 2 / span 1;
    overflow-x: hidden;
    overflow-y: scroll;
@@ -329,15 +342,16 @@ img {
 }
 
 .iconbtn {
-   width: 50px;
-   height: 50px;
+   width: 35%;
+   height: 35%;
+   max-width: 50px;
    background-color: transparent;
    border: none;
    cursor: pointer;
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
-   transition: background .3s;
+   transition: background .2s;
 }
 
 /* left side clickable icons */
