@@ -215,14 +215,14 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
+  
   const isStreetRoom = getRoom(disk.roomId);
 
-  if (isStreemRoom.isStreet){
-    spawnTenement();
+  if (isStreetRoom.isStreet){
+   spawnTenement();
   }
   console.log('trying to spawn the tenement');
-
-};
+}
 
 let response = (e) => {
   const ENTER = 13;
@@ -403,16 +403,8 @@ let callNum = (num) => {
   reenableInput();
   const room = getRoom(disk.roomId);
   let id;
-  let numbers = [
-    {number:'3', roomid:'phone-1'},
-    {number:'4', roomid:'phone-2'},
-    {number:'5', roomid:'phone-3'},
-    {number:'6', roomid:'phone-4'},
-    {number:'7', roomid:'phone-5'},
-    {number:'8', roomid:'phone-6'},
-    {number:'9', roomid:'phone-7'},
-    {number:'911', roomid:'phone-8'}
-  ];
+  
+  // add numbers.push 's to items in rooms instead of this function, to stop infinte pushing
   if(getItemInInventoryById('brochure')){
     numbers.push(
       {number:'555-1188', roomid:'phone-9'},
@@ -482,7 +474,6 @@ let enterNum = () => {
   document.getElementById("dialPad").style.display = "none";
   firstDial = true;
   document.getElementById("tutorial").style.display = "none";
-
 }
        
 let deleteNum = () => {
@@ -490,9 +481,10 @@ let deleteNum = () => {
 }
 
 let closeDial = () => {
-  document.getElementById("dialPad").style.display = "none";
-  document.getElementById("input").value = '';
   reenableInput();
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("tutorial").style.display = "none";
+  document.getElementById("input").value = "";
 }
 
 let openTutorial = () => {

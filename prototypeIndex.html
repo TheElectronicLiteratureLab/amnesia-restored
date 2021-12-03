@@ -138,12 +138,12 @@
                 <div id="left-side-clickables">
                     <div class="clickable-container" id="inventory-clickable">
                         <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
-                        <button class="iconbtn" id="inventory-button" onclick="displayToggle('inventory-display', 'inventory')">Inv</button>
+                        <button class="iconbtn" id="inventory-button" onclick="displayToggle('inventory-display', 'inventory'); currentInv()">Inv</button>
                     </div>
                     
                     <div class="clickable-container" id="address-book-clickable">
                         <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
-                        <button class="iconbtn" id="address-book-button" onclick="displayToggle('address-display', 'address')">Add</button>
+                        <button class="iconbtn" id="address-book-button" onclick="displayToggle('address-display', 'address'); currentAdd('addresses')">Add</button>
                     </div>
                     
                     <div class="clickable-container" id="map-clickable">
@@ -227,6 +227,33 @@
                         <div id="help">
                         </div>
                     </div>
+                    <div id="dialPad" class="clickables-right">
+                        <div id="dial-pad-buttons">
+                            <button id="toggleTutorial" onclick='openTutorial()'>i</button>
+                            <button id="close" onclick='closeDial()'>x</button>
+                        </div>
+                        <h2 id="dial-name">Dial Pad</h2>
+                        <h4 id="dial-info">Enter the phone number</h4>
+                        <div id="dial-keys">
+                          <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
+                          <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
+                          <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
+                          <button name="number" value="4" id="4key" onclick='numdialButton(this.id)'>4</button>
+                          <button name="number" value="5" id="5key" onclick='numdialButton(this.id)'>5</button>
+                          <button name="number" value="6" id="6key" onclick='numdialButton(this.id)'>6</button>
+                          <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
+                          <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
+                          <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
+                          <button name="delete" value="delete" id="deletekey" onclick='deleteNum()'>Delete</button>
+                          <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
+                          <button name="enter" value="enter" id="enterkey" onclick='enterNum()'>Enter</button>
+                        </div>
+                      </div>
+                    
+                      <div id='tutorial'>
+                        <h1>How to Use</h1>
+                        <p>Press number buttons on keyboard or use your mouse</p>
+                      </div>
             </div>
             <div class="game-item-4">
                 <div id="right-side-clickables">
@@ -290,10 +317,10 @@
 
 
     <!-- Include game data ('disk') -->
-    <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+    <script src="scr/text-engine/game-disks/Phase 1/hote-revi.js"></script>
 
     <!-- Load disk into engine -->
-    <script>loadDisk(amnesiaRestored);</script>
+    <script>loadDisk(hotereviDisk);</script>
 
 </body>
 </html>

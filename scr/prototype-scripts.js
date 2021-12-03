@@ -8,6 +8,16 @@
 
 let difficultyChoice;
 let styling;
+let numbers = [
+    {number:'3', roomid:'phone-1'},
+    {number:'4', roomid:'phone-2'},
+    {number:'5', roomid:'phone-3'},
+    {number:'6', roomid:'phone-4'},
+    {number:'7', roomid:'phone-5'},
+    {number:'8', roomid:'phone-6'},
+    {number:'9', roomid:'phone-7'},
+    {number:'911', roomid:'phone-8'}
+];
 
 
 let storyDesc = `This is story mode.`;
@@ -83,6 +93,61 @@ let beginGame = () => {
     console.log(playHung);
 }
 
+// clickables scripts
+
+let currentInv = () => {
+    applyInput("inv");
+    //console.log(items);
+    //document.getElementById("inventory").innerHTML = applyInput("inv");
+}
+
+let currentAdd = (id) => {
+    let x = document.getElementById(id);
+    x.innerHTML = '';
+    console.log(x);
+
+    let num = numbers;
+    // calls the div holding the numbers
+    let list = x;
+    // create a new div to hold the number
+    let newNumber = document.createElement('div');
+    // add a class to the divs
+    newNumber.setAttribute("class", "listedNum");
+    // create a new h3 element for contact name
+    let newConName = document.createElement('h3');
+    // create a new h4 element for number 
+    let newNum = document.createElement('h4');
+
+    num.forEach(e => {
+        let name = e.roomid;
+        let phoneNum = e.number;
+    
+        console.log(name);
+        console.log(phoneNum);
+        
+        displayNum(name, phoneNum);
+    })
+}
+
+let displayNum = (contact, number) => {
+    console.log(contact, number);
+    // call display
+    let listings = document.getElementById("addresses");
+    // create a div to hold listing
+    let newListing = document.createElement('div');
+    // add class to the divs
+    newListing.setAttribute("class", "listedNum");
+    // create an h3 el for contact name
+    let newCon = document.createElement('h3');
+    // create an h4 el for contact number
+    let newNum = document.createElement('h4');
+
+    // append the divs to the display
+    listings.appendChild(newListing);
+    newListing.appendChild(newCon).innerHTML = contact;
+    newListing.appendChild(newNum).innerHTML = number;
+}
+
 let invOn = false;
 let addOn = false;
 let mapOn = false;
@@ -94,7 +159,7 @@ let helpOn = false;
 
 let displayToggle = (id, name) => {
    let x = document.getElementById(id);
-   displayCheck(id, name);
+   displayCheck(name);
    
    if(!x.style.display || x.style.display === "none"){
         x.style.display = "block";
@@ -103,7 +168,7 @@ let displayToggle = (id, name) => {
    }
 }
 
-let displayCheck = (id, name) => {
+let displayCheck = (name) => {
     if(name === 'inventory'){
         invOn = true;
         if(addOn === true){
@@ -115,7 +180,7 @@ let displayCheck = (id, name) => {
             mapOn = false;
         }
         if(infoOn === true){
-            document.getElementById("inf0-display").style.display = "none";
+            document.getElementById("info-display").style.display = "none";
             infoOn = false;
         }
         if(modeOn === true){
@@ -123,7 +188,7 @@ let displayCheck = (id, name) => {
             modeOn = false;
         }
         if(achieveOn === true){
-            document.getElementById("acieve-display").style.display = "none";
+            document.getElementById("achieve-display").style.display = "none";
             achieveOn = false;
         }
         if(helpOn === true){
@@ -295,7 +360,7 @@ let displayCheck = (id, name) => {
             modeOn = false;
         }
         if(achieveOn === true){
-            document.getElementById("help-display").style.display = "none";
+            document.getElementById("achieve-display").style.display = "none";
             achieveOn = false;
         }
     }
@@ -303,10 +368,16 @@ let displayCheck = (id, name) => {
     
 }
 
-let displayNone = (inv, item, xIndex) => {
+let displayNone = (id) => {
+    document.getElementById(id).style.display = "none";
+    document.getElementById("inventory-item-display").style.display = "none";
+    document.getElementById("inventory-xIndex-display").style.display = "none";
+
+    /*
     document.getElementById(inv).style.display = "none";
     document.getElementById(item).style.display = "none";
     document.getElementById(xIndex).style.display = "none";
+    */
 }
 
 let openItem = (id, name) => {

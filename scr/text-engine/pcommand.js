@@ -548,10 +548,10 @@ let dial = () => {
     document.getElementById("tutorial").style.display = "block";
   }
   
-  if(room.id === 'hote-room' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+  if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     document.getElementById("input").value = document.getElementById("input").value + 'dialing ';
     let number;
-    document.getElementById('dialPad').style.display = "block";
+    document.getElementById('dialPad').style.display = "grid";
     document.querySelector('input').disabled = true;
     function checkKeyPressed(evt){
       if(evt.keyCode === 48){
@@ -619,7 +619,8 @@ let dial = () => {
 }
 
 let dialing = () => {
-  println(`Nope`)
+  println(`You have to enter in a number to be able to place a call. Wanna try again?`);
+  reenableInput();
 }
 
 // wear command
