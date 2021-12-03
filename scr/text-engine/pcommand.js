@@ -896,7 +896,7 @@ function createPhone() { //create function
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
-/*xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
   const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
   const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
   const streetNumber = aStreetNumber.value; //get the value of the street number drop down
@@ -919,23 +919,7 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
 
     }
   }
-};*/
-
-//x street indexer encounter functionality
-// function xStreetEvent () {
-//   let addressNumber = Math.floor(Math.random() * 3100); //random number between 0 - 3099
-//   let aveNameNumber = Math.floor(Math.random() * 16); //random number between 0 - 15
-
-
-//   console.log(aveNameNumber);
-//   console.log(xStreetName[aveNameNumber]);
-//   console.log(addressNumber);
-
-//   if (addressNumber >= 0 && addressNumber <= 199) {
-    
-//   }
-  
-// };
+};
 
 //dev command functions 
 
@@ -1170,6 +1154,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   
   } else if (difficulty === 'easy') {
     if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
@@ -1185,6 +1170,7 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
 
   } else if (difficulty === 'hard') {
     if (chance2 <= 20) { //chance to get nothing
@@ -1202,10 +1188,17 @@ const begLootTable = () => {
       println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
     }
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   } else { // debug purposes
     println(`Oops something went wrong`);
   }
 }
+
+const giveMoney = (amount) => {
+  playMon = playMon + amount
+
+  document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+};
 
 // drop item from inventory basically just reversed the take item function above.
 let dropItem = (itemName) => {
@@ -1309,9 +1302,53 @@ const sleepFunction = () => {
 
 
 //save load
+
+
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
-//player score
-//difficulty level tie ins
+//dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
+//different arrays for different neighborhoods with different flavor texts, also for the x street
+//x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
+
+
+const randomText = () => {
+
+};
+
+
+//x street indexer encounter functionality
+const xStreetEvent = () => {
+  const i1 = Math.floor(Math.random() * 31); //need number 0-30
+  const i2 = Math.floor(Math.random() * 15);//need number 0-14
+  //get an integer from a string within the numbers array based on the random number above
+  const a = parseInt(xStreetNumber[i1].name); 
+  if (a === 0) { //if the integer is zero
+    encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
+  } else { //if the integer is anything else
+     encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
+  } 
+  encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
+  encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
+  xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
+  if(xStreetC === 1) { //if that last digit is 1
+    xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 2) { //if that last digit is 2
+    xStreetD = `${encounterAnswer}nd`; //provide another answer to the player based on proper suffix
+  } else if (xStreetC === 3) { //if that last digit is 3
+    xStreetD = `${encounterAnswer}rd` //provide another answer to the player based on proper suffix
+  } else { //since all the other digits have the same suffix 
+    xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
+  };
+  const room = getRoom('xStreet-6'); //get the room with the answer onBlock
+  //set that room description to the following based on the encounter variables generated above
+  room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+  //enter the x street encounter room chain
+  enterRoom('xStreet');
+};
+//encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
+
+
+//player score\\
+//difficulty level tie ins\\
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
