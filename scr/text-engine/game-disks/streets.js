@@ -26412,7 +26412,7 @@ const streets = {
         {dir: 'south', id: '72-colu'},
         {dir: 'east', id: '73-cpkw'},
         {dir: 'west', id: '73-amst'},
-        {dir: 'alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
+        {dir: 'alley',id: 'dakota-alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
       ]
     },
     {
