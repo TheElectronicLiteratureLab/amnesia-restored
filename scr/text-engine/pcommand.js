@@ -1201,7 +1201,6 @@ let dropItem = (itemName) => {
   }
 };
 
-//save load
 
 
 //sleep function
@@ -1266,8 +1265,17 @@ const sleepFunction = () => {
 //random events (x indexer, wacky wanderer, kid with rag, flavor text)
 //random event on enter 
 //dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
-//different arrays for different neighborhoods with different flavor texts, also for the x street
-//x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
+//different arrays for different neighborhoods with different flavor texts -- 
+
+//random event functionality
+//must check which neighborhood the player is in via coord, if it is one of the appropriate neighborhoods then
+//random chance to have an encounter, has to be in a room where the description is empty
+//roll a number depending on the array as lengths are different
+//also need functionality for time locked ones in rush hour
+//once that index number is assigned parse the proper object at that index for 
+    //how many choices there are, if there are 4 roll 4 numbers, if there are 3 roll that many, etc, if there are none then print desc
+    //once the numbers are rolled assign the proper variables to the rolled values on the choices arrays
+    //then print desc with proper variables
 const randomText = () => {
 
 };

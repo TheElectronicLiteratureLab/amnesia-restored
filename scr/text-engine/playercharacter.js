@@ -119,7 +119,7 @@ let choice2;
 let choice3;
 let choice4;
 
-const chelseaEncounters = [
+const chelseaEncounters = [ //coord locations between lat -2/-36 , lon -55/-12
   {
     id: 1,
     desc: `You're on a street that is slowly but surely being gentrified. ${choice1} has moved in between ${choice2} and ${choice3}.`,
@@ -190,46 +190,9 @@ const chelseaEncounters = [
   },
 ];
 
-const wallStEncounters= [
-  {
-    id: 1, 
-    desc: `You would have thought, wouldn’t you, that the Wall Street area would be populated entirely by men in gray suits, but no, looking around, the mix isn’t that different from the mix of midtown. Even down here the melting pot is bubbling away.`,
-  },
-  {
-    id: 2, 
-    desc: `There’s no denying it: they built more beautiful buildings back when they were building these. There’s something about carved stone that just makes a person feel noble.`,
-  },
-  {
-    id: 3, 
-    desc: `A squirrel squats on the steps of a branch of Manufacturers Hanover calmly nibbling the remains of a seeded roll.`,
-  },
-  {
-    id: 4, 
-    desc: `A long line of honking cars is stacked up behind a double-parked limousine with diplomatic plates.`,
-  },
-  {
-    id: 5, 
-    desc: `As you cross the street you are almost run down by a bicycle rider darting out of the path of a taxi. You shout a futile protest after him.`,
-  },
-  {
-    id: 6, 
-    desc: `A limousine drives by slowly, leaking the majestic choral movement of Beethoven’s 9th Symphony. Somebody’s feeling good about his portfolio.`,
-  },
-  {
-    id: 7, 
-    desc: `Waiting for the light to change, you overhear a discussion between two pin-striped executives on the likelihood of General Foods being taken over by the Philip Morris Corporation. They both agree it couldn’t possibly happen.`,
-  },
-  {
-    id: 8, 
-    desc: `You watch a crane hauling bundles of iron beams from the street to the top of a new office tower under construction.`,
-  },
-  {
-    id: 9, 
-    desc: `Crunch! A car backing into a parking place runs over an empty beer bottle and showers the pavement with shards of brown glass.`,
-  },
-];
 
-const midtownEncounters= [
+
+const midtownEncounters= [ //coord location lat 13/42, long -55/28
   {
     id: 1, 
     desc: `${choice1} is double parked outside ${choice2}, and the traffic bottlenecked behind it is hoking passionately.`,
@@ -322,7 +285,7 @@ const midtownEncounters= [
   },
 ];
 
-const rushHourEncounters= [
+const rushHourEncounters= [//these are time locked
   {
     id: 1, 
     desc: `As the offices begin to empty of their workers and the stores of their shoppers, the sidewalks fill to overflowing.`
@@ -358,7 +321,7 @@ const rushHourEncounters= [
   
 ];
 
-const greenwichEncounters = [
+const greenwichEncounters = [//coord location lat -36/-58, long 5/-42
   {
     id: 1, 
     desc: `Bending over to tie ${choice1} shoelace, you realize that the sidewalk in front of this office building has been paved with ${choice2} instead of ordinary concrete`,
