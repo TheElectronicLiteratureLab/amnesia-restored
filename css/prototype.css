@@ -1,5 +1,4 @@
 /* across screen styles */
-
 html {
    font-size: 1em;
 }
@@ -8,11 +7,13 @@ body {
    background-image: url(../img/png/newyork.png);
 }
 
-img {
+#game-container img {
    max-width: 100%;
    height: auto;
 }
 
+
+/* typography */
 #game-container {
    font-family: 'Montserrat', sans-serif;
    color: #E4E4E4;
@@ -20,6 +21,44 @@ img {
    line-height: 1.5;
 }
 
+#game-container b, #game-container strong {
+   font-weight: 600;
+}
+
+#game-container i, #game-container em {
+   font-style: italic;
+}
+
+#game-container h1 {
+   font-size: 4em;
+}
+
+#game-container h2 {
+   font-size: 1.85em;
+   font-weight: 600;
+}
+
+#game-container h3 {
+   font-size: 1.5em;
+   font-weight: 600;
+}
+
+#game-container h4 {
+   font-size: 1.25em;
+   font-weight: 600;
+}
+
+#game-container h5 {
+   font-size: 1.1em;
+   font-weight: 600;
+}
+
+#game-container h6 {
+   font-size: 1em;
+   font-weight: 600;
+}
+
+/* buttons */
 .game-button {
    background-color: #0E0E0F;
    border: 2px solid plum;
@@ -34,6 +73,8 @@ img {
    background-color: plum;
 }
 
+
+/* layout */
 #game-container {
    height: 80vh;
    padding: 5%;
@@ -75,8 +116,8 @@ img {
    grid-row: 3 / span 1;
 }
 
-/* game-title */
 
+/* game-title */
 #game-title { 
    height: 100%;
    display: grid;
@@ -96,10 +137,12 @@ img {
    justify-self: center;
 }
 
-#tagline {
-   justify-self: center;
+#vid {
+   display: block;
+   margin: auto;
    grid-column: 1 / span 2;
-   grid-row: 2 / span 1;
+   justify-self: center;
+   align-self: center;
 }
 
 #game-button-container {
@@ -119,8 +162,8 @@ img {
    justify-self: left;
 }
 
-/* game-options */
 
+/* game-options */
 #game-options {
    height: 100%;
    display: none;
@@ -181,8 +224,8 @@ img {
    align-self: center;
 }
 
-/* game load */
 
+/* game load */
 #game-load {
    height: 100%;
    display: none;
@@ -214,8 +257,8 @@ img {
    grid-row: 4 / span 1;
 }
 
-/* game */
 
+/* game */
 #game {
    height: 100%;
    display: none;
@@ -232,9 +275,7 @@ img {
 
 #currroom {
    font-family: mostra-nuova, sans-serif;
-   font-size: 4em;
    letter-spacing: 4px;
-   margin: 0;
    font-weight: 300;
    text-transform: uppercase;
    justify-self: center;
@@ -265,18 +306,18 @@ img {
    height: 100%;
 }
 
-/* width */
+/* output scroll bar width */
 #output::-webkit-scrollbar {
    width: 15px;
 }
    
-/* Track */
+/* output scroll bar track */
  #output::-webkit-scrollbar-track {
    box-shadow: inset 0 0 5px #0E0E0F;
    border-radius: 10px;
 }
    
-/* Handle */
+/* output scroll bar handle */
 #output::-webkit-scrollbar-thumb {
    background: #494959;
    border-radius: 10px;
@@ -346,8 +387,9 @@ img {
    background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }
-/* clickable elements styles */
 
+
+/* clickable element styles */
 .clickables-left{
    position: absolute;
    background: transparent linear-gradient(151deg, rgba(73,73,89,.95) 0%, rgba(15,15,18,.95) 100%) 0% 0% no-repeat padding-box;
@@ -356,19 +398,19 @@ img {
    height: 100%;
 }
 
-/* width */
+/* left side scroll bar width */
 .clickables-left > *::-webkit-scrollbar {
    width: 10px;
 }
    
-/* Track */
+/* left side scroll bar track */
 .clickables-left > *::-webkit-scrollbar-track {
    background: #0E0E0F;
    box-shadow: inset 0 0 5px #0E0E0F;
    border-radius: 10px;
 }
    
-/* Handle */
+/* left side scroll bar handle */
 .clickables-left >*::-webkit-scrollbar-thumb {
    background: #494959;
    border-radius: 10px;
@@ -537,19 +579,19 @@ img {
    height: 100%;
 }
 
-/* width */
+/* right side scroll bar width */
 .clickables-right > *::-webkit-scrollbar {
    width: 10px;
 }
    
-/* Track */
+/* right side scroll bar track */
 .clickables-right > *::-webkit-scrollbar-track {
    background: #0E0E0F;
    box-shadow: inset 0 0 5px #0E0E0F;
    border-radius: 10px;
 }
    
-/* Handle */
+/* right side scroll bar handle */
 .clickables-right >*::-webkit-scrollbar-thumb {
    background: #494959;
    border-radius: 10px;

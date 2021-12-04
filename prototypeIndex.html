@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/cpx5vev.css">
 
@@ -39,11 +39,12 @@
             <div class="game-item-3">
                 <div id="title-screen">
                     <div id="title-img">
-                        <img id="amnesia-restored-logo-gif" src="scr/images/logo/image-logo-bannerblack2.jpg"
-                            alt="animated Amnesia: Restored logo">
-                    </div>
-                    <div id="tagline">
-                        <h2>The Original Adventure Game by Thomas M. Disch</h2>
+                        <video id="vid" width="60%" height="auto" autoplay muted>
+                            <source src="video/video-logo-bannerweb.mp4" type="video/mp4">
+                          </video>
+                          <script>
+                            document.getElementById('vid').play();
+                        </script>
                     </div>
                     <div id="game-button-container">
                         <div id="new-game-button">
@@ -314,10 +315,10 @@
                         <h3>FATIGUE</h3>
                     </div>
                     <div id="money-counter">
-                        <h2 id="money">$1,203</h2>
+                        <h3 id="money">$1,203</h2>
                     </div>
                     <div id="time-display">
-                        <h2 id="time">12:32 A.M.</h2>
+                        <h3 id="time">12:32 A.M.</h2>
                     </div>
                 </div>
             </div>
