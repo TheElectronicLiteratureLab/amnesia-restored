@@ -1276,7 +1276,7 @@ const sleepFunction = () => {
     //how many choices there are, if there are 4 roll 4 numbers, if there are 3 roll that many, etc, if there are none then print desc
     //once the numbers are rolled assign the proper variables to the rolled values on the choices arrays
     //then print desc with proper variables
-const randomText = () => {
+const randomEncounter = () => {
 
 };
 

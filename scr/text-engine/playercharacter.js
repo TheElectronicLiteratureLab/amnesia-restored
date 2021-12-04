@@ -195,7 +195,7 @@ const midtownEncounters= [ //coord location lat 13/42, long -55/28
   },
   { 
     desc: `You are on a street of shops and small businesses: there’s ${choice1} on the corner, then ${choice2} ${choice3} and ${choice4}`,
-    choices1: [`a drug store a deli`,`a luggage store` ,`an OTB office`,],
+    choices1: [`a drug store a deli`,`a luggage store` ,`an OTB office`],
     choices2: [`a liquor store,`,`a beauty shop,`,`a cigar store,`,`a bookstore,`],
     choices3: [`a bakery with twelve varieties of croissants,`,`a florist with a small jungle of sickly spider plants,`,`a hardware store with a frayed and faded Grand Opening banner flapping over the doorway,`,`a Xerox copy shop,`],
     choices4: [`a seafood restaurant.`,`a branch of Fanny Farmer.`,`a Federal Express office.`,`the main lobby of the office building housing this miscellany of shops.`]
