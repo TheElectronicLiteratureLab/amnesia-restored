@@ -1416,6 +1416,7 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
+  //3 arguments 
   {
     ask: askXAboutY,
   },
