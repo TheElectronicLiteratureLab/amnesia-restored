@@ -53,7 +53,7 @@ let quickResponse = (e) => {
 
   if (e.keyCode === ENTER) {
     applyInput();
-    
+    updateHun(playHung);
   }
 }
 // register listeners for input events

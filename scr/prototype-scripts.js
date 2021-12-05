@@ -90,7 +90,6 @@ let beginGame = () => {
     document.getElementById("game-options").style.display = "none";
     document.getElementById("game-load").style.display = "none";
     document.getElementById("game").style.display = "grid";
-    console.log(playHung);
 }
 
 // clickables scripts
@@ -417,10 +416,101 @@ let openItem = (id, name) => {
 }
 
 // status bars
+//let hunBarEl = document.querySelector("#hunger-bar");
+//let hunStyle = window.getComputedStyle(hunBarEl);
 
-let hunBar = () => {
-    let x = playHung;
+//let currWidth = hunStyle.getPropertyValue("width");
+//let hungerBar = document.getElementById("hunger-bar");
+//let currWidth = window.getComputedStyle(hungerBar).getPropertyValue("width");
 
-    document.getElementById("hunger-bar").style.width = `${x}` + '%';
+let updateHun = (x) => {
 
+    // IF PLAY HUNG IS 100 falls statments that should be true
+
+    //let i = 0;
+    
+    let newWidth = x; 
+    let curWidth = prevHung; 
+    //console.log(newWidth); 
+    //console.log(curWidth); 
+
+    if(x === 100){
+        newWidth = 100;
+    } else {
+        if(newWidth > curWidth){
+            console.log("new width is greater than");
+        } else {
+            console.log("new width is less than");
+        }
+    }
+    
+    /* if(newWidth === 100){
+        console.log("Im equal to 100");
+    } else if(newWidth > curWidth){
+        console.log("new width is greater than");
+    } else {
+        console.log("new width is less than");
+    } */
+    
+    console.log("previous hunger = " + prevHung);
+    console.log("player hunger = " + playHung);
+
+
+    // code below works but breaks if playhung is set to 100
+
+    //console.log(newWidth > curWidth);
+
+    /*if(newWidth === 100){
+        el.style.width = 100 + "%";
+    }*/
+
+    /*
+
+    if(newWidth > curWidth){
+        if(i === 0){
+            i = 1;
+            let el = document.querySelector("#hunger-bar");
+            let width = curWidth;
+            let progress = setInterval(increase, 5);
+            function increase(){
+                if(width >= newWidth){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    //console.log('increase')
+                    width++;
+                    el.style.width = width + "%";
+                    console.log(el.style.width)
+                }
+            }
+        }
+    } 
+    
+    if(newWidth < curWidth){
+        if(i === 0){
+            i = 1;
+            let el = document.querySelector("#hunger-bar");
+            let width = curWidth;
+            let progress = setInterval(decrease, 5);
+            function decrease(){
+                if(width <= newWidth){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    //console.log('decrease')
+                    width--;
+                    el.style.width = width + "%";
+                    console.log(el.style.width)
+                }
+            }
+        }
+    }
+    */
+
+    //hunBarEl.style.width = playHung + "%";
 }
+
+
+
+
+

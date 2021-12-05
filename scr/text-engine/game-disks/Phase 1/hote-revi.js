@@ -25,7 +25,7 @@ const hotereviDisk = {
                 }
         
                 const room = getRoom('hote-revi');
-                console.log(room.lukecall);
+                //console.log(room.lukecall);
             },
             onLook: () => {
                 const room = getRoom('hote-revi');

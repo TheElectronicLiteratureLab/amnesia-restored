@@ -370,14 +370,14 @@ body {
 }
 
 #hunger-bar-progress {
-   width: 85%;
+   width: 90%;
    background-color: #494959;
    border-radius: 16px;
 }
 
 #hunger-bar {
-   width: 50%;
-   height: 15px;
+   width: 99%;
+   height: 10px;
    background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }

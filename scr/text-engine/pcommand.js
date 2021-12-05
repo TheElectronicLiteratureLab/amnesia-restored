@@ -897,7 +897,7 @@ function createPhone() { //create function
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
-xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+/* xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
   const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
   const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
   const streetNumber = aStreetNumber.value; //get the value of the street number drop down
@@ -920,7 +920,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
     }
   }
-};
+}; */
 
 //dev command functions 
 
@@ -940,10 +940,14 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
   //set hunger to certain amount
   function setHunger(amount) {
+    prevHung = playHung;
     playHung = amount;
     println(`
     Player Hunger now set to ${amount}`);
+    //updateHun();
   };
+
+  
 
   //set fatigue to certain amount
   function setFatigue(amount) {
@@ -1036,10 +1040,10 @@ const incrementTime = () => {
     let dumbDays = days[zDays];
     let dumbAmPm = amPm[qMeridiem];
 
-    document.getElementById('hungerNumber').innerHTML = `${playHung}`;
-    document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
-    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-    document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+    //document.getElementById('hunger-number').innerHTML = `${playHung}`;
+    //document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+    //document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    //document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
 //increment day function
@@ -1065,7 +1069,7 @@ const incrementDay = () => {
   let dumbDays = days[zDays];
   let dumbAmPm = amPm[qMeridiem];
 
-  document.getElementById('hungerNumber').innerHTML = `${playHung}`;
+  //document.getElementById('hungerNumber').innerHTML = `${playHung}`;
   document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
