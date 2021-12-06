@@ -615,7 +615,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"I assume you will want to put this on your VISA card?"`);
+        println(`"I assume you will want to put this on your American Express card?"`);
       },
       onBlock: () => {
         if (prevInput === 'yes') {
@@ -634,9 +634,9 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         if (prevInput === 'yes') {
-          println(`I'll have a bellboy bring the readjusted VISA slip to your room momentarily. Have a good day." She hangs up.`);
+          println(`I'll have a bellboy bring the readjusted American Express slip to your room momentarily. Have a good day." She hangs up.`);
         } else {
-          println(`"We have your VISA slip here. I'll have a bellboy bring it to you. Have a good day." She hangs up.`);
+          println(`"We have your American Express slip here. I'll have a bellboy bring it to you. Have a good day." She hangs up.`);
         }
 
         pressEnter('hote-room-15');
@@ -648,7 +648,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"No? But I have the slip already made up. If you wish to make some other arrangement I'll have to ask you to come down to the Registration desk now. Can you do that? \n\nYou can't, of course, not without proper clothing. So you tell her to put it on your VISA card, and that settles that."`);
+        println(`"No? But I have the slip already made up. If you wish to make some other arrangement I'll have to ask you to come down to the Registration desk now. Can you do that? \n\nYou can't, of course, not without proper clothing. So you tell her to put it on your American Express card, and that settles that."`);
         pressEnter('hote-room-15');
       },
       exits: [],
@@ -708,20 +708,21 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'hote-revi', //unique ID for this room
-      name: 'Hotel Room', //room name (displayed to player)
+      name: 'Hotel Room 1502', //room name (displayed to player)
       hasBed: true,
       desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky.
       
       You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
       //**interactable items**
       onEnter: () => {
+        reenableInput();
           if(getRoom('hote-revi').visits >= 2){
               let hotelRoom = getRoom('hote-revi');
               hotelRoom.desc = `You're standing in your hotel room`;
               println(hotelRoom.desc);
           };
 
-          if (lastRoom.id === '')
+          //if (lastRoom.id === '')
 
           reenableInput();
       },
@@ -784,8 +785,10 @@ const amnesiaRestored = {
           },
           {
               itemId: 'pen',
+              icon: 'img/png/image-pen-thumbnailwoutline.png',
+              gif: 'img/gif/gif-penmodel-ingame.gif',
               name: ['ballpoint pen', 'pen'],
-              desc: `It is a white plastic ballpoint.`,
+              desc: `It is a blue plastic ballpoint.`,
               isTakeable: true, 
               isDroppable: true
           },
@@ -1144,7 +1147,7 @@ const amnesiaRestored = {
             You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
             
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
-            pressEnter('lobby');//leads to Lobby node
+            pressEnter('lobb-1');//leads to Lobby node
         } else {
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You've left it back in the room.
             
@@ -1153,7 +1156,7 @@ const amnesiaRestored = {
             You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
             
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
-            pressEnter('lobby');//leads to Lobby node
+            pressEnter('lobb-1');//leads to Lobby node
         }
       },
       exits: [],
@@ -7041,7 +7044,7 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'deja-vu', 
-      name: '', 
+      name: 'Deja-Vu', 
       desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`,
       
       onEnter: () => {
@@ -7263,7 +7266,8 @@ const amnesiaRestored = {
         exits: [],
       items: [
         {
-          name: 'Green Canvas Gym Bag',
+          itemId: 'gymbag',
+          name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
           desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
           isTakeable: true,
           isDroppable: true,
@@ -7358,8 +7362,9 @@ const amnesiaRestored = {
           println(`“That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time.” Half a minute later, he raps again. “How about it, Mr. Cameron. Do you think you can make it back to your room?”`)
         } if (prevInput === 'leave' || 'exit') {
           println(`“Ah, Mr. Cameron,” the masseur says unctuously. “I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door.” You try to protest, but your words go unheeded.`)
-        }else {
           enterRoom('heal-club27');
+        }else {
+          
         }
       },
       exits: [],
@@ -8631,8 +8636,9 @@ const amnesiaRestored = {
     id: 'lobb-1',
     name: 'The Lobby',
     desc: `You step out of the elevator into the lobby of the Sunderland Hotel, and the first thing you see is yourself looking elegantly sheepish in your white tuxedo, for the doors of the facing elevator are made of mirror-glass.`, 
-    
-
+    onEnter: () => {
+      reenableInput();
+    },
     onLook: () => { // Looking around the Lobby.
       const room = getRoom('lobb-1');
       room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
