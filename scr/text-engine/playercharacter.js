@@ -4,7 +4,7 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 });
 
-saveSlot = '2';
+saveSlot = '3';
 
 turnMapOn = false;
 

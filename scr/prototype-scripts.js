@@ -20,9 +20,9 @@ let numbers = [
 ];
 
 
-let storyDesc = `This is story mode.`;
-let normalDesc = `This is normal mode.`;
-let classicDesc = `This is classic mode.`;
+let storyDesc = `Lay back, relax and enjoy the story without the worry of hunger, fatigue, or money.`;
+let normalDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are.`;
+let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
 let restoredDesc = `A contemporary visual experience with a modern interface.`;
 let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
 let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commodore 64 visual experience with a modern interface.`;
@@ -40,9 +40,18 @@ let newGame = () => {
 let loadGame = () => {
     document.getElementById("game-title").style.display = "none";
     document.getElementById("game-load").style.display = "grid";
-    document.getElementById("saveSlot1").innerHTML = localStorage.key(0);
-    document.getElementById("saveSlot2").innerHTML = localStorage.key(1);
-    document.getElementById("saveSlot3").innerHTML = localStorage.key(2);
+
+    if (localStorage.length === 1) {
+        document.getElementById("saveSlot1").innerHTML = localStorage.key(0);
+    } else if (localStorage.length === 2) {
+        document.getElementById("saveSlot1").innerHTML = localStorage.key(1);
+        document.getElementById("saveSlot2").innerHTML = localStorage.key(0);
+    } else if (localStorage.length === 3) {
+        document.getElementById("saveSlot1").innerHTML = localStorage.key(2);
+        document.getElementById("saveSlot2").innerHTML = localStorage.key(1);
+        document.getElementById("saveSlot3").innerHTML = localStorage.key(0);  
+    }
+
     //other data we would like for each save slot
 }
 

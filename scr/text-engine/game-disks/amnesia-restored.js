@@ -9,6 +9,8 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById('map-button').style.display = "none";
+        document.getElementById('address-book-button').style.display = "none";
+        document.getElementById('game-ui-bar').style.display = "none";
         pressEnter(`amne-intr`);
       },
       exits: [],
@@ -48,7 +50,7 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println('AMNESIA: RESTORED was originally written by Thomas M. Disch, \nand programmed in the King Edward adventure language\n Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The ELL', "introSequence");
+        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The ELL', "introSequence");
 
         println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwell\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
@@ -235,15 +237,18 @@ const amnesiaRestored = {
         document.getElementById('time').innerHTML = `${days[zDays] + ' ' + hours[yHours] + ':' + minutes[xMinutes] + ' ' + amPm[qMeridiem]}`; */
         
         addItem('xindexer');
+        playMon += 1;
         reenableInput();
       },
       onLook: () => {
         let room = getRoom('hote-room-8');
         room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
+        println(room.desc);
       },
       items: [
         {
           itemId: 'xindexer',
+          icon: 'img/png/xindexer.png',
           name: ['X-street indexer', 'indexer', 'street indexer'],
           desc: 'A circular wheel that shows the cross street given the address.',
           isTakeable: true,
@@ -253,6 +258,8 @@ const amnesiaRestored = {
         },
         {
           itemId: 'bible',
+          icon: 'img/png/bible-icon.png',
+          gif: 'img/gif/gif-gideonbible-ingame.gif',
           name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
           desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
           isTakeable: true,
@@ -262,8 +269,10 @@ const amnesiaRestored = {
         },
         {
           itemId: 'pen',
+          icon: 'img/png/image-pen-thumbnailwoutline.png',
+          gif: 'img/gif/gif-penmodel-ingame.gif',
           name: ['ballpoint pen', 'pen'],
-          desc: 'It is a white plastic ballpoint.',
+          desc: 'It is a blue plastic ballpoint.',
           isTakeable: true,
           isDroppable: true
         },
@@ -396,14 +405,16 @@ const amnesiaRestored = {
         },
         {
           itemId: 'roomkey',
-          name: ['metal key', 'room key', 'hotel key', '1502 key', 'key'],
+          icon: '',
+          gif: 'img/gif/gif-hotelkey-ingame.gif',
+          name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
           desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
           isTakeable: true,
           isDroppable: true
         },
         {
           itemId: 'stationary',
-          name: ['hotel stationary', 'stationary', 'paper'],
+          name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
           desc: 'The stationary says SUNDERLAND HOTEL at the top.',
           isTakeable: true,
           isDroppable: true
@@ -455,8 +466,8 @@ const amnesiaRestored = {
           }
         },
         {
-          itemId: 'window',
-          name: 'window',
+          itemId: 'hotelwindow',
+          name: 'Hotel Window',
           desc: 'The window is shrouded by the drapes.',
           onLook: () => {
             let item = getItemInRoomById('curtains', disk.roomId);
@@ -488,22 +499,30 @@ const amnesiaRestored = {
           {
               name: ['sink', 'pink sink'], 
               desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
-              /*item: {
-                      name: ['soap', 'cake of soap'],
-                      desc: `It smells like lemon.`,
-                      isTakeable: true,
-                      onTake: () => {
-                          println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
-                          const sink = getItemInRoom('sink', 'hote-revi-1');
-                          sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
-                      },
-                      onUse: () => {
-                          println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you've never worn one?`); //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
+              /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
                       },
                   }, //end of sink items*/ //currently can't have an item property on item object.
 
           },
           {
+            itemId: 'bathsoap',
+            icon: '',
+            gif: 'img/gif/gif-soapbar-ingame.gif',
+            name: ['Soap', 'cake of soap'],
+            desc: `It smells like lemon.`,
+            isTakeable: true,
+            isDropable: true,
+            onTake: () => {
+                println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
+                const sink = getItemInRoom('sink', 'hote-revi-1');
+                sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
+            },
+            onUse: () => {
+                println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you've never worn one?`);
+            },
+          },
+          {
+              itemId: 'bathshower',
               name: ['tiled shower', 'shower'],
               desc: `The tiled shower is equipped with hot and cold water knobs, and a water conserving shower head.`,
               onUse: () => println(`You remove any clothing you have on. 
@@ -511,14 +530,19 @@ const amnesiaRestored = {
               You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleaniness is next to godliness after all.`),
           },
           {
+              itemId: 'bathtoilet',
               name: 'toilet',
               desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face -- looking very sheepish.`,
               onUse: () => println(`That's done. Now flush. Very good. Evidently your toilet training has not been neglected.`),
           },
           {
-              name: ['towel', 'large towel'],
+              itemId: 'bathtowel',
+              icon: '',
+              gif: 'img/gif/gif-towel-ingame.gif',
+              name: ['Towel', 'large towel'],
               desc: `It is a large fluffy towel.`,
               isTakeable: true,
+              isDroppable: true,
               onTake: () => {
                   println('You take the towel'); //appears in inventory as 'towel'
                   const bathroom = getRoom('hote-bath-1');
@@ -713,7 +737,7 @@ const amnesiaRestored = {
           
           To the left of the dresser is an **IBM PC** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
           
-          if(getItemInInventory('metal key')){ //if the 1502 room key is already in inventory
+          if(getItemInInventory('Room Key')){ //if the 1502 room key is already in inventory
               room.desc = room.desc.replace(`${keyDesc}`, '');
           };
 
@@ -741,13 +765,15 @@ const amnesiaRestored = {
           },
           { 
               itemId: 'roomkey', //change? keep? 
-              name: ['metal key', 'room key', 'hotel key', '1502 key', 'key'],
+              name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
               desc: `The key chain is green plastic with the numerals 1502 in white. The key is ordinary.`,
               isTakeable: true,
               isDroppable: true,
           }, 
           {
               itemId: 'bible',
+              icon: 'img/png/bible-icon.png',
+              gif: 'img/gif/gif-gideonbible-ingame.gif',
               name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
               desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
               isTakeable: true,
@@ -946,8 +972,8 @@ const amnesiaRestored = {
             }
           },
           {
-              itemId: 'window',
-              name: 'window', //hotel room window
+              itemId: 'hotelwindow',
+              name: 'Hotel Window', //hotel room window
               desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun low in the sky.`,
           },
       ], //end of hote-revi items

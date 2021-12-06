@@ -8,10 +8,12 @@ let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
-  if (input !== "inv") {
-    println(`${input}`, 'playerInput');
-  } else {
+  if (input === "inv") {
     setInput('');
+  } else if (input === "dial") {
+    setInput('');
+  } else {
+    println(`${input}`, 'playerInput');   
   }
   prevInput = input;
   console.log(inputs);

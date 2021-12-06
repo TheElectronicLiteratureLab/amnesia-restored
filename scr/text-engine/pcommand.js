@@ -15,27 +15,26 @@ let inv = () => {
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }
-    /*
-    document.getElementById("inventory-display").style.display = "block";
-    listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);*/
+    
+   // document.getElementById("inventory-display").style.display = "block";
+    //listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
   });
 };
 
 // show room description
 let look = () => {
+  
   const room = getRoom(disk.roomId);
 
   if (typeof room.onLook === 'function') {
     room.onLook({disk, println});
   }
-
   else if (room.desc === '' || "" || ``) {
     println(`There's nothing interesting here.`)
   }
-
-
   else {
-    println(room.desc)
+    console.log("WORKING")
+    println(room.desc);
   }
 };
 
@@ -544,11 +543,11 @@ let turnOffOn = (toggle, itemId) => {
 let dial = () => {
   const room = getRoom(disk.roomId);
 
-  if(firstDial === false){
-    document.getElementById("tutorial").style.display = "block";
-  }
-  
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+    if(firstDial === false){
+      document.getElementById("tutorial").style.display = "block";
+      firstDial = true;
+    }
     document.getElementById("input").value = document.getElementById("input").value + 'dialing ';
     let number;
     document.getElementById('dialPad').style.display = "grid";
@@ -865,6 +864,11 @@ let read = (item) => {
     println(`There's nothing to read.`);
   }
 }
+
+// map command to bring up the map
+/*let map = () => {
+  document.getElementById("map-display").style.display = "block";
+}*/
 
 
 ////////////////////////////////////////////////
@@ -1422,6 +1426,7 @@ let commands = [
     leave: useItem,
     say: sayString,
     drop: dropItem,
+    save: x => save(x),
     load: x => load(x),
     restore: x => load(x),
     x: x => lookAt([null, x]), // IF standard shortcut for look at
