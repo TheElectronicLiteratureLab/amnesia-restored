@@ -1422,7 +1422,6 @@ let commands = [
     leave: useItem,
     say: sayString,
     drop: dropItem,
-    save: x => save(x),
     load: x => load(x),
     restore: x => load(x),
     x: x => lookAt([null, x]), // IF standard shortcut for look at
