@@ -541,17 +541,26 @@ let turnOffOn = (toggle, itemId) => {
 }
 
 let dial = () => {
+  println("You pick up the phone.")
   const room = getRoom(disk.roomId);
-
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+    // display dial pad
+    document.getElementById('dialPad').style.display = "grid";
+    // pull up tutorial if firstDial is false
     if(firstDial === false){
       document.getElementById("tutorial").style.display = "block";
       firstDial = true;
     }
-    document.getElementById("input").value = document.getElementById("input").value + 'dialing ';
-    let number;
-    document.getElementById('dialPad').style.display = "grid";
+    // disable the input
     document.querySelector('input').disabled = true;
+    // selecting the input value
+    let el = document.getElementById("input");
+    // adding the command to input to then run a one arguement command
+    el.value = 'dialing ';
+    // variable to hold the digit choosen by player to add to the input value
+    let number;
+    
+    // functionality for keys 
     function checkKeyPressed(evt){
       if(evt.keyCode === 48){
         number = 0;
@@ -594,7 +603,7 @@ let dial = () => {
         numdialKey();
       }
       if(evt.keyCode === 13){
-        enterNum();
+        //enterBtnClick();
         window.removeEventListener("keydown", checkKeyPressed, false);
       }
       if(evt.keyCode === 8){
@@ -604,13 +613,16 @@ let dial = () => {
         deleteNum();
       }
     }
+    // adding an event listener to keys
     window.addEventListener("keydown", checkKeyPressed, false);
+    // function that adds the key pressed value to the input
     let numdialKey = () => {
-      document.getElementById("input").value = document.getElementById("input").value + number;
+      el.value = el.value + number;
     }
-
+    
+    // function that deletes last value of input string
     let deleteNum = () => {
-      document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
+      el.value = el.value.slice(0, -1);
     }
   } else {
     println(`With what phone?`)
@@ -618,8 +630,32 @@ let dial = () => {
 }
 
 let dialing = () => {
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("tutorial").style.display = "none";
   println(`You have to enter in a number to be able to place a call. Wanna try again?`);
   reenableInput();
+}
+
+let callNum = (num) => {
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("tutorial").style.display = "none";
+  reenableInput();
+
+  let id;
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i].number === num){
+      id = numbers[i].roomid;
+    };
+  }
+
+  if(id){
+    enterRoom(id);
+  }
+
+  if(!id){
+    println(`This number doesn't exist.`)
+  }
+  
 }
 
 // wear command
@@ -940,6 +976,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
     playMon = amount;
     println(`
     Player Money now set to ${amount}`);
+    updateMon();
   };
 
   //set hunger to certain amount

@@ -415,28 +415,9 @@ let openItem = (id, name) => {
         document.getElementById("inventory-xIndex-display").style.display = "grid";
         document.getElementById("inventory-item-display").style.display = "none";
     }
-    
-    // still need to add in check for if item clicked is xindexer so divs don't overlap
-    /*document.getElementById(id).style.display = "grid";
-    
-    let inv = disk.inventory;
-    inv.forEach(e => {
-        if(e.itemId === name){
-            document.getElementById("item-name").innerHTML = e.name[0];
-            document.getElementById("item-img").src = e.gif;
-            printInvDesc(e.desc);
-            console.log(e.onUse);
-        }
-    })*/
 }
 
 // status bars
-//let hunBarEl = document.querySelector("#hunger-bar");
-//let hunStyle = window.getComputedStyle(hunBarEl);
-
-//let currWidth = hunStyle.getPropertyValue("width");
-//let hungerBar = document.getElementById("hunger-bar");
-//let currWidth = window.getComputedStyle(hungerBar).getPropertyValue("width");
 
 let updateHung = (x) => {
     // update progress bar to show the new player hunger
@@ -610,6 +591,46 @@ let runProgress = (newHung) => {
 
 
 
+let updateMon = () => {
+    document.getElementById("money").innerHTML = `${formatter.format(playMon)}`;
+}
 
 
 
+// dial pad scripts
+
+// function that adds the button pressed value to the input
+let numdialButton = (clicked_id) => {
+    let x = document.getElementById(clicked_id).value;
+    let el = document.getElementById("input");
+    el.value = el.value + x; 
+}
+
+// function to be called on enter button to act like enter key press
+function enterBtnClick(){
+    e = $.Event('keyup');
+    e.keyCode = 13; //enter
+    $('input').trigger(e);
+    applyInput();
+}
+
+// function that deletes last number on input string value
+let deleteNumBtn = () => {
+    let el = document.getElementById("input");
+    el.value = el.value.slice(0, -1);
+}
+
+let closeDial = () => {
+    document.getElementById("dialPad").style.display = "none";
+    document.getElementById("tutorial").style.display = "none";
+    applyInput();
+  }
+  
+let openTutorial = () => {
+    let x = document.getElementById("tutorial");
+    if(x.style.display === "none"){
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}

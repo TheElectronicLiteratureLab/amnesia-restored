@@ -439,6 +439,11 @@ const amnesiaRestored = {
           },
           onTake: () => {
             println(`You take it but don't read it`);
+            numbers.push(
+              {number:'555-1188', roomid:'phone-9'},
+              {number:'555-7656', roomid:'phone-10'},
+              {number:'555-7653', roomid:'phone-11'}
+            );
           },
           onDrop: () => {
 
@@ -7343,6 +7348,27 @@ const amnesiaRestored = {
             name: 'Address Book',
             desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as “SEX” and “Drugs.” Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
+            onTake: () => {
+              numbers.push(
+                {number:'555-1314', roomid:'phone-12'},
+                {number:'555-1315', roomid:'phone-13'},
+                {number:'555-2712', roomid:'phone-14'},
+                {number:'555-2259', roomid:'phone-15'},
+                {number:'555-2577', roomid:'phone-16'},
+                {number:'555-2783', roomid:'phone-17'}, 
+                {number:'555-4312', roomid:'phone-18'},
+                {number:'555-4365', roomid:'phone-19'},
+                {number:'555-4685', roomid:'phone-20'},
+                {number:'555-5436', roomid:'phone-21'},
+                {number:'555-5643', roomid:'phone-22'},
+                {number:'555-6200', roomid:'phone-23'},
+                {number:'555-8422', roomid:'phone-24'},
+                {number:'555-8749', roomid:'phone-25'},
+                {number:'555-8876', roomid:'phone-26'},
+                {number:'571-7171', roomid:'phone-27'},
+                {number:'976-1212', roomid:'phone-28'}
+              );
+            },
             isDroppable: false,
           },
         ])
