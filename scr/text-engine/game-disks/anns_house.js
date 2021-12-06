@@ -104,7 +104,7 @@ const anns_house = {
                     itemId: 'cecily',
                     name: ['Cecily', 'cecily'],
                     onLook: () => {
-                        enterRoom('ann-11')
+                        enterRoom('ann-11');
                     },
                 }
             ]
@@ -217,7 +217,7 @@ const anns_house = {
                     itemId: 'bookshelf',
                     name: ['Bookshelf', 'bookshelf'],
                     onLook: () => {
-                        enterRoom('ann-21')
+                        enterRoom('ann-21');
                     },
                 }
             ]
@@ -240,7 +240,7 @@ const anns_house = {
                     itemId: 'bookshelf',
                     name: ['Bookshelf', 'bookshelf'],
                     onLook: () => {
-                        enterRoom('ann-21')
+                        enterRoom('ann-21');
                     },
                 }
             ]
@@ -254,7 +254,7 @@ const anns_house = {
                     itemId: 'bookshelf',
                     name: ['Bookshelf', 'bookshelf'],
                     onLook: () => {
-                        enterRoom('ann-21')
+                        enterRoom('ann-21');
                     },
                 }
             ]
@@ -392,7 +392,7 @@ const anns_house = {
             desc:`Even cold it is delicious. For a moment, your whole life--both the life you’ve forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
             Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
             onEnter: () => {
-                playHung(+50)
+                playHung += 50;
             },
             onBlock: () => {
                 if(prevInput === 'ask ann about'){
@@ -406,7 +406,7 @@ const anns_house = {
                     itemId: 'ann',
                     name: ['Ann', 'ann'],
                     onLook: () => {
-                        enterRoom('ann-32')
+                        enterRoom('ann-32');
                     },
                 }
             ]
@@ -450,7 +450,11 @@ const anns_house = {
                 {
                     itemId: 'anns_note',
                     name: ['note', 'Note'],
+                    desc: `The piece of paper has a number written on it: KL5-5413`,
+                    isTakeable: true,
                     onTake: () => {
+                        println(`You take the slip of paper and glance at the number Ann has written down. KL5-5413. It seems vaguely familiar.
+                        Ann goes to the door and holds it open, inviting your departure with a bittersweet smile.`)
                         enterRoom('ann-35');
                     }
                 }
@@ -459,8 +463,6 @@ const anns_house = {
         {
             id:'ann-35',
             name:'',
-            desc:`You take the slip of paper and glance at the number Ann has written down. KL5-5413. It seems vaguely familiar.
-            Ann goes to the door and holds it open, inviting your departure with a bittersweet smile.`,
             onBlock: () => {
                 if(prevInput === 'leave apartment' || prevInput === 'leave building'){
                     enterRoom('ann-37');
@@ -483,5 +485,3 @@ const anns_house = {
         },
     ]
 }
-
-//Might be best to make Cecily and Ann into characters to take advantage of onLook function for descriptions needed when the player "looks" at them.
