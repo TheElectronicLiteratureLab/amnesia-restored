@@ -948,7 +948,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
     playHung = amount;
     println(`
     Player Hunger now set to ${amount}`);
-    updateHun(playHung);
+    updateHung(playHung);
   };
 
   

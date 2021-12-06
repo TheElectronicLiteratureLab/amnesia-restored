@@ -438,23 +438,39 @@ let openItem = (id, name) => {
 //let hungerBar = document.getElementById("hunger-bar");
 //let currWidth = window.getComputedStyle(hungerBar).getPropertyValue("width");
 
-let updateHun = (x) => {
+let updateHung = (x) => {
     // update progress bar to show the new player hunger
     // check previous hunger to know where progress begins from
-    console.log(playHung + "this is play hunger");
-    console.log(prevHung + "this is previous hunger")
 
 
+    let width = x;
+    let i = 0;
+    if(i === 0){
+        i = 1;
+        let el = document.getElementById("hunger-bar");
+        let startWidth = 0;
+        let progress = setInterval(update, 1);
+        function update(){
+            if(startWidth >= width){
+                clearInterval(progress);
+                i = 0;
+            } else {
+                startWidth++;
+                el.style.width = startWidth + "%";
+            }
+        }
+    }
+
+
+
+    /*
     let newWidth = x;
     let width = prevHung;
-
-    
-    
+    let i = 0;
 
     // if player hunger is back up to 100% then run this
     if(newWidth === '100'){
         console.log("running")
-        let i = 0;
         if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
@@ -465,44 +481,18 @@ let updateHun = (x) => {
                     clearInterval(progress);
                     i = 0;
                 } else {
-                    console.log("going up!")
                     curWidth++;
                     el.style.width = curWidth + "%";
                 }
             }
         }
-    } else {
-        runProgress(newWidth);
-    }
-
-
-}
-
-let runProgress = (newHung) => {
-    
-    
-    let i = 0;
-
-    let newWidth = newHung;
-    let width = prevHung;
-
-    console.log(newWidth);
-    console.log(width);
-
-    console.log(width < newWidth);
-
-    //you'll never increase if width is 100
-
-    if(width === '100'){
-        console.log("true")
-    }
-
-    /*
+    } 
+        // 100 <= 50
     if(width <= newWidth){
-        let el = document.getElementById("hunger-bar");
+        //let el = document.getElementById("hunger-bar");
         console.log("increase bar");
-        el.style.width = newWidth + "%";
-        /*if(i === 0){
+        //el.style.width = newWidth + "%";
+        if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
             let curWidth = width;
@@ -517,14 +507,48 @@ let runProgress = (newHung) => {
                 }
             }
         }
-    }
-    
-    if(width >= newWidth){
-        let el = document.getElementById("hunger-bar");
+    } else if(width >= newWidth){
+        //let el = document.getElementById("hunger-bar");
         console.log("decrease bar");
-        el.style.width = newWidth + "%";
-    }*/
+        //el.style.width = newWidth + "%";
+        if(i === 0){
+            i = 1;
+            let el = document.getElementById("hunger-bar");
+            let curWidth = width;
+            let progress = setInterval(decrease, 10);
+            function decrease(){
+                if(curWidth <= newWidth){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    curWidth--;
+                    el.style.width = curWidth + "%";
+                }
+            }
+        }
+    }
+*/
+
 }
+
+/*
+
+let runProgress = (newHung) => {
+    
+    
+    let i = 0;
+
+    let newWidth = newHung;
+    let width = prevHung;
+
+
+
+    //you'll never increase if width is 100
+
+    
+    
+    
+} */
 
 
 
