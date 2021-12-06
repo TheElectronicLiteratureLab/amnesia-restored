@@ -432,6 +432,29 @@ let openItem = (id, name) => {
 let updateHung = (x) => {
     // update progress bar to show the new player hunger
     // check previous hunger to know where progress begins from
+
+
+    let width = x;
+    let i = 0;
+    if(i === 0){
+        i = 1;
+        let el = document.getElementById("hunger-bar");
+        let startWidth = 0;
+        let progress = setInterval(update, 1);
+        function update(){
+            if(startWidth >= width){
+                clearInterval(progress);
+                i = 0;
+            } else {
+                startWidth++;
+                el.style.width = startWidth + "%";
+            }
+        }
+    }
+
+
+
+    /*
     let newWidth = x;
     let width = prevHung;
     let i = 0;
@@ -449,7 +472,6 @@ let updateHung = (x) => {
                     clearInterval(progress);
                     i = 0;
                 } else {
-                    console.log("going up!")
                     curWidth++;
                     el.style.width = curWidth + "%";
                 }
@@ -496,7 +518,7 @@ let updateHung = (x) => {
             }
         }
     }
-
+*/
 
 }
 
