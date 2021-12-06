@@ -377,7 +377,7 @@ body {
 
 #hunger-bar {
    width: 99%;
-   height: 10px;
+   height: 15px;
    background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }
