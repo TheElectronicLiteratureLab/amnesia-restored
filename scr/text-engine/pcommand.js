@@ -876,21 +876,42 @@ let read = (item) => {
 function createPhone() { //create function
   const rooms = streets.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
+  let phoneCount = 0;
+  let roomCount = 0;
   for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
-    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
-      console.log(chance); //log the number generated
-      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
-      rooms[i].exits.push( //push the following into the room's exits array
-        {
-          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
-          id: 'pho-boo1' //id for phone booth
-        },
-      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
-      
+    const room = rooms[i];
+    roomCount++;
+    if (room.isStreet){
+      let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+      if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+        console.log(chance); //log the number generated
+        console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+        rooms[i].exits.push( //push the following into the room's exits array
+          {
+            dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+            id: 'pho-boo1' //id for phone booth
+          },
+        ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        phoneCount++
+      }
     }
   }
+  console.log(phoneCount + ' phone booths out of ' + roomCount + ' rooms.')
   thisRoom.phonesMade = true; //dont allow the function to run again
+};
+
+
+
+const findExitsArray = () => {
+  const rooms = streets.rooms;
+  let roomCount = 0;
+  for(let i = 0; i < rooms.length; i++){
+    rooms[i].exits.push(
+      {dir: 'dummy-exit', id: '', block: 'this is a dummy exit'},
+    );
+    roomCount++;
+    console.log(rooms[i].id + ' ' + roomCount);
+  }
 };
 
 //x street indexer functionality
