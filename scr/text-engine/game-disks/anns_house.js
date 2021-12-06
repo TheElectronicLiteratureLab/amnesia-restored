@@ -4,7 +4,7 @@ const anns_house = {
         {
             id:'ann-1',
             name:`Ann's House`,
-            desc:`You find 25 West 19th Street in the middle of the block on the uptown side of the street.`,
+            desc:`You can see a large brownstone at 25 W. 19th St. It is just a few steps from the corner.`,
             exits: [
                 {dir:['look'],id:'ann-2'},
                 {dir:['brownstone','building'],id:'ann-3'}
@@ -31,7 +31,7 @@ const anns_house = {
             name:'',
             desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
             onEnter: () => {
-                annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
+                annTimer = setTimeout(() =>{enterRoom('ann-5')}, 1500);
             },
             onBlock: () => {
                 if(prevInput === 'open'){
@@ -98,6 +98,15 @@ const anns_house = {
             desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won’t be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
             exits: [
                 {dir:['cecily'],id:'ann-11'},
+            ],
+            items: [
+                {
+                    itemId: 'cecily',
+                    name: ['Cecily', 'cecily'],
+                    onLook: () => {
+                        enterRoom('ann-11')
+                    },
+                }
             ]
         },
         {
@@ -203,6 +212,15 @@ const anns_house = {
                     println(`Can you rephrase that please?`);
                 }
             },
+            items: [
+                {
+                    itemId: 'bookshelf',
+                    name: ['Bookshelf', 'bookshelf'],
+                    onLook: () => {
+                        enterRoom('ann-21')
+                    },
+                }
+            ]
         },
         {
             id:'ann-19',
@@ -217,16 +235,29 @@ const anns_house = {
                     println(`Can you rephrase that please?`);
                 }
             },
+            items: [
+                {
+                    itemId: 'bookshelf',
+                    name: ['Bookshelf', 'bookshelf'],
+                    onLook: () => {
+                        enterRoom('ann-21')
+                    },
+                }
+            ]
         },
         {
             id:'ann-20',
             name:'',
             desc:`“I told you Mummy is taking a bath. Now don’t bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
-            onBlock: () => {
-                if(prevInput === 'look at bookshelf'|| prevInput === 'look at room'){
-                    enterRoom('ann-21');//onLook function might be best here.
+            items: [
+                {
+                    itemId: 'bookshelf',
+                    name: ['Bookshelf', 'bookshelf'],
+                    onLook: () => {
+                        enterRoom('ann-21')
+                    },
                 }
-            },
+            ]
         },
         {
             id:'ann-21',
@@ -360,16 +391,22 @@ const anns_house = {
             name:'',
             desc:`Even cold it is delicious. For a moment, your whole life--both the life you’ve forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
             Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
-            //onLook for Ann
             onBlock: () => {
-                if(prevInput === 'look at ann'){
-                    enterRoom('ann-32');
-                }else if(prevInput === 'ask ann about'){
+                if(prevInput === 'ask ann about'){
                     enterRoom('ann-34');
                 }else{
                     println(`Can you rephrase that please?`);
                 }
             },
+            items: [
+                {
+                    itemId: 'ann',
+                    name: ['Ann', 'ann'],
+                    onLook: () => {
+                        enterRoom('ann-32')
+                    },
+                }
+            ]
         },
         {
             id:'ann-32',
@@ -406,6 +443,15 @@ const anns_house = {
                     println(`Can you rephrase that please?`);
                 }
             },
+            items: [
+                {
+                    itemId: 'anns_note',
+                    name: ['note', 'Note'],
+                    onTake: () => {
+                        enterRoom('ann-35');
+                    }
+                }
+            ]
         },
         {
             id:'ann-35',

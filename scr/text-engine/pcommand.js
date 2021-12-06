@@ -48,7 +48,7 @@ let lookAt = (args) => {
     if (item.desc) {
       println(item.desc);
     } else {
-      println(`You don\'t notice anything remarkable about it.`);
+      //println(`You don\'t notice anything remarkable about it.`);
     }
 
     if (typeof(item.onLook) === 'function') {
