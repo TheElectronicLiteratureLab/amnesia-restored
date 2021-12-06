@@ -282,8 +282,7 @@
                 </div>
                 
                 <div id="map-display">
-                    <button class="x-button" onclick="displayNone('map-display')">X</button>
-                    <h2 id="map-display-title"></h2>
+                    <button class="x-button" id="exitMapBtn" onclick="displayNone('map-display')">X</button>
                     <div id="map-man" style="background-color: #32302f;"></div>
                 </div>
                 
@@ -313,9 +312,15 @@
                     <div id="help">
                     </div>
                 </div>
+
+                <div id='tutorial'>
+                    <h1>How to Use</h1>
+                    <p>Press number buttons on keyboard or use your mouse</p>
+                </div>
+
                 <div id="dialPad" class="clickables-right">
                     <div id="dial-pad-buttons">
-                        <button id="toggleTutorial" onclick='openTutorial()'>i</button>
+                        <button id="toggleTutorial" onclick='animateToggle()'>i</button> <!-- openTutorial() -->
                         <button id="close" onclick='closeDial()'>x</button>
                     </div>
                     <h2 id="dial-name">Dial Pad</h2>
@@ -336,10 +341,9 @@
                     </div>
                 </div>
 
-                <div id='tutorial'>
-                    <h1>How to Use</h1>
-                    <p>Press number buttons on keyboard or use your mouse</p>
-                </div>
+                
+                    
+                
             </div>
             <div class="game-item-4">
                 <div id="right-side-clickables">

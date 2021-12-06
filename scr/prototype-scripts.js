@@ -411,36 +411,68 @@ let openItem = (id, name) => {
     } 
 
     if(name === 'xindexer'){
-        console.log('true');
         document.getElementById("inventory-xIndex-display").style.display = "grid";
         document.getElementById("inventory-item-display").style.display = "none";
     }
 }
 
 // status bars
+let increasing = false;
+let decreasing = false;
 
 let updateHung = (x) => {
+    
+
+    if(playHung > prevHung){
+        increasing = true;
+    } else if(playHung < prevHung){
+        decreasing = true;
+    } else {
+        console.log("updateHung" + " if statements not working");
+    }
     // update progress bar to show the new player hunger
     // check previous hunger to know where progress begins from
 
-
-    let width = x;
-    let i = 0;
-    if(i === 0){
-        i = 1;
-        let el = document.getElementById("hunger-bar");
-        let startWidth = 0;
-        let progress = setInterval(update, 1);
-        function update(){
-            if(startWidth >= width){
-                clearInterval(progress);
-                i = 0;
-            } else {
-                startWidth++;
-                el.style.width = startWidth + "%";
+    if(increasing === true){
+        let width = x;
+        let i = 0;
+        if(i === 0){
+            i = 1;
+            let el = document.getElementById("hunger-bar");
+            let startWidth = `${prevHung}`;
+            let progress = setInterval(update, 1);
+            function update(){
+                if(startWidth >= width){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    startWidth++;
+                    el.style.width = startWidth + "%";
+                }
             }
         }
+        increasing = false;
+    } else if(decreasing === true){
+        let width = x;
+        let i = 0;
+        if(i === 0){
+            i = 1;
+            let el = document.getElementById("hunger-bar");
+            let startWidth = `${prevHung}`;
+            let progress = setInterval(update, 1);
+            function update(){
+                if(startWidth <= width){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    startWidth--;
+                    el.style.width = startWidth + "%";
+                }
+            }
+        }
+        decreasing = false;
     }
+    
 
 
 
@@ -620,9 +652,13 @@ let deleteNumBtn = () => {
     el.value = el.value.slice(0, -1);
 }
 
+
+
+
 let closeDial = () => {
     document.getElementById("dialPad").style.display = "none";
     document.getElementById("tutorial").style.display = "none";
+    tutorialDisplayed = false;
     applyInput();
   }
   
@@ -632,5 +668,45 @@ let openTutorial = () => {
       x.style.display = "block";
     } else {
       x.style.display = "none";
+    }
+}
+
+let tutorialDisplayed = false;
+
+let animateToggle = () => {
+    
+    if(tutorialDisplayed === false){
+        let id = null;
+        const el = document.getElementById("tutorial");
+        el.style.display = "block";
+        let rightPos = 0;
+        clearInterval(id);
+        id = setInterval(slide, 15);
+        function slide(){
+            if(rightPos === 25){
+                clearInterval(id);
+            } else {
+                rightPos++;
+                el.style.right = rightPos + "%";
+            }
+        }
+        tutorialDisplayed = true;
+    } else if(tutorialDisplayed === true){
+        console.log("goodbye")
+        let id = null;
+        const el = document.getElementById("tutorial");
+        let rightPos = 25;
+        clearInterval(id);
+        id = setInterval(slide, 15);
+        function slide(){
+            if(rightPos === 0){
+                clearInterval(id);
+                el.style.display = "none";
+            } else {
+                rightPos--;
+                el.style.right = rightPos + "%";
+            }
+        }
+        tutorialDisplayed = false;
     }
 }

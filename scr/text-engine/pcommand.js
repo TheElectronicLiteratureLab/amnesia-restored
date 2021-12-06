@@ -541,14 +541,15 @@ let turnOffOn = (toggle, itemId) => {
 }
 
 let dial = () => {
-  println("You pick up the phone.")
+  
   const room = getRoom(disk.roomId);
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+    println("You pick up the phone.")
     // display dial pad
     document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
-      document.getElementById("tutorial").style.display = "block";
+      animateToggle();
       firstDial = true;
     }
     // disable the input
@@ -655,6 +656,13 @@ let callNum = (num) => {
   if(!id){
     println(`This number doesn't exist.`)
   }
+
+  /* if(room.id === 'bett-apar'){
+      numbers.push(
+        {number:'555-0042', roomid:'phone-29'},
+        {number:'555-5413', roomid:'phone-30'}
+      );
+    }*/
   
 }
 

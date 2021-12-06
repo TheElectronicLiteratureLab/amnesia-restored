@@ -630,7 +630,7 @@ body {
    display: none;
    position: absolute;
    right: 0px;
-   background-color: rgba(121, 121, 121, 0.945);
+   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
    width: 25%;
    height: 100%;
    grid-template-columns: .05fr .9fr .05fr;
@@ -673,7 +673,7 @@ body {
 #tutorial {
    display: none;
    position: absolute;
-   right: 25.1%;
+   right: 0%;
    background-color: rgba(121, 121, 121, 0.945);
    width: 25%;
    height: 100%;
@@ -687,7 +687,15 @@ body {
 #map-man {
    position: absolute;
    width: 100%;
-   height: 95%;
+   height: 100%;
+   z-index: 1;
+}
+
+#exitMapBtn {
+   position: absolute;
+   right: 5px;
+   top: 5px;
+   z-index: 10;
 }
 
 #money {
