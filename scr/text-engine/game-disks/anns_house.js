@@ -391,6 +391,9 @@ const anns_house = {
             name:'',
             desc:`Even cold it is delicious. For a moment, your whole life--both the life you’ve forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
             Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
+            onEnter: () => {
+                playHung(+50)
+            },
             onBlock: () => {
                 if(prevInput === 'ask ann about'){
                     enterRoom('ann-34');
