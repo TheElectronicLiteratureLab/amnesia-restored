@@ -18104,7 +18104,7 @@ const streets = {
       id: 'broa-8',
       coord: [40.679, -27.796],
       name: 'Broadway and 8th Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The Broadway-8 AV Station entrance is at this corner.`,
       exits: [
         {dir: 'north', id: '59-cpkw'},
         {dir: 'south', id: '58-8'},
@@ -18268,7 +18268,8 @@ const streets = {
       id: '57-7',
       coord: [38.822, -21.202],
       name: 'W. 57th St. and 7th Ave.',
-      desc: `There is a subway entrance at this corner.`, //Subway entrance
+      desc: `The 57 ST-7 AV Station entrance is at this corner.`, //Subway entrance
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '58-7'},
         {dir: 'south', id: '56-7'},
@@ -18281,7 +18282,8 @@ const streets = {
       id: '57-amer',
       coord: [38.903, -14.557],
       name: 'W. 57th St. and Ave. of Americas',
-      desc: `There is a subway entrance at this corner.`, //Subway entrance
+      desc: `The 57 ST-6 AV entrance is at this corner.`, //Subway entrance
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '58-amer'},
         {dir: 'south', id: '56-amer'},
@@ -18621,7 +18623,8 @@ const streets = {
       id: '53-7',
       coord: [32.610, -21.049],
       name: 'W. 53rd St. and 7th Ave.',
-      desc: 'There is a subway entrance at this corner.', //Subway Entrance
+      desc: 'The 53 ST-7 AV Station entrance is at this corner.', //Subway Entrance
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '54-7'},
         {dir: 'south', id: '52-7'},
@@ -18883,7 +18886,8 @@ const streets = {
       id: '50-8',
       coord: [27.774, -27.450],
       name: 'W. 50th St. and 8th Ave.',
-      desc: 'There is a subway entrance at this corner.',
+      desc: 'The 50 ST-8 AV Station entrance is at this corner.',
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '51-8'},
         {dir: 'south', id: '49-8'},
@@ -18896,7 +18900,8 @@ const streets = {
       id: '50-broa',
       coord: [27.836, -23.529],
       name: 'W. 50th St. and Broadway',
-      desc: 'There is a subway entrance at this corner.',
+      desc: 'The 50 ST-Broadway Station entrance is at this corner.',
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '51-broa'},
         {dir: 'south', id: '49-broa'},
@@ -18922,6 +18927,7 @@ const streets = {
       coord: [27.939, -14.272],
       name: 'W. 50th St. and Ave. of Americas',
       desc: 'The 50 ST-6 AV Station Entrance is at this corner.',
+      hasSubway: 'true',
       exits: [
         {dir: 'north', id: '51-amer'},
         {dir: 'south', id: '49-amer'},
@@ -19003,7 +19009,8 @@ const streets = {
       id: '49-7',
       coord: [26.109, -20.854],
       name: 'W. 49th St. and 7th Ave.',
-      desc: 'There is a subway entrance at this corner.', //Subway Entrance
+      desc: 'The 49 ST-7 AV Station entrance is at this corner.', //Subway Entrance
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '50-7'},
         {dir: 'south', id: '48-7'},
@@ -19596,7 +19603,8 @@ const streets = {
       id: '43-7',
       coord: [15.209, -20.636],
       name: 'W. 43rd St. and 7th Ave.',
-      desc: 'There is a subway entrance at this corner.',
+      desc: 'The 43 ST-7 AV Station entrance is at this corner.',
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '44-7'},
         {dir: 'south', id: '42-7'},
@@ -20679,7 +20687,7 @@ const streets = {
       id: '54-5',
       coord: [34.216, -6.943],
       name: 'W. 54th St. and 5th Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 54 ST-5 AV Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       onEnter: () => {
@@ -21220,7 +21228,7 @@ const streets = {
       id: '42-5',
       coord: [13.368, -6.525],
       name: 'W. 42nd St. and 5th Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 42 ST-5 AV Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -21886,8 +21894,9 @@ const streets = {
       id: '42-depe',
       coord: [13.518, 3.493],
       name: 'E. 42nd St. and Depew Pl.',
-      desc: `Grand Central Station. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
+      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
         {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
@@ -22043,7 +22052,7 @@ const streets = {
       id: '51-lexi',
       coord: [29.669, 5.010],
       name: 'E. 51st St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 51 ST-Lexington Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -22149,7 +22158,7 @@ const streets = {
       id: '59-lexi',
       coord: [42.245, 4.724],
       name: 'E. 59th St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 59 ST-Lexington Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -22163,7 +22172,7 @@ const streets = {
       id: '59-3',
       coord: [42.294, 8.459],
       name: 'E. 59th St. and 3rd Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 59 ST-3 AV Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -22243,7 +22252,7 @@ const streets = {
       id: '53-3',
       coord: [32.953, 8.723],
       name: 'E. 53rd St. and 3rd Ave.',
-      desc: `There is a subway entrance at this corner`,
+      desc: `The 53 ST-3 AV Station entrance is at this corner.`,
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -28678,9 +28687,9 @@ const streets = {
       id: '59-5',
       coord: [42.143, -7.057],
       name: 'Central Park S. and 5th Ave',
-      desc: `There is a subway entrance at this corner.`,
-      hSubway: true,
+      desc: `The 59 ST-5 AV Station entrance is at this corner.`,
       isStreet : true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '60-5'},
         {dir: 'south', id: '58-5'},
@@ -30832,9 +30841,9 @@ const streets = {
       id: '68-lexi',
       coord: [53.834, 4.388],
       name: 'E. 68th St. and Lexington Ave.',
-      desc: ``,
+      desc: `The 68 ST-Lexington Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '69-lexi'},
         {dir: 'south', id: '67-lexi'},
@@ -30951,9 +30960,9 @@ const streets = {
       id: '77-lexi',
       coord: [62.827, 4.047],
       name: 'E. 77th St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 77 ST-Lexington Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '78-lexi'},
         {dir: 'south', id: '76-lexi'},
@@ -31070,9 +31079,9 @@ const streets = {
       id: '86-lexi',
       coord: [69.813, 3.820],
       name: 'E. 86th St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 86 ST-Lexington Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '87-lexi'},
         {dir: 'south', id: '85-lexi'},
@@ -31149,8 +31158,9 @@ const streets = {
       id: '92-lexi',
       coord: [73.408, 3.898],
       name: 'E. 92nd St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 92 ST-Lexington Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '93-lexi'},
         {dir: 'south', id: '91-lexi'},
@@ -31202,9 +31212,9 @@ const streets = {
       id: '96-lexi',
       coord: [75.468, 3.895],
       name: 'E. 96th St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 96 ST-Lexington Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '97-lexi'},
         {dir: 'south', id: '95-lexi'},
@@ -31294,9 +31304,9 @@ const streets = {
       id: '103-lexi',
       coord: [78.506, 3.936],
       name: 'E. 103rd St. and Lexington Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 103 ST-Lexington Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '104-lexi'},
         {dir: 'south', id: '102-lexi'},
@@ -31373,9 +31383,9 @@ const streets = {
       id: '109-park',
       coord: [80.563, 3.968],
       name: 'E. 109th St. and Park Ave.',
-      desc: `There is a subway entrance at this corner.`,
+      desc: `The 109 ST-Park Station entrance is at this corner.`,
       isStreet : true,
-      hSubway: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '110-lexi'},
         {dir: 'south', id: '108-lexi'},
