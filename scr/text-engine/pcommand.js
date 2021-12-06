@@ -944,7 +944,7 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
     playHung = amount;
     println(`
     Player Hunger now set to ${amount}`);
-    //updateHun();
+    updateHun(playHung);
   };
 
   
