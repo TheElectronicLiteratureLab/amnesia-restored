@@ -85,12 +85,25 @@ let setup = () => {
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
-let save = (name) => {
+/*let save = (name) => {
   const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
   localStorage.setItem(name, save);
   const line = name.length ? `Game saved as "${name}".` : `Game saved.`;
   println(line);
-};
+};*/
+
+let save = () => {
+  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
+  if (saveSlot === '1') {    
+    localStorage.setItem("Save 1", save);
+  } else if (saveSlot === '2') {
+    localStorage.setItem("Save 2", save);
+  } else if (saveSlot === '3') {
+    localStorage.setItem("Save 3", save);
+  } else {
+    console.log("There are no available slots left!")
+  }
+}
 
 // restore the disk from storage
 // (optionally accepts a name for the save)

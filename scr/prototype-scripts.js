@@ -40,6 +40,10 @@ let newGame = () => {
 let loadGame = () => {
     document.getElementById("game-title").style.display = "none";
     document.getElementById("game-load").style.display = "grid";
+    document.getElementById("saveSlot1").innerHTML = localStorage.key(0);
+    document.getElementById("saveSlot2").innerHTML = localStorage.key(1);
+    document.getElementById("saveSlot3").innerHTML = localStorage.key(2);
+    //other data we would like for each save slot
 }
 
 let displayDesc = (id) => {
@@ -226,6 +230,8 @@ let displayCheck = (name) => {
 
     if(name === "map"){
         mapOn = true;
+        setTimeout(function(){ map.invalidateSize()}, 50);
+        map.panTo(playerMarker.getLatLng());
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             invOn = false;

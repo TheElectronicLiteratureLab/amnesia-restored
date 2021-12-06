@@ -16,19 +16,20 @@
     <!-- Stylesheets -->
     <link id="styles" rel="stylesheet" type="text/css" href="css/reset.css">
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" href="scr/leaflet.css">
 
 
 
     <!-- Addtional Scripts -->
-
+    <script src="scr/leaflet.js"></script>
     <script src="scr/jquery/jquery-3.6.0.min.js"></script>
 
 
 </head>
 
 <body>
-    <!-- black portion of game fixed size, fixed height -->
 
+    <!-- black portion of game fixed size, fixed height -->
     <!-- this is the game -->
     <div id="game-container">
         <div id="game-title">
@@ -111,22 +112,27 @@
                     </div>
                     <div id="load-saves">
                         <div class="saves" id="first-save-container">
+                            <h4 id=saveSlot1></h4>
                             <h4 class="saves-date" id="first-save-date"></h4>
                             <h4 class="saves-time" id="first-save-time"></h4>
                         </div>
                         <div class="saves" id="second-save-container">
+                            <h4 id=saveSlot2></h4>
                             <h4 class="saves-date" id="second-save-date"></h4>
                             <h4 class="saves-time" id="second-save-time"></h4>
                         </div>
                         <div class="saves" id="third-save-container">
+                            <h4 id=saveSlot3></h4>
                             <h4 class="saves-date" id="third-save-date"></h4>
                             <h4 class="saves-time" id="third-save-time"></h4>
                         </div>
                         <div class="saves" id="fourth-save-container">
+                            <h4 id=saveSlot4></h4>
                             <h4 class="saves-date" id="fourth-save-date"></h4>
                             <h4 class="saves-time" id="fourth-save-time"></h4>
                         </div>
                         <div class="saves" id="fifth-save-container">
+                            <h4 id=saveSlot5></h4>
                             <h4 class="saves-date" id="fifth-save-date"></h4>
                             <h4 class="saves-time" id="fifth-save-time"></h4>
                         </div>
@@ -212,16 +218,15 @@
                     <div id="addresses">
                     </div>
                 </div>
-                <!--
-                    <div id="map-display">
-                        <button class="x-button" onclick="displayNone('map-display')">X</button>
-                        <h2 id="map-display-title">Map</h2>
-                        <div id="map">
-                        </div>
-                    </div>
-                    -->
+                
+                <div id="map-display">
+                    <button class="x-button" onclick="displayNone('map-display')">X</button>
+                    <h2 id="map-display-title"></h2>
+                    <div id="map-man" style="background-color: #32302f;"></div>
+                </div>
+                
                 <div id="info-display" class="clickables-left">
-                    <button class="x-button" onclick="displayNone('info-display')">X</button>
+                    <button id="map-x-button" class="x-button" onclick="displayNone('info-display')">X</button>
                     <h2 id="info-display-title">Info</h2>
                     <div id="info">
                     </div>
@@ -325,25 +330,50 @@
         </div>
     </div> <!-- close game container -->
 
-
+    <script type="text/javascript">
+        //Creating the Map
+          //var map = L.map('map').setView([0, 0], 0);
+          var map = L.map('map-man', {center:[0, 0], zoom: 4, attributionControl: false});
+          map.invalidateSize();
+          setTimeout(function(){ map.invalidateSize(true)}, 300);
+          L.tileLayer('map/{z}/{x}/{y}.png', {
+            continuousWorld: false,
+            noWrap: true,	
+            minZoom: 3,
+            maxZoom: 6,
+          }).addTo(map);
+        
+        /*//Coordinate Finder
+          var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
+          marker.bindPopup('LatLng Marker').openPopup();
+          marker.on('drag', function(e) {
+            marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
+            //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+            marker.on('dragend', function(e) {
+            navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
+          })
+          });
+          */
+</script>        
 
     <!-- Scripts (Including Engines)-->
     <!-- Include game engine -->
     <!-- Be sure to load in dependencies first -->
+    <script src='scr/text-engine/playercharacter.js'></script>
     <script src="scr/text-engine/parser.js"></script>
     <script src="scr/text-engine/init.js"></script>
     <script src="scr/prototype-scripts.js"></script>
     <script src="scr/text-engine/pcommand.js"></script>
     <script src="scr/text-engine/internalfunc.js"></script>
-    <script src='scr/text-engine/playercharacter.js'></script>
+
 
 
     <!-- Include game data ('disk') -->
-    <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+    <script src="scr/text-engine/game-disks/streets.js"></script>
 
     <!-- Load disk into engine -->
-    <script>loadDisk(amnesiaRestored);</script>
-
+    <script>loadDisk(streets);</script>
+    <script src='scr/text-engine/markers.js'></script>
 </body>
 
 </html>

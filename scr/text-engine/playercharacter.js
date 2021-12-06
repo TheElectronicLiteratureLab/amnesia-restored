@@ -4,6 +4,8 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 });
 
+saveSlot = '2';
+
 let playFat = 100;
 let playHung = 100;
 let prevHung; // holds the previous value of playHung
