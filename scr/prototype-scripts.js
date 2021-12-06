@@ -421,11 +421,14 @@ let increasing = false;
 let decreasing = false;
 
 let updateHung = (x) => {
+
+    const xPlayHung = parseInt(playHung);
+    const xPrevHung = parseInt(prevHung);
     
 
-    if(playHung > prevHung){
+    if(xPlayHung > xPrevHung){
         increasing = true;
-    } else if(playHung < prevHung){
+    } else if(xPlayHung < xPrevHung){
         decreasing = true;
     } else {
         console.log("updateHung" + " if statements not working");
@@ -439,7 +442,7 @@ let updateHung = (x) => {
         if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
-            let startWidth = `${prevHung}`;
+            let startWidth = xPrevHung;
             let progress = setInterval(update, 1);
             function update(){
                 if(startWidth >= width){
@@ -458,7 +461,7 @@ let updateHung = (x) => {
         if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
-            let startWidth = `${prevHung}`;
+            let startWidth = xPrevHung;
             let progress = setInterval(update, 1);
             function update(){
                 if(startWidth <= width){
