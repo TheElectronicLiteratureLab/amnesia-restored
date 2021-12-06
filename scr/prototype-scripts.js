@@ -231,7 +231,7 @@ let displayCheck = (name) => {
     if(name === "map"){
         mapOn = true;
         setTimeout(function(){ map.invalidateSize()}, 50);
-        map.panTo(playerMarker.getLatLng());
+        //map.panTo(playerMarker.getLatLng());
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             invOn = false;
