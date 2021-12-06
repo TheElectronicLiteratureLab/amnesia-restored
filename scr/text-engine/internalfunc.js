@@ -206,6 +206,7 @@ let enterRoom = (id) => {
 
   disk.roomId = id;
   disk.currPos = room.coord;
+  console.log(disk.currPos);
 
   if (typeof room.onEnter === 'function') {
     room.onEnter({disk, println, getRoom, enterRoom});
@@ -239,7 +240,7 @@ let response = (e) => {
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
 let pressEnter = (id) => {
-  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enterKey');
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";

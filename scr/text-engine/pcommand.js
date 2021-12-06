@@ -69,7 +69,7 @@ let lookAt = (args) => {
       if (character.desc) {
         println(character.desc);
       } else {
-        println(`You don't notice anything remarkable about them.`);
+        //println(`You don't notice anything remarkable about them.`);
       }
 
       if (typeof(character.onLook) === 'function') {
@@ -897,7 +897,7 @@ function createPhone() { //create function
 //x street indexer functionality
 const xStreetGoButton = document.getElementById("submitButton"); //submit button variable
 
-/* xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
+xStreetGoButton.onclick = function () { //set up the function if the submit button is pressed
   const aStreetNumber = document.getElementById("streetNumber"); //reference the street number drop down
   const bCrossStreet = document.getElementById("crossStreet"); //referende the street name drop down
   const streetNumber = aStreetNumber.value; //get the value of the street number drop down
@@ -920,7 +920,7 @@ const xStreetGoButton = document.getElementById("submitButton"); //submit button
 
     }
   }
-}; */
+}; 
 
 //dev command functions 
 

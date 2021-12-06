@@ -6,6 +6,8 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 saveSlot = '2';
 
+turnMapOn = false;
+
 let playFat = 100;
 let playHung = 100;
 let prevHung; // holds the previous value of playHung

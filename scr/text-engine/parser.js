@@ -8,13 +8,16 @@ let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
-  println(`${input}`, 'noborder');
+  if (input !== "inv") {
+    println(`${input}`, 'playerInput');
+  } else {
+    setInput('');
+  }
   prevInput = input;
   console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
  // console.log(playerMarker.getLatLng());
-
 
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);

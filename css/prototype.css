@@ -683,3 +683,28 @@ body {
    width: 100%;
    height: 95%;
 }
+
+#money {
+   text-align: center;
+}
+
+/* Classes for println() */
+
+#output div.introSequence {
+   text-align: center;
+   border-left: none;
+}
+
+#output div.amnesiaTitle {
+   text-align: center;
+   border-left: none;
+}
+
+#output div.enterKey {
+   text-align: center;
+   border-left: none;
+}
+
+#output div.playerInput {
+   border-left: none;
+}
