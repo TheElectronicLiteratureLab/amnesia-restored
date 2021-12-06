@@ -11,6 +11,10 @@ let playerMarker = L.marker(disk.currPos).addTo(map);
 //POI: Street
 //POI: Phone
 
+let centerOnPlayer = () => {
+  map.flyTo(playerMarker.getLatLng());
+}
+
 let setPlayerMarker = (e) => {
   const ENTER = 13;
   
@@ -19,10 +23,9 @@ let setPlayerMarker = (e) => {
     console.log(disk.currPos);
     if (disk.currPos.length !== 0) {
       let room = getRoom(disk.roomId);
-      //playerPopup.setContent('Hello World!');
-      //playerMarker.bindPopup(playerPopup);
-      //playerMarker.openPopup();
+      
       playerMarker.setLatLng(disk.currPos).bindPopup(room.name, {offset: L.point(-46, 5), className: 'popup'}).openPopup().update();
+      centerOnPlayer();
       playerMarker.on('click', function(e) {
         playerMarker.unbindPopup();
         playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
@@ -34,7 +37,7 @@ let setPlayerMarker = (e) => {
       println('There are no coordinates here, please find some.');
     } 
     else {
-      console.log('Something broke!!! Let your worldbuilder/programmer')
+      console.log('Something broke!!! Let your worldbuilder/programmer know!')
     }
   }
 }

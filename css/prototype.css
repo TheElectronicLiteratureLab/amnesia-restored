@@ -30,7 +30,7 @@ body {
 }
 
 #game-container h1 {
-   font-size: 4em;
+   font-size: 6vh;
 }
 
 #game-container h2 {
@@ -517,6 +517,10 @@ body {
    display: none;
 }
 
+#map-display {
+   display: none;
+}
+
 #info-display {
    display: none;
 }
@@ -672,4 +676,10 @@ body {
 #addresses {
    height: 80%;
    overflow-y: scroll;
+}
+
+#map-man {
+   position: absolute;
+   width: 100%;
+   height: 95%;
 }
