@@ -1300,14 +1300,14 @@ const sleepFunction = () => {
     //then print desc with proper variables
 
   
- let quIndex;
+
     
 const randomEncounter = () => {
   
   const chance = Math.floor(Math.random() * 100) + 1 //roll number between 1-100
   console.log('the chance was ' + chance);
   const room = getRoom(disk.roomId);
-  if (chance >= 5 && room.desc === '' || "" || ``) {
+  if (chance <= 5 && room.desc === '' || "" || ``) {
     const lat = room.coord[0];
     const lng = room.coord[1];
     if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) {
@@ -1448,9 +1448,6 @@ const randomEncounter = () => {
   } 
 };
 
-//chelsea coord location lat -2/-36 , lon -55/-12
-//midtown coord location lat 13/42, long -55/28
-//greenwich coord location lat -36/-58, long 5/-42
 
 
 

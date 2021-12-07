@@ -118,6 +118,7 @@ const amPm = ['AM', 'PM']
   let choice2;
   let choice3;
   let choice4;
+  let quIndex;
 
 const chelDesc = (w, x, y, z) => {
   const chelseaDescriptions = [
