@@ -1292,38 +1292,16 @@ const sleepFunction = () => {
 //player score\\
 //difficulty level tie ins\\
 
-
-//random events (x indexer, wacky wanderer, kid with rag, flavor text)
-//random event on enter 
-//dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
-//different arrays for different neighborhoods with different flavor texts -- 
-
-//random event functionality
-//place inside on enter, beneath the spawn tenement function
-//must check which neighborhood the player is in via coord, if it is one of the appropriate neighborhoods then
-//random chance to have an encounter, has to be in a room where the description is empty
-//roll a number depending on the array as lengths are different
-//also need functionality for time locked ones in rush hour
-//once that index number is assigned parse the proper object at that index for 
-    //how many choices there are, if there are 4 roll 4 numbers, if there are 3 roll that many, etc, if there are none then print desc
-    //once the numbers are rolled assign the proper variables to the rolled values on the choices arrays
-    //then print desc with proper variables
-
-  
-
-    
+//random encounter function
 const randomEncounter = () => {
   
   const chance = Math.floor(Math.random() * 100) + 1 //roll number between 1-100
-  console.log('the chance was ' + chance);
-  const room = getRoom(disk.roomId);
-  if (chance <= 5 && room.desc === '' || "" || ``) {
-    const lat = room.coord[0];
+  const room = getRoom(disk.roomId); //get the current room
+  if (chance <= 5 && room.desc === '' || "" || ``) { //5% chance and the room description has to be empty
+    const lat = room.coord[0]; //
     const lng = room.coord[1];
     if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) {
-      console.log('the player is in chelsea');
       quIndex = Math.floor(Math.random() * 11);
-      console.log(quIndex);
       if(quIndex >= 8 && quIndex <= 10) {
         chelDesc();
         return;
@@ -1365,9 +1343,7 @@ const randomEncounter = () => {
         }
       }
     } else if ( (lat >= 13 && lat <= 42) && (lng >= -55 && lng <= 28 ) ) {
-      console.log('the player is in midtown');
       quIndex = Math.floor(Math.random() * 14);
-      console.log(quIndex);
       if(quIndex === 13) {
         midDesc();
         return;
@@ -1411,9 +1387,7 @@ const randomEncounter = () => {
       }
 
     } else if ( (lat >= -58 && lat <= -36) && (lng >= -42 && lng <= 5 ) ) {
-      console.log('the player is in greenwich');
       quIndex = Math.floor(Math.random() * 12);
-      console.log(quIndex);
       if(quIndex >= 5) {
         greenDesc();
         return;
