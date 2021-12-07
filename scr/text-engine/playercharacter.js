@@ -141,7 +141,7 @@ const chelDesc = (w, x, y, z) => {
 
 let chelseaEncounters = [ //coord locations between lat -2/-36 , lon -55/-12
   {
-    choices1: [`An antique store specializing in 50's bad taste`, `A punk hairn stylist`, `A restuarant lit by pink neon`, `A shop selling nothing but popcorn in various colors`],
+    choices1: [`An antique store specializing in 50's bad taste`, `A punk hair stylist`, `A restuarant lit by pink neon`, `A shop selling nothing but popcorn in various colors`],
     choices2: [`a Hispanic barber shop`, `a laundromat`, `a beer-and-potato-chips grocery store`, `the parlor of a “Reader and Advisor” that’s been left in charge of a fat black cat`],
     choices3: [`a fish store with a special on salted cod.`, `a bar that’s been closed by the Board of Health.`, `a store dealing in used office furniture.`, `a coffee shop with a dusty sign asking you go be patient until its renovation is complete.`]
   }, 
