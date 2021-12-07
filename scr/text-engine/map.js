@@ -1,3 +1,5 @@
+//Creating the Map
+//Player Marker//
 let playerIcon =  L.icon ({
   iconUrl: '/scr/images/icon-character-map.png',
   iconSize: [206/4, 181/4],
@@ -7,16 +9,15 @@ let playerIcon =  L.icon ({
 
 let playerMarker = L.marker(disk.currPos, {icon: playerIcon, className: "popup"});
 let playerLayer = L.layerGroup([playerMarker]);
-
-//Creating the Map
           //var map = L.map('map').setView([0, 0], 0);
           var map = L.map('map-man', {
             center:[0, 0],
             zoom: 4,
             layers: [playerLayer],
             attributionControl: false,
+            zoomControl: false
           });
-        //map.invalidateSize();
+        map.invalidateSize();
         setTimeout(function(){ map.invalidateSize(true)}, 100);
         L.tileLayer('map/{z}/{x}/{y}.png', {
           continuousWorld: false,
@@ -36,7 +37,10 @@ let playerLayer = L.layerGroup([playerMarker]);
         })
         });
 */
-let fg = L.featureGroup().addTo(map);
+
+//******Marker Creation Here*******//
+
+//ICONS
 
 //POI: Tenement
 let tenementIcon = L.icon ({
@@ -45,7 +49,7 @@ let tenementIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
-let tenementMarker = L.marker([0,0], {icon: tenementIcon, className: "popup"}).addTo(map);
+let tenementMarker = L.marker([0,0], {icon: tenementIcon, className: "popup"});
 tenementMarker.bindPopup("Abandoned Tenement");
 tenementMarker.on("click", function() {
   tenementMarker.openPopup();
@@ -58,7 +62,7 @@ let hotelIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
-let hotelMarker = L.marker([32.787, -6.877], {icon: hotelIcon, className: "popup"}).addTo(map);
+let hotelMarker = L.marker([32.787, -6.877], {icon: hotelIcon, className: "popup"});
 hotelMarker.bindPopup("The Sunderland Hotel");
 hotelMarker.on("click", function() {
   hotelMarker.openPopup();
@@ -88,25 +92,47 @@ let phoneIcon = L.icon ({
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
 
-//POI: Story Node
+//POI: Story Nodes
+let poiIcon = L.icon ({
+  iconUrl: '/scr/images/icon-POI-map.png',
+  iconSize: [164/4, 164/4],
+  popupAnchor: [0, -164/8],
+  iconAnchor: [164/8 + 1 , 164/8 + 1],
+});
+//todo: insert story node icon here
 
 
+//Layer Groups
 
-//Creating a regular expression to extract Subway Station name
-//todo: make sure all stations have the correct formating
+let subwayLayer = L.layerGroup();
+let phoneLayer = L.layerGroup(); //this might need to be moved into the phone spawning function
+let foodLayer = L.layerGroup();
+let poiLayer = L.layerGroup();
+let sleepLayer = L.layerGroup([hotelMarker, tenementMarker]); 
 
+//Creating a regular expression to extract Subway Station name [98 Stations!]
 let subwayRegEx = / (.* Station) /;
 
+//Markers for POI, then run a forEach similarly like above in order to create markers.
+//This is done by feeding an array containing ids of the rooms we want
+let poiIDArr = ['56-madi'];
+
+
+//This block is checking the entire disk for boolean values for food and subway.
 //todo: need to add hasFood property to every room that has a restaruant
 console.log(disk.rooms)
 disk.rooms.forEach((element)=>{
   if (element.coord !== undefined) {
     if (element.coord[0] !== undefined && element.coord[1] !== undefined) {
+      
+      //Food Markers
       if (element.hasFood === true) {
         console.log([element.coord[0],element.coord[1]])
-        let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(fg)
+        let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(foodLayer);
         //marker.bindPopup(element.name, {className: 'popup'});
       }
+
+      //Subway Markers
       if (element.hasSubway === true) {
         //matches the desc to grab the exact the station name and places it in the popup.
         const match = subwayRegEx.exec(element.desc); 
@@ -114,23 +140,33 @@ disk.rooms.forEach((element)=>{
           let subName = match[1];
           console.log("match!");
           //console.log(subName)
-          let marker = L.marker([element.coord[0],element.coord[1]], {icon: subwayIcon}).addTo(fg)
+          let marker = L.marker([element.coord[0], element.coord[1]], {icon: subwayIcon}).addTo(subwayLayer);
           marker.bindPopup(subName, {className: 'popup'});
         }
+      } else {
+        console.log('No subways here!');
       }
+
+      //POI Markers
+      poiIDArr.forEach((poi) => {
+        if (poi === element.id) {
+          console.log(element.id);
+          let marker = L.marker([element.coord[0], element.coord[1]], {icon: poiIcon}).addTo(poiLayer);
+          marker.bindPopup("???", {className: 'popup'});
+        }
+      })
+    } else {
+      console.log('No coordinates here!');
     }
+  } else {
+    console.log('No rooms to be found!');
   }
 });
 
+//enable popups on click for all markers
 $('.popup').on('click', function(e) {
   e.openPopup();
 })
-
-
-
-
-//POI: Street?
-
 
 let centerOnPlayer = () => {
   map.flyTo(playerMarker.getLatLng());
@@ -163,6 +199,17 @@ let setPlayerMarker = (e) => {
   }
 }
 
+
+let overlays = {
+  "Subway": subwayLayer,
+  "Phone Booths": phoneLayer,
+  "Food": foodLayer,
+  "Sleep": sleepLayer,
+  "Story": poiLayer
+}
+
+L.control.layers(null, overlays, {collapsed: false, position: 'bottomleft'}).addTo(map);
+L.control.zoom({position: 'bottomright'}).addTo(map);
 input.addEventListener('keypress', setPlayerMarker);
 
 
