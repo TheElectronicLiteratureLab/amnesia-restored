@@ -540,6 +540,77 @@ let turnOffOn = (toggle, itemId) => {
   }
 }
 
+function enterBtnClick(){
+  e = $.Event('keyup');
+  e.keyCode = 13; //enter
+  $('input').trigger(e);
+  applyInput();
+  window.removeEventListener("keydown", checkKeyPressed, false);
+}
+
+function checkKeyPressed(evt){
+  let el = document.getElementById("input");
+  let number;
+  let numdialKey = () => {
+    el.value = el.value + number;
+  }
+  let deleteNum = () => {
+    el.value = el.value.slice(0, -1);
+  }
+
+  if(evt.keyCode === 48){
+    number = 0;
+    numdialKey();
+  }
+  if(evt.keyCode === 49){
+    number = 1;
+    numdialKey();
+  }
+  if(evt.keyCode === 50){
+    number = 2;
+    numdialKey();
+  }
+  if(evt.keyCode === 51){
+    number = 3;
+    numdialKey();
+  }
+  if(evt.keyCode === 52){
+    number = 4;
+    numdialKey();
+  }
+  if(evt.keyCode === 53){
+    number = 5;
+    numdialKey();
+  }
+  if(evt.keyCode === 54){
+    number = 6;
+    numdialKey();
+  }
+  if(evt.keyCode === 55){
+    number = 7;
+    numdialKey();
+  }
+  if(evt.keyCode === 56){
+    number = 8;
+    numdialKey();
+  }
+  if(evt.keyCode === 57){
+    number = 9;
+    numdialKey();
+  }
+  if(evt.keyCode === 13){
+    //enterBtnClick();
+    window.removeEventListener("keydown", checkKeyPressed, false);
+  }
+  if(evt.keyCode === 8){
+    deleteNum();
+    
+  }
+  if(evt.keyCode == 46){
+    deleteNum();
+  }
+}
+
 let dial = () => {
   
   const room = getRoom(disk.roomId);
@@ -559,75 +630,30 @@ let dial = () => {
     // adding the command to input to then run a one arguement command
     el.value = 'dialing ';
     // variable to hold the digit choosen by player to add to the input value
-    let number;
+    //let number;
     
+     // adding an event listener to keys
+     window.addEventListener("keydown", checkKeyPressed, false);
     // functionality for keys 
-    function checkKeyPressed(evt){
-      if(evt.keyCode === 48){
-        number = 0;
-        numdialKey();
-      }
-      if(evt.keyCode === 49){
-        number = 1;
-        numdialKey();
-      }
-      if(evt.keyCode === 50){
-        number = 2;
-        numdialKey();
-      }
-      if(evt.keyCode === 51){
-        number = 3;
-        numdialKey();
-      }
-      if(evt.keyCode === 52){
-        number = 4;
-        numdialKey();
-      }
-      if(evt.keyCode === 53){
-        number = 5;
-        numdialKey();
-      }
-      if(evt.keyCode === 54){
-        number = 6;
-        numdialKey();
-      }
-      if(evt.keyCode === 55){
-        number = 7;
-        numdialKey();
-      }
-      if(evt.keyCode === 56){
-        number = 8;
-        numdialKey();
-      }
-      if(evt.keyCode === 57){
-        number = 9;
-        numdialKey();
-      }
-      if(evt.keyCode === 13){
-        //enterBtnClick();
-        window.removeEventListener("keydown", checkKeyPressed, false);
-      }
-      if(evt.keyCode === 8){
-        deleteNum();
-      }
-      if(evt.keyCode == 46){
-        deleteNum();
-      }
-    }
-    // adding an event listener to keys
-    window.addEventListener("keydown", checkKeyPressed, false);
+    
+    checkKeyPressed();
+    
+    window.removeEventListener("keydown", checkKeyPressed, false);
+    
     // function that adds the key pressed value to the input
-    let numdialKey = () => {
+    /*let numdialKey = () => {
       el.value = el.value + number;
-    }
+    }*/
     
     // function that deletes last value of input string
-    let deleteNum = () => {
+    /*let deleteNum = () => {
       el.value = el.value.slice(0, -1);
-    }
+    }*/
+    
   } else {
     println(`With what phone?`)
   }
+  
 }
 
 let dialing = () => {
@@ -638,6 +664,7 @@ let dialing = () => {
 }
 
 let callNum = (num) => {
+  
   document.getElementById("dialPad").style.display = "none";
   document.getElementById("tutorial").style.display = "none";
   reenableInput();
@@ -1000,9 +1027,11 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
   //set fatigue to certain amount
   function setFatigue(amount) {
+    prevFat = playFat;
     playFat = amount;
     println(`
     Player fatigue now set to ${amount}`);
+    updateFat(playFat);
   };
 
 
@@ -1091,8 +1120,8 @@ const incrementTime = () => {
 
     //document.getElementById('hunger-number').innerHTML = `${playHung}`;
     //document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
-    //document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-    //document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+    document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };
 
 //increment day function
@@ -1119,7 +1148,7 @@ const incrementDay = () => {
   let dumbAmPm = amPm[qMeridiem];
 
   //document.getElementById('hungerNumber').innerHTML = `${playHung}`;
-  document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
+  //document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
   document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
 };

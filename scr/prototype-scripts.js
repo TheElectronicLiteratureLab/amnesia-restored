@@ -417,8 +417,8 @@ let openItem = (id, name) => {
 }
 
 // status bars
-let increasing = false;
-let decreasing = false;
+let increasingHung = false;
+let decreasingHung = false;
 
 let updateHung = (x) => {
 
@@ -427,23 +427,23 @@ let updateHung = (x) => {
     
 
     if(xPlayHung > xPrevHung){
-        increasing = true;
+        increasingHung = true;
     } else if(xPlayHung < xPrevHung){
-        decreasing = true;
+        decreasingHung = true;
     } else {
         console.log("updateHung" + " if statements not working");
     }
     // update progress bar to show the new player hunger
     // check previous hunger to know where progress begins from
 
-    if(increasing === true){
+    if(increasingHung === true){
         let width = x;
         let i = 0;
         if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
             let startWidth = xPrevHung;
-            let progress = setInterval(update, 1);
+            let progress = setInterval(update, 30);
             function update(){
                 if(startWidth >= width){
                     clearInterval(progress);
@@ -454,15 +454,15 @@ let updateHung = (x) => {
                 }
             }
         }
-        increasing = false;
-    } else if(decreasing === true){
+        increasingHung = false;
+    } else if(decreasingHung === true){
         let width = x;
         let i = 0;
         if(i === 0){
             i = 1;
             let el = document.getElementById("hunger-bar");
             let startWidth = xPrevHung;
-            let progress = setInterval(update, 1);
+            let progress = setInterval(update, 30);
             function update(){
                 if(startWidth <= width){
                     clearInterval(progress);
@@ -473,157 +473,75 @@ let updateHung = (x) => {
                 }
             }
         }
-        decreasing = false;
+        decreasingHung = false;
     }
     
-
-
-
-    /*
-    let newWidth = x;
-    let width = prevHung;
-    let i = 0;
-
-    // if player hunger is back up to 100% then run this
-    if(newWidth === '100'){
-        console.log("running")
-        if(i === 0){
-            i = 1;
-            let el = document.getElementById("hunger-bar");
-            let curWidth = width;
-            let progress = setInterval(fullBar, 10);
-            function fullBar(){
-                if(curWidth == 100){
-                    clearInterval(progress);
-                    i = 0;
-                } else {
-                    curWidth++;
-                    el.style.width = curWidth + "%";
-                }
-            }
-        }
-    } 
-        // 100 <= 50
-    if(width <= newWidth){
-        //let el = document.getElementById("hunger-bar");
-        console.log("increase bar");
-        //el.style.width = newWidth + "%";
-        if(i === 0){
-            i = 1;
-            let el = document.getElementById("hunger-bar");
-            let curWidth = width;
-            let progress = setInterval(increase, 10);
-            function increase(){
-                if(curWidth >= newWidth){
-                    clearInterval(progress);
-                    i = 0;
-                } else {
-                    curWidth++;
-                    el.style.width = curWidth + "%";
-                }
-            }
-        }
-    } else if(width >= newWidth){
-        //let el = document.getElementById("hunger-bar");
-        console.log("decrease bar");
-        //el.style.width = newWidth + "%";
-        if(i === 0){
-            i = 1;
-            let el = document.getElementById("hunger-bar");
-            let curWidth = width;
-            let progress = setInterval(decrease, 10);
-            function decrease(){
-                if(curWidth <= newWidth){
-                    clearInterval(progress);
-                    i = 0;
-                } else {
-                    curWidth--;
-                    el.style.width = curWidth + "%";
-                }
-            }
-        }
-    }
-*/
-
 }
 
-/*
+let increasingFat = false;
+let decreasingFat = false;
 
-let runProgress = (newHung) => {
+let updateFat = (x) => {
+
+    const xPlayFat = parseInt(playFat);
+    const xPrevFat = parseInt(prevFat);
     
-    
-    let i = 0;
 
-    let newWidth = newHung;
-    let width = prevHung;
-
-
-
-    //you'll never increase if width is 100
-
-    
-    
-    
-} */
-
-
-
-  
-
-
-    // code below works but breaks if playhung is set to 100
-
-    //console.log(newWidth > curWidth);
-
-    /*if(newWidth === 100){
-        el.style.width = 100 + "%";
-    }*/
-
-    /*
-
-    if(newWidth > curWidth){
-        if(i === 0){
-            i = 1;
-            let el = document.querySelector("#hunger-bar");
-            let width = curWidth;
-            let progress = setInterval(increase, 5);
-            function increase(){
-                if(width >= newWidth){
-                    clearInterval(progress);
-                    i = 0;
-                } else {
-                    //console.log('increase')
-                    width++;
-                    el.style.width = width + "%";
-                    console.log(el.style.width)
-                }
-            }
-        }
-    } 
-    
-    if(newWidth < curWidth){
-        if(i === 0){
-            i = 1;
-            let el = document.querySelector("#hunger-bar");
-            let width = curWidth;
-            let progress = setInterval(decrease, 5);
-            function decrease(){
-                if(width <= newWidth){
-                    clearInterval(progress);
-                    i = 0;
-                } else {
-                    //console.log('decrease')
-                    width--;
-                    el.style.width = width + "%";
-                    console.log(el.style.width)
-                }
-            }
-        }
+    if(xPlayFat > xPrevFat){
+        increasingFat = true;
+    } else if(xPlayFat < xPrevFat){
+        decreasingFat = true;
+    } else {
+        console.log("updateFat" + " if statements not working");
     }
-    */
 
-    //hunBarEl.style.width = playHung + "%";
+    if(increasingFat === true){
+        let width = x;
+        let i = 0;
+        if(i === 0){
+            i = 1;
+            let el = document.getElementById("fatigue-bar");
+            let startWidth = xPrevFat;
+            let progress = setInterval(update, 30);
+            function update(){
+                if(startWidth >= width){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    startWidth++;
+                    el.style.width = startWidth + "%";
+                }
+            }
+        }
+        increasingFat = false;
+    } else if(decreasingFat === true){
+        let width = x;
+        let i = 0;
+        if(i === 0){
+            i = 1;
+            let el = document.getElementById("fatigue-bar");
+            let startWidth = xPrevFat;
+            let progress = setInterval(update, 30);
+            function update(){
+                if(startWidth <= width){
+                    clearInterval(progress);
+                    i = 0;
+                } else {
+                    startWidth--;
+                    el.style.width = startWidth + "%";
+                }
+            }
+        }
+        decreasingFat = false;
+    }
+    
+}
 
+
+   
+
+
+    
 
 
 let updateMon = () => {
@@ -641,13 +559,16 @@ let numdialButton = (clicked_id) => {
     el.value = el.value + x; 
 }
 
+/*
 // function to be called on enter button to act like enter key press
 function enterBtnClick(){
     e = $.Event('keyup');
     e.keyCode = 13; //enter
     $('input').trigger(e);
     applyInput();
-}
+    
+} */
+
 
 // function that deletes last number on input string value
 let deleteNumBtn = () => {
@@ -713,3 +634,36 @@ let animateToggle = () => {
         tutorialDisplayed = false;
     }
 }
+
+
+function listAllEventListeners() {
+    const allElements = Array.prototype.slice.call(document.querySelectorAll('*'));
+    allElements.push(document);
+    allElements.push(window);
+  
+    const types = [];
+  
+    for (let ev in window) {
+      if (/^on/.test(ev)) types[types.length] = ev;
+    }
+  
+    let elements = [];
+    for (let i = 0; i < allElements.length; i++) {
+      const currentElement = allElements[i];
+      for (let j = 0; j < types.length; j++) {
+        if (typeof currentElement[types[j]] === 'function') {
+          elements.push({
+            "node": currentElement,
+            "type": types[j],
+            "func": currentElement[types[j]].toString(),
+          });
+        }
+      }
+    }
+  
+    return elements.sort(function(a,b) {
+      return a.type.localeCompare(b.type);
+    });
+  }
+
+  //console.log(listAllEventListeners);

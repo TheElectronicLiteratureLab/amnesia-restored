@@ -376,27 +376,21 @@ body {
 }
 
 #hunger-bar {
-   width: 99%;
-   height: 15px;
+   width: 100%;
+   height: 13px;
    background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
-}
-
-#hung {
-   border-radius: 16px;
-   height: 5px;
-   background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
 }
 
 #fatigue-bar-progress {
-   width: 85%;
+   width: 90%;
    background-color: #494959;
    border-radius: 16px;
 }
 
 #fatigue-bar {
-   width: 50%;
-   height: 15px;
+   width: 100%;
+   height: 13px;
    background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
    border-radius: 16px;
 }
