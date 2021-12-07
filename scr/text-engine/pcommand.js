@@ -1383,9 +1383,7 @@ const randomEncounter = () => {
           midDesc(choice1);
           return;
         }
-
       }
-
     } else if ( (lat >= -58 && lat <= -36) && (lng >= -42 && lng <= 5 ) ) {
       quIndex = Math.floor(Math.random() * 12);
       if(quIndex >= 5) {
