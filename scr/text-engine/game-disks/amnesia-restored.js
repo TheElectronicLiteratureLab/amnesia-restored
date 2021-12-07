@@ -16,6 +16,12 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: '',
       onEnter: () => {
+        playerC.dScore = 0;
+        playerC.cScore = 0;
+        playerC.sScore = 0;
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         document.getElementById("output").innerHTML = "";
         document.querySelector('input').disabled = true;
         document.getElementById("arrow").innerHTML = "";
@@ -82,6 +88,10 @@ const amnesiaRestored = {
         {
           name: 'up',
           onTake: () => {
+            playerC.sScore +=2;
+            playerC.cScore +=2;
+            console.log(playerC.cScore);
+            console.log(playerC.sScore);
             enterRoom('hote-room-2');
             getInput();
           }
@@ -524,6 +534,10 @@ const amnesiaRestored = {
               desc: `It is a large fluffy towel.`,
               isTakeable: true,
               onTake: () => {
+                playerC.cScore += 10;
+                playerC.sScore += 10;
+                console.log(playerC.cScore);
+                console.log(playerC.sScore);
                   println('You take the towel'); //appears in inventory as 'towel'
                   const bathroom = getRoom('hote-bath-1');
                   bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
@@ -670,6 +684,10 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'yes') {
+          playerC.cScore += 2;
+          playerC.sScore += 3;
+          console.log(playerC.cScore);
+          console.log(playerC.sScore);
           println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
           //eventual flag will need to be toggled that you tipped.
           enterRoom('hote-room-8');
@@ -841,6 +859,8 @@ const amnesiaRestored = {
               }
             },
             onUse: () => {
+              playerC.sScore +=5;
+              console.log(playerC.dScore);
               let pc = getItemInRoomById('computer', 'hote-room-8');
               if(pc.isOn === true)
               {
@@ -924,8 +944,16 @@ const amnesiaRestored = {
               
               Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
               isTakeable: true, 
-              onTake: () => println('You take the white tuxedo.'),//appears in inventory as 'white tuxedo'
+              onTake: () => {
+                playerC.dScore += 3; // Adding to Detective Score
+                playerC.cScore += 3; // Adding to Character Score
+                playerC.sScore += 3; // Adding to Survival Score
+                console.log(playerC.dScore);
+                console.log(playerC.cScore);
+                console.log(playerC.sScore);
+                println('You take the white tuxedo.');//appears in inventory as 'white tuxedo'
               //add onWear function to put clothes on player 
+              },
               isWearable: true,
           },
           {
@@ -934,6 +962,8 @@ const amnesiaRestored = {
             desc: ' ',
             isOpen: false,
             onLook: () => {
+              playerC.dScore +=2;
+              console.log(playerC.dScore);
               let item = getItemInRoomById('curtains', disk.roomId);
               if (item.isCurtOpen === true) {
                 if (item.desc === ' ')
@@ -1006,9 +1036,13 @@ const amnesiaRestored = {
           {
               name: ['tiled shower', 'shower'],
               desc: `The tiled shower is equipped with hot and cold water knobs, and a water conserving shower head.`,
-              onUse: () => println(`You remove any clothing you have on. 
+              onUse: () => {
+                playerC.sScore += 3;
+                console.log(playerC.sScore);
+               println(`You remove any clothing you have on. \n
               
-              You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleaniness is next to godliness after all.`),
+              You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleaniness is next to godliness after all.`);
+              },
           },
           {
               name: 'toilet',
@@ -1020,6 +1054,10 @@ const amnesiaRestored = {
               desc: `It is a large fluffy towel.`,
               isTakeable: true,
               onTake: () => {
+                  playerC.dScore += 10;
+                  playerC.sScore += 10;
+                  console.log(playerC.dScore);
+                  console.log(playerC.sScore);
                   println('You take the towel'); //appears in inventory as 'towel'
                   const bathroom = getRoom('hote-revi-1');
                   bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
@@ -1064,6 +1102,12 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
+        playerC.dScore += 15; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        playerC.sScore += 5; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
           println(`"John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes." He goes on without waiting for your reply. "I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucket yet?`);
           getInput();
           if(getInput() === ['yes', 'I have.', `I'm wearing it now.`]){
@@ -1146,6 +1190,8 @@ const amnesiaRestored = {
       desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
 
       onEnter: () => {
+        playerC.cScore += 3;
+        console.log(playerC.cScore);
         reenableInput();
         const room = getRoom('nigh-1');
 
@@ -1737,38 +1783,38 @@ const amnesiaRestored = {
       onEnter: () =>{
           reenableInput();
           },  
-      exits: [
-        {
-           dir: ['hollings', 'xavier'], 
-           id: 'hell-4',
-        },
-        {
-           dir: ['cameron', 'john', ], 
-           id: 'corridor-1503',
-       },
-       {
-        dir: ['' ], // on exit command? 
-        id: 'corridor-1503',
-        },
-       ],
+      onBlock: () => {
+        if(prevInput === 'hollings'){
+          enterRoom('hell-4');
+        }else if(prevInput === 'xavier'){
+          enterRoom('hell-4');
+        }else if(prevInput === 'cameron'){
+          enterRoom('hell-6');
+        }else if(prevInput === 'john'){
+          enterRoom('hell-6');
+        }else{
+          enterRoom('hell-6');
+        } 
+      },
       },
     {
       id: 'hell-4',
       name: '',
       desc: `Charon examines your card, scratches his head, and hands it back. “So tell me, Xavier,” he says, “what’s your middle name?”`,
-      exit: [
-        {
-        dir: ['' ], // on exit command? 
-        id: 'hell-5',
-        },
-      ],
+      onBlock: () => {
+        if(prevInput === 'hollings'){ // No matter the input it takes you to the game over screen
+          enterRoom('hell-5');
+        }else{
+          enterRoom('hell-5');
+        }
+      },
     },
     {
       id: 'hell-5',
       name: '',
       desc: `"Sorry, that's not right. Better luck next time."”`,
       onEnter: () =>{
-          pressEnter(loadDisk(gameOver));
+          pressEnter('game-over');
       },
       exits: [],
     },
@@ -1776,20 +1822,19 @@ const amnesiaRestored = {
       id: 'hell-6',
       name: '',
       desc: `“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`,
-      exits: [
-        {
-           dir: ['hollings', 'xavier'], 
-           id: 'hell-4',
-        },
-        {
-           dir: ['cameron', 'john', ], 
-           id: 'corridor-1503',
-       },
-       {
-        dir: ['' ], // on exit command? 
-        id: 'corridor-1503',
-        },
-       ],
+      onBlock: () => {
+        if(prevInput === 'hollings'){
+          enterRoom('hell-4');
+        }else if(prevInput === 'xavier'){
+          enterRoom('hell-4');
+        }else if(prevInput === 'cameron'){
+          enterRoom('hell-5');
+        }else if(prevInput === 'john'){
+          enterRoom('hell-5');
+        }else{
+          enterRoom('hell-5');
+        } 
+      },
 
     },
     //**********************************************************/
@@ -1802,7 +1847,10 @@ const amnesiaRestored = {
 
       Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
       removeOnRead: true,
-      
+      onEnter: () => {
+        playerC.sScore += 2; // Adding to Survival
+        console.log(playerC.sScore);
+      },
       items: [
           {
               name: 'room', // If the player tries to go back to room 1502
@@ -6789,6 +6837,10 @@ const amnesiaRestored = {
       desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be “Back in 10 Minutes.”
       
       The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
+      onEnter: () => {
+        playerC.sScore = 2;
+        console.log(playerC.sScore);
+      },
       exits: [
         {
           dir: ['left', 'dolls', 'girls', 'girls', `women's`, 'womens'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
@@ -7478,6 +7530,10 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 2; // Adding to Detective Score
+        playerC.sScore += 10; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.sScore);
           pressEnter('deat-f9');
       },
       exits: [],
@@ -7565,6 +7621,10 @@ const amnesiaRestored = {
     name: '', // Displayed each time the player enters the room.
     desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
     onEnter: () => {
+        playerC.dScore += 2; // Adding to Detective Score
+        playerC.cScore += 10; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
         pressEnter('deat-le9');
     },
     exits: [],
@@ -7904,6 +7964,10 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 10; // Adding to Detective Score
+        playerC.cScore += 10; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
         pressEnter('deat-letar4');
       },
       exits: [],
@@ -7978,6 +8042,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 25; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('deat-lesp4');
       },
       exits: [],
@@ -8052,6 +8118,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 20; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('deat-lebr4');
       },
       exits: [],
@@ -8126,6 +8194,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 25; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('deat-lert4');
       },
       exits: [],
@@ -8300,6 +8370,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 25; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('deat-fsp4');
       },
       exits: [],
@@ -8374,6 +8446,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.dScore += 25; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('deat-fbr4');
       },
       exits: [],
@@ -8612,6 +8686,8 @@ const amnesiaRestored = {
     
 
     onLook: () => { // Looking around the Lobby.
+      playerC.dScore +=5;
+      console.log(playerC.dScore);
       const room = getRoom('lobb-1');
       room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
       The Sunderland Hotel
@@ -8670,6 +8746,12 @@ exits: [
   {//talking to Luke while wearing the tux
     id: 'lobb-3',
     desc: `"Johnny my boy!" booms the man in the Stetson, in a voice as abrasive as desert sand. "Wouldn't your dear old mother -God rest her gentle soul!--be proud to see you now?" He advances toward you grinning like a friendly skull, with his long, thin arms extended to embrace you, and before you can back away or offer any other protest the embrace is completed. Not what you'd call warm, just a short symbolic collision between your torso and his, with him maintaining the same cadaverous grin all the while. "Well, my boy," he says, releasing you, "how are you feeling after your big toot?"`,
+    onEnter: () =>{
+      playerC.sScore +=10;
+      playerC.cScore +=10;
+      console.log(playerC.cScore);
+      console.log(playerC.sScore);
+    },
     exits: [
       { // Answering in confirmation, goes to 4.
         dir: 'okay',
