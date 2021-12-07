@@ -1023,10 +1023,20 @@ function spawnTenement() {
 
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
-  disk.conversant = character; //set the character to who you're talking to
-  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
-  talkToOrAboutX('about', y); //execute asking them the thing
+
+  if(disk.conversant && disk.conversation ) {
+    endConversation();
+    const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+    disk.conversant = character; //set the character to who you're talking to
+    disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+    talkToOrAboutX('about', y); //execute asking them the thing
+  }else {
+    const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+    disk.conversant = character; //set the character to who you're talking to
+    disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+    talkToOrAboutX('about', y); //execute asking them the thing
+  }
+
 };
 
 //passing time function
