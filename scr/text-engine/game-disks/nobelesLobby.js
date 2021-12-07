@@ -122,9 +122,85 @@ const nobelesLobby = {
         {
             id: 'nobe-11',
             name: '',
-            desc: `You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.
-            “It’s the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle,” that’s the name of it. You know what that means, don’t you? Your memories aren’t lost, they’re just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you’re very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`,
+            desc: ``,
+            onEnter: () => {
+                println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.
+                “It’s the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle,” that’s the name of it. You know what that means, don’t you? Your memories aren’t lost, they’re just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you’re very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
+                pressEnter('nobe-12');
+            },
         },
+        {
+            id: 'nobe-12',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                reenableInput();
+                println(`Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`);
+            },
+            onBlock: () => {
+                if(prevInput === 'open blinds'){
+                    enterRoom('nobe-13');
+                }else if (prevInput === 'sleep'){
+                    enterRoom('nobe-14');
+                }else if( prevInput === 'kiss bette'){
+                    enterRoom('nobe-17');
+                }
+            },
+            items: [
+                {
+                    itemId: 'apartment',
+                    name: ['Apartment','Room','apartment','room'],
+                    desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+                },
+                {
+                    itemId: 'dres_phot',
+                    name: ['picture', 'photo', 'Picture', 'Photo'],
+                    desc: `The photo shows you in evening clothes standing before a wall from which the patterned paper is peeling. The contrast between your perfect formal attire and the dismal wallpaper is striking.\n\n Then you recognize the pattern of the wallpaper. You have seen those peagreen rosettes and khaki-colored leaves before. It is the hallway of the tenement where you'd slept and dreamt the dream that had faded from your memory till this moment.`,
+                },
+            ],
+        },
+        {
+            id: 'nobe-13',
+            name: '',
+            desc: `You open the blinds`,
+            items: [
+                {
+                    itemId: 'window',
+                    name: ['window','Window'],
+                    onLook: () => {
+                        println(`Five stories below you can see the leaves of the tress in Gramercy Park shimmering in the lamplight.`);
+                        enterRoom('nobe-13');
+                    }
+
+                },
+            ],
+        },
+    ],
+    characters: [
+        {
+            name: ['Bette', 'bette'],
+            roomId: 'nobe-12',
+            topics: [
+                {
+                    option: ['ask bette about picture','ask bette about photo'],
+                    onSelected() {
+                        println(`It was early last November, not long after we first met, at the F-Stop Cafe, that we discovered that derelict building and I took that lot of pictures.\n\n You were very reluctant to model for me, and it was only when I promised that the pictures would only go to magazines in Europe that you agreed.`);
+                    },
+                },
+                {
+                    option: ['ask bette about f-stop cafe', 'ask bette about cafe'],
+                    onSelected() {
+                        println(`'We met at a lunch at the F-stop Cafe in Chelsea. You'd come there with a model who was working with me that day. I rather moved in on her, though it was plain to see it was no very serious relationship.'`);
+                    },
+                },
+                {
+                    option: ['ask bette about self', 'ask bette about john', 'ask bette about john cameron'],
+                    onSelected() {
+                        println(`'I could tell you many things about the man I fell in love with, and he went by the name of John Cameron, but I never learned very much about the life history of John Cameron. You said you went to school in Boston, but you didn't say at which university. \n\n You did seem to have all the time in the world. If you'd had a steady job anywhere you wouldn't have been able to do the modeling for me. But you also seemed fairly well-to-do. You picked up the tab at a lot of fairly swank restaurants, and you paid with a VISA card, so you did have some source of money.`);
+                    },
+                },
+            ]
+        }
     ]
 }
 //add bette as a character
