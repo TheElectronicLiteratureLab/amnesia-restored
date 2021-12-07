@@ -975,23 +975,44 @@ const fastTravel = () =>{
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
+  const rooms = streets.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
+  let phoneCount = 0;
+  let roomCount = 0;
   for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
-    let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-    if(chance <= 5 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
-      console.log(chance); //log the number generated
-      console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
-      rooms[i].exits.push( //push the following into the room's exits array
-        {
-          dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
-          id: 'pho-boo1' //id for phone booth
-        },
-      ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
-      
+    const room = rooms[i];
+    roomCount++;
+    if (room.isStreet){
+      let chance = Math.floor(Math.random() * 101); //roll random number 0-100
+      if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+        console.log(chance); //log the number generated
+        console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+        rooms[i].exits.push( //push the following into the room's exits array
+          {
+            dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+            id: 'pho-boo1' //id for phone booth
+          },
+        ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        phoneCount++
+      }
     }
   }
+  console.log(phoneCount + ' phone booths out of ' + roomCount + ' rooms.')
   thisRoom.phonesMade = true; //dont allow the function to run again
+};
+
+
+
+const findExitsArray = () => {
+  const rooms = streets.rooms;
+  let roomCount = 0;
+  for(let i = 0; i < rooms.length; i++){
+    rooms[i].exits.push(
+      {dir: 'dummy-exit', id: '', block: 'this is a dummy exit'},
+    );
+    roomCount++;
+    console.log(rooms[i].id + ' ' + roomCount);
+  }
 };
 
 //x street indexer functionality
@@ -1110,10 +1131,20 @@ function spawnTenement() {
 
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
-  const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
-  disk.conversant = character; //set the character to who you're talking to
-  disk.conversation = character.topics; //set the conversation to the list of topics the character knows
-  talkToOrAboutX('about', y); //execute asking them the thing
+
+  if(disk.conversant && disk.conversation ) {
+    endConversation();
+    const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+    disk.conversant = character; //set the character to who you're talking to
+    disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+    talkToOrAboutX('about', y); //execute asking them the thing
+  }else {
+    const character = getCharacter(x, getCharactersInRoom(disk.roomId)); //get character in room
+    disk.conversant = character; //set the character to who you're talking to
+    disk.conversation = character.topics; //set the conversation to the list of topics the character knows
+    talkToOrAboutX('about', y); //execute asking them the thing
+  }
+
 };
 
 //passing time function
@@ -1300,7 +1331,7 @@ const begLootTable = () => {
   } else { // debug purposes
     println(`Oops something went wrong`);
   }
-}
+};
 
 const giveMoney = (amount) => {
   playMon = playMon + amount
@@ -1337,6 +1368,8 @@ let dropItem = (itemName) => {
     return;
   }
 };
+
+
 
 //sleep function
 const sleepFunction = () => {
@@ -1409,18 +1442,149 @@ const sleepFunction = () => {
 };
 
 
-//save load
+//save load\\
+//player score\\
+//difficulty level tie ins\\.
 
-
-//random events (x indexer, wacky wanderer, kid with rag, flavor text)
-//dependent on what neighborhood the player is in? maybe make it based on distance from the center of the map and have that be a range. 
-//different arrays for different neighborhoods with different flavor texts, also for the x street
-//x street question answers can be modified version of drop down menu that executes when encounter is triggered. 
-
-
-const randomText = () => {
-
+//random encounter function
+const randomEncounter = () => {
+  
+  const chance = Math.floor(Math.random() * 100) + 1 //roll number between 1-100
+  const room = getRoom(disk.roomId); //get the current room
+  if (chance <= 5 && room.desc === '' || "" || ``) { //5% chance and the room description has to be empty
+    const lat = room.coord[0]; //set the latitude to the latitude
+    const lng = room.coord[1]; //set the longitude to the longitude
+    if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) { //if the lat/lng is in the range of chelsea
+      quIndex = Math.floor(Math.random() * 11);//roll an index equal to the length of the chelsea encounters array 
+      if(quIndex >= 8 && quIndex <= 10) { //if the index is one of the ones without variables to assign
+        chelDesc();//run the chelsea description function
+        return;//end this function 
+      } else { //if the index is one of the ones with variables to assign
+        const encounter = chelseaEncounters[quIndex]; //grab the proper encounter based on the index
+        const size = Object.keys(encounter).length; //get the length of the object to know how many variables to assign
+        if(size === 4) {//if there are 4 variables to assign
+          const u = Math.floor(Math.random() * encounter.choices4.length ); //randomly choose the choices
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h]; //assign those choices
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          chelDesc(choice1, choice2, choice3, choice4); //run the chelsea description function with the new choices.
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          chelDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          chelDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          chelDesc(choice1);
+          return;
+        }
+      }
+    } else if ( (lat >= 13 && lat <= 42) && (lng >= -55 && lng <= 28 ) ) {
+      quIndex = Math.floor(Math.random() * 14);
+      if(quIndex === 13) {
+        midDesc();
+        return;
+      } else {
+        const encounter = midtownEncounters[quIndex];
+        const size = Object.keys(encounter).length; 
+        if(size === 4) {
+          const u = Math.floor(Math.random() * encounter.choices4.length );
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          midDesc(choice1, choice2, choice3, choice4);
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          midDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          midDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          midDesc(choice1);
+          return;
+        }
+      }
+    } else if ( (lat >= -58 && lat <= -36) && (lng >= -42 && lng <= 5 ) ) {
+      quIndex = Math.floor(Math.random() * 12);
+      if(quIndex >= 5) {
+        greenDesc();
+        return;
+      } else {
+        const encounter = midtownEncounters[quIndex];
+        const size = Object.keys(encounter).length; 
+        if(size === 4) {
+          const u = Math.floor(Math.random() * encounter.choices4.length );
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          greenDesc(choice1, choice2, choice3, choice4);
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          greenDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          greenDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          greenDesc(choice1);
+          return;
+        }
+      }
+    } 
+  } 
 };
+
+
 
 
 //x street indexer encounter functionality
@@ -1454,9 +1618,6 @@ const xStreetEvent = () => {
 };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
 
-
-//player score\\
-//difficulty level tie ins\\
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1561,6 +1722,7 @@ let commands = [
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1])
   },
+  //3 arguments 
   {
     ask: askXAboutY,
   },
