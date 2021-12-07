@@ -1,5 +1,5 @@
 const streets = {
-  roomId: 'hote-exit',
+  roomId: '23-hhpw',
   currPos: [],
   rooms: [
 

@@ -115,9 +115,9 @@ const amPm = ['AM', 'PM']
 
 //random encounter stuff
 let choice1;
-let choice2;
-let choice3;
-let choice4;
+  let choice2;
+  let choice3;
+  let choice4;
 
 const chelseaEncounters = [ //coord locations between lat -2/-36 , lon -55/-12
   {

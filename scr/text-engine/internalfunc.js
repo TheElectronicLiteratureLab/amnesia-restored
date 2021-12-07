@@ -218,9 +218,15 @@ let enterRoom = (id) => {
   const isStreetRoom = getRoom(disk.roomId);
 
   if (isStreetRoom.isStreet){
-    spawnTenement();
+
+    if (!tenementSpawned) {
+      console.log('trying to spawn the tenement');
+      spawnTenement();
+    } 
+    
+    randomEncounter();
   }
-  console.log('trying to spawn the tenement');
+  
 
 };
 
