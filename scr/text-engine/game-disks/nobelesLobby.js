@@ -48,9 +48,9 @@ const nobelesLobby = {
                     desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
                     onLook: () => {
                         enterRoom('nobe-7');
-                    }
-                }
-            ]
+                    },
+                },
+            ],
         },
         {
             id: 'nobe-5',
@@ -64,8 +64,8 @@ const nobelesLobby = {
                     onLook: () => {
                         enterRoom('nobe-7');
                     }
-                }
-            ]
+                },
+            ],
         },
         {
             id: 'nobe-6',
@@ -78,9 +78,9 @@ const nobelesLobby = {
                     desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
                     onLook: () => {
                         enterRoom('nobe-7');
-                    }
-                }
-            ]
+                    },
+                },
+            ],
         },
         {
             id: 'nobe-7',
@@ -90,7 +90,7 @@ const nobelesLobby = {
                 {dir: ['yes'], id: 'nobe-8'},
                 {dir: ['no'], id: 'nobe-9'},
                 {dir: ['maybe'], id: 'nobe-10'},
-            ]
+            ],
         },
         {
             id: 'nobe-8',
