@@ -32,6 +32,7 @@ let playCloth = {
 let firstDial = false;
 
 let lastRoom;
+let lastCoord;
 
 const playerC ={
 

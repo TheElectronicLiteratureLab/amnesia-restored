@@ -2398,7 +2398,7 @@ const streets = {
       coord: [-35.651, 1.216],
       name: 'E. 14th St. and Broadway',
       desc: 'There is a restaurant called Nedicks here.',
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: '13-broa'},
@@ -2542,7 +2542,7 @@ const streets = {
       coord: [-50.420, 3.662],
       name: 'W. 3rd St. and Broadway',
       desc: 'There is a luncheonette on the corner.',
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '4-broa'},
         {dir: 'south', id: 'bond-broa'},
@@ -4613,7 +4613,7 @@ const streets = {
       coord: [-77.492, -2.008],
       name: 'Exchange Pl. and Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'rect-broa'},
         {dir: 'south', id: 'morr-broa'},
@@ -4864,7 +4864,7 @@ const streets = {
       coord: [-68.769, 0.776],
       name: 'Worth St. and Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'cath-broa'},
         {dir: 'south', id: 'thom-broa'},
@@ -5270,7 +5270,7 @@ const streets = {
       coord: [-77.543, 12.825],
       name: 'Wall St. and South St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'pine-sout'},
         {dir: 'south', id: 'gouv-sout'},
@@ -5715,7 +5715,7 @@ const streets = {
       coord: [-73.403, 9.580],
       name: 'Spruce St. and Gold St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'fran-gold'},
         {dir: 'south', id: 'beek-gold'},
@@ -6196,7 +6196,7 @@ const streets = {
       coord: [-77.245, 8.481],
       name: 'Wall St. and Pearl St.',
       desc: `There is a restaurant called Nedicks here.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'pine-pear'},
         {dir: 'south', id: 'hano-pear'},
@@ -6433,7 +6433,7 @@ const streets = {
       coord: [-77.418, 11.074],
       name: 'Wall St. and Front St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'pine-fron'},
         {dir: 'south', id: 'gouv-fron'},
@@ -6863,7 +6863,7 @@ const streets = {
       coord: [-69.427, 11.030],
       name: 'Baxter St. and Kent Pl.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'wort-baxt'},
         {dir: 'south', id: 'pear-baxt'},
@@ -6916,7 +6916,7 @@ const streets = {
       coord: [-70.598, 4.263],
       name: 'Reade St. and Elk St.',
       desc: `There is a restaurant called Nedicks here.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'duan-elk'},
         {dir: 'south', id: 'cham-elk'},
@@ -7074,7 +7074,7 @@ const streets = {
       coord: [-76.211, -3.801],
       name: 'Thames St. and Trinity Pl.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'ceda-trin'},
         {dir: 'south', id: 'rect-trin'},
@@ -7679,7 +7679,7 @@ const streets = {
       coord: [-77.167, -9.712],
       name: 'Rector St. and West End Hwy.',
       desc: `There is a luncheonette on this corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'carl-west'},
         {dir: 'south', id: 'exch-west'},
@@ -8018,7 +8018,7 @@ const streets = {
       coord: [-70.830, -10.854],
       name: 'Chambers St. and Greenwich Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'read-gree'},
         {dir: 'south', id: 'warr-gree'},
@@ -8409,7 +8409,7 @@ const streets = {
       coord: [-72.620, -6.855],
       name: 'Park Pl. and W. Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'murr-wbro'},
         {dir: 'south', id: 'barc-wbro'},
@@ -8787,7 +8787,7 @@ const streets = {
       coord: [-66.134, -11.931],
       name: 'Beach St. and Hudson Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'hube-huds'},
         {dir: 'south', id: 'nmoo-huds'},
@@ -8892,7 +8892,7 @@ const streets = {
       coord: [-59.378, -17.996],
       name: 'Vandam St. and Hudson Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'char-huds'},
         {dir: 'south', id: 'spri-huds'},
@@ -9270,7 +9270,7 @@ const streets = {
       coord: [-62.390, -14.897],
       name: 'Canal St. and Holland Tunnel In',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', block: `You can't go that way.`},
@@ -9284,7 +9284,7 @@ const streets = {
       coord: [-62.634, -16.172],
       name: 'Canal St. and Watts St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'watt-vari'},
         {dir: 'south', block: `You can't go that way.`},
@@ -11204,7 +11204,7 @@ const streets = {
       coord: [-50.087, -4.282],
       name: 'W. 3rd St. and LaGuardia Pl.',
       desc: `There is a luncheonette on the corner.`, // add to desc IF after ? time `The bridge and tunnel crowd has returned to suburbia in New Jersey and Connecticut, leaving Manhattan to the natives and the night clubs`
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'wash-lagu'},
         {dir: 'south', id: 'blee-lagu'},
@@ -12554,7 +12554,7 @@ const streets = {
       coord: [-54.282, -21.830],
       name: 'St. Lukes Pl. and Hudson St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'mort-huds'},
         {dir: 'south', id: 'clar-huds'},
@@ -12969,7 +12969,7 @@ const streets = {
       coord: [-40.784, -27.369],
       name: 'W. 12th St. and 8th Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '4-8'},
         {dir: 'south', id: 'blee-8'},
@@ -13126,7 +13126,7 @@ const streets = {
       coord: [-41.440, -20.798],
       name: 'W. 11th St. and Waverly Pl.',
       desc: `There is a Greek Gyro located here.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'bank-wave'},
         {dir: 'south', id: 'perr-wave'},
@@ -13349,7 +13349,7 @@ const streets = {
       coord: [-52.766, -25.602],
       name: 'Barrow St. and Greenwich St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'chri-gree-1'},
         {dir: 'south', id: 'mort-gree'},
@@ -13636,7 +13636,7 @@ const streets = {
       coord: [-46.527, -32.143],
       name: 'Bank St. and Washington St.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'beth-wash'},
         {dir: 'south', id: '11-wash'},
@@ -14582,7 +14582,7 @@ const streets = {
       coord: [-21.720, -39.988],
       name: 'W. 23rd St. and 10th Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '24-10'},
         {dir: 'south', id: '22-10'},
@@ -15477,6 +15477,7 @@ const streets = {
         {dir: 'south', id: 'broa-amer'},
         {dir: 'east', id: '34-5'},
         {dir: 'west', id: '34-broa'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -15957,7 +15958,7 @@ const streets = {
       coord: [-26.425, -2.466],
       name: 'W. 20th St. and Broadway',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '21-broa'},
         {dir: 'south', id: '19-broa'},
@@ -16654,7 +16655,7 @@ const streets = {
       coord: [-17.673, 2.150],
       name: 'E. 25th St. and Park Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '26-park'},
         {dir: 'south', id: '24-park'},
@@ -18015,6 +18016,7 @@ const streets = {
       coord: [42.048, -14.661],
       name: 'Central Park S. and Ave. of Americas',
       desc: `There is a restaurant called Nedicks here.`, // Nedicks entrance
+      hasFood: true,
       exits: [
         {dir: 'north', id: '60-amer'},
         {dir: 'south', id: '58-amer'},
@@ -18213,6 +18215,7 @@ const streets = {
       coord: [38.766, -27.768],
       name: 'W. 57th St. and 8th Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`, // Restaurant entrance
+      hasFood: true,
       exits: [
         {dir: 'north', id: '58-8'},
         {dir: 'south', id: '56-8'},
@@ -18389,6 +18392,7 @@ const streets = {
       coord: [35.554, -27.674],
       name: 'W. 55th St. and 8th Ave.',
       desc: `There is a Greek Gyro located here.`, // Restaurant entrance
+      hasFood: true,
       exits: [
         {dir: 'north', id: '56-8'},
         {dir: 'south', id: '54-8'},
@@ -18741,6 +18745,7 @@ const streets = {
       coord: [29.166, -40.880],
       name: 'W. 51st St. and 10th Ave.',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '52-10'},
         {dir: 'south', id: '50-10'},
@@ -18765,6 +18770,7 @@ const streets = {
       coord: [29.266, -27.493],
       name: 'W. 51st St. and 8th Ave.',
       desc: 'There is a luncheonette on the corner.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '52-8'},
         {dir: 'south', id: '50-8'},
@@ -18966,6 +18972,7 @@ const streets = {
       coord: [26.081, -23.360],
       name: 'W. 49th St. and Broadway',
       desc: `There is a restaurant called Nedicks here.`,//Restaurant Entrance
+      hasFood: true,
       exits: [
         {dir: 'north', id: '50-broa'},
         {dir: 'south', id: '48-broa'},
@@ -19086,6 +19093,7 @@ const streets = {
       coord: [24.487, -14.259],
       name: 'W. 48th St. and Ave. of Americas',
       desc: 'There is a Greek Gyro located here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '49-amer'},
         {dir: 'south', id: '47-amer'},
@@ -19111,6 +19119,7 @@ const streets = {
       coord: [22.412, -47.739],
       name: 'W. 47th St. and 11th Ave.',
       desc: 'There is a luncheonette on the corner.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '48-11'},
         {dir: 'south', id: '46-11'},
@@ -19170,6 +19179,7 @@ const streets = {
       coord: [22.736, -20.836],
       name: 'W. 47th St. and 7th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '48-7'},
         {dir: 'south', id: '46-7'},
@@ -19443,6 +19453,7 @@ const streets = {
       coord: [16.836, -33.861],
       name: 'W. 44th St. and 9th Ave.',
       desc: 'There is a Greek Gyro here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '45-9'},
         {dir: 'south', id: '43-9'},
@@ -19514,6 +19525,7 @@ const streets = {
       coord: [14.725, -52.284],
       name: 'W. 43rd St. and 12th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '44-12'},
         {dir: 'south', id: '42-12'},
@@ -19549,6 +19561,7 @@ const streets = {
       coord: [15.001, -33.816],
       name: 'W. 43rd St. and 9th Ave.',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '44-9'},
         {dir: 'south', id: '42-9'},
@@ -19769,6 +19782,7 @@ const streets = {
       coord: [10.879, -37.247],
       name: 'W. 41st St. and Dyer Ave.',
       desc: 'There is a restaurant called Nedicks here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '42-dyer'},
         {dir: 'south', id: 'bta-dyer'},
@@ -20108,6 +20122,7 @@ const streets = {
       coord: [7.312, -17.081],
       name: 'W. 39th St. and Broadway',
       desc: 'There is a Chock Full-O-Nuts at this intersection.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '40-broa'},
         {dir: 'south', id: '38-broa'},
@@ -20470,6 +20485,7 @@ const streets = {
       coord: [-0.019, -14.719],
       name: 'W. 35th St. and Broadway',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '36-broa'},
         {dir: 'south', id: '34-broa'},
@@ -20540,6 +20556,7 @@ const streets = {
       coord: [-2.174, -33.571],
       name: 'W. 34th St. and 9th Ave.',
       desc: 'There is a restaurant called Nedicks here.',
+      hasFood: true,
       exits: [
         {dir: 'north', id: '35-9'},
         {dir: 'south', id: '33-9'},
@@ -20824,7 +20841,7 @@ const streets = {
       coord: [34.325, -2.593],
       name: 'E. 54th St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '55-madi'},
         {dir: 'south', id: '53-madi'},
@@ -20900,7 +20917,7 @@ const streets = {
       coord: [26.352, -2.439],
       name: 'E. 49th St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '50-madi'},
         {dir: 'south', id: '48-madi'},
@@ -21005,7 +21022,7 @@ const streets = {
       coord: [11.372, -2.175],
       name: 'E. 41st St. and Madison Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '42-madi'},
         {dir: 'south', id: '40-madi'},
@@ -21342,7 +21359,7 @@ const streets = {
       coord: [28.053, -6.788],
       name: 'W. 50th St. and 5th Ave.',
       desc: `There is a Chock Full-O-Nuts at this intersection.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '51-5'},
         {dir: 'south', id: '49-5'},
@@ -21789,7 +21806,7 @@ const streets = {
       coord: [3.711, 5.470],
       name: 'E. 37th St. and Lexington Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '38-lexi'},
         {dir: 'south', id: '36-lexi'},
@@ -22195,7 +22212,7 @@ const streets = {
       coord: [35.907, 8.613],
       name: 'E. 55th St. and 3rd Ave.',
       desc: `There is a luncheonette on the corner`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '56-3'},
         {dir: 'south', id: '54-3'},
@@ -22275,7 +22292,7 @@ const streets = {
       coord: [26.490, 8.833],
       name: 'E. 49th St. and 3rd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '50-3'},
         {dir: 'south', id: '48-3'},
@@ -22315,7 +22332,7 @@ const streets = {
       coord: [21.228, 8.965],
       name: 'E. 46th St. and 3rd Ave.',
       desc: `There is a lunchonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '47-3'},
         {dir: 'south', id: '45-3'},
@@ -22629,7 +22646,7 @@ const streets = {
       coord: [9.536, 14.724],
       name: 'E. 40th St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '41-2'},
         {dir: 'south', id: '39-2'},
@@ -22799,7 +22816,7 @@ const streets = {
       coord: [33.009, 14.150],
       name: 'E. 53rd St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '54-2'},
         {dir: 'south', id: '52-2'},
@@ -29158,7 +29175,7 @@ const streets = {
       coord: [74.962, -7.777],
       name: 'E. 95th St. and 5th Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '96-5'},
         {dir: 'south', id: '94-5'},
@@ -30006,7 +30023,7 @@ const streets = {
       coord: [43.657, 1.044],
       name: 'E. 59th St. and Park Ave.',
       desc: `There is a restaurant called Nedicks here.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '60-park'},
         {dir: 'south', id: '58-park'},
@@ -30884,7 +30901,7 @@ const streets = {
       coord: [59.976, 4.155],
       name: 'E. 74th St. and Lexington Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '75-lexi'},
         {dir: 'south', id: '73-lexi'},
@@ -30937,7 +30954,7 @@ const streets = {
       coord: [63.623, 4.038],
       name: 'E. 78th St. and Lexington Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '79-lexi'},
         {dir: 'south', id: '77-lexi'},
@@ -31126,7 +31143,6 @@ const streets = {
         {dir: 'south', id: '91-lexi'},
         {dir: 'east', id: '92-3'},
         {dir: 'west', id: '92-park'},
-        {dir: ['inside', 'luncheonette', 'restaurant'], id: 'lun-92-lexi'},
       ],
     }, 
     {
@@ -31408,7 +31424,7 @@ const streets = {
       coord: [47.817, 8.345],
       name: 'E. 63rd St. and 3rd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '64-3'},
         {dir: 'south', id: '62-3'},
@@ -32085,7 +32101,7 @@ const streets = {
       coord: [46.543, 13.631],
       name: 'E. 62nd St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '63-2'},
         {dir: 'south', id: '61-2'},
@@ -32216,7 +32232,7 @@ const streets = {
       coord: [58.123, 13.251],
       name: 'E. 72nd St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '73-2'},
         {dir: 'south', id: '71-2'},
@@ -32504,7 +32520,7 @@ const streets = {
       coord: [74.426, 13.124],
       name: 'E. 94th St. and 2nd Ave.',
       desc: `There is a luncheonette on the corner.`,
-      isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '95-2'},
         {dir: 'south', id: '93-2'},
@@ -34622,5 +34638,20 @@ const streets = {
       },
       exits: [],
     },
+    {
+      id: 'subw-fast',
+      coord: [100, 100],
+      name: 'Subway Station',
+      desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      onEnter = () => {
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          room.exits[0].id = room.enteredFrom;
+          console.log(room.enteredFrom);
+      },
+      exits: [
+        {dir: 'leave', id: '???'}
+      ]
+    }
   ]
 }

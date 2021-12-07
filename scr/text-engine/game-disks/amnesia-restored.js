@@ -12253,6 +12253,7 @@ exits: [
       name: 'W. 3rd St. and Broadway',
       desc: 'There is a luncheonette on the corner.',
       isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '4-broa'},
         {dir: 'south', id: 'bond-broa'},
@@ -25187,6 +25188,7 @@ exits: [
         {dir: 'south', id: 'broa-amer'},
         {dir: 'east', id: '34-5'},
         {dir: 'west', id: '34-broa'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -30310,7 +30312,7 @@ exits: [
     },
     {
       id: 'hote-exit1',
-      coord: [],
+      coord: [100,100],
       name: 'Sunderland Hotel Lobby',
       desc: `Here it is already night time, but the sidewalks are still teeming with people, and the streets are heavily trafficked, and bright with the sum-total wattage of so many streetlights, headlights, and lighted signs. In the windows of the darkened shopfronts, you see yourself mirrored and feel an utterly inappropiate glow of vanity.
             
@@ -30326,6 +30328,7 @@ exits: [
       name: 'Sunderland Hotel Lobby',
       desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
       onEnter: () => {
+        createPhone();
         pressEnter('hote-exit3');
       },
       exits: []
@@ -30340,6 +30343,7 @@ exits: [
             
             You nod your head thoughtfully.`,
       onEnter: () => {
+        phoneMarkerGenerator();
         pressEnter('53-5');
       },
       exits: []
@@ -30348,7 +30352,7 @@ exits: [
       id: '53-5',
       coord: [32.787, -6.877],
       name: 'W. 53rd St. and 5th Ave.',
-      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
+      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art -- New York's big MOMA.`,
       isStreet: true,
       curMoveCount: 0,
       onEnter: () => {
@@ -30682,6 +30686,7 @@ exits: [
         {dir: 'south', id: '43-madi'},
         {dir: 'east', id: '44-vand'},
         {dir: 'west', id: '44-5'},
+        {dir: ['phone', 'telephone', 'booth'], id: 'phonebooth'}
       ]
     },
     {
@@ -44229,7 +44234,7 @@ exits: [
     },
     {
       id: 'xStreet',
-      coord: [],
+      coord: [100, 100],
       name: '',
       desc: `A confused-looking young man with a sparse moustache comes up to you.`,
       onEnter: () => {
@@ -44332,5 +44337,78 @@ exits: [
       },
       exits: [],
     },
+    {
+      id: 'subway',
+      coord: [100, 100],
+      name: 'Subway Station',
+      desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      onEnter: () => {
+        const room = getRoom(disk.roomId);
+          room.enteredFrom = lastRoom.id;
+          room.exits[0].id = room.enteredFrom;
+          
+      },
+      onBlock: () => {
+        if(prevInput === 'buy token' || prevInput === 'get token') {
+          if (playMon >= 1) {
+            playMon -= 1;
+            updateMon();
+            disk.inventory.push(
+              {
+                itemId: "token",
+                icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+                gif: '/img/gif/gif-subwaytoken-ingame.gif',
+                name: ["Subway Token", 'token', 'subway token'],
+                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                isTakeable: true,
+                isDroppable: true,
+                onUse: () => {
+                  console.log('Use the token!');
+                  if(disk.roomId === 'subway') {
+                    //let found = disk.inventory.find(el => el.itemId === 'token');
+                    //console.log(found);
+                    disk.inventory.splice(found);
+                    console.log(disk.inventory);
+                  } else {
+                    println(`You can't use that here! Try using it at a subway station.`);
+                  }
+                }
+              }
+            )
+          } else {
+            println(`You don't have enough money to ride the subway!`);
+          }
+
+        }
+      },
+      exits: [
+        {dir: 'leave', id: '???'}
+      ],
+      items: [
+        {
+          itemId: "token",
+                icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+                gif: '/img/gif/gif-subwaytoken-ingame.gif',
+                name: ["Subway Token", 'token', 'subway token'],
+                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                isTakeable: true,
+                isDroppable: true,
+                onUse: () => {
+                  console.log('Use the token!');
+                  if(disk.roomId === 'subway') {
+                    document.getElementById('map-display').style.display = "block";
+                    map.invalidateSize();
+                    let found = disk.inventory.find(el => el.itemId === 'token');
+                    //console.log(found);
+                    disk.inventory.splice(found);
+                    console.log(disk.inventory);
+                  } else {
+                    println(`You can't use that here! Try using it at a subway station.`);
+                  }
+                }
+        }
+      ]
+
+    }
   ],
 };

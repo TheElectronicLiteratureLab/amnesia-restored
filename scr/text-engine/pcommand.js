@@ -941,6 +941,31 @@ let read = (item) => {
   document.getElementById("map-display").style.display = "block";
 }*/
 
+const phoneMarkerGenerator = () => {
+  disk.rooms.forEach((el) => {
+    if (el.coord !== undefined) {
+      if (el.coord[0] !== undefined && el.coord[1] !== undefined) {
+        el.exits.forEach((e) => {
+          //console.log(typeof e.dir)
+          if(typeof e.dir === 'object') { // In JavaScript arrays' typeof is actually an object not array
+            if(e.dir[0] === 'phone') {
+              let marker = L.marker([el.coord[0], el.coord[1]], {icon: phoneIcon}).addTo(phoneLayer);
+              console.log("Phone Booth Spotted Captain");
+            }
+          }
+        })
+      }
+      //console.log(el.exits);
+    }
+  })
+}
+
+const fastTravel = () =>{
+  
+}
+
+
+
 
 ////////////////////////////////////////////////
 //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -950,11 +975,11 @@ let read = (item) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = hcDvDisk.rooms; //set variable to loaded disk
+  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   for(let i = 0, l = rooms.length; i < l; i++){ //iterate through the array of rooms
     let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-    if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+    if(chance <= 5 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
       console.log(chance); //log the number generated
       console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
       rooms[i].exits.push( //push the following into the room's exits array

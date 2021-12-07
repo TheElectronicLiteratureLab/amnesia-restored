@@ -10,6 +10,7 @@ let applyInput = (input) => {
   inputsPos = inputs.length;
   if (input === "inv") {
     setInput('');
+    moveCount--;
   } else if (input === "dial") {
     setInput('');
   } else {
