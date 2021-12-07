@@ -114,10 +114,19 @@ const amPm = ['AM', 'PM']
 
 
 //random encounter stuff
-let choice1;
+  let choice1;
   let choice2;
   let choice3;
   let choice4;
+
+  const smallFunction = (w, x, y, z) => {
+    const midtownDescriptions = [
+      `${w} is double parked outside ${x}, and the traffic bottlenecked behind it is hoking passionately.`,
+      `A brand new ${w} has been wedged into a narrow space betweem ${x} and ${y}`
+    ];
+
+    println(midtownDescriptions[0]);
+  }
 
 const chelseaEncounters = [ //coord locations between lat -2/-36 , lon -55/-12
   {

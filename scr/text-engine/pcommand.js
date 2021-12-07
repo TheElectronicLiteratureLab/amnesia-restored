@@ -1300,7 +1300,7 @@ const sleepFunction = () => {
     //then print desc with proper variables
 
   
-    let encounter;
+ let encounter;
     
 const randomEncounter = () => {
   
@@ -1376,8 +1376,6 @@ const randomEncounter = () => {
         choice1 = first[h]; 
         console.log(choice1)
         
-
-        console.log(encounter.desc);
 
 
       }else if (size === 2) {
