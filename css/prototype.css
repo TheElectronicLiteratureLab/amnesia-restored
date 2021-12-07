@@ -712,6 +712,7 @@ body {
 #output div.amnesiaTitle {
    text-align: center;
    border-left: none;
+   font-size: 3em;
 }
 
 #output div.enterKey {

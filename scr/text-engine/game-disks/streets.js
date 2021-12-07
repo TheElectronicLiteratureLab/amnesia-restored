@@ -2870,7 +2870,7 @@ const streets = {
       id: '14-3',
       coord: [-35.496, 10.122],
       name: 'E. 14th St. and 3rd Ave.',
-      desc: '',
+      desc: 'The 14 ST-3 AV Station entrance is at this corner.',
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -15307,6 +15307,7 @@ const streets = {
       name: '28th St. and 7th Ave.',
       desc: `The 28 ST-7 AV Station entrance is at this corner`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '29-7'},
         {dir: 'south', id: '27-7'},
@@ -15372,6 +15373,7 @@ const streets = {
       name: 'W. 23rd St. and 7th Ave.',
       desc: `The 23 ST-7 AV Station entrance is at this corner`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '24-7'},
         {dir: 'south', id: '22-7'},
@@ -15437,6 +15439,7 @@ const streets = {
       name: 'W. 18th St. and 7th Ave.',
       desc: `The 18 ST-7 AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '19-7'},
         {dir: 'south', id: '17-7'},
@@ -15489,6 +15492,7 @@ const streets = {
       name: '14th St. and 7th Ave.',
       desc: `The 14 ST-7 AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '15-7'},
         {dir: 'south', id: '13-7'},
@@ -15501,8 +15505,9 @@ const streets = {
       id: '34-amer',
       coord: [-1.888, -13.740],
       name: 'W. 34th St. and Ave. of Americas',
-      desc: '',
+      desc: 'The 34 ST-6 AV Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '35-amer'},
         {dir: 'south', id: 'broa-amer'},
@@ -15646,6 +15651,7 @@ const streets = {
       name: 'W. 23rd St. and Ave. of Americas',
       desc: `The 23 ST-6 AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '24-amer'},
         {dir: 'south', id: '22-amer'},
@@ -15766,6 +15772,7 @@ const streets = {
       name: 'W. 14th St. and Ave. of Americas',
       desc: `The 14 ST-6 AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '15-amer'},
         {dir: 'south', id: '13-amer'},
@@ -15950,6 +15957,7 @@ const streets = {
       name: 'W. 23rd St. and Broadway',
       desc: `The 23 ST-Broadway Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '24-5'},
         {dir: 'south', id: '22-broa'},
@@ -16502,6 +16510,7 @@ const streets = {
       name: 'E. 14th St. and Union Square W.',
       desc: `The 14 ST-Union Sq Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '15-usqw'},
         {dir: 'south', id: '13-univ'},
@@ -16648,6 +16657,7 @@ const streets = {
       name: 'E. 28th St. and Park Ave.',
       desc: `The 28 ST-Park AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '29-park'},
         {dir: 'south', id: '27-park'},
@@ -16713,6 +16723,7 @@ const streets = {
       name: 'E. 23rd St. and Park Ave.',
       desc: `The 23 ST-Park AV Station entrance is at this corner.`,
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '24-park'},
         {dir: 'south', id: '22-park'},
@@ -20581,6 +20592,9 @@ const streets = {
       id: '34-8',
       coord: [-2.046, -26.712],
       name: 'W. 34th St. and 8th Ave.',
+      desc: 'The 34 ST-8 AV Station entrance is at this corner.',
+      isStreets: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '35-8'},
         {dir: 'south', id: '33-8'},
@@ -20592,6 +20606,9 @@ const streets = {
       id: '34-7',
       coord: [-1.984, -20.303],
       name: 'W. 34th St. and 7th Ave.',
+      desc: 'The 34 ST-7 AV Station entrance is at this corner.',
+      isStreets: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '35-7'},
         {dir: 'south', id: '33-7'},
@@ -24629,8 +24646,9 @@ const streets = {
       id: '110-broa',
       coord: [80.887, -49.153],
       name: 'W. 110th St. and Broadway',
-      desc: '',
+      desc: 'The 110 ST-Broadway Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-broa'},
@@ -24734,8 +24752,9 @@ const streets = {
       id: '103-broa',
       coord: [78.540, -45.817],
       name: 'W. 103rd St. and Broadway',
-      desc: '',
+      desc: 'The 103 ST-Broadway Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '104-broa'},
         {dir: 'south', id: '102-broa'},
@@ -24825,7 +24844,7 @@ const streets = {
       id: '96-broa',
       coord: [75.501, -45.814],
       name: 'W. 96th St. and Broadway',
-      desc: '',
+      desc: 'The 96 ST-Broadway Station entrance is at this corner.',
       isStreet: true,
       hasSubway: true,
       exits: [
@@ -25047,8 +25066,9 @@ const streets = {
       id: '79-broa',
       coord: [64.548, -45.315],
       name: 'W. 79th St. and Broadway',
-      desc: '',
+      desc: 'The 79 ST-Broadway Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '80-broa'},
         {dir: 'south', id: '78-broa'},
@@ -25217,8 +25237,9 @@ const streets = {
       id: '66-broa',
       coord: [51.311, -36.605],
       name: 'W. 66th St. and Broadway',
-      desc: '',
+      desc: 'The 66 ST-Broadway Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '67-broa'},
         {dir: 'south', id: '65-broa'},
@@ -26765,8 +26786,9 @@ const streets = {
       id: '110-cpkw',
       coord: [80.891, -28.798],
       name: 'W. 110th St. and Central Park W.',
-      desc: '',
+      desc: 'The 110 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-cpkw'},
@@ -26856,8 +26878,9 @@ const streets = {
       id: '103-cpkw',
       coord: [78.524, -28.692],
       name: 'W. 103rd St. and Central Park W.',
-      desc: '',
+      desc: 'The 103 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '104-cpkw'},
         {dir: 'south', id: '102-cpkw'},
@@ -26921,8 +26944,9 @@ const streets = {
       id: '96-cpkw',
       coord: [75.501, -28.579],
       name: 'W. 96th St. and Central Park W.',
-      desc: '',
+      desc: 'The 96 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '97-cpkw'},
         {dir: 'south', id: '95-cpkw'},
@@ -27051,8 +27075,9 @@ const streets = {
       id: '86-cpkw',
       coord: [69.844, -28.404],
       name: 'W. 86th St. and Central Park W.',
-      desc: '',
+      desc: 'The 86 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '87-cpkw'},
         {dir: 'south', id: '85-cpkw'},
@@ -27116,8 +27141,9 @@ const streets = {
       id: '81-cpkw',
       coord: [66.248, -28.302],
       name: 'W. 81st St. and Central Park W.',
-      desc: '',
+      desc: 'The 81 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '82-cpkw'},
         {dir: 'south', id: '77-cpkw'},
@@ -27210,8 +27236,9 @@ const streets = {
       id: '71-cpkw',
       coord: [56.878, -28.115],
       name: 'W. 71st St. and Central Park W.',
-      desc: '',
+      desc: 'The 71 ST-Central Park Station entrance is at this corner.',
       isStreet: true,
+      hasSubway: true,
       exits: [
         {dir: 'north', id: '72-cpkw'},
         {dir: 'south', id: '70-cpkw'},

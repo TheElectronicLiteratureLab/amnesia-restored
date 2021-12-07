@@ -112,6 +112,7 @@ disk.rooms.forEach((element)=>{
         const match = subwayRegEx.exec(element.desc); 
         if (match) {
           let subName = match[1];
+          console.log("match!");
           //console.log(subName)
           let marker = L.marker([element.coord[0],element.coord[1]], {icon: subwayIcon}).addTo(fg)
           marker.bindPopup(subName, {className: 'popup'});
