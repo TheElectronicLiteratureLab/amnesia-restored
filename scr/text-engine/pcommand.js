@@ -1288,9 +1288,9 @@ const sleepFunction = () => {
 };
 
 
-//save load
+//save load\\
 //player score\\
-//difficulty level tie ins\\
+//difficulty level tie ins\\.
 
 //random encounter function
 const randomEncounter = () => {
