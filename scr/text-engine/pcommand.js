@@ -1300,7 +1300,11 @@ const randomEncounter = () => {
   if (chance <= 5 && room.desc === '' || "" || ``) { //5% chance and the room description has to be empty
     const lat = room.coord[0]; //set the latitude to the latitude
     const lng = room.coord[1]; //set the longitude to the longitude
-    if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) { //if the lat/lng is in the range of chelsea
+    if ( (zDays >= 1 && zDays <= 5) && (qMeridiem === 1) && (yHours === 6 || yHours === 5) ) { //if the time is during rush hour 
+      const chance2 = Math.floor(Math.random() * rushHourEncounters.length); //roll index of rush hour encounters array
+      println(rushHourEncounters[chance2].desc) //print out the corresponding index
+      return;
+    }else if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) { //if the lat/lng is in the range of chelsea
       quIndex = Math.floor(Math.random() * 11);//roll an index equal to the length of the chelsea encounters array 
       if(quIndex >= 8 && quIndex <= 10) { //if the index is one of the ones without variables to assign
         chelDesc();//run the chelsea description function
@@ -1426,7 +1430,7 @@ const randomEncounter = () => {
           return;
         }
       }
-    } 
+    }  
   } 
 };
 
