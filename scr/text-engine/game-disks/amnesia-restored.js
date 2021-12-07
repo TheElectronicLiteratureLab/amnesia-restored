@@ -248,8 +248,9 @@ const amnesiaRestored = {
       items: [
         {
           itemId: 'xindexer',
-          icon: 'img/png/xindexer.png',
-          name: ['X-street indexer', 'indexer', 'street indexer'],
+          icon: 'img/png/image-xstreet-frontthumbnail.png',
+          gif: 'img/png/image-xstree-front.png',
+          name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
           desc: 'A circular wheel that shows the cross street given the address.',
           isTakeable: true,
           onDrop: () => {
@@ -271,12 +272,11 @@ const amnesiaRestored = {
           onDrop: () => {
             playMon -= 1;
             updateMon();
-            println(playMon);
           }
         },
         {
           itemId: 'bible',
-          icon: 'img/png/bible-icon.png',
+          icon: 'img/gif/gif-gideonbible-ingame.gif',
           gif: 'img/gif/gif-gideonbible-ingame.gif',
           name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
           desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
@@ -345,7 +345,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'computer',
-          name: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
+          name: ['Apple //e', 'Apple IIe', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
           desc: ' ',
           isOn: false,
           onLook: () => {
@@ -354,9 +354,9 @@ const amnesiaRestored = {
             {
               if (pc.desc === ' ')
               {
-                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
+                println('The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
               }
-              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
+              pc.desc = 'The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
               println(pc.desc);
             } else {
               if (pc.desc === ' ')
