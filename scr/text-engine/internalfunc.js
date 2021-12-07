@@ -348,14 +348,6 @@ let addItem = (itemName) => {
   }
 };
 
-/*
-let addItem = (itemId, roomId) => {
-  let item = getItemName(itemId, roomId);
-  println(item.name[0]);
-
-}
-*/
-
 // retrieves a keyword from a topic
 // topic -> string
 function getKeywordFromTopic(topic) {

@@ -13,7 +13,7 @@ let playHung = 100;
 let prevHung; // holds the previous value of playHung
 let prevFat; // holds the previous value of playFat
 
-let playMon = 1.00; 
+let playMon = 0.00; 
 
 let detScore = 0;
 let charScore = 0;

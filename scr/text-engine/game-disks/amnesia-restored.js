@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'broa-amer', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-6', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -10,7 +10,9 @@ const amnesiaRestored = {
       onEnter: () => {
         document.getElementById('map-button').style.display = "none";
         document.getElementById('address-book-button').style.display = "none";
-        //document.getElementById('game-ui-bar').style.display = "none";
+        document.getElementById('inventory-button').style.display = "none";
+        document.getElementById('save-button').style.display = "none";
+        document.getElementById('game-ui-bar').style.display = "none";
         pressEnter(`amne-intr`);
       },
       exits: [],
@@ -228,16 +230,14 @@ const amnesiaRestored = {
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {
+               
+        document.getElementById('inventory-button').style.display = "grid";
+        document.getElementById('save-button').style.display = "grid";
+        //document.getElementById('game-ui-bar').style.display = "none";
         
-        /*
-        document.getElementById('statusBar').style.display = 'grid';
-        document.getElementById('hungerNumber').innerHTML = `${playHung}`;
-        document.getElementById('fatigueNumber').innerHTML = `${playFat}`;
-        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
-        document.getElementById('time').innerHTML = `${days[zDays] + ' ' + hours[yHours] + ':' + minutes[xMinutes] + ' ' + amPm[qMeridiem]}`; */
         
         addItem('xindexer');
-        playMon += 1;
+        addItem('dollarbill');
         reenableInput();
       },
       onLook: () => {
@@ -257,6 +257,24 @@ const amnesiaRestored = {
           }
         },
         {
+          itemId: 'dollarbill',
+          icon: 'img/png/image-dollarbill-thumbnailwoutline.png',
+          gif: 'img/gif/gif-dollarbill-ingame.gif',
+          name: ['One Dollar Bill', 'dollar bill', 'dollar', 'bill', 'scratch', 'single', 'bones', 'dirty wurst'],
+          desc: 'A single ragged dollar bill. Its seen better days.',
+          isTakeable: true,
+          isDroppable: true,
+          onTake: () => {
+            playMon += 1;
+            updateMon();
+          },
+          onDrop: () => {
+            playMon -= 1;
+            updateMon();
+            println(playMon);
+          }
+        },
+        {
           itemId: 'bible',
           icon: 'img/png/bible-icon.png',
           gif: 'img/gif/gif-gideonbible-ingame.gif',
@@ -271,10 +289,10 @@ const amnesiaRestored = {
           itemId: 'pen',
           icon: 'img/png/image-pen-thumbnailwoutline.png',
           gif: 'img/gif/gif-penmodel-ingame.gif',
-          name: ['ballpoint pen', 'pen'],
+          name: ['Ballpoint Pen', 'pen', 'blue pen'],
           desc: 'It is a blue plastic ballpoint.',
           isTakeable: true,
-          isDroppable: true
+          isDroppable: true,
         },
         {
           itemId: 'roomtv',
@@ -44390,7 +44408,7 @@ exits: [
                 icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
                 gif: '/img/gif/gif-subwaytoken-ingame.gif',
                 name: ["Subway Token", 'token', 'subway token'],
-                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                desc: 'The brass NY Transit Authority token is about the size of a quarter.',
                 isTakeable: true,
                 isDroppable: true,
                 onUse: () => {

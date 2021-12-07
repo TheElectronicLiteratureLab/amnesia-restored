@@ -40,6 +40,7 @@ const streets = {
         {dir: 'south', id: 'king-vari'},
         {dir: 'east', id: 'whou-amer'},
         {dir: 'west', id: 'whou-huds'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -92,6 +93,7 @@ const streets = {
         {dir: 'south', id: 'domi-amer'},
         {dir: 'east', id: 'spri-sull'},
         {dir: 'west', id: 'spri-vari'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -170,6 +172,7 @@ const streets = {
         {dir: 'south', id: 'laig-amer'},
         {dir: 'east', id: 'cana-thom'},
         {dir: 'west', id: 'cana-vari'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -612,6 +615,7 @@ const streets = {
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'cana-broa'},
         {dir: 'west', id: 'cana-gree'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
   
@@ -642,6 +646,7 @@ const streets = {
         {dir: 'south', id: 'spri-broa'},
         {dir: 'east', id: 'prin-cros'},
         {dir: 'west', id: 'prin-merc'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -707,6 +712,7 @@ const streets = {
         {dir: 'south', id: 'lisp-broa'},
         {dir: 'east', id: 'cana-cort'},
         {dir: 'west', id: 'cana-merc'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -824,6 +830,7 @@ const streets = {
         {dir: 'south', id: 'jers-lafa'},
         {dir: 'east', id: 'ehou-mulb'},
         {dir: 'west', id: 'ehou-cros'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -863,6 +870,7 @@ const streets = {
         {dir: 'south', id: 'kenm-lafa'},
         {dir: 'east', id: 'spri-cent'},
         {dir: 'west', id: 'spri-cros'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -928,6 +936,7 @@ const streets = {
         {dir: 'south', id: 'walk-lafa'},
         {dir: 'east', id: 'cana-cent'},
         {dir: 'west', id: 'cana-cort'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -941,6 +950,7 @@ const streets = {
         {dir: 'south', id: 'kenm-cent'},
         {dir: 'east', id: 'kenm-mulb'},
         {dir: 'west', id: 'spri-lafa'},
+        
       ]
     },
     {
@@ -1448,6 +1458,7 @@ const streets = {
         {dir: 'south', id: 'broo-bowe'},
         {dir: 'east', id: 'dela-chry'},
         {dir: 'west', id: 'kenm-eliz'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -2404,7 +2415,7 @@ const streets = {
         {dir: 'south', id: '13-broa'},
         {dir: 'east', id: '14-4'},
         {dir: 'west', id: '14-usqw'},
-        //{dir: 'Nedicks', id: '???'}
+        {dir: ['nedicks', 'restaurant'], id: 'nedick-intro'}
       ]
     },
     {
@@ -2678,6 +2689,7 @@ const streets = {
         {dir: 'south', id: 'lafa-mulb'},
         {dir: 'east', id: 'blee-mott'},
         {dir: 'west', id: 'blee-cros'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -2730,6 +2742,7 @@ const streets = {
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '14-4'},
         {dir: 'west', id: '14-broa'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -2834,6 +2847,7 @@ const streets = {
         {dir: 'south', id: '4-3'},
         {dir: 'east', id: 'asto-stma'},
         {dir: 'west', id: 'asto-lafa'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -2873,6 +2887,7 @@ const streets = {
         {dir: 'south', id: '13-3'},
         {dir: 'east', id: '14-2'},
         {dir: 'west', id: '14-irvi'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -3315,6 +3330,7 @@ const streets = {
         {dir: 'south', id: '13-1'},
         {dir: 'east', id: '14-avea'},
         {dir: 'west', id: '14-2'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -4121,6 +4137,7 @@ const streets = {
         {dir: 'south', id: 'stan-pitt'},
         {dir: 'east', id: 'ehou-colu'},
         {dir: 'west', id: 'ehou-2'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -4501,7 +4518,8 @@ const streets = {
         {dir: 'north', id: 'stat-whit'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'broa-sout'}, 
-        {dir: 'west', id: 'pete-stat'} 
+        {dir: 'west', id: 'pete-stat'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -4514,7 +4532,8 @@ const streets = {
         {dir: 'north', id: 'wate-whit'},
         {dir: 'south', id: 'whit-pete'},
         {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: 'pete-stat'}
+        {dir: 'west', id: 'pete-stat'},
+        {dir: 'subway', id: 'subway'}        
       ],
     },
     {
@@ -4646,7 +4665,8 @@ const streets = {
         {dir: 'north', id: 'pine-broa'},
         {dir: 'south', id: 'rect-broa'},
         {dir: 'east', id: 'new-wall'},
-        {dir: 'west', block: `You can't go that way.`}
+        {dir: 'west', block: `You can't go that way.`},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -4737,7 +4757,8 @@ const streets = {
         {dir: 'north', id: 'vese-broa'},
         {dir: 'south', id: 'john-broa'},
         {dir: 'east', id: 'fult-nass'},
-        {dir: 'west', id: 'fult-chur'}
+        {dir: 'west', id: 'fult-chur'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -4765,7 +4786,8 @@ const streets = {
         {dir: 'north', id: 'park-broa'},
         {dir: 'south', id: 'vese-broa'},
         {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: 'barc-chur'}
+        {dir: 'west', id: 'barc-chur'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -4778,7 +4800,8 @@ const streets = {
         {dir: 'north', id: 'murr-broa'},
         {dir: 'south', id: 'barc-broa'},
         {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: 'park-chur'}
+        {dir: 'west', id: 'park-chur'},
+        
       ],
     },
     {
@@ -4817,7 +4840,8 @@ const streets = {
         {dir: 'north', id: 'read-broa'},
         {dir: 'south', id: 'warr-broa'},
         {dir: 'east', id: 'cham-elk'},
-        {dir: 'west', id: 'cham-chur'}
+        {dir: 'west', id: 'cham-chur'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5000,7 +5024,8 @@ const streets = {
         {dir: 'north', id: 'pine-nass'},
         {dir: 'south', id: 'exch-nass'},
         {dir: 'east', id: 'wall-swil'},
-        {dir: 'west', id: 'new-wall'}
+        {dir: 'west', id: 'new-wall'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5066,7 +5091,8 @@ const streets = {
         {dir: 'north', id: 'fult-nass'},
         {dir: 'south', id: 'maid-nass'},
         {dir: 'east', id: 'john-dutc'},
-        {dir: 'west', id: 'john-broa'}
+        {dir: 'west', id: 'john-broa'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5079,7 +5105,8 @@ const streets = {
         {dir: 'north', id: 'ann-nass'},
         {dir: 'south', id: 'john-nass'},
         {dir: 'east', id: 'fult-dutc'},
-        {dir: 'west', id: 'fult-broa'}
+        {dir: 'west', id: 'fult-broa'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5157,7 +5184,8 @@ const streets = {
         {dir: 'north', id: 'read-cent'},
         {dir: 'south', id: 'park-cent'},
         {dir: 'east', id: 'broo-park'},
-        {dir: 'west', id: 'cham-elk'}
+        {dir: 'west', id: 'cham-elk'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5183,7 +5211,8 @@ const streets = {
         {dir: 'north', id: 'cent-lafa'},
         {dir: 'south', id: 'read-cent'},
         {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: 'duan-elk'}
+        {dir: 'west', id: 'duan-elk'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -5564,7 +5593,8 @@ const streets = {
         {dir: 'north', id: 'ann-will'},
         {dir: 'south', id: 'john-will'},
         {dir: 'east', id: 'fult-gold'},
-        {dir: 'west', id: 'fult-dutc'}
+        {dir: 'west', id: 'fult-dutc'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -6204,7 +6234,7 @@ const streets = {
         {dir: 'south', id: 'hano-pear'},
         {dir: 'east', id: 'wall-wate'},
         {dir: 'west', id: 'wall-beav'},
-        {dir: '', id: ''} // add nedicks exit
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -6925,7 +6955,7 @@ const streets = {
         {dir: 'south', id: 'cham-elk'},
         {dir: 'east', id: 'read-cent'},
         {dir: 'west', id: 'read-broa'},
-        {dir: '', id: ''} // add nedicks exit
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -7030,7 +7060,8 @@ const streets = {
         {dir: 'north', id: 'morr-broa'},
         {dir: 'south', id: 'brid-stat'},
         {dir: 'east', id: 'batt-whit'},
-        {dir: 'west', id: 'batt-gree'}
+        {dir: 'west', id: 'batt-gree'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -7069,7 +7100,8 @@ const streets = {
         {dir: 'north', id: 'tham-trin'},
         {dir: 'south', id: 'exch-trin'},
         {dir: 'east', id: 'rect-broa'},
-        {dir: 'west', id: 'rect-gree'}
+        {dir: 'west', id: 'rect-gree'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -7109,7 +7141,8 @@ const streets = {
         {dir: 'north', id: 'cort-trin'},
         {dir: 'south', id: 'ceda-trin'},
         {dir: 'east', id: 'libe-broa'},
-        {dir: 'west', id: 'libe-gree'}
+        {dir: 'west', id: 'libe-gree'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -7122,7 +7155,8 @@ const streets = {
         {dir: 'north', id: 'dey-trin'},
         {dir: 'south', id: 'libe-trin'},
         {dir: 'east', id: 'cort-broa'},
-        {dir: 'west', block: `You can't go that way.`}
+        {dir: 'west', block: `You can't go that way.`},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -7245,7 +7279,8 @@ const streets = {
         {dir: 'north', id: 'read-chur'},
         {dir: 'south', id: 'warr-chur'},
         {dir: 'east', id: 'cham-broa'},
-        {dir: 'west', id: 'cham-wbro'}
+        {dir: 'west', id: 'cham-wbro'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -7414,7 +7449,8 @@ const streets = {
         {dir: 'north', id: 'carl-gree'},
         {dir: 'south', id: 'exch-gree'},
         {dir: 'east', id: 'rect-trin'},
-        {dir: 'west', id: 'rect-wash'}
+        {dir: 'west', id: 'rect-wash'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -9058,7 +9094,8 @@ const streets = {
         {dir: 'north', id: 'nmoo-vari'},
         {dir: 'south', id: 'vari-wbro'},
         {dir: 'east', id: 'fran-wbro'},
-        {dir: 'west', id: 'fran-huds'}
+        {dir: 'west', id: 'fran-huds'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -9110,7 +9147,8 @@ const streets = {
         {dir: 'north', id: 'watt-vari'},
         {dir: 'south', id: 'laig-vari'},
         {dir: 'east', id: 'cana-amer'},
-        {dir: 'west', id: 'cana-watt'}
+        {dir: 'west', id: 'cana-watt'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -9830,7 +9868,8 @@ const streets = {
         {dir: 'north', id: 'rivi-esse'},
         {dir: 'south', id: 'broo-esse'},
         {dir: 'east', id: 'dela-norf'},
-        {dir: 'west', id: 'dela-ludl'}, 
+        {dir: 'west', id: 'dela-ludl'}, ,
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -10233,7 +10272,8 @@ const streets = {
         {dir: 'north', id: 'broo-chrys'},
         {dir: 'south', id: 'hest-chry'},
         {dir: 'east', id: 'gran-fors'},
-        {dir: 'west', id: 'gran-bowe'}, 
+        {dir: 'west', id: 'gran-bowe'}, ,
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -11848,7 +11888,8 @@ const streets = {
         {dir: 'north', id: 'wash-amer'},
         {dir: 'south', id: '3-amer'},
         {dir: 'east', id: '4-macd'}, 
-        {dir: 'west', id: 'corn-4'} 
+        {dir: 'west', id: 'corn-4'} ,
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {   
@@ -11965,7 +12006,8 @@ const streets = {
         {dir: 'north', id: 'down-7'},
         {dir: 'south', id: 'king-vari'},
         {dir: 'east', id: 'whou-amer'}, 
-        {dir: 'west', id: 'whou-huds'} 
+        {dir: 'west', id: 'whou-huds'} ,
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {   
@@ -12108,7 +12150,8 @@ const streets = {
         {dir: 'north', id: '10-7'},
         {dir: 'south', id: 'wash-7'},
         {dir: 'east', id: 'chri-grov'}, 
-        {dir: 'west', id: 'chri-blee'} 
+        {dir: 'west', id: 'chri-blee'} ,
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {   
@@ -15089,6 +15132,7 @@ const streets = {
         {dir: 'south', id: '22-8'},
         {dir: 'east', id: '23-7'},
         {dir: 'west', id: '23-9'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15180,6 +15224,7 @@ const streets = {
         {dir: 'south', id: '15-8'},
         {dir: 'east', id: '16-7'},
         {dir: 'west', id: '16-9'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15206,6 +15251,7 @@ const streets = {
         {dir: 'south', id: '13-4-1'},
         {dir: 'east', id: '14-7'},
         {dir: 'west', id: '14-9'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
         //7th Ave
@@ -15285,6 +15331,7 @@ const streets = {
         {dir: 'south', id: '27-7'},
         {dir: 'east', id: '28-amer'},
         {dir: 'west', id: '28-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15350,6 +15397,7 @@ const streets = {
         {dir: 'south', id: '22-7'},
         {dir: 'east', id: '23-amer'},
         {dir: 'west', id: '23-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15415,6 +15463,7 @@ const streets = {
         {dir: 'south', id: '17-7'},
         {dir: 'east', id: '18-amer'},
         {dir: 'west', id: '18-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15467,6 +15516,7 @@ const streets = {
         {dir: 'south', id: '13-7'},
         {dir: 'east', id: '14-amer'},
         {dir: 'west', id: '14-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     //6th Ave/Ave. of America
@@ -15625,6 +15675,7 @@ const streets = {
         {dir: 'south', id: '22-amer'},
         {dir: 'east', id: '23-5'},
         {dir: 'west', id: '23-7'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -15745,6 +15796,7 @@ const streets = {
         {dir: 'south', id: '13-amer'},
         {dir: 'east', id: '14-5'},
         {dir: 'west', id: '14-7'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
         //Broadway
@@ -15929,6 +15981,7 @@ const streets = {
         {dir: 'south', id: '22-broa'},
         {dir: 'east', id: '23-madi'},
         {dir: 'west', id: '23-5'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -16480,7 +16533,8 @@ const streets = {
         {dir: 'north', id: '15-usqw'},
         {dir: 'south', id: '13-univ'},
         {dir: 'east', id: '14-broa'},
-        {dir: 'west', id: '14-5'}
+        {dir: 'west', id: '14-5'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -16560,7 +16614,8 @@ const streets = {
         {dir: 'north', id: '34-park'},
         {dir: 'south', id: '32-park'},
         {dir: 'east', id: '33-lexi'},
-        {dir: 'west', id: '33-madi'}
+        {dir: 'west', id: '33-madi'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -16625,7 +16680,8 @@ const streets = {
         {dir: 'north', id: '29-park'},
         {dir: 'south', id: '27-park'},
         {dir: 'east', id: '28-lexi'},
-        {dir: 'west', id: '28-madi'}
+        {dir: 'west', id: '28-madi'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -16690,7 +16746,8 @@ const streets = {
         {dir: 'north', id: '24-park'},
         {dir: 'south', id: '22-park'},
         {dir: 'east', id: '23-lexi'},
-        {dir: 'west', id: '23-madi'}
+        {dir: 'west', id: '23-madi'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18029,7 +18086,7 @@ const streets = {
         {dir: 'south', id: '58-amer'},
         {dir: 'east', id: '59-wdri'},
         {dir: 'west', id: '59-7'},
-        {dir: ['nedicks','enter',], id: 'cent-amer-nedi'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
 //Begin 58th St.
@@ -18092,7 +18149,7 @@ const streets = {
         {dir: 'south', id: '58-8'},
         {dir: 'east', id: '58-broa'},
         {dir: 'west', id: '59-broa'},
-        {dir: ['subway', 'entrance'], id: 'broa-8-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18271,7 +18328,7 @@ const streets = {
         {dir: 'south', id: '56-7'},
         {dir: 'east', id: '57-amer'},
         {dir: 'west', id: '57-broa'},
-        {dir: ['subway', 'entrance'], id: '57-7-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18285,7 +18342,7 @@ const streets = {
         {dir: 'south', id: '56-amer'},
         {dir: 'east', id: '57-5'},
         {dir: 'west', id: '57-7'},
-        {dir: ['subway', 'entrance'], id: '57-amer-subway-ent'},
+
         ],
     },
 //Start 56th St.
@@ -18658,7 +18715,7 @@ const streets = {
         {dir: 'south', id: '52-7'},
         {dir: 'east', id: '53-amer'},
         {dir: 'west', id: '53-broa'},
-        {dir: ['subway', 'entrance'], id: '53-7-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18945,7 +19002,7 @@ const streets = {
         {dir: 'south', id: '49-8'},
         {dir: 'east', id: '50-broa'},
         {dir: 'west', id: '50-9'},
-        {dir: ['subway', 'entrance'], id: '50-8-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18960,7 +19017,7 @@ const streets = {
         {dir: 'south', id: '49-broa'},
         {dir: 'east', id: '50-7'},
         {dir: 'west', id: '50-8'},
-        {dir: ['subway', 'entrance'], id: '50-broa-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -18988,7 +19045,7 @@ const streets = {
         {dir: 'south', id: '49-amer'},
         {dir: 'east', id: '50-5'},
         {dir: 'west', id: '50-7'},
-        {dir: ['subway', 'entrance'], id: '50-amer-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
 //Start 49th St.
@@ -19064,7 +19121,7 @@ const streets = {
         {dir: 'south', id: '48-broa'},
         {dir: 'east', id: '49-7'},
         {dir: 'west', id: '49-8'},
-        {dir: ['enter', 'restaurant', 'nedicks'], id: '49-broa-nedicks'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -19079,8 +19136,7 @@ const streets = {
         {dir: 'south', id: '48-7'},
         {dir: 'east', id: '49-amer'},
         {dir: 'west', id: '49-broa'},
-        {//Subway Entrance
-            dir: ['subway', 'entrance'], id: '49-7-subway-ent'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -19288,7 +19344,7 @@ const streets = {
         {dir: 'south', id: '46-7'},
         {dir: 'east', id: '47-amer'},
         {dir: 'west', id: '47-broa'},
-        {dir: ['enter', 'restaurant', 'nedicks'], id: '47-7-nedi'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -19664,7 +19720,7 @@ const streets = {
         {dir: 'south', id: '42-12'},
         {dir: 'east', id: '43-11'},
         {dir: 'west', id: '43-hhpw'},
-        {dir: ['enter', 'nedicks'], id: '43-12-nedi'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -19730,6 +19786,7 @@ const streets = {
         {dir: 'south', id: '42-7'},
         {dir: 'east', id: '43-broa'},
         {dir: 'west', id: '43-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -19880,6 +19937,7 @@ const streets = {
         {dir: 'south', id: '41-amer'},
         {dir: 'east', id: '42-5'},
         {dir: 'west', id: '42-broa'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
 //Start 41st Street
@@ -19943,7 +20001,7 @@ const streets = {
         {dir: 'south', id: 'bta-dyer'},
         {dir: 'east', id: '41-9'},
         {dir: 'west', id: '41-10'},
-        {dir: ['enter', 'nedicks'], id: '41-dyer-nedi'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -20785,7 +20843,7 @@ const streets = {
         {dir: 'south', id: '33-9'},
         {dir: 'east', id: '34-8'},
         {dir: 'west', id: '34-dyer'},
-        {dir: ['enter', 'restaurant', 'nedicks'], id: '34-9-nedi'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
     {
@@ -20800,6 +20858,7 @@ const streets = {
         {dir: 'south', id: '33-8'},
         {dir: 'east', id: '34-7'},
         {dir: 'west', id: '34-9'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -20814,6 +20873,7 @@ const streets = {
         {dir: 'south', id: '33-7'},
         {dir: 'east', id: '34-broa'},
         {dir: 'west', id: '34-8'},
+        {dir: 'subway', id: 'subway'}
       ],
     },
     {
@@ -20924,7 +20984,7 @@ const streets = {
         {dir: 'south', id: '53-5'},
         {dir: 'east', id: '54-madi'},
         {dir: 'west', id: '54-amer'}, 
-        {dir: ['subway'], id: '????'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -21453,7 +21513,7 @@ const streets = {
         {dir: 'south', id: '41-5'},
         {dir: 'east', id: '42-madi'},
         {dir: 'west', id: '42-amer'},
-        {dir: ['Subway'], id: '????'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -22119,7 +22179,7 @@ const streets = {
         {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
         {dir: 'east', id: '42-lexi'},
         {dir: 'west', id: '42-park'},
-        {id: ['grand', 'central', 'station', 'subway'], id: 'gran-cent'}
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -22276,7 +22336,7 @@ const streets = {
         {dir: 'south', id: '50-lexi'},
         {dir: 'east', id: '51-3'},
         {dir: 'west', id: '51-park'},
-        {dir: ['subway'], id: '????'}
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -22381,6 +22441,7 @@ const streets = {
         {dir: 'south', id: '58-lexi'},
         {dir: 'east', id: '59-3'},
         {dir: 'west', id: '59-park'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -22394,6 +22455,7 @@ const streets = {
         {dir: 'south', id: '58-3'},
         {dir: 'east', id: '59-2'},
         {dir: 'west', id: '59-lexi'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -22473,7 +22535,7 @@ const streets = {
         {dir: 'south', id: '52-3'},
         {dir: 'east', id: '53-2'},
         {dir: 'west', id: '53-lexi'},
-        {dir: ['subway'], id: '????'}
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -24849,6 +24911,7 @@ const streets = {
         {dir: 'south', id: '109-broa'},
         {dir: 'east', id: '110-amst'},
         {dir: 'west', id: '110-rive'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -24954,6 +25017,7 @@ const streets = {
         {dir: 'south', id: '102-broa'},
         {dir: 'east', id: '103-amst'},
         {dir: 'west', id: '103-wend'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -25045,6 +25109,7 @@ const streets = {
         {dir: 'south', id: '95-broa'},
         {dir: 'east', id: '96-amst'},
         {dir: 'west', id: '96-wend'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -25266,6 +25331,7 @@ const streets = {
         {dir: 'south', id: '78-broa'},
         {dir: 'east', id: '79-amst'},
         {dir: 'west', id: '79-wend'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -25357,6 +25423,7 @@ const streets = {
         {dir: 'south', id: '71-broa'},
         {dir: 'east', id: '72-amst'},
         {dir: 'west', id: '72-wend'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -25435,6 +25502,7 @@ const streets = {
         {dir: 'south', id: '65-broa'},
         {dir: 'east', id: '66-colu'},
         {dir: 'west', id: '66-amst'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -25448,6 +25516,7 @@ const streets = {
         {dir: 'south', id: 'broa-colu'},
         {dir: 'east', id: '65-colu'},
         {dir: 'west', id: '65-amst'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -26202,6 +26271,7 @@ const streets = {
         {dir: 'south', id: '58-10'},
         {dir: 'east', id: '59-colu'},
         {dir: 'west', id: '59-wend'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -26982,6 +27052,7 @@ const streets = {
         {dir: 'south', id: '109-cpkw'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '110-manh'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27073,6 +27144,7 @@ const streets = {
         {dir: 'south', id: '102-cpkw'},
         {dir: 'east', id: '103-7'},
         {dir: 'west', id: '103-manh'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27138,6 +27210,7 @@ const streets = {
         {dir: 'south', id: '95-cpkw'},
         {dir: 'east', id: '96-7'},
         {dir: 'west', id: '96-colu'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27268,6 +27341,7 @@ const streets = {
         {dir: 'south', id: '85-cpkw'},
         {dir: 'east', id: '86-7'},
         {dir: 'west', id: '86-colu'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27333,6 +27407,7 @@ const streets = {
         {dir: 'south', id: '77-cpkw'},
         {dir: 'east', id: '81-7'},
         {dir: 'west', id: '81-colu'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27427,6 +27502,7 @@ const streets = {
         {dir: 'south', id: '70-cpkw'},
         {dir: 'east', id: '71-7'},
         {dir: 'west', id: '71-colu'},
+        {dir: 'subway', id: 'subway'}
       ]
     },
     {
@@ -27593,7 +27669,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: `According to the plaque in front of it this is a genuine Egyptian obelisk. It even has its own name -- Cleopatra's Needle.`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '61-amer'},
         {dir: 'south', id: '59-amer'},
@@ -27606,7 +27681,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '62-amer'},
         {dir: 'south', id: '60-amer'},
@@ -27619,7 +27693,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '63-amer'},
         {dir: 'south', id: '61-amer'},
@@ -27632,7 +27705,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: `You've entered the Central Park zoo. All of the cages are empty. The thought of prison suddenly takes over your imagination completely... There's Fifth Avenue just beyond the entrance to the zoo.`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '64-amer'},
         {dir: 'south', id: '62-amer'},
@@ -27645,7 +27717,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '65-amer'},
         {dir: 'south', id: '63-amer'},
@@ -27658,7 +27729,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '66-amer'},
         {dir: 'south', id: '64-amer'},
@@ -27671,7 +27741,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '67-amer'},
         {dir: 'south', id: '65-amer'},
@@ -27684,7 +27753,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '68-amer'},
         {dir: 'south', id: '66-amer'},
@@ -27697,7 +27765,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '69-amer'},
         {dir: 'south', id: '67-amer'},
@@ -27710,7 +27777,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '70-amer'},
         {dir: 'south', id: '68-amer'},
@@ -27723,7 +27789,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '71-amer'},
         {dir: 'south', id: '69-amer'},
@@ -27736,7 +27801,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '72-amer'},
         {dir: 'south', id: '70-amer'},
@@ -27749,7 +27813,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '73-amer'},
         {dir: 'south', id: '71-amer'},
@@ -27762,7 +27825,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '74-amer'},
         {dir: 'south', id: '72-amer'},
@@ -27775,7 +27837,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '75-amer'},
         {dir: 'south', id: '73-amer'},
@@ -27788,7 +27849,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '76-amer'},
         {dir: 'south', id: '74-amer'},
@@ -27801,7 +27861,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '77-amer'},
         {dir: 'south', id: '75-amer'},
@@ -27814,7 +27873,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '78-amer'},
         {dir: 'south', id: '76-amer'},
@@ -27827,7 +27885,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '79-amer'},
         {dir: 'south', id: '77-amer'},
@@ -27840,7 +27897,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '80-amer'},
         {dir: 'south', id: '78-amer'},
@@ -27854,7 +27910,6 @@ const streets = {
       name: 'Somewhere in Central Park',
       desc: `You see an empty bandshell with rows of empty green benches facing it attentively.\nMonday 2:00PM\n
             You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '81-amer'},
         {dir: 'south', id: '79-amer'},
@@ -27867,7 +27922,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '82-amer'},
         {dir: 'south', id: '80-amer'},
@@ -27880,7 +27934,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``,
-      isStreet: true,
       exits: [
         {dir: 'north', id: '83-amer'},
         {dir: 'south', id: '81-amer'},
@@ -27893,7 +27946,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: 'epoe-amer'},
         {dir: 'south', id: '82-amer'},
@@ -27906,7 +27958,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: `A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike -- all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '85-amer'},
         {dir: 'south', id: '83-amer'},
@@ -27919,7 +27970,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``,
-      isStreet: true,
       exits: [
         {dir: 'north', id: '86-amer'},
         {dir: 'south', id: 'epoe-amer'},
@@ -27932,7 +27982,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '87-amer'},
         {dir: 'south', id: '85-amer'},
@@ -27945,7 +27994,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '88-amer'},
         {dir: 'south', id: '86-amer'},
@@ -27958,7 +28006,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '89-amer'},
         {dir: 'south', id: '87-amer'},
@@ -27971,7 +28018,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '90-amer'},
         {dir: 'south', id: '88-amer'},
@@ -27984,7 +28030,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '91-amer'},
         {dir: 'south', id: '899-amer'},
@@ -27997,7 +28042,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '92-amer'},
         {dir: 'south', id: '90-amer'},
@@ -28010,7 +28054,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``,
-      isStreet: true,
       exits: [
         {dir: 'north', id: '93-amer'},
         {dir: 'south', id: '91-amer'},
@@ -28023,7 +28066,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '94-amer'},
         {dir: 'south', id: '92-amer'},
@@ -28036,7 +28078,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '95-amer'},
         {dir: 'south', id: '93-amer'},
@@ -28049,7 +28090,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '96-amer'},
         {dir: 'south', id: '94-amer'},
@@ -28062,7 +28102,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '97-amer'},
         {dir: 'south', id: '95-amer'},
@@ -28075,7 +28114,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '98-amer'},
         {dir: 'south', id: '96-amer'},
@@ -28088,7 +28126,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '99-amer'},
         {dir: 'south', id: '97-amer'},
@@ -28101,7 +28138,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '100-amer'},
         {dir: 'south', id: '98-amer'},
@@ -28114,7 +28150,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '101-amer'},
         {dir: 'south', id: '99-amer'},
@@ -28127,7 +28162,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '102-amer'},
         {dir: 'south', id: '100-amer'},
@@ -28140,7 +28174,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '103-amer'},
         {dir: 'south', id: '101-amer'},
@@ -28153,7 +28186,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '104-amer'},
         {dir: 'south', id: '102-amer'},
@@ -28166,7 +28198,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '105-amer'},
         {dir: 'south', id: '103-amer'},
@@ -28179,7 +28210,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '106-amer'},
         {dir: 'south', id: '104-amer'},
@@ -28192,7 +28222,6 @@ const streets = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '107-amer'},
         {dir: 'south', id: '105-amer'},
@@ -28904,6 +28933,7 @@ const streets = {
         {dir: 'south', id: '58-5'},
         {dir: 'east', id: '59-madi'},
         {dir: 'west', id: '59-amer'},
+        {dir: 'subway', id: 'subway'}
       ],    
     },
     {
@@ -30261,7 +30291,7 @@ const streets = {
         {dir: 'south', id: '58-park'},
         {dir: 'east', id: '59-lexi'},
         {dir: 'west', id: '59-madi'},
-        {dir: ['inside', 'nedicks', 'restaraunt'], id: '59-nedick'},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     }, 
     {//We should have some copy done here to write a descirption out for Bloomingdales.
@@ -31062,6 +31092,7 @@ const streets = {
         {dir: 'south', id: '67-lexi'},
         {dir: 'east', id: '68-3'},
         {dir: 'west', id: '68-park'},
+        {dir: 'subway', id: 'subway'}
       ],  
     },
     {
@@ -31180,6 +31211,7 @@ const streets = {
         {dir: 'south', id: '76-lexi'},
         {dir: 'east', id: '77-3'},
         {dir: 'west', id: '77-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {
@@ -31298,6 +31330,7 @@ const streets = {
         {dir: 'south', id: '85-lexi'},
         {dir: 'east', id: '86-3'},
         {dir: 'west', id: '86-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {
@@ -31376,6 +31409,7 @@ const streets = {
         {dir: 'south', id: '91-lexi'},
         {dir: 'east', id: '92-3'},
         {dir: 'west', id: '92-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {
@@ -31428,6 +31462,7 @@ const streets = {
         {dir: 'south', id: '95-lexi'},
         {dir: 'east', id: '96-3'},
         {dir: 'west', id: '96-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {
@@ -31519,6 +31554,7 @@ const streets = {
         {dir: 'south', id: '102-lexi'},
         {dir: 'east', id: '103-3'},
         {dir: 'west', id: '103-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {
@@ -31597,6 +31633,7 @@ const streets = {
         {dir: 'south', id: '108-lexi'},
         {dir: 'east', id: '109-3'},
         {dir: 'west', id: '109-park'},
+        {dir: 'subway', id: 'subway'}
       ],
     }, 
     {

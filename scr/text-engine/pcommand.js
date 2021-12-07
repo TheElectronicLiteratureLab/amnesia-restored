@@ -952,10 +952,15 @@ const phoneMarkerGenerator = () => {
               let marker = L.marker([el.coord[0], el.coord[1]], {icon: phoneIcon}).addTo(phoneLayer);
               console.log("Phone Booth Spotted Captain");
             }
+          } else {
+            console.log("Can't put a phone booth marker here.");
           }
         })
+      } else {
+        console.log("Coordinates exist, but are undefined.");
       }
-      //console.log(el.exits);
+    } else {
+      console.log("Coordinates don't exist here.");
     }
   })
 }
@@ -975,7 +980,7 @@ const fastTravel = () =>{
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = streets.rooms; //set variable to loaded disk
+  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
@@ -984,16 +989,21 @@ function createPhone() { //create function
     roomCount++;
     if (room.isStreet){
       let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-      if(chance <= 15 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      if(chance <= 10 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
         console.log(chance); //log the number generated
         console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
-        rooms[i].exits.push( //push the following into the room's exits array
+        if (rooms[i].exits !== undefined) {
+          rooms[i].exits.push( //push the following into the room's exits array
           {
             dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
             id: 'pho-boo1' //id for phone booth
           },
         ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
         phoneCount++
+        } else {
+          console.log(`Can't build a booth here.`);
+        }
+        
       }
     }
   }
@@ -1350,13 +1360,17 @@ let dropItem = (itemName) => {
     if (item.isDroppable) {
       room.items.push(item)
       disk.inventory.splice(itemIndex, 1);
-      if (typeof itemIndex === 'function') {
+      
+      if (typeof item.onDrop === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
+        console.log("TEST")
       } else {
+        
         println(`You dropped the ${getName(item.name)}.`);
       }
     } else {
-      if (typeof item.onDrop === 'function') {
+      
+      if (typeof itemIndex === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
       } else {
         println(item.block || `You can't drop that.`);

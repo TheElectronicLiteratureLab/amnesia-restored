@@ -2,10 +2,10 @@
 let disk;
 
 // global values for character creation
-hairColor = '';
-hairLength = '';
-hairFace = '';
-eyeColor = '';
+hairColor = 'dark';
+hairLength = 'short';
+hairFace = 'beard';
+eyeColor = 'blue';
 
 // store user input history
 let inputs = [''];
@@ -136,7 +136,7 @@ let save = () => {
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
-let save = (name) => {
+let save = (name = 'Amnesia Restored Save') => {
   const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
   localStorage.setItem(name, save);
   const line = name.length ? `Game saved as "${name}".` : `Game saved.`;

@@ -234,8 +234,8 @@ let setPlayerMarker = (e) => {
         }
         //centerOnPlayer();
         playerMarker.on('click', function(e) {
-          //playerMarker.unbindPopup();
-          //playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
+          playerMarker.unbindPopup();
+          playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
         });
         //playerMarker.getPopup().setContent(room.name).openPopup().update();
         console.log('Current Position: ' + disk.currPos);
