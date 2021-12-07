@@ -1213,13 +1213,13 @@ let dropItem = (itemName) => {
     if (item.isDroppable) {
       room.items.push(item)
       disk.inventory.splice(itemIndex, 1);
-      if (typeof itemIndex === 'function') {
+      if (typeof item.onDrop === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
       } else {
         println(`You dropped the ${getName(item.name)}.`);
       }
     } else {
-      if (typeof item.onDrop === 'function') {
+      if (typeof itemIndex === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
       } else {
         println(item.block || `You can't drop that.`);
