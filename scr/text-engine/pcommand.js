@@ -1298,26 +1298,26 @@ const randomEncounter = () => {
   const chance = Math.floor(Math.random() * 100) + 1 //roll number between 1-100
   const room = getRoom(disk.roomId); //get the current room
   if (chance <= 5 && room.desc === '' || "" || ``) { //5% chance and the room description has to be empty
-    const lat = room.coord[0]; //
-    const lng = room.coord[1];
-    if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) {
-      quIndex = Math.floor(Math.random() * 11);
-      if(quIndex >= 8 && quIndex <= 10) {
-        chelDesc();
-        return;
-      } else {
-        const encounter = chelseaEncounters[quIndex];
-        const size = Object.keys(encounter).length; 
-        if(size === 4) {
-          const u = Math.floor(Math.random() * encounter.choices4.length );
+    const lat = room.coord[0]; //set the latitude to the latitude
+    const lng = room.coord[1]; //set the longitude to the longitude
+    if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) { //if the lat/lng is in the range of chelsea
+      quIndex = Math.floor(Math.random() * 11);//roll an index equal to the length of the chelsea encounters array 
+      if(quIndex >= 8 && quIndex <= 10) { //if the index is one of the ones without variables to assign
+        chelDesc();//run the chelsea description function
+        return;//end this function 
+      } else { //if the index is one of the ones with variables to assign
+        const encounter = chelseaEncounters[quIndex]; //grab the proper encounter based on the index
+        const size = Object.keys(encounter).length; //get the length of the object to know how many variables to assign
+        if(size === 4) {//if there are 4 variables to assign
+          const u = Math.floor(Math.random() * encounter.choices4.length ); //randomly choose the choices
           const t = Math.floor(Math.random() * encounter.choices3.length );
           const v = Math.floor(Math.random() * encounter.choices2.length );
           const h = Math.floor(Math.random() * encounter.choices1.length );
-          choice1 = encounter.choices1[h];
+          choice1 = encounter.choices1[h]; //assign those choices
           choice2 = encounter.choices2[v];
           choice3 = encounter.choices3[t];
           choice4 = encounter.choices4[u];
-          chelDesc(choice1, choice2, choice3, choice4);
+          chelDesc(choice1, choice2, choice3, choice4); //run the chelsea description function with the new choices.
           return;
         } else if (size === 3 ) {
           const t = Math.floor(Math.random() * encounter.choices3.length );
