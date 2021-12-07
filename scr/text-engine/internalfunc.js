@@ -224,7 +224,7 @@ let enterRoom = (id) => {
       spawnTenement();
     } 
     
-    randomEncounter();
+    //randomEncounter();
   }
   
 

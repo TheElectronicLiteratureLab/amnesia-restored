@@ -1300,7 +1300,7 @@ const sleepFunction = () => {
     //then print desc with proper variables
 
   
- let encounter;
+ let quIndex;
     
 const randomEncounter = () => {
   
@@ -1310,155 +1310,142 @@ const randomEncounter = () => {
   if (chance >= 5 && room.desc === '' || "" || ``) {
     const lat = room.coord[0];
     const lng = room.coord[1];
-
     if( (lat >= -36 && lat <= -2) && (lng >= -55 && lng <= -12 ) ) {
       console.log('the player is in chelsea');
-      const q = Math.floor(Math.random() * chelseaEncounters.length);
-      encounter = chelseaEncounters[q];
-
-      const size = Object.keys(encounter).length; 
-      console.log(size + ' is the length of the encounter object.');
-      
-      if(size === 5) {
-        console.log('this encounter has 4 choices');
-
-        const fourth = encounter.choices4;
-        console.log(fourth.length);
-        const u = Math.floor(Math.random() * fourth.length );
-        choice4 = fourth[u];
-        console.log(choice4)
-        const third = encounter.choices3;
-        const t = Math.floor(Math.random() * third.length );
-        choice3 = third[t];
-        console.log(choice3)
-        const second = encounter.choices2;
-        const v = Math.floor(Math.random() * second.length );
-        choice2 = second[v];
-        console.log(choice2)
-        const first = encounter.choices1;
-        const h = Math.floor(Math.random() * first.length );
-        choice1 = first[h]; 
-        console.log(choice1)
-        
-        console.log(encounter);
-
-
-      } else if (size === 4) {
-        console.log('this encounter has 3 choices')
-
-        const third = encounter.choices3;
-        console.log(third.length);
-        const t = Math.floor(Math.random() * third.length );
-        choice3 = third[t];
-        console.log(choice3)
-        const second = encounter.choices2;
-        const v = Math.floor(Math.random() * second.length );
-        choice2 = second[v];
-        console.log(choice2)
-        const first = encounter.choices1;
-        const h = Math.floor(Math.random() * first.length );
-        choice1 = first[h]; 
-        console.log(choice1)
-        
-        console.log(encounter.desc);
-
-
-      } else if (size === 3) {
-        console.log('this encounter has 2 choices')
-
-        const second = encounter.choices2;
-        console.log(second.length);
-        const v = Math.floor(Math.random() * second.length );
-        choice2 = second[v];
-        console.log(choice2)
-        const first = encounter.choices1;
-        const h = Math.floor(Math.random() * first.length );
-        choice1 = first[h]; 
-        console.log(choice1)
-        
-
-
-      }else if (size === 2) {
-        console.log('this encounter has 1 choice')
-
-        const first = encounter.choices1;
-        console.log(first.length);
-        const h = Math.floor(Math.random() * first.length );
-        choice1 = first[h]; 
-        console.log(choice1)
-        
-
-        console.log(encounter);
-
-
+      quIndex = Math.floor(Math.random() * 11);
+      console.log(quIndex);
+      if(quIndex >= 8 && quIndex <= 10) {
+        chelDesc();
+        return;
       } else {
-        console.log('this encounter has no choices')
-        console.log(encounter.desc);
+        const encounter = chelseaEncounters[quIndex];
+        const size = Object.keys(encounter).length; 
+        if(size === 4) {
+          const u = Math.floor(Math.random() * encounter.choices4.length );
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          chelDesc(choice1, choice2, choice3, choice4);
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          chelDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          chelDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          chelDesc(choice1);
+          return;
+        }
       }
     } else if ( (lat >= 13 && lat <= 42) && (lng >= -55 && lng <= 28 ) ) {
       console.log('the player is in midtown');
-      const f = midtownEncounters.length;
-      const q = Math.floor(Math.random() * f);
-      const encounter = midtownEncounters[q];
-      const u = Math.floor(Math.random() * encounter.choices4.length );
-      const t = Math.floor(Math.random() * encounter.choices3.length );
-      const v = Math.floor(Math.random() * encounter.choices2.length );
-      const h = Math.floor(Math.random() * encounter.choices1.length );
-      if(encounter.choice4) {
-        choice4 = encounter.choices4[u];
-        choice3 = encounter.choices3[t];
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      } else if (encounter.choice3) {
-        choice3 = encounter.choices3[t];
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      } else if (encounter.choice2) {
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      }else if (encounter.choice1) {
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
+      quIndex = Math.floor(Math.random() * 14);
+      console.log(quIndex);
+      if(quIndex === 13) {
+        midDesc();
+        return;
       } else {
-        println(encounter.desc)
+        const encounter = midtownEncounters[quIndex];
+        const size = Object.keys(encounter).length; 
+        if(size === 4) {
+          const u = Math.floor(Math.random() * encounter.choices4.length );
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          midDesc(choice1, choice2, choice3, choice4);
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          midDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          midDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          midDesc(choice1);
+          return;
+        }
+
       }
+
     } else if ( (lat >= -58 && lat <= -36) && (lng >= -42 && lng <= 5 ) ) {
       console.log('the player is in greenwich');
-      const q = Math.floor(Math.random() * greenwichEncounters.length);
-      const encounter = greenwichEncounters[q];
-      const u = Math.floor(Math.random() * encounter.choices4.length );
-      const t = Math.floor(Math.random() * encounter.choices3.length );
-      const v = Math.floor(Math.random() * encounter.choices2.length );
-      const h = Math.floor(Math.random() * encounter.choices1.length );
-    
-      if(encounter.choice4) {
-        choice4 = encounter.choices4[u];
-        choice3 = encounter.choices3[t];
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      } else if (encounter.choice3) {
-        choice3 = encounter.choices3[t];
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      } else if (encounter.choice2) {
-        choice2 = encounter.choices2[v];
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
-      }else if (encounter.choice1) {
-        choice1 = encounter.choices1[h];
-        println(encounter.desc);
+      quIndex = Math.floor(Math.random() * 12);
+      console.log(quIndex);
+      if(quIndex >= 5) {
+        greenDesc();
+        return;
       } else {
-        println(encounter.desc)
+        const encounter = midtownEncounters[quIndex];
+        const size = Object.keys(encounter).length; 
+        if(size === 4) {
+          const u = Math.floor(Math.random() * encounter.choices4.length );
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          choice4 = encounter.choices4[u];
+          greenDesc(choice1, choice2, choice3, choice4);
+          return;
+        } else if (size === 3 ) {
+          const t = Math.floor(Math.random() * encounter.choices3.length );
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          choice3 = encounter.choices3[t];
+          greenDesc(choice1, choice2, choice3);
+          return;
+        } else if (size === 2 ) {
+          const v = Math.floor(Math.random() * encounter.choices2.length );
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          choice2 = encounter.choices2[v];
+          greenDesc(choice1, choice2);
+          return;
+        } else if ( size === 1 ) {
+          const h = Math.floor(Math.random() * encounter.choices1.length );
+          choice1 = encounter.choices1[h];
+          greenDesc(choice1);
+          return;
+        }
       }
     } 
   } 
-
-  
 };
 
 //chelsea coord location lat -2/-36 , lon -55/-12
