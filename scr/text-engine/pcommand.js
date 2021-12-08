@@ -1390,7 +1390,7 @@ const sleepFunction = () => {
   const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
 
     
-      if( playFat >= 40) {//if player fatigue is over 40 don't let them sleep.
+      if( playFat >= 41) {//if player fatigue is over 40 don't let them sleep.
         println(`You don't feel tired enough to sleep yet.`);
     //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
       } else if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
@@ -1430,7 +1430,14 @@ const sleepFunction = () => {
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
         //enter proper room
         enterRoom('nigh2-4');
-      //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
+        //sleep function inside bette apartment
+      } else if ( room.id === 'nobe-1' && room.hasBed && playFat <= 40) {
+      
+        
+        //sleep function inside bette apartment
+      } else if ( room.id === 'novbe-12' && room.hasBed && playFat <= 40 ) {
+      
+        //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
       } else if (!room.hasBed && room.isStreet) {
         //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
