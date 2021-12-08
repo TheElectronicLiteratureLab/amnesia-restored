@@ -206,8 +206,6 @@ let enterRoom = (id) => {
 
   disk.roomId = id;
   disk.currPos = room.coord;
-   
-  console.log(disk.currPos);
 
   if (typeof room.onEnter === 'function') {
     room.onEnter({disk, println, getRoom, enterRoom});

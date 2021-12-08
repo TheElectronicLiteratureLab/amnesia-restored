@@ -657,7 +657,6 @@ let dial = () => {
   } else {
     println(`With what phone?`)
   }
-  
 }
 
 let dialing = () => {
@@ -945,6 +944,7 @@ let read = (item) => {
   document.getElementById("map-display").style.display = "block";
 }*/
 
+//Generates Phone Markers for map after phonebooth generation happens
 const phoneMarkerGenerator = () => {
   disk.rooms.forEach((el) => {
     if (el.coord !== undefined) {
@@ -969,8 +969,28 @@ const phoneMarkerGenerator = () => {
   })
 }
 
-const fastTravel = () =>{
-  
+//command for pressing elevator buttons
+const press = (button) => {
+  let elevator = getRoom(disk.roomId);
+  let buttonArr = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
+  if (button === 'l') {
+    button = '0';
+  } else if (button === 'ph') {
+    button = '19';
+  } 
+  let parsedNum = parseInt(button);
+  console.log("Button Pressed: " + button);
+  console.log(elevator.exits.length)
+  if (elevator.id === 'corridor-elevator') {
+    if (parsedNum !== NaN && parsedNum < elevator.exits.length-1 && parsedNum > -1) {
+      console.log("Moving to floor: " + (parsedNum + 1));
+      enterRoom(elevator.exits[parsedNum].id);
+    } else {
+      println('Not a valid button. Please press L, PH, or 2 through 19.');
+    }
+  } else {
+    println(`You can't press a button when not in an elevator!`);
+  }
 }
 
 
@@ -1014,8 +1034,6 @@ function createPhone() { //create function
   console.log(phoneCount + ' phone booths out of ' + roomCount + ' rooms.')
   thisRoom.phonesMade = true; //dont allow the function to run again
 };
-
-
 
 const findExitsArray = () => {
   const rooms = streets.rooms;
@@ -1684,6 +1702,7 @@ let commands = [
     dialing,
     beg,
     sleep: sleepFunction,
+    press
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -1721,6 +1740,7 @@ let commands = [
     read: read,
     asking: args => askTesting(args),
     dialing: x => callNum(x),
+    press: x => press(x)
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

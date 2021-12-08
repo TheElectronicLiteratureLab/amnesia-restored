@@ -11,6 +11,8 @@ let turnMapOn = false;
 //Sunderland Hotel Flags
 let earlyLeave = false; //Checks to see if player leaves early in hotel tutorial.
 let tipBellboy = false; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
+let isNaked = true;
+
 
 let playFat = 100;
 let playHung = 100;
