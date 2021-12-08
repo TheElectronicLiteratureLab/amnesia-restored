@@ -210,6 +210,7 @@
                 </div>
                 <div id="inventory-xIndex-display">
                     <h2 id="item-name">X-Street Indexer</h2>
+                    <img id="item-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image" style="width: 70%">
                     <div id='xStreetIndex'>
                         <form>
                           <label for="x-Streets">Choose A Number and Cross Street</label>
@@ -272,7 +273,7 @@
                         <button id="submitButton">Go!</button>
                         
                       </div>
-                    <img id="item-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image" style="width: 80%">
+                    
                 </div>
                 <div id="address-display" class="clickables-left">
                     <button class="x-button" onclick="displayNone('address-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
@@ -288,8 +289,15 @@
                 
                 <div id="info-display" class="clickables-left">
                     <button id="map-x-button" class="x-button" onclick="displayNone('info-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="info-display-title">Info</h2>
+                    <h2 id="info-display-title">Information</h2>
                     <div id="info">
+                        <div id="score">
+                            <h3 id="score-title">SCORE</h3>
+                        </div>
+                        <h3 id="play-time-title">PLAY TIME</h3>
+                        <h4 id="play-time"></h4>
+                        <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
+                        <h4 id="difficulty-setting"></h4>
                     </div>
                 </div>
 

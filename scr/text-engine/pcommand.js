@@ -560,6 +560,15 @@ function enterBtnClick(){
   window.removeEventListener("keydown", checkKeyPressed, false);
 }
 
+
+let closeDial = () => {
+  document.getElementById("dialPad").style.display = "none";
+  document.getElementById("tutorial").style.display = "none";
+  tutorialDisplayed = false;
+  applyInput();
+  window.removeEventListener("keydown", checkKeyPressed, false);
+}
+
 function checkKeyPressed(evt){
   let el = document.getElementById("input");
   let number;

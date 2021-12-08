@@ -601,10 +601,10 @@ body {
    left: 25%;
    display: none;
    background-color: rgba(28, 28, 34, .95);
-   width: 40%;
+   width: 60%;
    height: 100%;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: .2fr .6fr .15fr .10fr;
+   grid-template-rows: .1fr .6fr .1fr .1fr .1fr;
    padding: 15px;
    box-sizing: border-box;
 }

@@ -577,15 +577,6 @@ let deleteNumBtn = () => {
     el.value = el.value.slice(0, -1);
 }
 
-
-
-
-let closeDial = () => {
-    document.getElementById("dialPad").style.display = "none";
-    document.getElementById("tutorial").style.display = "none";
-    tutorialDisplayed = false;
-    applyInput();
-  }
   
 let openTutorial = () => {
     let x = document.getElementById("tutorial");
