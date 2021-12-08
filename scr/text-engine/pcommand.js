@@ -1389,8 +1389,11 @@ const sleepFunction = () => {
   const nightmareRoom = getRoom('nigh-1'); //get the first nightmare room
   const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
 
-      //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
-      if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+    
+      if( playFat >= 40) {//if player fatigue is over 40 don't let them sleep.
+        println(`You don't feel tired enough to sleep yet.`);
+    //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
+      } else if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
         //print this line and then
         println(`You roll over and decide to fall back asleep.`);
         //enter the nightmare room
@@ -1406,10 +1409,6 @@ const sleepFunction = () => {
         //enter room of central park sleeping
         enterRoom('cent-slee');
       //else if the player is in central park and their fatigue is more than 40
-      } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
-        //print this line of not letting the player sleep
-        println(`You don't feel tired enough to sleep yet.`);
-      //else if youre in the hotel room revisited and haven't gotten a nightmare yet and the room has a bed
       } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
         //print this line
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
@@ -1428,18 +1427,10 @@ const sleepFunction = () => {
         //enter proper room
         pressEnter('nigh2-1');
       //else if youre in the tenement, you havent gotten the second nightmare, the room has a bed, and the player fatigure is more than 40
-      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
-        //print this line & dont let them sleep
-        println(`You don't feel tired enough to sleep yet.`);
-      //else if youre in the tenement, you have gotten the second nightmare, the room has a bed, and the fatigue is less than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
         //enter proper room
         enterRoom('nigh2-4');
       //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
-      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
-        //print this line and dont let them sleep
-        println(`You don't feel tired enough to sleep yet.`);
-      //else if the room doesnt have a bed and the room is on the streets
       } else if (!room.hasBed && room.isStreet) {
         //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
@@ -1456,7 +1447,70 @@ const sleepFunction = () => {
 
 //save load\\
 //player score\\
-//difficulty level tie ins\\.
+//52-5 needs to be linked properly to exiting hotel stuff
+
+
+//difficulty level tie ins\\
+// need to touch hunger, fatigue, money, subway shenanigans -- ahria taking this? 
+//onEnter 53-5||52-5 hunger and fatigue degrading starts. 
+//inside apply input, if command is valid and variable is true then degrade the hunger/fatigue
+//entering exit hotel room turns variable true. is always set to be true from then on. 
+//different difficulty levels need to degrade hunger and fatigue differently.
+//if hunger or fatigue hit zero enter death and texas -- ask charlie about this
+//also needs to be able to be turned off at certain points i.e. story nodes stuff
+
+  //hunger and fatigue degrade differently 
+  
+  //hunger
+      //'Youre stomach reminds you it has been some time since you've last ate.'
+        //easy 
+          //3-4 days without eating
+            //25% chance to degrade at all 
+            //80% chance to degrade by 1, 20% chance to degrade by 2 
+            //on average will degrade 100 in 4 days 
+        //medium
+          //1-2 days without eating 
+            //50% chance to degrade at all
+              //60% chance to degrade by 1
+              //40% chance to degrade by 2
+        //hard
+          //must eat at least once a day
+            //75% chance to degrade at all 
+              //50% to degrade by 1 or 2
+        //warnings
+          //40
+          //30
+          //20
+          //10
+          //5
+
+  //sleep
+      //player should only have to sleep once per day.
+        //easy
+            //degrades at 1 per recognized input
+        //medium
+            //degrades at 1 per recognized input with a chance to degrade at 2
+        //hard 
+            //degardes at 1 per recognized input with a chance to degrade at 2 and another chance to degrade at 3
+      //warnings 
+        //40%
+        //30%
+        //20%
+        //10%
+        //5%
+
+
+    //in the game it degrades at 2 per cardinal direction input, but can jump up to 4 or 6 
+
+const degradeHunger = () => {
+
+};
+
+const degradeFatigue = () => {
+
+};
+
+
 
 //random encounter function
 const randomEncounter = () => {

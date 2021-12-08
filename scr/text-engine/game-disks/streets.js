@@ -34682,6 +34682,7 @@ const streets = {
         } else if (lastRoom.id === 'nigh2-3' || lastRoom.id === 'nigh2-5') {
           reenableInput();
           println('You get up from the mattress feeling stiff, but reasonably rested.');
+          playFat = 100;
           incrementDay();
         } else {
           return;
@@ -34845,7 +34846,8 @@ const streets = {
       desc: `you are awakened by birdsong. Your clothes are damp with dew, and your muscles are sore from sleeping on the ground. You stretch your ams, and brush off your clothes as the first dog-walkers appear.`,
       onEnter: () => {
         incrementDay();
-        const room = getRoom('cent-slee')
+        const room = getRoom('cent-slee');
+        playFat= 100;
         pressEnter(room.enteredFrom);
       },
       exits: [],
