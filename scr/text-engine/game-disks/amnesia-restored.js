@@ -1801,6 +1801,14 @@ const amnesiaRestored = {
       id: 'hell-4',
       name: '',
       desc: `Charon examines your card, scratches his head, and hands it back. “So tell me, Xavier,” he says, “what’s your middle name?”`,
+      onEnter: () => {
+        playerC.dScore += 3; // Adding to Detective Score
+        playerC.cScore += 10; // Adding to Character Score
+        playerC.sScore += 3; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
+      },
       onBlock: () => {
         if(prevInput === 'hollings'){ // No matter the input it takes you to the game over screen
           enterRoom('hell-5');
@@ -7052,6 +7060,8 @@ const amnesiaRestored = {
 
       You are barely able to keep yourself from falling against the iron stove and its pile of heated rocks. You crumble onto the bench of wooden slats, and then…`,
       onEnter: () => {
+        playerC.dScore += 2; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('heal-club11');
       },
       exits: [],
@@ -7181,6 +7191,12 @@ const amnesiaRestored = {
       name: '',
       desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn’t it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn’t try to remember it. Maybe your amnesia is a blessing in disguise.`,
       onEnter: () => {
+        playerC.dScore += 5; // Adding to Detective Score
+        playerC.cScore += 15; // Adding to Character Score
+        playerC.sScore += 5; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
           pressEnter('heal-club14')
       },
       exits: [],
@@ -7346,6 +7362,12 @@ const amnesiaRestored = {
       
       You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
       onEnter: () => {
+        playerC.dScore += 35; // Adding to Detective Score
+        playerC.cScore += 40; // Adding to Character Score
+        playerC.sScore += 35; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         disk.inventory.push([
           {
             name: `Levi's Jeans`,
@@ -7410,6 +7432,12 @@ const amnesiaRestored = {
       
       You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
       onEnter: () => {
+        playerC.dScore += 5; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        playerC.sScore += 5; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         pressEnter('hote-revi');
       },
       exits: [],
@@ -8297,6 +8325,8 @@ const amnesiaRestored = {
       name: '', // Displayed each time the player enters the room.
       desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
       onEnter: () => {
+        playerC.cScore += 10; // Adding to Character Score
+        console.log(playerC.cScore);
         pressEnter('deat-ftar4');
       }
     },
@@ -9093,7 +9123,12 @@ exits: [
         id: 'chap-1',
         name: 'All-Faith Chapel',
         desc: `You are standing before a large rosewood door bearing a mottled brass nameplate declaring this to be the ALL-FAITH CHAPEL.`, 
-           
+        onEnter: () => {
+          playerC.dScore += 2; // Adding to Detective Score
+          playerC.cScore += 10; // Adding to Character Score
+          console.log(playerC.dScore);
+          console.log(playerC.cScore);
+        },   
         exits: [
           { //Any direction or "enter chapel" will result in entering the chapel.
             dir: 'enter',
