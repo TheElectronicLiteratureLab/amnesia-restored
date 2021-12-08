@@ -480,20 +480,28 @@ let getInput = () => input.value.trim();
 // TV Commands: If tv is on goes through a channel array.
 let forward = () => {
   let item = getItemInRoomById('roomtv', 'hote-room-8');
-  if(item.arrCount >= 12) {
-    println('You have entered the nightmare zone');
-    //enterRoom('nigh-node');
-    item.arrCount = 0;
-  }
-  if(item.isOn === true) {
-    console.log(item.channelArr[item.arrCount]);
-    println(item.channelArr[item.arrCount]);
-    item.arrCount++;
-  } else {
-    if (disk.roomId === 'hote-room-8') {
-      println(`The TV isn't turned on.`);
+  if (disk.roomId === 'hote-room-8') {
+    console.log("Channel Array Pos: " + item.arrCount);
+    if(item.arrCount >= 13) {
+      //println('You have entered the nightmare zone');
+      //enterRoom('nigh-1');
+      item.arrCount = 0;
+    }
+    if(item.isOn === true) {
+      console.log(item.channelArr[item.arrCount]);
+      println(item.channelArr[item.arrCount]);
+      item.arrCount++;
+      if (item.arrCount === 13) {
+        document.getElementById("output").innerHTML = "";
+        println("You feel yourself dozing off...")
+        enterRoom('nigh-1');
+      }
     } else {
-      println(`You can't do that here.`);
+      if (disk.roomId === 'hote-room-8') {
+        println(`The TV isn't turned on.`);
+      } else {
+        println(`You can't do that here.`);
+      }
     }
   }
 
