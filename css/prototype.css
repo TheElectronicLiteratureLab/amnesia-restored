@@ -197,6 +197,7 @@ img {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
    grid-template-rows: .5fr .5fr;
+   grid-column-gap: 10px;
 }
 
 #difficulty-options-descriptions {
@@ -209,6 +210,7 @@ img {
    display: grid;
    grid-template-columns: .25fr .1875fr .1875fr .1875fr .1875fr;
    grid-template-rows: .5fr .5fr;
+   grid-column-gap: 10px;
 }
 
 #visual-mode-options-descriptions {
@@ -220,7 +222,10 @@ img {
 }
 
 .mode:hover {
-   border-bottom: 1.5px solid red;
+   text-decoration: underline;
+   text-decoration-color: red;
+   text-decoration-thickness: 2px;
+   text-underline-offset: .5em;
 }
 
 #begin-game-button {

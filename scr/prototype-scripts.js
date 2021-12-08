@@ -56,6 +56,16 @@ let loadGame = () => {
 }
 
 let displayDesc = (id) => {
+    if(id === 'story-mode'){
+        document.getElementById(id).style.textDecoration = "underline";
+        document.getElementById(id).style.textDecorationColor = "red";
+    }
+
+    if(id === "normal-mode"){
+        document.getElementById("story-mode").style.textDecoration = "none";
+    }
+    
+    
     let x = document.getElementById("difficulty-options-descriptions");
     let y = [
         ["story-mode", storyDesc, difficultyLevels[0]],
@@ -108,7 +118,10 @@ let beginGame = () => {
 // clickables scripts
 
 let currentInv = () => {
-    applyInput("inv");
+    
+    //applyInput("inv");
+    
+   
     //console.log(items);
     //document.getElementById("inventory").innerHTML = applyInput("inv");
 }
@@ -119,16 +132,11 @@ let currentAdd = (id) => {
     console.log(x);
 
     let num = numbers;
-    // calls the div holding the numbers
-    let list = x;
+    
     // create a new div to hold the number
     let newNumber = document.createElement('div');
     // add a class to the divs
     newNumber.setAttribute("class", "listedNum");
-    // create a new h3 element for contact name
-    let newConName = document.createElement('h3');
-    // create a new h4 element for number 
-    let newNum = document.createElement('h4');
 
     num.forEach(e => {
         let name = e.roomid;
@@ -577,16 +585,6 @@ let deleteNumBtn = () => {
     el.value = el.value.slice(0, -1);
 }
 
-
-
-
-let closeDial = () => {
-    document.getElementById("dialPad").style.display = "none";
-    document.getElementById("tutorial").style.display = "none";
-    tutorialDisplayed = false;
-    applyInput();
-  }
-  
 let openTutorial = () => {
     let x = document.getElementById("tutorial");
     if(x.style.display === "none"){
@@ -636,7 +634,8 @@ let animateToggle = () => {
     }
 }
 
-
+/*
+//troubleshooting dial pad
 function listAllEventListeners() {
     const allElements = Array.prototype.slice.call(document.querySelectorAll('*'));
     allElements.push(document);
@@ -667,4 +666,4 @@ function listAllEventListeners() {
     });
   }
 
-  //console.log(listAllEventListeners);
+  //console.log(listAllEventListeners);*/
