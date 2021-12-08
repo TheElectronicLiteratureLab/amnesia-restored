@@ -133,7 +133,7 @@ const nobelesLobby = {
             id: 'nobe-12',
             name: '',
             desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large **window** with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
-            moveCount: 0,
+            moveCount = 0,
             onEnter: () => {
                 reenableInput();
             },
@@ -150,8 +150,6 @@ const nobelesLobby = {
                         enterRoom('nobe-14');
                     }else if( prevInput === 'kiss bette'){
                         enterRoom('nobe-17');
-                    }else if(prevInput === 'Tell bette about address book'){
-                        enterRoom('nobe-20')
                     }
                 }
             },
@@ -178,7 +176,7 @@ const nobelesLobby = {
                     name: ['window','Window'],
                     onLook: () => {
                         println(`Five stories below you can see the leaves of the tress in Gramercy Park shimmering in the lamplight.`);
-                        enterRoom('nobe-13');
+                        enterRoom('nobe-12');
                     }
 
                 },
@@ -208,6 +206,7 @@ const nobelesLobby = {
             id: 'nobe-16',
             name: '',
             desc: `Bette says, 'Ah, bed, what a good idea! I've got to be up by six A.M., So I think I'll join you.' You both get cleaned up, and then retire for the evening. The next morning, you awake to find Bette finished with her preperations for going to work.`,
+            //incriment time to wake up, add fatigue change
             onEnter: () => {
                 if(getItemInInventory === 'floppy disk'){
                     pressEnter('nobe-20')
@@ -251,52 +250,11 @@ const nobelesLobby = {
             },
         },
         {
+            //If 10 moves are made within the apartment this line triggers
             id: 'nobe-19',
             name: '',
-            desc:`This means moveCount works!`,
+            desc:``,
         },
-        {
-            id: 'nobe-20',
-            name: '',
-            desc: `“How interesting,” she says. “And what a source of clues! Do you have it with you?”`,
-            onBlock: () => {
-                if(prevInput === 'no'){
-                    enterRoom('nobe-21');
-                }else if(prevInput === 'yes'){
-                    enterRoom('nobe-22');
-                }else if(prevInput === 'show bette address book'){
-                    enterRoom('nobe-23');
-                }else{
-                    println(`Can you rephrase that please?`);
-                }
-            },
-        },
-        {
-            id: 'nobe-21',
-            name: '',
-            desc: ``,
-            onEnter: () => {
-                println(`“What a pity. I hope you left it somewhere you can find it again. You ought to track down every person in that book. One of them is bound to know more about your pre-amnesia life than I do.”`);
-                pressEnter('nobe-12');
-            }
-        },
-        {
-            id: 'nobe-22',
-            name: '',
-            desc: `“Can I see it?” she asks.`,
-            exits: [
-                {dir: ['yes'], id: 'nobe-23'},
-            ],
-        },
-        {
-            id: 'nobe-23',
-            name: '',
-            desc: `“I recognize this number. It’s Dial-a-Joke, isn’t it? I call it every week or so, to hear the latest tape that Jerry Ackerman does for them. I think he’s a scream. In fact, it was me who turned you on to Jerry Ackerman, and who gave you the Dial-a-Joke number. But none of the other numbers or names are familiar. Except SEX, that’s familiar, as an idea anyhow. You must try to get through to all the numbers you haven’t got a response from so far. The phone’s right there.” She nods toward the cordless telephone. “It’s at your disposal any time.”`,
-        },
-
-
-
-
         {
             id: 'nobe-20',
             name: '',
@@ -339,14 +297,228 @@ const nobelesLobby = {
             id: 'nobe-24',
             name: '',
             desc: `With a felt-tip marker Bette writes her telephone number in large letters on your left wrist: 555-0042. 'I've gotten this ink on my hands by accident a couple of times and it's nearly impossible to wash off.\n\n So there you are, tattooed with your old lady's phone number! How's that for romantic!'\n\n Bette promises not to surprise you again, then closes the door behind her on her way to work.`,
-
+            exits: [
+                {dir: ['bathroom'], id: 'nobe-25'},
+            ],
+        },
+        {
+            id: 'nobe-25',
+            name: '',
+            desc: `You're in Bette's bathroom. It is tiled in light beige with chocolate brown fixtures. There is no tub, but a large stall shower, a toilet, and a towel rack with a large bath towl.`,
+            onBlock: () => {
+                if(prevInput === 'take a shower' || 'take shower'){
+                    enterRoom('nobe-26');
+                }
+            },
+        },
+        {
+            id: 'nobe-26',
+            name: '',
+            desc: `You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleanliness is next to godliness after all. You dry off with a big fluffy towel.`,
+            //pcommand leave needs to be changed or this input needs to be changed.
+            onBlock: () => {
+                if(prevInput === 'leave bathroom'){
+                    println(`You leave the bathroom and return to the main living area.`);
+                    enterRoom('nobe-27');
+                }else{
+                    println(`Can you rephrase that please?`)
+                }
+            },
+        },
+        //Living room post shower
+        {
+            id: 'nobe-27',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                if(xMeridam === 1 & zHours === 5){
+                    if(bettesHome === 1);
+                        enterRoom('nobe-36');
+                }
+            },
+            onBlock: () => {
+                if(prevInput === 'turn on tv'){
+                    enterRoom('nobe-28');
+                }else if(prevInput === 'open fridge' || prevInput === 'eat'){
+                    if(xMeridam >= 1 & zHours >= 5){
+                        enterRoom('nobe-30');
+                        }
+                    else{
+                        enterRoom('nobe-32');
+                        }
+                }else if(prevInput === 'leave'){
+                    enterRoom('nobe-34');
+                }else if(prevInput === 'sleep'){
+                    enterRoom('nobe-35');
+                }else if(prevInput === 'call 555-0042'){
+                    println(`Bette's phone immediately rings busy. You put down the receiver.`);
+                }
+            },
+            exits: [
+                {dir: ['kitchen'], id: 'nobe-29'},
+            ],
+            items: [
+                {
+                    itemId: 'apartment',
+                    name: ['Apartment','Room','apartment','room'],
+                    desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+                },
+                {
+                    itemId: 'letter',
+                    name: ['Letter', 'letter', 'Mail', 'mail'],
+                    desc: `Bette's mail is her personal business -- leave it alone.`,
+                },
+                {
+                    itemId: 'dresser',
+                    name: ['dresser','Dresser'],
+                    desc: `The dresser contains a jumble of socks, pantyhose, and daintier underthings, all jumbled together in a great tangle direct from the laundry bag to the drawer.`,
+                }
+            ],
+        },
+        {
+            id: 'nobe-28',
+            name: '',
+            desc: `You turn on the TV`,
+            onBlock: () => {
+                println(`You flip through the channels on the TV, but find nothing appealing during the daytime hours. Frustrated, you turn the TV off.`)
+                pressEnter('nobe-27');
+            },
+        },
+        //eating dinner 1st day
+        {
+            id: 'nobe-29',
+            name: '',
+            desc: `You walk over to the kitchen area.`,
+            onEnter: () => {
+                enterRoom('nobe-27');
+            },
+        },
+        {
+            id: 'nobe-30',
+            name: '',
+            desc: `Bette says that she'll have one of whatever you're having. You look at all of the choices before you, and see Veal Chasseur, Duck a L'Orange, Chicken Veronique, Escargots au Beurre, and Quiche Lorraine. What is your pleasure?`,
+            onBlock: () => {
+                if(prevInput === 'veal chasseur' || prevInput === `duck l'orang` || prevInput === 'chicken veronique' || prevInput === 'escargot au reurre' || prevInput === 'quiche lorraine'){
+                    enterRoom('nobe-31');
+                }else{
+                    println(`Can you rephrase that please?`);
+                }
+            },
+        },
+        {
+            id: 'nobe-31',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                if(prevInput === 'veal casseur'){
+                    println(`Veal it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\nThe veal is sliced so thin it's a wonder it simply doesn't dissolve into the mushroom sauce.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === `duck l'orang`){
+                    println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'chicken veronique'){
+                    println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'escargot au reurre'){
+                    println(`Snails it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'quiche lorraine'){
+                    println(`Quiche it is.\n\nYou take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Quiche! And not just a mangy calorie-counted quiche, but a quiche of weight and substance.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                    pressEnter('')
+                }
+            }
+        },
+        {
+            id: 'nobe-32',
+            name: '',
+            desc: `Bette isn't here, so you don't have to worry about her. You look at all of the choices before you, and see Veal Chasseur, Duck a L'Orange, Chicken Veronique, Escargots au Beurre, and Quiche Lorraine. What is your pleasure?`,
+            onBlock: () => {
+                if(prevInput === 'veal chasseur' || prevInput === `duck l'orang` || prevInput === 'chicken veronique' || prevInput === 'escargot au reurre' || prevInput === 'quiche lorraine'){
+                    enterRoom('nobe-33');
+                }else{
+                    println(`Can you rephrase that please?`);
+                }
+            },
+        },
+        {
+            id: 'nobe-33',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                if(prevInput === 'veal casseur'){
+                    println(`Veal it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\nThe veal is sliced so thin it's a wonder it simply doesn't dissolve into the mushroom sauce.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === `duck l'orang`){
+                    println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'chicken veronique'){
+                    println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'escargot au reurre'){
+                    println(`Snails it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would. \n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }else if(prevInput === 'quiche lorraine'){
+                    println(`Quiche it is.\n\nYou take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\nQuiche! And not just a mangy calorie-counted quiche, but a quiche of weight and substance.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+                }
+            }
+        },
+        {
+            id: 'nobe-34',
+            name: '',
+            desc: `You leave Bette's apartment.\n\n Bette's apartment building sits at this corner. `,
+            onEnter: () => {
+                pressEnter('20-irvi');
+            }
+        },
+        {
+            id: 'nobe-35',
+            name: '',
+            desc: `You lie down and proceed to take a restful nap.`,
+            onEnter: () => {
+                if(xMeridam <= 1 & zHours <= 5){
+                    println(`'You're going to bed -- at this hour? We'll never get to sleep. Here, read a book.'\n\n She hands you a copy of a marvelous novel called 'LITTLE, BIG,' and it keeps you up till long after midnight. That night your dreams all happen in the world of 'LITTLE, BIG.'\n\n The next morning you awake to find Bette completing her mourning ritual.`);
+                    xMeridam === 0 & zHours === 6;
+                    playFat === 0;
+                }else{
+                    xMeridam === 0 & zHours === 6;
+                    playFat === 0;
+                }
+            },
+            //where does this go? Back to Apartment? Doesn't trigger Bette's first arrival?
+        },
+        //Bette's First Arrival
+        {
+            id: 'nobe-36',
+            name: '',
+            desc: `Bette enters the apartment with a Macy's shopping bag, inside of which is a box. 'I got you something new. I just couldn't stand seeing you wearing that old black turtleneck any longer. And I also thought, what if today's his birthday? You can't be sure it isn't after all. Go ahead open it.`,
+            onBlock: () => {
+                if(prevInput === 'open it' || prevInput === 'open box' || prevInput === 'open'){
+                    enterRoom('nobe-38');
+                }else if(prevInput === 'no'){
+                    enterRoom('nobe-37');
+                }else{
+                    println(`Can you rephrase that please?`);
+                }
+            },
+        },
+        {
+            id: 'nobe-37',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`'Oh, don't be such a prude,' says Bette. 'Open it!'\n\n You comply with her wish.`);
+                pressEnter('nobe-38');
+            },
+        },
+        {
+            id: 'nobe-38',
+            name: '',
+            desc: `In the box is a black turtleneck sweater. With a Ralph Lauren label. Bette looks dismayed. 'Oh dear, I told Ned to get anything BUT a black turtleneck. He must have misheard me.' She blushes. 'Ned's my assistant, and he loves to shop for clothes, so I sent him to Macy's with the shopping list.\n\n I'll take it back and get you something else.'\n\n You give her the box back and she puts it and the Macy's bag away.`,
+            onBlock: () => {
+                if(prevInput === 'leave'){
+                    println(`Bette says: 'I wish you didn't need to go out, John. I'm terrified something will happen to you.' She kisses you goodbye.`)
+                    enterRoom('nobe-34')
+                }
+            },
         },
 
     ],
     characters: [
         {
             name: ['Bette', 'bette'],
-            roomId: 'nobe-12',
+            roomId: ['nobe-12', 'nobe-38'],//can this be an array?
             topics: [
                 {
                     option: '**PICTURE**',
@@ -377,4 +549,4 @@ const nobelesLobby = {
         },
     ]
 }
-//add bette as a character
+//How do we get the game to remember what room the player was in when they leave and return to Bette's Apartment?
