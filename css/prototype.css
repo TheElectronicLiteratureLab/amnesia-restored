@@ -17,7 +17,7 @@ body {
 #game-container {
    font-family: 'Montserrat', sans-serif;
    color: #E4E4E4;
-   font-size: 16px;
+   font-size: 1.85vh;
    line-height: 1.5;
 }
 
@@ -34,16 +34,16 @@ body {
 }
 
 #game-container h2 {
-   font-size: 1.65em;
+   font-size: 2.65vh;
    font-weight: 600;
 }
 
 #game-container h3 {
-   font-size: 1.1em;
+   font-size: 1.85vh;
 }
 
 #game-container h4 {
-   font-size: 1em;
+   font-size: 1.85vh;
 }
 
 #game-container h5 {
@@ -337,14 +337,14 @@ body {
 #input {
    color: #E4E4E4;
    background: transparent;
-   font-size: 1.5em;
+   font-size: 2vh;
    border: none;
    width: 90%;
    padding-top: 1%;
 }
  
 #arrow {
-   font-size: 1.5em;
+   font-size: 2vh;
    color: #E4E4E4;
    padding-right: 10px;
 }
@@ -370,7 +370,7 @@ body {
 }
 
 #game-ui-bar h3 {
-   font-size: 1.5em;
+   font-size: 2.5vh;
 }
 
 #hunger, #fatigue {
@@ -378,7 +378,7 @@ body {
 }
 
 #hunger h3, #fatigue h3 {
-   font-size: 1em;
+   font-size: 1.85vh;
    margin-top: 7px;
 }
 
@@ -428,7 +428,6 @@ body {
 .x-button {
    background-color: transparent;
    color:#E4E4E4;
-   font-size: 1.1em;
    font-weight: 600;
    border: none;
    cursor: pointer;
@@ -573,7 +572,7 @@ body {
 }
 
 .clickItemInv img, .clickXIndex img {
-   width: 40px;
+   width: 15%;
    margin-right: 10px;
    border: 1px solid #E4E4E4;
    border-radius: 5px;
