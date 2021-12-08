@@ -370,9 +370,19 @@ img {
 
 #game-ui-bar {
    height: 100%;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
+   display: flex;
+   justify-content: space-between;
    padding-top: 4%;
+   letter-spacing: 2px;
+}
+
+#hunger, #fatigue {
+   width: 25%;
+}
+
+#hunger h3, #fatigue h3 {
+   font-size: 1em;
+   margin-top: 7px;
 }
 
 #hunger-bar-progress {
