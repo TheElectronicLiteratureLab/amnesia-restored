@@ -203,6 +203,7 @@ const amnesiaRestored = {
     },
     {
       id: 'hote-room-6',
+      coord: [100, 100],
       name: '',
       desc: '',
       onEnter: () => {
@@ -213,6 +214,7 @@ const amnesiaRestored = {
     },
     {
       id: 'hote-room-7',
+      coord: [],
       name: '',
       desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502.
 
@@ -346,27 +348,8 @@ const amnesiaRestored = {
         {
           itemId: 'computer',
           name: ['Apple //e', 'Apple IIe', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
-          desc: ' ',
+          desc: `The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
           isOn: false,
-          onLook: () => {
-            let pc = getItemInRoomById('computer', 'hote-room-8');
-            if(pc.isOn === true)
-            {
-              if (pc.desc === ' ')
-              {
-                println('The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
-              }
-              pc.desc = 'The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-              println(pc.desc);
-            } else {
-              if (pc.desc === ' ')
-              {
-                println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
-              }
-              pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
-              println(pc.desc);
-            }
-          },
           onUse: () => {
             let pc = getItemInRoomById('computer', 'hote-room-8');
             if(pc.isOn === true)
@@ -474,13 +457,13 @@ const amnesiaRestored = {
           isOpen: false,
           onLook: () => {
             let item = getItemInRoomById('curtains', disk.roomId);
-            if (item.isCurtOpen === true) {
+            if (item.isOpen === true) {
               if (item.desc === ' ')
               println(`The ${item.name[0]} are open.`);
             } else {
               println(item.desc);
             }
-            if (item.isCurtOpen === false) {
+            if (item.isOpen === false) {
               if (item.desc === ' ')
               println(`The ${item.name[0]} are closed.`);
             } else {
@@ -490,15 +473,25 @@ const amnesiaRestored = {
         },
         {
           itemId: 'hotelwindow',
-          name: 'Hotel Window',
+          name: 'Sunderland Window',
           desc: 'The window is shrouded by the drapes.',
-          onLook: () => {
-            let item = getItemInRoomById('curtains', disk.roomId);
-            if (item.isCurtOpen === false) {
-              item.desc = 'The window is shrouded by the drapes';
-            } else {
-              item.desc = `Even without being able to see the Empire State Building off to the south, you would know by the sheer immensity of the view that you are in Manhattan. It seems familiar, but only in the general way that a famous postcard view is familiar. You don’t feel as though you belong in this city, as though you are a New Yorker.`;
-              println(item.desc);
+        },
+        {
+          itemId: 'hoteldoor',
+          name: ['door', 'Door', 'room door'],
+          desc: 'The door is closed.',
+          isOpen: false,
+          onUse: () => {
+            let door = getItemInRoomById('hoteldoor', disk.roomId);
+            if (door.isOpen === true) {
+              if (earlyLeave !== true) {
+                enterRoom('hote-room-9');
+              } else {
+                enterRoom('corridor-1502');
+              }
+            }
+            else {
+              println(`You need to **open** the door first!`);
             }
           }
         }
@@ -511,10 +504,10 @@ const amnesiaRestored = {
     {
       id: 'hote-bath-1',
       name: 'Bathroom',
-      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretneding to be marble, **a tiled shower**, **a toilet**, a towel rack with a **large towel**. But no clothes.`, 
+      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretending to be marble, **a tiled shower**, **a toilet**, a towel rack with a **large towel**. But no clothes.`, 
       onEnter: () => {
           const room = getRoom('hote-bath-1');
-          if(getItemInInventory('towel')){ //if the towel is already in inventory
+          if(getItemInInventoryById('bathtowel')){ //if the towel is already in inventory
               room.desc = room.desc.replace(` with a **large towel**.`, '.');
           };
       },
@@ -522,16 +515,13 @@ const amnesiaRestored = {
           {
               name: ['sink', 'pink sink'], 
               desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
-              /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
-                      },
-                  }, //end of sink items*/ //currently can't have an item property on item object.
-
+              /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?*/
           },
           {
             itemId: 'bathsoap',
-            icon: '',
+            icon: 'img/gif/gif-soapbar-ingame.gif',
             gif: 'img/gif/gif-soapbar-ingame.gif',
-            name: ['Soap', 'cake of soap'],
+            name: ['Soap', 'soap', 'cake of soap'],
             desc: `It smells like lemon.`,
             isTakeable: true,
             isDropable: true,
@@ -541,7 +531,11 @@ const amnesiaRestored = {
                 sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
             },
             onUse: () => {
+              if (disk.roomId === 'hote-bath-1') {
                 println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you've never worn one?`);
+              } else {
+                println(`You can't really wash your hands here now can you?`);
+              }
             },
           },
           {
@@ -560,7 +554,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'bathtowel',
-              icon: '',
+              icon: 'img/png/image-towel-thumbnail2woutline.png',
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel'],
               desc: `It is a large fluffy towel.`,
@@ -569,7 +563,7 @@ const amnesiaRestored = {
               onTake: () => {
                   println('You take the towel'); //appears in inventory as 'towel'
                   const bathroom = getRoom('hote-bath-1');
-                  bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
+                  bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
               },
               //can WEAR towel.
           },
@@ -586,6 +580,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
+        earlyLeave = true;
         println('You are walking toward the door... \n\nSuddenly the phone comes to life. It rings.');
         let room = getRoom('hote-room-8');
         room.exits[1].id = 'corridor-1502';
@@ -713,10 +708,12 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'yes') {
+          tipBellboy = true;
           println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
           //eventual flag will need to be toggled that you tipped.
           enterRoom('hote-room-8');
         } else if (prevInput === 'no') {
+          tipBellboy = false;
           println(`The bellboy leaves with a discontented mumble, and you are left to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes. \n`);
           enterRoom('hote-room-8')
         } else {

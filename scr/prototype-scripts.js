@@ -180,6 +180,7 @@ let displayToggle = (id, name) => {
    }
 }
 
+
 let displayCheck = (name) => {
     if(name === 'inventory'){
         invOn = true;

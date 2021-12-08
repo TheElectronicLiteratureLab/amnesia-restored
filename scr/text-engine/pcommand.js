@@ -519,6 +519,7 @@ let turnOffOn = (toggle, itemId) => {
         item.isOn = true;
           if(item.itemId === 'computer') {
             println(`Without having to look for the switch, you reach behind the computer to turn it on. \n\nAfter 20 seconds or so, the machine emits a groaning noise in the area of the disk drives, and then a "Beep!" \n\nThe small built-in cooling fan begins to whir quietly. The screen remains blank -- and without software that is how it will remain. But you've learned one piece of information: you have used this kind of machine before.`);
+            item.desc = 'The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
           } else {
             println(`You turned the ${item.name[0]} on.`);
           }
@@ -529,6 +530,9 @@ let turnOffOn = (toggle, itemId) => {
       if (item.isOn === !false) {
         item.isOn = false;
         println(`You turned the ${item.name[0]} off.`);
+        if(item.itemId === 'computer') {
+          item.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.'
+        }
       } else {
         println(`The ${item.name[0]} is already turned off.`);
       }
@@ -818,7 +822,7 @@ let remove = (clothes) => {
 
 // open command
 let open = (itemToOpen) => {
-  //println(itemToOpen);
+  //println("item" + itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
   
   // Items that can be opened
@@ -826,16 +830,18 @@ let open = (itemToOpen) => {
   if (item !== undefined)
   {
     if (item.itemId === 'curtains') {
+      let window = getItemInRoom('Sunderland Window', disk.roomId);
       if(item.isOpen === !true) {
         item.isOpen = true;
+        window.desc = `Even without being able to see the Empire State Building off to the south, you would know by the sheer immensity of the view that you are in Manhattan. It seems familiar, but only in the general way that a famous postcard view is familiar. You don’t feel as though you belong in this city, as though you are a New Yorker.`;
         println(`The ${item.name[0]} are now open.`);
       } else {
         println("They're already opened.");
       }
     }
     // Window
-    else if (item.itemId === 'window') {
-      println('YOU ARE SEALED INSIDE NOOOO');
+    else if (item.itemId === 'hotelwindow') {
+      println('The window is sealed to keep the air-conditioned air in the hotel.');
     }     
     // Dresser
     else if (item.itemId === 'dresser') {
@@ -851,11 +857,11 @@ let open = (itemToOpen) => {
     else if (item.itemId === 'hoteldoor') {
       if(item.isOpen !== true) {
         item.isOpen = true;
-        println(`The ${item.name} is now open.`);
-        item.desc = 'is open'
+        println(`The ${item.name[0]} is now open.`);
+        item.desc = 'The door is now open.'
         console.log(item);
       } else {
-        println(`The ${item.name} is already open.`);
+        println(`The ${item.name[0]} is already open.`);
       }
     }
     // Large Box (Hote-Revi)
@@ -869,10 +875,6 @@ let open = (itemToOpen) => {
         println(`You've already opened that.`);
       }
     }
-  } else if (item.itemId === 'window') {
-    println('The window is sealed to keep the air-conditioned air in the hotel.');
-  } else if (item.itemId === 'dresser') {
-    println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
   } else {
     println("You can't open that.");
   }
@@ -884,13 +886,15 @@ let close = (itemToOpen) => {
   let item = getItemInRoom(itemToOpen, disk.roomId);
   if (item !== undefined){
     if (item.itemId === 'curtains') {
+      let window = getItemInRoom('Sunderland Window', disk.roomId);
       if(item.isOpen === !false) {
         item.isOpen = false;
         println(`The ${item.name[0]} are closed and the room is restored to the original semi-twilight you.`);
+        window.desc = `The window is shrouded by the drapes.`;
       } else {
         println("They're already closed.");
       }
-    } else if (item.itemId === 'window') {
+    } else if (item.itemId === 'hotelwindow') {
       println('You may not close that.');
     }
     // Dresser
@@ -906,10 +910,10 @@ let close = (itemToOpen) => {
     else if (item.itemId === 'hoteldoor') {
       if(item.isOpen !== false) {
         item.isOpen = false;
-        item.desc = 'is closed'
-        println(`The ${item.name} is now closed.`);
+        item.desc = 'The door is closed.';
+        println(`The ${item.name[0]} is now closed.`);
       } else {
-        println(`The ${item.name} is already closed.`);
+        println(`The ${item.name[0]} is already closed.`);
       }
     }    
   } else {
@@ -1380,7 +1384,6 @@ let dropItem = (itemName) => {
     return;
   }
 };
-
 
 
 //sleep function
