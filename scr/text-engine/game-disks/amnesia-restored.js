@@ -2051,20 +2051,18 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-210'},
           {dir: ['east','right'], id: 'corridor-212'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-215', block: 'You cannot go that way.'},
-
-         ],
+          {dir: ['north', 'south'], block: `You can't go that way.`}
+        ],
     },
     {
       id: 'corridor-212', // Player presses 2
       name: '2nd Floor Hallway',
       desc: `You are now a few steps to the east of the elevators, and are standing in front of rooms 212 and 213. The door to room 213 is ajar.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-210'},
           {dir: ['inside', '213', 'up'], id: 'corridor-213'},
           {dir: ['east','left'], id: 'corridor-214'},
-          {dir: ['north', 'south'], id: 'corridor-215', block: 'You cannot go that way.'}
+          {dir: ['north', 'south'], block: `You can't go that way.`}
         ],
     },
     {
@@ -2080,38 +2078,33 @@ const amnesiaRestored = {
       id: 'corridor-214', // 
       name: '2nd Floor Hallway',
       desc: `To the east is the end of the hallway, and on either side of you are the doors to rooms 214 and 215.`,
-      
-      exits: [ // These need to be specified with the press command
-          {dir: ['west', 'left'], id: 'corridor-212',
-          },
+      exits: [ 
+          {dir: ['west', 'left'], id: 'corridor-212'},
           {dir: ['inside', '213', 'up'], id: 'corridor-213'},
           {dir: ['east','right'], id: 'corridor-2end'},
-          {dir: ['214', '215'], id: 'corridor-315', block: 'The door is locked.'},
-          {dir: ['north', 'south'], id: 'corridor-215', block: 'You cannot go that way.'},
+          {dir: ['214', '215'], block: 'The door is locked.'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
         ],
     },
     {
       id: 'corridor-2end', // End of the hallway
       name: '2nd Floor Hallway',
       desc: `You are at the easterly end of the hallway.`,
-      
-      exits: [ // These need to be specified with the press command
+      exits: [ 
           {dir: ['west', 'left'], id: 'corridor-214'},
-          {dir: ['east','right'], id: 'corridor-2end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-215', block: 'You cannot go that way.'},
+          {dir: ['east','right'], block: `You can't go that way.`},
+          {dir: ['north', 'south'], block: `You can't go that way.`}
         ],
     },
     {
       id: 'corridor-210', 
       name: '2nd Floor Hallway',
       desc: `You are standing in front of the doors to rooms 209 and 210.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-208'},
-          {dir: ['inside', '209', '210' ,'up'], id: 'corridor-210', block: "The door is locked."},
+          {dir: ['inside', '209', '210' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-212'},
-          {dir: ['north', 'south'], id: 'corridor-210', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'],  block: `You can't go that way.`},
         ],
     },
     {
@@ -2121,9 +2114,9 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-204'},
-          {dir: ['inside', '207', '208' ,'up'], id: 'corridor-208', block: "The door is locked."},
+          {dir: ['inside', '207', '208' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-210'},
-          {dir: ['north', 'south'], id: 'corridor-210', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
         ],
     },
     {
@@ -2133,11 +2126,10 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-stairwell2'},
-          {dir: ['inside', '204', '203', '202', '201' ,'up'], id: 'corridor-204', block: "The door is locked."},
+          {dir: ['inside', '204', '203', '202', '201' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-208'},
-          {dir: ['north', 'south'], id: 'corridor-204', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],   
     },
     {
       id: 'corridor-stairwell2', 
@@ -2146,13 +2138,10 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell2', block: "Your're still outside the stairwell."
-              
-          },
+          {dir: ['inside', 'up'], block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-204'},
-          {dir: ['north', 'south'], id: 'corridor-204', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],   
     },
     {
       id: 'corridor-elevator3', // Player presses 3
@@ -2162,11 +2151,11 @@ const amnesiaRestored = {
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
       
       exits: [ // These need to be specified with the press command
-          {dir: ['west','left'], id: 'corridor-310'},
-          {dir: ['east','right'], id: 'corridor-312'},
-          {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-315', block: 'You cannot go that way.'},
-         ],
+          {dir: ['west', 'left'], id: 'corridor-310'},
+          {dir: ['east', 'right'], id: 'corridor-312'},
+          {dir: ['up', 'down', 'elevator'], id: 'corridor-elevator'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],
     },
     {
       id: 'corridor-312', 
@@ -2177,9 +2166,8 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-310'},
           {dir: ['inside', '313', 'up'], id: 'corridor-313'},
           {dir: ['east','left'], id: 'corridor-314'},
-          {dir: ['north', 'south'], id: 'corridor-315', block: 'You cannot go that way.'},
-        ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],  
     },
     {
       id: 'corridor-313', // Player goes into 313, goes to death and texas/ There is a Room 13 fail state on every floor
@@ -2199,8 +2187,8 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-312'},
           {dir: ['inside', '313', 'up'], id: 'corridor-313'},
           {dir: ['east','right'], id: 'corridor-3end'},
-          {dir: ['north', 'south'], id: 'corridor-315', block: 'You cannot go that way.'},
-          {dir: ['314', '315'], id: 'corridor-315', block: 'The door is locked.'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+          {dir: ['314', '315'], block: 'The door is locked.'},
         ],
     },
     {
@@ -2210,66 +2198,56 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-314'},
-          {dir: ['east','right'], id: 'corridor-3end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-315', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['east','right'], block: `You can't go that way.`},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],
     },
-    
     {
       id: 'corridor-310', 
       name: '3rd Floor Hallway',
       desc: `You are standing in front of the doors to rooms 309 and 310.`,
       
-      exits: [ // These need to be specified with the press command
+      exits: [ 
           {dir: ['west', 'left'], id: 'corridor-308'},
-          {dir: ['inside', '309', '310' ,'up'], id: 'corridor-310', block: "The door is locked."},
+          {dir: ['inside', '309', '310' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-312'},
-          {dir: ['north', 'south'], id: 'corridor-310', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],
     },
     {
       id: 'corridor-308', 
       name: '3rd Floor Hallway',
       desc: `You are standing betwixt rooms 307 and 308`,
       
-      exits: [ // These need to be specified with the press command
+      exits: [ 
           {dir: ['west', 'left'], id: 'corridor-304'},
-          {dir: ['inside', '307', '308' ,'up'], id: 'corridor-308', block: "The door is locked."},
+          {dir: ['inside', '307', '308' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-310'},
-          {dir: ['north', 'south'], id: 'corridor-310', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ], 
     },
     {
       id: 'corridor-304', 
       name: '3nd Floor Hallway',
       desc: `To your west are the doors for rooms 304 through 301, and beyond them, the stairway. Right now, you are standing in front of the doors to 303 and 304.`,
       
-      exits: [ // These need to be specified with the press command
+      exits: [ 
           {dir: ['west', 'left'], id: 'corridor-stairwell3'},
-          {dir: ['inside', '304', '303', '302', '301' ,'up'], id: 'corridor-304', block: "The door is locked."},
+          {dir: ['inside', '304', '303', '302', '301' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-308'},
-          {dir: ['north', 'south'], id: 'corridor-304', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], block: `You can't go that way.`},
+        ],
     },
     {
       id: 'corridor-stairwell3', 
       name: '3rd Floor Hallway',
       desc: `You are standing just down from the stairway.`,
-      
-      exits: [ // These need to be specified with the press command
+      exits: [ 
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "Your're still outside the stairwell."
-              
-          },
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-304'},
-          {dir: ['north', 'south'], id: 'corridor-304', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], id: 'corridor-304', block: `You can't go that way.`},
+        ],
     },
     {
       id: 'corridor-elevator4', // Player presses 4
@@ -2277,25 +2255,23 @@ const amnesiaRestored = {
       desc: `You press the button for 4. After a lurch and some movement, the elevator arrives at the 4th floor, the doors open, and you walk out into the hallway.
 
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west','left'], id: 'corridor-410'},
           {dir: ['east','right'], id: 'corridor-412'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-415', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-415', block: `You can't go that way.`},
          ],
     },
     {
       id: 'corridor-412', 
       name: '4th Floor Hallway',
       desc: `You are now a few steps to the east of the elevators, and are standing in front of rooms 412 and 413. The door to room 413 is ajar.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-410'},
           {dir: ['inside', '413', 'up'], id: 'corridor-413'},
           {dir: ['east','left'], id: 'corridor-414'},
           {dir: ['414', '415'], id: 'corridor-315', block: 'The door is locked.'},
-          {dir: ['north', 'south'], id: 'corridor-415', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-415', block: `You can't go that way.`},
          ],
          
     },
@@ -2312,25 +2288,22 @@ const amnesiaRestored = {
       id: 'corridor-414', // 
       name: '4th Floor Hallway',
       desc: `To the east is the end of the hallway, and on either side of you are the doors to rooms 414 and 415.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-412'},
           {dir: ['inside', '413', 'up'], id: 'corridor-413'},
           {dir: ['east','right'], id: 'corridor-4end'},
-          {dir: ['north', 'south'], id: 'corridor-415', block: 'You cannot go that way.'},
-         ],
-         
+          {dir: ['north', 'south'], id: 'corridor-415', block: `You can't go that way.`},
+         ],   
     },
     {
       id: 'corridor-4end', // End of the hallway
       name: '4th Floor Hallway',
       desc: `You are at the easterly end of the hallway.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-414'},
           {dir: ['east','right'], id: 'corridor-4end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-415', block: 'You cannot go that way.'},
+              block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-415', block: `You can't go that way.`},
          ],
          
     },
@@ -2344,7 +2317,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-408'},
           {dir: ['inside', '409', '410' ,'up'], id: 'corridor-410', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-412'},
-          {dir: ['north', 'south'], id: 'corridor-410', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-410', block: `You can't go that way.`},
          ],
          
     },
@@ -2357,7 +2330,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-404'},
           {dir: ['inside', '407', '408' ,'up'], id: 'corridor-408', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-410'},
-          {dir: ['north', 'south'], id: 'corridor-410', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-410', block: `You can't go that way.`},
          ],
          
     },
@@ -2370,7 +2343,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell4'},
           {dir: ['inside', '404', '403', '402', '401' ,'up'], id: 'corridor-404', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-408'},
-          {dir: ['north', 'south'], id: 'corridor-404', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-404', block: `You can't go that way.`},
          ],
          
     },
@@ -2385,7 +2358,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-404'},
-          {dir: ['north', 'south'], id: 'corridor-404', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-404', block: `You can't go that way.`},
          ],
          
     },
@@ -2400,7 +2373,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-510'},
           {dir: ['east','right'], id: 'corridor-512'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-515', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-515', block: `You can't go that way.`},
          ],
     },
     {
@@ -2413,7 +2386,7 @@ const amnesiaRestored = {
           {dir: ['inside', '453', 'up'], id: 'corridor-513'},
           {dir: ['east','left'], id: 'corridor-514'},
           {dir: ['514', '515'], id: 'corridor-515', block: 'The door is locked.'},
-          {dir: ['north', 'south'], id: 'corridor-515', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-515', block: `You can't go that way.`},
          ],
          
     },
@@ -2434,7 +2407,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-512'},
           {dir: ['inside', '513', 'up'], id: 'corridor-513'},
           {dir: ['east','right'], id: 'corridor-5end'},
-          {dir: ['north', 'south'], id: 'corridor-515', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-515', block: `You can't go that way.`},
          ],
          
     },
@@ -2445,9 +2418,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-514'},
-          {dir: ['east','right'], id: 'corridor-5end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-515', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-5end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-515', block: `You can't go that way.`},
          ],
          
     },
@@ -2461,7 +2433,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-508'},
           {dir: ['inside', '509', '510' ,'up'], id: 'corridor-510', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-512'},
-          {dir: ['north', 'south'], id: 'corridor-510', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-510', block: `You can't go that way.`},
          ],
          
     },
@@ -2474,7 +2446,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-504'},
           {dir: ['inside', '507', '508' ,'up'], id: 'corridor-508', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-510'},
-          {dir: ['north', 'south'], id: 'corridor-510', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-510', block: `You can't go that way.`},
          ],
          
     },
@@ -2487,7 +2459,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell5'},
           {dir: ['inside', '504', '503', '502', '501' ,'up'], id: 'corridor-504', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-508'},
-          {dir: ['north', 'south'], id: 'corridor-504', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-504', block: `You can't go that way.`},
          ],
          
     },
@@ -2502,7 +2474,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-504'},
-          {dir: ['north', 'south'], id: 'corridor-504', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-504', block: `You can't go that way.`},
          ],
          
     },
@@ -2517,7 +2489,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-610'},
           {dir: ['east','right'], id: 'corridor-612'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-615', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-615', block: `You can't go that way.`},
          ],
     },
     {
@@ -2529,7 +2501,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-610'},
           {dir: ['inside', '613', 'up'], id: 'corridor-613'},
           {dir: ['east','left'], id: 'corridor-614'},
-          {dir: ['north', 'south'], id: 'corridor-615', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-615', block: `You can't go that way.`},
          ],
          
     },
@@ -2551,7 +2523,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-612'},
           {dir: ['inside', '613', 'up'], id: 'corridor-613'},
           {dir: ['east','right'], id: 'corridor-6end'},
-          {dir: ['north', 'south'], id: 'corridor-615', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-615', block: `You can't go that way.`},
          ],
          
     },
@@ -2562,9 +2534,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-614'},
-          {dir: ['east','right'], id: 'corridor-6end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-6end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-6end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-6end', block: `You can't go that way.`},
          ],
          
     },
@@ -2576,9 +2547,9 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-608'},
-          {dir: ['inside', '609', '610' ,'up'], id: 'corridor-610', block: "The door is locked."},
+          {dir: ['inside', '609', '610' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-612'},
-          {dir: ['north', 'south'], id: 'corridor-610', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
         ],
     },
     {
@@ -2590,7 +2561,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-604'},
           {dir: ['inside', '607', '608' ,'up'], id: 'corridor-608', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-610'},
-          {dir: ['north', 'south'], id: 'corridor-610', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-610', block: `You can't go that way.`},
         ],
     },
     {
@@ -2602,7 +2573,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell6'},
           {dir: ['inside', '604', '603', '602', '601' ,'up'], id: 'corridor-604', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-608'},
-          {dir: ['north', 'south'], id: 'corridor-604', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-604', block: `You can't go that way.`},
 
          ],
          
@@ -2614,11 +2585,9 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "Your're still outside the stairwell."
-              
-          },
+          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-604'},
-          {dir: ['north', 'south'], id: 'corridor-604', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-604', block: `You can't go that way.`},
 
          ],
          
@@ -2629,12 +2598,11 @@ const amnesiaRestored = {
       desc: `You press the button for 7. After a lurch and some movement, the elevator arrives at the 7th floor, the doors open, and you walk out into the hallway.
 
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west','left'], id: 'corridor-710'},
           {dir: ['east','right'], id: 'corridor-712'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-715', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-715', block: `You can't go that way.`},
 
          ],
     },
@@ -2642,12 +2610,11 @@ const amnesiaRestored = {
       id: 'corridor-712', 
       name: '7th Floor Hallway',
       desc: `You are now a few steps to the east of the elevators, and are standing in front of rooms 712 and 713. The door to room 713 is ajar.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-710'},
           {dir: ['inside', '713', 'up'], id: 'corridor-713'},
           {dir: ['east','left'], id: 'corridor-714'},
-          {dir: ['north', 'south'], id: 'corridor-715', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-715', block: `You can't go that way.`},
 
          ],
          
@@ -2665,12 +2632,11 @@ const amnesiaRestored = {
       id: 'corridor-714', // 
       name: '7th Floor Hallway',
       desc: `To the east is the end of the hallway, and on either side of you are the doors to rooms 714 and 715.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-712'},
           {dir: ['inside', '713', 'up'], id: 'corridor-713'},
           {dir: ['east','right'], id: 'corridor-7end'},
-          {dir: ['north', 'south'], id: 'corridor-715', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-715', block: `You can't go that way.`},
 
          ],
          
@@ -2679,74 +2645,55 @@ const amnesiaRestored = {
       id: 'corridor-7end', // End of the hallway
       name: '7th Floor Hallway',
       desc: `You are at the easterly end of the hallway.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-714'},
-          {dir: ['east','right'], id: 'corridor-7end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-7end', block: 'You cannot go that way.'},
-
-         ],
-         
+          {dir: ['east','right'], id: 'corridor-7end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-7end', block: `You can't go that way.`},
+        ], 
     },
-    
     {
       id: 'corridor-710', 
       name: '7th Floor Hallway',
       desc: `You are standing in front of the doors to rooms 709 and 710.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-708'},
-          {dir: ['inside', '709', '710' ,'up'], id: 'corridor-710', block: "The door is locked."},
+          {dir: ['inside', '709', '710' ,'up'], block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-712'},
-          {dir: ['north', 'south'], id: 'corridor-710', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], block: `You can't go that way.`}
          ],
-         
     },
     {
       id: 'corridor-708', 
       name: '7th Floor Hallway',
       desc: `You are standing betwixt rooms 707 and 708`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-704'},
           {dir: ['inside', '707', '708' ,'up'], id: 'corridor-708', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-710'},
-          {dir: ['north', 'south'], id: 'corridor-710', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], id: 'corridor-710', block: `You can't go that way.`},
          ],
-         
     },
     {
       id: 'corridor-704', 
       name: '7th Floor Hallway',
       desc: `To your west are the doors for rooms 604 through 601, and beyond them, the stairway. Right now, you are standing in front of the doors to 703 and 704.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-stairwell7'},
           {dir: ['inside', '704', '703', '702', '701' ,'up'], id: 'corridor-674', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-708'},
-          {dir: ['north', 'south'], id: 'corridor-704', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], id: 'corridor-704', block: `You can't go that way.`}
          ],
-         
     },
     {
       id: 'corridor-stairwell7', 
       name: '7th Floor Hallway',
       desc: `You are standing just down from the stairway.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "Your're still outside the stairwell."
-              
-          },
+          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-704'},
-          {dir: ['north', 'south'], id: 'corridor-704', block: 'You cannot go that way.'},
-
-         ],
-         
+          {dir: ['north', 'south'], id: 'corridor-704', block: `You can't go that way.`}
+         ],   
     },
     {
       id: 'corridor-elevator8', // Player presses 8
@@ -2754,12 +2701,11 @@ const amnesiaRestored = {
       desc: `You press the button for 8. After a lurch and some movement, the elevator arrives at the 8th floor, the doors open, and you walk out into the hallway.
 
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west','left'], id: 'corridor-810'},
           {dir: ['east','right'], id: 'corridor-812'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-815', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-815', block: `You can't go that way.`},
 
          ],
     },
@@ -2772,7 +2718,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-810'},
           {dir: ['inside', '813', 'up'], id: 'corridor-813'},
           {dir: ['east','left'], id: 'corridor-814'},
-          {dir: ['north', 'south'], id: 'corridor-815', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-815', block: `You can't go that way.`},
 
          ],
          
@@ -2795,7 +2741,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-812'},
           {dir: ['inside', '813', 'up'], id: 'corridor-813'},
           {dir: ['east','right'], id: 'corridor-8end'},
-          {dir: ['north', 'south'], id: 'corridor-815', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-815', block: `You can't go that way.`},
 
          ],
          
@@ -2807,9 +2753,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-814'},
-          {dir: ['east','right'], id: 'corridor-8end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-8end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-8end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-8end', block: `You can't go that way.`},
 
          ],
          
@@ -2824,7 +2769,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-808'},
           {dir: ['inside', '809', '810' ,'up'], id: 'corridor-810', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-812'},
-          {dir: ['north', 'south'], id: 'corridor-810', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-810', block: `You can't go that way.`},
 
          ],
          
@@ -2838,7 +2783,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-804'},
           {dir: ['inside', '807', '808' ,'up'], id: 'corridor-808', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-810'},
-          {dir: ['north', 'south'], id: 'corridor-810', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-810', block: `You can't go that way.`},
 
          ],
          
@@ -2852,7 +2797,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell8'},
           {dir: ['inside', '804', '803', '802', '801' ,'up'], id: 'corridor-874', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-808'},
-          {dir: ['north', 'south'], id: 'corridor-804', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-804', block: `You can't go that way.`},
 
          ],
          
@@ -2864,14 +2809,10 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "Your're still outside the stairwell."
-              
-          },
+          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-804'},
-          {dir: ['north', 'south'], id: 'corridor-804', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], id: 'corridor-804', block: `You can't go that way.`}
          ],
-         
     },
     {
       id: 'corridor-elevator9', // Player presses 9
@@ -2884,7 +2825,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-910'},
           {dir: ['east','right'], id: 'corridor-912'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-915', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-915', block: `You can't go that way.`},
 
          ],
     },
@@ -2897,7 +2838,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-910'},
           {dir: ['inside', '913', 'up'], id: 'corridor-913'},
           {dir: ['east','left'], id: 'corridor-914'},
-          {dir: ['north', 'south'], id: 'corridor-915', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-915', block: `You can't go that way.`},
 
          ],
          
@@ -2920,7 +2861,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-912'},
           {dir: ['inside', '713', 'up'], id: 'corridor-913'},
           {dir: ['east','right'], id: 'corridor-9end'},
-          {dir: ['north', 'south'], id: 'corridor-915', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-915', block: `You can't go that way.`},
 
          ],
          
@@ -2932,9 +2873,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-914'},
-          {dir: ['east','right'], id: 'corridor-9end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-9end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-9end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-9end', block: `You can't go that way.`},
 
          ],
          
@@ -2949,7 +2889,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-908'},
           {dir: ['inside', '909', '910' ,'up'], id: 'corridor-910', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-912'},
-          {dir: ['north', 'south'], id: 'corridor-910', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-910', block: `You can't go that way.`},
 
          ],
          
@@ -2963,7 +2903,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-904'},
           {dir: ['inside', '907', '908' ,'up'], id: 'corridor-908', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-910'},
-          {dir: ['north', 'south'], id: 'corridor-910', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-910', block: `You can't go that way.`},
 
          ],
          
@@ -2977,7 +2917,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell9'},
           {dir: ['inside', '904', '903', '902', '901' ,'up'], id: 'corridor-904', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-908'},
-          {dir: ['north', 'south'], id: 'corridor-904', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-904', block: `You can't go that way.`},
 
          ],
          
@@ -2993,7 +2933,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-904'},
-          {dir: ['north', 'south'], id: 'corridor-904', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-904', block: `You can't go that way.`},
 
          ],
          
@@ -3009,7 +2949,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1010'},
           {dir: ['east','right'], id: 'corridor-1012'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1015', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1015', block: `You can't go that way.`},
 
          ],
     },
@@ -3022,7 +2962,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1010'},
           {dir: ['inside', '613', 'up'], id: 'corridor-1013'},
           {dir: ['east','left'], id: 'corridor-1014'},
-          {dir: ['north', 'south'], id: 'corridor-1015', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1015', block: `You can't go that way.`},
 
          ],
          
@@ -3045,7 +2985,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1012'},
           {dir: ['inside', '1013', 'up'], id: 'corridor-1013'},
           {dir: ['east','right'], id: 'corridor-10end'},
-          {dir: ['north', 'south'], id: 'corridor-1015', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1015', block: `You can't go that way.`},
 
          ],
          
@@ -3057,14 +2997,12 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1014'},
-          {dir: ['east','right'], id: 'corridor-10end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-10end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-10end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-10end', block: `You can't go that way.`},
 
          ],
          
     },
-    
     {
       id: 'corridor-1010', 
       name: '10th Floor Hallway',
@@ -3074,24 +3012,19 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1008'},
           {dir: ['inside', '1009', '1010' ,'up'], id: 'corridor-1010', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1012'},
-          {dir: ['north', 'south'], id: 'corridor-1010', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], id: 'corridor-1010', block: `You can't go that way.`}
          ],
-         
     },
     {
       id: 'corridor-708', 
       name: '10th Floor Hallway',
       desc: `You are standing betwixt rooms 1007 and 1008`,
-      
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1004'},
           {dir: ['inside', '1007', '1008' ,'up'], id: 'corridor-1008', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1010'},
-          {dir: ['north', 'south'], id: 'corridor-1010', block: 'You cannot go that way.'},
-
+          {dir: ['north', 'south'], id: 'corridor-1010', block: `You can't go that way.`}
          ],
-         
     },
     {
       id: 'corridor-1004', 
@@ -3102,7 +3035,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell10'},
           {dir: ['inside', '1004', '1003', '1002', '1001' ,'up'], id: 'corridor-1074', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1008'},
-          {dir: ['north', 'south'], id: 'corridor-1004', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1004', block: `You can't go that way.`},
 
          ],
          
@@ -3118,7 +3051,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1004'},
-          {dir: ['north', 'south'], id: 'corridor-1004', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1004', block: `You can't go that way.`},
 
          ],
          
@@ -3134,7 +3067,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1110'},
           {dir: ['east','right'], id: 'corridor-1112'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1115', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1115', block: `You can't go that way.`},
 
          ],
     },
@@ -3147,7 +3080,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1110'},
           {dir: ['inside', '1113', 'up'], id: 'corridor-1113'},
           {dir: ['east','left'], id: 'corridor-1114'},
-          {dir: ['north', 'south'], block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], block: `You can't go that way.`},
 
          ],
          
@@ -3170,7 +3103,7 @@ const amnesiaRestored = {
         {dir: ['inside', '1113', 'up'], id: 'corridor-1113'},
         {dir: ['east','right'], id: 'corridor-11end'},
         {dir: ['1114', '1115'], block: 'The door is locked.'},
-        {dir: ['north', 'south'], block: 'You cannot go that way.'}
+        {dir: ['north', 'south'], block: `You can't go that way.`}
       ]
     },
     {
@@ -3179,8 +3112,8 @@ const amnesiaRestored = {
       desc: `You are at the easterly end of the hallway.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1114'},
-          {dir: ['east','right'], block: 'You cannot go that way.'},
-          {dir: ['north', 'south'], block: 'You cannot go that way.'}
+          {dir: ['east','right'], block: `You can't go that way.`},
+          {dir: ['north', 'south'], block: `You can't go that way.`}
         ],
     },
     
@@ -3193,7 +3126,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1108'},
           {dir: ['inside', '1109', '1110' ,'up'], id: 'corridor-1110', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1112'},
-          {dir: ['north', 'south'], id: 'corridor-1110', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1110', block: `You can't go that way.`},
         ],
     },
     {
@@ -3205,7 +3138,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1104'},
           {dir: ['inside', '1107', '1108' ,'up'], id: 'corridor-1108', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1110'},
-          {dir: ['north', 'south'], id: 'corridor-210', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-210', block: `You can't go that way.`},
 
         ],
     },
@@ -3218,7 +3151,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell11'},
           {dir: ['inside', '1104', '1103', '1102', '1101' ,'up'], id: 'corridor-1104', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1108'},
-          {dir: ['north', 'south'], id: 'corridor-1104', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1104', block: `You can't go that way.`},
         ],
     },
     {
@@ -3230,7 +3163,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
           {dir: ['inside',  ,'up'], id: 'corridor-stairwell11', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1104'},
-          {dir: ['north', 'south'], id: 'corridor-1104', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1104', block: `You can't go that way.`},
         ],
     },
     {
@@ -3243,7 +3176,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1210'},
           {dir: ['east','right'], id: 'corridor-1212'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1215', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1215', block: `You can't go that way.`},
          ],
     },
     {
@@ -3254,7 +3187,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1210'},
           {dir: ['inside', '213', 'up'], id: 'corridor-1213'},
           {dir: ['east','left'], id: 'corridor-1214'},
-          {dir: ['north', 'south'], id: 'corridor-1215', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1215', block: `You can't go that way.`},
         ],
     },
     {
@@ -3275,7 +3208,7 @@ const amnesiaRestored = {
           {dir: ['inside', '1213', 'up'], id: 'corridor-1213'},
           {dir: ['east','right'], id: 'corridor-12end'},
           {dir: ['1214', '1215'], id: 'corridor-1215', block: 'The door is locked.'},
-          {dir: ['north', 'south'], id: 'corridor-1215', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1215', block: `You can't go that way.`},
         ],
     },
     {
@@ -3284,9 +3217,8 @@ const amnesiaRestored = {
       desc: `You are at the easterly end of the hallway.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1214'},
-          {dir: ['east','right'], id: 'corridor-12end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-1215', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-12end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-1215', block: `You can't go that way.`},
         ],
     },
     {
@@ -3297,7 +3229,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1208'},
           {dir: ['inside', '1209', '1210' ,'up'], id: 'corridor-1210', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1212'},
-          {dir: ['north', 'south'], id: 'corridor-1210', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1210', block: `You can't go that way.`},
         ],
     },
     {
@@ -3309,7 +3241,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1204'},
           {dir: ['inside', '1207', '1208' ,'up'], id: 'corridor-1208', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1210'},
-          {dir: ['north', 'south'], id: 'corridor-1210', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1210', block: `You can't go that way.`},
         ],
     },
     {
@@ -3321,7 +3253,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell12'},
           {dir: ['inside', '1204', '1203', '1202', '1201' ,'up'], id: 'corridor-1204', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1208'},
-          {dir: ['north', 'south'], id: 'corridor-1204', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1204', block: `You can't go that way.`},
         ],
     },
     {
@@ -3335,7 +3267,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1204'},
-          {dir: ['north', 'south'], id: 'corridor-1204', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1204', block: `You can't go that way.`},
         ],
     },
     {
@@ -3349,7 +3281,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1310'},
           {dir: ['east','right'], id: 'corridor-1312'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1315', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1315', block: `You can't go that way.`},
 
          ],
     },
@@ -3362,7 +3294,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1310'},
           {dir: ['inside', '1313', 'up'], id: 'corridor-1313'},
           {dir: ['east','left'], id: 'corridor-1314'},
-          {dir: ['north', 'south'], id: 'corridor-1315', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1315', block: `You can't go that way.`},
         ],
     },
     {
@@ -3383,7 +3315,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1312'},
           {dir: ['inside', '1313', 'up'], id: 'corridor-1313'},
           {dir: ['east','right'], id: 'corridor-13end'},
-          {dir: ['north', 'south'], id: 'corridor-1315', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1315', block: `You can't go that way.`},
           {dir: ['1314', '1315'], id: 'corridor-1315', block: 'The door is locked.'},
          ],
          
@@ -3395,9 +3327,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1314'},
-          {dir: ['east','right'], id: 'corridor-13end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-1315', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-13end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-1315', block: `You can't go that way.`},
 
          ],
          
@@ -3412,7 +3343,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1308'},
           {dir: ['inside', '1309', '1310' ,'up'], id: 'corridor-1310', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1312'},
-          {dir: ['north', 'south'], id: 'corridor-1310', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1310', block: `You can't go that way.`},
 
          ],
          
@@ -3426,7 +3357,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1304'},
           {dir: ['inside', '1307', '1308' ,'up'], id: 'corridor-1308', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1310'},
-          {dir: ['north', 'south'], id: 'corridor-1310', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1310', block: `You can't go that way.`},
 
          ],
          
@@ -3440,7 +3371,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell13'},
           {dir: ['inside', '1304', '1303', '1302', '1301' ,'up'], id: 'corridor-1304', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1308'},
-          {dir: ['north', 'south'], id: 'corridor-1304', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1304', block: `You can't go that way.`},
 
          ],
          
@@ -3456,7 +3387,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1304'},
-          {dir: ['north', 'south'], id: 'corridor-1304', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1304', block: `You can't go that way.`},
 
          ],
          
@@ -3472,7 +3403,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1410'},
           {dir: ['east','right'], id: 'corridor-1412'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1415', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1415', block: `You can't go that way.`},
 
          ],
     },
@@ -3486,7 +3417,7 @@ const amnesiaRestored = {
           {dir: ['inside', '413', 'up'], id: 'corridor-1413'},
           {dir: ['east','left'], id: 'corridor-1414'},
           {dir: ['1414', '1415'], id: 'corridor-1415', block: 'The door is locked.'},
-          {dir: ['north', 'south'], id: 'corridor-1415', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1415', block: `You can't go that way.`},
 
          ],
          
@@ -3509,7 +3440,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1412'},
           {dir: ['inside', '1413', 'up'], id: 'corridor-1413'},
           {dir: ['east','right'], id: 'corridor-14end'},
-          {dir: ['north', 'south'], id: 'corridor-1415', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1415', block: `You can't go that way.`},
 
          ],
          
@@ -3521,9 +3452,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1414'},
-          {dir: ['east','right'], id: 'corridor-14end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-1415', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-14end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-1415', block: `You can't go that way.`},
 
          ],
          
@@ -3538,7 +3468,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1408'},
           {dir: ['inside', '1409', '1410' ,'up'], id: 'corridor-1410', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1412'},
-          {dir: ['north', 'south'], id: 'corridor-1410', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1410', block: `You can't go that way.`},
 
          ],
          
@@ -3552,7 +3482,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1404'},
           {dir: ['inside', '1407', '1408' ,'up'], id: 'corridor-1408', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1410'},
-          {dir: ['north', 'south'], id: 'corridor-1410', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1410', block: `You can't go that way.`},
 
          ],
          
@@ -3566,7 +3496,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell14'},
           {dir: ['inside', '1404', '1403', '1402', '1401' ,'up'], id: 'corridor-1404', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1408'},
-          {dir: ['north', 'south'], id: 'corridor-1404', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1404', block: `You can't go that way.`},
 
          ],
          
@@ -3580,7 +3510,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
           {dir: ['inside',  ,'up'], id: 'corridor-stairwell14', block: "Your're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1404'},
-          {dir: ['north', 'south'], id: 'corridor-1404', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1404', block: `You can't go that way.`},
 
          ],
          
@@ -3596,7 +3526,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1610'},
           {dir: ['east','right'], id: 'corridor-1612'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1615', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1615', block: `You can't go that way.`},
 
          ],
     },
@@ -3609,7 +3539,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1610'},
           {dir: ['inside', '1613', 'up'], id: 'corridor-1613'},
           {dir: ['east','left'], id: 'corridor-1614'},
-          {dir: ['north', 'south'], id: 'corridor-1615', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1615', block: `You can't go that way.`},
 
          ],
          
@@ -3632,7 +3562,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1612'},
           {dir: ['inside', '1613', 'up'], id: 'corridor-1613'},
           {dir: ['east','right'], id: 'corridor-16end'},
-          {dir: ['north', 'south'], id: 'corridor-1615', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1615', block: `You can't go that way.`},
 
          ],
          
@@ -3644,9 +3574,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1614'},
-          {dir: ['east','right'], id: 'corridor-16end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-16end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-16end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-16end', block: `You can't go that way.`},
 
          ],
          
@@ -3661,7 +3590,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1608'},
           {dir: ['inside', '1609', '1610' ,'up'], id: 'corridor-1610', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1612'},
-          {dir: ['north', 'south'], id: 'corridor-1610', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1610', block: `You can't go that way.`},
 
          ],
          
@@ -3675,7 +3604,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1604'},
           {dir: ['inside', '1607', '1608' ,'up'], id: 'corridor-1608', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1610'},
-          {dir: ['north', 'south'], id: 'corridor-1610', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1610', block: `You can't go that way.`},
 
          ],
          
@@ -3689,7 +3618,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell16'},
           {dir: ['inside', '1604', '1603', '1602', '1601' ,'up'], id: 'corridor-1604', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1608'},
-          {dir: ['north', 'south'], id: 'corridor-1604', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1604', block: `You can't go that way.`},
 
          ],
          
@@ -3705,7 +3634,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1604'},
-          {dir: ['north', 'south'], id: 'corridor-1604', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1604', block: `You can't go that way.`},
 
          ],
          
@@ -3721,7 +3650,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1710'},
           {dir: ['east','right'], id: 'corridor-1712'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1715', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1715', block: `You can't go that way.`},
 
          ],
     },
@@ -3734,7 +3663,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1710'},
           {dir: ['inside', '1713', 'up'], id: 'corridor-1713'},
           {dir: ['east','left'], id: 'corridor-1714'},
-          {dir: ['north', 'south'], id: 'corridor-1715', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1715', block: `You can't go that way.`},
 
          ],
          
@@ -3757,7 +3686,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1712'},
           {dir: ['inside', '1713', 'up'], id: 'corridor-1713'},
           {dir: ['east','right'], id: 'corridor-17end'},
-          {dir: ['north', 'south'], id: 'corridor-1715', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1715', block: `You can't go that way.`},
 
          ],
          
@@ -3769,9 +3698,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1714'},
-          {dir: ['east','right'], id: 'corridor-17end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-17end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-17end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-17end', block: `You can't go that way.`},
 
          ],
          
@@ -3786,7 +3714,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1708'},
           {dir: ['inside', '1709', '1710' ,'up'], id: 'corridor-1710', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1712'},
-          {dir: ['north', 'south'], id: 'corridor-1710', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1710', block: `You can't go that way.`},
 
          ],
          
@@ -3800,7 +3728,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1704'},
           {dir: ['inside', '1707', '1708' ,'up'], id: 'corridor-1708', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1710'},
-          {dir: ['north', 'south'], id: 'corridor-1710', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1710', block: `You can't go that way.`},
 
          ],
          
@@ -3814,7 +3742,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell17'},
           {dir: ['inside', '1704', '1703', '1702', '1701' ,'up'], id: 'corridor-1704', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1708'},
-          {dir: ['north', 'south'], id: 'corridor-1704', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1704', block: `You can't go that way.`},
 
          ],
          
@@ -3830,7 +3758,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1704'},
-          {dir: ['north', 'south'], id: 'corridor-1704', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1704', block: `You can't go that way.`},
 
          ],
          
@@ -3846,7 +3774,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1810'},
           {dir: ['east','right'], id: 'corridor-1812'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1815', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1815', block: `You can't go that way.`},
 
          ],
     },
@@ -3859,7 +3787,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1810'},
           {dir: ['inside', '1813', 'up'], id: 'corridor-1813'},
           {dir: ['east','left'], id: 'corridor-1814'},
-          {dir: ['north', 'south'], id: 'corridor-1815', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1815', block: `You can't go that way.`},
 
          ],
          
@@ -3882,7 +3810,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1812'},
           {dir: ['inside', '1813', 'up'], id: 'corridor-1813'},
           {dir: ['east','right'], id: 'corridor-18end'},
-          {dir: ['north', 'south'], id: 'corridor-1815', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1815', block: `You can't go that way.`},
 
          ],
          
@@ -3894,9 +3822,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1814'},
-          {dir: ['east','right'], id: 'corridor-18end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-18end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-18end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-18end', block: `You can't go that way.`},
 
          ],
          
@@ -3911,7 +3838,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1808'},
           {dir: ['inside', '1809', '1810' ,'up'], id: 'corridor-1810', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1812'},
-          {dir: ['north', 'south'], id: 'corridor-1810', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1810', block: `You can't go that way.`},
 
          ],
          
@@ -3925,7 +3852,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1804'},
           {dir: ['inside', '1807', '1808' ,'up'], id: 'corridor-1808', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1810'},
-          {dir: ['north', 'south'], id: 'corridor-1810', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1810', block: `You can't go that way.`},
 
          ],
          
@@ -3939,7 +3866,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell8'},
           {dir: ['inside', '1804', '1803', '1802', '1801' ,'up'], id: 'corridor-1874', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1808'},
-          {dir: ['north', 'south'], id: 'corridor-1804', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1804', block: `You can't go that way.`},
 
          ],
          
@@ -3955,7 +3882,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1804'},
-          {dir: ['north', 'south'], id: 'corridor-1804', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1804', block: `You can't go that way.`},
 
          ],
          
@@ -3971,7 +3898,7 @@ const amnesiaRestored = {
           {dir: ['west','left'], id: 'corridor-1910'},
           {dir: ['east','right'], id: 'corridor-1912'},
           {dir: ['up','down', 'elevator'], id: 'corridor-elevator'},
-          {dir: ['north'], id: 'corridor-1915', block: 'You cannot go that way.'},
+          {dir: ['north'], id: 'corridor-1915', block: `You can't go that way.`},
 
          ],
     },
@@ -3984,7 +3911,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1910'},
           {dir: ['inside', '1913', 'up'], id: 'corridor-1913'},
           {dir: ['east','left'], id: 'corridor-1914'},
-          {dir: ['north', 'south'], id: 'corridor-1915', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1915', block: `You can't go that way.`},
 
          ],
          
@@ -4007,7 +3934,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1912'},
           {dir: ['inside', '713', 'up'], id: 'corridor-1913'},
           {dir: ['east','right'], id: 'corridor-19end'},
-          {dir: ['north', 'south'], id: 'corridor-1915', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1915', block: `You can't go that way.`},
 
          ],
          
@@ -4019,9 +3946,8 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1914'},
-          {dir: ['east','right'], id: 'corridor-19end',
-              lock: 'You cannot go that way.'},
-          {dir: ['north', 'south'], id: 'corridor-19end', block: 'You cannot go that way.'},
+          {dir: ['east','right'], id: 'corridor-19end', block: `You can't go that way.`},
+          {dir: ['north', 'south'], id: 'corridor-19end', block: `You can't go that way.`},
 
          ],
          
@@ -4036,7 +3962,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1908'},
           {dir: ['inside', '1909', '1910' ,'up'], id: 'corridor-1910', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1912'},
-          {dir: ['north', 'south'], id: 'corridor-1910', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1910', block: `You can't go that way.`},
 
          ],
          
@@ -4050,7 +3976,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-1904'},
           {dir: ['inside', '1907', '1908' ,'up'], id: 'corridor-1908', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1910'},
-          {dir: ['north', 'south'], id: 'corridor-1910', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1910', block: `You can't go that way.`},
 
          ],
          
@@ -4064,7 +3990,7 @@ const amnesiaRestored = {
           {dir: ['west', 'left'], id: 'corridor-stairwell19'},
           {dir: ['inside', '1904', '1903', '1902', '1901' ,'up'], id: 'corridor-1904', block: "The door is locked."},
           {dir: ['east','right'], id: 'corridor-1908'},
-          {dir: ['north', 'south'], id: 'corridor-1904', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1904', block: `You can't go that way.`},
 
          ],
          
@@ -4080,7 +4006,7 @@ const amnesiaRestored = {
               
           },
           {dir: ['east','right'], id: 'corridor-1904'},
-          {dir: ['north', 'south'], id: 'corridor-1904', block: 'You cannot go that way.'},
+          {dir: ['north', 'south'], id: 'corridor-1904', block: `You can't go that way.`},
 
          ],
          
@@ -4155,7 +4081,7 @@ const amnesiaRestored = {
       ],
       exits: [
         {
-          dir: ['inside', ' health club', 'enter'],
+          dir: ['inside', 'health club', 'enter'],
           id: 'heal-club'
         },
         {

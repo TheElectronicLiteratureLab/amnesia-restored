@@ -972,13 +972,13 @@ const phoneMarkerGenerator = () => {
 //command for pressing elevator buttons
 const press = (button) => {
   let elevator = getRoom(disk.roomId);
-  let buttonArr = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
-  if (button === 'l') {
-    button = '0';
-  } else if (button === 'ph') {
-    button = '19';
-  } 
   let parsedNum = parseInt(button);
+  if (button === 'l') {
+    parsedNum = parseInt('0');
+  } else if (button === 'ph') {
+    parsedNum = parseInt('19');
+  } 
+  
   console.log("Button Pressed: " + button);
   console.log(elevator.exits.length)
   if (elevator.id === 'corridor-elevator') {
@@ -987,6 +987,14 @@ const press = (button) => {
       enterRoom(elevator.exits[parsedNum].id);
     } else {
       println('Not a valid button. Please press L, PH, or 2 through 19.');
+    }
+  } else if (elevator.id === 'corridor-hostileelevator') {
+    if (button === 'ph') {
+      enterRoom('corridor-elevatorph');
+    } else if (button === 'alarm') {
+      enterRoom('corridor-alarm');
+    } else {
+      println('Not a valid button. Please press PH or ALARM');
     }
   } else {
     println(`You can't press a button when not in an elevator!`);
