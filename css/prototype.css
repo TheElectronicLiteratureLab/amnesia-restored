@@ -337,10 +337,12 @@ body {
 #input {
    color: #E4E4E4;
    background: transparent;
-   font-size: 2vh;
+   font-size: 2.5vh;
+   letter-spacing: 1px;
    border: none;
    width: 90%;
    padding-top: 1%;
+   font-family: 'Montserrat', sans-serif;
 }
  
 #arrow {
