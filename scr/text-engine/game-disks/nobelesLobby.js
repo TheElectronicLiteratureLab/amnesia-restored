@@ -197,7 +197,7 @@ const nobelesLobby = {
             ],
         },
         {
-            id: 'nobe-16',
+            id: 'nobe-14',
             name: '',
             desc: `Bette says, 'Ah, bed, what a good idea! I've got to be up by six A.M., So I think I'll join you.' You both get cleaned up, and then retire for the evening. The next morning, you awake to find Bette finished with her preperations for going to work.`,
             onEnter: () => {
@@ -329,6 +329,10 @@ const nobelesLobby = {
             desc: ``,
             hasBed: true,
             onEnter: () => {
+
+                numbers.push(
+                    {number:'555-0042', roomid:'phone-29', contactName: 'Bette'},);
+
                     const room = getRom(disk.roomId);
 
                     if(room.hasEntered === false ) {
@@ -342,14 +346,17 @@ const nobelesLobby = {
                     if(bettesHome === 1){
                         enterRoom('nobe-36');
                     }else if(bettesHome === 2){
-                        enterRoom('');
+                        enterRoom('nobe-40');
                     }else if(bettesHome === 3){
-                        enterRoom('');
+                        enterRoom('nobe-44');
                     }else if(bettesHome === 4){
-                        enterRoom('');
-                    }else if(bettesHome === 5){
-                        enterRoom('');
-                    }//what happens after day 5
+                        enterRoom('nobe-47');
+                    }else if(bettesHome >= 5){
+                        println(`Bette arrives back from work.`);
+                        if(meridam === 1 & zHours === 11){
+                            enterRoom('nobe-39');
+                        }//do I need an else statement here?
+                    }
 
             },
             onBlock: () => {
@@ -364,8 +371,6 @@ const nobelesLobby = {
                         }
                 }else if(prevInput === 'leave'){
                     enterRoom('nobe-34');
-                }else if(prevInput === 'call 555-0042'){
-                    println(`Bette's phone immediately rings busy. You put down the receiver.`);
                 }
             },
             exits: [
@@ -568,12 +573,230 @@ const nobelesLobby = {
             desc: ``,
             hasBed: true,
             onEnter: () => {
-                println(``);
+                if(getItemInInventory === 'floppy disk'){
+                    println(`As though responding to a cue, the telephone rings. Bette walks over to the phone and answers it. It is an editor, who requires her immediate presence in a Chelsea studio. As she fills a nylon bag with camera equipment, she apologizes for having to leave you alone. 'I'll be back as soon as I can, probably around six.`)
+                    pressEnter('nobe-49')
+                }else{
+                println(`Bette declares that she must be up early the next day for work. After you've each had a shower, you go to bed together on the unfolded sofa and are soon asleep.\n\n When you awake, you find Bette is almost ready to depart for the day.\n\n As she fills a nylon bag with camera equipment, she apologizes for having to leave you alone. 'I'll be back as soon as I can, probably around six.`);
+                enterRoom('nobe-27');
+                }
+            },
+        },
+        //Bette's second arrival
+        {
+            id: 'nobe-40',
+            name: '',
+            desc: `Bette comes home with a package from Woolworth's. She won't let you see what it is till after dinner, which you are delegated to select and prepare from the choices available in the freezer.`,
+            onEnter: () => {
+                println(`Bette comes home with a package from Woolworth's. She won't let you see what it is till after dinner, which you are delegated to select and prepare from the choices available in the freezer.`);
+                pressEnter('nobe-41');
+            },
+        },
+        {
+            id: 'nobe-41',
+            name: '',
+            desc: `After dinner Bette banishes you to the bathroom for five minutes, and when you come out you find she's spread the pieces of an enormous jigsaw puzzle over the glass-topped table. 'You used to love to do jig-saws,' she explains, 'and you said it was because they put you into a kind of trance state. This is a 2000 piece set that we've worked once already.\n\n But don't look at the picture on the box. My idea was that you might stir some of your buried memories by our working it together again. Do you want to try it?'`,
+            exits: [
+                {dir: ['yes'], id: 'nobe-42'},
+                {dir: ['no'], id: 'nobe-43'},
+            ],
+        },
+        {
+            id: 'nobe-42',
+            name: '',
+            desc: ``,
+            hasBed: true,
+            //player sleeps after this
+            onEnter: () => {
+                println(`With Bette's help, you turn all the pieces right-side up, sorting out the edge pieces, and joining those together first. At the moment the frame is complete, you suddenly are able to envision the completed jigsaw and you describe it in detail to Bette:\n\n There are rowboats in the foreground clustered round a dock; the dark rippled water of a harbor or moat, and beyond the water a square-towered castle that must be somewhere in Europe, since it seems the genuine medieval article, and a great quantity of cloudless blue sky.\n\n\ Bette shows you the picture on the box, and it's all there just as you've described it.\n\n You continue working the puzzle till well past midnight, and though you find it a pleasant pastime you uncover no further buried memories. You go to bed with Bette and dream of jigsaw puzzles.\n\n When you awake late in the morning, Bette has already left for work.`)
+                pressEnter('nobe-27')
+            }
+        },
+        {
+            id: 'nobe-43',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`'That's fine by me,' says Bette, sweeping the pieces into the Woolworth's bag and depositing it in the garbage. 'Personally I can't think of a duller way to spend an evening.'\n\n She takes the bag of jigsaw piece out into the hall and deposits it in the incinerator chute. As she goes by with it, you look at the picture on the side of the box. It registers a zero on the seismograph of your memory.`);
                 enterRoom('nobe-27');
             }
         },
+        //Bette's third arrival
+        {
+            id: 'nobe-44',
+            name: '',
+            desc: `'Anyone hungry for Chinese food?' Bette calls out as she enters the apartment. 'I've butterfly shrimp, wor shu op, and chicken with almonds.' What do you want to start with?'`,
+            onBlock: () => {
+                if(prevInput){
+                    enterRoom('nobe-45');
+                }else{}
+            },
+        },
+        {
+            id: 'nobe-45',
+            name: '',
+            desc: `As you eat your Chinese dinner, Bette says: 'For dessert, instead of fortune cookies, which I never get because I'm too superstitious, I rented a cassette of a Hitchcock movie that we almost went out to see at a revival house back when we first started going out. But then a job came up, and I couldn't, and you seemed so disappointed. So tonight we'll see it. Would you like that?'`,
+            exits: [
+                {dir: ['yes'], id: 'nobe-46'},
+                {dir: ['no'], id: 'nobe-47'},
+            ]
+        },
+        {
+            id: 'nobe-46',
+            name: '',
+            desc: `After dinner Bette puts the rented cassette in the VCR that lives under the tv and you settle beside her on the sofa to watch Hitchcock's SPELLBOUND. Gregory Peck plays a man suffering from amnesia, and Ingrid Bergman is a psychoanalyst trying to restore his memory. You and Bette begin to get the giggles halfway through the store, and by the end you are both weak with laughter.\n\n 'It does make you think, though,' Bette says, wiping away her tears of laughter. 'I mean, you were so anxious to see just that movie. Which means that for some reason you must have been interested in amnesia even then. I wonder why.'`,
+            onBlock: () => {
+                if(prevInput){
+                    enterRoom('nobe-39')
+                }
+            }
+        },
+        //Bette's fourth arrival
+        {
+            id: 'nobe-47',
+            name: '',
+            desc: ``,
+            //player sleeps here
+            onEnter: () => {
+                println(`Bette arrives home to announce that she is suffering a PMS headache of monstrous proportions. She takes two aspirins, covers her eyes with a small black sleep-mask ('So you can stay up and read, darling,' she explains.), gets into the unfolded sofabed, and falls into an uneasy sleep. You read a couple of back issues of 'The New Yorker' until you've developed a headache in sympathy with her's.\n\n Then you get ready to call it a night. 'We're becoming a couple,' you think happily as you drift off to sleep. 'We get sick together!'\n\n You both drift off to sleep.`);
+                pressEnter('nobe-48');
+            },
+        },
+        {
+            id: 'nobe-48',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`The next morning, you awake to find that Bette has already left for work.`);
+                enterRoom('nobe-27');
+            },
+        },
+        {
+            id: 'nobe-49',
+            name: '',
+            desc: `The phone rings`,
+            onBlock: () => {
+                if(prevInput === 'answer phone'){
+                    enterRoom('nobe-50');
+                }else{
+                    println(`The phone keeps ringing.`)
+                }
+            },
+        },
+        {
+            id: 'nobe-50',
+            name: '',
+            desc: `'John,' says Bette excitedly, when you pick up the phone. 'I've discovered a clue! Isn't that wonderful?'`,
+            exits: [
+                {dir: ['no'], id: 'nobe-51'},
+                {dir: ['yes'], id: 'nobe-52'},
+            ],
+        },
+        {
+            id: 'nobe-51',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`'Well, then nuts to you too! I'm going to tell you about my discovering anyhow.'`);
+                pressEnter('nobe-52')
+            },
+        },
+        {
+            id: 'nobe-53',
+            name: '',
+            desc: `“Do you know that picture of you that’s on the dresser, the one with you looking so elegant against that dismal wallpaper in the abandoned building? Well, Ned was just packing up some of the clothes from that shooting to send them back to the designers, and he found this paperback mystery in the right front pocket of the suit you were wearing that day. It’s a reprint of an old thriller by Cornell Woolrich called THE BLACK CURTAIN, and it’s about amnesia. But that’s not the Clue. On the inside back cover of the book, you’ve written the phone number of someone called Denise, and I don’t remember there being any Denise in your Address Book. But I’m sure it’s your handwriting. Do you have a pencil to write down the number? Or can you remember it?”`,
+            onBlock: () => {
+                if(prevInput === 'find pencil'){
+                    enterRoom('nobe-54');
+                }else if(prevInput === 'remember it'){
+                    enterRoom('nobe-55');
+                }
+            },
+        },
+        {
+            id: 'nobe-54',
+            name: '',
+            desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it’s correct: 555-5413. “I hope it’s not Another Woman,” she adds, with a nervous laugh, “but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later.” She hangs up.`,
+            onEnter: () => {
+                numbers.push(
+                    {number:'555-5413', roomid:'phone-30', contactName: 'Denise'}
+                  );
+            }
+        },
+        {
+            id: 'nobe-55',
+            name: '',
+            desc: `“The number is 555-5413.”  She makes you repeat it to be sure it’s correct. “I hope it’s not Another Woman,” she adds, with a nervous laugh, “but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later.” She hangs up.`,
+            //player has to call Denise.
+            onEnter: () => {
+                numbers.push(
+                    {number:'555-5413', roomid:'phone-30', contactName: 'Denise'}
+                  );
+            },
+        },
 
+
+
+
+//Phone call to Denise
+        {
+            id: 'phone-30',
+            name: '',
+            desc: `The phone is answered at the third ring by a woman with an agreeable, low-pitched voice, who says, 'Hello, Mrs. Hollings here.'\n\n At last -- a bonafide connection to your past life! In your excitement you're momentarily at a loss for words, and the woman asks, 'Who is this?'`,
+            onBlock: () => {
+                if(prevInput === 'john' || prevInput === 'xavier' || 'zane'){
+                    enterRoom('phone-31')
+                }else{
+                    println(`Can you rephrase that please?`)
+                }
+            },
+        },
+        {
+            id: 'phone-31',
+            name: '',
+            desc: `The voice gasps as if you had just repeated her darkest secret. In the briefest of moments, she recovers. \n\n 'I must see you at once, there's much to explain, but you can't come here right now. The servants would recognize you, and they'll probably call the police. Wait a half-hour, and I'll give the servants a few hours off.\n\n You'll find me at the Dakota on the corner of Central Park West and 72nd street. Tell the guard at the door you want to see Colby. Do you need money?`,
+            onBlock: () => {
+                if(prevInput === 'yes'){
+                    enterRoom('phone-33');
+                }else if(prevInput === 'no'){
+                    enterRoom('phone-32');
+                }else{
+                    println(`Before you've said two words, she interrupts. 'Darling, it's really not safe to talk on the phone. But we can speak privately at the Dakota. Remember, the name to give the guard is Colby. Take care.' She hangs up fore you can get in another word. You put down the receiver.`);
+                    pressEnter('return to previous room(either nobe-55 or nobe-54)')
+                }
+            },
+        },
+        {
+            id: 'phone-32',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`Good, then I won't bother making a trip to the bank. Do hurry! See you!' She hangs up before you can get in another word. You put down the receiver.`);
+                pressEnter('return to nobe-55 or nobe-54')
+            },
+        },
+        {
+            id: 'phone-33',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`'I'll bring what I can scrape together in the house. A thousand anyhow. Do hurry! I'm so glad to hear your voice. Take care.' She hangs up before you can get in another word. You put down the receiver.`);
+                pressEnter('return to previous room either nobe-54 or nobe-55')
+            }
+        },
+        //if player tries to call Denise again after this
+        {
+            id: 'phone-34',
+            name: '',
+            desc: ``,
+            onEnter: () => {
+                println(`'I'll bring what I can scrape together in the house. A thousand anyhow. Do hurry! I'm so glad to hear your voice. Take care.' She hangs up before you can get in another word. You put down the receiver.`);
+                pressEnter('previous room')
+            }
+        },
     ],
+
+
     characters: [
         {
             name: ['Bette', 'bette'],
@@ -609,3 +832,8 @@ const nobelesLobby = {
     ]
 }
 //How do we get the game to remember what room the player was in when they leave and return to Bette's Apartment?
+
+/*numbers.push(
+    {number:'555-0042', roomid:'phone-29', contactName: 'Bette'},
+    {number:'555-5413', roomid:'phone-30', 'contactName: 'Denise'}
+  );*/
