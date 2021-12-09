@@ -1329,22 +1329,6 @@ const incrementHour = () => {
 
 };
 
-const incrementHour = () => {
-  if (yHours < 12) {
-    yHours++;
-  } else {
-    yHours = 0;
-  }
-
-  let dumbMinutes = minutes[xMinutes];
-  let dumbHours = hours[yHours];
-  let dumbDays = days[zDays];
-  let dumbAmPm = amPm[qMeridiem];
-
-  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
-
-};
-
 //beg command
 const beg = () => {
   const curRoom = getRoom(disk.roomId); //get current room
