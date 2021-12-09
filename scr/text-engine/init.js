@@ -21,7 +21,7 @@ let annTimer;
 let bettesHome;
 
 //Specifc move counter for Bette's Apartment
-let moveCount;
+let betteCoutner;
 
 // reference to the input element
 let input = document.querySelector('#input');
