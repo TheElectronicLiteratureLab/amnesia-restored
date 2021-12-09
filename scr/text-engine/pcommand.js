@@ -59,7 +59,7 @@ let lookAt = (args) => {
     if (item.desc) {
       println(item.desc);
     } else {
-      println(`You don\'t notice anything remarkable about it.`);
+      //println(`You don\'t notice anything remarkable about it.`);
     }
 
     if (typeof(item.onLook) === 'function') {
@@ -1786,7 +1786,6 @@ let commands = [
     get: takeItem,
     wake: takeItem,
     use: useItem,
-    leave: useItem,
     say: sayString,
     drop: dropItem,
     save: x => save(x),
