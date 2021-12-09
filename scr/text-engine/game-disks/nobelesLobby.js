@@ -129,6 +129,10 @@ const nobelesLobby = {
                 pressEnter('nobe-12');
             },
         },
+
+//Place where player can sleep nobe-15 and nobe-19 goes to nobe-20 if the player has the floppy disk or nobe-21 if the player does not have the floppy disk, player can sleep in nobe-27 and goes to nobe-35, as well as in nobe-38 which loops back to nobe-27 after they sleep.
+
+
         {
             id: 'nobe-12',
             name: '',
@@ -152,14 +156,18 @@ const nobelesLobby = {
                 }else{
                     if(prevInput === 'open blinds'){
                         enterRoom('nobe-13');
-                    }else if (prevInput === 'sleep'){
-                        enterRoom('nobe-14');
                     }else if( prevInput === 'kiss bette'){
                         enterRoom('nobe-17');
                     }
                 }
             },
             items: [
+                {
+                    itemId: 'sofa-bed',
+                    name: [`sofa`, `sofabed`, `sofa-bed`],
+                    desc: `At first glance it appears to be a regular living room sofa but upon further inspection you can see that the sofa opens up into a bed.`,
+                    isOpen: false
+                },
                 {
                     itemId: 'apartment',
                     name: ['Apartment','Room','apartment','room'],
@@ -189,24 +197,6 @@ const nobelesLobby = {
             ],
         },
         {
-            id: 'nobe-14',
-            name: '',
-            desc: `You had better open the sofabed first.`,
-            onBlock: () => {
-                if(prevInput === 'open sofabed' || prevInput === 'open bed'){
-                    enterRoom('nobe 15');
-                }else{
-                    println(`Can you rephrase that please?`)
-                }
-            },
-        },
-        {
-            id: 'nobe-15',
-            name: '',
-            desc: `You take the cushion off the sofa, and pull out the mattress.`,
-            hasBed: true,
-        },
-        {
             id: 'nobe-16',
             name: '',
             desc: `Bette says, 'Ah, bed, what a good idea! I've got to be up by six A.M., So I think I'll join you.' You both get cleaned up, and then retire for the evening. The next morning, you awake to find Bette finished with her preperations for going to work.`,
@@ -234,15 +224,15 @@ const nobelesLobby = {
             desc: ``,
             onEnter: () => {
                 whatEncounter = () => {
-                    randomEncounter = math.floor(math.random()* 3);
-                    if(randomEncounter === 0) {
+                    zRandomEncounter = math.floor(math.random()* 3);
+                    if(zRandomEncounter === 0) {
                         println(`The look Bette is giving you is like a written invitation, and you answer it with your own best body english. Her arms slip around your body. Your tongues take taste tests of each other's flesh. The temperature rises, the beat quickens, and one thing leads to another.`);
                         pressEnter('nobe-12');
                         //need to change time according to what encounter is rolled.
-                    }else if(randomEncounter === 1){
+                    }else if(zRandomEncounter === 1){
                         println(`Impulsively you kiss Bette, and she responds like a dam bursting. Her fingers claw your back, tangle in your hair, and touch all your buttons. Sensuality and love fuse into a single rocket to the moon. Woosh! And then you land on the moon and pick the flowers growing there and whisper endearment for who knows how long until it's time to return to the rocket and jet back to Earth for a soft landing in the tangled sheets of the unfolded sofabed.`);
                         pressEnter('nobe-12');
-                    }else if(randomEncounter === 2){
+                    }else if(zRandomEncounter === 2){
                         println(` Bette responds to your kiss with the delicacy of a blossom opening at the pressure of the dawn's first light. Time stops and you seem, as your kiss continues, to take flight into the fifth dimension where size and color and rhythm all get synchronized and the usual chirping sounds that tell you you're happy become a whole symphony orchestra announcing the same fact, and you're Arturo Toscanini. You life your baton.`);
                         pressEnter('nobe-12');
                     }else{
@@ -259,7 +249,7 @@ const nobelesLobby = {
             desc:`Bette declares that she must be up early the next day for work. After you've each had a shower, you go to bed together on the unfolded sofa and are soon asleep.\n\n When you awake, you find Bette is almost ready to depart for the day.`,
             hasBed: true,
             onEnter: () => {
-                playFat === 100;
+                playFat = 100;
             }
         },
         {
@@ -382,6 +372,12 @@ const nobelesLobby = {
                 {dir: ['kitchen'], id: 'nobe-29'},
             ],
             items: [
+                {
+                    itemId: 'sofa-bed',
+                    name: [`sofa`, `sofabed`, `sofa-bed`],
+                    desc: `At first glance it appears to be a regular living room sofa but upon further inspection you can see that the sofa opens up into a bed.`,
+                    isOpen: false
+                },  
                 {
                     itemId: 'apartment',
                     name: ['Apartment','Room','apartment','room'],

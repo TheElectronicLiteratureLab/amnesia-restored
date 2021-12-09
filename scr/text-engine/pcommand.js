@@ -803,7 +803,14 @@ let open = (itemToOpen) => {
     println('The window is sealed to keep the air-conditioned air in the hotel.');
   } else if (item.itemId === 'dresser') {
     println(`One after the other, you look through all the dresser drawers. You find a shoe-polishing rag that isn't even big enough for a loin cloth and a slip of paper advertising Acme Invisible Reweaving.`);
-  } else {
+  } else if (item.itemId === 'sofa-bed') {
+    if (!item.isOpen) {
+      item.isOpen = true; 
+      println(`You take the cushion off the sofa, and pull out the mattress.`);
+    } else {
+      println(`The sofa is already open.`);
+    };
+  }else {
     println("You can't open that.");
   }
 }
@@ -842,7 +849,18 @@ let close = (itemToOpen) => {
         println(`The ${item.name} is already closed.`);
       }
     }    
-  } else {
+    //sofa bed
+  } else if (item.itemId === 'sofa-bed') {
+    if(item.isOpen) {
+      item.isOpen = false;
+      println(`You put the mattress back into the sofa base and set the cushions over top.`);
+    } else {
+      println(`The mattress is already pulled out.`);
+    }
+  } 
+  
+  
+  else {
       println("You can't close that.");
   }
 }
@@ -1250,6 +1268,8 @@ const sleepFunction = () => {
   const room = getRoom(disk.roomId); //get the current room
   const nightmareRoom = getRoom('nigh-1'); //get the first nightmare room
   const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
+  const sofa1 = getItemInRoomById('sofa-bed', 'nobe-12');
+  const sofa2 = getItemInRoomById('sofa-bed', 'nobe-27');
 
       //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
       if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
@@ -1302,6 +1322,18 @@ const sleepFunction = () => {
         //print this line and dont let them sleep
         println(`You don't feel tired enough to sleep yet.`);
       //else if the room doesnt have a bed and the room is on the streets
+      } else if (room.id === 'nobe-12' && sofa1.isOpen === false) {
+        println(`You had better open the sofa-bed first`);
+
+      } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {
+        enterRoom('nobe-16');
+
+      } else if (room.id === 'nobe-27' && sofa1.isOpen === false) {
+        println(`You had better open the sofa-bed first`);
+
+      } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {  
+        //enterRoom(``)
+
       } else if (!room.hasBed && room.isStreet) {
         //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
