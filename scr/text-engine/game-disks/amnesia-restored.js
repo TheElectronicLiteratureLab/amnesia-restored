@@ -1192,6 +1192,7 @@ const amnesiaRestored = {
       id: 'nigh-1',
       name:'Nightmare',
       desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” \n\n You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
+      hasEntered: false,
       onEnter: () => {
         reenableInput();
         nEntranceRoom = lastRoom.id;
