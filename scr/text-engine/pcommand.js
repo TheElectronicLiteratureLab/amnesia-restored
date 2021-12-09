@@ -1388,12 +1388,11 @@ const sleepFunction = () => {
   const room = getRoom(disk.roomId); //get the current room
   const nightmareRoom = getRoom('nigh-1'); //get the first nightmare room
   const nightmareRoom2 = getRoom('nigh2-1'); //get the second nightmare room
+  const sofa1 = getItemInRoomById('sofa-bed', 'nobe-12');
+  const sofa2 = getItemInRoomById('sofa-bed', 'nobe-27');
 
-    
-      if( playFat >= 41) {//if player fatigue is over 40 don't let them sleep.
-        println(`You don't feel tired enough to sleep yet.`);
-    //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
-      } else if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
+      //if the current room is the first hotel room and the player hasnt ehad a nightmare and the room has a bed then
+      if (room.id === 'hote-room-1' && !nightmareRoom.hasEntered && room.hasBed) {
         //print this line and then
         println(`You roll over and decide to fall back asleep.`);
         //enter the nightmare room
@@ -1409,6 +1408,10 @@ const sleepFunction = () => {
         //enter room of central park sleeping
         enterRoom('cent-slee');
       //else if the player is in central park and their fatigue is more than 40
+      } else if (room.name === 'Somewhere in Central Park' && playFat >= 40) {
+        //print this line of not letting the player sleep
+        println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the hotel room revisited and haven't gotten a nightmare yet and the room has a bed
       } else if (room.id === 'hote-revi' && !nightmareRoom.hasEntered && room.hasBed){
         //print this line
         println(`You lie down on the bed to take a midday nap, you find it hard to fall asleep with the thoughts of who you are running through your mind. But alas sleep does find you eventually.`);
@@ -1427,17 +1430,32 @@ const sleepFunction = () => {
         //enter proper room
         pressEnter('nigh2-1');
       //else if youre in the tenement, you havent gotten the second nightmare, the room has a bed, and the player fatigure is more than 40
+      } else if (room.id === 'tene-3' && !nightmareRoom2.hasEntered && room.hasBed && playFat >= 40) {
+        //print this line & dont let them sleep
+        println(`You don't feel tired enough to sleep yet.`);
+      //else if youre in the tenement, you have gotten the second nightmare, the room has a bed, and the fatigue is less than 40
       } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat <= 40){
         //enter proper room
         enterRoom('nigh2-4');
-        //sleep function inside bette apartment
-      } else if ( room.id === 'nobe-1' && room.hasBed && playFat <= 40) {
-      
-        
-        //sleep function inside bette apartment
-      } else if ( room.id === 'novbe-12' && room.hasBed && playFat <= 40 ) {
-      
-        //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
+      //else if youre in the tenement, have gotten the second nightmare, the room has a bed, and the fatigue is more than 40
+      } else if (room.id === 'tene-3' && nightmareRoom2.hasEntered && room.hasBed && playFat >= 40){
+        //print this line and dont let them sleep
+        println(`You don't feel tired enough to sleep yet.`);
+      //else if the room doesnt have a bed and the room is on the streets
+      } else if (room.id === 'nobe-12' && sofa1.isOpen === false) {
+        println(`You had better open the sofa-bed first`);
+
+      } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {
+        enterRoom('nobe-14');
+
+      } else if (room.id === 'nobe-27' && sofa2.isOpen === true) {
+        println(`You lie down and proceed to take a restful nap.`);
+        incrementHour();
+        playFat = 100;
+
+      } else if (room.id === 'nobe-27' && sofa2.isOpen === false) {
+        println(`You had better open the sofa-bed first`);
+
       } else if (!room.hasBed && room.isStreet) {
         //print this line dont let them sleep
         println(`Napping in the city isn't possible.`)
