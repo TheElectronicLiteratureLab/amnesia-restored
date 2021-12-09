@@ -209,70 +209,77 @@
                         -->
                 </div>
                 <div id="inventory-xIndex-display">
-                    <h2 id="item-name">X-Street Indexer</h2>
-                    <img id="item-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image" style="width: 70%">
-                    <div id='xStreetIndex'>
-                        <form>
-                          <label for="x-Streets">Choose A Number and Cross Street</label>
-                          <select name="Street Number" id="streetNumber">
-                            <option value='0-199'>0-199</option>
-                            <option value="200-299">200-299</option>
-                            <option value="300-399">300-399</option>
-                            <option value="400-499">400-499</option>
-                            <option value="500-599">500-599</option>
-                            <option value="600-699">600-699</option>
-                            <option value="700-799">700-799</option>
-                            <option value="800-899">800-899</option>
-                            <option value="900-999">900-999</option>
-                            <option value="1000-1099">1000-1099</option>
-                            <option value="1100-1199">1100-1199</option>
-                            <option value="1200-1299">1200-1299</option>
-                            <option value="1300-1399">1300-1399</option>
-                            <option value="1400-1499">1400-1499</option>
-                            <option value="1500-1599">1500-1599</option>
-                            <option value="1600-1699">1600-1699</option>
-                            <option value="1700-1799">1700-1799</option>
-                            <option value="1800-1899">1800-1899</option>
-                            <option value="1900-1999">1900-1999</option>
-                            <option value="2000-2099">2000-2099</option>
-                            <option value="2100-2199">2100-2199</option>
-                            <option value="2200-2299">2200-2299</option>
-                            <option value="2300-2399">2300-2399</option>
-                            <option value="2400-2499">2400-2499</option>
-                            <option value="2500-2599">2500-2599</option>
-                            <option value="2600-2699">2600-2699</option>
-                            <option value="2700-2799">2700-2799</option>
-                            <option value="2800-2899">2800-2899</option>
-                            <option value="2900-2999">2900-2999</option>
-                            <option value="3000-3099">3000-3099</option>
-                          </select>
-                  
-                          <select name="Cross Street" id="crossStreet">
-                            <option value="riverside">Riverside</option>
-                            <option value="park">Park</option>
-                            <option value="madison">Madison</option>
-                            <option value="lexington">Lexington</option>
-                            <option value="broadway">Broadway</option>
-                            <option value="10th">10th</option>
-                            <option value="9th">9th</option>
-                            <option value="8th">8th</option>
-                            <option value="7th">7th</option>
-                            <option value="6th">6th</option>
-                            <option value="5th">5th</option>
-                            <option value="4th">4th</option>
-                            <option value="3rd">3rd</option>
-                            <option value="2nd">2nd</option>
-                            <option value="1st">1st</option>
-                          </select>
-                  
-                          <input type="text" id="result">
-                  
-                          <!-- <input type="submit" value="Submit"> -->
-                        </form>
-                  
-                        <button id="submitButton">Go!</button>
-                        
-                      </div>
+                    <div id="xIndex-container">
+                        <h2 id="xIndex-name">X-Street Indexer</h2>
+                        <div id="xIndex-img-container">
+                            <img id="item-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image" style="width: 70%">
+                        </div>
+                        <div id="x-indexer-instructions">
+                            <p>Here is how to use the x-indexer. Via drag and drop and using the forms.</p>
+                        </div>
+                        <div id='xStreetIndex'>
+                            <form>
+                            <label for="x-Streets">Choose A Number and Cross Street</label>
+                            <select name="Street Number" id="streetNumber">
+                                <option value='0-199'>0-199</option>
+                                <option value="200-299">200-299</option>
+                                <option value="300-399">300-399</option>
+                                <option value="400-499">400-499</option>
+                                <option value="500-599">500-599</option>
+                                <option value="600-699">600-699</option>
+                                <option value="700-799">700-799</option>
+                                <option value="800-899">800-899</option>
+                                <option value="900-999">900-999</option>
+                                <option value="1000-1099">1000-1099</option>
+                                <option value="1100-1199">1100-1199</option>
+                                <option value="1200-1299">1200-1299</option>
+                                <option value="1300-1399">1300-1399</option>
+                                <option value="1400-1499">1400-1499</option>
+                                <option value="1500-1599">1500-1599</option>
+                                <option value="1600-1699">1600-1699</option>
+                                <option value="1700-1799">1700-1799</option>
+                                <option value="1800-1899">1800-1899</option>
+                                <option value="1900-1999">1900-1999</option>
+                                <option value="2000-2099">2000-2099</option>
+                                <option value="2100-2199">2100-2199</option>
+                                <option value="2200-2299">2200-2299</option>
+                                <option value="2300-2399">2300-2399</option>
+                                <option value="2400-2499">2400-2499</option>
+                                <option value="2500-2599">2500-2599</option>
+                                <option value="2600-2699">2600-2699</option>
+                                <option value="2700-2799">2700-2799</option>
+                                <option value="2800-2899">2800-2899</option>
+                                <option value="2900-2999">2900-2999</option>
+                                <option value="3000-3099">3000-3099</option>
+                            </select>
+                    
+                            <select name="Cross Street" id="crossStreet">
+                                <option value="riverside">Riverside</option>
+                                <option value="park">Park</option>
+                                <option value="madison">Madison</option>
+                                <option value="lexington">Lexington</option>
+                                <option value="broadway">Broadway</option>
+                                <option value="10th">10th</option>
+                                <option value="9th">9th</option>
+                                <option value="8th">8th</option>
+                                <option value="7th">7th</option>
+                                <option value="6th">6th</option>
+                                <option value="5th">5th</option>
+                                <option value="4th">4th</option>
+                                <option value="3rd">3rd</option>
+                                <option value="2nd">2nd</option>
+                                <option value="1st">1st</option>
+                            </select>
+                    
+                            <input type="text" id="result">
+                    
+                            <!-- <input type="submit" value="Submit"> -->
+                            </form>
+                    
+                            <button id="submitButton">Go!</button>
+                            
+                        </div>
+                    </div>
                     
                 </div>
                 <div id="address-display" class="clickables-left">
