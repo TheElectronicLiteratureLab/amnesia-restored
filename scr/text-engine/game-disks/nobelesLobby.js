@@ -336,7 +336,7 @@ const nobelesLobby = {
                         bettesHome = 0;
                     }
                     
-                    if(xMeridam === 1 & zHours === 5){
+                    if(qMeridiem === 1 & zHours === 5){
                         bettesHome ++;
                     }
                     if(bettesHome === 1){
