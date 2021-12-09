@@ -17,6 +17,12 @@ const nyhistorical = {
           Children (12 and Under) 0.75\n`,
           onEnter: () => 
           {
+            playerC.dScore += 5; // Adding to Detective Score
+            playerC.cScore += 2; // Adding to Character Score
+            playerC.sScore += 5; // Adding to Survival Score
+            console.log(playerC.dScore);
+            console.log(playerC.cScore);
+            console.log(playerC.sScore);
             pressEnter('nyhist-2');
           },
         },

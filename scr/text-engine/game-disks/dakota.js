@@ -18,6 +18,10 @@ const dakota = {
       onEnter: () => 
       {
         reenableInput();  
+        playerC.dScore += 2; // Adding to Detective Score
+        playerC.cScore += 2; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
       },
       onBlock: () => 
       {
@@ -32,6 +36,12 @@ const dakota = {
       id: 'dakota-2a',
       name: `The Dakota`,
       desc: `"And your name?"`,
+      onEnter: () => {
+        playerC.dScore += 20; // Adding to Detective Score
+        playerC.cScore += 15; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+      },
       onBlock: () => 
       {
         if(prevInput === 'hollings'){
@@ -255,6 +265,12 @@ const dakota = {
       name: `The Dakota`,
       desc: `"First, of course, there are the other women in your life. Alison, your ex-assistant. Tell me, Why didn't you marry the poor, pathetic creature?"`,
       onEnter: () =>{
+        playerC.dScore += 25; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        playerC.sScore += 3; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         reenableInput();
       },
       onBlock: () =>
@@ -293,6 +309,12 @@ const dakota = {
       desc: `"Alison was the one who -- at least temporarily -- convinced us that rather than murder you we should let you go to Australia as Mr. and Mrs. Cameron. That's why we put on our little drama at the Sunderland."`,
       onEnter: () => 
       {
+        playerC.dScore += 35; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        playerC.sScore += 0; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         pressEnter('dakota-denise-9');
       },
     },
@@ -359,6 +381,10 @@ const dakota = {
       desc: `She finishes her martini, and looks up with an expression of polite interest, as though she were working at the information booth of a good department store. "Would you like me to pour some more drinks?"`,
       onEnter: () => 
       {
+        playerC.dScore += 10; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
         reenableInput();
       },
       onBlock: () =>
@@ -430,6 +456,12 @@ const dakota = {
       You decide that perhaps telling Denise what she wants to know will give you an opportunity to find some point of weakness, some detail you can use to persuade her that your murder isn't necessary after all. You launch into the tale of your amnesial awakening at the Sunderland.`,
       onEnter: () => 
       {
+        playerC.dScore += 5; // Adding to Detective Score
+        playerC.cScore += 5; // Adding to Character Score
+        playerC.sScore += 3; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         pressEnter('dakota-denise-16');
       },
     },
@@ -622,6 +654,8 @@ const dakota = {
       desc: `"'Meaning Zane was. You were paying him some outrageous price to serve your time on a drug bust while you were enjoying yourself as John Cameron. When you gave me my walking papers, I packed my bag, flew down to Texas, and got married to my convict fiance. Zane was delighted to go along with the joke. After all, he was allowed a week's conjugal privileges."`,
       onEnter: () => 
       {
+        playerC.dScore += 10; // Adding to Detective Score
+        console.log(playerC.dScore);
         pressEnter('dakota-denise-25');
       },
     },
@@ -776,6 +810,12 @@ const dakota = {
       desc: `A man enters the room; you turn to look into the face of Zane Bester -- and it is like looking into a mirror. He has his hair styled exactly like yours. His skin may be a shade paler, and his chin a bit slacker, but otherwise you might be identical twins. The crucial difference between the two of you at this moment, however, is the expression on your faces.`, 
       onEnter: () => 
       {
+        playerC.dScore += 10; // Adding to Detective Score
+        playerC.cScore += 10; // Adding to Character Score
+        playerC.sScore += 3; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
         pressEnter('dakota-zane-2');
       },
     },
