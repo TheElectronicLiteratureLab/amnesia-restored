@@ -560,6 +560,7 @@ function enterBtnClick(){
   window.removeEventListener("keydown", checkKeyPressed, false);
 }
 
+
 let closeDial = () => {
   document.getElementById("dialPad").style.display = "none";
   document.getElementById("tutorial").style.display = "none";
@@ -647,15 +648,29 @@ let dial = () => {
     document.querySelector('input').disabled = true;
     // selecting the input value
     let el = document.getElementById("input");
+    // adding the command to input to then run a one arguement command
     el.value = 'dialing ';
-   
+    // variable to hold the digit choosen by player to add to the input value
+    //let number;
     
-    // adding an event listener to keys
-    window.addEventListener("keydown", checkKeyPressed, false);
+     // adding an event listener to keys
+     window.addEventListener("keydown", checkKeyPressed, false);
     // functionality for keys 
+    
     checkKeyPressed();
     
     window.removeEventListener("keydown", checkKeyPressed, false);
+    
+    // function that adds the key pressed value to the input
+    /*let numdialKey = () => {
+      el.value = el.value + number;
+    }*/
+    
+    // function that deletes last value of input string
+    /*let deleteNum = () => {
+      el.value = el.value.slice(0, -1);
+    }*/
+    
   } else {
     println(`With what phone?`)
   }
