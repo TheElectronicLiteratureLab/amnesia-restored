@@ -1171,30 +1171,15 @@ const incrementTime = () => {
       qMeridiem = 0;
       zDays++;
     }
-
-
     if(yHours >= 12 && qMeridiem === 0) {
       yHours = 0;
-      
-
-      
     } else if (yHours >= 12 && qMeridiem === 1) {
       yHours = 0;
     }
-
     if(zDays>= 7) {
       zDays = 0;
     }
   }
-  // if(yHours === 11 && qMeridiem === 0) { 
-  //   qMeridiem++;
-  // } else if (yHours >= 12 && qMeridiem === 1) {
-  //   zDays++;
-  //   yHours = 0;
-  // }
-  // if(zDays > 7) { //if index every goes above length of days array
-  //   zDays = 0; //set it back to sunday
-  // }
 
   //UPDATE THE UI ELEMENTS 
     let dumbMinutes = minutes[xMinutes];
