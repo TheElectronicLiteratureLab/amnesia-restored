@@ -1712,7 +1712,6 @@ let commands = [
     talk,
     t: talk, // shortcut for talk
     take,
-    get: take,
     items,
     use,
     chars,

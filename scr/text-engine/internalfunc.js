@@ -236,12 +236,7 @@ let response = (e) => {
   if (e.keyCode === ENTER) {
     applyInput();
   }
-
-  
-
 };
-
-
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
 let pressEnter = (id) => {
@@ -268,7 +263,6 @@ let reenableInput = () => {
     document.getElementById('arrow').innerHTML = ">";
     document.querySelector('input').focus(); }, 100);
 };
-
 
 // determine whether the object has the passed name
 // item | character, string -> bool
