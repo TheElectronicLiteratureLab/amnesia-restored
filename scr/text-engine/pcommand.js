@@ -1326,13 +1326,15 @@ const sleepFunction = () => {
         println(`You had better open the sofa-bed first`);
 
       } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {
-        enterRoom('nobe-16');
+        enterRoom('nobe-14');
 
-      } else if (room.id === 'nobe-27' && sofa1.isOpen === false) {
+      } else if (room.id === 'nobe-27' && sofa2.isOpen === true) {
+        println(`You lie down and proceed to take a restful nap.`);
+        incrementHour();
+        playFat = 100;
+
+      } else if (room.id === 'nobe-27' && sofa2.isOpen === false) {
         println(`You had better open the sofa-bed first`);
-
-      } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {  
-        //enterRoom(``)
 
       } else if (!room.hasBed && room.isStreet) {
         //print this line dont let them sleep
