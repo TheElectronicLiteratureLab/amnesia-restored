@@ -1507,7 +1507,6 @@ const sleepFunction = () => {
           //30
           //20
           //10
-          //5
 
   //sleep
       //player should only have to sleep once per day.
@@ -1522,16 +1521,100 @@ const sleepFunction = () => {
         //30%
         //20%
         //10%
-        //5%
 
 
     //in the game it degrades at 2 per cardinal direction input, but can jump up to 4 or 6 
 
+const hungerWarning = () => {
+  if ( ( (prevHung - 40) <= 0 ) && ( (prevHung - 40) >= -9 ) && hungBelow40 === false) {
+    hungBelow40 = true;
+    println(`Your stomach reminds you that you haven't eaten in a while.`);
+  } else if ( ( (prevHung - 30) <= 0 ) && ( (prevHung - 30) >= -9 ) && hungBelow40 === true && hungBelow30 === false) {
+    hungBelow30 = true;
+    println(`Your stomach growls are becoming hard to ignore.`);
+  } else if ( ( (prevHung - 20) <= 0 ) && ( (prevHung - 20) >= -9 ) && hungBelow30 === true && hungBelow20 === false) {
+    hungBelow20 = true;
+    println(`The hunger is slowly turning painful. You really ought to get some food.`);
+  } else if ( ( (prevHung - 10) <= 0 ) && ( (prevHung - 10) >= -9 ) && hungBelow20 === true && hungBelow10 === false) {
+    hungBelow10 = true;
+    println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
+  } else if (playHung <= 0) {
+    println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
+    pressEnter('deat-texa')
+  } else if (playHung >= 40) {
+    return;
+  } else {
+    println(`Error! Hunger warning is malfunctioning!`);
+  };
+};
+
+const ateSomething = (x) => {
+  playHung = playHung + x;
+  hungBelow40 = false;
+  hungBelow30 = false;
+  hungBelow20 = false;
+  hungBelow10 = false;
+
+  updateHung();
+};
+
 const degradeHunger = () => {
+  prevHung = playHung;
+  const chance = Math.floor(Math.random() * 100) + 1 ;
+  const chance2 = Math.floor(Math.random() * 100) + 1 ;
+  if (difficulty === 'easy'){
+    if ( chance <= 25 ) {
+      if ( chance2 <= 20) {
+        playHung = playHung - 2;
+      } else if (chance2 > 20) {
+        playHung = playHung - 1;
+      } else {
+        println(`error, hunger degradation malfunctioning.`)
+      }
+    }
+  } else if (difficulty === 'medium') {
+    if(chance <= 50) {
+      if(chance2 <= 60) {
+        playHung = playHung - 1;
+      } else {
+        playHung = playHung -2;
+      }
+    }
+  } else if (difficulty === 'hard') {
+    if(chance <= 75) {
+      if(chance2 <= 50) {
+        playHung = playHung - 1;
+      } else {
+        playHung = playHung - 2;
+      }
+    }
+  } else {
+    println(`Error, difficulty is not set.`)
+  }
+  updateHung();
+  hungerWarning();
+};
+
+
+
+const degradeFatigue = () => {
+  if (difficulty === 'easy'){
+
+  } else if (difficulty === 'medium') {
+
+  } else if (difficulty === 'hard') {
+
+  } else {
+    println(`Error, difficulty is not set.`)
+
+  }
+
 
 };
 
-const degradeFatigue = () => {
+const fatigueWarning = () => {
+
+
 
 };
 
