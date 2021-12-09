@@ -1164,19 +1164,37 @@ const incrementTime = () => {
   if(xMinutes >= 12 ) { //if index ever goes above length of minutes array 
     xMinutes = 0; //set index back to beginning
     yHours++;//then increment the hours index
-  }
-  if(yHours >= 12) { //if index ever goes above length of hours array
-    yHours = 0; //set index back to beginning 
-      if(qMeridiem === 1) { //if it is PM 
-      qMeridiem--;//set it back to Am
-      zDays++; //incremenent days array
-    } else {
-      qMeridiem++; //set it to PM
+
+    if(yHours === 11 && qMeridiem === 0 ) {
+      qMeridiem = 1;
+    } else if (yHours === 11 &&  qMeridiem === 1){
+      qMeridiem = 0;
+      zDays++;
+    }
+
+
+    if(yHours >= 12 && qMeridiem === 0) {
+      yHours = 0;
+      
+
+      
+    } else if (yHours >= 12 && qMeridiem === 1) {
+      yHours = 0;
+    }
+
+    if(zDays>= 7) {
+      zDays = 0;
     }
   }
-  if(zDays >= 7) { //if index every goes above length of days array
-    zDays = 0; //set it back to sunday
-  }
+  // if(yHours === 11 && qMeridiem === 0) { 
+  //   qMeridiem++;
+  // } else if (yHours >= 12 && qMeridiem === 1) {
+  //   zDays++;
+  //   yHours = 0;
+  // }
+  // if(zDays > 7) { //if index every goes above length of days array
+  //   zDays = 0; //set it back to sunday
+  // }
 
   //UPDATE THE UI ELEMENTS 
     let dumbMinutes = minutes[xMinutes];

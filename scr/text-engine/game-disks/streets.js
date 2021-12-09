@@ -34963,7 +34963,7 @@ const streets = {
       coord: [100, 100],
       name: 'Subway Station',
       desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
-      onEnter = () => {
+      onEnter: () => {
         const room = getRoom(disk.roomId);
           room.enteredFrom = lastRoom.id;
           room.exits[0].id = room.enteredFrom;
