@@ -1022,7 +1022,32 @@ const press = (button) => {
   }
 }
 
+//A jump command to randomly jump random height 
+//Kind of a fun addition
+const jump = () => {
+  let feet = Math.floor(Math.random() * 3);
+  let inches = Math.floor(Math.random() * 12);
+  println(`You jumped ${feet}' ${inches}" off the ground.`)
+  if (disk.roomId === 'jump-warn') {
+    println(`All right, if you say so. The window isn’t designed for opening, but that’s not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
+    document.getElementById('output').innerHTML = '';
+    enterRoom('hell-1');
+  }
+}
 
+//Jump command that is called when in hotel room
+//Only used in hotel room.
+const jumpOut = (prep, winJumpOut) => {
+  if (disk.roomId === 'hote-room-8' || disk.roomId === 'hote-revi') {
+    if (winJumpOut === 'window') {
+      enterRoom('jump-warn');
+    }
+  } else if (disk.roomId === 'jump-warn' && winJumpOut === 'window') {
+    println(`All right, if you say so. The window isn’t designed for opening, but that’s not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
+    document.getElementById('output').innerHTML = '';
+    enterRoom('hell-1');
+  }
+}
 
 
 ////////////////////////////////////////////////
@@ -1726,7 +1751,8 @@ let commands = [
     dialing,
     beg,
     sleep: sleepFunction,
-    press
+    press,
+    jump,
   },
   // one argument (e.g. "go north", "take book")
   {
@@ -1783,7 +1809,8 @@ let commands = [
     },
     talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
-    turn: args => turnOffOn(args[0], args[1])
+    turn: args => turnOffOn(args[0], args[1]),
+    jump: args => jumpOut(args[0], args[1])
   },
   //3 arguments 
   {

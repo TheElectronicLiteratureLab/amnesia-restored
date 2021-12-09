@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'nigh-9', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -306,7 +306,7 @@ const amnesiaRestored = {
             'static',
             'Channel 7 also has a news program. The President has asked Congress for money for arms. Two people died in a fire in the Bronx. \nRioting continues for the fifth day at the State Penitentiary at Revoltillo in Texas, where prisoners are protesting the prison’s food and its unsanitary conditions. There is some footage showing vats of stew cooking in the prison kitchen, the sight of which makes you continue to feel strangely queasy all through the weather forecast, which is for another bright and sunny day.',
             'static',
-            `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: “100 people surveyed, top five answers are on the board--here’s the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
+            `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board--here’s the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
             'static',
             'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
             'static',
@@ -833,7 +833,7 @@ const amnesiaRestored = {
               'static',
               'Channel 7 also has a news program. The President has asked Congress for money for arms. Two people died in a fire in the Bronx. \nRioting continues for the fifth day at the State Penitentiary at Revoltillo in Texas, where prisoners are protesting the prison’s food and its unsanitary conditions. There is some footage showing vats of stew cooking in the prison kitchen, the sight of which makes you continue to feel strangely queasy all through the weather forecast, which is for another bright and sunny day.',
               'static',
-              `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: “100 people surveyed, top five answers are on the board--here’s the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
+              `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board--here’s the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
               'static',
               'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
               'static',
@@ -1191,14 +1191,14 @@ const amnesiaRestored = {
     {
       id: 'nigh-1',
       name:'Nightmare',
-      desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” \n\n You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. “Come here, X,” the voice insists. “Come here to me, in the **mirror**.”`,
+      desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. "X," a voice whispers in the crimson twilight, "X, are you there?" \n\n You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. "Come here, X," the voice insists. "Come here to me, in the **mirror**."`,
       hasEntered: false,
       onEnter: () => {
         reenableInput();
         nEntranceRoom = lastRoom.id;
       },
       onBlock: () => {
-        println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: “Come here, X. Come here to me, in the **mirror**.”`)
+        println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: "Come here, X. Come here to me, in the **mirror**."`)
       },
       exits:[
         {dir: 'mirror', id: 'nigh-2'},
@@ -1215,7 +1215,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-4',
         name: '',
-        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n “Come,” says the faceless figure, putting his arm about your shoulder. “You mustn’t be late your first day at work.” If you wished to, you could not resist his greater strength. You enter the empty subway car. “Quickly!” Your companion hands you a spray can of black enamel. “Before the police come and you’re arrested--write a graffito. Quickly!”`,
+        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n "Come," says the faceless figure, putting his arm about your shoulder. "You mustn’t be late your first day at work." If you wished to, you could not resist his greater strength. You enter the empty subway car. "Quickly!" Your companion hands you a spray can of black enamel. "Before the police come and you’re arrested--write a graffito. Quickly!"`,
         onEnter: () =>{
           reenableInput();
         },
@@ -1262,7 +1262,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter:() =>{
-          println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito “Ladies and gentlemen,” the Mayor announces. “Today we eliminate once and for all the problem of graffiti in our subways. Commissioner  ${nightmareCeleb}, please take the guilty party away.`)
+          println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito "Ladies and gentlemen," the Mayor announces. "Today we eliminate once and for all the problem of graffiti in our subways. Commissioner  ${nightmareCeleb}, please take the guilty party away.`)
           pressEnter('nigh-7');
         },
     },
@@ -1287,13 +1287,13 @@ const amnesiaRestored = {
     {
         id: 'nigh-9',
         name: '',
-        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. "dI’ll have to leave you here,” your companion tells you, “but the Personnel Office is on the 13th f1oor. And there--” His featureless head nods toward the purring **escalator** at the center of the deserted sales floor. ”-is the **escalator**. See you later X.”`,
+        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. "dI’ll have to leave you here," your companion tells you, "but the Personnel Office is on the 13th f1oor. And there--" His featureless head nods toward the purring **escalator** at the center of the deserted sales floor. "-is the **escalator**. See you later X."`,
         onEnter: () => {
             reenableInput();
         },
         onBlock: () => {
           if(prevInput !== 'go to escalator'){
-            println(`You try to ${prevInput} but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the **escalator**. You nod. He points his bony finger toward the purring, gliding steps. “It’s right there, sir,” he informs you.`);
+            println(`You try to ${prevInput} but you can’t. Your acts don’t seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the **escalator**. You nod. He points his bony finger toward the purring, gliding steps. "It’s right there, sir," he informs you.`);
           } else {
             enterRoom('nigh-sale');
           }
@@ -1364,7 +1364,7 @@ const amnesiaRestored = {
     {
         id:'nigh-sale5',
         name: '',
-        desc:`You take the escalator to the fifth floor, where a white­haired salesman stands daydreaming behind a counter displaying all kinds of cutlery. “Could I interest you in a knife, Sir?” he asks wistfully.`,
+        desc:`You take the escalator to the fifth floor, where a white­haired salesman stands daydreaming behind a counter displaying all kinds of cutlery. "Could I interest you in a knife, Sir?" he asks wistfully.`,
         //need to make sure this yes or no question is coded correctly
         onBlock: () => {
           if (prevInput === 'yes') {
@@ -1377,7 +1377,7 @@ const amnesiaRestored = {
     {
         id:'knif-sale',
         name: '',
-        desc:`“Very good, Sir. This--” He holds a knife with an 8-inch stainless steel blade to your throat. “--is our very best all-purpose carving knife. And this--” The carving knife drops from his hand, and he takes another, smaller knife from the counter. “This is a superb knife for boning chicken.” He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
+        desc:`"Very good, Sir. This--" He holds a knife with an 8-inch stainless steel blade to your throat. "--is our very best all-purpose carving knife. And this--" The carving knife drops from his hand, and he takes another, smaller knife from the counter. "This is a superb knife for boning chicken." He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
         onEnter: () => {
             pressEnter('nigh-sale6');
         },
@@ -1385,7 +1385,7 @@ const amnesiaRestored = {
     {
         id: 'knif-sale2',
         name: '',
-        desc: `“No? You won’t even look at my knives?” The white-haired salesman sighs. “I don’t know why I waste my time. All these years, and all these knives, and never once … never once … “He picks up the largest of the knives from the counter and, with a really remarkable steadiness of purpose, slowly positions it over the left-hand breast pocket of his suit and commits suicide. “I’m sorry,” he says, with his last dying breath. “I tried to be a good salesman. I did … my level … best.”`,
+        desc: `"No? You won’t even look at my knives?" The white-haired salesman sighs. "I don’t know why I waste my time. All these years, and all these knives, and never once … never once … "He picks up the largest of the knives from the counter and, with a really remarkable steadiness of purpose, slowly positions it over the left-hand breast pocket of his suit and commits suicide. "I’m sorry," he says, with his last dying breath. "I tried to be a good salesman. I did … my level … best."`,
         onEnter: () => {
             pressEnter('nigh-sale6');
         },
@@ -1423,7 +1423,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale8',
         name: '',
-        desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. “Hello!” says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - “I see we have our work cut out for us today! Sit down, please.” He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
+        desc:`You take the escalator to the eighth floor, where Oldman’s Hair-Styling Saloon is situated. "Hello!" says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - "I see we have our work cut out for us today! Sit down, please." He gestures toward a low chair next to the shampooing sink. You shake your head. You don’t want a shampoo. The hair stylist insists.`,
         onEnter: () => {
           pressEnter('sham-sale');
         },
@@ -1431,7 +1431,7 @@ const amnesiaRestored = {
     {
         id:'sham-sale',
         name:'',
-        desc:`“This won’t take more than five or six hours,” the aged hair stylist assures you. “We simply have to remove all these facial growths and seal these unsightly pores with sealing wax and then fill in these repulsive cavities. My, what large nostrils you have! But with your nose removed they won’t be a problem any longer. Then we’ll take care of your eyes with some industrial-strength eye-cover. The better stores these days prefer mannequins with perfectly blank faces. Eyes are out, didn’t you know that?”`,
+        desc:`"This won’t take more than five or six hours," the aged hair stylist assures you. "We simply have to remove all these facial growths and seal these unsightly pores with sealing wax and then fill in these repulsive cavities. My, what large nostrils you have! But with your nose removed they won’t be a problem any longer. Then we’ll take care of your eyes with some industrial-strength eye-cover. The better stores these days prefer mannequins with perfectly blank faces. Eyes are out, didn’t you know that?"`,
         onEnter:() =>{
             pressEnter('sham-sale2');
         },
@@ -1439,7 +1439,7 @@ const amnesiaRestored = {
     {
         id:'sham-sale2',
         name: '',
-        desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he’d promised, you have been completely remodeled in the new blank style. “Now, isn’t that a lot better,” the old man says, holding up a mirror for you to see your now so much more geometrical face. “I’m sure the Personnel Department will hire you right off the bat--and assign you to work in one of the front windows. Well, have a nice day.” And he points you toward the Up escalator.`,
+        desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he’d promised, you have been completely remodeled in the new blank style. "Now, isn’t that a lot better," the old man says, holding up a mirror for you to see your now so much more geometrical face. "I’m sure the Personnel Department will hire you right off the bat--and assign you to work in one of the front windows. Well, have a nice day." And he points you toward the Up escalator.`,
         onEnter: () =>{
             reenableInput();
         },
@@ -1455,7 +1455,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale9',
         name: '',
-        desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. “That is a riddle,” the salesman explains, “and you must solve it.” The lines on the screen are:`,
+        desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
         onEnter: () => {
           pressEnter('ridd-1');
         },
@@ -1485,7 +1485,7 @@ const amnesiaRestored = {
     {
       id: 'ridd-2',
       name: '',
-      desc:`“Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--” \nBut instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n“The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?” \nYou think to yourself that you could run away to the next **escalator** or **look** for the switch.`,
+      desc:`"Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--" \nBut instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n"The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?" \nYou think to yourself that you could run away to the next **escalator** or **look** for the switch.`,
       onBlock: () => {
         if (prevInput === 'escalator' || prevInput === 'run' || prevInput === 'run away' || prevInput === 'run to escalator') {
           enterRoom('nigh-sale10');
@@ -1520,14 +1520,14 @@ const amnesiaRestored = {
       name:'',
       desc: ``,
       onEnter: () => {
-          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. “Hello,” says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. “My name’s Hugette, what’s yours?” You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. “My full name,” she continues, “is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?”`)
+          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name’s Hugette, what’s yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
           pressEnter('nigh-sale11');
       },
     },
     {
       id: 'nigh-sale11',
       name: '',
-      desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. “Oh dear,” she complains. “It’s stuck! Help me, won’t you?” You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. “Stop!” she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,
+      desc: `Taking your silence as her permission, Hugette takes a good grip on your head and slowly unscrews it from your neck. Then she gives it to you to hold while she tries to unscrew her own head. "Oh dear," she complains. "It’s stuck! Help me, won’t you?" You set your head down on the counter behind you and take a firm grip on Hugette’s head and try to twist it loose, but it’s stuck to her neck as solidly as the cap on a jar of pickles. "Stop!" she shrieks. You stop twisting-­ and then realize she did not mean you. She was yelling at the mannequin who has taken your head from the counter while your back was turned and is now running away with it up the escalator.`,
       onEnter: () => {;
         pressEnter('nigh-sale12');
       },
@@ -1561,7 +1561,7 @@ const amnesiaRestored = {
     {
       id:'nigh-sale14',
       name: '',
-      desc:`“You won’t? You won’t!” he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: “Help! Help me get out of this box. I’m suffocating. Help!” Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
+      desc:`"You won’t? You won’t!" he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I’m suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
       onBlock: () => {
         if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
           enterRoom('nigh-sale15');
@@ -1669,7 +1669,7 @@ const amnesiaRestored = {
   {
     id: 'nigh-2nd',
     name: 'You are dreaming.',
-    desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. “X,” a voice whispers in the crimson twilight, “X, are you there?” 
+    desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel’s gigantic neon light that glows a baleful red outside the window. "X," a voice whispers in the crimson twilight, "X, are you there?" 
     
     You decide to ignore the voice this time.`,
     onEnter: () => {
@@ -1681,12 +1681,33 @@ const amnesiaRestored = {
     //                Suicide at the Sunderland                /
     //********************************************************/
     {
-      id: 'hell-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: 'Lethe', // Displayed each time the player enters the room.
-      desc: `Now you are dead--but that isn’t the end of your problems. Because it turns out that there is an afterlife--and you are there. It is highly unpleasant, though strictly speaking it isn’t hell. Not yet. You and a few thousand other naked anxious souls are standing on the bank of a misty black river, being stung by mosquitoes and bitten by large centipedes.`, // Displayed when the player first enters the room.
+      id: 'jump-warn',
+      name: '',
+      desc: `Hey, come on, you're on the 15th floor. That would be suicide, and suicide is always a dumb idea.`,
+      onEnter: () => {
+        autoSave();
+      },
+      onBlock: () => {
+        if (prevInput === 'jump out window' || prevInput === 'jump' || prevInput === 'jump out the window') {
+          document.getElementById('output').innerHTML = '';
+          println(`All right, if you say so. The window isn’t designed for opening, but that’s not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
+          pressEnter('hell-1');
+        } else {
+          println(`You think better of jumping out the window. It wouldn't really help your predicament.`)
+          if (lastRoom.id === 'hote-room-8') {
+            enterRoom('hote-room-8')
+          } else if(lastRoom.id === 'hote-revi') {
+            enterRoom('hote-revi');
+          }
+        }
+      }
+    },
+    {
+      id: 'hell-1',
+      name: 'Lethe', 
+      desc: `Now you are dead--but that isn’t the end of your problems. Because it turns out that there is an afterlife--and you are there. It is highly unpleasant, though strictly speaking it isn’t hell. Not yet. You and a few thousand other naked anxious souls are standing on the bank of a misty black river, being stung by mosquitoes and bitten by large centipedes.`, 
       onEnter: () =>{
-          pressEnter('hell-2');
-          
+        pressEnter('hell-2');
       },
       exits: [],
     },
@@ -1694,8 +1715,8 @@ const amnesiaRestored = {
       id: 'hell-2',
       name: '',
       desc: `Every few years a kind of canoe comes up to the shore, and an old man with a long white beard and eyes that glow like a battery-operated jack-o-lantern offers the waiting throng a chance to get into the canoe and be taken to the seat of the Last Judgement. But first, you have to tell him your name. And you--and all these others--are the poor souls who died in a state of amnesia. You can’t remember your names, and you can’t get either to heaven or to hell until this old geezer, whose name is Charon, has checked you off his list. Each time he returns you have one chance to tell him what you think your name might be.`,
-      onEnter: () =>{
-          pressEnter('hell-3');
+      onEnter: () => {
+        pressEnter('hell-3');
       },
       exits: [],
     },
@@ -1704,62 +1725,67 @@ const amnesiaRestored = {
       name: '',
       desc: `Then if you’re wrong, you’ve got a few years to think of another name that might be yours. Eventually in the course of all eternity, you’ll probably come up with the name that corresponds to the name on his list. So, here’s your first chance. Charon hands you your Emigration Card, and there’s the blank you’ve got to fill in.\n PRINT YOUR NAME HERE`,
       onEnter: () =>{
-          reenableInput();
-          },  
-      exits: [
-        {
-           dir: ['hollings', 'xavier'], 
-           id: 'hell-4',
-        },
-        {
-           dir: ['cameron', 'john', ], 
-           id: 'corridor-1503',
-       },
-       {
-        dir: ['' ], // on exit command? 
-        id: 'corridor-1503',
-        },
-       ],
+        reenableInput();
       },
+      onBlock: () => {
+        if (prevInput === 'xavier hollings' || prevInput === 'xavier' || prevInput === 'hollings') {
+          enterRoom('hell-4');
+        } else if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron') {
+          println('That is an interesting name but, ');
+          enterRoom('hell-6');
+        } else if (prevInput === '') {
+          println('You need to print a name.');
+        } else {
+          enterRoom('hell-6');
+        }
+      }
+    },
     {
       id: 'hell-4',
       name: '',
-      desc: `Charon examines your card, scratches his head, and hands it back. “So tell me, Xavier,” he says, “what’s your middle name?”`,
-      exit: [
-        {
-        dir: ['' ], // on exit command? 
-        id: 'hell-5',
-        },
-      ],
-    },
-    {
-      id: 'hell-5',
-      name: '',
-      desc: `"Sorry, that's not right. Better luck next time."”`,
-      onEnter: () =>{
-          pressEnter(loadDisk(gameOver));
-      },
-      exits: [],
+      desc: `Charon examines your card, scratches his head, and hands it back. "So tell me, Xavier," he says, "what’s your middle name?"`,
+      onBlock: () => {
+        let styx = getRoom('hell-6');
+        if (prevInput !== '') {
+          println('You need to say a name.');
+        } else {
+          styx.charonReturns++;
+          enterRoom('hell-6');
+        }
+      }
     },
     {
       id: 'hell-6',
       name: '',
-      desc: `“Sorry,” says Charon, handing you back your Emigration Card. “I’ve got no pick-up order for anyone by this name. Better luck next time.” Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`,
-      exits: [
-        {
-           dir: ['hollings', 'xavier'], 
-           id: 'hell-4',
-        },
-        {
-           dir: ['cameron', 'john', ], 
-           id: 'corridor-1503',
-       },
-       {
-        dir: ['' ], // on exit command? 
-        id: 'corridor-1503',
-        },
-       ],
-
+      charonReturns: 0,
+      desc: `"Sorry," says Charon, handing you back your Emigration Card. "I’ve got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`,
+      onBlock: () => {
+        let styx = getRoom('hell-6');
+        if (prevInput === 'xavier hollings' || prevInput === 'xavier' || prevInput === 'hollings') {
+          enterRoom('hell-4');
+        } else if (prevInput === 'john cameron iii' || prevInput === 'john cameron' || prevInput === 'john' || prevInput === 'cameron') {
+          println(`"That is an interesting name but, sorry," says Charon, handing you back your Emigration Card. "I’ve got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`);
+          styx.charonReturns ++;
+        } else if (prevInput === '') {
+          println('You need to print a name.');
+        } else {
+          println(`"Sorry," says Charon, handing you back your Emigration Card. "I’ve got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat. You join in their collective groan as Charon’s ferryboat vanishes into the mists of the river Styx.\n Five Years have gone by. Charon has returned in a mood of angry impatience. You fill out the Emigration Card. \n PRINT YOUR NAME HERE.`);
+          styx.charonReturns ++;
+        }
+        if (styx.charonReturns > 5) {
+          enterRoom('eter-fore');
+        }
+      }
+    },
+    {
+      id: 'eter-fore',
+      name: 'Eternity Without a Name',
+      desc: `"Sorry," says Charon, handing you back your Emigration Card. "I’ve got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat.`,
+      onEnter: () => {
+        println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
+        end1Eternity = true;
+        pressEnter('game-over');
+      }
     },
 
     //**********************************************************/
@@ -4079,7 +4105,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Health Club Reception Room', // Displayed each time the player enters the room.
-      desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be “Back in 10 Minutes.”
+      desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes."
       
       The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
       exits: [
@@ -4102,9 +4128,9 @@ const amnesiaRestored = {
       name: `Women's Locker Room`,
       desc: `You enter the women’s locker room, and a woman who seems to be in training for the Olympic hammer throw looks at you with the joy of combat already glistening in her eyes. 
       
-      “Not here, buddy,” she informs you in a low voice. “This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room.” 
+      "Not here, buddy," she informs you in a low voice. "This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room." 
       
-      She points the direction with her thumb. “That way.”`,
+      She points the direction with her thumb. "That way."`,
       
       exits: [
         {
@@ -4177,7 +4203,7 @@ const amnesiaRestored = {
       name: `Men's Locker Room`,
       desc: `You are in the men’s locker room. 
 
-      To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked “Sauna,” that on the left “Massage.” Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
+      To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked "Sauna," that on the left "Massage." Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
       exits: [
         {
           dir: ['leave', 'exit'],
@@ -4329,7 +4355,7 @@ const amnesiaRestored = {
     {
       id: 'deja-vu2',
       name: '',
-      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. “What’s the matter, Juanito?” he asks in a drawling, twanging, Texas voice.`,
+      desc: `At last, your screams attract the attention of your jailer. The grill of the door is pushed aside, and his face appears, leering, in the aperture. "What’s the matter, Juanito?" he asks in a drawling, twanging, Texas voice.`,
         onEnter: () => {
             pressEnter('deja-vu3');
         },
@@ -4358,7 +4384,7 @@ const amnesiaRestored = {
     {
       id: 'deja-vu4',
       name: '',
-      desc: `“Sorry, Juanito,” your jailer says, and slams the grill shut.`,
+      desc: `"Sorry, Juanito," your jailer says, and slams the grill shut.`,
 
       onEnter: () => {
           pressEnter('deja-vu5');
@@ -4388,9 +4414,9 @@ const amnesiaRestored = {
     {
       id: 'deja-vu7',
       name: '',
-      desc: `The jailer favors you with a gap-toothed smile. “You’re learning quick, Juanito.” 
+      desc: `The jailer favors you with a gap-toothed smile. "You’re learning quick, Juanito." 
       
-      He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, “Waiter, there’s a fly in my soup!” And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.`,
+      He goes off and returns in a few minutes with the promised bowl of chili, which he hands you through the aperture in the door. Your mouth waters, and your hand is trembling as you dip the plastic spoon into the lukewarm chili. And then you see the large dead tarantula with which the jailer has garnished your dinner. You laugh, thinking of the classic line, "Waiter, there’s a fly in my soup!" And then you flip the dead tarantula off the chili and wolf down the congealed mixture voraciously.`,
 
       onEnter: () => {
         pressEnter('deja-vu8')
@@ -4423,7 +4449,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club14',
       name: 'Massage Room',
-      desc: `“Mr. Cameron, are you conscious, can you hear me?”
+      desc: `"Mr. Cameron, are you conscious, can you hear me?"
       A man’s face is bending down close to your own. You do not recognize him. Gradually you realize that you are no longer in the sauna, but in another small room, where you are lying on your back on a masseur’s table. The massage room, this must be.`,
       onEnter: () => {
           pressEnter('heal-club15')
@@ -4433,8 +4459,8 @@ const amnesiaRestored = {
     {
         id: 'heal-club15',
         name:'Massage Room',
-        desc: `“He’s opened his eyes,” another voice says.
-        “Yes,” says the man standing above you, “but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t.”`,
+        desc: `"He’s opened his eyes," another voice says.
+        "Yes," says the man standing above you, "but there’s this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can’t take the heat in that sauna. Some guys can’t."`,
         onEnter: () => {
             pressEnter('heal-club16');
         },
@@ -4443,7 +4469,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club16',
         name: 'Massage Room',
-        desc: `He turns his attention back to you. “Hey, Mr. Cameron—are you alright?”`,
+        desc: `He turns his attention back to you. "Hey, Mr. Cameron—are you alright?"`,
         onEnter: () => {
             pressEnter('heal-club17');
         },
@@ -4452,7 +4478,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club17',
       name: 'Massage Room',
-      desc: `“He’s trying to say something,” the other voice observes, “but the words are so slurred. Do you think he’s still drunk?”`,
+      desc: `"He’s trying to say something," the other voice observes, "but the words are so slurred. Do you think he’s still drunk?"`,
       onEnter: () => {
           pressEnter('heal-club18');
       },
@@ -4461,7 +4487,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club18',
         name: 'Massage Room',
-        desc: `The man above you bends over to sniff your breath. “Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-” He lowers his voice to a whisper,`,
+        desc: `The man above you bends over to sniff your breath. "Doesn’t seem to be. No, I figure it’s just heat prostration. Tell you what, Buddy, you mop up around the pool, and I’ll give Cameron here a once-over-lightly, then help him into some clothes. There must be something he can wear in his locker. After that I’d appreciate it if you would steer him back to his room.  Confidentially-" He lowers his voice to a whisper,`,
         onEnter: () => {
             pressEnter('heal-club19')
         },
@@ -4470,11 +4496,11 @@ const amnesiaRestored = {
     {
         id: 'heal-club19',
         name: 'Massage Room',
-        desc: `“--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers.” 
+        desc: `"--if there is something seriously wrong with him, I don’t want him shipped off to a hospital from here. It doesn’t look good for a gym to have people leaving it on stretchers." 
         
-        “Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?” The man nods. 
+        "Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?" The man nods. 
         
-        “It was on the floor of the sauna.”`,
+        "It was on the floor of the sauna."`,
         onEnter: () => {
             pressEnter('heal-club20');
         },
@@ -4485,7 +4511,7 @@ const amnesiaRestored = {
         name: 'Massage Room',
         desc: `The man who’d done most of the talking now begins to give you a very gentle massage. You find it strangely soothing. It’s as though he were smoothing tensions from your mind and your muscles at the same time.
         
-        You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of “your” locker.`,
+        You begin to be able to think more clearly. Now at least you have a reasonable explanation of how you came to be in Room 1502 without any clothes. Apparently you’ve been a long-term member of this gym, for the masseur spoke of "your" locker.`,
         onEnter: () => {
             pressEnter('heal-club21');
         },
@@ -4505,7 +4531,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club22',
         name: 'Massage Room',
-        desc: `“Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?”`,
+        desc: `"Sorry to have to cut through your padlock, Mr. Cameron. But I remember how frustrated you got last night trying to remember the combination. I would have cut off the lock then, but you’d passed out in the sauna first. You feeling a little better now?"`,
         onEnter: () => {
             reenableInput();
         },
@@ -4521,7 +4547,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club23',
         name: 'Massage Room',
-        desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
+        desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?" You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
         exits: [],
       items: [
         {
@@ -4548,7 +4574,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club24',
         name: 'Massage Room',
-        desc: `The masseur lays his hand on your shoulder. “Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?” You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
+        desc: `The masseur lays his hand on your shoulder. "Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?" You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
         items: [
           {
             itemId: 'canvasbag',
@@ -4600,7 +4626,7 @@ const amnesiaRestored = {
           },
           {
             name: 'Address Book',
-            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as “SEX” and “Drugs.” Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
             onTake: () => {
               numbers.push(
@@ -4639,9 +4665,9 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if(prevInput !== 'yes') {
-          println(`“That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time.” Half a minute later, he raps again. “How about it, Mr. Cameron. Do you think you can make it back to your room?”`)
+          println(`"That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time." Half a minute later, he raps again. "How about it, Mr. Cameron. Do you think you can make it back to your room?"`)
         } if (prevInput === 'leave' || 'exit') {
-          println(`“Ah, Mr. Cameron,” the masseur says unctuously. “I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door.” You try to protest, but your words go unheeded.`)
+          println(`"Ah, Mr. Cameron," the masseur says unctuously. "I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door." You try to protest, but your words go unheeded.`)
           enterRoom('heal-club27');
         }else {
           
@@ -4723,7 +4749,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f3', // if the player chooses firing squad
       name: '', // Displayed each time the player enters the room.
-      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. "Oh, Xavier!" she exclaims as you come into the room. "My poor darling! How shall I ever bear this loss?" She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
       onLook: () =>  {
         const room = getRoom('deat-f3');
         room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
@@ -4783,7 +4809,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f5', // after Kiss, hug, or touch  Denise if firing squad selected
       name: '', // Displayed each time the player enters the room.
-      desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
+      desc: `Denise affects to wipe away a tear with her cambric handkerchief. "Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself." She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
       onEnter: () => {
           pressEnter('deat-f9');
       },
@@ -4801,7 +4827,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if firing squad selected
       name: '', // Displayed each time the player enters the room.
-      desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
+      desc: `"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f9');
       },
@@ -4810,7 +4836,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
       name: '', // Displayed each time the player enters the room.
-      desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
+      desc: `Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f9');
       },
@@ -4819,7 +4845,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f9', // Proceeding to last meal node if firing squad selected
       name: '', // Displayed each time the player enters the room.
-      desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+      desc: `Denise rises from her chair. "So long, sucker. Have a nice afterlife." She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f10');
         reenableInput();
@@ -4829,7 +4855,7 @@ const amnesiaRestored = {
     {
       id: 'deat-le3', // if the player chooses lethal injection
       name: '', // Displayed each time the player enters the room.
-      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. “Oh, Xavier!” she exclaims as you come into the room. “My poor darling! How shall I ever bear this loss?” She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. "Oh, Xavier!" she exclaims as you come into the room. "My poor darling! How shall I ever bear this loss?" She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
       onLook: () =>  {
         const room = getRoom('deat-le3');
       room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
@@ -4870,7 +4896,7 @@ const amnesiaRestored = {
   {
     id: 'deat-le5', // after Kiss, hug, or touch  Denise if lethal injection selected
     name: '', // Displayed each time the player enters the room.
-    desc: `Denise affects to wipe away a tear with her cambric handkerchief. “Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself.” She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
+    desc: `Denise affects to wipe away a tear with her cambric handkerchief. "Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself." She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
     onEnter: () => {
         pressEnter('deat-le9');
     },
@@ -4888,7 +4914,7 @@ const amnesiaRestored = {
   {
     id: 'deat-le7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if lethal injection selected
     name: '', // Displayed each time the player enters the room.
-    desc: `“It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt.”`, // Displayed when the player first enters the room.
+    desc: `"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le9');
     },
@@ -4897,7 +4923,7 @@ const amnesiaRestored = {
   {
     id: 'deat-le8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
     name: '', // Displayed each time the player enters the room.
-    desc: `Denise sighs. “Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds.” She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
+    desc: `Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le9');
     },
@@ -4906,7 +4932,7 @@ const amnesiaRestored = {
   {
     id: 'deat-le9', // Proceeding to last meal node if firing squad selected
     name: '', // Displayed each time the player enters the room.
-    desc: `Denise rises from her chair. “So long, sucker. Have a nice afterlife.” She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
+    desc: `Denise rises from her chair. "So long, sucker. Have a nice afterlife." She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-le10');
     },
@@ -4915,7 +4941,7 @@ const amnesiaRestored = {
   {
     id: 'deat-le10', // last meal node if lethal injection squad
     name: '', // Displayed each time the player enters the room. 
-    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. "So, which of those three will it be?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    onEnter: () =>{
     document.querySelector('input').disabled = false;
@@ -4943,7 +4969,7 @@ const amnesiaRestored = {
   {
     id: 'deat-f10', // last meal node if firing squad
     name: '', // Displayed each time the player enters the room. 
-    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. “So, which of those three will it be?”`, // Displayed when the player first enters the room.
+    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. "So, which of those three will it be?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    onEnter: () => {
       document.querySelector('input').disabled = false;
@@ -4971,7 +4997,7 @@ const amnesiaRestored = {
   {
     id: 'deat-fsp', // religious node if firing squad and steak and potatoes
     name: '', // Displayed each time the player enters the room.
-    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    exits: [
     {
@@ -4995,7 +5021,7 @@ const amnesiaRestored = {
   {
     id: 'deat-fbr', // religious node if firing squad and barbeque ribs
     name: '', // Displayed each time the player enters the room.
-    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    exits: [
     {
@@ -5019,7 +5045,7 @@ const amnesiaRestored = {
   {
     id: 'deat-frt', // religious node if firing quad and roasted turkey
     name: '', // Displayed each time the player enters the room.
-    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    exits: [
     {
@@ -5043,7 +5069,7 @@ const amnesiaRestored = {
   {
     id: 'deat-ftar', // religious node if firing squad and no meal selected
     name: '', // Displayed each time the player enters the room.
-    desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    exits: [
     {
@@ -5067,7 +5093,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lesp', // religious node if lethal injection and steak and potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -5091,7 +5117,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lebr', // religious node if lethal injection and barbeque ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -5115,7 +5141,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lert', // religious node if lethal injection and roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -5139,7 +5165,7 @@ const amnesiaRestored = {
     {
       id: 'deat-letar', // religious node if lethal injection and no meal selected
       name: '', // Displayed each time the player enters the room.
-      desc: `“You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?”`, // Displayed when the player first enters the room.
+      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
      // argument made and stored for either ribs, turkey, steak
      exits: [
       {
@@ -5190,7 +5216,7 @@ const amnesiaRestored = {
     {
       id: 'deat-letar1', // If none or go away, lethal injection & no meal selected
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar2');
       },
@@ -5200,7 +5226,7 @@ const amnesiaRestored = {
       id: 'deat-letar2', // lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar3');
       },
@@ -5209,7 +5235,7 @@ const amnesiaRestored = {
     {
       id: 'deat-letar3', //  lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
+      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: "We didn’t want you to die without a chance to sample our famous Texas chili!"', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar4');
       },
@@ -5218,7 +5244,7 @@ const amnesiaRestored = {
     {
       id: 'deat-letar4', //  lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-letar5');
@@ -5228,7 +5254,7 @@ const amnesiaRestored = {
     {
       id: 'deat-letar5', // lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
+      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: "Feed me! Feed me!" like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
       },
@@ -5264,7 +5290,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lesp1', // If none or go away, lethal injection & Steak and Potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp2');
       },
@@ -5274,7 +5300,7 @@ const amnesiaRestored = {
       id: 'deat-lesp2', // lethal injection & steak and potatoes
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp3');
       },
@@ -5292,7 +5318,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lesp4', //  lethal injection & steak and potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lesp5');
@@ -5338,7 +5364,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lebr1', // If none or go away, lethal injection & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr2');
       },
@@ -5348,7 +5374,7 @@ const amnesiaRestored = {
       id: 'deat-lebr2', // lethal injection & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr3');
       },
@@ -5366,7 +5392,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lebr4', //  lethal injection & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lebr5');
@@ -5412,7 +5438,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lert1', // If none or go away, lethal injection & Roasted Turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert2');
       },
@@ -5422,7 +5448,7 @@ const amnesiaRestored = {
       id: 'deat-lert2', // lethal injection & roasted turkey
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert3');
       },
@@ -5440,7 +5466,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lert4', //  lethal injection & roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert5');
@@ -5450,7 +5476,7 @@ const amnesiaRestored = {
     {
       id: 'deat-lert5', // lethal injection & roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
+      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. "You’re my son!" she insisted almost hysterically. "I will not have you suppose otherwise!"', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lelw');
       },
@@ -5513,7 +5539,7 @@ const amnesiaRestored = {
     {
       id: 'deat-ftar1', // If none or go away, firing squad & no meal selected
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar2');
       },
@@ -5523,7 +5549,7 @@ const amnesiaRestored = {
       id: 'deat-ftar2', // firing squad & no meal cont
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar3');
       },
@@ -5532,7 +5558,7 @@ const amnesiaRestored = {
     {
       id: 'deat-ftar3', //  lethal injection & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: “We didn’t want you to die without a chance to sample our famous Texas chili!”', // Displayed when the player first enters the room.
+      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: "We didn’t want you to die without a chance to sample our famous Texas chili!"', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar4');
       }
@@ -5540,7 +5566,7 @@ const amnesiaRestored = {
     {
       id: 'deat-ftar4', //  firing squad & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-ftar5');
@@ -5550,7 +5576,7 @@ const amnesiaRestored = {
     {
       id: 'deat-ftar5', // firing squad & no meal cont
       name: '', // Displayed each time the player enters the room.
-      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: “Feed me! Feed me!” like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
+      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: "Feed me! Feed me!" like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
       },
@@ -5586,7 +5612,7 @@ const amnesiaRestored = {
     {
       id: 'deat-fsp1', // If none or go away, firing squad & Steak and Potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp2');
       },
@@ -5596,7 +5622,7 @@ const amnesiaRestored = {
       id: 'deat-fsp2', // firing squad & steak and potatoes
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp3');
       },
@@ -5614,7 +5640,7 @@ const amnesiaRestored = {
     {
       id: 'deat-fsp4', //  firing squad & steak and potatoes
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fsp5');
@@ -5660,7 +5686,7 @@ const amnesiaRestored = {
     {
       id: 'deat-fbr1', // If none or go away, firing squad & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr2');
       },
@@ -5670,7 +5696,7 @@ const amnesiaRestored = {
       id: 'deat-fbr2', // firing squad & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr3');
       },
@@ -5688,7 +5714,7 @@ const amnesiaRestored = {
     {
       id: 'deat-fbr4', //  firing squad & Barbecue Ribs
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-fbr5');
@@ -5734,7 +5760,7 @@ const amnesiaRestored = {
     {
       id: 'deat-frt1', // If none or go away, firing squad& Roasted Turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `“That’s about what I figured,” the warden says, and bids you good day.`, // Displayed when the player first enters the room.
+      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt2');
       },
@@ -5744,7 +5770,7 @@ const amnesiaRestored = {
       id: 'deat-frt2', // firing squad & roasted turkey
       name: '', // Displayed each time the player enters the room.
       desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. “Your last meal,” he announces, placing the tray on a table. “Enjoy it.” The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-frt3');
       },
@@ -5762,7 +5788,7 @@ const amnesiaRestored = {
     {
       id: 'deat-frt4', //  firing squad & roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. “Come on, Hollings,” he says encouragingly. “You’re holding everything up. Eat your last meal so we can get this show on the road.” The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
       You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-lert5');
@@ -5772,7 +5798,7 @@ const amnesiaRestored = {
     {
       id: 'deat-frt5', // firing squad & roasted turkey
       name: '', // Displayed each time the player enters the room.
-      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. “You’re my son!” she insisted almost hysterically. “I will not have you suppose otherwise!”', // Displayed when the player first enters the room.
+      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. "You’re my son!" she insisted almost hysterically. "I will not have you suppose otherwise!"', // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-flw');
       },
@@ -5817,7 +5843,7 @@ const amnesiaRestored = {
   {
     id: 'deat-lebad', // if you swear at the guard lethal injection
     name: '', // Displayed each time the player enters the room.
-    desc: 'The warden regards you with contempt and disbelief. “Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity.” You are led, protesting your innocence, to the place of execution.', // Displayed when the player first enters the room.
+    desc: 'The warden regards you with contempt and disbelief. "Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity." You are led, protesting your innocence, to the place of execution.', // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-fgo');
     },
@@ -5828,7 +5854,7 @@ const amnesiaRestored = {
     name: '', // Displayed each time the player enters the room.
     desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
     But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
-    “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
+    "Xavier Hollings," the warden asks solemnly, "do you have any last words?"`, // Displayed when the player first enters the room.
     // if anything
     onEnter: () =>{
       document.querySelector('input').disabled = false;
@@ -5850,7 +5876,7 @@ const amnesiaRestored = {
     name: '', // Displayed each time the player enters the room.
     desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
     But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
-    “Xavier Hollings,” the warden asks solemnly, “do you have any last words?”`, // Displayed when the player first enters the room.
+    "Xavier Hollings," the warden asks solemnly, "do you have any last words?"`, // Displayed when the player first enters the room.
     // if anything
     onEnter: () =>{
       document.querySelector('input').disabled = false;
@@ -5874,7 +5900,7 @@ const amnesiaRestored = {
     id: 'deat-fgo', // If Firing Squad
     name: '', // Displayed each time the player enters the room.
     desc: `A stake has been placed in the courtyard of the prison, and you are bound to it. A chaplain appears to offer you some last words of comfort, and he too refuses to listen to your protests, as does the guard who offers you a blindfold and a last cigarette.
-    “It’s just as well you don’t smoke,” he says, as he walks toward the group of six marksmen standing at the ready some ten yards away. “It’s bad for your health. Says so right on the package.”
+    "It’s just as well you don’t smoke," he says, as he walks toward the group of six marksmen standing at the ready some ten yards away. "It’s bad for your health. Says so right on the package."
     The marksmen laugh appreciatively at his joke.
     They take aim. You close your eyes. The order to Fire! is given.
     You die.`, // Displayed when the player first enters the room.
@@ -5884,8 +5910,8 @@ const amnesiaRestored = {
     id: 'deat-lego', // If lethal injection
     name: '', // Displayed each time the player enters the room.
     desc: `It is a small room glaringly lighted with about 500 watts of fluorescent light. The light gives a surreal intensity to the room’s single item of furniture, a kind of dentist’s chair that has been modified with a panoply of leather and canvas restraints. You are made to sit in the chair, and a guard secures the restraints.
-    “This is the first time we’ve ever done a lethal injection here in Texas. They say it’s the wave of the future, but I don’t know. I think there’s something to be said for the traditional way of doing these things. What do you think?”\n
-    The guard frowns thoughtfully at your protests of innocence and your frenzied attempt to explain the bizarre events that got you into this fix. “There’s nothing I can do to help you, fellow. Talk to the chaplain.”\n
+    "This is the first time we’ve ever done a lethal injection here in Texas. They say it’s the wave of the future, but I don’t know. I think there’s something to be said for the traditional way of doing these things. What do you think?"\n
+    The guard frowns thoughtfully at your protests of innocence and your frenzied attempt to explain the bizarre events that got you into this fix. "There’s nothing I can do to help you, fellow. Talk to the chaplain."\n
     The chaplain assures you that only God can help you now. The chaplain leaves.\n
     A medical attendant enters the room. He makes a tourniquet below your biceps with a length of rubber tubing, and then when he has found a vein, he injects the poison.
     There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:`, // Displayed when the player first enters the room.

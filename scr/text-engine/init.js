@@ -143,6 +143,14 @@ let save = (name = 'Amnesia Restored Save') => {
   println(line);
 };
 
+let autoSave = () => {
+  console.log('Saving...');
+  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
+  let saveDate = new Date();
+  let saveFileTime = `Autosave: ${saveDate.getFullYear()}-${saveDate.getMonth()}-${saveDate.getDate()} ${saveDate.getHours()}:${saveDate.getMinutes()}`
+  localStorage.setItem(saveFileTime, save);
+}
+
 // restore the disk from storage
 // (optionally accepts a name for the save)
 let load = (name) => {
