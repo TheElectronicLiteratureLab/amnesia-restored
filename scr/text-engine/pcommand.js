@@ -1551,7 +1551,7 @@ const hungerWarning = () => {
 const ateSomething = (x) => {
   prevHung = playHung
   playHung = playHung + x;
-  if(playHung >= 100) {
+  if(playHung > 100) {
     playHung = 100 
   }
   hungBelow40 = false;
