@@ -412,7 +412,7 @@ let openItem = (id, name) => {
     } 
 
     if(name === 'xindexer'){
-        document.getElementById("inventory-xIndex-display").style.display = "grid";
+        document.getElementById("inventory-xIndex-display").style.display = "block";
         document.getElementById("inventory-item-display").style.display = "none";
     }
 }

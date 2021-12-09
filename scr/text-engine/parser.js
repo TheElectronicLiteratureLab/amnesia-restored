@@ -14,7 +14,7 @@ let applyInput = (input) => {
   } else if (input === "dial") {
     setInput('');
   } else {
-    println(`${input}`, 'playerInput');   
+    println(`> ${input}`, 'playerInput');   
   }
   prevInput = input;
   console.log(inputs);
