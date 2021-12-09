@@ -17,6 +17,12 @@ let bullet = '•';
 //specific timer var for anns house
 let annTimer;
 
+//specific counter for Bette's Apartment
+let bettesHome;
+
+//Specifc move counter for Bette's Apartment
+let betteCoutner;
+
 // reference to the input element
 let input = document.querySelector('#input');
 
