@@ -176,7 +176,7 @@
                     <div class="clickable-container" id="info-clickable">
                         <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
                         <button class="iconbtn" id="info-button"
-                            onclick="displayToggle('info-display', 'info')"></button>
+                            onclick="displayToggle('info-display', 'info', 'info-text-container')"></button>
                     </div>
                 </div>
             </div>
@@ -304,18 +304,20 @@
                 </div>
                 
                 <div id="info-display" class="clickables-left">
-                    <button id="map-x-button" class="x-button" onclick="displayNone('info-display'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="info-display-title">Information</h2>
-                    <div id="info">
-                        <div id="score">
-                            <h3 id="score-title">SCORE</h3>
-                            <h4 id="det-title">Detective Score:</h4>
-                            <p id="det-score"></p>
+                    <div id="info-text-container">
+                        <button id="map-x-button" class="x-button" onclick="displayNone('info-display'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="info-display-title">Information</h2>
+                        <div id="info">
+                            <div id="score">
+                                <h3 id="score-title">SCORE</h3>
+                                <h4 id="det-title">Detective Score:</h4>
+                                <p id="det-score"></p>
+                            </div>
+                            <h3 id="play-time-title">PLAY TIME</h3>
+                            <h4 id="play-time"></h4>
+                            <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
+                            <h4 id="difficulty-setting"></h4>
                         </div>
-                        <h3 id="play-time-title">PLAY TIME</h3>
-                        <h4 id="play-time"></h4>
-                        <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
-                        <h4 id="difficulty-setting"></h4>
                     </div>
                 </div>
 

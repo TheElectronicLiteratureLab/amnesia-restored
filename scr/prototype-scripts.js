@@ -176,7 +176,7 @@ let achieveOn = false;
 let helpOn = false;
 
 
-let displayToggle = (id, name) => {
+let displayToggle = (id, name, text) => {
    let x = document.getElementById(id);
    displayCheck(id, name);
    
@@ -184,13 +184,15 @@ let displayToggle = (id, name) => {
        if(id === "help-display"){
         fadeOn(id);
        } else {
-         fadeOn(id);
+        slideLeftIn(id, text);
+         //fadeOn(id);
         //slideToggle(id);
         //x.style.display = "block";
         document.querySelector('input').disabled = true;
        }
    } else {
-        fadeOff(id);
+       slideLeftOut(id, text);
+        //fadeOff(id);
         //x.style.display = "none";
         //slideToggle(id);
         document.querySelector('input').disabled = false;
@@ -719,3 +721,87 @@ let fadeOff = (elId) => {
     
 }
 
+
+// functions for the left side clickables, slide ins, slide outs, and text fades and the map special slide down function
+// width starts at 0 and then text fades in at 10% width 
+let slideLeftIn = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideIn, 30);
+    function slideIn(){
+        if(width === 25){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 10){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }
+
+    
+    
+    
+}
+
+let slideLeftOut = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+    // sets beginning width 
+    let width = 25;
+    clearInterval(id);
+    id = setInterval(slideIn, 30);
+    function slideIn(){
+        if(width === 0){
+            clearInterval(id);
+            element.style.display = "none";
+        } else {
+            width--;
+            element.style.width = width + "%";
+            if(width === 24){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 1;
+                clearInterval(text);
+                text = setInterval(fadeOutText, 50);
+                function fadeOutText(){
+                    if(opacity <= 0){
+                        clearInterval(text);
+                    } else {
+                        opacity -= 0.1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }
+}
