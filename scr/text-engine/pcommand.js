@@ -2,13 +2,15 @@
 let inv = () => {
   document.getElementById("inventory").innerHTML = "";
   const items = disk.inventory.filter(item => !item.isHidden);
+  document.querySelector('input').disabled = true;
 
   if (!items.length) {
-    document.getElementById("inventory-display").style.display = "block";
+    fadeOn("inventory-display");
+    //document.getElementById("inventory-display").style.display = "block";
   }
 
   items.forEach(item => {
-    document.getElementById("inventory-display").style.display = "block";
+    //document.getElementById("inventory-display").style.display = "block";
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
@@ -19,6 +21,8 @@ let inv = () => {
    // document.getElementById("inventory-display").style.display = "block";
     //listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
   });
+
+  fadeOn("inventory-display");
 };
 
 // show room description
@@ -706,8 +710,8 @@ let callNum = (num) => {
 
   /* if(room.id === 'bett-apar'){
       numbers.push(
-        {number:'555-0042', roomid:'phone-29'},
-        {number:'555-5413', roomid:'phone-30'}
+        {number:'555-0042', roomid:'phone-29', contactName: 'Bette'},
+        {number:'555-5413', roomid:'phone-30', 'contactName: 'Denise'}
       );
     }*/
   
@@ -1105,15 +1109,13 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
   //teleport to certain room
   function teleport (place) {
     enterRoom(place);
-    println(`
-    Player Teleported to ${place}`);
+    println(`Player Teleported to ${place}`);
   };
 
   //set the money to certain ammount
   function setMoney(amount) {
     playMon = amount;
-    println(`
-    Player Money now set to ${amount}`);
+    println(`Player Money now set to ${amount}`);
     updateMon();
   };
 
@@ -1121,8 +1123,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
   function setHunger(amount) {
     prevHung = playHung;
     playHung = amount;
-    println(`
-    Player Hunger now set to ${amount}`);
+    println(`Player Hunger now set to ${amount}`);
     updateHung(playHung);
   };
 
@@ -1132,8 +1133,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
   function setFatigue(amount) {
     prevFat = playFat;
     playFat = amount;
-    println(`
-    Player fatigue now set to ${amount}`);
+    println(`Player fatigue now set to ${amount}`);
     updateFat(playFat);
   };
 

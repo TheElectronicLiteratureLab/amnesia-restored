@@ -7,8 +7,6 @@ body {
    background-image: url(../img/png/newyork.png);
 }
 
-
-
 #game-container img {
    max-width: 100%;
    height: auto;
@@ -212,7 +210,7 @@ body {
 }
 
 .mode {
-   justify-self: right;
+   justify-self: center;
 }
 
 .mode:hover {
@@ -556,9 +554,13 @@ body {
 }
 
 #address-display {
+   position: absolute;
    height: 100%;
    display: none;
+   opacity: 0%;
 }
+
+
 
 #map-display {
    display: none;
@@ -597,13 +599,37 @@ body {
    width: 40%;
    height: 100%;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: .2fr .6fr .15fr .10fr;
+   grid-template-rows: .1fr .5fr .4fr;
    padding: 15px;
    box-sizing: border-box;
 }
 
 #inventory-item-display img {
    width: 50%;
+}
+
+#item-name {
+   grid-column: 1 / span 2;
+}
+
+#item-img-container {
+   grid-column: 1 / span 2;
+   grid-row: 2 / span 1;
+   background: #0e0e0f8a;
+}
+
+#item-img {
+   width: 100%;
+   height: 100%;
+   margin-left: 25%;
+   margin-top: 3%;
+}
+
+#item-description {
+   margin-top: 5%;
+   grid-column: 1 / span 2;
+   grid: 3 / span 1;
+   overflow-y: scroll;
 }
 
 #inventory-xIndex-display {
@@ -618,10 +644,11 @@ body {
 
 #xIndex-container {
    display: grid;
-   height: auto;
+   height: 100%;
    grid-template-columns: .5fr 1fr;
    grid-template-rows: .1fr .4fr .5fr;
    padding: 15px;
+   
 }
 
 #xIndex-name {
@@ -629,9 +656,15 @@ body {
 }
 
 #xIndex-img-container {
+   width: 100%;
    grid-column: 2 / span 1;
    grid-row: 2 / span 2;
 
+}
+
+#xIndex-img-container img {
+   width: auto;
+   max-height: 100%;
 }
 
 #x-indexer-instructions {
@@ -639,24 +672,17 @@ body {
    grid-row: 2 / span 1;
 }
 
+#x-indexer-instructions p {
+   font-size: .8em;
+}
+
 #xStreetIndex {
    grid-column: 1 / span 1;
    grid-row: 3 / span 1;
+   margin-top: 10%;
 }
 
-#item-name {
-   grid-column: 1 / span 2;
-}
 
-#item-img {
-   grid-column: 1 / span 2;
-   grid-row: 2 / span 1;
-}
-
-#item-description {
-   grid-column: 1 / span 2;
-   grid: 3 / span 1;
-}
 
 .clickables-right {
    display: none;

@@ -2,26 +2,27 @@
 
 
 
+
 // global variables 
 
 
 
-let difficultyChoice;
-let styling;
+let difficultyChoice = "modern";
+let styling = "restored-mode";
 let numbers = [
-    {number:'3', roomid:'phone-1'},
-    {number:'4', roomid:'phone-2'},
-    {number:'5', roomid:'phone-3'},
-    {number:'6', roomid:'phone-4'},
-    {number:'7', roomid:'phone-5'},
-    {number:'8', roomid:'phone-6'},
-    {number:'9', roomid:'phone-7'},
-    {number:'911', roomid:'phone-8'}
+    {number:'3', roomid:'phone-1', contactName: 'Front Desk'},
+    {number:'4', roomid:'phone-2', contactName: 'Room Service'},
+    {number:'5', roomid:'phone-3', contactName: 'Valet'},
+    {number:'6', roomid:'phone-4', contactName: 'Bellman'},
+    {number:'7', roomid:'phone-5', contactName: 'Security'},
+    {number:'8', roomid:'phone-6', contactName: 'Other Rooms'},
+    {number:'9', roomid:'phone-7', contactName: 'Outside Calls'},
+    {number:'911', roomid:'phone-8', contactName: 'Emergency'}
 ];
 
 
 let storyDesc = `Lay back, relax and enjoy the story without the worry of hunger, fatigue, or money.`;
-let normalDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are.`;
+let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are.`;
 let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
 let restoredDesc = `A contemporary visual experience with a modern interface.`;
 let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
@@ -29,6 +30,7 @@ let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commo
 let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM PC visual experience with a modern interface.`;
 
 
+let slide = false;
 
 
 // button scripts
@@ -58,9 +60,9 @@ let loadGame = () => {
 let displayDesc = (id) => {
     let x = document.getElementById("difficulty-options-descriptions");
     let y = [
-        ["story-mode", storyDesc, difficultyLevels[0]],
-        ["normal-mode", normalDesc, difficultyLevels[1]],
-        ["classic-mode", classicDesc, difficultyLevels[2]],
+        ["story", storyDesc, difficultyLevels[0]],
+        ["modern", modernDesc, difficultyLevels[1]],
+        ["classic", classicDesc, difficultyLevels[2]],
     ]
     let z;
     let a;
@@ -108,7 +110,17 @@ let beginGame = () => {
 // clickables scripts
 
 let currentInv = () => {
-    applyInput("inv");
+    let invDisplay = document.getElementById("inventory-display");
+    if(!invDisplay.style.display || invDisplay.style.display === "none"){
+        applyInput("inv");
+        displayCheck("inventory-display", "inventory")
+    } else {
+        fadeOff("inventory-display");
+        document.getElementById("inventory-item-display").style.display = "none";
+    document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.querySelector("input").disabled = false;
+    }
+    
     //console.log(items);
     //document.getElementById("inventory").innerHTML = applyInput("inv");
 }
@@ -116,7 +128,6 @@ let currentInv = () => {
 let currentAdd = (id) => {
     let x = document.getElementById(id);
     x.innerHTML = '';
-    console.log(x);
 
     let num = numbers;
     // calls the div holding the numbers
@@ -131,18 +142,14 @@ let currentAdd = (id) => {
     let newNum = document.createElement('h4');
 
     num.forEach(e => {
-        let name = e.roomid;
+        let name = e.contactName;
         let phoneNum = e.number;
     
-        console.log(name);
-        console.log(phoneNum);
-        
         displayNum(name, phoneNum);
     })
 }
 
 let displayNum = (contact, number) => {
-    console.log(contact, number);
     // call display
     let listings = document.getElementById("addresses");
     // create a div to hold listing
@@ -171,17 +178,29 @@ let helpOn = false;
 
 let displayToggle = (id, name) => {
    let x = document.getElementById(id);
-   displayCheck(name);
+   displayCheck(id, name);
    
    if(!x.style.display || x.style.display === "none"){
-        x.style.display = "block";
+       if(id === "help-display"){
+        fadeOn(id);
+       } else {
+         fadeOn(id);
+        //slideToggle(id);
+        //x.style.display = "block";
+        document.querySelector('input').disabled = true;
+       }
    } else {
-        x.style.display = "none";
+        fadeOff(id);
+        //x.style.display = "none";
+        //slideToggle(id);
+        document.querySelector('input').disabled = false;
+        document.querySelector('input').focus();
    }
 }
 
 
-let displayCheck = (name) => {
+let displayCheck = (id, name) => {
+    
     if(name === 'inventory'){
         invOn = true;
         if(addOn === true){
@@ -214,6 +233,8 @@ let displayCheck = (name) => {
         addOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(mapOn === true){
@@ -225,7 +246,7 @@ let displayCheck = (name) => {
             infoOn = false;
         }
         if(modeOn === true){
-            document.getElementById("mode-display").style.display = "none";
+           document.getElementById("mode-display").style.display = "none";
             modeOn = false;
         }
         if(achieveOn === true){
@@ -244,6 +265,8 @@ let displayCheck = (name) => {
         //map.panTo(playerMarker.getLatLng());
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -272,6 +295,8 @@ let displayCheck = (name) => {
         infoOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -300,6 +325,8 @@ let displayCheck = (name) => {
         modeOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -328,6 +355,8 @@ let displayCheck = (name) => {
         achieveOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -356,6 +385,8 @@ let displayCheck = (name) => {
         helpOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
+            document.getElementById("inventory-xIndex-display").style.display = "none";
+            document.getElementById("inventory-item-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -384,10 +415,12 @@ let displayCheck = (name) => {
 }
 
 let displayNone = (id) => {
-    document.getElementById(id).style.display = "none";
+    fadeOff(id);
+    //document.getElementById(id).style.display = "none";
     document.getElementById("inventory-item-display").style.display = "none";
     document.getElementById("inventory-xIndex-display").style.display = "none";
-
+    document.querySelector('input').disabled = false;
+    document.querySelector('input').focus();
     /*
     document.getElementById(inv).style.display = "none";
     document.getElementById(item).style.display = "none";
@@ -425,6 +458,8 @@ let updateHung = (x) => {
 
     const xPlayHung = parseInt(playHung);
     const xPrevHung = parseInt(prevHung);
+
+   
     
 
     if(xPlayHung > xPrevHung){
@@ -444,7 +479,7 @@ let updateHung = (x) => {
             i = 1;
             let el = document.getElementById("hunger-bar");
             let startWidth = xPrevHung;
-            let progress = setInterval(update, 30);
+            let progress = setInterval(update, 100);
             function update(){
                 if(startWidth >= width){
                     clearInterval(progress);
@@ -463,7 +498,7 @@ let updateHung = (x) => {
             i = 1;
             let el = document.getElementById("hunger-bar");
             let startWidth = xPrevHung;
-            let progress = setInterval(update, 30);
+            let progress = setInterval(update, 100);
             function update(){
                 if(startWidth <= width){
                     clearInterval(progress);
@@ -475,6 +510,12 @@ let updateHung = (x) => {
             }
         }
         decreasingHung = false;
+    }
+
+    if(xPlayHung <= 40){
+        document.getElementById('hunger-bar').style.background = "transparent linear-gradient(270deg, #df3333 0%, #7c180b 100%) 0% 0% no-repeat padding-box";
+    } else {
+        document.getElementById('hunger-bar').style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
     }
     
 }
@@ -503,7 +544,7 @@ let updateFat = (x) => {
             i = 1;
             let el = document.getElementById("fatigue-bar");
             let startWidth = xPrevFat;
-            let progress = setInterval(update, 30);
+            let progress = setInterval(update, 100);
             function update(){
                 if(startWidth >= width){
                     clearInterval(progress);
@@ -522,7 +563,7 @@ let updateFat = (x) => {
             i = 1;
             let el = document.getElementById("fatigue-bar");
             let startWidth = xPrevFat;
-            let progress = setInterval(update, 30);
+            let progress = setInterval(update, 100);
             function update(){
                 if(startWidth <= width){
                     clearInterval(progress);
@@ -535,6 +576,12 @@ let updateFat = (x) => {
         }
         decreasingFat = false;
     }
+
+    if(xPlayFat <= 40){
+        document.getElementById('fatigue-bar').style.background = "transparent linear-gradient(270deg, #df3333 0%, #7c180b 100%) 0% 0% no-repeat padding-box";
+    } else {
+        document.getElementById('fatigue-bar').style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
+    }
     
 }
 
@@ -545,8 +592,14 @@ let updateFat = (x) => {
     
 
 
-let updateMon = () => {
+const updateMon = () => {
     document.getElementById("money").innerHTML = `${formatter.format(playMon)}`;
+}
+
+const updateScore = () => {
+    console.log("displaying score");
+    document.getElementById("det-score").innerHTML = detScore;
+    document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
 }
 
 
@@ -625,37 +678,44 @@ let animateToggle = () => {
         }
         tutorialDisplayed = false;
     }
+    
 }
 
 
-function listAllEventListeners() {
-    const allElements = Array.prototype.slice.call(document.querySelectorAll('*'));
-    allElements.push(document);
-    allElements.push(window);
-  
-    const types = [];
-  
-    for (let ev in window) {
-      if (/^on/.test(ev)) types[types.length] = ev;
-    }
-  
-    let elements = [];
-    for (let i = 0; i < allElements.length; i++) {
-      const currentElement = allElements[i];
-      for (let j = 0; j < types.length; j++) {
-        if (typeof currentElement[types[j]] === 'function') {
-          elements.push({
-            "node": currentElement,
-            "type": types[j],
-            "func": currentElement[types[j]].toString(),
-          });
-        }
-      }
-    }
-  
-    return elements.sort(function(a,b) {
-      return a.type.localeCompare(b.type);
-    });
-  }
 
-  //console.log(listAllEventListeners);
+let fadeOn = (elId) => {
+    let id = null;
+    const el = document.getElementById(elId);
+    el.style.display = "block";
+    let opacNum = 0;
+    clearInterval(id);
+    id = setInterval(fadeIn, 1);
+    function fadeIn(){
+        if(opacNum === 100){
+            clearInterval(id);
+        } else {
+            opacNum++;
+            el.style.opacity = opacNum + "%";
+        }
+    }
+}
+
+let fadeOff = (elId) => {
+    let id = null;
+    const elem = document.getElementById(elId);
+    //el.style.display = "block";
+    let opacNum = 100;
+    clearInterval(id);
+    id = setInterval(fadeOut, 1);
+    function fadeOut(){
+        if(opacNum === 0){
+            elem.style.display = "none";
+            clearInterval(id);
+        } else {
+            opacNum--;
+            elem.style.opacity = opacNum + "%";
+        }
+    }
+    
+}
+

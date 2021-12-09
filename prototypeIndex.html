@@ -76,18 +76,18 @@
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
-                        <h4 class="mode" id="story-mode" onclick="displayDesc(this.id)">Story Mode</h4>
-                        <h4 class="mode" id="normal-mode" onclick="displayDesc(this.id)">Normal Mode</h4>
-                        <h4 class="mode" id="classic-mode" onclick="displayDesc(this.id)">Classic Mode</h4>
-                        <p id="difficulty-options-descriptions"></p>
+                        <h4 class="mode" id="story-mode" onclick="displayDesc(this.id)">Story</h4>
+                        <h4 class="mode" id="normal-mode" onclick="displayDesc(this.id)">Modern</h4>
+                        <h4 class="mode" id="classic-mode" onclick="displayDesc(this.id)">Classic</h4>
+                        <p id="difficulty-options-descriptions">Default difficulty mode is modern.</p>
                     </div>
                     <div id="visuals-options">
                         <h3 id="visuals-title">VISUAL MODE</h3>
                         <h4 class="mode" id="restored-mode" onclick="visualDesc(this.id)">Restored</h4>
                         <h4 class="mode" id="apple-mode" onclick="visualDesc(this.id)">Apple lle</h4>
-                        <h4 class="mode" id="comm-mode" onclick="visualDesc(this.id)">Commodore 64</h4>
+                        <h4 class="mode" id="comm-mode" onclick="visualDesc(this.id)">Commodore</h4>
                         <h4 class="mode" id="IBM-mode" onclick="visualDesc(this.id)">IBM</h4>
-                        <p id="visual-mode-options-descriptions"></p>
+                        <p id="visual-mode-options-descriptions">Default visual mode is restored.</p>
                     </div>
                     <div id="begin-game-button">
                         <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
@@ -159,7 +159,7 @@
                     <div class="clickable-container" id="inventory-clickable">
                         <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
                         <button class="iconbtn" id="inventory-button"
-                            onclick="displayToggle('inventory-display', 'inventory'); currentInv()"></button>
+                            onclick="currentInv()"></button>
                     </div>
 
                     <div class="clickable-container" id="address-book-clickable">
@@ -201,7 +201,9 @@
                 </div>
                 <div id="inventory-item-display">
                     <h2 id="item-name">Item Name</h2>
-                    <img id="item-img" src="" alt="item image">
+                    <div id="item-img-container">
+                        <img id="item-img" src="" alt="item image">
+                    </div>
                     <div id="item-description"></div>
                     <!-- 
                             * right now there is not a use for this feature 11-29-2021
@@ -212,14 +214,18 @@
                     <div id="xIndex-container">
                         <h2 id="xIndex-name">X-Street Indexer</h2>
                         <div id="xIndex-img-container">
-                            <img id="item-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image" style="width: 70%">
+                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image">
                         </div>
                         <div id="x-indexer-instructions">
-                            <p>Here is how to use the x-indexer. Via drag and drop and using the forms.</p>
+                            <h3>Instructions for use:</h3>
+                            <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by dragging and dropping.</p>
+                            <p>2. The small window in the inner wheel shows the nearest cross street.</p>
+                            <br>
+                            <p>OR use the drop down menu below to find the nearest cross street.</p>
                         </div>
                         <div id='xStreetIndex'>
                             <form>
-                            <label for="x-Streets">Choose A Number and Cross Street</label>
+                            <label for="x-Streets">Choose A Number and Cross Street</label><br>
                             <select name="Street Number" id="streetNumber">
                                 <option value='0-199'>0-199</option>
                                 <option value="200-299">200-299</option>
@@ -282,12 +288,15 @@
                     </div>
                     
                 </div>
-                <div id="address-display" class="clickables-left">
-                    <button class="x-button" onclick="displayNone('address-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="address-display-title">Address Book</h2>
-                    <div id="addresses">
+
+                
+                    <div id="address-display" class="clickables-left">
+                        <button class="x-button" onclick="displayNone('address-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="address-display-title">Address Book</h2>
+                        <div id="addresses">
+                        </div>
                     </div>
-                </div>
+                
                 
                 <div id="map-display">
                     <button class="x-button" id="exitMapBtn" onclick="displayNone('map-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
@@ -295,11 +304,13 @@
                 </div>
                 
                 <div id="info-display" class="clickables-left">
-                    <button id="map-x-button" class="x-button" onclick="displayNone('info-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                    <button id="map-x-button" class="x-button" onclick="displayNone('info-display'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
                     <h2 id="info-display-title">Information</h2>
                     <div id="info">
                         <div id="score">
                             <h3 id="score-title">SCORE</h3>
+                            <h4 id="det-title">Detective Score:</h4>
+                            <p id="det-score"></p>
                         </div>
                         <h3 id="play-time-title">PLAY TIME</h3>
                         <h4 id="play-time"></h4>
