@@ -7,6 +7,8 @@ body {
    background-image: url(../img/png/newyork.png);
 }
 
+
+
 #game-container img {
    max-width: 100%;
    height: auto;
@@ -611,10 +613,35 @@ body {
    background-color: rgba(28, 28, 34, .95);
    width: 60%;
    height: 100%;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: .1fr .6fr .1fr .1fr .1fr;
-   padding: 15px;
    box-sizing: border-box;
+}
+
+#xIndex-container {
+   display: grid;
+   height: auto;
+   grid-template-columns: .5fr 1fr;
+   grid-template-rows: .1fr .4fr .5fr;
+   padding: 15px;
+}
+
+#xIndex-name {
+   grid-column: 1 / span 2;
+}
+
+#xIndex-img-container {
+   grid-column: 2 / span 1;
+   grid-row: 2 / span 2;
+
+}
+
+#x-indexer-instructions {
+   grid-column: 1 / span 1;
+   grid-row: 2 / span 1;
+}
+
+#xStreetIndex {
+   grid-column: 1 / span 1;
+   grid-row: 3 / span 1;
 }
 
 #item-name {
