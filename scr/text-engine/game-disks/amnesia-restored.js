@@ -229,13 +229,10 @@ const amnesiaRestored = {
       coord: [100, 100],
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
-      onEnter: () => {
-               
+      onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         //document.getElementById('game-ui-bar').style.display = "none";
-        
-        
         addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
@@ -464,7 +461,6 @@ const amnesiaRestored = {
             );
           },
           onDrop: () => {
-
           }
         },
         {
@@ -525,7 +521,6 @@ const amnesiaRestored = {
               /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
                       },
                   }, //end of sink items*/ //currently can't have an item property on item object.
-
           },
           {
             itemId: 'bathsoap',
@@ -571,7 +566,6 @@ const amnesiaRestored = {
                   const bathroom = getRoom('hote-bath-1');
                   bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
               },
-              //can WEAR towel.
           },
       ], //end of bathroom items
       exits: [
