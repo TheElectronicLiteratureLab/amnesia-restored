@@ -28,6 +28,12 @@ let applyInput = (input) => {
       cmd(arg);
       moveCount++;
       incrementTime();
+      
+      if(degradation === true ) {
+        degradeHunger();
+        degradeFatigue();
+      };
+
       console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);

@@ -20988,6 +20988,7 @@ const streets = {
       isStreet: true,
       curMoveCount: 0,
       onEnter: () => {
+        degradation = true;
         reenableInput();
 
         const room = getRoom(disk.roomId);
@@ -34682,7 +34683,7 @@ const streets = {
         } else if (lastRoom.id === 'nigh2-3' || lastRoom.id === 'nigh2-5') {
           reenableInput();
           println('You get up from the mattress feeling stiff, but reasonably rested.');
-          playFat = 100;
+          slept();
           incrementDay();
         } else {
           return;
@@ -34847,7 +34848,7 @@ const streets = {
       onEnter: () => {
         incrementDay();
         const room = getRoom('cent-slee');
-        playFat= 100;
+        slept();
         pressEnter(room.enteredFrom);
       },
       exits: [],

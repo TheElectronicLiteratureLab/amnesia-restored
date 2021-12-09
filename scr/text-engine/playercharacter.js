@@ -358,3 +358,6 @@ let fatBelow40 = false;
 let fatBelow30 = false;
 let fatBelow20 = false;
 let fatBelow10 = false;
+
+//variable for if the player stats should degrade
+let degradation = false;
