@@ -1164,7 +1164,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
 //spawn tenement function
-function spawnTenement() {
+/* function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
   const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
@@ -1210,7 +1210,7 @@ function spawnTenement() {
         }
 
 };
-
+*/
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
 
@@ -1310,6 +1310,21 @@ const incrementHour = () => {
 
 };
 
+const incrementHour = () => {
+  if (yHours < 12) {
+    yHours++;
+  } else {
+    yHours = 0;
+  }
+
+  let dumbMinutes = minutes[xMinutes];
+  let dumbHours = hours[yHours];
+  let dumbDays = days[zDays];
+  let dumbAmPm = amPm[qMeridiem];
+
+  document.getElementById('time').innerHTML = `${dumbDays + ' ' + dumbHours + ':' + dumbMinutes + ' ' + dumbAmPm}`;
+
+};
 
 //beg command
 const beg = () => {

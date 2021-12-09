@@ -227,6 +227,8 @@ let enterRoom = (id) => {
     randomEncounter();
   }
   
+  //spawnTenement();
+  //console.log('trying to spawn the tenement');
 
 };
 
