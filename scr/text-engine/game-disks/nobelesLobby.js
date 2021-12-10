@@ -249,6 +249,7 @@ const nobelesLobby = {
             desc:`Bette declares that she must be up early the next day for work. After you've each had a shower, you go to bed together on the unfolded sofa and are soon asleep.\n\n When you awake, you find Bette is almost ready to depart for the day.`,
             hasBed: true,
             onEnter: () => {
+                slept();
                 playFat = 100;
             }
         },
@@ -329,6 +330,7 @@ const nobelesLobby = {
             desc: ``,
             hasBed: true,
             onEnter: () => {
+                slept();
 
                 numbers.push(
                     {number:'555-0042', roomid:'phone-29', contactName: 'Bette'},);
@@ -573,6 +575,7 @@ const nobelesLobby = {
             desc: ``,
             hasBed: true,
             onEnter: () => {
+                slept();
                 if(getItemInInventory === 'floppy disk'){
                     println(`As though responding to a cue, the telephone rings. Bette walks over to the phone and answers it. It is an editor, who requires her immediate presence in a Chelsea studio. As she fills a nylon bag with camera equipment, she apologizes for having to leave you alone. 'I'll be back as soon as I can, probably around six.`)
                     pressEnter('nobe-49')
@@ -667,6 +670,7 @@ const nobelesLobby = {
             name: '',
             desc: ``,
             onEnter: () => {
+                slept();
                 println(`The next morning, you awake to find that Bette has already left for work.`);
                 enterRoom('nobe-27');
             },
