@@ -1,7 +1,18 @@
+$(document).ready(function(){
 
+    //jQuery to toggle on and off the command options
+    $("#noAgruCommand").click(function(){
+      $("#noAgruList").slideToggle("slow");
+    });
 
+    $("#oneAgruCommand").click(function(){
+        $("#oneAgruList").slideToggle("slow");
+    });
 
-
+    $("#twoAgruCommand").click(function(){
+        $("#twoAgruList").slideToggle("slow");
+    });
+});
 
 // global variables 
 
@@ -15,7 +26,6 @@ let numbers = [
     {number:'6', roomid:'phone-4', contactName: 'Bellman'},
     {number:'7', roomid:'phone-5', contactName: 'Security'},
     {number:'8', roomid:'phone-6', contactName: 'Other Rooms'},
-    {number:'9', roomid:'phone-7', contactName: 'Outside Calls'},
     {number:'911', roomid:'phone-8', contactName: 'Emergency'}
 ];
 
@@ -181,12 +191,39 @@ let displayLeftToggle = (id, name, text) => {
    displayCheck(id, name);
    // check if display is none, if true slide in display, if false slide out display
    if(!x.style.display || x.style.display === "none"){
-       slideLeftIn(id, text);
+       // add check to see if btn is address book to keep input enabled
+       if(id === "address-display"){
+        slideLeftIn(id, text);
+       } else {
+        slideLeftIn(id, text);
+        document.querySelector('input').disabled = true;
+       }
    } else {
         slideLeftOut(id, text);
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
    }
+}
+
+// this is the display toggling for the visual mode, achievements, and the command guide
+let displayRightToggle = (id, name, text) => {
+    let x = document.getElementById(id);
+    // run check to see if any other displays are on and turn them off before displaying
+    displayCheck(id, name);
+    // check if display is nnone, if true slide in display, if false slide out display
+    if(!x.style.display || x.style.display === "none"){
+        // checks to see if the btn is the help btn to allow input still, else input disabled
+        if(id === "help-display"){
+            slideRightIn(id, text);
+        } else {
+            slideRightIn(id, text);
+            document.querySelector('input').disabled = true;
+        }
+    } else {
+        slideRightOut(id, text);
+        document.querySelector('input').disabled = false;
+        document.querySelector('input').focus();
+    }
 }
 
 /*
@@ -436,10 +473,9 @@ let displayCheck = (id, name) => {
 
 let displayNone = (id, textId) => {
     slideLeftOut(id, textId);
-    //fadeOff(id);
-    //document.getElementById(id).style.display = "none";
-    document.getElementById("inventory-item-display").style.display = "none";
-    document.getElementById("inventory-xIndex-display").style.display = "none";
+    
+    //document.getElementById("inventory-item-display").style.display = "none";
+    //document.getElementById("inventory-xIndex-display").style.display = "none";
     document.querySelector('input').disabled = false;
     document.querySelector('input').focus();
     /*
@@ -471,7 +507,7 @@ let openItem = (id, name) => {
     }
 }
 
-// status bars
+// status bars and on screen variable changes (such as scoring)
 
 // the hunger status bar
 // variables to check the progress of the bar 
@@ -606,13 +642,6 @@ let updateFat = (x) => {
     }
 }
 
-
-   
-
-
-    
-
-
 const updateMon = () => {
     document.getElementById("money").innerHTML = `${formatter.format(playMon)}`;
 }
@@ -623,8 +652,6 @@ const updateScore = () => {
     document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
 }
 
-
-
 // dial pad scripts
 
 // function that adds the button pressed value to the input
@@ -633,68 +660,92 @@ let numdialButton = (clicked_id) => {
     let el = document.getElementById("input");
     el.value = el.value + x; 
 }
-
-/*
-// function to be called on enter button to act like enter key press
-function enterBtnClick(){
-    e = $.Event('keyup');
-    e.keyCode = 13; //enter
-    $('input').trigger(e);
-    applyInput();
-    
-} */
-
-
 // function that deletes last number on input string value
 let deleteNumBtn = () => {
     let el = document.getElementById("input");
     el.value = el.value.slice(0, -1);
 }
 
-  
-let openTutorial = () => {
-    let x = document.getElementById("tutorial");
-    if(x.style.display === "none"){
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}
-
+// tutorial is displayed on screen variable
 let tutorialDisplayed = false;
-
+// handles the toggling of tutorial display 
 let animateToggle = () => {
-    
+    // if the tutorial isn't displayed then display it
     if(tutorialDisplayed === false){
-        let id = null;
+        console.log("working")
+        let id = null; // handles the 3 second wait interval
+        let widthChange = null; // handles the width increase interval
+        let textOn = null; // handles the text displaying interval
+        // calling the element ID's
         const el = document.getElementById("tutorial");
-        el.style.display = "block";
-        let rightPos = 0;
+        let elText = document.getElementById("tutorial-text-container");
+        // calling reference variables
+        let secondCount = 0;
+        let width = 0;
+        let opacity = 0;
+
         clearInterval(id);
-        id = setInterval(slide, 15);
-        function slide(){
-            if(rightPos === 25){
+        id = setInterval(countDown, 30);
+        function countDown(){
+            if(secondCount >= 30){
                 clearInterval(id);
+                el.style.display = "block";
+                el.style.width = "0%";
+                clearInterval(widthChange);
+                widthChange = setInterval(slideOut, 40);
+                function slideOut(){
+                    if(width === 25){
+                        clearInterval(widthChange);
+                        clearInterval(textOn);
+                        textOn = setInterval(fadeOn, 40);
+                        function fadeOn(){
+                            if(opacity >= 1){
+                                clearInterval(textOn);
+                            } else {
+                                opacity += .2;
+                                elText.style.opacity = opacity;
+                            }
+                        }
+                    } else {
+                        width++;
+                        el.style.width = width + "%";
+                    }
+                }
             } else {
-                rightPos++;
-                el.style.right = rightPos + "%";
+                secondCount++;
+                
             }
         }
         tutorialDisplayed = true;
-    } else if(tutorialDisplayed === true){
-        console.log("goodbye")
-        let id = null;
+    } else {
+        let widthChangeDown = null; // handles the width decrese interval
+        let textOff = null; // handles the text displaying interval
         const el = document.getElementById("tutorial");
-        let rightPos = 25;
-        clearInterval(id);
-        id = setInterval(slide, 15);
-        function slide(){
-            if(rightPos === 0){
-                clearInterval(id);
+        let elText = document.getElementById("tutorial-text-container");
+        let width = 25;
+        let opacity = 1;
+
+        clearInterval(widthChangeDown);
+        widthChangeDown = setInterval(slideIn, 40);
+        function slideIn(){
+            if(width === 0){
+                clearInterval(widthChangeDown);
                 el.style.display = "none";
             } else {
-                rightPos--;
-                el.style.right = rightPos + "%";
+                width--;
+                el.style.width = width + "%";
+                if(width === 24){
+                    clearInterval(textOff);
+                    textOff = setInterval(fadeOff, 40);
+                    function fadeOff(){
+                        if(opacity <= 0){
+                            clearInterval(textOff)
+                        } else {
+                            opacity -= 0.2;
+                            elText.style.opacity = opacity;
+                        }
+                    }
+                }
             }
         }
         tutorialDisplayed = false;
@@ -702,8 +753,8 @@ let animateToggle = () => {
     
 }
 
-
-
+// old fade on and off of element displays NOT USING ANYMORE 
+/* 
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -738,11 +789,13 @@ let fadeOff = (elId) => {
         }
     }
     
-}
+} */
 
 
 // functions for the left side clickables, slide ins, slide outs, and text fades and the map special slide down function
-// width starts at 0 and then text fades in at 10% width 
+// width starts at 0 and then text fades in at 10% width
+
+// slide into view the left side clickable elements
 let slideLeftIn = (elId, textId) => {
     let id = null;
     // gets the display div
@@ -755,14 +808,14 @@ let slideLeftIn = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideIn, 30);
-    function slideIn(){
+    id = setInterval(slideInL, 30);
+    function slideInL(){
         if(width === 25){
             clearInterval(id);
         } else {
             width++;
             element.style.width = width + "%";
-            if(width === 10){
+            if(width === 20){
                 let text = null;
                 // sets beginning opacity
                 let opacity = 0;
@@ -772,7 +825,7 @@ let slideLeftIn = (elId, textId) => {
                     if(opacity >= 1){
                         clearInterval(text);
                     } else {
-                        opacity += .1;
+                        opacity += .2;
                         console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
@@ -780,13 +833,10 @@ let slideLeftIn = (elId, textId) => {
                 }
             }
         }
-    }
-
-    
-    
-    
+    }  
 }
 
+// slide out of view the left side clickables
 let slideLeftOut = (elId, textId) => {
     let id = null;
     // gets the display div
@@ -796,8 +846,8 @@ let slideLeftOut = (elId, textId) => {
     // sets beginning width 
     let width = 25;
     clearInterval(id);
-    id = setInterval(slideIn, 30);
-    function slideIn(){
+    id = setInterval(slideOutL, 30);
+    function slideOutL(){
         if(width === 0){
             clearInterval(id);
             element.style.display = "none";
@@ -814,7 +864,7 @@ let slideLeftOut = (elId, textId) => {
                     if(opacity <= 0){
                         clearInterval(text);
                     } else {
-                        opacity -= 0.1;
+                        opacity -= 0.2;
                         console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
@@ -823,4 +873,83 @@ let slideLeftOut = (elId, textId) => {
             }
         }
     }
+}
+
+// handles sliding in and out the right side clickables, including the dial pad
+let slideRightOut = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+    // sets beginning width 
+    let width = 25;
+    clearInterval(id);
+    id = setInterval(slideOutR, 30);
+    function slideOutR(){
+        if(width === 0){
+            clearInterval(id);
+            element.style.display = "none";
+        } else {
+            width--;
+            element.style.width = width + "%";
+            if(width === 24){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 1;
+                clearInterval(text);
+                text = setInterval(fadeOutText, 50);
+                function fadeOutText(){
+                    if(opacity <= 0){
+                        clearInterval(text);
+                    } else {
+                        opacity -= 0.2;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }
+}
+// slide into view the right side clickables
+let slideRightIn = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInR, 30);
+    function slideInR(){
+        if(width === 25){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .2;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
 }

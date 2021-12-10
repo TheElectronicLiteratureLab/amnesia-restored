@@ -76,9 +76,9 @@
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
-                        <h4 class="mode" id="story-mode" onclick="displayDesc(this.id)">Story</h4>
-                        <h4 class="mode" id="normal-mode" onclick="displayDesc(this.id)">Modern</h4>
-                        <h4 class="mode" id="classic-mode" onclick="displayDesc(this.id)">Classic</h4>
+                        <h4 class="mode" id="story" onclick="displayDesc(this.id)">Story</h4>
+                        <h4 class="mode" id="modern" onclick="displayDesc(this.id)">Modern</h4>
+                        <h4 class="mode" id="classic" onclick="displayDesc(this.id)">Classic</h4>
                         <p id="difficulty-options-descriptions">Default difficulty mode is modern.</p>
                     </div>
                     <div id="visuals-options">
@@ -175,7 +175,7 @@
                     <div class="clickable-container" id="info-clickable">
                         <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
                         <button class="iconbtn" id="info-button"
-                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container')"></button>
+                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container'); updateScore();"></button>
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@
                 
                 <div id="info-display" class="clickables-left">
                     <div id="info-text-container">
-                        <button id="map-x-button" class="x-button" onclick="displayNone('info-display', 'info-text-container'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button id="map-x-button" class="x-button" onclick="displayNone('info-display', 'info-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="info-display-title">Information</h2>
                         <div id="info">
                             <div id="score">
@@ -328,49 +328,139 @@
 
                 <!-- right side clickables -->
                 <div id="mode-display" class="clickables-right">
-                    <button class="x-button" onclick="displayNone('mode-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="mode-display-title">Mode</h2>
-                    <div id="mode">
+                    <div id="mode-text-container">
+                        <button class="x-button" onclick="displayNone('mode-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="mode-display-title">Mode</h2>
+                        <div id="mode">
+                        </div>
                     </div>
                 </div>
                 <div id="achieve-display" class="clickables-right">
-                    <button class="x-button" onclick="displayNone('achieve-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="achieve-display-title">Achievements</h2>
-                    <div id="achieve">
+                    <div id="achieve-text-container">
+                        <button class="x-button" onclick="displayNone('achieve-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="achieve-display-title">Ending Achievements</h2>
+                        <h3>Play the game to unlock your endings.</h3>
+                        <div id="achieve">
+                            <div class="ending">
+                                <img class="achieveImg" id="styxEndingIcon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle">???</h4>
+                                
+                                <!-- 
+                                    
+                                    Eternity Without A Name
+                                    <p>Reached the River Styx. Cheron's still waiting on that name...</p> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="help-display" class="clickables-right">
-                    <button class="x-button" onclick="displayNone('help-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="help-display-title">Command Guide</h2>
-                    <div id="help">
+                    <div id="help-text-container">
+                        <button class="x-button" onclick="displayNone('help-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="help-display-title">Command Guide</h2>
+                        <div id="help">
+                            <div id="noAgruCommand">
+                                <h3>No Agrument</h3>
+                                <h4>e.g. "help", "inv"</h4>
+                            </div>
+                            <div id="noAgruList">
+                                <p>inv OR i</p>
+                                <p>look OR l</p>
+                                <p>talk OR t</p>
+                                <p>take</p>
+                                <p>items</p>
+                                <p>use</p>
+                                <p>chars</p>
+                                <p>help</p>
+                                <p>say</p>
+                                <p>save</p>
+                                <p>load</p>
+                                <p>forward OR f</p>
+                                <p>dial</p>
+                                <p>beg</p>
+                                <p>sleep</p>
+                                <p>press</p>
+                                <p>jump</p>
+                                <p>go</p>
+                                <p>n</p>
+                                <p>s</p>
+                                <p>e</p>
+                                <p>w</p>
+                                <p>ne</p>
+                                <p>se</p>
+                                <p>sw</p>
+                                <p>nw</p>
+                            </div>
+                            <div id="oneAgruCommand">
+                                <h3>One Agrument</h3>
+                                <h4>e.g. "go north", "take book"</h4>
+                            </div>
+                            <div id="oneAgruList">
+                                <p>enter</p>
+                                <p>look</p>
+                                <p>head</p>
+                                <p>go</p>
+                                <p>take</p>
+                                <p>get</p>
+                                <p>wake</p>
+                                <p>use</p>
+                                <p>say</p>
+                                <p>drop</p>
+                                <p>open</p>
+                                <p>close</p>
+                                <p>wear</p>
+                                <p>remove</p>
+                                <p>read</p>
+                            </div>
+                            <div id="twoAgruCommand">
+                                <h3>Two Agruments</h3>
+                                <h4>e.g. "look at key", "talk to dene"</h4>
+                            </div>
+                            <div id="twoAgruList">
+                                <p>search</p>
+                                <p>look</p>
+                                <p>go</p>
+                                <p>walk</p>
+                                <p>talk</p>
+                                <p>turn</p>
+                                <p>jump</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div id='tutorial'>
-                    <h1>How to Use</h1>
-                    <p>Press number buttons on keyboard or use your mouse</p>
+                    <div id="tutorial-text-container">
+                        <h3>Instructions for use:</h3>
+                        <p>To dial a phone number either press the number keys on your keyboard or click the number buttons on the dial pad to the right.</p>
+                        <br>
+                        <p>Need to delete a number? Press the backspace key or the delete button.</p>
+                        <br>
+                        <p>To dial the number press the enter key or the enter button.</p>
+                    </div>
                 </div>
 
                 <div id="dialPad" class="clickables-right">
-                    <div id="dial-pad-buttons">
-                        <button id="toggleTutorial" onclick='animateToggle()'>i</button> <!-- openTutorial() -->
-                        <button id="close" onclick='closeDial()'>x</button>
-                    </div>
-                    <h2 id="dial-name">Dial Pad</h2>
-                    <h4 id="dial-info">Enter the phone number</h4>
-                    <div id="dial-keys">
-                        <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
-                        <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
-                        <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
-                        <button name="number" value="4" id="4key" onclick='numdialButton(this.id)'>4</button>
-                        <button name="number" value="5" id="5key" onclick='numdialButton(this.id)'>5</button>
-                        <button name="number" value="6" id="6key" onclick='numdialButton(this.id)'>6</button>
-                        <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
-                        <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
-                        <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
-                        <button name="delete" value="delete" id="deletekey" onclick='deleteNumBtn()'>Delete</button>
-                        <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
-                        <button name="enter" value="enter" id="enterkey" onclick='enterBtnClick()'>Enter</button>
+                    <div id="dial-pad-container">
+                        <div id="dial-pad-buttons">
+                            <button id="toggleTutorial" onclick='animateToggle()'>i</button> <!-- openTutorial() -->
+                            <button id="close" onclick='closeDial()'>x</button>
+                        </div>
+                        <h2 id="dial-name">Dial Pad</h2>
+                        <h4 id="dial-info">Enter the phone number</h4>
+                        <div id="dial-keys">
+                            <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
+                            <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
+                            <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
+                            <button name="number" value="4" id="4key" onclick='numdialButton(this.id)'>4</button>
+                            <button name="number" value="5" id="5key" onclick='numdialButton(this.id)'>5</button>
+                            <button name="number" value="6" id="6key" onclick='numdialButton(this.id)'>6</button>
+                            <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
+                            <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
+                            <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
+                            <button name="delete" value="delete" id="deletekey" onclick='deleteNumBtn()'>Delete</button>
+                            <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
+                            <button name="enter" value="enter" id="enterkey" onclick='enterBtnClick()'>Enter</button>
+                        </div>
                     </div>
                 </div>
 
@@ -388,19 +478,19 @@
                     <div class="clickable-container" id="mode-clickable">
                         <!-- icon insert <img class="clickable-image" id="mode-icon" src=""> -->
                         <button class="iconbtn" id="mode-button"
-                            onclick="displayToggle('mode-display', 'mode')"></button>
+                            onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"></button>
                     </div>
 
                     <div class="clickable-container" id="achievements-clickable">
                         <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
                         <button class="iconbtn" id="achieve-button"
-                            onclick="displayToggle('achieve-display', 'achieve')"></button>
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"></button>
                     </div>
 
                     <div class="clickable-container" id="help-clickable">
                         <!-- icon insert <img class="clickable-image" id="help-icon" src=""> -->
                         <button class="iconbtn" id="help-button"
-                            onclick="displayToggle('help-display', 'help')"></button>
+                            onclick="displayRightToggle('help-display', 'help', 'help-text-container')"></button>
                     </div>
                 </div>
             </div>

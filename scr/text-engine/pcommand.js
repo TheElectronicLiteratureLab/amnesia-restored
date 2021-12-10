@@ -453,7 +453,9 @@ let chars = () => {
 
 // display help menu
 let help = () => {
-  const instructions = `The following commands are available:
+  // pulls open the command guide for the player to reference
+  displayRightToggle("help-display", "help", "help-text-container");
+  /*const instructions = `The following commands are available:
     LOOK:   'look at key'
     TAKE:   'take book'
     DROP:   'drop key'
@@ -467,7 +469,7 @@ let help = () => {
     LOAD:   load the last saved game
     HELP:   this help menu
   `;
-  println(instructions);
+  println(instructions);*/
 };
 
 // handle say command with no args
@@ -566,13 +568,11 @@ function enterBtnClick(){
 
 
 let closeDial = () => {
-  document.getElementById("dialPad").style.display = "none";
-  document.getElementById("tutorial").style.display = "none";
-  tutorialDisplayed = false;
+  //tutorialDisplayed = false;
   applyInput();
   window.removeEventListener("keydown", checkKeyPressed, false);
 }
-
+// checking what keys are being pressed
 function checkKeyPressed(evt){
   let el = document.getElementById("input");
   let number;
@@ -635,14 +635,14 @@ function checkKeyPressed(evt){
     deleteNum();
   }
 }
-
+// the dial function
 let dial = () => {
-  
   const room = getRoom(disk.roomId);
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
-    document.getElementById('dialPad').style.display = "grid";
+    slideRightIn("dialPad", "dial-pad-container");
+    //document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
       animateToggle();
@@ -659,30 +659,20 @@ let dial = () => {
     
      // adding an event listener to keys
      window.addEventListener("keydown", checkKeyPressed, false);
-    // functionality for keys 
-    
+     // functionality for keys 
     checkKeyPressed();
-    
     window.removeEventListener("keydown", checkKeyPressed, false);
-    
-    // function that adds the key pressed value to the input
-    /*let numdialKey = () => {
-      el.value = el.value + number;
-    }*/
-    
-    // function that deletes last value of input string
-    /*let deleteNum = () => {
-      el.value = el.value.slice(0, -1);
-    }*/
-    
   } else {
     println(`With what phone?`)
   }
 }
 
 let dialing = () => {
-  document.getElementById("dialPad").style.display = "none";
-  document.getElementById("tutorial").style.display = "none";
+  slideRightOut("dialPad", "dial-pad-container");
+
+  animateToggle();
+  //document.getElementById("dialPad").style.display = "none";
+  //document.getElementById("tutorial").style.display = "none";
   println(`You have to enter in a number to be able to place a call. Wanna try again?`);
   reenableInput();
 }

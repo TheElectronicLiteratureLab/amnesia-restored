@@ -740,6 +740,19 @@ body {
 
 #help-display {
    display: none;
+   overflow-y: scroll;
+}
+
+#noAgruList {
+   display: none;
+}
+
+#oneAgruList {
+   display: none;
+}
+
+#twoAgruList {
+   display: none;
 }
 
 #dialPad {
@@ -749,6 +762,11 @@ body {
    background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
    width: 25%;
    height: 100%;
+}
+
+#dial-pad-container{
+   height: 100%;
+   display: grid;
    grid-template-columns: .05fr .9fr .05fr;
    grid-template-rows: .05fr .10fr .05fr auto .10fr;
 }
@@ -789,10 +807,14 @@ body {
 #tutorial {
    display: none;
    position: absolute;
-   right: 0%;
+   right: 25%;
    background-color: rgba(121, 121, 121, 0.945);
    width: 25%;
    height: 100%;
+}
+
+#tutorial-text-container {
+   opacity: 0;
 }
 
 #addresses {
@@ -847,4 +869,22 @@ body {
 
 #output div.playerInput {
    border-left: none;
+}
+
+#styxEndingIcon {
+   width: 40%;
+   margin-right: 10px;
+   border: 1px solid #E4E4E4;
+   border-radius: 5px;
+   background-color: #0e0e0f8a;
+   padding: 5px;
+}
+
+.ending {
+   display: grid;
+   grid-template-columns: .5fr 1fr;
+}
+
+.achieveImg {
+   justify-self: center;
 }
