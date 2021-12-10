@@ -295,6 +295,15 @@ let displayLeftToggle = (id, name, text) => {
    }
 }
 
+let turnOnMap = () => {
+    let x = document.getElementById("map-display");
+    console.log(x.style.display);
+    if(!x.style.display || x.style.display === "none"){
+        console.log("turn on");
+    }
+    
+}
+
 // this is the display toggling for the map
 let displayMapToggle = (id, name) => {
     let x = document.getElementById(id);
@@ -303,7 +312,8 @@ let displayMapToggle = (id, name) => {
     // check if display is none, if true slide in display, if false slide out display
     if(!x.style.display || x.style.display === "none"){
         //slideMapDown(id);
-        document.getElementById("map-display").style.display = "block";
+        //fadeOn(id);
+        console.log("turn on")
     } else {
          
          document.querySelector('input').disabled = false;
@@ -856,7 +866,7 @@ let animateToggle = () => {
 }
 
 // old fade on and off of element displays NOT USING ANYMORE 
-/* 
+
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -873,7 +883,7 @@ let fadeOn = (elId) => {
         }
     }
 }
-
+/*
 let fadeOff = (elId) => {
     let id = null;
     const elem = document.getElementById(elId);
