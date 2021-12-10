@@ -4229,7 +4229,7 @@ const amnesiaRestored = {
         {dir: ['leave', 'exit', 'back'], id: 'heal-club'},
         {dir: ['lockers', 'locker',], id: 'heal-club6'},
         {dir: ['left door', 'massage', 'left'], id: 'heal-club7', block: 'The door to that room is locked.'},
-        {dir: ['right door', 'sauna'], id: 'heal-club8'}, 
+        {dir: ['right door', 'sauna', 'right'], id: 'heal-club8'}, 
         {dir: ['showers', 'shower'], id: 'heal-club9', block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`},
         {dir: ['weight room', 'weights', 'weight', 'room'], id: 'heal-club10', block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room.`}
       ],
