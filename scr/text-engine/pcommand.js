@@ -1881,6 +1881,8 @@ const randomEncounter = () => {
 //LINK UP X STREET EVENT RANDOMNESS TO MOVEMENT ON STREETS
 //POLISH MIDTOWN EASTSIDE OFFICE BUILDINGS WITH PROPER EXIT BLOCKS AND IF THEY CAN ENTER DURING WEEKDAYS 
 //WEEKDAY BLOCKS FOR CERTAIN STREET EXITS
+//turn off hunger and fatigue
+  //vault NYHS dakota UfCS restaurants tenement sketchbook
 
 
 //x street indexer encounter functionality
