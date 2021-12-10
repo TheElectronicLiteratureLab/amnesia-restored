@@ -563,7 +563,6 @@ let displayCheck = (id, name) => {
 
 let displayNone = (id, textId) => {
     slideLeftOut(id, textId);
-    
     //document.getElementById("inventory-item-display").style.display = "none";
     //document.getElementById("inventory-xIndex-display").style.display = "none";
     document.querySelector('input').disabled = false;

@@ -5,7 +5,7 @@ let inv = () => {
   document.querySelector('input').disabled = true;
 
   if (!items.length) {
-    fadeOn("inventory-display");
+    slideLeftIn("inventory-display", "inventory-text-container");
     //document.getElementById("inventory-display").style.display = "block";
   }
 
