@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-revi', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -521,6 +521,7 @@ const amnesiaRestored = {
           if(getItemInInventoryById('bathtowel')){ //if the towel is already in inventory
               room.desc = room.desc.replace(` with a **large towel**.`, '.');
           };
+          room.exits[0].id = lastRoom.id;
       },
       items: [
           {
@@ -567,7 +568,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'bathtowel',
-              icon: 'img/png/image-towel-thumbnail2woutline.png',
+              icon: 'img/png/image-towel-thumbnail2-outline.png',
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel', 'bath towel'],
               desc: `It is a large fluffy towel.`,
@@ -757,21 +758,37 @@ const amnesiaRestored = {
       id: 'hote-revi', //unique ID for this room
       name: 'Hotel Room 1502', //room name (displayed to player)
       hasBed: true,
+      lukecall: false,
       desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky.
       
       You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
       //**interactable items**
       onEnter: () => {
         reenableInput();
-          if(getRoom('hote-revi').visits >= 2){
-              let hotelRoom = getRoom('hote-revi');
-              hotelRoom.desc = `You're standing in your hotel room`;
-              println(hotelRoom.desc);
-          };
+        let hotelRoom = getRoom('hote-revi');
+        hotelRoom.visits += 1;
 
-          //if (lastRoom.id === '')
+        if(hotelRoom.visits >= 2){
+            hotelRoom.desc = `You're standing in your hotel room.`;
+            println(hotelRoom.desc);
+        } else {
+          hotelRoom.desc = `You're standing in your hotel room.`;
+        }
+        
+        if (hotelRoom.visits) {  
+          disk.inventory.forEach((item) => {
+            console.log(item.itemId);
+            hotelRoom.items.forEach((rItem) => {
+              if (rItem.itemId === item.itemId) {
+                let index = hotelRoom.items.indexOf(rItem);
+                console.log(index);
+                hotelRoom.items.splice(index, 1);
+                console.log('Spliced!')
+              }
+            })
+          })
+        }
 
-          reenableInput();
       },
       onLook: () => {
           const room = getRoom('hote-revi');
@@ -811,13 +828,6 @@ const amnesiaRestored = {
                   enterRoom('hote-revi-2'); //LUKE SEQUENCE, just wanted to check if works...won't work without calling getRoom
               },
           },
-          { 
-              itemId: 'roomkey', //change? keep? 
-              name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
-              desc: `The key chain is green plastic with the numerals 1502 in white. The key is ordinary.`,
-              isTakeable: true,
-              isDroppable: true,
-          }, 
           {
               itemId: 'bible',
               icon: 'img/png/bible-icon.png',
@@ -854,7 +864,8 @@ const amnesiaRestored = {
               'static',
               'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
               'static',
-              `Channel 13 is showing a lot of advertising interspersed with clips from an old black-and-white movie.`
+              `Channel 13 is showing a lot of advertising interspersed with clips from an old black-and-white movie.`,
+              'static'
             ],
             isOn: false,
             arrCount: 0,
@@ -886,42 +897,21 @@ const amnesiaRestored = {
                 println(item.desc);
               }
             }
-          },  
+          },
           {
             itemId: 'computer',
-            names: ['IBM PC', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
-            desc: ` `,
+            name: ['Apple //e', 'Apple IIe', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
+            desc: `The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
             isOn: false,
-            onLook: () => {
+            onUse: () => {
               let pc = getItemInRoomById('computer', 'hote-room-8');
               if(pc.isOn === true)
               {
-                if (item.desc == ' ')
-                {
-                  println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.');
-                }
-                pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-                println(pc.desc);
+                println('The computer is already on.');
               } else {
-                if (item.desc == ' ')
-                {
-                  println('The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.');
-                }
-                pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
-                println(pc.desc);
+                println('The computer is off.');
               }
             },
-            onUse: () => {
-              playerC.sScore +=5;
-              console.log(playerC.dScore);
-              let pc = getItemInRoomById('computer', 'hote-room-8');
-              if(pc.isOn === true)
-              {
-                pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
-              } else {
-                pc.desc = 'The computer is an IBM PC equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.';
-              }
-            }                
           },
           {
             itemId: 'dresser',
@@ -968,46 +958,55 @@ const amnesiaRestored = {
             }
           },
           {
+            itemId: 'roomkey',
+            icon: 'img/gif/gif-hotelkey-ingame.gif',
+            gif: 'img/gif/gif-hotelkey-ingame.gif',
+            name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
+            desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
+            isTakeable: true,
+            isDroppable: true
+          },
+          {
             itemId: 'stationary',
-            name: ['hotel stationary', 'stationary', 'paper'],
+            icon: 'img/gif/gif-hotelkey-ingame.gif',
+            gif: 'img/gif/gif-hotelkey-ingame.gif',
+            name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
             desc: 'The stationary says SUNDERLAND HOTEL at the top.',
             isTakeable: true,
             isDroppable: true
           },
           {
-            itemId: 'brochure',
-            name: ['brochure', 'hotel brochure'],
-            desc: 'A brochure from the Sunderland Hotel',
-            isTakeable: true,
-            isDroppable: true,
-            onUse: () => {
-              println('Brochure coming soon!');
-            },
+            itemId: 'roomphone',
+            name: ['phone', 'telephone'],
+            inUse: false,
+            desc: 'The phone on the dresser belongs to NYNEX.',
             onTake: () => {
-              println(`You take it but don't read it`);
-            },
-            onDrop: () => {
-  
+              println("You probably shouldn't take that.");
             }
           },
           {
-              //itemId: 'tuxedo', 
-              name: ['tuxedo', 'tux'],
-              desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
-              
-              Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
-              isTakeable: true, 
-              onTake: () => {
-                playerC.dScore += 3; // Adding to Detective Score
-                playerC.cScore += 3; // Adding to Character Score
-                playerC.sScore += 3; // Adding to Survival Score
-                console.log(playerC.dScore);
-                console.log(playerC.cScore);
-                console.log(playerC.sScore);
-                println('You take the white tuxedo.');//appears in inventory as 'white tuxedo'
-              //add onWear function to put clothes on player 
-              },
-              isWearable: true,
+            itemId: 'brochure',
+            png: '/img/png/image-brochure-ingamewoutline.png',
+            name: ['brochure', 'hotel brochure'],
+            desc: 'A brochure from the Sunderland Hotel.',
+            isTakeable: true,
+            isDroppable: true,
+            onUse: () => {
+              //println('Brochure coming soon!');
+              //need some divs to switch between text
+              //stretch goal unfortunately
+              println("You look through the brochure and think its really nicely designed and laid out.");
+            },
+            onTake: () => {
+              //println(`You take it but don't read it.`);
+              numbers.push(
+                {number: '555-1188', roomid: 'phone-9', contactName: 'Roe & Harpmeister'},
+                {number: '555-7656', roomid: 'phone-10', contactName: `Rolo's Pizzeria`},
+                {number: '555-7673', roomid: 'phone-11', contactName: `Koch's Florist`},
+              );
+            },
+            onDrop: () => {
+            }
           },
           {
             itemId: 'curtains',
@@ -1015,16 +1014,14 @@ const amnesiaRestored = {
             desc: ' ',
             isOpen: false,
             onLook: () => {
-              playerC.dScore +=2;
-              console.log(playerC.dScore);
               let item = getItemInRoomById('curtains', disk.roomId);
-              if (item.isCurtOpen === true) {
+              if (item.isOpen === true) {
                 if (item.desc === ' ')
                 println(`The ${item.name[0]} are open.`);
               } else {
                 println(item.desc);
               }
-              if (item.isCurtOpen === false) {
+              if (item.isOpen === false) {
                 if (item.desc === ' ')
                 println(`The ${item.name[0]} are closed.`);
               } else {
@@ -1033,93 +1030,65 @@ const amnesiaRestored = {
             }
           },
           {
-              itemId: 'hotelwindow',
-              name: 'Hotel Window', //hotel room window
-              desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun low in the sky.`,
+            itemId: 'hotelwindow',
+            name: 'Sunderland Window',
+            desc: 'The window is shrouded by the drapes.',
           },
+          {
+            itemId: 'hoteldoor',
+            name: ['door', 'Door', 'room door'],
+            desc: 'The door is closed.',
+            isOpen: false,
+            onUse: () => {
+              let door = getItemInRoomById('hoteldoor', disk.roomId);
+              if (door.isOpen === true) {
+                if (earlyLeave !== true) {
+                  enterRoom('hote-room-9');
+                } else {
+                  enterRoom('corridor-1502');
+                }
+              }
+              else {
+                println(`You need to **open** the door first!`);
+              }
+            }
+          },
+          {
+            itemId: 'tuxedo',
+            name: ['White Tuxedo', 'tuxedo', 'tux'],
+            desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
+              
+              Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
+              isTakeable: true,
+              isDroppable: true,
+              top: true, 
+              bottom: true,
+              takeFirst: false,
+              onTake: () => {
+                let room = getRoom(disk.roomId);
+
+                if (room.takeFirst === false) {
+                  playerC.dScore += 3; // Adding to Detective Score
+                  playerC.cScore += 3; // Adding to Character Score
+                  playerC.sScore += 3; // Adding to Survival Score
+                  console.log(playerC.dScore);
+                  console.log(playerC.cScore);
+                  console.log(playerC.sScore);  
+                  room.takeFirst = true;
+                } else {
+                  println('You take the white tuxedo.');
+                }
+              //add onWear function to put clothes on player 
+              }
+            }
       ], //end of hote-revi items
       exits: [
-          {dir: ['bathroom'], id: 'hote-revi-1',
-          }, //leads to bathroom 
-          {dir: ['leave'],
-              id: 'hote-revi-2',
-              //leads to phone interaction with LUKE
-          },
-          {
-              //enter phone room??
-          },
-          {dir: ['leave2'],
-              id: 'hote-revi-8', //leads to transition to Lobby node
-          },
+          {dir: ['bathroom'], id: 'hote-bath-1'}, //leads to bathroom 
+          {dir: ['leave'], id: 'hote-revi-2'}, //leads to phone interaction with LUKE
+          {dir: ['leave2'], id: 'hote-revi-8'}, //leads to transition to Lobby node
       ],
   }, //end of hote-revi room
-  {
-      id: 'hote-revi-1',
-      name: 'Bathroom',
-      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretneding to be marble, **a tiled shower**, **a toilet**, a towel rack with a **large towel**. But no clothes.`, 
-      onEnter: () => {
-          const room = getRoom('hote-revi-1');
-          if(getItemInInventory('towel')){ //if the towel is already in inventory
-              room.desc = room.desc.replace(` with a **large towel**.`, '.');
-          };
-      },
-      items: [
-          {
-              name: ['sink', 'pink sink'], 
-              desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
-              /*item: {
-                      name: ['soap', 'cake of soap'],
-                      desc: `It smells like lemon.`,
-                      isTakeable: true,
-                      onTake: () => {
-                          println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
-                          const sink = getItemInRoom('sink', 'hote-revi-1');
-                          sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
-                      },
-                      onUse: () => {
-                          println(`You wash your hands. It occurs to you only now that you are not wearing a wedding band. Does that mean you're single? Or divorced? Or that the ring has been stolen? Or that, like many married men, you've never worn one?`); //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
-                      },
-                  }, //end of sink items*/ //currently can't have an item property on item object.
-
-          },
-          {
-              name: ['tiled shower', 'shower'],
-              desc: `The tiled shower is equipped with hot and cold water knobs, and a water conserving shower head.`,
-              onUse: () => {
-                playerC.sScore += 3;
-                console.log(playerC.sScore);
-               println(`You remove any clothing you have on. \n
-              
-              You step into the shower, slide the door shut, adjust the temperature to your liking, and take a nice long lathery shower. Not that you really needed one that badly, but cleaniness is next to godliness after all.`);
-              },
-          },
-          {
-              name: 'toilet',
-              desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face -- looking very sheepish.`,
-              onUse: () => println(`That's done. Now flush. Very good. Evidently your toilet training has not been neglected.`),
-          },
-          {
-              name: ['towel', 'large towel'],
-              desc: `It is a large fluffy towel.`,
-              isTakeable: true,
-              onTake: () => {
-                  playerC.dScore += 10;
-                  playerC.sScore += 10;
-                  console.log(playerC.dScore);
-                  console.log(playerC.sScore);
-                  println('You take the towel'); //appears in inventory as 'towel'
-                  const bathroom = getRoom('hote-revi-1');
-                  bathroom.desc = bathroom.desc.replace(` with a **large towel**.`, '.'); //removes towel description from bathroom look description
-              },
-              //can WEAR towel.
-          },
-      ], //end of bathroom items
-      exits: [
-          {dir: ['room'], //rename
-              id: 'hote-revi'
-          },
-      ],//end of hote-revi-1 exits
-  }, //end of hote-revi-1 room
+   //end of hote-revi-1 room
   {
       id:'hote-revi-2',
       name: '',
@@ -4227,9 +4196,9 @@ const amnesiaRestored = {
       To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked "Sauna," that on the left "Massage." Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
       exits: [
         {dir: ['leave', 'exit', 'back'], id: 'heal-club'},
-        {dir: ['lockers', 'locker',], id: 'heal-club6'},
-        {dir: ['left door', 'massage', 'left'], id: 'heal-club7', block: 'The door to that room is locked.'},
-        {dir: ['right door', 'sauna', 'right'], id: 'heal-club8'}, 
+        {dir: ['lockers', 'locker'], id: 'heal-club6'},
+        {dir: ['massage', 'left', 'left door'], block: 'The door to that room is locked.'},
+        {dir: ['sauna', 'right', 'right door'], id: 'heal-club8'}, 
         {dir: ['showers', 'shower'], id: 'heal-club9', block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`},
         {dir: ['weight room', 'weights', 'weight', 'room'], id: 'heal-club10', block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room.`}
       ],
@@ -4248,10 +4217,34 @@ const amnesiaRestored = {
       id: 'heal-club12',
       name: `Men's Locker Room`,
       desc: `You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.`,
-
       onEnter: () => {
-        pressEnter('heal-club13')
-      },
+        pressEnter('heal-club13');
+        let item = getItemInRoomById('mmtshirt', 'heal-club12');
+          if (item) {
+            addItem('mmtshirt');
+            addItem('lockersweats');
+          }
+        },
+      items: [
+        {
+          itemId: 'mmtshirt',
+          icon: '/img/gif/gif-clothingmickeytee-ingame.gif',
+          gif: '/img/gif/gif-clothingmickeytee-ingame.gif',
+          name: 'Mickey Mouse T-Shirt',
+          desc: 'A Mickey Mouse T-shirt with its sleeves chopped off. First found in a Sunderland Hotel Healthclub locker room.',
+          isTakeable: true,
+          isDroppable: true,
+        },
+        {
+          itemId: 'lockersweats',
+          icon: '/img/gif/gif-sweatsuitbottom-ingame.gif',
+          gif: '/img/gif/gif-sweatsuitbottom-ingame.gif',
+          name: 'Sweatpants',
+          desc: 'A pair of sweatpants. First found in a Sunderland Hotel Healthclub locker room.',
+          isTakeable: true,
+          isDroppable: true,
+        },
+      ],
       exits: [],
     },
     {
@@ -4262,45 +4255,25 @@ const amnesiaRestored = {
         reenableInput();
       },
       exits: [
-        {dir: ['leave', 'exit'], id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
-              
-              Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+        {dir: ['leave', 'exit'], id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. \n\n Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
             },
             {dir: ['right', 'lockers', 'locker',],
               id: 'heal-club6'
             },
-            {dir: ['left door', 'massage'],
+            {dir: ['massage', 'left door'],
               id: 'heal-club7', block: 'The door to that room is locked.'
             },
-            {dir: ['right door', 'sauna'],
+            {dir: ['sauna', 'right door'],
               id: 'heal-club8'
             }, 
             {dir: ['showers', 'shower'],
-              id: 'heal-club9', block: `As you do, you realize that a man and womana re coming out of the shower. Even in your present predicament you can't help but wonder what the woman is doing in the men's locker room.`
+              id: 'heal-club9', block: `As you do, you realize that a man and a woman are coming out of the shower. Even in your present predicament you can't help but wonder what the woman is doing in the men's locker room.`
             },
-            {dir: ['weight room', 'weights', 'weight', 'room'],
+            {dir: ['weight', 'weights', 'weight room', 'room'],
               id: 'heal-club10',
               block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
             }
           ],
-    },
-    {
-      id: 'heal-club7',
-      name: `Men's Locker Room`,
-      desc: 'massage',
-      exits: [],
-    },
-    {
-      id: 'heal-club9',
-      name: `Men's Locker Room`,
-      desc: 'showers',
-      exits: [],
-    },
-    {
-      id: 'heal-club10',
-      name: `Men's Locker Room`,
-      desc: `weight room`,
-      exits: [],
     },
     {
       id: 'heal-club8',
@@ -4331,10 +4304,11 @@ const amnesiaRestored = {
     {
       id: 'deja-vu', 
       name: 'Deja-Vu', 
-      desc: `You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`,
-      
+      desc: ` `,
       onEnter: () => {
-          pressEnter('deja-vu1');
+        clearOutput();
+        println(`You are locked in a cell. It is bare and dark and smells of lives gone sour. The only light is a feeble fluorescent glow that slants in through the louvred grill in the iron door. You know the door is iron because you have been beating on it. Your hands are sore, and your right eye is swollen shut. You ache all over.`)
+        pressEnter('deja-vu1');
       },
       exits: [],
     },
@@ -4346,10 +4320,12 @@ const amnesiaRestored = {
         reenableInput();
     },
       onBlock: () => {
+        if (prevInput !== '') {
           for (let count = 0; count < 3; count++) {
-              println(`'${prevInput}'`);
-          }
-          enterRoom('deja-vu2');
+            println(`'${prevInput}'`);
+        }
+        enterRoom('deja-vu2');
+        }
       },
       exits: [],
     },
@@ -4375,8 +4351,10 @@ const amnesiaRestored = {
         exits: [],
 
         onBlock: () => {
-            if (prevInput === 'please sir') {
+            if (prevInput === 'please sir' || prevInput === 'food please') {
                 enterRoom('deja-vu7');
+            } else if (prevInput === '') {
+              println(`I'm waiting on those words...`);
             } else {
                 enterRoom('deja-vu4');
             };
@@ -4543,9 +4521,12 @@ const amnesiaRestored = {
             reenableInput();
         },
         onBlock: () => {
-            if (prevInput === 'yes') {
-                enterRoom('heal-club23');
-            } else {
+            if (prevInput === '') {
+              println('"Are you feeling a little better now?"')
+                
+            } else if (prevInput === 'yes') {
+              enterRoom('heal-club23');
+            } else if (prevInput === 'no') {
                 enterRoom('heal-club24');
             }
         },
@@ -4556,12 +4537,13 @@ const amnesiaRestored = {
         name: 'Massage Room',
         desc: `"That's good, Mr. Cameron! You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?" You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`, 
         exits: [],
-      items: [
+        items: [
         {
-          itemId: 'gymbag',
+          itemId: 'canvasbag',
+          icon: '/img/gif/gif-gymbag-ingame.gif/',
+          gif: '/img/png/image-gymbag-outline.png/,',
           name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
           desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
-          isTakeable: true,
           isDroppable: true,
           descRead: false,
           onTake: () => {
@@ -4572,8 +4554,8 @@ const amnesiaRestored = {
             pressEnter('heal-club25');
           },
           onLook: () => {
-            takeItem('Green Canvas Gym Bag');
-            pressEnter('heal-club25');
+            //addItem('canvasbag');
+            enterRoom('heal-club25');
           }
         },
       ]
@@ -4585,9 +4567,10 @@ const amnesiaRestored = {
         items: [
           {
             itemId: 'canvasbag',
-            name: ['Green Canvas Gym Bag', 'canvas bag', 'bag'],
+            icon: '/img/gif/gif-gymbag-ingame.gif/',
+            gif: '/img/png/image-gymbag-outline.png/,',
+            name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
             desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
-            isTakeable: true,
             isDroppable: true,
             descRead: false,
             onTake: () => {
@@ -4598,8 +4581,8 @@ const amnesiaRestored = {
               pressEnter('heal-club25');
             },
             onLook: () => {
-              takeItem('Green Canvas Gym Bag');
-              pressEnter('heal-club25');
+              //addItem('canvasbag');
+              enterRoom('heal-club25');
             }
           },
         ],
@@ -4612,59 +4595,81 @@ const amnesiaRestored = {
       
       You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
       onEnter: () => {
+        document.getElementById('address-book-button').style.display = "block";
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
         playerC.sScore += 35; // Adding to Survival Score
         console.log(playerC.dScore);
         console.log(playerC.cScore);
         console.log(playerC.sScore);
-        disk.inventory.push([
+        numbers.push(
+          {number:'555-1314', roomid:'phone-12', contactName:'JA'},
+          {number:'555-1315', roomid:'phone-13', contactName:`Wit's End`},
+          {number:'555-2712', roomid:'phone-14', contactName:'FBI'},
+          {number:'555-2259', roomid:'phone-15', contactName:'E. H.'},
+          {number:'555-2577', roomid:'phone-16', contactName:'Lila T.'},
+          {number:'555-2783', roomid:'phone-17', contactName:'Sue G.'}, 
+          {number:'555-4312', roomid:'phone-18', contactName:'Chelsea H.'},
+          {number:'555-4365', roomid:'phone-19', contactName:'SEX'},
+          {number:'555-4685', roomid:'phone-20', contactName:'Kvetch'},
+          {number:'555-5436', roomid:'phone-21', contactName:'AA'},
+          {number:'555-5643', roomid:'phone-22', contactName:'Interlude'},
+          {number:'555-6200', roomid:'phone-23', contactName:'TTTT'},
+          {number:'555-8422', roomid:'phone-24', contactName:'DRUGS'},
+          {number:'555-8749', roomid:'phone-25', contactName:'R + J'},
+          {number:'555-8876', roomid:'phone-26', contactName:'J.L.'}, 
+          {number:'571-7171', roomid:'phone-27', contactName:'SOFT'},
+          {number:'976-1212', roomid:'phone-28', contactName:'F.'} 
+        );
+        disk.inventory.push(
           {
+            itemId: 'canvasbag',
+            icon: '/img/gif/gif-gymbag-ingame.gif',
+            gif: '/img/gif/gif-gymbag-ingame.gif',
+            name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
+            desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
+            isTakeable: true,
+            isDroppable: true,
+          },
+          {
+            itemId: 'jeans',
+            icon: '/img/gif/gif-clothinglevis-ingame.gif',
+            gif: '/img/gif/gif-clothinglevis-ingame.gif',
             name: `Levi's Jeans`,
             desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
             isDroppable: true,
             isTakeable: true,
           },
           {
-            name: 'T Shirt',
-            desc: `It is a red teeshirt that has faded to a shade of pink.`,
+            itemId: 'tshirt',
+            icon: '/img/gif/gif-clothingtshirt-ingame.gif',
+            gif: '/img/gif/gif-clothingtshirt-ingame.gif',
+            name: 'T-Shirt',
+            desc: `It is a gray teeshirt that has faded to a shade of off white.`,
             isDroppable: true,
             isTakeable: true,
           },
           {
+            itemId: 'sneakers',
+            icon: '/img/gif/gif-clothingadidas-ingame.gif',
+            gif: '/img/gif/gif-clothingadidas-ingame.gif',
             name: 'Sneakers',
             desc:`The well-worn sneakers are made by Adidas.`,
             isDroppable: true,
             isTakeable: true,
           },
           {
+            itemId: 'addressbook',
+            icon: '/img/gif/gif-addressbook-ingame.gif',
+            gif: '/img/gif/gif-addressbook-ingame.gif',
             name: 'Address Book',
-            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
-            onTake: () => {
-              numbers.push(
-                {number:'555-1314', roomid:'phone-12', contactName:'JA'},
-                {number:'555-1315', roomid:'phone-13', contactName:`Wit's End`},
-                {number:'555-2712', roomid:'phone-14', contactName:'FBI'},
-                {number:'555-2259', roomid:'phone-15', contactName:'E. H.'},
-                {number:'555-2577', roomid:'phone-16', contactName:'Lila T.'},
-                {number:'555-2783', roomid:'phone-17', contactName:'Sue G.'}, 
-                {number:'555-4312', roomid:'phone-18', contactName:'Chelsea H.'},
-                {number:'555-4365', roomid:'phone-19', contactName:'SEX'},
-                {number:'555-4685', roomid:'phone-20', contactName:'Kvetch'},
-                {number:'555-5436', roomid:'phone-21', contactName:'AA'},
-                {number:'555-5643', roomid:'phone-22', contactName:'Interlude'},
-                {number:'555-6200', roomid:'phone-23', contactName:'TTTT'},
-                {number:'555-8422', roomid:'phone-24', contactName:'DRUGS'},
-                {number:'555-8749', roomid:'phone-25', contactName:'R + J'},
-                {number:'555-8876', roomid:'phone-26', contactName:'J.L.'}, 
-                {number:'571-7171', roomid:'phone-27', contactName:'SOFT'},
-                {number:'976-1212', roomid:'phone-28', contactName:'F.'} 
-              );
-            },
-            isDroppable: false,
+            onUse: () => {
+              //Open address book
+            }
           },
-        ])
+        )
         pressEnter('heal-club26');
       },
       exits: [],
@@ -4677,13 +4682,11 @@ const amnesiaRestored = {
         reenableInput();
       },
       onBlock: () => {
-        if(prevInput !== 'yes') {
+        if(prevInput !== 'yes' || prevInput === '') {
           println(`"That’s all right, Mr. Cameron. Whenever you’re ready. Just take your time." Half a minute later, he raps again. "How about it, Mr. Cameron. Do you think you can make it back to your room?"`)
-        } if (prevInput === 'leave' || 'exit') {
+        } else if (prevInput === 'leave' || 'exit') {
           println(`"Ah, Mr. Cameron," the masseur says unctuously. "I’m happy to see you on your feet again. But I wouldn’t feel right if I let you leave here by yourself. You need to go back to your room and get some rest. Buddy here has your key; and he’ll see you to your door." You try to protest, but your words go unheeded.`)
           enterRoom('heal-club27');
-        }else {
-          
         }
       },
       exits: [],

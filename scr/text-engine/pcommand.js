@@ -341,6 +341,8 @@ let takeItem = (itemName) => {
   const findItem = item => objectHasName(item, itemName);
   let itemIndex = room.items && room.items.findIndex(findItem);
 
+  console.log('Room:' + itemName)
+
   if (typeof itemIndex === 'number' && itemIndex > -1) {
     const item = room.items[itemIndex];
     if (item.isTakeable) {
@@ -710,13 +712,15 @@ let callNum = (num) => {
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
+  console.log(item);
+  addItem(item.itemId);
   const room = getRoom('hote-revi');
 
   // items that are worn on both the torso and legs
   if(item.top && item.bottom && playCloth.top.length === 0 && playCloth.bottom.length === 0){
     playCloth.top.push(item.itemId);
     playCloth.bottom.push(item.itemId);
-    if(item.itemId === 'tuxedo' && room.lukecall !== true){
+    if(item.itemId === 'tuxedo' && room.lukecall === false){
       println(`With a sense partly of jumping off a diving board into a complete void and partly of self-amazement-- as though you were a matador getting dressed for the first time in his suit-of-lights-- you put on the white tuxedo. First the frilly shirt and the white bow tie, then the pants, which are held up by the novelty of braces instead of by a belt; then the cummerbund; white silk calf-length socks and the whiter-than-white patent leather shoes; and finally the white jacket and the white silk top hat. You step in front of the mirror to see if you look any more or less familiar- but you only look very white.`);
     } else {
       println(`You put on the ${clothes}.`);
@@ -786,8 +790,11 @@ let wear = (clothes) => {
 
 // remove command
 let remove = (clothes) => {
+  //let room = getRoom(disk.roomId);
   let item = getItemInRoom(clothes, disk.roomId);
-
+  //console.log(item.itemId)
+  //dropItem(item.name[0]);
+  
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
     playCloth.bottom.splice(item.itemId);
@@ -832,9 +839,9 @@ let remove = (clothes) => {
 
 // open command
 let open = (itemToOpen) => {
-  //println("item" + itemToOpen);
+  println("item" + itemToOpen);
   let item = getItemInRoom(itemToOpen, disk.roomId);
-  
+
   // Items that can be opened
   // Curtains
   if (item !== undefined)
@@ -894,10 +901,20 @@ let open = (itemToOpen) => {
       } else {
         println(`The sofa is already open.`);
       }
-    } 
+    }
+
+    //Canvas Bag
+    else if (item.itemId === 'canvasbag') {
+      if (disk.roomId === 'heal-club23' || disk.roomId === 'heal-club24')
+      addItem('canvasbag');
+      enterRoom('heal-club25');
+    } else {
+      println('You already emptied it of its contents');
+    }
   } else {
     println("You can't open that.");
   }
+
 }
 
 // close command

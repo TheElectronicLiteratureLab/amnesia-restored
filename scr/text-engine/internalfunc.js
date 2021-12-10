@@ -266,6 +266,11 @@ let reenableInput = () => {
     document.querySelector('input').focus(); }, 100);
 };
 
+// clear the output screen
+let clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+}
+
 // determine whether the object has the passed name
 // item | character, string -> bool
 let objectHasName = (obj, name) => {
