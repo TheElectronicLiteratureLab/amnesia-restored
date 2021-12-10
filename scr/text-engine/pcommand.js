@@ -1573,7 +1573,6 @@ const sleepFunction = () => {
 
 //save load\\
 //player score\\
-//52-5 needs to be linked properly to exiting hotel stuff
 
 
 //difficulty level tie ins\\
