@@ -1437,7 +1437,6 @@ const begLootTable = () => {
     println(`Oops something went wrong`);
   }
 };
-
 const giveMoney = (amount) => {
   playMon = playMon + amount
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;

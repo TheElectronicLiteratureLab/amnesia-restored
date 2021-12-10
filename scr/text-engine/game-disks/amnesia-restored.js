@@ -4719,6 +4719,20 @@ const amnesiaRestored = {
     //                   Death and Texas                       /
     //********************************************************/
     {
+      id: 'hosp-deat', // After the nightmare, proceeding to death and texas
+      name: 'NYU Medical Center',
+      desc: `You find yourself waking up not where you passed out, but in a hospital bed. Your arms have been fastened to the sides of the bed by canvas restraining straps. After you have struggled a little while, a nurse enters with a hypodermic. "Now, now, Mr. Hollings, none of that or I will have to sedate you."`,
+      onBlock: () => {
+        if (prevInput === 'fight' || prevInput === 'protest' || prevInput === 'scream' || prevInput === 'struggle' || prevInput === 'kill' || prevInput === 'nurse' || prevInput === 'hollings') {
+          println(`Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`);
+          pressEnter('deat-1');
+        } else if (prevInput === 'explain' || prevInput === 'explanation' || prevInput === 'you'|| prevInput === 'who are you' || prevInput === 'who are you?') {
+          println(`"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
+          pressEnter('deat-1'); 
+        }
+      }
+    },
+    {
       id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Death Row', // Displayed each time the player enters the room.
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
