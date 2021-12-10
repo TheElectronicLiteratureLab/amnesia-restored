@@ -980,7 +980,7 @@ const fastTravel = () =>{
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
+  const rooms = streets.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
@@ -1094,9 +1094,9 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 //spawn tenement function
 function spawnTenement() {
   const room = getRoom(disk.roomId); //get current room
-  const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
+  const exitedFrom = getRoom('hote-exit');
+  const enteredStreets = getRoom(exitedFrom.streetExit); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
-
   const tenement = getRoom('tene'); //get the tenement rooms
   const tenement2 = getRoom('tene-1');
   const tenement3 = getRoom('tene-2');
@@ -1294,7 +1294,7 @@ const beg = () => {
     println(`You can't beg when you aren't on the streets.`)
   }
 
-}
+};
 
 
 //loot table for beg command
@@ -1360,7 +1360,6 @@ const begLootTable = () => {
 
 const giveMoney = (amount) => {
   playMon = playMon + amount
-
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
 };
 

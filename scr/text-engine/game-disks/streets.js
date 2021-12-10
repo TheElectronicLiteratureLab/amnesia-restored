@@ -1,5 +1,5 @@
 const streets = {
-  roomId: '23-hhpw',
+  roomId: 'test1',
   currPos: [],
   rooms: [
 
@@ -19200,7 +19200,7 @@ const streets = {
         {dir: 'north', id: '49-12'},
         {dir: 'south', id: '47-12'},
         {dir: 'east', id: '48-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19302,7 +19302,7 @@ const streets = {
         {dir: 'north', id: '48-12'},
         {dir: 'south', id: '46-12'},
         {dir: 'east', id: '47-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19411,7 +19411,7 @@ const streets = {
         {dir: 'north', id: '47-12'},
         {dir: 'south', id: '45-12'},
         {dir: 'east', id: '46-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19508,7 +19508,7 @@ const streets = {
         {dir: 'north', id: '46-12'},
         {dir: 'south', id: '44-12'},
         {dir: 'east', id: '45-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19631,7 +19631,7 @@ const streets = {
         {dir: 'north', id: '57-hhpw'},
         {dir: 'south', id: '43-hhpw'},
         {dir: 'east', id: '44-12'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19732,7 +19732,7 @@ const streets = {
         {dir: 'south', id: '43-amer'},
         {dir: 'east', id: '44-5'},
         {dir: 'west', id: '44-broa'},
-        {dir: ['enter', 'hotel', 'algonquin'], block:`You can’t go that way.`},
+        {dir: ['enter', 'hotel', 'algonquin'], block:`You can't go that way.`},
       ],
     },
 //Start 43rd Street
@@ -19745,7 +19745,7 @@ const streets = {
         {dir: 'north', id: '44-hhpw'},
         {dir: 'south', id: '42-hhpw'},
         {dir: 'east', id: '43-12'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19863,7 +19863,7 @@ const streets = {
         {dir: 'north', id: '43-hhpw'},
         {dir: 'south', id: '39-hhpw'},
         {dir: 'east', id: '42-12'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -19910,7 +19910,7 @@ const streets = {
       name: 'W. 42nd St. and Dyer Ave.',
       desc: 'A row of new theatres struggle desperately to surmount the general decay of the area.',
       exits: [
-        {dir: 'north', block:`You can’t go that way.`},
+        {dir: 'north', block:`You can't go that way.`},
         {dir: 'east', id: '42-9'},
         {dir: 'west', id: '42-10'},
         {dir: 'south', id: '41-dyer'},
@@ -19990,7 +19990,7 @@ const streets = {
         {dir: 'north', id: '42-12'},
         {dir: 'south', id: '40-12'},
         {dir: 'east', id: '41-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20011,7 +20011,7 @@ const streets = {
       isStreet: true,
       name: 'W. 41st St. and Galvin Ave.',
       exits: [
-        {dir: 'north', block:`You can’t go that way.`},
+        {dir: 'north', block:`You can't go that way.`},
         {dir: 'east', id: '41-10'},
         {dir: 'west', id: '41-11'},
         {dir: 'south', id: '40-galv'},
@@ -20103,7 +20103,7 @@ const streets = {
       exits: [
         {dir: 'north', id: '42-amer'},
         {dir: 'south', id: '40-amer'},
-        {dir: 'east', block:`You can’t go that way.`},
+        {dir: 'east', block:`You can't go that way.`},
         {dir: 'west', id: '41-broa'},
         {dir: 'pizzeria', id: 'pizza-intro'}
       ],
@@ -20118,7 +20118,7 @@ const streets = {
         {dir: 'north', id: '41-12'},
         {dir: 'south', id: '39-12'},
         {dir: 'east', id: '40-11'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20166,7 +20166,7 @@ const streets = {
         {dir: 'north', id: '40-galv'},
         {dir: 'south', id: '39-galv'},
         {dir: 'east', id: 'bta-10'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20213,7 +20213,7 @@ const streets = {
       exits: [
         {dir: 'north', id: '41-9'},
         {dir: 'south', id: '40-9'},
-        {dir: 'east', block:`You can’t go that way.`},
+        {dir: 'east', block:`You can't go that way.`},
         {dir: 'west', id: 'bta-dyer'},
       ],
     },//End Bus Terminal Access
@@ -20326,7 +20326,7 @@ const streets = {
         {dir: 'north', id: 'bta-galv'},
         {dir: 'east', id: '39-10'},
         {dir: 'west', id: '39-11'},
-        {dir: 'south', block:`You can’t go that way.`},
+        {dir: 'south', block:`You can't go that way.`},
       ],
     },
     {
@@ -20361,8 +20361,8 @@ const streets = {
       exits: [
         {dir: 'north', id: '39-dyer'},
         {dir: 'south', id: '38-dyer'},
-        {dir: 'east', block: `You can’t go that way.`},
-        {dir: 'west', block: `You can’t go that way.`},
+        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'west', block: `You can't go that way.`},
       ],
     },
     {
@@ -20438,7 +20438,7 @@ const streets = {
         {dir: 'north', id: '39-11'},
         {dir: 'south', id: '37-11'},
         {dir: 'east', id: '38-10'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20536,7 +20536,7 @@ const streets = {
         {dir: 'north', id: '38-11'},
         {dir: 'south', id: '36-11'},
         {dir: 'east', id: '37-10'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20634,7 +20634,7 @@ const streets = {
         {dir: 'north', id: '37-11'},
         {dir: 'south', id: '35-11'},
         {dir: 'east', id: '36-10'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20732,7 +20732,7 @@ const streets = {
         {dir: 'north', id: '36-11'},
         {dir: 'south', id: '34-11'},
         {dir: 'east', id: '35-10'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20834,7 +20834,7 @@ const streets = {
         {dir: 'north', id: '39-hhpw'},
         {dir: 'south', id: '23-hhpw'},
         {dir: 'east', id: '34-12'},
-        {dir: 'west', block:`You can’t go that way.`},
+        {dir: 'west', block:`You can't go that way.`},
       ],
     },
     {
@@ -20936,6 +20936,7 @@ const streets = {
     {
       id: 'hote-exit',
       coord: [],
+      hasEntered: false,
       name: 'Sunderland Hotel Lobby',
       desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
       onEnter: () => {
@@ -20976,6 +20977,26 @@ const streets = {
             
             You nod your head thoughtfully.`,
       onEnter: () => {
+        const room = getRoom('hote-exit');
+      //   const exit52 = getRoom('lobb-revi-5');
+      //   const exit53 = getRoom('lobb-revi-8');
+
+      //   exit53.exits = [
+      //     {dir: ['n', 'north', 'leave'], id: '53-5'}, // exit onto streets
+      //     {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
+      //     {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+      //     {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+      // ];
+
+      // exit52.exits = [
+      //   {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
+      //           {dir: ['s', 'south', 'leave'], id: '52-5'}, // exit building
+      //           {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+      //           {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+      // ]
+
+        //pressEnter(room.streetExit);
+
         pressEnter('53-5');
       },
       exits: []
@@ -20988,13 +21009,24 @@ const streets = {
       isStreet: true,
       curMoveCount: 0,
       onEnter: () => {
-        degradation = true;
-        reenableInput();
+        if (lastRoom.id === 'hote-exit3'){
+          degradation = true;
+          reenableInput();
 
-        const room = getRoom(disk.roomId);
+          const room = getRoom(disk.roomId);
 
-        room.curMoveCount = moveCount;
+          room.curMoveCount = moveCount;
 
+          
+        } else {
+          if(!firstEncounter) {
+            firstEncounter = true;
+  
+            xStreetEvent();
+          } else {
+            return;
+          };
+        };
 
       },
       exits: [
@@ -21012,7 +21044,6 @@ const streets = {
       desc: `The 54 ST-5 AV Station entrance is at this corner.`,
       hasSubway: true,
       onEnter: () => {
-        const room = getRoom(disk.roomId);
 
         if(!firstEncounter) {
           firstEncounter = true;
@@ -21060,7 +21091,7 @@ const streets = {
       id: '57-5',
       coord: [38.959, -6.987],
       name: 'W. 57th St. and 5th Ave.',
-      desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany’s. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
+      desc: `Every block, every shop front, in this part of town seems to bear another Famous Name. This corner, which from a distance looked like a large granite tombstone, turns out on closer inspection to be none other than that celebrated breakfast club, Tiffany's. Inside each of the tiny windows in the fortress-like facade is a modest bouquet of tea-roses, each held together by about $50,000 worth of diamonds, pearls, emeralds, and rubies. An ideal low-cholesterol breakfast.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '58-5'},
@@ -21073,7 +21104,7 @@ const streets = {
       id: '58-5',
       coord: [40.581, -7.031],
       name: 'W. 58th St. and 5th Ave.',
-      desc: `There are certain buildings--the Pyramids, St. Peter’s in Rome, the White House--that even an amnesiac would probably recognize. And here’s another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
+      desc: `There are certain buildings--the Pyramids, St. Peter's in Rome, the White House--that even an amnesiac would probably recognize. And here's another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
       isStreet: true,
       onEnter: () => {
         reenableInput();
@@ -21090,7 +21121,7 @@ const streets = {
       id: 'plaz-hote',
       coord: [],
       name: 'Lobby of the Plaza Hotel',
-      desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don’t. You ignore the voice deep inside and leave with a sigh of regret.`,
+      desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don't. You ignore the voice deep inside and leave with a sigh of regret.`,
       isStreet: true,
       exits: [],
       onEnter: () => {
@@ -21430,7 +21461,7 @@ const streets = {
       id: '35-madi',
       coord: [0.110, -2.000],
       name: 'E. 35th St. and Madison Ave.',
-      desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn’t have asked for a nobler palazzo. Until you’re right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman’s doesn’t believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
+      desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn't have asked for a nobler palazzo. Until you're right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman's doesn't believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '36-madi'},
@@ -21535,7 +21566,7 @@ const streets = {
       id: '41-5',
       coord: [11.351, -6.459],
       name: 'W. 41st St. and 5th Ave.',
-      desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world’s classiest set of bookshelves.`,
+      desc: `Two large, smug lions flank the steps that lead up to the monumental triple triumphant arch of the main branch of the Public Library. This has got to be the world's classiest set of bookshelves.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '42-5'},
@@ -21631,7 +21662,7 @@ const streets = {
       id: '48-5',
       coord: [24.527, -6.700],
       name: 'W. 48th St. and 5th Ave.',
-      desc: `Here is Barnes & Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner’s. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club.`,
+      desc: `Here is Barnes & Nobles – a store filled with what appears to be thousands and thousands of books. Across the street is Scribner's. Looking through the windows, you cannot be certain whether it is a retail establishment or a library of some exclusive club.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '49-5'},
@@ -21719,19 +21750,33 @@ const streets = {
       id: '52-5',
       coord: [31.222, -6.876],
       isStreet: true,
+      curMoveCount: 0,
       name: 'W. 52nd St. and 5th Ave.',
       desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
 
-            There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
+            There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick's Cathedral in memory of James Renwick, the architect.`,
       onEnter: () => {
+        if (lastRoom.id === 'hote-exit3'){
+          degradation = true;
+          reenableInput();
 
-        if(!firstEncounter) {
-          firstEncounter = true;
+          const room = getRoom(disk.roomId);
 
-          xStreetEvent();
+          room.curMoveCount = moveCount;
+
+          room.onEnter = () => {
+            return;
+          } ;
         } else {
-          return;
-        }
+          if(!firstEncounter) {
+            firstEncounter = true;
+  
+            xStreetEvent();
+          } else {
+            return;
+          };
+        };
+
       },
       exits: [
         {dir: 'north', id: '53-5'},
@@ -22202,7 +22247,7 @@ const streets = {
       id: '42-lexi',
       coord: [13.496, 5.294],
       name: 'E. 42nd St. and Lexington Ave.',
-      desc: `You are stopped in your tracks by the Marlene Dietrich of New York’s skyscrapers. It’s the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
+      desc: `You are stopped in your tracks by the Marlene Dietrich of New York's skyscrapers. It's the Chrysler building swathed in stainless steel, and Art Deco trimmings. It still looks like a million.  `,
       isStreet: true,
       exits: [
         {dir: 'north', id: '43-lexi'},
@@ -22215,7 +22260,7 @@ const streets = {
       id: '42-depe',
       coord: [13.518, 3.493],
       name: 'E. 42nd St. and Depew Pl.',
-      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!’ `,
+      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!' `,
       hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
@@ -22704,7 +22749,7 @@ const streets = {
       id: '43-3',
       coord: [15.496, 9.075],
       name: 'E. 43rd St. and 3rd Ave.',
-      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat’ here: a lush indoor park complete with trees and flowers.`,
+      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat' here: a lush indoor park complete with trees and flowers.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '44-3'},
@@ -23749,7 +23794,7 @@ const streets = {
       id: '55-sutt',
       coord: [35.996, 24.170],
       name: 'E. 55th St. and Sutton Place',
-      desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he’s too slim for Zeus. `,
+      desc: `In a city of strange sights this has to be one of the strangest.  A gigantic office building in the shape of a chest of drawers has come to rest on what seems to be a gigantic pagan temple, complete with gilded idol. But who is the god being worshipped here? \n\nHe carries a bundle of lightning bolts, but he's too slim for Zeus. `,
       exits: [
         {dir: 'north', id: '56-sutt'},
         {dir: 'south', id: '54-sutt'},
@@ -34999,5 +35044,85 @@ const streets = {
 
       ],
     },
+    {
+      id: 'lobb-revi-5',
+      name: '52nd Street Exit',
+      desc: `This is the 52nd Street Exit.`,
+      onEnter: () => {
+          const room = getRoom('hote-exit');
+
+          room.streetExit = '52-5'; 
+      },
+      onLook: () => {
+          println(`To either side of the exit are easy chairs. In one of them soneone has left a copy of the Daily News. Through the glass panels of the revolving doors, you can see the shifting lights of the evening traffic on 52nd Street and the occasional shadowy figure of a pedestrian walking past the hotel.`);
+      },
+      
+      items: [
+          {
+              itemId: 'dailynews',
+              name: 'Daily News',
+              desc: ``,
+              isTakeable: true,
+              isDroppable: true,
+              onLook: () => {
+                  println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
+                  // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you."
+              }
+          }
+      ],
+      exits: [
+          {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
+          {dir: ['s', 'south', 'leave'], id: 'hote-exit'}, // exit building
+          {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+          {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+      ]
+  },// closes lobb-revi-5 room
+  {
+    id: 'lobb-revi-8',
+    name: '53rd Street Exit',
+    desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
+    onEnter: () => {
+        const room = getRoom('hote-exit');
+
+        room.streetExit = '53-5'; 
+    },
+    onLook: () => {
+        println(`Just outside the hotel a taxi has drawn up to the curb and the doorman is helping onload luggage from its trunk.`);
+    },
+    items: [
+        {
+            itemId: 'map',
+            name: 'map',
+            desc: `It is an accordion fold map printed on stiff paper. Parklands are indicated by fuchsia, the surrounding Hudson and East Rivers by a dark shade of the green favored by mentholated cigarettes, and the city itself by a tannish gray crisscrossed by a white mesh of streets and avenues. This, then, is the haystack in which you are the needle.`, // check what the colors are on the map that Wesley is designing and match them in the description. 
+            isTakeable: true,
+            onTake: () => {
+                println(`You take the map and slip it into your left hip pocket.`);
+            },
+            onDrop: () => {
+                println(`You shouldn't drop that. It might be important.`);
+            }
+        },
+        {
+           itemId: 'times',
+           name: ['times', 'New York Times', 'times newsspaper'],
+           desc: `You skim through the news and reviews and ads in the paper, looking always for some hint of who you are-- some special knowledge, some keenness of interest or hunger that would be a clue to the life you've forgotten. But all the news and reviews seem equally interesting and equally irrelevant. The baseball news evokes no sense of partisanship for one city's team more than another's. From reading through the financial pages, it seems pretty certain that you are not a banker or stockbroker, since there are many entire articles that make no sense to you at all. On the other hand, you do seem to know something about computers, to judge by your response to various ads for computer hardware and software.` 
+        }
+    ],
+    exits: [
+        {dir: ['n', 'north', 'leave'], id: 'hote-exit'}, // exit onto streets
+        {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
+        {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
+        {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+    ]
+},// closes lobb-revi-8 room
+{
+  id: 'test1',
+  name: 'This is a testing room',
+  desc: `please ignore`,
+  exits: [
+    {dir:'53', id: 'lobb-revi-8'},
+    {dir: '52', id: 'lobb-revi-5'}
+  ],
+}
   ]
 }

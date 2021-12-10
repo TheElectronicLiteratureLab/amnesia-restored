@@ -113,6 +113,11 @@ const lobbyRevisited = {
             id: 'lobb-revi-5',
             name: '52nd Street Exit',
             desc: `This is the 52nd Street Exit.`,
+            onEnter: () => {
+                const room = getRoom('hote-exit');
+
+                room.streetExit = '52-5'; 
+            },
             onLook: () => {
                 println(`To either side of the exit are easy chairs. In one of them soneone has left a copy of the Daily News. Through the glass panels of the revolving doors, you can see the shifting lights of the evening traffic on 52nd Street and the occasional shadowy figure of a pedestrian walking past the hotel.`);
             },
@@ -132,7 +137,7 @@ const lobbyRevisited = {
             ],
             exits: [
                 {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
-                {dir: ['s', 'south'], id: ''}, // exit building
+                {dir: ['s', 'south', 'leave'], id: 'hote-exit'}, // exit building
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
@@ -225,6 +230,11 @@ const lobbyRevisited = {
             id: 'lobb-revi-8',
             name: '53rd Street Exit',
             desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
+            onEnter: () => {
+                const room = getRoom('hote-exit');
+
+                room.streetExit = '53-5'; 
+            },
             onLook: () => {
                 println(`Just outside the hotel a taxi has drawn up to the curb and the doorman is helping onload luggage from its trunk.`);
             },
@@ -248,7 +258,7 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {dir: ['n', 'north'], id: ''}, // exit onto streets
+                {dir: ['n', 'north', 'leave'], id: 'hote-exit'}, // exit onto streets
                 {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
