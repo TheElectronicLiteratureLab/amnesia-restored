@@ -1077,7 +1077,7 @@ const jumpOut = (prep, winJumpOut) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
+  const rooms = streets.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
@@ -1185,9 +1185,9 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 //spawn tenement function
 /* function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
-  const enteredStreets = getRoom('53-5'); //get the room where they entered the streets
+  const exitedFrom = getRoom('hote-exit');
+  const enteredStreets = getRoom(exitedFrom.streetExit); //get the room where they entered the streets
   const count = moveCount - enteredStreets.curMoveCount; //check the movecount against where they entered the streets
-
   const tenement = getRoom('tene'); //get the tenement rooms
   const tenement2 = getRoom('tene-1');
   const tenement3 = getRoom('tene-2');
@@ -1255,18 +1255,21 @@ const incrementTime = () => {
   if(xMinutes >= 12 ) { //if index ever goes above length of minutes array 
     xMinutes = 0; //set index back to beginning
     yHours++;//then increment the hours index
-  }
-  if(yHours >= 12) { //if index ever goes above length of hours array
-    yHours = 0; //set index back to beginning 
-      if(qMeridiem === 1) { //if it is PM 
-      qMeridiem--;//set it back to Am
-      zDays++; //incremenent days array
-    } else {
-      qMeridiem++; //set it to PM
+
+    if(yHours === 11 && qMeridiem === 0 ) {
+      qMeridiem = 1;
+    } else if (yHours === 11 &&  qMeridiem === 1){
+      qMeridiem = 0;
+      zDays++;
     }
-  }
-  if(zDays >= 7) { //if index every goes above length of days array
-    zDays = 0; //set it back to sunday
+    if(yHours >= 12 && qMeridiem === 0) {
+      yHours = 0;
+    } else if (yHours >= 12 && qMeridiem === 1) {
+      yHours = 0;
+    }
+    if(zDays>= 7) {
+      zDays = 0;
+    }
   }
 
   //UPDATE THE UI ELEMENTS 
@@ -1340,7 +1343,13 @@ const beg = () => {
       caughtCoords1 = curRoom.coord;
       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
       //enterRoom('beg-poli'); //enter the room where the police catch you
-      println(`We'll give you a warning this time.`)
+      println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
+
+      'Sure buddy. But now you been told and you got no excuse the next time. If I see you panhandling again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+      
+      You nod in agreement 
+      
+      The policeman goes off in the same directions that the person you'd asked for money went `)
     } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
       begLootTable(); //roll on loot table
     } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
@@ -1357,7 +1366,13 @@ const beg = () => {
         console.log('caught but changed neighborhoods');
         begLootTable();
       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
-        println(`We already gave you a warning, come with us.`)
+        println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against panhandling.  
+
+        'Hello again. I see you want to establish a more meaningful relationship.'  
+        
+        As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`)
+
+        pressEnter('deat-texa');
       }
     } else if (chance1 >= 20 && policeCaught) { //if player has been caught but passed the check
       console.log(`caught once but succeeded 80% check`);
@@ -1369,7 +1384,7 @@ const beg = () => {
     println(`You can't beg when you aren't on the streets.`)
   }
 
-}
+};
 
 
 //loot table for beg command
@@ -1379,7 +1394,7 @@ const begLootTable = () => {
 
   if (difficulty === 'medium'){ // 
     if (chance2 <= 15) { //chance to get nothing
-      println(`People shy away when you ask for money, you weren't able to get anything.`);
+      println(`The person you've asked for money refuses your request with a contemptuous smile.`);
     } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
       println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
@@ -1413,7 +1428,7 @@ const begLootTable = () => {
 
   } else if (difficulty === 'hard') {
     if (chance2 <= 20) { //chance to get nothing
-      println(`People shy away when you ask for money, you weren't able to get anything.`);
+      println(`The person you've asked for money refuses your request with a contemptuous smile.`);
     } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
       println(`You were able to get ${formatter.format(dollarAmount)}`);
@@ -1435,7 +1450,6 @@ const begLootTable = () => {
 
 const giveMoney = (amount) => {
   playMon = playMon + amount
-
   document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
 };
 
@@ -1536,12 +1550,10 @@ const sleepFunction = () => {
 
       } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {
         enterRoom('nobe-14');
-
       } else if (room.id === 'nobe-27' && sofa2.isOpen === true) {
         println(`You lie down and proceed to take a restful nap.`);
         incrementHour();
-        playFat = 100;
-
+        slept();
       } else if (room.id === 'nobe-27' && sofa2.isOpen === false) {
         println(`You had better open the sofa-bed first`);
 
@@ -1561,7 +1573,170 @@ const sleepFunction = () => {
 
 //save load\\
 //player score\\
-//difficulty level tie ins\\.
+//52-5 needs to be linked properly to exiting hotel stuff
+
+
+//difficulty level tie ins\\
+// need to touch hunger, fatigue, money, subway shenanigans -- ahria taking this? 
+//onEnter 53-5||52-5 hunger and fatigue degrading starts. 
+//inside apply input, if command is valid and variable is true then degrade the hunger/fatigue
+//entering exit hotel room turns variable true. is always set to be true from then on. 
+//different difficulty levels need to degrade hunger and fatigue differently.
+//if hunger or fatigue hit zero enter death and texas -- ask charlie about this
+//also needs to be able to be turned off at certain points i.e. story nodes stuff
+
+  //hunger and fatigue degrade differently 
+  
+//warning the player of their hunger level / killing them if it drops to 0
+const hungerWarning = () => {
+  if ( ( (prevHung - 40) <= 0 ) && ( (prevHung - 40) >= -9 ) && hungBelow40 === false) { //if you drop below 40
+    hungBelow40 = true;
+    println(`Your stomach reminds you that it has been some time since you've eaten.`); //print the proper warning
+  } else if ( ( (prevHung - 30) <= 0 ) && ( (prevHung - 30) >= -9 ) && hungBelow40 === true && hungBelow30 === false) {
+    hungBelow30 = true;
+    println(`Your stomach growls are becoming hard to ignore.`);
+  } else if ( ( (prevHung - 20) <= 0 ) && ( (prevHung - 20) >= -9 ) && hungBelow30 === true && hungBelow20 === false) {
+    hungBelow20 = true;
+    println(`The hunger is slowly turning painful. You really ought to get some food.`);
+  } else if ( ( (prevHung - 10) <= 0 ) && ( (prevHung - 10) >= -9 ) && hungBelow20 === true && hungBelow10 === false) {
+    hungBelow10 = true;
+    println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
+  } else if (playHung <= 0) { //if your hunger drops to 0 game over the player
+    println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
+    pressEnter('deat-texa')
+  } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
+    return;
+  } else {
+    println(`Error! Hunger warning is malfunctioning!`);
+  };
+};
+
+//restore player hunger when they eat
+const ateSomething = (x) => {
+  prevHung = playHung //set prevHung 
+  playHung = playHung + x; //set hunger to amount the food restores
+  if(playHung > 100) { //if the hunger goes above 100 
+    playHung = 100 //set it to 100
+  }
+  hungBelow40 = false; //reset the warnings 
+  hungBelow30 = false;
+  hungBelow20 = false;
+  hungBelow10 = false;
+
+  updateHung(); //update the UI
+};
+
+//degrade hunger
+const degradeHunger = () => {
+  prevHung = playHung;//set prev hung
+  const chance = Math.floor(Math.random() * 100) + 1 ; //random number 1-100 #1
+  const chance2 = Math.floor(Math.random() * 100) + 1 ;//random number 1-100 #2
+  if (difficulty === 'easy'){ //if difficulty is easy
+    if ( chance <= 25 ) { //25% chance to degrade at all 
+      if ( chance2 <= 20) { //20% chance to degrade by 2
+        playHung = playHung - 2;
+      } else if (chance2 > 20) { //80% chance to degrade by 1
+        playHung = playHung - 1;
+      } else { 
+        println(`error, hunger degradation malfunctioning.`)
+      }
+    }
+  } else if (difficulty === 'medium') { 
+    if(chance <= 50) { //50% chance to degrade at all
+      if(chance2 <= 60) { //60% chance to degrade by 1
+        playHung = playHung - 1;
+      } else { //40% chance to degrade by 2
+        playHung = playHung -2;
+      }
+    }
+  } else if (difficulty === 'hard') { 
+    if(chance <= 75) {//75% chance to degrade at all
+      if(chance2 <= 50) { //50% chance to degrade by 1
+        playHung = playHung - 1;
+      } else { //50% chance to degrade by 2
+        playHung = playHung - 2;
+      }
+    }
+  } else {
+    println(`Error, difficulty is not set.`)
+  }
+  updateHung(); //update UI 
+  hungerWarning(); //Issue hunger warning if necessary 
+};
+
+
+const fatigueWarning = () => {
+  if ( ( (prevFat - 40) <= 0 ) && ( (prevFat - 40) >= -9 ) && fatBelow40 === false) { //if you drop below 40
+    fatBelow40 = true;
+    println(`Your body and mind both tell you that you could use some rest.`); //print the proper warning
+  } else if ( ( (prevFat - 30) <= 0 ) && ( (prevFat - 30) >= -9 ) && fatBelow40 === true && fatBelow30 === false) {
+    fatBelow30 = true;
+    println(`You ought to think about some place to sleep for the night.`);
+  } else if ( ( (prevFat - 20) <= 0 ) && ( (prevFat - 20) >= -9 ) && fatBelow30 === true && fatBelow20 === false) {
+    fatBelow20 = true;
+    println(`Prospect of sleeping on the streets strikes you as uncomfortable.`);
+  } else if ( ( (prevFat - 10) <= 0 ) && ( (prevFat - 10) >= -9 ) && fatBelow20 === true && fatBelow10 === false) {
+    fatBelow10 = true;
+    println(`You can barely keep your eyes open, if you don't sleep soon you feel like you'll pass out.`);
+  } else if (playFat <= 0) { //if your hunger drops to 0 game over the player
+    println(`Just as it occurs to you that you can hardly stay awake any longer, someone gives you a powerful sedative, with a blow to the back of your head. 
+
+    When you wake up from the mugger's attack you are lying on the ground with a close-up view of the four polished shoes of the policemen who've found you. One of them claims to recognize you. You are handcuffed and led to their patrol car.`)
+    pressEnter('deat-texa')
+  } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
+    return;
+  } else {
+    println(`Error! Hunger warning is malfunctioning!`);
+  };
+
+
+};
+
+const degradeFatigue = () => {
+  prevFat = playFat;//set prev hung
+  const chance = Math.floor(Math.random() * 100) + 1 ; //random number 1-100 #1
+
+  if (difficulty === 'easy'){
+    playFat = playFat - 1;
+
+  } else if (difficulty === 'medium') {
+    if(chance <= 80) {
+      playFat = playFat - 1;
+    } else {
+      playFat = playFat - 2;
+    }
+
+  } else if (difficulty === 'hard') {
+    if (chance <= 40) {
+      playFat = playFat - 1;
+    } else if (chance>= 41 && chance <= 80) {
+      playFat = playFat - 2;
+    }else {
+      playFat = playFat - 3;
+    }
+
+  } else {
+    println(`Error, difficulty is not set.`)
+  }
+
+  updateFat();
+  fatigueWarning();
+};
+
+
+
+const slept = () => {
+  prevFat = playFat //set prevHung 
+  playFat = 100; //set hunger to amount the food restores
+  
+  fatBelow40 = false; //reset the warnings 
+  fatBelow30 = false;
+  fatBelow20 = false;
+  fatBelow10 = false;
+
+  updateFat(); //update the UI
+};
+
 
 //random encounter function
 const randomEncounter = () => {
