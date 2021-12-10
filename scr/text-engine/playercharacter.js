@@ -65,7 +65,7 @@ let policeCaught = false;
 
 //difficulty levels stuff
 const difficultyLevels = ['easy', 'medium', 'hard']; 
-let difficulty;
+let difficulty = difficultyLevels[1];
 
 //x street indexer stuff
 const xStreetNumber = [
