@@ -116,7 +116,6 @@ const lobbyRevisited = {
             onLook: () => {
                 println(`To either side of the exit are easy chairs. In one of them soneone has left a copy of the Daily News. Through the glass panels of the revolving doors, you can see the shifting lights of the evening traffic on 52nd Street and the occasional shadowy figure of a pedestrian walking past the hotel.`);
             },
-            
             items: [
                 {
                     itemId: 'dailynews',
@@ -132,7 +131,7 @@ const lobbyRevisited = {
             ],
             exits: [
                 {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
-                {dir: ['s', 'south'], id: ''}, // exit building
+                {dir: ['s', 'south'], id: '52-5'}, // exit building
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]

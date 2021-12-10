@@ -15,6 +15,7 @@ let isNaked = true;
 let firstNightmare = true;
 let nightmareCeleb = 'Disch';
 let nEntranceRoom = 'hote-room-8';
+let nightmareStair = false;
 
 
 
