@@ -1461,12 +1461,10 @@ const sleepFunction = () => {
 
       } else if (room.id === 'nobe-12' && sofa1.isOpen === true) {
         enterRoom('nobe-14');
-
       } else if (room.id === 'nobe-27' && sofa2.isOpen === true) {
         println(`You lie down and proceed to take a restful nap.`);
         incrementHour();
-        playFat = 100;
-
+        slept();
       } else if (room.id === 'nobe-27' && sofa2.isOpen === false) {
         println(`You had better open the sofa-bed first`);
 
@@ -1500,8 +1498,6 @@ const sleepFunction = () => {
 
   //hunger and fatigue degrade differently 
   
-
-
 //warning the player of their hunger level / killing them if it drops to 0
 const hungerWarning = () => {
   if ( ( (prevHung - 40) <= 0 ) && ( (prevHung - 40) >= -9 ) && hungBelow40 === false) { //if you drop below 40
