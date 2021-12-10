@@ -22,7 +22,7 @@ let inv = () => {
     //listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
   });
 
-  fadeOn("inventory-display");
+  slideLeftIn("inventory-display", "inventory-text-container");
 };
 
 // show room description
