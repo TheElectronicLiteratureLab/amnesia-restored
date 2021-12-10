@@ -164,8 +164,7 @@
 
                     <div class="clickable-container" id="address-book-clickable">
                         <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
-                        <button class="iconbtn" id="address-book-button"
-                            onclick="displayToggle('address-display', 'address'); currentAdd('addresses')"></button>
+                        <button class="iconbtn" id="address-book-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container'); currentAdd('addresses')"></button>
                     </div>
 
                     <div class="clickable-container" id="map-clickable">
@@ -176,7 +175,7 @@
                     <div class="clickable-container" id="info-clickable">
                         <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
                         <button class="iconbtn" id="info-button"
-                            onclick="displayToggle('info-display', 'info', 'info-text-container')"></button>
+                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container')"></button>
                     </div>
                 </div>
             </div>
@@ -190,25 +189,29 @@
                 <!-- clickables elements -->
                 <!-- left side clickables -->
                 <div id="inventory-display" class="clickables-left">
-                    <button class="x-button"
-                        onclick="displayNone('inventory-display', 'inventory-item-display', 'inventory-xIndex-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                    <h2 id="inventory-display-title">Inventory</h2>
-                    <div id="inventory">
-                        <!-- 
-                            <img class="inventory-img" alt="icon">
-                            <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
+                    <div id="inventory-text-container">
+                        <button class="x-button"
+                            onclick="displayNone('inventory-display', 'inventory-item-display', 'inventory-xIndex-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="inventory-display-title">Inventory</h2>
+                        <div id="inventory">
+                            <!-- 
+                                <img class="inventory-img" alt="icon">
+                                <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
+                        </div>
                     </div>
                 </div>
                 <div id="inventory-item-display">
-                    <h2 id="item-name">Item Name</h2>
-                    <div id="item-img-container">
-                        <img id="item-img" src="" alt="item image">
+                    <div id="inventory-item-container">
+                        <h2 id="item-name">Item Name</h2>
+                        <div id="item-img-container">
+                            <img id="item-img" src="" alt="item image">
+                        </div>
+                        <div id="item-description"></div>
+                        <!-- 
+                                * right now there is not a use for this feature 11-29-2021
+                                <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button> 
+                            -->
                     </div>
-                    <div id="item-description"></div>
-                    <!-- 
-                            * right now there is not a use for this feature 11-29-2021
-                            <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button> 
-                        -->
                 </div>
                 <div id="inventory-xIndex-display">
                     <div id="xIndex-container">
@@ -291,9 +294,11 @@
 
                 
                     <div id="address-display" class="clickables-left">
-                        <button class="x-button" onclick="displayNone('address-display')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                        <h2 id="address-display-title">Address Book</h2>
-                        <div id="addresses">
+                        <div id="address-text-container">
+                            <button class="x-button" onclick="displayNone('address-display', 'address-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                            <h2 id="address-display-title">Address Book</h2>
+                            <div id="addresses">
+                            </div>
                         </div>
                     </div>
                 
@@ -305,7 +310,7 @@
                 
                 <div id="info-display" class="clickables-left">
                     <div id="info-text-container">
-                        <button id="map-x-button" class="x-button" onclick="displayNone('info-display'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button id="map-x-button" class="x-button" onclick="displayNone('info-display', 'info-text-container'); updateScore();"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="info-display-title">Information</h2>
                         <div id="info">
                             <div id="score">

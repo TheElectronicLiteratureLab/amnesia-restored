@@ -5,10 +5,9 @@
 
 // global variables 
 
-
-
 let difficultyChoice = "modern";
 let styling = "restored-mode";
+// the number array that gets referenced when the player uses the phone, as well as reference to display numbers visually
 let numbers = [
     {number:'3', roomid:'phone-1', contactName: 'Front Desk'},
     {number:'4', roomid:'phone-2', contactName: 'Room Service'},
@@ -20,7 +19,7 @@ let numbers = [
     {number:'911', roomid:'phone-8', contactName: 'Emergency'}
 ];
 
-
+// all of the descriptions of the difficulty levels and the visual style choices
 let storyDesc = `Lay back, relax and enjoy the story without the worry of hunger, fatigue, or money.`;
 let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are.`;
 let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
@@ -28,9 +27,6 @@ let restoredDesc = `A contemporary visual experience with a modern interface.`;
 let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
 let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commodore 64 visual experience with a modern interface.`;
 let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM PC visual experience with a modern interface.`;
-
-
-let slide = false;
 
 
 // button scripts
@@ -109,22 +105,21 @@ let beginGame = () => {
 
 // clickables scripts
 
+// when the inv button is pressed, if NOT displayed apply input command inv and run a check to see if any of the other visual display elements are on ELSE if displayed, slide out of view. 
 let currentInv = () => {
     let invDisplay = document.getElementById("inventory-display");
     if(!invDisplay.style.display || invDisplay.style.display === "none"){
         applyInput("inv");
         displayCheck("inventory-display", "inventory")
     } else {
-        fadeOff("inventory-display");
+        slideLeftOut("inventory-display", "inventory-text-container");
         document.getElementById("inventory-item-display").style.display = "none";
-    document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("inventory-xIndex-display").style.display = "none";
         document.querySelector("input").disabled = false;
     }
-    
-    //console.log(items);
-    //document.getElementById("inventory").innerHTML = applyInput("inv");
 }
 
+// runs a function to pull the updated address book numbers and clear out the old list
 let currentAdd = (id) => {
     let x = document.getElementById(id);
     x.innerHTML = '';
@@ -148,7 +143,7 @@ let currentAdd = (id) => {
         displayNum(name, phoneNum);
     })
 }
-
+// function displays the numbers in the address book display
 let displayNum = (contact, number) => {
     // call display
     let listings = document.getElementById("addresses");
@@ -167,6 +162,8 @@ let displayNum = (contact, number) => {
     newListing.appendChild(newNum).innerHTML = number;
 }
 
+
+// variables to check whether displays are on or off. on = true, off = false
 let invOn = false;
 let addOn = false;
 let mapOn = false;
@@ -175,38 +172,59 @@ let modeOn = false;
 let achieveOn = false;
 let helpOn = false;
 
+// when the player presses the sidebar btns toggle on and off, when displays are open inputs are disabled except the command guide.
 
-let displayToggle = (id, name, text) => {
+// this is the display toggling for the address book and the infomation display
+let displayLeftToggle = (id, name, text) => {
    let x = document.getElementById(id);
+   // run check to see if any other displays are on and turn them off before displaying
    displayCheck(id, name);
-   
+   // check if display is none, if true slide in display, if false slide out display
    if(!x.style.display || x.style.display === "none"){
-       if(id === "help-display"){
-        fadeOn(id);
-       } else {
-        slideLeftIn(id, text);
-         //fadeOn(id);
-        //slideToggle(id);
-        //x.style.display = "block";
-        document.querySelector('input').disabled = true;
-       }
+       slideLeftIn(id, text);
    } else {
-       slideLeftOut(id, text);
-        //fadeOff(id);
-        //x.style.display = "none";
-        //slideToggle(id);
+        slideLeftOut(id, text);
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
    }
 }
 
+/*
+let displayLeftToggle = (id, name, text) => {
+    let x = document.getElementById(id);
+    // run check to see if any other displays are on and turn them off before displaying
+    displayCheck(id, name);
+    // check if display is none, if true slide in display, if false slide out display
+    if(!x.style.display || x.style.display === "none"){
+        if(id === "help-display"){
+             document.getElementById("help-display").style.display = "block";
+        } else if (id === "map-display"){
+             document.getElementById("map-display").style.display = "block";
+        } else {
+         slideLeftIn(id, text);
+          //fadeOn(id);
+         //slideToggle(id);
+         //x.style.display = "block";
+         document.querySelector('input').disabled = true;
+        }
+    } else {
+        slideLeftOut(id, text);
+         //fadeOff(id);
+         //x.style.display = "none";
+         //slideToggle(id);
+         document.querySelector('input').disabled = false;
+         document.querySelector('input').focus();
+    }
+ }
+ */
 
+// running a check to see if a display is open and if it is turn variable true and check which other variable is true and turn false
 let displayCheck = (id, name) => {
-    
     if(name === 'inventory'){
         invOn = true;
         if(addOn === true){
-            document.getElementById("address-display").style.display = "none";
+            slideLeftOut()
+            //document.getElementById("address-display").style.display = "none";
             addOn = false;
         } 
         if(mapOn === true){
@@ -416,8 +434,9 @@ let displayCheck = (id, name) => {
     
 }
 
-let displayNone = (id) => {
-    fadeOff(id);
+let displayNone = (id, textId) => {
+    slideLeftOut(id, textId);
+    //fadeOff(id);
     //document.getElementById(id).style.display = "none";
     document.getElementById("inventory-item-display").style.display = "none";
     document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -453,17 +472,18 @@ let openItem = (id, name) => {
 }
 
 // status bars
+
+// the hunger status bar
+// variables to check the progress of the bar 
 let increasingHung = false;
 let decreasingHung = false;
 
+// function to be called whenever hunger is changed, it then updates the visual of the bars
 let updateHung = (x) => {
-
+    // converts values into integers
     const xPlayHung = parseInt(playHung);
     const xPrevHung = parseInt(prevHung);
-
-   
-    
-
+    // checking whether the previous hunger is higher or lower than the current hunger and setting variable true
     if(xPlayHung > xPrevHung){
         increasingHung = true;
     } else if(xPlayHung < xPrevHung){
@@ -472,8 +492,7 @@ let updateHung = (x) => {
         console.log("updateHung" + " if statements not working");
     }
     // update progress bar to show the new player hunger
-    // check previous hunger to know where progress begins from
-
+    // increasing bar
     if(increasingHung === true){
         let width = x;
         let i = 0;
@@ -493,7 +512,7 @@ let updateHung = (x) => {
             }
         }
         increasingHung = false;
-    } else if(decreasingHung === true){
+    } else if(decreasingHung === true){ // decreasing bar
         let width = x;
         let i = 0;
         if(i === 0){
@@ -513,24 +532,25 @@ let updateHung = (x) => {
         }
         decreasingHung = false;
     }
-
+    // checking to see if the hunger is beneath 40 the color of the bar changes to red
     if(xPlayHung <= 40){
         document.getElementById('hunger-bar').style.background = "transparent linear-gradient(270deg, #df3333 0%, #7c180b 100%) 0% 0% no-repeat padding-box";
     } else {
         document.getElementById('hunger-bar').style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
     }
-    
 }
 
+// the fatigue status bar
+// variables to check the progress of the bar
 let increasingFat = false;
 let decreasingFat = false;
 
+// function to be called whenever the players fatigue is changed
 let updateFat = (x) => {
-
+    // converts variables to intergers to run math checks
     const xPlayFat = parseInt(playFat);
     const xPrevFat = parseInt(prevFat);
-    
-
+    // determines whether the fatigue is lower or higher than the previous fatigue number 
     if(xPlayFat > xPrevFat){
         increasingFat = true;
     } else if(xPlayFat < xPrevFat){
@@ -538,7 +558,7 @@ let updateFat = (x) => {
     } else {
         console.log("updateFat" + " if statements not working");
     }
-
+    // increasing bar
     if(increasingFat === true){
         let width = x;
         let i = 0;
@@ -558,7 +578,7 @@ let updateFat = (x) => {
             }
         }
         increasingFat = false;
-    } else if(decreasingFat === true){
+    } else if(decreasingFat === true){ // decreasing bar
         let width = x;
         let i = 0;
         if(i === 0){
@@ -578,13 +598,12 @@ let updateFat = (x) => {
         }
         decreasingFat = false;
     }
-
+    // if the player fatigue is lower than 40 change the color style
     if(xPlayFat <= 40){
         document.getElementById('fatigue-bar').style.background = "transparent linear-gradient(270deg, #df3333 0%, #7c180b 100%) 0% 0% no-repeat padding-box";
     } else {
         document.getElementById('fatigue-bar').style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
     }
-    
 }
 
 
