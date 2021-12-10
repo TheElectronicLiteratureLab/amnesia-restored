@@ -15,6 +15,7 @@ let isNaked = true;
 let firstNightmare = true;
 let nightmareCeleb = 'Disch';
 let nEntranceRoom = 'hote-room-8';
+let nightmareStair = false;
 
 
 
@@ -74,7 +75,7 @@ let policeCaught = false;
 
 //difficulty levels stuff
 const difficultyLevels = ['easy', 'medium', 'hard']; 
-let difficulty;
+let difficulty = difficultyLevels[1];
 
 //x street indexer stuff
 const xStreetNumber = [
@@ -355,3 +356,18 @@ const greenwichEncounters = [//coord location lat -36/-58, long 5/-42
   },
 ];
 
+//hunger degradation stuff
+let hungBelow40 = false;
+let hungBelow30 = false;
+let hungBelow20 = false;
+let hungBelow10 = false;
+
+
+//fatigue degradation stuff
+let fatBelow40 = false;
+let fatBelow30 = false;
+let fatBelow20 = false;
+let fatBelow10 = false;
+
+//variable for if the player stats should degrade
+let degradation = false;

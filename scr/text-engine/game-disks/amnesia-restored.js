@@ -238,13 +238,10 @@ const amnesiaRestored = {
       coord: [100, 100],
       name: 'Hotel Room 1502',
       desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
-      onEnter: () => {
-               
+      onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         //document.getElementById('game-ui-bar').style.display = "none";
-        
-        
         addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
@@ -272,7 +269,7 @@ const amnesiaRestored = {
           icon: 'img/png/image-dollarbill-thumbnailwoutline.png',
           gif: 'img/gif/gif-dollarbill-ingame.gif',
           name: ['One Dollar Bill', 'dollar bill', 'dollar', 'bill', 'scratch', 'single', 'bones', 'dirty wurst'],
-          desc: 'A single ragged dollar bill. Its seen better days.',
+          desc: 'A single ragged dollar bill. Its seen better days. You it when you first woke up in the Sunderland Hotel.',
           isTakeable: true,
           isDroppable: true,
           onTake: () => {
@@ -462,7 +459,6 @@ const amnesiaRestored = {
             );
           },
           onDrop: () => {
-
           }
         },
         {
@@ -530,7 +526,9 @@ const amnesiaRestored = {
           {
               name: ['sink', 'pink sink'], 
               desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
-              /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?*/
+              /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
+                      },
+                  }, //end of sink items*/ //currently can't have an item property on item object.
           },
           {
             itemId: 'bathsoap',
@@ -573,6 +571,8 @@ const amnesiaRestored = {
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel', 'bath towel'],
               desc: `It is a large fluffy towel.`,
+              top: true,
+              bottom: true,
               isTakeable: true,
               isDroppable: true,
               onTake: () => {
@@ -584,7 +584,6 @@ const amnesiaRestored = {
                   const bathroom = getRoom('hote-bath-1');
                   bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
               },
-              //can WEAR towel.
           },
       ], //end of bathroom items
       exits: [
@@ -4077,7 +4076,7 @@ const amnesiaRestored = {
       name: '',
       desc: `The doors close, and the elevator rises with a little lurch. Its progress is marked by red lights that wink on and off behind the numbers above the door: 16, 17, 18, 19, and your destination, the Penthouse floor. The door opens and you step out into a narrow corridor. A sign in front of the elevator directs you (by an arrow pointing to the right) to the entrance of the Sunderland Sauna and Health Club. The door of the elevator closes behind you.`,
       onEnter: () => {
-          pressEnter('corridor-rooftop');
+          pressEnter('heal-club');
       },
       exits: [],
     },
@@ -4096,7 +4095,7 @@ const amnesiaRestored = {
               name: 'door', // If the player tries to go back to room 1502
               desc: `You are now standing in front of the metal door.`,
               onUse: () => {
-                    goDir( 'heal-club');
+                    goDir('heal-club');
                 },
           }
       ],
@@ -4114,46 +4113,34 @@ const amnesiaRestored = {
     {
       id: 'corridor-stairwellde',
       name: '?th Floor Stairwell',
-      desc: `You go down the steps. At the next floor landing, you feel an odd vertiginous feeling. Foolishly you ignore the feeling, and as you approach the landing of still another floor you lose all sense of balance. 
+      desc: ` `,
+      onEnter: () =>{   
+        if (nightmareStair === false) {
+          println(`You go down the steps. At the next floor landing, you feel an odd vertiginous feeling. Foolishly you ignore the feeling, and as you approach the landing of still another floor you lose all sense of balance. 
 
-      The stairwell whirls about you. You clutch for the railing and collapse on the landing where you lie, an inert and unconscious heap.`,
-     onEnter: () =>{
-         pressEnter('nightmare'); // change to whatever the room id of the nightmare is
+          The stairwell whirls about you. You clutch for the railing and collapse on the landing where you lie, an inert and unconscious heap.`)
+          pressEnter('nigh-1'); // change to whatever the room id of the nightmare is
+          nightmareStair = true;
+        } else {
+          reenableInput();
+          enterRoom('nyu-medical1');
+        }
      },
      exits: [],
     },
     {
-      id: 'nyu-medical1', // After the nightmare, proceeding to death and texas
+      id: 'nyu-medi-stair', // After the nightmare, proceeding to death and texas
       name: 'NYU Medical Center',
       desc: `You awaken not where you fell, on the landing of the Sunderland's firestairs, but in a hospital bed. Your arms have been fastened to the sides of the bed by canvas restraining straps. After you have struggled a little while, a nurse enters with a hypodermic. "Now, now, Mr. Hollings, none of that or I will have to sedate you."`,
-      exits: [
-          {
-            dir: ['fight', 'protest', 'scream', 'struggle', 'kill','nurse', 'hollings'],
-            id: 'nyu-medical2'
-          },
-          {
-            dir: ['explain', 'explaination', 'you'],
-            id: 'nyu-medical3'
-          },
-        ],
-  },
-  {
-      id: 'nyu-medical2', // Proceed to Death and Texas
-      name: 'NYU Medical Center',
-      desc: `Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`,
-     onEnter: () =>{
-         pressEnter('deat-1'); 
-     },
-     exits: [],
-  },
-  {
-      id: 'nyu-medical3', // Proceed to Death and Texas
-      name: 'NYU Medical Center',
-      desc: `"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`,
-     onEnter: () =>{
-         pressEnter('deat-1'); 
-     },
-     exits: [],
+      onBlock: () => {
+        if (prevInput === 'fight' || prevInput === 'protest' || prevInput === 'scream' || prevInput === 'struggle' || prevInput === 'kill' || prevInput === 'nurse' || prevInput === 'hollings') {
+          println(`Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`);
+          pressEnter('deat-1');
+        } else if (prevInput === 'explain' || prevInput === 'explanation' || prevInput === 'you'|| prevInput === 'who are you' || prevInput === 'who are you?') {
+          println(`"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
+          pressEnter('deat-1'); 
+        }
+      }
   },
     //**********************************************************/
     //                Sunderland Health Club                   /
@@ -4161,26 +4148,21 @@ const amnesiaRestored = {
     {
       id: 'heal-club', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
       name: 'Health Club Reception Room', // Displayed each time the player enters the room.
-      desc: `The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes."
-      
-      The elevators open into the reception area from a hallway on one wall. There are two doors behind the desk. the one on the left is marked "Dolls," the one on the right "Guys."`, // Displayed when the player first enters the room.
+      desc: ` `, // Displayed when the player first enters the room.
       onEnter: () => {
-        playerC.sScore = 2;
-        console.log(playerC.sScore);
+        reenableInput();
+        playerC.sScore += 2;
+        console.log('Sur ' + playerC.sScore);
+        if (lastRoom.id === 'corridor-elevatorph') {
+          println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+        } else {
+          println(`The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+        }
       },
       exits: [
-        {
-          dir: ['left', 'dolls', 'girls', 'girls', `women's`, 'womens'], // "dir" can be anything. If it's north, the player will type "go north" to get to the room called "A Forest Clearing".
-          id: 'heal-club1',
-        },
-        {
-          dir: ['right', 'guys', 'mens', 'boys', `boy's`, `men's`],
-          id: 'heal-club5',
-        },
-        {
-          dir: ['leave'],
-          id: 'cor-?'
-        }
+        {dir: ['left', 'dolls', 'girls', 'girls', `women's`, 'womens', 'women'], id: 'heal-club1'},
+        {dir: ['right', 'guys', 'mens', 'boys', `boy's`, `men's`], id: 'heal-club5'},
+        {dir: ['leave'], id: 'corridor-stairwell15'}
       ],
     },
     {
@@ -4191,19 +4173,9 @@ const amnesiaRestored = {
       "Not here, buddy," she informs you in a low voice. "This is the women’s locker room. And you--correct me if I’m wrong--belong in the men’s locker room." 
       
       She points the direction with her thumb. "That way."`,
-      
-      exits: [
-        {
-          dir: ['leave', 'exit'],
-          id: 'heal-club',
-        },
-        {
-          dir: [],
-          id: 'heal-club2',
-          block: `"I'm warning you, Bozo: Out of here!`
-          
-        }
-      ],
+      onEnter: () => {
+        autoSave();
+      },
       onBlock: () => {
         if (prevInput !== 'leave' || 'exit') {
           enterRoom('heal-club2');
@@ -4216,17 +4188,6 @@ const amnesiaRestored = {
       id: 'heal-club2',
       name: ``,
       desc: `"I'm warning you, Bozo: Out of here!`,
-      
-      exits: [
-        {
-          dir: ['leave', 'exit'],
-          id: 'heal-club',
-        },
-        {
-          dir: [],
-          id: 'heal-club3'
-        }        
-      ],
       onBlock: () => {
         if (prevInput !== 'leave' || 'exit') {
           enterRoom('heal-club3');
@@ -4248,7 +4209,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club29',
       name: `Women's Locker Room`,
-      desc: `     You awake in the infirmary of a prison hospital, where a nurse informs you
+      desc: `You awake in the infirmary of a prison hospital, where a nurse informs you
       
       (1) that you're lucky to be alive after suffering from a severe concussion when your head struck the floor of the gym, and
       
@@ -4265,33 +4226,12 @@ const amnesiaRestored = {
 
       To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked "Sauna," that on the left "Massage." Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
       exits: [
-        {
-          dir: ['leave', 'exit'],
-          id: 'heal-club',
-        },
-        {
-          dir: ['right', 'lockers', 'locker',],
-          id: 'heal-club6'
-        },
-        {
-          dir: ['left door', 'massage'],
-          id: 'heal-club7',
-          block: 'The door to that room is locked.'
-        },
-        {
-          dir: ['right door', 'sauna'],
-          id: 'heal-club8'
-        }, 
-        {
-          dir: ['showers', 'shower'],
-          id: 'heal-club9',
-          block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`
-        },
-        {
-          dir: ['weight room', 'weights', 'weight', 'room'],
-          id: 'heal-club10',
-          block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room`
-        }
+        {dir: ['leave', 'exit', 'back'], id: 'heal-club'},
+        {dir: ['right', 'lockers', 'locker',], id: 'heal-club6'},
+        {dir: ['left door', 'massage'], id: 'heal-club7', block: 'The door to that room is locked.'},
+        {dir: ['right door', 'sauna'], id: 'heal-club8'}, 
+        {dir: ['showers', 'shower'], id: 'heal-club9', block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`},
+        {dir: ['weight room', 'weights', 'weight', 'room'], id: 'heal-club10', block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room.`}
       ],
     },
     {
@@ -4780,7 +4720,7 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: '', // Displayed each time the player enters the room.
+      name: 'Death Row', // Displayed each time the player enters the room.
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
       
       The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
