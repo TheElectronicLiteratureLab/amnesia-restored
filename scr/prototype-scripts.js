@@ -295,6 +295,32 @@ let displayLeftToggle = (id, name, text) => {
    }
 }
 
+let turnOnMap = () => {
+    let x = document.getElementById("map-display");
+    console.log(x.style.display);
+    if(!x.style.display || x.style.display === "none"){
+        console.log("turn on");
+    }
+    
+}
+
+// this is the display toggling for the map
+let displayMapToggle = (id, name) => {
+    let x = document.getElementById(id);
+    // run check to see if any other displays are on and turn them off before displaying
+    displayCheck(id, name);
+    // check if display is none, if true slide in display, if false slide out display
+    if(!x.style.display || x.style.display === "none"){
+        //slideMapDown(id);
+        //fadeOn(id);
+        console.log("turn on")
+    } else {
+         
+         document.querySelector('input').disabled = false;
+         document.querySelector('input').focus();
+    }
+}
+
 // this is the display toggling for the visual mode, achievements, and the command guide
 let displayRightToggle = (id, name, text) => {
     let x = document.getElementById(id);
@@ -561,18 +587,15 @@ let displayCheck = (id, name) => {
     
 }
 
+/*
 let displayNone = (id, textId) => {
     slideLeftOut(id, textId);
-    //document.getElementById("inventory-item-display").style.display = "none";
-    //document.getElementById("inventory-xIndex-display").style.display = "none";
+    document.getElementById("inventory-item-display").style.display = "none";
+    document.getElementById("inventory-xIndex-display").style.display = "none";
     document.querySelector('input').disabled = false;
     document.querySelector('input').focus();
-    /*
-    document.getElementById(inv).style.display = "none";
-    document.getElementById(item).style.display = "none";
-    document.getElementById(xIndex).style.display = "none";
-    */
-}
+   
+} */
 
 let openItem = (id, name) => {
 
@@ -843,7 +866,7 @@ let animateToggle = () => {
 }
 
 // old fade on and off of element displays NOT USING ANYMORE 
-/* 
+
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -860,7 +883,7 @@ let fadeOn = (elId) => {
         }
     }
 }
-
+/*
 let fadeOff = (elId) => {
     let id = null;
     const elem = document.getElementById(elId);
@@ -1041,4 +1064,25 @@ let slideRightIn = (elId, textId) => {
             }
         }
     }  
+}
+
+// display the map
+
+let slideMapDown = (elId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    // sets beginning width 
+    let width = 25;
+    clearInterval(id);
+    id = setInterval(slideOutR, 30);
+    function slideOutR(){
+        if(width === 0){
+            clearInterval(id);
+            element.style.display = "none";
+        } else {
+            width--;
+            element.style.width = width + "%";
+        }
+    }
 }

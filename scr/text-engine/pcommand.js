@@ -572,8 +572,11 @@ function enterBtnClick(){
 let closeDial = () => {
   //tutorialDisplayed = false;
   applyInput();
+  document.getElementById("tutorial").style.display = "none";
   window.removeEventListener("keydown", checkKeyPressed, false);
 }
+
+
 // checking what keys are being pressed
 function checkKeyPressed(evt){
   let el = document.getElementById("input");
@@ -584,7 +587,6 @@ function checkKeyPressed(evt){
   let deleteNum = () => {
     el.value = el.value.slice(0, -1);
   }
-
   if(evt.keyCode === 48){
     number = 0;
     numdialKey();
@@ -636,7 +638,7 @@ function checkKeyPressed(evt){
   if(evt.keyCode == 46){
     deleteNum();
   }
-}
+} 
 // the dial function
 let dial = () => {
   const room = getRoom(disk.roomId);
