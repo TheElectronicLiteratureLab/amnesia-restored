@@ -72,7 +72,8 @@
             <div class="game-item-3">
                 <div id="options-screen">
                     <div id="options-title">
-                        <h2>Select Your Game Options</h2>
+                        <h2 id="selectTitle">Select Your Game Options</h2>
+                        <h4 id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</h4>
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
@@ -83,10 +84,10 @@
                     </div>
                     <div id="visuals-options">
                         <h3 id="visuals-title">VISUAL MODE</h3>
-                        <h4 class="mode" id="restored-mode" onclick="visualDesc(this.id)">Restored</h4>
-                        <h4 class="mode" id="apple-mode" onclick="visualDesc(this.id)">Apple lle</h4>
-                        <h4 class="mode" id="comm-mode" onclick="visualDesc(this.id)">Commodore</h4>
-                        <h4 class="mode" id="IBM-mode" onclick="visualDesc(this.id)">IBM</h4>
+                        <h4 class="mode" id="restored" onclick="visualDesc(this.id)">Restored</h4>
+                        <h4 class="mode" id="apple" onclick="visualDesc(this.id)">Apple lle</h4>
+                        <h4 class="mode" id="commodore" onclick="visualDesc(this.id)">Commodore</h4>
+                        <h4 class="mode" id="IBM" onclick="visualDesc(this.id)">IBM</h4>
                         <p id="visual-mode-options-descriptions">Default visual mode is restored.</p>
                     </div>
                     <div id="begin-game-button">
@@ -139,6 +140,7 @@
                     </div>
                     <div id="load-begin-game-button">
                         <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
+                        <button class="game-button" onclick="mainScreen()">BACK</button>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ $(document).ready(function(){
 // global variables 
 
 let difficultyChoice = "modern";
-let styling = "restored-mode";
+let styling = "restored";
 // the number array that gets referenced when the player uses the phone, as well as reference to display numbers visually
 let numbers = [
     {number:'3', roomid:'phone-1', contactName: 'Front Desk'},
@@ -30,8 +30,8 @@ let numbers = [
 ];
 
 // all of the descriptions of the difficulty levels and the visual style choices
-let storyDesc = `Lay back, relax and enjoy the story without the worry of hunger, fatigue, or money.`;
-let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are.`;
+let storyDesc = `Relax and enjoy the story. Fast travel from any position once you reach Manhattan.`;
+let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are. Fast travel is only at subway entrances.`;
 let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
 let restoredDesc = `A contemporary visual experience with a modern interface.`;
 let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
@@ -44,7 +44,6 @@ let newGame = () => {
     document.getElementById("game-title").style.display = "none";
     document.getElementById("game-options").style.display = "grid";
 }
-
 let loadGame = () => {
     document.getElementById("game-title").style.display = "none";
     document.getElementById("game-load").style.display = "grid";
@@ -62,8 +61,22 @@ let loadGame = () => {
 
     //other data we would like for each save slot
 }
-
+// back button on load screen
+let mainScreen = () => {
+    document.getElementById("game-title").style.display = "grid";
+    document.getElementById("game-load").style.display = "none";
+}
+// function iterates through the array to find which value the player has clicked on and sets that value to the difficulty variable
 let displayDesc = (id) => {
+    // styling variables for chosen mode
+    let tD = "underline";
+    let tDC = "red";
+    let tDT = "2px";
+    let tUO = ".5em";
+    let storyMode = document.getElementById("story");
+    let modernMode = document.getElementById("modern");
+    let classicMode = document.getElementById("classic");
+    // iterates through array to display description and set difficulty variable
     let x = document.getElementById("difficulty-options-descriptions");
     let y = [
         ["story", storyDesc, difficultyLevels[0]],
@@ -82,20 +95,59 @@ let displayDesc = (id) => {
     x.innerHTML = z;
     difficulty = a;
     console.log(difficulty);
+    // toggles on and off visual of chosen difficulty
+    if(id === "story"){
+        storyMode.style.textDecoration = tD;
+        storyMode.style.textDecorationColor = tDC;
+        storyMode.style.textDecorationThickness = tDT;
+        storyMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        modernMode.style.removeProperty("text-decoration");
+        classicMode.style.removeProperty("text-decoration");
+    } else if(id === "modern"){
+        modernMode.style.textDecoration = tD;
+        modernMode.style.textDecorationColor = tDC;
+        modernMode.style.textDecorationThickness = tDT;
+        modernMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        storyMode.style.removeProperty("text-decoration");
+        classicMode.style.removeProperty("text-decoration");
+    } else {
+        classicMode.style.textDecoration = tD;
+        classicMode.style.textDecorationColor = tDC;
+        classicMode.style.textDecorationThickness = tDT;
+        classicMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        storyMode.style.removeProperty("text-decoration");
+        modernMode.style.removeProperty("text-decoration");
+    }
 }
-
+// function iterates through the array to find which value the players has clicked on and sets that value to the visual mode variable called styling
 let visualDesc = (id) => {
+    // text-decoration: underline;
+    // text-decoration-color: red;
+    // text-decoration-thickness: 2px;
+    // text-underline-offset: .5em;
+    // styling variables for chosen mode
+    let tD = "underline";
+    let tDC = "red";
+    let tDT = "2px";
+    let tUO = ".5em";
+    let restoredMode = document.getElementById("restored");
+    let appleMode = document.getElementById("apple");
+    let commMode = document.getElementById("commodore");
+    let IBMMode = document.getElementById("IBM");
+    // iterating through array to display description and set visual mode to variable
     let a = document.getElementById("visual-mode-options-descriptions");
     let b = [
-        ["restored-mode", restoredDesc, 'restored'],
-        ["apple-mode", appleDesc, 'apple'],
-        ["comm-mode", commDesc, 'commodore'],
-        ["IBM-mode", IBMDesc, 'IBM']
+        ["restored", restoredDesc, 'restored'],
+        ["apple", appleDesc, 'apple'],
+        ["commodore", commDesc, 'commodore'],
+        ["IBM", IBMDesc, 'IBM']
     ]
     let c;
     let d;
     let i;
-
     for(i = 0; i < b.length; i++){
         if(id === b[i][0]){
             c = b[i][1];
@@ -105,6 +157,44 @@ let visualDesc = (id) => {
     a.innerHTML = c;
     styling = d;
     console.log(styling);
+    // toggling styling if chosen
+    if(id === "restored"){
+        restoredMode.style.textDecoration = tD;
+        restoredMode.style.textDecorationColor = tDC;
+        restoredMode.style.textDecorationThickness = tDT;
+        restoredMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        appleMode.style.removeProperty("text-decoration");
+        commMode.style.removeProperty("text-decoration");
+        IBMMode.style.removeProperty("text-decoration");
+    } else if (id === "apple") {
+        appleMode.style.textDecoration = tD;
+        appleMode.style.textDecorationColor = tDC;
+        appleMode.style.textDecorationThickness = tDT;
+        appleMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        restoredMode.style.removeProperty("text-decoration");
+        commMode.style.removeProperty("text-decoration");
+        IBMMode.style.removeProperty("text-decoration");
+    } else if (id === "commodore"){
+        commMode.style.textDecoration = tD;
+        commMode.style.textDecorationColor = tDC;
+        commMode.style.textDecorationThickness = tDT;
+        commMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        restoredMode.style.removeProperty("text-decoration");
+        appleMode.style.removeProperty("text-decoration");
+        IBMMode.style.removeProperty("text-decoration");
+    } else {
+        IBMMode.style.textDecoration = tD;
+        IBMMode.style.textDecorationColor = tDC;
+        IBMMode.style.textDecorationThickness = tDT;
+        IBMMode.style.textUnderlineOffset = tUO;
+        // remove other stylings
+        restoredMode.style.removeProperty("text-decoration");
+        appleMode.style.removeProperty("text-decoration");
+        commMode.style.removeProperty("text-decoration");
+    } 
 }
 
 let beginGame = () => {
