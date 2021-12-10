@@ -1183,7 +1183,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
 //spawn tenement function
-/* function spawnTenement() { 
+ function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
   const exitedFrom = getRoom('hote-exit');
   const enteredStreets = getRoom(exitedFrom.streetExit); //get the room where they entered the streets
@@ -1229,7 +1229,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
         }
 
 };
-*/
+
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
 
@@ -1570,11 +1570,6 @@ const sleepFunction = () => {
       }     
 };
 
-
-//save load\\
-//player score\\
-
-
 //difficulty level tie ins\\
 // need to touch hunger, fatigue, money, subway shenanigans -- ahria taking this? 
 //onEnter 53-5||52-5 hunger and fatigue degrading starts. 
@@ -1879,7 +1874,9 @@ const randomEncounter = () => {
   } 
 };
 
-
+//WACKY WANDERER
+//KID WITH RAG
+//DAMSEL IN DISTRESS ENCOUNTER 
 
 
 //x street indexer encounter functionality
