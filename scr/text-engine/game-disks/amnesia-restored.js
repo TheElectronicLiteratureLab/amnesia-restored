@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'heal-club', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -4177,10 +4177,10 @@ const amnesiaRestored = {
         autoSave();
       },
       onBlock: () => {
-        if (prevInput !== 'leave' || 'exit') {
-          enterRoom('heal-club2');
-        } else {
+        if (prevInput === 'leave' || prevInput === 'exit') {
           enterRoom('heal-club');
+        } else {
+          enterRoom('heal-club2');
         }
       },
     },
@@ -4189,10 +4189,10 @@ const amnesiaRestored = {
       name: ``,
       desc: `"I'm warning you, Bozo: Out of here!`,
       onBlock: () => {
-        if (prevInput !== 'leave' || 'exit') {
-          enterRoom('heal-club3');
-        } else {
+        if (prevInput === 'leave' || prevInput === 'exit') {
           enterRoom('heal-club');
+        } else {
+          enterRoom('heal-club3');
         }
       },
     },
@@ -4227,8 +4227,8 @@ const amnesiaRestored = {
       To your right are two changing areas formed by free-standing metal lockers. To your left are some sinks and a large mirror, with doors on either side. The door on the right is marked "Sauna," that on the left "Massage." Directly ahead are the showers, and beyond these a sign points the way to the weight room.`,
       exits: [
         {dir: ['leave', 'exit', 'back'], id: 'heal-club'},
-        {dir: ['right', 'lockers', 'locker',], id: 'heal-club6'},
-        {dir: ['left door', 'massage'], id: 'heal-club7', block: 'The door to that room is locked.'},
+        {dir: ['lockers', 'locker',], id: 'heal-club6'},
+        {dir: ['left door', 'massage', 'left'], id: 'heal-club7', block: 'The door to that room is locked.'},
         {dir: ['right door', 'sauna'], id: 'heal-club8'}, 
         {dir: ['showers', 'shower'], id: 'heal-club9', block: `You walk towards the showers, look at the half-dozen uninteresting shower heads on the wall, and return to the locker stands.`},
         {dir: ['weight room', 'weights', 'weight', 'room'], id: 'heal-club10', block:`There is a woman in the weight room who looks like she is in training for the olympic hammer throw. You take one look at her decidedly hostile expression, and decide you are in less trouble in the locker room.`}
@@ -4262,8 +4262,7 @@ const amnesiaRestored = {
         reenableInput();
       },
       exits: [
-            {dir: ['leave', 'exit'],
-              id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
+        {dir: ['leave', 'exit'], id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman’s voice, and then a man’s, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they’d be back in ten minutes has come back. 
               
               Realizing that you can’t leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
             },
@@ -4727,7 +4726,7 @@ const amnesiaRestored = {
           println(`Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`);
           pressEnter('deat-1');
         } else if (prevInput === 'explain' || prevInput === 'explanation' || prevInput === 'you'|| prevInput === 'who are you' || prevInput === 'who are you?') {
-          println(`"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
+          println(`"There's really no much to explain, Mr. Hollings. You were found passed out and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
           pressEnter('deat-1'); 
         }
       }
