@@ -1085,7 +1085,6 @@ const amnesiaRestored = {
       exits: [
           {dir: ['bathroom'], id: 'hote-bath-1'}, //leads to bathroom 
           {dir: ['leave'], id: 'hote-revi-2'}, //leads to phone interaction with LUKE
-          {dir: ['leave2'], id: 'hote-revi-8'}, //leads to transition to Lobby node
       ],
   }, //end of hote-revi room
    //end of hote-revi-1 room
@@ -1093,6 +1092,13 @@ const amnesiaRestored = {
       id:'hote-revi-2',
       name: '',
       desc:`The phone rings.`,
+      onBlock: () => {
+        if (prevInput === 'answer phone' || prevInput === 'answer' || prevInput === 'get phone') {
+          enterRoom('hote-revi-3');
+        } else {
+          println('The phone keeps ringing...');
+        }
+      },
       exits: [],
       
       items: [
@@ -1106,7 +1112,7 @@ const amnesiaRestored = {
   {
       id: 'hote-revi-3',
       name: '',
-      desc: ``,
+      desc: ` `,
       onEnter: () => {
           println(`You go to the dresser and answer the phone with a rather tentative "Hello?"`);
           pressEnter('hote-revi-4');
@@ -1119,22 +1125,28 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
+        let room = getRoom('hote-revi');
+        room.exits[1].id = 'hote-revi-8'
         playerC.dScore += 15; // Adding to Detective Score
         playerC.cScore += 5; // Adding to Character Score
         playerC.sScore += 5; // Adding to Survival Score
         console.log(playerC.dScore);
         console.log(playerC.cScore);
         console.log(playerC.sScore);
-          println(`"John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes." He goes on without waiting for your reply. "I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucket yet?`);
-          getInput();
-          if(getInput() === ['yes', 'I have.', `I'm wearing it now.`]){
-              println(`"Well then, what are we waiting for? I'm paying this damned preacher by the hour, and he's going to want time and a half for overtime pretty soon. Get on down to the lobby on the double!" He hangs up, and you're left thinking that getting married is almost as easy as...as putting on a suit of clothes.`);
-          } else if(getInput() === ['no', 'I have not']){
-              println(`"Well, get moving, my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
-          } else {
-              println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called *Alice at the Sunderland Hotel*. And there is the costume for the White Rabbit in three boxes on the bed.`)
-          }
-          pressEnter('hote-revi-1');
+      },
+      onBlock: () => {
+        if (prevInput === 'yes' || prevInput === 'I have' || prevInput === 'i have' || prevInput === `I'm wearing it` || prevInput === `I'm wearing it now`) {
+          println(`"Well then, what are we waiting for? I'm paying this damned preacher by the hour, and he's going to want time and a half for overtime pretty soon. Get on down to the lobby on the double!" He hangs up, and you're left thinking that getting married is almost as easy as...as putting on a suit of clothes.`);
+          enterRoom('hote-revi');
+        } else if (prevInput === 'no' || prevInput === 'I have not' || prevInput === `I haven't` || prevInput === 'nope' || prevInput === 'i have not') {
+          println(`"Well, get moving, my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
+          enterRoom('hote-revi');
+        } else if (prevInput === '') {
+          
+        } else {
+          println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called *Alice at the Sunderland Hotel*. And there is the costume for the White Rabbit in three boxes on the bed.`)
+          enterRoom('hote-revi');
+        }
       },
       exits: [],
   },//end of hote-revi-4 room (conversation w/Luke on phone)
