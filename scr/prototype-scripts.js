@@ -299,7 +299,10 @@ let turnOnMap = () => {
     let x = document.getElementById("map-display");
     console.log(x.style.display);
     if(!x.style.display || x.style.display === "none"){
-        console.log("turn on");
+        x.style.display = "block";
+        map.invalidateSize();
+    } else {
+        x.style.display = "none";
     }
     
 }
@@ -1086,3 +1089,45 @@ let slideMapDown = (elId) => {
         }
     }
 }
+
+/*
+// slide in items from inventory
+let slideInv = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 30);
+    function slideInL(){
+        if(width === 25){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .2;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} */
