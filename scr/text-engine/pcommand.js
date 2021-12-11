@@ -1885,6 +1885,36 @@ const randomEncounter = () => {
   //vault NYHS dakota UfCS restaurants tenement sketchbook
 
 
+//boolean variable of gotten rag or not if gotten it kill function
+
+const carWashEncounter = () => {
+  const chance = Math.floor(Math.random() * 100) + 1;
+  const room = getRoom(disk.roomId);
+
+  if(chance <= 5) {
+    if(gottenRag === true) {
+      return;
+    } else {
+      println(`'A black kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
+
+      room.onBlock = () => {
+        if(prevInput === 'yes') {
+          enterRoom(`rag-get`)
+        } else if (prevInput === 'no'){
+          println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
+          delete(room.onBlock);
+        } else {
+          println(`'It's a simple **yes** or **no** question whitey.'`)
+        }
+      }
+
+    }
+  }
+
+  
+};
+
+
 //x street indexer encounter functionality
 const xStreetEvent = () => {
   const i1 = Math.floor(Math.random() * 31); //need number 0-30
@@ -1908,13 +1938,37 @@ const xStreetEvent = () => {
   } else { //since all the other digits have the same suffix 
     xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
   };
-  const room = getRoom('xStreet-6'); //get the room with the answer onBlock
-  //set that room description to the following based on the encounter variables generated above
+
+  const betteApt = getRoom('nobe-12');
+  const dameRoom = getRoom('dame-1');
+  const dame = getRoom('dame-8');
+  const room = getRoom('xStreet-6'); 
+  const chance2 = Math.floor(Math.random() * 100) + 1 ;
+  const wackyRoom = getRoom('wacky-6');
+
+  if(!betteApt.hasEntered) {
   room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
-  //enter the x street encounter room chain
   enterRoom('xStreet');
+  } else if (betteApt.hasEntered && !dame.hasEntered) {
+  dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't ever know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
+  enterRoom('dame-1');
+  } else if (dameRoom.hasEntered) {
+    room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+    enterRoom('xStreet');
+  } else if (chance2 <= 3 && !wackyEncounter) {
+    wackyRoom.desc = `'Thanks, Johnny,' he says, turning off his equipment and wiping his brow with a handkerchief embroidered 'WW.' 'You got any idea where I could find ${encounterStreetNumber} ${encounterStreetName}? It's my nephew's house and I'm supposed to bring him this little cable car I got in San Francisco.`
+    //wacky wanderer
+    enterRoom('wacky');
+  }
 };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
+
+
+//if you havent gotten the first encounter 
+//if you have gotten the first encounter 
+//if you have entered bettes apartment but havent gotten the dame encounter
+//if you have entered bettes apartment and have gotten the dame encounter
+//chance for wacky wanderer
 
 
 ////////////////////////////////////////////////

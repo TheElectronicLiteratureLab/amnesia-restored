@@ -1,5 +1,5 @@
 const streets = {
-  roomId: 'test1',
+  roomId: '53-5',
   currPos: [],
   rooms: [
 
@@ -22260,7 +22260,7 @@ const streets = {
       id: '42-depe',
       coord: [13.518, 3.493],
       name: 'E. 42nd St. and Depew Pl.',
-      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!' `,
+      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, 'John Cameron, you old son of a gun – nice to see you again!' `,
       hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
@@ -22749,7 +22749,7 @@ const streets = {
       id: '43-3',
       coord: [15.496, 9.075],
       name: 'E. 43rd St. and 3rd Ave.',
-      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat' here: a lush indoor park complete with trees and flowers.`,
+      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their 'natural habitat' here: a lush indoor park complete with trees and flowers.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '44-3'},
@@ -35114,15 +35114,346 @@ const streets = {
         {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
         {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
     ]
-},// closes lobb-revi-8 room
-{
-  id: 'test1',
-  name: 'This is a testing room',
-  desc: `please ignore`,
-  exits: [
-    {dir:'53', id: 'lobb-revi-8'},
-    {dir: '52', id: 'lobb-revi-5'}
-  ],
-}
+  },
+  {
+    id: 'dame-1',
+    coord: [],
+    name: '',
+    desc: `Without any warning an attractive young woman with long, flowing, dark hair steps up and embraces you, planting a warm kiss on your cheek.`,
+    onEnter: () => {
+      const room = getRoom(disk.roomId);
+
+      room.enteredFrom = lastRoom.id;
+      pressEnter('dame-2');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-2',
+    coord: [],
+    name: '',
+    desc: `'Xavier, it's so good to see you!' she says. 'How are you? I used to wonder if you even had a life outside the lab. How did that trip down to Texas on that super-secret project work out? I resigned to marry Jack right after you left, so I lost track of Alison. But don't worry -- she hardly told me anything. I was so sad to hear about your mother.' `,
+    onEnter: () => {
+      pressEnter('dame-3');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-3',
+    coord: [],
+    name: '',
+    desc: `'I do recall you said the two of you weren't close; that's what you said, isn't it? So how have you been? What have you been doing lately?'`,
+    onEnter: () => {
+      reenableInput();
+    },
+    onBlock: () => {
+      if(prevInput) {
+        enterRoom('dame-4')
+      }
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-4',
+    coord: [],
+    name: '',
+    desc: `Before she can respond, her face is suddenly filled with disgust. 'Oh, hell! It's the same private detective who's been following me around all month. Jack and I are separated and I've filed for divorce and now he's looking to catch me in beg with someone so he can try to weasel out of sharing the bonus he got for closing the Saudi deal.'`,
+    onEnter: () => {
+      pressEnter('dame-5');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-5',
+    coord: [],
+    name: '',
+    desc: `She rolls her eyes. 'Can you believe it? I mean, I gave that man eleven months of my life -- a year, really, if you count the time in the flat in SoHo. That's worth one hell of a lot more than $200,000. Xavier, do me a favor and lose this guy for me. I know he'll stop and question you; I can't say hello to a man without the same thing happening.'`,
+    onEnter: () => {
+      pressEnter('dame-6');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-6',
+    coord: [],
+    name: '',
+    desc: `'Just tell him I'm going to meet you later and throw him off; I've got a special date later -- we're meeting at the World Trade Center, and I simply refuse to go up to the top of the thing, but the lobby's nice, -- and I don't want the atmosphere ruined by that walking hairball.'`,
+    onEnter: () => {
+      pressEnter('dame-7');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-7',
+    coord: [],
+    name: '',
+    desc: `Even as she hurries away, a rotund little man who looks more like a monk out of uniform than a private detective walks up the street. Flashing an ID while still trying to keep the woman in sight, he asks 'I'm carrying on a criminal investigation. Did she tell you were she was going?' `,
+    onEnter: () => {
+      pressEnter('dame-8');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-8',
+    coord: [],
+    name: '',
+    desc: ``,
+    onEnter: () => {
+      pressEnter('dame-9');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-9',
+    coord: [],
+    name: '',
+    desc: `The detectives eyebrows raise and he cracks a tobacco-stained smile. 'You happen to know the cross-street there?'`,
+    onEnter: () => {
+      pressEnter('dame-10');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-10',
+    coord: [],
+    name: '',
+    desc: `It's your turn to smile. Pulling out the useless X-street Indexer, you twirl the wheels and tell him the cross street is:`,
+    onEnter: () => {
+        
+      const room = getRoom(disk.roomId);
+
+
+      room.onBlock = () => {
+        if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+          enterRoom('dame-11');//correct answer room
+        } else {
+          if(room.wrongAnswer === false) {
+            room.wrongAnswer = true;
+            println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
+          } else {
+            room.wrongAnswer = false;
+            enterRoom('dame-12');//game over room
+          }
+        }
+      }
+
+      reenableInput();
+
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-11',
+    coord: [],
+    name: '',
+    desc: `'Thanks, fella,' he says, writing the information in a little book that looks like it's been dipped in used motor oil. 'Here's five bucks -- buy her a drink on me.' 
+
+    The man takes off down the street, his short little legs pumping furiously to try and catch up with his quarry.`,
+    onEnter: () => {
+
+      const room = getRoom('dame-1')
+      pressEnter(room.enteredFrom);
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-12',
+    coord: [],
+    name: '',
+    desc: `He steps close to you, pulling a greasy-looking pistol from his waistband and poking it in your ribs. 'Don't try and mess with me, fella. I saw the number that came up in that little window, and it ain't the number you told me.'`,
+    onEnter: () => {
+      pressEnter('dame-13');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-13',
+    coord: [],
+    name: '',
+    desc: `Before you can reply, an elderly woman carrying an oversize bag of groceries bumps into the fat detective. As he tries to elbow her away his finger accidentally depresses the trigger of his battered gun, sending one bullet cleanly through you heart.`,
+    onEnter: () => {
+      pressEnter('dame-14');
+    },
+    exits: [],
+  },
+  {
+    id: 'dame-14',
+    coord: [],
+    name: '',
+    desc: `He looks down at the pistol as if amazed it could actually hurt anyone, but you die instantly and thus have no opportunity to decide if you're surprised or merely angry. `,
+    onEnter: () => {
+      pressEnter('game-over');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky',
+    coord: [],
+    name: '',
+    desc: `A tall man with a smile so wide you are certain it is recorded in all the appropriate record books approaches you, weighed down by what appears to be a collection of tape recorders.
+
+    'Now, sir, tell me your name!'`,
+    onEnter: () => {
+      const room = getRoom(disk.roomId);
+
+      room.enteredFrom = lastRoom.id;
+      wackyEncounter = true;
+      pressEnter('wacky-2');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-2',
+    coord: [],
+    name: '',
+    desc: `What is normally the easiest of questions presents you with a difficult dilemma. After a moment's thought you settle on 'John Cameron.'
+
+    'Wonnn-derful, Mr. Cameron. And do you know who I am?'`,
+    onEnter: () => {
+      pressEnter('wacky-3');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-3',
+    coord: [],
+    name: '',
+    desc: `You admit that you don't.
+
+    'I'm that Wacky Wanderer from . . . ' Here his voice trails off and he confides in you pleasantly, 'I'll edit in the station names later - I'm syndicated all across the country to radio stations who appreciate Wacky Wanderer humor.'`,
+    onEnter: () => {
+      pressEnter('wacky-4');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-4',
+    coord: [],
+    name: '',
+    desc: `‘Now Mr. Cameron, I’m prepared to give you one hundred dollars if you happen to have in your possession any kind of . . . elephant! It could be a plastic toy, a gold bauble, a wooden statuette, or, yes, even a genuine living, breathing pachyderm!’
+    
+    Do you happen to have any sort of the aformentioned elephant themed items?`,
+    onEnter: () => {
+
+      const room = getRoom(disk.roomId);
+      const item = getItemInInventoryById('elephant');
+      
+      room.onBlock = () => {
+
+        if(prevInput === 'yes' && item) {
+          println(``)
+          enterRoom('wacky-?')
+        } else if (prevInput === 'yes' && !item) {
+          println(`You don't see a reason to lie to this man. Maybe rethink your answer.`);
+        } else if (prevInput === 'no') {
+          enterRoom('wacky-5')
+
+        } else { 
+          println(`'Come again?
+          
+          All I need to know is if you have an elephant themed item son.'`);
+
+        }
+
+      }
+
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-5',
+    coord: [],
+    name: '',
+    desc: `The Wacky Wanderer smiles expectantly as you shrug your shoulders and admit you have no elephant. ‘So sorry, Mr. Cameron,’ he whines apologetically. ‘But here’s a Wacky Wanderer Lucky Buck Bag to thank you for your time.’
+    
+    He hands you an envelope with five dollars in it.`,
+    onEnter: () => {
+      giveMoney(5);
+      pressEnter('wacky-6');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-6',
+    coord: [],
+    name: '',
+    desc: ``,
+    onEnter: () => {
+      pressEnter('wacky-7');
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-7',
+    coord: [],
+    name: '',
+    desc: ``,
+    onEnter: () => {
+      const room = getRoom(disk.roomId);
+
+
+      room.onBlock = () => {
+        if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+          enterRoom('wacky-8');//correct answer room
+        } else {
+          if(room.wrongAnswer === false) {
+            room.wrongAnswer = true;
+            println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
+          } else {
+            room.wrongAnswer = false;
+            enterRoom('wacky-9');//game over room
+          }
+        }
+      }
+
+      reenableInput();
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-8',
+    coord: [],
+    name: '',
+    desc: `‘It’s worth a try,’ the Wacky Wanderer says, and vanishes around a corner.`,
+    onEnter: () => {
+      const room = getRoom('wacky');
+      pressEnter(room.enteredFrom);
+    },
+    exits: [],
+  },
+  {
+    id: 'wacky-9',
+    coord: [],
+    name: '',
+    desc: `The Wacky Wanderer ponders for a moment, noting that the answer you gave him didn't match what was on the wheel. 
+    
+    While he ponders, some 62 feet above your heads, a rope breaks`,
+    onEnter: () => {
+      pressEnter('wacky-10');
+    },
+    exits: [],
+  },
+  {
+    id: 'rag-get',
+    coord: [],
+    name: '',
+    desc: `He hands you a bottle of Windex and a rather greasy dishrag. 'You can earn plenty washing windshields. Just do it when the turkeys stop for a light. But be careful, man. The cops will leave you alone around the Lincoln Tunnel, but don't try it where the rich folks live.'
+
+    He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
+    onEnter: () => {
+      addItem('rag');
+      pressEnter(lastRoom.id);
+    },
+    items:[
+      {
+        itemId: 'car-wash',
+        name: ['rag', 'dishrag', 'windex'],
+        desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
+        isDroppable: true,
+    },
+    ],
+    exits: [],
+  },
   ]
 }
+
