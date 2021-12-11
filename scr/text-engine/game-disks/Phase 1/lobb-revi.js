@@ -1,17 +1,17 @@
 const lobbyRevisited = {
     roomId: 'lobb-revi', // this is the Lobby Revisited Node, entered from the Chapel node
-    onBlock: () =>{
-        if(tipBellboy === false){
-            // add check if movecount has increased by 2
-            enterRoom('lobb-revi-20')
-        }
-    },
+    
     rooms: [
         {
             id: 'lobb-revi',
             name: 'The Lobby',
             desc: `You are now in the lobby.`, // player is in the Elevator Alcove
-            
+            onBlock: () =>{
+                if(tipBellboy === false){
+                    // add check if movecount has increased by 2
+                    enterRoom('lobb-revi-20')
+                }
+            },
             onLook: () => {
                 const room = getRoom('lobb-revi');
                 room.desc = `Mirrors seem to be the prevailing theme at the Sunderland-- at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal. Reflected and muliplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. 
