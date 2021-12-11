@@ -97,7 +97,6 @@ button {
 }
 
 
-
 #container-o {
   border: 0px solid pink;
   width: 100%;
@@ -136,6 +135,7 @@ button {
 }
 
 #playerio {
+  border: 1px double #2d0140;
   background: #0d0d0d;
   height: 570px;
 }
@@ -182,11 +182,14 @@ button {
 .statusbar {
   border: 0px solid #707070;
   color: #f2ebdf;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   margin-top: 2%;
   padding: 10px;
+}
+
+#statusBar {
+  display: none;
 }
 
 .statusbar div {
@@ -199,6 +202,7 @@ button {
   text-align: left;
     margin: auto;
 }
+
 
 #map {
   position: relative;
@@ -246,6 +250,30 @@ button {
   height: 500px;
   display: none;
 }
+* { box-sizing: border-box; }
+
+#dialPad {
+  display: none;
+  position: absolute;
+  left: 100vh;
+  bottom: 35vh;
+  width: 25%;
+  margin: 0px;
+}
+
+#dialKeys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#tutorial {
+  display: none;
+  position: absolute;
+  left: 100vh;
+  bottom: 20vh;
+  width: 25%;
+  margin: 0px;
+}
 
 /*Classes meant for ingame println function*/
 .enter {
@@ -258,7 +286,12 @@ button {
 }
 
 #output div.noborder {
-  border-left: 3px solid #707070;
   background: #707070;
   width: fit-content;
+}
+
+/*Classes meant for map styling*/
+.popup .leaflet-popup-tip, .popup .leaflet-popup-content-wrapper{
+  background: #2d0140;
+  color: #ad3121;
 }

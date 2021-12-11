@@ -1,17 +1,17 @@
 const lobbyRevisited = {
     roomId: 'lobb-revi', // this is the Lobby Revisited Node, entered from the Chapel node
-    onBlock: () =>{
-        if(tipBellboy === false){
-            // add check if movecount has increased by 2
-            enterRoom('lobb-revi-20')
-        }
-    },
+    
     rooms: [
         {
             id: 'lobb-revi',
             name: 'The Lobby',
             desc: `You are now in the lobby.`, // player is in the Elevator Alcove
-            
+            onBlock: () =>{
+                if(tipBellboy === false){
+                    // add check if movecount has increased by 2
+                    enterRoom('lobb-revi-20')
+                }
+            },
             onLook: () => {
                 const room = getRoom('lobb-revi');
                 room.desc = `Mirrors seem to be the prevailing theme at the Sunderland-- at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal. Reflected and muliplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. 
@@ -113,10 +113,14 @@ const lobbyRevisited = {
             id: 'lobb-revi-5',
             name: '52nd Street Exit',
             desc: `This is the 52nd Street Exit.`,
+            onEnter: () => {
+                const room = getRoom('hote-exit');
+
+                room.streetExit = '52-5'; 
+            },
             onLook: () => {
                 println(`To either side of the exit are easy chairs. In one of them soneone has left a copy of the Daily News. Through the glass panels of the revolving doors, you can see the shifting lights of the evening traffic on 52nd Street and the occasional shadowy figure of a pedestrian walking past the hotel.`);
             },
-            
             items: [
                 {
                     itemId: 'dailynews',
@@ -132,7 +136,7 @@ const lobbyRevisited = {
             ],
             exits: [
                 {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
-                {dir: ['s', 'south'], id: ''}, // exit building
+                {dir: ['s', 'south', 'leave'], id: 'hote-exit'}, // exit building
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
             ]
@@ -225,6 +229,11 @@ const lobbyRevisited = {
             id: 'lobb-revi-8',
             name: '53rd Street Exit',
             desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
+            onEnter: () => {
+                const room = getRoom('hote-exit');
+
+                room.streetExit = '53-5'; 
+            },
             onLook: () => {
                 println(`Just outside the hotel a taxi has drawn up to the curb and the doorman is helping onload luggage from its trunk.`);
             },
@@ -248,7 +257,7 @@ const lobbyRevisited = {
                 }
             ],
             exits: [
-                {dir: ['n', 'north'], id: ''}, // exit onto streets
+                {dir: ['n', 'north', 'leave'], id: 'hote-exit'}, // exit onto streets
                 {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
                 {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
                 {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area

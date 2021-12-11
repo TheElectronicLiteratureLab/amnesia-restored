@@ -2,10 +2,10 @@
 let disk;
 
 // global values for character creation
-hairColor = '';
-hairLength = '';
-hairFace = '';
-eyeColor = '';
+hairColor = 'dark';
+hairLength = 'short';
+hairFace = 'beard';
+eyeColor = 'blue';
 
 // store user input history
 let inputs = [''];
@@ -13,6 +13,15 @@ let inputsPos = 0;
 
 // define list style
 let bullet = '•';
+
+//specific timer var for anns house
+let annTimer;
+
+//specific counter for Bette's Apartment
+let bettesHome;
+
+//Specifc move counter for Bette's Apartment
+let betteCoutner;
 
 // reference to the input element
 let input = document.querySelector('#input');
@@ -52,7 +61,6 @@ let quickResponse = (e) => {
     applyInput();
   }
 }
-
 // register listeners for input events
 let setup = () => {
 
@@ -83,12 +91,71 @@ let setup = () => {
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
-let save = (name) => {
+/*let save = (name) => {
+  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
+  localStorage.setItem(name, save);
+  const line = name.length ? `Game saved as "${name}".` : `Game saved.`;
+  println(line);
+};*/
+
+/*
+let save = () => {
+  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
+  if (saveSlot === '1') {    
+    localStorage.setItem("Slot1", save);
+    println("Game Saved to Slot 1");
+  } else if (saveSlot === '2') {
+    localStorage.setItem("Save2", save);
+  } else if (saveSlot === '3') {
+    localStorage.setItem("Slot3", save);
+  } else {
+    console.log("There are no available slots left!")
+  }
+}
+*/
+
+// restore the disk from storage
+// (optionally accepts a name for the save)
+
+/*let load = (name) => {
+  println('TEST')
+  const save = localStorage.getItem(name);
+  console.log(save);
+  if (!save) {
+    println(`Save file not found.`);
+    return;
+  }
+
+  disk = JSON.parse(save, (key, value) => {
+    try {
+      return eval(value);
+    } catch (error) {
+      return value;
+    }
+  });
+
+  const line = name.length ? `Game "${name}" was loaded.` : `Game loaded.`;
+  println(line);
+  enterRoom(disk.roomId);
+};
+*/
+
+// convert the disk to JSON and store it
+// (optionally accepts a name for the save)
+let save = (name = 'Amnesia Restored Save') => {
   const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
   localStorage.setItem(name, save);
   const line = name.length ? `Game saved as "${name}".` : `Game saved.`;
   println(line);
 };
+
+let autoSave = () => {
+  console.log('Saving...');
+  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
+  let saveDate = new Date();
+  let saveFileTime = `Autosave: ${saveDate.getFullYear()}-${saveDate.getMonth()}-${saveDate.getDate()} ${saveDate.getHours()}:${saveDate.getMinutes()}`
+  localStorage.setItem(saveFileTime, save);
+}
 
 // restore the disk from storage
 // (optionally accepts a name for the save)

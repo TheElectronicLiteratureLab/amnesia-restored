@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        #dialPad {
+            display: none;
+        }
+
+        #dialKeys {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 25%;
+        }
+    </style>
 </head>
 <body>
 
-    <div id="dialpad">
-        <div id="dial key">
+    <div id="dialPad">
+        <div id="dialKeys">
             <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
             <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
             <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
@@ -15,14 +26,14 @@
             <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
             <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
             <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
-            <button name="number" value="delete" id="deletekey">Delete</button>
+            <button name="number" value="delete" id="deletekey" onclick='deleteNum()'>Delete</button>
             <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
-            <button name="number" value="enter" id="enterkey">Enter</button>
+            <button name="number" value="enter" id="enterkey" onclick='enterNum()'>Enter</button>
         </div>
     </div>
 
     <div class="input">
-        <input type="text" id="input" value="dial ">
+        <input type="text" id="input" value="">
     </div>
 
     <div id="dialedNum">

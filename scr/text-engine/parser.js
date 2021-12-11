@@ -8,29 +8,43 @@ let applyInput = (input) => {
   input = input || getInput();
   inputs.push(input);
   inputsPos = inputs.length;
-  println(`${input}`, 'noborder');
+  if (input === "inv") {
+    setInput('');
+    moveCount--;
+  } else if (input === "dial") {
+    setInput('');
+  } else {
+    println(`> ${input}`, 'playerInput');   
+  }
   prevInput = input;
   console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
  // console.log(playerMarker.getLatLng());
+
+//special count-up for dawdling in hotel
+
+
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
-    //moveCount++;
     if (cmd) {
       cmd(arg);
       moveCount++;
+      incrementTime();
+      
+      if(degradation === true ) {
+        degradeHunger();
+        degradeFatigue();
+      };
+
       console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
-    } 
-    else if (typeof room.onBlock === 'function') {
-      room.onBlock({disk, println, getRoom, enterRoom,});
-      return;
-    }
-    else {
+    } else if (typeof room.onBlock === 'function') { //check if inside the room there is an onBlock function
+      room.onBlock({disk, println, getRoom, enterRoom,}); //run the code if there is
+      return; //stop running this function after the onBlock is executed
+    } else {
       println(`Sorry, I didn't understand your input. For a list of available commands, type HELP.`);
-      //moveCount--;
     }
   };
 
@@ -64,6 +78,7 @@ let applyInput = (input) => {
   } else {
     exec(commands[arguments.length][command], arguments);
   }
+
 };
 
 // allows wrapping text in special characters so println can convert them to HTML tags

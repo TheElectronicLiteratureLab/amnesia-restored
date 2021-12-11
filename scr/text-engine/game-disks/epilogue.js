@@ -27,7 +27,13 @@ const epilogue = {
         desc: `You pick up the phone and say, "Hello."\n
         "I'm sorry to wake you darling," Bette's voice replies, "but I simply had to call as soon as I saw the headline in the DAILY NEWS."`,
         onEnter: () => 
-        {
+        {   
+            playerC.dScore += 25; // Adding to Detective Score
+            playerC.cScore += 25; // Adding to Character Score
+            playerC.sScore += 3; // Adding to Survival Score
+            console.log(playerC.dScore);
+            console.log(playerC.cScore);
+            console.log(playerC.sScore);
             pressEnter('epil-3');
         },
     },

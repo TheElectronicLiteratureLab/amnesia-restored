@@ -1,6 +1,6 @@
 // render output, with optional class
 // (string | array | fn -> string) -> nothing
-let println = (line, className = "border") => {
+let println = (line, className) => {
   // bail if string is null or undefined
   if (!line) {
     return;
@@ -39,9 +39,119 @@ let println = (line, className = "border") => {
     str = str.replace('\n', '<br>');
   }
 
-  output.appendChild(newLine).innerHTML = str;
+    output.appendChild(newLine).innerHTML = str;
+    output.scrollTo(0, output.scrollHeight);
   //output.scrollTo(0, document.body.scrollHeight);
-  output.scrollTo(0, output.scrollHeight);
+   
+
+
+  // var app = document.querySelector('.app');
+
+  // var typewriter = new Typewriter(app, {
+  //   delay: 50,
+
+  // });
+
+  // typewriter.typeString(str)
+  //   .start();
+};
+
+let listX = (iconPath, line, className, idName) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#inventory');
+  const newLine = document.createElement('div');
+  newLine.setAttribute("id", idName);
+  newLine.setAttribute("onclick", "openItem('inventory-xIndex-display', this.id)");
+  const itemTitle = document.createElement('h3');
+  const icon = document.createElement("img");
+  icon.src = iconPath;
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  output.appendChild(newLine);
+  newLine.appendChild(icon);
+  newLine.appendChild(itemTitle).innerHTML = str;
+};
+
+let listInv = (iconPath, line, className, idName) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#inventory');
+  const newLine = document.createElement('div');
+  newLine.setAttribute("id", idName);
+  newLine.setAttribute("onclick", "openItem('inventory-item-display', this.id)");
+  const itemTitle = document.createElement('h3');
+  const icon = document.createElement("img");
+  icon.src = iconPath;
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  output.appendChild(newLine);
+  newLine.appendChild(icon);
+  newLine.appendChild(itemTitle).innerHTML = str;
+};
+
+let printInvDesc = (line, className) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#item-description');
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  // support for markdown-like bold, italic, underline & strikethrough tags
+  if (className !== 'img') {
+    str = addStyleTags(str, '__', 'u');
+    str = addStyleTags(str, '**', 'b');
+    str = addStyleTags(str, '*', 'i');
+    str = addStyleTags(str, '~~', 'strike');
+  }
+
+  // maintain line breaks
+  while (str.includes('\n')) {
+    str = str.replace('\n', '<br>');
+  }
+
+    output.innerHTML = str;
 };
 
 // get random array element
@@ -70,9 +180,11 @@ let removeExtraSpaces = str => str.replace(/\s{2,}/g," ");
 
 // move the player into room with passed ID
 // string -> nothing
+
 let enterRoom = (id) => {
   const room = getRoom(id);
-  const lastRoom = getRoom(disk.roomId);//get the id of the current room before transitioning. 
+  lastRoom = getRoom(disk.roomId);
+  lastCoord = disk.currPos;
 
   if (!room) {
     println(`That exit doesn't seem to go anywhere.`);
@@ -103,13 +215,22 @@ let enterRoom = (id) => {
   delete disk.conversation;
   delete disk.conversant;
 
-  const room2 = getRoom(disk.roomId); //get new room on entry
-  if ( room2.isStreets && !tenementSpawned ) { //if the new room is a street room and the tenement hasnt spawned yet
-    spawnTenement(); //try and spawn the tenement
+  const isStreetRoom = getRoom(disk.roomId);
+
+  if (isStreetRoom.isStreet){
+
+    if (!tenementSpawned) {
+      console.log('trying to spawn the tenement');
+      spawnTenement();
+    } 
+    
+    randomEncounter();
   }
+  
+  //spawnTenement();
+  //console.log('trying to spawn the tenement');
 
 };
-
 
 let response = (e) => {
   const ENTER = 13;
@@ -117,15 +238,11 @@ let response = (e) => {
   if (e.keyCode === ENTER) {
     applyInput();
   }
-
-  
-
 };
-
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
 let pressEnter = (id) => {
-  println('\nPLEASE PRESS **[ENTER]** TO CONTINUE', 'enter');
+  println('PLEASE PRESS **[ENTER]** TO CONTINUE', 'enterKey');
   //disable normal input
   document.querySelector('input').disabled = true;
   document.getElementById("arrow").innerHTML = "";
@@ -149,6 +266,10 @@ let reenableInput = () => {
     document.querySelector('input').focus(); }, 100);
 };
 
+// clear the output screen
+let clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+}
 
 // determine whether the object has the passed name
 // item | character, string -> bool
@@ -207,7 +328,7 @@ let getItemInInventoryById = (name) => disk.inventory.find(item => objectHasId(i
 // string -> item
 let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(item, name));
 
-// add item into players inventory automatically taken from pcmommands
+// add item into players inventory automatically, taken from pcmommands
 let addItem = (itemName) => {
   const room = getRoom(disk.roomId);
   const findItem = item => objectHasId(item, itemName);
@@ -225,14 +346,6 @@ let addItem = (itemName) => {
     }
   }
 };
-
-/*
-let addItem = (itemId, roomId) => {
-  let item = getItemName(itemId, roomId);
-  println(item.name[0]);
-
-}
-*/
 
 // retrieves a keyword from a topic
 // topic -> string
@@ -284,3 +397,4 @@ let endConversation = () => {
   disk.conversant = undefined;
   disk.conversation = undefined;
 };
+
