@@ -210,7 +210,7 @@ let currentInv = () => {
     let invDisplay = document.getElementById("inventory-display");
     if(!invDisplay.style.display || invDisplay.style.display === "none"){
         applyInput("inv");
-        displayCheck("inventory-display", "inventory")
+        displayCheck("inventory")
     } else {
         slideLeftOut("inventory-display", "inventory-text-container");
         document.getElementById("inventory-item-display").style.display = "none";
@@ -278,7 +278,7 @@ let helpOn = false;
 let displayLeftToggle = (id, name, text) => {
    let x = document.getElementById(id);
    // run check to see if any other displays are on and turn them off before displaying
-   displayCheck(id, name);
+   displayCheck(name);
    // check if display is none, if true slide in display, if false slide out display
    if(!x.style.display || x.style.display === "none"){
        // add check to see if btn is address book to keep input enabled
@@ -299,7 +299,7 @@ let turnOnMap = () => {
     let x = document.getElementById("map-display");
     console.log(x.style.display);
     if(!x.style.display || x.style.display === "none"){
-        x.style.display = "block";
+        slideMapDown("map-display");
         map.invalidateSize();
     } else {
         x.style.display = "none";
@@ -307,11 +307,12 @@ let turnOnMap = () => {
     
 }
 
+/*
 // this is the display toggling for the map
 let displayMapToggle = (id, name) => {
     let x = document.getElementById(id);
     // run check to see if any other displays are on and turn them off before displaying
-    displayCheck(id, name);
+    displayCheck(name);
     // check if display is none, if true slide in display, if false slide out display
     if(!x.style.display || x.style.display === "none"){
         //slideMapDown(id);
@@ -322,13 +323,13 @@ let displayMapToggle = (id, name) => {
          document.querySelector('input').disabled = false;
          document.querySelector('input').focus();
     }
-}
+} */
 
 // this is the display toggling for the visual mode, achievements, and the command guide
 let displayRightToggle = (id, name, text) => {
     let x = document.getElementById(id);
     // run check to see if any other displays are on and turn them off before displaying
-    displayCheck(id, name);
+    displayCheck(name);
     // check if display is nnone, if true slide in display, if false slide out display
     if(!x.style.display || x.style.display === "none"){
         // checks to see if the btn is the help btn to allow input still, else input disabled
@@ -375,12 +376,11 @@ let displayLeftToggle = (id, name, text) => {
  */
 
 // running a check to see if a display is open and if it is turn variable true and check which other variable is true and turn false
-let displayCheck = (id, name) => {
+let displayCheck = (name) => {
     if(name === 'inventory'){
         invOn = true;
         if(addOn === true){
-            slideLeftOut()
-            //document.getElementById("address-display").style.display = "none";
+            document.getElementById("address-display").style.display = "none";
             addOn = false;
         } 
         if(mapOn === true){
@@ -605,6 +605,7 @@ let openItem = (id, name) => {
     if(name !== 'xindexer'){
         document.getElementById("inventory-xIndex-display").style.display = "none";
         document.getElementById(id).style.display = "grid";
+        //slideInvItems(id, textId);
     
         let inv = disk.inventory;
         inv.forEach(e => {
@@ -617,7 +618,8 @@ let openItem = (id, name) => {
     } 
 
     if(name === 'xindexer'){
-        document.getElementById("inventory-xIndex-display").style.display = "block";
+        slideInvX("inventory-xIndex-display", "xIndex-container");
+        //document.getElementById("inventory-xIndex-display").style.display = "block";
         document.getElementById("inventory-item-display").style.display = "none";
     }
 }
@@ -764,6 +766,9 @@ const updateMon = () => {
 const updateScore = () => {
     console.log("displaying score");
     document.getElementById("det-score").innerHTML = detScore;
+    document.getElementById("sur-score").innerHTML = survScore;
+    document.getElementById("char-score").innerHTML = charScore;
+    document.getElementById("tote-score").innerHTML = totalScore;
     document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
 }
 
@@ -869,7 +874,7 @@ let animateToggle = () => {
 }
 
 // old fade on and off of element displays NOT USING ANYMORE 
-
+/*
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -1075,24 +1080,25 @@ let slideMapDown = (elId) => {
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
     // sets beginning width 
-    let width = 25;
+    let width = 0;
     clearInterval(id);
-    id = setInterval(slideOutR, 30);
-    function slideOutR(){
-        if(width === 0){
+    id = setInterval(slideDown, 30);
+    function slideDown(){
+        if(width === 100){
             clearInterval(id);
-            element.style.display = "none";
         } else {
-            width--;
+            width++;
             element.style.width = width + "%";
         }
     }
 }
 
-/*
+//slideInvX("inventory-xIndex-display", "xIndex-container");
 // slide in items from inventory
-let slideInv = (elId, textId) => {
+let slideInvX = (elId, textId) => {
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
@@ -1106,7 +1112,7 @@ let slideInv = (elId, textId) => {
     clearInterval(id);
     id = setInterval(slideInL, 30);
     function slideInL(){
-        if(width === 25){
+        if(width === 60){
             clearInterval(id);
         } else {
             width++;
@@ -1121,7 +1127,7 @@ let slideInv = (elId, textId) => {
                     if(opacity >= 1){
                         clearInterval(text);
                     } else {
-                        opacity += .2;
+                        opacity += .1;
                         console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
@@ -1130,4 +1136,44 @@ let slideInv = (elId, textId) => {
             }
         }
     }  
-} */
+} 
+
+let slideInvItems = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 30);
+    function slideInL(){
+        if(width === 60){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
