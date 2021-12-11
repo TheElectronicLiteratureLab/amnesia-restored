@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-revi', // Set this to the ID of the room you want the player to start in.
+  roomId: 'deat-1', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -293,8 +293,32 @@ const amnesiaRestored = {
           }
         },
         {
+          itemId: 'coathanger',
+          icon: 'img/png/image-metalcoathanger-thumbnail.png',
+          gif: 'img/gif/gif-metalcoathanger-ingame.gif',
+          name: ['Metal Coathanger', 'coathanger', 'metal coathanger'],
+          desc: 'A metal coathanger that you found in the closet of the Sunderland Hotel.',
+          isTakeable: true,
+          isDroppable: true
+        },
+        {
+          itemId: 'closet',
+          name: 'closet',
+          desc: 'A closet that is empty, save for one lonely **coathanger**',
+          onLook: () => {
+            let room = getRoom(disk.roomId);
+            if (getItemInInventoryById('coathanger')) {
+              room.desc = 'A very empty closet.';
+              println(room.desc);
+            } else {
+              room.desc = 'A closet that is empty, save for one lonely **coathanger**';
+              println(room.desc);
+            }
+          },
+        },
+        {
           itemId: 'pen',
-          icon: 'img/png/image-pen-thumbnailwoutline.png',
+          icon: 'img/png/image-pen-thumbnail.png',
           gif: 'img/gif/gif-penmodel-ingame.gif',
           name: ['Ballpoint Pen', 'pen', 'blue pen'],
           desc: 'It is a blue plastic ballpoint.',
@@ -412,7 +436,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'roomkey',
-          icon: 'img/gif/gif-hotelkey-ingame.gif',
+          icon: 'img/png/image-hotelkey-ingame.png',
           gif: 'img/gif/gif-hotelkey-ingame.gif',
           name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
           desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
@@ -421,8 +445,8 @@ const amnesiaRestored = {
         },
         {
           itemId: 'stationary',
-          icon: 'img/gif/gif-hotelkey-ingame.gif',
-          gif: 'img/gif/gif-hotelkey-ingame.gif',
+          icon: 'img/png/image-padofpaper-thumbnail.png',
+          gif: 'img/gif/gif-padofpaper-ingame.gif',
           name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
           desc: 'The stationary says SUNDERLAND HOTEL at the top.',
           isTakeable: true,
@@ -505,6 +529,15 @@ const amnesiaRestored = {
               println(`You need to **open** the door first!`);
             }
           }
+        },
+        {
+          itemId: 'bedsheet',
+          icon: 'img/png/image-bedsheet-thumnail.png',
+          gif: 'img/gif/gif-bedsheet-ingame.gif',
+          name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
+          desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+          isTakeable: true,
+          isDroppable: true
         }
       ],
       exits: [
@@ -541,7 +574,7 @@ const amnesiaRestored = {
             isDropable: true,
             onTake: () => {
                 println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
-                const sink = getItemInRoom('sink', 'hote-revi-1');
+                const sink = getItemInRoom('sink', 'hote-bath-1');
                 sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
             },
             onUse: () => {
@@ -568,7 +601,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'bathtowel',
-              icon: 'img/png/image-towel-thumbnail2-outline.png',
+              icon: 'img/png/image-towel-thumbnail.png',
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel', 'bath towel'],
               desc: `It is a large fluffy towel.`,
@@ -842,6 +875,30 @@ const amnesiaRestored = {
               }
           },
           {
+            itemId: 'coathanger',
+            icon: 'img/png/image-metalcoathanger-thumbnail.png',
+            gif: 'img/gif/gif-metalcoathanger-ingame.gif',
+            name: ['Metal Coathanger', 'coathanger', 'metal coathanger'],
+            desc: 'A metal coathanger that you found in the closet of the Sunderland Hotel.',
+            isTakeable: true,
+            isDroppable: true
+          },
+          {
+            itemId: 'closet',
+            name: 'closet',
+            desc: 'A closet that is empty, save for one lonely **coathanger**',
+            onLook: () => {
+              let room = getRoom(disk.roomId);
+              if (getItemInInventoryById('coathanger')) {
+                room.desc = 'A very empty closet.';
+                println(room.desc);
+              } else {
+                room.desc = 'A closet that is empty, save for one lonely **coathanger**';
+                println(room.desc);
+              }
+            },
+          },
+          {
               itemId: 'pen',
               icon: 'img/png/image-pen-thumbnailwoutline.png',
               gif: 'img/gif/gif-penmodel-ingame.gif',
@@ -960,7 +1017,7 @@ const amnesiaRestored = {
           },
           {
             itemId: 'roomkey',
-            icon: 'img/gif/gif-hotelkey-ingame.gif',
+            icon: 'img/png/image-hotelkey-ingame.png',
             gif: 'img/gif/gif-hotelkey-ingame.gif',
             name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
             desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
@@ -969,8 +1026,8 @@ const amnesiaRestored = {
           },
           {
             itemId: 'stationary',
-            icon: 'img/gif/gif-hotelkey-ingame.gif',
-            gif: 'img/gif/gif-hotelkey-ingame.gif',
+            icon: 'img/png/image-padofpaper-ingame.gif',
+            gif: 'img/gif/gif-padofpaper-ingame.gif',
             name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
             desc: 'The stationary says SUNDERLAND HOTEL at the top.',
             isTakeable: true,
@@ -1036,25 +1093,6 @@ const amnesiaRestored = {
             desc: 'The window is shrouded by the drapes.',
           },
           {
-            itemId: 'hoteldoor',
-            name: ['door', 'Door', 'room door'],
-            desc: 'The door is closed.',
-            isOpen: false,
-            onUse: () => {
-              let door = getItemInRoomById('hoteldoor', disk.roomId);
-              if (door.isOpen === true) {
-                if (earlyLeave !== true) {
-                  enterRoom('hote-room-9');
-                } else {
-                  enterRoom('corridor-1502');
-                }
-              }
-              else {
-                println(`You need to **open** the door first!`);
-              }
-            }
-          },
-          {
             itemId: 'tuxedo',
             name: ['White Tuxedo', 'tuxedo', 'tux'],
             desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
@@ -1081,6 +1119,15 @@ const amnesiaRestored = {
                 }
               //add onWear function to put clothes on player 
               }
+            },
+            {
+              itemId: 'bedsheet',
+              icon: 'img/png/image-bedsheet-thumnail.png',
+              gif: 'img/gif/gif-bedsheet-ingame.gif',
+              name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
+              desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+              isTakeable: true,
+              isDroppable: true
             }
       ], //end of hote-revi items
       exits: [
@@ -1119,7 +1166,6 @@ const amnesiaRestored = {
           pressEnter('hote-revi-4');
       },
       exits: [],
-
   }, //end of hote-revi-3 room (conversation w/Luke on phone)
   {
       id: 'hote-revi-4',
@@ -1127,6 +1173,7 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         reenableInput();
+        println(`"John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes. I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucker yet?"`);
         let room = getRoom('hote-revi');
         room.exits[1].id = 'hote-revi-8'
         playerC.dScore += 15; // Adding to Detective Score
@@ -1187,6 +1234,8 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
+        let room = getRoom('hote-revi');
+        console.log(room.items);
         if(getItemInInventoryById('roomkey')){
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You have it.
             
@@ -1197,6 +1246,7 @@ const amnesiaRestored = {
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
             pressEnter('lobb-1');//leads to Lobby node
         } else {
+          console.log()
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You've left it back in the room.
             
             You return to get the key-- and anything else you think you ought to have with you.
@@ -1204,7 +1254,33 @@ const amnesiaRestored = {
             You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
             
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
-            pressEnter('lobb-1');//leads to Lobby node
+            disk.inventory.push(
+              {
+                itemId: 'roomkey',
+                icon: 'img/png/image-hotelkey-thumbnail.png',
+                gif: 'img/gif/gif-hotelkey-ingame.gif',
+                name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
+                desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
+                isTakeable: true,
+                isDroppable: true
+              },
+            )
+            disk.inventory.forEach((elItem) => {
+              let index = disk.inventory.indexOf(elItem);
+              if (elItem.itemId === 'bathtowel') {
+                disk.inventory.splice(index, 1);
+              } else if (elItem.itemId === 'bathsoap') {
+                disk.inventory.splice(index, 1);
+              } else if (elItem.itemId === 'bedsheet') {
+                disk.inventory.splice(index, 1);
+              } else if (elItem.itemId === 'pen') {
+                disk.inventory.splice(index, 1);
+              } else if (elItem.itemId === 'coathanger') {
+                disk.inventory.splice(index, 1);
+              }
+            })
+            disk.inventory.splice()
+            pressEnter('lobb-1'); //leads to Lobby node
         }
       },
       exits: [],
@@ -1908,7 +1984,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'bathtowel',
-          icon: 'img/png/image-towel-thumbnail2woutline.png',
+          icon: 'img/png/image-towel-thumbnail.png',
           gif: 'img/gif/gif-towel-ingame.gif',
           name: ['Towel', 'large towel', 'bath towel'],
           desc: `It is a large fluffy towel.`,
@@ -4747,112 +4823,70 @@ const amnesiaRestored = {
       }
     },
     {
-      id: 'deat-1', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: 'Death Row', // Displayed each time the player enters the room.
+      id: 'deat-1', 
+      name: 'Death Row',
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
       
       The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
       
       The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
       // arguement for lethal injection or firing squad
-      exits: [
-        {
-          dir: ['squad',], //Two word strings are not working, need to find out why
-          id : 'deat-f3'
-        },
-        {
-          dir: ['injection'],
-          id : 'deat-le3'
-        },
-        {
-          dir: ['appeal', 'fight', 'resist'],
-          id : 'deat-3'
-        },
-        {
-          dir: [''], //onExit command here
-          id : 'deat-2'
-        },
-      ],
+      onBlock: () => {
+        if (prevInput === 'firing squad' || prevInput === 'squad') {
+          firingInjection = false;
+          enterRoom('deat-f3');
+        } else if (prevInput === 'lethal injection' || prevInput === 'injection') {
+          firingInjection = true;
+          enterRoom('deat-le3');
+        } else if (prevInput === 'appeal decision' || prevInput === 'appeal' || prevInput === 'fight' || prevInput === 'fight it' || prevInput === 'resist it' || prevInput === 'resist') {
+          enterRoom('deat-3');
+        } else if (prevInput === '' || prevInput !== ''){
+          println('You must make a decision: the firing squad or lethal injection, which will it be?');
+        }
+      },
     },
-    {
-      id: 'deat-2', // if the player doesn't pick firing squad or lethal injection
-      name: '',
-      desc: `You must make a decision: the firing squad or lethal injection, which will it be?`,
-      exits: [
-        {
-          dir: ['firing', 'squad', 'firing squad'],
-          id : 'deat-f3'
-        },
-        {
-          dir: ['lethal', 'injection', 'lethal injection'],
-          id : 'deat-le3'
-        },
-        {
-          dir: [''], //onExit command here
-          id : 'deat-2'
-        },
-      ],
-    },
-    
     {
       id: 'deat-f3', // if the player chooses firing squad
       name: '', // Displayed each time the player enters the room.
       desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. "Oh, Xavier!" she exclaims as you come into the room. "My poor darling! How shall I ever bear this loss?" She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
       onLook: () =>  {
-        const room = getRoom('deat-f3');
-        room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
-
+        println(`You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`);
       },
-      exits: [
-        {
-          dir: ['kiss', 'hug', 'touch'], // second argument matters here
-          id : 'deat-f4'
-        },
-        {
-          dir: ['marriage', 'denise', 'who are you'], // second argument matters here
-          id : 'deat-f7'
-        },
-        {
-          dir: ['bite', 'spit', 'fuck', 'die'], // second argument matters here
-          id : 'deat-f6'
-        },
-        {
-          dir: ['xavier', 'hollings', 'xavier hollings', 'xav'], // second argument matters here
-          id : 'deat-f8'
-        },
-        { 
-          dir: [''], //onExit command here
-          id : 'deat-f5'
-        },
-      ],
+      onBlock: () => {
+        if (prevInput === 'kiss' || prevInput === 'kiss her' || prevInput === 'touch' || prevInput === 'touch her' || prevInput === 'hug' || prevInput === 'hug her') {
+          println(`Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`)
+          pressEnter('deat-f5');
+        } else if (prevInput === 'marriage' || prevInput === 'denise' || prevInput === 'who are you?' || prevInput === 'who are you') {
+          println(`"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`);
+          pressEnter('deat-f9');
+        } else if (prevInput === 'bite' || prevInput === 'spit' || prevInput === 'fuck' || prevInput === 'die' || prevInput === 'bite her' || prevInput === 'spit at her' || prevInput === 'fuck you') {
+          println(`It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`);
+          pressEnter('deat-f10');
+        } else if (prevInput === 'xavier' || prevInput === 'hollings' || prevInput === 'xavier hollings' || prevInput === 'xav' || prevInput === 'who am i' || prevInput === 'who am I?' || prevInput === 'Who is Xavier Hollings?' || prevInput === 'Who is Xavier Hollings?') {
+          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
+          pressEnter('deat-f9');
+        } else if (prevInput === '' || prevInput !== '') {
+          println('Well? What are you going to do?');
+        }
+      },
     },
     {
       id: 'deat-3', // if the player chooses to appeal the decision
       name: '', // Displayed each time the player enters the room.
       desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection--which is it?`, // Displayed when the player first enters the room.
-      exits: [
-        {
-          dir: ['squad'],
-          id : 'deat-f3'
-        },
-        {
-          dir: ['injection'],
-          id : 'deat-le3'
-        },
-        {
-          dir: [''],
-          id : 'deat-2'
-        },
-      ],
-    },
-    {
-      id: 'deat-f4', // if Kiss, hug, or touch  Denise if firing squad selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-          pressEnter('deat-f5');
+      onBlock: () => {
+        if (prevInput === 'firing squad' || prevInput === 'squad' || prev === 'firing') {
+          firingInjection = false;
+          enterRoom('deat-f3');
+        } else if (prevInput === 'lethal injection' || prevInput === 'injection' || prev === 'lethal') {
+          firingInjection = true;
+          enterRoom('deat-le3');
+        } else if (prevInput === 'appeal decision' || prevInput === 'appeal' || prevInput === 'fight' || prevInput === 'fight it' || prevInput === 'resist it' || prevInput === 'resist') {
+          enterRoom('deat-3');
+        } else if (prevInput === '' || prevInput !== ''){
+          println('You must make a decision: the firing squad or lethal injection, which will it be?');
+        }
       },
-      exits: [],
     },
     {
       id: 'deat-f5', // after Kiss, hug, or touch  Denise if firing squad selected
@@ -4868,159 +4902,38 @@ const amnesiaRestored = {
       exits: [],
     },
     {
-      id: 'deat-f6', // if BITE/SPIT or any obscenity at Denise if firing squad selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-f10');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-f7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if firing squad selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-f9');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-f8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-f9');
-      },
-      exits: [],
-    },
-    {
       id: 'deat-f9', // Proceeding to last meal node if firing squad selected
       name: '', // Displayed each time the player enters the room.
       desc: `Denise rises from her chair. "So long, sucker. Have a nice afterlife." She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
       onEnter: () => {
         pressEnter('deat-f10');
-        reenableInput();
       },
       exits: [],
     },
     {
       id: 'deat-le3', // if the player chooses lethal injection
       name: '', // Displayed each time the player enters the room.
-      desc: `On the morning of the day you are to be shot, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. "Oh, Xavier!" she exclaims as you come into the room. "My poor darling! How shall I ever bear this loss?" She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
+      desc: `On the morning of the day you are to be lethally injected, a guard comes to your cell on Death Row and announces that you have a visitor. He takes you to the visiting room, and there, behind the wire mesh, already wearing the black dress and veil of her mourning, is your widow-soon-to-be, Denise. "Oh, Xavier!" she exclaims as you come into the room. "My poor darling! How shall I ever bear this loss?" She presses her face close to the wire mesh and awaits your kiss.`, // Displayed when the player first enters the room.
       onLook: () =>  {
-        const room = getRoom('deat-le3');
-      room.desc = `You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`
-
-    },
-     exits: [
-      {
-        dir: ['kiss', 'hug', 'touch'],
-        id : 'deat-le4'
+        println(`You search her face for some sign of genuine feeling but encounter a gaze of unyielding opacity. It is not that her eyes avoid yours; they are simply, and studiedly, noncommittal, like the eyes of a medical student performing an autopsy. For whose sake, you wonder, is she putting on this performance? Is she really your wife? And are you really guilty of the crime for which you’re to be executed? If only you could remember!`);
       },
-      {
-        dir: ['marriage', 'denise', 'who are you'],
-        id : 'deat-le7'
+      onBlock: () => {
+        if (prevInput === 'kiss' || prevInput === 'kiss her' || prevInput === 'touch' || prevInput === 'touch her' || prevInput === 'hug' || prevInput === 'hug her') {
+          println(`Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`)
+          pressEnter('deat-f5');
+        } else if (prevInput === 'marriage' || prevInput === 'denise' || prevInput === 'who are you?' || prevInput === 'who are you') {
+          println(`"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`);
+          pressEnter('deat-f9');
+        } else if (prevInput === 'bite' || prevInput === 'spit' || prevInput === 'fuck' || prevInput === 'die' || prevInput === 'bite her' || prevInput === 'spit at her' || prevInput === 'fuck you') {
+          println(`It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`);
+          pressEnter('deat-f10');
+        } else if (prevInput === 'xavier' || prevInput === 'hollings' || prevInput === 'xavier hollings' || prevInput === 'xav' || prevInput === 'who am i' || prevInput === 'who am I?' || prevInput === 'Who is Xavier Hollings?' || prevInput === 'Who is Xavier Hollings?') {
+          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
+          pressEnter('deat-f9');
+        } else if (prevInput === '' || prevInput !== '') {
+          println('Well? What are you going to do?');
+        }
       },
-      {
-        dir: ['bite', 'spit', 'fuck', 'die'],
-        id : 'deat-le6'
-      },
-      {
-        dir: ['xavier', 'hollings', 'xavier hollings', 'xav'],
-        id : 'deat-le8'
-      },
-      { //Anything other than the directions, wonder how to do that
-        dir: [''],
-        id : 'deat-le5' //onExit here
-      },
-    ],
-  },
-  {
-    id: 'deat-le4', // if Kiss, hug, or touch  Denise if lethal injection selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `Your lips meet hers in a kiss as chilly and formal as the swan carved from ice that appears at the end of a banquet. Yet when Denise draws back, she seems as pleased and replete as the proverbial cat that ate the canary. She wipes an imaginary tear from the corner of her eye with a cambric handkerchief embroidered with red and white roses.`, // Displayed when the player first enters the room.
-    onEnter: () => {
-        pressEnter('deat-le5');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le5', // after Kiss, hug, or touch  Denise if lethal injection selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `Denise affects to wipe away a tear with her cambric handkerchief. "Xavier, forgive me, but I don’t think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o’clock. It seems you won’t be able to cut me out of your will--as you’ve tried to do behind my back. I’ll inherit your estate willy-nilly--and your mother’s too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself." She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
-    onEnter: () => {
-        playerC.dScore += 2; // Adding to Detective Score
-        playerC.cScore += 10; // Adding to Character Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        pressEnter('deat-le9');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le6', // if BITE/SPIT or any obscenity at Denise if lethal injection selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise’s black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
-    onEnter: () => {
-      pressEnter('deat-le10');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le7', // if ASK ABOUT DENISE or MARRIAGE or WHO ARE YOU if lethal injection selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `"It’s very brave of you, my dear, to stick to this silly story about your amnesia right to the bitter end, but surely with me there’s no need for such an imposture. You ask me about myself as though we were strangers. I’m your wife, the woman you love and to whom you confessed your guilt."`, // Displayed when the player first enters the room.
-    onEnter: () => {
-      pressEnter('deat-le9');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le8', // if ASK ABOUT XAVIER at DENISE if firing squad selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you’ve done. And now you must face the fact that you must die. Do please try to die with some style. That’s all I have to say, except good-bye--and thank you for a huge inheritance. I’ll try and spend it the way you’d want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`, // Displayed when the player first enters the room.
-    onEnter: () => {
-      pressEnter('deat-le9');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le9', // Proceeding to last meal node if firing squad selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `Denise rises from her chair. "So long, sucker. Have a nice afterlife." She leaves the room, and the guard escorts you back to your cell.`, // Displayed when the player first enters the room.
-    onEnter: () => {
-      pressEnter('deat-le10');
-    },
-    exits: [],
-  },
-  {
-    id: 'deat-le10', // last meal node if lethal injection squad
-    name: '', // Displayed each time the player enters the room. 
-    desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. "So, which of those three will it be?"`, // Displayed when the player first enters the room.
-   // argument made and stored for either ribs, turkey, steak
-   onEnter: () =>{
-    document.querySelector('input').disabled = false;
-    document.getElementById('arrow').innerHTML = '>';
-   },
-   exits: [
-    {
-      dir: ['steak', 'potatoes', 'steak and potatoes'], // two word arguement
-      id : 'deat-lesp'
-    },
-    {
-      dir: ['barbecue', 'ribs', 'barbecue ribs'], // two word arguement
-      id : 'deat-lebr'
-    },
-    {
-      dir: ['roasted', 'turkey', 'roasted turkey'], // two word arguement
-      id : 'deat-lert'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-letar'
-    },
-  ],
   },
   {
     id: 'deat-f10', // last meal node if firing squad
@@ -5028,896 +4941,187 @@ const amnesiaRestored = {
     desc: `Back in your cell you await the hour of execution. The warden asks what you would like for your last meal. Your first request shocks the warden, who is a man of simple, unsophisticated tastes. He explains that all previous condemned men have ordered either steak and potatoes for their last meal, or barbecued ribs, or roast turkey with stuffing. "So, which of those three will it be?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
    onEnter: () => {
-      document.querySelector('input').disabled = false;
-      document.getElementById('arrow').innerHTML = '>';
+      reenableInput();
      },
-   exits: [
-    {
-      dir: ['steak', 'potatoes', 'steak and potatoes'], // two word arguement
-      id : 'deat-fsp'
+     onBlock: () => {
+      if (prevInput === 'steak' || prevInput === 'potatoes' || prevInput === 'steak and potatoes') {
+        deathFood = 'steak';
+        enterRoom('deat-fsp');
+      } else if (prevInput === 'bbq' || prevInput === 'bbq ribs' || prevInput === 'barbecue' || prevInput === 'ribs' || prevInput === 'barbecue ribs') {
+        deathFood = 'ribs';
+        enterRoom('deat-fsp');
+      } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'stuffed turkey') {
+        deathFood = 'turkey';
+        enterRoom('deat-fsp');
+      } else if (prevInput === '') {
+        deathFood = 'chili';
+        enterRoom('deat-ftar');
+      } else {
+        println('So, what will it be?');
+      }
     },
-    {
-      dir: ['barbecue', 'ribs', 'barbecue ribs'], // two word arguement
-      id : 'deat-fbr'
-    },
-    {
-      dir: ['roasted', 'turkey', 'roasted turkey'], // two word arguement
-      id : 'deat-frt'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-ftar'
-    },
-  ],
   },
   {
     id: 'deat-fsp', // religious node if firing squad and steak and potatoes
     name: '', // Displayed each time the player enters the room.
     desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
    // argument made and stored for either ribs, turkey, steak
-   exits: [
-    {
-      dir: ['jewish'], 
-      id : 'deat-fspj'
-    },
-    {
-      dir: ['catholic'], 
-      id : 'deat-fspc'
-    },
-    {
-      dir: ['protestant'], 
-      id : 'deat-fspp'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-fsp1'
-    },
-  ],
+   onEnter: () => {
+     reenableInput();
+   },
+   onBlock: () => {
+     if (prevInput === 'catholic') {
+       religion = 'catholic';
+       println(`The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`);
+      pressEnter('deat-letar2');
+     } else if (prevInput === 'protestant') {
+       religion = 'protestant';
+       println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`);
+       pressEnter('deat-letar2');
+     } else if (prevInput === 'jewish') {
+       religion = 'jewish';
+       println(`The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`);
+       pressEnter('deat-letar2');
+     } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none') {
+       religion = 'none';
+       println(`"That’s about what I figured," the warden says, and bids you good day.`)
+       pressEnter('deat-letar2');
+     }
+   }
   },
   {
-    id: 'deat-fbr', // religious node if firing squad and barbeque ribs
+    id: 'deat-letar2', // lethal injection & no meal cont
     name: '', // Displayed each time the player enters the room.
-    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-   // argument made and stored for either ribs, turkey, steak
-   exits: [
-    {
-      dir: ['jewish'], 
-      id : 'deat-fbrj'
-    },
-    {
-      dir: ['catholic'], 
-      id : 'deat-fbrc'
-    },
-    {
-      dir: ['protestant'], 
-      id : 'deat-fbrp'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-fbr1'
-    },
-  ],
-  },
-  {
-    id: 'deat-frt', // religious node if firing quad and roasted turkey
-    name: '', // Displayed each time the player enters the room.
-    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-   // argument made and stored for either ribs, turkey, steak
-   exits: [
-    {
-      dir: ['jewish'], 
-      id : 'deat-frtj'
-    },
-    {
-      dir: ['catholic'], 
-      id : 'deat-frtc'
-    },
-    {
-      dir: ['protestant'], 
-      id : 'deat-frtp'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-frt1'
-    },
-  ],
-  },
-  {
-    id: 'deat-ftar', // religious node if firing squad and no meal selected
-    name: '', // Displayed each time the player enters the room.
-    desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-   // argument made and stored for either ribs, turkey, steak
-   exits: [
-    {
-      dir: ['jewish'], 
-      id : 'deat-ftarj'
-    },
-    {
-      dir: ['catholic'], 
-      id : 'deat-ftarc'
-    },
-    {
-      dir: ['protestant'], 
-      id : 'deat-ftarp'
-    },
-    {
-      dir: [''], // If no input
-      id : 'deat-ftar1'
-    },
-  ],
-  },
-    {
-      id: 'deat-lesp', // religious node if lethal injection and steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-     // argument made and stored for either ribs, turkey, steak
-     exits: [
-      {
-        dir: ['jewish'], 
-        id : 'deat-lespj'
-      },
-      {
-        dir: ['catholic'], 
-        id : 'deat-lespc'
-      },
-      {
-        dir: ['protestant'], 
-        id : 'deat-lespp'
-      },
-      {
-        dir: [''], // If no input
-        id : 'deat-lesp1'
-      },
-    ],
-    },
-    {
-      id: 'deat-lebr', // religious node if lethal injection and barbeque ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-     // argument made and stored for either ribs, turkey, steak
-     exits: [
-      {
-        dir: ['jewish'], 
-        id : 'deat-lebrj'
-      },
-      {
-        dir: ['catholic'], 
-        id : 'deat-lebrc'
-      },
-      {
-        dir: ['protestant'], 
-        id : 'deat-lebrp'
-      },
-      {
-        dir: [''], // If no input
-        id : 'deat-lebr1'
-      },
-    ],
-    },
-    {
-      id: 'deat-lert', // religious node if lethal injection and roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-     // argument made and stored for either ribs, turkey, steak
-     exits: [
-      {
-        dir: ['jewish'], 
-        id : 'deat-lertj'
-      },
-      {
-        dir: ['catholic'], 
-        id : 'deat-lertc'
-      },
-      {
-        dir: ['protestant'], 
-        id : 'deat-lertp'
-      },
-      {
-        dir: [''], // If no input
-        id : 'deat-lert1'
-      },
-    ],
-    },
-    {
-      id: 'deat-letar', // religious node if lethal injection and no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `"You’ll probably want to see a clergyman now. I forget: are you Catholic, Protestant, or Jewish?"`, // Displayed when the player first enters the room.
-     // argument made and stored for either ribs, turkey, steak
-     exits: [
-      {
-        dir: ['jewish'], 
-        id : 'deat-letarj'
-      },
-      {
-        dir: ['catholic'], 
-        id : 'deat-letarc'
-      },
-      {
-        dir: ['protestant'], 
-        id : 'deat-letarp'
-      },
-      {
-        dir: [''], // If no input
-        id : 'deat-letar1'
-      },
-    ],
-    },
-    {
-      id: 'deat-letarj', // If JEWISH, lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letar1', // If none or go away, lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letar2', // lethal injection & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
+    desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
+    Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      if (deathFood === 'chili') {
         pressEnter('deat-letar3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letar3', //  lethal injection & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: "We didn’t want you to die without a chance to sample our famous Texas chili!"', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 10; // Adding to Detective Score
-        playerC.cScore += 10; // Adding to Character Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        pressEnter('deat-letar4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letar4', //  lethal injection & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letar5', // lethal injection & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: "Feed me! Feed me!" like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lelw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letarj', // If JEWISH, lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letarc', // If CATHOLIC & lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-letarp', // If Protestant & lethal injection & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lesp1', // If none or go away, lethal injection & Steak and Potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lesp2', // lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lesp3', //  lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 25; // Adding to Detective Score
-        console.log(playerC.dScore);
-        pressEnter('deat-lesp4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lesp4', //  lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lesp5', // lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lelw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lespj', // If JEWISH, lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lespc', // If CATHOLIC & lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lespp', // If Protestant & lethal injection & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lesp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebr1', // If none or go away, lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebr2', // lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebr3', //  lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 20; // Adding to Detective Score
-        console.log(playerC.dScore);
-        pressEnter('deat-lebr4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebr4', //  lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebr5', // lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lelw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebrj', // If JEWISH, lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebrc', // If CATHOLIC & lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lebrp', // If Protestant & lethal injection & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lebr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lert1', // If none or go away, lethal injection & Roasted Turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lert2', // lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lert3', //  lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 25; // Adding to Detective Score
-        console.log(playerC.dScore);
-        pressEnter('deat-lert4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lert4', //  lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lert5', // lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. "You’re my son!" she insisted almost hysterically. "I will not have you suppose otherwise!"', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lelw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lertj', // If JEWISH, lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lertc', // If CATHOLIC & lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lertp', // If Protestant & lethal injection & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftar1', // If none or go away, firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftar2', // firing squad & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-ftar3', //  lethal injection & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: "We didn’t want you to die without a chance to sample our famous Texas chili!"', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.cScore += 10; // Adding to Character Score
-        console.log(playerC.cScore);
-        pressEnter('deat-ftar4');
+      } else if (deathFood === 'steak') {
+        pressEnter('deat-lesp3') //steak
+      } else if (deathFood === 'ribs') {
+        pressEnter('deat-lebr3') //ribs
+      } else if (deathFood === 'turkey') {
+        pressEnter('deat-lert3') //turkey
+      } else {
+        pressEnter('deat-letar3'); //error check just in case
       }
     },
-    {
-      id: 'deat-ftar4', //  firing squad & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar5');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-letar3', //  lethal injection & no meal cont
+    name: '', // Displayed each time the player enters the room.
+    desc: 'You are confronted with a bowl of cold chili garnished with a large dead hairy tarantula. An unsigned note accompanying this entree says: "We didn’t want you to die without a chance to sample our famous Texas chili!"', // Displayed when the player first enters the room.
+    onEnter: () => {
+      playerC.dScore += 10; // Adding to Detective Score
+      playerC.cScore += 10; // Adding to Character Score
+      console.log(playerC.dScore);
+      console.log(playerC.cScore);
+      pressEnter('deat-letar4');
     },
-    {
-      id: 'deat-ftar5', // firing squad & no meal cont
-      name: '', // Displayed each time the player enters the room.
-      desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: "Feed me! Feed me!" like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-flw');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lesp3', //  lethal injection & steak and potatoes
+    name: '', // Displayed each time the player enters the room.
+    desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
+    onEnter: () => {
+      playerC.dScore += 25; // Adding to Detective Score
+      console.log(playerC.dScore);
+      pressEnter('deat-letar4');
     },
-    {
-      id: 'deat-ftarj', // If JEWISH, firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lebr3', //  lethal injection & Barbecue Ribs
+    name: '', // Displayed each time the player enters the room.
+    desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
+    onEnter: () => {
+      playerC.dScore += 20; // Adding to Detective Score
+      console.log(playerC.dScore);
+      pressEnter('deat-letar4');
     },
-    {
-      id: 'deat-ftarc', // If CATHOLIC & firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-letar2');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lert3', //  lethal injection & roasted turkey
+    name: '', // Displayed each time the player enters the room.
+    desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
+    onEnter: () => {
+      playerC.dScore += 25; // Adding to Detective Score
+      console.log(playerC.dScore);
+      pressEnter('deat-letar4');
     },
-    {
-      id: 'deat-ftarp', // If Protestant & firing squad & no meal selected
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-ftar2');
-      },
-      exits: [],
+    exits: [],
+  },
+
+  {
+    id: 'deat-letar4', //  lethal injection & no meal cont
+    name: '', // Displayed each time the player enters the room.
+    desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
+    You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      if (deathFood === 'chili') {
+        pressEnter('deat-letar5');
+      } else if (deathFood === 'steak') {
+        pressEnter('deat-lesp5') //steak
+      } else if (deathFood === 'ribs') {
+        pressEnter('deat-lebr5') //ribs
+      } else if (deathFood === 'turkey') {
+        pressEnter('deat-lert5') //turkey
+      } else {
+        pressEnter('deat-letar5'); // error correction 
+      }
     },
-    {
-      id: 'deat-fsp1', // If none or go away, firing squad & Steak and Potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp2');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-letar5', // lethal injection & no meal cont
+    name: '', // Displayed each time the player enters the room.
+    desc: 'Balefully you regard this last sadistic prank of the staff of Revoltillo State Penitentiary, and briefly you consider ways of disposing of the chili in a spirit of reciprocal spite. But then, to your dismay and astonishment, you experience a voracious hunger for the cold, congealed chili before you. Your mouth waters like a faucet, and every cell of your body screams: "Feed me! Feed me!" like the voices of a rioting cellblock.\n You look down at the dead tarantula, which you’d removed from the chili before eating it, and remember your first experience of prison. In Santa Candelaria, where, investigating the rumors of a plague of amnesia that had been reported in a weekly tabloid paper, you had incurred the enmity of the local sheriff. He’d framed you on drug charges, imprisoned you with a flagrant disregard of all your legal rights, and made you the butt of endless sadistic jokes, such as serving you just such a bowl of tarantula-garnished chili. The horror of that squalid jail cell! The horror of it!', // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-lelw');
     },
-    {
-      id: 'deat-fsp2', // firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp3');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lesp5', // lethal injection & steak and potatoes
+    name: '', // Displayed each time the player enters the room.
+    desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-lelw');
     },
-    {
-      id: 'deat-fsp3', //  firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 25; // Adding to Detective Score
-        console.log(playerC.dScore);
-        pressEnter('deat-fsp4');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lebr5', // lethal injection & Barbecue Ribs
+    name: '', // Displayed each time the player enters the room.
+    desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-lelw');
     },
-    {
-      id: 'deat-fsp4', //  firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp5');
-      },
-      exits: [],
+    exits: [],
+  },
+  {
+    id: 'deat-lert5', // lethal injection & roasted turkey
+    name: '', // Displayed each time the player enters the room.
+    desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. "You’re my son!" she insisted almost hysterically. "I will not have you suppose otherwise!"', // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('deat-lelw');
     },
-    {
-      id: 'deat-fsp5', // firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember an earlier steak dinner you had with Denise. You remember the care and deliberation with which she cut into her own steak with the steak knife after you had told her that you had fallen in love with another woman and that your engagement was over. You remember her look of rage and her quick recovery as she told you that she understood and wished you every happiness with your new love.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-flw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fspj', // If JEWISH, firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fspc', // If CATHOLIC & firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fspp', // If Protestant & firing squad & steak and potatoes
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fsp2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbr1', // If none or go away, firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbr2', // firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbr3', //  firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        playerC.dScore += 25; // Adding to Detective Score
-        console.log(playerC.dScore);
-        pressEnter('deat-fbr4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbr4', //  firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbr5', // firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you’d had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you’d seen the bright blue package in every one of the homes you’d been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria’s plague of amnesia!.', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-flw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbrj', // If JEWISH, firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbrc', // If CATHOLIC & firing squad& Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbrp', // If Protestant & firing squad & Barbecue Ribs
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fbr2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frt1', // If none or go away, firing squad& Roasted Turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `"That’s about what I figured," the warden says, and bids you good day.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frt2', // firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you’d killed a guard while trying to escape from this prison, you’d feel less of two minds. Since you’re not sure, you feel it isn’t really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
-      Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you’re to enjoy in this life.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt3');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frt3', //  firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt4');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frt4', //  firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You’re holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-      You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-lert5');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frt5', // firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: 'You remember a holiday dinner years ago. It was your first Christmas home from college. After the dinner you had mustered up the courage to ask your mother (your father was already dead then) if you were an adopted child. She had denied it emphatically, and asked you how you had come to have such a suspicion. You had not told her, then, about Zane. Only years later, when she had put up the bail to release you from the nightmarish prison cell in Santa Candelaria, only then did you tell her that you had, if not an identical twin, a doppelganger, and even then she had denied you could be Zane’s twin. "You’re my son!" she insisted almost hysterically. "I will not have you suppose otherwise!"', // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-flw');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frtj', // If JEWISH, firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-lertc', // If CATHOLIC & firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-frtp', // If Protestant & firing squad & roasted turkey
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-frt2');
-      },
-      exits: [],
-    },
-    {
-      id: 'deat-fbad', // If you swear at the guard firing squad
-      name: '', // Displayed each time the player enters the room.
-      desc: `The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`, // Displayed when the player first enters the room.
-      onEnter: () => {
-        pressEnter('deat-fgo');
-      },
-      exits: [],
-    },
+    exits: [],
+  },
   {
     id: 'deat-lebad', // if you swear at the guard lethal injection
     name: '', // Displayed each time the player enters the room.
     desc: 'The warden regards you with contempt and disbelief. "Come on, Hollings. You’ve only got a few minutes left. Try and show some dignity." You are led, protesting your innocence, to the place of execution.', // Displayed when the player first enters the room.
     onEnter: () => {
-      pressEnter('deat-fgo');
+      if (firingInjection === false) {
+        enterRoom('deat-fgo');
+      } else {
+        enterRoom('deat-lego');
+      }
     },
     exits: [],
   },
@@ -5929,44 +5133,25 @@ const amnesiaRestored = {
     "Xavier Hollings," the warden asks solemnly, "do you have any last words?"`, // Displayed when the player first enters the room.
     // if anything
     onEnter: () =>{
-      document.querySelector('input').disabled = false;
-      document.getElementById('arrow').innerHTML = '>';
+      reenableInput();
      },
-    exits: [
-      {
-        dir: ['no', '', 'yes'], //Two word strings are not working, need to find out why
-        id : 'deat-lego'
-      },
-      {
-        dir: ['fuck', 'shit', 'die'], //Two word strings are not working, need to find out why
-        id : 'deat-lebad'
-      },
-    ],
-  },
-  {
-    id: 'deat-flw', // Last Words firing squad route
-    name: '', // Displayed each time the player enters the room.
-    desc: `And then it all comes back in a rush, everything you’d forgotten, the entire tangle of events your amnesia had erased. And you realize that you are innocent! It wasn’t you who murdered the guard. It wasn’t you who escaped from Revoltillo. You’re innocent of those crimes.
-    But this realization comes too late, for it is just then that the warden comes to your cell with the guards who are to ready you for your execution.
-    "Xavier Hollings," the warden asks solemnly, "do you have any last words?"`, // Displayed when the player first enters the room.
-    // if anything
-    onEnter: () =>{
-      document.querySelector('input').disabled = false;
-      document.getElementById('arrow').innerHTML = '>';
-     },
-     onBlock: () => {
-      enterRoom(`deat-fgo`);
-    },
-    exits: [
-      {
-        dir: ['no', '', 'yes'], //Two word strings are not working, need to find out why
-        id : 'deat-fgo'
-      },
-      {
-        dir: ['fuck', 'shit', 'die'], //Two word strings are not working, need to find out why
-        id : 'deat-fbad'
-      },
-    ],
+    onBlock: () => {
+      if(prevInput === 'no' || prevInput === 'yes' || prevInput === '') {
+        if (firingInjection === false) {
+          enterRoom('death-fgo');
+        } else {
+          enterRoom('deat-lego');
+        }
+      } else if (prevInput === 'fuck' || prevInput === 'shit' || prevInput === 'fuck you' || prevInput === 'eat shit' || prevInput === 'die' || prevInput === 'eat shit and die' || prevInput === 'I hate you' || prevInput === 'I am your father' || prevInput === 'ftfy') {
+        enterRoom('deat-lebad');
+      } else {
+        if (firingInjection === false) {
+          enterRoom('death-fgo');
+        } else {
+          enterRoom('deat-lego');
+        }
+      }
+    }
   },
   {
     id: 'deat-fgo', // If Firing Squad
@@ -5976,6 +5161,9 @@ const amnesiaRestored = {
     The marksmen laugh appreciatively at his joke.
     They take aim. You close your eyes. The order to Fire! is given.
     You die.`, // Displayed when the player first enters the room.
+    onEnter: () => {
+      pressEnter('game-over');
+    },
     exits: [],// Go to Game Over
   },
   {
@@ -5988,8 +5176,7 @@ const amnesiaRestored = {
     A medical attendant enters the room. He makes a tourniquet below your biceps with a length of rubber tubing, and then when he has found a vein, he injects the poison.
     There is a tingling along your arm, a pain in your chest, followed by a sense of wonderful relaxation. You feel you still have breath enough to speak a single word that will be your last. You say it:`, // Displayed when the player first enters the room.
     onEnter: () =>{
-      document.querySelector('input').disabled = false;
-      document.getElementById('arrow').innerHTML = '>';
+      reenableInput();
      },
     onBlock: () => {
       enterRoom(`deat-ledie`);
@@ -5998,14 +5185,11 @@ const amnesiaRestored = {
   },
   {
     id: 'deat-ledie', // If lethal injection
-    name: '', // Displayed each time the player enters the room.
+    name: 'Death and Texas', // Displayed each time the player enters the room.
     desc: `And then you die`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('game-over');
     },
-    // if anything
-    // println('And then you die'
-    //pressEnter('gameover?')
   },
   //**********************************************************/
   //                        Lobby                            /

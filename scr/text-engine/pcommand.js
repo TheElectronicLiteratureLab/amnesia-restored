@@ -1973,12 +1973,6 @@ let commands = [
   },
   // one argument (e.g. "go north", "take book")
   {
-    firing: args => goDir(args), //Firing and below commands won't work, they're just accepting whatever word this is as a command
-    lethal: args => goDir(args),
-    xavier: args => goDir(args),
-    steak: args => goDir(args), 
-    roasted: args => goDir(args),
-    barbecue: args => goDir(args),
     ring: args => goDir(args),
     enter: args => goDir(args),
     look: lookThusly,

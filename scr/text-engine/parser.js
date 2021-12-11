@@ -22,6 +22,9 @@ let applyInput = (input) => {
   setInput(''); // reset input field
  // console.log(playerMarker.getLatLng());
 
+//special count-up for dawdling in hotel
+
+
   const exec = (cmd, arg) => {
     const room = getRoom(disk.roomId);
     if (cmd) {
