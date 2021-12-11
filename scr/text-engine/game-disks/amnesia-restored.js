@@ -756,6 +756,7 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'hote-revi', //unique ID for this room
+      coord: [100, 100],
       name: 'Hotel Room 1502', //room name (displayed to player)
       hasBed: true,
       lukecall: false,
