@@ -1910,9 +1910,18 @@ const carWashEncounter = () => {
 
     }
   }
-
-  
 };
+
+//clean cars logic
+//needs to check if proper item is in inventory
+//needs to check coords, 
+    //if in lincoln tunnel neighborhood no chance to be caught by cops 
+    //if not in lincoln tunnel neighborhood chance to be caught, similar to beg function
+    //also need loot table similar to beg function
+        //dependent on difficulty
+          //chance to get nothing 
+    //need car/person list like flavor text 
+
 
 
 //x street indexer encounter functionality
