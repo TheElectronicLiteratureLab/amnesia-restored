@@ -16,6 +16,7 @@
     <!-- Stylesheets -->
     <link id="styles" rel="stylesheet" type="text/css" href="css/reset.css">
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link id="styles" rel="stylesheet" type="text/css" href="css/c64.css">
     <link rel="stylesheet" href="scr/leaflet.css">
 
 
@@ -73,7 +74,7 @@
                 <div id="options-screen">
                     <div id="options-title">
                         <h2 id="selectTitle">Select Your Game Options</h2>
-                        <h4 id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</h4>
+                        <p id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</p>
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
@@ -195,7 +196,7 @@
                         <button class="x-button"
                             onclick="currentInv()"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="inventory-display-title">Inventory</h2>
-                        <div id="inventory">
+                        <div id="inventory" class="clickables-scrollbar">
                             <!-- 
                                 <img class="inventory-img" alt="icon">
                                 <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
@@ -219,18 +220,17 @@
                     <div id="xIndex-container">
                         <h2 id="xIndex-name">X-Street Indexer</h2>
                         <div id="xIndex-img-container">
-                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image">
+                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="cross street image">
                         </div>
                         <div id="x-indexer-instructions">
                             <h3>Instructions for use:</h3>
                             <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by dragging and dropping.</p>
                             <p>2. The small window in the inner wheel shows the nearest cross street.</p>
-                            <br>
                             <p>OR use the drop down menu below to find the nearest cross street.</p>
                         </div>
                         <div id='xStreetIndex'>
                             <form>
-                            <label for="x-Streets">Choose A Number and Cross Street</label><br>
+                            <label for="x-Streets">Choose a Number<br>and Cross Street</label><br>
                             <select name="Street Number" id="streetNumber">
                                 <option value='0-199'>0-199</option>
                                 <option value="200-299">200-299</option>
@@ -299,7 +299,7 @@
                         <div id="address-text-container">
                             <button class="x-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
                             <h2 id="address-display-title">Address Book</h2>
-                            <div id="addresses">
+                            <div id="addresses" class="clickables-scrollbar">
                             </div>
                         </div>
                     </div>
@@ -318,11 +318,11 @@
                             <div id="score">
                                 <h3 id="score-title">SCORE</h3>
                                 <h4 id="det-title">Detective Score:</h4>
-                                <p id="det-score"></p>
+                                <p id="det-score"></p><br>
                                 <h4 id="sur-title">Survival Score:</h4>
-                                <p id="sur-score"></p>
+                                <p id="sur-score"></p><br>
                                 <h4 id="char-title">Character Score:</h4>
-                                <p id="char-score"></p>
+                                <p id="char-score"></p><br>
                                 <h4 id="tote-title">Total Score:</h4>
                                 <p id="tote-score"></p>
                             </div>
@@ -344,6 +344,7 @@
                                 <div id="btn-container"> 
                                     <img id="restored-bow-image" src="img/png/icon-mode-restored.png">
                                     <input type="radio" id="restored-radio" name="radio">
+                                    <span class="custom-radio"></span>
                                     <label for="restored-radio">Restored</label>
                                 </div>
                             </div>
@@ -375,12 +376,12 @@
                     <div id="help-text-container">
                         <button class="x-button" onclick="displayRightToggle('help-display', 'help', 'help-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="help-display-title">Command Guide</h2>
-                        <div id="help">
+                        <div id="help" class="clickables-scrollbar">
                             <div id="noAgruCommand">
                                 <h3>No Agrument</h3>
                                 <h4>e.g. "help", "inv"</h4>
                             </div>
-                            <div id="noAgruList">
+                            <div id="noAgruList" class="commands">
                                 <p>inv OR i</p>
                                 <p>look OR l</p>
                                 <p>talk OR t</p>
@@ -412,7 +413,7 @@
                                 <h3>One Agrument</h3>
                                 <h4>e.g. "go north", "take book"</h4>
                             </div>
-                            <div id="oneAgruList">
+                            <div id="oneAgruList" class="commands">
                                 <p>enter</p>
                                 <p>look</p>
                                 <p>head</p>
@@ -433,7 +434,7 @@
                                 <h3>Two Agruments</h3>
                                 <h4>e.g. "look at key", "talk to dene"</h4>
                             </div>
-                            <div id="twoAgruList">
+                            <div id="twoAgruList" class="commands">
                                 <p>search</p>
                                 <p>look</p>
                                 <p>go</p>
