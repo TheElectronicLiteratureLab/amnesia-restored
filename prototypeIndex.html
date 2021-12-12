@@ -16,7 +16,6 @@
     <!-- Stylesheets -->
     <link id="styles" rel="stylesheet" type="text/css" href="css/reset.css">
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
-    <link id="styles" rel="stylesheet" type="text/css" href="css/c64.css">
     <link rel="stylesheet" href="scr/leaflet.css">
 
 
@@ -74,7 +73,7 @@
                 <div id="options-screen">
                     <div id="options-title">
                         <h2 id="selectTitle">Select Your Game Options</h2>
-                        <p id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</p>
+                        <h4 id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</h4>
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
@@ -196,7 +195,7 @@
                         <button class="x-button"
                             onclick="currentInv()"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="inventory-display-title">Inventory</h2>
-                        <div id="inventory" class="clickables-scrollbar">
+                        <div id="inventory">
                             <!-- 
                                 <img class="inventory-img" alt="icon">
                                 <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
@@ -205,7 +204,7 @@
                 </div>
                 <div id="inventory-item-display">
                     <div id="inventory-item-container">
-                        <h2 id="item-name">Item Name</h2>
+                        <h2 id="item-name"></h2>
                         <div id="item-img-container">
                             <img id="item-img" src="" alt="item image">
                         </div>
@@ -216,21 +215,34 @@
                             -->
                     </div>
                 </div>
+
+                <div id='inventory-brochure-display'>
+                    <div id="inventory-brochure-container">
+                        <h2 id="item-name">Brochure</h2>
+                        <div id="item-img-container">
+                            <img id="item-img" src="" alt="item image">
+                        </div>
+                        <div class="item-description">Read more information about the Sunderland...</div>
+                    </div>
+                </div>
+
+
                 <div id="inventory-xIndex-display">
                     <div id="xIndex-container">
                         <h2 id="xIndex-name">X-Street Indexer</h2>
                         <div id="xIndex-img-container">
-                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="cross street image">
+                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image">
                         </div>
                         <div id="x-indexer-instructions">
                             <h3>Instructions for use:</h3>
                             <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by dragging and dropping.</p>
                             <p>2. The small window in the inner wheel shows the nearest cross street.</p>
+                            <br>
                             <p>OR use the drop down menu below to find the nearest cross street.</p>
                         </div>
                         <div id='xStreetIndex'>
                             <form>
-                            <label for="x-Streets">Choose a Number<br>and Cross Street</label><br>
+                            <label for="x-Streets">Choose A Number and Cross Street</label><br>
                             <select name="Street Number" id="streetNumber">
                                 <option value='0-199'>0-199</option>
                                 <option value="200-299">200-299</option>
@@ -290,19 +302,18 @@
                             <button id="submitButton">Go!</button>
                             
                         </div>
-                    </div>
-                    
+                    </div>  
                 </div>
 
                 
-                    <div id="address-display" class="clickables-left">
-                        <div id="address-text-container">
-                            <button class="x-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                            <h2 id="address-display-title">Address Book</h2>
-                            <div id="addresses" class="clickables-scrollbar">
-                            </div>
+                <div id="address-display" class="clickables-left">
+                    <div id="address-text-container">
+                        <button class="x-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="address-display-title">Address Book</h2>
+                        <div id="addresses">
                         </div>
                     </div>
+                </div>
                 
                 
                 <div id="map-display">
@@ -318,16 +329,16 @@
                             <div id="score">
                                 <h3 id="score-title">SCORE</h3>
                                 <h4 id="det-title">Detective Score:</h4>
-                                <p id="det-score"></p><br>
+                                <p id="det-score"></p>
                                 <h4 id="sur-title">Survival Score:</h4>
-                                <p id="sur-score"></p><br>
+                                <p id="sur-score"></p>
                                 <h4 id="char-title">Character Score:</h4>
-                                <p id="char-score"></p><br>
+                                <p id="char-score"></p>
                                 <h4 id="tote-title">Total Score:</h4>
                                 <p id="tote-score"></p>
                             </div>
-                            <h3 id="play-time-title">PLAY TIME</h3>
-                            <h4 id="play-time"></h4>
+                            <!-- <h3 id="play-time-title">PLAY TIME</h3>
+                            <h4 id="play-time"></h4> -->
                             <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
                             <h4 id="difficulty-setting"></h4>
                         </div>
@@ -344,7 +355,6 @@
                                 <div id="btn-container"> 
                                     <img id="restored-bow-image" src="img/png/icon-mode-restored.png">
                                     <input type="radio" id="restored-radio" name="radio">
-                                    <span class="custom-radio"></span>
                                     <label for="restored-radio">Restored</label>
                                 </div>
                             </div>
@@ -360,14 +370,50 @@
                         <h2 id="achieve-display-title">Ending Achievements</h2>
                         <h3>Play the game to unlock your endings.</h3>
                         <div id="achieve">
-                            <div class="ending">
-                                <img class="achieveImg" id="styxEndingIcon" src="img/png/hat-icon.png">
-                                <h4 class="achieveTitle">???</h4>
-                                
-                                <!-- 
-                                    
-                                    Eternity Without A Name
-                                    <p>Reached the River Styx. Cheron's still waiting on that name...</p> -->
+                            <div class="ending" id="eterWith-ending">
+                                <img class="achieveImg" id="eterWith-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="eterWith-title">???</h4>
+                                <p class="achieveDesc" id="eterWith-desc">Reached the River Styx. Charon's still waiting on that name.</p>
+                            </div>
+                            <div class="ending" id="emptEnli-ending">
+                                <img class="achieveImg" id="emptEnli-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="emptEnli-title">???</h4>
+                                <p class="achieveDesc" id="emptEnli-desc">An easy life free of sin, you enjoy quiet walks and the smell of fresh dirt.</p>
+                            </div>
+                            <div class="ending" id="theShep-ending">
+                                <img class="achieveImg" id="theShep-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="theShep-title">???</h4>
+                                <p class="achieveDesc" id="theShep-desc">You're still enjoying life on the idyllic sheep farm in the beautiful outback.</p>
+                            </div>
+                            <div class="ending" id="the1986-ending">
+                                <img class="achieveImg" id="the1986-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="the1986-title">???</h4>
+                                <p class="achieveDesc" id="the1986-desc">Next time let's check streets with precision detective.</p>
+                            </div>
+                            <div class="ending" id="deatTexa-ending">
+                                <img class="achieveImg" id="deatTexa-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="deatTexa-title">???</h4>
+                                <p class="achieveDesc" id="deatTexa-desc">Texas is no home for an amnesiac.</p>
+                            </div>
+                            <div class="ending" id="painMan-ending">
+                                <img class="achieveImg" id="painMan-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="painMan-title">???</h4>
+                                <p class="achieveDesc" id="painMan-desc">"Sing us a song, you're the piano man, sing us a song tonight." You've failed to give the Wacky Wanderer the correct directions.</p>
+                            </div>
+                            <div class="ending" id="dawdHote-ending">
+                                <img class="achieveImg" id="dawdHote-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="dawdHote-title">???</h4>
+                                <p class="achieveDesc" id="dawdHote-desc">Luke is not a man to be kept waiting.</p>
+                            </div>
+                            <div class="ending" id="anAmn-ending">
+                                <img class="achieveImg" id="anAmn-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="anAmn-title">???</h4>
+                                <p class="achieveDesc" id="anAmn-desc">You've been restored as John Cameron. Congradulations.</p>
+                            </div>
+                            <div class="ending" id="totaAmn-ending">
+                                <img class="achieveImg" id="totaAmn-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="totaAmn-title">???</h4>
+                                <p class="achieveDesc" id="totaAmn-desc">Amnesia re-tuxed. You've failed to restore your memory and now you're back where you started. Welcome to the Sunderland.</p>
                             </div>
                         </div>
                     </div>
@@ -376,12 +422,12 @@
                     <div id="help-text-container">
                         <button class="x-button" onclick="displayRightToggle('help-display', 'help', 'help-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="help-display-title">Command Guide</h2>
-                        <div id="help" class="clickables-scrollbar">
+                        <div id="help">
                             <div id="noAgruCommand">
                                 <h3>No Agrument</h3>
                                 <h4>e.g. "help", "inv"</h4>
                             </div>
-                            <div id="noAgruList" class="commands">
+                            <div id="noAgruList">
                                 <p>inv OR i</p>
                                 <p>look OR l</p>
                                 <p>talk OR t</p>
@@ -413,7 +459,7 @@
                                 <h3>One Agrument</h3>
                                 <h4>e.g. "go north", "take book"</h4>
                             </div>
-                            <div id="oneAgruList" class="commands">
+                            <div id="oneAgruList">
                                 <p>enter</p>
                                 <p>look</p>
                                 <p>head</p>
@@ -434,7 +480,7 @@
                                 <h3>Two Agruments</h3>
                                 <h4>e.g. "look at key", "talk to dene"</h4>
                             </div>
-                            <div id="twoAgruList" class="commands">
+                            <div id="twoAgruList">
                                 <p>search</p>
                                 <p>look</p>
                                 <p>go</p>
@@ -503,7 +549,7 @@
                     <div class="clickable-container" id="achievements-clickable">
                         <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
                         <button class="iconbtn" id="achieve-button"
-                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"></button>
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container'); updateEndings()"></button>
                     </div>
 
                     <div class="clickable-container" id="help-clickable">

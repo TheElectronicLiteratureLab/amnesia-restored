@@ -428,7 +428,7 @@ body {
 #hunger-bar {
    width: 100%;
    height: 13px;
-   background: transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box;
+   background: grey;
    border-radius: 16px;
 }
 
@@ -625,20 +625,32 @@ body {
    grid-template-columns: 1fr;
 }
 
-.clickItemInv, .clickXIndex {
+.clickItemInv, .clickXIndex, .clickBrochure{
    display: flex;
    align-items: center;
    margin: 10px 0;
    cursor: pointer;
 }
 
-.clickItemInv img, .clickXIndex img {
+.clickItemInv img, .clickXIndex img, .clickBrochure img{
    width: 15%;
    margin-right: 10px;
    border: 1px solid #E4E4E4;
    border-radius: 5px;
    background-color: #0e0e0f8a;
    padding: 5px;
+}
+
+#inventory-brochure-display {
+   position: absolute;
+   left: 25%;
+   display: none;
+   grid-template-rows: 50vh;
+   background-color: rgba(28, 28, 34, .95);
+   width: 40%;
+   height: 100%;
+   padding: 15px;
+   box-sizing: border-box;
 }
 
 #inventory-item-display {
@@ -683,7 +695,7 @@ body {
    margin-top: 3%;
 }
 
-#item-description {
+.item-description {
    width: 100%;
    height: 100%;
    grid-column: 1 / span 2;
@@ -800,10 +812,65 @@ body {
    width: 15%;
 }
 
-
 /**/
 
 #achieve-display {
+   display: none;
+   overflow-y: scroll;
+}
+
+#achieve {
+   margin-top: 10%;
+}
+
+.ending {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   margin-bottom: 10%;
+   grid-row-gap: 5%;
+}
+
+.achieveDesc {
+   grid-column: 1 / span 2;
+   margin-right: 5%;
+   margin-left: 10%;
+}
+
+/* setting ending desc to none before endings achieved */
+
+#eterWith-desc {
+   display: none;
+}
+
+#emptEnli-desc {
+   display: none;
+}
+
+#theShep-desc {
+   display: none;
+}
+
+#the1986-desc {
+   display: none;
+}
+
+#deatTexa-desc {
+   display: none;
+}
+
+#painMan-desc {
+   display: none;
+}
+
+#dawdHote-desc {
+   display: none;
+}
+
+#anAmn-desc {
+   display: none;
+}
+
+#totaAmn-desc {
    display: none;
 }
 
