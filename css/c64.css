@@ -8,7 +8,7 @@
 /* typography */
 #game-container {
    font-family: 'c64', monospace;
-   color: #e4e4e4;
+   color: #887ecb;
    font-size: 1.5vh;
    line-height: 1.5;
 }
@@ -22,7 +22,7 @@
 }
 
 #game-container h1 {
-   font-size: 5vh;
+   font-size: 3.5vh;
 }
 
 #game-container h2 {
@@ -48,6 +48,10 @@
 
 #game-container p {
    margin-bottom: 3%;
+}
+
+.game-item-3 {
+   background-color: #50459b;
 }
 
 /* buttons */
@@ -126,22 +130,30 @@
    font-weight: 300;
    text-transform: none;
 }
+
+#output div {
+   border-left: 1px solid #887ecb;
+}
  
 #input {
-   color: #E4E4E4;
+   color: #887ecb;
    font-size: 2.5vh;
    letter-spacing: 1px;
    font-family: 'c64', monospace;
 }
+
+.input {
+   border-top: 0.5px solid #887ecb;
+}
  
 #arrow {
    font-size: 2vh;
-   color: #E4E4E4;
+   color: #887ecb;
    padding-right: 10px;
 }
 
 #game-ui-bar h3 {
-   font-size: 2.25vh;
+   font-size: 2vh;
 }
 
 
@@ -149,12 +161,22 @@
    font-size: 1.5vh;
 }
 
+#hunger-bar-progress {
+   border-radius: 0;
+}
+
 #hunger-bar {
    background: transparent linear-gradient(270deg, #887ecb 0%, #3a3466 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
+}
+
+#fatigue-bar-progress {
+   border-radius: 0;
 }
 
 #fatigue-bar {
    background: transparent linear-gradient(270deg, #887ecb 0%, #3a3466 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
 }
 
 

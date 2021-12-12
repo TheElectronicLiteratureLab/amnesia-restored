@@ -8,7 +8,7 @@
 /* typography */
 #game-container {
    font-family: 'ibm', monospace;
-   color: #e4e4e4;
+   color: #aaaaaa;
    font-size: 2.25vh;
    line-height: 1.5;
 }
@@ -124,7 +124,7 @@
 }
  
 #input {
-   color: #E4E4E4;
+   color: #aaaaaa;
    font-size: 2.5vh;
    letter-spacing: 1px;
    font-family: 'ibm', monospace;
@@ -132,7 +132,7 @@
  
 #arrow {
    font-size: 2.25vh;
-   color: #E4E4E4;
+   color: #aaaaaa;
    padding-right: 10px;
 }
 
@@ -145,12 +145,22 @@
    font-size: 2.25vh;
 }
 
+#hunger-bar-progress {
+   border-radius: 0;
+}
+
 #hunger-bar {
    background: transparent linear-gradient(270deg, #a8a8a8 0%, #484848 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
+}
+
+#fatigue-bar-progress {
+   border-radius: 0;
 }
 
 #fatigue-bar {
    background: transparent linear-gradient(270deg, #a8a8a8 0%, #484848 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
 }
 
 
