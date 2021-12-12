@@ -1338,23 +1338,23 @@ const beg = () => {
   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
   console.log(chance1 + ' rolled for chance to be caught');
   if(curRoom.isStreet){//if tha player is on the streets
-    if (chance1 <= 20 && !policeCaught) { //if you got caught and you haven't been caught before
-      policeCaught = true;
+    if (chance1 <= 20 && !policeCaughtBegging) { //if you got caught and you haven't been caught before
+      policeCaughtBegging = true;
       caughtCoords1 = curRoom.coord;
       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
 
-      'Sure buddy. But now you been told and you got no excuse the next time. If I see you panhandling again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+      'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
       
       You nod in agreement 
       
-      The policeman goes off in the same directions that the person you'd asked for money went `)
-    } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
+      The policeman goes off in the same direction that the driver of the car you cleaned went.`)
+    } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
       begLootTable(); //roll on loot table
-    } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
+    } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
       caughtCoords2 = curRoom.coord; //generate coordinates of current room
-      console.log(caughtCoords2 + ' thesen are the coordinates in which player was caught again.')
+      console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
       
       //distance formula
       const a = caughtCoords1[0] - caughtCoords2[0];
@@ -1362,7 +1362,7 @@ const beg = () => {
       const distance = Math.sqrt( (a*a) + (b*b) );
 
       if(distance >= 20) { //if player has moved far enough from where initially caught;
-        policeCaught = false;
+        policeCaughtBegging = false;
         console.log('caught but changed neighborhoods');
         begLootTable();
       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
@@ -1374,7 +1374,7 @@ const beg = () => {
 
         pressEnter('deat-texa');
       }
-    } else if (chance1 >= 20 && policeCaught) { //if player has been caught but passed the check
+    } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
       console.log(`caught once but succeeded 80% check`);
       begLootTable();
     }else { //debug purposes
@@ -1914,13 +1914,237 @@ const carWashEncounter = () => {
 
 //clean cars logic
 //needs to check if proper item is in inventory
-//needs to check coords, 
+//needs to check coords,
     //if in lincoln tunnel neighborhood no chance to be caught by cops 
+          //within lincoln tunnel neighborhood at (lat,lng) 8.755, -52.734 || 9.189, -20.566 || -17.979, -20.039 || -18.229, -50.713
     //if not in lincoln tunnel neighborhood chance to be caught, similar to beg function
     //also need loot table similar to beg function
         //dependent on difficulty
           //chance to get nothing 
     //need car/person list like flavor text 
+
+
+    // const clean = () => {
+    //   const curRoom = getRoom(disk.roomId); //get current room
+    //   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
+    //   console.log(chance1 + ' rolled for chance to be caught');
+    //   if(curRoom.isStreet){//if tha player is on the streets
+    //     if (chance1 <= 20 && !policeCaughtBegging) { //if you got caught and you haven't been caught before
+    //       policeCaughtBegging = true;
+    //       caughtCoords1 = curRoom.coord;
+    //       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
+    //       //enterRoom('beg-poli'); //enter the room where the police catch you
+    //       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
+    
+    //       'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+          
+    //       You nod in agreement 
+          
+    //       The policeman goes off in the same direction that the driver of the car you cleaned went.`)
+    //     } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
+    //       begLootTable(); //roll on loot table
+    //     } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
+    //       caughtCoords2 = curRoom.coord; //generate coordinates of current room
+    //       console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
+          
+    //       //distance formula
+    //       const a = caughtCoords1[0] - caughtCoords2[0];
+    //       const b = caughtCoords1[1] - caughtCoords2[1];
+    //       const distance = Math.sqrt( (a*a) + (b*b) );
+    
+    //       if(distance >= 20) { //if player has moved far enough from where initially caught;
+    //         policeCaughtBegging = false;
+    //         console.log('caught but changed neighborhoods');
+    //         begLootTable();
+    //       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
+    //         println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against panhandling.  
+    
+    //         'Hello again. I see you want to establish a more meaningful relationship.'  
+            
+    //         As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`)
+    
+    //         pressEnter('deat-texa');
+    //       }
+    //     } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
+    //       console.log(`caught once but succeeded 80% check`);
+    //       begLootTable();
+    //     }else { //debug purposes
+    //       console.log(`Beg Command Malfunctioning`)
+    //     }
+    //   } else { //if player isn't on the streets
+    //     println(`You can't beg when you aren't on the streets.`)
+    //   }
+    
+    // };
+
+    //within lincoln tunnel neighborhood at (lat,lng) 8.755, -52.734 || 9.189, -20.566 || -17.979, -20.039 || -18.229, -50.713
+
+    const carLootTable = () => {
+      const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
+      console.log(chance2 + ' is what was rolled for loot chance')
+    
+      if (difficulty === 'medium'){ // 
+        if (chance2 <= 15) { //chance to get nothing
+          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+        } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.00
+          const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`); //tell the player how much they got
+          playMon = playMon + dollarAmount;//add amount to player inventory
+        } else if (71 <= chance2 <= 90) { //chance to get between 1.01 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 101) + 101)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (91 <= chance2 <= 100) { //chance to get between 1.26-1.50
+          const dollarAmount = Math.Floor(Math.random() * ((150 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+      
+      } else if (difficulty === 'easy') {
+        if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (56 <= chance2 <= 85) { //chance to get between 1.26 & 1.75
+          const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (86 <= chance2 <= 100) { //chance to get between 1.76-2.00
+          const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    
+      } else if (difficulty === 'hard') {
+        if (chance2 <= 20) { //chance to get nothing
+          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+        } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.00
+          const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (76 <= chance2 <= 95) { //chance to get between 1.00 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 101) + 101)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);;
+          playMon = playMon + dollarAmount;
+        } else if (96 <= chance2 <= 100) { //chance to get between 1.26-1.50
+          const dollarAmount = Math.Floor(Math.random() * ((150 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+      } else { // debug purposes
+        println(`Oops something went wrong`);
+      }
+    };
+
+    const clean = (x) => {
+      const curRoom = getRoom(disk.roomId);
+      const item = getItemInInventoryById('car-rag');
+
+      if(curRoom.isStreet && (x === 'car' || x === 'cars') && item) {
+        const lng = curRoom.coord[1];
+        const lat = curRoom.coord[0];
+        
+        if( (lat >= -18.334 && lat <= 9.189) && (lng >= -52.690 && lng <= -20.544 ) ) {
+          carLootTable();
+        } else {
+          const chance = Math.floor(Math.random() * 100) + 1;
+
+          if (difficulty === 'easy' && chance <= 10) {
+
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true; 
+
+              caughtCoords1 = curRoom.coord;
+
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+
+                pressEnter('deat-texa');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false;
+                carLootTable();
+              }
+            }
+          } else if (difficulty === 'medium' && chance <= 20) {
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true;
+              caughtCoords1 = curRoom.coord;
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+            
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                pressEnter('deat-texa');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false; 
+                carLootTable();
+              }
+            }
+          } else if (difficulty === 'hard' && chance <= 30){
+            
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true; 
+
+              caughtCoords1 = curRoom.coord;
+
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+
+                pressEnter('deat-texa');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false; 
+
+                carLootTable();
+                
+              }
+            }
+
+          } else if (difficulty === 'easy' && chance > 10) {
+            carLootTable();
+          } else if (difficulty === 'medium' && chance > 20) {
+            carLootTable();
+          } else if (difficulty === 'hard' && chance > 30 ) {
+            carLootTable();
+          }
+        }
+
+      } else if (item && (x != 'car' || x != 'cars')) {
+        println(`The rag is good for windshields but you feel its rather dirty to clean anything else with it.`)
+      } else if (!item) {
+        println(`You don't have the supplies to clean anything, let alone that.`)
+      }
+    };
+
+
+const distanceFormula = (x,y) => {
+  const a = x[0] - y[0];
+  const b = x[1] - y[1];
+  return Math.sqrt( (a*a) + (b*b) ); 
+
+}
+    
 
 
 
@@ -2063,7 +2287,8 @@ let commands = [
     read: read,
     asking: args => askTesting(args),
     dialing: x => callNum(x),
-    press: x => press(x)
+    press: x => press(x),
+    clean: args => clean(args),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {

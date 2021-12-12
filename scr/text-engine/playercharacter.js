@@ -70,7 +70,11 @@ let qMeridiem = 0;
 //variables needed for beg command
 let caughtCoords1;
 let caughtCoords2;
-let policeCaught = false;
+let policeCaughtBegging = false;
+
+
+//variables needed for clean command
+let policeCaughtWashing = false;
 
 
 //difficulty levels stuff
