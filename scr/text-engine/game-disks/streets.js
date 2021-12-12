@@ -34951,8 +34951,16 @@ const streets = {
 
 
         room.onBlock = () => {
-          if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+          if (prevInput === `${encounterAnswer}` || prevInput === `${xStreetD}`) {
             enterRoom('xStreet-3')
+          } else if (prevInput === `` || prevInput === '' || prevInput === "") {
+            if(room.wrongAnswer === false) {
+              room.wrongAnswer = true;
+              println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
+            } else {
+              room.wrongAnswer = false;
+              enterRoom('xStreet-5');
+            }
           } else {
             if(room.wrongAnswer === false) {
               room.wrongAnswer = true;
@@ -35224,8 +35232,16 @@ const streets = {
 
 
       room.onBlock = () => {
-        if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+        if (prevInput === `${encounterAnswer}` || prevInput === `${xStreetD}`) {
           enterRoom('dame-11');//correct answer room
+        } else if (prevInput === `` || prevInput === '' || prevInput === "") {
+          if(room.wrongAnswer === false) {
+            room.wrongAnswer = true;
+            println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
+          } else {
+            room.wrongAnswer = false;
+            enterRoom('dame-12');//game over room
+          }
         } else {
           if(room.wrongAnswer === false) {
             room.wrongAnswer = true;
@@ -35357,6 +35373,8 @@ const streets = {
 
       }
 
+      reenableInput();
+
     },
     exits: [],
   },
@@ -35387,15 +35405,27 @@ const streets = {
     id: 'wacky-7',
     coord: [],
     name: '',
-    desc: ``,
+    wrongAnswer: false,
+    desc: `As he displays the souvenir you consult your X-street Indexer, although you warn him that you suspect the device to be totally inaccurate. You come up with the cross street:`,
     onEnter: () => {
       const room = getRoom(disk.roomId);
 
 
       room.onBlock = () => {
-        if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+        if (prevInput === `${encounterAnswer}` || prevInput === `${xStreetD}`) {
           enterRoom('wacky-8');//correct answer room
-        } else {
+        } else if (prevInput === `` || prevInput === '' || prevInput === "") {
+          if(room.wrongAnswer === false) {
+            room.wrongAnswer = true;
+            println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
+          } else {
+            room.wrongAnswer = false;
+            enterRoom('wacky-9');//game over room
+          }
+        } 
+        
+        
+        else {
           if(room.wrongAnswer === false) {
             room.wrongAnswer = true;
             println(`'That doesn't sound right,' he says. 'Do you want to try doing that again?'`)
@@ -35452,6 +35482,16 @@ const streets = {
         isDroppable: true,
     },
     ],
+    exits: [],
+  },
+  {
+    id: 'test-1',
+    coord: [],
+    name: '',
+    desc: `this is a testing room, pls ignore`,
+    onEnter: () => {
+      xStreetEvent();
+    },
     exits: [],
   },
   ]
