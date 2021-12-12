@@ -378,3 +378,17 @@ let fatBelow10 = false;
 
 //variable for if the player stats should degrade
 let degradation = false;
+
+// ending variables IF true unlock achievement
+// add variable equals true on matching endings
+// add function updateEndings()
+// add function slideRightIn('achieve-display', 'achieve-text-container')
+let emptEnli = false; // empty enlightenment ending (monk ending)
+let theShep = false; // the shepard ending (sheep farmer ending)
+let the1986 = false; // the 1986 classic ending (when you fail a street indexer check)
+let deatTexa = false; // the death and texas ending 
+let painMan = false; // the wacky wanderer fail ending
+let dawdHote = false; // the dawdler in the hotel ending
+let anAmn = false; // true ending
+let totaAmn = false; // getting amnesia again
+let eterWith = false; // river styx ending

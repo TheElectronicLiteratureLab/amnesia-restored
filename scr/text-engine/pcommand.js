@@ -14,6 +14,8 @@ let inv = () => {
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
+    } else if(item.itemId === 'brochure'){
+      listBro(item.icon, `${getName(item.name)}`, 'clickBrochure', item.itemId);
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }

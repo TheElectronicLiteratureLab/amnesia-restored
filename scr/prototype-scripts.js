@@ -620,6 +620,10 @@ let openItem = (id, name) => {
         })
     } 
 
+    if(name !== 'brochure'){
+        document.getElementById(id).style.display = "block";
+    }
+
     // if item is the xindexer
     if(name === 'xindexer'){
         slideInvX("inventory-xIndex-display", "xIndex-container");
@@ -774,6 +778,45 @@ const updateScore = () => {
     document.getElementById("char-score").innerHTML = charScore;
     document.getElementById("tote-score").innerHTML = totalScore;
     document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
+}
+
+const updateEndings = () => {
+    if(eterWith === true){
+        document.getElementById("eterWith-title").innerHTML = "Eternity Without A Name";
+        document.getElementById("eterWith-desc").style.display = "block";
+    }
+    if(emptEnli === true){
+        document.getElementById("emptEnli-title").innerHTML = "Empty Enlightenment";
+        document.getElementById("emptEnli-desc").style.display = "block";
+    }
+    if(theShep === true){
+        document.getElementById("theShep-title").innerHTML = "The Shepard";
+        document.getElementById("theShep-desc").style.display = "block";
+    }
+    if(the1986 === true){
+        document.getElementById("the1986-title").innerHTML = "The 1986 Classic";
+        document.getElementById("the1986-desc").style.display = "block";
+    }
+    if(deatTexa === true){
+        document.getElementById("deatTexa-title").innerHTML = "Death and Texas";
+        document.getElementById("deatTexa-desc").style.display = "block";
+    }
+    if(painMan === true){
+        document.getElementById("painMan-title").innerHTML = "Piano Man";
+        document.getElementById("painMan-desc").style.display = "block";
+    }
+    if(dawdHote === true){
+        document.getElementById("dawdHote-title").innerHTML = "Dawdler in the Hotel";
+        document.getElementById("dawdHote-desc").style.display = "block";
+    }
+    if(anAmn === true){
+        document.getElementById("anAmn-title").innerHTML = "An Amnesiac No More";
+        document.getElementById("anAmn-desc").style.display = "none";
+    }
+    if(totaAmn === true){
+        document.getElementById("totaAmn-title").innerHTML = "Total Amnesia";
+        document.getElementById("totaAmn-desc").style.display = "block";
+    }
 }
 
 // dial pad scripts
