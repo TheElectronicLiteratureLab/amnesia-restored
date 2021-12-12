@@ -158,6 +158,12 @@ let inputRead = () => {
   }
 };
 
+const distanceFormula = (x,y) => {
+  const a = x[0] - y[0];
+  const b = x[1] - y[1];
+  return Math.sqrt( (a*a) + (b*b) ); 
+};
+
 
 // shortcuts for cardinal directions
 let n = () => goDir('north');
@@ -1108,6 +1114,7 @@ function createPhone() { //create function
   thisRoom.phonesMade = true; //dont allow the function to run again
 };
 
+//debug function for finding if room has empty exit array. 
 const findExitsArray = () => {
   const rooms = streets.rooms;
   let roomCount = 0;
@@ -1202,10 +1209,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
     //distance formula
-      const a = room.coord[0] - enteredStreets.coord[0];
-      const b = room.coord[1] - enteredStreets.coord[1];
-      const c = Math.sqrt( (a*a) + (b*b) );
-
+      const c = distanceFormula(room.coord, enteredStreets.coord)
   
       //if count is greater than or equal to 11 and 
       //if the distance between player and hotel is greater than or equal to 11 and
@@ -1357,9 +1361,7 @@ const beg = () => {
       console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
       
       //distance formula
-      const a = caughtCoords1[0] - caughtCoords2[0];
-      const b = caughtCoords1[1] - caughtCoords2[1];
-      const distance = Math.sqrt( (a*a) + (b*b) );
+      const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
       if(distance >= 20) { //if player has moved far enough from where initially caught;
         policeCaughtBegging = false;
@@ -1881,35 +1883,33 @@ const randomEncounter = () => {
 //LINK UP X STREET EVENT RANDOMNESS TO MOVEMENT ON STREETS
 //POLISH MIDTOWN EASTSIDE OFFICE BUILDINGS WITH PROPER EXIT BLOCKS AND IF THEY CAN ENTER DURING WEEKDAYS 
 //WEEKDAY BLOCKS FOR CERTAIN STREET EXITS
-//turn off hunger and fatigue
+//turn off hunger and fatigue--
   //vault NYHS dakota UfCS restaurants tenement sketchbook
 
 
 //boolean variable of gotten rag or not if gotten it kill function
 
 const carWashEncounter = () => {
-  const chance = Math.floor(Math.random() * 100) + 1;
-  const room = getRoom(disk.roomId);
 
-  if(chance <= 5) {
-    if(gottenRag === true) {
-      return;
-    } else {
+  if (gottenRag === false) {
+    const room = getRoom(disk.roomId);
+
       println(`'A black kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
 
-      room.onBlock = () => {
-        if(prevInput === 'yes') {
-          enterRoom(`rag-get`)
-        } else if (prevInput === 'no'){
-          println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
-          delete(room.onBlock);
-        } else {
-          println(`'It's a simple **yes** or **no** question whitey.'`)
+        room.onBlock = () => {
+          if(prevInput === 'yes') {
+            enterRoom(`rag-get`)
+          } else if (prevInput === 'no'){
+            println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
+            delete(room.onBlock);
+          } else {
+            println(`'It's a simple **yes** or **no** question whitey.'`)
+          }
         }
-      }
 
+    } else {
+      return;
     }
-  }
 };
 
 //clean cars logic
@@ -1922,62 +1922,6 @@ const carWashEncounter = () => {
         //dependent on difficulty
           //chance to get nothing 
     //need car/person list like flavor text 
-
-
-    // const clean = () => {
-    //   const curRoom = getRoom(disk.roomId); //get current room
-    //   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
-    //   console.log(chance1 + ' rolled for chance to be caught');
-    //   if(curRoom.isStreet){//if tha player is on the streets
-    //     if (chance1 <= 20 && !policeCaughtBegging) { //if you got caught and you haven't been caught before
-    //       policeCaughtBegging = true;
-    //       caughtCoords1 = curRoom.coord;
-    //       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
-    //       //enterRoom('beg-poli'); //enter the room where the police catch you
-    //       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
-    
-    //       'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
-          
-    //       You nod in agreement 
-          
-    //       The policeman goes off in the same direction that the driver of the car you cleaned went.`)
-    //     } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
-    //       begLootTable(); //roll on loot table
-    //     } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
-    //       caughtCoords2 = curRoom.coord; //generate coordinates of current room
-    //       console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
-          
-    //       //distance formula
-    //       const a = caughtCoords1[0] - caughtCoords2[0];
-    //       const b = caughtCoords1[1] - caughtCoords2[1];
-    //       const distance = Math.sqrt( (a*a) + (b*b) );
-    
-    //       if(distance >= 20) { //if player has moved far enough from where initially caught;
-    //         policeCaughtBegging = false;
-    //         console.log('caught but changed neighborhoods');
-    //         begLootTable();
-    //       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
-    //         println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against panhandling.  
-    
-    //         'Hello again. I see you want to establish a more meaningful relationship.'  
-            
-    //         As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`)
-    
-    //         pressEnter('deat-texa');
-    //       }
-    //     } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
-    //       console.log(`caught once but succeeded 80% check`);
-    //       begLootTable();
-    //     }else { //debug purposes
-    //       console.log(`Beg Command Malfunctioning`)
-    //     }
-    //   } else { //if player isn't on the streets
-    //     println(`You can't beg when you aren't on the streets.`)
-    //   }
-    
-    // };
-
-    //within lincoln tunnel neighborhood at (lat,lng) 8.755, -52.734 || 9.189, -20.566 || -17.979, -20.039 || -18.229, -50.713
 
     const carLootTable = () => {
       const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
@@ -2136,16 +2080,6 @@ const carWashEncounter = () => {
         println(`You don't have the supplies to clean anything, let alone that.`)
       }
     };
-
-
-const distanceFormula = (x,y) => {
-  const a = x[0] - y[0];
-  const b = x[1] - y[1];
-  return Math.sqrt( (a*a) + (b*b) ); 
-
-}
-    
-
 
 
 //x street indexer encounter functionality

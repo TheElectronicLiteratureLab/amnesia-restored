@@ -35471,6 +35471,7 @@ const streets = {
 
     He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
     onEnter: () => {
+      gottenRag = true;
       addItem('rag');
       pressEnter(lastRoom.id);
     },
