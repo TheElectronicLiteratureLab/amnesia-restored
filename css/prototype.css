@@ -807,10 +807,25 @@ body {
    display: none;
 }
 
-/* radio buttons display */
+#mode div {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-bottom: 3%;
+}
 
+#mode input {
+   position: absolute;
+   left: 25px;
+}
+
+#mode img {
+   margin-right: 15px;
+}
+
+/* radio buttons display */
 #restored-bow-image {
-   width: 15%;
+   width: 45px;
 }
 
 /**/
