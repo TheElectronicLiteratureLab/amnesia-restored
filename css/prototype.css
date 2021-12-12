@@ -615,7 +615,7 @@ body {
    display: grid;
    grid-template-columns: auto auto;
    grid-template-rows: .1fr 5fr 4fr;
-   
+   grid-row-gap: 3%;
 }
 
 #inventory-item-display img {
@@ -624,6 +624,7 @@ body {
 
 #item-name {
    grid-column: 1 / span 2;
+   margin-left: .5%;
 }
 
 #item-img-container {
@@ -644,6 +645,7 @@ body {
    height: 100%;
    grid-column: 1 / span 2;
    grid-row: 3 / span 1;
+   margin-left: 1%;
    overflow-y: scroll;
 }
 
@@ -738,6 +740,15 @@ body {
 #mode-display {
    display: none;
 }
+
+/* radio buttons display */
+
+#restored-bow-image {
+   width: 15%;
+}
+
+
+/**/
 
 #achieve-display {
    display: none;

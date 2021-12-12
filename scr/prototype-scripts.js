@@ -600,11 +600,14 @@ let displayNone = (id, textId) => {
    
 } */
 
+// run when players click on items in inventory
 let openItem = (id, name) => {
-
+    // if items are not the xindexer
     if(name !== 'xindexer'){
+
+        slideInvItems(id);
         document.getElementById("inventory-xIndex-display").style.display = "none";
-        document.getElementById(id).style.display = "grid";
+        //document.getElementById(id).style.display = "grid";
         //slideInvItems(id, textId);
     
         let inv = disk.inventory;
@@ -617,6 +620,7 @@ let openItem = (id, name) => {
         })
     } 
 
+    // if item is the xindexer
     if(name === 'xindexer'){
         slideInvX("inventory-xIndex-display", "xIndex-container");
         //document.getElementById("inventory-xIndex-display").style.display = "block";
@@ -1033,6 +1037,7 @@ let slideRightOut = (elId, textId) => {
         }
     }
 }
+
 // slide into view the right side clickables
 let slideRightIn = (elId, textId) => {
     let id = null;
@@ -1117,7 +1122,7 @@ let slideInvX = (elId, textId) => {
         } else {
             width++;
             element.style.width = width + "%";
-            if(width === 20){
+            if(width === 30){
                 let text = null;
                 // sets beginning opacity
                 let opacity = 0;
@@ -1138,21 +1143,25 @@ let slideInvX = (elId, textId) => {
     }  
 } 
 
-let slideInvItems = (elId, textId) => {
+let slideInvItems = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
-    element.style.display = "block";
+    element.style.display = "grid";
     element.style.width = "0%";
     // gets the text of display
-    let elementText = document.getElementById(textId);
+    let elementText = document.getElementById('inventory-item-container');
         elementText.style.opacity = 0;
     // sets beginning width
     let width = 0;
     clearInterval(id);
     id = setInterval(slideInL, 30);
     function slideInL(){
-        if(width === 60){
+        if(width === 40){
             clearInterval(id);
         } else {
             width++;
