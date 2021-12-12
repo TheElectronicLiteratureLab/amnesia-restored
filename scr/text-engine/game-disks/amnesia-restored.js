@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'deat-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'lobb-1', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -436,7 +436,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'roomkey',
-          icon: 'img/png/image-hotelkey-ingame.png',
+          icon: 'img/png/image-hotelkey-thumbnail.png',
           gif: 'img/gif/gif-hotelkey-ingame.gif',
           name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
           desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
@@ -1017,7 +1017,7 @@ const amnesiaRestored = {
           },
           {
             itemId: 'roomkey',
-            icon: 'img/png/image-hotelkey-ingame.png',
+            icon: 'img/png/image-hotelkey-thumbnail.png',
             gif: 'img/gif/gif-hotelkey-ingame.gif',
             name: ['Room Key', 'metal key', 'hotel key', '1502 key', 'key'],
             desc: 'The key chain is green plastic with the numerals 1502 in white. The key is ordinary.',
@@ -1096,8 +1096,7 @@ const amnesiaRestored = {
             itemId: 'tuxedo',
             name: ['White Tuxedo', 'tuxedo', 'tux'],
             desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
-              
-              Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
+            Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
               isTakeable: true,
               isDroppable: true,
               top: true, 
@@ -4955,7 +4954,7 @@ const amnesiaRestored = {
         enterRoom('deat-fsp');
       } else if (prevInput === '') {
         deathFood = 'chili';
-        enterRoom('deat-ftar');
+        enterRoom('deat-fsp');
       } else {
         println('So, what will it be?');
       }
@@ -5198,60 +5197,42 @@ const amnesiaRestored = {
     id: 'lobb-1',
     name: 'The Lobby',
     desc: `You step out of the elevator into the lobby of the Sunderland Hotel, and the first thing you see is yourself looking elegantly sheepish in your white tuxedo, for the doors of the facing elevator are made of mirror-glass.`, 
+    scored: false,
     onEnter: () => {
       reenableInput();
+      let room = getRoom(disk.roomId);
+      if (getItemInInventoryById('tuxedo')) {
+        room.exits[0].id = 'lobb-3';
+      } else {
+        room.exits[0].id = 'lobb-8';
+      }
     },
     onLook: () => { // Looking around the Lobby.
-      playerC.dScore +=5;
-      console.log(playerC.dScore);
       const room = getRoom('lobb-1');
-      room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
+      if (room.scored === false) {
+        playerC.dScore +=5;
+        room.scored = true;
+      console.log(playerC.dScore);
+      }
+        
+      room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says: \n
       The Sunderland Hotel
       is happy to welcome
       The Noise Abatement League
-      to the Big Apple.
+      to the Big Apple.\n
       Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
       Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the evening news to a man slumped in a wing-back chair. The man, who is dressed like a Texas businessman in suit and tie, with boots and Stetson, tilts back his hat to look at you. Then he stands up, smiling, and gestures for you to come to him.`;
+      println(room.desc);
     },
-    
-
     exits: [
       { // If the player is wearing the Tux and goes to Luke
         dir: 'west',
         id: 'lobb-3', 
       },
-
-      { // If the player is NOT wearing the Tux and goes to Luke
-        dir: 'tuxless', //Temporary dir, used to access the tuxless path.
-        id: 'lobb-8', 
-      },
-
     ],
   },
 
 //Begin Lobby Wandering Section
-{ 
-id: 'lobb-#',
-desc: `Text`,
-
-onLook: () => {
-  const room = getRoom('lobb-#');
-  room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says:
-  The Sunderland Hotel
-  is happy to welcome
-  The Noise Abatement League
-  to the Big Apple.
-  Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
-  Directly in front of the elevator alcove in which you're standing is the main reception area. In the far corner of the reception area a lonely TV mutely displays the evening news to a man slumped in a wing-back chair. The man, who is dressed like a Texas businessman in suit and tie, with boots and Stetson, tilts back his hat to look at you. Then he stands up, smiling, and gestures for you to come to him.`;
-},
-
-exits: [
-  {
-    dir: 'Text',
-    id: '#',
-  },
-],  
-},
 
 
 //End Lobby Wandering Section
@@ -5267,107 +5248,93 @@ exits: [
       playerC.cScore +=10;
       console.log(playerC.cScore);
       console.log(playerC.sScore);
+      autoSave();
     },
-    exits: [
-      { // Answering in confirmation, goes to 4.
-        dir: 'okay',
-        id: 'lobb-4',
-      },
-
-      { // Answering negativley, goes to 4A.
-        dir: 'no',
-        id: 'lobb-4A',
-      },
-
-      { // Asking 'Who are you?' or something similar, skips both 4 and 4A to go to 4B.
-        dir: 'who',
-        id: 'lobb-4B',
-      },
-    ],  
+    onBlock: () => {
+      if (prevInput === 'okay' || prevInput === 'so so' || prevInput === 'meh' || prevInput === 'good' || prevInput === 'pretty good') {
+        enterRoom('lobb-4');
+      } else if (prevInput === 'not good' || prevInput === 'bad' || prevInput === 'feel bad' || prevInput === 'I feel bad') {
+        enterRoom('lobb-4A');
+      } else if (prevInput === 'who are you?' || prevInput === 'who are you' || prevInput === 'who') {
+        enterRoom('lobb-4B');
+      } else if (prevInput === '') {
+        enterRoom('lobb-4A');
+      }
+    },
   },
-
   {
     id: 'lobb-4',
     desc: `"Wish I could say the same for myself, but that's no matter now. Say, why that funny look? Something wrong with what I'm wearing?" You shake your head and go on wondering how anyone who'd ever met this man--as you must have in the life you can't remember--could ever forget him. For he is memorably ugly.`,
-    exits: [
-      {// Asking 'Who are you?' or something similar.
-        dir: 'who',
-        id: 'lobb-4B',
-      },
-    ],  
+    onBlock: () => {
+      if (prevInput === 'who are you?' || prevInput === 'who are you' || prevInput === 'who') {
+        enterRoom('lobb-4B');
+      } else {
+        enterRoom('lobb-4B');
+      }
+    }
   },
 
   {
     id: 'lobb-4A',
     desc: `"I'm feeling just fine myself, but that's no matter now."`,
-    exits: [
-      {// Asking 'Who are you?' or something similar.
-        dir: 'who',
-        id: 'lobb-4B',
-      },
-    ],  
+    onEnter: () => {
+      enterRoom('lobb-4B');
+    }
   },
 
   {
     id: 'lobb-4B',
     desc: `"Hey, Johnny boy, this is no time for dumb questions like that. I gotta go down to this here rats' cellar and fetch back that preacher. Meanwhile you'd better go up to the chapel on the next floor and smooth things over with the little lady. I think she was starting to worry that you was going to leave her standing at the altar a second time, but I told her, 'Honey, I said, just joking like, 'if that Cameron boy walks out on you this time with another dumb excuse like the last one, he's going to have to answer to your daddy.' And then, Johnny, I showed her what I was packing--" The man holds open the jacket of his suit to reveal a shoulder holster from which the butt of a small handgun projects. "--and that seemed to ease her worrying a whole lot. Nuff said, my boy? Do you take my meaning?"`,
-    
+    onBlock: () => {
+      if (prevInput === 'yes') {
+        enterRoom('lobb-5');
+      } else {
+        enterRoom('lobb-7');
+      }
+    },
     onLook: () => { // (6) Looking at Luke
       const room = getRoom('lobb-4B');
       room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
-    },
-
-    exits: [
-      { //Continues onto 5
-        dir: 'yes',
-        id: 'lobb-5',
-      },
-    ],  
+      println(room.desc);
+    },  
   },
 
   { 
     id: 'lobb-5',
     desc: `"Glad to hear it. Cause I wouldn't want to have to do anything to make my little cactus blossom unhappy. You've given that poor gal enough trouble to last her a lifetime, and from here on out, Mr. Know-It-All Cameron the Third, you're going to do right by my little Alice--or my name ain't Luke Dudley. Now scoot on up those stairs and give her some of that sweet talk that got the two of you into this situation.'`,
-    
+    onEnter: () => {
+      reenableInput();
+    },
+    onBlock : () => {
+      if (prevInput === 'okay' || prevInput === 'go to chapel' || prevInput || 'go to stairs') {
+        enterRoom('chap-1');
+      } else {
+        enterRoom('lobb-7');
+      }
+    },
     onLook: () => { // (6) Looking at Luke
       const room = getRoom('lobb-5');
       room.desc = `He is a tall thin man with an expression of "good humor" so forced that his smile seems to be achieved the way some facelifts are, with little fishhooks pulling the flesh into place. His black suit hangs loosely on his spare frame, and the few strands of hair that have escaped the band of his black Stetson are the color of dirty khaki. His eyes are small and he has a tendency to squint. The buckle of his belt spells out his name in big brass capitals: LUKE.`;
     },
-    
     exits: [
-      { // Leads straight to chapel
-        dir: 'stairs',
-        id: 'chap-1',
-      },
-
-      { // Asking Luke any form of question.
-        dir: 'what',
-        id: 'lobb-7',
-      },
-
+      {dir: ['stairs', 'chapel'],  id: 'chap-1'},// Leads straight to chapel
+      {dir: 'what', id: 'lobb-7'},// Asking Luke any form of question.
     ],  
   },
-
   { 
     id: 'lobb-7',
     desc: `Luke pats his concealed pistol. "I said 'scoot,' boy, and when I say 'scoot' I'm not talking about by-and-by. I'm saying 'scoot now.'"`,
-
+    onBlock: () => {
+      if (prevInput === 'go to stairs' || prevInput === 'go to chapel') {
+        enterRoom('lobb-17');
+      } else {
+        println(`"Don't make me repeat myself, now scoot!"`);
+      }
+    },
     exits: [
-      {// responding 'go to stairs"
-        dir: 'stairs',
-        id: 'lobb-17',
-      },
-
-      {// if player tries to go east past the stairs towards the street exit
-        dir: 'east',
-        id: 'lobb-18',
-      },
-
-      {// if player tries to go west past the stairs towards the street exit
-        dir: 'west',
-        id: 'lobb-18A',
-      },
-
+      {dir: ['stairs', 'chapel'], id: 'lobb-17'},// responding 'go to stairs"
+      {dir: 'east', id: 'lobb-18'}, // if player tries to go east past the stairs towards the street exit
+      {dir: 'west', id: 'lobb-18A'},// if player tries to go west past the stairs towards the street exit
     ],  
   },
 //End Tuxedo Lobby Section
@@ -5376,152 +5343,122 @@ exits: [
 
   { //if attempting to talk to Luke without wearing the Tuxedo from earlier.
     id: 'lobb-8',
+    name: '',
     desc: `"Well, god damn," swears the man in the Stetson hat loud enough to be heard from the other side of the reception area. He strides toward you with an angry glint in his beady eyes. "Now where in tarnation is that white suit. I ain't shelling out five hundred bucks to get my little Alice looking like a proper bride and then have you showing up looking like a pig farmer. No siree!" He lays a hand on your shoulder and pushed you back toward the elevator alcove. "We are going right back to your room, and you are going to get dressed in your bridegroom uniform, and then by God you're going to do the right thing by my little Alice. Now get inside that elevator."`,
-
+    onBlock: () => {
+      if (prevInput === 'elevator' || prevInput === 'go to elevator' || prevInput === 'ride elevator' || prevInput === 'get in' || prevInput === 'okay') {
+        enterRoom('lobb-9');
+      }
+      else if (prevInput === 'no' || prevInput === 'absolutely not') {
+        enterRoom('lobb-10');
+      }
+    },
     exits: [
       {// Responding by going to the elevator.
-        dir: 'elevator',
+        dir: ['elevator', 'inside'],
         id: 'lobb-9',
       },
-
-      {// Anything else but going to the elevator
-        dir: 'no',
-        id: 'lobb-10',
-      },
-
     ],  
   },
-
   { 
     id: 'lobb-9',
-    desc: `The man in the Stetson--his brass belt-buckle identifies him as 'LUKE'--follows you into the elevator and pushes the button for 15. The doors whoosh close and the elevator starts to go up.`,
-
-    exits: [
-      {// Attempting to ask a question
-        dir: 'what',
-        id: 'lobb-10A',
-      },
-
-    ],  
+    name: 'Elevator',
+    desc: `The man in the Stetson--his brass belt-buckle identifies him as 'LUKE' -- follows you into the elevator and pushes the button for 15. The doors whoosh close and the elevator starts to go up.`,
+    onBlock: () => {
+      enterRoom('lobb-10A');
+    },
   },
 
   { // entering from lobb-8
     id: 'lobb-10',
+    name: 'Elevator',
     desc: `The man spreads back the lapel of his suitcoat to reveal a shoulder holster from which the butt of a small handgun projects. "Now I don't want any trouble out of you, Mr. smarty-pants Cameron the Third. This ain't going to be no shotgun wedding, but it might turn out to be a .38 caliber wedding, if you insist on it."
     
     You are persuaded by his eloquence and get in the elevator. He follows after you and pushes the button for 15. The doors whoosh closed and the elevator starts to go up.`,
-
-    exits: [
-      {// any response except 'take gun' or 'fight man/Luke'
-        dir: 'any',
-        id: 'lobb-11',
-      },
-
-      {// responding 'take gun' or 'fight man/Luke'
-        dir: 'fight',
-        id: 'lobb-13',
-      },
-
-    ],  
+    onBlock: () => {
+      if (prevInput === 'take gun' || prevInput === 'fight Luke' || prevInput === 'fight' || prevInput === 'gun') {
+        enterRoom('lobb-13');
+      } else if (prevInput === ''){
+        enterRoom('lobb-11');
+      }
+    }
   },
 
   { // entering from lobby-9
     id: 'lobb-10A',
+    name: 'Elevator',
     desc: `The man spreads back the lapel of his suitcoat to reveal a shoulder holster from which the butt of a small handgun projects. "Now I don't want any trouble out of you, Mr. smarty-pants Cameron the Third. This ain't going to be no shotgun wedding, but it might turn out to be a .38 caliber wedding, if you insist on it."`,
-
-    exits: [
-      {// any response except 'take gun' or 'fight man/Luke'
-        dir: 'any',
-        id: 'lobb-11',
-      },
-
-      {// responding 'take gun' or 'fight man/Luke'
-        dir: 'fight',
-        id: 'lobb-13',
-      },
-    ],  
+    onBlock: () => {
+      if (prevInput === 'take gun' || prevInput === 'fight Luke' || prevInput === 'fight' || prevInput === 'gun') {
+        enterRoom('lobb-13');
+      } else if (prevInput === '') {
+        enterRoom('lobb-11');
+      }
+    }  
   },
 
   { 
     id: 'lobb-11',
+    name: '15th Floor Hallway',
     desc: `The man pats his concealed weapon significantly and gives you a grin like a skull trying to be friendly. The elevator arrives at 15 and the doors open. He motions for you to get out, and then follows you to the door of Room 1502. "Now give me the key," he demands.`,
-
-    exits: [
-      {// responding 'give man/Luke room key'
-       dir: 'give key',
-       id: 'lobb-14',
-      },
-
-      {// if the player either didn't take the key from the room, or says: "I don't have key/I can't"
-        dir: 'no',
-        id: 'lobb-12',
-      },
-    ],  
+    onBlock: () => {
+      if (prevInput === 'give key' || prevInput === 'give' || prevInput === 'hand keys over' || prevInput === 'okay' || prevInput === 'ok') {
+        enterRoom('lobb-14');
+      } else if (!getItemInInventoryById('roomkey') || prevInput === 'no') {
+        enterRoom('lobb-12'); //if player says no
+      }
+    }
   },
 
   { 
     id: 'lobb-12',
+    name: '15th Floor Hallway',
     desc: `"You didn’t take your room key when you left your room? God-damn, but you are a turkey.  Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
-
-    exits: [
-      { // leads to the same 'Hell' ending as the suicide from earlier.
-        dir: 'dead',
-        id: 'hell-1',
-      },
-    ],  
+    onEnter: () => {
+      pressEnter('hell-1');
+    }
   },
 
   { 
     id: 'lobb-13',
     desc: `Unwisely you try to take the man’s revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet--right between the eyes.`,
-
-    exits: [
-      { // leads to the same 'Hell' ending as the suicide from earlier.
-        dir: 'dead',
-        id: 'hell-1',
-      },
-    ],  
+    onEnter: () => {
+      pressEnter('hell-1');
+    }  
   },
 
   { 
     id: 'lobb-14',
     desc: `He takes the key from you and unlocks the door to Room 1502. "Now you get in there and change into that white monkey suit on the double--and then like the song says, you're going to the chapel and you're going to get married." He chuckles and adds: "Going to the Chapel of Love!"`,
-
+    onEnter: () => {
+      autoSave();
+    },
+    onBlock: () => {
+      if (prevInput === 'go to room' || prevInput === 'go inside') {
+        enterRoom('lobb-16');
+      } else if (prevInput === 'no' || prevInput === 'refuse') {
+        enterRoom('lobb-15');
+      }
+    },
     exits: [
-      {// responding "enter room"
-        dir: 'enter',
-        id: 'lobb-16',
-      },
-
-      {// any response but "enter room"
-        dir: 'no',
-        id: 'lobb-15',
-      },
-    ],  
+      {dir: ['inside', 'room'], id: 'lobb-16'}
+    ]
   },
-
   { 
     id: 'lobb-15',
     desc: `"God-damn, but you are a turkey. Johnny boy, I think you just plain aren't good enough for my little Alice, so say your prayers and make them quick." And with no more preface than that, the man in the Stetson takes the .38 caliber revolver from his shoulder holster and shoots you between the eyes.`,
-
-    exits: [
-      {// leads to the same 'Hell' ending as the suicide from earlier.
-        dir: 'dead',
-        id: 'hell-1',
-      },
-    ],  
+    onEnter: () => {
+      pressEnter('hell-1');
+    }
   },
 
   { 
     id: 'lobb-16',
+    name: 'Hotel Room 1502',
     desc: `You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don’t it?" He presses the button for 2, and the elevator takes you to the second floor--and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`,
-
-    exits: [
-      { // Leads straight to chapel
-        dir: 'chapel',
-        id: 'chap-1',
-      },
-    ],  
+    onEnter: () => {
+      pressEnter('chap-1');
+    }
   },
 //End Tuxless Section
 
@@ -5529,40 +5466,24 @@ exits: [
   { 
     id: 'lobb-17',
     desc: `Halfway up the stairs a woman in a bright blue dress insists on giving you a mimeographed flyer with the headline: TOO MUCH NOISE CAN DRIVE YOU CRAZY!!! A large yellow button pinned to her dress shows her to be a member of the New York City Chapter of the Noise Abatement League. "The next presentation will be in just a minute or two!" she calls after you as you continue up the staircase. At the top you take your direction from an arrow pointing you to the All­-Faith Chapel.`,
-
-    exits: [
-      { // Leads straight to chapel
-        dir: 'enter',
-        id: 'chap-1',
-      },
-
-    ],  
+    onEnter: () => {
+      pressEnter('chap-1');
+    }
   },
 
   { //East from (lobby-7)
     id: 'lobb-18',
     desc: `You walk on past the stairs towards the 52nd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
-
-    exits: [
-      {// responding 'go to stairs"
-        dir: 'stairs',
-        id: 'lobb-17',
-      },
-
-    ],  
+    onEnter: () => {
+      pressEnter('lobb-17');
+    }
   },
-
   { //West from (7)
     id: 'lobb-18A',
     desc: `Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you’ve not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
-
-    exits: [
-      {// responding 'go to stairs"
-        dir: 'stairs',
-        id: 'lobb-17',
-      },
-
-    ],  
+    onEnter: () => {
+      pressEnter('lobb-17');
+    }
   },
   //**********************************************************/
   //                          Chapel                         /
@@ -5605,335 +5526,332 @@ exits: [
       },
     ],  
   },
+      {
+      id: 'chap-1',
+      name: 'All-Faith Chapel',
+      desc: `You are standing before a large rosewood door bearing a mottled brass nameplate declaring this to be the ALL-FAITH CHAPEL.`, 
+      onEnter: () => {
+        reenableInput();
+        playerC.dScore += 2; // Adding to Detective Score
+        playerC.cScore += 10; // Adding to Character Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+      },   
+      exits: [
+        {dir: ['enter', 'chapel', 'inside'], id: 'chap-2'}, //Any direction or "enter chapel" will result in entering the chapel.
+      ],
+    },
+
+    { 
+      id: 'chap-2',
+      desc: `You enter the chapel, which is dim and fragrant with the mingled scents of flowers and candlewax. It seems to be deserted.`,
+
+      onLook: () => {
+        const room = getRoom('chap-2');
+        room.desc = `The chapel is about twenty feet square, windowless, with a high coffered ceiling and a terracotta floor. In the center of the room is a large round slab of marble too low to dine at but too high to be a coffee table. Grouped about it on three sides are pews of blond wood. Behind it is a lectern flanked by a vase of wilting gladiolas on a free­standing marble column and a large candelabra, its candles burned down to the sockets. The general effect is that of a funeral parlor without a corpse.
+        High up on three of the walls, forming a kind of frieze, is the All-Faith Chapel's chief claim to distinction, a much-darkened mural representing all the faiths of mankind worshipping the Supreme Being, painted (a plaque behind the lectern informs you) in 1938 by Maxfield Parrish. Christ, Moses, Mohammed, Buddha, Confucius, Martin Luther, and Mary Baker Eddy are represented sitting down at or standing about a table and waving their arms, all seeming to be alarmed by the gold-and-violet sunset sky painted on the wall to their right or by the magenta dawn to their left, or possibly by the simultaneity of these events, although the servants who are waiting on this distinguished gathering seem entirely unperturbed.`;
+      },
+
+      exits: [
         {
-        id: 'chap-1',
-        name: 'All-Faith Chapel',
-        desc: `You are standing before a large rosewood door bearing a mottled brass nameplate declaring this to be the ALL-FAITH CHAPEL.`, 
-        onEnter: () => {
-          playerC.dScore += 2; // Adding to Detective Score
-          playerC.cScore += 10; // Adding to Character Score
-          console.log(playerC.dScore);
-          console.log(playerC.cScore);
-        },   
-        exits: [
-          { //Any direction or "enter chapel" will result in entering the chapel.
-            dir: 'enter',
-            id: 'chap-2', 
-          },
-  
-        ],
-      },
-
-      { 
-        id: 'chap-2',
-        desc: `You enter the chapel, which is dim and fragrant with the mingled scents of flowers and candlewax. It seems to be deserted.`,
-  
-        onLook: () => {
-          const room = getRoom('chap-2');
-          room.desc = `The chapel is about twenty feet square, windowless, with a high coffered ceiling and a terracotta floor. In the center of the room is a large round slab of marble too low to dine at but too high to be a coffee table. Grouped about it on three sides are pews of blond wood. Behind it is a lectern flanked by a vase of wilting gladiolas on a free­standing marble column and a large candelabra, its candles burned down to the sockets. The general effect is that of a funeral parlor without a corpse.
-          High up on three of the walls, forming a kind of frieze, is the All-Faith Chapel's chief claim to distinction, a much-darkened mural representing all the faiths of mankind worshipping the Supreme Being, painted (a plaque behind the lectern informs you) in 1938 by Maxfield Parrish. Christ, Moses, Mohammed, Buddha, Confucius, Martin Luther, and Mary Baker Eddy are represented sitting down at or standing about a table and waving their arms, all seeming to be alarmed by the gold-and-violet sunset sky painted on the wall to their right or by the magenta dawn to their left, or possibly by the simultaneity of these events, although the servants who are waiting on this distinguished gathering seem entirely unperturbed.`;
+          dir: 'leave',
+          id: 'chap-4',
         },
-  
-        exits: [
-          {
-            dir: 'leave',
-            id: 'chap-4',
-          },
-          {
-            dir: 'pray',
-            id: 'chap-3',
-          },
-        ],  
-      },
+        {
+          dir: 'pray',
+          id: 'chap-3',
+        },
+      ],  
+    },
 
-      { 
-        id: 'chap-3',
-        desc: `You enter one of the pews nearest the central marble slab and kneel on the padded kneeler. You fold your hands and bow your head and close your eyes. You’re all ready to say a prayer--but what do you want to say a prayer for?`,
-  
-        exits: [
-          {
-            dir: 'leave',
-            id: 'chap-4',
-          },
-          {
-            dir: 'memory',
-            id: 'chap-3A',
-          },
-        ],  
-      },
+    { 
+      id: 'chap-3',
+      desc: `You enter one of the pews nearest the central marble slab and kneel on the padded kneeler. You fold your hands and bow your head and close your eyes. You’re all ready to say a prayer--but what do you want to say a prayer for?`,
 
-      { 
-        id: 'chap-3A',
-        desc: `You pray to have your memory restored--if not in whole, then for the least scrap of your past, a flashback from childhood, a face, a voice, a feeling--anything authentically belonging to your mislaid identity. And then you wait, trying to make your mind receptively blank. But a blank mind is hard to maintain. You begin to imagine memories you would like to have--your first communion, your bar mitzvah, your wedding day--and the image of each is so vivid that you might be seeing it in an album of family photographs.`,
-  
-        exits: [
-          {
-            dir: 'leave',
-            id: 'chap-4',
-          },
-        ],  
-      },
+      exits: [
+        {
+          dir: 'leave',
+          id: 'chap-4',
+        },
+        {
+          dir: 'memory',
+          id: 'chap-3A',
+        },
+      ],  
+    },
+
+    { 
+      id: 'chap-3A',
+      desc: `You pray to have your memory restored--if not in whole, then for the least scrap of your past, a flashback from childhood, a face, a voice, a feeling--anything authentically belonging to your mislaid identity. And then you wait, trying to make your mind receptively blank. But a blank mind is hard to maintain. You begin to imagine memories you would like to have--your first communion, your bar mitzvah, your wedding day--and the image of each is so vivid that you might be seeing it in an album of family photographs.`,
+
+      exits: [
+        {
+          dir: 'leave',
+          id: 'chap-4',
+        },
+      ],  
+    },
 //End Starting Chapel Section
 
 //Begin Alice Chapel Section
-      { 
-        id: 'chap-4',
-        desc: `Just as you decide to leave the empty chapel, the door opens behind you, and a woman’s voice exclaims, "John! Oh my darling, you're here!" You spin around to confront the figure of a woman in a bridal gown.`,
-  
-        onLook: () => {
-          const room = getRoom('chap-4');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+    { 
+      id: 'chap-4',
+      desc: `Just as you decide to leave the empty chapel, the door opens behind you, and a woman’s voice exclaims, "John! Oh my darling, you're here!" You spin around to confront the figure of a woman in a bridal gown.`,
+
+      onLook: () => {
+        const room = getRoom('chap-4');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+      },
+
+      exits: [
+        {//If response is "Who are you?"
+          dir: 'who',
+          id: 'chap-5',
         },
-  
-        exits: [
-          {//If response is "Who are you?"
-            dir: 'who',
-            id: 'chap-5',
-          },
-          {//If response is "Ask woman/Alice about Luke"
-            dir: 'ask luke',
-            id: 'chap-6',
-          },
-          {//If response is "Ask woman/Alice about marriage/wedding"
-            dir: 'ask marriage',
-            id: 'chap-7',
-          },
-        ],  
-      },
-
- //Begin Alice Chapel Questions
-      { //"Who are you?"
-        id: 'chap-5',
-        desc: `In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am… a woman of mystery." Her Garbo imitation is first-rate.`,
-  
-        onLook: () => {
-          const room = getRoom('chap-5');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        {//If response is "Ask woman/Alice about Luke"
+          dir: 'ask luke',
+          id: 'chap-6',
         },
-  
-        exits: [
-          {//If response is "Ask woman/Alice about Luke"
-            dir: 'ask luke',
-            id: 'chap-6',
-          },
-          {//If response is "Ask woman/Alice about marriage/wedding"
-            dir: 'ask marriage',
-            id: 'chap-7',
-          },
-        ],  
-      },
-  
-      {//"Ask woman/Alice about Luke"
-        id: 'chap-6',
-        desc: `"Oh darling, don't make me get into all that again. Can I help it if the man is my father? Once we're in Australia he can't bother us anymore."`,
-  
-        onLook: () => {
-          const room = getRoom('chap-6');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+        {//If response is "Ask woman/Alice about marriage/wedding"
+          dir: 'ask marriage',
+          id: 'chap-7',
         },
-  
-        exits: [
-          {//If response is "Who are you?"
-            dir: 'who',
-            id: 'chap-5',
-          },
-          {//If response is "Ask woman/Alice about marriage/wedding"
-            dir: 'ask marriage',
-            id: 'chap-7',
-          },
-        ],  
+      ],  
+    },
+
+//Begin Alice Chapel Questions
+    { //"Who are you?"
+      id: 'chap-5',
+      desc: `In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am… a woman of mystery." Her Garbo imitation is first-rate.`,
+
+      onLook: () => {
+        const room = getRoom('chap-5');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
       },
 
-      {//"Ask woman/Alice about marriage/wedding"
-        id: 'chap-7',
-        desc: `"Isn't it wonderful? I've always wanted to be married in full bridal regalia, and even if there's not to be a great crowd to see us, it's so much more solemn like this. And more fun too. It's so sweet of you to go along with my whims. And I promise that tonight I'll go along with all of yours. Oh my darling, take me in your arms! Kiss me! Make me yours!"`,
-  
-        onLook: () => {
-          const room = getRoom('chap-7');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+      exits: [
+        {//If response is "Ask woman/Alice about Luke"
+          dir: 'ask luke',
+          id: 'chap-6',
         },
-  
-        exits: [
-          {//If response is "Who are you?"
-            dir: 'who',
-            id: 'chap-5',
-          },
-          {//If response is "Ask woman/Alice about Luke"
-            dir: 'ask luke',
-            id: 'chap-6',
-          },
-          {//If response is "Lift Veil"
-            dir: 'lift veil',
-            id: 'chap-8',
-          },
-        ],  
-      },
-
-      { //Lifting the veil
-        id: 'chap-8',
-        desc: `You grasp the lower edge of the veil with a gentle firmness and raise it slowly--to reveal a pale, pretty, and slightly frightened face. Her eyes are fixed on yours imploringly, but she bites her lower lip, as though to keep herself from asking aloud the question that is in her eyes. But the eyes need no interpreters. Do you love me? they ask. Will you love me? Can you love me?`,
-  
-        onLook: () => {
-          const room = getRoom('chap-8');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+        {//If response is "Ask woman/Alice about marriage/wedding"
+          dir: 'ask marriage',
+          id: 'chap-7',
         },
-  
-        exits: [
-          {//If response is "I love you"
-            dir: 'i love you',
-            id: 'chap-9',
-          },
-        ],  
+      ],  
+    },
+
+    {//"Ask woman/Alice about Luke"
+      id: 'chap-6',
+      desc: `"Oh darling, don't make me get into all that again. Can I help it if the man is my father? Once we're in Australia he can't bother us anymore."`,
+
+      onLook: () => {
+        const room = getRoom('chap-6');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
       },
 
-      {//"I love you"
-        id: 'chap-9',
-        desc: `"Oh my darling, I love you too. More than anything in the whole world. You are my world. You're everything to me. Oh my love--kiss me!"`,
-  
-        onLook: () => {
-          const room = getRoom('chap-9');
-          room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+      exits: [
+        {//If response is "Who are you?"
+          dir: 'who',
+          id: 'chap-5',
         },
+        {//If response is "Ask woman/Alice about marriage/wedding"
+          dir: 'ask marriage',
+          id: 'chap-7',
+        },
+      ],  
+    },
+
+    {//"Ask woman/Alice about marriage/wedding"
+      id: 'chap-7',
+      desc: `"Isn't it wonderful? I've always wanted to be married in full bridal regalia, and even if there's not to be a great crowd to see us, it's so much more solemn like this. And more fun too. It's so sweet of you to go along with my whims. And I promise that tonight I'll go along with all of yours. Oh my darling, take me in your arms! Kiss me! Make me yours!"`,
+
+      onLook: () => {
+        const room = getRoom('chap-7');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`;
+      },
+
+      exits: [
+        {//If response is "Who are you?"
+          dir: 'who',
+          id: 'chap-5',
+        },
+        {//If response is "Ask woman/Alice about Luke"
+          dir: 'ask luke',
+          id: 'chap-6',
+        },
+        {//If response is "Lift Veil"
+          dir: 'lift veil',
+          id: 'chap-8',
+        },
+      ],  
+    },
+
+    { //Lifting the veil
+      id: 'chap-8',
+      desc: `You grasp the lower edge of the veil with a gentle firmness and raise it slowly--to reveal a pale, pretty, and slightly frightened face. Her eyes are fixed on yours imploringly, but she bites her lower lip, as though to keep herself from asking aloud the question that is in her eyes. But the eyes need no interpreters. Do you love me? they ask. Will you love me? Can you love me?`,
+
+      onLook: () => {
+        const room = getRoom('chap-8');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+      },
+
+      exits: [
+        {//If response is "I love you"
+          dir: 'i love you',
+          id: 'chap-9',
+        },
+      ],  
+    },
+
+    {//"I love you"
+      id: 'chap-9',
+      desc: `"Oh my darling, I love you too. More than anything in the whole world. You are my world. You're everything to me. Oh my love--kiss me!"`,
+
+      onLook: () => {
+        const room = getRoom('chap-9');
+        room.desc = `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown in evidence than of the woman.`;
+      },
+
+      exits: [
+        {//Kiss Alice (Veil raised)
+          dir: 'kiss',
+          id: 'chap-10',
+        },
+      ],  
+    },
+
+    {//Kiss Alice (Veil raised)
+      id: 'chap-10',
+      desc: `Her lips meet yours eagerly, and the satin of her gown is crushed to the polyester of your tux. The invitation is irresistible. The kiss intensifies from perhaps to entirely. Something phony may be going on, but a kiss like this doesn't leave any room to doubt one thing--this woman wants you.`,
   
-        exits: [
-          {//Kiss Alice (Veil raised)
-            dir: 'kiss',
-            id: 'chap-10',
-          },
-        ],  
-      },
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Kiss Alice (Veil raised)
-        id: 'chap-10',
-        desc: `Her lips meet yours eagerly, and the satin of her gown is crushed to the polyester of your tux. The invitation is irresistible. The kiss intensifies from perhaps to entirely. Something phony may be going on, but a kiss like this doesn't leave any room to doubt one thing--this woman wants you.`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Kiss Alice (Veil down)
+      id: 'chap-10A',
+      desc: `You place your hands on her shoulders and incline your head until your lips meet… the yellowed lace of the wedding veil. It has a dusty smell with a faint overtone of mothballs.`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Kiss Alice (Veil down)
-        id: 'chap-10A',
-        desc: `You place your hands on her shoulders and incline your head until your lips meet… the yellowed lace of the wedding veil. It has a dusty smell with a faint overtone of mothballs.`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Telling Alice about amnesia
+      id: 'chap-11',
+      desc: `She laughs. "Well, that’s nothing to worry about, darling. If you had herpes, that would be something else again." When she sees that you don't laugh at her joke, she fingers her bridal veil nervously. "You're not serious, are you?"`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-11A',
+        },
+      ],  
+    },
 
-      {//Telling Alice about amnesia
-        id: 'chap-11',
-        desc: `She laughs. "Well, that’s nothing to worry about, darling. If you had herpes, that would be something else again." When she sees that you don't laugh at her joke, she fingers her bridal veil nervously. "You're not serious, are you?"`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-11A',
-          },
-        ],  
-      },
+    {//Answering yes, serious about amnesia
+      id: 'chap-11A',
+      desc: `When you assure her that you are perfectly serious and that you're suffering from total amnesia and have no idea who she is, she smiles grimly, lifts her satin-gloved hand and slaps your face. "John Cameron, you are the most despicable liar I've ever known, and if you think you can worm your way out of our getting married this time, you are mistaken."`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Answering yes, serious about amnesia
-        id: 'chap-11A',
-        desc: `When you assure her that you are perfectly serious and that you're suffering from total amnesia and have no idea who she is, she smiles grimly, lifts her satin-gloved hand and slaps your face. "John Cameron, you are the most despicable liar I've ever known, and if you think you can worm your way out of our getting married this time, you are mistaken."`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about self (1st time)
+      id: 'chap-12',
+      desc: `"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover--but I'm not going to make comparisons. And you’ve told me you love me-­ and I've believed you."`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about self (1st time)
-        id: 'chap-12',
-        desc: `"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover--but I'm not going to make comparisons. And you’ve told me you love me-­ and I've believed you."`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about self (2nd time)
+      id: 'chap-12A',
+      desc: `"Are you serious? Maybe you think I blame you for what happened in Texas. But I know that wasn't your fault. You had to get away from that jail. It would have destroyed your soul. You simply have to stop thinking about all that-­ and think about Australia instead."`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about self (2nd time)
-        id: 'chap-12A',
-        desc: `"Are you serious? Maybe you think I blame you for what happened in Texas. But I know that wasn't your fault. You had to get away from that jail. It would have destroyed your soul. You simply have to stop thinking about all that-­ and think about Australia instead."`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about self (3rd time)
+      id: 'chap-12B',
+      desc: `"What a vain creature you are, John! Why don't we talk about me for a change? How I feel about sacrificing my career for your sake? Do you realize I could go to jail for helping you get out of the country?"`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about self (3rd time)
-        id: 'chap-12B',
-        desc: `"What a vain creature you are, John! Why don't we talk about me for a change? How I feel about sacrificing my career for your sake? Do you realize I could go to jail for helping you get out of the country?"`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about self (4th+ time)
+      id: 'chap-12C',
+      desc: `In reply to your repeated question, she will only shake her head, as though at the annoyance of a persistent fly.`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about self (4th+ time)
-        id: 'chap-12C',
-        desc: `In reply to your repeated question, she will only shake her head, as though at the annoyance of a persistent fly.`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about Austrailia - if chap-12A has appeared
+      id: 'chap-13',
+      desc: `"Oh, we're going to be so happy in Australia, John--I know we wil1. It may be hard at first, since we don’t either of us know anything about sheep ranches--or are they called farms?--but we're young and strong and healthy, and our love will see us through our trials."`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about Austrailia - if chap-12A has appeared
-        id: 'chap-13',
-        desc: `"Oh, we're going to be so happy in Australia, John--I know we wil1. It may be hard at first, since we don’t either of us know anything about sheep ranches--or are they called farms?--but we're young and strong and healthy, and our love will see us through our trials."`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about Texas - if chap-12A has appeared
+      id: 'chap-14',
+      desc: `"John, you must try and forget about all that. Oh, I really wish you did have amnesia, so that you'd never be haunted by those terrible memories. Forget Texas, John. Pretend it never happened."`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
-      {//Asking about Texas - if chap-12A has appeared
-        id: 'chap-14',
-        desc: `"John, you must try and forget about all that. Oh, I really wish you did have amnesia, so that you'd never be haunted by those terrible memories. Forget Texas, John. Pretend it never happened."`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
-
-      {//Asking about Jail - if chap-12A has appeared
-        id: 'chap-15',
-        desc: `"Oh John, please, this is our wedding day. It's not a time to talk about these morbid matters. That's over and done with. Try to forget. Try!"`,
-    
-        exits: [
-          {
-            dir: 'Text',
-            id: 'chap-#',
-          },
-        ],  
-      },
+    {//Asking about Jail - if chap-12A has appeared
+      id: 'chap-15',
+      desc: `"Oh John, please, this is our wedding day. It's not a time to talk about these morbid matters. That's over and done with. Try to forget. Try!"`,
+  
+      exits: [
+        {
+          dir: 'Text',
+          id: 'chap-#',
+        },
+      ],  
+    },
 
  //End Alice Chapel Questions
 
