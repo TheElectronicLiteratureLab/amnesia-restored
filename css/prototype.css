@@ -181,6 +181,7 @@ body {
 #game-options h3 {
    font-size: 2vh;
    font-weight: 600;
+   letter-spacing: 1px;
 }
 
 #game-options p {
@@ -824,10 +825,14 @@ body {
 }
 
 .ending {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
    margin-bottom: 10%;
-   grid-row-gap: 5%;
+}
+
+.achieveImg {
+   margin: 0 15px;
 }
 
 .achieveDesc {
@@ -1031,11 +1036,6 @@ body {
    padding: 5px;
 }
 
-.ending {
-   display: grid;
-   grid-template-columns: .5fr 1fr;
-}
-
 .achieveImg {
-   justify-self: center;
+   margin-left: 15px;
 }
