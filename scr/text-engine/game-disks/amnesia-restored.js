@@ -464,7 +464,7 @@ const amnesiaRestored = {
         {
           itemId: 'brochure',
           png: '/img/png/image-brochure-ingamewoutline.png',
-          name: ['brochure', 'hotel brochure'],
+          name: ['Brochure', 'hotel brochure'],
           desc: 'A brochure from the Sunderland Hotel.',
           isTakeable: true,
           isDroppable: true,
@@ -27370,7 +27370,7 @@ const amnesiaRestored = {
       curMoveCount: 0,
       onEnter: () => {
         reenableInput();
-
+        document.getElementById("hunger-bar").style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
         const room = getRoom(disk.roomId);
 
         room.curMoveCount = moveCount;
@@ -28102,15 +28102,19 @@ const amnesiaRestored = {
       desc: `Midway down the block, across from the Sunderland, plaster jockeys mark the 21 club, home of the most expensive hamburger in New York City. 
 
             There is a poster here which catches your eye. It announces a series of organ recitals at St. Patrick’s Cathedral in memory of James Renwick, the architect.`,
+      leavingHotel: false,
       onEnter: () => {
         const room = getRoom(disk.roomId);
-
         if(firstEncounter) {
           firstEncounter = true;
-
           xStreetEvent();
         } else {
           return;
+        }
+
+        if(leavingHotel === false){
+          room.leavingHotel = true;
+          document.getElementById("hunger-bar").style.background = "transparent linear-gradient(270deg, #9C4FEC 0%, #4E2876 100%) 0% 0% no-repeat padding-box";
         }
       },
       exits: [

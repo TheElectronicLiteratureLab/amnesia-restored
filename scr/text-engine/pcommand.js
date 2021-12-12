@@ -14,6 +14,8 @@ let inv = () => {
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
+    } else if(item.itemId === 'brochure'){
+      listBro(item.icon, `${getName(item.name)}`, 'clickBrochure', item.itemId);
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }
@@ -1086,7 +1088,7 @@ const jumpOut = (prep, winJumpOut) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = streets.rooms; //set variable to loaded disk
+  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
