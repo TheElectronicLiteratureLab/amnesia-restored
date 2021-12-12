@@ -453,7 +453,7 @@ const amnesiaRestored = {
           itemId: 'stationary',
           icon: 'img/png/image-padofpaper-thumbnail.png',
           gif: 'img/gif/gif-padofpaper-ingame.gif',
-          name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
+          name: ['Stationary', 'stationary',, 'paper'],
           desc: 'The stationary says SUNDERLAND HOTEL at the top.',
           isTakeable: true,
           isDroppable: true
@@ -470,7 +470,7 @@ const amnesiaRestored = {
         {
           itemId: 'brochure',
           png: '/img/png/image-brochure-ingamewoutline.png',
-          name: ['brochure', 'hotel brochure'],
+          name: ['brochure'],
           desc: 'A brochure from the Sunderland Hotel.',
           isTakeable: true,
           isDroppable: true,
