@@ -34641,6 +34641,8 @@ const streets = {
       onEnter: () => {
         const room = getRoom(disk.roomId);
 
+        degradation = !degradation;
+
         if(!room.hasEntered){
           room.desc = `You are in the vestibule of the tenement.`
           room.hasEntered = true;
@@ -34667,6 +34669,7 @@ const streets = {
       name: 'Tenement Hallway',
       desc: `You go through the open door and enter the narrow, shadowy hallway. There is a smell of must and wet ashes. Your feeling you've been here is now almost a certainty.`,
       onEnter: () => {
+        degradation = false;
         const room = getRoom(disk.roomId);
 
         if(!room.hasEntered){

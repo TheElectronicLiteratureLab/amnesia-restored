@@ -1227,6 +1227,9 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
                //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
+              room.onEnter = () => {
+                room.onEnter() + (degradation = true);
+              }
               room.desc = `The abandoned tenement is here`; //tell player the tenement is here
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
@@ -1374,7 +1377,7 @@ const beg = () => {
         
         As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`)
 
-        pressEnter('deat-texa');
+        pressEnter('deat-1');
       }
     } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
       console.log(`caught once but succeeded 80% check`);
@@ -1599,7 +1602,7 @@ const hungerWarning = () => {
     println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
   } else if (playHung <= 0) { //if your hunger drops to 0 game over the player
     println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
-    pressEnter('deat-texa')
+    pressEnter('deat-1')
   } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } else {
@@ -2014,7 +2017,7 @@ const carWashEncounter = () => {
               if (distance <= 10 ) {
                 println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
 
-                pressEnter('deat-texa');
+                pressEnter('deat-1');
               } else if (distance > 10 ) {
                 policeCaughtWashing = false;
                 carLootTable();
@@ -2032,7 +2035,7 @@ const carWashEncounter = () => {
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
               if (distance <= 10 ) {
                 println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
-                pressEnter('deat-texa');
+                pressEnter('deat-1');
               } else if (distance > 10 ) {
                 policeCaughtWashing = false; 
                 carLootTable();
@@ -2056,7 +2059,7 @@ const carWashEncounter = () => {
               if (distance <= 10 ) {
                 println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
 
-                pressEnter('deat-texa');
+                pressEnter('deat-1');
               } else if (distance > 10 ) {
                 policeCaughtWashing = false; 
 
