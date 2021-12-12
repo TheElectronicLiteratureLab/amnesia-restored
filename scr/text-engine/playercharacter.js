@@ -10,12 +10,14 @@ let turnMapOn = false;
 
 //Sunderland Hotel Flags and Variables
 let earlyLeave = false; //Checks to see if player leaves early in hotel tutorial.
-let tipBellboy = false; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
+let tipBellboy = true; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
 let isNaked = true;
 let firstNightmare = true;
 let nightmareCeleb = 'Disch';
 let nEntranceRoom = 'hote-room-8';
 let nightmareStair = false;
+let safeDeposit = false;
+
 
 //Death and Texas Flags and Variables
 let firingInjection = false; //false = firing squad, true = injection

@@ -20936,6 +20936,7 @@ const streets = {
     {
       id: 'hote-exit',
       coord: [],
+      streetExit: '',
       hasEntered: false,
       name: 'Sunderland Hotel Lobby',
       desc: `You exit the Sunderland with a feeling a POW must have when he cuts through the last strands of barbed wire separating him from freedom. It feels great to be a single faceless, nameless atom among the million others churning about in the grid of Manhattan's streets. It feels safe.`,
@@ -35005,7 +35006,7 @@ const streets = {
       exits: [],
     },
     {
-      id: 'subw-fast',
+      id: 'subway',
       coord: [100, 100],
       name: 'Subway Station',
       desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
@@ -35013,10 +35014,67 @@ const streets = {
         const room = getRoom(disk.roomId);
           room.enteredFrom = lastRoom.id;
           room.exits[0].id = room.enteredFrom;
-          console.log(room.enteredFrom);
+          
+      },
+      onBlock: () => {
+        if(prevInput === 'buy token' || prevInput === 'get token') {
+          if (playMon >= 1) {
+            playMon -= 1;
+            updateMon();
+            disk.inventory.push(
+              {
+                itemId: "token",
+                icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+                gif: '/img/gif/gif-subwaytoken-ingame.gif',
+                name: ["Subway Token", 'token', 'subway token'],
+                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                isTakeable: true,
+                isDroppable: true,
+                onUse: () => {
+                  console.log('Use the token!');
+                  if(disk.roomId === 'subway') {
+                    //let found = disk.inventory.find(el => el.itemId === 'token');
+                    //console.log(found);
+                    disk.inventory.splice(found);
+                    console.log(disk.inventory);
+                  } else {
+                    println(`You can't use that here! Try using it at a subway station.`);
+                  }
+                }
+              }
+            )
+          } else {
+            println(`You don't have enough money to ride the subway!`);
+          }
+
+        }
       },
       exits: [
         {dir: 'leave', id: '???'}
+      ],
+      items: [
+        {
+          itemId: "token",
+          icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+          gif: '/img/gif/gif-subwaytoken-ingame.gif',
+          name: ["Subway Token", 'token', 'subway token'],
+          desc: 'The brass NY Transit Authority token is about the size of a quarter.',
+          isTakeable: true,
+          isDroppable: true,
+          onUse: () => {
+            console.log('Use the token!');
+            if(disk.roomId === 'subway') {
+              document.getElementById('map-display').style.display = "block";
+              map.invalidateSize();
+              let found = disk.inventory.findIndex(el => el.itemId === 'token');
+              //console.log(found);
+              disk.inventory.splice(found);
+              console.log(disk.inventory);
+            } else {
+              println(`You can't use that here! Try using it at a subway station.`);
+            }
+          }
+        }
       ]
     },
     {
@@ -35044,85 +35102,5 @@ const streets = {
 
       ],
     },
-    {
-      id: 'lobb-revi-5',
-      name: '52nd Street Exit',
-      desc: `This is the 52nd Street Exit.`,
-      onEnter: () => {
-          const room = getRoom('hote-exit');
-
-          room.streetExit = '52-5'; 
-      },
-      onLook: () => {
-          println(`To either side of the exit are easy chairs. In one of them soneone has left a copy of the Daily News. Through the glass panels of the revolving doors, you can see the shifting lights of the evening traffic on 52nd Street and the occasional shadowy figure of a pedestrian walking past the hotel.`);
-      },
-      
-      items: [
-          {
-              itemId: 'dailynews',
-              name: 'Daily News',
-              desc: ``,
-              isTakeable: true,
-              isDroppable: true,
-              onLook: () => {
-                  println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
-                  // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you."
-              }
-          }
-      ],
-      exits: [
-          {dir: ['n', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
-          {dir: ['s', 'south', 'leave'], id: 'hote-exit'}, // exit building
-          {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
-          {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
-      ]
-  },// closes lobb-revi-5 room
-  {
-    id: 'lobb-revi-8',
-    name: '53rd Street Exit',
-    desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
-    onEnter: () => {
-        const room = getRoom('hote-exit');
-
-        room.streetExit = '53-5'; 
-    },
-    onLook: () => {
-        println(`Just outside the hotel a taxi has drawn up to the curb and the doorman is helping onload luggage from its trunk.`);
-    },
-    items: [
-        {
-            itemId: 'map',
-            name: 'map',
-            desc: `It is an accordion fold map printed on stiff paper. Parklands are indicated by fuchsia, the surrounding Hudson and East Rivers by a dark shade of the green favored by mentholated cigarettes, and the city itself by a tannish gray crisscrossed by a white mesh of streets and avenues. This, then, is the haystack in which you are the needle.`, // check what the colors are on the map that Wesley is designing and match them in the description. 
-            isTakeable: true,
-            onTake: () => {
-                println(`You take the map and slip it into your left hip pocket.`);
-            },
-            onDrop: () => {
-                println(`You shouldn't drop that. It might be important.`);
-            }
-        },
-        {
-           itemId: 'times',
-           name: ['times', 'New York Times', 'times newsspaper'],
-           desc: `You skim through the news and reviews and ads in the paper, looking always for some hint of who you are-- some special knowledge, some keenness of interest or hunger that would be a clue to the life you've forgotten. But all the news and reviews seem equally interesting and equally irrelevant. The baseball news evokes no sense of partisanship for one city's team more than another's. From reading through the financial pages, it seems pretty certain that you are not a banker or stockbroker, since there are many entire articles that make no sense to you at all. On the other hand, you do seem to know something about computers, to judge by your response to various ads for computer hardware and software.` 
-        }
-    ],
-    exits: [
-        {dir: ['n', 'north', 'leave'], id: 'hote-exit'}, // exit onto streets
-        {dir: ['s', 'south'], id: 'lobb-revi-7', block: 'The deposit boxes are closed at the moment.'}, // go to safe deposit boxes
-        {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
-        {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
-    ]
-},// closes lobb-revi-8 room
-{
-  id: 'test1',
-  name: 'This is a testing room',
-  desc: `please ignore`,
-  exits: [
-    {dir:'53', id: 'lobb-revi-8'},
-    {dir: '52', id: 'lobb-revi-5'}
-  ],
-}
   ]
 }

@@ -714,6 +714,9 @@ let callNum = (num) => {
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
+  if (item === undefined) {
+    item = getItemInInventory(clothes);
+  }
   console.log(item);
   addItem(item.itemId);
   const room = getRoom('hote-revi');
@@ -793,9 +796,24 @@ let wear = (clothes) => {
 // remove command
 let remove = (clothes) => {
   //let room = getRoom(disk.roomId);
-  let item = getItemInRoom(clothes, disk.roomId);
-  //console.log(item.itemId)
+  //let item = getItemInRoom(clothes, disk.roomId);
+  let item = getItemInInventory(clothes);
+  console.log(item.itemId)
   //dropItem(item.name[0]);
+
+/*  
+  let indexToRemove = disk.inventory.indexOf(item);
+  console.log(disk.inventory.slice(indexToRemove));
+  let clotheToRemove = disk.inventory.slice(indexToRemove);
+  disk.inventory.splice(indexToRemove, 1);
+  let room = getRoom(disk.roomId);
+  if (room.items === undefined) {
+    //disk.inventory.slice(indexToRemove)
+    room.items = clotheToRemove;
+  } else {
+    room.items.push(clothesToRemove[0]);
+  }
+*/
   
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
@@ -1086,7 +1104,7 @@ const jumpOut = (prep, winJumpOut) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = streets.rooms; //set variable to loaded disk
+  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
@@ -1192,7 +1210,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
 //spawn tenement function
-/* function spawnTenement() { 
+function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
   const exitedFrom = getRoom('hote-exit');
   const enteredStreets = getRoom(exitedFrom.streetExit); //get the room where they entered the streets
@@ -1238,7 +1256,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
         }
 
 };
-*/
+
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
 
@@ -2015,7 +2033,7 @@ let commands = [
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
       goDir(str);
     },
-    talk: args => talkToOrAboutX(args[0], args[1]),
+    //talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1]),
     jump: args => jumpOut(args[0], args[1])
