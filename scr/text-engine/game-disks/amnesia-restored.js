@@ -1,11 +1,11 @@
 const amnesiaRestored = {
-  roomId: 'lobb-1', // Set this to the ID of the room you want the player to start in.
+  roomId: 'amne-intr', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
       id: 'titl-scre',
       coord: [100, 100],
-      name: 'AMNESIA: RESTORED',
+      name: 'AMNESIA : RESTORED',
       desc: '',
       onEnter: () => {/*
         document.getElementById('map-button').style.display = "none";
@@ -19,9 +19,15 @@ const amnesiaRestored = {
     },
     {
       id: 'amne-intr', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
-      name: '', // Displayed each time the player enters the room.
+      coord: [100, 100],
+      name: 'AMNESIA : RESTORED', // Displayed each time the player enters the room.
       desc: '',
       onEnter: () => {
+        document.getElementById('map-button').style.display = "none";
+        document.getElementById('address-book-button').style.display = "none";
+        document.getElementById('inventory-button').style.display = "none";
+        document.getElementById('save-button').style.display = "none";
+        document.getElementById('game-ui-bar').style.display = "none";
         playerC.dScore = 0;
         playerC.cScore = 0;
         playerC.sScore = 0;
@@ -60,9 +66,9 @@ const amnesiaRestored = {
         document.getElementById("output").innerHTML = "";
         println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The ELL', "introSequence");
 
-        println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwell\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
+        println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwell\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
-        println("Special Thanks: Washington State University Vancouver, Greg, Sarah, Holly", "introSequence");
+        println("Special Thanks: Washington State University Vancouver, Greg , Sarah", "introSequence");
         pressEnter('hote-room-1');
       },
       exits: [],
@@ -475,7 +481,7 @@ const amnesiaRestored = {
             println("You look through the brochure and think its really nicely designed and laid out.");
           },
           onTake: () => {
-            //println(`You take it but don't read it.`);
+            println(`You took the brochure.`);
             numbers.push(
               {number: '555-1188', roomid: 'phone-9', contactName: 'Roe & Harpmeister'},
               {number: '555-7656', roomid: 'phone-10', contactName: `Rolo's Pizzeria`},
@@ -4722,7 +4728,7 @@ const amnesiaRestored = {
             itemId: 'jeans',
             icon: '/img/gif/gif-clothinglevis-ingame.gif',
             gif: '/img/gif/gif-clothinglevis-ingame.gif',
-            name: `Levi's Jeans`,
+            name: [`Levi's Jeans`],
             desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
             isDroppable: true,
             isTakeable: true,
@@ -4731,7 +4737,7 @@ const amnesiaRestored = {
             itemId: 'tshirt',
             icon: '/img/gif/gif-clothingtshirt-ingame.gif',
             gif: '/img/gif/gif-clothingtshirt-ingame.gif',
-            name: 'T-Shirt',
+            name: ['T-Shirt'],
             desc: `It is a gray teeshirt that has faded to a shade of off white.`,
             isDroppable: true,
             isTakeable: true,
@@ -4740,7 +4746,7 @@ const amnesiaRestored = {
             itemId: 'sneakers',
             icon: '/img/gif/gif-clothingadidas-ingame.gif',
             gif: '/img/gif/gif-clothingadidas-ingame.gif',
-            name: 'Sneakers',
+            name: ['Sneakers'],
             desc:`The well-worn sneakers are made by Adidas.`,
             isDroppable: true,
             isTakeable: true,
@@ -4749,7 +4755,7 @@ const amnesiaRestored = {
             itemId: 'addressbook',
             icon: '/img/gif/gif-addressbook-ingame.gif',
             gif: '/img/gif/gif-addressbook-ingame.gif',
-            name: 'Address Book',
+            name: ['Address Book'],
             desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
             onUse: () => {
