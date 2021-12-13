@@ -6566,6 +6566,115 @@ const amnesiaRestored = {
 
 
         /*******************************/
+       /*        PrincetonClub        */
+      /*******************************/
+      {
+        id: 'prin-club-1',
+        coord: [15.390, -6.546],
+        name: 'The Princeton Club',
+        desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the Club's Board of Directors on the subject of the dangers of creeping seediness.`,
+        onEnter: () => {
+          pressEnter('prin-club-2');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-2',
+        coord: [],
+        name: '',
+        desc: `Surely, such a venerable institution should not be allowed to sag into such a state of shabbiness. Perhaps contributions should be solicited for a Redecorating Fund. Just as you’ve begun mentally to frame this appeal, the doorman asks you what your business is. You explain that you believe yourself to be a member.`,
+        onEnter: () => {
+          pressEnter('prin-club-3');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-3',
+        coord: [],
+        name: '',
+        desc: `He assures you that he has an infallible memory for faces and that you are not.  you are not. You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
+        onEnter: () => {
+          pressEnter('prin-club-4');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-4',
+        coord: [],
+        name: '',
+        desc: `You feel as though you’d been expelled from the university on the first day of your freshman year: it was a very brief career.`,
+        onEnter: () => {
+          pressEnter(`prin-club-5`);
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-5',
+        coord: [],
+        name: '',
+        desc: `“John Cameron!” \n\nYou look round to see who has called you in that deep, cracked voice. She calls again and you spot her, an immense woman wearing layer upon layer of dirty rags. She is sitting on the sidewalk across the street from the Princeton Club, surrounding by shopping bags.`,
+        onEnter: () => {
+          pressEnter('prin-club-6');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-6',
+        coord: [],
+        name: '',
+        desc: `You cross the street and ask the woman how she comes to know you. “We were lovers, honey,” she confides with a sly smile. “Don’t you remember?” \n“I’m afraid I don’t remember anything,” you reply. “I have amnesia.”`,
+        onEnter: () => {
+          pressEnter('prin-club-7');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-7',
+        coord: [],
+        name: '',
+        desc: `She confesses that she knows about your amnesia, for two weeks earlier you’d had a long conversation with her about it right here at her post of duty. At that time, you’d given her a letter that she was to give you if you ever turned up again--as you have now, thanks to the matchbook from the Princeton Club.`,
+        onEnter: () => {
+          pressEnter('prin-club-8')
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-8',
+        coord: [],
+        name: '',
+        desc: `After some minutes of polite conversation about the perils and pleasures of being destitute in the world’s greatest city, you take your leave of the shopping bag lady and open the letter you’d written to yourself:`,
+        onEnter: () => {
+          pressEnter('prin-club-9');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-9',
+        coord: [],
+        name: '',
+        desc: `“Dear Self,” it says. “In case you haven’t been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel According to John. “In the beginning was the word, and the Word was with God.” Get it? With God. You will need what’s in that box. So get it. Fond regards from Guess Who.”`,
+        onEnter: () => {
+          pressEnter('prin-club-10');
+        },
+        exits: []
+      },
+      {
+        id: 'prin-club-10',
+        coord: [],
+        name: '',
+        desc: `Congratulating yourself on your foresight you tear up the note and throw it away. Only you will have the password.`,
+        onEnter: () => {
+          pressEnter('43-5');
+        },
+        exits: []
+      },
+        /*******************************/
+       /*     Return to Sunderland    */
+      /*******************************/
+
+
+
+        /*******************************/
        /*        Restaurants          */
       /*******************************/
 
@@ -27503,7 +27612,7 @@ const amnesiaRestored = {
    /*********************/
     {
       id: 'hote-exit',
-      coord: [],
+      coord: [32.787, -6.877],
       streetExit: '',
       hasEntered: false,
       name: 'Sunderland Hotel Lobby',
@@ -27515,7 +27624,7 @@ const amnesiaRestored = {
     },
     {
       id: 'hote-exit1',
-      coord: [],
+      coord: [32.787, -6.877],
       name: 'Sunderland Hotel Lobby',
       desc: `Here it is already night time, but the sidewalks are still teeming with people, and the streets are heavily trafficked, and bright with the sum-total wattage of so many streetlights, headlights, and lighted signs. In the windows of the darkened shopfronts, you see yourself mirrored and feel an utterly inappropiate glow of vanity.
             
@@ -27528,17 +27637,18 @@ const amnesiaRestored = {
     },
     {
       id: 'hote-exit2',
-      coord: [],
+      coord: [32.787, -6.877],
       name: 'Sunderland Hotel Lobby',
       desc: `As you approach Fifth Avenue, the brief buoyancy of feeling free gives way to ordinary what-now anxieties. You've got no money, no credit card, nowhere to sleep (you certainly can't stay on at the Sunderland), and no visible means of support.`,
       onEnter: () => {
+        phoneMarkerGenerator();
         pressEnter('hote-exit3');
       },
       exits: []
     },
     {
       id: 'hote-exit3',
-      coord: [],
+      coord: [32.787, -6.877],
       name: 'Sunderland Hotel Lobby',
       desc: `At the corner you watch a blind man with a tin cup slowly progress down Fifth Avenue, rattling coins at the milling pedestrians. Most of them are too caught up in their own business even to notice the blind man. A few do see him and veer widely around him, as though fearing the rattle of his cup
             
@@ -28165,12 +28275,15 @@ const amnesiaRestored = {
       name: 'W. 43rd St. and 5th Ave.',
       desc: `Here is the Princeton Club - distinctly a members only institution.`,
       isStreet: true,
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '44-5'},
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['Princeton', 'Health', 'Club',], id: '????'},
+        {dir: ['Princeton Club', 'Princeton', 'Health', 'Club',], id: 'prin-club-1'},
       ]
     },
     {
@@ -41469,7 +41582,7 @@ const amnesiaRestored = {
     },
     {
       id: 'xStreet',
-      coord: [],
+      coord: [100, 100],
       name: '',
       desc: `A confused-looking young man with a sparse moustache comes up to you.`,
       onEnter: () => {
@@ -41574,6 +41687,15 @@ const amnesiaRestored = {
       exits: [],
     },
     {
+      id: 'test',
+      coord: [0, 0],
+      name: 'TEST ROOM',
+      desc: `I'm a dumby room!`,
+      exits: [
+        {dir: 'leave', dir: "43-5"}
+      ]
+    },
+    {
       id: 'subway',
       coord: [100, 100],
       name: 'Subway Station',
@@ -41673,46 +41795,46 @@ const amnesiaRestored = {
   ],
   characters: [
         {
-            name: ['clerk', 'registration clerk', 'desk clerk'],
-            roomId: 'lobb-revi-6',
-            desc: '',
-            onLook: () => {
-                const clerk = getCharactersInRoom('lobb-revi-6');
-                println(`The desk clerk is a blond young man, probably in his mid-20's, who has gone prematurely bald and tries to disguise the fact by combing his side hair over the bald spot. It only makes his baldness more noticeable and pathertic. Is there (you wonder) some evolutionary reason for baldness? If not, why do genes do it?`);
+          name: ['clerk', 'registration clerk', 'desk clerk'],
+          roomId: 'lobb-revi-6',
+          desc: '',
+          onLook: () => {
+              const clerk = getCharactersInRoom('lobb-revi-6');
+              println(`The desk clerk is a blond young man, probably in his mid-20's, who has gone prematurely bald and tries to disguise the fact by combing his side hair over the bald spot. It only makes his baldness more noticeable and pathertic. Is there (you wonder) some evolutionary reason for baldness? If not, why do genes do it?`);
 
-                if(prevInput === `I don't know`){
-                    println(`That's all right-- neither does Science.`);
-                }
-            },
-            onTalk: () => println(`"Hello, Mr. Cameron. How may I help you?`),
+              if(prevInput === `I don't know`){
+                  println(`That's all right-- neither does Science.`);
+              }
+          },
+          onTalk: () => println(`"Hello, Mr. Cameron. How may I help you?`),
 
-            topics: [
-                {
-                    option: 'Ask clerk about **WIFE**',
-                    line: `"I thought her a very attractive woman and quite smartly dressed. Of course, I did feel suspicious, having earlier spoken to the young lady, Miss Dudley, who had reserved the All-Faith Chapel for your wedding and whom I understood to be your intended bride. Of course, none of this is my business."`,
-                },
-                {
-                    option: 'Ask clerk about **SAFE** deposit box.',
-                    line: `"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`, 
-                    // IF 24 hours has past change line to `"I can assure you that no one has had access to your box since you last locked it yourself. But if you would like to check for yourself, just step this way."`
-                    onBlock: () => {
-                        if(prevInput === 'follow clerk') {
-                            enterRoom('lobb-revi-7');
-                        }
-                    }  
-                },
-                {
-                    option: 'Ask clerk about **MANAGER**.',
-                    line: `"I can assure you, Mr. Cameron, that the manager can tell you no more than I have. Whatever is in your safe deposit box will still be there tomorrow or any later day. Be sure, in the meantime, not to forget your password."
-                    
-                    At the other end of the counter, the bell captain signals urgently to the desk clerk, who goes off with a final cringe of apology.`,
-                    prereqs: ['safe']
-                },
-                {
-                    option: 'Ask clerk about **ROOM**.',
-                    line: `"Your room is number 1502, sir."`
-                }
-           ],
-        },
+          topics: [
+              {
+                  option: 'Ask clerk about **WIFE**',
+                  line: `"I thought her a very attractive woman and quite smartly dressed. Of course, I did feel suspicious, having earlier spoken to the young lady, Miss Dudley, who had reserved the All-Faith Chapel for your wedding and whom I understood to be your intended bride. Of course, none of this is my business."`,
+              },
+              {
+                  option: 'Ask clerk about **SAFE** deposit box.',
+                  line: `"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`, 
+                  // IF 24 hours has past change line to `"I can assure you that no one has had access to your box since you last locked it yourself. But if you would like to check for yourself, just step this way."`
+                  onBlock: () => {
+                      if(prevInput === 'follow clerk') {
+                          enterRoom('lobb-revi-7');
+                      }
+                  }  
+              },
+              {
+                  option: 'Ask clerk about **MANAGER**.',
+                  line: `"I can assure you, Mr. Cameron, that the manager can tell you no more than I have. Whatever is in your safe deposit box will still be there tomorrow or any later day. Be sure, in the meantime, not to forget your password."
+                  
+                  At the other end of the counter, the bell captain signals urgently to the desk clerk, who goes off with a final cringe of apology.`,
+                  prereqs: ['safe']
+              },
+              {
+                  option: 'Ask clerk about **ROOM**.',
+                  line: `"Your room is number 1502, sir."`
+              }
+          ],
+      },
     ],
 };

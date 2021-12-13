@@ -105,6 +105,7 @@ let go = () => {
     }
 
     const dir = getName(exit.dir).toUpperCase();
+    console.log('Get Exit Ids: ' + dir);
     // include room name if player has been there before
     const directionName = rm.visits > 0
       ? `${dir} - ${rm.name}`
