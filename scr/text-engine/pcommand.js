@@ -118,9 +118,7 @@ let go = () => {
 // find the exit with the passed direction in the given list
 // string, array -> exit
 let getExitDir = (dir, exits) => exits.find(exit =>
-  Array.isArray(exit.dir)
-    ? exit.dir.includes(dir)
-    : exit.dir === dir
+  Array.isArray(exit.dir) ? exit.dir.includes(dir) : exit.dir === dir
 );
 
 // go the passed direction
@@ -136,7 +134,9 @@ function goDir(dir) {
 
   const nextRoom = getExitDir(dir, exits);
 
+  
   if (!nextRoom) {
+    
     println(`There is no exit in that direction.`);
     return;
   }
@@ -145,11 +145,10 @@ function goDir(dir) {
     println(nextRoom.block);
     return;
   }
-
+  console.log('Room trying to enter: ' + nextRoom.id);
   enterRoom(nextRoom.id);
 
   //updatePlayerStats();
-
 
 }
 //testing some things to further parse input
