@@ -4738,12 +4738,29 @@ const amnesiaRestored = {
         disk.inventory.push(
           {
             itemId: 'canvasbag',
-            icon: '/img/gif/gif-gymbag-ingame.gif',
+            icon: '/img/png/image-gymbag-thumbnail.png',
             gif: '/img/gif/gif-gymbag-ingame.gif',
             name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
             desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
             isTakeable: true,
-            isDroppable: true,
+            firstLook: false,
+            onLook: () => {
+              let item = getItemInInventoryById('canvasbag');
+              if (item.firstLook === false) {
+                println('On closer inspection you find a matchbook.');
+                disk.inventory.push(
+                  {
+                    itemId: 'matchbook',
+                    icon: 'img/png/image-matches-thumbnail.png',
+                    gif: 'img/gif/gif-matches-ingame.gif',
+                    name: ['Matchbook', 'matches', 'matches'],
+                    isTakeable: true,
+                    desc: `The matchbook is empty and you wonder why you've kept it. It is white with an orange coat of arms. Written below that: "Princeton Club, 15 W. 43 Street.`
+                  }
+                )
+              }
+
+            }
           },
           {
             itemId: 'jeans',
