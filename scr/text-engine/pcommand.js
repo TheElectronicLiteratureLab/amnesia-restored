@@ -2080,124 +2080,124 @@ const carWashEncounter = () => {
 
 
 //x street indexer encounter functionality
-const xStreetEvent = () => {
-  const i1 = Math.floor(Math.random() * 31); //need number 0-30
-  const i2 = Math.floor(Math.random() * 15);//need number 0-14
-  //get an integer from a string within the numbers array based on the random number above
-  const a = parseInt(xStreetNumber[i1].name); 
-  if (a === 0) { //if the integer is zero
-    encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
-  } else { //if the integer is anything else
-     encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
-  } 
-  encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
-  encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
-  xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
-  if(xStreetC === 1) { //if that last digit is 1
-    xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
-  } else if (xStreetC === 2) { //if that last digit is 2
-    xStreetD = `${encounterAnswer}nd`; //provide another answer to the player based on proper suffix
-  } else if (xStreetC === 3) { //if that last digit is 3
-    xStreetD = `${encounterAnswer}rd` //provide another answer to the player based on proper suffix
-  } else { //since all the other digits have the same suffix 
-    xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
-  };
+// const xStreetEvent = () => {
+//   const i1 = Math.floor(Math.random() * 31); //need number 0-30
+//   const i2 = Math.floor(Math.random() * 15);//need number 0-14
+//   //get an integer from a string within the numbers array based on the random number above
+//   const a = parseInt(xStreetNumber[i1].name); 
+//   if (a === 0) { //if the integer is zero
+//     encounterStreetNumber = Math.floor(Math.random() * 199) + 1; // set the encounter street number to random number in that range
+//   } else { //if the integer is anything else
+//      encounterStreetNumber = Math.floor(Math.random() * ( ( (a + 99) - a) + 1 ) + a ); //set the encounter street number to a random number in that proper indexes range
+//   } 
+//   encounterStreetName = xStreetNameComplete[i2]; //set the string value at that index to a variable
+//   encounterAnswer = xStreetNumber[i1].value[i2]; //get the answer to the encounter based on the random numbers above
+//   xStreetC = encounterStreetNumber % 10; //find the last digit of the encounter street number
+//   if(xStreetC === 1) { //if that last digit is 1
+//     xStreetD = `${encounterAnswer}st`; //provide another answer to the player based on proper suffix
+//   } else if (xStreetC === 2) { //if that last digit is 2
+//     xStreetD = `${encounterAnswer}nd`; //provide another answer to the player based on proper suffix
+//   } else if (xStreetC === 3) { //if that last digit is 3
+//     xStreetD = `${encounterAnswer}rd` //provide another answer to the player based on proper suffix
+//   } else { //since all the other digits have the same suffix 
+//     xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
+//   };
 
-  const betteApt = getRoom('nobe-12');
-  const dameRoom = getRoom('dame-1');
-  const dame = getRoom('dame-8');
-  const room = getRoom('xStreet-6'); 
-  const chance2 = Math.floor(Math.random() * 100) + 1 ;
-  const wackyRoom = getRoom('wacky-6');
-  const curRoom = getRoom(disk.roomId);
+//   //const betteApt = getRoom('nobe-12');
+//   const dameRoom = getRoom('dame-1');
+//   const dame = getRoom('dame-8');
+//   const room = getRoom('xStreet-6'); 
+//   const chance2 = Math.floor(Math.random() * 100) + 1 ;
+//   const wackyRoom = getRoom('wacky-6');
+//   const curRoom = getRoom(disk.roomId);
   
-  if(!betteApt.hasEntered) {
-  room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+//   if(!betteApt.hasEntered) {
+//   room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
 
-  const xStreet1 = getRoom('xStreet');
-  const xStreet2 = getRoom('xStreet-2');
-  const xStreet3 = getRoom('xStreet-3');
-  const xStreet4 = getRoom('xStreet-4');
-  const xStreet5 = getRoom('xStreet-5');
-  const xStreet6 = getRoom('xStreet-6');
+//   const xStreet1 = getRoom('xStreet');
+//   const xStreet2 = getRoom('xStreet-2');
+//   const xStreet3 = getRoom('xStreet-3');
+//   const xStreet4 = getRoom('xStreet-4');
+//   const xStreet5 = getRoom('xStreet-5');
+//   const xStreet6 = getRoom('xStreet-6');
 
-  const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
+//   const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
 
-  for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
-    xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
-    xStreetArray[i].name = curRoom.name;
-  };
+//   for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
+//     xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+//     xStreetArray[i].name = curRoom.name;
+//   };
 
-  enterRoom('xStreet');
-  } else if (betteApt.hasEntered && !dame.hasEntered) {
-  dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't ever know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
+//   enterRoom('xStreet');
+//   } else if (betteApt.hasEntered && !dame.hasEntered) {
+//   dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't ever know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
 
-  const dame1 = getRoom('dame-1');
-  const dame2 = getRoom('dame-2');
-  const dame3 = getRoom('dame-3');
-  const dame4 = getRoom('dame-4');
-  const dame5 = getRoom('dame-5');
-  const dame6 = getRoom('dame-6');
-  const dame7 = getRoom('dame-7');
-  const dame8 = getRoom('dame-8');
-  const dame9 = getRoom('dame-9');
-  const dame10 = getRoom('dame-10');
-  const dame11 = getRoom('dame-11');
-  const dame12 = getRoom('dame-12');
-  const dame13 = getRoom('dame-13');
-  const dame14 = getRoom('dame-14');
+//   const dame1 = getRoom('dame-1');
+//   const dame2 = getRoom('dame-2');
+//   const dame3 = getRoom('dame-3');
+//   const dame4 = getRoom('dame-4');
+//   const dame5 = getRoom('dame-5');
+//   const dame6 = getRoom('dame-6');
+//   const dame7 = getRoom('dame-7');
+//   const dame8 = getRoom('dame-8');
+//   const dame9 = getRoom('dame-9');
+//   const dame10 = getRoom('dame-10');
+//   const dame11 = getRoom('dame-11');
+//   const dame12 = getRoom('dame-12');
+//   const dame13 = getRoom('dame-13');
+//   const dame14 = getRoom('dame-14');
 
-  const dameArray = [dame1,dame2,dame3,dame4,dame5,dame6,dame7,dame8,dame9,dame10,dame11,dame12,dame13,dame14];
+//   const dameArray = [dame1,dame2,dame3,dame4,dame5,dame6,dame7,dame8,dame9,dame10,dame11,dame12,dame13,dame14];
 
-  for (let i = 0; i < dameArray.length; i++) { //iterate through the dame rooms
-    dameArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
-    dameArray[i].name = curRoom.name; //set all the names
-  };
-
-
-  enterRoom('dame-1');
-  } else if (dameRoom.hasEntered) {
-    room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
-
-  const xStreet1 = getRoom('xStreet');
-  const xStreet2 = getRoom('xStreet-2');
-  const xStreet3 = getRoom('xStreet-3');
-  const xStreet4 = getRoom('xStreet-4');
-  const xStreet5 = getRoom('xStreet-5');
-  const xStreet6 = getRoom('xStreet-6');
-
-  const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
-
-  for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
-    xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
-    xStreetArray[i].name = curRoom.name;
-  };
-
-  enterRoom('xStreet');
-  } else if (chance2 <= 3 && !wackyEncounter) {
-    wackyRoom.desc = `'Thanks, Johnny,' he says, turning off his equipment and wiping his brow with a handkerchief embroidered 'WW.' 'You got any idea where I could find ${encounterStreetNumber} ${encounterStreetName}? It's my nephew's house and I'm supposed to bring him this little cable car I got in San Francisco.`
+//   for (let i = 0; i < dameArray.length; i++) { //iterate through the dame rooms
+//     dameArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+//     dameArray[i].name = curRoom.name; //set all the names
+//   };
 
 
-    const wacky1 = getRoom('wacky');
-  const wacky2 = getRoom('wacky-2');
-  const wacky3 = getRoom('wacky-3');
-  const wacky4 = getRoom('wacky-4');
-  const wacky5 = getRoom('wacky-5');
-  const wacky6 = getRoom('wacky-6');
-  const wacky7 = getRoom('wacky-7');
-  const wacky8 = getRoom('wacky-8');
-  const wacky9 = getRoom('wacky-9');
+//   enterRoom('dame-1');
+//   } else if (dameRoom.hasEntered) {
+//     room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
 
-  const wackyArray = [wacky1,wacky2,wacky3,wacky4,wacky5,wacky6,wacky7,wacky8,wacky9,];
+//   const xStreet1 = getRoom('xStreet');
+//   const xStreet2 = getRoom('xStreet-2');
+//   const xStreet3 = getRoom('xStreet-3');
+//   const xStreet4 = getRoom('xStreet-4');
+//   const xStreet5 = getRoom('xStreet-5');
+//   const xStreet6 = getRoom('xStreet-6');
 
-  for (let i = 0; i < wackyArray.length; i++) { //iterate through the xStreet rooms
-    wackyArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
-    wackyArray[i].name = curRoom.name;
-  };
-    //wacky wanderer
-    enterRoom('wacky');
-  }
-};
+//   const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
+
+//   for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
+//     xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+//     xStreetArray[i].name = curRoom.name;
+//   };
+
+//   enterRoom('xStreet');
+//   } else if (chance2 <= 3 && !wackyEncounter) {
+//     wackyRoom.desc = `'Thanks, Johnny,' he says, turning off his equipment and wiping his brow with a handkerchief embroidered 'WW.' 'You got any idea where I could find ${encounterStreetNumber} ${encounterStreetName}? It's my nephew's house and I'm supposed to bring him this little cable car I got in San Francisco.`
+
+
+//     const wacky1 = getRoom('wacky');
+//   const wacky2 = getRoom('wacky-2');
+//   const wacky3 = getRoom('wacky-3');
+//   const wacky4 = getRoom('wacky-4');
+//   const wacky5 = getRoom('wacky-5');
+//   const wacky6 = getRoom('wacky-6');
+//   const wacky7 = getRoom('wacky-7');
+//   const wacky8 = getRoom('wacky-8');
+//   const wacky9 = getRoom('wacky-9');
+
+//   const wackyArray = [wacky1,wacky2,wacky3,wacky4,wacky5,wacky6,wacky7,wacky8,wacky9,];
+
+//   for (let i = 0; i < wackyArray.length; i++) { //iterate through the xStreet rooms
+//     wackyArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+//     wackyArray[i].name = curRoom.name;
+//   };
+//     //wacky wanderer
+//     enterRoom('wacky');
+//   }
+// };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
 
 
