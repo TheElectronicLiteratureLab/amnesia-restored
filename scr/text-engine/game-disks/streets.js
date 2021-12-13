@@ -21659,7 +21659,7 @@ const streets = {
         {dir: 'south', id: '46-5'},
         {dir: 'east', id: '47-madi'},
         {dir: 'west', id: '47-amer'},
-        {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: 'You have no reason to go there.'}
+        {dir: [`brentano's`, `brentano`, `brentanos`], id: 'bren', block: 'You have no reason to go there.'}
       ]
     },
     {
