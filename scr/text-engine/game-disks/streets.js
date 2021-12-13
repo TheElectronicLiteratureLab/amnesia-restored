@@ -21629,7 +21629,7 @@ const streets = {
         {dir: 'south', id: '44-5'},
         {dir: 'east', id: '45-madi'},
         {dir: 'west', id: '45-amer'},
-        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
+        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????', block: `You have no reason to go there.`}
       ]
     },
     {
