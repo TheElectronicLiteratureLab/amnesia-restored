@@ -20,7 +20,7 @@ const phoneCalls = {
         {
             id: 'phone-1-2',
             name: 'Front Desk',
-            desc: `"Hey , Buddy, this is not an information service you're talking to here.`,
+            desc: `"Hey, Buddy, this is not an information service you're talking to here.`,
             onBlock: () =>{
                 if(prevInput === 'yes'){
                     enterRoom('phone-1-3');
