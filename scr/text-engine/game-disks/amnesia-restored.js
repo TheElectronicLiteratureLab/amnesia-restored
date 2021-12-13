@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'lobb-revi', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -64,11 +64,11 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The ELL', "introSequence");
+        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Electronic Literature Lab', "introSequence");
 
-        println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwell\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
+        println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwall\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
-        println("Special Thanks: Washington State University Vancouver, Greg , Sarah", "introSequence");
+        println("Special Thanks: Washington State University Vancouver, Greg Feeley and Sarah Smith", "introSequence");
         pressEnter('hote-room-1');
       },
       exits: [],
@@ -247,7 +247,7 @@ const amnesiaRestored = {
       onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
-        //document.getElementById('game-ui-bar').style.display = "none";
+        document.getElementById('game-ui-bar').style.display = "grid";
         addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
