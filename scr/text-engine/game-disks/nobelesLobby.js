@@ -12,11 +12,14 @@ const nobelesLobby = {
                     enterRoom('nobe-3');
                 }
             },
+            exits: [
+                {dir: ['apartment'], id: 'nobe-2'},
+            ]
         },
         {
             id: 'nobe-2',
             name: '',
-            desc: `You enter her apartment and Bette follows you inside. “Welcome home. Now, why don’t you sit down and ask all those questions you’re obviously bursting with. But first, do you want a drink?”`,
+            desc: `You enter her apartment and Bette follows you inside. “Welcome home. Now, why don't you sit down and ask all those questions you're obviously bursting with. But first, do you want a drink?”`,
             exits: [
                 {dir: ['sit'], id: 'nobe-4'},
                 {dir: ['yes','please'], id: 'nobe-5'},
@@ -26,7 +29,7 @@ const nobelesLobby = {
         {
             id: 'nobe-3',
             name: '',
-            desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There’s no point standing in the hall to talk. Sit down and ask all those questions you’re obviously bursting with. But first do you want a drink?” You enter the apartment.`,
+            desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There's no point standing in the hall to talk. Sit down and ask all those questions you’re obviously bursting with. But first do you want a drink?” You enter the apartment.`,
             exits: [
                 {dir: ['sit'], id: 'nobe-4'},
                 {dir: ['yes','please'], id: 'nobe-5'},
@@ -45,7 +48,7 @@ const nobelesLobby = {
                 {
                     itemId: 'apartment',
                     name: ['Apartment','Room','apartment','room'],
-                    desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+                    desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
                     onLook: () => {
                         enterRoom('nobe-7');
                     },
@@ -55,12 +58,12 @@ const nobelesLobby = {
         {
             id: 'nobe-5',
             name: '',
-            desc: `“I can’t offer more than a glass of wine, I’m afraid,” Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you’ve taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it.”`,
+            desc: `“I can't offer more than a glass of wine, I'm afraid,” Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you’ve taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it.”`,
             items: [
                 {
                     itemId: 'apartment',
                     name: ['Apartment','Room','apartment','room'],
-                    desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+                    desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
                     onLook: () => {
                         enterRoom('nobe-7');
                     }
@@ -124,7 +127,7 @@ const nobelesLobby = {
             name: '',
             desc: ``,
             onEnter: () => {
-                println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.
+                println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.\n
                 “It’s the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle,” that’s the name of it. You know what that means, don’t you? Your memories aren’t lost, they’re just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you’re very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
                 pressEnter('nobe-12');
             },
@@ -132,36 +135,38 @@ const nobelesLobby = {
 
 //Place where player can sleep nobe-15 and nobe-19 goes to nobe-20 if the player has the floppy disk or nobe-21 if the player does not have the floppy disk, player can sleep in nobe-27 and goes to nobe-35, as well as in nobe-38 which loops back to nobe-27 after they sleep.
 
+//Counter not working properly, need to troubleshoot
 
         {
             id: 'nobe-12',
             name: '',
-            desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large **window** with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+            desc: ``,
             hasEntered: false,
             onEnter: () => {
-                const room = getRom(disk.roomId);
+                const room = getRoom(disk.roomId);
 
                 if(room.hasEntered === false ) {
                     room.hasEntered === true;
                     betteCounter = 0;
                 }
-                reenableInput();
+
             },
+        
             onBlock: () => {
                 if(prevInput){
-                    betteCounter++
-                }
+                    betteCounter++;
+                    console.log('+1');
+                }else{}
                 if(betteCounter === 3){
                     enterRoom('nobe-19')
-                }else{
-                    if(prevInput === 'open blinds'){
-                        enterRoom('nobe-13');
-                    }else if( prevInput === 'kiss bette'){
-                        enterRoom('nobe-17');
+                }else if(prevInput === 'open blinds'){
+                    enterRoom('nobe-13');
+                }else if( prevInput === 'kiss bette'){
+                    enterRoom('nobe-17');
                     }
-                }
             },
             items: [
+                //open sofa not working
                 {
                     itemId: 'sofa-bed',
                     name: [`sofa`, `sofabed`, `sofa-bed`],
@@ -180,6 +185,7 @@ const nobelesLobby = {
                 },
             ],
         },
+        //Should I cut having to open the blinds? It might be best to do this rather than try and get around the open command. Opening blinds isn't intuitive.
         {
             id: 'nobe-13',
             name: '',
@@ -250,8 +256,12 @@ const nobelesLobby = {
             hasBed: true,
             onEnter: () => {
                 slept();
-                playFat = 100;
-            }
+                if(getItemInInventory === 'floppy disk'){
+                    enterRoom('nobe-20');
+                }else{
+                    enterRoom('nobe-21');
+                }
+            },
         },
         {
             id: 'nobe-20',
@@ -335,7 +345,7 @@ const nobelesLobby = {
                 numbers.push(
                     {number:'555-0042', roomid:'phone-29', contactName: 'Bette'},);
 
-                    const room = getRom(disk.roomId);
+                    const room = getRoom(disk.roomId);
 
                     if(room.hasEntered === false ) {
                         room.hasEntered === true;
@@ -804,7 +814,7 @@ const nobelesLobby = {
     characters: [
         {
             name: ['Bette', 'bette'],
-            roomId: ['nobe-12', 'nobe-38'],//can this be an array?
+            roomId: 'nobe-12',//can this be an array?
             topics: [
                 {
                     option: '**PICTURE**',
