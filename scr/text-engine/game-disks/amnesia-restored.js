@@ -6566,7 +6566,7 @@ const amnesiaRestored = {
 
 
         /*******************************/
-       /*        PrincetonClub        */
+       /*        PRINCETON CLUB       */
       /*******************************/
       {
         id: 'prin-club-1',
@@ -6602,7 +6602,7 @@ const amnesiaRestored = {
         id: 'prin-club-4',
         coord: [],
         name: '',
-        desc: `You feel as though you’d been expelled from the university on the first day of your freshman year: it was a very brief career.`,
+        desc: `You feel as though you'd been expelled from the university on the first day of your freshman year: it was a very brief career.`,
         onEnter: () => {
           pressEnter(`prin-club-5`);
         },
@@ -6612,7 +6612,7 @@ const amnesiaRestored = {
         id: 'prin-club-5',
         coord: [],
         name: '',
-        desc: `“John Cameron!” \n\nYou look round to see who has called you in that deep, cracked voice. She calls again and you spot her, an immense woman wearing layer upon layer of dirty rags. She is sitting on the sidewalk across the street from the Princeton Club, surrounding by shopping bags.`,
+        desc: `"John Cameron!" \n\nYou look round to see who has called you in that deep, cracked voice. She calls again and you spot her, an immense woman wearing layer upon layer of dirty rags. She is sitting on the sidewalk across the street from the Princeton Club, surrounding by shopping bags.`,
         onEnter: () => {
           pressEnter('prin-club-6');
         },
@@ -6622,7 +6622,7 @@ const amnesiaRestored = {
         id: 'prin-club-6',
         coord: [],
         name: '',
-        desc: `You cross the street and ask the woman how she comes to know you. “We were lovers, honey,” she confides with a sly smile. “Don’t you remember?” \n“I’m afraid I don’t remember anything,” you reply. “I have amnesia.”`,
+        desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Dont you remember?" \n"I’m afraid I don't remember anything," you reply. "I have amnesia."`,
         onEnter: () => {
           pressEnter('prin-club-7');
         },
@@ -6652,7 +6652,7 @@ const amnesiaRestored = {
         id: 'prin-club-9',
         coord: [],
         name: '',
-        desc: `“Dear Self,” it says. “In case you haven’t been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel According to John. “In the beginning was the word, and the Word was with God.” Get it? With God. You will need what’s in that box. So get it. Fond regards from Guess Who.”`,
+        desc: `"Dear Self," it says. "In case you haven’t been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel According to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what’s in that box. So get it. Fond regards from Guess Who."`,
         onEnter: () => {
           pressEnter('prin-club-10');
         },
@@ -6687,7 +6687,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-2',
         name: '',
-        desc: `You enter her apartment and Bette follows you inside. “Welcome home. Now, why don’t you sit down and ask all those questions you’re obviously bursting with. But first, do you want a drink?”`,
+        desc: `You enter her apartment and Bette follows you inside. "Welcome home. Now, why don’t you sit down and ask all those questions you’re obviously bursting with. But first, do you want a drink?"`,
         exits: [
             {dir: ['sit'], id: 'nobe-4'},
             {dir: ['yes','please'], id: 'nobe-5'},
@@ -6697,7 +6697,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-3',
         name: '',
-        desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There’s no point standing in the hall to talk. Sit down and ask all those questions you’re obviously bursting with. But first do you want a drink?” You enter the apartment.`,
+        desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. "Come in," she insists. "There’s no point standing in the hall to talk. Sit down and ask all those questions you’re obviously bursting with. But first do you want a drink?" You enter the apartment.`,
         exits: [
             {dir: ['sit'], id: 'nobe-4'},
             {dir: ['yes','please'], id: 'nobe-5'},
@@ -6726,7 +6726,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-5',
         name: '',
-        desc: `“I can’t offer more than a glass of wine, I’m afraid,” Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you’ve taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it.”`,
+        desc: `"I can’t offer more than a glass of wine, I’m afraid," Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you’ve taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. "Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it."`,
         items: [
             {
                 itemId: 'apartment',
@@ -6741,7 +6741,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-6',
         name: '',
-        desc: ` You decline her offer, and together you sit down on a sofa piled high with pillows. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it.”`,
+        desc: ` You decline her offer, and together you sit down on a sofa piled high with pillows. "Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I’ve had to learn to believe it."`,
         items: [
             {
                 itemId: 'apartment',
@@ -6756,7 +6756,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-7',
         name: '',
-        desc: `Bette notices that the piano has captured your attention. “Isn’t it lovely?” she says. “It makes we wish I could play, but I can’t at all. And the terms of the sublet are that the piano is not to go into storage, so there it stands, my mute baby grand. Do you play?”`,
+        desc: `Bette notices that the piano has captured your attention. "Isn’t it lovely?" she says. "It makes we wish I could play, but I can’t at all. And the terms of the sublet are that the piano is not to go into storage, so there it stands, my mute baby grand. Do you play?"`,
         exits: [
             {dir: ['yes'], id: 'nobe-8'},
             {dir: ['no'], id: 'nobe-9'},
@@ -6768,7 +6768,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter: () => {
-            println(`“Wonderful! Play something, would you? I’d love to hear what my furniture sounds like.”`);
+            println(`"Wonderful! Play something, would you? I’d love to hear what my furniture sounds like."`);
             pressEnter('nobe-11');
         },
     },
@@ -6777,7 +6777,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter: () => {
-            println(`"How can you be sure of that? Maybe you can but the amnesia’s made you forget that you can. I’ll bet it’s like riding a bicycle, though. Try it!”`);
+            println(`"How can you be sure of that? Maybe you can but the amnesia’s made you forget that you can. I’ll bet it’s like riding a bicycle, though. Try it!"`);
             pressEnter('nobe-11');
         },
     },
@@ -6786,7 +6786,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter: () => {
-            println(`“Of course, with your amnesia you wouldn’t know until you actually try. Why don’t you try? I’ll bet it’s like riding a bicycle.”`);
+            println(`"Of course, with your amnesia you wouldn’t know until you actually try. Why don’t you try? I’ll bet it’s like riding a bicycle."`);
             pressEnter('nobe-11');
         },
     },
@@ -6795,8 +6795,8 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter: () => {
-            println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.
-            “It’s the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle,” that’s the name of it. You know what that means, don’t you? Your memories aren’t lost, they’re just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you’re very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
+            println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. "John!" Bette exclaims. "Do you know what that music is?" You assure her you have no idea.
+            "It’s the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle," that’s the name of it. You know what that means, don’t you? Your memories aren’t lost, they’re just buried deep inside of you." At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. "This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you’re very tired, the sofa folds out into a bed." Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
             pressEnter('nobe-12');
         },
     },
@@ -7379,7 +7379,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-53',
         name: '',
-        desc: `“Do you know that picture of you that’s on the dresser, the one with you looking so elegant against that dismal wallpaper in the abandoned building? Well, Ned was just packing up some of the clothes from that shooting to send them back to the designers, and he found this paperback mystery in the right front pocket of the suit you were wearing that day. It’s a reprint of an old thriller by Cornell Woolrich called THE BLACK CURTAIN, and it’s about amnesia. But that’s not the Clue. On the inside back cover of the book, you’ve written the phone number of someone called Denise, and I don’t remember there being any Denise in your Address Book. But I’m sure it’s your handwriting. Do you have a pencil to write down the number? Or can you remember it?”`,
+        desc: `"Do you know that picture of you that’s on the dresser, the one with you looking so elegant against that dismal wallpaper in the abandoned building? Well, Ned was just packing up some of the clothes from that shooting to send them back to the designers, and he found this paperback mystery in the right front pocket of the suit you were wearing that day. It’s a reprint of an old thriller by Cornell Woolrich called THE BLACK CURTAIN, and it’s about amnesia. But that’s not the Clue. On the inside back cover of the book, you’ve written the phone number of someone called Denise, and I don’t remember there being any Denise in your Address Book. But I’m sure it’s your handwriting. Do you have a pencil to write down the number? Or can you remember it?"`,
         onBlock: () => {
             if(prevInput === 'find pencil'){
                 enterRoom('nobe-54');
@@ -7391,7 +7391,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-54',
         name: '',
-        desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it’s correct: 555-5413. “I hope it’s not Another Woman,” she adds, with a nervous laugh, “but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later.” She hangs up.`,
+        desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it’s correct: 555-5413. "I hope it’s not Another Woman," she adds, with a nervous laugh, "but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later." She hangs up.`,
         onEnter: () => {
             numbers.push(
                 {number:'555-5413', roomid:'phone-30', contactName: 'Denise'}
@@ -7401,7 +7401,7 @@ const amnesiaRestored = {
     {
         id: 'nobe-55',
         name: '',
-        desc: `“The number is 555-5413.”  She makes you repeat it to be sure it’s correct. “I hope it’s not Another Woman,” she adds, with a nervous laugh, “but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later.” She hangs up.`,
+        desc: `"The number is 555-5413."  She makes you repeat it to be sure it’s correct. "I hope it’s not Another Woman," she adds, with a nervous laugh, "but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later." She hangs up.`,
         //player has to call Denise.
         onEnter: () => {
             numbers.push(
@@ -29070,7 +29070,7 @@ const amnesiaRestored = {
       id: '43-5',
       coord: [15.390, -6.546],
       name: 'W. 43rd St. and 5th Ave.',
-      desc: `Here is the Princeton Club - distinctly a members only institution.`,
+      desc: `Here is the **Princeton Club** - distinctly a members only institution.`,
       isStreet: true,
       onEnter: () => {
         reenableInput();
@@ -29080,7 +29080,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['Princeton Club', 'Princeton', 'Health', 'Club',], id: 'prin-club-1'},
+        {dir: ['princeton club', 'princeton', 'club'], id: 'prin-club-1'},
       ]
     },
     {

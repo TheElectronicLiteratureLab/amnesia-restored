@@ -9,7 +9,6 @@ let playerIcon =  L.icon ({
 
 let playerLayer = L.layerGroup();
 let playerMarker = L.marker(disk.currPos, {icon: playerIcon, zIndexOffset: 1000, className: "popup"}).addTo(playerLayer);
-
 let foodLayer = L.layerGroup();
 
 //var map = L.map('map').setView([0, 0], 0);
@@ -20,8 +19,10 @@ let foodLayer = L.layerGroup();
     attributionControl: false,
     zoomControl: false
   });
-map.invalidateSize();
-setTimeout(function(){ map.invalidateSize(true)}, 100);
+map.invalidateSize(); //this allows for resizing within other divs
+setTimeout(function(){ map.invalidateSize(true)}, 100); //this is just in case
+
+//Link the tiles and the file directory template
 L.tileLayer('map/{z}/{x}/{y}.png', {
   continuousWorld: false,
   noWrap: true,	
@@ -34,20 +35,20 @@ var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
 marker.bindPopup('LatLng Marker').openPopup();
 marker.on('drag', function(e) {
   marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
-  //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+  ///marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+  /// This allows for coordinates to be directly formated and copied to clipboard
   marker.on('dragend', function(e) {
-  navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
+    navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
 })
 });*/
 
-
 //Layer Groups
 let subwayLayer = L.layerGroup();
-let phoneLayer = L.layerGroup(); //this might need to be moved into the phone spawning function
-
+let phoneLayer = L.layerGroup();
 let poiLayer = L.layerGroup();
 let sleepLayer = L.layerGroup(); 
 
+//Object that controls the different layer groups
 let overlays = {
   "Subway": subwayLayer,
   "Phone Booths": phoneLayer,
@@ -59,9 +60,9 @@ let overlays = {
 L.control.layers(null, overlays, {collapsed: false, position: 'bottomleft'}).addTo(map);
 L.control.zoom({position: 'bottomright'}).addTo(map);
 
-//******Marker Creation Here*******//
 
-//ICONS
+//******Main Marker Creation Here*******//
+///ICONS
 
 //POI: Tenement
 let tenementIcon = L.icon ({
@@ -120,9 +121,6 @@ let poiIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
-//todo: insert story node icon here
-
-
 
 //Creating a regular expression to extract Subway Station name [98 Stations!]
 let subwayRegEx = / (.* Station) /;
@@ -131,13 +129,12 @@ let subwayRegEx = / (.* Station) /;
 let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
 
-//Markers for POI, then run a forEach similarly like above in order to create markers.
+//Markers for POI Story Nodes, then run a forEach similarly like above in order to create markers.
 //This is done by feeding an array containing ids of the rooms we want
-let poiIDArr = ['56-madi'];
+let poiIDArr = ['43-5', '53-5'];
 
 
 //This block is checking the entire disk for boolean values for food and subway.
-//todo: need to add hasFood property to every room that has a restaruant
 disk.rooms.forEach((element)=>{
   if (element.coord !== undefined) {
     if (element.coord[0] !== undefined && element.coord[1] !== undefined) {
