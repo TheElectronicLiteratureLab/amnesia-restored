@@ -43,7 +43,7 @@ let storyDesc = `Relax and enjoy the story. Fast travel from any position once y
 let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are. Fast travel is only at subway entrances.`;
 let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
 let restoredDesc = `A contemporary visual experience with a modern interface.`;
-let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
+let appleDesc = `Published in 1986 for the Apple //e, this mode gives the classic visual experience with a modern interface.`; 
 let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commodore 64 visual experience with a modern interface.`;
 let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM PC visual experience with a modern interface.`;
 
@@ -879,6 +879,50 @@ let deleteNumBtn = () => {
     el.value = el.value.slice(0, -1);
 }
 
+// animate first tutorial display
+let slideTutoIn = (elId, textId) => {
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById(textId);
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInR, 30);
+    function slideInR(){
+        if(width === 25){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .2;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+}
+
+
+
+/*
 // tutorial is displayed on screen variable
 let tutorialDisplayed = false;
 // handles the toggling of tutorial display 
@@ -964,7 +1008,7 @@ let animateToggle = () => {
         tutorialDisplayed = false;
     }
     
-}
+} */
 
 // map fade on, fade off elements
 

@@ -657,7 +657,7 @@ let dial = () => {
     //document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
-      animateToggle();
+      slideTutoIn("tutorial", "tutorial-text-container");
       firstDial = true;
     }
     // disable the input
