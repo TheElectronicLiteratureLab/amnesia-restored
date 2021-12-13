@@ -12,6 +12,14 @@ $(document).ready(function(){
     $("#twoAgruCommand").click(function(){
         $("#twoAgruList").slideToggle("slow");
     });
+
+    $("#brochure-more").click(function(){
+        $("#brochure-full-display").animate({
+            width: "toggle",
+            opacity: "toggle"
+        },
+        1500);
+    });
 });
 
 // global variables 
@@ -215,6 +223,8 @@ let currentInv = () => {
         slideLeftOut("inventory-display", "inventory-text-container");
         document.getElementById("inventory-item-display").style.display = "none";
         document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
         document.querySelector("input").disabled = false;
     }
 }
@@ -297,12 +307,13 @@ let displayLeftToggle = (id, name, text) => {
 
 let turnOnMap = () => {
     let x = document.getElementById("map-display");
-    console.log(x.style.display);
+    displayCheck("map");
+    //console.log(x.style.display);
     if(!x.style.display || x.style.display === "none"){
-        slideMapDown("map-display");
+        fadeOn("map-display");
         map.invalidateSize();
     } else {
-        x.style.display = "none";
+        fadeOff("map-display");
     }
     
 }
@@ -384,7 +395,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -411,10 +423,13 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -443,6 +458,8 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -473,6 +490,8 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -480,7 +499,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(modeOn === true){
@@ -503,6 +523,8 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -510,7 +532,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -533,6 +556,8 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -540,7 +565,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -563,6 +589,8 @@ let displayCheck = (name) => {
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -570,7 +598,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -607,6 +636,8 @@ let openItem = (id, name) => {
 
         slideInvItems(id);
         document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
         //document.getElementById(id).style.display = "grid";
         //slideInvItems(id, textId);
     
@@ -620,11 +651,20 @@ let openItem = (id, name) => {
         })
     } 
 
+    if(name === 'brochure'){
+        slideBro(id);
+        document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
+    }
+
     // if item is the xindexer
     if(name === 'xindexer'){
         slideInvX("inventory-xIndex-display", "xIndex-container");
         //document.getElementById("inventory-xIndex-display").style.display = "block";
         document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
     }
 }
 
@@ -636,7 +676,7 @@ let increasingHung = false;
 let decreasingHung = false;
 
 // function to be called whenever hunger is changed, it then updates the visual of the bars
-let updateHung = (x) => {
+let updateHung = () => {
     // converts values into integers
     const xPlayHung = parseInt(playHung);
     const xPrevHung = parseInt(prevHung);
@@ -703,7 +743,7 @@ let increasingFat = false;
 let decreasingFat = false;
 
 // function to be called whenever the players fatigue is changed
-let updateFat = (x) => {
+let updateFat = () => {
     // converts variables to intergers to run math checks
     const xPlayFat = parseInt(playFat);
     const xPrevFat = parseInt(prevFat);
@@ -774,6 +814,45 @@ const updateScore = () => {
     document.getElementById("char-score").innerHTML = charScore;
     document.getElementById("tote-score").innerHTML = totalScore;
     document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
+}
+
+const updateEndings = () => {
+    if(eterWith === true){
+        document.getElementById("eterWith-title").innerHTML = "Eternity Without A Name";
+        document.getElementById("eterWith-desc").style.display = "block";
+    }
+    if(emptEnli === true){
+        document.getElementById("emptEnli-title").innerHTML = "Empty Enlightenment";
+        document.getElementById("emptEnli-desc").style.display = "block";
+    }
+    if(theShep === true){
+        document.getElementById("theShep-title").innerHTML = "The Shepard";
+        document.getElementById("theShep-desc").style.display = "block";
+    }
+    if(the1986 === true){
+        document.getElementById("the1986-title").innerHTML = "The 1986 Classic";
+        document.getElementById("the1986-desc").style.display = "block";
+    }
+    if(deatTexa === true){
+        document.getElementById("deatTexa-title").innerHTML = "Death and Texas";
+        document.getElementById("deatTexa-desc").style.display = "block";
+    }
+    if(painMan === true){
+        document.getElementById("painMan-title").innerHTML = "Piano Man";
+        document.getElementById("painMan-desc").style.display = "block";
+    }
+    if(dawdHote === true){
+        document.getElementById("dawdHote-title").innerHTML = "Dawdler in the Hotel";
+        document.getElementById("dawdHote-desc").style.display = "block";
+    }
+    if(anAmn === true){
+        document.getElementById("anAmn-title").innerHTML = "An Amnesiac No More";
+        document.getElementById("anAmn-desc").style.display = "none";
+    }
+    if(totaAmn === true){
+        document.getElementById("totaAmn-title").innerHTML = "Total Amnesia";
+        document.getElementById("totaAmn-desc").style.display = "block";
+    }
 }
 
 // dial pad scripts
@@ -877,8 +956,8 @@ let animateToggle = () => {
     
 }
 
-// old fade on and off of element displays NOT USING ANYMORE 
-/*
+// map fade on, fade off elements
+
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -895,7 +974,7 @@ let fadeOn = (elId) => {
         }
     }
 }
-/*
+
 let fadeOff = (elId) => {
     let id = null;
     const elem = document.getElementById(elId);
@@ -913,7 +992,7 @@ let fadeOff = (elId) => {
         }
     }
     
-} */
+} 
 
 
 // functions for the left side clickables, slide ins, slide outs, and text fades and the map special slide down function
@@ -1079,27 +1158,7 @@ let slideRightIn = (elId, textId) => {
     }  
 }
 
-// display the map
 
-let slideMapDown = (elId) => {
-    let id = null;
-    // gets the display div
-    const element = document.getElementById(elId);
-    element.style.display = "block";
-    element.style.width = "0%";
-    // sets beginning width 
-    let width = 0;
-    clearInterval(id);
-    id = setInterval(slideDown, 30);
-    function slideDown(){
-        if(width === 100){
-            clearInterval(id);
-        } else {
-            width++;
-            element.style.width = width + "%";
-        }
-    }
-}
 
 //slideInvX("inventory-xIndex-display", "xIndex-container");
 // slide in items from inventory
@@ -1107,7 +1166,7 @@ let slideInvX = (elId, textId) => {
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
-    element.style.display = "block";
+    element.style.display = "grid";
     element.style.width = "0%";
     // gets the text of display
     let elementText = document.getElementById(textId);
@@ -1122,7 +1181,7 @@ let slideInvX = (elId, textId) => {
         } else {
             width++;
             element.style.width = width + "%";
-            if(width === 30){
+            if(width === 50){
                 let text = null;
                 // sets beginning opacity
                 let opacity = 0;
@@ -1151,10 +1210,98 @@ let slideInvItems = (elId) => {
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
-    element.style.display = "grid";
+    element.style.display = "block";
     element.style.width = "0%";
     // gets the text of display
     let elementText = document.getElementById('inventory-item-container');
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 30);
+    function slideInL(){
+        if(width === 40){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
+
+let slideBro = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById('inventory-brochure-container');
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 30);
+    function slideInL(){
+        if(width === 40){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
+
+let slideBroFull = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById('brochure-full-container');
         elementText.style.opacity = 0;
     // sets beginning width
     let width = 0;

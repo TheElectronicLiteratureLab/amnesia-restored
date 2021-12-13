@@ -10,12 +10,14 @@ let turnMapOn = false;
 
 //Sunderland Hotel Flags and Variables
 let earlyLeave = false; //Checks to see if player leaves early in hotel tutorial.
-let tipBellboy = false; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
+let tipBellboy = true; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
 let isNaked = true;
 let firstNightmare = true;
 let nightmareCeleb = 'Disch';
 let nEntranceRoom = 'hote-room-8';
 let nightmareStair = false;
+let safeDeposit = false;
+
 
 //Death and Texas Flags and Variables
 let firingInjection = false; //false = firing squad, true = injection
@@ -75,7 +77,11 @@ let qMeridiem = 0;
 //variables needed for beg command
 let caughtCoords1;
 let caughtCoords2;
-let policeCaught = false;
+let policeCaughtBegging = false;
+
+
+//variables needed for clean command
+let policeCaughtWashing = false;
 
 
 //difficulty levels stuff
@@ -122,6 +128,9 @@ let encounterAnswer;
 let xStreetC;
 let xStreetD; 
 let firstEncounter = false;
+let wackyEncounter = false;
+
+let gottenRag = false;
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st'];
 
@@ -376,3 +385,17 @@ let fatBelow10 = false;
 
 //variable for if the player stats should degrade
 let degradation = false;
+
+// ending variables IF true unlock achievement
+// add variable equals true on matching endings
+// add function updateEndings()
+// add function slideRightIn('achieve-display', 'achieve-text-container')
+let emptEnli = false; // empty enlightenment ending (monk ending)
+let theShep = false; // the shepard ending (sheep farmer ending)
+let the1986 = false; // the 1986 classic ending (when you fail a street indexer check)
+let deatTexa = false; // the death and texas ending 
+let painMan = false; // the wacky wanderer fail ending
+let dawdHote = false; // the dawdler in the hotel ending
+let anAmn = false; // true ending
+let totaAmn = false; // getting amnesia again
+let eterWith = false; // river styx ending

@@ -1,0 +1,308 @@
+/* across screen styles */
+
+@font-face {
+   font-family: ibm;
+   src: url(../fnt/font-amneisa-pxibmpc.ttf);
+}
+
+/* typography */
+#game-container {
+   font-family: 'ibm', monospace;
+   color: #aaaaaa;
+   font-size: 2.25vh;
+   line-height: 1.5;
+}
+
+#game-container b, #game-container strong {
+   font-weight: 600;
+}
+
+#game-container i, #game-container em {
+   font-style: italic;
+}
+
+#game-container h1 {
+   font-size: 6vh;
+}
+
+#game-container h2 {
+   font-size: 3vh;
+   font-weight: 600;
+}
+
+#game-container h3 {
+   font-size: 2.25vh;
+}
+
+#game-container h4 {
+   font-size: 2.25vh;
+}
+
+#game-container h5 {
+   font-size: 1em;
+}
+
+#game-container h6 {
+   font-size: 1em;
+}
+
+#game-container p {
+   margin-bottom: 3%;
+}
+
+/* buttons */
+.game-button {
+   background-color: transparent;
+   border: 2px solid #a8a8a8;
+   color: #E4E4E4;
+   letter-spacing: 1px;
+   font-size: 14px;
+   border-radius: 3em;
+   transition-duration: 0.4s;
+   padding: 10px 1.5em;
+}
+
+.game-button:hover {
+   transition: 150ms ease-in-out;
+   background-color: #a8a8a8;
+}
+
+#title-img {
+   grid-column: 1 / span 2;
+   justify-self: center;
+}
+
+#vid {
+   display: block;
+   margin: auto;
+   grid-column: 1 / span 2;
+   justify-self: center;
+   align-self: center;
+}
+
+#game-button-container {
+   grid-column: 1 / span 2;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-column-gap: 10%;
+}
+
+#new-game-button {
+   align-self: center;
+   justify-self: right;
+}
+
+#load-game-button {
+   align-self: center;
+   justify-self: left;
+}
+
+
+/* game-options */
+#game-options h3 {
+   font-size: 2.25vh;
+   font-weight: 600;
+}
+
+#difficulty-options-descriptions {
+   font-size: .9em;
+   color: #A1A1A1;
+}
+
+
+#visual-mode-options-descriptions {
+   font-size: .9em;
+   color: #A1A1A1;
+}
+
+
+#currroom {
+   font-family: 'ibm', monospace;
+   letter-spacing: 4px;
+   font-weight: 300;
+   text-transform: none;
+}
+ 
+#input {
+   color: #aaaaaa;
+   font-size: 2.5vh;
+   letter-spacing: 1px;
+   font-family: 'ibm', monospace;
+}
+ 
+#arrow {
+   font-size: 2.25vh;
+   color: #aaaaaa;
+   padding-right: 10px;
+}
+
+#game-ui-bar h3 {
+   font-size: 3vh;
+}
+
+
+#hunger h3, #fatigue h3 {
+   font-size: 2.25vh;
+}
+
+#hunger-bar-progress {
+   border-radius: 0;
+}
+
+#hunger-bar {
+   background: transparent linear-gradient(270deg, #a8a8a8 0%, #484848 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
+}
+
+#fatigue-bar-progress {
+   border-radius: 0;
+}
+
+#fatigue-bar {
+   background: transparent linear-gradient(270deg, #a8a8a8 0%, #484848 100%) 0% 0% no-repeat padding-box;
+   border-radius: 0;
+}
+
+
+/* clickable element styles */
+.clickables-left{
+   border-right: 2px solid #a8a8a8;
+}
+
+/* left side clickable icons */
+#inventory-button {
+   background-image: url(../img/png/icon-inventory-ibm.png);
+}
+
+#inventory-button:hover {
+   background-image: url(../img/png/icon-inventory-ibm.png);
+}
+
+#address-book-button {
+   background-image: url(../img/png/icon-address-ibm.png);
+}
+
+#address-book-button:hover {
+   background-image: url(../img/png/icon-address-ibm.png);
+}
+
+#map-button {
+   background-image: url(../img/png/icon-map-ibm.png);
+}
+
+#map-button:hover {
+   background-image: url(../img/png/icon-map-ibm.png);
+}
+
+#info-button {
+   background-image: url(../img/png/icon-info-ibm.png);
+}
+
+#info-button:hover {
+   background-image: url(../img/png/icon-info-ibm.png);
+}
+
+/* right side clickable icons */
+#save-button {
+   background-image: url(../img/png/icon-save-ibm.png);
+}
+
+#save-button:hover {
+   background-image: url(../img/png/icon-save-ibm.png);
+}
+
+#mode-button {
+   background-image: url(../img/png/icon-mode-ibm.png);
+}
+
+#mode-button:hover {
+   background-image: url(../img/png/icon-mode-ibm.png);
+}
+
+#achieve-button {
+   background-image: url(../img/png/icon-achieve-ibm.png);
+}
+
+#achieve-button:hover {
+   background-image: url(../img/png/icon-achieve-ibm.png);
+}
+
+#help-button {
+   background-image: url(../img/png/icon-help-ibm.png);
+}
+
+#help-button:hover {
+   background-image: url(../img/png/icon-help-ibm.png);
+}
+
+#info-display h3 {
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+#xIndex-container h3 {
+   font-weight: 600;
+}
+
+#xIndex-container label {
+   line-height: 1;
+   font-size: 2.25vh;
+   font-weight: 600;
+}
+
+#x-indexer-instructions p {
+   font-size: .8em;
+}
+
+.clickables-right {
+   border-left: 2px solid #a8a8a8;
+}
+
+#dialPad {
+   display: none;
+   position: absolute;
+   right: 0px;
+   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
+   width: 25%;
+   height: 100%;
+}
+
+#dial-pad-container{
+   height: 100%;
+   display: grid;
+   grid-template-columns: .05fr .9fr .05fr;
+   grid-template-rows: .05fr .10fr .05fr auto .10fr;
+}
+
+#dial-pad-buttons {
+   grid-column: 1 / span 3;
+   display: grid;
+   grid-template-columns: .90fr .10fr;
+}
+
+#toggleTutorial {
+   justify-self: right;
+}
+
+#dial-keys {
+   grid-column: 2 / span 1;
+   grid-row: 4 / span 1;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: .25fr .25fr .25fr .25fr;
+   grid-row-gap: 10%;
+}
+
+#tutorial {
+   display: none;
+   position: absolute;
+   right: 25%;
+   background-color: rgba(121, 121, 121, 0.945);
+   width: 25%;
+   height: 100%;
+}
+
+/* Classes for println() */
+#output div.amnesiaTitle {
+   font-size: 3em;
+}

@@ -9,7 +9,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/cpx5vev.css">
 
@@ -42,8 +43,8 @@
                     <div id="title-img">
                         <video id="vid" width="60%" height="auto" autoplay muted>
                             <source src="video/video-logo-bannerweb.mp4" type="video/mp4">
-                          </video>
-                          <script>
+                        </video>
+                        <script>
                             document.getElementById('vid').play();
                         </script>
                     </div>
@@ -73,7 +74,8 @@
                 <div id="options-screen">
                     <div id="options-title">
                         <h2 id="selectTitle">Select Your Game Options</h2>
-                        <h4 id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern and Restored.</h4>
+                        <p id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern
+                            and Restored.</p>
                     </div>
                     <div id="difficulty-options">
                         <h3 id="difficulty-title">DIFFICULTY</h3>
@@ -160,13 +162,13 @@
                 <div id="left-side-clickables">
                     <div class="clickable-container" id="inventory-clickable">
                         <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
-                        <button class="iconbtn" id="inventory-button"
-                            onclick="currentInv()"></button>
+                        <button class="iconbtn" id="inventory-button" onclick="currentInv()"></button>
                     </div>
 
                     <div class="clickable-container" id="address-book-clickable">
                         <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
-                        <button class="iconbtn" id="address-book-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container'); currentAdd('addresses')"></button>
+                        <button class="iconbtn" id="address-book-button"
+                            onclick="displayLeftToggle('address-display', 'address', 'address-text-container'); currentAdd('addresses')"></button>
                     </div>
 
                     <div class="clickable-container" id="map-clickable">
@@ -192,8 +194,8 @@
                 <!-- left side clickables -->
                 <div id="inventory-display" class="clickables-left">
                     <div id="inventory-text-container">
-                        <button class="x-button"
-                            onclick="currentInv()"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button class="x-button" onclick="currentInv()"><img src="img/png/x-icon.png"
+                                alt="close icon"></button>
                         <h2 id="inventory-display-title">Inventory</h2>
                         <div id="inventory">
                             <!-- 
@@ -204,7 +206,7 @@
                 </div>
                 <div id="inventory-item-display">
                     <div id="inventory-item-container">
-                        <h2 id="item-name">Item Name</h2>
+                        <h2 id="item-name"></h2>
                         <div id="item-img-container">
                             <img id="item-img" src="" alt="item image">
                         </div>
@@ -215,6 +217,28 @@
                             -->
                     </div>
                 </div>
+
+                <div id='inventory-brochure-display'>
+                    <div id="inventory-brochure-container">
+                        <h2 id="item-name">Brochure</h2>
+                        <div id="item-img-container">
+                            <img id="item-img" src="img/gif/gif-brochure-ingame.gif" alt="item image">
+                        </div>
+                        <div class="item-description">
+                            <div id="brochure-more">
+                                Read more information about the Sunderland...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="brochure-full-display">
+                    <div id="brochure-full-container">
+                        <h2>The Sunderland Hotel</h2>
+                    </div>
+                </div>
+
+
                 <div id="inventory-xIndex-display">
                     <div id="xIndex-container">
                         <h2 id="xIndex-name">X-Street Indexer</h2>
@@ -223,111 +247,115 @@
                         </div>
                         <div id="x-indexer-instructions">
                             <h3>Instructions for use:</h3>
-                            <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by dragging and dropping.</p>
+                            <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by
+                                dragging and dropping.</p>
                             <p>2. The small window in the inner wheel shows the nearest cross street.</p>
-                            <br>
                             <p>OR use the drop down menu below to find the nearest cross street.</p>
                         </div>
                         <div id='xStreetIndex'>
                             <form>
-                            <label for="x-Streets">Choose A Number and Cross Street</label><br>
-                            <select name="Street Number" id="streetNumber">
-                                <option value='0-199'>0-199</option>
-                                <option value="200-299">200-299</option>
-                                <option value="300-399">300-399</option>
-                                <option value="400-499">400-499</option>
-                                <option value="500-599">500-599</option>
-                                <option value="600-699">600-699</option>
-                                <option value="700-799">700-799</option>
-                                <option value="800-899">800-899</option>
-                                <option value="900-999">900-999</option>
-                                <option value="1000-1099">1000-1099</option>
-                                <option value="1100-1199">1100-1199</option>
-                                <option value="1200-1299">1200-1299</option>
-                                <option value="1300-1399">1300-1399</option>
-                                <option value="1400-1499">1400-1499</option>
-                                <option value="1500-1599">1500-1599</option>
-                                <option value="1600-1699">1600-1699</option>
-                                <option value="1700-1799">1700-1799</option>
-                                <option value="1800-1899">1800-1899</option>
-                                <option value="1900-1999">1900-1999</option>
-                                <option value="2000-2099">2000-2099</option>
-                                <option value="2100-2199">2100-2199</option>
-                                <option value="2200-2299">2200-2299</option>
-                                <option value="2300-2399">2300-2399</option>
-                                <option value="2400-2499">2400-2499</option>
-                                <option value="2500-2599">2500-2599</option>
-                                <option value="2600-2699">2600-2699</option>
-                                <option value="2700-2799">2700-2799</option>
-                                <option value="2800-2899">2800-2899</option>
-                                <option value="2900-2999">2900-2999</option>
-                                <option value="3000-3099">3000-3099</option>
-                            </select>
-                    
-                            <select name="Cross Street" id="crossStreet">
-                                <option value="riverside">Riverside</option>
-                                <option value="park">Park</option>
-                                <option value="madison">Madison</option>
-                                <option value="lexington">Lexington</option>
-                                <option value="broadway">Broadway</option>
-                                <option value="10th">10th</option>
-                                <option value="9th">9th</option>
-                                <option value="8th">8th</option>
-                                <option value="7th">7th</option>
-                                <option value="6th">6th</option>
-                                <option value="5th">5th</option>
-                                <option value="4th">4th</option>
-                                <option value="3rd">3rd</option>
-                                <option value="2nd">2nd</option>
-                                <option value="1st">1st</option>
-                            </select>
-                    
-                            <input type="text" id="result">
-                    
-                            <!-- <input type="submit" value="Submit"> -->
+                                <label for="x-Streets">Choose A Number and Cross Street</label><br>
+                                <select name="Street Number" id="streetNumber">
+                                    <option value='0-199'>0-199</option>
+                                    <option value="200-299">200-299</option>
+                                    <option value="300-399">300-399</option>
+                                    <option value="400-499">400-499</option>
+                                    <option value="500-599">500-599</option>
+                                    <option value="600-699">600-699</option>
+                                    <option value="700-799">700-799</option>
+                                    <option value="800-899">800-899</option>
+                                    <option value="900-999">900-999</option>
+                                    <option value="1000-1099">1000-1099</option>
+                                    <option value="1100-1199">1100-1199</option>
+                                    <option value="1200-1299">1200-1299</option>
+                                    <option value="1300-1399">1300-1399</option>
+                                    <option value="1400-1499">1400-1499</option>
+                                    <option value="1500-1599">1500-1599</option>
+                                    <option value="1600-1699">1600-1699</option>
+                                    <option value="1700-1799">1700-1799</option>
+                                    <option value="1800-1899">1800-1899</option>
+                                    <option value="1900-1999">1900-1999</option>
+                                    <option value="2000-2099">2000-2099</option>
+                                    <option value="2100-2199">2100-2199</option>
+                                    <option value="2200-2299">2200-2299</option>
+                                    <option value="2300-2399">2300-2399</option>
+                                    <option value="2400-2499">2400-2499</option>
+                                    <option value="2500-2599">2500-2599</option>
+                                    <option value="2600-2699">2600-2699</option>
+                                    <option value="2700-2799">2700-2799</option>
+                                    <option value="2800-2899">2800-2899</option>
+                                    <option value="2900-2999">2900-2999</option>
+                                    <option value="3000-3099">3000-3099</option>
+                                </select>
+
+                                <select name="Cross Street" id="crossStreet">
+                                    <option value="riverside">Riverside</option>
+                                    <option value="park">Park</option>
+                                    <option value="madison">Madison</option>
+                                    <option value="lexington">Lexington</option>
+                                    <option value="broadway">Broadway</option>
+                                    <option value="10th">10th</option>
+                                    <option value="9th">9th</option>
+                                    <option value="8th">8th</option>
+                                    <option value="7th">7th</option>
+                                    <option value="6th">6th</option>
+                                    <option value="5th">5th</option>
+                                    <option value="4th">4th</option>
+                                    <option value="3rd">3rd</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="1st">1st</option>
+                                </select>
+
+                                <input type="text" id="result">
+
+                                <!-- <input type="submit" value="Submit"> -->
                             </form>
-                    
+
                             <button id="submitButton">Go!</button>
-                            
+
                         </div>
                     </div>
-                    
                 </div>
 
-                
-                    <div id="address-display" class="clickables-left">
-                        <div id="address-text-container">
-                            <button class="x-button" onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
-                            <h2 id="address-display-title">Address Book</h2>
-                            <div id="addresses">
-                            </div>
+
+                <div id="address-display" class="clickables-left">
+                    <div id="address-text-container">
+                        <button class="x-button"
+                            onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="address-display-title">Address Book</h2>
+                        <div id="addresses">
                         </div>
                     </div>
-                
-                
+                </div>
+
+
                 <div id="map-display">
-                    <button class="x-button" id="exitMapBtn" onclick="turnOnMap"><img src="img/png/x-icon.png" alt="close icon"></button>
+                    <button class="x-button" id="exitMapBtn" onclick="turnOnMap"><img src="img/png/x-icon.png"
+                            alt="close icon"></button>
                     <div id="map-man" style="background-color: #32302f;"></div>
                 </div>
-                
+
                 <div id="info-display" class="clickables-left">
                     <div id="info-text-container">
-                        <button id="map-x-button" class="x-button" onclick="displayLeftToggle('info-display', 'info', 'info-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button id="map-x-button" class="x-button"
+                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="info-display-title">Information</h2>
                         <div id="info">
                             <div id="score">
                                 <h3 id="score-title">SCORE</h3>
                                 <h4 id="det-title">Detective Score:</h4>
-                                <p id="det-score"></p>
+                                <p id="det-score"></p><br>
                                 <h4 id="sur-title">Survival Score:</h4>
-                                <p id="sur-score"></p>
+                                <p id="sur-score"></p><br>
                                 <h4 id="char-title">Character Score:</h4>
-                                <p id="char-score"></p>
+                                <p id="char-score"></p><br>
                                 <h4 id="tote-title">Total Score:</h4>
                                 <p id="tote-score"></p>
                             </div>
-                            <h3 id="play-time-title">PLAY TIME</h3>
-                            <h4 id="play-time"></h4>
+                            <!-- <h3 id="play-time-title">PLAY TIME</h3>
+                            <h4 id="play-time"></h4> -->
                             <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
                             <h4 id="difficulty-setting"></h4>
                         </div>
@@ -337,12 +365,14 @@
                 <!-- right side clickables -->
                 <div id="mode-display" class="clickables-right">
                     <div id="mode-text-container">
-                        <button class="x-button" onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button class="x-button"
+                            onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="mode-display-title">Mode</h2>
                         <div id="mode">
                             <div id="restored-button-container">
-                                <div id="btn-container"> 
-                                    <img id="restored-bow-image" src="img/png/icon-mode-restored.png">
+                                <div id="btn-container">
+                                    <img id="restored-bow-image" src="img/png/icon-mode-option-restored.png">
                                     <input type="radio" id="restored-radio" name="radio">
                                     <label for="restored-radio">Restored</label>
                                 </div>
@@ -355,32 +385,80 @@
                 </div>
                 <div id="achieve-display" class="clickables-right">
                     <div id="achieve-text-container">
-                        <button class="x-button" onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button class="x-button"
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="achieve-display-title">Ending Achievements</h2>
                         <h3>Play the game to unlock your endings.</h3>
                         <div id="achieve">
-                            <div class="ending">
-                                <img class="achieveImg" id="styxEndingIcon" src="img/png/hat-icon.png">
-                                <h4 class="achieveTitle">???</h4>
-                                
-                                <!-- 
-                                    
-                                    Eternity Without A Name
-                                    <p>Reached the River Styx. Cheron's still waiting on that name...</p> -->
+                            <div class="ending" id="eterWith-ending">
+                                <img class="achieveImg" id="eterWith-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="eterWith-title">???</h4>
+                                <p class="achieveDesc" id="eterWith-desc">Reached the River Styx. Charon's still waiting
+                                    on that name.</p>
+                            </div>
+                            <div class="ending" id="emptEnli-ending">
+                                <img class="achieveImg" id="emptEnli-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="emptEnli-title">???</h4>
+                                <p class="achieveDesc" id="emptEnli-desc">An easy life free of sin, you enjoy quiet
+                                    walks and the smell of fresh dirt.</p>
+                            </div>
+                            <div class="ending" id="theShep-ending">
+                                <img class="achieveImg" id="theShep-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="theShep-title">???</h4>
+                                <p class="achieveDesc" id="theShep-desc">You're still enjoying life on the idyllic sheep
+                                    farm in the beautiful outback.</p>
+                            </div>
+                            <div class="ending" id="the1986-ending">
+                                <img class="achieveImg" id="the1986-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="the1986-title">???</h4>
+                                <p class="achieveDesc" id="the1986-desc">Next time let's check streets with precision
+                                    detective.</p>
+                            </div>
+                            <div class="ending" id="deatTexa-ending">
+                                <img class="achieveImg" id="deatTexa-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="deatTexa-title">???</h4>
+                                <p class="achieveDesc" id="deatTexa-desc">Texas is no home for an amnesiac.</p>
+                            </div>
+                            <div class="ending" id="painMan-ending">
+                                <img class="achieveImg" id="painMan-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="painMan-title">???</h4>
+                                <p class="achieveDesc" id="painMan-desc">"Sing us a song, you're the piano man, sing us
+                                    a song tonight." You've failed to give the Wacky Wanderer the correct directions.
+                                </p>
+                            </div>
+                            <div class="ending" id="dawdHote-ending">
+                                <img class="achieveImg" id="dawdHote-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="dawdHote-title">???</h4>
+                                <p class="achieveDesc" id="dawdHote-desc">Luke is not a man to be kept waiting.</p>
+                            </div>
+                            <div class="ending" id="anAmn-ending">
+                                <img class="achieveImg" id="anAmn-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="anAmn-title">???</h4>
+                                <p class="achieveDesc" id="anAmn-desc">You've been restored as John Cameron.
+                                    Congradulations.</p>
+                            </div>
+                            <div class="ending" id="totaAmn-ending">
+                                <img class="achieveImg" id="totaAmn-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="totaAmn-title">???</h4>
+                                <p class="achieveDesc" id="totaAmn-desc">Amnesia re-tuxed. You've failed to restore your
+                                    memory and now you're back where you started. Welcome to the Sunderland.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="help-display" class="clickables-right">
                     <div id="help-text-container">
-                        <button class="x-button" onclick="displayRightToggle('help-display', 'help', 'help-text-container')"><img src="img/png/x-icon.png" alt="close icon"></button>
+                        <button class="x-button"
+                            onclick="displayRightToggle('help-display', 'help', 'help-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
                         <h2 id="help-display-title">Command Guide</h2>
                         <div id="help">
                             <div id="noAgruCommand">
                                 <h3>No Agrument</h3>
                                 <h4>e.g. "help", "inv"</h4>
                             </div>
-                            <div id="noAgruList">
+                            <div id="noAgruList" class="commands">
                                 <p>inv OR i</p>
                                 <p>look OR l</p>
                                 <p>talk OR t</p>
@@ -412,7 +490,7 @@
                                 <h3>One Agrument</h3>
                                 <h4>e.g. "go north", "take book"</h4>
                             </div>
-                            <div id="oneAgruList">
+                            <div id="oneAgruList" class="commands">
                                 <p>enter</p>
                                 <p>look</p>
                                 <p>head</p>
@@ -433,7 +511,7 @@
                                 <h3>Two Agruments</h3>
                                 <h4>e.g. "look at key", "talk to dene"</h4>
                             </div>
-                            <div id="twoAgruList">
+                            <div id="twoAgruList" class="commands">
                                 <p>search</p>
                                 <p>look</p>
                                 <p>go</p>
@@ -449,7 +527,8 @@
                 <div id='tutorial'>
                     <div id="tutorial-text-container">
                         <h3>Instructions for use:</h3>
-                        <p>To dial a phone number either press the number keys on your keyboard or click the number buttons on the dial pad to the right.</p>
+                        <p>To dial a phone number either press the number keys on your keyboard or click the number
+                            buttons on the dial pad to the right.</p>
                         <br>
                         <p>Need to delete a number? Press the backspace key or the delete button.</p>
                         <br>
@@ -461,7 +540,8 @@
                     <div id="dial-pad-container">
                         <div id="dial-pad-buttons">
                             <button id="toggleTutorial" onclick='animateToggle()'>i</button> <!-- openTutorial() -->
-                            <button id="close" onclick='closeDial()'><img src="img/png/x-icon.png" alt="close icon"></button>
+                            <button id="close" onclick='closeDial()'><img src="img/png/x-icon.png"
+                                    alt="close icon"></button>
                         </div>
                         <h2 id="dial-name">Dial Pad</h2>
                         <h4 id="dial-info">Enter the phone number</h4>
@@ -482,9 +562,9 @@
                     </div>
                 </div>
 
-                
-                    
-                
+
+
+
             </div>
             <div class="game-item-4">
                 <div id="right-side-clickables">
@@ -502,7 +582,7 @@
                     <div class="clickable-container" id="achievements-clickable">
                         <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
                         <button class="iconbtn" id="achieve-button"
-                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"></button>
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container'); updateEndings()"></button>
                     </div>
 
                     <div class="clickable-container" id="help-clickable">
@@ -527,7 +607,8 @@
                         <h3>FATIGUE</h3>
                     </div>
                     <div id="money-counter">
-                        <h3 id="money"></h2>
+                        <h3 id="money">
+                            </h2>
                     </div>
                     <div id="time-display">
                         <h3 id="time">Sunday 9:05 A.M.</h2>
@@ -538,12 +619,12 @@
     </div> <!-- close game container -->
 
     <script type="text/javascript">
-        
 
 
 
-          
-</script>        
+
+
+    </script>
 
     <!-- Scripts (Including Engines)-->
     <!-- Include game engine -->
@@ -554,7 +635,7 @@
     <script src="scr/prototype-scripts.js"></script>
     <script src="scr/text-engine/pcommand.js"></script>
     <script src="scr/text-engine/internalfunc.js"></script>
-    
+
 
     <!-- Include game data ('disk') -->
     <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>

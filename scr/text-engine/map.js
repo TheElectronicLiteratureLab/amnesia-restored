@@ -1,5 +1,3 @@
-
-
 //Creating the Map
 //Player Marker//
 let playerIcon =  L.icon ({
@@ -130,7 +128,7 @@ let poiIcon = L.icon ({
 let subwayRegEx = / (.* Station) /;
 
 //Creating a regular expression to extract restaruant name
-let foodRegEx = /luncheonette/;
+let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
 
 //Markers for POI, then run a forEach similarly like above in order to create markers.
@@ -151,6 +149,7 @@ disk.rooms.forEach((element)=>{
         console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
+        console.log(str);
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
       }

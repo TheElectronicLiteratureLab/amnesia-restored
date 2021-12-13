@@ -87,6 +87,38 @@ let listX = (iconPath, line, className, idName) => {
   newLine.appendChild(itemTitle).innerHTML = str;
 };
 
+// making the item population for the brochure
+let listBro = (iconPath, line, className, idName) => {
+  // bail if string is null or undefined
+  if (!line) {
+    return;
+  }
+
+  str =
+    // if this is an array of lines, pick one at random
+    Array.isArray(line) ? pickOne(line)
+    // if this is a method returning a string, evaluate it
+    : typeof line  === 'function' ? line()
+    // otherwise, line should be a string
+    : line;
+
+  const output = document.querySelector('#inventory');
+  const newLine = document.createElement('div');
+  newLine.setAttribute("id", idName);
+  newLine.setAttribute("onclick", "openItem('inventory-brochure-display', this.id)");
+  const itemTitle = document.createElement('h3');
+  const icon = document.createElement("img");
+  icon.src = iconPath;
+
+  if (className) {
+    newLine.classList.add(className);
+  }
+
+  output.appendChild(newLine);
+  newLine.appendChild(icon);
+  newLine.appendChild(itemTitle).innerHTML = str;
+};
+
 let listInv = (iconPath, line, className, idName) => {
   // bail if string is null or undefined
   if (!line) {
@@ -218,17 +250,25 @@ let enterRoom = (id) => {
   const isStreetRoom = getRoom(disk.roomId);
 
   if (isStreetRoom.isStreet){
+    const chance = Math.floor(Math.random() * 100) + 1;
 
     if (!tenementSpawned) {
       console.log('trying to spawn the tenement');
       spawnTenement();
     } 
     
+    if(chance <= 10) {
+      const chance2 = Math.floor(Math.random() * 100) + 1;
+
+      if(chance2 <= 50) {
+      xStreetEvent();
+      } else {
+      carWashEncounter();
+      }
+    }
+
     randomEncounter();
   }
-  
-  //spawnTenement();
-  //console.log('trying to spawn the tenement');
 
 };
 
