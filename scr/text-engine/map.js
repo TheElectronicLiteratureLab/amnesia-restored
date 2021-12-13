@@ -146,10 +146,10 @@ disk.rooms.forEach((element)=>{
       if (element.hasFood === true) {
         let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(foodLayer);
         //marker.bindPopup(element.name, {className: 'popup'});
-        console.log(`Yum yum, I'm hungry.`);
+        //console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
-        console.log(str);
+        //console.log(str);
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
       }
@@ -216,7 +216,6 @@ $('.popup').on('click', function(e) {
 console.log(subwayLayer)
 
 
-
 //Player Marker Movement
 let centerOnPlayer = () => {
   map.flyTo(playerMarker.getLatLng());
@@ -232,15 +231,16 @@ let setPlayerMarker = (e) => {
           playerMarker.setLatLng(disk.currPos).bindPopup(room.name, {offset: L.point(-46, 5), className: 'popup'}).openPopup().update();
         }
         //centerOnPlayer();
-        playerMarker.on('click', function(e) {
+          playerMarker.on('click', function(e) {
           playerMarker.unbindPopup();
           playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
-        });
+        
+      });
         //playerMarker.getPopup().setContent(room.name).openPopup().update();
-        console.log('Current Position: ' + disk.currPos);
-        console.log('Name of Intersection: ' + room.name);
+        //console.log('Current Position: ' + disk.currPos);
+        //console.log('Name of Intersection: ' + room.name);
       } else if (disk.currPos === undefined) {
-        console.log('There are no coordinates here, please find some.');
+        //console.log('There are no coordinates here, please find some.');
       } 
       else {
         console.log('Something broke!!! Let your worldbuilder/programmer know!')

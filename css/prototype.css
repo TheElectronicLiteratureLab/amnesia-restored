@@ -680,6 +680,13 @@ body {
    width: 50%;
 }
 
+#inventory-brochure-container {
+   display: grid;
+   grid-template-columns: auto auto;
+   grid-template-rows: .1fr 5fr 3fr;
+   grid-row-gap: 3%;
+}
+
 #brochure-full-display {
    display: none;
    position: absolute;
@@ -688,6 +695,7 @@ body {
    width: 40%;
    height: 100%;
    border-left: 2px solid #9C4FEC;
+   overflow-y: scroll;
 }
 
 #item-name {
@@ -887,6 +895,8 @@ body {
 
 /**/
 
+
+
 #achieve-display {
    display: none;
    overflow-y: scroll;
@@ -899,60 +909,72 @@ body {
 .ending {
    display: flex;
    flex-direction: row;
+   flex-wrap: wrap;
    align-items: center;
    margin-bottom: 10%;
 }
 
 .achieveImg {
    margin: 0 15px;
+   width: 12%;
+   border: 1px solid #E4E4E4;
+   border-radius: 5px;
+   background-color: #0e0e0f8a;
+   padding: 5px;
 }
 
 .achieveDesc {
-   grid-column: 1 / span 2;
+   font-size: .9em;
+   color: #A1A1A1;
+   margin-top: 5%;
    margin-right: 5%;
-   margin-left: 10%;
+   margin-left: 5%;
+}
+
+#achieve-hidden {
+   margin-bottom: 10%;
 }
 
 /* setting ending desc to none before endings achieved */
 
 #eterWith-desc {
-   display: none;
+   
 }
 
 #emptEnli-desc {
-   display: none;
+   
 }
 
 #theShep-desc {
-   display: none;
+   
 }
 
 #the1986-desc {
-   display: none;
+   
 }
 
 #deatTexa-desc {
-   display: none;
+   
 }
 
 #painMan-desc {
-   display: none;
+   
 }
 
 #dawdHote-desc {
-   display: none;
+   
 }
 
 #anAmn-desc {
-   display: none;
+   
 }
 
 #totaAmn-desc {
-   display: none;
+   
 }
 
 #help-display {
-   display: none;
+   
 }
 
 #help h3 {
@@ -1133,15 +1155,4 @@ body {
    border-left: none;
 }
 
-#styxEndingIcon {
-   width: 40%;
-   margin-right: 10px;
-   border: 1px solid #E4E4E4;
-   border-radius: 5px;
-   background-color: #0e0e0f8a;
-   padding: 5px;
-}
 
-.achieveImg {
-   margin-left: 15px;
-}

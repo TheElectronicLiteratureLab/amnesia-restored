@@ -1315,7 +1315,7 @@ let slideBroFull = (elId) => {
     clearInterval(id);
     id = setInterval(slideInL, 30);
     function slideInL(){
-        if(width === 40){
+        if(width === 35){
             clearInterval(id);
         } else {
             width++;
