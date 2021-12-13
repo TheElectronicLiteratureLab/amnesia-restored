@@ -676,7 +676,7 @@ let increasingHung = false;
 let decreasingHung = false;
 
 // function to be called whenever hunger is changed, it then updates the visual of the bars
-let updateHung = (x) => {
+let updateHung = () => {
     // converts values into integers
     const xPlayHung = parseInt(playHung);
     const xPrevHung = parseInt(prevHung);
@@ -743,7 +743,7 @@ let increasingFat = false;
 let decreasingFat = false;
 
 // function to be called whenever the players fatigue is changed
-let updateFat = (x) => {
+let updateFat = () => {
     // converts variables to intergers to run math checks
     const xPlayFat = parseInt(playFat);
     const xPrevFat = parseInt(prevFat);
@@ -1258,6 +1258,50 @@ let slideBro = (elId) => {
     element.style.width = "0%";
     // gets the text of display
     let elementText = document.getElementById('inventory-brochure-container');
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 30);
+    function slideInL(){
+        if(width === 40){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
+
+let slideBroFull = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById('brochure-full-container');
         elementText.style.opacity = 0;
     // sets beginning width
     let width = 0;
