@@ -1648,7 +1648,7 @@ const ateSomething = (x) => {
   hungBelow20 = false;
   hungBelow10 = false;
 
-  updateHung(); //update the UI
+  updateHung(playHung); //update the UI
 };
 
 //degrade hunger
@@ -1685,7 +1685,7 @@ const degradeHunger = () => {
   } else {
     println(`Error, difficulty is not set.`)
   }
-  updateHung(); //update UI 
+  updateHung(playHung); //update UI 
   hungerWarning(); //Issue hunger warning if necessary 
 };
 
@@ -1740,7 +1740,7 @@ const degradeFatigue = () => {
     println(`Error, difficulty is not set.`)
   }
 
-  updateFat();
+  updateFat(playFat);
   fatigueWarning();
 };
 
@@ -1755,7 +1755,7 @@ const slept = () => {
   fatBelow20 = false;
   fatBelow10 = false;
 
-  updateFat(); //update the UI
+  updateFat(playFat); //update the UI
 };
 
 

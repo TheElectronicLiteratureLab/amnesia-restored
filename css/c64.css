@@ -191,7 +191,7 @@
 }
 
 #inventory-button:hover {
-   background-image: url(../img/png/icon-inventory-c64.png);
+   background-image: url(../img/png/icon-inventory-c64over.png);
 }
 
 #address-book-button {
@@ -199,7 +199,7 @@
 }
 
 #address-book-button:hover {
-   background-image: url(../img/png/icon-address-c64.png);
+   background-image: url(../img/png/icon-address-c64over.png);
 }
 
 #map-button {
@@ -207,7 +207,7 @@
 }
 
 #map-button:hover {
-   background-image: url(../img/png/icon-map-c64.png);
+   background-image: url(../img/png/icon-map-c64over.png);
 }
 
 #info-button {
@@ -215,7 +215,7 @@
 }
 
 #info-button:hover {
-   background-image: url(../img/png/icon-info-c64.png);
+   background-image: url(../img/png/icon-info-c64over.png);
 }
 
 /* right side clickable icons */
@@ -224,7 +224,7 @@
 }
 
 #save-button:hover {
-   background-image: url(../img/png/icon-save-c64.png);
+   background-image: url(../img/png/icon-save-c64over.png);
 }
 
 #mode-button {
@@ -232,7 +232,7 @@
 }
 
 #mode-button:hover {
-   background-image: url(../img/png/icon-mode-c64.png);
+   background-image: url(../img/png/icon-mode-c64over.png);
 }
 
 #achieve-button {
@@ -240,7 +240,7 @@
 }
 
 #achieve-button:hover {
-   background-image: url(../img/png/icon-achieve-c64.png);
+   background-image: url(../img/png/icon-achieve-c64over.png);
 }
 
 #help-button {
@@ -248,7 +248,7 @@
 }
 
 #help-button:hover {
-   background-image: url(../img/png/icon-help-c64.png);
+   background-image: url(../img/png/icon-help-c64over.png);
 }
 
 #info-display h3 {
