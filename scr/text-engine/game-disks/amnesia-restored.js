@@ -243,7 +243,7 @@ const amnesiaRestored = {
       id: 'hote-room-8',
       coord: [100, 100],
       name: 'Hotel Room 1502',
-      desc: `To the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
+      desc: `To the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
@@ -255,7 +255,7 @@ const amnesiaRestored = {
       },
       onLook: () => {
         let room = getRoom('hote-room-8');
-        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an IBM PC computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
+        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
         println(room.desc);
       },
       items: [
@@ -841,7 +841,7 @@ const amnesiaRestored = {
           
           To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
           
-          To the left of the dresser is an **IBM PC** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
+          To the left of the dresser is an **Apple //e** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
           
           if(getItemInInventory('Room Key')){ //if the 1502 room key is already in inventory
               room.desc = room.desc.replace(`${keyDesc}`, '');
@@ -4738,8 +4738,8 @@ const amnesiaRestored = {
         disk.inventory.push(
           {
             itemId: 'canvasbag',
-            icon: '/img/png/image-gymbag-thumbnail.png',
-            gif: '/img/gif/gif-gymbag-ingame.gif',
+            icon: 'img/png/image-gymbag-thumbnail.png',
+            gif: 'img/gif/gif-gymbag-ingame.gif',
             name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
             desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
             isTakeable: true,
@@ -4755,7 +4755,7 @@ const amnesiaRestored = {
                     gif: 'img/gif/gif-matches-ingame.gif',
                     name: ['Matchbook', 'matches', 'matches'],
                     isTakeable: true,
-                    desc: `The matchbook is empty and you wonder why you've kept it. It is white with an orange coat of arms. Written below that: "Princeton Club, 15 W. 43 Street.`
+                    desc: `You realize that you don't smoke, so you wonder why you've kept it. It is white with an orange coat of arms. Written below that: "Princeton Club, 15 W. 43 Street.`
                   }
                 )
               }
