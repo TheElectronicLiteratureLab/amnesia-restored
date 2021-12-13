@@ -175,7 +175,7 @@
 }
 
 #inventory-button:hover {
-   background-image: url(../img/png/icon-inventory-ibm.png);
+   background-image: url(../img/png/icon-inventory-ibmover.png);
 }
 
 #address-book-button {
@@ -183,7 +183,7 @@
 }
 
 #address-book-button:hover {
-   background-image: url(../img/png/icon-address-ibm.png);
+   background-image: url(../img/png/icon-address-ibmover.png);
 }
 
 #map-button {
@@ -191,7 +191,7 @@
 }
 
 #map-button:hover {
-   background-image: url(../img/png/icon-map-ibm.png);
+   background-image: url(../img/png/icon-map-ibmover.png);
 }
 
 #info-button {
@@ -199,7 +199,7 @@
 }
 
 #info-button:hover {
-   background-image: url(../img/png/icon-info-ibm.png);
+   background-image: url(../img/png/icon-info-ibmover.png);
 }
 
 /* right side clickable icons */
@@ -208,7 +208,7 @@
 }
 
 #save-button:hover {
-   background-image: url(../img/png/icon-save-ibm.png);
+   background-image: url(../img/png/icon-save-ibmover.png);
 }
 
 #mode-button {
@@ -216,7 +216,7 @@
 }
 
 #mode-button:hover {
-   background-image: url(../img/png/icon-mode-ibm.png);
+   background-image: url(../img/png/icon-mode-ibmover.png);
 }
 
 #achieve-button {
@@ -224,7 +224,7 @@
 }
 
 #achieve-button:hover {
-   background-image: url(../img/png/icon-achieve-ibm.png);
+   background-image: url(../img/png/icon-achieve-ibmover.png);
 }
 
 #help-button {
@@ -232,7 +232,7 @@
 }
 
 #help-button:hover {
-   background-image: url(../img/png/icon-help-ibm.png);
+   background-image: url(../img/png/icon-help-ibmover.png);
 }
 
 #info-display h3 {
