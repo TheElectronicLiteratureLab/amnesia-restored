@@ -574,10 +574,14 @@ function enterBtnClick(){
   $('input').trigger(e);
   applyInput();
   window.removeEventListener("keydown", checkKeyPressed, false);
+  slideLeftOut("address-display", "address-text-container");
 }
 
 
 let closeDial = () => {
+  slideRightOut("dialPad", "dial-pad-container");
+  slideLeftOut("address-display", "address-text-container");
+  console.log("closed bb")
   //tutorialDisplayed = false;
   applyInput();
   document.getElementById("tutorial").style.display = "none";
@@ -635,10 +639,20 @@ function checkKeyPressed(evt){
     number = 9;
     numdialKey();
   }
-  if(evt.keyCode === 13){
+  
+  if(addOn === true){
+    if(evt.keyCode === 13){
+      enterBtnClick();
+    }
+  } else {
+    if(evt.keyCode === 13){
+      window.removeEventListener("keydown", checkKeyPressed, false);
+    }
+  }
+  /*if(evt.keyCode === 13){
     //enterBtnClick();
     window.removeEventListener("keydown", checkKeyPressed, false);
-  }
+  }*/
   if(evt.keyCode === 8){
     deleteNum();
     
@@ -650,14 +664,15 @@ function checkKeyPressed(evt){
 // the dial function
 let dial = () => {
   const room = getRoom(disk.roomId);
+  dialOn = true;
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
-    slideTutoIn();
+    slideRightIn("dialPad", "dial-pad-container");
     //document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
-      slideTutoIn("tutorial", "tutorial-text-container");
+      slideTutoIn();
       firstDial = true;
     }
     // disable the input
@@ -681,8 +696,8 @@ let dial = () => {
 
 let dialing = () => {
   slideRightOut("dialPad", "dial-pad-container");
-
-  animateToggle();
+  slideLeftOut("address-display", "address-text-container");
+  document.getElementById("tutorial").style.display = "none";
   //document.getElementById("dialPad").style.display = "none";
   //document.getElementById("tutorial").style.display = "none";
   println(`You have to enter in a number to be able to place a call. Wanna try again?`);

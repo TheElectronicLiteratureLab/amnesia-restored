@@ -220,6 +220,7 @@ let currentInv = () => {
     if(!invDisplay.style.display || invDisplay.style.display === "none"){
         applyInput("inv");
         displayCheck("inventory")
+        invOn = true;
     } else {
         slideLeftOut("inventory-display", "inventory-text-container");
         document.getElementById("inventory-item-display").style.display = "none";
@@ -227,6 +228,7 @@ let currentInv = () => {
         document.getElementById("inventory-brochure-display").style.display = "none";
         document.getElementById("brochure-full-display").style.display = "none";
         document.querySelector("input").disabled = false;
+        invOn = false;
     }
 }
 
@@ -282,6 +284,7 @@ let infoOn = false;
 let modeOn = false;
 let achieveOn = false;
 let helpOn = false;
+let dialOn = false;
 
 // when the player presses the sidebar btns toggle on and off, when displays are open inputs are disabled except the command guide.
 
@@ -295,12 +298,19 @@ let displayLeftToggle = (id, name, text) => {
        // add check to see if btn is address book to keep input enabled
        if(id === "address-display"){
         slideLeftIn(id, text);
+        addOn = true;
        } else {
         slideLeftIn(id, text);
         document.querySelector('input').disabled = true;
+        infoOn = true;
        }
    } else {
         slideLeftOut(id, text);
+        if(name === "address"){
+            addOn = false;
+        } else {
+            infoOn = false;
+        }
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
    }
@@ -313,8 +323,10 @@ let turnOnMap = () => {
     if(!x.style.display || x.style.display === "none"){
         fadeOn("map-display");
         map.invalidateSize();
+        mapOn = true;
     } else {
         fadeOff("map-display");
+        mapOn = false;
     }
     
 }
@@ -347,12 +359,25 @@ let displayRightToggle = (id, name, text) => {
         // checks to see if the btn is the help btn to allow input still, else input disabled
         if(id === "help-display"){
             slideRightIn(id, text);
+            helpOn = true;
         } else {
             slideRightIn(id, text);
             document.querySelector('input').disabled = true;
+            if(name === "mode"){
+                modeOn = true;
+            } else {
+                achieveOn = true;
+            }
         }
     } else {
         slideRightOut(id, text);
+        if(name === "mode"){
+            modeOn = false;
+        } else if(name === achieve){
+            achieveOn = false;
+        } else {
+            helpOn = false;
+        }
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
     }
@@ -390,7 +415,6 @@ let displayLeftToggle = (id, name, text) => {
 // running a check to see if a display is open and if it is turn variable true and check which other variable is true and turn false
 let displayCheck = (name) => {
     if(name === 'inventory'){
-        invOn = true;
         if(addOn === true){
             document.getElementById("address-display").style.display = "none";
             addOn = false;
@@ -416,10 +440,13 @@ let displayCheck = (name) => {
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
         }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
+        }
     }
 
     if(name === "address"){
-        addOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -452,7 +479,6 @@ let displayCheck = (name) => {
     }
 
     if(name === "map"){
-        mapOn = true;
         setTimeout(function(){ map.invalidateSize()}, 50);
         //map.panTo(playerMarker.getLatLng());
         if(invOn === true){
@@ -483,10 +509,13 @@ let displayCheck = (name) => {
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
         }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
+        }
     }
 
     if(name === "info"){
-        infoOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -515,11 +544,14 @@ let displayCheck = (name) => {
         if(helpOn === true){
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
     if(name === "mode"){
-        modeOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -548,11 +580,14 @@ let displayCheck = (name) => {
         if(helpOn === true){
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
     if(name === "achieve"){
-        achieveOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -582,10 +617,13 @@ let displayCheck = (name) => {
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
         }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
+        }
     }
 
     if(name === "help"){
-        helpOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
@@ -614,6 +652,10 @@ let displayCheck = (name) => {
         if(achieveOn === true){
             document.getElementById("achieve-display").style.display = "none";
             achieveOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
@@ -877,6 +919,18 @@ let numdialButton = (clicked_id) => {
 let deleteNumBtn = () => {
     let el = document.getElementById("input");
     el.value = el.value.slice(0, -1);
+}
+
+
+// toggle tutorial 
+let animateToggle = () => {
+    let x = document.getElementById("tutorial");
+
+    if(x.style.display === "none"){
+        slideRightIn("tutorial", "tutorial-text-container");
+    } else {
+        slideRightOut("tutorial", "tutorial-text-container");
+    }
 }
 
 // animate first tutorial display
