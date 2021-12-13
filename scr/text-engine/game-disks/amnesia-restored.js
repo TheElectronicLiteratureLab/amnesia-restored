@@ -28275,7 +28275,7 @@ exits: [
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['Princeton', 'Health', 'Club',], id: 'test-1'},
+        {dir: ['princeton', 'health', 'club',], id: '????'},
       ]
     },
     {
@@ -41746,6 +41746,14 @@ exits: [
         }
       ]
 
+    },
+    {
+      id: 'test-1',
+      name:'',
+      desc: 'I am a test room please ignore.',
+      onEnter: () => {
+        pressEnter('53-5');
+      }
     }
   ],
 };
