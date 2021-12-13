@@ -372,6 +372,9 @@ const nobelesLobby = {
 
             },
             onBlock: () => {
+                if(prevInput){
+                    betteCounter++;
+                }
                 if(prevInput === 'turn on tv'){
                     enterRoom('nobe-28');
                 }else if(prevInput === 'open fridge' || prevInput === 'eat'){
