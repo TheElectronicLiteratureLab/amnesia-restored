@@ -17,6 +17,15 @@ const nyhistorical = {
           Children (12 and Under) 0.75\n`,
           onEnter: () => 
           {
+
+            const room = getRoom(lastRoom.id);
+
+            room.onEnter = () => {
+                room.onEnter() + (degradation = true);
+            }
+
+            degradation = !degradation
+            
             playerC.dScore += 5; // Adding to Detective Score
             playerC.cScore += 2; // Adding to Character Score
             playerC.sScore += 5; // Adding to Survival Score
@@ -30,8 +39,9 @@ const nyhistorical = {
             id: 'nyhist-2', // New York Historical Society entrance
             name: 'N.Y. Historical Society', // Displayed each time the player enters the room.
             desc: `The ticket agent looks inquireingly from the paperback he was reading and says, "Would you like a ticket, sir?`,
-            onEnter: () => 
-            {
+            onEnter: () => {
+
+                degradation = false;
               reenableInput();
             },
             onBlock: () => 

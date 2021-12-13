@@ -1605,9 +1605,7 @@ const hungerWarning = () => {
     pressEnter('deat-1')
   } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
     return;
-  } else {
-    println(`Error! Hunger warning is malfunctioning!`);
-  };
+  } 
 };
 
 //restore player hunger when they eat
@@ -1684,9 +1682,7 @@ const fatigueWarning = () => {
     pressEnter('hosp-deat')
   } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
     return;
-  } else {
-    println(`Error! Hunger warning is malfunctioning!`);
-  };
+  } 
 
 
 };

@@ -26,6 +26,7 @@ const computerStore = {
       name: 'USER-FRIENDLY COMPUTER STORE',
       desc: `The store looks like it has either not yet opened for business or recently gone bankrupt. There are only a few computers in sight--an Apple, a Commodore, and an IBM PC. \n\n Various products line the wall, including Electronic Arts' "Adventure Construction Set", "Tales of the Unknown: The Bard's Tale", and "Thomas M. Disch's AMNESIA."`,
       onEnter: () => {
+        degradation = !degradation;
         //if first time:
         println(`The one other person in the store--a woman in what is almost but not quite a man’s business suit--approaches you, and says, “How may I help you, sir?”`);
         pressEnter('frie-comp-3');
@@ -49,6 +50,7 @@ const computerStore = {
       desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on--and of course it will only run on a machine if it’s been formatted to do so.
       I don’t pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple 2e, the IBM PC, and the Commodore 64. Which would you like?`,
       onEnter: () => {
+        degradation = false;
         reenableInput();
       },
       onBlock: () => {

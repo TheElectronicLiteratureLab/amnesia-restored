@@ -21176,6 +21176,10 @@ const streets = {
             USER-FRIENDLY
 
             COMPUTER STORE.`,
+
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '57-madi'},
         {dir: 'south', id: '55-madi'},
