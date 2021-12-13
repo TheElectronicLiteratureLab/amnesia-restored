@@ -1,7 +1,7 @@
 const amnesiaRestored = {
 
  // Set this to the ID of the room you want the player to start in.
-  roomId: `nyhist-1`, // Set this to the ID of the room you want the player to start in.
+  roomId: 'nyhist-1', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -1238,7 +1238,10 @@ const amnesiaRestored = {
           println(`The man shoots you twice in the chest, first through your liver and then through your heart. In the moments before your death, your killer offers some parting words of advice. "In the future, friend, don't dawdle. Dawdling never got anyone anywhere." He bends down and places your hands crosswise over the two bullet holes in your chest, straightens out your legs, and leaves the room with a tip of his Stetson.
           
           A fly alights on your nose. For a little while you feel the tickle of its feet, and then you're dead.`);
-          pressEnter('');//leads to end screen
+          dawdHote = true;
+          updateEndings();
+          slideRightIn('achieve-display', 'achieve-text-container');
+          pressEnter('game-over');//leads to end screen
       },
       exits: [],
   },//end of hote-revi-7 room (death for dawdlers ending)
@@ -1907,6 +1910,8 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
         end1Eternity = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
         pressEnter('game-over');
       }
     },
@@ -2126,6 +2131,7 @@ const amnesiaRestored = {
       desc: `At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open -- to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, your makeshift costume comes undone and falls to the floor of the elevator. As you stoop to retrieve it, the elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`,
       
       onEnter: () => {
+
           pressEnter('deat-1');
       },
       exits: [],
@@ -5207,6 +5213,9 @@ const amnesiaRestored = {
     They take aim. You close your eyes. The order to Fire! is given.
     You die.`, // Displayed when the player first enters the room.
     onEnter: () => {
+      deatTexa = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
       pressEnter('game-over');
     },
     exits: [],// Go to Game Over
@@ -5233,6 +5242,9 @@ const amnesiaRestored = {
     name: 'Death and Texas', // Displayed each time the player enters the room.
     desc: `And then you die`, // Displayed when the player first enters the room.
     onEnter: () => {
+      deatTexa = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
       pressEnter('game-over');
     },
   },
@@ -7279,7 +7291,7 @@ const amnesiaRestored = {
               },
               { 
                   dir: ['east'],
-                  id : '76-cpkw'
+                  id : 'nyhist-2f-1'
               },
               {
                   dir: ['west'],
@@ -7292,8 +7304,7 @@ const amnesiaRestored = {
           name: 'N.Y. Historical Society', // This room is only entered if the player boldly declaires himself a member
           desc: `You enter a gallery hung with many portraits of famous New Yorkers.`,
           onLook: () => {
-              const room = getRoom('nyhist-1f-2');
-              room.desc = `Most of these paintings are of women wearing magnificent dresses and hung with several small fortunes in jewelry. Each of them seems to be sizing up the other disdainfully, except for Mrs. Aloysius D. Brouwer, who looks with perfect satisfaction into a full-length mirror. Whistler had her number, and no doubt about it.`;
+              println(`Most of these paintings are of women wearing magnificent dresses and hung with several small fortunes in jewelry. Each of them seems to be sizing up the other disdainfully, except for Mrs. Aloysius D. Brouwer, who looks with perfect satisfaction into a full-length mirror. Whistler had her number, and no doubt about it.`);
           },
           exits: 
           [
@@ -7312,7 +7323,7 @@ const amnesiaRestored = {
               },
               { 
                   dir: ['east'],
-                  id : '76-cpkw'
+                  id : 'nyhist-2f-1'
               },
               {
                   dir: ['west'],
@@ -30389,7 +30400,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['Princeton Club', 'Princeton', 'Health', 'Club',], id: 'prin-club-1'},
+        {dir: ['princeton club', 'princeton', 'health', 'club',], id: 'prin-club-1'},
       ]
     },
     {
@@ -30531,7 +30542,7 @@ const amnesiaRestored = {
         {dir: 'west', id: '51-amer'},
         {
                     dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'],
-                    id: '????'}
+                    id: 'cathe-1'}
       ]
     },
     {
@@ -43789,6 +43800,9 @@ const amnesiaRestored = {
       
         'You shouldn't have tried to trick me . . .'`,
       onEnter: () => {
+        the1986 = true; 
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
         pressEnter('game-over');
       },
       exits: [],

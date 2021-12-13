@@ -52,6 +52,9 @@ const ending = {
             playerC.sScore = 700;
             playerC.dScore = 0;
             playerC.cScore = 0;
+            emptEnli = true;
+            updateEndings();
+            slideRightIn('achieve-display', 'achieve-text-container');
             pressEnter('game-over');
         },
       },
@@ -128,8 +131,10 @@ const ending = {
         name: ``,
         desc: `"You don't really want to know about those things, John," she would tell you, and then turn away to call the children: "Come get your supper while it's hot!" On your deathbed you are still wondering who you are and what you'd done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
         onEnter: () =>{
-          
-            pressEnter('game-over');
+          theShep = true;
+          updateEndings();
+          slideRightIn('achieve-display', 'achieve-text-container');
+          pressEnter('game-over');
         },
       },
     ],

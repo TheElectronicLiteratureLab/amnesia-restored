@@ -98,6 +98,9 @@ const epilogue = {
         desc: `Bette laughs cheerfully, and says, "I knew you'd say something like that. Don't leave bed. I'll be right home with the newspaper and a pint of Haagen-Daaz. What's your favorite flavor? No, don't tell me. I know."`,
         onEnter: () => 
         {
+            anAmn = true;
+            pdateEndings();
+            slideRightIn('achieve-display', 'achieve-text-container');
             pressEnter('credits'); // Or whatever the last screen of the game is
         },
     },

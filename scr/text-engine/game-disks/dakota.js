@@ -913,6 +913,9 @@ const dakota = {
       desc: `You are dead.`, 
       onEnter: () => 
       {
+        totaAmn = true; 
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
         pressEnter('game-over'); // Game over screen
       },
     },
