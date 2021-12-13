@@ -35364,8 +35364,8 @@ const streets = {
       room.onBlock = () => {
 
         if(prevInput === 'yes' && item) {
-          println(``)
-          enterRoom('wacky-?')
+          println(``);
+          enterRoom('wacky-?');
         } else if (prevInput === 'yes' && !item) {
           println(`You don't see a reason to lie to this man. Maybe rethink your answer.`);
         } else if (prevInput === 'no') {
