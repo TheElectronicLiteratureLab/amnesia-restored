@@ -13,13 +13,14 @@ $(document).ready(function(){
         $("#twoAgruList").slideToggle("slow");
     });
 
+        /*
     $("#brochure-more").click(function(){
         $("#brochure-full-display").animate({
             width: "toggle",
             opacity: "toggle"
         },
         1500);
-    });
+    });*/
 });
 
 // global variables 
@@ -676,7 +677,7 @@ let increasingHung = false;
 let decreasingHung = false;
 
 // function to be called whenever hunger is changed, it then updates the visual of the bars
-let updateHung = () => {
+let updateHung = (x) => {
     // converts values into integers
     const xPlayHung = parseInt(playHung);
     const xPrevHung = parseInt(prevHung);
@@ -743,7 +744,7 @@ let increasingFat = false;
 let decreasingFat = false;
 
 // function to be called whenever the players fatigue is changed
-let updateFat = () => {
+let updateFat = (x) => {
     // converts variables to intergers to run math checks
     const xPlayFat = parseInt(playFat);
     const xPrevFat = parseInt(prevFat);
@@ -849,10 +850,19 @@ const updateEndings = () => {
         document.getElementById("anAmn-title").innerHTML = "An Amnesiac No More";
         document.getElementById("anAmn-desc").style.display = "none";
     }
-    if(totaAmn === true){
-        document.getElementById("totaAmn-title").innerHTML = "Total Amnesia";
-        document.getElementById("totaAmn-desc").style.display = "block";
+    if(zaneShot === true){
+        document.getElementById("zaneShot-title").innerHTML = "Flight or Fight";
+        document.getElementById("zaneShot-desc").style.display = "block";
     }
+    if(shepTux === true){
+        document.getElementById("shepTux-title").innerHTML = "The Shepard ReTuxed";
+        document.getElementById("shepTux-desc").style.display = "block";
+    }
+    if(elepAchi === true){
+        document.getElementById("elepAchi-title").innerHTML = "An Elephant Never Forgets";
+        document.getElementById("elepAchi-desc").style.display = "block";
+    }
+    
 }
 
 // dial pad scripts
@@ -1291,9 +1301,6 @@ let slideBro = (elId) => {
 } 
 
 let slideBroFull = (elId) => {
-
-    // elId would be 'inventory-item-display'
-    // textId would be the item id, which is the div that holds the title/img/desc
 
     let id = null;
     // gets the display div
