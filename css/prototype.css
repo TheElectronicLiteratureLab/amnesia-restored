@@ -1111,6 +1111,7 @@ body {
    font-weight: 600;
    border: none;
    cursor: pointer;
+   margin-right: 10px;
 }
 
 #addresses {

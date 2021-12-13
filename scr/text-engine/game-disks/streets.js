@@ -18766,7 +18766,7 @@ const streets = {
         if(!firstEncounter) {
           firstEncounter = true;
 
-          xStreetEvent();
+          //xStreetEvent();
         } else {
           return;
         }
@@ -21023,7 +21023,7 @@ const streets = {
           if(!firstEncounter) {
             firstEncounter = true;
   
-            xStreetEvent();
+            //xStreetEvent();
           } else {
             return;
           };
@@ -21049,7 +21049,7 @@ const streets = {
         if(!firstEncounter) {
           firstEncounter = true;
 
-          xStreetEvent();
+          //xStreetEvent();
         } else {
           return;
         }
@@ -21226,7 +21226,7 @@ const streets = {
 
         if(!firstEncounter) {
           firstEncounter = true;
-          xStreetEvent();
+          //xStreetEvent();
         } else {
           return;
         }
@@ -21606,7 +21606,7 @@ const streets = {
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['princeton', 'health', 'club',], id: 'prin-club-1'},
+        {dir: ['princeton', 'health', 'club',], id: 'test-1'},
       ]
     },
     {
@@ -21660,7 +21660,7 @@ const streets = {
         {dir: 'south', id: '46-5'},
         {dir: 'east', id: '47-madi'},
         {dir: 'west', id: '47-amer'},
-        {dir: [`Brentano's`, `Brentano`, `Brentanos`], id: 'bren', block: 'You have no reason to go there.'}
+        {dir: [`brentano's`, `brentano`, `brentanos`], id: 'bren', block: 'You have no reason to go there.'}
       ]
     },
     {
@@ -21776,7 +21776,7 @@ const streets = {
           if(!firstEncounter) {
             firstEncounter = true;
   
-            xStreetEvent();
+            //xStreetEvent();
           } else {
             return;
           };
@@ -35613,7 +35613,8 @@ const streets = {
     name: '',
     desc: `this is a testing room, pls ignore`,
     onEnter: () => {
-      xStreetEvent();
+      pressEnter('53-5');
+      //xStreetEvent();
     },
     exits: [],
   },
