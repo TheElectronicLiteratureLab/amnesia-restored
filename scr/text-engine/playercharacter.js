@@ -77,7 +77,11 @@ let qMeridiem = 0;
 //variables needed for beg command
 let caughtCoords1;
 let caughtCoords2;
-let policeCaught = false;
+let policeCaughtBegging = false;
+
+
+//variables needed for clean command
+let policeCaughtWashing = false;
 
 
 //difficulty levels stuff
@@ -124,6 +128,9 @@ let encounterAnswer;
 let xStreetC;
 let xStreetD; 
 let firstEncounter = false;
+let wackyEncounter = false;
+
+let gottenRag = false;
 
 const xStreetName = ['riverside','park','madison','lexington','broadway','10th','9th','8th','7th','6th','5th','4th','3rd','2nd','1st'];
 

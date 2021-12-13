@@ -250,17 +250,25 @@ let enterRoom = (id) => {
   const isStreetRoom = getRoom(disk.roomId);
 
   if (isStreetRoom.isStreet){
+    const chance = Math.floor(Math.random() * 100) + 1;
 
     if (!tenementSpawned) {
       console.log('trying to spawn the tenement');
       spawnTenement();
     } 
     
+    if(chance <= 10) {
+      const chance2 = Math.floor(Math.random() * 100) + 1;
+
+      if(chance2 <= 50) {
+      xStreetEvent();
+      } else {
+      carWashEncounter();
+      }
+    }
+
     randomEncounter();
   }
-  
-  //spawnTenement();
-  //console.log('trying to spawn the tenement');
 
 };
 
