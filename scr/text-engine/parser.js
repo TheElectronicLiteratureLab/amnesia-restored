@@ -29,10 +29,10 @@ let applyInput = (input) => {
       moveCount++;
       incrementTime();
       
-      // if(degradation === true ) {
-      //   degradeHunger();
-      //   degradeFatigue();
-      // };
+      if(degradation === true ) {
+        degradeHunger();
+        degradeFatigue();
+      };
 
       console.log(moveCount);
     } else if (disk.conversation) {
