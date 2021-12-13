@@ -880,44 +880,50 @@ let deleteNumBtn = () => {
 }
 
 // animate first tutorial display
-let slideTutoIn = (elId, textId) => {
-    let id = null;
-    // gets the display div
-    const element = document.getElementById(elId);
-    element.style.display = "block";
-    element.style.width = "0%";
-    // gets the text of display
-    let elementText = document.getElementById(textId);
-        elementText.style.opacity = 0;
-    // sets beginning width
-    let width = 0;
-    clearInterval(id);
-    id = setInterval(slideInR, 30);
-    function slideInR(){
-        if(width === 25){
-            clearInterval(id);
-        } else {
-            width++;
-            element.style.width = width + "%";
-            if(width === 20){
-                let text = null;
-                // sets beginning opacity
-                let opacity = 0;
-                clearInterval(text);
-                text = setInterval(fadeInText, 50);
-                function fadeInText(){
-                    if(opacity >= 1){
-                        clearInterval(text);
-                    } else {
-                        opacity += .2;
-                        console.log(opacity);
-                        elementText.style.opacity = opacity;
-                    }
+let slideTutoIn = () => {
+    let id = null; // handles the 3 second wait interval
+        let widthChange = null; // handles the width increase interval
+        let textOn = null; // handles the text displaying interval
+        // calling the element ID's
+        const el = document.getElementById("tutorial");
+        let elText = document.getElementById("tutorial-text-container");
+        // calling reference variables
+        let secondCount = 0;
+        let width = 0;
+        let opacity = 0;
 
+        clearInterval(id);
+        id = setInterval(countDown, 30);
+        function countDown(){
+            if(secondCount >= 30){
+                clearInterval(id);
+                el.style.display = "block";
+                el.style.width = "0%";
+                clearInterval(widthChange);
+                widthChange = setInterval(slideOut, 40);
+                function slideOut(){
+                    if(width === 25){
+                        clearInterval(widthChange);
+                        clearInterval(textOn);
+                        textOn = setInterval(fadeOn, 40);
+                        function fadeOn(){
+                            if(opacity >= 1){
+                                clearInterval(textOn);
+                            } else {
+                                opacity += .2;
+                                elText.style.opacity = opacity;
+                            }
+                        }
+                    } else {
+                        width++;
+                        el.style.width = width + "%";
+                    }
                 }
+            } else {
+                secondCount++;
+                
             }
         }
-    }  
 }
 
 

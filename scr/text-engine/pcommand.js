@@ -653,7 +653,7 @@ let dial = () => {
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
-    slideRightIn("dialPad", "dial-pad-container");
+    slideTutoIn();
     //document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
