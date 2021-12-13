@@ -787,6 +787,50 @@ body {
    margin-top: 10%;
 }
 
+#xStreetIndex select {
+   background-color: #0E0E0F;
+   color: #e4e4e4;
+   padding: 5px;
+   border-radius: 16px;
+   border: 2px solid #9C4FEC;
+   font-family: 'Montserrat', sans-serif;
+   margin: 5% 0;
+}
+
+/* right side scroll bar width */
+#xStreetIndex select::-webkit-scrollbar {
+   width: 5px;
+}
+   
+/* right side scroll bar track */
+#xStreetIndex select::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* right side scroll bar handle */
+#xStreetIndex select::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
+#xStreetIndex #result {
+   border-radius: 16px 0 0 16px;
+   background-color: #0E0E0F;
+   border: none;
+   padding: 5px;
+}
+
+#xStreetIndex #submitButton {
+   background-color: #9C4FEC;
+   border-radius: 16px;
+   color: #e4e4e4;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   text-transform: uppercase;
+   border: none;
+   cursor: pointer;
+}
+
 .clickables-right {
    display: none;
    position: absolute;
@@ -1000,6 +1044,7 @@ body {
 #dial-info {
    grid-column: 2 / span 1;
    grid-row: 3 / span 1;
+   margin-bottom: 5%;
 }
 
 #dial-keys {
@@ -1011,17 +1056,49 @@ body {
    grid-row-gap: 10%;
 }
 
+#dial-keys button {
+   background-color: #494959;
+   width: 70%;
+   min-width: 50px;
+   border-radius: 5px;
+   font-family: 'Montserrat', sans-serif;
+   color: #e4e4e4;
+   font-size: 2vh;
+   cursor: pointer;
+   transition: .2s ease-in-out;
+}
+
+#dial-keys button:hover {
+   color: #9C4FEC;
+}
+
 #tutorial {
    display: none;
    position: absolute;
    right: 25%;
-   background-color: rgba(121, 121, 121, 0.945);
+   background-color: rgba(28, 28, 34, .95);
    width: 25%;
    height: 100%;
+   padding: 15px;
+   box-sizing: border-box;
 }
 
 #tutorial-text-container {
    opacity: 0;
+}
+
+#tutorial h3 {
+   font-weight: 600;
+   margin-bottom: 5%;
+   font-size: 2vh;
+}
+
+#toggleTutorial {
+   background-color: transparent;
+   color:#E4E4E4;
+   font-weight: 600;
+   border: none;
+   cursor: pointer;
 }
 
 #addresses {

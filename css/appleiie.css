@@ -22,7 +22,7 @@
 }
 
 #game-container h1 {
-   font-size: 5vh;
+   font-size: 4vh;
 }
 
 #game-container h2 {
@@ -179,7 +179,7 @@
 }
 
 #inventory-button:hover {
-   background-image: url(../img/png/icon-inventory-apple.png);
+   background-image: url(../img/png/icon-inventory-appleover.png);
 }
 
 #address-book-button {
@@ -187,7 +187,7 @@
 }
 
 #address-book-button:hover {
-   background-image: url(../img/png/icon-address-apple.png);
+   background-image: url(../img/png/icon-address-appleover.png);
 }
 
 #map-button {
@@ -195,7 +195,7 @@
 }
 
 #map-button:hover {
-   background-image: url(../img/png/icon-map-apple.png);
+   background-image: url(../img/png/icon-map-appleover.png);
 }
 
 #info-button {
@@ -203,7 +203,7 @@
 }
 
 #info-button:hover {
-   background-image: url(../img/png/icon-info-apple.png);
+   background-image: url(../img/png/icon-info-appleover.png);
 }
 
 /* right side clickable icons */
@@ -212,7 +212,7 @@
 }
 
 #save-button:hover {
-   background-image: url(../img/png/icon-save-apple.png);
+   background-image: url(../img/png/icon-save-appleover.png);
 }
 
 #mode-button {
@@ -220,7 +220,7 @@
 }
 
 #mode-button:hover {
-   background-image: url(../img/png/icon-mode-apple.png);
+   background-image: url(../img/png/icon-mode-appleover.png);
 }
 
 #achieve-button {
@@ -228,7 +228,7 @@
 }
 
 #achieve-button:hover {
-   background-image: url(../img/png/icon-achieve-apple.png);
+   background-image: url(../img/png/icon-achieve-appleover.png);
 }
 
 #help-button {
@@ -236,7 +236,7 @@
 }
 
 #help-button:hover {
-   background-image: url(../img/png/icon-help-apple.png);
+   background-image: url(../img/png/icon-help-appleover.png);
 }
 
 #info-display h3 {
