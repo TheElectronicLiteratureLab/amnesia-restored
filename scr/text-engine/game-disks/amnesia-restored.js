@@ -6664,6 +6664,7 @@ const amnesiaRestored = {
         name: '',
         desc: `Congratulating yourself on your foresight you tear up the note and throw it away. Only you will have the password.`,
         onEnter: () => {
+          storyMarker.addTo(poiLayer);
           pressEnter('43-5');
         },
         exits: []

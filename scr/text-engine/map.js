@@ -123,7 +123,7 @@ let poiIcon = L.icon ({
 });
 
 let storyMarker = L.marker([32.787, -6.877], {icon: poiIcon, className: "popup"})
-storyMarker.bindPopup("???").addTo(poiLayer);
+storyMarker.bindPopup("???");
 storyMarker.on("click", function() {
   storyMarker.openPopup();
 });
