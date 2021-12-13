@@ -1352,10 +1352,21 @@ const incrementDay = () => {
 
 //increment hour function
 const incrementHour = () => {
-  if (yHours >= 12) { //if the hours every get to 12 or higher reset it back to 0
+  yHours++;
+
+  if ( yHours === 11 && qMeridiem === 0) {
+    qMeridiem = 1;
+  } else if (yHours === 11 && qMeridiem === 1) {
+    qMeridiem = 0;
+    zDays++;
+  } 
+
+  if (yHours >= 12) {
     yHours = 0;
-  } else {
-    yHours++; //else increment the days
+  } 
+
+  if (zDays >= 7) {
+    zDays = 0
   }
 
 //update the ui elements to match properly
@@ -2131,7 +2142,7 @@ const xStreetEvent = () => {
     xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
   };
 
-  const betteApt = getRoom('nobe-12');
+  //const betteApt = getRoom('nobe-12');
   const dameRoom = getRoom('dame-1');
   const dame = getRoom('dame-8');
   const room = getRoom('xStreet-6'); 
@@ -2283,6 +2294,7 @@ let commands = [
     sleep: sleepFunction,
     press,
     jump,
+    wait: incrementHour,
   },
   // one argument (e.g. "go north", "take book")
   {

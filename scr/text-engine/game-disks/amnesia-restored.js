@@ -30952,7 +30952,7 @@ characters: [
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['princeton club', 'princeton', 'health', 'club'], id: 'prin-club-1'},
+        {dir: ['princeton', 'health', 'club',], id: '????'},
       ]
     },
     {
