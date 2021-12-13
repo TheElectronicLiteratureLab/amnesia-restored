@@ -1683,8 +1683,6 @@ const fatigueWarning = () => {
   } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } 
-
-
 };
 
 const degradeFatigue = () => {
