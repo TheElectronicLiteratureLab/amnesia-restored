@@ -779,6 +779,50 @@ body {
    margin-top: 10%;
 }
 
+#xStreetIndex select {
+   background-color: #0E0E0F;
+   color: #e4e4e4;
+   padding: 5px;
+   border-radius: 16px;
+   border: 2px solid #9C4FEC;
+   font-family: 'Montserrat', sans-serif;
+   margin: 5% 0;
+}
+
+/* right side scroll bar width */
+#xStreetIndex select::-webkit-scrollbar {
+   width: 5px;
+}
+   
+/* right side scroll bar track */
+#xStreetIndex select::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* right side scroll bar handle */
+#xStreetIndex select::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
+#xStreetIndex #result {
+   border-radius: 16px 0 0 16px;
+   background-color: #0E0E0F;
+   border: none;
+   padding: 5px;
+}
+
+#xStreetIndex #submitButton {
+   background-color: #9C4FEC;
+   border-radius: 16px;
+   color: #e4e4e4;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   text-transform: uppercase;
+   border: none;
+   cursor: pointer;
+}
+
 .clickables-right {
    display: none;
    position: absolute;
