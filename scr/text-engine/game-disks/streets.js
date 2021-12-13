@@ -18766,7 +18766,7 @@ const streets = {
         if(!firstEncounter) {
           firstEncounter = true;
 
-          //xStreetEvent();
+          xStreetEvent();
         } else {
           return;
         }
@@ -21022,7 +21022,7 @@ const streets = {
           if(!firstEncounter) {
             firstEncounter = true;
   
-            //xStreetEvent();
+            xStreetEvent();
           } else {
             return;
           };
@@ -21048,7 +21048,7 @@ const streets = {
         if(!firstEncounter) {
           firstEncounter = true;
 
-          //xStreetEvent();
+          xStreetEvent();
         } else {
           return;
         }
@@ -21225,7 +21225,7 @@ const streets = {
 
         if(!firstEncounter) {
           firstEncounter = true;
-          //xStreetEvent();
+          xStreetEvent();
         } else {
           return;
         }
@@ -21775,7 +21775,7 @@ const streets = {
           if(!firstEncounter) {
             firstEncounter = true;
   
-            //xStreetEvent();
+            xStreetEvent();
           } else {
             return;
           };
@@ -35493,13 +35493,60 @@ const streets = {
     exits: [],
   },
   {
+    id: 'nobe-12',
+    name: '',
+    desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large **window** with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+    hasEntered: false,
+    onEnter: () => {
+        const room = getRom(disk.roomId);
+
+        if(room.hasEntered === false ) {
+            room.hasEntered === true;
+            betteCounter = 0;
+        }
+        reenableInput();
+    },
+    onBlock: () => {
+        if(prevInput){
+            betteCounter++
+        }
+        if(betteCounter === 3){
+            enterRoom('nobe-19')
+        }else{
+            if(prevInput === 'open blinds'){
+                enterRoom('nobe-13');
+            }else if( prevInput === 'kiss bette'){
+                enterRoom('nobe-17');
+            }
+        }
+    },
+    items: [
+        {
+            itemId: 'sofa-bed',
+            name: [`sofa`, `sofabed`, `sofa-bed`],
+            desc: `At first glance it appears to be a regular living room sofa but upon further inspection you can see that the sofa opens up into a bed.`,
+            isOpen: false
+        },
+        {
+            itemId: 'apartment',
+            name: ['Apartment','Room','apartment','room'],
+            desc: `Betty’s studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+        },
+        {
+            itemId: 'dres_phot',
+            name: ['picture', 'photo', 'Picture', 'Photo'],
+            desc: `The photo shows you in evening clothes standing before a wall from which the patterned paper is peeling. The contrast between your perfect formal attire and the dismal wallpaper is striking.\n\n Then you recognize the pattern of the wallpaper. You have seen those peagreen rosettes and khaki-colored leaves before. It is the hallway of the tenement where you'd slept and dreamt the dream that had faded from your memory till this moment.`,
+        },
+    ],
+},
+  {
     id: 'test-1',
     coord: [],
     name: '',
     desc: `this is a testing room, pls ignore`,
     onEnter: () => {
       pressEnter('53-5');
-      //xStreetEvent();
+      xStreetEvent();
     },
     exits: [],
   },
