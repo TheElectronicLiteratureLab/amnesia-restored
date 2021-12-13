@@ -21606,7 +21606,7 @@ const streets = {
         {dir: 'south', id: '42-5'},
         {dir: 'east', id: '43-madi'},
         {dir: 'west', id: '43-amer'},
-        {dir: ['Princeton', 'Health', 'Club',], id: '????'},
+        {dir: ['princeton', 'health', 'club',], id: 'prin-club-1'},
       ]
     },
     {
@@ -21633,7 +21633,7 @@ const streets = {
         {dir: 'south', id: '44-5'},
         {dir: 'east', id: '45-madi'},
         {dir: 'west', id: '45-amer'},
-        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
+        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????', block: `You have no reason to go there.`}
       ]
     },
     {
