@@ -7131,7 +7131,7 @@ const amnesiaRestored = {
               orderTotal += 2.00;
               enterRoom('nyhist-3');
               console.log("Order Total: " + orderTotal);
-           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member`){
+           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member`){
               enterRoom('nyhist-4');
            }else{
 
@@ -7519,11 +7519,13 @@ const amnesiaRestored = {
                   enterRoom('nyhist-ann-1');
               }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
                   enterRoom('nyhist-lila-1');
-              }else{
+              }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise"){
                   enterRoom('nyhist-denise-1');
+              }else{
+                println(`"Don't be a pain in my side, John. Ask your questions.'`);
               }
+            },
           },
-      },
       {
           id: 'nyhist-ask-2', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
