@@ -2,7 +2,9 @@ $(document).ready(function(){
 
     //jQuery to toggle on and off the command options
     $("#noAgruCommand").click(function(){
+        
       $("#noAgruList").slideToggle("slow");
+      changeCaret();
     });
 
     $("#oneAgruCommand").click(function(){
@@ -13,17 +15,27 @@ $(document).ready(function(){
         $("#twoAgruList").slideToggle("slow");
     });
 
-        /*
-    $("#brochure-more").click(function(){
-        $("#brochure-full-display").animate({
-            width: "toggle",
-            opacity: "toggle"
-        },
-        1500);
-    });*/
+     
 });
 
+let changeCaret = () => {
+    console.log(document.getElementById("noAgruList").style.display)
+}
+
 // global variables 
+
+// radio checks
+
+const radioModes = document.querySelectorAll('input[name="radio"]');
+
+if(radioModes.checked){
+    console.log("CHECK! CHECK!")
+}
+
+if(document.getElementById("restored-radio").checked){
+        console.log("it's a meee restored");
+}
+
 
 let difficultyChoice = "modern";
 let styling = "restored";
@@ -947,14 +959,14 @@ let slideTutoIn = () => {
         let opacity = 0;
 
         clearInterval(id);
-        id = setInterval(countDown, 30);
+        id = setInterval(countDown, 20);
         function countDown(){
             if(secondCount >= 30){
                 clearInterval(id);
                 el.style.display = "block";
                 el.style.width = "0%";
                 clearInterval(widthChange);
-                widthChange = setInterval(slideOut, 40);
+                widthChange = setInterval(slideOut, 15);
                 function slideOut(){
                     if(width === 25){
                         clearInterval(widthChange);
@@ -1125,7 +1137,7 @@ let slideLeftIn = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 25){
             clearInterval(id);
@@ -1163,7 +1175,7 @@ let slideLeftOut = (elId, textId) => {
     // sets beginning width 
     let width = 25;
     clearInterval(id);
-    id = setInterval(slideOutL, 30);
+    id = setInterval(slideOutL, 15);
     function slideOutL(){
         if(width === 0){
             clearInterval(id);
@@ -1202,7 +1214,7 @@ let slideRightOut = (elId, textId) => {
     // sets beginning width 
     let width = 25;
     clearInterval(id);
-    id = setInterval(slideOutR, 30);
+    id = setInterval(slideOutR, 15);
     function slideOutR(){
         if(width === 0){
             clearInterval(id);
@@ -1215,7 +1227,7 @@ let slideRightOut = (elId, textId) => {
                 // sets beginning opacity
                 let opacity = 1;
                 clearInterval(text);
-                text = setInterval(fadeOutText, 50);
+                text = setInterval(fadeOutText, 20);
                 function fadeOutText(){
                     if(opacity <= 0){
                         clearInterval(text);
@@ -1244,7 +1256,7 @@ let slideRightIn = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInR, 30);
+    id = setInterval(slideInR, 15);
     function slideInR(){
         if(width === 25){
             clearInterval(id);
@@ -1288,7 +1300,7 @@ let slideInvX = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 60){
             clearInterval(id);
@@ -1332,7 +1344,7 @@ let slideInvItems = (elId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 40){
             clearInterval(id);
@@ -1376,7 +1388,7 @@ let slideBro = (elId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 40){
             clearInterval(id);
@@ -1417,7 +1429,7 @@ let slideBroFull = (elId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 35){
             clearInterval(id);
@@ -1444,3 +1456,5 @@ let slideBroFull = (elId) => {
         }
     }  
 } 
+
+
