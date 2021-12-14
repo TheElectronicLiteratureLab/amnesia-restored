@@ -5229,6 +5229,9 @@ const amnesiaRestored = {
     They take aim. You close your eyes. The order to Fire! is given.
     You die.`, // Displayed when the player first enters the room.
     onEnter: () => {
+      deatTexa = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
       pressEnter('game-over');
     },
     exits: [],// Go to Game Over
