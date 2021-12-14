@@ -284,48 +284,8 @@
    border-left: 2px solid #887ecb;
 }
 
-#dialPad {
-   display: none;
-   position: absolute;
-   right: 0px;
-   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
-   width: 25%;
-   height: 100%;
-}
-
-#dial-pad-container{
-   height: 100%;
-   display: grid;
-   grid-template-columns: .05fr .9fr .05fr;
-   grid-template-rows: .05fr .10fr .05fr auto .10fr;
-}
-
-#dial-pad-buttons {
-   grid-column: 1 / span 3;
-   display: grid;
-   grid-template-columns: .90fr .10fr;
-}
-
-#toggleTutorial {
-   justify-self: right;
-}
-
-#dial-keys {
-   grid-column: 2 / span 1;
-   grid-row: 4 / span 1;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-rows: .25fr .25fr .25fr .25fr;
-   grid-row-gap: 10%;
-}
-
-#tutorial {
-   display: none;
-   position: absolute;
-   right: 25%;
-   background-color: rgba(121, 121, 121, 0.945);
-   width: 25%;
-   height: 100%;
+#dial-keys button:hover {
+   color: #887ecb;
 }
 
 /* Classes for println() */
