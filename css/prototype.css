@@ -239,7 +239,7 @@ body {
    grid-column: 2 / span 1;
    grid-row: 4 / span 1;
    display: grid;
-   grid-template-columns: .25fr .1875fr .1875fr .1875fr .1875fr;
+   grid-template-columns: .25fr .16fr .25fr .35fr .08fr;
    grid-template-rows: .3fr .5fr;
    grid-column-gap: 10px;
 }

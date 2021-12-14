@@ -214,6 +214,17 @@ let visualDesc = (id) => {
         appleMode.style.removeProperty("text-decoration");
         commMode.style.removeProperty("text-decoration");
     } 
+
+    //displaying style
+    if(styling === 'restored'){
+        document.getElementById("modeStyles").href = "";
+    } else if(styling === 'apple'){
+        document.getElementById("modeStyles").href = "css/appleiie.css";
+    } else if(styling === 'commodore'){
+        document.getElementById("modeStyles").href = "css/c64.css";
+    } else {
+        document.getElementById("modeStyles").href = "css/ibm.css";
+    }
 }
 
 let beginGame = () => {
@@ -229,12 +240,16 @@ let changeMode = (mode) => {
     let x = document.getElementById("modeStyles");
     if(mode === 'restored'){
         x.href = "";
+        styling = 'restored';
     } else if(mode === 'apple'){
         x.href = "css/appleiie.css";
+        styling = 'apple';
     } else if(mode === 'c64'){
         x.href = "css/c64.css";
+        styling = 'commodore';
     } else {
         x.href = "css/ibm.css";
+        styling = "IBM";
     }
     
 }
