@@ -10,7 +10,7 @@
    font-family: 'ibm', monospace;
    color: #aaaaaa;
    font-size: 2.25vh;
-   line-height: 1.5;
+   line-height: 1.25;
 }
 
 #game-container b, #game-container strong {
@@ -252,6 +252,16 @@
 
 #x-indexer-instructions p {
    font-size: .8em;
+}
+
+#xStreetIndex select {
+   border: 2px solid #aaaaaa;
+   font-family: Arial, sans-serif;
+}
+
+#xStreetIndex #submitButton {
+   background-color: #aaaaaa;
+   font-family: Arial, sans-serif;
 }
 
 .clickables-right {

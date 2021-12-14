@@ -258,6 +258,16 @@
    font-size: .8em;
 }
 
+#xStreetIndex select {
+   border: 2px solid #19ab07;
+   font-family: Arial, sans-serif;
+}
+
+#xStreetIndex #submitButton {
+   background-color: #19ab07;
+   font-family: Arial, sans-serif;
+}
+
 .clickables-right {
    border-left: 2px solid #19ab07;
 }
