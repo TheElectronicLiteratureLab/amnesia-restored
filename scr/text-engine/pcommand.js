@@ -2269,6 +2269,7 @@ let commands = [
   {
     inv,
     i: inv, // shortcut for inventory
+    inventory: inv,
     look,
     l: look, // shortcut for look
     go,

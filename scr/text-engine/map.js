@@ -122,12 +122,11 @@ let poiIcon = L.icon ({
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
 
-let storyMarker = L.marker([32.787, -6.877], {icon: poiIcon, className: "popup"})
+let storyMarker = L.marker([15.390, -6.546], {icon: poiIcon, className: "popup"})
 storyMarker.bindPopup("???");
 storyMarker.on("click", function() {
   storyMarker.openPopup();
 });
-
 
 
 //Creating a regular expression to extract Subway Station name [98 Stations!]
