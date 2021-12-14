@@ -700,6 +700,13 @@ body {
    display: none;
 }
 
+#brochure-more:hover {
+   text-decoration: underline;
+   text-decoration-color: #AD3121;
+   text-decoration-thickness: 2px;
+   text-underline-offset: .5em;
+}
+
 /* x-indexer stylings */
 
 #inventory-xIndex-display {
@@ -1138,6 +1145,13 @@ body {
 
 #noAgruList {
    display: none;
+}
+
+.c-list:hover {
+   text-decoration: underline;
+   text-decoration-color: #AD3121;
+   text-decoration-thickness: 2px;
+   text-underline-offset: .5em;
 }
 
 #oneAgruList {
