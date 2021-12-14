@@ -1,4 +1,18 @@
-/* across screen styles */
+/*** AMNESIA:RESTORED GAME ***/
+/***
+   Table Of Contents:
+
+   1. styling across game screens
+   2. title screen styling (main landing screen on page)
+   3. main menu styling (options)
+   4. loading screen styling
+   5. the main game screen stylings
+***/
+
+/* 1:
+   styling for grid layouts and across game screen styles, including typography and colors
+*/
+
 html {
    font-size: 1em;
 }
@@ -11,7 +25,6 @@ body {
    max-width: 100%;
    height: auto;
 }
-
 
 /* typography */
 #game-container {
@@ -54,6 +67,10 @@ body {
    font-size: 1em;
 }
 
+#game-container p {
+   margin-bottom: 3%;
+}
+
 /* buttons */
 .game-button {
    background-color: transparent;
@@ -64,13 +81,13 @@ body {
    border-radius: 3em;
    transition-duration: 0.4s;
    padding: 10px 1.5em;
+   cursor: pointer;
 }
 
 .game-button:hover {
    transition: 150ms ease-in-out;
    background-color: #9C4FEC;
 }
-
 
 /* layout */
 #game-container {
@@ -83,14 +100,12 @@ body {
    height: 100%;
    grid-column: 2 / span 1;
    grid-row: 1 / span 1;
-   
 }
 
 .game-item-2 {
    background-color: transparent;
    grid-column: 1 / span 1;
    grid-row: 2 / span 1;
-   
 }
 
 .game-item-3 {
@@ -104,8 +119,7 @@ body {
 .game-item-4 {
    background-color: transparent;
    grid-column: 3 / span 1;
-   grid-row: 2 / span 1;
-   
+   grid-row: 2 / span 1; 
 }
 
 .game-item-5 {
@@ -114,8 +128,10 @@ body {
    grid-row: 3 / span 1;
 }
 
+/* 2:
+   title screen styling, the first screen the players see. 
+*/
 
-/* game-title */
 #game-title { 
    height: 100%;
    display: grid;
@@ -160,13 +176,29 @@ body {
    justify-self: left;
 }
 
+/* 3:
+   the main menu of the game, the options screen, let's players choose the difficulty and styling 
+*/
 
-/* game-options */
 #game-options {
    height: 100%;
    display: none;
    grid-template-columns: 10% 80% 10%;
    grid-template-rows: 15% 1fr 15%;
+}
+
+#game-options h2 {
+   margin-bottom: 2%;
+}
+
+#game-options h3 {
+   font-size: 2vh;
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+#game-options p {
+   margin-bottom: 5%;
 }
 
 #options-screen {
@@ -198,6 +230,9 @@ body {
 
 #difficulty-options-descriptions {
    grid-column: 1 / span 4; 
+   margin-top: 2%;
+   font-size: .9em;
+   color: #A1A1A1;
 }
 
 #visuals-options {
@@ -212,15 +247,19 @@ body {
 #visual-mode-options-descriptions {
    grid-column: 1 / span 4;
    align-self: flex-end;
+   margin-top: 2%;
+   font-size: .9em;
+   color: #A1A1A1;
 }
 
 .mode {
    justify-self: center;
+   cursor: pointer;
 }
 
 .mode:hover {
    text-decoration: underline;
-   text-decoration-color: red;
+   text-decoration-color: #AD3121;
    text-decoration-thickness: 2px;
    text-underline-offset: .5em;
 }
@@ -232,8 +271,10 @@ body {
    align-self: center;
 }
 
+/* 4:
+   the game loading screen, the player can reload a previous game from this screen
+*/
 
-/* game load */
 #game-load {
    height: 100%;
    display: none;
@@ -265,8 +306,10 @@ body {
    grid-row: 4 / span 1;
 }
 
+/* 5:
+   the game proper, all styles for the game!
+*/
 
-/* game */
 #game {
    height: 100%;
    display: none;
@@ -321,7 +364,6 @@ body {
    
 /* output scroll bar track */
  #output::-webkit-scrollbar-track {
-   box-shadow: inset 0 0 5px #0E0E0F;
    border-radius: 10px;
 }
    
@@ -420,8 +462,13 @@ body {
    border-radius: 16px;
 }
 
+#money {
+   text-align: center;
+}
 
-/* clickable element styles */
+
+/* clickable left element styles */
+
 .clickables-left{
    position: absolute;
    background: transparent linear-gradient(151deg, rgba(73,73,89,.95) 0%, rgba(15,15,18,.95) 100%) 0% 0% no-repeat padding-box;
@@ -431,6 +478,8 @@ body {
    padding: 15px;
    padding-right: 0;
    box-sizing: border-box;
+   overflow-y: scroll;
+   overflow-x: hidden;
 }
 
 .clickables-left h2, .clickables-right h2 {
@@ -449,30 +498,28 @@ body {
    position: absolute;
    right: 10px;
    top: 15px;
-   
-}
-
-/* left side scroll bar width */
-.clickables-left > *::-webkit-scrollbar {
-   width: 10px;
-}
-   
-/* left side scroll bar track */
-.clickables-left > *::-webkit-scrollbar-track {
-   box-shadow: inset 0 0 5px #0E0E0F;
-   border-radius: 10px;
-}
-   
-/* left side scroll bar handle */
-.clickables-left >*::-webkit-scrollbar-thumb {
-   background: #494959;
-   border-radius: 10px;
 }
 
 .clickable-container {
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+/* left side scroll bar width */
+.clickables-left::-webkit-scrollbar {
+   width: 10px;
+}
+   
+/* left side scroll bar track */
+.clickables-left::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* left side scroll bar handle */
+.clickables-left::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
 }
 
 .iconbtn {
@@ -521,6 +568,335 @@ body {
    background-image: url(../img/png/icon-info-red.png);
 }
 
+/* inventory display specific stylings */
+
+#inventory-display {
+   display: none;
+}
+
+#inventory {
+   display: grid;
+   grid-template-columns: 1fr;
+}
+
+.clickItemInv, .clickXIndex, .clickBrochure{
+   display: flex;
+   align-items: center;
+   margin: 10px 0;
+   cursor: pointer;
+}
+
+.clickItemInv img, .clickXIndex img, .clickBrochure img{
+   width: 15%;
+   margin-right: 10px;
+   border: 1px solid #E4E4E4;
+   border-radius: 5px;
+   background-color: #0e0e0f8a;
+   padding: 5px;
+}
+
+#inventory-item-display {
+   position: absolute;
+   left: 25%;
+   display: none;
+   background-color: rgba(28, 28, 34, .95);
+   width: 40%;
+   height: 100%;
+   padding: 15px;
+   box-sizing: border-box;
+} 
+
+#inventory-item-container {
+   height: 100%;
+   display: grid;
+   grid-template-columns: auto auto;
+   grid-template-rows: .1fr 5fr 3fr;
+   grid-row-gap: 3%;
+}
+
+#inventory-item-display img {
+   width: 50%;
+}
+
+#item-name {
+   grid-column: 1 / span 2;
+   margin-left: .5%;
+}
+
+#item-img-container {
+   grid-column: 1 / span 2;
+   background: #0e0e0f8a;
+}
+
+#item-img {
+   width: 100%;
+   height: 100%;
+   margin-left: 25%;
+   margin-top: 3%;
+}
+
+#item-description {
+   width: 100%;
+   height: 100%;
+   grid-column: 1 / span 2;
+   grid-row: 3 / span 1;
+   margin-left: 1%;
+   overflow-y: scroll;
+}
+
+/* brochure styling */
+
+#inventory-brochure-display {
+   position: absolute;
+   left: 25%;
+   display: none;
+   grid-template-rows: 50vh;
+   background-color: rgba(28, 28, 34, .95);
+   width: 40%;
+   height: 100%;
+   padding: 15px;
+   box-sizing: border-box;
+}
+
+#inventory-brochure-display img {
+   width: 50%;
+}
+
+#inventory-brochure-container {
+   display: grid;
+   grid-template-columns: auto auto;
+   grid-template-rows: .1fr 5fr 3fr;
+   grid-row-gap: 3%;
+}
+
+#brochure-full-display {
+   display: none;
+   position: absolute;
+   left: 65%;
+   background-color: rgba(28, 28, 34, .95);
+   width: 40%;
+   height: 100%;
+   border-left: 2px solid #9C4FEC;
+   overflow-y: scroll;
+}
+
+/* x-indexer stylings */
+
+#inventory-xIndex-display {
+   position: absolute;
+   left: 25%;
+   display: none;
+   background-color: rgba(28, 28, 34, .95);
+   width: 60%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+#xIndex-container {
+   display: grid;
+   height: 100%;
+   grid-template-columns: .6fr 1fr;
+   grid-template-rows: .2fr .4fr .4fr;  
+   box-sizing: border-box;
+   margin: 2%;
+}
+
+#xIndex-container h3 {
+   margin: 5% 0;
+   font-weight: 600;
+}
+
+#xIndex-container label {
+   line-height: 1;
+   font-size: 1.85vh;
+   font-weight: 600;
+}
+
+#xIndex-name {
+   grid-column: 1 / span 2;
+   grid-row: 1 / span 1;
+}
+
+#xIndex-img-container {
+   width: 100%;
+   grid-column: 2 / span 1;
+   grid-row: 1 / span 3;
+   align-self: center;
+}
+
+#xIndex-img-container img {
+   width: auto;
+   max-height: 100%;
+}
+
+#x-indexer-instructions {
+   grid-column: 1 / span 1;
+   grid-row: 2 / span 1;
+}
+
+#x-indexer-instructions p {
+   font-size: .8em;
+   margin-bottom: 5%;
+}
+
+#xStreetIndex {
+   grid-column: 1 / span 1;
+   grid-row: 3 / span 1;
+   margin-top: 10%;
+}
+
+#xStreetIndex select {
+   background-color: #0E0E0F;
+   color: #e4e4e4;
+   padding: 5px;
+   border-radius: 16px;
+   border: 2px solid #9C4FEC;
+   font-family: 'Montserrat', sans-serif;
+   margin: 5% 0;
+}
+
+/* right side scroll bar width */
+#xStreetIndex select::-webkit-scrollbar {
+   width: 5px;
+}
+   
+/* right side scroll bar track */
+#xStreetIndex select::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* right side scroll bar handle */
+#xStreetIndex select::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
+#xStreetIndex #result {
+   border-radius: 16px 0 0 16px;
+   background-color: #0E0E0F;
+   border: none;
+   padding: 5px;
+}
+
+#xStreetIndex #submitButton {
+   background-color: #9C4FEC;
+   border-radius: 16px;
+   color: #e4e4e4;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   text-transform: uppercase;
+   border: none;
+   cursor: pointer;
+}
+
+/* address book display specific stylings */
+
+#address-display {
+   position: absolute;
+   height: 100%;
+   display: none;
+}
+
+#address-text-container {
+   height: 100%;
+}
+
+#addresses {
+   height: 80%;
+}
+
+.listedNum {
+   margin-bottom: 10px;
+}
+
+.listedNum h4 {
+   color: #A1A1A1;
+   margin-left: 15px;
+}
+
+/* manhattan map display specific stylings */
+
+#map-display {
+   display: none;
+}
+
+#map-man {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+}
+
+#exitMapBtn {
+   position: absolute;
+   right: 5px;
+   top: 5px;
+   z-index: 10;
+}
+
+/* information display specific stylings */
+
+#info-display {
+   display: none;
+}
+
+#info-display h3 {
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+#info-display h4 {
+   margin-left: 15px;
+   display: inline;
+}
+
+#score {
+   margin-bottom: 1.33em;
+}
+
+#score p {
+   display: inline;
+}
+
+/* clickable right element styles */
+
+.clickables-right {
+   display: none;
+   position: absolute;
+   border-left: 2px solid #9C4FEC;
+   right: 0px;
+   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
+   width: 25%;
+   height: 100%;
+   padding: 15px;
+   padding-right: 0;
+   box-sizing: border-box;
+   overflow-x: hidden;
+   overflow-y: scroll;
+}
+
+.clickables-right .x-button {
+   position: absolute;
+   right: 10px;
+   top: 15px;
+}
+
+/* right side scroll bar width */
+.clickables-right::-webkit-scrollbar {
+   width: 10px;
+}
+   
+/* right side scroll bar track */
+.clickables-right::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* right side scroll bar handle */
+.clickables-right::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
 /* right side clickable icons */
 #save-button {
    background-image: url(../img/png/icon-save-purple.png);
@@ -554,198 +930,149 @@ body {
    background-image: url(../img/png/icon-help-red.png);
 }
 
-#inventory-display {
+/* mode display stylings */
+
+#mode-display {
+   display: none;
+}
+
+#mode div {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-bottom: 5%;
+   margin-left: 2%;
+}
+
+#mode label {
+   margin-left: 5px;
+}
+
+#mode input {
+   position: relative; 
+   height: 25px;
+   width: 25px;
+}
+
+#restored-radio {
+  right: 26%;
+}
+
+#restored-radio hover {
+   background-color: red;
+}
+
+#mode img {
+   position: relative;  
+}
+
+/* ending achievement display stylings */
+
+#achieve-display {
    display: none;
    overflow-y: scroll;
 }
 
-#address-display {
-   position: absolute;
-   height: 100%;
-   display: none;
+#achieve {
+   margin-top: 10%;
 }
 
-#address-text-container {
-   height: 100%;
-}
-
-#map-display {
-   display: none;
-}
-
-#info-display {
-   display: none;
-}
-
-#inventory {
-   display: grid;
-   grid-template-columns: 1fr;
-}
-
-.clickItemInv, .clickXIndex {
+.ending {
    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
    align-items: center;
-   margin: 10px 0;
-   cursor: pointer;
+   margin-bottom: 10%;
 }
 
-.clickItemInv img, .clickXIndex img {
-   width: 15%;
-   margin-right: 10px;
+.achieveImg {
+   margin: 0 15px;
+   width: 12%;
    border: 1px solid #E4E4E4;
    border-radius: 5px;
    background-color: #0e0e0f8a;
    padding: 5px;
 }
 
-#inventory-item-display {
-   position: absolute;
-   left: 25%;
-   display: none;
-   grid-template-rows: 50vh;
-   background-color: rgba(28, 28, 34, .95);
-   width: 40%;
-   height: 100%;
-   padding: 15px;
-   box-sizing: border-box;
-} 
-
-#inventory-item-container {
-   height: 100%;
-   display: grid;
-   grid-template-columns: auto auto;
-   grid-template-rows: .1fr 5fr 4fr;
-   
+.achieveDesc {
+   font-size: .9em;
+   color: #A1A1A1;
+   margin-top: 5%;
+   margin-right: 5%;
+   margin-left: 5%;
 }
 
-#inventory-item-display img {
-   width: 50%;
+#achieve-hidden {
+   margin-bottom: 10%;
 }
 
-#item-name {
-   grid-column: 1 / span 2;
-}
+/* setting ending desc to none before endings achieved */
 
-#item-img-container {
-   grid-column: 1 / span 2;
-   
-   background: #0e0e0f8a;
-}
-
-#item-img {
-   width: 100%;
-   height: 100%;
-   margin-left: 25%;
-   margin-top: 3%;
-}
-
-#item-description {
-   width: 100%;
-   height: 100%;
-   grid-column: 1 / span 2;
-   grid-row: 3 / span 1;
-   overflow-y: scroll;
-}
-
-#inventory-xIndex-display {
-   position: absolute;
-   left: 25%;
-   display: none;
-   background-color: rgba(28, 28, 34, .95);
-   width: 60%;
-   height: 100%;
-   box-sizing: border-box;
-}
-
-#xIndex-container {
-   display: grid;
-   height: 100%;
-   grid-template-columns: .5fr 1fr;
-   grid-template-rows: .1fr .4fr .5fr;
-   padding: 15px;
-   
-}
-
-#xIndex-name {
-   grid-column: 1 / span 2;
-}
-
-#xIndex-img-container {
-   width: 100%;
-   grid-column: 2 / span 1;
-   grid-row: 2 / span 2;
-
-}
-
-#xIndex-img-container img {
-   width: auto;
-   max-height: 100%;
-}
-
-#x-indexer-instructions {
-   grid-column: 1 / span 1;
-   grid-row: 2 / span 1;
-}
-
-#x-indexer-instructions p {
-   font-size: .8em;
-}
-
-#xStreetIndex {
-   grid-column: 1 / span 1;
-   grid-row: 3 / span 1;
-   margin-top: 10%;
-}
-
-
-
-.clickables-right {
-   display: none;
-   position: absolute;
-   border-left: 2px solid #9C4FEC;
-   right: 0px;
-   background: transparent linear-gradient(29deg, rgba(15,15,18,.95) 0%, rgba(73,73,89,.95) 100%) 0% 0% no-repeat padding-box;
-   width: 25%;
-   height: 100%;
-   padding: 15px;
-   padding-right: 0;
-   box-sizing: border-box;
-}
-
-.clickables-right .x-button {
-   position: absolute;
-   right: 10px;
-   top: 15px;
-}
-
-/* right side scroll bar width */
-.clickables-right > *::-webkit-scrollbar {
-   width: 10px;
-}
-   
-/* right side scroll bar track */
-.clickables-right > *::-webkit-scrollbar-track {
-   box-shadow: inset 0 0 5px #0E0E0F;
-   border-radius: 10px;
-}
-   
-/* right side scroll bar handle */
-.clickables-right >*::-webkit-scrollbar-thumb {
-   background: #494959;
-   border-radius: 10px;
-}
-
-#mode-display {
+#eterWith-desc {
    display: none;
 }
 
-#achieve-display {
+#emptEnli-desc {
    display: none;
 }
+
+#theShep-desc {
+   display: none;
+}
+
+#the1986-desc {
+   display: none;
+}
+
+#deatTexa-desc {
+   display: none;
+}
+
+#painMan-desc {
+   display: none;
+}
+
+#dawdHote-desc {
+   display: none;
+}
+
+#anAmn-desc {
+   display: none;
+}
+
+#zaneShot-desc {
+   display: none;
+}
+
+#shepTux-desc {
+   display: none;
+}
+
+#elepAchi-desc {
+   display: none;
+}
+
+/* command guide display stylings */
 
 #help-display {
    display: none;
-   overflow-y: scroll;
+}
+
+#help h3 {
+   cursor: pointer;
+}
+
+#help h4 {
+   font-size: .9em;
+   color: #A1A1A1;
+}
+
+#help div {
+   margin-bottom: 5%;
+}
+
+.commands {
+   margin-left: 15px;
 }
 
 #noAgruList {
@@ -759,6 +1086,8 @@ body {
 #twoAgruList {
    display: none;
 }
+
+/* dial pad display stylings */
 
 #dialPad {
    display: none;
@@ -798,6 +1127,7 @@ body {
 #dial-info {
    grid-column: 2 / span 1;
    grid-row: 3 / span 1;
+   margin-bottom: 5%;
 }
 
 #dial-keys {
@@ -809,49 +1139,49 @@ body {
    grid-row-gap: 10%;
 }
 
+#dial-keys button {
+   background-color: #494959;
+   width: 70%;
+   min-width: 50px;
+   border-radius: 5px;
+   font-family: 'Montserrat', sans-serif;
+   color: #e4e4e4;
+   font-size: 2vh;
+   cursor: pointer;
+   transition: .2s ease-in-out;
+}
+
+#dial-keys button:hover {
+   color: #9C4FEC;
+}
+
 #tutorial {
    display: none;
    position: absolute;
    right: 25%;
-   background-color: rgba(121, 121, 121, 0.945);
+   background-color: rgba(28, 28, 34, .95);
    width: 25%;
    height: 100%;
+   padding: 15px;
+   box-sizing: border-box;
 }
 
 #tutorial-text-container {
    opacity: 0;
 }
 
-#addresses {
-   height: 80%;
-   overflow-y: scroll;
+#tutorial h3 {
+   font-weight: 600;
+   margin-bottom: 5%;
+   font-size: 2vh;
 }
 
-.listedNum {
-   margin-bottom: 10px;
-}
-
-.listedNum h4 {
-   color: #A1A1A1;
-   margin-left: 10%;
-}
-
-#map-man {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   z-index: 1;
-}
-
-#exitMapBtn {
-   position: absolute;
-   right: 5px;
-   top: 5px;
-   z-index: 10;
-}
-
-#money {
-   text-align: center;
+#toggleTutorial {
+   background-color: transparent;
+   color:#E4E4E4;
+   font-weight: 600;
+   border: none;
+   cursor: pointer;
 }
 
 /* Classes for println() */
@@ -874,22 +1204,4 @@ body {
 
 #output div.playerInput {
    border-left: none;
-}
-
-#styxEndingIcon {
-   width: 40%;
-   margin-right: 10px;
-   border: 1px solid #E4E4E4;
-   border-radius: 5px;
-   background-color: #0e0e0f8a;
-   padding: 5px;
-}
-
-.ending {
-   display: grid;
-   grid-template-columns: .5fr 1fr;
-}
-
-.achieveImg {
-   justify-self: center;
 }

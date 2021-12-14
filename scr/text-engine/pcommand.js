@@ -14,6 +14,8 @@ let inv = () => {
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
+    } else if(item.itemId === 'brochure'){
+      listBro(item.icon, `${getName(item.name)}`, 'clickBrochure', item.itemId);
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }
@@ -103,6 +105,7 @@ let go = () => {
     }
 
     const dir = getName(exit.dir).toUpperCase();
+    console.log('Get Exit Ids: ' + dir);
     // include room name if player has been there before
     const directionName = rm.visits > 0
       ? `${dir} - ${rm.name}`
@@ -156,6 +159,12 @@ let inputRead = () => {
   } else {
     console.log(`nice, you're leaving`)
   }
+};
+
+const distanceFormula = (x,y) => {
+  const a = x[0] - y[0];
+  const b = x[1] - y[1];
+  return Math.sqrt( (a*a) + (b*b) ); 
 };
 
 
@@ -566,10 +575,14 @@ function enterBtnClick(){
   $('input').trigger(e);
   applyInput();
   window.removeEventListener("keydown", checkKeyPressed, false);
+  slideLeftOut("address-display", "address-text-container");
 }
 
 
 let closeDial = () => {
+  slideRightOut("dialPad", "dial-pad-container");
+  slideLeftOut("address-display", "address-text-container");
+  console.log("closed bb")
   //tutorialDisplayed = false;
   applyInput();
   document.getElementById("tutorial").style.display = "none";
@@ -627,10 +640,20 @@ function checkKeyPressed(evt){
     number = 9;
     numdialKey();
   }
-  if(evt.keyCode === 13){
+  
+  if(addOn === true){
+    if(evt.keyCode === 13){
+      enterBtnClick();
+    }
+  } else {
+    if(evt.keyCode === 13){
+      window.removeEventListener("keydown", checkKeyPressed, false);
+    }
+  }
+  /*if(evt.keyCode === 13){
     //enterBtnClick();
     window.removeEventListener("keydown", checkKeyPressed, false);
-  }
+  }*/
   if(evt.keyCode === 8){
     deleteNum();
     
@@ -642,6 +665,7 @@ function checkKeyPressed(evt){
 // the dial function
 let dial = () => {
   const room = getRoom(disk.roomId);
+  dialOn = true;
   if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'bett-apar' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
@@ -649,7 +673,7 @@ let dial = () => {
     //document.getElementById('dialPad').style.display = "grid";
     // pull up tutorial if firstDial is false
     if(firstDial === false){
-      animateToggle();
+      slideTutoIn();
       firstDial = true;
     }
     // disable the input
@@ -673,8 +697,8 @@ let dial = () => {
 
 let dialing = () => {
   slideRightOut("dialPad", "dial-pad-container");
-
-  animateToggle();
+  slideLeftOut("address-display", "address-text-container");
+  document.getElementById("tutorial").style.display = "none";
   //document.getElementById("dialPad").style.display = "none";
   //document.getElementById("tutorial").style.display = "none";
   println(`You have to enter in a number to be able to place a call. Wanna try again?`);
@@ -714,6 +738,9 @@ let callNum = (num) => {
 // wear command
 let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
+  if (item === undefined) {
+    item = getItemInInventory(clothes);
+  }
   console.log(item);
   addItem(item.itemId);
   const room = getRoom('hote-revi');
@@ -793,9 +820,24 @@ let wear = (clothes) => {
 // remove command
 let remove = (clothes) => {
   //let room = getRoom(disk.roomId);
-  let item = getItemInRoom(clothes, disk.roomId);
-  //console.log(item.itemId)
+  //let item = getItemInRoom(clothes, disk.roomId);
+  let item = getItemInInventory(clothes);
+  console.log(item.itemId)
   //dropItem(item.name[0]);
+
+/*  
+  let indexToRemove = disk.inventory.indexOf(item);
+  console.log(disk.inventory.slice(indexToRemove));
+  let clotheToRemove = disk.inventory.slice(indexToRemove);
+  disk.inventory.splice(indexToRemove, 1);
+  let room = getRoom(disk.roomId);
+  if (room.items === undefined) {
+    //disk.inventory.slice(indexToRemove)
+    room.items = clotheToRemove;
+  } else {
+    room.items.push(clothesToRemove[0]);
+  }
+*/
   
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
@@ -1086,7 +1128,7 @@ const jumpOut = (prep, winJumpOut) => {
 
 //Phone Booth Creation
 function createPhone() { //create function
-  const rooms = streets.rooms; //set variable to loaded disk
+  const rooms = amnesiaRestored.rooms; //set variable to loaded disk
   const thisRoom = getRoom(disk.roomId); //get current room
   let phoneCount = 0;
   let roomCount = 0;
@@ -1117,6 +1159,7 @@ function createPhone() { //create function
   thisRoom.phonesMade = true; //dont allow the function to run again
 };
 
+//debug function for finding if room has empty exit array. 
 const findExitsArray = () => {
   const rooms = streets.rooms;
   let roomCount = 0;
@@ -1192,7 +1235,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
 //spawn tenement function
-/* function spawnTenement() { 
+ function spawnTenement() { 
   const room = getRoom(disk.roomId); //get current room
   const exitedFrom = getRoom('hote-exit');
   const enteredStreets = getRoom(exitedFrom.streetExit); //get the room where they entered the streets
@@ -1211,10 +1254,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
 
 
     //distance formula
-      const a = room.coord[0] - enteredStreets.coord[0];
-      const b = room.coord[1] - enteredStreets.coord[1];
-      const c = Math.sqrt( (a*a) + (b*b) );
-
+      const c = distanceFormula(room.coord, enteredStreets.coord)
   
       //if count is greater than or equal to 11 and 
       //if the distance between player and hotel is greater than or equal to 11 and
@@ -1232,13 +1272,16 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
                //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
+              room.onEnter = () => {
+                room.onEnter() + (degradation = true);
+              }
               room.desc = `The abandoned tenement is here`; //tell player the tenement is here
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
 
 };
-*/
+
 //ask function
 const askXAboutY = ([x, _, y]) => { //arguments will be xCharacter, 'about', yTopic
 
@@ -1347,31 +1390,29 @@ const beg = () => {
   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
   console.log(chance1 + ' rolled for chance to be caught');
   if(curRoom.isStreet){//if tha player is on the streets
-    if (chance1 <= 20 && !policeCaught) { //if you got caught and you haven't been caught before
-      policeCaught = true;
+    if (chance1 <= 20 && !policeCaughtBegging) { //if you got caught and you haven't been caught before
+      policeCaughtBegging = true;
       caughtCoords1 = curRoom.coord;
       console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
 
-      'Sure buddy. But now you been told and you got no excuse the next time. If I see you panhandling again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+      'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
       
       You nod in agreement 
       
-      The policeman goes off in the same directions that the person you'd asked for money went `)
-    } else if (chance1 >= 21 && !policeCaught) {//if you didnt get caught
+      The policeman goes off in the same direction that the driver of the car you cleaned went.`)
+    } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
       begLootTable(); //roll on loot table
-    } else if (chance1 <= 20 && policeCaught) {//if you did get caught and have been caught before
+    } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
       caughtCoords2 = curRoom.coord; //generate coordinates of current room
-      console.log(caughtCoords2 + ' thesen are the coordinates in which player was caught again.')
+      console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
       
       //distance formula
-      const a = caughtCoords1[0] - caughtCoords2[0];
-      const b = caughtCoords1[1] - caughtCoords2[1];
-      const distance = Math.sqrt( (a*a) + (b*b) );
+      const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
       if(distance >= 20) { //if player has moved far enough from where initially caught;
-        policeCaught = false;
+        policeCaughtBegging = false;
         console.log('caught but changed neighborhoods');
         begLootTable();
       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
@@ -1381,9 +1422,9 @@ const beg = () => {
         
         As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`)
 
-        pressEnter('deat-texa');
+        pressEnter('deat-1');
       }
-    } else if (chance1 >= 20 && policeCaught) { //if player has been caught but passed the check
+    } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
       console.log(`caught once but succeeded 80% check`);
       begLootTable();
     }else { //debug purposes
@@ -1578,12 +1619,6 @@ const sleepFunction = () => {
       }     
 };
 
-
-//save load\\
-//player score\\
-//52-5 needs to be linked properly to exiting hotel stuff
-
-
 //difficulty level tie ins\\
 // need to touch hunger, fatigue, money, subway shenanigans -- ahria taking this? 
 //onEnter 53-5||52-5 hunger and fatigue degrading starts. 
@@ -1611,12 +1646,10 @@ const hungerWarning = () => {
     println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
   } else if (playHung <= 0) { //if your hunger drops to 0 game over the player
     println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
-    pressEnter('deat-texa')
+    pressEnter('deat-1')
   } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
     return;
-  } else {
-    println(`Error! Hunger warning is malfunctioning!`);
-  };
+  } 
 };
 
 //restore player hunger when they eat
@@ -1631,7 +1664,7 @@ const ateSomething = (x) => {
   hungBelow20 = false;
   hungBelow10 = false;
 
-  updateHung(); //update the UI
+  updateHung(playHung); //update the UI
 };
 
 //degrade hunger
@@ -1668,7 +1701,7 @@ const degradeHunger = () => {
   } else {
     println(`Error, difficulty is not set.`)
   }
-  updateHung(); //update UI 
+  updateHung(playHung); //update UI 
   hungerWarning(); //Issue hunger warning if necessary 
 };
 
@@ -1690,14 +1723,10 @@ const fatigueWarning = () => {
     println(`Just as it occurs to you that you can hardly stay awake any longer, someone gives you a powerful sedative, with a blow to the back of your head. 
 
     When you wake up from the mugger's attack you are lying on the ground with a close-up view of the four polished shoes of the policemen who've found you. One of them claims to recognize you. You are handcuffed and led to their patrol car.`)
-    pressEnter('deat-texa')
+    pressEnter('hosp-deat')
   } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
     return;
-  } else {
-    println(`Error! Hunger warning is malfunctioning!`);
-  };
-
-
+  } 
 };
 
 const degradeFatigue = () => {
@@ -1727,7 +1756,7 @@ const degradeFatigue = () => {
     println(`Error, difficulty is not set.`)
   }
 
-  updateFat();
+  updateFat(playFat);
   fatigueWarning();
 };
 
@@ -1742,7 +1771,7 @@ const slept = () => {
   fatBelow20 = false;
   fatBelow10 = false;
 
-  updateFat(); //update the UI
+  updateFat(playFat); //update the UI
 };
 
 
@@ -1888,7 +1917,210 @@ const randomEncounter = () => {
   } 
 };
 
+//WACKY WANDERER -- STORY NODES ||
+//KID WITH RAG -- 
+//HUNGER AND FATIGUE DEATH AND TEXAS FLAVOR TEXT DIFFERENCES -- ASK CHARLIE
+//DAMSEL IN DISTRESS ENCOUNTER -- STORY NODES TOWARD BOTTOM || HIGHLIGHTED RED
+//LINK UP X STREET EVENT RANDOMNESS TO MOVEMENT ON STREETS
+//POLISH MIDTOWN EASTSIDE OFFICE BUILDINGS WITH PROPER EXIT BLOCKS AND IF THEY CAN ENTER DURING WEEKDAYS 
+//WEEKDAY BLOCKS FOR CERTAIN STREET EXITS
+//turn off hunger and fatigue--
+  //vault NYHS dakota UfCS restaurants tenement sketchbook
 
+
+//boolean variable of gotten rag or not if gotten it kill function
+
+const carWashEncounter = () => {
+
+  if (gottenRag === false) {
+    const room = getRoom(disk.roomId);
+
+      println(`'A black kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
+
+        room.onBlock = () => {
+          if(prevInput === 'yes') {
+            enterRoom(`rag-get`)
+          } else if (prevInput === 'no'){
+            println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
+            delete(room.onBlock);
+          } else {
+            println(`'It's a simple **yes** or **no** question whitey.'`)
+          }
+        }
+
+    } else {
+      return;
+    }
+};
+
+//clean cars logic
+//needs to check if proper item is in inventory
+//needs to check coords,
+    //if in lincoln tunnel neighborhood no chance to be caught by cops 
+          //within lincoln tunnel neighborhood at (lat,lng) 8.755, -52.734 || 9.189, -20.566 || -17.979, -20.039 || -18.229, -50.713
+    //if not in lincoln tunnel neighborhood chance to be caught, similar to beg function
+    //also need loot table similar to beg function
+        //dependent on difficulty
+          //chance to get nothing 
+    //need car/person list like flavor text 
+
+    const carLootTable = () => {
+      const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
+      console.log(chance2 + ' is what was rolled for loot chance')
+    
+      if (difficulty === 'medium'){ // 
+        if (chance2 <= 15) { //chance to get nothing
+          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+        } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.00
+          const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`); //tell the player how much they got
+          playMon = playMon + dollarAmount;//add amount to player inventory
+        } else if (71 <= chance2 <= 90) { //chance to get between 1.01 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 101) + 101)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (91 <= chance2 <= 100) { //chance to get between 1.26-1.50
+          const dollarAmount = Math.Floor(Math.random() * ((150 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+      
+      } else if (difficulty === 'easy') {
+        if (1 <= chance2 <= 55) { //chance to get between 0.25 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (56 <= chance2 <= 85) { //chance to get between 1.26 & 1.75
+          const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (86 <= chance2 <= 100) { //chance to get between 1.76-2.00
+          const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+    
+      } else if (difficulty === 'hard') {
+        if (chance2 <= 20) { //chance to get nothing
+          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+        } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.00
+          const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        } else if (76 <= chance2 <= 95) { //chance to get between 1.00 & 1.25
+          const dollarAmount = Math.floor(Math.random() * ((125 - 101) + 101)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);;
+          playMon = playMon + dollarAmount;
+        } else if (96 <= chance2 <= 100) { //chance to get between 1.26-1.50
+          const dollarAmount = Math.Floor(Math.random() * ((150 - 126) + 126)) / 100;
+          println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
+          playMon = playMon + dollarAmount;
+        }
+        document.getElementById('money').innerHTML = `${formatter.format(playMon)}`;
+      } else { // debug purposes
+        println(`Oops something went wrong`);
+      }
+    };
+
+    const clean = (x) => {
+      const curRoom = getRoom(disk.roomId);
+      const item = getItemInInventoryById('car-rag');
+
+      if(curRoom.isStreet && (x === 'car' || x === 'cars') && item) {
+        const lng = curRoom.coord[1];
+        const lat = curRoom.coord[0];
+        
+        if( (lat >= -18.334 && lat <= 9.189) && (lng >= -52.690 && lng <= -20.544 ) ) {
+          carLootTable();
+        } else {
+          const chance = Math.floor(Math.random() * 100) + 1;
+
+          if (difficulty === 'easy' && chance <= 10) {
+
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true; 
+
+              caughtCoords1 = curRoom.coord;
+
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+
+                pressEnter('deat-1');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false;
+                carLootTable();
+              }
+            }
+          } else if (difficulty === 'medium' && chance <= 20) {
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true;
+              caughtCoords1 = curRoom.coord;
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+            
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                pressEnter('deat-1');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false; 
+                carLootTable();
+              }
+            }
+          } else if (difficulty === 'hard' && chance <= 30){
+            
+            if(policeCaughtWashing === false) {
+              policeCaughtWashing = true; 
+
+              caughtCoords1 = curRoom.coord;
+
+              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              
+              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+            } else if (policeCaughtWashing === true) {
+              caughtCoords2 = curRoom.coord;
+
+              const distance = distanceFormula(caughtCoords1, caughtCoords2);
+
+              if (distance <= 10 ) {
+                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+
+                pressEnter('deat-1');
+              } else if (distance > 10 ) {
+                policeCaughtWashing = false; 
+
+                carLootTable();
+                
+              }
+            }
+
+          } else if (difficulty === 'easy' && chance > 10) {
+            carLootTable();
+          } else if (difficulty === 'medium' && chance > 20) {
+            carLootTable();
+          } else if (difficulty === 'hard' && chance > 30 ) {
+            carLootTable();
+          }
+        }
+
+      } else if (item && (x != 'car' || x != 'cars')) {
+        println(`The rag is good for windshields but you feel its rather dirty to clean anything else with it.`)
+      } else if (!item) {
+        println(`You don't have the supplies to clean anything, let alone that.`)
+      }
+    };
 
 
 //x street indexer encounter functionality
@@ -1914,13 +2146,110 @@ const xStreetEvent = () => {
   } else { //since all the other digits have the same suffix 
     xStreetD = `${encounterAnswer}th` //provide another answer to the player based on proper suffix
   };
-  const room = getRoom('xStreet-6'); //get the room with the answer onBlock
-  //set that room description to the following based on the encounter variables generated above
+
+  const betteApt = getRoom('nobe-12');
+  const dameRoom = getRoom('dame-1');
+  const dame = getRoom('dame-8');
+  const room = getRoom('xStreet-6'); 
+  const chance2 = Math.floor(Math.random() * 100) + 1 ;
+  const wackyRoom = getRoom('wacky-6');
+  const curRoom = getRoom(disk.roomId);
+  
+  if(!betteApt.hasEntered) {
   room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
-  //enter the x street encounter room chain
+
+  const xStreet1 = getRoom('xStreet');
+  const xStreet2 = getRoom('xStreet-2');
+  const xStreet3 = getRoom('xStreet-3');
+  const xStreet4 = getRoom('xStreet-4');
+  const xStreet5 = getRoom('xStreet-5');
+  const xStreet6 = getRoom('xStreet-6');
+
+  const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
+
+  for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
+    xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+    xStreetArray[i].name = curRoom.name;
+  };
+
   enterRoom('xStreet');
+  } else if (betteApt.hasEntered && !dame.hasEntered) {
+  dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't ever know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
+
+  const dame1 = getRoom('dame-1');
+  const dame2 = getRoom('dame-2');
+  const dame3 = getRoom('dame-3');
+  const dame4 = getRoom('dame-4');
+  const dame5 = getRoom('dame-5');
+  const dame6 = getRoom('dame-6');
+  const dame7 = getRoom('dame-7');
+  const dame8 = getRoom('dame-8');
+  const dame9 = getRoom('dame-9');
+  const dame10 = getRoom('dame-10');
+  const dame11 = getRoom('dame-11');
+  const dame12 = getRoom('dame-12');
+  const dame13 = getRoom('dame-13');
+  const dame14 = getRoom('dame-14');
+
+  const dameArray = [dame1,dame2,dame3,dame4,dame5,dame6,dame7,dame8,dame9,dame10,dame11,dame12,dame13,dame14];
+
+  for (let i = 0; i < dameArray.length; i++) { //iterate through the dame rooms
+    dameArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+    dameArray[i].name = curRoom.name; //set all the names
+  };
+
+
+  enterRoom('dame-1');
+  } else if (dameRoom.hasEntered) {
+    room.desc = `'Pardon me, but I'm from out of town,' he says in a twangy voice that makes his admission superfluous, 'and I can't seem to figure out how to get to ${encounterStreetNumber} ${encounterStreetName}.`
+
+  const xStreet1 = getRoom('xStreet');
+  const xStreet2 = getRoom('xStreet-2');
+  const xStreet3 = getRoom('xStreet-3');
+  const xStreet4 = getRoom('xStreet-4');
+  const xStreet5 = getRoom('xStreet-5');
+  const xStreet6 = getRoom('xStreet-6');
+
+  const xStreetArray = [xStreet1, xStreet2, xStreet3, xStreet4, xStreet5, xStreet6];
+
+  for (let i = 0; i < xStreetArray.length; i++) { //iterate through the xStreet rooms
+    xStreetArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+    xStreetArray[i].name = curRoom.name;
+  };
+
+  enterRoom('xStreet');
+  } else if (chance2 <= 3 && !wackyEncounter) {
+    wackyRoom.desc = `'Thanks, Johnny,' he says, turning off his equipment and wiping his brow with a handkerchief embroidered 'WW.' 'You got any idea where I could find ${encounterStreetNumber} ${encounterStreetName}? It's my nephew's house and I'm supposed to bring him this little cable car I got in San Francisco.`
+
+
+    const wacky1 = getRoom('wacky');
+  const wacky2 = getRoom('wacky-2');
+  const wacky3 = getRoom('wacky-3');
+  const wacky4 = getRoom('wacky-4');
+  const wacky5 = getRoom('wacky-5');
+  const wacky6 = getRoom('wacky-6');
+  const wacky7 = getRoom('wacky-7');
+  const wacky8 = getRoom('wacky-8');
+  const wacky9 = getRoom('wacky-9');
+
+  const wackyArray = [wacky1,wacky2,wacky3,wacky4,wacky5,wacky6,wacky7,wacky8,wacky9,];
+
+  for (let i = 0; i < wackyArray.length; i++) { //iterate through the xStreet rooms
+    wackyArray[i].coord = curRoom.coord; //set all of the coords of the rooms to the current street corners coords
+    wackyArray[i].name = curRoom.name;
+  };
+    //wacky wanderer
+    enterRoom('wacky');
+  }
 };
 //encounter needs to happen on 2nd move after leaving hotel then not sure when after that\\
+
+
+//if you havent gotten the first encounter 
+//if you have gotten the first encounter 
+//if you have entered bettes apartment but havent gotten the dame encounter
+//if you have entered bettes apartment and have gotten the dame encounter
+//chance for wacky wanderer
 
 
 ////////////////////////////////////////////////
@@ -1998,7 +2327,8 @@ let commands = [
     read: read,
     asking: args => askTesting(args),
     dialing: x => callNum(x),
-    press: x => press(x)
+    press: x => press(x),
+    clean: args => clean(args),
   },
   // two+ arguments (e.g. "look at key", "talk to mary")
   {
@@ -2015,7 +2345,7 @@ let commands = [
       const str = args.reduce((cur, acc) => cur + ' ' + acc, '');
       goDir(str);
     },
-    talk: args => talkToOrAboutX(args[0], args[1]),
+    //talk: args => talkToOrAboutX(args[0], args[1]),
     x: args => lookAt([null, ...args]),
     turn: args => turnOffOn(args[0], args[1]),
     jump: args => jumpOut(args[0], args[1])

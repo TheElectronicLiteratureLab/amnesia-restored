@@ -1,5 +1,3 @@
-
-
 //Creating the Map
 //Player Marker//
 let playerIcon =  L.icon ({
@@ -11,7 +9,6 @@ let playerIcon =  L.icon ({
 
 let playerLayer = L.layerGroup();
 let playerMarker = L.marker(disk.currPos, {icon: playerIcon, zIndexOffset: 1000, className: "popup"}).addTo(playerLayer);
-
 let foodLayer = L.layerGroup();
 
 //var map = L.map('map').setView([0, 0], 0);
@@ -22,8 +19,10 @@ let foodLayer = L.layerGroup();
     attributionControl: false,
     zoomControl: false
   });
-map.invalidateSize();
-setTimeout(function(){ map.invalidateSize(true)}, 100);
+map.invalidateSize(); //this allows for resizing within other divs
+setTimeout(function(){ map.invalidateSize(true)}, 100); //this is just in case
+
+//Link the tiles and the file directory template
 L.tileLayer('map/{z}/{x}/{y}.png', {
   continuousWorld: false,
   noWrap: true,	
@@ -36,20 +35,20 @@ var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
 marker.bindPopup('LatLng Marker').openPopup();
 marker.on('drag', function(e) {
   marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
-  //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+  ///marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
+  /// This allows for coordinates to be directly formated and copied to clipboard
   marker.on('dragend', function(e) {
-  navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
+    navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
 })
 });*/
 
-
 //Layer Groups
 let subwayLayer = L.layerGroup();
-let phoneLayer = L.layerGroup(); //this might need to be moved into the phone spawning function
-
+let phoneLayer = L.layerGroup();
 let poiLayer = L.layerGroup();
 let sleepLayer = L.layerGroup(); 
 
+//Object that controls the different layer groups
 let overlays = {
   "Subway": subwayLayer,
   "Phone Booths": phoneLayer,
@@ -61,9 +60,9 @@ let overlays = {
 L.control.layers(null, overlays, {collapsed: false, position: 'bottomleft'}).addTo(map);
 L.control.zoom({position: 'bottomright'}).addTo(map);
 
-//******Marker Creation Here*******//
 
-//ICONS
+//******Main Marker Creation Here*******//
+///ICONS
 
 //POI: Tenement
 let tenementIcon = L.icon ({
@@ -122,24 +121,26 @@ let poiIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
-//todo: insert story node icon here
+
+let storyMarker = L.marker([32.787, -6.877], {icon: poiIcon, className: "popup"})
+storyMarker.bindPopup("???");
+storyMarker.on("click", function() {
+  storyMarker.openPopup();
+});
 
 
 
 //Creating a regular expression to extract Subway Station name [98 Stations!]
 let subwayRegEx = / (.* Station) /;
-
 //Creating a regular expression to extract restaruant name
-let foodRegEx = /luncheonette/;
+let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
-
-//Markers for POI, then run a forEach similarly like above in order to create markers.
-//This is done by feeding an array containing ids of the rooms we want
-let poiIDArr = ['56-madi'];
-
+//Markers for POI Story Nodes, then run a forEach similarly like above in order to create markers. This is done by feeding an array containing ids of the rooms we want.
+//I realized I'm making it more complicated, I just need one marker that I can move around...
+let poiIDArr = ['43-5', '53-5', ];
+//let storyMarkers = [];
 
 //This block is checking the entire disk for boolean values for food and subway.
-//todo: need to add hasFood property to every room that has a restaruant
 disk.rooms.forEach((element)=>{
   if (element.coord !== undefined) {
     if (element.coord[0] !== undefined && element.coord[1] !== undefined) {
@@ -148,9 +149,10 @@ disk.rooms.forEach((element)=>{
       if (element.hasFood === true) {
         let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(foodLayer);
         //marker.bindPopup(element.name, {className: 'popup'});
-        console.log(`Yum yum, I'm hungry.`);
+        //console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
+        //console.log(str);
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
       }
@@ -173,39 +175,38 @@ disk.rooms.forEach((element)=>{
                   //console.log(fastEle.coord[0] + ', ' + fastEle.coord[1]);
                   //console.log(fastTravelLoc);
                   if ((fastEle.coord[0] === fastTravelLoc.lat) && (fastEle.coord[1] === fastTravelLoc.lng)) {
-                    console.log(fastTravelLoc)
-                    console.log(fastEle.coord);
+                    //console.log(fastTravelLoc)
+                    //console.log(fastEle.coord);
                     enterRoom(fastEle.id);
                     playerMarker.unbindPopup();
                     playerMarker.setLatLng(disk.currPos).bindPopup(fastEle.name, {className: 'popup'}).openPopup().update();
                     console.log("YOU HAVE ARRIVED");
                   }
-                }
-
-                
+                }                
               })
-
-
             } else {
               console.log("You can't fast travel here!");
             }
           })
         }
       }
-
-      //POI Markers
-      poiIDArr.forEach((poi) => {
+      //.addTo(poiLayer)
+      //POI Story Markers
+/*      poiIDArr.forEach((poi) => {
         if (poi === element.id) {
           //console.log(element.id);
-          let marker = L.marker([element.coord[0], element.coord[1]], {icon: poiIcon}).addTo(poiLayer);
-          marker.bindPopup("???", {className: 'popup'});
+          storyMarkers[poi] = L.marker([element.coord[0], element.coord[1]], {icon: poiIcon});
+          storyMarkers[poi].bindPopup("???", {className: 'popup'});
         }
-      })
+      })*/
     }
   } else {
     console.log('NO COORDINATES EXIST IN THESE ROOMS');
   }
 });
+
+//console.log(storyMarkers);
+
 
 //enable popups on click for all markers
 $('.popup').on('click', function(e) {
@@ -214,8 +215,7 @@ $('.popup').on('click', function(e) {
 
 //Phone Booth Marker Function
 //Will move this so that it runs later
-console.log(subwayLayer)
-
+//console.log(subwayLayer)
 
 
 //Player Marker Movement
@@ -226,7 +226,6 @@ let centerOnPlayer = () => {
 let setPlayerMarker = (e) => {
   const ENTER = 13;
   if (e.keyCode === ENTER) {
-
       if (disk.currPos !== undefined) {
         let room = getRoom(disk.roomId);
         if (disk.roomId !== 'subway') {
@@ -248,7 +247,6 @@ let setPlayerMarker = (e) => {
       }
   }
 }
-
 
 input.addEventListener('keypress', setPlayerMarker);
 

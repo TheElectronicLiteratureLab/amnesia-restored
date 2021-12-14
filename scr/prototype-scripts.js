@@ -2,7 +2,9 @@ $(document).ready(function(){
 
     //jQuery to toggle on and off the command options
     $("#noAgruCommand").click(function(){
+        
       $("#noAgruList").slideToggle("slow");
+      changeCaret();
     });
 
     $("#oneAgruCommand").click(function(){
@@ -12,9 +14,28 @@ $(document).ready(function(){
     $("#twoAgruCommand").click(function(){
         $("#twoAgruList").slideToggle("slow");
     });
+
+     
 });
 
+let changeCaret = () => {
+    console.log(document.getElementById("noAgruList").style.display)
+}
+
 // global variables 
+
+// radio checks
+
+const radioModes = document.querySelectorAll('input[name="radio"]');
+
+if(radioModes.checked){
+    console.log("CHECK! CHECK!")
+}
+
+if(document.getElementById("restored-radio").checked){
+        console.log("it's a meee restored");
+}
+
 
 let difficultyChoice = "modern";
 let styling = "restored";
@@ -34,7 +55,7 @@ let storyDesc = `Relax and enjoy the story. Fast travel from any position once y
 let modernDesc = `This is how the game should be played, a small challenge to solve the mystery of who you are. Fast travel is only at subway entrances.`;
 let classicDesc = `Based on the original game's difficulty. Play this if you want to feel a bit nostalgic and want a challenge. Not for the faint of heart or mind.`;
 let restoredDesc = `A contemporary visual experience with a modern interface.`;
-let appleDesc = `Published in 1986 for the Apple lle, this mode gives the classic visual experience with a modern interface.`; 
+let appleDesc = `Published in 1986 for the Apple //e, this mode gives the classic visual experience with a modern interface.`; 
 let commDesc = `Released in 1987 for the Commodore 64, this mode gives the Commodore 64 visual experience with a modern interface.`;
 let IBMDesc = `Published in 1986 for IBM PC compatibles, this mode gives the IBM PC visual experience with a modern interface.`;
 
@@ -211,11 +232,15 @@ let currentInv = () => {
     if(!invDisplay.style.display || invDisplay.style.display === "none"){
         applyInput("inv");
         displayCheck("inventory")
+        invOn = true;
     } else {
         slideLeftOut("inventory-display", "inventory-text-container");
         document.getElementById("inventory-item-display").style.display = "none";
         document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
         document.querySelector("input").disabled = false;
+        invOn = false;
     }
 }
 
@@ -271,6 +296,7 @@ let infoOn = false;
 let modeOn = false;
 let achieveOn = false;
 let helpOn = false;
+let dialOn = false;
 
 // when the player presses the sidebar btns toggle on and off, when displays are open inputs are disabled except the command guide.
 
@@ -284,12 +310,19 @@ let displayLeftToggle = (id, name, text) => {
        // add check to see if btn is address book to keep input enabled
        if(id === "address-display"){
         slideLeftIn(id, text);
+        addOn = true;
        } else {
         slideLeftIn(id, text);
         document.querySelector('input').disabled = true;
+        infoOn = true;
        }
    } else {
         slideLeftOut(id, text);
+        if(name === "address"){
+            addOn = false;
+        } else {
+            infoOn = false;
+        }
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
    }
@@ -297,12 +330,15 @@ let displayLeftToggle = (id, name, text) => {
 
 let turnOnMap = () => {
     let x = document.getElementById("map-display");
-    console.log(x.style.display);
+    displayCheck("map");
+    //console.log(x.style.display);
     if(!x.style.display || x.style.display === "none"){
-        slideMapDown("map-display");
+        fadeOn("map-display");
         map.invalidateSize();
+        mapOn = true;
     } else {
-        x.style.display = "none";
+        fadeOff("map-display");
+        mapOn = false;
     }
     
 }
@@ -335,12 +371,25 @@ let displayRightToggle = (id, name, text) => {
         // checks to see if the btn is the help btn to allow input still, else input disabled
         if(id === "help-display"){
             slideRightIn(id, text);
+            helpOn = true;
         } else {
             slideRightIn(id, text);
             document.querySelector('input').disabled = true;
+            if(name === "mode"){
+                modeOn = true;
+            } else {
+                achieveOn = true;
+            }
         }
     } else {
         slideRightOut(id, text);
+        if(name === "mode"){
+            modeOn = false;
+        } else if(name === achieve){
+            achieveOn = false;
+        } else {
+            helpOn = false;
+        }
         document.querySelector('input').disabled = false;
         document.querySelector('input').focus();
     }
@@ -378,13 +427,13 @@ let displayLeftToggle = (id, name, text) => {
 // running a check to see if a display is open and if it is turn variable true and check which other variable is true and turn false
 let displayCheck = (name) => {
     if(name === 'inventory'){
-        invOn = true;
         if(addOn === true){
             document.getElementById("address-display").style.display = "none";
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -403,18 +452,24 @@ let displayCheck = (name) => {
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
         }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
+        }
     }
 
     if(name === "address"){
-        addOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -436,13 +491,14 @@ let displayCheck = (name) => {
     }
 
     if(name === "map"){
-        mapOn = true;
         setTimeout(function(){ map.invalidateSize()}, 50);
         //map.panTo(playerMarker.getLatLng());
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -464,15 +520,20 @@ let displayCheck = (name) => {
         if(helpOn === true){
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
     if(name === "info"){
-        infoOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -480,7 +541,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(modeOn === true){
@@ -494,15 +556,20 @@ let displayCheck = (name) => {
         if(helpOn === true){
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
     if(name === "mode"){
-        modeOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -510,7 +577,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -524,15 +592,20 @@ let displayCheck = (name) => {
         if(helpOn === true){
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
     if(name === "achieve"){
-        achieveOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -540,7 +613,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -555,14 +629,19 @@ let displayCheck = (name) => {
             document.getElementById("help-display").style.display = "none";
             helpOn = false;
         }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
+        }
     }
 
     if(name === "help"){
-        helpOn = true;
         if(invOn === true){
             document.getElementById("inventory-display").style.display = "none";
             document.getElementById("inventory-xIndex-display").style.display = "none";
             document.getElementById("inventory-item-display").style.display = "none";
+            document.getElementById("inventory-brochure-display").style.display = "none";
+            document.getElementById("brochure-full-display").style.display = "none";
             invOn = false;
         }
         if(addOn === true){
@@ -570,7 +649,8 @@ let displayCheck = (name) => {
             addOn = false;
         } 
         if(mapOn === true){
-            document.getElementById("map-display").style.display = "none";
+            //document.getElementById("map-display").style.display = "none";
+            fadeOff("map-display");
             mapOn = false;
         }
         if(infoOn === true){
@@ -584,6 +664,10 @@ let displayCheck = (name) => {
         if(achieveOn === true){
             document.getElementById("achieve-display").style.display = "none";
             achieveOn = false;
+        }
+        if(dialOn === true){
+            applyInput('dialing');
+            dialOn = false;
         }
     }
 
@@ -600,11 +684,16 @@ let displayNone = (id, textId) => {
    
 } */
 
+// run when players click on items in inventory
 let openItem = (id, name) => {
-
+    // if items are not the xindexer
     if(name !== 'xindexer'){
+
+        slideInvItems(id);
         document.getElementById("inventory-xIndex-display").style.display = "none";
-        document.getElementById(id).style.display = "grid";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
+        //document.getElementById(id).style.display = "grid";
         //slideInvItems(id, textId);
     
         let inv = disk.inventory;
@@ -617,10 +706,20 @@ let openItem = (id, name) => {
         })
     } 
 
+    if(name === 'brochure'){
+        slideBro(id);
+        document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-xIndex-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
+    }
+
+    // if item is the xindexer
     if(name === 'xindexer'){
         slideInvX("inventory-xIndex-display", "xIndex-container");
         //document.getElementById("inventory-xIndex-display").style.display = "block";
         document.getElementById("inventory-item-display").style.display = "none";
+        document.getElementById("inventory-brochure-display").style.display = "none";
+        document.getElementById("brochure-full-display").style.display = "none";
     }
 }
 
@@ -772,6 +871,54 @@ const updateScore = () => {
     document.getElementById("difficulty-setting").innerHTML = difficultyChoice;
 }
 
+const updateEndings = () => {
+    if(eterWith === true){
+        document.getElementById("eterWith-title").innerHTML = "Eternity Without A Name";
+        document.getElementById("eterWith-desc").style.display = "block";
+    }
+    if(emptEnli === true){
+        document.getElementById("emptEnli-title").innerHTML = "Empty Enlightenment";
+        document.getElementById("emptEnli-desc").style.display = "block";
+    }
+    if(theShep === true){
+        document.getElementById("theShep-title").innerHTML = "The Shepard";
+        document.getElementById("theShep-desc").style.display = "block";
+    }
+    if(the1986 === true){
+        document.getElementById("the1986-title").innerHTML = "The 1986 Classic";
+        document.getElementById("the1986-desc").style.display = "block";
+    }
+    if(deatTexa === true){
+        document.getElementById("deatTexa-title").innerHTML = "Death and Texas";
+        document.getElementById("deatTexa-desc").style.display = "block";
+    }
+    if(painMan === true){
+        document.getElementById("painMan-title").innerHTML = "Piano Man";
+        document.getElementById("painMan-desc").style.display = "block";
+    }
+    if(dawdHote === true){
+        document.getElementById("dawdHote-title").innerHTML = "Dawdler in the Hotel";
+        document.getElementById("dawdHote-desc").style.display = "block";
+    }
+    if(anAmn === true){
+        document.getElementById("anAmn-title").innerHTML = "An Amnesiac No More";
+        document.getElementById("anAmn-desc").style.display = "none";
+    }
+    if(zaneShot === true){
+        document.getElementById("zaneShot-title").innerHTML = "Flight or Fight";
+        document.getElementById("zaneShot-desc").style.display = "block";
+    }
+    if(shepTux === true){
+        document.getElementById("shepTux-title").innerHTML = "The Shepard ReTuxed";
+        document.getElementById("shepTux-desc").style.display = "block";
+    }
+    if(elepAchi === true){
+        document.getElementById("elepAchi-title").innerHTML = "An Elephant Never Forgets";
+        document.getElementById("elepAchi-desc").style.display = "block";
+    }
+    
+}
+
 // dial pad scripts
 
 // function that adds the button pressed value to the input
@@ -786,6 +933,68 @@ let deleteNumBtn = () => {
     el.value = el.value.slice(0, -1);
 }
 
+
+// toggle tutorial 
+let animateToggle = () => {
+    let x = document.getElementById("tutorial");
+
+    if(x.style.display === "none"){
+        slideRightIn("tutorial", "tutorial-text-container");
+    } else {
+        slideRightOut("tutorial", "tutorial-text-container");
+    }
+}
+
+// animate first tutorial display
+let slideTutoIn = () => {
+    let id = null; // handles the 3 second wait interval
+        let widthChange = null; // handles the width increase interval
+        let textOn = null; // handles the text displaying interval
+        // calling the element ID's
+        const el = document.getElementById("tutorial");
+        let elText = document.getElementById("tutorial-text-container");
+        // calling reference variables
+        let secondCount = 0;
+        let width = 0;
+        let opacity = 0;
+
+        clearInterval(id);
+        id = setInterval(countDown, 20);
+        function countDown(){
+            if(secondCount >= 30){
+                clearInterval(id);
+                el.style.display = "block";
+                el.style.width = "0%";
+                clearInterval(widthChange);
+                widthChange = setInterval(slideOut, 15);
+                function slideOut(){
+                    if(width === 25){
+                        clearInterval(widthChange);
+                        clearInterval(textOn);
+                        textOn = setInterval(fadeOn, 40);
+                        function fadeOn(){
+                            if(opacity >= 1){
+                                clearInterval(textOn);
+                            } else {
+                                opacity += .2;
+                                elText.style.opacity = opacity;
+                            }
+                        }
+                    } else {
+                        width++;
+                        el.style.width = width + "%";
+                    }
+                }
+            } else {
+                secondCount++;
+                
+            }
+        }
+}
+
+
+
+/*
 // tutorial is displayed on screen variable
 let tutorialDisplayed = false;
 // handles the toggling of tutorial display 
@@ -871,10 +1080,10 @@ let animateToggle = () => {
         tutorialDisplayed = false;
     }
     
-}
+} */
 
-// old fade on and off of element displays NOT USING ANYMORE 
-/*
+// map fade on, fade off elements
+
 let fadeOn = (elId) => {
     let id = null;
     const el = document.getElementById(elId);
@@ -891,7 +1100,7 @@ let fadeOn = (elId) => {
         }
     }
 }
-/*
+
 let fadeOff = (elId) => {
     let id = null;
     const elem = document.getElementById(elId);
@@ -909,7 +1118,7 @@ let fadeOff = (elId) => {
         }
     }
     
-} */
+} 
 
 
 // functions for the left side clickables, slide ins, slide outs, and text fades and the map special slide down function
@@ -928,7 +1137,7 @@ let slideLeftIn = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 25){
             clearInterval(id);
@@ -966,7 +1175,7 @@ let slideLeftOut = (elId, textId) => {
     // sets beginning width 
     let width = 25;
     clearInterval(id);
-    id = setInterval(slideOutL, 30);
+    id = setInterval(slideOutL, 15);
     function slideOutL(){
         if(width === 0){
             clearInterval(id);
@@ -1005,7 +1214,7 @@ let slideRightOut = (elId, textId) => {
     // sets beginning width 
     let width = 25;
     clearInterval(id);
-    id = setInterval(slideOutR, 30);
+    id = setInterval(slideOutR, 15);
     function slideOutR(){
         if(width === 0){
             clearInterval(id);
@@ -1018,7 +1227,7 @@ let slideRightOut = (elId, textId) => {
                 // sets beginning opacity
                 let opacity = 1;
                 clearInterval(text);
-                text = setInterval(fadeOutText, 50);
+                text = setInterval(fadeOutText, 20);
                 function fadeOutText(){
                     if(opacity <= 0){
                         clearInterval(text);
@@ -1033,6 +1242,7 @@ let slideRightOut = (elId, textId) => {
         }
     }
 }
+
 // slide into view the right side clickables
 let slideRightIn = (elId, textId) => {
     let id = null;
@@ -1046,7 +1256,7 @@ let slideRightIn = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInR, 30);
+    id = setInterval(slideInR, 15);
     function slideInR(){
         if(width === 25){
             clearInterval(id);
@@ -1074,27 +1284,7 @@ let slideRightIn = (elId, textId) => {
     }  
 }
 
-// display the map
 
-let slideMapDown = (elId) => {
-    let id = null;
-    // gets the display div
-    const element = document.getElementById(elId);
-    element.style.display = "block";
-    element.style.width = "0%";
-    // sets beginning width 
-    let width = 0;
-    clearInterval(id);
-    id = setInterval(slideDown, 30);
-    function slideDown(){
-        if(width === 100){
-            clearInterval(id);
-        } else {
-            width++;
-            element.style.width = width + "%";
-        }
-    }
-}
 
 //slideInvX("inventory-xIndex-display", "xIndex-container");
 // slide in items from inventory
@@ -1102,7 +1292,7 @@ let slideInvX = (elId, textId) => {
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
-    element.style.display = "block";
+    element.style.display = "grid";
     element.style.width = "0%";
     // gets the text of display
     let elementText = document.getElementById(textId);
@@ -1110,14 +1300,14 @@ let slideInvX = (elId, textId) => {
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
         if(width === 60){
             clearInterval(id);
         } else {
             width++;
             element.style.width = width + "%";
-            if(width === 20){
+            if(width === 50){
                 let text = null;
                 // sets beginning opacity
                 let opacity = 0;
@@ -1138,21 +1328,25 @@ let slideInvX = (elId, textId) => {
     }  
 } 
 
-let slideInvItems = (elId, textId) => {
+let slideInvItems = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
     let id = null;
     // gets the display div
     const element = document.getElementById(elId);
     element.style.display = "block";
     element.style.width = "0%";
     // gets the text of display
-    let elementText = document.getElementById(textId);
+    let elementText = document.getElementById('inventory-item-container');
         elementText.style.opacity = 0;
     // sets beginning width
     let width = 0;
     clearInterval(id);
-    id = setInterval(slideInL, 30);
+    id = setInterval(slideInL, 15);
     function slideInL(){
-        if(width === 60){
+        if(width === 40){
             clearInterval(id);
         } else {
             width++;
@@ -1177,3 +1371,90 @@ let slideInvItems = (elId, textId) => {
         }
     }  
 } 
+
+let slideBro = (elId) => {
+
+    // elId would be 'inventory-item-display'
+    // textId would be the item id, which is the div that holds the title/img/desc
+
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById('inventory-brochure-container');
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 15);
+    function slideInL(){
+        if(width === 40){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
+
+let slideBroFull = (elId) => {
+
+    let id = null;
+    // gets the display div
+    const element = document.getElementById(elId);
+    element.style.display = "block";
+    element.style.width = "0%";
+    // gets the text of display
+    let elementText = document.getElementById('brochure-full-container');
+        elementText.style.opacity = 0;
+    // sets beginning width
+    let width = 0;
+    clearInterval(id);
+    id = setInterval(slideInL, 15);
+    function slideInL(){
+        if(width === 35){
+            clearInterval(id);
+        } else {
+            width++;
+            element.style.width = width + "%";
+            if(width === 20){
+                let text = null;
+                // sets beginning opacity
+                let opacity = 0;
+                clearInterval(text);
+                text = setInterval(fadeInText, 50);
+                function fadeInText(){
+                    if(opacity >= 1){
+                        clearInterval(text);
+                    } else {
+                        opacity += .1;
+                        console.log(opacity);
+                        elementText.style.opacity = opacity;
+                    }
+
+                }
+            }
+        }
+    }  
+} 
+
+
