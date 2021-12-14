@@ -64,11 +64,11 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Electronic Literature Lab', "introSequence");
+        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Electronic Literature Lab & Creative Media and Digital Culture Program ', "introSequence");
 
         println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwall\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
-        println("Special Thanks: Washington State University Vancouver, Greg Feeley and Sarah Smith", "introSequence");
+        println("Special Thanks to: Washington State University Vancouver, The Thomas M. Disch Estate: Greg Feeley and Sarah Smith", "introSequence");
         pressEnter('hote-room-1');
       },
       exits: [],
@@ -86,17 +86,20 @@ const amnesiaRestored = {
         println(`What's a person to do in such a situation? \n\nWhat YOU do is...`);
         reenableInput();
       },
+      onLook: () => {
+        println('You should get up first.');
+      },
       onBlock: () => {
-        if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up') {
+        if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up' || prevInput === 'up') {
           playerC.sScore +=2;
           playerC.cScore +=2;
           console.log(playerC.cScore);
           console.log(playerC.sScore);
           enterRoom('hote-room-2');
-        } else if (prevInput !== '') {
-          println('Sorry, you may not do that in bed.');
+        } else{
+          println('You need to get up first.');
         }
-      }
+      },
     },
     {
       id: 'hote-room-2',
@@ -229,7 +232,7 @@ const amnesiaRestored = {
       id: 'hote-room-7',
       coord: [],
       name: '',
-      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502.
+      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502.\n
 
       On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged dollar bill, both of which you take. To pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone.
       `,
@@ -543,8 +546,10 @@ const amnesiaRestored = {
           gif: 'img/gif/gif-bedsheet-ingame.gif',
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
-          isTakeable: true,
-          isDroppable: true
+           top: true,
+              bottom: true,
+              isTakeable: true,
+              isDroppable: true,
         }
       ],
       exits: [
@@ -644,13 +649,12 @@ const amnesiaRestored = {
         room.exits[1].id = 'corridor-1502';
       },
       onBlock: () => {
-        if (prevInput === 'answer phone' || prevInput === 'answer the phone') {
+        if (prevInput === 'answer phone' || prevInput === 'answer the phone' || prevInput === 'phone' || prevInput === 'answer') {
           enterRoom('hote-room-10');
         } else {
           println('The phone continues ringing.');
         }
       },
-      exits: [],
     },
     {
       id: 'hote-room-10',
