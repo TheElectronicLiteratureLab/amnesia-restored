@@ -42382,6 +42382,9 @@ const amnesiaRestored = {
       
         'You shouldn't have tried to trick me . . .'`,
       onEnter: () => {
+        the1986 = true; 
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
         pressEnter('game-over');
       },
       exits: [],
