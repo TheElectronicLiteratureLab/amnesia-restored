@@ -136,7 +136,8 @@ let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
 //Markers for POI Story Nodes, then run a forEach similarly like above in order to create markers. This is done by feeding an array containing ids of the rooms we want.
 //I realized I'm making it more complicated, I just need one marker that I can move around...
-let poiIDArr = ['43-5', '53-5', ];
+//[Princeton, Sunderland, Computer Store, Ann's House, Historical Society, Sketchpad, Bettes Apartment', The Dakota, Back to Bette's, Alison's Deathbed, Epilogue]
+let poiIDArr = ['43-5', '53-5', '56-madi', '19-amer', '76-cpkw', ''];
 //let storyMarkers = [];
 
 //This block is checking the entire disk for boolean values for food and subway.
