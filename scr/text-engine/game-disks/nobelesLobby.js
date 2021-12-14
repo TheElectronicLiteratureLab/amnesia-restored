@@ -753,8 +753,6 @@ const nobelesLobby = {
         },
 
 
-
-
 //Phone call to Denise
         {
             id: 'phone-30',
