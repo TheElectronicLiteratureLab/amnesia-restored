@@ -1,10 +1,11 @@
+
+
 $(document).ready(function(){
 
     //jQuery to toggle on and off the command options
     $("#noAgruCommand").click(function(){
         
-      $("#noAgruList").slideToggle("slow");
-      changeCaret();
+      $("#noAgruList").slideToggle("slow", changeCaret());
     });
 
     $("#oneAgruCommand").click(function(){
@@ -19,23 +20,10 @@ $(document).ready(function(){
 });
 
 let changeCaret = () => {
-    console.log(document.getElementById("noAgruList").style.display)
+    console.log("hello!");
 }
 
 // global variables 
-
-// radio checks
-
-const radioModes = document.querySelectorAll('input[name="radio"]');
-
-if(radioModes.checked){
-    console.log("CHECK! CHECK!")
-}
-
-if(document.getElementById("restored-radio").checked){
-        console.log("it's a meee restored");
-}
-
 
 let difficultyChoice = "modern";
 let styling = "restored";
@@ -222,6 +210,23 @@ let beginGame = () => {
     document.getElementById("game-options").style.display = "none";
     document.getElementById("game-load").style.display = "none";
     document.getElementById("game").style.display = "grid";
+}
+
+// changing the mode styling through radio buttons
+
+let changeMode = (mode) => {
+    console.log("its a meee a mode change.")
+    let x = document.getElementById("modeStyles");
+    if(mode === 'restored'){
+        x.href = "";
+    } else if(mode === 'apple'){
+        x.href = "css/appleiie.css";
+    } else if(mode === 'c64'){
+        x.href = "css/c64.css";
+    } else {
+        x.href = "css/ibm.css";
+    }
+    
 }
 
 // clickables scripts

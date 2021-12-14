@@ -955,7 +955,8 @@ body {
 }
 
 #restored-radio {
-  right: 26%;
+   position: absolute;
+   right: 50px;
 }
 
 #restored-radio hover {

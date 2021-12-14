@@ -17,6 +17,7 @@
     <!-- Stylesheets -->
     <link id="styles" rel="stylesheet" type="text/css" href="css/reset.css">
     <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link id="modeStyles" rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" href="scr/leaflet.css">
 
 
@@ -376,7 +377,7 @@
                                 <div class="btn-container">
                                     <div id="restored-btn-container">
                                         <img id="restored-bow-image" src="img/png/icon-mode-option-restored.png">
-                                        <input type="radio" id="restored-radio" name="radio">
+                                        <input type="radio" id="restored-radio" name="radio" onclick="changeMode('restored')">
                                         <label for="restored-radio">Restored</label>
                                     </div>
                                 </div>
@@ -385,7 +386,7 @@
                                 <div class="btn-container">
                                     <div id="appleiie-btn-container">
                                         <img id="appleiie-bow-image" src="img/png/icon-mode-option-apple.png">
-                                        <input type="radio" id="appleiie-radio" name="radio">
+                                        <input type="radio" id="appleiie-radio" name="radio" onclick="changeMode('apple')">
                                         <label for="appleiie-radio">Apple //e</label>
                                     </div>
                                 </div>
@@ -394,7 +395,7 @@
                                 <div class="btn-container">
                                     <div id="commodore-btn-container">
                                         <img id="commodore-bow-image" src="img/png/icon-mode-option-c64.png">
-                                        <input type="radio" id="commodore-radio" name="radio">
+                                        <input type="radio" id="commodore-radio" name="radio" onclick="changeMode('c64')">
                                         <label for="commordore-radio">Commodore 64</label>
                                     </div>
                                 </div>
@@ -403,7 +404,7 @@
                                 <div class="btn-container">
                                     <div id="IBM-btn-container">
                                         <img id="IBM-bow-image" src="img/png/icon-mode-option-ibm.png">
-                                        <input type="radio" id="IBM-radio" name="radio">
+                                        <input type="radio" id="IBM-radio" name="radio" onclick="changeMode('ibm')">
                                         <label for="IBM-radio">IBM</label>
                                     </div>
                                 </div>
