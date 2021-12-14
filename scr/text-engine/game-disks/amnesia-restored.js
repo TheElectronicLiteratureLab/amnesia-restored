@@ -1877,11 +1877,11 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         let styx = getRoom('hell-6');
-        if (prevInput !== '') {
-          println('You need to say a name.');
+        if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron'){
+          enterRoom('hell-6');
         } else {
           styx.charonReturns++;
-          enterRoom('hell-6');
+          enterRoom('eter-fore');
         }
       }
     },
@@ -4647,16 +4647,14 @@ const amnesiaRestored = {
             reenableInput();
         },
         onBlock: () => {
-            if (prevInput === '') {
-              println('"Are you feeling a little better now?"')
-                
-            } else if (prevInput === 'yes') {
+            if (prevInput === 'yes') {
               enterRoom('heal-club23');
             } else if (prevInput === 'no') {
                 enterRoom('heal-club24');
+            }else {
+              println('"Are you feeling a little better now?"')
             }
         },
-        exits: [],
     },
     {
         id: 'heal-club23',
