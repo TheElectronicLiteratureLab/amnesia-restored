@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -7,12 +7,12 @@ const amnesiaRestored = {
       coord: [100, 100],
       name: 'AMNESIA : RESTORED',
       desc: '',
-      onEnter: () => {/*
+      onEnter: () => {
         document.getElementById('map-button').style.display = "none";
         document.getElementById('address-book-button').style.display = "none";
         document.getElementById('inventory-button').style.display = "none";
         document.getElementById('save-button').style.display = "none";
-        document.getElementById('game-ui-bar').style.display = "none";*/
+        document.getElementById('game-ui-bar').style.display = "none";
         pressEnter(`amne-intr`);
       },
       exits: [],
@@ -247,7 +247,7 @@ const amnesiaRestored = {
       onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
-        document.getElementById('game-ui-bar').style.display = "grid";
+        document.getElementById('game-ui-bar').style.display = "flex";
         addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
