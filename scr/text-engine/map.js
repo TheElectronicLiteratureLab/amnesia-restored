@@ -132,7 +132,7 @@ storyMarker.on("click", function() {
 //Creating a regular expression to extract Subway Station name [98 Stations!]
 let subwayRegEx = / (.* Station) /;
 //Creating a regular expression to extract restaruant name
-let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
+let foodRegEx = /luncheonette|Nedick's|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
 //Markers for POI Story Nodes, then run a forEach similarly like above in order to create markers. This is done by feeding an array containing ids of the rooms we want.
 //I realized I'm making it more complicated, I just need one marker that I can move around...
@@ -154,8 +154,10 @@ disk.rooms.forEach((element)=>{
         //marker.bindPopup(element.name, {className: 'popup'});
         //console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
-        //let str = foodMatch[0];
-        //console.log(str);
+        let str = foodMatch[0];
+        //console.log(element.coord)
+        console.log(str);
+        //Capitlize the first name of each food area.
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
       }

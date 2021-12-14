@@ -114,7 +114,7 @@ const luncheonette = { // Luncheonette Room
       {
         orderTotal = 0; // Clearing this variable
         energyTotal = 0; // Clearing the variable 
-        pressEnter(room.enteredFrom); // Replace with the last room visited secret formula
+        enterRoom(room.enteredFrom); // Replace with the last room visited secret formula
       }
     },
     {
@@ -125,7 +125,7 @@ const luncheonette = { // Luncheonette Room
         { const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom); // Replace with the last room visited secret formula
+          enterRoom(room.enteredFrom); // Replace with the last room visited secret formula
         },
     },
     {
@@ -137,7 +137,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);a
+          enterRoom(room.enteredFrom);a
         },
     },
     {
@@ -239,7 +239,7 @@ const luncheonette = { // Luncheonette Room
         const room = getRoom('nedick-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
       }
     },
     {
@@ -251,7 +251,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('nedick-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -263,7 +263,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('nedick-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -359,7 +359,7 @@ const luncheonette = { // Luncheonette Room
         const room = getRoom('pizza-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
       }
     },
     {
@@ -371,7 +371,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('pizza-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -379,11 +379,11 @@ const luncheonette = { // Luncheonette Room
       name: `Pizzeria`, // Displayed each time the player enters the room.
       desc: `Realizing you do not have enough money, you run out of the store and walk hastily down the block to the nearest corner.`,
       onEnter: () => 
-        {
+        { 
           const room = getRoom('pizza-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -487,7 +487,7 @@ const luncheonette = { // Luncheonette Room
         const room = getRoom('nuts-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
       }
     },
     {
@@ -499,7 +499,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('nuts-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -511,7 +511,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('nuts-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -606,7 +606,7 @@ const luncheonette = { // Luncheonette Room
         const room = getRoom('lunch-intro');
         orderTotal = 0; // Clearing this variable
         energyTotal = 0; // Clearing the variable 
-        pressEnter(room.enteredFrom);
+        enterRoom(room.enteredFrom);
       }
     },
     {
@@ -618,7 +618,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     {
@@ -630,7 +630,7 @@ const luncheonette = { // Luncheonette Room
           const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
-          pressEnter(room.enteredFrom);
+          enterRoom(room.enteredFrom);
         },
     },
     ],
