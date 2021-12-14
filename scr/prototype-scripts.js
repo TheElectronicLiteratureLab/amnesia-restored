@@ -46,27 +46,27 @@ let changeCaretNo = () => {
     let x = document.getElementById("noAgruList").style.display;
     let arrow = document.getElementById("arrowIndicateNo");
     if(!x || x === "none"){
-        arrow.innerHTML = "&#8744;"
+        arrow.style.transform = "rotate(90deg)";
     } else {
-        arrow.innerHTML = "&#62;"
+        arrow.style.transform = "rotate(0)";
     }
 }
 let changeCaretOne = () => {
     let x = document.getElementById("oneAgruList").style.display;
     let arrow = document.getElementById("arrowIndicateOne");
     if(!x || x === "none"){
-        arrow.innerHTML = "&#8744;"
+        arrow.style.transform = "rotate(90deg)";
     } else {
-        arrow.innerHTML = "&#62;"
+        arrow.style.transform = "rotate(0)";
     }
 }
 let changeCaretTwo = () => {
     let x = document.getElementById("twoAgruList").style.display;
     let arrow = document.getElementById("arrowIndicateTwo");
     if(!x || x === "none"){
-        arrow.innerHTML = "&#8744;"
+        arrow.style.transform = "rotate(90deg)";
     } else {
-        arrow.innerHTML = "&#62;"
+        arrow.style.transform = "rotate(0)";
     }
 }
 

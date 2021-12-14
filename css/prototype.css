@@ -1123,6 +1123,11 @@ body {
    margin-bottom: 5%;
 }
 
+.argument-indicator {
+   transition: .2s ease-in-out;
+   display:inline-block;
+}
+
 .commands {
    margin-left: 15px;
 }
