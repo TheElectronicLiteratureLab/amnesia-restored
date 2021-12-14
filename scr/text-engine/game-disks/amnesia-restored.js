@@ -11836,11 +11836,283 @@ else{
     },
 },
 
-
   /****************************/
  /*      Ending/Epilogue     */
 /****************************/
+{
+  id: 'epil-1',
+  coord: [],
+  name: `Bette's Apartment`,
+  desc: `You wake up the next morning to the ringing of the cordless phone. You have been asleep on the sofa bed in Bette’s apartment.`,
+  onLook: () =>
+  {
+    const room = getRoom('epil-1');
+    room.desc = `The apartment is just as you last left it. The drapes are fluttering in the breeze from the open window. The phone continues ringing. It is placed on the floor just beside the sofa bed.`
+  },
+  onBlock: () => 
+  {
+    if(prevInput === 'phone'){ // **We'll need a command for answering the phone
+        enterRoom('epil-2');
+    }else{
+        println(`The phone continues ringing.`);
+    }
+  },
+},
+{
+    id: 'epil-2',
+    coord: [],
+    name: `Bette's Apartment`,
+    desc: `You pick up the phone and say, "Hello."\n
+    "I'm sorry to wake you darling," Bette's voice replies, "but I simply had to call as soon as I saw the headline in the DAILY NEWS."`,
+    onEnter: () => 
+    {   
+        playerC.dScore += 25; // Adding to Detective Score
+        playerC.cScore += 25; // Adding to Character Score
+        playerC.sScore += 3; // Adding to Survival Score
+        console.log(playerC.dScore);
+        console.log(playerC.cScore);
+        console.log(playerC.sScore);
+        pressEnter('epil-3');
+    },
+},
+{
+    id: 'epil-3',
+    coord: [],
+    name: `Bette's Apartment`,
+    desc: `'It covers the entire front page, in gigantic letters: SLAUGHTER ON 8TH AVENUE! Then in a smaller headline under that: FOUR DEATHS IN BIZARRE LOVE NEST TRAGEDY. Story on Page Three. Do you want me to read you the story?"`,
+    onEnter: () => 
+    {
+        reenableInput();
+    },
+    onBlock: () => 
+    {
+      if(prevInput === 'yes' || 'headline'){
+          enterRoom('epil-4');
+      }else{
+          println(`"Darling, you simply have to hear this! It seems that Zane didn't die the moment we left. He managed to record a kind of confession -- and he made out a will. I'll just read that part -- listen!"`);
+          pressEnter('epil-4');
 
+      }
+    },
+},
+{
+    id: 'epil-4',
+    coord: [],
+    name: `Bette's Apartment`,
+    desc: `"On a cassette recorder in his office, where he lay dying amid these scenes of carnage, Xavier Hollings describes how his confederate, Luke Bester, under the influence of drugs, had first murdered Miss Abrams in an effort to extort from her the whereabouts of moneys she purportedly sequestered from earlier drug transactions. Failing to do so, Bester is said to have threatened Hollings and his wife with a gun."\n
+
+    "A wild gunbattle ensued, in which both Bester and Mrs. Hollings were killed, and Hollings himself was mortally wounded."\n
+    
+    "In the last moments before he died, Hollings wrote a brief account of these terrible events, and then went on to dictate a will bequeathing his entire estate to MIT, for the special purpose of doing research into the process of memory in worms, rats, and salamanders, an area in which Hollings felt a special interest."`,
+    onEnter: () => 
+    {
+        pressEnter('epil-5');
+    },
+},
+{
+    id: 'epil-5',
+    coord: [],
+    name: `Bette's Apartment`,
+    desc: `"Since the death of Hollings' mother four months ago, at a time when Hollings was already a fugitive from justice, Hollings; estate is estimated to be worth some forty million dollars. Hollings is not known to have other living heirs, and his bequest to MIT is not likely to be challenged in court."\n
+    Bette pauses breathlessly, and then asks: “You’re not disappointed, are you? I mean about the money. Forty million dollars is such a lot, but then it’s not as you’ll suffer from the painful memories of your former affluence. And you’re quite bright enough, even without a degree, to earn good money as John Cameron, and with what I make we’ll soon be able to afford more than a studio, especially if you’re willing to live somewhere besides Manhattan. I mean don’t you think love is more important than money?”`,
+    onEnter: () => 
+    {
+        reenableInput();
+    },
+    onBlock: () => 
+    {
+      if(prevInput === 'yes'){
+          enterRoom('epil-6');
+      }else{
+          enterRoom('epil-6');
+
+      }
+    },
+},
+{
+    id: 'epil-6',
+    coord: [],
+    name: `Bette's Apartment`,
+    desc: `Bette laughs cheerfully, and says, "I knew you'd say something like that. Don't leave bed. I'll be right home with the newspaper and a pint of Haagen-Daaz. What's your favorite flavor? No, don't tell me. I know."`,
+    onEnter: () => 
+    {
+        pressEnter('credits'); // Or whatever the last screen of the game is
+    },
+},
+
+  /*88888888888888888888888888888888888888*/
+ /*8888888 CREDITS AND GAME OVER 88888888*/
+/*88888888888888888888888888888888888888*/
+
+{
+  id: 'game-over',
+  name: 'Game Over',
+  desc:`Your scores are as follows:\n
+  As a detective: ${playerC.dScore}\n
+  As a character: ${playerC.cScore}\n
+  As a survivor: ${playerC.sScore}\n
+  \n
+  Your total score is ${playerC.tScore}\n
+  Your score ranks you as occasionally absent-minded.\n
+  \n
+  You've reached the end of your adventure. To begin your next application, insert the desired disk in drive A:, or leave the drive the drive door open and your hard drive disk will be booked. Then, follow your machine's warm boot procedure (ie: CTRL-ALT-DELETE).`,
+},
+{
+  id: 'credits',
+  name: 'You Won!',
+  desc:`Your scores are as follows:\n
+  As a detective: ${playerC.dScore}\n
+  As a character: ${playerC.cScore}\n
+  As a survivor: ${playerC.sScore}\n
+  \n
+  Your total score is ${playerC.tScore}\n
+  Your score ranks you as of sound mind.\n
+  \n
+  You've reached the end of your adventure. To begin your next application, insert the desired disk in drive A:, or leave the drive the drive door open and your hard drive disk will be booked. Then, follow your machine's warm boot procedure (ie: CTRL-ALT-DELETE).`,
+},
+
+  /*888888888888888888888888*/
+ /*8888888 ENDINGS 88888888*/
+/*888888888888888888888888*/
+{
+  id: 'cathe-1',
+  coord: [],
+  name: `St. Patricks Cathedral`,
+  desc: `The moment you enter the cathedral a strange feeling comes over you. A combination of peace and uneasiness and guilt. But how can you feel guilty over a past you can't remember?\n
+  The cathedral provides no answer to that question, but the feeling grows stronger. Waves of vertigo assail you. You'll have to sit in one of the pews -- or leave at once.`,
+  onEnter: () => {
+    degradation = !degradation;
+  },
+    onBlock: () => {
+    if(prevInput === 'sit'){ // **We'll need a command for answering the phone
+        enterRoom('cathe-2');
+    }else{
+        println(`You feel compelled to leave the chapel at once by a feeling so strong it almost scares you.`);
+        pressEnter('51-5');
+    }
+  },
+  exits: [
+    {
+        dir: ['leave'],
+        id : '51-5'  
+    }, 
+        ],
+},
+{
+    id: 'cathe-2',
+    coord: [],
+    name: `St. Patricks Cathedral`,
+    desc: `As you collapse into one of the pews, a prayer rises from your sinful heart like a flame leaping from the wick of a candle.\n
+
+    You realize that the world is nothing but a maze of wickedness and folly, a snare. You understand your true vocation and thank the Lord for your amnesia, which has freed you from a past life that must certainly have been sinful.\n
+    
+    To the East, before the alter of the cathedral, is a priest. To the West the door stands open onto the blare of 5th Ave.`,
+    exits: [
+      {
+          dir: ['leave'],
+          id : '51-5'     
+      },
+      {
+        dir: ['east'],
+        id : 'cathe-3'     
+    },
+    ],
+  },
+  {
+    id: 'cathe-3', // Trappist Monk ending
+    coord: [],
+    name: `St. Patricks Cathedral`,
+    desc: `You go to the priest so that you may offer the Church the rest of your life in service as a Trappist monk, dedicated to silence, chastity, poverty, and worship.\n
+    Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermonnt. Congratulations on your escape from a world of sin!`,
+    onEnter: () =>{
+        playerC.sScore = 700;
+        playerC.dScore = 0;
+        playerC.cScore = 0;
+        emptEnli = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
+        pressEnter('game-over');
+    },
+  },
+  {
+    id: 'aust-1',
+    coord: [],
+    name: `Alls-Faith-Chapel`,
+    desc: `She lifts the veil, revealing a smile that seems more triumphant than blissful, but the kiss you then exchange has a wordless way of saying that you will soon be rewarded for your submission to the yoke of marriage.`,
+    onEnter: () =>{
+        pressEnter('aust-2');
+
+    },
+  },
+  {
+    id: 'aust-2',
+    coord: [],
+    name: `Qantas Flight 461`,
+    desc: `And so you are. That night, after a small wedding dinner in the Rathskellar, you enjoy that reward and cemet the bond of marriage in Room 1502.`,
+    onEnter: () =>{
+      playerC.sScore = 700;
+        playerC.dScore = 0;
+        playerC.cScore = 0;
+        pressEnter('aust-3');
+    },
+  },
+  {
+    id: 'aust-3',
+    coord: [],
+    name: `Qantas Flight 461`,
+    desc: `The next morning Luke arrives with a great deal of luggage and drives you to JFK airport, where you board a Qantas jet for Melbourne, Australia.`,
+    onEnter: () =>{
+        pressEnter('aust-4');
+    },
+  },
+  {
+    id: 'aust-4',
+    coord: [],
+    name: ``,
+    desc: `Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide name Hogan.`,
+    onEnter: () =>{
+        pressEnter('aust-5');
+    },
+  },
+  {
+    id: 'aust-5',
+    coord: [],
+    name: ``,
+    desc: `A year later Alice gives birth to your first daughter, and her name is Ahria.`,
+    onEnter: () =>{
+        pressEnter('aust-6');
+    },
+  },
+  {
+    id: 'aust-6', // hehe 
+    coord: [],
+    name: ``,
+    desc: `Then come the quints, and their names are: Natalie, Charlie, Craig, Arlo, Dene, Andrew, and Greg. `,
+    onEnter: () =>{
+        pressEnter('aust-7');
+    },
+  },
+  {
+    id: 'aust-7', 
+    coord: [],
+    name: ``,
+    desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she coyly avoids answering. `,
+    onEnter: () =>{
+        pressEnter('aust-8');
+    },
+  },
+  {
+    id: 'aust-8', 
+    coord: [],
+    name: ``,
+    desc: `"You don't really want to know about those things, John," she would tell you, and then turn away to call the children: "Come get your supper while it's hot!" On your deathbed you are still wondering who you are and what you'd done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
+    onEnter: () =>{
+      theShep = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
+      pressEnter('game-over');
+    },
+  }, 
 
 
         /*******************************/
@@ -48373,156 +48645,6 @@ else{
             }
         ],
     },
-    ////////////////////////////////////////
-    ////////////////////////////////////////
-    ////////HISTORICAL SOCIETY END/////////
-    ///////////////////////////////////////
-    ////////////////////////////////////////
-
-
-    /////////////////////////////////
-    ///////////////////////////////////
-    /////////endings.js//////////////
-    ////////////////////////////////
-    {
-      id: 'cathe-1',
-      coord: [],
-      name: `St. Patricks Cathedral`,
-      desc: `The moment you enter the cathedral a strange feeling comes over you. A combination of peace and uneasiness and guilt. But how can you feel guilty over a past you can't remember?\n
-      The cathedral provides no answer to that question, but the feeling grows stronger. Waves of vertigo assail you. You'll have to sit in one of the pews -- or leave at once.`,
-      onEnter: () => {
-        degradation = !degradation;
-      },
-        onBlock: () => {
-        if(prevInput === 'sit'){ // **We'll need a command for answering the phone
-            enterRoom('cathe-2');
-        }else{
-            println(`You feel compelled to leave the chapel at once by a feeling so strong it almost scares you.`);
-            pressEnter('51-5');
-        }
-      },
-      exits: [
-        {
-            dir: ['leave'],
-            id : '51-5'  
-        }, 
-            ],
-    },
-    {
-        id: 'cathe-2',
-        coord: [],
-        name: `St. Patricks Cathedral`,
-        desc: `As you collapse into one of the pews, a prayer rises from your sinful heart like a flame leaping from the wick of a candle.\n
-
-        You realize that the world is nothing but a maze of wickedness and folly, a snare. You understand your true vocation and thank the Lord for your amnesia, which has freed you from a past life that must certainly have been sinful.\n
-        
-        To the East, before the alter of the cathedral, is a priest. To the West the door stands open onto the blare of 5th Ave.`,
-        exits: [
-          {
-              dir: ['leave'],
-              id : '51-5'     
-          },
-          {
-            dir: ['east'],
-            id : 'cathe-3'     
-        },
-        ],
-      },
-      {
-        id: 'cathe-3', // Trappist Monk ending
-        coord: [],
-        name: `St. Patricks Cathedral`,
-        desc: `You go to the priest so that you may offer the Church the rest of your life in service as a Trappist monk, dedicated to silence, chastity, poverty, and worship.\n
-        Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermonnt. Congratulations on your escape from a world of sin!`,
-        onEnter: () =>{
-            playerC.sScore = 700;
-            playerC.dScore = 0;
-            playerC.cScore = 0;
-            emptEnli = true;
-            updateEndings();
-            slideRightIn('achieve-display', 'achieve-text-container');
-            pressEnter('game-over');
-        },
-      },
-      {
-        id: 'aust-1',
-        coord: [],
-        name: `Alls-Faith-Chapel`,
-        desc: `She lifts the veil, revealing a smile that seems more triumphant than blissful, but the kiss you then exchange has a wordless way of saying that you will soon be rewarded for your submission to the yoke of marriage.`,
-        onEnter: () =>{
-            pressEnter('aust-2');
-
-        },
-      },
-      {
-        id: 'aust-2',
-        coord: [],
-        name: `Qantas Flight 461`,
-        desc: `And so you are. That night, after a small wedding dinner in the Rathskellar, you enjoy that reward and cemet the bond of marriage in Room 1502.`,
-        onEnter: () =>{
-          playerC.sScore = 700;
-            playerC.dScore = 0;
-            playerC.cScore = 0;
-            pressEnter('aust-3');
-        },
-      },
-      {
-        id: 'aust-3',
-        coord: [],
-        name: `Qantas Flight 461`,
-        desc: `The next morning Luke arrives with a great deal of luggage and drives you to JFK airport, where you board a Qantas jet for Melbourne, Australia.`,
-        onEnter: () =>{
-            pressEnter('aust-4');
-        },
-      },
-      {
-        id: 'aust-4',
-        coord: [],
-        name: ``,
-        desc: `Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide name Hogan.`,
-        onEnter: () =>{
-            pressEnter('aust-5');
-        },
-      },
-      {
-        id: 'aust-5',
-        coord: [],
-        name: ``,
-        desc: `A year later Alice gives birth to your first daughter, and her name is Ahria.`,
-        onEnter: () =>{
-            pressEnter('aust-6');
-        },
-      },
-      {
-        id: 'aust-6', // hehe 
-        coord: [],
-        name: ``,
-        desc: `Then come the quints, and their names are: Natalie, Charlie, Craig, Arlo, Dene, Andrew, and Greg. `,
-        onEnter: () =>{
-            pressEnter('aust-7');
-        },
-      },
-      {
-        id: 'aust-7', 
-        coord: [],
-        name: ``,
-        desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she coyly avoids answering. `,
-        onEnter: () =>{
-            pressEnter('aust-8');
-        },
-      },
-      {
-        id: 'aust-8', 
-        coord: [],
-        name: ``,
-        desc: `"You don't really want to know about those things, John," she would tell you, and then turn away to call the children: "Come get your supper while it's hot!" On your deathbed you are still wondering who you are and what you'd done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
-        onEnter: () =>{
-          theShep = true;
-          updateEndings();
-          slideRightIn('achieve-display', 'achieve-text-container');
-          pressEnter('game-over');
-        },
-      }, 
 
     ],
 };
