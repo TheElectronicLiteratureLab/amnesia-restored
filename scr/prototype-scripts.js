@@ -1,3 +1,5 @@
+/*
+
 // adding alert to refreshing page
 window.addEventListener('beforeunload', function (e) {
     // Cancel the event
@@ -6,6 +8,7 @@ window.addEventListener('beforeunload', function (e) {
     e.returnValue = '';
   });
 
+  */
 
 
 // preload icon images to prevent any flickering
