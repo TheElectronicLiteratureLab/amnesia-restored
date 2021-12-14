@@ -2309,6 +2309,7 @@ let commands = [
     head: goDir,
     go: goDir,
     take: takeItem,
+    grab: takeItem,
     use: useItem,
     say: sayString,
     drop: dropItem,

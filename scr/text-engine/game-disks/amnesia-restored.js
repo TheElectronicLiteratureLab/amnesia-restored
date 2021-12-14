@@ -554,7 +554,8 @@ const amnesiaRestored = {
       ],
       exits: [
         {dir: 'bathroom', id: 'hote-bath-1'},
-        {dir: 'leave', id: 'hote-room-9'}
+        {dir: 'leave', id: 'hote-room-9'},
+        {dir: 'dresser', id:'hote-room-9', block:'What about the dresser?'}
       ]
     },
     {
@@ -1926,7 +1927,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-1502',
       name: '15th Floor Hallway',
-      desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n\n
+      desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n
       Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
