@@ -18652,6 +18652,9 @@ const amnesiaRestored = {
       name: 'Washington Square S and LaGuardia Pl.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: '3-lagu'},
@@ -18705,6 +18708,9 @@ const amnesiaRestored = {
       name: 'Washington Square S. and Thompson St.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: '3-thom'},
@@ -18758,6 +18764,9 @@ const amnesiaRestored = {
       name: 'Washington Square S. and Sullivan St.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: '3-sull'},
@@ -18824,6 +18833,9 @@ const amnesiaRestored = {
       name: 'W. 4th St. and MacDougal Ave.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wash-wsqw'},
         {dir: 'south', id: '3-macd'},
@@ -18838,6 +18850,9 @@ const amnesiaRestored = {
       name: 'Washington Pl. and Washington Square W.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wave-macd'},
         {dir: 'south', id: '4-macd'},
@@ -18891,6 +18906,9 @@ const amnesiaRestored = {
       name: 'Waverly Pl. and 5th Ave.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wash-5'},
         {dir: 'south', block: `You can't go that way.`},
@@ -19063,6 +19081,9 @@ const amnesiaRestored = {
       name: 'Washington Square S. and University Pl.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wash-wsqe'},
         {dir: 'south', block: `You can't go that way.`},
@@ -19077,6 +19098,9 @@ const amnesiaRestored = {
       name: 'Washington Pl. and Washington Square E.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wave-univ'},
         {dir: 'south', id: 'wsqs-univ'},
@@ -19091,6 +19115,9 @@ const amnesiaRestored = {
       name: 'Waverly Pl. and University Pl.',
       desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: 'wash-unvi'},
         {dir: 'south', id: 'wash-wsqe'},
@@ -23133,11 +23160,15 @@ const amnesiaRestored = {
       name: 'W. 19th St. and Ave. of Americas',
       desc: `You can see a large brownstone at 25 W. 19th St. It is just a few steps from the corner.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '20-amer'},
         {dir: 'south', id: '18-amer'},
         {dir: 'east', id: '19-5'},
         {dir: 'west', id: '19-7'},
+        {dir: [`ann`, `brownstone`, `apartment`, `tiny`, `tykes`, `25W`, `talent`, `town`], id: 'ann-2'}
         //{dir: ['brownstone', '25W'], id: '25w-19st'}
       ],
     },
@@ -23662,12 +23693,16 @@ const amnesiaRestored = {
       coord: [-28.069, -5.714],
       name: 'W. 19th St. and 5th Ave.',
       desc: `You can see a large brownstone at 25 W. 19th St. It is just a few steps from the corner.`,
+      onEnter: () => {
+        degradation = true;
+      },
       isStreet: true,
       exits: [
         {dir: 'north', id: '20-5'},
         {dir: 'south', id: '18-5'},
         {dir: 'east', id: '19-broa'},
         {dir: 'west', id: '19-amer'},
+        {dir: [`ann`, `brownstone`, `apartment`, `tiny`, `tykes`, `25W`, `talent`, `town`], id: 'ann-2'}
         //exit for the brownstone
       ],
     },
@@ -24472,6 +24507,9 @@ const amnesiaRestored = {
       name: 'E. 20th St. and Irving Pl.',
       desc: ``,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: '19-irvi'},
@@ -34173,6 +34211,9 @@ const amnesiaRestored = {
       name: 'W. 73rd St. and Columbus Ave.',
       desc: 'You see an alley here that seems to be used for making deliveries to the Dakota.',
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '74-colu'},
         {dir: 'south', id: '72-colu'},
@@ -34907,6 +34948,7 @@ const amnesiaRestored = {
       desc: `The granite facade of the New York Historical Society stretches from 76th to 77th St. in a single crisp classical gestalt. Ionic columns rise from a fortress-like base, at the center of which the museum's small entry looks like an afterthought, as though the architect only reluctantly has conceded the possibility that people might go in and out`,
       isStreet: true,
       onEnter: () => {
+        degradation = true;
         reenableInput();
       },
       exits: [
@@ -34914,6 +34956,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '75-cpkw'},
         {dir: 'east', id: '76-7'},
         {dir: 'west', id: '76-colu'},
+        {dir: [`inside`, `museum`, `historical`, `new york`, `society`], id: `nyhist-1`}
       ]
     },
     {
@@ -34959,13 +35002,21 @@ const amnesiaRestored = {
       id: '72-cpkw',
       coord: [57.944, -28.158],
       name: 'W. 72nd St. and Central Park W.',
-      desc: '',
+      desc: `This is the Dakota, a nine-story jumble of dirty yellow brick trimmed with dirtier terra cotta. The trim is black in the steeply gabled upper stories, tan at street level.
+
+      Hell could not have a less inviting entrance than the great gate house on 72nd Street, where an elderly black uniformed guard regards you distrustfully.
+      
+      The subway entrance here is closed. A sign directs you to another entrance at 71st and Central Park West.`,
       isStreet: true,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '73-cpkw'},
         {dir: 'south', id: '71-cpkw'},
         {dir: 'east', id: '72-7'},
         {dir: 'west', id: '72-colu'},
+        {dir: [`inside`, `dakota`, `the dakota`], id: `dakota-1`}
       ]
     },
     {
@@ -42565,6 +42616,9 @@ const amnesiaRestored = {
         Children (12 and Under) 0.75\n`,
         onEnter: () => 
         {
+          degradation = !degradation;
+
+
           playerC.dScore += 5; // Adding to Detective Score
           playerC.cScore += 2; // Adding to Character Score
           playerC.sScore += 5; // Adding to Survival Score
@@ -42579,7 +42633,8 @@ const amnesiaRestored = {
           name: 'N.Y. Historical Society', // Displayed each time the player enters the room.
           desc: `The ticket agent looks inquireingly from the paperback he was reading and says, "Would you like a ticket, sir?`,
           onEnter: () => 
-          {
+          { 
+            degradation = false;
             reenableInput();
           },
           onBlock: () => 
@@ -43329,6 +43384,9 @@ const amnesiaRestored = {
         id:'ann-2',
         name:'Tiny Tykes Talent Town',
         desc:`You climb the steps to the entrance portico. There is a doorbell on the wall with a plastic nameplate beside it. The nameplate reads: TINY TYKES TALENT TOWN`,
+        onEnter: () => {
+          degradation = !degradation;
+        },
         exits:[
             {dir:['doorbell','bell','knock'],id:'ann-4'},
             {dir:['inside','open'],id:'ann-4'},
@@ -43340,7 +43398,8 @@ const amnesiaRestored = {
         name:'Tiny Tykes Talent Town',
         desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
         onEnter: () => {
-            annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
+          degradation = false;
+          annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
         },
         onBlock: () => {
             if(prevInput === 'open'){
