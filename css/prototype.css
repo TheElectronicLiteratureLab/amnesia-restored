@@ -644,6 +644,22 @@ body {
    overflow-y: scroll;
 }
 
+/* item description scroll bar width */
+#item-description::-webkit-scrollbar {
+   width: 5px;
+}
+   
+/* item description scroll bar track */
+#item-description::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* item description scroll bar handle */
+#item-description::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
 /* brochure styling */
 
 #inventory-brochure-display {
