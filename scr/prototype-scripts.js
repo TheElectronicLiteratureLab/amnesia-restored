@@ -1,3 +1,13 @@
+// preload icon images to prevent any flickering
+(function () {
+	var preload = ["./img/png/icon-achieve-purple.png", "./img/png/icon-achieve-red.png", "./img/png/icon-address-purple.png", "./img/png/icon-address-red.png", "./img/png/icon-help-purple.png", "./img/png/icon-help-red.png", "./img/png/icon-info-purple.png", "./img/png/icon-info-red.png", "./img/png/icon-inventory-purple.png", "./img/png/icon-inventory-red.png", "./img/png/icon-map-purple.png", "./img/png/icon-map-red.png", "./img/png/icon-mode-purple.png", "./img/png/icon-mode-red.png", "./img/png/icon-save-purple.png", "./img/png/icon-save-red.png"];
+
+	window._ImageCache = preload.map(function (url) {
+		var image = document.createElement('img');
+		image.src = url;
+		return image;
+	});
+})();
 
 
 $(document).ready(function(){
