@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   rooms: [
     {
@@ -6249,7 +6249,7 @@ const amnesiaRestored = {
             } else if(prevInput === '334'){
                 println(`"Very good," says the clerk. He shows you the position of the box you've named, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors-- so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
                 
-                YOUR PASSWORD IS _ _ _ _  _ _ _`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
                 enterRoom('lobb-revi-18');
             } else {
                 println(`"What is the number of your box, Mr. Cameron? Do you remember it?`);
@@ -6266,6 +6266,7 @@ const amnesiaRestored = {
     },// closes lobb-revi-7 room
     {
         id: 'lobb-revi-8',
+        coord: [100, 100],
         name: '53rd Street Exit',
         desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
         onEnter: () => {
@@ -6704,6 +6705,454 @@ const amnesiaRestored = {
       /*******************************/
 
       //Just return to the Sunderland a player marker will mark it after this sequence.
+
+        /********************************/
+       /* User Friendly Computer Store */
+      /********************************/
+
+      {
+        id: 'frie-comp-1',
+        coord: [],
+        name: 'USER-FRIENDLY COMPUTER STORE',
+        desc: `The store looks like it has either not yet opened for business or recently gone bankrupt. There are only a few computers in sight--an Apple, a Commodore, and an IBM PC. \n\n Various products line the wall, including Electronic Arts' "Adventure Construction Set", "Tales of the Unknown: The Bard's Tale", and "Thomas M. Disch's AMNESIA."`,
+        onEnter: () => {
+          if (getItemInInventoryById('floppydisk')) {
+            degradation = !degradation;
+            //if first time:
+            println(`The one other person in the store--a woman in what is almost but not quite a man's business suit--approaches you, and says, "How may I help you, sir?"`);
+            pressEnter('frie-comp-3');
+          } else {
+            println(`You think twice before going inside. Even though you know `)
+          }
+
+        },
+        exits: []
+      },
+      {//if closed
+        id: 'frie-comp-2',
+        coord: [],
+        name: '',
+        desc: 'The store looks closed. \n\nList HOURS HERE:',
+        onEnter: () => {
+          pressEnter('56-madi');
+        },
+        exits: []
+      },
+      {
+        id: 'frie-comp-3',
+        coord: [],
+        name: '',
+        desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on--and of course it will only run on a machine if it’s been formatted to do so.
+        I don’t pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple 2e, the IBM PC, and the Commodore 64. Which would you like?`,
+        onEnter: () => {
+          degradation = false;
+          reenableInput();
+        },
+        onBlock: () => {
+          //Eventually check for which version is being run
+          //If player picks a different version afterwards change it.
+          if (prevInput === 'Apple 2e' || prevInput === 'apple' || prevInput === 'Apple' || prevInput === 'the apple' || prevInput === 'the apple 2e' || prevInput === 'apple 2e' ) {
+            //run a check if version is apple
+            if (readApple === true) {
+              enterRoom('frie-comp-4');
+            } {
+              document.getElementById('output').innerHTML = '';
+              println(`The Apple's disk drive whirrs earnestly, but the monitor remains blank "Perhaps," the saleswoman suggest, "you'd like to try another machine. Which would you like the Commodore or the IBM?"`);
+            }       
+          } else if (prevInput === 'commodore' || prevInput === 'Commodore' || prevInput === 'Commodore 64' || prevInput === 'commodore 64' || prevInput === 'the commodore 64') {
+            if (readC64 === true) {
+              enterRoom('frie-comp-4');
+            } else {
+              document.getElementById('output').innerHTML = '';
+              println(`The screen of the Commodore refuses to acknolodege the presence of your disk in its disk drive. "Not this one," the saleswoman says. "Another machine perhaps?"`);
+            }
+          }
+          else if (prevInput === 'pc' || prevInput === 'ibm pc' || prevInput === 'the ibm pc' || prevInput === 'IBM PC' || prevInput === 'IBM' || prevInput === 'PC' || prevInput === 'the PC' ) {
+            //run a check if version is ibm
+            if (readIBM === true) {
+              enterRoom('frie-comp-4');
+            } else {
+              document.getElementById('output').innerHTML = '';
+              println(`The screen of the IBM PC refuses to acknolodege the presence of your disk in its disk drive. "Not this one," the saleswoman says. "Another machine perhaps?"`);
+            }
+          } else if (prevInput === '') {
+            println('Please select a computer sir.');
+          } else {
+            println('Please select a computer sir. We have an Apple 2e, Commodore 64, and IBM PC.');
+          }
+        },
+        exits: [
+          {dir: 'leave', id: '56-madi'}
+        ]
+      },
+      {
+        id: 'frie-comp-4',
+        coord: [],
+        name: '',
+        desc: '',
+        onEnter: () => {
+          document.getElementById('output').innerHTML = '';
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
+          pressEnter('frie-comp-5');
+        },
+        exits: [],
+      },
+      {
+        id: 'frie-comp-5',
+        coord: [],
+        name: '',
+        desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is an Apple set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
+        onEnter: () => {
+          reenableInput();
+        },
+        onBlock: () => {
+          if (prevInput === 'pay' || prevInput === 'pay for computer' || prevInput === 'rent computer' || prevInput === 'give money' || prevInput === 'pay saleswoman' || prevInput === 'give' || prevInput === 'rent'){
+            if (playMon >= 7.5) {
+              playMon -= 7.50;
+              updateMon();
+              enterRoom('frie')
+            }
+          } else {
+          println(`"I don't have the time now," you tell the saleswoman. "Maybe later." She smiles stiffly as you go out the door to Madison Avenue.`);
+          enterRoom('56-madi')
+          }
+        },
+        exits: [
+          {dir: ['leave', 'back'], id: '56-madi'}
+        ]
+      },
+      {
+        id: 'frie-comp-6',
+        coord: [],
+        name: '',
+        desc: `You pay the saleswoman for an hour on the Apple, and she leads you to a back room about the size of the hotel's safe deposit vault. When you’re alone, you boot the disk into the Apple disk drive, and once again the monitor lights up with this introductory message:`,
+        onEnter: () => {
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don’t know who you are.`, 'enter');
+          pressEnter('frie-comp-7');
+        },
+        exits: []
+      },
+      {
+        id: 'frie-comp-7',
+        coord: [],
+        name: '',
+        desc: '',
+        onEnter: () => {
+          document.getElementById('output').innerHTML = '';
+          println(`E/xit opsys \n\nDirectory of CAMERON: \n ENTER A FILE ID:
+          <table style="width: 100%"><tr><th>ID:</th><th>FILENAME:</th><th>SIZE:</th><th>TY:</th><th>DTE:</th></tr><tr><th></th><th>Vol254</th><th></th><th></th><th>1-Jan-80</th></tr><tr><th>1</th><th>File1</th><th>5k</th><th>Txt</th><th>4-Jul-86</th></tr><tr><th>2</th><th>File2</th><th>6k</th><th>Txt</th><th>3-Jul-86</th></tr><tr><th>3</th><th>File3</th><th>8k</th><th>Txt</th><th>2-Jul-86</th></tr><tr><th>4</th><th>File4</th><th>7k</th><th>Txt</th><th>1-Jul-86</th></tr><tr><th>5</th><th>&#42File5</th><th>14k</th><th>Txt</th><th>30-Jun-86</th></tr>
+          </table>`);
+          pressEnter('frie-comp-8');
+        },
+        onBlock: () => {
+          if (prevInput ===  '1' || prevInput === 'file1' || prevInput === 'File1' || prevInput === 'access File1' || prevInput === 'access file1') {
+            pressEnter('frie-comp-8')
+          } 
+        },
+        */
+        exits: []
+      },
+      {
+        id: 'frie-comp-8', //riddle one
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
+      {
+        id: 'frie-comp-',
+        coord: [],
+        name: '',
+        desc: '',
+        exits: []
+      },
 
         /*******************************/
        /*        Restaurants          */
@@ -9785,7 +10234,7 @@ const amnesiaRestored = {
       id: '14-broa',
       coord: [-35.651, 1.216],
       name: 'E. 14th St. and Broadway',
-      desc: 'There is a restaurant called Nedicks here.',
+      desc: `There is a restaurant called Nedick's here.`,
       hasFood: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -23136,7 +23585,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '18-amer'},
         {dir: 'east', id: '19-5'},
         {dir: 'west', id: '19-7'},
-        //{dir: ['brownstone', '25W'], id: '25w-19st'}
+        {dir: ['brownstone', '25w', 'the brownstone', '25 w 19th st', '25 w. 19th st.'], id: '25w-19st'}
       ],
     },
     {
@@ -26753,14 +27202,14 @@ const amnesiaRestored = {
       coord: [22.736, -20.836],
       isStreet: true,
       name: 'W. 47th St. and 7th Ave.',
-      desc: 'There is a restaurant called Nedicks here.',
+      desc: `There is a restaurant called Nedick's here.`,
       hasFood: true,
       exits: [
         {dir: 'north', id: '48-7'},
         {dir: 'south', id: '46-7'},
         {dir: 'east', id: '47-amer'},
         {dir: 'west', id: '47-broa'},
-        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
+        {dir: ['nedicks', 'restaurant', 'inside', 'in'], id: 'nedick-intro'}
       ],
     },
     {
@@ -27103,13 +27552,13 @@ const amnesiaRestored = {
       coord: [17.025, -14.099],
       isStreet: true,
       name: 'W. 44th St. and Ave. of Americas',
-      desc: 'The faded elegance of the Algonquin Hotel still draws the theatre and writing crowd for cocktails and meals.',
+      desc: 'The faded elegance of the Algonquin Hotel still draws the theatre and writing crowd for cocktails and meals. \n',
       exits: [
         {dir: 'north', id: '45-amer'},
         {dir: 'south', id: '43-amer'},
         {dir: 'east', id: '44-5'},
         {dir: 'west', id: '44-broa'},
-        {dir: ['enter', 'hotel', 'algonquin'], block:`You can't go that way.`},
+        {dir: ['enter', 'hotel', 'algonquin',], block:`You can't go that way.`},
       ],
     },
 //Start 43rd Street
@@ -27130,7 +27579,7 @@ const amnesiaRestored = {
       coord: [14.725, -52.284],
       isStreet: true,
       name: 'W. 43rd St. and 12th Ave.',
-      desc: 'There is a restaurant called Nedicks here.',
+      desc: `There is a restaurant called Nedick's here.`,
       hasFood: true,
       exits: [
         {dir: 'north', id: '44-12'},
@@ -27411,7 +27860,7 @@ const amnesiaRestored = {
       coord: [10.879, -37.247],
       isStreet: true,
       name: 'W. 41st St. and Dyer Ave.',
-      desc: 'There is a restaurant called Nedicks here.',
+      desc: `There is a restaurant called Nedick's here.`,
       hasFood: true,
       exits: [
         {dir: 'north', id: '42-dyer'},
@@ -28255,7 +28704,7 @@ const amnesiaRestored = {
       coord: [-2.174, -33.571],
       isStreet: true,
       name: 'W. 34th St. and 9th Ave.',
-      desc: 'There is a restaurant called Nedicks here.',
+      desc: `There is a restaurant called Nedick's here.`,
       hasFood: true,
       exits: [
         {dir: 'north', id: '35-9'},
@@ -28555,12 +29004,15 @@ const amnesiaRestored = {
             USER-FRIENDLY
 
             COMPUTER STORE.`,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '57-madi'},
         {dir: 'south', id: '55-madi'},
         {dir: 'east', id: '56-park'},
         {dir: 'west', id: '56-5'},
-        {dir: ['computer', 'store', 'user', 'friendly'], id: 'user-frie'}
+        {dir: ['store', 'computer store', 'user-friendly computer store', 'user friendly computer store', 'user-friendly', 'user friendly', 'inside', 'in'], id: 'frie-comp-1'},
       ]
     },
     {
@@ -28587,7 +29039,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '53-madi'},
         {dir: 'east', id: '54-park'},
         {dir: 'west', id: '54-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35705,7 +36157,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '108-amer'},
         {dir: 'south', id: '106-amer'},
@@ -35718,7 +36169,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '109-amer'},
         {dir: 'south', id: '107-amer'},
@@ -35731,7 +36181,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', block: `You can go no further in the park.`},
         {dir: 'south', id: '108-amer'},
@@ -35745,7 +36194,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``,
-      isStreet: true,
       exits: [
         {dir: 'north', id: '61-7'},
         {dir: 'south', id: '59-7'},
@@ -35758,7 +36206,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '62-7'},
         {dir: 'south', id: '60-7'},
@@ -35771,7 +36218,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '63-7'},
         {dir: 'south', id: '61-7'},
@@ -35784,7 +36230,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '64-7'},
         {dir: 'south', id: '62-7'},
@@ -35797,7 +36242,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '65-7'},
         {dir: 'south', id: '63-7'},
@@ -35810,7 +36254,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '66-7'},
         {dir: 'south', id: '64-7'},
@@ -35823,7 +36266,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '67-7'},
         {dir: 'south', id: '65-7'},
@@ -35836,7 +36278,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '68-7'},
         {dir: 'south', id: '66-7'},
@@ -35849,7 +36290,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '69-7'},
         {dir: 'south', id: '67-7'},
@@ -35862,7 +36302,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '70-7'},
         {dir: 'south', id: '68-7'},
@@ -35875,7 +36314,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: `You come upon an avenue of weathered bronze statues of famous long-ago statesmen, generals, and public benefactors. All have become victims of history's king-size amnesia. Or maybe American History was never your subject.`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '71-7'},
         {dir: 'south', id: '69-7'},
@@ -35888,7 +36326,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: `"Strawberry Fields forever..."`, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '72-7'},
         {dir: 'south', id: '70-7'},
@@ -35901,7 +36338,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '73-7'},
         {dir: 'south', id: '71-7'},
@@ -35914,7 +36350,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '74-7'},
         {dir: 'south', id: '72-7'},
@@ -35927,7 +36362,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '75-7'},
         {dir: 'south', id: '73-7'},
@@ -35940,7 +36374,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '76-7'},
         {dir: 'south', id: '74-7'},
@@ -35953,7 +36386,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '77-7'},
         {dir: 'south', id: '75-7'},
@@ -35966,7 +36398,6 @@ const amnesiaRestored = {
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
-      isStreet: true,
       exits: [
         {dir: 'north', id: '78-7'},
         {dir: 'south', id: '76-7'},
