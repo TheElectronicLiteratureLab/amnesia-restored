@@ -5258,6 +5258,9 @@ const amnesiaRestored = {
     name: 'Death and Texas', // Displayed each time the player enters the room.
     desc: `And then you die`, // Displayed when the player first enters the room.
     onEnter: () => {
+      deatTexa = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
       pressEnter('game-over');
     },
   },
