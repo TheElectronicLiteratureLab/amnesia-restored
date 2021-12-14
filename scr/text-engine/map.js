@@ -154,7 +154,7 @@ disk.rooms.forEach((element)=>{
         //marker.bindPopup(element.name, {className: 'popup'});
         //console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
-        let str = foodMatch[0];
+        //let str = foodMatch[0];
         //console.log(str);
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});

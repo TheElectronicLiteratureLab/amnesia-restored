@@ -1447,12 +1447,14 @@ const begLootTable = () => {
       println(`The person you've asked for money refuses your request with a contemptuous smile.`);
     } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
-      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
       playMon = playMon + dollarAmount;//add amount to player inventory
+      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
+      
     } else if (71 <= chance2 <= 90) { //chance to get between 1.26 & 1.75
       const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
-      println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      
     } else if (91 <= chance2 <= 100) { //chance to get between 1.76-2.00
       const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
       println(`You were able to get ${formatter.format(dollarAmount)}`);

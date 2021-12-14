@@ -275,7 +275,7 @@ const amnesiaRestored = {
           icon: 'img/png/image-dollarbill-thumbnail.png',
           gif: 'img/gif/gif-dollarbill-ingame.gif',
           name: ['One Dollar Bill', 'dollar bill', 'dollar', 'bill', 'scratch', 'single', 'bones', 'dirty wurst'],
-          desc: 'A single ragged dollar bill. Its seen better days. You it when you first woke up in the Sunderland Hotel.',
+          desc: `It is a rather old limp bill, with Washington's face on one side and the pyramid and eagle seals on the other. It's seen better days. Its serial number is C56672493C. You got it when you first woke up in the Sunderland Hotel.`,
           isTakeable: true,
           isDroppable: true,
           onTake: () => {
@@ -1592,7 +1592,7 @@ const amnesiaRestored = {
           if(prevInput === 'riddle' || prevInput === 'a riddle'){
             enterRoom('ridd-2');
           } else{
-            println(`I’m afraid that’s not the answer. It’s a very simple riddle really. Almost everyone gets it right away. Keep trying.`);
+            println(`I'm afraid that's not the answer. It's a very simple riddle really. Almost everyone gets it right away. Keep trying.`);
             riddleRoom.hintCount += 1;
             if (riddleRoom.hintCount > 3) {
               println(riddleRoom.ridHint);
@@ -6533,17 +6533,21 @@ const amnesiaRestored = {
                     disk.inventory.push({
                         itemId: 'floppydisk',
                         icon: 'img/png/image-floppydisk-thumbnail.png',
-                        gif: 'img/png/gif-floppydisk-ingame.gif',
-                        name: ['floppy disk', '5 and 1/4-inch floppy disk', 'disk'],
+                        gif: 'img/gif/gif-floppydisk-ingame.gif',
+                        name: ['Floppy Disk', 'floppy disk', '5 and 1/4-inch floppy disk', 'disk', 'floppy'],
+                        desc: 'The disk is 5 and 1/4 inches square. The label reads: User Friendly Computer Store, 56th St. and Madison.',
                         isTakeable: true,
                         onTake: () => println(`You take the disc and put it in the gym bag.`),
                         onDrop: () => println(`You shouldn't drop that. It might be important.`)
                     });
-                    enterRoom('good-bye')
+                    enterRoom('good-bye');
                 }       
             },
         ],
-        exits: {dir: ['leave', 'exit', 'back'], id: 'good-bye'} // can we print a line here saying `When you return to the lobby, the clerk looks up from the desk. You thank him and explain that you will have no further need for the safe deposit box.`
+        exits: [
+          {dir: ['leave', 'exit', 'back'], id: 'good-bye'}
+        ],
+ // can we print a line here saying `When you return to the lobby, the clerk looks up from the desk. You thank him and explain that you will have no further need for the safe deposit box.`
     }, // closes lobb-revi-18
     {
       id: 'good-bye',
@@ -6724,7 +6728,8 @@ const amnesiaRestored = {
             println(`The one other person in the store--a woman in what is almost but not quite a man's business suit--approaches you, and says, "How may I help you, sir?"`);
             pressEnter('frie-comp-3');
           } else {
-            println(`You think twice before going inside. Even though you know `)
+            println(`You think twice before going inside. There is not much for you to do there.`);
+            enterRoom('56-madi');
           }
 
         },
@@ -6743,7 +6748,7 @@ const amnesiaRestored = {
       {
         id: 'frie-comp-3',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on--and of course it will only run on a machine if it’s been formatted to do so.
         I don’t pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple 2e, the IBM PC, and the Commodore 64. Which would you like?`,
         onEnter: () => {
@@ -6757,7 +6762,7 @@ const amnesiaRestored = {
             //run a check if version is apple
             if (readApple === true) {
               enterRoom('frie-comp-4');
-            } {
+            } else {
               document.getElementById('output').innerHTML = '';
               println(`The Apple's disk drive whirrs earnestly, but the monitor remains blank "Perhaps," the saleswoman suggest, "you'd like to try another machine. Which would you like the Commodore or the IBM?"`);
             }       
@@ -6790,7 +6795,7 @@ const amnesiaRestored = {
       {
         id: 'frie-comp-4',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
@@ -6802,7 +6807,7 @@ const amnesiaRestored = {
       {
         id: 'frie-comp-5',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is an Apple set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
         onEnter: () => {
           reenableInput();
@@ -6812,7 +6817,7 @@ const amnesiaRestored = {
             if (playMon >= 7.5) {
               playMon -= 7.50;
               updateMon();
-              enterRoom('frie')
+              enterRoom('frie-comp-6');
             }
           } else {
           println(`"I don't have the time now," you tell the saleswoman. "Maybe later." She smiles stiffly as you go out the door to Madison Avenue.`);
@@ -6826,9 +6831,10 @@ const amnesiaRestored = {
       {
         id: 'frie-comp-6',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: `You pay the saleswoman for an hour on the Apple, and she leads you to a back room about the size of the hotel's safe deposit vault. When you’re alone, you boot the disk into the Apple disk drive, and once again the monitor lights up with this introductory message:`,
         onEnter: () => {
+          document.getElementById('output').innerHTML = '';
           println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don’t know who you are.`, 'enter');
           pressEnter('frie-comp-7');
         },
@@ -6837,321 +6843,158 @@ const amnesiaRestored = {
       {
         id: 'frie-comp-7',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
+        rid1comp: false,
+        rid2comp: false,
+        rid3comp: false,
+        rid4comp: false,
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
           println(`E/xit opsys \n\nDirectory of CAMERON: \n ENTER A FILE ID:
-          <table style="width: 100%"><tr><th>ID:</th><th>FILENAME:</th><th>SIZE:</th><th>TY:</th><th>DTE:</th></tr><tr><th></th><th>Vol254</th><th></th><th></th><th>1-Jan-80</th></tr><tr><th>1</th><th>File1</th><th>5k</th><th>Txt</th><th>4-Jul-86</th></tr><tr><th>2</th><th>File2</th><th>6k</th><th>Txt</th><th>3-Jul-86</th></tr><tr><th>3</th><th>File3</th><th>8k</th><th>Txt</th><th>2-Jul-86</th></tr><tr><th>4</th><th>File4</th><th>7k</th><th>Txt</th><th>1-Jul-86</th></tr><tr><th>5</th><th>&#42File5</th><th>14k</th><th>Txt</th><th>30-Jun-86</th></tr>
-          </table>`);
-          pressEnter('frie-comp-8');
+          <table style="width: 100%"><tr><th>ID:</th><th>FILENAME:</th><th>SIZE:</th><th>TY:</th><th>DTE:</th></tr><tr><th></th><th>Vol254</th><th></th><th></th><th>1-Jan-80</th></tr><tr><th>1</th><th>**File1**</th><th>5k</th><th>Txt</th><th>4-Jul-86</th></tr><tr><th>2</th><th>**File2**</th><th>6k</th><th>Txt</th><th>3-Jul-86</th></tr><tr><th>3</th><th>**File3**</th><th>8k</th><th>Txt</th><th>2-Jul-86</th></tr><tr><th>4</th><th>**File4**</th><th>7k</th><th>Txt</th><th>1-Jul-86</th></tr><tr><th>5</th><th>**&#42File5**</th><th>14k</th><th>Txt</th><th>30-Jun-86</th></tr>
+          </table>`, 'playerInput');
+          reenableInput();
         },
         onBlock: () => {
-          if (prevInput ===  '1' || prevInput === 'file1' || prevInput === 'File1' || prevInput === 'access File1' || prevInput === 'access file1') {
-            pressEnter('frie-comp-8')
-          } 
+          if (prevInput ===  '1' || prevInput === 'file1' || prevInput === 'File1' || prevInput === 'File 1' || prevInput === 'file 1' ||prevInput === 'access File1' || prevInput === 'access file1' || prevInput ===  '2' || prevInput === 'file2' || prevInput === 'File2' || prevInput === 'File 2' || prevInput === 'file 2' ||prevInput === 'access File2' || prevInput === 'access file2' || prevInput ===  '3' || prevInput === 'file3' || prevInput === 'File3' || prevInput === 'File 3' || prevInput === 'file 3' ||prevInput === 'access File3' || prevInput === 'access file3' || prevInput ===  '4' || prevInput === 'file4' || prevInput === 'File4' || prevInput === 'File 4' || prevInput === 'file 4' ||prevInput === 'access File4' || prevInput === 'access file4') {
+            pressEnter('frie-comp-8');
+          } else if (prevInput ===  '5' || prevInput === 'file5' || prevInput === 'File5' || prevInput === 'File 5' || prevInput === 'file 5' ||prevInput === 'access File5' || prevInput === 'access file5') {
+            println(`File5 is corrupted and can't be accessed.`);
+          }
         },
-        exits: []
+        exits: [
+          {dir: ['leave', 'exit', 'e', 'back', 'eject', 'shutdown'], id: 'exit-comp'}
+        ]
+      },
+      {
+        id: 'exit-comp',
+        coord: [],
+        name: '',
+        desc: 'You decide to eject the disk and leave the store.',
+        onEnter: () => {
+          enterRoom('56-madi');
+        }
       },
       {
         id: 'frie-comp-8', //riddle one
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
+        hintCount: 0,
+        ridHint: `It rhymes with taradiddle.`,
+        onEnter: () => {
+          println(`wait...`, 'playerInput');
+          setTimeout(() => {  println(`.`, 'playerInput'); }, 1000);
+          setTimeout(() => {  println(`.`, 'playerInput'); }, 2000);
+          setTimeout(() => {  println(`.`, 'playerInput'); }, 3000);
+          setTimeout(() => {  println(`Access to CAMERON:File1.txt is controlled by the correct answer to the following riddle:`, 'playerInput'); }, 5000);
+          setTimeout(() => {
+            println(`Although I talk of no one and \n Of nothing else but me and mine, \n I hope you will not understand \n Just who I am until the line \n Revealing all my taradiddle \n As the substance of a &#95 &#95 &#95 &#95 &#95 &#95.`);
+            reenableInput();}, 5000);
+        },
+        onBlock: () => {
+          let riddleRoom = getRoom(disk.roomId);
+          if(prevInput === 'riddle' || prevInput === 'a riddle'){
+            println('You got it, and the pay-off is a screenful of text, which you scroll through with increasing astonishment and alarm:')
+            enterRoom('frie-comp-9');
+          } else{
+            println(`Please enter the correct answer.`);
+            riddleRoom.hintCount += 1;
+            if (riddleRoom.hintCount > 3) {
+              println(riddleRoom.ridHint);
+            }
+          }
+        },
         exits: []
       },
       {
-        id: 'frie-comp-',
+        id: 'frie-comp-9',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
+        onEnter: () => {
+          println(`I am writing this message to myself on a rented Apple computer in Room 1502 of the Sunderland Hotel, but beyond that one certain fact everything else I might say about who I am or why I'm here is a matter of faith and/or inference. I'm registered at the desk downstairs as John Cameron III, and my bill is being paid for by an American Express card in that name (no idea where the card is tho, dammit), but all my efforts to dig up solid info about this “John Cameron” have met with no success. American Express insists my records are confidential and can't be divulged over the phone. The WHO'S WHO at the library shows no entry for John Cameron III. The name is probably an alias. This much is certain: whoever I am, I'm suffering from a disease that causes a progressively worse amnesia. The nature and origin of that disease—and much else- are set out (presumably by myself, but that's where faith comes in, since I don't remember writing even yesterday's entry!) on files that are coded within this file. Access to these files is controlled by a series of riddles, similar to but harder than the riddle that opened this file. The need for "burying" this information will become evident as you/I continue to access earlier files. As for the riddles themselves, it seems that even in my amnesiac condition I have a knack for inventing doggerel riddles. God, I hope I don't end up discovering I'm a poet! I have, at this point, almost no memories of my adult life, though I do retain certain capabilities--such as basic programming skills- and general knowledge. There is also a grab-bag of what I suppose are childhood memories--streets and rooms and cooking smells and a woman's voice softly urging me to go to sleep. My mother's voice? I can remember watching DUMBO and wishing that I had his magic feather. I remember unwrapping a birthday present that had one box inside of another box inside of another box--but I can't remember what was in the last box. It's not safe for me to continue writing. You/I will find what you need to know on the earlier files. I have nothing substantive to add. I'll deposit this in the hotel's safe deposit box and use the password that's keyed to John 1:1. None of the other riddles concern the Bible, by the way, so don't think to find more “clues.” I was able to guess them, so I guess you will, since I'm counting on you to be me. This is a weird situation.`, 'compStore');
+
+          pressEnter('frie-comp-10')
+        },
         exits: []
       },
       {
-        id: 'frie-comp-',
+        id: 'frie-comp-10',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
+        hintCount: 0,
+        ridHint2: 'You need this to give an answer.',
+        ridHint: 'Wrong. Need a hint? There it is.',
+        onEnter: () => {
+          setTimeout(() => {  println(`The text on the screen breaks off and is replaced by a second riddle:`); }, 1000);
+          setTimeout(() => {  println(`Acess to next file controlled by correct answer to the following riddle:`); }, 2000);
+          setTimeout(() => {
+            println(`With every question that I pose \n The keener curiosity grows. \n Who? I ask, and then, a moment later, \n How come? And when? And where's our waiter? \n Who am I?
+            `);
+            reenableInput();
+          }, 4000)
+        },
+        onBlock: () => {
+          let riddleRoom = getRoom(disk.roomId);
+          if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
+            enterRoom('frie-comp-11');
+          } else{
+            println(`Please enter the correct answer.`);
+            riddleRoom.hintCount += 1;
+            if (riddleRoom.hintCount > 2) {
+              println(riddleRoom.ridHint);
+            } else if (riddleRoom.hintCount > 3) {
+              println(riddleRoom.ridHint2);
+            }
+          }
+        },
         exits: []
       },
       {
-        id: 'frie-comp-',
+        id: 'frie-comp-11',
         coord: [],
-        name: '',
+        name: 'User Friendly Computer Store',
         desc: '',
+        onEnter: () => {
+          println(`I have become a virtual prisoner in this hotel room. My self-declared fiancée “Alice Dudley” just appeared outside the door and got very impatient rattling the chain lock on the door while I secreted this disk. She brought a Chinese takeout, which I refused to eat, as I've developed the paranoid suspicion that she is doctoring my food, which aggravates my amnesia. When I complained, Alice tells me that my amnesia has been triggered by premarital anxieties. She hints, moreover, that I'm a fugitive from justice--but won't provide details, because (she says) when she did so some short while back the discovery triggered my worst setback amnesia-wise. She may be telling the truth: I can't remember. Tho I don't trust her I don't doubt her essential good will towards me. Call it love, even. But it is an over-protective, manipulating love and I want no part of it. If she were to read this... Not much point in continuing a record of my quandary, yet I've come to feel so dependent on this disc. And I haven't been able to solve the innermost riddles, tho I keep trying. For practice I've been phoning **555-8749**. No idea what the place is, a bookstore maybe; in any case there's a different riddle each day. Found the number in my address book. Don't know why it seems so important to keep others from reading these files, but it does. Reading, or what would be worse, tampering with what's already been written here. (Tho can I be sure it hasn't been tampered with already?) I have to get away, but without money or even clothes (I have sweatpants, a Mickey Mouse tee shirt, sneakers, and a smile) I don't feel very well-equipped to set off on my own. And Alice keeps promising, throwing out hints, asking me to wait “just one more day.” Meanwhile I'm getting a lot of exercise in the hotel's rooftop...  and in bed. Tonight, after we've made love and she's let her guard down, I will ask her what she knows about this Zane Bester. What would be the best way to put it? "Darling, would you happen to know if I'm really Zane Bester? And if so, who the hell is Zane Bester?"`, 'compStore');
+          pressEnter('frie-comp-12')
+        },
         exits: []
       },
       {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
+        id: 'frie-comp-12',
+        coord: [37.265, -2.637],
+        name: 'User Friendly Computer Store',
         desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
-        exits: []
-      },
-      {
-        id: 'frie-comp-',
-        coord: [],
-        name: '',
-        desc: '',
+        onEnter: () => {
+          println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the Apple you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
+          I am Evolution's way
+          Of saying you’ve had long enough to play.
+          I’m the unveiling of the skull,
+          The barnacles sheared off the hull
+          To show the noble wreck beneath,
+          As all shall learn who feel my teeth.
+          Who am I?
+          There’s no time to answer that question now, but maybe by the next time you’ve booted this disk you’ll have figured out the answer. You say good-bye to the saleswoman and leave the User-Friendly Computer Store.`, 'compStore');
+          addItem('riddlenote');
+          storyMarker.bindPopup('Maybe try finding a phone?').addTo(poiLayer);
+          storyMarker.setLatLng(disk.currPos);
+          pressEnter('56-madi');
+        },
+        items: [
+          {
+            itemId: 'riddlenote',
+            icon: 'img/png/image-letter-thumbnail.png',
+            gif: 'img/gif/gif-letter-ingame.gif',
+            name: [`Riddle Note`, 'riddle note', 'computer store note'],
+            desc: `A riddle quickly scribbled on a piece of paper at the User-Friendly Computer Store. \n            
+            I am Evolution's way \n Of saying you've had long enough to play \n I'm the unveiling of the skull, \n The barnacles sheared off the hull \n To show the noble wreck beneath, \n As all shall learn who feel my teeth. \n Who am I?`,
+            isTakeable: true
+          }
+        ],
         exits: []
       },
 
@@ -29044,6 +28887,15 @@ const amnesiaRestored = {
 
             COMPUTER STORE.`,
         onEnter: () => {
+          reenableInput();
+          let room = getRoom(disk.roomId);
+          room.visits++;
+          if (room.visits > 1){
+            println(`A sign halfway down the block, a shop has a sign above the window that says \n
+            USER-FRIENDLY
+
+            COMPUTER STORE.`);
+          }
           degradation = true;
         },
       exits: [
