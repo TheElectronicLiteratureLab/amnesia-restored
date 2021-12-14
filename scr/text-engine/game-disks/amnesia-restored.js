@@ -1223,9 +1223,14 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-          println(`"That's right, son," he says; aiming the gun at your chest, "you just freeze, and I will explain something about my character. I have never been a man to abide dawdlers. In fact, one time in Nashville, there was this waitress who took the better part of an hour to serve me a damned hamburger. I told her I was becoming impatient, and then I told her again. And then I lost my temper. Like this!`);
-          pressEnter('hote-revi-7');
-      },
+        println(`The man shoots you twice in the chest, first through your liver and then through your heart. In the moments before your death, your killer offers some parting words of advice. "In the future, friend, don't dawdle. Dawdling never got anyone anywhere." He bends down and places your hands crosswise over the two bullet holes in your chest, straightens out your legs, and leaves the room with a tip of his Stetson.
+        
+        A fly alights on your nose. For a little while you feel the tickle of its feet, and then you're dead.`);
+        dawdHote = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
+        pressEnter('game-over');//leads to end screen
+    },
       exits: [],
   },//end of hote-revi-6 room (death for dawdlers ending)
   {
