@@ -6849,7 +6849,6 @@ const amnesiaRestored = {
             pressEnter('frie-comp-8')
           } 
         },
-        */
         exits: []
       },
       {
