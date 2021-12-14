@@ -802,6 +802,8 @@ body {
    text-transform: uppercase;
    border: none;
    cursor: pointer;
+   position: absolute;
+   padding: 5px;
 }
 
 /* address book display specific stylings */
