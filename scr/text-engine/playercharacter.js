@@ -29,7 +29,8 @@ let readApple = true;
 let readC64 = false;
 let readIBM = false;
 
-//
+//Ann's Apartment Flags and Variables
+let cookieCount = 1;
 
 
 let playFat = 100;

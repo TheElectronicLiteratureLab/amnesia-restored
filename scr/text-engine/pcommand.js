@@ -1143,10 +1143,10 @@ function createPhone() { //create function
         if (rooms[i].exits !== undefined) {
           rooms[i].exits.push( //push the following into the room's exits array
           {
-            dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+            dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth'], //exit directions for phone booth room
             id: 'pho-boo1' //id for phone booth
           },
-        ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        ); rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
         phoneCount++
         } else {
           console.log(`Can't build a booth here.`);

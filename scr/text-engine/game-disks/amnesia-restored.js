@@ -2090,7 +2090,7 @@ const amnesiaRestored = {
       desc: `After a short interval an elevator arrives. There are twenty buttons on the aluminum panel -- the lowest marked L for Lobby, the uppermost PH for PENTHOUSE, and the others numbered 2 through 19.`,
       
       exits: [ // These need to be specified with the press command
-          {dir: 'L', id: 'corridor-hostileelevator'},
+          {dir: 'l', id: 'corridor-hostileelevator'},
           {dir: '2', id: 'corridor-elevator2'},
           {dir: '3', id: 'corridor-elevator3'},
           {dir: '4', id: 'corridor-elevator4'},
@@ -2109,7 +2109,7 @@ const amnesiaRestored = {
           {dir: '17', id: 'corridor-elevator17'},
           {dir: '18', id: 'corridor-elevator18'},
           {dir: '19', id: 'corridor-elevator19'},
-          {dir: 'PH', id: 'corridor-elevatorph'},
+          {dir: 'ph', id: 'corridor-elevatorph'},
           {dir: 'leave', id: 'corridor-elevator15'}
          ],
     },
@@ -4724,23 +4724,23 @@ const amnesiaRestored = {
         console.log(playerC.cScore);
         console.log(playerC.sScore);
         numbers.push(
-          {number:'555-1314', roomid:'phone-12', contactName:'JA'},
-          {number:'555-1315', roomid:'phone-13', contactName:`Wit's End`},
-          {number:'555-2712', roomid:'phone-14', contactName:'FBI'},
-          {number:'555-2259', roomid:'phone-15', contactName:'E. H.'},
-          {number:'555-2577', roomid:'phone-16', contactName:'Lila T.'},
-          {number:'555-2783', roomid:'phone-17', contactName:'Sue G.'}, 
-          {number:'555-4312', roomid:'phone-18', contactName:'Chelsea H.'},
-          {number:'555-4365', roomid:'phone-19', contactName:'SEX'},
-          {number:'555-4685', roomid:'phone-20', contactName:'Kvetch'},
-          {number:'555-5436', roomid:'phone-21', contactName:'AA'},
-          {number:'555-5643', roomid:'phone-22', contactName:'Interlude'},
-          {number:'555-6200', roomid:'phone-23', contactName:'TTTT'},
-          {number:'555-8422', roomid:'phone-24', contactName:'DRUGS'},
-          {number:'555-8749', roomid:'phone-25', contactName:'R + J'},
-          {number:'555-8876', roomid:'phone-26', contactName:'J.L.'}, 
-          {number:'571-7171', roomid:'phone-27', contactName:'SOFT'},
-          {number:'976-1212', roomid:'phone-28', contactName:'F.'} 
+          {number:'5551314', roomid:'phone-12', contactName:'JA'},
+          {number:'5551315', roomid:'phone-13', contactName:`Wit's End`},
+          {number:'5552712', roomid:'phone-14', contactName:'FBI'},
+          {number:'5552259', roomid:'phone-15', contactName:'E. H.'},
+          {number:'5552577', roomid:'phone-16', contactName:'Lila T.'},
+          {number:'5552783', roomid:'phone-17', contactName:'Sue G.'}, 
+          {number:'5554312', roomid:'phone-18', contactName:'Chelsea H.'},
+          {number:'5554365', roomid:'phone-19', contactName:'SEX'},
+          {number:'5554685', roomid:'phone-20', contactName:'Kvetch'},
+          {number:'5555436', roomid:'phone-21', contactName:'AA'},
+          {number:'5555643', roomid:'phone-22', contactName:'Interlude'},
+          {number:'5556200', roomid:'phone-23', contactName:'TTTT'},
+          {number:'5558422', roomid:'phone-24', contactName:'DRUGS'},
+          {number:'5558749', roomid:'phone-25', contactName:'R + J'},
+          {number:'5558876', roomid:'phone-26', contactName:'J.L.'}, 
+          {number:'5717171', roomid:'phone-27', contactName:'SOFT'},
+          {number:'9761212', roomid:'phone-28', contactName:'F.'} 
         );
         disk.inventory.push(
           {
@@ -5969,11 +5969,11 @@ const amnesiaRestored = {
 
   exits: [
     {//Respond with John Cameron, John Cameron III, or John
-      dir: 'John',
+      dir: 'john',
       id: 'marr-2',
     },
     {//Fail to respond appropriately
-      dir: 'Text',
+      dir: 'text',
       id: 'marr-1A',
     },
   ],  
@@ -5985,7 +5985,7 @@ const amnesiaRestored = {
 
   exits: [
     {//Forced to next question
-      dir: 'Text',
+      dir: 'text',
       id: 'marr-2',
     },
   ],  
@@ -5996,11 +5996,11 @@ const amnesiaRestored = {
   desc: ``,
   exits: [
     {//Correct response
-      dir: 'Text',
+      dir: 'text',
       id: 'marr-3',
     },
     {//Fail to respond appropriately
-      dir: 'Text',
+      dir: 'text',
       id: 'marr-2A',
     },
   ],  
@@ -6012,7 +6012,7 @@ const amnesiaRestored = {
 
   exits: [
     {
-      dir: 'Text',
+      dir: 'text',
       id: 'marr-#',
     },
   ],  
@@ -6959,7 +6959,7 @@ const amnesiaRestored = {
         name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
-          println(`I have become a virtual prisoner in this hotel room. My self-declared fiancée “Alice Dudley” just appeared outside the door and got very impatient rattling the chain lock on the door while I secreted this disk. She brought a Chinese takeout, which I refused to eat, as I've developed the paranoid suspicion that she is doctoring my food, which aggravates my amnesia. When I complained, Alice tells me that my amnesia has been triggered by premarital anxieties. She hints, moreover, that I'm a fugitive from justice--but won't provide details, because (she says) when she did so some short while back the discovery triggered my worst setback amnesia-wise. She may be telling the truth: I can't remember. Tho I don't trust her I don't doubt her essential good will towards me. Call it love, even. But it is an over-protective, manipulating love and I want no part of it. If she were to read this... Not much point in continuing a record of my quandary, yet I've come to feel so dependent on this disc. And I haven't been able to solve the innermost riddles, tho I keep trying. For practice I've been phoning **555-8749**. No idea what the place is, a bookstore maybe; in any case there's a different riddle each day. Found the number in my address book. Don't know why it seems so important to keep others from reading these files, but it does. Reading, or what would be worse, tampering with what's already been written here. (Tho can I be sure it hasn't been tampered with already?) I have to get away, but without money or even clothes (I have sweatpants, a Mickey Mouse tee shirt, sneakers, and a smile) I don't feel very well-equipped to set off on my own. And Alice keeps promising, throwing out hints, asking me to wait “just one more day.” Meanwhile I'm getting a lot of exercise in the hotel's rooftop...  and in bed. Tonight, after we've made love and she's let her guard down, I will ask her what she knows about this Zane Bester. What would be the best way to put it? "Darling, would you happen to know if I'm really Zane Bester? And if so, who the hell is Zane Bester?"`, 'compStore');
+          println(`I have become a virtual prisoner in this hotel room. My self-declared fiancée “Alice Dudley” just appeared outside the door and got very impatient rattling the chain lock on the door while I secreted this disk. She brought a Chinese takeout, which I refused to eat, as I've developed the paranoid suspicion that she is doctoring my food, which aggravates my amnesia. When I complained, Alice tells me that my amnesia has been triggered by premarital anxieties. She hints, moreover, that I'm a fugitive from justice--but won't provide details, because (she says) when she did so some short while back the discovery triggered my worst setback amnesia-wise. She may be telling the truth: I can't remember. Tho I don't trust her I don't doubt her essential good will towards me. Call it love, even. But it is an over-protective, manipulating love and I want no part of it. If she were to read this... Not much point in continuing a record of my quandary, yet I've come to feel so dependent on this disc. And I haven't been able to solve the innermost riddles, tho I keep trying. For practice I've been phoning **555-6200**. No idea what the place is, a bookstore maybe; in any case there's a different riddle each day. Found the number in my address book. Don't know why it seems so important to keep others from reading these files, but it does. Reading, or what would be worse, tampering with what's already been written here. (Tho can I be sure it hasn't been tampered with already?) I have to get away, but without money or even clothes (I have sweatpants, a Mickey Mouse tee shirt, sneakers, and a smile) I don't feel very well-equipped to set off on my own. And Alice keeps promising, throwing out hints, asking me to wait “just one more day.” Meanwhile I'm getting a lot of exercise in the hotel's rooftop...  and in bed. Tonight, after we've made love and she's let her guard down, I will ask her what she knows about this Zane Bester. What would be the best way to put it? "Darling, would you happen to know if I'm really Zane Bester? And if so, who the hell is Zane Bester?"`, 'compStore');
           pressEnter('frie-comp-12')
         },
         exits: []
@@ -6998,6 +6998,566 @@ const amnesiaRestored = {
         exits: []
       },
 
+
+    /************************/
+   /* Ann's Apartment/TTTT */
+  /************************/
+
+      {
+        id:'ann-2',
+        coord: [],
+        name:'Tiny Tykes Talent Town',
+        desc:`You climb the steps to the entrance portico. There is a doorbell on the wall with a plastic nameplate beside it. The nameplate reads: TINY TYKES TALENT TOWN`,
+        onEnter: () => {
+          degradation = !degradation;
+        },
+        exits:[
+            {dir:['doorbell','bell','knock'],id:'ann-4'},
+            {dir:['inside','open'],id:'ann-4'},
+            {dir:'leave',id:'19-amer'}
+        ],
+    },
+    {
+        id:'ann-4',
+        coord: [],
+        name:'Tiny Tykes Talent Town',
+        desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
+        onEnter: () => {
+          degradation = false;
+          annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
+        },
+        onBlock: () => {
+            if(prevInput === 'open') {
+                clearTimeout(annTimer);
+                enterRoom('ann-6');
+            } else if(prevInput ==='knock'){
+                clearTimeout(annTimer);
+                enterRoom('ann-6');
+            } else{
+                println(`What's that?`);
+            }
+        },
+        exits: [
+          {dir: ['leave', 'back'], id: '19-amer'}
+        ]
+    },
+    {
+        id:'ann-5',
+        coord: [],
+        name:'Tiny Tykes Talent Town',
+        desc:`You try to open the door but you're too late; the buzzer's stopped buzzing.`,
+        exits:[
+          {dir:['doorbell','bell','knock'],id:'ann-4'},
+          {dir:'leave',id:'19-amer'}
+        ],
+    },
+    {
+        id: 'ann-6',
+        coord: [],
+        name: `Ann's House`,
+        desc:`You enter and find yourself at the foot of another flight of stairs. A voice calls down, pipingly, "Who's there?"`,
+        onEnter: () => {
+          println(`"Oh, John, how nice. Mummy is in the bathtub, and I'm making imaginary cookies. I'll go tell her you're here."`);
+        },
+        onBlock: () => {
+          if(prevInput === 'wait'){ // Any response should take you to 9
+              enterRoom('ann-9');
+          }else if(prevInput === 'thank you'){
+              enterRoom('ann-9');
+          }
+          else{
+              enterRoom('ann-9');
+          }
+      },
+    },
+      {
+        id:'ann-7', 
+        name:`Ann's House`,
+        desc:`“Oh, John, how nice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
+        onBlock: () => {
+          if(prevInput === 'wait'){ // Any response should take you to 9
+              enterRoom('ann-9');
+          }else if(prevInput === 'thank you'){
+              enterRoom('ann-9');
+          }
+          else{
+              enterRoom('ann-9');
+          }
+      },
+    },
+    {
+      id:'ann-8',
+      name:`Ann's House`,
+      desc:`“Oh, John, you can’t fool me, I know your voice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
+      onBlock: () => {
+        if(prevInput === 'wait'){ // Any response should take you to 9
+            enterRoom('ann-9');
+        }else if(prevInput === 'thank you'){
+            enterRoom('ann-9');
+        }
+        else{
+            enterRoom('ann-9');
+        }
+    },
+  },
+    {
+        id:'ann-9',
+        name:`Ann's House`,
+        desc:`You climb the stairs to the second floor landing, where the door to apartment B has been left ajar.`,
+          onEnter: () =>{
+            playerC.sScore += 10;
+            playerC.cScore += 15;
+            playerC.dScore += 15;
+            pressEnter('ann-10');
+          },
+    },
+          {
+              id:'ann-10',
+              name:`Ann's House`,
+              desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won’t be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
+              onEnter: () =>{
+                reenableInput();
+                println(`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`);
+              },
+              onBlock: () => {
+          //might be better to use the onTake function here.
+                if (prevInput === 'no' || prevInput === 'no thanks' || prevInput === 'no thank you') {
+                  enterRoom('ann-13')
+                }
+              },
+              items: [
+                {
+                  itemId: 'chocogenerator',
+                  icon: '',
+                  gif: '',
+                  name: ['cookie', 'chocolate cookie', 'chocolate chip cookie', 'invisible cookie'],
+                  desc: 'An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan.',
+                  onTake: () => {
+                    if (!getItemInInventoryById('chococookie')) {
+                      playerC.cScore += 5;
+                      println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.\n
+                      “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`);
+                      disk.inventory.push(
+                        {
+                          itemId: 'chococookie',
+                          icon: '',
+                          gif: '',
+                          name: ['Invisible Chocolate Chip Cookie', 'invisible cookie', 'chocolate chip cookie', 'cookie', 'another cookie'],
+                          desc: `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`,
+                          isDroppable: true,
+                        }
+                      )
+                    } else {
+                      if (cookieCount > 0) {
+                        println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.\n
+                        “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`);
+                        cookieCount++;
+                        getItemInInventoryById('chococookie').desc = `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`;
+                        console.log("CookiesTaken: " + cookieCount)
+                      } else {
+                        println('You are too full on cookies;');
+                      }
+                    }
+                  }
+                }
+              ],
+              exits: [
+                {dir:['leave'],id:'ann-21'},
+            ],
+        },
+    {
+        id:'ann-13',
+        name:`Ann's House`,
+        desc:`“Now that you’ve had your fill,” Cecily says, “I’ll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let Mummy come out of the bathtub. Okay?`,
+        onBlock: () => {
+            if(prevInput === 'yes' || 'okay' || 'answer riddles'){
+                enterRoom('ann-15');
+            } else{
+                enterRoom('ann-14');
+            }
+        },
+    },
+    {
+        id:'ann-14',
+        name:`Ann's House`,
+        desc:`Cecily stamps her foot with beguiling petulance. “The riddles have to come first. That is the rule. Now, here is the first riddle.\n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
+        onBlock: () => {
+            if(prevInput === '1' || prevInput === 'one'){
+                enterRoom('ann-17');
+            }else{
+                enterRoom('ann-16');
+            }
+        },
+    },
+    {
+        id:'ann-15',
+        name:`Ann's House`,
+        desc:`“Very well! Here is the first riddle. She closes her eyes for better concentration, and recites: \n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
+        onEnter: () =>{
+          playerC.cScore += 3;
+        },
+        onBlock: () => {
+            if(prevInput === '1' || prevInput === 'one'){
+                enterRoom('ann-17');
+            }else{
+                enterRoom('ann-16');
+            }
+        },
+    },
+    {
+        id:'ann-16',
+        name:`Ann's House`,
+        desc:`“You’re wrong!” Cecily shrieks gleefully. “You’re wrong, you’re wrong, you’re wrong! There’s only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don’t be disappointed. Okay, here’s one that’s even harder: \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
+        onBlock: () => {
+            if(prevInput === 'ann' || prevInput === 'anne'){
+                enterRoom('ann-19');
+            }else{
+                enterRoom('ann-18');
+            }
+        },
+    },
+    {
+        id:'ann-17',
+        name:`Ann's House`,
+        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I’ll ask you one from another book then. \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
+        onEnter: () => {
+          playerC.cScore += 3;
+        },
+        onBlock: () => {
+            if(prevInput === 'ann' || prevInput ==='anne'){
+                enterRoom('ann-19');
+            }else{
+                enterRoom('ann-18');
+            }
+        },
+      },
+      {
+        id:'ann-18',
+        name:`Ann's House`,
+        desc:`“You’re wrong! You’re wrong, you’re wrong, you’re wrong. The right answer is Ann, the same as Mummy’s name. Silk AN’ satin, gold AN’ velvet, get it? Well, you’re no good at riddles, I can see that. I’ll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don’t care.”`,
+        onBlock: () => {
+            if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
+                enterRoom('ann-20');
+            }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
+                enterRoom('ann-21');
+            }else{
+                println(`Can you rephrase that please?`);
+            }
+          },
+            items: [
+                  {
+                      itemId: 'bookshelf',
+                      name: ['Bookshelf', 'bookshelf'],
+                      onLook: () => {
+                          enterRoom('ann-21');
+                      },
+                  }
+              ],
+          },
+          {
+              id:'ann-19',
+              name:`Ann's House`,
+              desc:`“Oh, you knew that one because Mummy’s name is Ann. You’re no fun to play with at all. I’m going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don’t care.”`,
+              onBlock: () => {
+                if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
+                    enterRoom('ann-20');
+                }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
+                    enterRoom('ann-21');
+                }else{
+                    println(`Can you rephrase that please?`);
+                }
+              },
+                items: [
+                      {
+                          itemId: 'bookshelf',
+                          name: ['Bookshelf', 'bookshelf'],
+                          onLook: () => {
+                              enterRoom('ann-21');
+                          },
+                      }
+                  ],
+              },
+              {
+                        id:'ann-20',
+                        name:`Ann's House`,
+                        desc:`“I told you Mummy is taking a bath. Now don’t bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
+                        onBlock: () => {
+                          if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
+                              enterRoom('ann-20');
+                          }else{
+                              enterRoom('ann-21');
+                          }
+                      },
+              },
+        {
+        id:'ann-21',
+        name:`Ann's House`,
+        desc:`The one stable and somber note among the apartment’s happy jumble are its tall bookshelves. You consider some of the titles of the exposed spines, and recognize many titles and authors that seem familiar, but only as the fame of a foreign city can be familiar though you’ve never visited it. And then you do find one book, and a very thick one, that you can dimly remember having read, or at least begun. There was a beautiful girl in it, the daughter of a man who carved tombstones. Gerta her name was. You look inside the book--it is called WOLF SOLENT--and find the name on the first page you skim. You feel a fierce glow of accomplishment at having remembered something, even if it was only a character in a book. You continue paging through the long novel until a woman’s voice addresses you: “John Cameron! This is a surprise.”`,
+        onBlock: () => {
+            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello'){
+                enterRoom('ann-22');
+            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+                enterRoom('ann-23');
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+                enterRoom('ann-24');
+            }else {
+              enterRoom('ann-25');
+          }
+        },
+      },
+      {      
+        id:'ann-22',
+        name:`Ann's House`,
+        desc:`“Hello yourself.”`,
+        onBlock: () => {
+            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+                enterRoom('ann-23');
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+                enterRoom('ann-24');
+            }else {
+              enterRoom('ann-25');
+            }
+          },
+        },
+        {
+        id:'ann-23',
+        name:`Ann's House`,
+        desc:`“Oh, that’s pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won’t have to pay such high taxes if she’s a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
+        onBlock: () => {
+            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+                enterRoom('ann-24');
+            }else {
+              enterRoom('ann-25');
+            }
+          },
+        },
+        {
+        id:'ann-24',
+        name:`Ann's House`,
+        desc:`“She’s been having a few problems at school. One of her classmates has dyslexia and Cecily is jealous. She wants to be dyslexic too. Were you able to answer her riddles?”`,
+        onBlock: () => {
+            if(prevInput === ''){
+                enterRoom('ann-25');
+            }else{
+              enterRoom('ann-26');
+            }
+        },
+    },
+    {
+        id:'ann-25',
+        name:`Ann's House`,
+        desc:`She turns away from you, indifferent to your riddle-answering prowess, and begins vigorously to dry her hair with the bath towel that was her turban. After it is all fluffed out into a great halo of damp blonde curls, she opens a cupboard compartment underneath the tv, takes out two brandy glasses and a bottle of brandy. She appraises the level of the bottle’s contents. “There’s just enough to finish off what we started,” she announces, and pours the brandy into the glasses. She hands you one of the snifters and then holds up her own in a toast: “To what we started!”`,
+        onBlock: () => {
+            if(prevInput === 'ask about what we started' || prevInput === 'to what we started' || prevInput === 'kiss ann' || prevInput === 'i love you'){
+                enterRoom('ann-26'); // any response will take you to ann-26
+            }else {
+              enterRoom('ann-26');
+            }
+        },
+    },
+    {
+        id:'ann-26',
+        name:`Ann's House`,
+        desc:`“Don’t think, John Cameron, that what we started is still happening. You’ve had your chance. I’m after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I’m not blaming you-- you never pretended to be anything you’re not. But you’re a bum--a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you’re hungry there’s a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I’ve got to put the Little Princess to bed. She’s got a makeup call for six a.m.”`,
+        onEnter: () =>{
+          playerC.cScore += 10;
+            if(playHung <= 25){
+                println(`The mention of the brie starts you salivating like one of Pavlov’s dogs. You may have amnesia, but your tastebuds don’t.`);
+            }
+        },
+        onBlock: () => {
+            if(prevInput === 'get brie' || prevInput === 'eat brie'){
+                println(`Ann said the brie is in the icebox. Why not start there?`);
+            }else if(prevInput === 'go to icebox' || prevInput === 'open icebox'){
+                enterRoom('ann-27');
+            }else {
+              enterRoom('ann-34');
+            }
+        },
+    },
+    {
+        id:'ann-27',
+        name:`Ann's House`,
+        desc:`You go across the room to a corner that is predominantly kitcheny without quite becoming a kitchen, open the icebox and encounter a truly monumental wedge of brie gleaming in wrinkly plastic wrap.`,
+        onBlock: () => {
+            if(prevInput ==='eat brie'){
+                enterRoom('ann-28');
+            }else if(prevInput === 'unwrap brie'){
+                enterRoom('ann-29');
+            }else if(prevInput === 'slice brie'){
+                enterRoom('ann-30');
+            }else {
+              enterRoom('ann-34');
+            }
+          },
+        },
+      {
+        id:'ann-28',
+        name:`Ann's House`,
+        desc:`Sure enough--as soon as the plastic wrap is off.`,
+        onBlock: () => {
+            if(prevInput === 'eat brie'){
+                enterRoom('ann-31');
+            }else {
+              enterRoom('ann-34');
+            }
+        },
+    },
+    {
+        id:'ann-29',
+        name:`Ann's House`,
+        desc:`The brie is unwrapped, but even so it’s too cold to release a really knockdown aroma`,
+        onBlock: () => {
+            if(prevInput === 'eat brie'){
+                enterRoom('ann-31');
+            }else {
+              enterRoom('ann-34');
+            }
+          },
+      },
+      {
+      id:'ann-30',
+        name:`Ann's House`,
+        desc:` You find a knife on a nearby counter and slice off a sizable triangle of cold brie.`,
+        onBlock: () => {
+            if(prevInput === 'eat brie'){
+                enterRoom('ann-31');
+            }else {
+              enterRoom('ann-34');
+            }
+          },
+      },
+      {
+      id:'ann-31',
+        name:`Ann's House`,
+        desc:`Even cold it is delicious. For a moment, your whole life--both the life you’ve forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
+        Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
+        onEnter: () => {
+            playerC.sScore += 10;
+            playerC.dScore += 5;
+            playHung += 50;
+        },
+        onBlock: () => {
+            if(prevInput === 'ask ann about'){
+               enterRoom('ann-34');
+            }else if(prevInput === 'propose' || prevInput === 'propose to ann' || prevInput === 'i love you' || prevInput ==='kiss ann'){
+               enterRoom('ann-33');
+          }else {
+               enterRoom('ann-34');
+          }
+        },
+        items:[
+          {
+            itemId: 'ann',
+                name: ['Ann', 'ann'],
+                onLook: () => {
+                    enterRoom('ann-32');
+                },
+              },
+        ]
+    },
+    {
+        id:'ann-32',
+        name:`Ann's House`,
+        desc:`She is beautiful with the beauty of the Ideal Housewife to be seen in advertisements for cooking oil and detergents, a bland, unglamorous beauty that can neither be envied nor denied. She is the sort of woman whose single marital status (she’s not wearing a wedding ring) seems like a freak of nature.`,
+        onBlock: () => {
+          if(prevInput === 'propose' || prevInput === 'propose to ann' || prevInput === 'i love you' || prevInput ==='kiss ann'){
+             enterRoom('ann-33');
+        }else {
+             enterRoom('ann-34');
+        }
+      },
+    },
+    {
+        id:'ann-33',
+        name:`Ann's House`,
+        desc:`“John, you’re a darling, and you know how fond I am of you, but you must accept the fact that as lovers we belong in the past tense. It’s over, and I’m engaged to another man, as you very well know, and he is jealous of you, and I don’t blame him, so you see, you simply must stop coming round here. In fact, I’ll have to ask you to leave now, since Jeff is coming over to watch an old Bergman movie on the Betamax.”`,
+        onBlock: () => {
+            if(prevInput === 'ask ann about'){ // Any response will go to ann-34
+                enterRoom('ann-34');
+            }else {
+              enterRoom('ann-34');
+            }
+        },
+    },
+    {
+        id:'ann-34',
+        name:`Ann's House`,
+        desc:`“Oh, John, next you’ll want to know why the sky is blue. No more questions.'In one way I am glad you came, since it gives me an opportunity to give you this.'\n
+        She reaches into her pocket and pulls out a note. 'Cecily found this under the hall door this morning when she came back from her dance class. In the future, please have your mail left at another address: I'm not a forwarding service.`,
+        onEnter: () => {
+          let brownstone = getRoom('19-amer');
+          brownstone.exits[4].block = `Ann doesn't want to see you around here anymore. Probably not a good idea to go back.`;
+          storyMarker.setLatLng([61.884, -28.210]).bindPopup('New York Historical Society').addTo(poiLayer);
+          playerC.sScore += 10;
+          playerC.dScore += 20;
+          playerC.cScore += 10;
+
+          addItem('alice-letter');
+          pressEnter('ann-35');
+        },
+        items:
+        [
+          {
+                itemId: 'alice-letter',
+                icon:`img/png/image-letter-thumbnail.png`,
+                gif:`img/gif/gif-letter-ingame.gif`,
+                name: [`Alice's Letter`],
+                isTakeable: true,
+                desc: `The note is in the form of a short hand-written letter.\n
+                "Dear John, (the letter begins)\n
+        
+                I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
+                
+                Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
+                I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
+        
+                    (signed) Alice.`,
+          },
+        ],
+    },
+    {
+        id:'ann-35',
+        name:`Ann's House`,
+        desc: `The note is in the form of a short hand-written letter.\n
+        "Dear John, (the letter begins)\n
+
+        I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
+        
+        Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
+        I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
+
+            (signed) Alice.`,
+            onEnter: () => {
+              reenableInput();
+              
+            },
+        onBlock: () => {
+            if(prevInput === 'leave apartment' || prevInput === 'leave building'){
+                enterRoom('ann-36');
+            }else{
+                enterRoom('ann-37');
+            }
+          },
+        },
+      {
+        id:'ann-36',
+        name:`Ann's House`,
+        desc:`“John, please, don’t make a scene. Jeff will be here any moment.”\n\nReluctantly you gather up your things and go out the door she is holding open. She watches you go down the stairs and doesn’t close the door until she has heard the door to the main entrance close and knows you are out on the street.`,
+        onEnter: () =>{
+          enterRoom('19-amer');
+        },
+        //exits back to streets
+    },
+    {
+        id:'ann-37',
+        name:`Ann's House`,
+        desc:`You say good-bye, gather up your things, and leave. `,
+        onEnter: () =>{
+          enterRoom('19-amer');
+        },
+        //exits back to streets
+    },    
         /*******************************/
        /*        Restaurants          */
       /*******************************/
@@ -7561,13 +8121,15 @@ const amnesiaRestored = {
     {
         id: 'phone-23-2',
         name: `TTTT`,
-        desc: `"We're located at 25 W. 19th and provide free-of-charge evaluations of your Tiny Tyke's modelling potential."\n
+        desc: `"We're located at **25 W. 19th** and provide free-of-charge evaluations of your Tiny Tyke's modelling potential."\n
         Unfortunately, You haven't any tiny tyke available for evaluation. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box."`,
         onEnter: () => {
-            playerC.money += 0.25;
+          storyMarker.setLatLng([-28.192, -13.177]).bindPopup('The Brownstone?').addTo(poiLayer);
+            playMon -= 0.25;
+            updateMon();
             const room = getRoom('phone-23');
             console.log(room.enteredFrom);
-            pressEnter(room.enteredFrom);
+            enterRoom(room.enteredFrom);
         },
     },
     {
@@ -14095,7 +14657,7 @@ const amnesiaRestored = {
         {dir: 'south', id: 'hano-beav'},
         {dir: 'east', id: 'wall-pear'},
         {dir: 'west', id: 'wall-hano'},
-        {dir: 'Citibank', id: 'wall-beav-1'}
+        {dir: 'citibank', id: 'wall-beav-1'}
       ],
     },
     {
@@ -14672,7 +15234,7 @@ const amnesiaRestored = {
         {dir: 'south', id: 'pear-lafa'},
         {dir: 'east', id: 'wort-cent'},
         {dir: 'west', id: 'wort-broa'},
-        {dir: `Koch's Florists`, block: `It's closed, remember?`}
+        {dir: `kochs`, block: `It's closed, remember?`}
       ],
     },
     {
@@ -20385,15 +20947,6 @@ const amnesiaRestored = {
       ],
     },
     {   
-      id: 'chri-huds-1',
-      coord: [],
-      name: '',
-      desc: ``,
-      exits: [
-
-      ],
-    },
-    {   
       id: '10-huds',
       coord: [-49.167, -25.375],
       name: 'W. 10th St. and Hudson St.',
@@ -23438,11 +23991,10 @@ const amnesiaRestored = {
       desc: ``,
       isStreet: true,
       exits: [
+        {dir: 'north', id: '21-amer'},
         {dir: 'south', id: '19-amer'},
         {dir: 'east', id: '20-5'},
-        {dir: 'west', id: '20-7'},
-        {dir: 'north', id: '21-amer'
-        }
+        {dir: 'west', id: '20-7'}
       ],
     },
     {
@@ -23459,8 +24011,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '18-amer'},
         {dir: 'east', id: '19-5'},
         {dir: 'west', id: '19-7'},
-        {dir: [`ann`, `brownstone`, `apartment`, `tiny`, `tykes`, `25w`, `talent`, `town`, 'the brownstone', '25 w 19th st', '25 w. 19th st.'], id: 'ann-2'}
-        //{dir: ['brownstone', '25W'], id: '25w-19st'}
+        {dir: 'brownstone', id: 'ann-2'}
       ],
     },
     {
@@ -23977,6 +24528,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '19-5'},
         {dir: 'east', id: '20-broa'},
         {dir: 'west', id: '20-amer'},
+        {dir: 'love', id: 'ann-2'}
       ],
     },
     {
@@ -23993,7 +24545,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '18-5'},
         {dir: 'east', id: '19-broa'},
         {dir: 'west', id: '19-amer'},
-        {dir: [`ann`, `brownstone`, `apartment`, `tiny`, `tykes`, `25W`, `talent`, `town`], id: 'ann-2'}
+        {dir: [`ann`, `brownstone`, `apartment`, `tiny`, `tykes`, `talent`, `town`], id: 'ann-2'}
         //exit for the brownstone
       ],
     },
@@ -28744,7 +29296,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '52-5'},
         {dir: 'east', id: '53-madi'},
         {dir: 'west', id: '53-amer'}, 
-        {dir: ['Sunderland', 'hotel'], id: 'lobb-revi'},
+        {dir: ['sunderland', 'hotel'], id: 'lobb-revi'},
       ]
     },
     {
@@ -31253,7 +31805,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '42-1'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '44-2'},
-        {dir: ['UN', 'building', 'secretariat'], block: 'There is no point in going there.',
+        {dir: ['un', 'building', 'secretariat'], block: 'There is no point in going there.',
             },
       ]
     },
@@ -43657,534 +44209,6 @@ const amnesiaRestored = {
     ///////////////////////////////////////
     ////////////////////////////////////////
 
-
-  /*        Ann's House          */
-      /*******************************/   
-      {
-        id:'ann-2',
-        name:'Tiny Tykes Talent Town',
-        desc:`You climb the steps to the entrance portico. There is a doorbell on the wall with a plastic nameplate beside it. The nameplate reads: TINY TYKES TALENT TOWN`,
-        onEnter: () => {
-          degradation = !degradation;
-        },
-        exits:[
-            {dir:['doorbell','bell','knock'],id:'ann-4'},
-            {dir:['inside','open'],id:'ann-4'},
-            {dir:'leave',id:'19-amer'}
-        ],
-    },
-    {
-        id:'ann-4',
-        name:'Tiny Tykes Talent Town',
-        desc:`You ring the doorbell, and after a short wait the buzzer sounds.`,
-        onEnter: () => {
-          degradation = false;
-          annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
-        },
-        onBlock: () => {
-            if(prevInput === 'open'){
-                clearTimeout(annTimer);
-                enterRoom('ann-6');
-            }else if(prevInput ==='knock'){
-                clearTimeout(annTimer);
-                enterRoom('ann-6');
-            }
-            else{
-                println(`What's that?`);
-            }
-        },
-    },
-    {
-        id:'ann-5',
-        name:'Tiny Tykes Talent Town',
-        desc:`You try to open the door but you’re too late; the buzzer’s stopped buzzing.`,
-        exits:[
-          {dir:['doorbell','bell','knock'],id:'ann-4'},
-          {dir:'leave',id:'19-amer'}
-        ],
-    },
-    {
-        id:'ann-6',
-        name:`Ann's House`,
-        desc:`You enter and find yourself at the foot of another flight of stairs. A voice calls down, pipingly, “Who’s there?”`,
-        id:'ann-7', 
-        name:`Ann's House`,
-        desc:`“Oh, John, how nice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
-        onBlock: () => {
-          if(prevInput === 'wait'){ // Any response should take you to 9
-              enterRoom('ann-9');
-          }else if(prevInput === 'thank you'){
-              enterRoom('ann-9');
-          }
-          else{
-              enterRoom('ann-9');
-          }
-      },
-    },
-      {
-        id:'ann-7', 
-        name:`Ann's House`,
-        desc:`“Oh, John, how nice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
-        onBlock: () => {
-          if(prevInput === 'wait'){ // Any response should take you to 9
-              enterRoom('ann-9');
-          }else if(prevInput === 'thank you'){
-              enterRoom('ann-9');
-          }
-          else{
-              enterRoom('ann-9');
-          }
-      },
-    },
-    {
-      id:'ann-8',
-      name:`Ann's House`,
-      desc:`“Oh, John, you can’t fool me, I know your voice. Mummy is in the bathtub, and I’m making imaginary cookies. I’ll go tell her you’re here.”`,
-      onBlock: () => {
-        if(prevInput === 'wait'){ // Any response should take you to 9
-            enterRoom('ann-9');
-        }else if(prevInput === 'thank you'){
-            enterRoom('ann-9');
-        }
-        else{
-            enterRoom('ann-9');
-        }
-    },
-  },
-    {
-        id:'ann-9',
-        name:`Ann's House`,
-        desc:`You climb the stairs to the second floor landing, where the door to apartment B has been left ajar.`,
-          onEnter: () =>{
-            playerC.sScore += 10;
-            playerC.cScore += 15;
-            playerC.dScore += 15;
-            pressEnter('ann-10');
-          },
-    },
-          {
-              id:'ann-10',
-              name:`Ann's House`,
-              desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won’t be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
-              onEnter: () =>{
-                reenableInput();
-                println(`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`);
-              },
-              onBlock: () => {
-          //might be better to use the onTake function here.
-              if(prevInput === 'grab cookie'){
-              enterRoom('ann-12');
-             }else if(prevInput === 'grab chocolate cookie'){
-              enterRoom('ann-12');
-            }else if(prevInput ==='grab sprinkle cookie'){
-              enterRoom('ann-12');
-            }else{
-                println(`Can you rephrase that please?`);
-          }
-              },
-              exits: [
-                {dir:['leave'],id:'ann-21'},
-            ],
-            },
-    {
-        id:'ann-12',
-        name:`Ann's House`,
-        desc:`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.\n
-        “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`,
-        onEnter: () =>{
-          playerC.cScore += 5;
-        },
-        exits:[
-            {dir:['yes','thanks'],id:'ann-12'},
-            {dir:['no'],id:'ann-13'}
-        ],
-    },
-    {
-        id:'ann-13',
-        name:`Ann's House`,
-        desc:`“Now that you’ve had your fill,” Cecily says, “I’ll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let Mummy come out of the bathtub. Okay?`,
-        onBlock: () => {
-            if(prevInput === 'yes' || 'okay' || 'answer riddles'){
-                enterRoom('ann-15');
-            }else{
-                enterRoom('ann-14');
-            }
-        },
-    },
-    {
-        id:'ann-14',
-        name:`Ann's House`,
-        desc:`Cecily stamps her foot with beguiling petulance. “The riddles have to come first. That is the rule. Now, here is the first riddle.\n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
-        onBlock: () => {
-            if(prevInput === '1' || prevInput === 'one'){
-                enterRoom('ann-17');
-            }else{
-                enterRoom('ann-16');
-            }
-        },
-    },
-    {
-        id:'ann-15',
-        name:`Ann's House`,
-        desc:`“Very well! Here is the first riddle. She closes her eyes for better concentration, and recites: \n\nAs I was going to St. Ives, I met a man with seven wives. Each wife had seven sacks. Each sack had seven cats. Each cat had seven kits. Kits, cats, sacks, and wives: How many were going to St. Ives?”`,
-        onEnter: () =>{
-          playerC.cScore += 3;
-        },
-        onBlock: () => {
-            if(prevInput === '1' || prevInput === 'one'){
-                enterRoom('ann-17');
-            }else{
-                enterRoom('ann-16');
-            }
-        },
-    },
-    {
-        id:'ann-16',
-        name:`Ann's House`,
-        desc:`“You’re wrong!” Cecily shrieks gleefully. “You’re wrong, you’re wrong, you’re wrong! There’s only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don’t be disappointed. Okay, here’s one that’s even harder: \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
-        onBlock: () => {
-            if(prevInput === 'ann' || prevInput === 'anne'){
-                enterRoom('ann-19');
-            }else{
-                enterRoom('ann-18');
-            }
-        },
-    },
-    {
-        id:'ann-17',
-        name:`Ann's House`,
-        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I’ll ask you one from another book then. \n\n“There was a girl in our town, silk an’ satin was her gown, silk an’ satin, gold an’ velvet, Guess her name, three times I’ve telled it.”`,
-        onEnter: () => {
-          playerC.cScore += 3;
-        },
-        onBlock: () => {
-            if(prevInput === 'ann' || prevInput ==='anne'){
-                enterRoom('ann-19');
-            }else{
-                enterRoom('ann-18');
-            }
-        },
-      },
-      {
-        id:'ann-18',
-        name:`Ann's House`,
-        desc:`“You’re wrong! You’re wrong, you’re wrong, you’re wrong. The right answer is Ann, the same as Mummy’s name. Silk AN’ satin, gold AN’ velvet, get it? Well, you’re no good at riddles, I can see that. I’ll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don’t care.”`,
-        onBlock: () => {
-            if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
-                enterRoom('ann-20');
-            }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
-                enterRoom('ann-21');
-            }else{
-                println(`Can you rephrase that please?`);
-            }
-          },
-            items: [
-                  {
-                      itemId: 'bookshelf',
-                      name: ['Bookshelf', 'bookshelf'],
-                      onLook: () => {
-                          enterRoom('ann-21');
-                      },
-                  }
-              ],
-          },
-          {
-              id:'ann-19',
-              name:`Ann's House`,
-              desc:`“Oh, you knew that one because Mummy’s name is Ann. You’re no fun to play with at all. I’m going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don’t care.”`,
-              onBlock: () => {
-                if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
-                    enterRoom('ann-20');
-                }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
-                    enterRoom('ann-21');
-                }else{
-                    println(`Can you rephrase that please?`);
-                }
-              },
-                items: [
-                      {
-                          itemId: 'bookshelf',
-                          name: ['Bookshelf', 'bookshelf'],
-                          onLook: () => {
-                              enterRoom('ann-21');
-                          },
-                      }
-                  ],
-              },
-              {
-                        id:'ann-20',
-                        name:`Ann's House`,
-                        desc:`“I told you Mummy is taking a bath. Now don’t bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
-                        onBlock: () => {
-                          if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
-                              enterRoom('ann-20');
-                          }else{
-                              enterRoom('ann-21');
-                          }
-                      },
-              },
-        {
-        id:'ann-21',
-        name:`Ann's House`,
-        desc:`The one stable and somber note among the apartment’s happy jumble are its tall bookshelves. You consider some of the titles of the exposed spines, and recognize many titles and authors that seem familiar, but only as the fame of a foreign city can be familiar though you’ve never visited it. And then you do find one book, and a very thick one, that you can dimly remember having read, or at least begun. There was a beautiful girl in it, the daughter of a man who carved tombstones. Gerta her name was. You look inside the book--it is called WOLF SOLENT--and find the name on the first page you skim. You feel a fierce glow of accomplishment at having remembered something, even if it was only a character in a book. You continue paging through the long novel until a woman’s voice addresses you: “John Cameron! This is a surprise.”`,
-        onBlock: () => {
-            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello'){
-                enterRoom('ann-22');
-            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
-                enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
-                enterRoom('ann-24');
-            }else {
-              enterRoom('ann-25');
-          }
-        },
-      },
-      {      
-        id:'ann-22',
-        name:`Ann's House`,
-        desc:`“Hello yourself.”`,
-        onBlock: () => {
-            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
-                enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
-                enterRoom('ann-24');
-            }else {
-              enterRoom('ann-25');
-            }
-          },
-        },
-        {
-        id:'ann-23',
-        name:`Ann's House`,
-        desc:`“Oh, that’s pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won’t have to pay such high taxes if she’s a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
-        onBlock: () => {
-            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
-                enterRoom('ann-24');
-            }else {
-              enterRoom('ann-25');
-            }
-          },
-        },
-        {
-        id:'ann-24',
-        name:`Ann's House`,
-        desc:`“She’s been having a few problems at school. One of her classmates has dyslexia and Cecily is jealous. She wants to be dyslexic too. Were you able to answer her riddles?”`,
-        onBlock: () => {
-            if(prevInput === ''){
-                enterRoom('ann-25');
-            }else{
-              enterRoom('ann-26');
-            }
-        },
-    },
-    {
-        id:'ann-25',
-        name:`Ann's House`,
-        desc:`She turns away from you, indifferent to your riddle-answering prowess, and begins vigorously to dry her hair with the bath towel that was her turban. After it is all fluffed out into a great halo of damp blonde curls, she opens a cupboard compartment underneath the tv, takes out two brandy glasses and a bottle of brandy. She appraises the level of the bottle’s contents. “There’s just enough to finish off what we started,” she announces, and pours the brandy into the glasses. She hands you one of the snifters and then holds up her own in a toast: “To what we started!”`,
-        onBlock: () => {
-            if(prevInput === 'ask about what we started' || prevInput === 'to what we started' || prevInput === 'kiss ann' || prevInput === 'i love you'){
-                enterRoom('ann-26'); // any response will take you to ann-26
-            }else {
-              enterRoom('ann-26');
-            }
-        },
-    },
-    {
-        id:'ann-26',
-        name:`Ann's House`,
-        desc:`“Don’t think, John Cameron, that what we started is still happening. You’ve had your chance. I’m after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I’m not blaming you-- you never pretended to be anything you’re not. But you’re a bum--a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you’re hungry there’s a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I’ve got to put the Little Princess to bed. She’s got a makeup call for six a.m.”`,
-        onEnter: () =>{
-          playerC.cScore += 10;
-            if(playHung <= 25){
-                println(`The mention of the brie starts you salivating like one of Pavlov’s dogs. You may have amnesia, but your tastebuds don’t.`);
-            }
-        },
-        onBlock: () => {
-            if(prevInput === 'get brie' || prevInput === 'eat brie'){
-                println(`Ann said the brie is in the icebox. Why not start there?`);
-            }else if(prevInput === 'go to icebox' || prevInput === 'open icebox'){
-                enterRoom('ann-27');
-            }else {
-              enterRoom('ann-34');
-            }
-        },
-    },
-    {
-        id:'ann-27',
-        name:`Ann's House`,
-        desc:`You go across the room to a corner that is predominantly kitcheny without quite becoming a kitchen, open the icebox and encounter a truly monumental wedge of brie gleaming in wrinkly plastic wrap.`,
-        onBlock: () => {
-            if(prevInput ==='eat brie'){
-                enterRoom('ann-28');
-            }else if(prevInput === 'unwrap brie'){
-                enterRoom('ann-29');
-            }else if(prevInput === 'slice brie'){
-                enterRoom('ann-30');
-            }else {
-              enterRoom('ann-34');
-            }
-          },
-        },
-      {
-        id:'ann-28',
-        name:`Ann's House`,
-        desc:`Sure enough--as soon as the plastic wrap is off.`,
-        onBlock: () => {
-            if(prevInput === 'eat brie'){
-                enterRoom('ann-31');
-            }else {
-              enterRoom('ann-34');
-            }
-        },
-    },
-    {
-        id:'ann-29',
-        name:`Ann's House`,
-        desc:`The brie is unwrapped, but even so it’s too cold to release a really knockdown aroma`,
-        onBlock: () => {
-            if(prevInput === 'eat brie'){
-                enterRoom('ann-31');
-            }else {
-              enterRoom('ann-34');
-            }
-          },
-      },
-      {
-      id:'ann-30',
-        name:`Ann's House`,
-        desc:` You find a knife on a nearby counter and slice off a sizable triangle of cold brie.`,
-        onBlock: () => {
-            if(prevInput === 'eat brie'){
-                enterRoom('ann-31');
-            }else {
-              enterRoom('ann-34');
-            }
-          },
-      },
-      {
-      id:'ann-31',
-        name:`Ann's House`,
-        desc:`Even cold it is delicious. For a moment, your whole life--both the life you’ve forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
-        Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
-        onEnter: () => {
-            playerC.sScore += 10;
-            playerC.dScore += 5;
-            playHung += 50;
-        },
-        onBlock: () => {
-            if(prevInput === 'ask ann about'){
-               enterRoom('ann-34');
-            }else if(prevInput === 'propose' || prevInput === 'propose to ann' || prevInput === 'i love you' || prevInput ==='kiss ann'){
-               enterRoom('ann-33');
-          }else {
-               enterRoom('ann-34');
-          }
-        },
-        items:[
-          {
-            itemId: 'ann',
-                name: ['Ann', 'ann'],
-                onLook: () => {
-                    enterRoom('ann-32');
-                },
-              },
-        ]
-    },
-    {
-        id:'ann-32',
-        name:`Ann's House`,
-        desc:`She is beautiful with the beauty of the Ideal Housewife to be seen in advertisements for cooking oil and detergents, a bland, unglamorous beauty that can neither be envied nor denied. She is the sort of woman whose single marital status (she’s not wearing a wedding ring) seems like a freak of nature.`,
-        onBlock: () => {
-          if(prevInput === 'propose' || prevInput === 'propose to ann' || prevInput === 'i love you' || prevInput ==='kiss ann'){
-             enterRoom('ann-33');
-        }else {
-             enterRoom('ann-34');
-        }
-      },
-    },
-    {
-        id:'ann-33',
-        name:`Ann's House`,
-        desc:`“John, you’re a darling, and you know how fond I am of you, but you must accept the fact that as lovers we belong in the past tense. It’s over, and I’m engaged to another man, as you very well know, and he is jealous of you, and I don’t blame him, so you see, you simply must stop coming round here. In fact, I’ll have to ask you to leave now, since Jeff is coming over to watch an old Bergman movie on the Betamax.”`,
-        onBlock: () => {
-            if(prevInput === 'ask ann about'){ // Any response will go to ann-34
-                enterRoom('ann-34');
-            }else {
-              enterRoom('ann-34');
-            }
-        },
-    },
-    {
-        id:'ann-34',
-        name:`Ann's House`,
-        desc:`“Oh, John, next you’ll want to know why the sky is blue. No more questions.'In one way I am glad you came, since it gives me an opportunity to give you this.'\n
-        She reaches into her pocket and pulls out a note. 'Cecily found this under the hall door this morning when she came back from her dance class. In the future, please have your mail left at another address: I'm not a forwarding service.`,
-        onEnter: () => {
-          addItem('alice-letter');
-          pressEnter('ann-35');
-        },
-        items:
-        [
-          {
-                itemId: 'alice-letter',
-                icon:`img/png/image-letter-thumbnail.png`,
-                gif:`img/gif/gif-letter-ingame.gif`,
-                name: [`Alice's Letter`],
-                desc: `The note is in the form of a short hand-written letter.\n
-                "Dear John, (the letter begins)\n
-        
-                I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
-                
-                Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
-                I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
-        
-                    (signed) Alice.`,
-          },
-        ],
-    },
-    {
-        id:'ann-35',
-        name:`Ann's House`,
-        desc: `The note is in the form of a short hand-written letter.\n
-        "Dear John, (the letter begins)\n
-
-        I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
-        
-        Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
-        I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
-
-            (signed) Alice.`,
-            onEnter: () => {
-              playerC.sScore += 10;
-              playerC.dScore += 20;
-              playerC.cScore += 10;
-            },
-        onBlock: () => {
-            if(prevInput === 'leave apartment' || prevInput === 'leave building'){
-                enterRoom('ann-36');
-            }else{
-                enterRoom('ann-37');
-            }
-          },
-        },
-      {
-        id:'ann-36',
-        name:`Ann's House`,
-        desc:`“John, please, don’t make a scene. Jeff will be here any moment.”\n\nReluctantly you gather up your things and go out the door she is holding open. She watches you go down the stairs and doesn’t close the door until she has heard the door to the main entrance close and knows you are out on the street.`,
-        onEnter: () =>{
-          pressEnter('19-amer');
-        },
-        //exits back to streets
-    },
-    {
-        id:'ann-37',
-        name:`Ann's House`,
-        desc:`You say good-bye, gather up your things, and leave. `,
-        onEnter: () =>{
-          pressEnter('19-amer');
-        },
-        //exits back to streets
-    },    
 
     /////////////////////////////////
     ///////////////////////////////////
