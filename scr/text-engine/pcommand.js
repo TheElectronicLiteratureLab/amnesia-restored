@@ -1646,7 +1646,7 @@ const hungerWarning = () => {
     println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
   } else if (playHung <= 0) { //if your hunger drops to 0 game over the player
     println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
-    pressEnter('deat-1')
+    pressEnter('hosp-deat')
   } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } 
@@ -1725,7 +1725,7 @@ const fatigueWarning = () => {
     println(`Just as it occurs to you that you can hardly stay awake any longer, someone gives you a powerful sedative, with a blow to the back of your head. 
 
     When you wake up from the mugger's attack you are lying on the ground with a close-up view of the four polished shoes of the policemen who've found you. One of them claims to recognize you. You are handcuffed and led to their patrol car.`)
-    pressEnter('hosp-deat')
+    pressEnter('deat-1')
   } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } 
@@ -1918,16 +1918,6 @@ const randomEncounter = () => {
     }  
   } 
 };
-
-//WACKY WANDERER -- STORY NODES ||
-//KID WITH RAG -- 
-//HUNGER AND FATIGUE DEATH AND TEXAS FLAVOR TEXT DIFFERENCES -- ASK CHARLIE
-//DAMSEL IN DISTRESS ENCOUNTER -- STORY NODES TOWARD BOTTOM || HIGHLIGHTED RED
-//LINK UP X STREET EVENT RANDOMNESS TO MOVEMENT ON STREETS
-//POLISH MIDTOWN EASTSIDE OFFICE BUILDINGS WITH PROPER EXIT BLOCKS AND IF THEY CAN ENTER DURING WEEKDAYS 
-//WEEKDAY BLOCKS FOR CERTAIN STREET EXITS
-//turn off hunger and fatigue--
-  //vault NYHS dakota UfCS restaurants tenement sketchbook
 
 
 //boolean variable of gotten rag or not if gotten it kill function

@@ -28453,7 +28453,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '52-5'},
         {dir: 'east', id: '53-madi'},
         {dir: 'west', id: '53-amer'}, 
-        {dir: ['Sunderland', 'hotel'], id: '????'},
+        {dir: ['Sunderland', 'hotel'], id: 'lobb-revi'},
       ]
     },
     {
@@ -28890,7 +28890,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '34-madi'},
         {dir: 'east', id: '35-park'},
         {dir: 'west', id: '35-5'},
-        {dir: [`Altman's`,], id: '????'},
+        {dir: [`Altman's`,], id: '????', block: `You have no reason to go there.`},
       ]
     },
     {
@@ -29054,7 +29054,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '44-5'},
         {dir: 'east', id: '45-madi'},
         {dir: 'west', id: '45-amer'},
-        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????'}
+        {dir: ['qantas', 'british', 'airways', 'northwest', 'orient', 'aeroflot'], id: '????', block: `You have no reason to go there.`}
       ]
     },
     {
@@ -29095,8 +29095,8 @@ const amnesiaRestored = {
         {dir: 'south', id: '47-5'},
         {dir: 'east', id: '48-madi'},
         {dir: 'west', id: '48-amer'},
-        {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: '????'},
-        {dir: [`scriber's`, 'scribners'], id: 'scri', block: '????'}
+        {dir: [`barnes`, `nobles`], id: 'barn-nobl', block: `You have no reason to go there.`},
+        {dir: [`scriber's`, 'scribners'], id: 'scri', block: `You have no reason to go there.`}
       ]
     },
     {
@@ -29126,7 +29126,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '48-5'},
         {dir: 'east', id: '49-madi'},
         {dir: 'west', id: '49-amer'},
-        {dir: [`rockefeller`, `plaza`], id: 'rock-plaz', block: '????'}
+        {dir: [`rockefeller`, `plaza`], id: 'rock-plaz', block: `You have no reason to go there.`}
       ]
     },
     {
@@ -29209,7 +29209,8 @@ const amnesiaRestored = {
         {dir: 'south', id: '51-5'},
         {dir: 'east', id: '52-madi'},
         {dir: 'west', id: '52-amer'},
-        {dir: ['21', 'club'], id: '????'}
+        {dir: ['21', 'club'], id: '????', block: `You have no reason to go there.`},
+        {dir: [`sunderland`, `hotel`], id: 'lobb-revi'}
       ]
     },
     {
@@ -29444,7 +29445,7 @@ const amnesiaRestored = {
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '42-park'},
         {dir: 'west', id: '42-madi'},
-        {dir: ['mobil', 'building'], id: '????'}
+        {dir: ['mobil', 'building'], id: '????', block: `You have no reason to go there.`}
       ]
     },
     {
@@ -30182,7 +30183,7 @@ const amnesiaRestored = {
         {dir: 'south', id: '42-3'},
         {dir: 'east', id: '43-2'},
         {dir: 'west', id: '43-lexi'},
-        {dir: ['ford', 'foundation','building'], id: '????'}
+        {dir: ['ford', 'foundation','building'], id: '????', block: `You have no reason to go there.`}
       ]
     },
     {
