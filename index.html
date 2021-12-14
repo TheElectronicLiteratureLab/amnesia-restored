@@ -1,325 +1,698 @@
-<!-- Needed to add this for live server to auto update -->
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amnesia Restored</title>
-  <!-- CSS styles -->
-  <link id="styles" rel="stylesheet" type="text/css" href="css/dev.css">
-  <link rel="stylesheet" href="scr/leaflet.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Work+Sans&display=swap" rel="stylesheet">
-  
-  <!-- Addtional Scripts -->
-  <script src="scr/leaflet.js"></script>
-  <script src="scr/jquery/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amnesia Restored</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/cpx5vev.css">
+
+    <!-- Stylesheets -->
+    <link id="styles" rel="stylesheet" type="text/css" href="css/reset.css">
+    <link id="styles" rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" href="scr/leaflet.css">
+
+
+
+    <!-- Addtional Scripts -->
+    <script src="scr/leaflet.js"></script>
+    <script src="scr/jquery/jquery-3.6.0.min.js"></script>
+
 
 </head>
+
 <body>
-  <div id="map" style="background-color: #32302f"></div>
-    <!-- Game content -->
-  <div class="game">
-    
-    <div class="sidebar">
-      <button id="invbutton">INVENTORY</button>
-      <button id="addrbutton">ADDRESS BOOK</button>
-      <button id="mapbutton">MAP</button>
-      <button id="xstreetbutton">X INDEXER</button>
-    </div>
-    
-    <div id="container-o">
-      <div id="currroom">CURRENT ROOM</div>
-      <div id="playerio">
-        <div id="map" style="background-color: #32302f"></div>
 
-          <div id="output"></div>
-        <!-- Player input -->
-        <div class="input"><span class="ml-2" id="arrow">></span><input id="input" autofocus spellcheck="false" autocomplete="off"></div>
-      </div>
-      
-      <div class="statusbar" id='statusBar'>
-        <div id="hunger">
-          <div id='hungerNumber'></div>
-          <div>HUNGER</div>
+    <!-- black portion of game fixed size, fixed height -->
+    <!-- this is the game -->
+    <div id="game-container">
+        <div id="game-title">
+            <div class="game-item-1">
+            </div>
+            <div class="game-item-2">
+            </div>
+            <div class="game-item-3">
+                <div id="title-screen">
+                    <div id="title-img">
+                        <video id="vid" width="60%" height="auto" autoplay muted>
+                            <source src="video/video-logo-bannerweb.mp4" type="video/mp4">
+                        </video>
+                        <script>
+                            document.getElementById('vid').play();
+                        </script>
+                    </div>
+                    <div id="game-button-container">
+                        <div id="new-game-button">
+                            <button class="game-button" onclick="newGame()">NEW GAME</button>
+                        </div>
+                        <div id="load-game-button">
+                            <button class="game-button" onclick="loadGame()">LOAD GAME</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-item-4">
+            </div>
+            <div class="game-item-5">
+            </div>
         </div>
-        <div id="fatigue">
-          <div id='fatigueNumber'></div>
-          <div>FATIGUE</div>
+
+        <!-- these are the different screens that will populate in the game -->
+        <div id="game-options">
+            <div class="game-item-1">
+            </div>
+            <div class="game-item-2">
+            </div>
+            <div class="game-item-3">
+                <div id="options-screen">
+                    <div id="options-title">
+                        <h2 id="selectTitle">Select Your Game Options</h2>
+                        <p id="defaultDesc">If no options are chosen, default difficulty and visual mode will be Modern
+                            and Restored.</p>
+                    </div>
+                    <div id="difficulty-options">
+                        <h3 id="difficulty-title">DIFFICULTY</h3>
+                        <h4 class="mode" id="story" onclick="displayDesc(this.id)">Story</h4>
+                        <h4 class="mode" id="modern" onclick="displayDesc(this.id)">Modern</h4>
+                        <h4 class="mode" id="classic" onclick="displayDesc(this.id)">Classic</h4>
+                        <p id="difficulty-options-descriptions">Default difficulty mode is modern.</p>
+                    </div>
+                    <div id="visuals-options">
+                        <h3 id="visuals-title">VISUAL MODE</h3>
+                        <h4 class="mode" id="restored" onclick="visualDesc(this.id)">Restored</h4>
+                        <h4 class="mode" id="apple" onclick="visualDesc(this.id)">Apple //e</h4>
+                        <h4 class="mode" id="commodore" onclick="visualDesc(this.id)">Commodore 64</h4>
+                        <h4 class="mode" id="IBM" onclick="visualDesc(this.id)">IBM</h4>
+                        <p id="visual-mode-options-descriptions">Default visual mode is restored.</p>
+                    </div>
+                    <div id="begin-game-button">
+                        <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-item-4">
+            </div>
+            <div class="game-item-5">
+            </div>
         </div>
-        <div id="money"></div>
-        <div id="time"></div>
-      </div>
-    </div>
-    
-    <div class="sidebar" id="menubutton">
-      <button>SAVE</button>
-      <button>SETTINGS</button>
-      <button>HELP</button>
-    </div>
 
-    <div id="address">ADDRESS</div>
+        <div id="game-load">
+            <div class="game-item-1">
+            </div>
+            <div class="game-item-2">
+            </div>
+            <div class="game-item-3">
+                <div id="load-screen">
+                    <div id="load-title">
+                        <h2>Load a previously saved game.</h2>
+                    </div>
+                    <div id="load-saves">
+                        <div class="saves" id="first-save-container">
+                            <h4 id=saveSlot1></h4>
+                            <h4 class="saves-date" id="first-save-date"></h4>
+                            <h4 class="saves-time" id="first-save-time"></h4>
+                        </div>
+                        <div class="saves" id="second-save-container">
+                            <h4 id=saveSlot2></h4>
+                            <h4 class="saves-date" id="second-save-date"></h4>
+                            <h4 class="saves-time" id="second-save-time"></h4>
+                        </div>
+                        <div class="saves" id="third-save-container">
+                            <h4 id=saveSlot3></h4>
+                            <h4 class="saves-date" id="third-save-date"></h4>
+                            <h4 class="saves-time" id="third-save-time"></h4>
+                        </div>
+                        <div class="saves" id="fourth-save-container">
+                            <h4 id=saveSlot4></h4>
+                            <h4 class="saves-date" id="fourth-save-date"></h4>
+                            <h4 class="saves-time" id="fourth-save-time"></h4>
+                        </div>
+                        <div class="saves" id="fifth-save-container">
+                            <h4 id=saveSlot5></h4>
+                            <h4 class="saves-date" id="fifth-save-date"></h4>
+                            <h4 class="saves-time" id="fifth-save-time"></h4>
+                        </div>
+                    </div>
+                    <div id="load-begin-game-button">
+                        <button class="game-button" onclick="beginGame()">BEGIN GAME</button>
+                        <button class="game-button" onclick="mainScreen()">BACK</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-item-4">
+            </div>
+            <div class="game-item-5">
+            </div>
+        </div>
 
-    <div id='xStreetIndex'>
-      <form>
-        <label for="x-Streets">Choose A Number and Cross Street</label>
-        <select name="Street Number" id="streetNumber">
-          <option value='0-199'>0-199</option>
-          <option value="200-299">200-299</option>
-          <option value="300-399">300-399</option>
-          <option value="400-499">400-499</option>
-          <option value="500-599">500-599</option>
-          <option value="600-699">600-699</option>
-          <option value="700-799">700-799</option>
-          <option value="800-899">800-899</option>
-          <option value="900-999">900-999</option>
-          <option value="1000-1099">1000-1099</option>
-          <option value="1100-1199">1100-1199</option>
-          <option value="1200-1299">1200-1299</option>
-          <option value="1300-1399">1300-1399</option>
-          <option value="1400-1499">1400-1499</option>
-          <option value="1500-1599">1500-1599</option>
-          <option value="1600-1699">1600-1699</option>
-          <option value="1700-1799">1700-1799</option>
-          <option value="1800-1899">1800-1899</option>
-          <option value="1900-1999">1900-1999</option>
-          <option value="2000-2099">2000-2099</option>
-          <option value="2100-2199">2100-2199</option>
-          <option value="2200-2299">2200-2299</option>
-          <option value="2300-2399">2300-2399</option>
-          <option value="2400-2499">2400-2499</option>
-          <option value="2500-2599">2500-2599</option>
-          <option value="2600-2699">2600-2699</option>
-          <option value="2700-2799">2700-2799</option>
-          <option value="2800-2899">2800-2899</option>
-          <option value="2900-2999">2900-2999</option>
-          <option value="3000-3099">3000-3099</option>
-        </select>
+        <div id="game">
+            <div class="game-item-1">
+                <div id="room-title">
+                    <h1 id="currroom"></h1>
+                </div>
+            </div>
+            <div class="game-item-2">
+                <div id="left-side-clickables">
+                    <div class="clickable-container" id="inventory-clickable">
+                        <!-- icon insert <img class="clickable-image" id="inventory-icon" src=""> -->
+                        <button class="iconbtn" id="inventory-button" onclick="currentInv()"></button>
+                    </div>
 
-        <select name="Cross Street" id="crossStreet">
-          <option value="riverside">Riverside</option>
-          <option value="park">Park</option>
-          <option value="madison">Madison</option>
-          <option value="lexington">Lexington</option>
-          <option value="broadway">Broadway</option>
-          <option value="10th">10th</option>
-          <option value="9th">9th</option>
-          <option value="8th">8th</option>
-          <option value="7th">7th</option>
-          <option value="6th">6th</option>
-          <option value="5th">5th</option>
-          <option value="4th">4th</option>
-          <option value="3rd">3rd</option>
-          <option value="2nd">2nd</option>
-          <option value="1st">1st</option>
-        </select>
+                    <div class="clickable-container" id="address-book-clickable">
+                        <!-- icon insert <img class="clickable-image" id="address-icon" src=""> -->
+                        <button class="iconbtn" id="address-book-button"
+                            onclick="displayLeftToggle('address-display', 'address', 'address-text-container'); currentAdd('addresses')"></button>
+                    </div>
 
-        <input type="text" id="result">
+                    <div class="clickable-container" id="map-clickable">
+                        <!-- icon insert <img class="clickable-image" id="map-icon" src=""> -->
+                        <button class="iconbtn" id="map-button" onclick="turnOnMap()"></button>
+                    </div>
 
-        <!-- <input type="submit" value="Submit"> -->
-      </form>
+                    <div class="clickable-container" id="info-clickable">
+                        <!-- icon insert <img class="clickable-image" id="info-icon" src=""> -->
+                        <button class="iconbtn" id="info-button"
+                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container'); updateScore();"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-item-3">
+                <div class="container" id="input-output-container">
+                    <div id="output"></div>
+                    <!-- Player input -->
+                    <div class="input"><span class="ml-2" id="arrow">></span><input id="input" autofocus
+                            spellcheck="false" autocomplete="off"></div>
+                </div>
+                <!-- clickables elements -->
+                <!-- left side clickables -->
+                <div id="inventory-display" class="clickables-left">
+                    <div id="inventory-text-container">
+                        <button class="x-button" onclick="currentInv()"><img src="img/png/x-icon.png"
+                                alt="close icon"></button>
+                        <h2 id="inventory-display-title">Inventory</h2>
+                        <div id="inventory">
+                            <!-- 
+                                <img class="inventory-img" alt="icon">
+                                <h3 onclick="openItem('inventory-item-display')">Item Name</h3>-->
+                        </div>
+                    </div>
+                </div>
+                <div id="inventory-item-display">
+                    <div id="inventory-item-container">
+                        <h2 id="item-name"></h2>
+                        <div id="item-img-container">
+                            <img id="item-img" src="" alt="item image">
+                        </div>
+                        <div id="item-description"></div>
+                        <!-- 
+                                * right now there is not a use for this feature 11-29-2021
+                                <button class="game-button" id="use-item-button" onclick="useItem()">USE ITEM</button> 
+                            -->
+                    </div>
+                </div>
 
-      <button id="submitButton">Go!</button>
-      
-    </div>
+                <div id='inventory-brochure-display'>
+                    <div id="inventory-brochure-container">
+                        <h2 id="item-name">Brochure</h2>
+                        <div id="item-img-container">
+                            <img id="item-img" src="img/gif/gif-brochure-ingame.gif" alt="item image">
+                        </div>
+                        <div id ="item-description">
+                            <div id="brochure-more" onclick="slideBroFull('brochure-full-display')">
+                                Read more information about the Sunderland...
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div id="inv">INV
-      <div class="inventorygrid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
-        <div>11</div>
-        <div>12</div>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="dialPad">
-    <button id="close" onclick='closeDial()'>x</button>
-    <button id="toggleTutorial" onclick='openTutorial()'>i</button>
-    <div id="dialKeys">
-      <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
-      <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
-      <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
-      <button name="number" value="4" id="4key" onclick='numdialButton(this.id)'>4</button>
-      <button name="number" value="5" id="5key" onclick='numdialButton(this.id)'>5</button>
-      <button name="number" value="6" id="6key" onclick='numdialButton(this.id)'>6</button>
-      <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
-      <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
-      <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
-      <button name="delete" value="delete" id="deletekey" onclick='deleteNum()'>Delete</button>
-      <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
-      <button name="enter" value="enter" id="enterkey" onclick='enterNum()'>Enter</button>
-    </div>
-  </div>
-
-  <div id='tutorial'>
-    <h1>How to Use</h1>
-    <p>Press number buttons on keyboard or use your mouse</p>
-  </div>
-  
-  
-  <script type="text/javascript">
-//Creating the Map
-  //var map = L.map('map').setView([0, 0], 0);
-  var map = L.map('map', {center:[0, 0], zoom: 4, attributionControl: false});
-  map.invalidateSize();
-  setTimeout(function(){ map.invalidateSize(true)}, 300);
-  L.tileLayer('map/{z}/{x}/{y}.png', {
-    continuousWorld: false,
-    noWrap: true,	
-    minZoom: 3,
-    maxZoom: 6,
-  }).addTo(map);
-
-//Coordinate Finder
-  var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
-  marker.bindPopup('LatLng Marker').openPopup();
-  marker.on('drag', function(e) {
-    marker.getPopup().setContent("Lat, Lng[" + marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString() + "]").openOn(map);
-    //marker.getPopup().setContent(marker.getLatLng().lat.toFixed(3).toString() + ", " + marker.getLatLng().lng.toFixed(3).toString()).openOn(map);
-    marker.on('dragend', function(e) {
-    navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
-  })
-  });
+                <div id="brochure-full-display">
+                    <div id="brochure-full-container">
+                        <div id="brochure-front-page">
+                            <h3>A Visitors Guide to New York City</h3>
+                            <h4>Compliments of</h4>
+                            <h3>The</h3>
+                            <h3>SUNDERLAND HOTEL</h3>
+                            <h4>53rd Street at 5th Avenue</h4>
+                        </div>
+                    </div>
+                </div>
 
 
-//Markers are located in a separate JavaScript file for more modularity, cleanliness, and readability.
-//let playerMarker = L.marker([2, 2], {draggable: true}).addTo(map).bindPopup('LatLng:').openPopup();
+                <div id="inventory-xIndex-display">
+                    <div id="xIndex-container">
+                        <h2 id="xIndex-name">X-Street Indexer</h2>
+                        <div id="xIndex-img-container">
+                            <img id="xIndex-img" src="/img/png/image-xstreet-frontthumbnail.png" alt="item image">
+                        </div>
+                        <div id="x-indexer-instructions">
+                            <h3>Instructions for use:</h3>
+                            <p>1. Align the avenue name on the inner wheel with the street address on the outer wheel by
+                                dragging and dropping.</p>
+                            <p>2. The small window in the inner wheel shows the nearest cross street.</p>
+                            <p>OR use the drop down menu below to find the nearest cross street.</p>
+                        </div>
+                        <div id='xStreetIndex'>
+                            <form>
+                                <label for="x-Streets">Choose A Number and Cross Street</label><br>
+                                <select name="Street Number" id="streetNumber">
+                                    <option value='0-199'>0-199</option>
+                                    <option value="200-299">200-299</option>
+                                    <option value="300-399">300-399</option>
+                                    <option value="400-499">400-499</option>
+                                    <option value="500-599">500-599</option>
+                                    <option value="600-699">600-699</option>
+                                    <option value="700-799">700-799</option>
+                                    <option value="800-899">800-899</option>
+                                    <option value="900-999">900-999</option>
+                                    <option value="1000-1099">1000-1099</option>
+                                    <option value="1100-1199">1100-1199</option>
+                                    <option value="1200-1299">1200-1299</option>
+                                    <option value="1300-1399">1300-1399</option>
+                                    <option value="1400-1499">1400-1499</option>
+                                    <option value="1500-1599">1500-1599</option>
+                                    <option value="1600-1699">1600-1699</option>
+                                    <option value="1700-1799">1700-1799</option>
+                                    <option value="1800-1899">1800-1899</option>
+                                    <option value="1900-1999">1900-1999</option>
+                                    <option value="2000-2099">2000-2099</option>
+                                    <option value="2100-2199">2100-2199</option>
+                                    <option value="2200-2299">2200-2299</option>
+                                    <option value="2300-2399">2300-2399</option>
+                                    <option value="2400-2499">2400-2499</option>
+                                    <option value="2500-2599">2500-2599</option>
+                                    <option value="2600-2699">2600-2699</option>
+                                    <option value="2700-2799">2700-2799</option>
+                                    <option value="2800-2899">2800-2899</option>
+                                    <option value="2900-2999">2900-2999</option>
+                                    <option value="3000-3099">3000-3099</option>
+                                </select>
 
-//MAP BUTTON
-/*const targetDiv = document.getElementById("map");
-  const btn = document.getElementById("mapbutton");
-  btn.onclick = function () {
-  if (targetDiv.style.display !== "none") {
-    targetDiv.style.display = "none";
-  } else {
-    targetDiv.style.display = "block";
-    map.invalidateSize();
-  }
-};*/
+                                <select name="Cross Street" id="crossStreet">
+                                    <option value="riverside">Riverside</option>
+                                    <option value="park">Park</option>
+                                    <option value="madison">Madison</option>
+                                    <option value="lexington">Lexington</option>
+                                    <option value="broadway">Broadway</option>
+                                    <option value="10th">10th</option>
+                                    <option value="9th">9th</option>
+                                    <option value="8th">8th</option>
+                                    <option value="7th">7th</option>
+                                    <option value="6th">6th</option>
+                                    <option value="5th">5th</option>
+                                    <option value="4th">4th</option>
+                                    <option value="3rd">3rd</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="1st">1st</option>
+                                </select>
 
-$("#mapbutton").click(function() {
-  $("#map").slideToggle();
-  map.invalidateSize();
-  $("#output").slideToggle();
-  //$(".input").slideToggle();
-  setTimeout(function(){ map.invalidateSize()}, 400);
-})
-
-//INVENTORY BUTTON
-const invDiv = document.getElementById("inv");
-  const invBtn = document.getElementById("invbutton");
-  invBtn.onclick = function () {
-  if (invDiv.style.display !== "none") {
-    invDiv.style.display = "none";
-  } else {
-    invDiv.style.display = "block";
-  }
-};
-
-//ADDRESS BUTTON
-const addrDiv = document.getElementById("address");
-  const addrBtn = document.getElementById("addrbutton");
-  addrBtn.onclick = function () {
-  if (addrDiv.style.display !== "none") {
-    addrDiv.style.display = "none";
-  } else {
-    addrDiv.style.display = "block";
-  }
-};
-
-
-//x street indexer open button
-const xStreetDiv = document.getElementById("xStreetIndex");
-  const xStreetBtn = document.getElementById("xstreetbutton");
-  xStreetBtn.onclick = function () {
-  if (xStreetDiv.style.display !== "none") {
-    xStreetDiv.style.display = "none";
-  } else {
-    xStreetDiv.style.display = "block";
-  }
-};
-
-// DIAL
-/*
-let numdialButton = (clicked_id) => {
-  let x = document.getElementById(clicked_id).innerHTML;
-  document.getElementById("input").value = document.getElementById("input").value + x;
-}
-
-let numdialKey = () => {
-  document.getElementById("input").value = document.getElementById("input").value + number;
-}
-
-function enterBtnClick () {
-  e = $.Event('keyup');
-  e.keyCode= 13; // enter
-  $('input').trigger(e);
-  applyInput();
-  console.log('triggered');
-}
-
-let enterNum = () => {
-  const enterButton = document.getElementById("enterkey");
-  enterButton.addEventListener("click", enterBtnClick());
-  document.getElementById("dialPad").style.display = "none";
-  firstDial = true;
-  document.getElementById("tutorial").style.display = "none";
-}
-       
-let deleteNum = () => {
-  document.getElementById("input").value = document.getElementById("input").value.slice(0, -1);
-}
-
-let closeDial = () => {
-  reenableInput();
-  document.getElementById("dialPad").style.display = "none";
-  document.getElementById("input").value = '';
-}
-
-let openTutorial = () => {
-  let x = document.getElementById("tutorial");
-  if(x.style.display === "none"){
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}*/
-
-</script>
+                                <!-- <input type="submit" value="Submit"> -->
+                            </form>
+                            <input type="text" id="result" style="color: white;"><button id="submitButton">Go!</button>
+                        </div>
+                    </div>
+                </div>
 
 
-
-  <!-- Include game engine -->
-  <!-- Be sure to load in dependencies first -->
-  <script src="scr/text-engine/parser.js"></script>
-  <script src="scr/text-engine/init.js"></script>
-  <script src="scr/text-engine/pcommand.js"></script>
-  <script src="scr/text-engine/internalfunc.js"></script>
-  <script src='scr/text-engine/playercharacter.js'></script>
-
-
-  <!-- Include game data ('disk') -->
-  <script src="scr/text-engine/game-disks/streets.js"></script>
-  <script src="scr/text-engine/game-disks/newyorksociety.js"></script>
-  <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
-<!-- Load disk into engine -->
+                <div id="address-display" class="clickables-left">
+                    <div id="address-text-container">
+                        <button class="x-button"
+                            onclick="displayLeftToggle('address-display', 'address', 'address-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="address-display-title">Address Book</h2>
+                        <div id="addresses">
+                        </div>
+                    </div>
+                </div>
 
 
-<script>loadDisk(streets);</script>
-<script src='scr/text-engine/streets.js'></script>
+                <div id="map-display">
+                    <button class="x-button" id="exitMapBtn" onclick="turnOnMap"><img src="img/png/x-icon.png"
+                            alt="close icon"></button>
+                    <div id="map-man" style="background-color: #32302f;"></div>
+                </div>
+
+                <div id="info-display" class="clickables-left">
+                    <div id="info-text-container">
+                        <button id="map-x-button" class="x-button"
+                            onclick="displayLeftToggle('info-display', 'info', 'info-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="info-display-title">Information</h2>
+                        <div id="info">
+                            <div id="score">
+                                <h3 id="score-title">SCORE</h3>
+                                <h4 id="det-title">Detective Score:</h4>
+                                <p id="det-score"></p><br>
+                                <h4 id="sur-title">Survival Score:</h4>
+                                <p id="sur-score"></p><br>
+                                <h4 id="char-title">Character Score:</h4>
+                                <p id="char-score"></p><br>
+                                <h4 id="tote-title">Total Score:</h4>
+                                <p id="tote-score"></p>
+                            </div>
+                            <!-- <h3 id="play-time-title">PLAY TIME</h3>
+                            <h4 id="play-time"></h4> -->
+                            <h3 id="difficulty-setting-title">DIFFICULTY SETTING</h3>
+                            <h4 id="difficulty-setting"></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right side clickables -->
+                <div id="mode-display" class="clickables-right">
+                    <div id="mode-text-container">
+                        <button class="x-button"
+                            onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="mode-display-title">Mode</h2>
+                        <div id="mode">
+                            <div id="restored-button-container">
+                                <div class="btn-container">
+                                    <div id="restored-btn-container">
+                                        <img id="restored-bow-image" src="img/png/icon-mode-option-restored.png">
+                                        <input type="radio" id="restored-radio" name="radio">
+                                        <label for="restored-radio">Restored</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="appleiie-button-container">
+                                <div class="btn-container">
+                                    <div id="appleiie-btn-container">
+                                        <img id="appleiie-bow-image" src="img/png/icon-mode-option-apple.png">
+                                        <input type="radio" id="appleiie-radio" name="radio">
+                                        <label for="appleiie-radio">Apple //e</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="commodore-button-container">
+                                <div class="btn-container">
+                                    <div id="commodore-btn-container">
+                                        <img id="commodore-bow-image" src="img/png/icon-mode-option-c64.png">
+                                        <input type="radio" id="commodore-radio" name="radio">
+                                        <label for="commordore-radio">Commodore 64</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="IBM-button-container">
+                                <div class="btn-container">
+                                    <div id="IBM-btn-container">
+                                        <img id="IBM-bow-image" src="img/png/icon-mode-option-ibm.png">
+                                        <input type="radio" id="IBM-radio" name="radio">
+                                        <label for="IBM-radio">IBM</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="achieve-display" class="clickables-right">
+                    <div id="achieve-text-container">
+                        <button class="x-button"
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="achieve-display-title">Ending Achievements</h2>
+                        <h3>Play the game to unlock your endings.</h3>
+                        <div id="achieve">
+                            <div class="ending" id="eterWith-ending">
+                                <img class="achieveImg" id="eterWith-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="eterWith-title">???</h4>
+                                <p class="achieveDesc" id="eterWith-desc">Reached the River Styx. Charon's still waiting
+                                    on that name.</p>
+                            </div>
+                            <div class="ending" id="emptEnli-ending">
+                                <img class="achieveImg" id="emptEnli-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="emptEnli-title">???</h4>
+                                <p class="achieveDesc" id="emptEnli-desc">An easy life free of sin, you enjoy quiet
+                                    walks and the smell of fresh dirt.</p>
+                            </div>
+                            <div class="ending" id="theShep-ending">
+                                <img class="achieveImg" id="theShep-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="theShep-title">???</h4>
+                                <p class="achieveDesc" id="theShep-desc">You're still enjoying life on the idyllic sheep
+                                    farm in the beautiful outback.</p>
+                            </div>
+                            <div class="ending" id="the1986-ending">
+                                <img class="achieveImg" id="the1986-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="the1986-title">???</h4>
+                                <p class="achieveDesc" id="the1986-desc">Next time let's check streets with precision
+                                    detective.</p>
+                            </div>
+                            <div class="ending" id="deatTexa-ending">
+                                <img class="achieveImg" id="deatTexa-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="deatTexa-title">???</h4>
+                                <p class="achieveDesc" id="deatTexa-desc">Texas is no home for an amnesiac.</p>
+                            </div>
+                            <div class="ending" id="painMan-ending">
+                                <img class="achieveImg" id="painMan-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="painMan-title">???</h4>
+                                <p class="achieveDesc" id="painMan-desc">"Sing us a song, you're the piano man, sing us
+                                    a song tonight." You've failed to give the Wacky Wanderer the correct directions and 
+                                    suffered a crushing defeat.
+                                </p>
+                            </div>
+                            <div class="ending" id="dawdHote-ending">
+                                <img class="achieveImg" id="dawdHote-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="dawdHote-title">???</h4>
+                                <p class="achieveDesc" id="dawdHote-desc">Good things come to those who wait, but Luke
+                                    is not one of those things.
+                                </p>
+                            </div>
+                            <div class="ending" id="anAmn-ending">
+                                <img class="achieveImg" id="anAmn-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="anAmn-title">???</h4>
+                                <p class="achieveDesc" id="anAmn-desc">You've been restored as John Cameron.
+                                    Congradulations.</p>
+                            </div>
+                            <div class="ending" id="zaneShot-ending">
+                                <img class="achieveImg" id="zaneShot-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="zaneShot-title">???</h4>
+                                <p class="achieveDesc" id="zaneShot-desc">While I commend you on fighting perhaps in this story, it really is best to go with
+                                    flight.
+                                </p>
+                            </div>
+                            <div class="ending" id="shepTux-ending">
+                                <img class="achieveImg" id="shepTux-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="shepTux-title">???</h4>
+                                <p class="achieveDesc" id="shepTux-desc">Alice is your one true love,
+                                    it doesn't matter that you still
+                                    don't know who you are, what you are 
+                                    is a Shepard. You will no longer hurt, you will just heard.  
+                                </p>
+                            </div>
+                            <h3 id="achieve-hidden">Achievement Hidden</h3>
+                            <div class="ending" id="elephantAchieve" id="elephantAchieve-ending">
+                                <img class="achieveImg" id="elepAchi-icon" src="img/png/hat-icon.png">
+                                <h4 class="achieveTitle" id="elepAchi-title">???</h4>
+                                <p class="achieveDesc" id="elepAchi-desc">Shared a touching moment with the Wanderer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="help-display" class="clickables-right">
+                    <div id="help-text-container">
+                        <button class="x-button"
+                            onclick="displayRightToggle('help-display', 'help', 'help-text-container')"><img
+                                src="img/png/x-icon.png" alt="close icon"></button>
+                        <h2 id="help-display-title">Command<br>
+                            Guide</h2>
+                        <div id="help">
+                            <div id="noAgruCommand">
+                                <h3>No Arguments</h3>
+                                <h4><span id="arrowIndicate">&#62;</span> e.g. "help", "inv"</h4>
+                            </div>
+                            <div id="noAgruList" class="commands">
+                                <p>inv OR i</p>
+                                <p>look OR l</p>
+                                <p>talk OR t</p>
+                                <p>take</p>
+                                <p>items</p>
+                                <p>use</p>
+                                <p>chars</p>
+                                <p>help</p>
+                                <p>say</p>
+                                <p>save</p>
+                                <p>load</p>
+                                <p>forward OR f</p>
+                                <p>dial</p>
+                                <p>beg</p>
+                                <p>sleep</p>
+                                <p>press</p>
+                                <p>jump</p>
+                                <p>go</p>
+                                <p>n</p>
+                                <p>s</p>
+                                <p>e</p>
+                                <p>w</p>
+                                <p>ne</p>
+                                <p>se</p>
+                                <p>sw</p>
+                                <p>nw</p>
+                            </div>
+                            <div id="oneAgruCommand">
+                                <h3>One Argument</h3>
+                                <h4>e.g. "go north", "take book"</h4>
+                            </div>
+                            <div id="oneAgruList" class="commands">
+                                <p>enter</p>
+                                <p>look</p>
+                                <p>head</p>
+                                <p>go</p>
+                                <p>take</p>
+                                <p>get</p>
+                                <p>wake</p>
+                                <p>use</p>
+                                <p>say</p>
+                                <p>drop</p>
+                                <p>open</p>
+                                <p>close</p>
+                                <p>wear</p>
+                                <p>remove</p>
+                                <p>read</p>
+                            </div>
+                            <div id="twoAgruCommand">
+                                <h3>Two Arguments</h3>
+                                <h4>e.g. "look at key", "talk to dene"</h4>
+                            </div>
+                            <div id="twoAgruList" class="commands">
+                                <p>search</p>
+                                <p>look</p>
+                                <p>go</p>
+                                <p>walk</p>
+                                <p>talk</p>
+                                <p>turn</p>
+                                <p>jump</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id='tutorial'>
+                    <div id="tutorial-text-container">
+                        <h3>Instructions for use:</h3>
+                        <p>To dial a phone number either press the number keys on your keyboard or click the number
+                            buttons on the dial pad to the right.</p>
+                        <br>
+                        <p>Need to delete a number? Press the backspace key or the delete button.</p>
+                        <br>
+                        <p>To dial the number press the enter key or the enter button.</p>
+                    </div>
+                </div>
+
+                <div id="dialPad" class="clickables-right">
+                    <div id="dial-pad-container">
+                        <div id="dial-pad-buttons">
+                            <button id="toggleTutorial" onclick='animateToggle()'>i</button> <!-- openTutorial() -->
+                            <button id="close" class="x-button" onclick='closeDial()'><img src="img/png/x-icon.png"
+                                    alt="close icon"></button>
+                        </div>
+                        <h2 id="dial-name">Dial Pad</h2>
+                        <h4 id="dial-info">Enter the phone number</h4>
+                        <div id="dial-keys">
+                            <button name="number" value="1" id="1key" onclick='numdialButton(this.id)'>1</button>
+                            <button name="number" value="2" id="2key" onclick='numdialButton(this.id)'>2</button>
+                            <button name="number" value="3" id="3key" onclick='numdialButton(this.id)'>3</button>
+                            <button name="number" value="4" id="4key" onclick='numdialButton(this.id)'>4</button>
+                            <button name="number" value="5" id="5key" onclick='numdialButton(this.id)'>5</button>
+                            <button name="number" value="6" id="6key" onclick='numdialButton(this.id)'>6</button>
+                            <button name="number" value="7" id="7key" onclick='numdialButton(this.id)'>7</button>
+                            <button name="number" value="8" id="8key" onclick='numdialButton(this.id)'>8</button>
+                            <button name="number" value="9" id="9key" onclick='numdialButton(this.id)'>9</button>
+                            <button name="delete" value="delete" id="deletekey" onclick='deleteNumBtn()'>Del</button>
+                            <button name="number" value="0" id="0key" onclick='numdialButton(this.id)'>0</button>
+                            <button name="enter" value="enter" id="enterkey" onclick='enterBtnClick()'>Ent</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="game-item-4">
+                <div id="right-side-clickables">
+                    <div class="clickable-container" id="save-clickable">
+                        <!-- icon insert <img class="clickable-image" id="save-icon" src=""> -->
+                        <button class="iconbtn" id="save-button" onclick="save()"></button>
+                    </div>
+
+                    <div class="clickable-container" id="mode-clickable">
+                        <!-- icon insert <img class="clickable-image" id="mode-icon" src=""> -->
+                        <button class="iconbtn" id="mode-button"
+                            onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"></button>
+                    </div>
+
+                    <div class="clickable-container" id="achievements-clickable">
+                        <!-- icon insert <img class="clickable-image" id="achieve-icon" src=""> -->
+                        <button class="iconbtn" id="achieve-button"
+                            onclick="displayRightToggle('achieve-display', 'achieve', 'achieve-text-container'); updateEndings()"></button>
+                    </div>
+
+                    <div class="clickable-container" id="help-clickable">
+                        <!-- icon insert <img class="clickable-image" id="help-icon" src=""> -->
+                        <button class="iconbtn" id="help-button"
+                            onclick="displayRightToggle('help-display', 'help', 'help-text-container')"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-item-5">
+                <div id="game-ui-bar">
+                    <div id=hunger>
+                        <div id="hunger-bar-progress">
+                            <div id="hunger-bar"></div>
+                        </div>
+                        <h3>HUNGER</h3>
+                    </div>
+                    <div id="fatigue">
+                        <div id="fatigue-bar-progress">
+                            <div id="fatigue-bar"></div>
+                        </div>
+                        <h3>FATIGUE</h3>
+                    </div>
+                    <div id="money-counter">
+                        <h3 id="money">
+                            </h2>
+                    </div>
+                    <div id="time-display">
+                        <h3 id="time">Sunday 9:05 A.M.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- close game container -->
+
+    <script type="text/javascript">
+
+
+
+
+
+    </script>
+
+    <!-- Scripts (Including Engines)-->
+    <!-- Include game engine -->
+    <!-- Be sure to load in dependencies first -->
+    <script src='scr/text-engine/playercharacter.js'></script>
+    <script src="scr/text-engine/parser.js"></script>
+    <script src="scr/text-engine/init.js"></script>
+    <script src="scr/prototype-scripts.js"></script>
+    <script src="scr/text-engine/pcommand.js"></script>
+    <script src="scr/text-engine/internalfunc.js"></script>
+
+
+    <!-- Include game data ('disk') -->
+    <script src="scr/text-engine/game-disks/amnesia-restored.js"></script>
+
+    <!-- Load disk into engine -->
+    <script>loadDisk(amnesiaRestored)</script>
+    <script src='scr/text-engine/map.js'></script>
 
 </body>
+
+</html>
