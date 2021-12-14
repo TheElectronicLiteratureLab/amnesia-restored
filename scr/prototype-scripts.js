@@ -1,3 +1,13 @@
+// adding alert to refreshing page
+window.addEventListener('beforeunload', function (e) {
+    // Cancel the event
+    e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+    // Chrome requires returnValue to be set
+    e.returnValue = '';
+  });
+
+
+
 // preload icon images to prevent any flickering
 (function () {
 	var preload = ["./img/png/icon-achieve-purple.png", "./img/png/icon-achieve-red.png", "./img/png/icon-address-purple.png", "./img/png/icon-address-red.png", "./img/png/icon-help-purple.png", "./img/png/icon-help-red.png", "./img/png/icon-info-purple.png", "./img/png/icon-info-red.png", "./img/png/icon-inventory-purple.png", "./img/png/icon-inventory-red.png", "./img/png/icon-map-purple.png", "./img/png/icon-map-red.png", "./img/png/icon-mode-purple.png", "./img/png/icon-mode-red.png", "./img/png/icon-save-purple.png", "./img/png/icon-save-red.png", "./img/png/icon-achieve-apple.png", "./img/png/icon-achieve-appleover.png", "./img/png/icon-address-apple.png", "./img/png/icon-address-appleover.png", "./img/png/icon-help-apple.png", "./img/png/icon-help-appleover.png", "./img/png/icon-info-apple.png", "./img/png/icon-info-appleover.png", "./img/png/icon-inventory-apple.png", "./img/png/icon-inventory-appleover.png", "./img/png/icon-map-apple.png", "./img/png/icon-map-appleover.png", "./img/png/icon-mode-apple.png", "./img/png/icon-mode-appleover.png", "./img/png/icon-save-apple.png", "./img/png/icon-save-appleover.png", "./img/png/icon-achieve-c64.png", "./img/png/icon-achieve-c64over.png", "./img/png/icon-address-c64.png", "./img/png/icon-address-c64over.png", "./img/png/icon-help-c64.png", "./img/png/icon-help-c64over.png", "./img/png/icon-info-c64.png", "./img/png/icon-info-c64over.png", "./img/png/icon-map-c64.png", "./img/png/icon-map-c64over.png", "./img/png/icon-mode-c64.png", "./img/png/icon-mode-c64over.png", "./img/png/icon-save-c64.png", "./img/png/icon-save-c64over.png", "./img/png/icon-achieve-IBM.png", "./img/png/icon-achieve-IBMover.png", "./img/png/icon-address-IBM.png", "./img/png/icon-address-IBMover.png", "./img/png/icon-help-IBM.png", "./img/png/icon-help-IBMover.png", "./img/png/icon-info-IBM.png", "./img/png/icon-info-IBMover.png", "./img/png/icon-inventory-IBM.png", "./img/png/icon-inventory-IBMover.png", "./img/png/icon-map-IBM.png", "./img/png/icon-map-IBMover.png", "./img/png/icon-mode-ibm.png", "./img/png/icon-mode-IBMover.png", "./img/png/icon-save-IBM.png", "./img/png/icon-save-IBMover.png"];
@@ -15,22 +25,46 @@ $(document).ready(function(){
     //jQuery to toggle on and off the command options
     $("#noAgruCommand").click(function(){
         
-      $("#noAgruList").slideToggle("slow", changeCaret());
+      $("#noAgruList").slideToggle("slow", changeCaretNo());
     });
 
     $("#oneAgruCommand").click(function(){
-        $("#oneAgruList").slideToggle("slow");
+        $("#oneAgruList").slideToggle("slow", changeCaretOne());
     });
 
     $("#twoAgruCommand").click(function(){
-        $("#twoAgruList").slideToggle("slow");
+        $("#twoAgruList").slideToggle("slow", changeCaretTwo());
     });
 
      
 });
 
-let changeCaret = () => {
-    console.log("hello!");
+let changeCaretNo = () => {
+    let x = document.getElementById("noAgruList").style.display;
+    let arrow = document.getElementById("arrowIndicateNo");
+    if(!x || x === "none"){
+        arrow.innerHTML = "&#8744;"
+    } else {
+        arrow.innerHTML = "&#62;"
+    }
+}
+let changeCaretOne = () => {
+    let x = document.getElementById("oneAgruList").style.display;
+    let arrow = document.getElementById("arrowIndicateOne");
+    if(!x || x === "none"){
+        arrow.innerHTML = "&#8744;"
+    } else {
+        arrow.innerHTML = "&#62;"
+    }
+}
+let changeCaretTwo = () => {
+    let x = document.getElementById("twoAgruList").style.display;
+    let arrow = document.getElementById("arrowIndicateTwo");
+    if(!x || x === "none"){
+        arrow.innerHTML = "&#8744;"
+    } else {
+        arrow.innerHTML = "&#62;"
+    }
 }
 
 // global variables 
