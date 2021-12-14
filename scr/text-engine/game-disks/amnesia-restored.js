@@ -1905,6 +1905,8 @@ const amnesiaRestored = {
       onEnter: () => {
         println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
         end1Eternity = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
         pressEnter('game-over');
       }
     },
