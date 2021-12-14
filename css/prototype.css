@@ -764,7 +764,6 @@ body {
 #xStreetIndex select {
    background-color: #0E0E0F;
    color: #e4e4e4;
-   padding: 5px;
    border-radius: 16px;
    border: 2px solid #9C4FEC;
    font-family: 'Montserrat', sans-serif;
@@ -803,6 +802,8 @@ body {
    text-transform: uppercase;
    border: none;
    cursor: pointer;
+   position: absolute;
+   padding: 5px;
 }
 
 /* address book display specific stylings */
@@ -952,35 +953,69 @@ body {
    display: none;
 }
 
+#mode-display h2 {
+   margin-bottom: 10%;
+}
+
 #mode div {
    display: flex;
    flex-direction: row;
    align-items: center;
    margin-bottom: 5%;
-   margin-left: 2%;
 }
 
 #mode label {
    margin-left: 5px;
 }
 
-#mode input {
-   position: relative; 
-   height: 25px;
-   width: 25px;
+.btn-container {
+   position: relative;
+   width: 100%;
 }
 
-#restored-radio {
+.btn-container input {
    position: absolute;
-   right: 50px;
+   left: 13px;
+   opacity: 0;
+   cursor: pointer;
+   z-index: 999;
 }
 
-#restored-radio hover {
-   background-color: red;
+.btn-container .custom-radio {
+   position: absolute;
+   left: 17px;
+   height: 13px;
+   width: 13px;
+   background-color: #eee;
+   border-radius: 50%;
+   border: 1px solid white;
 }
+
+/* On mouse-over, add a grey background color */
+.btn-container:hover input ~ .custom-radio {
+   background-color: #ccc;
+ }
+ 
+ /* When the radio button is checked, add a blue background */
+ .btn-container input:checked ~ .custom-radio {
+   background-color: #494959;
+ }
+ 
+ /* Create the indicator (the dot/circle - hidden when not checked) */
+ .custom-radio:after {
+   content: "";
+   position: absolute;
+   display: none;
+ }
+ 
+ /* Show the indicator (dot/circle) when checked */
+ .btn-container input:checked ~ .custom-radio:after {
+   display: block;
+ }
 
 #mode img {
    position: relative;  
+   margin-right: 5px;
 }
 
 /* ending achievement display stylings */
@@ -1086,6 +1121,11 @@ body {
 
 #help div {
    margin-bottom: 5%;
+}
+
+.argument-indicator {
+   transition: .2s ease-in-out;
+   display:inline-block;
 }
 
 .commands {

@@ -316,7 +316,7 @@
 
                                 <!-- <input type="submit" value="Submit"> -->
                             </form>
-                            <input type="text" id="result" style="color: white;"><button id="submitButton">Go!</button>
+                            <input type="text" id="result" style="color: #e4e4e4;"><button id="submitButton">Go!</button>
                         </div>
                     </div>
                 </div>
@@ -372,13 +372,14 @@
                         <button class="x-button"
                             onclick="displayRightToggle('mode-display', 'mode', 'mode-text-container')"><img
                                 src="img/png/x-icon.png" alt="close icon"></button>
-                        <h2 id="mode-display-title">Mode</h2>
+                        <h2 id="mode-display-title">Visual Mode</h2>
                         <div id="mode">
                             <div id="restored-button-container">
                                 <div class="btn-container">
                                     <div id="restored-btn-container">
                                         <img id="restored-bow-image" src="img/png/icon-mode-option-restored.png">
                                         <input type="radio" id="restored-radio" name="radio" onclick="changeMode('restored')">
+                                        <span class="custom-radio"></span>
                                         <label for="restored-radio">Restored</label>
                                     </div>
                                 </div>
@@ -388,6 +389,7 @@
                                     <div id="appleiie-btn-container">
                                         <img id="appleiie-bow-image" src="img/png/icon-mode-option-apple.png">
                                         <input type="radio" id="appleiie-radio" name="radio" onclick="changeMode('apple')">
+                                        <span class="custom-radio"></span>
                                         <label for="appleiie-radio">Apple //e</label>
                                     </div>
                                 </div>
@@ -397,6 +399,7 @@
                                     <div id="commodore-btn-container">
                                         <img id="commodore-bow-image" src="img/png/icon-mode-option-c64.png">
                                         <input type="radio" id="commodore-radio" name="radio" onclick="changeMode('c64')">
+                                        <span class="custom-radio"></span>
                                         <label for="commordore-radio">Commodore 64</label>
                                     </div>
                                 </div>
@@ -406,6 +409,7 @@
                                     <div id="IBM-btn-container">
                                         <img id="IBM-bow-image" src="img/png/icon-mode-option-ibm.png">
                                         <input type="radio" id="IBM-radio" name="radio" onclick="changeMode('ibm')">
+                                        <span class="custom-radio"></span>
                                         <label for="IBM-radio">IBM</label>
                                     </div>
                                 </div>
@@ -506,8 +510,8 @@
                             Guide</h2>
                         <div id="help">
                             <div id="noAgruCommand">
-                                <h3>No Arguments</h3>
-                                <h4><span id="arrowIndicateNo">&#62;</span> e.g. "help", "inv"</h4>
+                                <h3><span id="arrowIndicateNo" class="argument-indicator"><img src="img/png/argument-indicator.png" alt="arrow indicator"></span> No Arguments</h3>
+                                <h4>e.g. "help", "inv"</h4>
                             </div>
                             <div id="noAgruList" class="commands">
                                 <p>inv OR i</p>
@@ -538,8 +542,8 @@
                                 <p>nw</p>
                             </div>
                             <div id="oneAgruCommand">
-                                <h3>One Argument</h3>
-                                <h4><span id="arrowIndicateOne">&#62;</span> e.g. "go north", "take book"</h4>
+                                <h3><span id="arrowIndicateOne" class="argument-indicator"><img src="img/png/argument-indicator.png" alt="arrow indicator"></span> One Argument</h3>
+                                <h4>e.g. "go north", "take book"</h4>
                             </div>
                             <div id="oneAgruList" class="commands">
                                 <p>enter</p>
@@ -559,8 +563,8 @@
                                 <p>read</p>
                             </div>
                             <div id="twoAgruCommand">
-                                <h3>Two Arguments</h3>
-                                <h4><span id="arrowIndicateTwo">&#62;</span> e.g. "look at key", "talk to dene"</h4>
+                                <h3><span id="arrowIndicateTwo" class="argument-indicator"><img src="img/png/argument-indicator.png" alt="arrow indicator"></span> Two Arguments</h3>
+                                <h4>e.g. "look at key", "talk to dene"</h4>
                             </div>
                             <div id="twoAgruList" class="commands">
                                 <p>search</p>
