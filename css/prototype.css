@@ -696,6 +696,10 @@ body {
    overflow-y: scroll;
 }
 
+#brochure-first-page {
+   display: none;
+}
+
 /* x-indexer stylings */
 
 #inventory-xIndex-display {

@@ -38,8 +38,7 @@ $(document).ready(function(){
     $("#twoAgruCommand").click(function(){
         $("#twoAgruList").slideToggle("slow", changeCaretTwo());
     });
-
-     
+    
 });
 
 let changeCaretNo = () => {
