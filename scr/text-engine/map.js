@@ -122,23 +122,26 @@ let poiIcon = L.icon ({
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
 
-let storyMarker = L.marker([32.787, -6.877], {icon: poiIcon, className: "popup"})
+let storyMarker = L.marker([15.390, -6.546], {icon: poiIcon, className: "popup"})
 storyMarker.bindPopup("???");
 storyMarker.on("click", function() {
   storyMarker.openPopup();
 });
 
 
-
 //Creating a regular expression to extract Subway Station name [98 Stations!]
 let subwayRegEx = / (.* Station) /;
 //Creating a regular expression to extract restaruant name
-let foodRegEx = /luncheonette|Nedicks|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
+let foodRegEx = /luncheonette|Nedick's|pizzeria|Greek Gyro|Chock Full-O-Nuts/;
 
 //Markers for POI Story Nodes, then run a forEach similarly like above in order to create markers. This is done by feeding an array containing ids of the rooms we want.
 //I realized I'm making it more complicated, I just need one marker that I can move around...
-let poiIDArr = ['43-5', '53-5', ];
+//[Princeton, Sunderland, Computer Store, Ann's House, Historical Society, Sketchpad, Bettes Apartment', The Dakota, Back to Bette's, Alison's Deathbed (dakota the 2nd), Epilogue]
+let poiIDArr = ['43-5', '53-5', '56-madi', '19-amer', '76-cpkw', 'wasq-park', '20-irvi', '72-cpkw', '20-irvi', '73-colu'];
 //let storyMarkers = [];
+
+//Dakota Block 
+//'73-columbus'
 
 //This block is checking the entire disk for boolean values for food and subway.
 disk.rooms.forEach((element)=>{
@@ -152,7 +155,9 @@ disk.rooms.forEach((element)=>{
         //console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
-        //console.log(str);
+        //console.log(element.coord)
+        console.log(str);
+        //Capitlize the first name of each food area.
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
       }

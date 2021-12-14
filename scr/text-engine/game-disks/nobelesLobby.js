@@ -736,7 +736,7 @@ const nobelesLobby = {
             desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it’s correct: 555-5413. “I hope it’s not Another Woman,” she adds, with a nervous laugh, “but I’ll have to wait till tonight to find out. We’ll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here’s the bunting now. Talk to you later.” She hangs up.`,
             onEnter: () => {
                 numbers.push(
-                    {number:'555-5413', roomid:'phone-30', contactName: 'Denise'}
+                    {number:'5555413', roomid:'phone-30', contactName: 'Denise'}
                   );
             }
         },
@@ -747,12 +747,10 @@ const nobelesLobby = {
             //player has to call Denise.
             onEnter: () => {
                 numbers.push(
-                    {number:'555-5413', roomid:'phone-30', contactName: 'Denise'}
+                    {number:'5555413', roomid:'phone-30', contactName: 'Denise'}
                   );
             },
         },
-
-
 
 
 //Phone call to Denise

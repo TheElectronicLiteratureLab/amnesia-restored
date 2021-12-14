@@ -24,6 +24,13 @@ let firingInjection = false; //false = firing squad, true = injection
 let religion = 'none';
 let deathFood = 'steak';
 
+//User Friendly Computer Store Flags and Variables
+let readApple = true;
+let readC64 = false;
+let readIBM = false;
+
+//Ann's Apartment Flags and Variables
+let cookieCount = 1;
 
 
 let playFat = 100;

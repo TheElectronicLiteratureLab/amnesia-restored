@@ -1143,10 +1143,10 @@ function createPhone() { //create function
         if (rooms[i].exits !== undefined) {
           rooms[i].exits.push( //push the following into the room's exits array
           {
-            dir: ['phone', 'telephone', 'booth'], //exit directions for phone booth room
+            dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth'], //exit directions for phone booth room
             id: 'pho-boo1' //id for phone booth
           },
-        ); rooms[i].desc = rooms[i].desc + ` There is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        ); rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
         phoneCount++
         } else {
           console.log(`Can't build a booth here.`);
@@ -1447,12 +1447,14 @@ const begLootTable = () => {
       println(`The person you've asked for money refuses your request with a contemptuous smile.`);
     } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.25
       const dollarAmount = Math.floor(Math.random() * ((125 - 25) + 25)) / 100;
-      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
       playMon = playMon + dollarAmount;//add amount to player inventory
+      println(`You were able to get ${formatter.format(dollarAmount)}`); //tell the player how much they got
+      
     } else if (71 <= chance2 <= 90) { //chance to get between 1.26 & 1.75
       const dollarAmount = Math.floor(Math.random() * ((175 - 126) + 126)) / 100;
-      println(`You were able to get ${formatter.format(dollarAmount)}`);
       playMon = playMon + dollarAmount;
+      println(`You were able to get ${formatter.format(dollarAmount)}`);
+      
     } else if (91 <= chance2 <= 100) { //chance to get between 1.76-2.00
       const dollarAmount = Math.Floor(Math.random() * ((200 - 176) + 176)) / 100;
       println(`You were able to get ${formatter.format(dollarAmount)}`);
@@ -1646,7 +1648,7 @@ const hungerWarning = () => {
     println(`You are getting light headed, if you don't eat soon you feel like you'll pass out.`);
   } else if (playHung <= 0) { //if your hunger drops to 0 game over the player
     println(`You try and take another step, but you finally succumb to the hunger and collapse. Your vision fades . . .`)
-    pressEnter('deat-1')
+    pressEnter('hosp-deat')
   } else if (playHung >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } 
@@ -1666,6 +1668,8 @@ const ateSomething = (x) => {
 
   updateHung(playHung); //update the UI
 };
+//Actual story sequence: [Princeton, Sunderland, Computer Store, Ann's House, Historical Society, Sketchpad, Bettes Apartment', The Dakota, Back to Bette's, Alison's Deathbed (dakota the 2nd), Epilogue]
+//let poiIDArr = ['43-5'--, '53-5'--, '56-madi'--, '19-amer'--, '76-cpkw'--, 'wasq-park', '20-irvi', '72-cpkw', '20-irvi', '73-colu'];
 
 //degrade hunger
 const degradeHunger = () => {
@@ -1723,7 +1727,7 @@ const fatigueWarning = () => {
     println(`Just as it occurs to you that you can hardly stay awake any longer, someone gives you a powerful sedative, with a blow to the back of your head. 
 
     When you wake up from the mugger's attack you are lying on the ground with a close-up view of the four polished shoes of the policemen who've found you. One of them claims to recognize you. You are handcuffed and led to their patrol car.`)
-    pressEnter('hosp-deat')
+    pressEnter('deat-1')
   } else if (playFat >= 40) { //if the player hunger is above 40 do nothing 
     return;
   } 
@@ -1916,16 +1920,6 @@ const randomEncounter = () => {
     }  
   } 
 };
-
-//WACKY WANDERER -- STORY NODES ||
-//KID WITH RAG -- 
-//HUNGER AND FATIGUE DEATH AND TEXAS FLAVOR TEXT DIFFERENCES -- ASK CHARLIE
-//DAMSEL IN DISTRESS ENCOUNTER -- STORY NODES TOWARD BOTTOM || HIGHLIGHTED RED
-//LINK UP X STREET EVENT RANDOMNESS TO MOVEMENT ON STREETS
-//POLISH MIDTOWN EASTSIDE OFFICE BUILDINGS WITH PROPER EXIT BLOCKS AND IF THEY CAN ENTER DURING WEEKDAYS 
-//WEEKDAY BLOCKS FOR CERTAIN STREET EXITS
-//turn off hunger and fatigue--
-  //vault NYHS dakota UfCS restaurants tenement sketchbook
 
 
 //boolean variable of gotten rag or not if gotten it kill function
@@ -2269,6 +2263,7 @@ let commands = [
   {
     inv,
     i: inv, // shortcut for inventory
+    inventory: inv,
     look,
     l: look, // shortcut for look
     go,
