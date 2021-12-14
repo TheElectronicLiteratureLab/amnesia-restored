@@ -1667,7 +1667,7 @@ const ateSomething = (x) => {
   updateHung(playHung); //update the UI
 };
 //Actual story sequence: [Princeton, Sunderland, Computer Store, Ann's House, Historical Society, Sketchpad, Bettes Apartment', The Dakota, Back to Bette's, Alison's Deathbed (dakota the 2nd), Epilogue]
-//let poiIDArr = ['43-5', '53-5', '56-madi', '19-amer', '76-cpkw', 'wasq-park', '20-irvi', '72-cpkw', '20-irvi', '73-colu'];
+//let poiIDArr = ['43-5'--, '53-5'--, '56-madi', '19-amer', '76-cpkw', 'wasq-park', '20-irvi', '72-cpkw', '20-irvi', '73-colu'];
 
 //degrade hunger
 const degradeHunger = () => {

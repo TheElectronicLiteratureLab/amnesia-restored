@@ -6604,6 +6604,7 @@ const amnesiaRestored = {
         name: 'The Princeton Club',
         desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the Club's Board of Directors on the subject of the dangers of creeping seediness.`,
         onEnter: () => {
+          degradation = !degradation;
           pressEnter('prin-club-2');
         },
         exits: []
@@ -6614,6 +6615,7 @@ const amnesiaRestored = {
         name: '',
         desc: `Surely, such a venerable institution should not be allowed to sag into such a state of shabbiness. Perhaps contributions should be solicited for a Redecorating Fund. Just as you’ve begun mentally to frame this appeal, the doorman asks you what your business is. You explain that you believe yourself to be a member.`,
         onEnter: () => {
+          degradation = false
           pressEnter('prin-club-3');
         },
         exits: []
@@ -28555,6 +28557,9 @@ const amnesiaRestored = {
             USER-FRIENDLY
 
             COMPUTER STORE.`,
+            onEnter: () => {
+              degradation = true;
+            },
       exits: [
         {dir: 'north', id: '57-madi'},
         {dir: 'south', id: '55-madi'},
@@ -28976,6 +28981,7 @@ const amnesiaRestored = {
       desc: `Here is the **Princeton Club** - distinctly a members only institution.`,
       isStreet: true,
       onEnter: () => {
+        degradation = true;
         reenableInput();
       },
       exits: [
@@ -29116,16 +29122,16 @@ const amnesiaRestored = {
       coord: [29.535, -6.832],
       isStreet: true,
       name: 'W. 51st St. and 5th Ave.',
-      desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.
-            `,
+      desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.`,
+      onEnter: () => {
+        degradation = true;
+      },
       exits: [
         {dir: 'north', id: '52-5'},
         {dir: 'south', id: '50-5'},
         {dir: 'east', id: '51-madi'},
         {dir: 'west', id: '51-amer'},
-        {
-                    dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'],
-                    id: '????'}
+        {dir: ['st.', 'saint', 'patrick', `patrick's`, 'cathedral'], id: 'cath-e1'}
       ]
     },
     {
@@ -43851,6 +43857,9 @@ const amnesiaRestored = {
       name: `St. Patricks Cathedral`,
       desc: `The moment you enter the cathedral a strange feeling comes over you. A combination of peace and uneasiness and guilt. But how can you feel guilty over a past you can't remember?\n
       The cathedral provides no answer to that question, but the feeling grows stronger. Waves of vertigo assail you. You'll have to sit in one of the pews -- or leave at once.`,
+      onEnter: () => {
+        degradation = !degradation;
+      },
         onBlock: () => {
         if(prevInput === 'sit'){ // **We'll need a command for answering the phone
             enterRoom('cathe-2');
