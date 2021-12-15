@@ -1,6 +1,17 @@
 const amnesiaRestored = {
   roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
+  inventory: [{
+    itemId: 'xindexer',
+    icon: 'img/png/image-xstreet-frontthumbnail.png',
+    gif: 'img/png/image-xstree-front.png',
+    name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
+    desc: 'A circular wheel that shows the cross street given the address.',
+    isTakeable: true,
+    onDrop: () => {
+      println(`You shouldn't drop that. It might be important.`);
+    }
+  }],
   rooms: [
     {
       id: 'titl-scre',
@@ -248,7 +259,7 @@ const amnesiaRestored = {
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
-        addItem('xindexer');
+        //addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
         console.log(disk.inventory);
@@ -259,17 +270,6 @@ const amnesiaRestored = {
         println(room.desc);
       },
       items: [
-        {
-          itemId: 'xindexer',
-          icon: 'img/png/image-xstreet-frontthumbnail.png',
-          gif: 'img/png/image-xstree-front.png',
-          name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
-          desc: 'A circular wheel that shows the cross street given the address.',
-          isTakeable: true,
-          onDrop: () => {
-            println(`You shouldn't drop that. It might be important.`);
-          }
-        },
         {
           itemId: 'dollarbill',
           icon: 'img/png/image-dollarbill-thumbnail.png',
@@ -1080,7 +1080,7 @@ const amnesiaRestored = {
             itemId: 'curtains',
             name: ['drapes', 'curtains'],
             desc: ' ',
-            isOpen: false,
+            isOpen: true,
             onLook: () => {
               let item = getItemInRoomById('curtains', disk.roomId);
               if (item.isOpen === true) {
@@ -6324,10 +6324,10 @@ const amnesiaRestored = {
         ],
         exits: [
             {dir: ['newstand', 'get up', 'north'], id: 'lobb-revi-15'},
-            {dir: ['s', 'south'], id: 'lobb-revi-15'},
-            {dir: ['e', 'east'], id: 'lobb-revi-15', // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
+            {dir: ['registration', 'south'], id: 'lobb-revi-15'},
+            {dir: ['elevators', 'east'], id: 'lobb-revi-15', // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
 },
-          {dir: ['w', 'west'], id: 'lobb-revi-15'}
+          {dir: ['leave', 'west'], id: 'lobb-revi-15'}
         ]
     },// closes lobb-revi-9 room
     {
@@ -6418,7 +6418,7 @@ const amnesiaRestored = {
                 println(`"You should be more caerful, Mr. Hollings. I mean, a white suit is kind of conspicuous for a man on the lam from a murder rap. The police have already been round once showing that same picture. You're lucky nobody but me recognized you. But I wouldn't push my luck staying on in...wasn't it Room 1502?" You are too startled to reply, and the bellboy goes on: "There was nothing about a reward for turning you in, so I didn't say anything then. I figured I'd wait round and talk to you first. Maybe you could help me forget I saw you."
                 
                 You realize you are being blackmailed.`);
-                if(getItemInInventory('ring') && prevInput === 'give ring to bellboy'){
+                if(getItemInInventory('weddingring') && (prevInput === 'give ring to bellboy' || prevInput === 'give ring' || prevInput === 'give the ring' || prevInput === 'hand over the ring' || prevInput === 'hand ring over')){
                     println(`Quickly the bellboy flips open the lid of the box. "Thanks, Mr. Hollings. Or I guess I should say Mr. Cameron. Thanks a whole lot. I served time in the slammer myself, so I wish you the best of luck."`);
                     pressEnter('lobb-revi-9');
                 } else {
@@ -7142,8 +7142,8 @@ const amnesiaRestored = {
                       disk.inventory.push(
                         {
                           itemId: 'chococookie',
-                          icon: '',
-                          gif: '',
+                          icon: 'img/png/image-invisiblecookie-thumbnail.png',
+                          gif: 'img/png/image-invisiblecookie-thumbnail.png',
                           name: ['Invisible Chocolate Chip Cookie', 'invisible cookie', 'chocolate chip cookie', 'cookie', 'another cookie'],
                           desc: `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`,
                           isDroppable: true,
@@ -7172,7 +7172,7 @@ const amnesiaRestored = {
         name:`Ann's House`,
         desc:`“Now that you’ve had your fill,” Cecily says, “I’ll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let Mummy come out of the bathtub. Okay?`,
         onBlock: () => {
-            if(prevInput === 'yes' || 'okay' || 'answer riddles'){
+            if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'answer riddles'){
                 enterRoom('ann-15');
             } else{
                 enterRoom('ann-14');
@@ -7226,7 +7226,7 @@ const amnesiaRestored = {
           playerC.cScore += 3;
         },
         onBlock: () => {
-            if(prevInput === 'ann' || prevInput ==='anne'){
+            if(prevInput === 'ann' || prevInput ==='anne' || prevInput === 'Ann' || prevInput === 'Anne'){
                 enterRoom('ann-19');
             }else{
                 enterRoom('ann-18');
@@ -7261,7 +7261,7 @@ const amnesiaRestored = {
               name:`Ann's House`,
               desc:`“Oh, you knew that one because Mummy’s name is Ann. You’re no fun to play with at all. I’m going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don’t care.”`,
               onBlock: () => {
-                if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
+                if(prevInput === 'ann' || prevInput === 'Ann' || prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                     enterRoom('ann-20');
                 }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
                     enterRoom('ann-21');
