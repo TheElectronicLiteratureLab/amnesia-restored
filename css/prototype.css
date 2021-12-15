@@ -739,6 +739,7 @@ body {
    line-height: 1.15;
    font-size: 1.85vh;
    font-weight: 600;
+   margin-bottom: 3%;
 }
 
 #xIndex-name {
@@ -794,7 +795,7 @@ body {
    border-radius: 16px;
    border: 2px solid #9C4FEC;
    font-family: 'Montserrat', sans-serif;
-   margin: 3% 0;
+   margin-bottom: 3%;
 }
 
 /* right side scroll bar width */
