@@ -98,17 +98,20 @@ const amnesiaRestored = {
         println(`What's a person to do in such a situation? \n\nWhat YOU do is...`);
         reenableInput();
       },
+      onLook: () => {
+        println('You should get up first.');
+      },
       onBlock: () => {
-        if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up') {
+        if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up' || prevInput === 'up') {
           playerC.sScore +=2;
           playerC.cScore +=2;
           console.log(playerC.cScore);
           console.log(playerC.sScore);
           enterRoom('hote-room-2');
-        } else if (prevInput !== '') {
-          println('Sorry, you may not do that in bed.');
+        } else{
+          println('You need to get up first.');
         }
-      }
+      },
     },
     {
       id: 'hote-room-2',
@@ -241,9 +244,9 @@ const amnesiaRestored = {
       id: 'hote-room-7',
       coord: [],
       name: '',
-      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502.
+      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a **room key** with a large green plastic tag showing your room number, 1502.\n
 
-      On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged dollar bill, both of which you take. To pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone.
+      On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged dollar bill, both of which you take. To pass the time the hotel offers a television. Also, a **Gideon Bible**. A ballpoint **pen** has been placed near the phone.
       `,
       onEnter: () => {
         //reenableInput();
@@ -556,13 +559,16 @@ const amnesiaRestored = {
           bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
-          isTakeable: true,
-          isDroppable: true
+           top: true,
+              bottom: true,
+              isTakeable: true,
+              isDroppable: true,
         }
       ],
       exits: [
         {dir: 'bathroom', id: 'hote-bath-1'},
-        {dir: 'leave', id: 'hote-room-9'}
+        {dir: 'leave', id: 'hote-room-9'},
+        {dir: 'dresser', id:'hote-room-9', block:'What about the dresser?'}
       ]
     },
     {
@@ -657,13 +663,12 @@ const amnesiaRestored = {
         room.exits[1].id = 'corridor-1502';
       },
       onBlock: () => {
-        if (prevInput === 'answer phone' || prevInput === 'answer the phone') {
+        if (prevInput === 'answer phone' || prevInput === 'answer the phone' || prevInput === 'phone' || prevInput === 'answer') {
           enterRoom('hote-room-10');
         } else {
           println('The phone continues ringing.');
         }
       },
-      exits: [],
     },
     {
       id: 'hote-room-10',
@@ -1887,11 +1892,11 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         let styx = getRoom('hell-6');
-        if (prevInput !== '') {
-          println('You need to say a name.');
+        if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron'){
+          enterRoom('hell-6');
         } else {
           styx.charonReturns++;
-          enterRoom('hell-6');
+          enterRoom('eter-fore');
         }
       }
     },
@@ -1938,7 +1943,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-1502',
       name: '15th Floor Hallway',
-      desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n\n
+      desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n
       Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
@@ -4658,16 +4663,14 @@ const amnesiaRestored = {
             reenableInput();
         },
         onBlock: () => {
-            if (prevInput === '') {
-              println('"Are you feeling a little better now?"')
-                
-            } else if (prevInput === 'yes') {
+            if (prevInput === 'yes') {
               enterRoom('heal-club23');
             } else if (prevInput === 'no') {
                 enterRoom('heal-club24');
+            }else {
+              println('"Are you feeling a little better now?"')
             }
         },
-        exits: [],
     },
     {
         id: 'heal-club23',
