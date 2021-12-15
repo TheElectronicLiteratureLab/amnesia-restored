@@ -1297,3 +1297,15 @@ body {
 #output div.playerInput {
    border-left: none;
 }
+
+#output div.credits {
+   text-align: center;
+   border-left: none;
+   font-weight: 400;
+}
+
+#output div.credits img {
+   display: block;
+   width: 15%;
+   margin: auto;
+}

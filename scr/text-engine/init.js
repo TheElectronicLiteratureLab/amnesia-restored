@@ -180,6 +180,11 @@ let load = (name) => {
   enterRoom(disk.roomId);
 };
 
+
+
+
+
+
 // load the passed disk and start the game
 // disk -> nothing
 let loadDisk = (uninitializedDisk) => {
@@ -202,3 +207,71 @@ let loadDisk = (uninitializedDisk) => {
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = loadDisk;
 }
+
+
+//internalSave();
+
+
+//let globalStats = localStorage.setItem('stats', saveLoadChar);
+let internalSave = (saveStats = 'stats') => {
+  saveLoadChar.currMon = playMon;
+  saveLoadChar.currFat = playFat;
+  saveLoadChar.currHun = playHung;
+  saveLoadChar.shepEnd = theShep;
+  saveLoadChar.monkEnd = emptEnli;
+  saveLoadChar.shepEnd = theShep;
+  saveLoadChar.clasEnd = the1986;
+  saveLoadChar.texaEnd = deatTexa;
+  saveLoadChar.pianEnd = painMan;
+  saveLoadChar.dawdEnd = dawdHote;
+  saveLoadChar.trueEnd = anAmn;
+  saveLoadChar.zaneEnd = zaneShot;
+  saveLoadChar.eterEnd = eterWith;
+  saveLoadChar.she2End = shepTux;
+  saveLoadChar.elephant = elepAchi;
+
+
+
+  const globalStats = JSON.stringify(saveLoadChar);
+  
+  localStorage.setItem(saveStats, globalStats);
+}
+
+let internalLoad = (statsToLoad = 'stats') => {
+  const saveStats = localStorage.getItem(statsToLoad);
+
+  if (!saveStats) {
+    console.log('nothing to load yet')
+    return;
+  }
+
+  globalStats = JSON.parse(saveStats);
+  console.log(globalStats);
+
+  //Reload all stats :( This kind of sucks doing by hand. I might find a different way eventually...
+  //disk.roomId = saveLoadChar.currRoom;
+  
+  playMon = globalStats.currMon;
+  playFat = globalStats.currFat;
+  playHung = globalStats.currHun;
+  theShep = globalStats.shepEnd;
+  emptEnli = globalStats.monkEnd;
+  theShep = globalStats.shepEnd;
+  the1986 = globalStats.clasEnd;
+  deatTexa = globalStats.texaEnd;
+  painMan = globalStats.pianEnd;
+  dawdHote = globalStats.dawdEnd;
+  anAmn = globalStats.trueEnd;
+  zaneShot = globalStats.zaneEnd;
+  eterWith = globalStats.eterEnd;
+  shepTux = globalStats.she2End;
+  elepAchi = globalStats.elephant;
+}
+
+//this is to clear certain varibles so they don't bleed over.
+//Should always put before saveInternal() in game over scenarios;
+let clearTemps = () => {
+  //money, hung, fat, time, all flags, player clothes, difficulty (just in case)
+} 
+internalLoad();
+

@@ -280,7 +280,7 @@ let response = (e) => {
   }
 };
 
-// Function for pressing Enter and advancing to the next room, shout out to Ahira for masterminding this
+// Function for pressing Enter and advancing to the next room, shout out to Ahria for masterminding this
 let pressEnter = (id) => {
   println('PLEASE PRESS **[ENTER]** TO CONTINUE', 'enterKey');
   //disable normal input

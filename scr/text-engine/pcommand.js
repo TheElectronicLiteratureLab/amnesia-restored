@@ -1269,7 +1269,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               for (let i = 0; i < tenementArray.length; i++) { //iterate through the tenement rooms
                 tenementArray[i].coord = room.coord; //set all of the coords of the rooms to the current street corners coords
               };
-              tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
+              tenement.exits[1]= {dir: ['leave', 'south', 'back'], id: room.id};
                //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
               room.onEnter = () => {
@@ -1279,7 +1279,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
-
+  tenementMarker.setLatLng(room.coord).addTo(sleepLayer);
 };
 
 //ask function
