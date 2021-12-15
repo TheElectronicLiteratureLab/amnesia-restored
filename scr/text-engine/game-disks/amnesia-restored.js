@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -4815,8 +4815,8 @@ const amnesiaRestored = {
           },
           {
             itemId: 'jeans',
-            icon: '/img/png/image-levis-thumbnail.png',
-            gif: '/img/gif/gif-levis-ingame.gif',
+            icon: 'img/png/image-levis-thumbnail.png',
+            gif: 'img/gif/gif-levis-ingame.gif',
             name: [`Levi's Jeans`],
             desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
             isDroppable: true,
@@ -4824,8 +4824,8 @@ const amnesiaRestored = {
           },
           {
             itemId: 'sneakers',
-            icon: '/img/png/image-adidas-thumbnail.png',
-            gif: '/img/gif/gif-adidas-ingame.gif',
+            icon: 'img/png/image-adidas-thumbnail.png',
+            gif: 'img/gif/gif-adidas-ingame.gif',
             name: ['Sneakers'],
             desc:`The well-worn sneakers are made by Adidas.`,
             isDroppable: true,
@@ -4833,8 +4833,8 @@ const amnesiaRestored = {
           },
           {
             itemId: 'addressbook',
-            icon: '/img/png/image-addressbook-thumbnail.png',
-            gif: '/img/gif/gif-addressbook-ingame.gif',
+            icon: 'img/png/image-addressbook-thumbnail.png',
+            gif: 'img/gif/gif-addressbook-ingame.gif',
             name: ['Address Book'],
             desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
