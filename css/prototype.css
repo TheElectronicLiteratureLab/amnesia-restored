@@ -693,11 +693,40 @@ body {
    width: 40%;
    height: 100%;
    border-left: 2px solid #9C4FEC;
-   overflow-y: scroll;
 }
+
+#bro-title-inner-content {
+  margin-top: 10%;
+} 
 
 #brochure-first-page {
    display: none;
+}
+
+#brochure-second-page {
+   display: none;
+}
+
+#brochure-third-page {
+   display: none;
+}
+#brochure-fourth-page {
+   display: none;
+}
+#brochure-fifth-page {
+   display: none;
+}
+#brochure-sixth-page {
+   display: none;
+}
+
+.content-title {
+   margin-left: 15%;
+   margin-right: 5%;
+}
+
+#top-second-content h3 {
+   font-style: italic;
 }
 
 #brochure-more:hover {
@@ -705,6 +734,90 @@ body {
    text-decoration-color: #AD3121;
    text-decoration-thickness: 2px;
    text-underline-offset: .5em;
+}
+
+.bropage {
+   height: 50vh;
+   display: grid;
+   margin: 5%;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 2fr .2fr;
+}
+
+.bropage h3 {
+   font-size: 2vh;
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+#brochure-first-page h4 {
+   font-style: italic;
+}
+
+.bropage h4 {
+   color: #A1A1A1;
+}
+
+.bropage h4 span {
+   font-weight: 600;
+}
+
+.brocontent {
+   grid-column: 1 / span 2;
+   overflow-y: scroll;
+}
+
+.pagenums {
+   grid-column: 1 / span 1;
+   margin-top: 5%;
+}
+
+.pagebtns {
+   grid-column: 2 / span 1;
+   justify-self: right;
+   margin-top: 5%;
+   margin-right: 5%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-column-gap: 10px;
+}
+
+/* specific styling of brochure pages */
+
+#roe-square {
+   border: 1px dotted;
+}
+
+#row-sqaure-content {
+   padding: 3%;
+}
+
+#koch-square {
+   border: 1px dotted;
+   margin-top: 2%;
+}
+
+#koch-square-content {
+   padding: 3%;
+}
+
+#rath-square {
+   border: 1px dotted;
+}
+
+#rath-square-content {
+   padding: 3%;
+   display: grid;
+   grid-template-columns: 2.5fr .5fr;
+   grid-template-rows: .5fr .5fr .5fr .5fr .5fr;
+}
+
+#rolo-square {
+   border: 1px dotted;
+}
+
+#rolo-square-content {
+   padding: 3%;
 }
 
 /* x-indexer stylings */
