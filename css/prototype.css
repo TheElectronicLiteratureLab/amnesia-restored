@@ -724,9 +724,9 @@ body {
    display: grid;
    height: 100%;
    grid-template-columns: .6fr 1fr;
-   grid-template-rows: .2fr .4fr .4fr;  
+   grid-template-rows: .2fr .4fr .5fr;  
    box-sizing: border-box;
-   margin: 2%;
+   padding: 2%;
 }
 
 #xIndex-container h3 {
@@ -750,9 +750,9 @@ body {
    position: relative;
    height: 100%;
    grid-column: 2 / span 1;
-   grid-row: 1 / span 3;
+   grid-row: 1 / span 4;
    box-sizing: border-box;
-   margin: 5% 0 0 5%;
+   margin-left: 2%;
 }
 
 #xIndex-img-container img {
