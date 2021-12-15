@@ -257,10 +257,10 @@ let enterRoom = (id) => {
       spawnTenement();
     } 
     
-    if(chance <= 10) {
+    if(chance <= 5) {
       const chance2 = Math.floor(Math.random() * 100) + 1;
 
-      if(chance2 <= 50) {
+      if(chance2 <= 25) {
       xStreetEvent();
       } else {
       carWashEncounter();

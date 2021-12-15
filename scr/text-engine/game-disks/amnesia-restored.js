@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -1124,29 +1124,29 @@ const amnesiaRestored = {
           {
             itemId: 'tuxedo',
             icon: 'img/png/image-tuxedo-thumbnail.png',
-            gif: 'img/gif/gif-clothingtuxedo-ingame.gif',
+            gif: 'img/gif/gif-tuxedo-ingame.gif',
             name: ['White Tuxedo', 'tuxedo', 'tux'],
             desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
             Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
-              isTakeable: true,
-              isDroppable: true,
-              top: true, 
-              bottom: true,
-              takeFirst: false,
-              onTake: () => {
-                let room = getRoom(disk.roomId);
+            isTakeable: true,
+            isDroppable: true,
+            top: true, 
+            bottom: true,
+            takeFirst: false,
+            onTake: () => {
+              let room = getRoom(disk.roomId);
 
-                if (room.takeFirst === false) {
-                  playerC.dScore += 3; // Adding to Detective Score
-                  playerC.cScore += 3; // Adding to Character Score
-                  playerC.sScore += 3; // Adding to Survival Score
-                  console.log(playerC.dScore);
-                  console.log(playerC.cScore);
-                  console.log(playerC.sScore);  
-                  room.takeFirst = true;
-                } else {
-                  println('You take the white tuxedo.');
-                }
+              if (room.takeFirst === false) {
+                playerC.dScore += 3; // Adding to Detective Score
+                playerC.cScore += 3; // Adding to Character Score
+                playerC.sScore += 3; // Adding to Survival Score
+                console.log(playerC.dScore);
+                console.log(playerC.cScore);
+                console.log(playerC.sScore);  
+                room.takeFirst = true;
+              } else {
+                println('You take the white tuxedo.');
+              }
               //add onWear function to put clothes on player 
               }
             },
@@ -4379,7 +4379,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'lockersweats',
-          icon: '/img/gif/gif-sweatsuitbottom-ingame.gif',
+          icon: '/img/png/image-sweatsuitbottom-thumbnail.png',
           gif: '/img/gif/gif-sweatsuitbottom-ingame.gif',
           name: 'Sweatpants',
           desc: 'A pair of sweatpants. First found in a Sunderland Hotel Healthclub locker room.',
@@ -4682,7 +4682,7 @@ const amnesiaRestored = {
           itemId: 'canvasbag',
           icon: '/img/gif/gif-gymbag-ingame.gif/',
           gif: '/img/png/image-gymbag-outline.png/,',
-          name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag"],
+          name: ['Green Canvas Gym Bag', "gym bag", "bag", "canvas bag", "green bag", "green gym bag", "canvas gym bag", "gym", "canvas"],
           desc: `It is a green canvas gym bag with an adjustable strap that allows it either to be carried by hand or hung from the shoulder. The cloth bears a Nike emblem. It doesn't seem to have seen much use.`,
           isDroppable: true,
           descRead: false,
@@ -4702,6 +4702,7 @@ const amnesiaRestored = {
     },
     {
         id: 'heal-club24',
+        coord: [100, 100],
         name: 'Massage Room',
         desc: `The masseur lays his hand on your shoulder. "Now don’t get agitated, Mr. Cameron? You’re going to be just fine. Just steer clear of the sauna in future. And take salt tablets. Now I’ll leave this bag here with you, and when you’ve got some clothes on, Buddy will help you down to your room. Okay?" You smile weakly and nod okay, and the masseur leaves you alone with the green canvas gym bag.`,
         items: [
@@ -4790,18 +4791,9 @@ const amnesiaRestored = {
             }
           },
           {
-            itemId: 'jeans',
-            icon: '/img/gif/gif-clothinglevis-ingame.gif',
-            gif: '/img/gif/gif-clothinglevis-ingame.gif',
-            name: [`Levi's Jeans`],
-            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
-            isDroppable: true,
-            isTakeable: true,
-          },
-          {
             itemId: 'tshirt',
-            icon: '/img/gif/gif-clothingtshirt-ingame.gif',
-            gif: '/img/gif/gif-clothingtshirt-ingame.gif',
+            icon: '/img/png/image-tshirt-thumbnail.png',
+            gif: '/img/gif/gif-tshirt-ingame.gif',
             name: ['T-Shirt'],
             desc: `It is a gray t-shirt that has faded to a shade of off white.`,
             isTakeable: true,
@@ -4822,9 +4814,18 @@ const amnesiaRestored = {
             }
           },
           {
+            itemId: 'jeans',
+            icon: '/img/png/image-levis-thumbnail.png',
+            gif: '/img/gif/gif-levis-ingame.gif',
+            name: [`Levi's Jeans`],
+            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
+            isDroppable: true,
+            isTakeable: true,
+          },
+          {
             itemId: 'sneakers',
-            icon: '/img/gif/gif-clothingadidas-ingame.gif',
-            gif: '/img/gif/gif-clothingadidas-ingame.gif',
+            icon: '/img/png/image-adidas-thumbnail.png',
+            gif: '/img/gif/gif-adidas-ingame.gif',
             name: ['Sneakers'],
             desc:`The well-worn sneakers are made by Adidas.`,
             isDroppable: true,
@@ -4832,7 +4833,7 @@ const amnesiaRestored = {
           },
           {
             itemId: 'addressbook',
-            icon: '/img/gif/gif-addressbook-ingame.gif',
+            icon: '/img/png/image-addressbook-thumbnail.png',
             gif: '/img/gif/gif-addressbook-ingame.gif',
             name: ['Address Book'],
             desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
@@ -48809,7 +48810,7 @@ else{
             disk.inventory.push(
               {
                 itemId: "token",
-                icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+                icon: 'img/png/image-subwaytoken-thumbnail.png',
                 gif: '/img/gif/gif-subwaytoken-ingame.gif',
                 name: ["Subway Token", 'token', 'subway token'],
                 desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
@@ -48840,7 +48841,7 @@ else{
       items: [
         {
           itemId: "token",
-          icon: 'img/png/image-subwaytoken-thumbnailwoutline.png',
+          icon: 'img/png/image-subwaytoken-thumbnail.png',
           gif: '/img/gif/gif-subwaytoken-ingame.gif',
           name: ["Subway Token", 'token', 'subway token'],
           desc: 'The brass NY Transit Authority token is about the size of a quarter.',
