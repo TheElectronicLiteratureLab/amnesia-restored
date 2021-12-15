@@ -6149,7 +6149,8 @@ const amnesiaRestored = {
         desc: `This is the 52nd Street Exit.`,
         onEnter: () => {
             const room = getRoom('hote-exit');
-            
+            println('On your way out you decide its a good idea to take a map with you.');
+            document.getElementById('map-button').style.display = "grid";
             room.streetExit = '52-5'; 
         },
         onLook: () => {
@@ -6271,7 +6272,8 @@ const amnesiaRestored = {
         desc: `On a table just to the left of the revolving doors exiting to 53rd St. there is a stack of maps, each bearing the title STREETWISE MANHATTAN. A small pastaboard sign beside the stack of ***maps*** invites the guests of the hotel to take one of the maps with the compliments of the management. On the edge of the table is a folded ***Times***`,
         onEnter: () => {
             const room = getRoom('hote-exit');
-
+            println('On your way out you decide its a good idea to take a map with you.');
+            document.getElementById('map-button').style.display = "grid";
             room.streetExit = '53-5'; 
         },
         onLook: () => {
