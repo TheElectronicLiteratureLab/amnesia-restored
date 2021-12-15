@@ -1929,7 +1929,7 @@ const carWashEncounter = () => {
   if (gottenRag === false) {
     const room = getRoom(disk.roomId);
 
-      println(`'A black kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
+      println(`'A kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
 
         room.onBlock = () => {
           if(prevInput === 'yes') {
@@ -2347,7 +2347,7 @@ let commands = [
   },
   //3 arguments 
   {
-    ask: askXAboutY,
+    //ask: askXAboutY,
   },
 ];
 
