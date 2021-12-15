@@ -742,7 +742,7 @@ let wear = (clothes) => {
     item = getItemInInventory(clothes);
   }
   console.log(item);
-  addItem(item.itemId);
+  takeItem(item.itemId);
   const room = getRoom('hote-revi');
 
   // items that are worn on both the torso and legs
@@ -787,7 +787,7 @@ let wear = (clothes) => {
 
   if(item.bottom && !item.top && playCloth.bottom.length === 0){
     playCloth.bottom.push(item.itemId);
-    println(`You put on ${clothes} on your legs.`);
+    println(`You put the ${clothes} on your legs.`);
   } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] !== item.itemId){
     println(`You must first remove the ${playCloth.bottom} you're wearing in order to put on something else.`);
   } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] === item.itemId){

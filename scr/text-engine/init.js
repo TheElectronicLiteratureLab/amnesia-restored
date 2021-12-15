@@ -214,9 +214,9 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 //let globalStats = localStorage.setItem('stats', saveLoadChar);
 let internalSave = (saveStats = 'stats') => {
-  saveLoadChar.currMon = playMon;
-  saveLoadChar.currFat = playFat;
-  saveLoadChar.currHun = playHung;
+  //saveLoadChar.currMon = playMon;
+  //saveLoadChar.currFat = playFat;
+  //saveLoadChar.currHun = playHung;
   saveLoadChar.shepEnd = theShep;
   saveLoadChar.monkEnd = emptEnli;
   saveLoadChar.shepEnd = theShep;
@@ -251,9 +251,9 @@ let internalLoad = (statsToLoad = 'stats') => {
   //Reload all stats :( This kind of sucks doing by hand. I might find a different way eventually...
   //disk.roomId = saveLoadChar.currRoom;
   
-  playMon = globalStats.currMon;
-  playFat = globalStats.currFat;
-  playHung = globalStats.currHun;
+  //playMon = globalStats.currMon;
+  //playFat = globalStats.currFat;
+ // playHung = globalStats.currHun;
   theShep = globalStats.shepEnd;
   emptEnli = globalStats.monkEnd;
   theShep = globalStats.shepEnd;

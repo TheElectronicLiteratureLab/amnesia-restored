@@ -272,6 +272,17 @@ const amnesiaRestored = {
       },
       items: [
         {
+          itemId: 'xindexer',
+          icon: 'img/png/image-xstreet-frontthumbnail.png',
+          gif: 'img/png/image-xstreet-frontthumbnail.png',
+          name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
+          desc: 'A circular wheel that shows the cross street given the address.',
+          isTakeable: true,
+          onDrop: () => {
+            println(`You shouldn't drop that. It might be important.`);
+          }        
+        },
+        {
           itemId: 'dollarbill',
           icon: 'img/png/image-dollarbill-thumbnail.png',
           gif: 'img/gif/gif-dollarbill-ingame.gif',
@@ -540,8 +551,9 @@ const amnesiaRestored = {
         },
         {
           itemId: 'bedsheet',
-          icon: 'img/png/image-bedsheet-thumnail.png',
+          icon: 'img/png/image-bedsheet-thumbnail.png',
           gif: 'img/gif/gif-bedsheet-ingame.gif',
+          bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
           isTakeable: true,
@@ -613,7 +625,7 @@ const amnesiaRestored = {
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel', 'bath towel'],
               desc: `It is a large fluffy towel.`,
-              top: true,
+              //top: true,
               bottom: true,
               isTakeable: true,
               isDroppable: true,
@@ -622,9 +634,9 @@ const amnesiaRestored = {
                 playerC.sScore += 10;
                 console.log(playerC.cScore);
                 console.log(playerC.sScore);
-                  println('You take the towel'); //appears in inventory as 'towel'
-                  const bathroom = getRoom('hote-bath-1');
-                  bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
+                println('You take the towel.'); //appears in inventory as 'towel'
+                const bathroom = getRoom('hote-bath-1');
+                bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
               },
           },
       ], //end of bathroom items
@@ -4128,11 +4140,11 @@ const amnesiaRestored = {
       desc: `The door opens onto the landing of a wide stairwell. The concrete steps and walls are painted battleship grey.`,
       exits: [
         {
-          dir: ['up', 'ascend'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
+          dir: ['up', 'ascend', 'upstairs'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
           id: 'corridor-stairwellph'
         },
         {
-          dir: ['down', 'descend'],
+          dir: ['down', 'descend', 'downstairs'],
           id: 'corridor-stairwellde'
         },
         {
@@ -12346,7 +12358,7 @@ else{
   {
     id: 'aust-4',
     coord: [],
-    name: ``,
+    name: `Australia`,
     desc: `You enjoy the complimentary bottle, and then a second, and arrive at your destination in a mellow, accepting frame of mind. Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide to name Hogan.`,
     onEnter: () =>{
         pressEnter('aust-5');
@@ -12355,7 +12367,7 @@ else{
   {
     id: 'aust-5',
     coord: [],
-    name: ``,
+    name: `Sheep Ranch`,
     desc: `A year later Alice gives birth to your first daughter, and her name is Ahria.`,
     onEnter: () =>{
         pressEnter('aust-6');
@@ -12364,7 +12376,7 @@ else{
   {
     id: 'aust-6', // hehe 
     coord: [],
-    name: ``,
+    name: `Sheep Ranch`,
     desc: `Then come the octuplets, and their names are: Natalie, Charlie, Craig, Arlo, Dene, Holly, Andrew, and Greg.`,
     onEnter: () =>{
         pressEnter('aust-7');
@@ -12373,7 +12385,7 @@ else{
   {
     id: 'aust-7', 
     coord: [],
-    name: ``,
+    name: `Sheep Ranch`,
     desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she coyly avoids answering. `,
     onEnter: () =>{
         pressEnter('aust-8');
@@ -12382,7 +12394,7 @@ else{
   {
     id: 'aust-8', 
     coord: [],
-    name: ``,
+    name: `The Sheppard`,
     desc: `"You don't really want to know about those things, John," she would tell you, and then turn away to call the children: "Come get your supper while it's hot!" On your deathbed you are still wondering who you are and what you'd done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
     onEnter: () =>{
       theShep = true;
