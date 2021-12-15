@@ -1137,7 +1137,7 @@ function createPhone() { //create function
     roomCount++;
     if (room.isStreet){
       let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-      if(chance <= 10 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      if(chance <= 6 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
         console.log(chance); //log the number generated
         console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
         if (rooms[i].exits !== undefined) {
@@ -1146,7 +1146,13 @@ function createPhone() { //create function
             dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth'], //exit directions for phone booth room
             id: 'pho-boo1' //id for phone booth
           },
-        ); rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        );
+        if (rooms[i].desc !== undefined) {
+          rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        } else {
+          rooms[i].desc = `There is a phone booth on the corner.`;
+        }
+        
         phoneCount++
         } else {
           console.log(`Can't build a booth here.`);

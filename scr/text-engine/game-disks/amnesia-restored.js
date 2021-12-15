@@ -1,7 +1,7 @@
 const amnesiaRestored = {
-  roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
-  inventory: [{
+  /*inventory: [{
     itemId: 'xindexer',
     icon: 'img/png/image-xstreet-frontthumbnail.png',
     gif: 'img/png/image-xstreet-frontthumbnail.png',
@@ -11,7 +11,7 @@ const amnesiaRestored = {
     onDrop: () => {
       println(`You shouldn't drop that. It might be important.`);
     }
-  }],
+  }],*/
   rooms: [
     {
       id: 'titl-scre',
@@ -75,11 +75,12 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Electronic Literature Lab', "introSequence");
+        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Creative Media & Digital Culture Program and The Electronic Literature Lab ', "introSequence");
 
         println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwall\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
-        println("Special Thanks: Washington State University Vancouver, Greg Feeley and Sarah Smith", "introSequence");
+        println("Special Thanks To: The Thomas M. Disch Estate: Greg Feeley and Sarah Smith and Washington State University Vancouver", "introSequence");
+        document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
         pressEnter('hote-room-1');
       },
       exits: [],
@@ -259,7 +260,7 @@ const amnesiaRestored = {
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
-        //addItem('xindexer');
+        addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
         console.log(disk.inventory);
@@ -907,7 +908,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'pen',
-              icon: 'img/png/image-pen-thumbnailwoutline.png',
+              icon: 'img/png/image-pen-thumbnail.png',
               gif: 'img/gif/gif-penmodel-ingame.gif',
               name: ['ballpoint pen', 'pen'],
               desc: `It is a blue plastic ballpoint.`,
@@ -970,6 +971,7 @@ const amnesiaRestored = {
             desc: `The computer is an Apple IIe equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
             isOn: false,
             onUse: () => {
+              //println(`<img src="/img/gif/gif-appleIIe-ingame.gif">`, 'items');
               let pc = getItemInRoomById('computer', 'hote-room-8');
               if(pc.isOn === true)
               {
@@ -12214,7 +12216,7 @@ else{
   onEnter: () => {
     clearOutput();
     println(`**Thomas M. Disch Estate**
-    Greg Feely and Sarah Smith
+    Greg Feeley and Sarah Smith
     <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n\n
     Washington State University Vancouver
     <img src="/img/png/wsu-logo.png">

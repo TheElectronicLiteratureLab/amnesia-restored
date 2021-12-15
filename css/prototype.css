@@ -1414,11 +1414,20 @@ body {
 #output div.credits {
    text-align: center;
    border-left: none;
-   font-weight: 400;
 }
 
 #output div.credits img {
    display: block;
    width: 15%;
+   margin: auto;
+}
+
+#output div.items {
+   border-left: none;
+}
+
+#output div.items img {
+   display: block;
+   width: 25%;
    margin: auto;
 }
