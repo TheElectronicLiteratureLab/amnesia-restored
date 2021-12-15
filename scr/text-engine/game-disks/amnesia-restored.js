@@ -4,7 +4,7 @@ const amnesiaRestored = {
   inventory: [{
     itemId: 'xindexer',
     icon: 'img/png/image-xstreet-frontthumbnail.png',
-    gif: 'img/png/image-xstree-front.png',
+    gif: 'img/png/image-xstreet-frontthumbnail.png',
     name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
     desc: 'A circular wheel that shows the cross street given the address.',
     isTakeable: true,
