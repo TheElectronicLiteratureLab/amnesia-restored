@@ -71,7 +71,7 @@ let tenementIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
-let tenementMarker = L.marker([0,0], {icon: tenementIcon, className: "popup"}).addTo(sleepLayer);
+let tenementMarker = L.marker([0,0], {icon: tenementIcon, className: "popup"});
 tenementMarker.bindPopup("Abandoned Tenement");
 tenementMarker.on("click", function() {
   tenementMarker.openPopup();
@@ -84,6 +84,7 @@ let hotelIcon = L.icon ({
   popupAnchor: [0, -164/8],
   iconAnchor: [164/8 + 1 , 164/8 + 1],
 });
+
 let hotelMarker = L.marker([32.787, -6.877], {icon: hotelIcon, className: "popup"}).addTo(sleepLayer);
 hotelMarker.bindPopup("The Sunderland Hotel");
 hotelMarker.on("click", function() {

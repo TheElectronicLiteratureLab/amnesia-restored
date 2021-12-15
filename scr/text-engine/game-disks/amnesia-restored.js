@@ -1,17 +1,17 @@
 const amnesiaRestored = {
-  roomId: 'lobb-revi-8', // Set this to the ID of the room you want the player to start in.
+  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
-  inventory: [{
+  /*inventory: [{
     itemId: 'xindexer',
     icon: 'img/png/image-xstreet-frontthumbnail.png',
-    gif: 'img/png/image-xstree-front.png',
+    gif: 'img/png/image-xstreet-frontthumbnail.png',
     name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
     desc: 'A circular wheel that shows the cross street given the address.',
     isTakeable: true,
     onDrop: () => {
       println(`You shouldn't drop that. It might be important.`);
     }
-  }],
+  }],*/
   rooms: [
     {
       id: 'titl-scre',
@@ -75,11 +75,12 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Electronic Literature Lab', "introSequence");
+        println('Software copyright &#169; 1985, 1986 By Thomas M. Disch and Cognetics Corp.\n Story copyright &#169; 1984, 1985, 1986 by Thomas M. Disch\n AMNESIA: RESTORED &#169; 2021 by The Creative Media & Digital Culture Program and The Electronic Literature Lab ', "introSequence");
 
         println("Executive Team: Dene Grigar, Suzanne Anderson, Greg Philbrook, Holly Slocum\n Project Manager: Andrew Thompson\nLead Designer: Ariel Wallace\nLead Programmer: Ahria Nicholas\nLead Web Developer: Elaina Sundwall\nLead Animator: James Kay\nLead Videographer: Zach McNaught\nLead Promotioner: Sydney Brower", "introSequence");
 
-        println("Special Thanks: Washington State University Vancouver, Greg Feeley and Sarah Smith", "introSequence");
+        println("Special Thanks To: The Thomas M. Disch Estate: Greg Feeley and Sarah Smith and Washington State University Vancouver", "introSequence");
+        document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
         pressEnter('hote-room-1');
       },
       exits: [],
@@ -259,7 +260,7 @@ const amnesiaRestored = {
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
-        //addItem('xindexer');
+        addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
         console.log(disk.inventory);
@@ -270,6 +271,17 @@ const amnesiaRestored = {
         println(room.desc);
       },
       items: [
+        {
+          itemId: 'xindexer',
+          icon: 'img/png/image-xstreet-frontthumbnail.png',
+          gif: 'img/png/image-xstreet-frontthumbnail.png',
+          name: ['X-Street Indexer', 'x-street indexer', 'indexer', 'street indexer', 'xindexer', 'x-indexer'],
+          desc: 'A circular wheel that shows the cross street given the address.',
+          isTakeable: true,
+          onDrop: () => {
+            println(`You shouldn't drop that. It might be important.`);
+          }        
+        },
         {
           itemId: 'dollarbill',
           icon: 'img/png/image-dollarbill-thumbnail.png',
@@ -289,7 +301,7 @@ const amnesiaRestored = {
         },
         {
           itemId: 'bible',
-          icon: 'img/gif/gif-gideonbible-ingame.gif',
+          icon: 'img/png/image-gideonbible-thumbnail.png',
           gif: 'img/gif/gif-gideonbible-ingame.gif',
           name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
           desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
@@ -539,8 +551,9 @@ const amnesiaRestored = {
         },
         {
           itemId: 'bedsheet',
-          icon: 'img/png/image-bedsheet-thumnail.png',
+          icon: 'img/png/image-bedsheet-thumbnail.png',
           gif: 'img/gif/gif-bedsheet-ingame.gif',
+          bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
           isTakeable: true,
@@ -612,7 +625,7 @@ const amnesiaRestored = {
               gif: 'img/gif/gif-towel-ingame.gif',
               name: ['Towel', 'large towel', 'bath towel'],
               desc: `It is a large fluffy towel.`,
-              top: true,
+              //top: true,
               bottom: true,
               isTakeable: true,
               isDroppable: true,
@@ -621,9 +634,9 @@ const amnesiaRestored = {
                 playerC.sScore += 10;
                 console.log(playerC.cScore);
                 console.log(playerC.sScore);
-                  println('You take the towel'); //appears in inventory as 'towel'
-                  const bathroom = getRoom('hote-bath-1');
-                  bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
+                println('You take the towel.'); //appears in inventory as 'towel'
+                const bathroom = getRoom('hote-bath-1');
+                bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
               },
           },
       ], //end of bathroom items
@@ -871,7 +884,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'bible',
-              icon: 'img/png/bible-icon.png',
+              icon: 'img/png/image-gideonbible-thumbnail.png',
               gif: 'img/gif/gif-gideonbible-ingame.gif',
               name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
               desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
@@ -907,7 +920,7 @@ const amnesiaRestored = {
           },
           {
               itemId: 'pen',
-              icon: 'img/png/image-pen-thumbnailwoutline.png',
+              icon: 'img/png/image-pen-thumbnail.png',
               gif: 'img/gif/gif-penmodel-ingame.gif',
               name: ['ballpoint pen', 'pen'],
               desc: `It is a blue plastic ballpoint.`,
@@ -970,6 +983,7 @@ const amnesiaRestored = {
             desc: `The computer is an Apple IIe equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
             isOn: false,
             onUse: () => {
+              //println(`<img src="/img/gif/gif-appleIIe-ingame.gif">`, 'items');
               let pc = getItemInRoomById('computer', 'hote-room-8');
               if(pc.isOn === true)
               {
@@ -1229,6 +1243,7 @@ const amnesiaRestored = {
         dawdHote = true;
         updateEndings();
         slideRightIn('achieve-display', 'achieve-text-container');
+        internalSave();
         pressEnter('game-over');//leads to end screen
     },
       exits: [],
@@ -1909,9 +1924,10 @@ const amnesiaRestored = {
       desc: `"Sorry," says Charon, handing you back your Emigration Card. "I’ve got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat.`,
       onEnter: () => {
         println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
-        end1Eternity = true;
+        eterWith = true;
         updateEndings();
         slideRightIn('achieve-display', 'achieve-text-container');
+        internalSave();
         pressEnter('game-over');
       }
     },
@@ -4124,11 +4140,11 @@ const amnesiaRestored = {
       desc: `The door opens onto the landing of a wide stairwell. The concrete steps and walls are painted battleship grey.`,
       exits: [
         {
-          dir: ['up', 'ascend'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
+          dir: ['up', 'ascend', 'upstairs'], // PROBLEM - the two word command as written doesn't discriminate with the first word, in this case it matters if they type up or down
           id: 'corridor-stairwellph'
         },
         {
-          dir: ['down', 'descend'],
+          dir: ['down', 'descend', 'downstairs'],
           id: 'corridor-stairwellde'
         },
         {
@@ -4716,6 +4732,7 @@ const amnesiaRestored = {
       
       You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
       onEnter: () => {
+        storyMarker.setLatLng([15.390, -6.546]).bindPopup('The Princeton Club').addTo(poiLayer);
         document.getElementById('address-book-button').style.display = "block";
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
@@ -5205,7 +5222,7 @@ const amnesiaRestored = {
     onBlock: () => {
       if(prevInput === 'no' || prevInput === 'yes' || prevInput === '') {
         if (firingInjection === false) {
-          enterRoom('death-fgo');
+          enterRoom('deat-fgo');
         } else {
           enterRoom('deat-lego');
         }
@@ -5232,6 +5249,7 @@ const amnesiaRestored = {
       deatTexa = true;
       updateEndings();
       slideRightIn('achieve-display', 'achieve-text-container');
+      internalSave();
       pressEnter('game-over');
     },
     exits: [],// Go to Game Over
@@ -5701,7 +5719,7 @@ const amnesiaRestored = {
           enterRoom('chap-11');
         } 
         //Ask Alice about yourself
-        else if (prevInput === 'what about me?' || prevInput === 'What about me?' || prevInput === 'What about me' || prevInput === 'what about me' || prevInput === 'ask about self' || prevInput === 'me' || prevInput === 'myself' || prevInput === 'john') {
+        else if (prevInput === 'what about me?' || prevInput === 'What about me?' || prevInput === 'What about me' || prevInput === 'what about me' || prevInput === 'ask about self' || prevInput === 'me' || prevInput === 'myself' || prevInput === 'john' || prevInput === 'who am i?' || 'who am i') {
           room.askSelf++;
           console.log(room.askSelf);
           switch(room.askSelf) {
@@ -5769,8 +5787,10 @@ const amnesiaRestored = {
     if (prevInput === 'no' || prevInput === 'I will not' || prevInput === 'i will not' || prevInput === 'leave') {
       println(`Considering her almost hysterical manner up till now, she accepts your refusal with surprising dignity. "Very well then, I won't argue. But promise me at least this--promise that we can meet again tomorrow--just to talk. We can't talk now. Daddy will be here at any moment. I must go out and tell him you've left me standing at the altar once again. I expect he'll be very mad for a while, so please stay in the chapel for another half hour or so, till we’re out of the hotel. And then tomorrow at noon I'll meet you in that lovely hall of Tiffany lamps at the New York Historical Society. It will be a sort of anniversary for us. Please be there, John." She turns to leave, and then turns round again to hand you a small blue box bearing the words "Tiffany & Co." "Speaking of Tiffany," she says with a sad smile, "I almost forgot to give you this. I bought it with your money, so it belongs to you--until you decide that you want to put it on my finger."`);
       enterRoom('chap-18');  
-    } else if (prevInput === 'yes' || prevInput === 'okay' || prevInput === 'i will' || prevInput === 'I will') {
-      //to sheppard ending
+    } else if (prevInput === 'yes' || prevInput === 'okay' || prevInput === 'i will' || prevInput === 'I will' || prevInput === 'I will marry you' || prevInput === 'okay' || prevInput === 'kiss') {
+      enterRoom('marr-1')
+    } else {
+      println('I need an answer John!');
     }
   }
   
@@ -5904,7 +5924,7 @@ const amnesiaRestored = {
   desc: `You take off the ruined shirt as well and see, to your relief that the source of these bloodstains is a superficial wound--an inch-long line drawn across the smooth flesh as though by a ruler. It represents, you realize, the path of a bullet. \n\nAnd though you did not see or hear that bullet fired you have no doubt at all that it was Luke who shot at you. Perhaps, if you had not stumbled over the kneeler, his bullet might have had a deadlier result.
   Tentatively you move your arm. Any pronounced movement from the shoulder seems to start the blood flowing freshly from the wound. It would probably be a good idea to **bandage** it up somehow.`,
   onBlock: () => {
-    if (prevInput === 'bandage' || prevInput === 'bandage arm' || prevInput === 'mend arm') {
+    if (prevInput === 'bandage' || prevInput === 'bandage arm' || prevInput === 'mend arm' || prevInput === 'bandage your arm') {
       println('Good idea, but what to use for a bandage?');
       enterRoom('chap-24');
     }
@@ -5927,7 +5947,7 @@ const amnesiaRestored = {
   items: [
     {    
       itemId: 'frillyshirt',
-      name: ['frilly shirt', 'tux shirt'],
+      name: ['frilly shirt', 'tux shirt', 'frilly'],
       onUse: () => {
         println(`Carefully you tear off the left arm of the bloodstained shirt and wrap it about the wound as a crude bandage. Your arm hurts but not much more than if you'd had a shot at a doctor's office.
         Now to get dressed again. Except that it's missing its left arm the frilly shirt is still wearable. Or there are the T-shirts in the gym bag--the plain white T-shirt or the Mickey Mouse T-shirt.`);
@@ -5942,9 +5962,9 @@ const amnesiaRestored = {
 
 {//Dressed again (Could just move this text into the shirt sections)
   id: 'chap-25',
-  desc: ` `,
+  desc: `It doesn't really matter just **get dressed**.`,
   onBlock: () => {
-    if (prevInput === 'get dressed') {
+    if (prevInput === 'get dressed' || prevInput === 'dressed' || prevInput === 'dress yourself' || prevInput === 'dress') {
       println('You get dressed and proceed to leave the chapel.')
       enterRoom('chap-26');
     }
@@ -5963,59 +5983,127 @@ const amnesiaRestored = {
 //Begin Marriage Section (Chapel)
 {//What is your name?
   id: 'marr-1',
+  name: 'Marriage',
   desc: `"Oh my darling!" she cries, leaping to her feet and embracing you with all of love's tender fury and then some. "Oh my sweet eternal love!" Her lips meet yours, preventing any reply but a kiss: and then another kiss, and then, as though he'd been waiting outside the door of the chapel for this cue, the father of the bride enters with a preacher and two witnesses in tow. You recognize both witnesses: one is the cleaning woman who entered Room 1502 without knocking just after you woke up ear1ier in the day, and the other is the man, Buddy, who took you from the penthouse health club and sauna back to Room 1502.
   
   The preacher, a thin white-haired man in a Roman collar, takes charge. He positions you and Alice before the marble slab of the altar. He directs Luke Dudley to stand behind his daughter--and to remove his Stetson, which he does with reluctance. Buddy and the cleaning woman take up a position in the center aisle, as though to be able to block you if you make a final bolt. The preacher begins to intone the wedding service from memory, only breaking stride to ask you your name.`,
-
-  exits: [
-    {//Respond with John Cameron, John Cameron III, or John
-      dir: 'john',
-      id: 'marr-2',
-    },
-    {//Fail to respond appropriately
-      dir: 'text',
-      id: 'marr-1A',
-    },
-  ],  
+onBlock: () => {
+  if (prevInput === 'John Cameron' || prevInput === 'John' || prevInput === 'john cameron' || prevInput === 'cameron' || prevInput === 'john' || prevInput === 'John Cameron III' || prevInput === 'john cameron III') {
+    enterRoom('marr-2');
+  } else {
+    enterRoom('marr-1A');
+  } 
+}
 },
 
 {//Forced to respond with name
   id: 'marr-1A',
   desc: `"Very funny, Johnny-boy," Luke says to you. Then, to the preacher: "His name is John Cameron."`,
-
-  exits: [
-    {//Forced to next question
-      dir: 'text',
-      id: 'marr-2',
-    },
-  ],  
+  onEnter: () => {
+    enterRoom('marr-2');
+  },
 },
 
 {//Take as your wife?
   id: 'marr-2',
-  desc: ``,
-  exits: [
-    {//Correct response
-      dir: 'text',
-      id: 'marr-3',
-    },
-    {//Fail to respond appropriately
-      dir: 'text',
-      id: 'marr-2A',
-    },
-  ],  
+  desc: `"Do you John Cameron, take this woman to be your lawfully wedded wife, to have and to hold, to love and to cherish, through richer and poorer, in sickness and in health, long as you both shall live?`,
+  onBlock: () => {
+    if (prevInput === 'I do' || prevInput === 'i do' || prevInput === 'yes') {
+      enterRoom('marr-3');
+    } else if (prevInput === 'no' || prevInput === `nope` || prevInput === 'I do not' || prevInput === `I don't` || prevInput === `I don't want to` || prevInput === 'eh' || prevInput !== '' || prevInput === '') {
+      enterRoom('marr-6');
+    }
+  },
 },
 
-{//Forced to respond "I do"
-  id: 'marr-2A',
-  desc: ``,
-
-  exits: [
+{
+  id: 'marr-3',
+  desc: `And so does Alice, after which she produces a small blue box from the lacy recesses of her bodice and hands it to Luke, who holds it out to you.`,
+  onEnter: () => {
+    reenableInput();
+  },
+  onBlock: () => {
+    println(`"Johnny-boy," Luke prompts. "Take the box."`);
+  },
+  items: [
     {
-      dir: 'text',
-      id: 'marr-#',
-    },
-  ],  
+      itemId: 'weddingbox',
+      icon: 'img/png/image-openweddingbox-thumbnail.png',
+      gif: 'img/gif/gif-openbox-ingame.gif',
+      name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
+      desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
+      isOpen: true,
+      firstGet: true,
+      firstUse: true,
+      isTakeable: true,
+      isDroppable: true,
+      onTake: () => {
+        addItem('weddingbox');
+        let item = getItemInInventoryById('weddingbox');
+        if (item.firstGet === true) {
+          item.firstGet = false;
+          println(`You take the box, which is warm still from its resting place in your bride's bosom. It smells of lilacs.`);
+          item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
+          item.gif = 'img/gif/gif-closedbox-ingame.gif';
+
+          println(`You tilt back the hinged lid of the box and find, nestled in white velvet, a thick silver band with a giant diamond on it. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`);
+
+          disk.inventory.push(
+            {
+              itemId: 'weddingring',
+              icon: 'img/png/image-ring-thumbnail.png',
+              gif: 'img/gif/gif-weddingring-ingame.gif',
+              name: ['Wedding Ring', 'diamond ring', 'ring'],
+              desc: `Engraved within the band: "To my beloved wife Alice, from John."`,
+              isTakeable: true,
+            })
+          enterRoom('marr-4');
+        } else {
+          println('You take the Wedding Box');  
+        }
+      },
+      onUse: () => {
+        let item = getItemInInventoryById('weddingbox');
+        item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
+        item.gif = 'img/gif/gif-closedbox-ingame.gif';
+        }
+      }
+  ]
+},
+{
+  id: 'marr-4',
+  desc: `Alice removes the glove from her left hand and holds out that hand with the fingers spread to faciliate the ring's easier placement'`,
+  onBlock: () => {
+    if (prevInput === 'place on finger' || prevInput === 'place in hand' || prevInput === 'put ring on finger' || prevInput === 'place ring on finger' || prevInput === 'ring on finger') {
+      pressEnter('marr-5');
+    } else {
+      println('“Johnny-boy,” Luke says in the tone of a parent explaining something to a confused child, “the ring goes on her finger.”');
+    }
+  }
+},
+{
+  id: 'marr-5',
+  name: 'All-Faith-Chapel',
+  desc: `'You put the ring on her finger and repeat the words the preacher tells you to: “With this ring I thee wed.” The preacher then pronounces you man and wife and says that you may kiss your bride.'`,
+  onEnter: () => {
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'kiss the bride' || prevInput === 'kiss' || prevInput === 'kiss Alice' || prevInput === 'kiss her' || prevInput === 'smooch') {
+      pressEnter('aust-1');
+    } else {
+      println('“Johnny-boy,” says Luke, repeating the preacher’s suggestion and making it a command, “kiss the bride, you dork!”');
+    }
+  }
+},
+{
+  id: 'marr-6',
+  desc: `“Johnny-boy,” Luke reminds you, touching the bulge created by the revolver in his shoulder holster, “the man is asking you a question.”
+
+  “I do,” you say.`,
+  onEnter: () => {
+    pressEnter('marr-3')
+  }
 },
 
 //End Chapel
@@ -6972,6 +7060,9 @@ const amnesiaRestored = {
         name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
+          incrementHour();
+          playFat -= 15;
+          updateFat(playFat);
           println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the Apple you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
           I am Evolution's way
           Of saying you’ve had long enough to play.
@@ -11949,29 +12040,216 @@ else{
 {
   id: 'game-over',
   name: 'Game Over',
-  desc:`Your scores are as follows:\n
-  As a detective: ${playerC.dScore}\n
-  As a character: ${playerC.cScore}\n
-  As a survivor: ${playerC.sScore}\n
-  \n
-  Your total score is ${playerC.tScore}\n
-  Your score ranks you as occasionally absent-minded.\n
-  \n
-  You've reached the end of your adventure. To begin your next application, insert the desired disk in drive A:, or leave the drive the drive door open and your hard drive disk will be booked. Then, follow your machine's warm boot procedure (ie: CTRL-ALT-DELETE).`,
+  desc: ` `,
+  onEnter: () => {
+    clearOutput();
+    println(`Your scores are as follows:\n
+    As a detective: ${playerC.dScore}\n
+    As a character: ${playerC.cScore}\n
+    As a survivor: ${playerC.sScore}\n
+    \n
+    Your total score is ${playerC.tScore}\n
+    Your score ranks you as occasionally absent-minded.\n
+    You've reached the end of your adventure. To begin again refresh the browser page.`);
+  }
+  
 },
 {
   id: 'credits',
   name: 'You Won!',
-  desc:`Your scores are as follows:\n
-  As a detective: ${playerC.dScore}\n
-  As a character: ${playerC.cScore}\n
-  As a survivor: ${playerC.sScore}\n
-  \n
-  Your total score is ${playerC.tScore}\n
-  Your score ranks you as of sound mind.\n
-  \n
-  You've reached the end of your adventure. To begin your next application, insert the desired disk in drive A:, or leave the drive the drive door open and your hard drive disk will be booked. Then, follow your machine's warm boot procedure (ie: CTRL-ALT-DELETE).`,
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`Your scores are as follows:\n
+    As a detective: ${playerC.dScore}
+    As a character: ${playerC.cScore}
+    As a survivor: ${playerC.sScore}\n
+    <img src="img/png/x-icon.png"alt="close icon">
+    Your total score is ${playerC.tScore}
+    Your score ranks you as of sound mind.\n
+    You've reached the end of your adventure. Congratulations on winning the game! The mystery of who you are is solved. Job well done detective.`);
+    pressEnter('credits-1');
+  }
 },
+{
+  id: 'credits-1',
+  name: 'Credits',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    pressEnter('credits-2')
+  }
+},
+{
+  id: 'credits-2',
+  name: 'Executive Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`Andrew Thompson - Project Manager
+    <img src="/img/png/teams/thompson-1.jpg"> \n
+    Dr. Dene Grigar - Professor
+    <img src="/img/png/teams/grigar-1.jpg"> \n
+    Suzanne Anderson - Professor\n
+    Holly Slocum - Interface Designer & Developer\n
+    Greg Philbrook - Instructional & Technical Support \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-3');
+  }
+},
+{
+  id: 'credits-3',
+  name: 'Design Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Ariel Wallace - Lead**
+    <img src="/img/png/teams/wallace-1.jpg"> \n
+    Wes Anglin
+    <img src="/img/png/teams/anglin-1.jpg"> \n
+    Richelle Sabado
+    <img src="/img/png/teams/sabado-1.jpg"> \n
+    Yimin Que
+    <img src="/img/png/teams/que-1.jpg"> \n
+    Charlotte Bordon
+    <img src="/img/png/teams/bordon-1.jpg"> \n
+    Jacob Cook
+    <img src="/img/png/teams/cook-1.jpg"> \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-4');
+  }
+},
+{
+  id: 'credits-4',
+  name: 'Development Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Ahria Nicholas - Lead**
+    <img src="/img/png/teams/nicholas-1.jpg"> \n
+    Hogan Coverdale
+    <img src="/img/png/teams/coverdale-1.jpg"> \n
+    Natalie Lusk
+    <img src="/img/png/teams/lusk-1.jpg">\n
+    Charlie Klever
+    <img src="/img/png/teams/klever-1.jpg"> \n
+    Craig Vesterby
+    <img src="/img/png/teams/vesterby-1.jpg">\n
+    Arlo Ptolmey
+    <img src="/img/png/teams/ptolemy-1.jpg">\n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-5');
+  }
+},
+
+{
+  id: 'credits-5',
+  name: 'Animation Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**James Kay - Lead**
+    <img src="/img/png/teams/kay-1.jpg"> \n
+    Sierra O'Neal
+    <img src="/img/png/teams/oneal-1.jpg"> \n
+    Annie Johnson
+    <img src="/img/png/teams/johnson-1.jpg"> \n
+    Natalie Quinn
+    <img src="/img/png/teams/quinn-1.jpg"> \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-6');
+  }
+},
+{
+  id: 'credits-6',
+  name: 'Video Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Zach McNaught - Lead**
+    <img src="/img/png/teams/mcnaught-1.jpg">\n
+    Nick Terhune
+    <img src="/img/png/teams/terhune-1.jpg"> \n
+    Madalyn Reed
+    <img src="/img/png/teams/reed-1.jpg"> \n
+    Colton Kent
+    <img src="/img/png/teams/kent-1.jpg"> \n
+    Zane Jager
+    <img src="/img/png/teams/jager-1.jpg"> \n
+    Bogdan Storozhko
+    <img src="/img/png/teams/storozhko-1.jpg"> \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-7');
+  }
+},
+{
+  id: 'credits-7',
+  name: 'Website Team',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Elaina Sundwall - Lead**
+    <img src="/img/png/teams/sundwall-1.jpg"> \n
+    Eric Everson
+    <img src="/img/png/teams/everson-1.jpg"> \n
+    Liv Torczon
+    <img src="/img/png/teams/torczon-1.jpg"> \n
+    Shelby Conrad
+    <img src="/img/png/teams/conrad-1.jpg"> \n
+    Madelaine Olbricht
+    <img src="/img/png/teams/olbricht-1.jpg"> \n
+    Ceenan Calzadilla
+    <img src="/img/png/teams/calzadilla-1.jpg"> \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-8');
+  }
+},
+
+{
+  id: 'credits-8',
+  name: 'Promotions Team ',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Sydney Brower - Lead**
+    <img src="/img/png/teams/brower-1.jpg"> \n
+    Caitlin McBride
+    <img src="/img/png/teams/mcbride-1.jpg"> \n
+    Carly Schlecht
+    <img src="/img/png/teams/schlecht-1.jpg"> \n`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-9');
+  }
+},
+{
+  id: 'credits-9',
+  name: 'Special Thanks',
+  desc: ``,
+  onEnter: () => {
+    clearOutput();
+    println(`**Thomas M. Disch Estate**
+    Greg Feeley and Sarah Smith
+    <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n\n
+    Washington State University Vancouver
+    <img src="/img/png/wsu-logo.png">
+    The Electronic Literature Lab
+    <img src="/img/png/ellLogo_Text.png">
+    The Creative Media & Digital Culture Program
+    <img src="/img/png/cmdc-logo-white.png">`, 'credits');
+    document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
+    pressEnter('credits-10')
+  }
+},
+{
+  id: 'credits-10',
+  name: 'Credits',
+  desc: `Special Thanks`,
+  onEnter: () => {
+    clearOutput();
+    println(`\n\n<img style="padding-bottom: 1%;" src="/img/png/image-logo-circletransparent3.png">And a special thank you to you the player, for taking the time to play this historical piece of interactive fiction.`, 'credits');
+  }
+},
+
 
   /*888888888888888888888888*/
  /*8888888 ENDINGS 88888888*/
@@ -12011,7 +12289,7 @@ else{
     To the East, before the alter of the cathedral, is a priest. To the West the door stands open onto the blare of 5th Ave.`,
     exits: [
       {
-          dir: ['leave'],
+          dir: ['west', 'leave'],
           id : '51-5'     
       },
       {
@@ -12033,13 +12311,14 @@ else{
         emptEnli = true;
         updateEndings();
         slideRightIn('achieve-display', 'achieve-text-container');
+        internalSave();
         pressEnter('game-over');
     },
   },
   {
     id: 'aust-1',
     coord: [],
-    name: `Alls-Faith-Chapel`,
+    name: `All-Faith-Chapel`,
     desc: `She lifts the veil, revealing a smile that seems more triumphant than blissful, but the kiss you then exchange has a wordless way of saying that you will soon be rewarded for your submission to the yoke of marriage.`,
     onEnter: () =>{
         pressEnter('aust-2');
@@ -12062,16 +12341,25 @@ else{
     id: 'aust-3',
     coord: [],
     name: `Qantas Flight 461`,
-    desc: `The next morning Luke arrives with a great deal of luggage and drives you to JFK airport, where you board a Qantas jet for Melbourne, Australia.`,
-    onEnter: () =>{
+    desc: `The next morning Luke arrives with a great deal of luggage and drives you to JFK airport, where you board a Qantas jet for Melbourne, Australia. As the jet lifts off the ground, a stewardess approaches you with a complimentary bottle of champagne. (You are both still wearing the clothes from the wedding.)`,
+    onEnter: () => {
+      reenableInput();
+    },
+    onBlock: () =>{
+      if (prevInput === 'drink champagne' || prevInput === 'drink' || prevInput === 'celebrate') {
         pressEnter('aust-4');
+      } else {
+        println(`"Oh darling", Alice says in a cajoling tone. "Don't be so contrary. Look--it's Australian champagne! I'll bet you didn't know there was such a thing, did you?"`);
+      }
+        
     },
   },
+
   {
     id: 'aust-4',
     coord: [],
-    name: ``,
-    desc: `Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide name Hogan.`,
+    name: `Australia`,
+    desc: `You enjoy the complimentary bottle, and then a second, and arrive at your destination in a mellow, accepting frame of mind. Within a week you have established your residence at the modest sheep ranch that Alice brings as her dowry. It is a hard but ultimately satisfying life, and your marriage is blessed with a son, whom you decide to name Hogan.`,
     onEnter: () =>{
         pressEnter('aust-5');
     },
@@ -12079,7 +12367,7 @@ else{
   {
     id: 'aust-5',
     coord: [],
-    name: ``,
+    name: `Sheep Ranch`,
     desc: `A year later Alice gives birth to your first daughter, and her name is Ahria.`,
     onEnter: () =>{
         pressEnter('aust-6');
@@ -12088,8 +12376,8 @@ else{
   {
     id: 'aust-6', // hehe 
     coord: [],
-    name: ``,
-    desc: `Then come the quints, and their names are: Natalie, Charlie, Craig, Arlo, Dene, Andrew, and Greg. `,
+    name: `Sheep Ranch`,
+    desc: `Then come the octuplets, and their names are: Natalie, Charlie, Craig, Arlo, Dene, Holly, Andrew, and Greg.`,
     onEnter: () =>{
         pressEnter('aust-7');
     },
@@ -12097,7 +12385,7 @@ else{
   {
     id: 'aust-7', 
     coord: [],
-    name: ``,
+    name: `Sheep Ranch`,
     desc: `You live on, a prosperous hardworking sheep rancher, for many years, and gradually the feeling that there is a blank at the center of your life fades away. You almost forget the amnesia you suffered from so many years ago, and you no longer ask Alice questions about your earlier life, questions she coyly avoids answering. `,
     onEnter: () =>{
         pressEnter('aust-8');
@@ -12106,16 +12394,16 @@ else{
   {
     id: 'aust-8', 
     coord: [],
-    name: ``,
+    name: `The Sheppard`,
     desc: `"You don't really want to know about those things, John," she would tell you, and then turn away to call the children: "Come get your supper while it's hot!" On your deathbed you are still wondering who you are and what you'd done and what your life might have been like if you hadn't married darling Alice and devoted your life to the breeding of sheep.`,
     onEnter: () =>{
       theShep = true;
       updateEndings();
       slideRightIn('achieve-display', 'achieve-text-container');
+      internalSave();
       pressEnter('game-over');
     },
   }, 
-
 
         /*******************************/
        /*        RESTAURANTS        */
@@ -28992,6 +29280,9 @@ else{
       name: 'W. 34th St. and Ave. of Americas',
       desc: 'The 34 ST-6 AV Station entrance is at this corner.',
       hasSubway: true,
+      onEnter: () => {
+        internalSave();
+      },
       exits: [
         {dir: 'north', id: '35-amer'},
         {dir: 'south', id: 'broa-amer'},
@@ -33048,6 +33339,25 @@ else{
       isStreet: true,
       name: 'Broadway and 7th Ave.',
       desc: `Times Square -- where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
+      onBlock: () => {
+        let room = getRoom(disk.roomId);
+        println(`A sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap, only $5?"`)
+        if ((playMon >= 5) && (prevInput === 'yes' || prevInput === 'buy' || prevInput === 'buy necklace')) {
+          println('"You done wonders for me kid, thanks a bundle!" You see him scurry down the block to his next hustle.');
+          println('He hands over a beautiful gold elephant necklace.');
+          disk.inventory(
+            {
+              itemId: 'goldelephant',
+              icon: '',
+              gif: '',
+              name: ['Gold Elephant Necklace', 'gold necklace', 'necklace', 'elephant necklace'],
+              desc: 'A beautiful gold elephant necklace. What are the chances for such a wacky find? Who knows maybe you might have a treasure on your hands?',
+              isTakeable: true,
+              isDroppable: true
+            }
+          )
+        }
+      },
     //Important!! In this section, there is a guy who says: "And a sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap?'" 
     //The player can then respond with "no" for a response of: "The hustler leaves you and begins making his pitch to someone else halfway down the block."
     //When the player responds yes, the game continues to a bad end, in the following room.
@@ -48112,7 +48422,7 @@ else{
         println(` You find yourself in a cramped vestibule. The building once held (by a count of the gutted mailboxes) twelve apartments. The inner doorway of the vestibule stands wide open, allowing a very dim view of a narrow, shadowy hallway.`);
       },
       exits: [
-        {dir: 'north', id:'tene-1'},
+        {dir: ['hallway', 'tenement hallway', 'north'], id:'tene-1'},
         {dir: 'south', id:''},
         {dir: 'east', id: '', block: `You can't go that way.`},
         {dir: 'west', id: '', block: `You can't go that way.`},
@@ -48136,10 +48446,10 @@ else{
 
       },
       exits: [
-        {dir: 'north', id:'', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
-        {dir: 'south', id:'tene'},
+        {dir: 'north', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
+        {dir: ['tenement entrance', 'entrance', 'back', 'leave'], id:'tene'},
         {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
-        {dir: 'west', id: `tene-2`},
+        {dir: ['living Room', 'west', 'living room', 'room', 'living'], id: `tene-2`},
       ],
     },
     {
@@ -48161,9 +48471,9 @@ else{
         };
       },
       exits: [
-        {dir: 'north', id:'tene-3',},
-        {dir: 'south', id:'', block: `You can't go that way.`},
-        {dir: 'east', block: `tene-1`},
+        {dir: ['bedroom', 'north', 'bed'], id:'tene-3',},
+        {dir: 'south', block: `You can't go that way.`},
+        {dir: ['tenement hallway', 'east'], block: `tene-1`},
         {dir: 'west', id: ``, block: `You can't go that way.`},
       ],
     },
@@ -48193,10 +48503,11 @@ else{
         };
       },
       exits: [
-        {dir: 'north', id:`tene-4`},
-        {dir: 'south', id:'tene-2'},
+        {dir: ['backroom', 'back room', 'north'], id:`tene-4`},
+        {dir: ['living room', 'south', 'living'], id:'tene-2'},
         {dir: 'east', id: '', block: `You can't go that way.`},
         {dir: 'west', id: ``, block: `You can't go that way.`},
+        {dir: ['leave', 'back'], id: 'tene-1'}
       ],
     },
     {
@@ -48229,9 +48540,10 @@ else{
       },
       exits: [
         {dir: 'north', id:``, block: `You can't go that way.`},
-        {dir: 'south', id:'tene-3'},
+        {dir: ['bedroom', 'south', 'bed'], id:'tene-3'},
         {dir: 'east', id: '', block: `You can't go that way.`},
         {dir: 'west', id: ``, block: `You can't go that way.`},
+        {dir: ['leave', 'back'], id: 'tene-1'}
       ],
     },
     {
@@ -48244,9 +48556,10 @@ else{
       },
       exits: [
         {dir: 'north', id:``, block: `You can't go that way.`},
-        {dir: 'south', id:'tene-3'},
+        {dir: ['bedroom', 'south', 'bed'], id:'tene-3'},
         {dir: 'east', id: '', block: `You can't go that way.`},
         {dir: 'west', id: ``, block: `You can't go that way.`},
+        {dir: ['leave', 'back'], id: 'tene-1'}
       ],
     },
     {
@@ -48571,6 +48884,7 @@ else{
 
       ],
     },
+
   ],
   characters: [
         {
@@ -48647,6 +48961,12 @@ else{
             }
         ],
     },
+    {
+      name: ['X', 'Xavier', 'John'],
+      roomId: 'debugchar',
+      
+    }
+
 
     ],
 };

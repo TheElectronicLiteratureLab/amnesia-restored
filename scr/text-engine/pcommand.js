@@ -787,7 +787,7 @@ let wear = (clothes) => {
 
   if(item.bottom && !item.top && playCloth.bottom.length === 0){
     playCloth.bottom.push(item.itemId);
-    println(`You put on ${clothes} on your legs.`);
+    println(`You put the ${clothes} on your legs.`);
   } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] !== item.itemId){
     println(`You must first remove the ${playCloth.bottom} you're wearing in order to put on something else.`);
   } else if(item.bottom && !item.top && playCloth.bottom.length >= 1 && playCloth.bottom[0] === item.itemId){
@@ -1137,7 +1137,7 @@ function createPhone() { //create function
     roomCount++;
     if (room.isStreet){
       let chance = Math.floor(Math.random() * 101); //roll random number 0-100
-      if(chance <= 10 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
+      if(chance <= 6 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
         console.log(chance); //log the number generated
         console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
         if (rooms[i].exits !== undefined) {
@@ -1146,7 +1146,13 @@ function createPhone() { //create function
             dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth'], //exit directions for phone booth room
             id: 'pho-boo1' //id for phone booth
           },
-        ); rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        );
+        if (rooms[i].desc !== undefined) {
+          rooms[i].desc = rooms[i].desc + `\nThere is a phone booth on the corner.`; //set the description of the changed room to notify player upon entry that a phone is there
+        } else {
+          rooms[i].desc = `There is a phone booth on the corner.`;
+        }
+        
         phoneCount++
         } else {
           console.log(`Can't build a booth here.`);
@@ -1269,7 +1275,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               for (let i = 0; i < tenementArray.length; i++) { //iterate through the tenement rooms
                 tenementArray[i].coord = room.coord; //set all of the coords of the rooms to the current street corners coords
               };
-              tenement.exits[1]= {dir: ['south', 'leave'], id: room.id};
+              tenement.exits[1]= {dir: ['leave', 'south', 'back'], id: room.id};
                //push that rooms id into an exit south of the tenement entrance
               tenementSpawned = true; //set value so that function wont run again
               room.onEnter = () => {
@@ -1279,7 +1285,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
-
+  tenementMarker.setLatLng(room.coord).addTo(sleepLayer);
 };
 
 //ask function

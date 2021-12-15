@@ -38,7 +38,71 @@ $(document).ready(function(){
     $("#twoAgruCommand").click(function(){
         $("#twoAgruList").slideToggle("slow", changeCaretTwo());
     });
+
+    $("#nextPage1").click(function(){
+        $("#brochure-title-page").css("display", "none");
+        $("#brochure-first-page").css("display", "grid");
+    });
+
+    $("#backPage1").click(function(){
+        $("#brochure-title-page").css("display", "grid");
+        $("#brochure-first-page").css("display", "none");
+    });
+
+    $("#nextPage2").click(function(){
+        $("#brochure-first-page").css("display", "none");
+        $("#brochure-second-page").css("display", "grid");
+    });
+
+    $("#backPage2").click(function(){
+        $("#brochure-second-page").css("display", "none");
+        $("#brochure-first-page").css("display", "grid");
+    });
+
+    $("#nextPage3").click(function(){
+        $("#brochure-second-page").css("display", "none");
+        $("#brochure-third-page").css("display", "grid");
+    });
+
+    $("#backPage3").click(function(){
+        $("#brochure-third-page").css("display", "none");
+        $("#brochure-second-page").css("display", "grid");
+    });
+
+    $("#nextPage4").click(function(){
+        $("#brochure-third-page").css("display", "none");
+        $("#brochure-fourth-page").css("display", "grid");
+    });
+
+    $("#backPage4").click(function(){
+        $("#brochure-fourth-page").css("display", "none");
+        $("#brochure-third-page").css("display", "grid");
+    });
+
+    $("#nextPage5").click(function(){
+        $("#brochure-fourth-page").css("display", "none");
+        $("#brochure-fifth-page").css("display", "grid");
+    });
     
+    $("#backPage5").click(function(){
+        $("#brochure-fifth-page").css("display", "none");
+        $("#brochure-fourth-page").css("display", "grid");
+    });
+
+    $("#nextPage6").click(function(){
+        $("#brochure-fifth-page").css("display", "none");
+        $("#brochure-sixth-page").css("display", "grid");
+    });
+
+    $("#backPage6").click(function(){
+        $("#brochure-sixth-page").css("display", "none");
+        $("#brochure-fifth-page").css("display", "grid");
+    });
+
+    $("#nextPageTitle").click(function(){
+        $("#brochure-sixth-page").css("display", "none");
+        $("#brochure-first-page").css("display", "grid");
+    });
 });
 
 let changeCaretNo = () => {

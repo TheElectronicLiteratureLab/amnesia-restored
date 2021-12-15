@@ -408,3 +408,31 @@ let zaneShot = false; // you're shot by Zane
 let eterWith = false; // river styx ending
 let shepTux = false; // shepard 2 (new york society)
 let elepAchi = false; // found the elephant and gave to the wacky wanderer
+
+
+let saveLoadChar = {
+  id: 'play-char',
+  coord: [1000, 1000],
+  name: 'Debug Character Screen',
+  desc: 'TEST TEST TEST \n JOHN JOHN JOHN \n XAVIER XAVIER XAVIER \n ZANE ZANE ZANE',
+  earlLea: false,
+  tipBell: false,
+  naked: false,
+  firsNig: true,
+  nighCel: 'Disch',
+  currMon: playMon,
+  currFat: playFat,
+  currHun: playHung,
+  monkEnd: emptEnli,
+  shepEnd: theShep,
+  clasEnd: the1986,
+  texaEnd: deatTexa,
+  pianEnd: painMan,
+  dawdEnd: dawdHote,
+  trueEnd: anAmn,
+  zaneEnd: zaneShot,
+  eterEnd: eterWith,
+  she2End: shepTux,
+  elephant: elepAchi,
+}
+

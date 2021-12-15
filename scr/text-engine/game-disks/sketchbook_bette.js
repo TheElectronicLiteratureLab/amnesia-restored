@@ -145,24 +145,27 @@ const sketchbook ={
                 randomRoom = () => {
                     roomNumber = Math.floor(Math.random() * 3);
                     if(roomNumber === 0){
-                        enterRoom('');
+                        enterRoom('book-13');
                     }else if(roomNumber === 1){
-                        enterRoom('');
+                        enterRoom('book-19');
                     }else if(roomNumber === 2){
-                        enterRoom('');
+                        enterRoom('book-28');
                     }else if(roomNumber === 3){
-                        enterRoom('');
+                        enterRoom('book-32');
                     }else{
                         println('what are numbers?');
                     }
                   }
                 }
+
             },
             onBlock: () => {
                 const room1 = getRoom('book-13');
                 const room2 = getRoom('book-19');
-                if(room1.visits >=1 && room2.visits >=1){
-                    pressEnter('')
+                const room3 = getRoom('book-28');
+                const room4 = getRoom('book-32');
+                if(room1.visits >=1 && room2.visits >=1 && room3.visits >= 1 && room4.visits >= 1){
+                    pressEnter('book-37')
                 }
             }
         },

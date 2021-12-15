@@ -256,6 +256,14 @@
    letter-spacing: 1px;
 }
 
+#brochure-full-display {
+   border-left: 2px solid #887ecb;
+}
+
+#brochure-more:hover {
+   text-decoration-color: #A1A1A1;
+}
+
 #xIndex-container h3 {
    font-weight: 600;
 }
@@ -286,6 +294,10 @@
 
 #dial-keys button:hover {
    color: #887ecb;
+}
+
+.c-list:hover {
+   text-decoration-color: #A1A1A1;
 }
 
 /* Classes for println() */
