@@ -742,7 +742,7 @@ let wear = (clothes) => {
     item = getItemInInventory(clothes);
   }
   console.log(item);
-  takeItem(item.itemId);
+  addItem(item.itemId);
   const room = getRoom('hote-revi');
 
   // items that are worn on both the torso and legs
