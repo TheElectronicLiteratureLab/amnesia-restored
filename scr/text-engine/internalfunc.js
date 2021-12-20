@@ -371,7 +371,7 @@ let getItemInInventory = (name) => disk.inventory.find(item => objectHasName(ite
 // add item into players inventory automatically, taken from pcmommands
 let addItem = (itemName) => {
   const room = getRoom(disk.roomId);
-  const findItem = item => objectHasId(item, itemName);
+  const findItem = item => objectHasName(item, itemName);
   let itemIndex = room.items && room.items.findIndex(findItem);
 
   if (typeof itemIndex === 'number' && itemIndex > -1) {

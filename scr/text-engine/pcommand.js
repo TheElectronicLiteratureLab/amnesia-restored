@@ -740,9 +740,15 @@ let wear = (clothes) => {
   let item = getItemInRoom(clothes, disk.roomId);
   if (item === undefined) {
     item = getItemInInventory(clothes);
+
+    if (item === undefined) {
+      println(`You don't see how you can wear ${clothes} without ${clothes} existing in the space around you.`)
+      return;
+    }
+  } else {
+    addItem(item.name[1]);
   }
   console.log(item);
-  addItem(item.itemId);
   const room = getRoom('hote-revi');
 
   // items that are worn on both the torso and legs
@@ -825,7 +831,7 @@ let remove = (clothes) => {
   console.log(item.itemId)
   //dropItem(item.name[0]);
 
-/*  
+  
   let indexToRemove = disk.inventory.indexOf(item);
   console.log(disk.inventory.slice(indexToRemove));
   let clotheToRemove = disk.inventory.slice(indexToRemove);
@@ -835,9 +841,9 @@ let remove = (clothes) => {
     //disk.inventory.slice(indexToRemove)
     room.items = clotheToRemove;
   } else {
-    room.items.push(clothesToRemove[0]);
+    room.items.push(clotheToRemove[0]);
   }
-*/
+
   
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
