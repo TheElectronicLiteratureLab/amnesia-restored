@@ -153,11 +153,11 @@ disk.rooms.forEach((element)=>{
       if (element.hasFood === true) {
         let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(foodLayer);
         //marker.bindPopup(element.name, {className: 'popup'});
-        //console.log(`Yum yum, I'm hungry.`);
+        ////console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
-        //console.log(element.coord)
-        console.log(str);
+        ////console.log(element.coord)
+        //console.log(str);
         //Capitlize the first name of each food area.
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
@@ -169,29 +169,29 @@ disk.rooms.forEach((element)=>{
         const match = subwayRegEx.exec(element.desc); 
         if (match) {
           let subName = match[1];
-          //console.log(subName)
+          ////console.log(subName)
           let marker = L.marker([element.coord[0], element.coord[1]], {icon: subwayIcon}).addTo(subwayLayer);
           marker.bindPopup(subName, {className: 'popup'});
           marker.on('click', function(e) {
             if (disk.roomId === 'subway' && disk.inventory.find(el => el.itemId === 'token')) {
-              console.log('Fast Traveling...');
+              //console.log('Fast Traveling...');
               let fastTravelLoc = marker.getLatLng();
               disk.rooms.forEach((fastEle) => {
                 if (fastEle.coord !== undefined) {
-                  //console.log(fastEle.coord[0] + ', ' + fastEle.coord[1]);
-                  //console.log(fastTravelLoc);
+                  ////console.log(fastEle.coord[0] + ', ' + fastEle.coord[1]);
+                  ////console.log(fastTravelLoc);
                   if ((fastEle.coord[0] === fastTravelLoc.lat) && (fastEle.coord[1] === fastTravelLoc.lng)) {
-                    //console.log(fastTravelLoc)
-                    //console.log(fastEle.coord);
+                    ////console.log(fastTravelLoc)
+                    ////console.log(fastEle.coord);
                     enterRoom(fastEle.id);
                     playerMarker.unbindPopup();
                     playerMarker.setLatLng(disk.currPos).bindPopup(fastEle.name, {className: 'popup'}).openPopup().update();
-                    console.log("YOU HAVE ARRIVED");
+                    //console.log("YOU HAVE ARRIVED");
                   }
                 }                
               })
             } else {
-              console.log("You can't fast travel here!");
+              //console.log("You can't fast travel here!");
             }
           })
         }
@@ -200,18 +200,18 @@ disk.rooms.forEach((element)=>{
       //POI Story Markers
 /*      poiIDArr.forEach((poi) => {
         if (poi === element.id) {
-          //console.log(element.id);
+          ////console.log(element.id);
           storyMarkers[poi] = L.marker([element.coord[0], element.coord[1]], {icon: poiIcon});
           storyMarkers[poi].bindPopup("???", {className: 'popup'});
         }
       })*/
     }
   } else {
-    console.log('NO COORDINATES EXIST IN THESE ROOMS');
+    //console.log('NO COORDINATES EXIST IN THESE ROOMS');
   }
 });
 
-//console.log(storyMarkers);
+////console.log(storyMarkers);
 
 
 //enable popups on click for all markers
@@ -221,7 +221,7 @@ $('.popup').on('click', function(e) {
 
 //Phone Booth Marker Function
 //Will move this so that it runs later
-//console.log(subwayLayer)
+////console.log(subwayLayer)
 
 
 //Player Marker Movement
@@ -243,13 +243,13 @@ let setPlayerMarker = (e) => {
           playerMarker.bindPopup(room.name, {className: 'popup'}).openPopup();
         });
         //playerMarker.getPopup().setContent(room.name).openPopup().update();
-        console.log('Current Position: ' + disk.currPos);
-        console.log('Name of Intersection: ' + room.name);
+        //console.log('Current Position: ' + disk.currPos);
+        //console.log('Name of Intersection: ' + room.name);
       } else if (disk.currPos === undefined) {
-        console.log('There are no coordinates here, please find some.');
+        //console.log('There are no coordinates here, please find some.');
       } 
       else {
-        console.log('Something broke!!! Let your worldbuilder/programmer know!')
+        //console.log('Something broke!!! Let your worldbuilder/programmer know!')
       }
   }
 }
