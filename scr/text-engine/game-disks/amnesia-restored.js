@@ -42,9 +42,6 @@ const amnesiaRestored = {
         playerC.dScore = 0;
         playerC.cScore = 0;
         playerC.sScore = 0;
-        ////console.log(playerC.dScore);
-        ////console.log(playerC.cScore);
-        ////console.log(playerC.sScore);
         document.getElementById("output").innerHTML = "";
         document.querySelector('input').disabled = true;
         document.getElementById("arrow").innerHTML = "";
@@ -105,8 +102,6 @@ const amnesiaRestored = {
         if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up' || prevInput === 'up') {
           playerC.sScore +=2;
           playerC.cScore +=2;
-          ////console.log(playerC.cScore);
-          ////console.log(playerC.sScore);
           enterRoom('hote-room-2');
         } else{
           println('You need to get up first.');
@@ -124,7 +119,6 @@ const amnesiaRestored = {
       onBlock: () => {
         if (prevInput === 'light'){
           hairColor = 'dark';
-          ////console.log(hairColor);
           println(pickOne(confirmArray));
           enterRoom('hote-room-3');
         } else if (prevInput === 'dark'){
@@ -146,7 +140,6 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         println('Long or short?');
-        ////console.log(hairColor);
       },
       exits: [],
       onBlock: () => {
@@ -7680,9 +7673,7 @@ onBlock: () => {
           playerC.dScore += 5; // Adding to Detective Score
           playerC.cScore += 2; // Adding to Character Score
           playerC.sScore += 5; // Adding to Survival Score
-          ////console.log(playerC.dScore);
-          ////console.log(playerC.cScore);
-          ////console.log(playerC.sScore);
+
           pressEnter('nyhist-2');
         },
       },
@@ -7736,26 +7727,11 @@ onBlock: () => {
           },
           exits: 
           [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north'],
-                  id : 'nyhist-1f-1'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-1f-2'
-              },
-              { 
-                  dir: ['east'],
-                  id : '76-cpkw'
-              },
-              {
-                  dir: ['west'],
-                  id: 'nyhist-2f-1'
-              }
+            { dir: ['leave'], id : '76-cpkw'},
+            { dir: ['north'], id : 'nyhist-1f-1'},
+            { dir: ['south'], id : 'nyhist-1f-2'},
+            { dir: ['east'], id : '76-cpkw'},
+            { dir: ['west'], id: 'nyhist-2f-1'}
           ],
       },
       {
