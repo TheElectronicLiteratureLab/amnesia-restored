@@ -663,7 +663,7 @@ const amnesiaRestored = {
         room.exits[1].id = 'corridor-1502';
       },
       onBlock: () => {
-        if (prevInput === 'answer phone' || prevInput === 'answer the phone' || prevInput === 'phone' || prevInput === 'answer') {
+        if (prevInput === 'answer phone' || prevInput === 'answer the phone' || prevInput === 'phone' || prevInput === 'answer' || prevInput === 'pick up' || prevInput === 'pick up phone') {
           enterRoom('hote-room-10');
         } else {
           println('The phone continues ringing.');
@@ -678,7 +678,7 @@ const amnesiaRestored = {
         println(`"Good morning," says a woman's voice, after you say hellow. "This is the Registration desk. You are aware, are you not, that the check-out time is twelve o'clock?"`);
       },
       onBlock: () => {
-        if (prevInput === 'yes' || prevInput === 'no') {
+        if (prevInput === 'yes' || prevInput === 'no' || prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'nah' || prevInput === 'nope' || prevInput === 'yes please'|| prevInput === 'no thank you') {
           enterRoom('hote-room-11');
         } else {
           println(`I'm sorry come again?`);
@@ -694,9 +694,9 @@ const amnesiaRestored = {
         println(`"If you haven't checked out by that hour, Mr. Cameron, we will have to bill you for another night. But if you wish to extend your stay, I can adjust your bill accordingly. Do you wish to continue your stay?"`);
       },
       onBlock: () => {
-        if (prevInput === 'yes') {
+        if (prevInput === 'yes'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please') {
           enterRoom('hote-room-12');
-        } else if (prevInput === 'no') {
+        } else if (prevInput === 'no' || prevInput === 'nah' || prevInput === 'nope' || prevInput === 'negative' || prevInput === 'no thank you') {
           enterRoom('hote-room-13');
         } else {
           println(`I'm sorry come again?`);
@@ -783,7 +783,7 @@ const amnesiaRestored = {
         getRoom('hote-room-8').visits++;
       },
       onBlock: () => {
-        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him') {
+        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please') {
           tipBellboy = true;
           let dollarItem = disk.inventory.findIndex(element => element.itemId === 'dollarbill');
           ////console.log(dollarItem.itemId);
@@ -798,7 +798,7 @@ const amnesiaRestored = {
           ////console.log(playerC.sScore);
           println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
           enterRoom('hote-room-8');
-        } else if (prevInput === 'no' || prevInput === `don't tip` || prevInput === `don't tip him`) {
+        } else if (prevInput === 'no' || prevInput === `don't tip` || prevInput === `don't tip him` || prevInput === 'no' || prevInput === 'nah' || prevInput === 'nope' || prevInput === 'negative' || prevInput === 'no thank you') {
           tipBellboy = false;
           println(`The bellboy leaves with a discontented mumble, and you are left to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes. \n`);
           enterRoom('hote-room-8')
@@ -1951,14 +1951,15 @@ const amnesiaRestored = {
         ////console.log(playerC.sScore);
         const room1502 = getRoom('corridor-1502');
           const exit = getExitDir('hote-room-1', room1502.exits);
-          if ((getItemInRoom('roomkey') || getItemInInventory('roomkey'))) {
+          const item = getItemInInventory('roomkey');
+          if (item) {
             delete exit.block;
           } else {
             println('You try to return to your room, but the door locked automatically when it was closed.');
           }
       },
       exits: [
-        {dir: ['leave', '1502'], id: 'hote-room-1', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
+        {dir: ['leave', '1502', 'room', 'hotel room'], id: 'hote-room-1', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
         {dir: ['east', 'right', '1503'], id: 'corridor-1503'},
         {dir: ['west', 'left', '1501'], id: 'corridor-1501'},
         {dir: ['elevator', 'lift'], id: 'corridor-elevator15'},

@@ -17,10 +17,10 @@ let applyInput = (input) => {
     println(`> ${input}`, 'playerInput');   
   }
   prevInput = input;
-  console.log(inputs);
+  //console.log(inputs);
   const val = input.toLowerCase();
   setInput(''); // reset input field
- // console.log(playerMarker.getLatLng());
+ // //console.log(playerMarker.getLatLng());
 
 //special count-up for dawdling in hotel
 
@@ -37,7 +37,7 @@ let applyInput = (input) => {
         degradeFatigue();
       };
 
-      console.log(moveCount);
+      //console.log(moveCount);
     } else if (disk.conversation) {
       println(`Type the capitalized KEYWORD to select a topic.`);
     } else if (typeof room.onBlock === 'function') { //check if inside the room there is an onBlock function

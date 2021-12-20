@@ -213,7 +213,7 @@ let displayDesc = (id) => {
     }
     x.innerHTML = z;
     difficulty = a;
-    console.log(difficulty);
+    //console.log(difficulty);
     // toggles on and off visual of chosen difficulty
     if(id === "story"){
         storyMode.style.textDecoration = tD;
@@ -275,7 +275,7 @@ let visualDesc = (id) => {
     }
     a.innerHTML = c;
     styling = d;
-    console.log(styling);
+    //console.log(styling);
     // toggling styling if chosen
     if(id === "restored"){
         restoredMode.style.textDecoration = tD;
@@ -336,7 +336,7 @@ let beginGame = () => {
 // changing the mode styling through radio buttons
 
 let changeMode = (mode) => {
-    console.log("its a meee a mode change.")
+    //console.log("its a meee a mode change.")
     let x = document.getElementById("modeStyles");
     if(mode === 'restored'){
         x.href = "";
@@ -461,7 +461,7 @@ let displayLeftToggle = (id, name, text) => {
 let turnOnMap = () => {
     let x = document.getElementById("map-display");
     displayCheck("map");
-    //console.log(x.style.display);
+    ////console.log(x.style.display);
     if(!x.style.display || x.style.display === "none"){
         fadeOn("map-display");
         map.invalidateSize();
@@ -483,7 +483,7 @@ let displayMapToggle = (id, name) => {
     if(!x.style.display || x.style.display === "none"){
         //slideMapDown(id);
         //fadeOn(id);
-        console.log("turn on")
+        //console.log("turn on")
     } else {
          
          document.querySelector('input').disabled = false;
@@ -871,7 +871,7 @@ let updateHung = (x) => {
     } else if(xPlayHung < xPrevHung){
         decreasingHung = true;
     } else {
-        console.log("updateHung" + " if statements not working");
+        //console.log("updateHung" + " if statements not working");
     }
     // update progress bar to show the new player hunger
     // increasing bar
@@ -938,7 +938,7 @@ let updateFat = (x) => {
     } else if(xPlayFat < xPrevFat){
         decreasingFat = true;
     } else {
-        console.log("updateFat" + " if statements not working");
+        //console.log("updateFat" + " if statements not working");
     }
     // increasing bar
     if(increasingFat === true){
@@ -993,7 +993,7 @@ const updateMon = () => {
 }
 
 const updateScore = () => {
-    console.log("displaying score");
+    //console.log("displaying score");
     document.getElementById("det-score").innerHTML = detScore;
     document.getElementById("sur-score").innerHTML = survScore;
     document.getElementById("char-score").innerHTML = charScore;
@@ -1131,7 +1131,7 @@ let tutorialDisplayed = false;
 let animateToggle = () => {
     // if the tutorial isn't displayed then display it
     if(tutorialDisplayed === false){
-        console.log("working")
+        //console.log("working")
         let id = null; // handles the 3 second wait interval
         let widthChange = null; // handles the width increase interval
         let textOn = null; // handles the text displaying interval
@@ -1285,7 +1285,7 @@ let slideLeftIn = (elId, textId) => {
                         clearInterval(text);
                     } else {
                         opacity += .2;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1324,7 +1324,7 @@ let slideLeftOut = (elId, textId) => {
                         clearInterval(text);
                     } else {
                         opacity -= 0.2;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1363,7 +1363,7 @@ let slideRightOut = (elId, textId) => {
                         clearInterval(text);
                     } else {
                         opacity -= 0.2;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1404,7 +1404,7 @@ let slideRightIn = (elId, textId) => {
                         clearInterval(text);
                     } else {
                         opacity += .2;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1448,7 +1448,7 @@ let slideInvX = (elId, textId) => {
                         clearInterval(text);
                     } else {
                         opacity += .1;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1492,7 +1492,7 @@ let slideInvItems = (elId) => {
                         clearInterval(text);
                     } else {
                         opacity += .1;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1536,7 +1536,7 @@ let slideBro = (elId) => {
                         clearInterval(text);
                     } else {
                         opacity += .1;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
@@ -1577,7 +1577,7 @@ let slideBroFull = (elId) => {
                         clearInterval(text);
                     } else {
                         opacity += .1;
-                        console.log(opacity);
+                        //console.log(opacity);
                         elementText.style.opacity = opacity;
                     }
 
