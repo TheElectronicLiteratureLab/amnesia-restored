@@ -109,7 +109,7 @@ let save = () => {
   } else if (saveSlot === '3') {
     localStorage.setItem("Slot3", save);
   } else {
-    console.log("There are no available slots left!")
+    //////console.log("There are no available slots left!")
   }
 }
 */
@@ -120,7 +120,7 @@ let save = () => {
 /*let load = (name) => {
   println('TEST')
   const save = localStorage.getItem(name);
-  console.log(save);
+  //////console.log(save);
   if (!save) {
     println(`Save file not found.`);
     return;
@@ -150,7 +150,7 @@ let save = (name = 'Amnesia Restored Save') => {
 };
 
 let autoSave = () => {
-  console.log('Saving...');
+  //////console.log('Saving...');
   const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
   let saveDate = new Date();
   let saveFileTime = `Autosave: ${saveDate.getFullYear()}-${saveDate.getMonth()}-${saveDate.getDate()} ${saveDate.getHours()}:${saveDate.getMinutes()}`
@@ -241,12 +241,12 @@ let internalLoad = (statsToLoad = 'stats') => {
   const saveStats = localStorage.getItem(statsToLoad);
 
   if (!saveStats) {
-    console.log('nothing to load yet')
+    //////console.log('nothing to load yet')
     return;
   }
 
   globalStats = JSON.parse(saveStats);
-  console.log(globalStats);
+  //////console.log(globalStats);
 
   //Reload all stats :( This kind of sucks doing by hand. I might find a different way eventually...
   //disk.roomId = saveLoadChar.currRoom;

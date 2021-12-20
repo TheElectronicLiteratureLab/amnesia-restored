@@ -39,7 +39,7 @@ let look = () => {
     println(`There's nothing interesting here.`)
   }
   else {
-    console.log("WORKING")
+    
     println(room.desc);
   }
 };
@@ -105,7 +105,7 @@ let go = () => {
     }
 
     const dir = getName(exit.dir).toUpperCase();
-    console.log('Get Exit Ids: ' + dir);
+    ////////console.log('Get Exit Ids: ' + dir);
     // include room name if player has been there before
     const directionName = rm.visits > 0
       ? `${dir} - ${rm.name}`
@@ -152,14 +152,6 @@ function goDir(dir) {
 
 
 }
-//testing some things to further parse input
-let inputRead = () => {
-  if (input.value !== 'leave') {
-    console.log(`you're not leaving`)
-  } else {
-    console.log(`nice, you're leaving`)
-  }
-};
 
 const distanceFormula = (x,y) => {
   const a = x[0] - y[0];
@@ -350,8 +342,6 @@ let takeItem = (itemName) => {
   const findItem = item => objectHasName(item, itemName);
   let itemIndex = room.items && room.items.findIndex(findItem);
 
-  console.log('Room:' + itemName)
-
   if (typeof itemIndex === 'number' && itemIndex > -1) {
     const item = room.items[itemIndex];
     if (item.isTakeable) {
@@ -498,14 +488,14 @@ let getInput = () => input.value.trim();
 let forward = () => {
   let item = getItemInRoomById('roomtv', 'hote-room-8');
   if (disk.roomId === 'hote-room-8') {
-    console.log("Channel Array Pos: " + item.arrCount);
+    ////////console.log("Channel Array Pos: " + item.arrCount);
     if(item.arrCount >= 13) {
       //println('You have entered the nightmare zone');
       //enterRoom('nigh-1');
       item.arrCount = 0;
     }
     if(item.isOn === true) {
-      console.log(item.channelArr[item.arrCount]);
+      ////////console.log(item.channelArr[item.arrCount]);
       println(item.channelArr[item.arrCount]);
       item.arrCount++;
       if (item.arrCount === 13) {
@@ -582,7 +572,7 @@ function enterBtnClick(){
 let closeDial = () => {
   slideRightOut("dialPad", "dial-pad-container");
   slideLeftOut("address-display", "address-text-container");
-  console.log("closed bb")
+  //////console.log("closed bb")
   //tutorialDisplayed = false;
   applyInput();
   document.getElementById("tutorial").style.display = "none";
@@ -748,7 +738,7 @@ let wear = (clothes) => {
   } else {
     addItem(item.name[1]);
   }
-  console.log(item);
+  //////console.log(item);
   const room = getRoom('hote-revi');
 
   // items that are worn on both the torso and legs
@@ -828,12 +818,12 @@ let remove = (clothes) => {
   //let room = getRoom(disk.roomId);
   //let item = getItemInRoom(clothes, disk.roomId);
   let item = getItemInInventory(clothes);
-  console.log(item.itemId)
+  //////console.log(item.itemId)
   //dropItem(item.name[0]);
 
   
   let indexToRemove = disk.inventory.indexOf(item);
-  console.log(disk.inventory.slice(indexToRemove));
+  //////console.log(disk.inventory.slice(indexToRemove));
   let clotheToRemove = disk.inventory.slice(indexToRemove);
   disk.inventory.splice(indexToRemove, 1);
   let room = getRoom(disk.roomId);
@@ -926,7 +916,7 @@ let open = (itemToOpen) => {
         item.isOpen = true;
         println(`The ${item.name[0]} is now open.`);
         item.desc = 'The door is now open.'
-        console.log(item);
+        //////console.log(item);
       } else {
         println(`The ${item.name[0]} is already open.`);
       }
@@ -1047,21 +1037,21 @@ const phoneMarkerGenerator = () => {
     if (el.coord !== undefined) {
       if (el.coord[0] !== undefined && el.coord[1] !== undefined) {
         el.exits.forEach((e) => {
-          //console.log(typeof e.dir)
+          ////////console.log(typeof e.dir)
           if(typeof e.dir === 'object') { // In JavaScript arrays' typeof is actually an object not array
             if(e.dir[0] === 'phone') {
               let marker = L.marker([el.coord[0], el.coord[1]], {icon: phoneIcon}).addTo(phoneLayer);
-              console.log("Phone Booth Spotted Captain");
+              //////console.log("Phone Booth Spotted Captain");
             }
           } else {
-            console.log("Can't put a phone booth marker here.");
+            //////console.log("Can't put a phone booth marker here.");
           }
         })
       } else {
-        console.log("Coordinates exist, but are undefined.");
+        //////console.log("Coordinates exist, but are undefined.");
       }
     } else {
-      console.log("Coordinates don't exist here.");
+      //////console.log("Coordinates don't exist here.");
     }
   })
 }
@@ -1076,11 +1066,11 @@ const press = (button) => {
     parsedNum = parseInt('19');
   } 
   
-  console.log("Button Pressed: " + button);
-  console.log(elevator.exits.length)
+  //////console.log("Button Pressed: " + button);
+  //////console.log(elevator.exits.length)
   if (elevator.id === 'corridor-elevator') {
     if (parsedNum !== NaN && parsedNum < elevator.exits.length-1 && parsedNum > -1) {
-      console.log("Moving to floor: " + (parsedNum + 1));
+      //////console.log("Moving to floor: " + (parsedNum + 1));
       enterRoom(elevator.exits[parsedNum].id);
     } else {
       println('Not a valid button. Please press L, PH, or 2 through 19.');
@@ -1144,8 +1134,8 @@ function createPhone() { //create function
     if (room.isStreet){
       let chance = Math.floor(Math.random() * 101); //roll random number 0-100
       if(chance <= 6 && !thisRoom.phonesMade  && !rooms[i].isPhone) { //if number is 15 or less and the phone booths havent been made yet and the room is not a phone booth already
-        console.log(chance); //log the number generated
-        console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
+        //////console.log(chance); //log the number generated
+        //////console.log(rooms[i].id + ` had a phone exit added`); // log which roomid has had a phone added
         if (rooms[i].exits !== undefined) {
           rooms[i].exits.push( //push the following into the room's exits array
           {
@@ -1161,13 +1151,13 @@ function createPhone() { //create function
         
         phoneCount++
         } else {
-          console.log(`Can't build a booth here.`);
+          //////console.log(`Can't build a booth here.`);
         }
         
       }
     }
   }
-  console.log(phoneCount + ' phone booths out of ' + roomCount + ' rooms.')
+  //////console.log(phoneCount + ' phone booths out of ' + roomCount + ' rooms.')
   thisRoom.phonesMade = true; //dont allow the function to run again
 };
 
@@ -1180,7 +1170,7 @@ const findExitsArray = () => {
       {dir: 'dummy-exit', id: '', block: 'this is a dummy exit'},
     );
     roomCount++;
-    console.log(rooms[i].id + ' ' + roomCount);
+    //////console.log(rooms[i].id + ' ' + roomCount);
   }
 };
 
@@ -1400,12 +1390,12 @@ const incrementHour = () => {
 const beg = () => {
   const curRoom = getRoom(disk.roomId); //get current room
   const chance1 = Math.floor(Math.random() * 100) + 1; //generate chance of getting caught my cops
-  console.log(chance1 + ' rolled for chance to be caught');
+  //////console.log(chance1 + ' rolled for chance to be caught');
   if(curRoom.isStreet){//if tha player is on the streets
     if (chance1 <= 20 && !policeCaughtBegging) { //if you got caught and you haven't been caught before
       policeCaughtBegging = true;
       caughtCoords1 = curRoom.coord;
-      console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
+      //////console.log(caughtCoords1 + ' these are the coordinates in which player was first caught');
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
 
@@ -1418,14 +1408,14 @@ const beg = () => {
       begLootTable(); //roll on loot table
     } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
       caughtCoords2 = curRoom.coord; //generate coordinates of current room
-      console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
+      //////console.log(caughtCoords2 + ' these are the coordinates in which player was caught again.')
       
       //distance formula
       const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
       if(distance >= 20) { //if player has moved far enough from where initially caught;
         policeCaughtBegging = false;
-        console.log('caught but changed neighborhoods');
+        //////console.log('caught but changed neighborhoods');
         begLootTable();
       } else if (distance <= 19) { //if player hasnt moved far enough from where initially caught
         println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against panhandling.  
@@ -1437,10 +1427,10 @@ const beg = () => {
         pressEnter('deat-1');
       }
     } else if (chance1 >= 20 && policeCaughtBegging) { //if player has been caught but passed the check
-      console.log(`caught once but succeeded 80% check`);
+      //////console.log(`caught once but succeeded 80% check`);
       begLootTable();
     }else { //debug purposes
-      console.log(`Beg Command Malfunctioning`)
+      //////console.log(`Beg Command Malfunctioning`)
     }
   } else { //if player isn't on the streets
     println(`You can't beg when you aren't on the streets.`)
@@ -1452,7 +1442,7 @@ const beg = () => {
 //loot table for beg command
 const begLootTable = () => {
   const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
-  console.log(chance2 + ' is what was rolled for loot chance')
+  //////console.log(chance2 + ' is what was rolled for loot chance')
 
   if (difficulty === 'medium'){ // 
     if (chance2 <= 15) { //chance to get nothing
@@ -1529,7 +1519,7 @@ let dropItem = (itemName) => {
       disk.inventory.splice(itemIndex, 1);
       if (typeof item.onDrop === 'function') {
         item.onDrop({disk, println, room, getRoom, enterRoom, item});
-        console.log("TEST")
+        //////console.log("TEST")
       } else {
         
         println(`You dropped the ${getName(item.name)}.`);
@@ -1629,7 +1619,7 @@ const sleepFunction = () => {
         println(`You need a bed to sleep.`);
       //else console log this if stuff is broken.
       } else {
-        console.log('sleep function malfunctioning.');
+        //////console.log('sleep function malfunctioning.');
       }     
 };
 
@@ -1972,7 +1962,7 @@ const carWashEncounter = () => {
 
     const carLootTable = () => {
       const chance2 = Math.floor(Math.random() * 100) + 1; //roll on loot table
-      console.log(chance2 + ' is what was rolled for loot chance')
+      //////console.log(chance2 + ' is what was rolled for loot chance')
     
       if (difficulty === 'medium'){ // 
         if (chance2 <= 15) { //chance to get nothing

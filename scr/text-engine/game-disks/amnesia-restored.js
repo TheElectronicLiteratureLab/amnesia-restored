@@ -42,9 +42,9 @@ const amnesiaRestored = {
         playerC.dScore = 0;
         playerC.cScore = 0;
         playerC.sScore = 0;
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
         document.getElementById("output").innerHTML = "";
         document.querySelector('input').disabled = true;
         document.getElementById("arrow").innerHTML = "";
@@ -105,8 +105,8 @@ const amnesiaRestored = {
         if (prevInput === 'get up' || prevInput === 'rise' || prevInput === 'wake up' || prevInput === 'wake' || prevInput === 'rise up' || prevInput === 'up') {
           playerC.sScore +=2;
           playerC.cScore +=2;
-          console.log(playerC.cScore);
-          console.log(playerC.sScore);
+          ////console.log(playerC.cScore);
+          ////console.log(playerC.sScore);
           enterRoom('hote-room-2');
         } else{
           println('You need to get up first.');
@@ -124,7 +124,7 @@ const amnesiaRestored = {
       onBlock: () => {
         if (prevInput === 'light'){
           hairColor = 'dark';
-          console.log(hairColor);
+          ////console.log(hairColor);
           println(pickOne(confirmArray));
           enterRoom('hote-room-3');
         } else if (prevInput === 'dark'){
@@ -146,7 +146,7 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         println('Long or short?');
-        console.log(hairColor);
+        ////console.log(hairColor);
       },
       exits: [],
       onBlock: () => {
@@ -266,7 +266,7 @@ const amnesiaRestored = {
         addItem('xindexer');
         addItem('dollarbill');
         reenableInput();
-        console.log(disk.inventory);
+        ////console.log(disk.inventory);
       },
       onLook: () => {
         let room = getRoom('hote-room-8');
@@ -638,8 +638,8 @@ const amnesiaRestored = {
               onTake: () => {
                 playerC.cScore += 10;
                 playerC.sScore += 10;
-                console.log(playerC.cScore);
-                console.log(playerC.sScore);
+                ////console.log(playerC.cScore);
+                ////console.log(playerC.sScore);
                 println('You take the towel.'); //appears in inventory as 'towel'
                 const bathroom = getRoom('hote-bath-1');
                 bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
@@ -786,16 +786,16 @@ const amnesiaRestored = {
         if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him') {
           tipBellboy = true;
           let dollarItem = disk.inventory.findIndex(element => element.itemId === 'dollarbill');
-          console.log(dollarItem.itemId);
+          ////console.log(dollarItem.itemId);
           disk.inventory.splice(dollarItem);
           playMon -= 1;
           updateMon();
-          console.log(disk.inventory);
+          ////console.log(disk.inventory);
 
           playerC.cScore += 2;
           playerC.sScore += 3;
-          console.log(playerC.cScore);
-          console.log(playerC.sScore);
+          ////console.log(playerC.cScore);
+          ////console.log(playerC.sScore);
           println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
           enterRoom('hote-room-8');
         } else if (prevInput === 'no' || prevInput === `don't tip` || prevInput === `don't tip him`) {
@@ -836,13 +836,13 @@ const amnesiaRestored = {
         
         if (hotelRoom.visits) {  
           disk.inventory.forEach((item) => {
-            console.log(item.itemId);
+            ////console.log(item.itemId);
             hotelRoom.items.forEach((rItem) => {
               if (rItem.itemId === item.itemId) {
                 let index = hotelRoom.items.indexOf(rItem);
-                console.log(index);
+                ////console.log(index);
                 hotelRoom.items.splice(index, 1);
-                console.log('Spliced!')
+                ////console.log('Spliced!')
               }
             })
           })
@@ -1140,9 +1140,9 @@ const amnesiaRestored = {
                 playerC.dScore += 3; // Adding to Detective Score
                 playerC.cScore += 3; // Adding to Character Score
                 playerC.sScore += 3; // Adding to Survival Score
-                console.log(playerC.dScore);
-                console.log(playerC.cScore);
-                console.log(playerC.sScore);  
+                ////console.log(playerC.dScore);
+                ////console.log(playerC.cScore);
+                ////console.log(playerC.sScore);  
                 room.takeFirst = true;
               } else {
                 println('You take the white tuxedo.');
@@ -1209,9 +1209,9 @@ const amnesiaRestored = {
         playerC.dScore += 15; // Adding to Detective Score
         playerC.cScore += 5; // Adding to Character Score
         playerC.sScore += 5; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
       },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'I have' || prevInput === 'i have' || prevInput === `I'm wearing it` || prevInput === `I'm wearing it now`) {
@@ -1271,7 +1271,7 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         let room = getRoom('hote-revi');
-        console.log(room.items);
+        ////console.log(room.items);
         if(getItemInInventoryById('roomkey')){
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You have it.
             
@@ -1282,7 +1282,7 @@ const amnesiaRestored = {
             You leave the room and close the door behind you. Then you head down the corridor. One of the elevators arrives at 15 the moment you press the DOWN button. You get in and ride to the lobby.`);
             pressEnter('lobb-1');//leads to Lobby node
         } else {
-          console.log()
+          ////console.log()
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You've left it back in the room.
             
             You return to get the key-- and anything else you think you ought to have with you.
@@ -1331,7 +1331,7 @@ const amnesiaRestored = {
       hasEntered: false,
       onEnter: () => {
         playerC.cScore += 3;
-        console.log(playerC.cScore);
+        ////console.log(playerC.cScore);
         reenableInput();
         nEntranceRoom = lastRoom.id;
       },
@@ -1886,9 +1886,9 @@ const amnesiaRestored = {
         playerC.dScore += 3; // Adding to Detective Score
         playerC.cScore += 10; // Adding to Character Score
         playerC.sScore += 3; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
       },
       onBlock: () => {
         let styx = getRoom('hell-6');
@@ -1948,7 +1948,7 @@ const amnesiaRestored = {
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
         playerC.sScore += 2; // Adding to Survival
-        console.log(playerC.sScore);
+        ////console.log(playerC.sScore);
         const room1502 = getRoom('corridor-1502');
           const exit = getExitDir('hote-room-1', room1502.exits);
           if ((getItemInRoom('roomkey') || getItemInInventory('roomkey'))) {
@@ -2096,7 +2096,7 @@ const amnesiaRestored = {
       onEnter: () => {
         let changeRoom = getRoom('corridor-elevator15');
         changeRoom.exits[0].id = 'corridor-elevator';
-        console.log(changeRoom.exits[0].id)
+        ////console.log(changeRoom.exits[0].id)
       },
       exits: [
         {dir: ['up', 'down', 'penthouse'], id: 'corridor-elevator'},
@@ -4248,7 +4248,7 @@ const amnesiaRestored = {
       onEnter: () => {
         reenableInput();
         playerC.sScore += 2;
-        console.log('Sur ' + playerC.sScore);
+        ////console.log('Sur ' + playerC.sScore);
         if (lastRoom.id === 'corridor-elevatorph') {
           println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
         } else {
@@ -4425,7 +4425,7 @@ const amnesiaRestored = {
       You are barely able to keep yourself from falling against the iron stove and its pile of heated rocks. You crumble onto the bench of wooden slats, and then…`,
       onEnter: () => {
         playerC.dScore += 2; // Adding to Detective Score
-        console.log(playerC.dScore);
+        ////console.log(playerC.dScore);
         pressEnter('heal-club11');
       },
       exits: [],
@@ -4526,7 +4526,7 @@ const amnesiaRestored = {
         let room = getRoom('deja-vu5');
         println('There is no way out');
         room.count++;
-        console.log(room.count);
+        ////console.log(room.count);
         if (room.count === 5){
             enterRoom('deja-vu6')
         }
@@ -4563,9 +4563,9 @@ const amnesiaRestored = {
         playerC.dScore += 5; // Adding to Detective Score
         playerC.cScore += 15; // Adding to Character Score
         playerC.sScore += 5; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
           pressEnter('heal-club14')
       },
       exits: [],
@@ -4741,9 +4741,9 @@ const amnesiaRestored = {
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
         playerC.sScore += 35; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
         numbers.push(
           {number:'5551314', roomid:'phone-12', contactName:'JA'},
           {number:'5551315', roomid:'phone-13', contactName:`Wit's End`},
@@ -4883,9 +4883,9 @@ const amnesiaRestored = {
         playerC.dScore += 5; // Adding to Detective Score
         playerC.cScore += 5; // Adding to Character Score
         playerC.sScore += 5; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
         pressEnter('hote-revi');
       },
       exits: [],
@@ -4983,8 +4983,8 @@ const amnesiaRestored = {
       onEnter: () => {
         playerC.dScore += 2; // Adding to Detective Score
         playerC.sScore += 10; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.sScore);
           pressEnter('deat-f9');
       },
       exits: [],
@@ -5104,8 +5104,8 @@ const amnesiaRestored = {
     onEnter: () => {
       playerC.dScore += 10; // Adding to Detective Score
       playerC.cScore += 10; // Adding to Character Score
-      console.log(playerC.dScore);
-      console.log(playerC.cScore);
+      ////console.log(playerC.dScore);
+      ////console.log(playerC.cScore);
       pressEnter('deat-letar4');
     },
     exits: [],
@@ -5116,7 +5116,7 @@ const amnesiaRestored = {
     desc: 'A large sirloin steak confronts you, together with an abundance of french fries, and a single lettuce leaf symbolizing salad.', // Displayed when the player first enters the room.
     onEnter: () => {
       playerC.dScore += 25; // Adding to Detective Score
-      console.log(playerC.dScore);
+      ////console.log(playerC.dScore);
       pressEnter('deat-letar4');
     },
     exits: [],
@@ -5127,7 +5127,7 @@ const amnesiaRestored = {
     desc: 'The barbecue sauce on the slab of ribs is charred to the brown nearest black. There is a mound of french fries and a small paper cup of coleslaw.', // Displayed when the player first enters the room.
     onEnter: () => {
       playerC.dScore += 20; // Adding to Detective Score
-      console.log(playerC.dScore);
+      ////console.log(playerC.dScore);
       pressEnter('deat-letar4');
     },
     exits: [],
@@ -5138,7 +5138,7 @@ const amnesiaRestored = {
     desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
     onEnter: () => {
       playerC.dScore += 25; // Adding to Detective Score
-      console.log(playerC.dScore);
+      ////console.log(playerC.dScore);
       pressEnter('deat-letar4');
     },
     exits: [],
@@ -5309,7 +5309,7 @@ const amnesiaRestored = {
       if (room.scored === false) {
         playerC.dScore +=5;
         room.scored = true;
-      console.log(playerC.dScore);
+      ////console.log(playerC.dScore);
       }
         
       room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says: \n
@@ -5343,8 +5343,8 @@ const amnesiaRestored = {
     onEnter: () =>{
       playerC.sScore +=10;
       playerC.cScore +=10;
-      console.log(playerC.cScore);
-      console.log(playerC.sScore);
+      ////console.log(playerC.cScore);
+      ////console.log(playerC.sScore);
       autoSave();
     },
     onBlock: () => {
@@ -5631,8 +5631,8 @@ const amnesiaRestored = {
         reenableInput();
         playerC.dScore += 2; // Adding to Detective Score
         playerC.cScore += 10; // Adding to Character Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
       },
       exits: [
         {dir: ['enter', 'chapel', 'inside', 'in'], id: 'chap-2'}, //Any direction or "enter chapel" will result in entering the chapel.
@@ -5725,7 +5725,7 @@ const amnesiaRestored = {
         //Ask Alice about yourself
         else if (prevInput === 'what about me?' || prevInput === 'What about me?' || prevInput === 'What about me' || prevInput === 'what about me' || prevInput === 'ask about self' || prevInput === 'me' || prevInput === 'myself' || prevInput === 'john' || prevInput === 'who am i?' || 'who am i') {
           room.askSelf++;
-          console.log(room.askSelf);
+          ////console.log(room.askSelf);
           switch(room.askSelf) {
             case 1:
               println(`"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover--but I'm not going to make comparisons. And you’ve told me you love me-­ and I've believed you."`);
@@ -6274,12 +6274,12 @@ onBlock: () => {
         desc: '',
         onEnter: () => {
             const room = getRoom('lobb-revi-6');
-            console.log(room.visits);
+            ////console.log(room.visits);
             if(room.visits === 0){
                 println(`As you walk pass the recepetion desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your **safe deposit box**. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope-- if she was indeed your wife-- that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
             }
             room.visits++;
-            console.log(room.visits);
+            ////console.log(room.visits);
             if(room.visits >= 2){
                 println(`You walk over to the registration desk, where the **clerk** is patiently going about his duties.`);
                 room.desc = room.desc.replace('', `The **clerk** is patiently going about his duties.`);
@@ -7250,7 +7250,7 @@ onBlock: () => {
                         “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`);
                         cookieCount++;
                         getItemInInventoryById('chococookie').desc = `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`;
-                        console.log("CookiesTaken: " + cookieCount)
+                        ////console.log("CookiesTaken: " + cookieCount)
                       } else {
                         println('You are too full on cookies;');
                       }
@@ -7681,9 +7681,9 @@ onBlock: () => {
           playerC.dScore += 5; // Adding to Detective Score
           playerC.cScore += 2; // Adding to Character Score
           playerC.sScore += 5; // Adding to Survival Score
-          console.log(playerC.dScore);
-          console.log(playerC.cScore);
-          console.log(playerC.sScore);
+          ////console.log(playerC.dScore);
+          ////console.log(playerC.cScore);
+          ////console.log(playerC.sScore);
           pressEnter('nyhist-2');
         },
       },
@@ -7701,7 +7701,7 @@ onBlock: () => {
           if(prevInput === "buy ticket" || prevInput === 'ticket' || prevInput === 'yes' || prevInput === 'buy a ticket'){ // If player buys a ticket to the historical society
               orderTotal += 2.00;
               enterRoom('nyhist-3');
-              console.log("Order Total: " + orderTotal);
+              ////console.log("Order Total: " + orderTotal);
            }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member`){
               enterRoom('nyhist-4');
            }else{
@@ -7959,10 +7959,10 @@ onBlock: () => {
               println(`You wait for an hour. Strangely, you don't feel any impatience, for the Tiffany lamps are an endless source of wonder.`);
               }
               if (qMeridiem === 1 || yHours === 0 || yHours === 1 || yHours === 2){
-                  console.log(qMeridiem);
+                  ////console.log(qMeridiem);
                   enterRoom('nyhist-alice-5');
               }else{
-                  console.log(yHours);
+                  ////console.log(yHours);
               }
           },
           exits: [
@@ -9174,7 +9174,7 @@ else{
   onBlock: () => {
       if(prevInput){
           betteCounter++;
-          console.log('+1');
+          ////console.log('+1');
       }else{}
       if(betteCounter === 3){
           enterRoom('nobe-19')
@@ -9852,8 +9852,8 @@ else{
     reenableInput();  
     playerC.dScore += 2; // Adding to Detective Score
     playerC.cScore += 2; // Adding to Character Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
   },
   onBlock: () => 
   {
@@ -9871,8 +9871,8 @@ else{
   onEnter: () => {
     playerC.dScore += 20; // Adding to Detective Score
     playerC.cScore += 15; // Adding to Character Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
   },
   onBlock: () => 
   {
@@ -10100,9 +10100,9 @@ else{
     playerC.dScore += 25; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
     playerC.sScore += 3; // Adding to Survival Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
-    console.log(playerC.sScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
+    ////console.log(playerC.sScore);
     reenableInput();
   },
   onBlock: () =>
@@ -10144,9 +10144,9 @@ else{
     playerC.dScore += 35; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
     playerC.sScore += 0; // Adding to Survival Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
-    console.log(playerC.sScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
+    ////console.log(playerC.sScore);
     pressEnter('dakota-denise-9');
   },
 },
@@ -10215,8 +10215,8 @@ else{
   {
     playerC.dScore += 10; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
     reenableInput();
   },
   onBlock: () =>
@@ -10291,9 +10291,9 @@ else{
     playerC.dScore += 5; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
     playerC.sScore += 3; // Adding to Survival Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
-    console.log(playerC.sScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
+    ////console.log(playerC.sScore);
     pressEnter('dakota-denise-16');
   },
 },
@@ -10487,7 +10487,7 @@ else{
   onEnter: () => 
   {
     playerC.dScore += 10; // Adding to Detective Score
-    console.log(playerC.dScore);
+    ////console.log(playerC.dScore);
     pressEnter('dakota-denise-25');
   },
 },
@@ -10645,9 +10645,9 @@ else{
     playerC.dScore += 10; // Adding to Detective Score
     playerC.cScore += 10; // Adding to Character Score
     playerC.sScore += 3; // Adding to Survival Score
-    console.log(playerC.dScore);
-    console.log(playerC.cScore);
-    console.log(playerC.sScore);
+    ////console.log(playerC.dScore);
+    ////console.log(playerC.cScore);
+    ////console.log(playerC.sScore);
     pressEnter('dakota-zane-2');
   },
 },
@@ -11966,9 +11966,9 @@ else{
         playerC.dScore += 25; // Adding to Detective Score
         playerC.cScore += 25; // Adding to Character Score
         playerC.sScore += 3; // Adding to Survival Score
-        console.log(playerC.dScore);
-        console.log(playerC.cScore);
-        console.log(playerC.sScore);
+        ////console.log(playerC.dScore);
+        ////console.log(playerC.cScore);
+        ////console.log(playerC.sScore);
         pressEnter('epil-3');
     },
 },
@@ -12422,7 +12422,7 @@ else{
             pressEnter('lunch-buyscreen');
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
           },
       },
       {
@@ -12447,38 +12447,38 @@ else{
             orderTotal += 2.75;
             energyTotal += 28;
             println('One charlie is ready to go. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           }else if(prevInput ==='ham'){
             orderTotal += 2.75;
             energyTotal += 26;
             println('One kosher special coming right up. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           }else if(prevInput ==='tea'){
             orderTotal += 0.45;
             energyTotal += 8;
             println('One tea is on its way. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           }else if(prevInput ==='coffee'){
             orderTotal += 0.45;
             energyTotal += 8;
             println('One coffee is on its way. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           }else if(prevInput ==='pepsi'){
             orderTotal += 0.85;
             energyTotal += 8;
             println('One pepsi is on its way. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           }else if(prevInput ==='burger'){
             orderTotal += 0.85;
             energyTotal += 16;
             println('One hamburger is ready to go. \n Anything else?');
-            console.log("Order Total: " + orderTotal);
-            console.log("Energy Total: " + energyTotal);
+            ////console.log("Order Total: " + orderTotal);
+            ////console.log("Energy Total: " + energyTotal);
           } else if (prevInput === 'leave') {
             enterRoom('lunch-leave');
           }
@@ -12499,7 +12499,7 @@ else{
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
-            console.log(playMon);
+            ////console.log(playMon);
           pressEnter('lunch-payscreen');
             }else{
               pressEnter('lunch-nomon'); // if you have no money
@@ -12555,7 +12555,7 @@ else{
           pressEnter('nedick-buyscreen');
           const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
           },
       },
       {
@@ -12682,7 +12682,7 @@ else{
           pressEnter('pizza-buyscreen');
           const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
           },
       },
       {
@@ -12805,7 +12805,7 @@ else{
           pressEnter('nuts-buyscreen');
           const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
           },
       },
       {
@@ -12931,7 +12931,7 @@ else{
           pressEnter('gyro-buyscreen');
           const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
           },
       },
       {
@@ -13349,7 +13349,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
      
@@ -13362,7 +13362,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13374,7 +13374,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13385,7 +13385,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-12-2');
         },
     },
@@ -13396,7 +13396,7 @@ else{
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom('phone-12');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13408,7 +13408,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13419,7 +13419,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-14-2');
         },
     },
@@ -13443,7 +13443,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
         },
         onBlock: () =>{
             if(prevInput === 'zane'){
@@ -13460,7 +13460,7 @@ else{
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom('phone-15');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13471,7 +13471,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
         },
         onBlock: () =>{
             if(prevInput === 'hollings'){
@@ -13488,7 +13488,7 @@ else{
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom('phone-16');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13500,7 +13500,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13512,7 +13512,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13523,7 +13523,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-19-2');
         },
     },
@@ -13536,7 +13536,7 @@ else{
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom('phone-19');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13548,7 +13548,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13560,7 +13560,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13571,7 +13571,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-22-2');
         },
     },
@@ -13582,7 +13582,7 @@ else{
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom('phone-22');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13593,7 +13593,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-23-2');
         },
     },
@@ -13607,7 +13607,7 @@ else{
             playMon -= 0.25;
             updateMon();
             const room = getRoom('phone-23');
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             enterRoom(room.enteredFrom);
         },
     },
@@ -13619,7 +13619,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13631,7 +13631,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13642,7 +13642,7 @@ else{
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter('phone-26-2');
         },
     },
@@ -13685,7 +13685,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom('phone-26');
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13697,7 +13697,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -13709,7 +13709,7 @@ else{
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
-            console.log(room.enteredFrom);
+            ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
         },
     },
@@ -48817,12 +48817,12 @@ else{
                 isTakeable: true,
                 isDroppable: true,
                 onUse: () => {
-                  console.log('Use the token!');
+                  ////console.log('Use the token!');
                   if(disk.roomId === 'subway') {
                     //let found = disk.inventory.find(el => el.itemId === 'token');
-                    //console.log(found);
+                    //////console.log(found);
                     disk.inventory.splice(found);
-                    console.log(disk.inventory);
+                    ////console.log(disk.inventory);
                   } else {
                     println(`You can't use that here! Try using it at a subway station.`);
                   }
@@ -48848,14 +48848,14 @@ else{
           isTakeable: true,
           isDroppable: true,
           onUse: () => {
-            console.log('Use the token!');
+            ////console.log('Use the token!');
             if(disk.roomId === 'subway') {
               document.getElementById('map-display').style.display = "block";
               map.invalidateSize();
               let found = disk.inventory.findIndex(el => el.itemId === 'token');
-              //console.log(found);
+              //////console.log(found);
               disk.inventory.splice(found);
-              console.log(disk.inventory);
+              ////console.log(disk.inventory);
             } else {
               println(`You can't use that here! Try using it at a subway station.`);
             }
