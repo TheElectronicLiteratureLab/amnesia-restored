@@ -325,15 +325,15 @@ const amnesiaRestored = {
         {
           itemId: 'closet',
           name: 'closet',
-          desc: 'A closet that is empty, save for one lonely **coathanger**',
+          desc: ' ',
           onLook: () => {
-            let room = getRoom(disk.roomId);
+            let coat1 = 'save for';
+            let coat2 = 'not even';
+            
             if (getItemInInventoryById('coathanger')) {
-              room.desc = 'A very empty closet.';
-              println(room.desc);
+              println(`There's nothing in the walk-in closet -- ${coat2} a forlorn coathanger.`);
             } else {
-              room.desc = 'A closet that is empty, save for one lonely **coathanger**';
-              println(room.desc);
+              println(`There's nothing in the walk-in closet -- ${coat1} a forlorn coathanger.`);
             }
           },
         },
@@ -638,8 +638,6 @@ const amnesiaRestored = {
               onTake: () => {
                 playerC.cScore += 10;
                 playerC.sScore += 10;
-                ////console.log(playerC.cScore);
-                ////console.log(playerC.sScore);
                 println('You take the towel.'); //appears in inventory as 'towel'
                 const bathroom = getRoom('hote-bath-1');
                 bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
@@ -675,7 +673,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"Good morning," says a woman's voice, after you say hellow. "This is the Registration desk. You are aware, are you not, that the check-out time is twelve o'clock?"`);
+        println(`"Good morning," says a woman's voice, after you say hello. "This is the Registration desk. You are aware, are you not, that the check-out time is twelve o'clock?"`);
       },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'no') {
@@ -911,15 +909,15 @@ const amnesiaRestored = {
           {
             itemId: 'closet',
             name: 'closet',
-            desc: 'A closet that is empty, save for one lonely **coathanger**',
+            desc: ' ',
             onLook: () => {
-              let room = getRoom(disk.roomId);
+              let coat1 = 'save for';
+              let coat2 = 'not even';
+              
               if (getItemInInventoryById('coathanger')) {
-                room.desc = 'A very empty closet.';
-                println(room.desc);
+                println(`There's nothing in the walk-in closet -- ${coat2} a forlorn coathanger.`);
               } else {
-                room.desc = 'A closet that is empty, save for one lonely **coathanger**';
-                println(room.desc);
+                println(`There's nothing in the walk-in closet -- ${coat1} a forlorn coathanger.`);
               }
             },
           },
@@ -7419,7 +7417,7 @@ onBlock: () => {
         {
         id:'ann-23',
         name:`Ann's House`,
-        desc:`“Oh, that’s pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won’t have to pay such high taxes if she’s a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
+        desc:`“Oh, that's pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won’t have to pay such high taxes if she’s a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
         onBlock: () => {
             if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
                 enterRoom('ann-24');
@@ -7455,7 +7453,7 @@ onBlock: () => {
     {
         id:'ann-26',
         name:`Ann's House`,
-        desc:`“Don’t think, John Cameron, that what we started is still happening. You’ve had your chance. I’m after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I’m not blaming you-- you never pretended to be anything you’re not. But you’re a bum--a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you’re hungry there’s a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I’ve got to put the Little Princess to bed. She’s got a makeup call for six a.m.”`,
+        desc:`“Don’t think, John Cameron, that what we started is still happening. You've had your chance. I'm after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I’m not blaming you-- you never pretended to be anything you’re not. But you’re a bum--a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you’re hungry there’s a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I’ve got to put the Little Princess to bed. She’s got a makeup call for six a.m.”`,
         onEnter: () =>{
           playerC.cScore += 10;
             if(playHung <= 25){
