@@ -153,11 +153,8 @@ disk.rooms.forEach((element)=>{
       if (element.hasFood === true) {
         let marker = L.marker([element.coord[0],element.coord[1]], {icon: foodIcon}).addTo(foodLayer);
         //marker.bindPopup(element.name, {className: 'popup'});
-        ////console.log(`Yum yum, I'm hungry.`);
         let foodMatch = foodRegEx.exec(element.desc);
         let str = foodMatch[0];
-        ////console.log(element.coord)
-        //console.log(str);
         //Capitlize the first name of each food area.
         let restName = str.charAt(0).toUpperCase() + str.slice(1);
         marker.bindPopup(restName, {className: 'popup'});
