@@ -7698,13 +7698,10 @@ onBlock: () => {
 
            }
           },
-          exits: 
-          [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
+          exits: [
+            {dir: ['leave'], id: '76-cpkw'},
           ],
+          
       },
       
       {
@@ -7725,79 +7722,58 @@ onBlock: () => {
                 pressEnter('76-cpkw');
               }
           },
-          exits: 
-          [
-            { dir: ['leave'], id : '76-cpkw'},
-            { dir: ['north'], id : 'nyhist-1f-1'},
-            { dir: ['south'], id : 'nyhist-1f-2'},
-            { dir: ['east'], id : '76-cpkw'},
-            { dir: ['west'], id: 'nyhist-2f-1'}
+          exits: [
+            {dir: ['leave'], id: '76-cpkw'},
+            {dir: ['north'], id: 'nyhist-1f-1'},
+            {dir: ['south'], id: 'nyhist-1f-2'},
+            {dir: ['east'], id: '76-cpkw'},
+            {dir: ['west'], id: 'nyhist-2f-1'}
           ],
       },
       {
-          id: 'nyhist-4', // New York Historical Society entrance
-          name: 'N.Y. Historical Society', // This room is only entered if the player boldly declaires himself a member
-          desc: `"I'm sorry," the ticket agent says. "I didn't recognize you at first, Sir. Go right in."\n
-          You see a large free-standing bulletin board which shows you the maps of each floor of the museum. There is a special exhibition of 19th century portraits of famous New Yorkers in the first floor galleries to the north and south.`,
-          onEnter: () =>{
-            playerC.dScore += 5;
-            playerC.cScore += 10;
-            playerC.sScore += 5;
-          },
-          exits: 
-          [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north'],
-                  id : 'nyhist-1f-1'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-1f-2'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-entrance'
-              },
-              { 
-                  dir: ['east'],
-                  id : '76-cpkw'
-              },
-              {
-                  dir: ['west', 'upstairs'],
-                  id: 'nyhist-2f-1'
-              }
-          ],
+        id: 'nyhist-4', // New York Historical Society entrance
+        name: 'N.Y. Historical Society', // This room is only entered if the player boldly declaires himself a member
+        desc: `"I'm sorry," the ticket agent says. "I didn't recognize you at first, Sir. Go right in."\n
+        You see a large free-standing bulletin board which shows you the maps of each floor of the museum. There is a special exhibition of 19th century portraits of famous New Yorkers in the first floor galleries to the north and south.`,
+        onEnter: () =>{
+          playerC.dScore += 5;
+          playerC.cScore += 10;
+          playerC.sScore += 5;
+        },
+        exits: [
+          {dir: ['leave'], id: '76-cpkw'},
+          {dir: ['north'], id: 'nyhist-1f-1'},
+          {dir: ['south'], id: 'nyhist-1f-2'},
+          {dir: ['south'], id: 'nyhist-entrance'},
+          {dir: ['east'], id: '76-cpkw'},
+          {dir: ['west', 'upstairs'], id: 'nyhist-2f-1'}
+        ],
       },
       {
           id: 'nyhist-entrance', // New York Historical Society entrance
           name: 'N.Y. Historical Society', // This room is only entered if the player returns to the entrance from one of the galleries.
           desc: `You return to the gallery entrance.`,
-          exits: 
-          [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north'],
-                  id : 'nyhist-1f-1'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-1f-2'
-              },
-              { 
-                  dir: ['east'],
-                  id : '76-cpkw'
-              },
-              {
-                  dir: ['west', 'upstairs'],
-                  id: 'nyhist-2f-1'
-              }
+          exits: [
+            { 
+                dir: ['leave'],
+                id: '76-cpkw'
+            },
+            { 
+                dir: ['north'],
+                id: 'nyhist-1f-1'
+            },
+            { 
+                dir: ['south'],
+                id: 'nyhist-1f-2'
+            },
+            { 
+                dir: ['east'],
+                id: '76-cpkw'
+            },
+            {
+                dir: ['west', 'upstairs'],
+                id: 'nyhist-2f-1'
+            }
           ],
       },
       {
@@ -7808,29 +7784,28 @@ onBlock: () => {
               const room = getRoom('nyhist-1f-1'); // if they look at the portraits
               room.desc = `Most of the portraits are of long-ago businessmen. They don't seem particularly happy to be assembled here in a public museum with only each other-and you- for company. Surely it was not for this they'd hired the most expensive and dullest painters of their day. You see nothing unusual.`;
           },
-          exits: 
-          [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north'],
-                  id : 'nyhist-1f-1',
-                  block: 'You cannot go that way'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-1f-2'
-              },
-              { 
-                  dir: ['east'],
-                  id : 'nyhist-2f-1'
-              },
-              {
-                  dir: ['west'],
-                  id: 'nyhist-2f-1'
-              }
+          exits: [
+            { 
+                dir: ['leave'],
+                id: '76-cpkw'
+            },
+            { 
+                dir: ['north'],
+                id: 'nyhist-1f-1',
+                block: 'You cannot go that way'
+            },
+            { 
+                dir: ['south'],
+                id: 'nyhist-1f-2'
+            },
+            { 
+                dir: ['east'],
+                id: 'nyhist-2f-1'
+            },
+            {
+                dir: ['west'],
+                id: 'nyhist-2f-1'
+            }
           ],
       },
       {
@@ -7840,29 +7815,28 @@ onBlock: () => {
           onLook: () => {
               println(`Most of these paintings are of women wearing magnificent dresses and hung with several small fortunes in jewelry. Each of them seems to be sizing up the other disdainfully, except for Mrs. Aloysius D. Brouwer, who looks with perfect satisfaction into a full-length mirror. Whistler had her number, and no doubt about it.`);
           },
-          exits: 
-          [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north'],
-                  id : 'nyhist-1f-1'
-              },
-              { 
-                  dir: ['south'],
-                  id : 'nyhist-1f-2',
-                  block: 'You cannot go that way.'
-              },
-              { 
-                  dir: ['east'],
-                  id : 'nyhist-2f-1'
-              },
-              {
-                  dir: ['west'],
-                  id: 'nyhist-2f-1'
-              }
+          exits: [
+            { 
+                dir: ['leave'],
+                id: '76-cpkw'
+            },
+            { 
+                dir: ['north'],
+                id: 'nyhist-1f-1'
+            },
+            { 
+                dir: ['south'],
+                id: 'nyhist-1f-2',
+                block: 'You cannot go that way.'
+            },
+            { 
+                dir: ['east'],
+                id: 'nyhist-2f-1'
+            },
+            {
+                dir: ['west'],
+                id: 'nyhist-2f-1'
+            }
           ],
       },
       {
@@ -7875,46 +7849,36 @@ onBlock: () => {
           },
           exits: 
           [
-              { 
-                  dir: ['leave'],
-                  id : '76-cpkw'
-              },
-              { 
-                  dir: ['north', 'upstairs'],
-                  id : 'nyhist-1f-1',
-                  block: "You cannot go that way."
-              },
-              { 
-                  dir: ['south'],
-                  id : '76-cpkw',
-              },
-              { 
-                  dir: ['east'],
-                  id : 'nyhist-alice-1'
-              },
-              {
-                  dir: ['west'],
-                  id: 'nyhist-2f-1',
-                  block: "The door to the library is locked."
-              }
+            { 
+                dir: ['leave'],
+                id: '76-cpkw'
+            },
+            { 
+              dir: ['north', 'upstairs'],
+              id: 'nyhist-1f-1',
+              block: "You cannot go that way."
+            },
+            {dir: ['south'], id: '76-cpkw'},
+            {dir: ['east'], id: 'nyhist-alice-1'},
+            {dir: ['west'], block: "The door to the library is locked."}
           ],
       },
       {
-          id: 'nyhist-alice-1', // New York Historical 2nd floor
-          name: 'N.Y. Historical Society', 
-          desc: `You enter the gallery devoted to the Neustadt Collection of Tiffany lamps.`,
-          onEnter: () => {
-              pressEnter('nyhist-alice-2');
-          },
+        id: 'nyhist-alice-1', // New York Historical 2nd floor
+        name: 'N.Y. Historical Society', 
+        desc: `You enter the gallery devoted to the Neustadt Collection of Tiffany lamps.`,
+        onEnter: () => {
+            pressEnter('nyhist-alice-2');
+        },
       },
       {
-          id: 'nyhist-alice-2', // New York Historical 2nd floor
-          name: 'N.Y. Historical Society', 
-          desc: `It is a single high-ceilinged hall from which every trace of daylight has been excluded. Each stained glass lamp gives off its own multicolored glow. How can it be that so many lamps, all alight and crowded together, each so intense, don't flood the hall with their radience?\n
-          But the darkness here seems to exist quite independently of the light, a force in its own right.`,
-          onEnter: () => {
-              pressEnter('nyhist-alice-3');
-          },
+        id: 'nyhist-alice-2', // New York Historical 2nd floor
+        name: 'N.Y. Historical Society', 
+        desc: `It is a single high-ceilinged hall from which every trace of daylight has been excluded. Each stained glass lamp gives off its own multicolored glow. How can it be that so many lamps, all alight and crowded together, each so intense, don't flood the hall with their radience?\n
+        But the darkness here seems to exist quite independently of the light, a force in its own right.`,
+        onEnter: () => {
+            pressEnter('nyhist-alice-3');
+        },
       },
       {
           id: 'nyhist-alice-3', // New York Historical 2nd floor
@@ -9879,7 +9843,7 @@ else{
   exits: [
     {
         dir: ['leave'],
-        id : 'dakota-death'
+        id: 'dakota-death'
     },
   ],
 },
@@ -9998,16 +9962,16 @@ else{
     },
     {
       dir: ['right', 'east'],
-      id : 'dakota-denise-1'
+      id: 'dakota-denise-1'
     },
     {
       dir: 'south',
-      id : 'dakota-8',
+      id: 'dakota-8',
       block: `You can't go that way.`
     },
     {
       dir: 'leave',
-      id : 'dakota-leave'
+      id: 'dakota-leave'
     },
   ],
 },
@@ -12253,7 +12217,7 @@ else{
   exits: [
     {
         dir: ['leave'],
-        id : '51-5'  
+        id: '51-5'  
     }, 
         ],
 },
@@ -12269,11 +12233,11 @@ else{
     exits: [
       {
           dir: ['west', 'leave'],
-          id : '51-5'     
+          id: '51-5'     
       },
       {
         dir: ['east'],
-        id : 'cathe-3'     
+        id: 'cathe-3'     
     },
     ],
   },
