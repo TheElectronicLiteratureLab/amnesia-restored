@@ -48665,7 +48665,9 @@ else{
 
 
         room.onBlock = () => {
-          if (prevInput === `${encounterAnswer}` || `${xStreetD}`) {
+          if (prevInput === `${encounterAnswer}` || prevInput === `${xStreetD}`) {
+            console.log(encounterAnswer);
+            console.log(prevInput);
             enterRoom('xStreet-3')
           } else {
             if(room.wrongAnswer === false) {
