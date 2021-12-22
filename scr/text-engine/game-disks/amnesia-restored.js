@@ -16242,7 +16242,7 @@ else{
       id: 'blee-cros',
       coord: [-52.993, 5.266],
       name: 'Bleecker St. and Crosby St.',
-      desc: '',
+      desc: `Attractive though the Bayard building is, with its long clean lines, it isn't heaven -- the angels at the top must have lost their way somehow.`,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -16385,7 +16385,7 @@ else{
     {
       id: '14-usqe',
       coord: [-35.562, 2.483],
-      name: 'E. 14th At. and Union Square E.', 
+      name: 'E. 14th St. and Union Square E.', 
       desc: 'The 14 ST-Union Sq E Station entrance is at this corner.',
       hasSubway: true,
       exits: [
@@ -16429,7 +16429,7 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '13-4-1'},
+        {dir: 'north', id: '13-4'},
         {dir: 'south', id: '11-4'},
         {dir: 'east', id: '12-3'},
         {dir: 'west', id: '12-broa'},
@@ -16779,7 +16779,9 @@ else{
       id: '12-2',
       coord: [-38.580, 15.670],
       name: 'E. 12th St. and 2nd Ave.',
-      desc: '',
+      desc: `The 11th Street Gallery is a narrow storefront sandwiched between an Estonian bakery and a bookshop that advertises itself as "Manhattan's Source for Metaphysical Reference Works."
+
+      The sign in the window informs you that the Gallery is only open from 10 to 6 daily.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '13-2'},
@@ -16844,7 +16846,7 @@ else{
       id: '10-2',
       coord: [-41.471, 15.651],
       name: 'E. 10th St. and 2nd Ave.',
-      desc: '',
+      desc: `Behind a fence of sharp black iron spikes, standing in a churchyard paved with little hillocks of patterned brick, is the Church of St. Mark's on the Bowery. A poster urges you to "Join the Poet's Protest Against --" But the rest has been torn off.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'stuy-2'},
@@ -16873,7 +16875,7 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'wana-1'},
+        {dir: 'north', id: 'wana-2'},
         {dir: 'south', id: '7-2'},
         {dir: 'east', id: 'stma-1'},
         {dir: 'west', id: 'stma-3'},
@@ -17045,8 +17047,8 @@ else{
       exits: [
         {dir: 'north', id: '10-1'},
         {dir: 'south', id: 'stma-1'},
-        {dir: 'east', id: 'stma-avea'},
-        {dir: 'west', id: 'stma-2'},
+        {dir: 'east', id: 'wana-avea'},
+        {dir: 'west', id: 'wana-2'},
       ]
     },
     {
@@ -17066,13 +17068,15 @@ else{
       id: '7-1',
       coord: [-45.472, 21.035],
       name: 'E. 7th St. and 1st Ave.',
-      desc: '',
+      desc: `There is a pizzeria here.`,
       isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'stma-1'},
         {dir: 'south', id: '6-1'},
         {dir: 'east', id: '7-avea'},
         {dir: 'west', id: '7-2'},
+        {dir: 'pizzeria', id: 'pizza-intro'}
       ]
     },
     {
@@ -17448,8 +17452,8 @@ else{
       exits: [
         {dir: 'north', id: '12-aveb'},
         {dir: 'south', id: '10-aveb'},
-        {dir: 'east', id: '12-avec'},
-        {dir: 'west', id: '12-avea'},
+        {dir: 'east', id: '11-avec'},
+        {dir: 'west', id: '11-avea'},
       ]
     },
     {
@@ -17468,7 +17472,7 @@ else{
     {
       id: 'wana-aveb',
       coord: [-42.779, 32.036],
-      name: 'Wanamaker St. and Ave. B',
+      name: 'Wanamaker Pl. and Ave. B',
       desc: '',
       isStreet: true,
       exits: [
@@ -17566,7 +17570,7 @@ else{
         {dir: 'north', id: '3-aveb'},
         {dir: 'south', id: 'ehou-clin'},
         {dir: 'east', id: 'ehou-2'},
-        {dir: 'west', id: 'ehou-suff'},
+        {dir: 'west', id: '2-avea'},
       ]
     },
     {
@@ -17650,7 +17654,7 @@ else{
     {
       id: '12-avec',
       coord: [-38.454, 37.465],
-      name: 'E. 12th and Ave. C',
+      name: 'E. 12th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17663,7 +17667,7 @@ else{
     {
       id: '11-avec',
       coord: [-39.949, 37.499],
-      name: 'E. 11th and Ave. C',
+      name: 'E. 11th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17676,20 +17680,20 @@ else{
     {
       id: '10-avec',
       coord: [-41.283, 37.521],
-      name: 'E. 10th and Ave. C',
+      name: 'E. 10th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
         {dir: 'north', id: '11-avec'},
         {dir: 'south', id: 'wana-avec'},
-        {dir: 'east', id: '10-szol'},
+        {dir: 'east', id: '10-aved'},
         {dir: 'west', id: '10-aveb'},
       ]
     },
     {
       id: 'wana-avec',
       coord: [-42.744, 37.571],
-      name: 'Wanamaker St. and Ave. C',
+      name: 'Wanamaker Pl. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17998,7 +18002,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'avec-fdrd'},
-        {dir: 'south', id: '15-aved'},
+        {dir: 'south', id: '15-avec'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', block: `You can't go that way.`},
       ]
@@ -18011,7 +18015,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '23-fdrd'},
-        {dir: 'south', id: 'avec-avec'},
+        {dir: 'south', id: 'avec-fdrd'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '20-1'},
       ]
@@ -18039,7 +18043,7 @@ else{
         {dir: 'north', id: 'avec-fdrd'},
         {dir: 'south', id: '14-fdrd'},
         {dir: 'east', id: '15-erdr'},
-        {dir: 'west', id: '15-aved'},
+        {dir: 'west', id: '15-avec'},
       ]
     },
     {
@@ -18097,7 +18101,7 @@ else{
     {
       id: 'ehou-fdrd',
       coord: [-51.469, 52.421],
-      name: 'E. Houston St. and FDR Drive',
+      name: 'E. Houston St. and FDR Dr.',
       desc: '',
       isStreet: true,
       exits: [
@@ -23623,7 +23627,7 @@ else{
     {
       id: 'dela-fdrd',
       coord: [-57.194, 55.478],
-      name: 'Delancy St. and FDR Drive',
+      name: 'Delancy St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -27845,7 +27849,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '27-12'},
-        {dir: 'south', id: '25-12'},
+        {dir: 'south', id: '24-12'},
         {dir: 'east', id: '26-11'},
         {dir: 'west', block: `You can't go that way.`}
       ],
@@ -28146,9 +28150,9 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '23-11'},
-        {dir: 'south', id: '12-12'},
+        {dir: 'south', id: '11-12'},
         {dir: 'east', id: '22-10'},
-        {dir: 'west', id: '23-12'}
+        {dir: 'west', id: '22-12'}
       ],
     },
         //10th Ave
@@ -28174,7 +28178,7 @@ else{
       exits: [
         {dir: 'north', id: '33-10'},
         {dir: 'south', id: '31-10'},
-        {dir: 'east', id: '32-9'},
+        {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '32-11'},
       ]
     },
@@ -28186,11 +28190,11 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '32-10'},
-        {dir: 'south', id: '30-10'},
+        {dir: 'south', id: 'linc-10'},
         {dir: 'east', id: '31-9'},
         {dir: 'west', block: `You can't go that way.`}
       ],
-    }, //Todo: check here
+    },
     {
       id: 'linc-10',
       coord: [-8.637, -40.163],
@@ -28211,7 +28215,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '31-10'},
+        {dir: 'north', id: 'linc-10'},
         {dir: 'south', id: '29-10'},
         {dir: 'east', id: '30-9'},
         {dir: 'west', id: '30-11'},
@@ -28975,7 +28979,7 @@ else{
     {
       id: '31-7',
       coord: [-7.370, -20.173],
-      name: '31st St. and 7th Ave.',
+      name: 'W. 31st St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29001,7 +29005,7 @@ else{
     {
       id: '29-7',
       coord: [-11.059, -20.069],
-      name: '29th St. and 7th Ave.',
+      name: 'W. 29th St. and 7th Ave.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
       hasFood: true,
@@ -29016,8 +29020,8 @@ else{
     {
       id: '28-7',
       coord: [-12.773, -20.061],
-      name: '28th St. and 7th Ave.',
-      desc: `The 28 ST-7 AV Station entrance is at this corner`,
+      name: 'W. 28th St. and 7th Ave.',
+      desc: `The 28 ST-7 AV Station entrance is at this corner.`,
       hasSubway: true,
       exits: [
         {dir: 'north', id: '29-7'},
@@ -29115,7 +29119,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '21-7'},
+        {dir: 'north', id: '22-7'},
         {dir: 'south', id: '20-7'},
         {dir: 'east', id: '21-amer'},
         {dir: 'west', id: '21-8'},
@@ -29179,7 +29183,7 @@ else{
     {
       id: '16-7',
       coord: [-32.912, -19.622],
-      name: '16th St. and 7th Ave.',
+      name: 'W. 16th St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29192,7 +29196,7 @@ else{
     {
       id: '15-7',
       coord: [-34.085, -19.577],
-      name: '15th St. and 7th Ave.',
+      name: 'W. 15th St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29205,7 +29209,7 @@ else{
     {
       id: '14-7',
       coord: [-35.757, -19.577],
-      name: '14th St. and 7th Ave.',
+      name: 'W. 14th St. and 7th Ave.',
       desc: `The 14 ST-7 AV Station entrance is at this corner.`,
       hasSubway: true,
       exits: [
@@ -29354,8 +29358,8 @@ else{
     {
       id: '24-amer',
       coord: [-19.531, -13.393],
-      name: '24th St. and Ave. of Americas',
-      desc: `There is a pizeria here.`,
+      name: 'W. 24th St. and Ave. of Americas',
+      desc: `There is a pizzeria here.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '25-amer'},
@@ -30026,7 +30030,7 @@ else{
       id: '14-5',
       coord: [-35.630, -5.570],
       name: 'W. 14th St. and 5th Ave.',
-      desc: `You stop to admire the imaginar living rooms in the three windows of a furniture store. They are furnished in the highly traditional bad tast of the quiz program WHEEL OF FORTUNE`,
+      desc: `You stop to admire the imaginary living rooms in the three windows of a furniture store. They are furnished in the highly traditional bad taste of the quiz program WHEEL OF FORTUNE.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '15-5'},
@@ -30276,7 +30280,7 @@ else{
     {
       id: '15-usqe',
       coord: [-33.859, 2.442],
-      name: 'E. 15th St. and Union Sqaure E.',
+      name: 'E. 15th St. and Union Square E.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -30290,8 +30294,9 @@ else{
       id: '4-usqe',
       coord: [-35.580, 2.829],
       name: '4th Ave. and Union Square E.',
-      desc: ``,
+      desc: `There is a restaurant called Nedick's here.`,
       isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '15-usqe'},
         {dir: 'south', id: '14-usqe'},
@@ -31270,7 +31275,7 @@ else{
     {
       id: '21-2',
       coord: [-24.482, 15.329],
-      name: 'E. 31st St. and 2nd Ave.',
+      name: 'E. 21st St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31394,7 +31399,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
-        {dir: 'south', id: 'nath-16'},
+        {dir: 'south', id: '16-perl'},
         {dir: 'east', id: '17-1'},
         {dir: 'west', id: '17-2'},
       ],
@@ -31406,8 +31411,8 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '17-ruth'},
-        {dir: 'south', id: 'nath-15'},
+        {dir: 'north', id: '17-perl'},
+        {dir: 'south', id: '15-perl'},
         {dir: 'east', id: '16-1'},
         {dir: 'west', block: `You can't go that way.`}
       ],
@@ -31419,7 +31424,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '16-ruth'},
+        {dir: 'north', id: '16-perl'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '15-1'},
         {dir: 'west', id: '15-2'}
@@ -31624,7 +31629,7 @@ else{
     {
       id: '15-1',
       coord: [-33.706, 20.856],
-      name: 'W. 15th St. and 1st Ave.',
+      name: 'E. 15th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31703,7 +31708,7 @@ else{
     {
       id: '34-fdrd',
       coord: [-1.519, 22.074],
-      name: 'E. 34th St. and FDR Drive',
+      name: 'E. 34th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31716,7 +31721,7 @@ else{
     {
       id: '25-fdrd',
       coord: [-17.430, 25.840],
-      name: 'E. 25th St. and FDR Drive',
+      name: 'E. 25th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31729,7 +31734,7 @@ else{
     {
       id: '23-fdrd',
       coord: [-20.981, 27.645],
-      name: 'E. 23rd St. and FDR Drive',
+      name: 'E. 23rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -37421,7 +37426,7 @@ else{
     {
       id: '41-fdrd',
       coord: [11.652, 23.778],
-      name: 'E. 41st St. and FDR Drive',
+      name: 'E. 41st St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -37434,7 +37439,7 @@ else{
     {
       id: '42-fdrd',
       coord: [13.667, 24.042],
-      name: 'E. 42nd St. and FDR Drive',
+      name: 'E. 42nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -46790,7 +46795,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '110-2', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-2'},
         {dir: 'east', id: '110-1'},
         {dir: 'west', id: '110-3'},
@@ -47497,7 +47502,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '110-1', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-1'},
         {dir: 'east', id: '110-fdrd'},
         {dir: 'west', id: '110-2'},
@@ -48135,7 +48140,7 @@ else{
     {
       id: '71-fdrd',
       coord: [57.007, 28.107],
-      name: 'E. 71st St. and FDR Drive',
+      name: 'E. 71st St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48148,7 +48153,7 @@ else{
     {
       id: '72-fdrd',
       coord: [58.083, 28.283],
-      name: 'E. 72nd St. and FDR Drive',
+      name: 'E. 72nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48161,7 +48166,7 @@ else{
     {
       id: '73-fdrd',
       coord: [59.203, 28.402],
-      name: 'E. 73rd St. and FDR Drive',
+      name: 'E. 73rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48174,7 +48179,7 @@ else{
     {
       id: '79-fdrd',
       coord: [64.374, 29.632],
-      name: 'E. 79th St. and FDR Drive',
+      name: 'E. 79th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48187,7 +48192,7 @@ else{
     {
       id: 'eend-fdrd',
       coord: [72.790, 28.226],
-      name: 'East End Ave. and FDR Drive',
+      name: 'East End Ave. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48200,7 +48205,7 @@ else{
     {
       id: '93-fdrd',
       coord: [73.937, 23.431],
-      name: 'E. 93rd St. and FDR Drive',
+      name: 'E. 93rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48213,7 +48218,7 @@ else{
     {
       id: '94-fdrd',
       coord: [74.428, 22.227],
-      name: 'E. 94th St. and FDR Drive',
+      name: 'E. 94th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48226,7 +48231,7 @@ else{
     {
       id: '95-fdrd',
       coord: [74.916, 21.630],
-      name: 'E. 95th St. and FDR Drive',
+      name: 'E. 95th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48239,7 +48244,7 @@ else{
     {
       id: '96-fdrd',
       coord: [75.438, 21.102],
-      name: 'E. 96th St. and FDR Drive',
+      name: 'E. 96th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48252,7 +48257,7 @@ else{
     {
       id: '97-fdrd',
       coord: [75.925, 21.290],
-      name: 'E. 97th St. and FDR Drive',
+      name: 'E. 97th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48265,7 +48270,7 @@ else{
     {
       id: '98-fdrd',
       coord: [76.383, 21.681],
-      name: 'E. 98th St. and FDR Drive',
+      name: 'E. 98th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48278,7 +48283,7 @@ else{
     {
       id: '99-fdrd',
       coord: [76.851, 22.014],
-      name: 'E. 99th St. and FDR Drive',
+      name: 'E. 99th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48291,7 +48296,7 @@ else{
     {
       id: '100-fdrd',
       coord: [77.241, 22.268],
-      name: 'E. 100th St. and FDR Drive',
+      name: 'E. 100th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48304,7 +48309,7 @@ else{
     {
       id: '102-fdrd',
       coord: [78.069, 22.721],
-      name: 'E. 102nd St. and FDR Drive',
+      name: 'E. 102nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48317,7 +48322,7 @@ else{
     {
       id: '105-fdrd',
       coord: [79.247, 23.089],
-      name: 'E. 105th St. and FDR Drive',
+      name: 'E. 105th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48330,7 +48335,7 @@ else{
     {
       id: '106-fdrd',
       coord: [79.562, 23.109],
-      name: 'E. 106th St. and FDR Drive',
+      name: 'E. 106th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
