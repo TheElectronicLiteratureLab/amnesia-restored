@@ -2218,7 +2218,7 @@ const xStreetEvent = () => {
     wackyRoom.desc = `'Thanks, Johnny,' he says, turning off his equipment and wiping his brow with a handkerchief embroidered 'WW.' 'You got any idea where I could find ${encounterStreetNumber} ${encounterStreetName}? It's my nephew's house and I'm supposed to bring him this little cable car I got in San Francisco.`
 
 
-    const wacky1 = getRoom('wacky');
+  const wacky1 = getRoom('wacky');
   const wacky2 = getRoom('wacky-2');
   const wacky3 = getRoom('wacky-3');
   const wacky4 = getRoom('wacky-4');
