@@ -1559,7 +1559,19 @@ const sleepFunction = () => {
         println(`You roll over and decide to fall back asleep.`);
         //enter the already had a nightmare room
         pressEnter('nigh-2nd');
+        //else if the player is in central park and their fatigure is less than 40
+      } else if (room.id === 'hote-room-8' && nightmareRoom.hasEntered && room.hasBed) {
+        //print this line and then
+        println(`You lie down on the cool bed spread and shut your eyes...`);
+        //enter the already had a nightmare room
+        pressEnter('nigh-2nd');
       //else if the player is in central park and their fatigure is less than 40
+    } else if (room.id === 'hote-room-8' && !nightmareRoom.hasEntered && room.hasBed){
+      //print this line
+      println(`You lie down on the cool bed spread and shut your eyes...`);
+      //enter the proper room
+      pressEnter('nigh-1');
+    //else if youre in the hotel room revisited and have gotten the nightmare and the room has a bed      
       } else if (room.name === 'Somewhere in Central Park' && playFat <= 40) {
         //enter room of central park sleeping
         enterRoom('cent-slee');

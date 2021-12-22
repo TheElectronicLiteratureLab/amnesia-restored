@@ -251,6 +251,7 @@ const amnesiaRestored = {
       id: 'hote-room-8',
       coord: [100, 100],
       name: 'Hotel Room 1502',
+      hasBed: true,
       desc: `To the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {     
         document.getElementById('inventory-button').style.display = "grid";
