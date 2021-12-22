@@ -760,7 +760,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \n\nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
+        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
       exits: [],
@@ -8361,14 +8361,24 @@ onBlock: () => {
           },
       },
       {
-          id: 'nyhist-denise-3', // New York Historical 2nd floor
-          name: 'N.Y. Historical Society', 
-          desc: `You follow Alice, from a distance, down the staircase and out of the museum. She turns right and heads around a corner. You quicken your pace, but when you reach the corner she's turned, there is no sign of her anywhere in the street.`,
-          onEnter: () => {
-              pressEnter('76-cpkw'); //Goes directly to sheep ending
-          },
+        id: 'nyhist-denise-3', // New York Historical 2nd floor
+        name: 'N.Y. Historical Society', 
+        desc: `You follow Alice, from a distance, down the staircase and out of the museum. She turns right and heads around a corner. You quicken your pace, but when you reach the corner she's turned, there is no sign of her anywhere in the street.`,
+        onEnter: () => {
+            pressEnter('side-art'); //Goes directly to sheep ending
+        },
       },
 
+  /***********************/
+ /* The Sidewalk Artist */
+/***********************/
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
 
   /**********************/
  /*      Sketchpad     */
@@ -13703,7 +13713,7 @@ else{
         {dir: 'north', id: 'whou-amer'},
         {dir: 'south', id: 'char-amer'},
         {dir: 'east', id: 'king-macd'},
-        {dir: 'west', id: 'king-7'},
+        {dir: 'west', id: 'king-vari'},
       ]
     },
     {
@@ -13789,7 +13799,7 @@ else{
       id: 'watt-amer',
       coord: [-61.547, -8.789],
       name: 'Watts St. and Ave. of Americas',
-      desc: '',
+      desc: `PARK WEST says the sign of a parking lot. All the rest of the building on which that sign has been tacked is given over to a mural of bright, inept, geometric doodles.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-amer'},
@@ -13881,7 +13891,7 @@ else{
       id: 'prin-thom',
       coord: [-56.869, -6.834],
       name: 'Prince St. and Thompson St.',
-      desc: '',
+      desc: `The Neugelt Gallery is having an opening, and through the plate glass windows you can see a great crowd of expensively dressed people with plastic tumblers, who bear a remarkable resemblance to the mannequins in the adjoining boutique, La Modiste Maudite, except that the mannequins haven't been supplied with plastic tumblers.`,
       isStreet: true,
       exits: [
         {dir:  'north', id: 'whou-thom'},
@@ -13897,7 +13907,7 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'spri-thom'},
+        {dir: 'north', id: 'prin-thom'},
         {dir: 'south', id: 'broo-thom'},
         {dir: 'east', id: 'spri-wbro'},
         {dir: 'west', id: 'spri-sull'},
@@ -13907,14 +13917,74 @@ else{
       id: 'broo-thom',
       coord: [-60.877, -7.192],
       name: 'Broome St. and Thompson St.',
-      desc: '',
+      desc: ``,
+      tomEncounter: false,
       isStreet: true,
+      onEnter: () => {
+        reenableInput()
+        let room = getRoom(disk.roomId);
+        if (room.tomEncounter === false) {
+          room.tomEncounter = true;
+          println(`Above a sign directing traffic to the Holland Tunnel a mural has been painted on the side of a brick building. Against a bright blue background a pair of gargantuan draft horses haul a wagon piled with kegs of beer. They are advertising the MANHATTAN BREWING CO.`);
+          pressEnter('thom-disc-1');
+        } else {
+          room.desc = `You see the shopfront buildings that the man Tom Disch was painting. A fleeting thought passes you questioning where he is at now.`;
+        }
+      },
       exits: [
         {dir: 'north', id: 'spri-thom'},
         {dir: 'south', id: 'watt-thom'},
         {dir: 'east', id: 'broo-wbro'},
         {dir: 'west', id: 'broo-amer'},
       ]
+    },
+    {
+      id: 'thom-disc-1',
+      coord: [-60.877, -7.192],
+      name: 'Broome St. and Thompson St.',
+      desc: `Beneath the mural a well-meaning but rather amateurish painter has set up his easel on the sidewalk and is painting one of the shopfront tenement buildings on Thompson Street. It is a building of no particular character, which the painting in progress faithfully mirrors.`,
+      onEnter: () => {
+        pressEnter('thom-disc-2');
+      },
+      exits: []
+    },
+    {
+      id: 'thom-disc-2',
+      coord: [-60.877, -7.192],
+      name: 'Broome St. and Thompson St.',
+      desc: `You watch from a polite distance, wondering why he's bothering to paint such an uninteresting scene and after a while the painter notices you and asks to stand in front of the building so he can put you in the picture.`,
+      onEnter: () => {
+        pressEnter('thom-disc-3');
+      },
+      exits: []
+    },
+    {
+      id: 'thom-disc-3',
+      coord: [-60.877, -7.192],
+      name: 'Broome St. and Thompson St.',
+      desc: `"If you have the time, " he adds, squeezing out a large glob of zinc white onto his palette.
+      
+      While he adds you to his painting he explains that years ago, in the early '60's, he used to live in the building he's painting and wrote his first sci-fi story there.
+      
+      "That's what I do for a living," he goes on, tinging the white paint with a minute trace of ochre.  "I write." You ask his name, and he says Tom Disch. You smile apologetically and say that you don't remember ever reading anything by him.
+      
+      "But," you add "that's because I've got amnesia. I don't remember anything."`,
+      onEnter: () => {
+        pressEnter('thom-disc-4');
+      },
+      exits: []
+    },
+    {
+      id: 'thom-disc-4',
+      coord: [-60.877, -7.192],
+      name: 'Broome St. and Thompson St.',
+      desc: `This doesn't seem to surprise him in the least. 
+      "Thank you," he says, folding up his easel. "I hope you're over your amnesia soon. Bye now."
+      He packs his painting equipment in his car, a blue Oldsmobile Cutlass Supreme, and drives off uptown. You wonder if he really is a writer.`,
+      onEnter: () => {
+        pressEnter('broo-thom');
+      },
+      exits: []
     },
     {
       id: 'watt-thom',
@@ -13946,7 +14016,7 @@ else{
       id: 'cana-thom',
       coord: [-63.552, -7.346],
       name: 'Canal St. and Thompson St.',
-      desc: '',
+      desc: `At the end of a brick-paved triangular parkette stands a statue of Juan Pablo (1813-1876). The bronze Juan is dressed in a matte-black version of a white tux and holds in his right hand a bronze scroll or else a pastry peculiar to the Dominican Republics. A pizza might look something like that if you rolled it up.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'gran-thom'},
@@ -13972,7 +14042,7 @@ else{
       id: 'spri-wbro',
       coord: [-59.074, -5.068],
       name: 'Spring St. and W. Broadway',
-      desc: '',
+      desc: `At the end of a brick-paved triangular parkette stands a statue of Juan Pablo (1813-1876). The bronze Juan is dressed in a matte-black version of a white tux and holds in his right hand a bronze scroll or else a pastry peculiar to the Dominican Republics. A pizza might look something like that if you rolled it up.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'prin-wbro'},
@@ -14080,7 +14150,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-woos'},
-        {dir: 'south', block: `You can't go that way.`},
+        {dir: 'south', id: 'cana-woos'},
         {dir: 'east', id: 'gran-gree'},
         {dir: 'west', id: 'gran-wbro'},
       ]
@@ -14598,7 +14668,7 @@ else{
       exits: [
         {dir: 'north', id: 'prin-lafa'},
         {dir: 'south', id: 'kenm-cent'},
-        {dir: 'east', id: 'kenm-mulb'},
+        {dir: 'east', id: 'spri-mulb'},
         {dir: 'west', id: 'spri-lafa'},
         
       ]
@@ -14620,7 +14690,7 @@ else{
       id: 'broo-cent',
       coord: [-61.309, 7.727],
       name: 'Broome St. and Centre St.',
-      desc: '',
+      desc: `Painted across a miniature Greek-colonnaded building wedged between the store fronts is "Roe-Harpmeister Funeral Service." A sign on the the door says "Closed for annual summer retreat with Koch's Florists."`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'kenm-cent'},
@@ -14633,7 +14703,7 @@ else{
       id: 'gran-cent',
       coord: [-62.825, 7.625],
       name: 'Grand St. and Centre St.',
-      desc: '',
+      desc: `According to what's carved under the pediment of the main entrance on Centre Street this is -- or was -- the police Department. Apparently the police vacated the premises and half their palazzo is in ruins and the other half, including the wedding-cake of a dome, is covered with scaffolding.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-cent'},
@@ -14793,7 +14863,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'spri-mulb'},
-        {dir: 'south', id: 'kenm-mulb'},
+        {dir: 'south', id: 'broo-mulb'},
         {dir: 'east', id: 'kenm-mott'},
         {dir: 'west', id: 'kenm-cent'},
       ]
@@ -14828,7 +14898,7 @@ else{
       id: 'hest-mulb',
       coord: [-64.372, 10.767],
       name: 'Hester St. and Mulberry St.',
-      desc: '',
+      desc: `A tour bus bearing the name SCENES OF THE CRIMES pulls up in front of Umberto's Clam House. The tourists file out of the bus and listen to their guide's account of how on the night of his 43rd birthday, April 7, 1972, "Crazy Joey" Gallo was shot down in this very restaurant.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'gran-mulb'},
@@ -14919,7 +14989,15 @@ else{
       id: 'gran-mott',
       coord: [-62.771, 12.400],
       name: 'Grand St. and Mott St.',
-      desc: '',
+      desc: `F
+      E
+      R
+      R
+      A
+      R
+      A
+
+      The word is spelled out in light bulbs on the sign projecting from the side of the new low brick building, and the word is defined by the bakery smells that waft out the front door.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-mott'},
@@ -15287,7 +15365,7 @@ else{
     {
       id: 'fran-lafa',
       coord: [-67.483, 5.319],
-      name: 'Franklin St. and Lafayette',
+      name: 'Franklin St. and Lafayette St.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15300,7 +15378,7 @@ else{
     {
       id: 'leon-lafa',
       coord: [-68.092, 5.158],
-      name: 'Leonard St. and Lafayette',
+      name: 'Leonard St. and Lafayette St.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15423,8 +15501,8 @@ else{
       exits: [
         {dir: 'north', id: 'cana-mulb'},
         {dir: 'south', id: 'baya-mulb'},
-        {dir: 'east', id: 'walk-baxt'},
-        {dir: 'west', block: `You can't go that way.`},
+        {dir: 'east', id: 'cana-mott'},
+        {dir: 'west', id: 'walk-baxt'},
       ]
     },
     {
@@ -15560,7 +15638,7 @@ else{
     {
       id: 'wort-stja',
       coord: [-68.935, 16.6199],
-      name: 'Worth St. and Saint James St.',
+      name: 'Worth St. and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15573,7 +15651,7 @@ else{
     {
       id: 'broa-stja',
       coord: [-68.966, 16.633],
-      name: 'E. Broadway and and Saint James St.',
+      name: 'E. Broadway and and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15586,7 +15664,7 @@ else{
     {
       id: 'divi-stja',
       coord: [-68.272, 16.780],
-      name: 'Division St. and Saint James St.',
+      name: 'Division St. and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15664,7 +15742,7 @@ else{
     {
       id: 'baya-stja',
       coord: [-67.119, 16.824],
-      name: 'Bayard St. and Saint James St.',
+      name: 'Bayard St. and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15677,7 +15755,7 @@ else{
     {
       id: 'pell-stja',
       coord: [-67.576, 16.765],
-      name: 'Pell St. and Saint James St.',
+      name: 'Pell St. and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15690,7 +15768,7 @@ else{
     {
       id: 'stja-doye',
       coord: [-68.172, 16.779],
-      name: 'Saint James St. and Doyers La.',
+      name: 'Saint James Pl. and Doyers La.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15716,7 +15794,7 @@ else{
     {
       id: 'stja-cath',
       coord: [-68.177, 16.897],
-      name: 'Saint James St. and Catherine St.',
+      name: 'Saint James Pl. and Catherine St.',
       desc: '',
       isStreet: true,
       exits: [
@@ -15788,7 +15866,7 @@ else{
         {dir: 'north', id: 'hest-fors'},
         {dir: 'south', id: 'fors-divi'},
         {dir: 'east', id: 'cana-eldr'},
-        {dir: 'west', id: 'cana-chrs'},
+        {dir: 'west', id: 'cana-chry'},
       ]
     },
     {
@@ -16032,8 +16110,8 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'hest-esse'},
-        {dir: 'south', id: 'cana-rutg'},
+        {dir: 'north', id: 'cana-esse'},
+        {dir: 'south', id: 'broa-rutg'},
         {dir: 'east', id: 'broa-cana'},
         {dir: 'west', id: 'cana-divi'},
       ]
@@ -16242,7 +16320,7 @@ else{
       id: 'blee-cros',
       coord: [-52.993, 5.266],
       name: 'Bleecker St. and Crosby St.',
-      desc: '',
+      desc: `Attractive though the Bayard building is, with its long clean lines, it isn't heaven -- the angels at the top must have lost their way somehow.`,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -16385,7 +16463,7 @@ else{
     {
       id: '14-usqe',
       coord: [-35.562, 2.483],
-      name: 'E. 14th At. and Union Square E.', 
+      name: 'E. 14th St. and Union Square E.', 
       desc: 'The 14 ST-Union Sq E Station entrance is at this corner.',
       hasSubway: true,
       exits: [
@@ -16429,7 +16507,7 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: '13-4-1'},
+        {dir: 'north', id: '13-4'},
         {dir: 'south', id: '11-4'},
         {dir: 'east', id: '12-3'},
         {dir: 'west', id: '12-broa'},
@@ -16779,7 +16857,9 @@ else{
       id: '12-2',
       coord: [-38.580, 15.670],
       name: 'E. 12th St. and 2nd Ave.',
-      desc: '',
+      desc: `The 11th Street Gallery is a narrow storefront sandwiched between an Estonian bakery and a bookshop that advertises itself as "Manhattan's Source for Metaphysical Reference Works."
+
+      The sign in the window informs you that the Gallery is only open from 10 to 6 daily.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '13-2'},
@@ -16844,7 +16924,7 @@ else{
       id: '10-2',
       coord: [-41.471, 15.651],
       name: 'E. 10th St. and 2nd Ave.',
-      desc: '',
+      desc: `Behind a fence of sharp black iron spikes, standing in a churchyard paved with little hillocks of patterned brick, is the Church of St. Mark's on the Bowery. A poster urges you to "Join the Poet's Protest Against --" But the rest has been torn off.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'stuy-2'},
@@ -16873,7 +16953,7 @@ else{
       desc: '',
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'wana-1'},
+        {dir: 'north', id: 'wana-2'},
         {dir: 'south', id: '7-2'},
         {dir: 'east', id: 'stma-1'},
         {dir: 'west', id: 'stma-3'},
@@ -17045,8 +17125,8 @@ else{
       exits: [
         {dir: 'north', id: '10-1'},
         {dir: 'south', id: 'stma-1'},
-        {dir: 'east', id: 'stma-avea'},
-        {dir: 'west', id: 'stma-2'},
+        {dir: 'east', id: 'wana-avea'},
+        {dir: 'west', id: 'wana-2'},
       ]
     },
     {
@@ -17066,13 +17146,15 @@ else{
       id: '7-1',
       coord: [-45.472, 21.035],
       name: 'E. 7th St. and 1st Ave.',
-      desc: '',
+      desc: `There is a pizzeria here.`,
       isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: 'stma-1'},
         {dir: 'south', id: '6-1'},
         {dir: 'east', id: '7-avea'},
         {dir: 'west', id: '7-2'},
+        {dir: 'pizzeria', id: 'pizza-intro'}
       ]
     },
     {
@@ -17448,8 +17530,8 @@ else{
       exits: [
         {dir: 'north', id: '12-aveb'},
         {dir: 'south', id: '10-aveb'},
-        {dir: 'east', id: '12-avec'},
-        {dir: 'west', id: '12-avea'},
+        {dir: 'east', id: '11-avec'},
+        {dir: 'west', id: '11-avea'},
       ]
     },
     {
@@ -17468,7 +17550,7 @@ else{
     {
       id: 'wana-aveb',
       coord: [-42.779, 32.036],
-      name: 'Wanamaker St. and Ave. B',
+      name: 'Wanamaker Pl. and Ave. B',
       desc: '',
       isStreet: true,
       exits: [
@@ -17566,7 +17648,7 @@ else{
         {dir: 'north', id: '3-aveb'},
         {dir: 'south', id: 'ehou-clin'},
         {dir: 'east', id: 'ehou-2'},
-        {dir: 'west', id: 'ehou-suff'},
+        {dir: 'west', id: '2-avea'},
       ]
     },
     {
@@ -17650,7 +17732,7 @@ else{
     {
       id: '12-avec',
       coord: [-38.454, 37.465],
-      name: 'E. 12th and Ave. C',
+      name: 'E. 12th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17663,7 +17745,7 @@ else{
     {
       id: '11-avec',
       coord: [-39.949, 37.499],
-      name: 'E. 11th and Ave. C',
+      name: 'E. 11th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17676,20 +17758,20 @@ else{
     {
       id: '10-avec',
       coord: [-41.283, 37.521],
-      name: 'E. 10th and Ave. C',
+      name: 'E. 10th St. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
         {dir: 'north', id: '11-avec'},
         {dir: 'south', id: 'wana-avec'},
-        {dir: 'east', id: '10-szol'},
+        {dir: 'east', id: '10-aved'},
         {dir: 'west', id: '10-aveb'},
       ]
     },
     {
       id: 'wana-avec',
       coord: [-42.744, 37.571],
-      name: 'Wanamaker St. and Ave. C',
+      name: 'Wanamaker Pl. and Ave. C',
       desc: '',
       isStreet: true,
       exits: [
@@ -17998,7 +18080,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'avec-fdrd'},
-        {dir: 'south', id: '15-aved'},
+        {dir: 'south', id: '15-avec'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', block: `You can't go that way.`},
       ]
@@ -18011,7 +18093,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '23-fdrd'},
-        {dir: 'south', id: 'avec-avec'},
+        {dir: 'south', id: 'avec-fdrd'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '20-1'},
       ]
@@ -18039,7 +18121,7 @@ else{
         {dir: 'north', id: 'avec-fdrd'},
         {dir: 'south', id: '14-fdrd'},
         {dir: 'east', id: '15-erdr'},
-        {dir: 'west', id: '15-aved'},
+        {dir: 'west', id: '15-avec'},
       ]
     },
     {
@@ -18097,7 +18179,7 @@ else{
     {
       id: 'ehou-fdrd',
       coord: [-51.469, 52.421],
-      name: 'E. Houston St. and FDR Drive',
+      name: 'E. Houston St. and FDR Dr.',
       desc: '',
       isStreet: true,
       exits: [
@@ -23042,7 +23124,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
-        {dir: 'south', id: 'stan-fors'},
+        {dir: 'south', id: 'stan-eldr'},
         {dir: 'east', id: 'ehou-alle'},
         {dir: 'west', id: 'ehou-fors'}, 
       ]
@@ -23120,7 +23202,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'ehou-orch'},
-        {dir: 'south', id: 'rici-orch'},
+        {dir: 'south', id: 'rivi-orch'},
         {dir: 'east', id: 'stan-ludl'},
         {dir: 'west', id: 'stan-alle'}, 
       ]
@@ -23420,7 +23502,7 @@ else{
       exits: [
         {dir: 'north', id: 'stan-pitt'},
         {dir: 'south', id: 'dela-pitt'},
-        {dir: 'east', id: 'rivi-colu'},
+        {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'rivi-ridg'}, 
       ]
     },
@@ -23551,20 +23633,20 @@ else{
       exits: [
         {dir: 'north', id: 'rivi-suff'},
         {dir: 'south', id: 'broo-suff'},
-        {dir: 'east', id: 'will-clin'},
+        {dir: 'east', id: 'dela-clin'},
         {dir: 'west', id: 'dela-norf'}, 
       ]
     },
     {
       id: 'dela-clin',
-      coord: [-59.255, 31.762],
+      coord: [-59.131, 33.750],
       name: 'Delancy St. and Clinton St.',
       desc: ``,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'rivi-clin'},
-        {dir: 'south', id: 'will-clin'},
-        {dir: 'east', block: `You can't go that way.`},
+        {dir: 'south', id: 'new-clin'},
+        {dir: 'east', id: 'will-clin'},
         {dir: 'west', id: 'dela-suff'}, 
       ]
     },
@@ -23623,7 +23705,7 @@ else{
     {
       id: 'dela-fdrd',
       coord: [-57.194, 55.478],
-      name: 'Delancy St. and FDR Drive',
+      name: 'Delancy St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -23640,10 +23722,10 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'dela-clin'},
+        {dir: 'north', id: 'rivi-clin'},
         {dir: 'south', id: 'new-clin'},
         {dir: 'east', block: `You can't go that way.`},
-        {dir: 'west', id: 'dela-suff'}, 
+        {dir: 'west', id: 'dela-clin'}, 
       ]
     },
     {
@@ -23653,7 +23735,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'will-clin'},
+        {dir: 'north', id: 'dela-clin'},
         {dir: 'south', id: 'broo-clin'},
         {dir: 'east', id: 'new-ridg'},
         {dir: 'west', block: `You can't go that way.`}, 
@@ -23903,7 +23985,7 @@ else{
         {dir: 'north', id: 'new-will'},
         {dir: 'south', id: 'gran-will'},
         {dir: 'east', id: 'broo-colu'},
-        {dir: 'west', id: 'bro-pitt'}, 
+        {dir: 'west', id: 'broo-pitt'}, 
       ]
     },
     {
@@ -24006,7 +24088,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-esse'},
-        {dir: 'south', id: 'hest-eese'},
+        {dir: 'south', id: 'hest-esse'},
         {dir: 'east', id: 'gran-norf'},
         {dir: 'west', id: 'gran-ludl'}, 
       ]
@@ -24139,7 +24221,7 @@ else{
       exits: [
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: 'madi-jack'},
-        {dir: 'east', id: 'gran-lwei'},
+        {dir: 'east', id: 'gran-lewi'},
         {dir: 'west', id: 'gran-henr'}, 
       ]
     },
@@ -24166,7 +24248,7 @@ else{
         {dir: 'north', block: `You can't go that way.`},
         {dir: 'south', id: 'madi-jack'},
         {dir: 'east', id: 'gran-sout'},
-        {dir: 'west', id: 'gran-lwei'}, 
+        {dir: 'west', id: 'gran-lewi'}, 
       ]
     },
     {
@@ -24177,7 +24259,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'new-sout'},
-        {dir: 'south', id: 'sout-jack'},
+        {dir: 'south', id: 'jack-sout'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'gran-madi'}, 
       ]
@@ -24271,6 +24353,19 @@ else{
         {dir: 'south', id: 'cana-esse'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'hest-ludl'}, 
+      ]
+    },
+    {
+      id: 'cana-esse',
+      coord: [-64.766, 29.795],
+      name: 'Canal St. and Essex St.',
+      desc: ``,
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'hest-esse'},
+        {dir: 'south', id: 'cana-rutg'},
+        {dir: 'east', id: 'broa-cana'},
+        {dir: 'west', id: 'cana-ludl'}, 
       ]
     },
     {
@@ -24502,9 +24597,22 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
-        {dir: 'south', id: 'ggdn-gouv'},
+        {dir: 'south', id: 'gouv-sout-1'},
         {dir: 'east', id: 'madi-jack'},
         {dir: 'west', id: 'madi-mont'}, 
+      ]
+    },
+    {
+      id: 'gouv-sout-1',
+      coord: [-64.747, 45.352],
+      name: 'Gouverneur St. and South St.',
+      desc: ``,
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'madi-gouv'},
+        {dir: 'south', id: 'ggdn-gouv'},
+        {dir: 'east', id: 'jack-sout'},
+        {dir: 'west', block: `You can't go that way.`}, 
       ]
     },
     {
@@ -24515,7 +24623,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: 'gran-jack'},
-        {dir: 'south', id: `ggdn-jack`},
+        {dir: 'south', id: `jack-sout`},
         {dir: 'east', id: 'gran-madi'},
         {dir: 'west', id: 'madi-gouv'}, 
       ]
@@ -24696,7 +24804,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'madi-gouv'},
+        {dir: 'north', id: 'gouv-sout-1'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'ggdn-gsle'},
         {dir: 'west', id: 'ggdn-gslw'}, 
@@ -24722,10 +24830,23 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: 'madi-jack'},
+        {dir: 'north', id: 'jack-sout'},
         {dir: 'south', id: 'sout-jack'},
         {dir: 'east', id: 'gran-sout'},
         {dir: 'west', id: 'ggdn-gsle'}, 
+      ]
+    },
+    {
+      id: 'jack-sout',
+      coord: [-63.117, 50.362],
+      name: 'Jackson St. and South St.',
+      desc: ``,
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'madi-jack'},
+        {dir: 'south', id: 'ggdn-jack'},
+        {dir: 'east', id: 'gran-sout'},
+        {dir: 'west', id: 'gouv-sout-1'}, 
       ]
     },
     {
@@ -24921,7 +25042,7 @@ else{
       id: 'wash-lagu',
       coord: [-48.795, -4.258],
       name: 'Washington Square S and LaGuardia Pl.',
-      desc: `You may enter ***Washington Square Park*** from here.`,
+      desc: `You may enter **Washington Square Park** from here.`,
       isStreet: true,
       onEnter: () => {
         degradation = true;
@@ -25384,13 +25505,13 @@ else{
       id: 'wave-univ',
       coord: [-46.354, -1.556],
       name: 'Waverly Pl. and University Pl.',
-      desc: `You may enter ***Washington Square Park*** from here.`,
+      desc: `You may enter **Washington Square Park** from here.`,
       isStreet: true,
       onEnter: () => {
         degradation = true;
       },
       exits: [
-        {dir: 'north', id: 'wash-unvi'},
+        {dir: 'north', id: 'wash-univ'},
         {dir: 'south', id: 'wash-wsqe'},
         {dir: 'east', id: 'wave-gree'}, 
         {dir: 'west', id: 'wave-5'},
@@ -25682,20 +25803,6 @@ else{
         {dir: 'south', id: '12-amer'},
         {dir: 'east', id: '13-5'}, 
         {dir: 'west', id: '13-7'} 
-      ],
-    },
-    {   
-      id: 'whou-7',
-      coord: [-55.579, -16.726],
-      name: 'W. Houston St. and 7th Ave. S.',
-      desc: `The Houston-Varick Station entrance is at this corner.`,
-      hasSubway: true,
-      exits: [
-        {dir: 'north', id: 'down-7'},
-        {dir: 'south', id: 'king-vari'},
-        {dir: 'east', id: 'whou-amer'}, 
-        {dir: 'west', id: 'whou-huds'} ,
-        {dir: 'subway', id: 'subway'}
       ],
     },
     {   
@@ -26339,6 +26446,19 @@ else{
         {dir: 'west', block: `You can't go that way.`} 
       ],
     },
+    {
+      id: '10-huds',
+      coord: [-49.182, -25.378],
+      name: 'W. 10th St. and Hudson St.',
+      desc: ``,
+      isStreet: true,
+      exits: [
+        {dir: 'north', id: 'char-huds-1'},
+        {dir: 'south', id: 'chri-huds'},
+        {dir: 'east', id: '10-blee'}, 
+        {dir: 'west', id: '10-gree-1'} 
+      ],
+    },
     {   
       id: 'chri-huds',
       coord: [-50.107, -24.806],
@@ -26355,27 +26475,118 @@ else{
       
       WARNING: The management of this theater is NOT responsible! 
       Admissions: Only $2.00!`,
+      //this only happens if time is after 7pm but before 10pm
       isStreet: true,
+      onEnter: () => {
+        reenableInput();
+      },
+      onBlock: () => {
+        if (prevInput === 'buy ticket' || prevInput === 'buy a ticket' || prevInput === 'see performance') {
+          if (playMon >= 2) {
+            playMon -= 2;
+            updateMon();
+            println('You walk up to the ticket window, and purchase a ticket.');
+            enterRoom('chri-huds-1');
+          } else {
+            println(`You don't have enough money!`);
+          }
+        } else if (prevInput === '') {
+          println('Are you going to buy a ticket?');
+        } else {
+          println('Can you rephrase that?');
+        }
+      },
       exits: [
         {dir: 'north', id: '10-huds'},
         {dir: 'south', id: 'grov-huds'},
         {dir: 'east', id: 'chri-bedf'}, 
         {dir: 'west', id: 'chri-gree-1'},
-        {dir: 'theatre of silliness', id: 'chri-huds-1'}
+        {dir: ['theatre', 'buy', 'theatre of silliness', 'inside'], id: 'chri-huds-1'}
       ],
     },
+    //Theatre of Silliness
     {   
-      id: '10-huds',
-      coord: [-49.167, -25.375],
-      name: 'W. 10th St. and Hudson St.',
-      desc: ``,
-      isStreet: true,
-      exits: [
-        {dir: 'north', id: 'char-huds-1'},
-        {dir: 'south', id: 'chri-huds'},
-        {dir: 'east', id: '10-blee'}, 
-        {dir: 'west', id: '10-gree-1'} 
-      ],
+      id: 'chri-huds-1',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `You enter a dark dismal vestibule that leads to a second door, and that door is locked. As you stand there, undecided, the door to the street bursts open and two bulldog-jowled policemen enter, pistols drawn. You're ordered to face the wall, and while one reads you your rights the other searches you for weapons.`,
+      onEnter: () => {
+        pressEnter('chri-huds-2')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-2',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `"What did I tell you, Louie. Didn't I say we should stake out this joint? Didn't I say he'd return to the scene of the crime? Am I right or am I right?" 
+
+      "You're right, you're right, but why not just settle his hash right here? We know he's guilty -- why waste the taxpayer's money on a trial? When you think of what the sombitch did...." `,
+      onEnter: () => {
+        pressEnter('chri-huds-3')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-3',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `"Louie, you shoulda been a philosopher. And I know just how to make it look like a suicide. Take him in there."
+      `,
+      onEnter: () => {
+        pressEnter('chri-huds-4')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-4',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `You are led through the door that had been locked, but which is now open, and stumble forward into the darkness. You bump into someone -- a woman, by the nature of the collision. You knock your shin against a wooden board, and then are made to mount a short flight of steps.`,
+      onEnter: () => {
+        pressEnter('chri-huds-5')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-5',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `A bright light comes on, blinding you, and behind you Louie's amplified voice booms out: "Ladies and Gentlemen, Boys and Girls, Children of All Ages, let's have a nice round of applause for this evening's fifteenth victim!"`,
+      onEnter: () => {
+        pressEnter('chri-huds-6')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-6',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `There is some tepid applause, but also some murmurs of complaint: "He didn't look the least bit frightened!" "This is a cheat, I want my money back." "When does the show start?"`,
+      onEnter: () => {
+        pressEnter('chri-huds-7')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-7',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `"Okay, okay, you want theater, we'll give you theater!" declares the false cop who'd frisked you. He shrugs off his police jacket and wheels a small throne to the center of the stage. Meanwhile the other policeman ushers you to a seat in the third row of the theater.`,
+      onEnter: () => {
+        pressEnter('chri-huds-8')
+      },
+      exits: []
+    },
+    {   
+      id: 'chri-huds-8',
+      coord: [-50.107, -24.806],
+      name: 'The Theatre of Silliness',
+      desc: `For the next two hours you watch as a small cast of amateurs lip-synch Shakespeare's HAMLET as recorded, in Serbo-Croatian, by Yugoslavian Radio. The experience is oddly soothing, and you return to the streets of Manhattan with a sense that there really are more things under heaven and earth than you've dreamt of in your philosophy.`,
+      onEnter: () => {
+        pressEnter('chri-huds');
+      },
+      exits: []
     },
     {   
       id: 'char-huds-1',
@@ -27845,7 +28056,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '27-12'},
-        {dir: 'south', id: '25-12'},
+        {dir: 'south', id: '24-12'},
         {dir: 'east', id: '26-11'},
         {dir: 'west', block: `You can't go that way.`}
       ],
@@ -28146,9 +28357,9 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '23-11'},
-        {dir: 'south', id: '12-12'},
+        {dir: 'south', id: '11-12'},
         {dir: 'east', id: '22-10'},
-        {dir: 'west', id: '23-12'}
+        {dir: 'west', id: '22-12'}
       ],
     },
         //10th Ave
@@ -28174,7 +28385,7 @@ else{
       exits: [
         {dir: 'north', id: '33-10'},
         {dir: 'south', id: '31-10'},
-        {dir: 'east', id: '32-9'},
+        {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '32-11'},
       ]
     },
@@ -28186,11 +28397,11 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', id: '32-10'},
-        {dir: 'south', id: '30-10'},
+        {dir: 'south', id: 'linc-10'},
         {dir: 'east', id: '31-9'},
         {dir: 'west', block: `You can't go that way.`}
       ],
-    }, //Todo: check here
+    },
     {
       id: 'linc-10',
       coord: [-8.637, -40.163],
@@ -28211,7 +28422,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '31-10'},
+        {dir: 'north', id: 'linc-10'},
         {dir: 'south', id: '29-10'},
         {dir: 'east', id: '30-9'},
         {dir: 'west', id: '30-11'},
@@ -28975,7 +29186,7 @@ else{
     {
       id: '31-7',
       coord: [-7.370, -20.173],
-      name: '31st St. and 7th Ave.',
+      name: 'W. 31st St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29001,7 +29212,7 @@ else{
     {
       id: '29-7',
       coord: [-11.059, -20.069],
-      name: '29th St. and 7th Ave.',
+      name: 'W. 29th St. and 7th Ave.',
       desc: `There is a pizzeria here.`,
       isStreet: true,
       hasFood: true,
@@ -29016,8 +29227,8 @@ else{
     {
       id: '28-7',
       coord: [-12.773, -20.061],
-      name: '28th St. and 7th Ave.',
-      desc: `The 28 ST-7 AV Station entrance is at this corner`,
+      name: 'W. 28th St. and 7th Ave.',
+      desc: `The 28 ST-7 AV Station entrance is at this corner.`,
       hasSubway: true,
       exits: [
         {dir: 'north', id: '29-7'},
@@ -29115,7 +29326,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '21-7'},
+        {dir: 'north', id: '22-7'},
         {dir: 'south', id: '20-7'},
         {dir: 'east', id: '21-amer'},
         {dir: 'west', id: '21-8'},
@@ -29179,7 +29390,7 @@ else{
     {
       id: '16-7',
       coord: [-32.912, -19.622],
-      name: '16th St. and 7th Ave.',
+      name: 'W. 16th St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29192,7 +29403,7 @@ else{
     {
       id: '15-7',
       coord: [-34.085, -19.577],
-      name: '15th St. and 7th Ave.',
+      name: 'W. 15th St. and 7th Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -29205,7 +29416,7 @@ else{
     {
       id: '14-7',
       coord: [-35.757, -19.577],
-      name: '14th St. and 7th Ave.',
+      name: 'W. 14th St. and 7th Ave.',
       desc: `The 14 ST-7 AV Station entrance is at this corner.`,
       hasSubway: true,
       exits: [
@@ -29354,8 +29565,8 @@ else{
     {
       id: '24-amer',
       coord: [-19.531, -13.393],
-      name: '24th St. and Ave. of Americas',
-      desc: `There is a pizeria here.`,
+      name: 'W. 24th St. and Ave. of Americas',
+      desc: `There is a pizzeria here.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '25-amer'},
@@ -30026,7 +30237,7 @@ else{
       id: '14-5',
       coord: [-35.630, -5.570],
       name: 'W. 14th St. and 5th Ave.',
-      desc: `You stop to admire the imaginar living rooms in the three windows of a furniture store. They are furnished in the highly traditional bad tast of the quiz program WHEEL OF FORTUNE`,
+      desc: `You stop to admire the imaginary living rooms in the three windows of a furniture store. They are furnished in the highly traditional bad taste of the quiz program WHEEL OF FORTUNE.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '15-5'},
@@ -30276,7 +30487,7 @@ else{
     {
       id: '15-usqe',
       coord: [-33.859, 2.442],
-      name: 'E. 15th St. and Union Sqaure E.',
+      name: 'E. 15th St. and Union Square E.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -30290,8 +30501,9 @@ else{
       id: '4-usqe',
       coord: [-35.580, 2.829],
       name: '4th Ave. and Union Square E.',
-      desc: ``,
+      desc: `There is a restaurant called Nedick's here.`,
       isStreet: true,
+      hasFood: true,
       exits: [
         {dir: 'north', id: '15-usqe'},
         {dir: 'south', id: '14-usqe'},
@@ -31270,7 +31482,7 @@ else{
     {
       id: '21-2',
       coord: [-24.482, 15.329],
-      name: 'E. 31st St. and 2nd Ave.',
+      name: 'E. 21st St. and 2nd Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31394,7 +31606,7 @@ else{
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
-        {dir: 'south', id: 'nath-16'},
+        {dir: 'south', id: '16-perl'},
         {dir: 'east', id: '17-1'},
         {dir: 'west', id: '17-2'},
       ],
@@ -31406,8 +31618,8 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '17-ruth'},
-        {dir: 'south', id: 'nath-15'},
+        {dir: 'north', id: '17-perl'},
+        {dir: 'south', id: '15-perl'},
         {dir: 'east', id: '16-1'},
         {dir: 'west', block: `You can't go that way.`}
       ],
@@ -31419,7 +31631,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '16-ruth'},
+        {dir: 'north', id: '16-perl'},
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '15-1'},
         {dir: 'west', id: '15-2'}
@@ -31624,7 +31836,7 @@ else{
     {
       id: '15-1',
       coord: [-33.706, 20.856],
-      name: 'W. 15th St. and 1st Ave.',
+      name: 'E. 15th St. and 1st Ave.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31703,7 +31915,7 @@ else{
     {
       id: '34-fdrd',
       coord: [-1.519, 22.074],
-      name: 'E. 34th St. and FDR Drive',
+      name: 'E. 34th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31716,7 +31928,7 @@ else{
     {
       id: '25-fdrd',
       coord: [-17.430, 25.840],
-      name: 'E. 25th St. and FDR Drive',
+      name: 'E. 25th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -31729,7 +31941,7 @@ else{
     {
       id: '23-fdrd',
       coord: [-20.981, 27.645],
-      name: 'E. 23rd St. and FDR Drive',
+      name: 'E. 23rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -34707,7 +34919,7 @@ else{
       id: '53-5',
       coord: [32.787, -6.877],
       name: 'W. 53rd St. and 5th Ave.',
-      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art == New York's big MOMA.`,
+      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art -- New York's big MOMA.`,
       isStreet: true,
       curMoveCount: 0,
       onEnter: () => {
@@ -34951,7 +35163,7 @@ else{
       id: '52-madi',
       coord: [31.297, -2.505],
       name: 'E. 52nd St. and Madison Ave.',
-      desc: `Park Plaza – In the sterile griminess of New York, a patch of green is good to see – but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
+      desc: `Park Plaza - In the sterile griminess of New York, a patch of green is good to see - but this 50-story glass structure does not remind you of meadows or forests; it is more like congealed lake water. `,
       isStreet: true,
       exits: [
         {dir: 'north', id: '53-madi'},
@@ -37421,7 +37633,7 @@ else{
     {
       id: '41-fdrd',
       coord: [11.652, 23.778],
-      name: 'E. 41st St. and FDR Drive',
+      name: 'E. 41st St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -37434,7 +37646,7 @@ else{
     {
       id: '42-fdrd',
       coord: [13.667, 24.042],
-      name: 'E. 42nd St. and FDR Drive',
+      name: 'E. 42nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -47152,7 +47364,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '110-2', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-2'},
         {dir: 'east', id: '110-1'},
         {dir: 'west', id: '110-3'},
@@ -47859,7 +48071,7 @@ else{
       desc: ``,
       isStreet: true,
       exits: [
-        {dir: 'north', id: '110-1', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
+        {dir: 'north', block: `North of here is Harlem, or Columbia, and north of those is the Bronx, and north of the Bronx is Yonkers, and then the Catskills, the Adirondacks, Montreal, the Arctic Circle, and finally the North Pole itself, but you decide, wisely, that venturing any further north in search of your identity or even a pleasanter life would be wasted effort. Wasn't it Horace Greely who said, "Go south, young man"?`},
         {dir: 'south', id: '109-1'},
         {dir: 'east', id: '110-fdrd'},
         {dir: 'west', id: '110-2'},
@@ -48497,7 +48709,7 @@ else{
     {
       id: '71-fdrd',
       coord: [57.007, 28.107],
-      name: 'E. 71st St. and FDR Drive',
+      name: 'E. 71st St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48510,7 +48722,7 @@ else{
     {
       id: '72-fdrd',
       coord: [58.083, 28.283],
-      name: 'E. 72nd St. and FDR Drive',
+      name: 'E. 72nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48523,7 +48735,7 @@ else{
     {
       id: '73-fdrd',
       coord: [59.203, 28.402],
-      name: 'E. 73rd St. and FDR Drive',
+      name: 'E. 73rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48536,7 +48748,7 @@ else{
     {
       id: '79-fdrd',
       coord: [64.374, 29.632],
-      name: 'E. 79th St. and FDR Drive',
+      name: 'E. 79th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48549,7 +48761,7 @@ else{
     {
       id: 'eend-fdrd',
       coord: [72.790, 28.226],
-      name: 'East End Ave. and FDR Drive',
+      name: 'East End Ave. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48562,7 +48774,7 @@ else{
     {
       id: '93-fdrd',
       coord: [73.937, 23.431],
-      name: 'E. 93rd St. and FDR Drive',
+      name: 'E. 93rd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48575,7 +48787,7 @@ else{
     {
       id: '94-fdrd',
       coord: [74.428, 22.227],
-      name: 'E. 94th St. and FDR Drive',
+      name: 'E. 94th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48588,7 +48800,7 @@ else{
     {
       id: '95-fdrd',
       coord: [74.916, 21.630],
-      name: 'E. 95th St. and FDR Drive',
+      name: 'E. 95th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48601,7 +48813,7 @@ else{
     {
       id: '96-fdrd',
       coord: [75.438, 21.102],
-      name: 'E. 96th St. and FDR Drive',
+      name: 'E. 96th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48614,7 +48826,7 @@ else{
     {
       id: '97-fdrd',
       coord: [75.925, 21.290],
-      name: 'E. 97th St. and FDR Drive',
+      name: 'E. 97th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48627,7 +48839,7 @@ else{
     {
       id: '98-fdrd',
       coord: [76.383, 21.681],
-      name: 'E. 98th St. and FDR Drive',
+      name: 'E. 98th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48640,7 +48852,7 @@ else{
     {
       id: '99-fdrd',
       coord: [76.851, 22.014],
-      name: 'E. 99th St. and FDR Drive',
+      name: 'E. 99th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48653,7 +48865,7 @@ else{
     {
       id: '100-fdrd',
       coord: [77.241, 22.268],
-      name: 'E. 100th St. and FDR Drive',
+      name: 'E. 100th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48666,7 +48878,7 @@ else{
     {
       id: '102-fdrd',
       coord: [78.069, 22.721],
-      name: 'E. 102nd St. and FDR Drive',
+      name: 'E. 102nd St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48679,7 +48891,7 @@ else{
     {
       id: '105-fdrd',
       coord: [79.247, 23.089],
-      name: 'E. 105th St. and FDR Drive',
+      name: 'E. 105th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [
@@ -48692,7 +48904,7 @@ else{
     {
       id: '106-fdrd',
       coord: [79.562, 23.109],
-      name: 'E. 106th St. and FDR Drive',
+      name: 'E. 106th St. and FDR Dr.',
       desc: ``,
       isStreet: true,
       exits: [

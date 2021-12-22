@@ -29,7 +29,7 @@ L.tileLayer('map/{z}/{x}/{y}.png', {
   minZoom: 3,
   maxZoom: 6,
 }).addTo(map);
-/* 
+ 
 ///Coordinate Finder
 var marker = L.marker([0, 0], {draggable: true,}).addTo(map);
 marker.bindPopup('LatLng Marker').openPopup();
@@ -40,7 +40,7 @@ marker.on('drag', function(e) {
   marker.on('dragend', function(e) {
     navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
 })
-});*/
+});
 
 //Layer Groups
 let subwayLayer = L.layerGroup();
