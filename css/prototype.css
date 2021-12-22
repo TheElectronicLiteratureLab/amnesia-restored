@@ -734,6 +734,7 @@ body {
    text-decoration-color: #AD3121;
    text-decoration-thickness: 2px;
    text-underline-offset: .5em;
+   cursor: pointer;
 }
 
 .bropage {
