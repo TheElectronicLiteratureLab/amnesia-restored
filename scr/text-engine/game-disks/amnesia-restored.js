@@ -759,7 +759,6 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        document.getElementById("output").innerHTML = '';
         println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
@@ -8361,14 +8360,24 @@ onBlock: () => {
           },
       },
       {
-          id: 'nyhist-denise-3', // New York Historical 2nd floor
-          name: 'N.Y. Historical Society', 
-          desc: `You follow Alice, from a distance, down the staircase and out of the museum. She turns right and heads around a corner. You quicken your pace, but when you reach the corner she's turned, there is no sign of her anywhere in the street.`,
-          onEnter: () => {
-              pressEnter('76-cpkw'); //Goes directly to sheep ending
-          },
+        id: 'nyhist-denise-3', // New York Historical 2nd floor
+        name: 'N.Y. Historical Society', 
+        desc: `You follow Alice, from a distance, down the staircase and out of the museum. She turns right and heads around a corner. You quicken your pace, but when you reach the corner she's turned, there is no sign of her anywhere in the street.`,
+        onEnter: () => {
+            pressEnter('side-art'); //Goes directly to sheep ending
+        },
       },
 
+  /***********************/
+ /* The Sidewalk Artist */
+/***********************/
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
 
   /**********************/
  /*      Sketchpad     */
