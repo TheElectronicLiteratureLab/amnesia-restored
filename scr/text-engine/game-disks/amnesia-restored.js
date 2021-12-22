@@ -237,9 +237,9 @@ const amnesiaRestored = {
       id: 'hote-room-7',
       coord: [],
       name: '',
-      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a **room key** with a large green plastic tag showing your room number, 1502.\n
+      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502.\n
 
-      On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged dollar bill, both of which you take. To pass the time the hotel offers a television. Also, a **Gideon Bible**. A ballpoint **pen** has been placed near the phone.
+      On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged __dollar bill__, both of which you take. To pass the time the hotel offers a television. Also, a __Gideon Bible__. A ballpoint __pen__ has been placed near the phone.
       `,
       onEnter: () => {
         //reenableInput();
@@ -264,7 +264,7 @@ const amnesiaRestored = {
       },
       onLook: () => {
         let room = getRoom('hote-room-8');
-        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a room key with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a Gideon Bible. A ballpoint pen has been placed near the phone. \nTo the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
+        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's __stationary__ informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a __Gideon Bible__. A __ballpoint pen__ has been placed near the phone. \nTo the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
         println(room.desc);
       },
       items: [
@@ -568,7 +568,7 @@ const amnesiaRestored = {
     {
       id: 'hote-bath-1',
       name: 'Bathroom',
-      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretending to be marble, **a tiled shower**, **a toilet**, a towel rack with a **large towel**. But no clothes.`, 
+      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretending to be marble, **a tiled shower**, **a toilet**, a towel rack with a __large towel__. But no clothes.`, 
       onEnter: () => {
           const room = getRoom('hote-bath-1');
           if(getItemInInventoryById('bathtowel')){ //if the towel is already in inventory
@@ -744,7 +744,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`"Cameron." You test out the sound of the name she's given you. But can you be sure you are the Cameron that rented this room? \n\nIf your own signature as "Cameron" jibes with the one on the reciept the bellboy is bringing... \n\nYou saw a ballpoint pen somewhere...`);
+        println(`"Cameron." You test out the sound of the name she's given you. But can you be sure you are the Cameron that rented this room? \n\nIf your own signature as "Cameron" jives with the one on the reciept the bellboy is bringing... \n\nYou saw a ballpoint pen somewhere...`);
         if (getItemInInventoryById('pen')){
           println('Oh yes you grabbed it from the dresser.');
         } else {
@@ -760,7 +760,6 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        document.getElementById("output").innerHTML = '';
         println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
