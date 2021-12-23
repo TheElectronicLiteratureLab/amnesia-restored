@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -258,7 +258,7 @@ const amnesiaRestored = {
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
         addItem('xindexer');
-        addItem('dollarbill');
+        addItem('dollar bill');
         reenableInput();
         ////console.log(disk.inventory);
       },
@@ -2009,7 +2009,7 @@ const amnesiaRestored = {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
-              addItem('bathtowel');
+              addItem('bath towel');
             }
           }
         },
@@ -4349,7 +4349,7 @@ const amnesiaRestored = {
           itemId: 'mmtshirt',
           icon: '/img/gif/gif-clothingmickeytee-ingame.gif',
           gif: '/img/gif/gif-clothingmickeytee-ingame.gif',
-          name: 'Mickey Mouse T-Shirt',
+          name: ['Mickey Mouse T-Shirt', 'mmtshirt'],
           desc: 'A Mickey Mouse T-shirt with its sleeves chopped off. First found in a Sunderland Hotel Healthclub locker room.',
           used: false,
           isTakeable: true,
@@ -4373,7 +4373,7 @@ const amnesiaRestored = {
           itemId: 'lockersweats',
           icon: '/img/png/image-sweatsuitbottom-thumbnail.png',
           gif: '/img/gif/gif-sweatsuitbottom-ingame.gif',
-          name: 'Sweatpants',
+          name: ['Sweatpants', 'sweatpants', 'lockersweats'],
           desc: 'A pair of sweatpants. First found in a Sunderland Hotel Healthclub locker room.',
           isTakeable: true,
           isDroppable: true,
@@ -5800,14 +5800,14 @@ const amnesiaRestored = {
       println(`When you do not at once accept the box from her, she mutters a fervent, "Oh, damn you!" and throws it at your feet. Then in a flash of white satin and yellow lace she is out the door of the chapel.`);
       enterRoom('chap-20');
     } if (prevInput === 'take box' || prevInput === 'okay' || prevInput === 'yes' || prevInput === 'take ring') {
-      addItem('weddingbox');
+      addItem('box');
     }
   },
   items: [
     {
       itemId: 'weddingbox',
       icon: 'img/png/image-openweddingbox-thumbnail.png',
-      gif: 'img/gif/gif-openbox-ingame.gif',
+      gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
       desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
@@ -5816,7 +5816,7 @@ const amnesiaRestored = {
       isTakeable: true,
       isDroppable: true,
       onTake: () => {
-        addItem('weddingbox');
+        addItem('box');
         let item = getItemInInventoryById('weddingbox');
         if (item.firstGet === true) {
           item.firstGet = false;
@@ -5829,7 +5829,7 @@ const amnesiaRestored = {
       onUse: () => {
         let item = getItemInInventoryById('weddingbox');
         item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-        item.gif = 'img/gif/gif-closedbox-ingame.gif';
+        item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
         
         println(`You tilt back the hinged lid of the box and find, nestled in white velvet, a thick silver band with a giant diamond on it. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`);
         if (item.firstUse === true) {
@@ -6025,7 +6025,7 @@ onBlock: () => {
     {
       itemId: 'weddingbox',
       icon: 'img/png/image-openweddingbox-thumbnail.png',
-      gif: 'img/gif/gif-openbox-ingame.gif',
+      gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
       desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
@@ -6034,13 +6034,13 @@ onBlock: () => {
       isTakeable: true,
       isDroppable: true,
       onTake: () => {
-        addItem('weddingbox');
+        addItem('box');
         let item = getItemInInventoryById('weddingbox');
         if (item.firstGet === true) {
           item.firstGet = false;
           println(`You take the box, which is warm still from its resting place in your bride's bosom. It smells of lilacs.`);
           item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-          item.gif = 'img/gif/gif-closedbox-ingame.gif';
+          item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
 
           println(`You tilt back the hinged lid of the box and find, nestled in white velvet, a thick silver band with a giant diamond on it. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`);
 
@@ -6061,7 +6061,7 @@ onBlock: () => {
       onUse: () => {
         let item = getItemInInventoryById('weddingbox');
         item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-        item.gif = 'img/gif/gif-closedbox-ingame.gif';
+        item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
         }
       }
   ]
@@ -7068,7 +7068,7 @@ onBlock: () => {
           As all shall learn who feel my teeth.
           Who am I?
           There’s no time to answer that question now, but maybe by the next time you’ve booted this disk you’ll have figured out the answer. You say good-bye to the saleswoman and leave the User-Friendly Computer Store.`, 'compStore');
-          addItem('riddlenote');
+          addItem('riddle note');
           storyMarker.bindPopup('Maybe try finding a phone?').addTo(poiLayer);
           storyMarker.setLatLng(disk.currPos);
           pressEnter('56-madi');
@@ -7582,7 +7582,7 @@ onBlock: () => {
           playerC.dScore += 20;
           playerC.cScore += 10;
 
-          addItem('alice-letter');
+          addItem('alice letter');
           pressEnter('ann-35');
         },
         items:
@@ -7591,7 +7591,7 @@ onBlock: () => {
                 itemId: 'alice-letter',
                 icon:`img/png/image-letter-thumbnail.png`,
                 gif:`img/gif/gif-letter-ingame.gif`,
-                name: [`Alice's Letter`],
+                name: [`Alice's Letter`, 'alice letter'],
                 isTakeable: true,
                 desc: `The note is in the form of a short hand-written letter.\n
                 "Dear John, (the letter begins)\n
@@ -42017,13 +42017,13 @@ else{
       He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
         gottenRag = true;
-        addItem('rag');
+        addItem('Rag');
         pressEnter(lastRoom.id);
       },
       items:[
         {
           itemId: 'car-wash',
-          name: ['rag', 'dishrag', 'windex'],
+          name: ['Rag', 'rag', 'dishrag', 'windex'],
           desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
           isDroppable: true,
       },
