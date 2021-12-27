@@ -43,17 +43,6 @@ let println = (line, className) => {
     output.scrollTo(0, output.scrollHeight);
   //output.scrollTo(0, document.body.scrollHeight);
    
-
-
-  // var app = document.querySelector('.app');
-
-  // var typewriter = new Typewriter(app, {
-  //   delay: 50,
-
-  // });
-
-  // typewriter.typeString(str)
-  //   .start();
 };
 
 let listX = (iconPath, line, className, idName) => {
