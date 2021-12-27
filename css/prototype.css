@@ -27,6 +27,15 @@ body {
 }
 
 /* typography */
+#version-number {
+   font-family: 'Montserrat', sans-serif;
+   color: #e4e4e4;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   letter-spacing: 1px;
+}
+
 #game-container {
    font-family: 'Montserrat', sans-serif;
    color: #e4e4e4;
@@ -695,6 +704,22 @@ body {
    border-left: 2px solid #9C4FEC;
 }
 
+/* brochure scroll bar width */
+.brocontent::-webkit-scrollbar {
+   width: 5px;
+}
+   
+/* brochure scroll bar track */
+.brocontent::-webkit-scrollbar-track {
+   border-radius: 10px;
+}
+   
+/* brochure scroll bar handle */
+.brocontent::-webkit-scrollbar-thumb {
+   background: #494959;
+   border-radius: 10px;
+}
+
 #bro-title-inner-content {
   margin-top: 10%;
 } 
@@ -781,6 +806,7 @@ body {
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-column-gap: 10px;
+   cursor: pointer;
 }
 
 /* specific styling of brochure pages */
