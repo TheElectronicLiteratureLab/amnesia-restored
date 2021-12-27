@@ -271,10 +271,12 @@ let response = (e) => {
 
 // Function for pressing Enter and advancing to the next room, shout out to Ahria for masterminding this
 let pressEnter = (id) => {
-  println('PLEASE PRESS **[ENTER]** TO CONTINUE', 'enterKey');
+
+  let x = document.getElementById("arrow");
+
   //disable normal input
   document.querySelector('input').disabled = true;
-  document.getElementById("arrow").innerHTML = "";
+  x.innerHTML = `PLEASE PRESS <strong>[ENTER]</strong> TO CONTINUE`;
   document.querySelector('input').focus();
 
   let cont = (e) => {
@@ -289,9 +291,17 @@ document.addEventListener("keydown", cont);
 
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
+
+  let x = document.getElementById("arrow");
+
+  
   setTimeout(() => {
+    x.classList.remove('ml-1');
+    x.classList.add('ml-2');
+    
+    
     document.querySelector('input').disabled = false;
-    document.getElementById('arrow').innerHTML = ">";
+    x.innerHTML = ">";
     document.querySelector('input').focus(); }, 100);
 };
 
