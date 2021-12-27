@@ -1416,7 +1416,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-9',
         name: '',
-        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. "dI’ll have to leave you here," your companion tells you, "but the Personnel Office is on the 13th f1oor. And there--" His featureless head nods toward the purring **escalator** at the center of the deserted sales floor. "-is the **escalator**. See you later X."`,
+        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman’s Department Store directly from the subway platform. "I’ll have to leave you here," your companion tells you, "but the Personnel Office is on the 13th f1oor. And there--" His featureless head nods toward the purring **escalator** at the center of the deserted sales floor. "-is the **escalator**. See you later X."`,
         onEnter: () => {
             reenableInput();
         },
@@ -1584,7 +1584,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale9',
         name: '',
-        desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
+        desc: `You take the escalator up to the ninth floor, where an elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
         onEnter: () => {
           pressEnter('ridd-1');
         },
@@ -1614,7 +1614,7 @@ const amnesiaRestored = {
     {
       id: 'ridd-2',
       name: '',
-      desc:`"Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--" \nBut instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n"The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?" \nYou think to yourself that you could run away to the next **escalator** or **look** for the switch.`,
+      desc:`"Very good! You see how easy it is to use a computer? And when you’ve finished, just remove the disc from the disc drive, like so--" \nBut instead of removing the computer’s disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n"The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?" \nYou think to yourself that you could run away to the next **escalator** or **find** the switch.`,
       onBlock: () => {
         if (prevInput === 'escalator' || prevInput === 'run' || prevInput === 'run away' || prevInput === 'run to escalator') {
           enterRoom('nigh-sale10');
@@ -1649,7 +1649,7 @@ const amnesiaRestored = {
       name:'',
       desc: ``,
       onEnter: () => {
-          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name’s Hugette, what’s yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
+          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name’s Hugette, what’s yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
           pressEnter('nigh-sale11');
       },
     },
@@ -1690,9 +1690,9 @@ const amnesiaRestored = {
     {
       id:'nigh-sale14',
       name: '',
-      desc:`"You won’t? You won’t!" he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I’m suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
+      desc:`"You won’t? You won’t!" he shouts at you. But you’ve already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman’s Shipping Department. None of the department’s staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman’s ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I’m suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must **find** your head and take it up the last flight of steps to be interviewed.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale15');
         }
       },
@@ -1712,7 +1712,7 @@ const amnesiaRestored = {
       name: '',
       desc: `You open the box nearest at hand. It contains a ceramic vase, jade green with dark specklings. It won’t do for a head.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale16');
         }
       },
@@ -1732,7 +1732,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open another box. It contains a basket imported from Thailand. It’s just about the right size for carrying your head, once you find it, but that’s small consolation.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale17');
         }
       },
@@ -1752,7 +1752,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open a third box. It contains a large Gouda cheese from the Gourmet Grocery Department.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale18');
         }
       },
@@ -1772,7 +1772,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open yet another box. It contains lingerie in a style you would not have supposed Oldman’s would stock. You begin to feel discouraged. It’s been several minutes since you’ve heard so much as a whimper from your detached cranium.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale19');
         }
       },
