@@ -8436,7 +8436,7 @@ onBlock: () => {
   id:'',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
   onBlock: () => {
-      if(prevInput === 'draw girl' || 'draw' || 'sketch'){
+      if(prevInput === 'draw girl' || prevInput === 'draw' || prevInput === 'sketch'){
           enterRoom('book-6')
       }else{
           println(`Can you rephrase that please?`)
@@ -8519,7 +8519,7 @@ onBlock: () => {
   onBlock: () => {
       if(prevInput === 'Change $10 to $5'){
           println(`You decide to lower your asking price and methodically erase the numeral 10 and write in its place $5.`)
-      }else if(prevInput === 'Change $10 to 15$' || 'Change $10 to 20$'){
+      }else if(prevInput === 'Change $10 to 15$' || prevInput === 'Change $10 to 20$'){
           if(prevInput === 'Change $10 to 15$'){
               println(`You decide to raise your asking price and methodically erase the numeral 10 and write in its place $15.`)}
           else{
@@ -8577,7 +8577,7 @@ onBlock: () => {
   name:'',
   desc:`You begin to do his portrait but have only set down the first few lines defining the volumes of his head when his eyes slowly droop closed and he begins quietly to snore. His head remains erect, and you are able to continue drawing him. The wrinkles present an interesting technical problem but you manage to render them realistically without making him look like a giant prune. Finally only the eyes are left to draw. Should you draw him as he is now, with his eyes closed, or should they be open?`,
   onBlock: () => {
-      if(prevInput === 'open' || 'with eyes open'){
+      if(prevInput === 'open' || prevInput === 'with eyes open'){
           enterRoom('book-15')
       }else{
           enterRoom('book-17')
@@ -8634,7 +8634,7 @@ onBlock: () => {
   onBlock: () => {
       if(prevInput === 'yes'){
           enterRoom('book-20')
-      }else if(prevInput === 'no' || 'sit down, pardner'){
+      }else if(prevInput === 'no' || prevInput === 'sit down, pardner'){
           enterRoom('book-21')
       }else{
           println('Can you rephrase that please?')
@@ -8732,9 +8732,9 @@ onBlock: () => {
   name:'',
   desc:`Just when your patience is about to be exhausted, a woman stops to read your sign. She is tastefully dressed and has a wistful, worldly-wise smile. Her age could be anywhere from 40 to 60. “My portrait,” she says, more to herself than to you. “It's been years since anyone has done my portrait. But why not. It wouldn't do to appear at the reception too early. Here.” She looks inside her alligator handbag and takes out [amount of money on sign]. She hands you the money and sits at the other end of the bench. “You may begin,” she says, “but please, young man-–be kind.”`,
   exits: [
-      {dir:['ask' || 'tell'],id:'book-29'},
-      {dir:['take'],id:'book-30'},
-      {dir:['draw' ||'sketch'],id:'book-31'}
+      {dir:['ask', 'tell'], id:'book-29'},
+      {dir:['take'], id:'book-30'},
+      {dir:['draw', 'sketch'], id:'book-31'}
   ]
 },
 {
@@ -8752,7 +8752,7 @@ onBlock: () => {
   name:'',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
   exits:[
-      {dir:['draw' ||'sketch'],id:'book-31'} 
+      {dir:['draw', 'sketch'], id:'book-31'} 
   ]
 },
 {
@@ -8772,10 +8772,10 @@ onBlock: () => {
   desc:`After only a short wait, a young man in a seersucker suit stops to read your sign. He seems to be only in his early twenties, but he is almost totally bald. Only a fringe of wispy, mouse-colored hair remains. He starts to walk away, hesitates, returns, and asks in an embarrassed whisper, “Could you do my portrait ... and show me with a full head of hair?”
   `,
   exits:[
-      {dir:['no','go away'],id:'book-33'},
+      {dir:['no', 'go away'],id:'book-33'},
       {dir:['take'],id:'book-34'},
-      {dir:['yes','how long','what style'],id:'book-35'},
-      {dir:['draw' ||'sketch'],id:'book-36'}
+      {dir:['yes', 'how long', 'what style'],id:'book-35'},
+      {dir:['draw', 'sketch'],id:'book-36'}
   ]
 },
 {
@@ -8793,7 +8793,7 @@ onBlock: () => {
   name:'',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
   exits:[
-      {dir:['draw' ||'sketch'],id:'book-36'}
+      {dir:['draw', 'sketch'], id:'book-36'}
   ]
 },
 {
@@ -8801,7 +8801,7 @@ onBlock: () => {
   name:'',
   desc:`He blushes and takes a seat on the bench. “Just an average kind of haircut, ‘sort of like Johnny Carson, okay? And do it as quick as you can. This is embarrassing.”`,
   exits:[
-      {dir:['draw' ||'sketch'],id:'book-36'}
+      {dir:['draw', 'sketch'], id:'book-36'}
   ]
 },
 {
@@ -8809,7 +8809,7 @@ onBlock: () => {
   name:'',
   desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
   exits:[
-      {dir:['show','give'],id:'book-36'}
+      {dir:['show', 'give'], id:'book-36'}
   ]
 },
 {
@@ -8819,7 +8819,7 @@ onBlock: () => {
   OnEnter: () => {
       Const.room = getRoom(disk.roomId);
       room.visits++ ;
-      pressEnter('book-11')
+      pressEnter('book-11');
       },
 },
 //Bette's Scene
@@ -8828,9 +8828,9 @@ onBlock: () => {
   name:'',
   desc:`You flip the pages of the sketchpad back so as once more to display the hand lettered sign and prop it against the back of the park bench. As you do so, you become aware that you are being scrutinized intently by a woman standing some twenty feet away. Hoping for another customer, you angle the hand lettered sign in her direction:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$10\n\nShe approaches closer. You smile, and that seems to stop her in her tracks.`,
   exits:[
-      {dir:['look'],id:'book-39'},
-      {dir:['great','hello','hi'],id:'book-38'},
-      {dir:['ask','tell'],id:'book-40'}
+      {dir:['look'], id:'book-39'},
+      {dir:['great','hello','hi'], id:'book-38'},
+      {dir:['ask','tell'], id:'book-40'}
   ]
 },
 {
@@ -8843,7 +8843,7 @@ onBlock: () => {
   exits:[
       {dir:['yes'],id:'book-40'},
       {dir:['no'],id:'book-41'},
-      {dir:['ask','tell'],id:'book-40'}//nned to fix navigation here.
+      {dir:['ask', 'tell'],id:'book-40'}//nned to fix navigation here.
   ]
 },
 {
@@ -8853,8 +8853,8 @@ onBlock: () => {
   `,
   exits:[
       {dir:['look'],id:'book-39'},
-      {dir:['great','hello','hi'],id:'book-38'},
-      {dir:['ask','tell'],id:'book-40'}
+      {dir:['great', 'hello', 'hi'],id:'book-38'},
+      {dir:['ask', 'tell'], id:'book-40'}
   ]
 },
 {
@@ -8863,9 +8863,9 @@ onBlock: () => {
   desc:`You have said scarcely three words to her, when she cuts you short by raising her finger to her lips in a sign of silence. “No, please, don't talk. Just draw me, if you would. Please.”
   `,
   onBlock: () => {
-      if(prevInput === 'yes' || 'yeah'){
+      if(prevInput === 'yes' || prevInput === 'yeah'){
           enterRoom('book-41')
-      }else if(prevInput === 'no' || 'nope'){
+      }else if(prevInput === 'no' || prevInput === 'nope'){
           enterRoom('book-42')
       }else{
           println(`You almost speak again but feel compelled to honor her request for silence.`)
@@ -8904,7 +8904,7 @@ onBlock: () => {
   name:'',
   desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
   onBlock: () => {
-      if(prevInput === 'embrace' || 'kiss' || 'hug' || 'I love you'){
+      if(prevInput === 'embrace' || prevInput === 'kiss' || prevInput === 'hug' || prevInput === 'I love you'){
           enterRoom('book-45')
       }else{
           println(`Come on, this is no moment for talk. The lady is crying out for affection. Show a little tenderness!`)
@@ -8917,9 +8917,9 @@ onBlock: () => {
   desc:`You melt in her arms like butter in a microwave. You fuse in a kiss. You love her, whoever she is, and you tell her so, and she says she loves you. That she should be feeling the same way about you is too good to be true. Your heart's a radio blasting out love songs. The whole world should know about this, and a good section of Washington Square is getting a chance to.\n\nShe falls limp in your arms, and sighs with the bliss of releasing a tension too long sustained.\n\nYou realize you still don't know her name.
   `,
   onBlock: () => {
-      if([prevInput === 'ask name' || 'what is your name']){
+      if([prevInput === 'ask name' || prevInput === 'what is your name']){
           enterRoom('book-46')
-      }else if(prevInput === 'tell about amnesia' || 'explain amnesia'){
+      }else if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia'){
           enterRoom('book-47')
       }else{
           println(`Can you rephrase that please?`)
@@ -8931,7 +8931,7 @@ onBlock: () => {
   name:'',
   desc:`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.'`,
   onBlock: () => {
-      if(prevInput === 'tell about amnesia' || 'explain amnesia'){
+      if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia'){
           enterRoom('book-46')
       }else{
           println(`Can you rephrase that please?`)
@@ -8943,7 +8943,7 @@ onBlock: () => {
   name:'',
   desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`,
   onBlock: () => {
-      if(prevInput === 'take her hand'||'grab her hand'||'go with'||'follow'){
+      if(prevInput === 'take her hand' || prevInput === 'grab her hand' || prevInput === 'go with' || prevInput === 'follow'){
           enterRoom('book-48')
       }else{
           enterRoom('book-46')
@@ -9006,7 +9006,7 @@ else{
   desc: `You enter her apartment and Bette follows you inside. “Welcome home. Now, why don't you sit down and ask all those questions you're obviously bursting with. But first, do you want a drink?”`,
   exits: [
       {dir: ['sit'], id: 'nobe-4'},
-      {dir: ['yes','please'], id: 'nobe-5'},
+      {dir: ['yes', 'please'], id: 'nobe-5'},
       {dir: ['no'], id: 'nobe-6'},
   ],
 },
@@ -9016,7 +9016,7 @@ else{
   desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There's no point standing in the hall to talk. Sit down and ask all those questions you're obviously bursting with. But first do you want a drink?” You enter the apartment.`,
   exits: [
       {dir: ['sit'], id: 'nobe-4'},
-      {dir: ['yes','please'], id: 'nobe-5'},
+      {dir: ['yes', 'please'], id: 'nobe-5'},
       {dir: ['no'], id: 'nobe-6'},
   ],
 },
@@ -9025,7 +9025,7 @@ else{
   name: '',
   desc: `You cross the room to a sofa stacked high with pillows and sit down. What a luxury to be safe and secure! Bette asks again if you would like a drink.`,
   exits: [
-      {dir: ['yes','please'], id: 'nobe-5'},
+      {dir: ['yes', 'please'], id: 'nobe-5'},
       {dir: ['no'], id: 'nobe-6'},
   ],
   items: [
@@ -9273,7 +9273,7 @@ else{
       }else if(prevInput === 'no'){
           enterRoom('nobe-23');
       }else{
-          println(`can you rephrase that please?`)
+          println(`Can you rephrase that please?`)
       }
   },
 },
