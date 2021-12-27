@@ -1432,3 +1432,9 @@ body {
    width: 25%;
    margin: auto;
 }
+
+.ml-1 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
