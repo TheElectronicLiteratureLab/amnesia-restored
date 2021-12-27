@@ -171,68 +171,68 @@
 
 /* left side clickable icons */
 #inventory-button {
-   background-image: url(../img/png/icon-inventory-ibm.png);
+   background-image: url(../img/png/icon-inventory-IBM.png);
 }
 
 #inventory-button:hover {
-   background-image: url(../img/png/icon-inventory-ibmover.png);
+   background-image: url(../img/png/icon-inventory-IBMover.png);
 }
 
 #address-book-button {
-   background-image: url(../img/png/icon-address-ibm.png);
+   background-image: url(../img/png/icon-address-IBM.png);
 }
 
 #address-book-button:hover {
-   background-image: url(../img/png/icon-address-ibmover.png);
+   background-image: url(../img/png/icon-address-IBMover.png);
 }
 
 #map-button {
-   background-image: url(../img/png/icon-map-ibm.png);
+   background-image: url(../img/png/icon-map-IBM.png);
 }
 
 #map-button:hover {
-   background-image: url(../img/png/icon-map-ibmover.png);
+   background-image: url(../img/png/icon-map-IBMover.png);
 }
 
 #info-button {
-   background-image: url(../img/png/icon-info-ibm.png);
+   background-image: url(../img/png/icon-info-IBM.png);
 }
 
 #info-button:hover {
-   background-image: url(../img/png/icon-info-ibmover.png);
+   background-image: url(../img/png/icon-info-IBMover.png);
 }
 
 /* right side clickable icons */
 #save-button {
-   background-image: url(../img/png/icon-save-ibm.png);
+   background-image: url(../img/png/icon-save-IBM.png);
 }
 
 #save-button:hover {
-   background-image: url(../img/png/icon-save-ibmover.png);
+   background-image: url(../img/png/icon-save-IBMover.png);
 }
 
 #mode-button {
-   background-image: url(../img/png/icon-mode-ibm.png);
+   background-image: url(../img/png/icon-mode-IBM.png);
 }
 
 #mode-button:hover {
-   background-image: url(../img/png/icon-mode-ibmover.png);
+   background-image: url(../img/png/icon-mode-IBMover.png);
 }
 
 #achieve-button {
-   background-image: url(../img/png/icon-achieve-ibm.png);
+   background-image: url(../img/png/icon-achieve-IBM.png);
 }
 
 #achieve-button:hover {
-   background-image: url(../img/png/icon-achieve-ibmover.png);
+   background-image: url(../img/png/icon-achieve-IBMover.png);
 }
 
 #help-button {
-   background-image: url(../img/png/icon-help-ibm.png);
+   background-image: url(../img/png/icon-help-IBM.png);
 }
 
 #help-button:hover {
-   background-image: url(../img/png/icon-help-ibmover.png);
+   background-image: url(../img/png/icon-help-IBMover.png);
 }
 
 #info-display h3 {
