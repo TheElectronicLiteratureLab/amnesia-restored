@@ -27,6 +27,15 @@ body {
 }
 
 /* typography */
+#version-number {
+   font-family: 'Montserrat', sans-serif;
+   color: #e4e4e4;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   letter-spacing: 1px;
+}
+
 #game-container {
    font-family: 'Montserrat', sans-serif;
    color: #e4e4e4;
