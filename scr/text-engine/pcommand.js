@@ -890,7 +890,7 @@ let open = (itemToOpen) => {
       let window = getItemInRoom('Sunderland Window', disk.roomId);
       if(item.isOpen === !true) {
         item.isOpen = true;
-        window.desc = `Even without being able to see the Empire State Building off to the south, you would know by the sheer immensity of the view that you are in Manhattan. It seems familiar, but only in the general way that a famous postcard view is familiar. You don’t feel as though you belong in this city, as though you are a New Yorker.`;
+        window.desc = `Even without being able to see the Empire State Building off to the south, you would know by the sheer immensity of the view that you are in Manhattan. It seems familiar, but only in the general way that a famous postcard view is familiar. You don't feel as though you belong in this city, as though you are a New Yorker.`;
         println(`The ${item.name[0]} are now open.`);
       } else {
         println("They're already opened.");
@@ -1095,7 +1095,7 @@ const jump = () => {
   let inches = Math.floor(Math.random() * 12);
   println(`You jumped ${feet}' ${inches}" off the ground.`)
   if (disk.roomId === 'jump-warn') {
-    println(`All right, if you say so. The window isn’t designed for opening, but that’s not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
+    println(`All right, if you say so. The window isn't designed for opening, but that's not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
     document.getElementById('output').innerHTML = '';
     enterRoom('hell-1');
   }
@@ -1109,7 +1109,7 @@ const jumpOut = (prep, winJumpOut) => {
       enterRoom('jump-warn');
     }
   } else if (disk.roomId === 'jump-warn' && winJumpOut === 'window') {
-    println(`All right, if you say so. The window isn’t designed for opening, but that’s not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
+    println(`All right, if you say so. The window isn't designed for opening, but that's not going to stop someone as desperate as you. You crank it to its widest opening, wiggle through, and plunge to your death.`);
     document.getElementById('output').innerHTML = '';
     enterRoom('hell-1');
   }
