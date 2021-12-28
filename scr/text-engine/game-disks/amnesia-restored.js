@@ -1,5 +1,5 @@
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -59,7 +59,7 @@ const amnesiaRestored = {
       desc: "",
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println(`Then the blank of WHERE AM I? balloons into the bigger the total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n`)
+        println(`Then the blank of WHERE AM I? balloons into the bigger total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n`)
         setTimeout(() => {  println("Thomas M. Disch's\n ", "enterKey"); }, 1000);
         setTimeout(() => {  println("**AMNESIA**", "amnesiaTitle"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-2'));}, 1150);
@@ -48932,7 +48932,7 @@ else{
       coord: [],
       hasEntered: false,
       name: 'Tenement Entrance',
-      desc: `You mount the steps and squeeze round the door that hanges twisted from a single hinge.
+      desc: `You mount the steps and squeeze round the door that hangs twisted from a single hinge.
       
           You find yourself in a cramped vestibule. The building once held (by a count of the gutted mailboxes) twelve apartments. The inner doorway of the vestibule stands wide open, allowing a very dim view of a narrow, shadowy hallway.`,
 
