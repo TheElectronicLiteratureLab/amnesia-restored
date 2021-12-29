@@ -42139,10 +42139,10 @@ else{
       name: '',
       desc: `He hands you a bottle of Windex and a rather greasy dishrag. 'You can earn plenty washing windshields. Just do it when the turkeys stop for a light. But be careful, man. The cops will leave you alone around the Lincoln Tunnel, but don't try it where the rich folks live.'
   
-      He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
+      He leaves, doing a cartwheel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
         gottenRag = true;
-        addItem('Rag');
+        addItem('rag');
         pressEnter(lastRoom.id);
       },
       items:[
@@ -42150,6 +42150,7 @@ else{
           itemId: 'car-wash',
           name: ['Rag', 'rag', 'dishrag', 'windex'],
           desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
+          isTakeable: true,
           isDroppable: true,
       },
       ],
