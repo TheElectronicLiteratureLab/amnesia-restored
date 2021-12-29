@@ -42143,7 +42143,7 @@ else{
       name: '',
       desc: `He hands you a bottle of Windex and a rather greasy dishrag. 'You can earn plenty washing windshields. Just do it when the turkeys stop for a light. But be careful, man. The cops will leave you alone around the Lincoln Tunnel, but don't try it where the rich folks live.'
   
-      He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
+      He leaves, doing a cartwheel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
         const room = getRoom(lastRoom.id);
 
