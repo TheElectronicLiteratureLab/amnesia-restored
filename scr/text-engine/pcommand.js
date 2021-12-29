@@ -1370,10 +1370,21 @@ const incrementDay = () => {
 
 //increment hour function
 const incrementHour = () => {
-  if (yHours >= 12) { //if the hours every get to 12 or higher reset it back to 0
+  yHours++;
+
+  if ( yHours === 11 && qMeridiem === 0) {
+    qMeridiem = 1;
+  } else if (yHours === 11 && qMeridiem === 1) {
+    qMeridiem = 0;
+    zDays++;
+  } 
+
+  if (yHours >= 12) {
     yHours = 0;
-  } else {
-    yHours++; //else increment the days
+  } 
+
+  if (zDays >= 7) {
+    zDays = 0
   }
 
 //update the ui elements to match properly
@@ -1943,11 +1954,19 @@ const carWashEncounter = () => {
   if (gottenRag === false) {
     const room = getRoom(disk.roomId);
 
+    room.onEnter = () => {
+      reenableInput();
+    };
+
+    const ragGet = getRoom('rag-get');
+
+    ragGet.coord = room.coord;
+
       println(`'A kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
 
         room.onBlock = () => {
           if(prevInput === 'yes') {
-            enterRoom(`rag-get`)
+            enterRoom(ragGet.id)
           } else if (prevInput === 'no'){
             println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
             delete(room.onBlock);
@@ -2308,6 +2327,7 @@ let commands = [
     sleep: sleepFunction,
     press,
     jump,
+    wait: incrementHour,
   },
   // one argument (e.g. "go north", "take book")
   {
