@@ -1370,10 +1370,21 @@ const incrementDay = () => {
 
 //increment hour function
 const incrementHour = () => {
-  if (yHours >= 12) { //if the hours every get to 12 or higher reset it back to 0
+  yHours++;
+
+  if ( yHours === 11 && qMeridiem === 0) {
+    qMeridiem = 1;
+  } else if (yHours === 11 && qMeridiem === 1) {
+    qMeridiem = 0;
+    zDays++;
+  } 
+
+  if (yHours >= 12) {
     yHours = 0;
-  } else {
-    yHours++; //else increment the days
+  } 
+
+  if (zDays >= 7) {
+    zDays = 0
   }
 
 //update the ui elements to match properly
