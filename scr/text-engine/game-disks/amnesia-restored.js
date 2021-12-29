@@ -778,7 +778,7 @@ const amnesiaRestored = {
           tipBellboy = true;
           let dollarItem = disk.inventory.findIndex(element => element.itemId === 'dollarbill');
           ////console.log(dollarItem.itemId);
-          disk.inventory.splice(dollarItem);
+          disk.inventory.splice(dollarItem, 1);
           playMon -= 1;
           updateMon();
           ////console.log(disk.inventory);
@@ -2067,7 +2067,7 @@ const amnesiaRestored = {
       onEnter: () => {
         let room = getRoom(disk.roomId);
         //todo: renable check for bathtowel
-        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
           println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
           pressEnter('corridor-security');
         }
