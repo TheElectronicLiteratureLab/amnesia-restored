@@ -258,7 +258,7 @@ const amnesiaRestored = {
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
         addItem('xindexer');
-        addItem('dollarbill');
+        addItem('dollar bill');
         reenableInput();
         ////console.log(disk.inventory);
       },
@@ -778,7 +778,7 @@ const amnesiaRestored = {
           tipBellboy = true;
           let dollarItem = disk.inventory.findIndex(element => element.itemId === 'dollarbill');
           ////console.log(dollarItem.itemId);
-          disk.inventory.splice(dollarItem);
+          disk.inventory.splice(dollarItem, 1);
           playMon -= 1;
           updateMon();
           ////console.log(disk.inventory);
@@ -1584,7 +1584,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale9',
         name: '',
-        desc: `You take the escalator up to the ninth floor, where ar1 elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
+        desc: `You take the escalator up to the ninth floor, where an elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
         onEnter: () => {
           pressEnter('ridd-1');
         },
@@ -1649,7 +1649,7 @@ const amnesiaRestored = {
       name:'',
       desc: ``,
       onEnter: () => {
-          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
+          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
           pressEnter('nigh-sale11');
       },
     },
@@ -1692,7 +1692,7 @@ const amnesiaRestored = {
       name: '',
       desc:`"You won't? You won't!" he shouts at you. But you've already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman's Shipping Department. None of the department's staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman's ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I'm suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale15');
         }
       },
@@ -1712,7 +1712,7 @@ const amnesiaRestored = {
       name: '',
       desc: `You open the box nearest at hand. It contains a ceramic vase, jade green with dark specklings. It won't do for a head.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale16');
         }
       },
@@ -1732,7 +1732,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open another box. It contains a basket imported from Thailand. It's just about the right size for carrying your head, once you find it, but that's small consolation.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale17');
         }
       },
@@ -1752,7 +1752,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open a third box. It contains a large Gouda cheese from the Gourmet Grocery Department.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale18');
         }
       },
@@ -1772,7 +1772,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open yet another box. It contains lingerie in a style you would not have supposed Oldman's would stock. You begin to feel discouraged. It's been several minutes since you've heard so much as a whimper from your detached cranium.`,
       onBlock: () => {
-        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head') {
+        if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale19');
         }
       },
@@ -2009,7 +2009,7 @@ const amnesiaRestored = {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
-              addItem('bathtowel');
+              addItem('bath towel');
             }
           }
         },
@@ -2067,7 +2067,7 @@ const amnesiaRestored = {
       onEnter: () => {
         let room = getRoom(disk.roomId);
         //todo: renable check for bathtowel
-        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
           println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
           pressEnter('corridor-security');
         }
@@ -4349,7 +4349,7 @@ const amnesiaRestored = {
           itemId: 'mmtshirt',
           icon: '/img/gif/gif-clothingmickeytee-ingame.gif',
           gif: '/img/gif/gif-clothingmickeytee-ingame.gif',
-          name: 'Mickey Mouse T-Shirt',
+          name: ['Mickey Mouse T-Shirt', 'mmtshirt'],
           desc: 'A Mickey Mouse T-shirt with its sleeves chopped off. First found in a Sunderland Hotel Healthclub locker room.',
           used: false,
           isTakeable: true,
@@ -4373,7 +4373,7 @@ const amnesiaRestored = {
           itemId: 'lockersweats',
           icon: '/img/png/image-sweatsuitbottom-thumbnail.png',
           gif: '/img/gif/gif-sweatsuitbottom-ingame.gif',
-          name: 'Sweatpants',
+          name: ['Sweatpants', 'sweatpants', 'lockersweats'],
           desc: 'A pair of sweatpants. First found in a Sunderland Hotel Healthclub locker room.',
           isTakeable: true,
           isDroppable: true,
@@ -5689,7 +5689,7 @@ const amnesiaRestored = {
           println(`In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am... a woman of mystery." Her Garbo imitation is first-rate.`);
         } 
         //Ask about luke
-        else if (prevInput === 'ask about Luke' || prevInput === 'who is Luke' || prevInput === 'how is luke') { 
+        else if (prevInput === 'ask about Luke' || prevInput === 'who is Luke' || prevInput === 'how is Luke') { 
           println(`"Oh darling, don't make me get into all that again. Can I help it if the man is my father? Once we're in Australia he can't bother us anymore."`);
         }
         //Ask about marriage
@@ -5806,14 +5806,14 @@ const amnesiaRestored = {
       println(`When you do not at once accept the box from her, she mutters a fervent, "Oh, damn you!" and throws it at your feet. Then in a flash of white satin and yellow lace she is out the door of the chapel.`);
       enterRoom('chap-20');
     } if (prevInput === 'take box' || prevInput === 'okay' || prevInput === 'yes' || prevInput === 'take ring') {
-      addItem('weddingbox');
+      addItem('box');
     }
   },
   items: [
     {
       itemId: 'weddingbox',
       icon: 'img/png/image-openweddingbox-thumbnail.png',
-      gif: 'img/gif/gif-openbox-ingame.gif',
+      gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
       desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
@@ -5822,7 +5822,7 @@ const amnesiaRestored = {
       isTakeable: true,
       isDroppable: true,
       onTake: () => {
-        addItem('weddingbox');
+        addItem('box');
         let item = getItemInInventoryById('weddingbox');
         if (item.firstGet === true) {
           item.firstGet = false;
@@ -5835,7 +5835,7 @@ const amnesiaRestored = {
       onUse: () => {
         let item = getItemInInventoryById('weddingbox');
         item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-        item.gif = 'img/gif/gif-closedbox-ingame.gif';
+        item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
         
         println(`You tilt back the hinged lid of the box and find, nestled in white velvet, a thick silver band with a giant diamond on it. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`);
         if (item.firstUse === true) {
@@ -6039,7 +6039,7 @@ onBlock: () => {
     {
       itemId: 'weddingbox',
       icon: 'img/png/image-openweddingbox-thumbnail.png',
-      gif: 'img/gif/gif-openbox-ingame.gif',
+      gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
       desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
@@ -6048,13 +6048,13 @@ onBlock: () => {
       isTakeable: true,
       isDroppable: true,
       onTake: () => {
-        addItem('weddingbox');
+        addItem('box');
         let item = getItemInInventoryById('weddingbox');
         if (item.firstGet === true) {
           item.firstGet = false;
           println(`You take the box, which is warm still from its resting place in your bride's bosom. It smells of lilacs.`);
           item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-          item.gif = 'img/gif/gif-closedbox-ingame.gif';
+          item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
 
           println(`You tilt back the hinged lid of the box and find, nestled in white velvet, a thick silver band with a giant diamond on it. An engraver has written in miniscule script within the band: "To my beloved wife Alice, from John."`);
 
@@ -6075,7 +6075,7 @@ onBlock: () => {
       onUse: () => {
         let item = getItemInInventoryById('weddingbox');
         item.icon = 'img/png/image-closedweddingbox-thumbnail.png';
-        item.gif = 'img/gif/gif-closedbox-ingame.gif';
+        item.gif = 'img/gif/gif-closedweddingbox-ingame.gif';
         }
       }
   ]
@@ -7084,7 +7084,7 @@ onBlock: () => {
           As all shall learn who feel my teeth.
           Who am I?
           There's no time to answer that question now, but maybe by the next time you've booted this disk you'll have figured out the answer. You say good-bye to the saleswoman and leave the User-Friendly Computer Store.`, 'compStore');
-          addItem('riddlenote');
+          addItem('riddle note');
           storyMarker.bindPopup('Maybe try finding a phone?').addTo(poiLayer);
           storyMarker.setLatLng(disk.currPos);
           pressEnter('56-madi');
@@ -7598,7 +7598,7 @@ onBlock: () => {
           playerC.dScore += 20;
           playerC.cScore += 10;
 
-          addItem('alice-letter');
+          addItem('alice letter');
           pressEnter('ann-35');
         },
         items:
@@ -7607,7 +7607,7 @@ onBlock: () => {
                 itemId: 'alice-letter',
                 icon:`img/png/image-letter-thumbnail.png`,
                 gif:`img/gif/gif-letter-ingame.gif`,
-                name: [`Alice's Letter`],
+                name: [`Alice's Letter`, 'alice letter'],
                 isTakeable: true,
                 desc: `The note is in the form of a short hand-written letter.\n
                 "Dear John, (the letter begins)\n
@@ -8385,9 +8385,121 @@ onBlock: () => {
         },
       },
 
-  /***********************/
- /* The Sidewalk Artist */
-/***********************/
+  /****************************/
+ /* Tony the Sidewalk Artist */
+/****************************/
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      onEnter: () => {
+        pressEnter('side-art-1');
+      },
+      exits: []
+    },
+    {
+      id: 'side-art-1',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian -- black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
+
+      YOUR PORTRAIT
+      IN CHARCOAL
+      $5
+      
+      The young man sees you reading his sign, and smiles. 'I like that white suit,' he says. 'It's classic.' He holds out his hand to be shaken. 'My name's Tony,' he says.`,
+      onEnter: () => {
+        pressEnter('side-art-2');
+      },
+      exits: []
+    },
+    {
+      id: 'side-art-2',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
+      onBlock: () => {
+        if (prevInput === 'yes' || prevInput === 'sure') {
+          println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
+
+          You sit on the bench, and Tony begins his sketch. He works quickly, keeping up a steady stream of chatter all the while concerning the fascination of your white tuxedo. In a few minutes he's finished the sketch and hands it to you to look at.`);
+          pressEnter('side-art-3');
+        } else if (prevInput === 'no' || prevInput === 'nope' || prevInput === `I'm broke` || prevInput === `i'm broke` || prevInput === `I have no money` || prevInput === 'no money' || prevInput === 'i have no money') {
+          println(`"Hey, if it's only a question of money, I'll do it for free. The thing is, I really get off on that white suit of yours. It makes you look like a statue. Classic, if you know what I mean."
+
+          With a bit more inveigling, Tony persuades you to take a seat on the park bench beside him while he does a sketch of you. He works quickly, keeping up a steady stream of chatter all the while concerning the fascination of your white tuxedo. In a few minutes he's finished the sketch and hands it to you to look at.`)
+          pressEnter('side-art-3');
+        } else {
+          println('Could you run that past me one more time?');
+        }
+      }, 
+      exits: []
+    },
+    {
+      id: 'side-art-3',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `It is evident from his careful rendering of your tuxedo and much-erased blur of your face that Tony's interest really is concentrated on your clothes and not on the person wearing them.
+      
+      Tony apologizes for the poor likeness, and explains that his real ambition is to be a fashion designer. 
+      
+      "I guess I'm just not cut out for this sort or work. Almost everyone who sits for a portrait decides not to buy it once they see it. Can you draw a good likeness?"
+      
+      You tell him, quite honestly, that you don't know. 
+      
+      "Here," he says handing you a stick of charcoal and a kneaded eraser, "try it. Draw me."`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
     {
       id: 'side-art',
       coord: [61.884, -28.210],
@@ -42030,13 +42142,13 @@ else{
       He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
         gottenRag = true;
-        addItem('rag');
+        addItem('Rag');
         pressEnter(lastRoom.id);
       },
       items:[
         {
           itemId: 'car-wash',
-          name: ['rag', 'dishrag', 'windex'],
+          name: ['Rag', 'rag', 'dishrag', 'windex'],
           desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
           isDroppable: true,
       },
