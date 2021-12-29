@@ -2327,6 +2327,7 @@ let commands = [
     sleep: sleepFunction,
     press,
     jump,
+    wait: incrementHour,
   },
   // one argument (e.g. "go north", "take book")
   {
