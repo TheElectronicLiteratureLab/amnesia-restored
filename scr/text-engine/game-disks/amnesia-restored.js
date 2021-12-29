@@ -775,20 +775,24 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please') {
+
+          let dollarItem1 = getItemInInventoryById('dollarbill');
+
+          if(dollarItem1) {
           tipBellboy = true;
           let dollarItem = disk.inventory.findIndex(element => element.itemId === 'dollarbill');
           ////console.log(dollarItem.itemId);
-          disk.inventory.splice(dollarItem);
+          disk.inventory.splice(dollarItem,1);
           playMon -= 1;
           updateMon();
-          ////console.log(disk.inventory);
 
           playerC.cScore += 2;
           playerC.sScore += 3;
-          ////console.log(playerC.cScore);
-          ////console.log(playerC.sScore);
           println(`He accepts the tip with a murmur of thanks and leaves you alone in the room to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes.`);
           enterRoom('hote-room-8');
+          } else {
+            println(`You don't have anything to tip him with...`)
+          }
         } else if (prevInput === 'no' || prevInput === `don't tip` || prevInput === `don't tip him` || prevInput === 'no' || prevInput === 'nah' || prevInput === 'nope' || prevInput === 'negative' || prevInput === 'no thank you') {
           tipBellboy = false;
           println(`The bellboy leaves with a discontented mumble, and you are left to consider what John Cameron's next move should be. Clothes are surely the first priority. Think: you ought to look everywhere where there might be clothes. \n`);
@@ -1953,7 +1957,7 @@ const amnesiaRestored = {
         {dir: ['leave', '1502', 'room', 'hotel room'], id: 'hote-room-1', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
         {dir: ['east', 'right', '1503'], id: 'corridor-1503'},
         {dir: ['west', 'left', '1501'], id: 'corridor-1501'},
-        {dir: ['elevator', 'lift'], id: 'corridor-elevator15'},
+        {dir: ['elevator', 'lift', 'elevators'], id: 'corridor-elevator15'},
         {dir: ['stairwell', 'stairs', 'exit'], id: 'corridor-stairwell15'},
       ],
     },
@@ -8799,7 +8803,7 @@ onBlock: () => {
 {
   id:'book-35',
   name:'',
-  desc:`He blushes and takes a seat on the bench. “Just an average kind of haircut, ‘sort of like Johnny Carson, okay? And do it as quick as you can. This is embarrassing.”`,
+  desc:`He blushes and takes a seat on the bench. “Just an average kind of haircut, 'sort of like Johnny Carson, okay? And do it as quick as you can. This is embarrassing.”`,
   exits:[
       {dir:['draw', 'sketch'], id:'book-36'}
   ]
@@ -9112,7 +9116,7 @@ else{
   desc: ``,
   onEnter: () => {
       println(`You take a seat at the piano and place your hands on the keyboard. You let your mind go blank, and then like water rising from some deep arterial spring, the music wells from you, filling the small apartment with a soaring melody. “John!” Bette exclaims. “Do you know what that music is?” You assure her you have no idea.\n
-      “It's the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. ‘Polichinelle,” that's the name of it. You know what that means, don't you? Your memories aren't lost, they're just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you're very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
+      “It's the part of the Rachmaninoff piece that we played over and over on my stereo till the record was worn out. 'Polichinelle,” that's the name of it. You know what that means, don't you? Your memories aren't lost, they're just buried deep inside of you.” At just that moment the phone rings, and Bette excuses herself to answer it. It is the editor of a magazine she is doing work for. “This may take a moment, John. Make yourself at home. Have a bath if you like. Or if you're very tired, the sofa folds out into a bed.” Bette takes the cordless phone to the table where the prints and contact sheets are spread and begins to talk business with her editor.`);
       pressEnter('nobe-12');
   },
 },
@@ -10988,7 +10992,7 @@ else{
 {
     id: 'alisonsdeath-10', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘... never meant to . . . can you forgive . . .' Sensing that you have not understood her, again she raises her hand toward her mouth, beckoning you to come closer.`,
+    desc: `'... never meant to . . . can you forgive . . .' Sensing that you have not understood her, again she raises her hand toward her mouth, beckoning you to come closer.`,
     onEnter: () => {
         pressEnter('alisonsdeath-11');
     },
@@ -11004,7 +11008,7 @@ else{
 {
     id: 'alisonsdeath-12', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Xavier,' she whispers. ‘I tried to save you. Now they'll murder both of us. Forgive me if you can.' `,
+    desc: `'Xavier,' she whispers. 'I tried to save you. Now they'll murder both of us. Forgive me if you can.' `,
     onEnter: () => {
         pressEnter('alisonsdeath-13');
     },
@@ -11027,8 +11031,8 @@ else{
 {
     id: 'alisonsdeath-explain', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘I'm not really Alice Dudley, you know. All that – the wedding, what I told you in the museum – that was all lies. My real name is Alison Abrams. I was your secretary at Hollings Pharmaceutical, though my title -- ‘At the cost of a deep shuddering breath, she manages to smile, then goes on:  \n
-    ‘-- my title was Executive Associate. I was never your fiancé. I never let you know how much I wanted to be, either. Not until your amnesia began to take hold. I thought then I could deceive you into loving me. Try and forgive me. I did love you. I still do'`,
+    desc: `'I'm not really Alice Dudley, you know. All that – the wedding, what I told you in the museum – that was all lies. My real name is Alison Abrams. I was your secretary at Hollings Pharmaceutical, though my title -- 'At the cost of a deep shuddering breath, she manages to smile, then goes on:  \n
+    '-- my title was Executive Associate. I was never your fiancé. I never let you know how much I wanted to be, either. Not until your amnesia began to take hold. I thought then I could deceive you into loving me. Try and forgive me. I did love you. I still do'`,
     onEnter: () => {
         pressEnter('alisonsdeath-explain-2');
     },
@@ -11044,7 +11048,7 @@ else{
 {
     id: 'alisonsdeath-explain-3', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Your amnesia was caused by a chemical agent that you isolated and called Letheum, after the river in Hades whose waters cause forgetfulness. You first got on the track of the chemical when you read in some weekly tabloid about this Texas town called Santa Candelaria where some local people had claimed there was an epidemic of amnesia.' `,
+    desc: `'Your amnesia was caused by a chemical agent that you isolated and called Letheum, after the river in Hades whose waters cause forgetfulness. You first got on the track of the chemical when you read in some weekly tabloid about this Texas town called Santa Candelaria where some local people had claimed there was an epidemic of amnesia.' `,
     onEnter: () => {
         pressEnter('alisonsdeath-explain-4');
     },
@@ -11052,7 +11056,7 @@ else{
 {
     id: 'alisonsdeath-explain-4', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘You went there and tracked down the culprit. It was the decay product of a dishwashing detergent called Shimmer. When Shimmer is stored at very high temperatures it degrades into Letheum. The people who'd used the Shimmer that had been kept in one particular warehouse and who weren't careful about rinsing their dishes were the ones who started to develop amnesia.'`,
+    desc: `'You went there and tracked down the culprit. It was the decay product of a dishwashing detergent called Shimmer. When Shimmer is stored at very high temperatures it degrades into Letheum. The people who'd used the Shimmer that had been kept in one particular warehouse and who weren't careful about rinsing their dishes were the ones who started to develop amnesia.'`,
     onEnter: () => {
         pressEnter('alisonsdeath-explain-5');
     },
@@ -11060,7 +11064,7 @@ else{
 {
     id: 'alisonsdeath-explain-5', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘No one ever had total amnesia like yours – because no one was systematically doctoring their food with it – as I was doing with yours after you came back to New York and asked me to help you. Before that you'd had only minor bouts of forgetfulness from your exposure to the drug from your research.'`,
+    desc: `'No one ever had total amnesia like yours – because no one was systematically doctoring their food with it – as I was doing with yours after you came back to New York and asked me to help you. Before that you'd had only minor bouts of forgetfulness from your exposure to the drug from your research.'`,
     onEnter: () => {
         reenableInput();
     },
@@ -11075,7 +11079,7 @@ else{
 {
     id: 'alisonsdeath-wound', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘When you first announced your engagement to Denise I almost stopped working for you. I knew she was a cynical, manipulative little golddigger. But she was also an accomplished sexual athlete, and so long as you were ‘training' with her, she had you jumping through hoops.' `,
+    desc: `'When you first announced your engagement to Denise I almost stopped working for you. I knew she was a cynical, manipulative little golddigger. But she was also an accomplished sexual athlete, and so long as you were 'training' with her, she had you jumping through hoops.' `,
     onEnter: () => {
         pressEnter('alisonsdeath-wound-2');
     },
@@ -11083,7 +11087,7 @@ else{
 {
     id: 'alisonsdeath-wound-2', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘But after you switched places with Zane, and he'd gone to Texas to be tried and serve your sentence, you started tomcatting around, answering personal ads in the Village Voice, and joining video dating clubs, and in the process you met Bette Binet.'`,
+    desc: `'But after you switched places with Zane, and he'd gone to Texas to be tried and serve your sentence, you started tomcatting around, answering personal ads in the Village Voice, and joining video dating clubs, and in the process you met Bette Binet.'`,
     onEnter: () => {
         pressEnter('alisonsdeath-wound-3');
     },
@@ -11091,7 +11095,7 @@ else{
 {
     id: 'alisonsdeath-wound-3', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Falling in love with Bette finally opened your eyes to what a bitch Denise is, and when you dumped her, she proved it. She went down to the prison where Zane was serving your term and got him to marry her, so that legally she had your name – and bank account.' `,
+    desc: `'Falling in love with Bette finally opened your eyes to what a bitch Denise is, and when you dumped her, she proved it. She went down to the prison where Zane was serving your term and got him to marry her, so that legally she had your name – and bank account.' `,
     onEnter: () => {
         pressEnter('alisonsdeath-wound-4');
     },
@@ -11099,7 +11103,7 @@ else{
 {
     id: 'alisonsdeath-wound-4', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Any further effort at all seems both to exhaust and exalt Alice. She has fallen into a kind of faint. After some time has gone by, you manage to revive her. When she is again fully alert, she askes you, ‘Do you know who John Cameron REALLY is?'`,
+    desc: `'Any further effort at all seems both to exhaust and exalt Alice. She has fallen into a kind of faint. After some time has gone by, you manage to revive her. When she is again fully alert, she askes you, 'Do you know who John Cameron REALLY is?'`,
     onEnter: () => {
         reenableInput();
     },
@@ -11114,7 +11118,7 @@ else{
 {
     id: 'alisonsdeath-cameron', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘There was a real John Cameron, or so I was told. He died in a swimming accident, and his father, who was some kind of small time gangster, sold me his identity so I could help you stay hidden in New York while Zane was in prison. You told me you couldn't stand to go back to that prison, and you had enough money you didn't have to. The nightmares you used to have . . .' `,
+    desc: `'There was a real John Cameron, or so I was told. He died in a swimming accident, and his father, who was some kind of small time gangster, sold me his identity so I could help you stay hidden in New York while Zane was in prison. You told me you couldn't stand to go back to that prison, and you had enough money you didn't have to. The nightmares you used to have . . .' `,
     onEnter: () => {
         pressEnter('alisonsdeath-cameron-1');
     },
@@ -11122,7 +11126,7 @@ else{
 {
     id: 'alisonsdeath-cameron-1', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Do you remember anything about Hollings Pharmaceutical?' Alice asks.  `,
+    desc: `'Do you remember anything about Hollings Pharmaceutical?' Alice asks.  `,
     onEnter: () => {
         reenableInput();
     },
@@ -11139,7 +11143,7 @@ else{
 {
     id: 'alisonsdeath-hollings', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Your father's fortune came from a patent for a popular sedative, Bromonine, but eventually his company produced a great range of pharmaceuticals. He died when you were ten, and the money went into a trust that provided a very nice income.'`,
+    desc: `'Your father's fortune came from a patent for a popular sedative, Bromonine, but eventually his company produced a great range of pharmaceuticals. He died when you were ten, and the money went into a trust that provided a very nice income.'`,
     onEnter: () => {
         pressEnter('alisonsdeath-hollings-1');
     },
@@ -11147,7 +11151,7 @@ else{
 {
     id: 'alisonsdeath-hollings-1', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘The family fortune wasn't yours until your mother passed on. You've worked in the Research Division of Hollings Pharmaceutical since you got your doctorate at Harvard. Everyone seemed to think the laboratory was just a very expensive playground the company provided to keep you out of management's hair.'`,
+    desc: `'The family fortune wasn't yours until your mother passed on. You've worked in the Research Division of Hollings Pharmaceutical since you got your doctorate at Harvard. Everyone seemed to think the laboratory was just a very expensive playground the company provided to keep you out of management's hair.'`,
     onEnter: () => {
         pressEnter('alisonsdeath-hollings-2');
     },
@@ -11155,7 +11159,7 @@ else{
 {
     id: 'alisonsdeath-hollings-2', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘You didn't let anyone but me know about your work refining Letheum in Santa Candelaria, And it is potentially worth a fortune. You did it all in a little hotel room. But before you could bring the formula back, something happened with you and the sheriff's daughter, and he trumped up something . . .`,
+    desc: `'You didn't let anyone but me know about your work refining Letheum in Santa Candelaria, And it is potentially worth a fortune. You did it all in a little hotel room. But before you could bring the formula back, something happened with you and the sheriff's daughter, and he trumped up something . . .`,
     onEnter: () => {
         pressEnter('alisonsdeath-hollings-3');
     },
@@ -11163,7 +11167,7 @@ else{
 {
     id: 'alisonsdeath-hollings-3', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `‘Alice, who had seemed to be getting stronger and stronger, stopped speaking abruptly, like a radio that's had its dial twisted to an empty station. Her eyes star vacantly at the ceiling. Is she dead? You feel for a pulse in her wrist. There is none. Her own hand, cuffed to yours, dangles limply as you place your hand on her chest to see if her heart still beats. `,
+    desc: `'Alice, who had seemed to be getting stronger and stronger, stopped speaking abruptly, like a radio that's had its dial twisted to an empty station. Her eyes star vacantly at the ceiling. Is she dead? You feel for a pulse in her wrist. There is none. Her own hand, cuffed to yours, dangles limply as you place your hand on her chest to see if her heart still beats. `,
     onEnter: () => {
         pressEnter('alisonsdeath-hollings-4');
     },
@@ -36204,7 +36208,7 @@ else{
       id: '42-depe',
       coord: [13.518, 3.493],
       name: 'E. 42nd St. and Depew Pl.',
-      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, ‘John Cameron, you old son of a gun – nice to see you again!' `,
+      desc: `The Grand Central Station entrance is here. Crossroads of a million people. What are your chances, you wonder, of meeting someone who used to know you back in your real life? You loiter for a while, waiting for someone to come along, clap you on the shoulder, and say, 'John Cameron, you old son of a gun – nice to see you again!' `,
       hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
@@ -36693,7 +36697,7 @@ else{
       id: '43-3',
       coord: [15.496, 9.075],
       name: 'E. 43rd St. and 3rd Ave.',
-      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their ‘natural habitat' here: a lush indoor park complete with trees and flowers.`,
+      desc: `The glass and steel case of the Ford Foundation Building resembles an aquarium that any tropical fish might envy. Humans are kept in their 'natural habitat' here: a lush indoor park complete with trees and flowers.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '44-3'},
@@ -41904,7 +41908,7 @@ else{
       id: 'wacky-4',
       coord: [],
       name: '',
-      desc: `‘Now Mr. Cameron, I'm prepared to give you one hundred dollars if you happen to have in your possession any kind of . . . elephant! It could be a plastic toy, a gold bauble, a wooden statuette, or, yes, even a genuine living, breathing pachyderm!'
+      desc: `'Now Mr. Cameron, I'm prepared to give you one hundred dollars if you happen to have in your possession any kind of . . . elephant! It could be a plastic toy, a gold bauble, a wooden statuette, or, yes, even a genuine living, breathing pachyderm!'
       
       Do you happen to have any sort of the aformentioned elephant themed items?`,
       onEnter: () => {
@@ -41940,7 +41944,7 @@ else{
       id: 'wacky-5',
       coord: [],
       name: '',
-      desc: `The Wacky Wanderer smiles expectantly as you shrug your shoulders and admit you have no elephant. ‘So sorry, Mr. Cameron,' he whines apologetically. ‘But here's a Wacky Wanderer Lucky Buck Bag to thank you for your time.'
+      desc: `The Wacky Wanderer smiles expectantly as you shrug your shoulders and admit you have no elephant. 'So sorry, Mr. Cameron,' he whines apologetically. 'But here's a Wacky Wanderer Lucky Buck Bag to thank you for your time.'
       
       He hands you an envelope with five dollars in it.`,
       onEnter: () => {
@@ -42002,7 +42006,7 @@ else{
       id: 'wacky-8',
       coord: [],
       name: '',
-      desc: `‘It's worth a try,' the Wacky Wanderer says, and vanishes around a corner.`,
+      desc: `'It's worth a try,' the Wacky Wanderer says, and vanishes around a corner.`,
       onEnter: () => {
         const room = getRoom('wacky');
         pressEnter(room.enteredFrom);
@@ -42029,13 +42033,19 @@ else{
   
       He leaves, doing a cartweel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
+        const room = getRoom(lastRoom.id);
+
+        delete room.onBlock;
+
         gottenRag = true;
-        addItem('rag');
+        addItem('dishrag');
         pressEnter(lastRoom.id);
       },
       items:[
         {
           itemId: 'car-wash',
+          icon: 'img/png/windex+rag-thumbnail.png',
+          gif: 'img/gif/windex+rag-ingame.gif',
           name: ['rag', 'dishrag', 'windex'],
           desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
           isDroppable: true,

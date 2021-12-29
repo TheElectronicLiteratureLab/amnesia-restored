@@ -1943,11 +1943,19 @@ const carWashEncounter = () => {
   if (gottenRag === false) {
     const room = getRoom(disk.roomId);
 
+    room.onEnter = () => {
+      reenableInput();
+    };
+
+    const ragGet = getRoom('rag-get');
+
+    ragGet.coord = room.coord;
+
       println(`'A kid, about eight years old, going on fourteen, looks at you with a smirk and says, 'Hey whitey, you need bread? Wanna earn easy money?'`);
 
         room.onBlock = () => {
           if(prevInput === 'yes') {
-            enterRoom(`rag-get`)
+            enterRoom(ragGet.id)
           } else if (prevInput === 'no'){
             println(`Without a second thought you see him start moving down the street, disappearing around a street corner.`)
             delete(room.onBlock);
