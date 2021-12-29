@@ -42155,14 +42155,14 @@ else{
       },
       items:[
         {
-          itemId: 'car-wash',
-          icon: 'img/png/windex+rag-thumbnail.png',
-          gif: 'img/gif/windex+rag-ingame.gif',
+          itemId: 'washrag',
+          icon: 'img/png/image-windex+rag-thumbnail.png',
+          gif: 'img/gif/gif-windex+rag-ingame.gif',
           name: ['rag', 'dishrag', 'windex'],
-
           desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
           isDroppable: true,
-      },
+          isTakeable: true,
+        },
       ],
       exits: [],
     },
