@@ -5285,7 +5285,7 @@ const amnesiaRestored = {
     id: 'lobb-1',
     coord: [100, 100],
     name: 'The Lobby',
-    desc: `You step out of the elevator into the lobby of the Sunderland Hotel, and the first thing you see is yourself looking elegantly sheepish in your white tuxedo, for the doors of the facing elevator are made of mirror-glass.`, 
+    desc: `You step out of the elevator into the lobby of the Sunderland Hotel, and the first thing you see is yourself looking elegantly sheepish, for the doors of the facing elevator are made of mirror-glass.`, 
     scored: false,
     onEnter: () => {
       reenableInput();
@@ -5672,7 +5672,7 @@ const amnesiaRestored = {
 //Begin Alice Chapel Section
     { 
       id: 'chap-4',
-      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there’s more of the wedding gown and veil in evidence than of the woman.`,
+      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there's more of the wedding gown and veil in evidence than of the woman.`,
       veilRaised: false,
       askSelf: 0,
       onEnter: () => {
@@ -5686,7 +5686,7 @@ const amnesiaRestored = {
           println(`In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am... a woman of mystery." Her Garbo imitation is first-rate.`);
         } 
         //Ask about luke
-        else if (prevInput === 'ask about Luke' || prevInput === 'who is Luke' || prevInput === 'how is luke') { 
+        else if (prevInput === 'ask about Luke' || prevInput === 'who is Luke' || prevInput === 'how is Luke') { 
           println(`"Oh darling, don't make me get into all that again. Can I help it if the man is my father? Once we're in Australia he can't bother us anymore."`);
         }
         //Ask about marriage
@@ -8369,9 +8369,121 @@ onBlock: () => {
         },
       },
 
-  /***********************/
- /* The Sidewalk Artist */
-/***********************/
+  /****************************/
+ /* Tony the Sidewalk Artist */
+/****************************/
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      onEnter: () => {
+        pressEnter('side-art-1');
+      },
+      exits: []
+    },
+    {
+      id: 'side-art-1',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian -- black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
+
+      YOUR PORTRAIT
+      IN CHARCOAL
+      $5
+      
+      The young man sees you reading his sign, and smiles. 'I like that white suit,' he says. 'It's classic.' He holds out his hand to be shaken. 'My name's Tony,' he says.`,
+      onEnter: () => {
+        pressEnter('side-art-2');
+      },
+      exits: []
+    },
+    {
+      id: 'side-art-2',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
+      onBlock: () => {
+        if (prevInput === 'yes' || prevInput === 'sure') {
+          println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
+
+          You sit on the bench, and Tony begins his sketch. He works quickly, keeping up a steady stream of chatter all the while concerning the fascination of your white tuxedo. In a few minutes he's finished the sketch and hands it to you to look at.`);
+          pressEnter('side-art-3');
+        } else if (prevInput === 'no' || prevInput === 'nope' || prevInput === `I'm broke` || prevInput === `i'm broke` || prevInput === `I have no money` || prevInput === 'no money' || prevInput === 'i have no money') {
+          println(`"Hey, if it's only a question of money, I'll do it for free. The thing is, I really get off on that white suit of yours. It makes you look like a statue. Classic, if you know what I mean."
+
+          With a bit more inveigling, Tony persuades you to take a seat on the park bench beside him while he does a sketch of you. He works quickly, keeping up a steady stream of chatter all the while concerning the fascination of your white tuxedo. In a few minutes he's finished the sketch and hands it to you to look at.`)
+          pressEnter('side-art-3');
+        } else {
+          println('Could you run that past me one more time?');
+        }
+      }, 
+      exits: []
+    },
+    {
+      id: 'side-art-3',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `It is evident from his careful rendering of your tuxedo and much-erased blur of your face that Tony's interest really is concentrated on your clothes and not on the person wearing them.
+      
+      Tony apologizes for the poor likeness, and explains that his real ambition is to be a fashion designer. 
+      
+      "I guess I'm just not cut out for this sort or work. Almost everyone who sits for a portrait decides not to buy it once they see it. Can you draw a good likeness?"
+      
+      You tell him, quite honestly, that you don't know. 
+      
+      "Here," he says handing you a stick of charcoal and a kneaded eraser, "try it. Draw me."`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
+    {
+      id: 'side-art',
+      coord: [61.884, -28.210],
+      name: 'W. 76th St. and Central Park W.',
+      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      exits: []
+    },
     {
       id: 'side-art',
       coord: [61.884, -28.210],
