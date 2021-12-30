@@ -19,7 +19,7 @@ and this project loosely adheres to [Semantic Versioning](https://semver.org/spe
 - Worked on almost all of the sktechpad transition. 
 - Fixed some syntax errors in if statements.
 - Sketchpad and New York Historic Museum transition fixes 75% done.
-- Fixed the press enter function
+- Fixed the press enter function.
 - Fixed and updated the addItem() function after wear command update.
 - Changing the versioning schema slightly.
 
