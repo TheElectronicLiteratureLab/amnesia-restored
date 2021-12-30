@@ -2,13 +2,39 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project loosely adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-This project uses a loose version of Semantic Versioning
-## [Unreleased]
+## [Unreleased] - 2022-1-?? 
+### Added
+
+
+### Changed
+
+
+### Removed
+
+## [Amnesia-v2.2] - 2021-12-30
+### Added
+
+
+### Changed
+
+
+### Removed
+
+## [Amnesia-v2.1] - 2021-12-22
 - Fixes for getting user input
+### Added
 
-## [1.0.0] - 2017-06-20
+
+### Changed
+- Complete overhaul of code base.
+
+
+### Removed
+
+
+## [Amnesia-v2.0] - 2021-12-15
 ### Added
 
 
@@ -19,9 +45,6 @@ This project uses a loose version of Semantic Versioning
 
 
 
-Added for new features.
-Changed for changes in existing functionality.
-Deprecated for soon-to-be removed features.
-Removed for now removed features.
-Fixed for any bug fixes.
-Security in case of vulnerabilities.
+## [Amnesia-v1.0] - 1986-9-??
+- The original game that was released in 1986 for the Apple IIe and IBM PC. Later released in 1987 on the Commodore 64.
+- Original source code was lost and only the compiled versions remain, though are not readily accessible with modern PCs.
