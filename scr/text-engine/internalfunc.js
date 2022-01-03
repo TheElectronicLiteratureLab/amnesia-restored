@@ -274,6 +274,9 @@ let pressEnter = (id) => {
 
   let x = document.getElementById("arrow");
 
+  x.classList.remove('ml-2');
+    x.classList.add('ml-1');
+
   //disable normal input
   document.querySelector('input').disabled = true;
   x.innerHTML = `PLEASE PRESS <strong>[ENTER]</strong> TO CONTINUE`;
