@@ -854,7 +854,7 @@ const amnesiaRestored = {
           
           To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
           
-          To the left of the dresser is an **Apple //e** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
+          To the left of the dresser is an **Apple //e** computer on its own metal cart.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
           
           if(getItemInInventory('Room Key')){ //if the 1502 room key is already in inventory
               room.desc = room.desc.replace(`${keyDesc}`, '');
@@ -1381,7 +1381,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-5',
         name:'',
-        desc: `No sooner have you sprayed your offensive message on the subway car's window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor's Commission to Keep the Subways Clean, who is no less a celebrity than ____________`,
+        desc: `No sooner have you sprayed your offensive message on the subway car's window, than Mayor Koch bursts upon the scene, with an entourage including two policemen, a press photographer, and the head of the Mayor's Commission to Keep the Subways Clean, who is no less a celebrity than &#95;&#95;&#95;&#95;&#95;&#95;&#95;`,
         //need to add a way for this text to be added to a list then recalled later in the text.
         onBlock: () => {
           if (prevInput !== '') {
@@ -8453,63 +8453,102 @@ onBlock: () => {
       You tell him, quite honestly, that you don't know. 
       
       "Here," he says handing you a stick of charcoal and a kneaded eraser, "try it. Draw me."`,
+      onEnter: () => {
+        pressEnter('side-art-4');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-4',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You finish your attempt to draw Tony, and he looks at your work. "That's okay," he admits. "Its's better than my stuff. I'll tell you what. I got a proposition. \nI got ten bucks for far doing this. I'll give you five, plus this sketchpad, and the charcoal, and the clothes I got on, if you'll let me have that white tux. We're about the same size. I know a place in the park where we can switch clothes without anyone seeing. What do you say?"`,
+      onBlock: () => {
+        if (prevInput === 'More money' || prevInput === 'I want more money' || prevInput === 'ask for more money' || prevInput === 'more money' || prevInput === 'give me more money' || prevInput === 'give me more' || prevInput === 'no') {
+          println(`I can't really give you more than the five dollars. Look I got to get by somehow.`);
+        } else if (prevInput === 'yes' || prevInput === 'yep' || prevInput === 'sure' || prevInput === 'okay') {
+          println(`"Ok, follow me." \nAfter some distance, you come to a part of Centeral Park, where Tony judges it will be safe to change. He steps behind a thick stand of bushes and begins to take off his clothes." \n "Come on," he says. "Strip!"`);
+          pressEnter('side-art-5');
+        }
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-5',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You step behind the bushes, and hesitate. You feel embarassed. "Hey, come on," Tony urges. "Save the blushes till later."`,
+      onEnter: () => {
+        pressEnter('side-art-6');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-6',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You pull off your pants, and a momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`,
+      onEnter: () => {
+        pressEnter('side-art-7');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-7',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You are in a tiny apartment, but since it takes no space to change into someone else its size is of no importance. Alice stands there with you, smiling. And then the memory is gone like the breeze that brought it. You and Tony step out from behind the bushes; in the white tuxedo he looks like a shy usher at a stranger's wedding.`,
+      onEnter: () => {
+        pressEnter('side-art-8');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-8',
       coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      name: 'Somewhere in Central Park',
+      desc: `Tony says, 'Go down to the park at Washington Square in the village and draw there. You should have good business at the park, and the police will not bother you.' Tony bids you goodbye. \nYou are in Manhattan's beautiful Central Park.`,
+      onEnter: () => {
+        pressEnter('76-7');
+        storyMarker.setLatLng([-47.428, -5.559]).bindPopup('Take some time to draw here.').addTo(poiLayer);
+      },
       exits: []
     },
     {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
+      id: 'wasq-park',
+      coord: [-47.428, -5.559],
+      name: 'Washington Square Park',
+      desc: '',
+      onEnter: () => {
+        if (!getItemInInventoryById('sketchpad')) {
+          println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net.
+
+          There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
+          pressEnter('wasq-park-2');
+        }
+        else {
+          println(`One corner of the park is given over to chess-players, and nearby a man is completing a sketch of a woman. When he is done, she pays him and takes the sketch. Then they go off in opposite directions, leaving the bench they'd occupied up for grabs.`);
+        }
+      }
     },
     {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
-    },
-    {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
+      id: 'wasq-park-2',
+      coord: [-47.428, -5.559],
+      name: 'Washington Square Park',
+      desc: '',
+      onEnter: () => {
+        println(`One corner of the park is given over to chess-players, and nearby a man is completing a sketch of a woman. When he is done, she pays him and takes the sketch. Then they go off in opposite directions, leaving the bench they'd occupied up for grabs.`);
+      },
+      onBlock: () => {
+        if (prevInput === 'sit') {
+          println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net. 
+
+          There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
+        }
+      },
+      exits: [
+        {dir: ['leave', 'back'], id: 'wash-lagu'}
+      ]
     },
 
   /**********************/
@@ -8524,8 +8563,8 @@ onBlock: () => {
       \n\nIN CHARCOAL\n\n 5.00\n\nYou prop the sketchpad against the back of the bench, assume an artistic expression, and wait for a fish to take the bait. A few people glance your sign as they pass by, but none even slow down. Then there's a nibble\n\nA pair of teenagers, one blonde, the other brunette, comes to a halt some few feet from the bench and confers in whispers. 'Can we see one of your sketches?'`)
   },
   exits:[
-      {dir:['yes'],id:'book-2'},
-      {dir:['no'],id:'book-3'}
+      {dir:['yes'], id:'book-2'},
+      {dir:['no'], id:'book-3'}
   ]
 },
 {
@@ -8533,8 +8572,8 @@ onBlock: () => {
   name:'',
   desc:`You show them the sketch you'd done of Tony, and they confer again. The brunette seems eager to have you do her portrait, but she hasn't enough money. Reluctantly her friend loans her five dollars. 'Okay,' the brunette says, and sits down stiffly on the edge of the bench to pose. 'But if I don't like it, I don't have to buy it. Okay?' You nod your acquiescence. 'Should i smile?'`,
   exits:[
-      {dir:['yes'],id:'book-5'},
-      {dir:['no'],id:'book-8'}
+      {dir:['yes'], id:'book-5'},
+      {dir:['no'], id:'book-8'}
   ]
 },
 {
@@ -8623,6 +8662,7 @@ onBlock: () => {
       if(prevInput === 'wait'){
           enterRoom('book-11')
       }else{
+        enterRoom('wasq-park');
           //Washington Square Park
       }
   }
@@ -25184,7 +25224,7 @@ else{
         {dir: 'south', id: '3-lagu'},
         {dir: 'east', id: 'wsqs-univ'}, 
         {dir: 'west', id: 'wash-thom'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25240,7 +25280,7 @@ else{
         {dir: 'south', id: '3-thom'},
         {dir: 'east', id: 'wash-lagu'}, 
         {dir: 'west', id: 'wash-sull'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25296,7 +25336,7 @@ else{
         {dir: 'south', id: '3-sull'},
         {dir: 'east', id: 'wash-thom'}, 
         {dir: 'west', id: '4-macd'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25365,7 +25405,7 @@ else{
         {dir: 'south', id: '3-macd'},
         {dir: 'east', id: 'wash-sull'}, 
         {dir: 'west', id: '4-amer'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25382,7 +25422,7 @@ else{
         {dir: 'south', id: '4-macd'},
         {dir: 'east', block: `You can't go that way.`}, 
         {dir: 'west', id: 'wash-amer'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25438,7 +25478,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'wave-univ'}, 
         {dir: 'west', id: 'wave-macd'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25613,7 +25653,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: '4-gree'}, 
         {dir: 'west', id: 'wash-lagu'},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25630,7 +25670,7 @@ else{
         {dir: 'south', id: 'wsqs-univ'},
         {dir: 'east', id: 'wash-gree'}, 
         {dir: 'west', block: `You can't go that way.`},
-        {dir: 'washington square park', id: 'wasq-park'} 
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'} 
       ],
     },
     {   
@@ -25647,7 +25687,7 @@ else{
         {dir: 'south', id: 'wash-wsqe'},
         {dir: 'east', id: 'wave-gree'}, 
         {dir: 'west', id: 'wave-5'},
-        {dir: 'washington square park', id: 'wasq-park'}
+        {dir: ['washington square park', 'washington park', 'park'], id: 'wasq-park'}
       ],
     },
     {   
