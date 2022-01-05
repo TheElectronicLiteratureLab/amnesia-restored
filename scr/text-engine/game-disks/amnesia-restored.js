@@ -165,7 +165,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println('Do you have a beard? Or a mustache? or neither?');
+        println('Do you have a beard? Or a mustache? Or neither?');
       },
       exits: [],
       onBlock: () => {
@@ -488,7 +488,7 @@ const amnesiaRestored = {
             //println('Brochure coming soon!');
             //need some divs to switch between text
             //stretch goal unfortunately
-            println("You look through the brochure and think its really nicely designed and laid out.");
+            println("You look through the brochure and think it's really nicely designed and laid out.");
           },
           onTake: () => {
             println(`You took the brochure.`);
@@ -552,7 +552,7 @@ const amnesiaRestored = {
           gif: 'img/gif/gif-bedsheet-ingame.gif',
           bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
-          desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+          desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
            top: true,
               bottom: true,
               isTakeable: true,
@@ -760,7 +760,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
+        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is presumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
       exits: [],
@@ -854,7 +854,7 @@ const amnesiaRestored = {
           
           To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
           
-          To the left of the dresser is an **Apple //e** computer on its own metal cart. There's a **window** bro.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
+          To the left of the dresser is an **Apple //e** computer on its own metal cart.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
           
           if(getItemInInventory('Room Key')){ //if the 1502 room key is already in inventory
               room.desc = room.desc.replace(`${keyDesc}`, '');
@@ -1077,7 +1077,7 @@ const amnesiaRestored = {
               //println('Brochure coming soon!');
               //need some divs to switch between text
               //stretch goal unfortunately
-              println("You look through the brochure and think its really nicely designed and laid out.");
+              println("You look through the brochure and think it's really nicely designed and laid out.");
             },
             onTake: () => {
               println(`You took the brochure.`);
@@ -1150,7 +1150,7 @@ const amnesiaRestored = {
               icon: 'img/png/image-bedsheet-thumnail.png',
               gif: 'img/gif/gif-bedsheet-ingame.gif',
               name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
-              desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+              desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
               isTakeable: true,
               isDroppable: true
             }
@@ -1348,7 +1348,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-4',
         name: '',
-        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n "Come," says the faceless figure, putting his arm about your shoulder. "You mustn't be late your first day at work." If you wished to, you could not resist his greater strength. You enter the empty subway car. "Quickly!" Your companion hands you a spray can of black enamel. "Before the police come and you're arrested--write a graffito. Quickly!"`,
+        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n "Come," says the faceless figure, putting his arm about your shoulder. "You mustn't be late your first day at work." Even if you wished to, you could not resist his greater strength. You enter the empty subway car. "Quickly!" Your companion hands you a spray can of black enamel. "Before the police come and you're arrested--write a graffito. Quickly!"`,
         onEnter: () =>{
           reenableInput();
         },
@@ -1455,7 +1455,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale2',
         name: '',
-        desc: `You take the escalator to the second floor, where four female manikins have been grouped in a tableau representing an outing to the beach. Each of the mannequins has lifted her plaster hand to point to the upward-bound escalator.`,
+        desc: `You take the escalator to the second floor, where four female mannequins have been grouped in a tableau representing an outing to the beach. Each of the mannequins has lifted her plaster hand to point to the upward-bound escalator.`,
         onBlock: () => {
           if (prevInput === 'go up escalator' || prevInput === 'go to escalator') {
             enterRoom('nigh-sale3');
@@ -1653,7 +1653,7 @@ const amnesiaRestored = {
       name:'',
       desc: ``,
       onEnter: () => {
-          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
+          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off different styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
           pressEnter('nigh-sale11');
       },
     },
@@ -1863,7 +1863,7 @@ const amnesiaRestored = {
       onBlock: () => {
         if (prevInput === 'xavier hollings' || prevInput === 'xavier' || prevInput === 'hollings') {
           enterRoom('hell-4');
-        } else if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron') {
+        } else if (prevInput === 'john cameron iii' || prevInput === 'john cameron' || prevInput === 'john' || prevInput === 'cameron') {
           println('That is an interesting name but, ');
           enterRoom('hell-6');
         } else if (prevInput === '') {
@@ -1887,7 +1887,7 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         let styx = getRoom('hell-6');
-        if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron'){
+        if (prevInput === 'john cameron iii' || prevInput === 'john cameron' || prevInput === 'john' || prevInput === 'cameron'){
           enterRoom('hell-6');
         } else {
           styx.charonReturns++;
@@ -1923,7 +1923,7 @@ const amnesiaRestored = {
       name: 'Eternity Without a Name',
       desc: `"Sorry," says Charon, handing you back your Emigration Card. "I've got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat.`,
       onEnter: () => {
-        println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
+        println('Years turned to centuries, which turned to millenia. Millenia become eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
         eterWith = true;
         updateEndings();
         slideRightIn('achieve-display', 'achieve-text-container');
@@ -1939,7 +1939,7 @@ const amnesiaRestored = {
       id: 'corridor-1502',
       name: '15th Floor Hallway',
       desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n
-      Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
+      Halfway down the corridor there is a branching northward hall and an arrow directing you to a bank of elevators. For the moment, the hallway is deserted save for a maid's laundry trolley some five doors away and yourself.`,
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
         playerC.sScore += 2; // Adding to Survival
@@ -2178,7 +2178,7 @@ const amnesiaRestored = {
         ],
     },
     {
-      id: 'corridor-213', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-213', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 213',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2250,7 +2250,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-204'},
           {dir: ['north', 'south'], block: `You can't go that way.`},
         ],   
@@ -2356,7 +2356,7 @@ const amnesiaRestored = {
       desc: `You are standing just down from the stairway.`,
       exits: [ 
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "You're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-304'},
           {dir: ['north', 'south'], id: 'corridor-304', block: `You can't go that way.`},
         ],
@@ -2388,7 +2388,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-413', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-413', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 413',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2466,7 +2466,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell4', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell4', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-404'},
@@ -2503,7 +2503,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-513', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-513', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 513',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2582,7 +2582,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell5', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell5', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-504'},
@@ -2618,7 +2618,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-613', // Player gopes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-613', // Player goes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 613',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2697,7 +2697,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-604'},
           {dir: ['north', 'south'], id: 'corridor-604', block: `You can't go that way.`},
 
@@ -2732,7 +2732,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-713', // Player gopes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-713', // Player goes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 713',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2802,7 +2802,7 @@ const amnesiaRestored = {
       desc: `You are standing just down from the stairway.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-704'},
           {dir: ['north', 'south'], id: 'corridor-704', block: `You can't go that way.`}
          ],   
@@ -2836,7 +2836,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-813', // Player gopes into 813, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-813', // Player goes into 813, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 813',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2921,7 +2921,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-804'},
           {dir: ['north', 'south'], id: 'corridor-804', block: `You can't go that way.`}
          ],
@@ -2956,7 +2956,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-913', // Player gopes into 913, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-913', // Player goes into 913, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 913',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3041,7 +3041,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell9', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell9', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-904'},
@@ -3080,7 +3080,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1013', // Player gopes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1013', // Player goes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1013',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3159,7 +3159,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell10', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell10', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1004'},
@@ -3171,7 +3171,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevator11', // Player presses 11
       name: '11th Floor Hallway',
-      desc: `You press the button for 11. After a lurch and some movement, the elevator arrives at the 11thd floor, the doors open, and you walk out into the hallway.
+      desc: `You press the button for 11. After a lurch and some movement, the elevator arrives at the 11th floor, the doors open, and you walk out into the hallway.
 
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
       
@@ -3231,7 +3231,7 @@ const amnesiaRestored = {
     
     {
       id: 'corridor-1110', 
-      name: '2nd Floor Hallway',
+      name: '11th Floor Hallway',
       desc: `You are standing in front of the doors to rooms 1109 and 1110.`,
       
       exits: [ // These need to be specified with the press command
@@ -3273,7 +3273,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell11', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell11', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1104'},
           {dir: ['north', 'south'], id: 'corridor-1104', block: `You can't go that way.`},
         ],
@@ -3303,7 +3303,7 @@ const amnesiaRestored = {
         ],
     },
     {
-      id: 'corridor-1213', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1213', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1213',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3313,7 +3313,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1214', // 
-      name: '12nd Floor Hallway',
+      name: '12th Floor Hallway',
       desc: `To the east is the end of the hallway, and on either side of you are the doors to rooms 1214 and 1215.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1212'},
@@ -3375,7 +3375,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside' ,'up'], id: 'corridor-stairwell12', block: "Your're still outside the stairwell."
+          {dir: ['inside' ,'up'], id: 'corridor-stairwell12', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1204'},
@@ -3495,7 +3495,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell13', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell13', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1304'},
@@ -3535,7 +3535,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1413', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1413', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1413',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3587,7 +3587,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1408', 
-      name: '4th Floor Hallway',
+      name: '14th Floor Hallway',
       desc: `You are standing betwixt rooms 1407 and 1408`,
       
       exits: [ // These need to be specified with the press command
@@ -3601,7 +3601,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1404', 
-      name: '4th Floor Hallway',
+      name: '14th Floor Hallway',
       desc: `To your west are the doors for rooms 1404 through 1401, and beyond them, the stairway. Right now, you are standing in front of the doors to 1403 and 1404.`,
       
       exits: [ // These need to be specified with the press command
@@ -3620,7 +3620,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell14', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell14', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1404'},
           {dir: ['north', 'south'], id: 'corridor-1404', block: `You can't go that way.`},
 
@@ -3644,7 +3644,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1612', 
-      name: '6th Floor Hallway',
+      name: '16th Floor Hallway',
       desc: `You are now a few steps to the east of the elevators, and are standing in front of rooms 1612 and 1613. The door to room 1613 is ajar.`,
       
       exits: [ // These need to be specified with the press command
@@ -3657,7 +3657,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1613', // Player gopes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1613', // Player goes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1613',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3742,7 +3742,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell16', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell16', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1604'},
@@ -3781,7 +3781,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1713', // Player gopes into 1713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1713', // Player goes into 1713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1713',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3866,7 +3866,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell17', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell17', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1704'},
@@ -3905,7 +3905,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1813', // Player gopes into 1813, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1813', // Player goes into 1813, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1813',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3990,7 +3990,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell18', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell18', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1804'},
@@ -4029,7 +4029,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1913', // Player gopes into 1913, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1913', // Player goes into 1913, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1913',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -4114,7 +4114,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell19', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell19', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1904'},
@@ -4543,7 +4543,7 @@ const amnesiaRestored = {
     {
         id: 'deja-vu8',
         name: '',
-        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, and of shame for being reduced to such a condition.`,
 
         onEnter: () => {
             pressEnter('deja-vu5')
@@ -5131,7 +5131,7 @@ const amnesiaRestored = {
   {
     id: 'deat-lert3', //  lethal injection & roasted turkey
     name: '', // Displayed each time the player enters the room.
-    desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
+    desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner.', // Displayed when the player first enters the room.
     onEnter: () => {
       playerC.dScore += 25; // Adding to Detective Score
       ////console.log(playerC.dScore);
@@ -5679,7 +5679,7 @@ const amnesiaRestored = {
     { 
       id: 'chap-4',
       name: 'All-Faith Chapel',
-      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there's more of the wedding gown and veil in evidence than of the woman.`,
+      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well-proportioned figure--or a good dressmaker. Really, there's more of the wedding gown and veil in evidence than of the woman.`,
       veilRaised: false,
       askSelf: 0,
       onEnter: () => {
@@ -5784,7 +5784,7 @@ const amnesiaRestored = {
  {//When attempting to leave the chapel after Alice has appeared. Also when responding to Alice's questions with: go away/ask her to go/say goodbye/I will not marry you or similar response
   id: 'chap-16',
   name: 'All-Faith Chapel',
-  desc: `"John!" the woman in the bridal dress shrieks, "please don't abandon me like this. I'll die of shame if you leave me now. Surely, whatever reason you may have for changing your mind, it's something we can talk about it. It's Daddy, isn't it? He's such a bully, I know. But once you get to know him he's really a sweet person, and in any case, John, once we're in Australia he won't be able to bother us anymore." She throws herself on her knees before you and lifts up her arms (the same gesture in which you can see Mary Baker Eddy worshipping the Supreme Being in the chapel's mural) imploringly. "Please John. Please say you'll marry me."`,
+  desc: `"John!" the woman in the bridal dress shrieks, "please don't abandon me like this. I'll die of shame if you leave me now. Surely, whatever reason you may have for changing your mind, it's something we can talk about. It's Daddy, isn't it? He's such a bully, I know. But once you get to know him he's really a sweet person, and in any case, John, once we're in Australia he won't be able to bother us anymore." She throws herself on her knees before you and lifts up her arms (the same gesture in which you can see Mary Baker Eddy worshipping the Supreme Being in the chapel's mural) imploringly. "Please John. Please say you'll marry me."`,
   onEnter: () => {
     autoSave();
   },
@@ -5819,7 +5819,7 @@ const amnesiaRestored = {
       icon: 'img/png/image-openweddingbox-thumbnail.png',
       gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
-      desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
+      desc: 'It is nearly cubical. It is a turquoise blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
       firstGet: true,
       firstUse: true,
@@ -6045,7 +6045,7 @@ onBlock: () => {
       icon: 'img/png/image-openweddingbox-thumbnail.png',
       gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
-      desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
+      desc: 'It is nearly cubical. It is a turquoise blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
       firstGet: true,
       firstUse: true,
@@ -6170,7 +6170,7 @@ onBlock: () => {
     {
         id: 'lobb-revi-1',
         name: 'Newsstand',
-        desc: `The upper part of the newsstand us given order to a display of gum and candy. Beneath this display there are a few remaining copies of the New York Post, and on either side of this are small hand-lettered signs explaining that the Times and Daily News are sold out. The Post's headline is ***MOB BOSS IN CASINO SLAYING***.`,
+        desc: `The upper part of the newsstand is given order to a display of gum and candy. Beneath this display there are a few remaining copies of the New York Post, and on either side of this are small hand-lettered signs explaining that the Times and Daily News are sold out. The Post's headline is ***MOB BOSS IN CASINO SLAYING***.`,
         onEnter: () => {
           reenableInput();
         },
@@ -6178,7 +6178,7 @@ onBlock: () => {
             {
                 itemId: 'post',
                 name: ['The Post', 'Post', 'Newspaper', 'Paper'],
-                desc: 'A copy of The Post, that you took from a newstand in the Sunderland Hotel. The headline, ***MOB BOSS IN CASINO SLAYING***',
+                desc: 'A copy of The Post, that you took from a newsstand in the Sunderland Hotel. The headline, ***MOB BOSS IN CASINO SLAYING***',
                 passage: '***MOB BOSS IN CASINO SLAYING***',
                 isTakeable: true,
                 onTake: () => println(`You pick up a copy of the Post, as though to study the picture of the slain mob boss, and when you are certain the newsstand attendant has not noticed, you roll it up and put it under your arm.`),
@@ -6268,7 +6268,7 @@ onBlock: () => {
                 isTakeable: true,
                 isDroppable: true,
                 onLook: () => {
-                    println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
+                    println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You find these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
                     // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you."
                 }
             }
@@ -6441,7 +6441,7 @@ onBlock: () => {
         onEnter: () => {
             println(`Momentarily your attention is diverted by the shouts of the contending factions of the caucus of the Noise Abatement League. When you look back at the TV you think you see your own face on the screen. The hair is shorter, and you seem very unhappy. Small wonder, for this fleeting portrait is framed, at the top of the screen, by the word WANTED, and at the bottom by a string of numerals. You strain to hear the announcer's voice and catch only the end of the report:
             
-            "...killed during his escape from the Texas State Penitentiary at Revoltillo, where the prisoner was serving a two-year sentence for the possession of an illegal substance. He is beleived to be armed and should be considered dangerous." This caution is followed by the weather report. Tomorrow will be another sunny day.`);
+            "...killed during his escape from the Texas State Penitentiary at Revoltillo, where the prisoner was serving a two-year sentence for the possession of an illegal substance. He is believed to be armed and should be considered dangerous." This caution is followed by the weather report. Tomorrow will be another sunny day.`);
             pressEnter('lobb-revi-9');
         }
     }, // closes lobb-revi-10 room (watching TV continuation)
@@ -6492,7 +6492,7 @@ onBlock: () => {
         onEnter: () => {
             println(`You shake out the newspaper, uninterrupted this time.
             
-            You skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold nexk chains appeal to you?
+            You skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold neck chains appeal to you?
             
             This series of rather idle questions comes to an abrupt end as you turn to page 17 and see a blurry picture of your own scowling face. The hair is shorter, but there's no mistaking that face as anyone's but yours. The caption under the photo reads: 
             
@@ -6560,7 +6560,7 @@ onBlock: () => {
                     let room = getRoom('lobb-revi-17')
                         if(room.elevatorCount === 0){
                             if(prevInput === ('press up' || 'press down' || 'down' || 'up' || 'use elevator')){
-                                println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wai tin the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
+                                println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wait in the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
                                 elevatorCount++;
                                 if(prevInput === 'yes'){
                                     enterRoom('lobb-revi-19');
@@ -6571,7 +6571,7 @@ onBlock: () => {
                         }
 
                         if(room.elevatorCount !== 0){
-                            println(`You wait some time for another elevator, and when it arrives the same two policemen get out. "Just the man we were looking for," says the first policeman with satisfaction. "Cuff him Louie, and I'll read him his rights." As the policeman finishes cuffing you, your rights have been read to you. You are not actually JOhn Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                            println(`You wait some time for another elevator, and when it arrives the same two policemen get out. "Just the man we were looking for," says the first policeman with satisfaction. "Cuff him Louie, and I'll read him his rights." As the policeman finishes cuffing you, your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
                             pressEnter('deat-1'); // sends player to death and texas
                         }
 
@@ -6608,7 +6608,7 @@ onBlock: () => {
                 YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
             } else if(passwordCount === 2 && prevInput !== 'with god'){
                 passwordCount++;
-                println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. the text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
+                println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. The text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
             
                 if(prevInput === 'look at bible' && getItemInInventory('bible')){
                     println(`You take the Bible from your gym bag and find the page of recommended texts. Those in doubt and uncertainty are advised to read John I. You turn to the Gospel according to St. John, first chapter, first verse: "In the beginning was the Word, and the word was with God, and the word was God."
@@ -6735,7 +6735,7 @@ onBlock: () => {
         id: 'prin-club-3',
         coord: [],
         name: '',
-        desc: `He assures you that he has an infallible memory for faces and that you are not.  you are not. You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
+        desc: `He assures you that he has an infallible memory for faces and that you are not.  You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
         onEnter: () => {
           pressEnter('prin-club-4');
         },
@@ -6856,7 +6856,7 @@ onBlock: () => {
         coord: [],
         name: 'User Friendly Computer Store',
         desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on--and of course it will only run on a machine if it's been formatted to do so.
-        I don't pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple 2e, the IBM PC, and the Commodore 64. Which would you like?`,
+        I don't pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple //e, the IBM PC, and the Commodore 64. Which would you like?`,
         onEnter: () => {
           degradation = false;
           reenableInput();
@@ -6864,7 +6864,7 @@ onBlock: () => {
         onBlock: () => {
           //Eventually check for which version is being run
           //If player picks a different version afterwards change it.
-          if (prevInput === 'Apple 2e' || prevInput === 'apple' || prevInput === 'Apple' || prevInput === 'the apple' || prevInput === 'the apple 2e' || prevInput === 'apple 2e' ) {
+          if (prevInput === 'Apple 2e' || prevInput === 'apple' || prevInput === 'Apple' || prevInput === 'the apple' || prevInput === 'the apple 2e' || prevInput === 'apple 2e' || prevInput === 'apple //e' || prevInput === 'Apple //e' || prevInput === 'the apple //e') {
             //run a check if version is apple
             if (readApple === true) {
               enterRoom('frie-comp-4');
@@ -6891,7 +6891,7 @@ onBlock: () => {
           } else if (prevInput === '') {
             println('Please select a computer sir.');
           } else {
-            println('Please select a computer sir. We have an Apple 2e, Commodore 64, and IBM PC.');
+            println('Please select a computer sir. We have an Apple //e, Commodore 64, and IBM PC.');
           }
         },
         exits: [
@@ -6914,7 +6914,7 @@ onBlock: () => {
         id: 'frie-comp-5',
         coord: [],
         name: 'User Friendly Computer Store',
-        desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is an Apple set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
+        desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is a computer set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
         onEnter: () => {
           reenableInput();
         },
@@ -6938,7 +6938,7 @@ onBlock: () => {
         id: 'frie-comp-6',
         coord: [],
         name: 'User Friendly Computer Store',
-        desc: `You pay the saleswoman for an hour on the Apple, and she leads you to a back room about the size of the hotel's safe deposit vault. When you're alone, you boot the disk into the Apple disk drive, and once again the monitor lights up with this introductory message:`,
+        desc: `You pay the saleswoman for an hour on the computer, and she leads you to a back room about the size of the hotel's safe deposit vault. When you're alone, you boot the disk into the disk drive, and once again the monitor lights up with this introductory message:`,
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
           println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
@@ -7020,7 +7020,7 @@ onBlock: () => {
         name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
-          println(`I am writing this message to myself on a rented Apple computer in Room 1502 of the Sunderland Hotel, but beyond that one certain fact everything else I might say about who I am or why I'm here is a matter of faith and/or inference. I'm registered at the desk downstairs as John Cameron III, and my bill is being paid for by an American Express card in that name (no idea where the card is tho, dammit), but all my efforts to dig up solid info about this “John Cameron” have met with no success. American Express insists my records are confidential and can't be divulged over the phone. The WHO'S WHO at the library shows no entry for John Cameron III. The name is probably an alias. This much is certain: whoever I am, I'm suffering from a disease that causes a progressively worse amnesia. The nature and origin of that disease—and much else- are set out (presumably by myself, but that's where faith comes in, since I don't remember writing even yesterday's entry!) on files that are coded within this file. Access to these files is controlled by a series of riddles, similar to but harder than the riddle that opened this file. The need for "burying" this information will become evident as you/I continue to access earlier files. As for the riddles themselves, it seems that even in my amnesiac condition I have a knack for inventing doggerel riddles. God, I hope I don't end up discovering I'm a poet! I have, at this point, almost no memories of my adult life, though I do retain certain capabilities--such as basic programming skills- and general knowledge. There is also a grab-bag of what I suppose are childhood memories--streets and rooms and cooking smells and a woman's voice softly urging me to go to sleep. My mother's voice? I can remember watching DUMBO and wishing that I had his magic feather. I remember unwrapping a birthday present that had one box inside of another box inside of another box--but I can't remember what was in the last box. It's not safe for me to continue writing. You/I will find what you need to know on the earlier files. I have nothing substantive to add. I'll deposit this in the hotel's safe deposit box and use the password that's keyed to John 1:1. None of the other riddles concern the Bible, by the way, so don't think to find more “clues.” I was able to guess them, so I guess you will, since I'm counting on you to be me. This is a weird situation.`, 'compStore');
+          println(`I am writing this message to myself on a rented computer in Room 1502 of the Sunderland Hotel, but beyond that one certain fact everything else I might say about who I am or why I'm here is a matter of faith and/or inference. I'm registered at the desk downstairs as John Cameron III, and my bill is being paid for by an American Express card in that name (no idea where the card is tho, dammit), but all my efforts to dig up solid info about this “John Cameron” have met with no success. American Express insists my records are confidential and can't be divulged over the phone. The WHO'S WHO at the library shows no entry for John Cameron III. The name is probably an alias. This much is certain: whoever I am, I'm suffering from a disease that causes a progressively worse amnesia. The nature and origin of that disease—and much else- are set out (presumably by myself, but that's where faith comes in, since I don't remember writing even yesterday's entry!) on files that are coded within this file. Access to these files is controlled by a series of riddles, similar to but harder than the riddle that opened this file. The need for "burying" this information will become evident as you/I continue to access earlier files. As for the riddles themselves, it seems that even in my amnesiac condition I have a knack for inventing doggerel riddles. God, I hope I don't end up discovering I'm a poet! I have, at this point, almost no memories of my adult life, though I do retain certain capabilities--such as basic programming skills- and general knowledge. There is also a grab-bag of what I suppose are childhood memories--streets and rooms and cooking smells and a woman's voice softly urging me to go to sleep. My mother's voice? I can remember watching DUMBO and wishing that I had his magic feather. I remember unwrapping a birthday present that had one box inside of another box inside of another box--but I can't remember what was in the last box. It's not safe for me to continue writing. You/I will find what you need to know on the earlier files. I have nothing substantive to add. I'll deposit this in the hotel's safe deposit box and use the password that's keyed to John 1:1. None of the other riddles concern the Bible, by the way, so don't think to find more “clues.” I was able to guess them, so I guess you will, since I'm counting on you to be me. This is a weird situation.`, 'compStore');
 
           pressEnter('frie-comp-10')
         },
@@ -7079,7 +7079,7 @@ onBlock: () => {
           incrementHour();
           playFat -= 15;
           updateFat(playFat);
-          println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the Apple you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
+          println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the computer you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
           I am Evolution's way
           Of saying you've had long enough to play.
           I'm the unveiling of the skull,
@@ -8881,7 +8881,7 @@ onBlock: () => {
       pressEnter('book-12')
       },
 },
-//skecch 4: the Bald Man
+//sketch 4: the Bald Man
 {
   id:'book-32',
   name:'',
@@ -8959,7 +8959,7 @@ onBlock: () => {
   exits:[
       {dir:['yes'],id:'book-40'},
       {dir:['no'],id:'book-41'},
-      {dir:['ask', 'tell'],id:'book-40'}//nned to fix navigation here.
+      {dir:['ask', 'tell'],id:'book-40'}//planned to fix navigation here.
   ]
 },
 {
@@ -9339,7 +9339,7 @@ else{
               println(`Impulsively you kiss Bette, and she responds like a dam bursting. Her fingers claw your back, tangle in your hair, and touch all your buttons. Sensuality and love fuse into a single rocket to the moon. Woosh! And then you land on the moon and pick the flowers growing there and whisper endearment for who knows how long until it's time to return to the rocket and jet back to Earth for a soft landing in the tangled sheets of the unfolded sofabed.`);
               pressEnter('nobe-12');
           }else if(zRandomEncounter === 2){
-              println(` Bette responds to your kiss with the delicacy of a blossom opening at the pressure of the dawn's first light. Time stops and you seem, as your kiss continues, to take flight into the fifth dimension where size and color and rhythm all get synchronized and the usual chirping sounds that tell you you're happy become a whole symphony orchestra announcing the same fact, and you're Arturo Toscanini. You life your baton.`);
+              println(` Bette responds to your kiss with the delicacy of a blossom opening at the pressure of the dawn's first light. Time stops and you seem, as your kiss continues, to take flight into the fifth dimension where size and color and rhythm all get synchronized and the usual chirping sounds that tell you you're happy become a whole symphony orchestra announcing the same fact, and you're Arturo Toscanini. Your life your baton.`);
               pressEnter('nobe-12');
           }else{
               println(`You kiss, and that kiss modulates into a kid of banquet, a love-feast, a smorgasboard that seems to be replenished by its own devourings. You understand why the word 'carnal' refers not only to the joy of sex but to the pleasure, as well, of being a carnivore. Meat! Bar-B-Q spare-ribs! Loin of pork and breast of veal! Flank steaks! Roast beef au jus! And ladles and ladles of hot gravy.`);
