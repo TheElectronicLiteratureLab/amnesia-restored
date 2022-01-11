@@ -9557,7 +9557,7 @@ else{
           println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
           enterRoom('nobe-27');
       }else if(prevInput === 'chicken veronique'){
-          println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          println(`Chicken it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n The chicken is tasty, and the grapes look pretty, but the sauce hasn't managed to introduce them to each other.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
           enterRoom('nobe-27');
       }else if(prevInput === 'escargot au reurre'){
           println(`Snails it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
@@ -9592,7 +9592,7 @@ else{
           println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
           enterRoom('nobe-27');
       }else if(prevInput === 'chicken veronique'){
-          println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          println(`Chicken it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n The chicken is tasty, and the grapes look pretty, but the sauce hasn't managed to introduce them to each other.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
           enterRoom('nobe-27');
       }else if(prevInput === 'escargot au reurre'){
           println(`Snails it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would. \n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
@@ -9774,7 +9774,7 @@ else{
   desc: ``,
   //player sleeps here
   onEnter: () => {
-      println(`Bette arrives home to announce that she is suffering a PMS headache of monstrous proportions. She takes two aspirins, covers her eyes with a small black sleep-mask ('So you can stay up and read, darling,' she explains.), gets into the unfolded sofabed, and falls into an uneasy sleep. You read a couple of back issues of 'The New Yorker' until you've developed a headache in sympathy with her's.\n\n Then you get ready to call it a night. 'We're becoming a couple,' you think happily as you drift off to sleep. 'We get sick together!'\n\n You both drift off to sleep.`);
+      println(`Bette arrives home to announce that she is suffering a PMS headache of monstrous proportions. She takes two aspirins, covers her eyes with a small black sleep-mask ('So you can stay up and read, darling,' she explains.), gets into the unfolded sofabed, and falls into an uneasy sleep. You read a couple of back issues of 'The New Yorker' until you've developed a headache in sympathy with her's.\n\n Then you get ready to call it a night. 'We're becoming a couple,' you think happily. 'We get sick together!'\n\n You both drift off to sleep.`);
       pressEnter('nobe-48');
   },
 },
@@ -9905,7 +9905,7 @@ else{
   name: '',
   desc: ``,
   onEnter: () => {
-      println(`'I'll bring what I can scrape together in the house. A thousand anyhow. Do hurry! I'm so glad to hear your voice. Take care.' She hangs up before you can get in another word. You put down the receiver.`);
+      println(`'Darling, it's really not safe to talk on the phone. But we can speak privately at the Dakota. Remember, the name to give the guard is Colby. Take care.' She hangs up fore you can get in another word. You put down the receiver.`);
       pressEnter('previous room')
   }
 },
@@ -10176,7 +10176,7 @@ else{
 {
   id: 'dakota-denise-6', // Introducing Denise outside of Death and Texas
   name: `The Dakota`,
-  desc: `"First, of course, there are the other women in your life. Alison, your ex-assistant. Tell me, Why didn't you marry the poor, pathetic creature?"`,
+  desc: `"First, of course, there are the other women in your life. Alison, your ex-assistant. Tell me, why didn't you marry the poor, pathetic creature?"`,
   onEnter: () =>{
     playerC.dScore += 25; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
@@ -10646,7 +10646,7 @@ else{
 {
   id: 'dakota-denise-32',
   name: `The Dakota`,
-  desc: `"The poor thing thought she'd have you docile as a lamb in three or four days. After four weeks, you not only didn't know the formula for the drug, you still refused to marry her and exit gracefully, even when Luk threatened you at the hotel."`, 
+  desc: `"The poor thing thought she'd have you docile as a lamb in three or four days. After four weeks, you not only didn't know the formula for the drug, you still refused to marry her and exit gracefully, even when Luke threatened you at the hotel."`, 
   onEnter: () => 
   {
     pressEnter('dakota-denise-33');
@@ -10747,7 +10747,7 @@ else{
   id: 'dakota-zane-3',
   name: `The Dakota`,
   desc: `"It's just Luke," Denise tells him.\n
-  "No, it's not. He went to the Sunderland to wait for Hollings. Besides, that's not his walk, I can her it isn't him."`, 
+  "No, it's not. He went to the Sunderland to wait for Hollings. Besides, that's not his walk, I can hear it isn't him."`, 
   onEnter: () => 
   {
     pressEnter('dakota-zane-4');
@@ -11459,7 +11459,7 @@ else{
 {
     id: 'alisonsdeath-disk-4', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Denise smiles with satisfaction. "So you see, Xavier, how much there is to be gained if you'll only be trusting and cooperative. Now let's being, shall we?"`,
+    desc: `Denise smiles with satisfaction. "So you see, Xavier, how much there is to be gained if you'll only be trusting and cooperative. Now let's begin, shall we?"`,
     onEnter: () => {
         pressEnter('alisonsdeath-disk-5');
     },
@@ -11524,7 +11524,7 @@ else{
 {
     id: 'alisonsdeath-riddle-1', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `"Yes," Dennise agrees. "It's pretty obvious. I hope they're all so easy." She types the anser on the keyboard and a large block of text appears on the screen`,
+    desc: `"Yes," Dennise agrees. "It's pretty obvious. I hope they're all so easy." She types the answer on the keyboard and a large block of text appears on the screen`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-2');
     },
@@ -11559,7 +11559,7 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'question'){
+        if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
             enterRoom('alisonsdeath-riddle-3');
         }else{ 
             enterRoom('alisonsdeath-wrong-2');
@@ -11597,7 +11597,7 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'question'){
+        if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
             enterRoom('alisonsdeath-riddle-3');
         }else{ 
             enterRoom('alisonsdeath-wrong-3');
@@ -11661,7 +11661,7 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'bald'){
+        if(prevInput === 'bald' || prevInput === 'balding'){
             enterRoom('alisonsdeath-riddle-8');
         }else if(prevInput === 'nemesis'){ 
             enterRoom('alisonsdeath-nemesis'); // The covetted nemesis ending
@@ -11968,7 +11968,7 @@ else{
 {
     id: 'alisonsdeath-ending-13', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Very slowly, as though she were reaching forward to feed a squirrel that might suddenly take fright and bound away, Bette bends forward and reaches for the gun that lies on the floor. When the gun is in her hand, she stands -- annd Zane, with tears still in his eyes, but a strange smile on his lips, stands up too.`,
+    desc: `Very slowly, as though she were reaching forward to feed a squirrel that might suddenly take fright and bound away, Bette bends forward and reaches for the gun that lies on the floor. When the gun is in her hand, she stands -- and Zane, with tears still in his eyes, but a strange smile on his lips, stands up too.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-14');
     },
