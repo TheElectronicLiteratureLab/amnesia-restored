@@ -8544,6 +8544,7 @@ onBlock: () => {
           println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net. 
 
           There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
+          pressEnter('book-1');
         }
       },
       exits: [
@@ -8561,6 +8562,13 @@ onBlock: () => {
   onEnter: () => {
       println(`You open the sketchpad to the page bearing the hand-lettered sign: \n\nYOUR PORTRAIT
       \n\nIN CHARCOAL\n\n 5.00\n\nYou prop the sketchpad against the back of the bench, assume an artistic expression, and wait for a fish to take the bait. A few people glance your sign as they pass by, but none even slow down. Then there's a nibble\n\nA pair of teenagers, one blonde, the other brunette, comes to a halt some few feet from the bench and confers in whispers. 'Can we see one of your sketches?'`)
+  },
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'sure') {
+      pressEnter('book-2')
+    } else {
+      pressEnter('book-3');
+    }
   },
   exits:[
       {dir:['yes'], id:'book-2'},
