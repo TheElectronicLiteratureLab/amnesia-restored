@@ -32,6 +32,14 @@ let readIBM = false;
 //Ann's Apartment Flags and Variables
 let cookieCount = 1;
 
+//Sketchpad and Washington Square Park Flags and Variables
+let sketches = 0;
+let roomNumber = 0;
+let metBette = false;
+
+//Dakota and Endgame Flags and Variables
+let dakotaEntered = false;
+
 
 let playFat = 100;
 let playHung = 100;
