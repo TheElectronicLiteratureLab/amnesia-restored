@@ -12349,7 +12349,7 @@ else{
     degradation = !degradation;
   },
     onBlock: () => {
-    if(prevInput === 'sit'){ // **We'll need a command for answering the phone
+    if(prevInput === 'sit'){
         enterRoom('cathe-2');
     }else{
         println(`You feel compelled to leave the chapel at once by a feeling so strong it almost scares you.`);
@@ -12388,7 +12388,7 @@ else{
     coord: [],
     name: `St. Patricks Cathedral`,
     desc: `You go to the priest so that you may offer the Church the rest of your life in service as a Trappist monk, dedicated to silence, chastity, poverty, and worship.\n
-    Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermonnt. Congratulations on your escape from a world of sin!`,
+    Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermont. Congratulations on your escape from a world of sin!`,
     onEnter: () =>{
         playerC.sScore = 700;
         playerC.dScore = 0;
@@ -12591,7 +12591,7 @@ else{
       {
         id: 'lunch-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: 'Luncheonette', // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
+        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
         \n
         Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
         onEnter: () => 
@@ -12716,7 +12716,7 @@ else{
       {
         id: 'nedick-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Nedick's`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
+        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
         \n
         Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
         onEnter: () => 
@@ -12796,7 +12796,7 @@ else{
           }else if(prevInput ==='rootbeer'){
             orderTotal += 2.75;
             energyTotal += 8;
-            println('One rootbeer is on its way. \n Anything else?');
+            println('One root beer is on its way. \n Anything else?');
             
           }else if(prevInput ==='coke'){
             orderTotal += 0.65;
@@ -12837,7 +12837,7 @@ else{
       {
         id: 'pizza-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Pizzeria`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
+        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
         \n
         Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
         onEnter: () => 
@@ -12966,7 +12966,7 @@ else{
       {
         id: 'nuts-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
+        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
         \n
         Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
         onEnter: () => 
@@ -13086,7 +13086,7 @@ else{
       {
         id: 'gyro-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
+        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
         \n
         Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
         onEnter: () => 
@@ -13251,7 +13251,7 @@ else{
     {
         id: 'phone-2-4', // Egg
         name: 'Room Service',
-        desc: `"Allright, egg."\n
+        desc: `"Alright, egg."\n
         "Thank you for your order. Your food will be up shortly."\n
         The person on the other end hangs up.\n
         There is a knock on the door, and without further ado a bellboy enters with your order. The bellboy places the tray of food on top of the dresser and then pauses long enough to say, "Don't bother with a tip, Bud. It's included in the cost of the food."\n
@@ -13279,7 +13279,7 @@ else{
     {
         id: 'phone-2-6', // Coffee
         name: 'Room Service',
-        desc: `"Allright, coffee."\n
+        desc: `"Alright, coffee."\n
         "Thank you for your order. Your food will be up shortly."\n
         The person on the other end hangs up.\n
         There is a knock on the door, and without further ado a bellboy enters with your order. The bellboy places the tray of food on top of the dresser and then pauses long enough to say, "Don't bother with a tip, Bud. It's included in the cost of the food."\n
@@ -13425,7 +13425,7 @@ else{
     {
         id: 'phone-9',
         name: 'Roe & Harpmeister',
-        desc: `The phone rings repeatedly. But no one's home. Finally you hang up. Your moment clinks into the coint slot, and you scoop it out.`,
+        desc: `The phone rings repeatedly. But no one's home. Finally you hang up. Your money clinks into the coin slot, and you scoop it out.`,
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
@@ -13473,9 +13473,9 @@ else{
     {
         id: 'phone-12-2',
         name: `JA`,
-        desc: `At the beep you leave a simple sincere message: "Hi, Jane. You'll never guess who this is. But I'll try and be there at five. Hope to see you,. Bye for now." You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `At the beep you leave a simple sincere message: "Hi, Jane. You'll never guess who this is. But I'll try and be there at five. Hope to see you. Bye for now." You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-12');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13510,7 +13510,7 @@ else{
         desc: `"The F.B.I., located at 69th and 1st, is open for business, and our roster of entertainers will include the sensational new comedian, Jerry Ackermann." The message is followed by a few bars of the march that had been the theme-song of the Forties radio program, THE F.B.I. IN PEACE AND WAR. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
             reenableInput();
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-14');
             pressEnter(room.enteredFrom);
         },
@@ -13539,7 +13539,7 @@ else{
         name: `E.H`,
         desc: `You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box."`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-15');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13567,7 +13567,7 @@ else{
         name: `Lila T.`,
         desc: `"Sorry, your name doesn't ring a bell. You must have dialed a wrong number." Before you can contradict her, she has hung up and all you hear is dial tone. You putback the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-16');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13590,7 +13590,7 @@ else{
         name: `Chelsea H.`,
         desc: `"Hello, this is the Chelsea Hotel. How can I help you?" You ask to speak to a guest -- giving the first name that comes into your head -- and are told there is no one by that name presently residing at the hotel. That was not a lot of information for a quarter. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13615,7 +13615,7 @@ else{
         Have a real hot time, and don't do anything Wanda wouldn't do!" There is a beep.\n
         After giving your message, you hear a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-19');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13659,9 +13659,9 @@ else{
     {
         id: 'phone-22-2',
         name: `Interlude`,
-        desc: `"Tickets cost $2, and you must arrive between 7 and 8 PM." You put back the receiver and as you do, your money clinks and rattles as it drops `,
+        desc: `"Tickets cost $2, and you must arrive between 7 and 8 PM." You put back the receiver and as you do, your money clinks and rattles as it drops`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-22');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13670,7 +13670,7 @@ else{
     {
         id: 'phone-23',
         name: `TTTT`,
-        desc: `Hi, this is Tiny Tykes Talent Town, New York's newest and most successful Children's Modelling Agency. WE can't answer the phone right now, but please leave a message after the beep.`,
+        desc: `Hi, this is Tiny Tykes Talent Town, New York's newest and most successful Children's Modelling Agency. We can't answer the phone right now, but please leave a message after the beep.`,
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
@@ -13707,9 +13707,9 @@ else{
     {
         id: 'phone-25',
         name: `R + J`,
-        desc: `"Hello," says a man's tape recorded voice. "This is Ray. I'm not here right now. Billym if this is you, try and remember to record the Met's game tonight." The line goes dead without giving you an opportunity to leave a message. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `"Hello," says a man's tape recorded voice. "This is Ray. I'm not here right now. Billy, if this is you, try and remember to record the Met's game tonight." The line goes dead without giving you an opportunity to leave a message. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13761,9 +13761,9 @@ else{
     {
         id: 'phone-26-5',
         name: `J.L`,
-        desc: `You realize you are talking to a dial tone. You put back the receiver and as you do, your moneyclinks and rattles as it drops into the coin box.`,
+        desc: `You realize you are talking to a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-26');
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13785,9 +13785,9 @@ else{
     {
         id: 'phone-28',
         name: `F`,
-        desc: `"For tomorrow nothing but sunshine, pleasant temperatures, lower humidity all day long, highs around 78. On the sound ond south shore coastal waters wind is from the northwest, increasing from 10 to 15 this afternoon, wave heights at one to 2 feet on the ocean and one foot or less across the sound, the ocean water temperature standing at 71 degrees. Thank you for calling!" You get a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `"For tomorrow nothing but sunshine, pleasant temperatures, lower humidity all day long, highs around 78. On the sound and south shore coastal waters wind is from the northwest, increasing from 10 to 15 this afternoon, wave heights at one to 2 feet on the ocean and one foot or less across the sound, the ocean water temperature standing at 71 degrees. Thank you for calling!" You get a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -14822,7 +14822,7 @@ else{
       id: 'broo-cent',
       coord: [-61.309, 7.727],
       name: 'Broome St. and Centre St.',
-      desc: `Painted across a miniature Greek-colonnaded building wedged between the store fronts is "Roe-Harpmeister Funeral Service." A sign on the the door says "Closed for annual summer retreat with Koch's Florists."`,
+      desc: `Painted across a miniature Greek-colonnaded building wedged between the store fronts is "Roe-Harpmeister Funeral Service." A sign on the door says "Closed for annual summer retreat with Koch's Florists."`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'kenm-cent'},
@@ -18941,7 +18941,7 @@ else{
       id: 'maid-nass',
       coord: [-75.358, 2.224],
       name: 'Maiden La. and Nassau St.',
-      desc: `You are on Nassau, a street that here has been converted to a pedestrian mall where a variety of shops provies honey for the hives of Wall Street.`,
+      desc: `You are on Nassau, a street that here has been converted to a pedestrian mall where a variety of shops provide honey for the hives of Wall Street.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'john-nass'},
@@ -19706,7 +19706,7 @@ else{
       id: 'new-wall',
       coord: [-76.866, -0.220],
       name: 'New St. and Wall St.',
-      desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
+      desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constabtly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -19837,7 +19837,7 @@ else{
       id: 'wall-wate',
       coord: [-77.341, 9.888],
       name: 'Wall St. and Water St.',
-      desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; here it's just another skyscraper.`,
+      desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; Here it's just another skyscraper.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'pine-wate'},
@@ -21087,7 +21087,7 @@ else{
       id: 'park-chur',
       coord: [-72.666, -3.735],
       name: 'Park Pl. and Church Ave.',
-      desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was teh tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
+      desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was the tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
         
         "And how tall is it?" on of the tourists asks him.
         
@@ -26510,7 +26510,7 @@ else{
         {dir: 'west', id: 'perr-7'} 
       ],
     },
-    {   //todo: map fix, husdson st needs to be moved over one street.
+    {   //todo: map fix, hudson st needs to be moved over one street.
       id: 'clar-huds',
       coord: [-55.410, -20.992],
       name: 'Clarkson St. and Hudson St.',
@@ -29105,7 +29105,7 @@ else{
       id: '27-8',
       coord: [-14.486, -26.497],
       name: 'W. 27th St. and 8th Ave.',
-      desc: `You are at the edge of a vast tract of buildings all built to the same characterless specs, a monument ot the bureaucratic mind.`,
+      desc: `You are at the edge of a vast tract of buildings all built to the same characterless specs, a monument of the bureaucratic mind.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '28-8'},
@@ -33638,7 +33638,7 @@ else{
               icon: '',
               gif: '',
               name: ['Gold Elephant Necklace', 'gold necklace', 'necklace', 'elephant necklace'],
-              desc: 'A beautiful gold elephant necklace. What are the chances for such a wacky find? Who knows maybe you might have a treasure on your hands?',
+              desc: 'A beautiful gold elephant necklace. What are the chances for such a wacky find? Who knows, maybe you might have a treasure on your hands?',
               isTakeable: true,
               isDroppable: true
             }
