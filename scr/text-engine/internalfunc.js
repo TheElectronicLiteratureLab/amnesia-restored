@@ -276,7 +276,7 @@ let pressEnter = (id) => {
 
   //disable normal input
   document.querySelector('input').disabled = true;
-  x.innerHTML = `PLEASE PRESS <strong>[ENTER]</strong> TO CONTINUE`;
+  x.innerHTML = `PLEASE PRESS <strong>&nbsp[ENTER]&nbsp</strong> TO CONTINUE`;
   document.querySelector('input').focus();
 
   let cont = (e) => {
