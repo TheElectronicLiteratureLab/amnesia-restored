@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project loosely adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2022-1-?? 
+## [Unreleased] - 2022-01-?? 
 ### Added
 
 
@@ -12,6 +12,16 @@ and this project loosely adheres to [Semantic Versioning](https://semver.org/spe
 
 
 ### Removed
+
+## [Amnesia-v2.3] - 2022-01-13 
+### Added
+
+
+### Changed
+
+
+### Removed
+
 
 ## [Amnesia-v2.2] - 2021-12-30
 ### Changed
