@@ -33965,7 +33965,7 @@ else{
       coord: [13.036, -33.781],
       isStreet: true,
       name: 'W. 42nd St. and 9th Ave.',
-      desc: 'This block long stretch of 42nd St. is another one lined with movie marquee after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamourizing.',
+      desc: 'This block long stretch of 42nd St. is lined with movie marquees after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamorizing.',
       exits: [
         {dir: 'north', id: '43-9'},
         {dir: 'south', id: '41-9'},
@@ -35768,7 +35768,7 @@ else{
       name: 'Office Building Lobby',
       desc: `You walk through the revolving doors, and enter a lobby decorated in marble. A security check-point near the elevators makes you think twice about remaining. 
             
-            you turn away quickly and leave`,
+            You turn away quickly and leave.`,
       onEnter: () => {
         pressEnter('49-5')
       }, 
@@ -36324,7 +36324,7 @@ else{
       hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
-        {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
+        {dir: 'south', id: '', coord: [], block: `You can't go that way.`},
         {dir: 'east', id: '42-lexi'},
         {dir: 'west', id: '42-park'},
         {dir: 'subway', id: 'subway'}
@@ -41839,7 +41839,7 @@ else{
       id: 'dame-4',
       coord: [],
       name: '',
-      desc: `Before she can respond, her face is suddenly filled with disgust. 'Oh, hell! It's the same private detective who's been following me around all month. Jack and I are separated and I've filed for divorce and now he's looking to catch me in beg with someone so he can try to weasel out of sharing the bonus he got for closing the Saudi deal.'`,
+      desc: `Before she can respond, her face is suddenly filled with disgust. 'Oh, hell! It's the same private detective who's been following me around all month. Jack and I are separated and I've filed for divorce and now he's looking to catch me in bed with someone so he can try to weasel out of sharing the bonus he got for closing the Saudi deal.'`,
       onEnter: () => {
         pressEnter('dame-5');
       },
@@ -41960,7 +41960,7 @@ else{
       id: 'dame-13',
       coord: [],
       name: '',
-      desc: `Before you can reply, an elderly woman carrying an oversize bag of groceries bumps into the fat detective. As he tries to elbow her away his finger accidentally depresses the trigger of his battered gun, sending one bullet cleanly through you heart.`,
+      desc: `Before you can reply, an elderly woman carrying an oversize bag of groceries bumps into the fat detective. As he tries to elbow her away his finger accidentally depresses the trigger of his battered gun, sending one bullet cleanly through your heart.`,
       onEnter: () => {
         pressEnter('dame-14');
       },
@@ -42159,7 +42159,7 @@ else{
           icon: 'img/png/image-windex+rag-thumbnail.png',
           gif: 'img/gif/gif-windex+rag-ingame.gif',
           name: ['Rag', 'dishrag', 'windex'],
-          desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
+          desc: `Standard cleaning supplies for glass. Although still useable, you imagine they have seen better days.`,
           isTakeable: true,
           isDroppable: true,
           isTakeable: true,
@@ -42440,8 +42440,7 @@ else{
       id: '80-amer',
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
-      desc: `You see an empty bandshell with rows of empty green benches facing it attentively.\nMonday 2:00PM\n
-            You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
+      desc: `You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
       exits: [
         {dir: 'north', id: '81-amer'},
         {dir: 'south', id: '79-amer'},
@@ -43740,7 +43739,7 @@ else{
     {
       id: 'met-mus', // Inside the Metropolitan Museum, brief interaction
       name: 'Museum',
-      desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display.\n When you've seen enough of the display, you leAve.`,
+      desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display.\n When you've seen enough of the display, you leave.`,
       onEnter: () => {
         pressEnter('81-5');
       },
@@ -49169,7 +49168,7 @@ else{
       coord: [],
       name: 'Back Room',
       hasEntered: false,
-      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. Ther is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
+      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. There is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
       onEnter: () => {
         const room = getRoom(disk.roomId);
         pressEnter('tene-5')
@@ -49221,7 +49220,7 @@ else{
       coord: [],
       hasEntered: false,
       name: 'Bedroom',
-      desc: `In the last hour of the night you have a dream, and when you wake, to the first gray monochromes of dawn, you try to remember what you'd dreamt, for you know that the dream explained why this building inspired such a sense of deja vu. All you can remember, however, if a woman's face.`,
+      desc: `In the last hour of the night you have a dream, and when you wake, to the first gray monochromes of dawn, you try to remember what you'd dreamt, for you know that the dream explained why this building inspired such a sense of deja vu. All you can remember, however, is a woman's face.`,
       onEnter: () => {
         const room = getRoom('nigh2-1');
 
@@ -49438,7 +49437,7 @@ else{
       id: 'test',
       coord: [0, 0],
       name: 'TEST ROOM',
-      desc: `I'm a dumby room!`,
+      desc: `I'm a dummy room!`,
       exits: [
         {dir: 'leave', dir: "43-5"}
       ]
@@ -49447,7 +49446,7 @@ else{
       id: 'subway',
       coord: [100, 100],
       name: 'Subway Station',
-      desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      desc: `After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
       onEnter: () => {
         const room = getRoom(disk.roomId);
           room.enteredFrom = lastRoom.id;
@@ -49465,7 +49464,7 @@ else{
                 icon: 'img/png/image-subwaytoken-thumbnail.png',
                 gif: '/img/gif/gif-subwaytoken-ingame.gif',
                 name: ["Subway Token", 'token', 'subway token'],
-                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                desc: 'The brass NY Transit Authority token is about the size of a quarter.',
                 isTakeable: true,
                 isDroppable: true,
                 onUse: () => {
@@ -49597,7 +49596,7 @@ else{
             {
                 option: '**CAFE**',
                 prereqs: ['picture'],
-                line: `'We met at a lunch at the F-stop Cafe in Chelsea. You'd come there with a model who was working with me that day. I rather moved in on her, though it was plain to see it was no very serious relationship.`,
+                line: `'We met at lunch at the F-stop Cafe in Chelsea. You'd come there with a model who was working with me that day. I rather moved in on her, though it was plain to see it was not very serious of a relationship.`,
             },
             {
                 option: '**JOHN**',
