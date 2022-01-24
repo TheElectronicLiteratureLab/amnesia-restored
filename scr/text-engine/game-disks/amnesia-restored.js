@@ -42031,16 +42031,13 @@ else{
         room.onBlock = () => {
   
           if(prevInput === 'yes' && item) {
-            println(``);
-            enterRoom('wacky-?');
+            enterRoom('wacky-12');
           } else if (prevInput === 'yes' && !item) {
             println(`You don't see a reason to lie to this man. Maybe rethink your answer.`);
           } else if (prevInput === 'no') {
             enterRoom('wacky-5')
-  
           } else { 
             println(`'Come again?
-            
             All I need to know is if you have an elephant themed item son.'`);
   
           }
@@ -42134,6 +42131,64 @@ else{
       While he ponders, some 62 feet above your heads, a rope breaks`,
       onEnter: () => {
         pressEnter('wacky-10');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-10',
+      coord: [],
+      name: '',
+      desc: `The rope is connected on one end to a pulley, and, beyond the pulley to the buildings roof.`,
+      onEnter: () => {
+        pressEnter('wacky-11');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-11',
+      coord: [],
+      name: '',
+      desc: `On it's other end, the rope is connected to a Korean made genuine simulated rosewood exterior Grand Piano, which, devoid of it's support, plummets directly on top of you, killing you instantly.
+  
+      The Wacky Wanderer is badly shaken, but unhurt.`,
+      onEnter: () => {
+        pressEnter('game-over');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-12',
+      coord: [],
+      name: '',
+      desc: `You, stunned by the coincidence of actually having an elephant themed bauble, take a second to hand it over to the gentleman.`,
+      onEnter: () => {
+        pressEnter('wacky-13');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-13',
+      coord: [],
+      name: '',
+      desc: `As he takes it from your hands, you see his eyes soften as he begins to speak,  
+  
+      "Perhaps the most important lesson I learned is that there are no walls between humans and the elephants except those that we put up ourselves, and that until we allow not only elephants, but all living creatures their place in the sun, we can never be whole ourselves."`,
+      onEnter: () => {
+        pressEnter('wacky-14');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-13',
+      coord: [],
+      name: '',
+      desc: `You both share a moment of silence which is broken by him passing you an envelope with a $100 bill in it.`,
+      onEnter: () => {
+        elepAchi = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
+        giveMoney(100);
+        pressEnter('wacky-6');
       },
       exits: [],
     },
