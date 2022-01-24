@@ -1410,11 +1410,11 @@ const beg = () => {
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
 
-      'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+      'Sure buddy. But now you been told and you got no excuse the next time. If I see you begging for change again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
       
       You nod in agreement 
       
-      The policeman goes off in the same direction that the driver of the car you cleaned went.`)
+      The policeman goes off in the same direction that the person you asked for money went.`)
     } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
       begLootTable(); //roll on loot table
     } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
