@@ -172,7 +172,7 @@ const chelDesc = (w, x, y, z) => {
     `${w} ${x} is sitting ${y} reading ${z}`,
     `More signs of gentrification. A shop that sells nothing but popcorn in various decorator colors, and across the street a restaurant with its name spelled out in giant pink neon letters: NEW COOKING.`,
     `A vandalized car rests on its wheelless axles outside a beer-and-potato-chips grocery store.`,
-    `In the window of a shoe repair shop you see, taped to the soot-freckled glass, a postcard that seems strangely, even disturbingly, familiar. “Welcome to—" and then in very large letters--“SANTA CANDELARIA!” Behind the letters you can glimpse a couple palm trees and a Mission-style church. You find you’re having trouble breathing, and your legs are turning to silly putty. You’d go in the shop and ask them about this Santa Candelaria but a sign next to the postcard explains that the shop is no longer in business, and it gives a number to phone for rental inquiries.`
+    `In the window of a shoe repair shop you see, taped to the soot-freckled glass, a postcard that seems strangely, even disturbingly, familiar. “Welcome to—" and then in very large letters—“SANTA CANDELARIA!” Behind the letters you can glimpse a couple palm trees and a Mission-style church. You find you’re having trouble breathing, and your legs are turning to silly putty. You’d go in the shop and ask them about this Santa Candelaria but a sign next to the postcard explains that the shop is no longer in business, and it gives a number to phone for rental inquiries.`
   ];
 
   println(chelseaDescriptions[quIndex]);
@@ -224,11 +224,11 @@ let chelseaEncounters = [ //coord locations between lat -2/-36 , lon -55/-12
 
 const midDesc = (w, x, y, z) => {
   const midtownDescriptions = [
-    `${w} is double parked outside ${x}, and the traffic bottlenecked behind it is hoking passionately.`,
+    `${w} is double parked outside ${x}, and the traffic bottlenecked behind it is honking passionately.`,
     `A brand new ${w} has been wedged into a narrow space betweem ${x} and ${y}`,
     `You are on a street of shops and small businesses: there’s ${w} on the corner, then ${x} ${y} and ${z}`,
     `Bending over to tie ${w} shoelace, you realize that the sidewalk in front of this office building has been paved with ${x} instead of ordinary concrete`,
-    `${w} is having a heated argument with a policeman over the question of whether as a United States citizen one does or does not have the right to plunk down when and where one likes--even in front of ${x} if that’s where one’s feet give out. The policeman takes strong exception to this view. You decide that this dispute is none of your business and move along.`,
+    `${w} is having a heated argument with a policeman over the question of whether as a United States citizen one does or does not have the right to plunk down when and where one likes—even in front of ${x} if that’s where one’s feet give out. The policeman takes strong exception to this view. You decide that this dispute is none of your business and move along.`,
     `${w} man ${x} stops in the recess of a doorway to light ${y}`,
     `You hear what sounds like gunshots and look up and down the street with consternation. ${w} notices your alarm and gives you a knowing smile. “That’s just a truck backfiring.” You remain convinced, even so, that it was gunshots.`,
     `${w} woman ${x} is standing in front of a window display of ${y} carrying on conversation with ${z}`,
@@ -256,7 +256,7 @@ const midtownEncounters= [ //coord location lat 13/42, long -55/28
     choices3: [`a decrepit residence hotel.`,`a vest-pocket park.`,`a grim soot-blackened church.`,`a fire station.`,]
   },
   { 
-    choices1: [`a drug store a deli`,`a luggage store` ,`an OTB office`],
+    choices1: [`a drug store`,`a deli`,`a luggage store`,`an OTB office`],
     choices2: [`a liquor store,`,`a beauty shop,`,`a cigar store,`,`a bookstore,`],
     choices3: [`a bakery with twelve varieties of croissants,`,`a florist with a small jungle of sickly spider plants,`,`a hardware store with a frayed and faded Grand Opening banner flapping over the doorway,`,`a Xerox copy shop,`],
     choices4: [`a seafood restaurant.`,`a branch of Fanny Farmer.`,`a Federal Express office.`,`the main lobby of the office building housing this miscellany of shops.`]
@@ -270,7 +270,7 @@ const midtownEncounters= [ //coord location lat 13/42, long -55/28
     choices2: [`a jewelry store,`,`a bar,`,`a bank entrance,`,`a Porsche showroom,`]
   },
   {
-    choices1: [`A stylish woman`,`A businessman`,`A pizza delivery boy` ,`A massage parlor tout`]
+    choices1: [`A stylish woman`,`A businessman`,`A pizza delivery boy`,`A massage parlor tout`]
   },
   { 
     choices1: [`A well- dressed`,`A bearded`,`A black`,`A tall dark`],
@@ -278,7 +278,7 @@ const midtownEncounters= [ //coord location lat 13/42, long -55/28
     choices3: [`his pipe`,`a cigarette.`,`a dead cigar.`]
   },
   {
-    choices1: [`An elderly`,`An obese`, `An anxious`,`An obviously disturbed`],
+    choices1: [`An elderly`,`An obese`,`An anxious`,`An obviously disturbed`],
     choices2: [`with hair dyed bright orange`,`with an armful of packages`,`in a red dress`,`in a Salvation Army uniform`],
     choices3: [`summer clothes`,`stationery supplies`,`imported hand soaps`,`bestsellers`],
     choices4: [`a derelict.`,`herself.`,`a toy poodle`,`a child in a wheelchair.`]
@@ -289,11 +289,11 @@ const midtownEncounters= [ //coord location lat 13/42, long -55/28
     choices3: [`whistling “Celeste Aida”.`,`engrossed in a paperback copy of The Queen’s Gambit.`,`carrying a radio playing disco music at top volume.`,`licking an ice cream cone.`]
   },
   { 
-    choices1: [`A nun in dark glasses` ,`A blind man`,`A Mondale campaign worker`,`A gypsyish-looking woman with a sick child`],
+    choices1: [`A nun in dark glasses`,`A blind man`,`A Mondale campaign worker`,`A gypsyish-looking woman with a sick child`],
     choices2: [`in a loud, whining voice.`,`half-heartedly.`,`with fierce insistence.`,`by banging a tambourine.`]
   },
   {
-    choices1: [`A Puerto Rican`,`A black`,`A leather-jacketed`,`A Chinese`],
+    choices1: [`A Puerto Rican`,`A Black`,`A leather-jacketed`,`A Chinese`],
     choices2: [`a punk haircut`,`a hunting knife on his belt`,`a broken front tooth`,`mirror sunglasses`],
     choices3: [`a quarter.`,`a match.`,`the time.`,`all the money you’ve got.`]
   },
@@ -338,7 +338,7 @@ const greenDesc = (w, x, y, z) => {
     `Bending over to tie ${w} shoelace, you realize that the sidewalk in front of this office building has been paved with ${x} instead of ordinary concrete`,
     `You hear what sounds like gunshots and look up and down the street with consternation. ${w} notices your alarm and gives you a knowing smile. “That’s just a truck backfiring.” You remain convinced, even so, that it was gunshots.`,
     `You are on a street of shops and small businesses: there’s ${w} on the corner, then ${x} ${y} and ${z}`,
-    `${w} is double parked outside ${x}, and the traffic bottlenecked behind it is hoking passionately.`,
+    `${w} is double parked outside ${x}, and the traffic bottlenecked behind it is honking passionately.`,
     `An old woman totters along on an aluminum walker, carrying a sack of groceries, looking very determined. She gives you a smile, refuses your offer of help, and totters on her way.`,
     `A young woman in an Adidas gym suit whizzes by in the middle of the street, and a few moments later a second roller-skater, male, whizzes after her.`,
     `A bevy of schoolkids is being herded by two teachers in the direction of a vest-pocket playground.`,
