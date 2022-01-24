@@ -2071,16 +2071,24 @@ const carWashEncounter = () => {
 
               caughtCoords1 = curRoom.coord;
 
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
               
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
 
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
 
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
@@ -2092,14 +2100,22 @@ const carWashEncounter = () => {
             if(policeCaughtWashing === false) {
               policeCaughtWashing = true;
               caughtCoords1 = curRoom.coord;
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
-            
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
+              
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
                 policeCaughtWashing = false; 
@@ -2113,16 +2129,24 @@ const carWashEncounter = () => {
 
               caughtCoords1 = curRoom.coord;
 
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
               
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
 
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
 
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
