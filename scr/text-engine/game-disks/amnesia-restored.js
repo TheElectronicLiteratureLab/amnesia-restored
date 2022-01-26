@@ -1,3 +1,5 @@
+preLoad();
+
 const amnesiaRestored = {
   roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
@@ -443,9 +445,9 @@ const amnesiaRestored = {
               if (pen === undefined) {
                 iFiv = '';
               }
-              println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
+              println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
             } else {
-              dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
+              dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
             }
           }
         },
@@ -850,7 +852,7 @@ const amnesiaRestored = {
           let bibleDesc = `Also, a **Gideon Bible**.`;
           let penDesc = `A **ballpoint pen** has been placed near the phone.`;
 
-          room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
+          room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
           
           To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
           
@@ -1031,9 +1033,9 @@ const amnesiaRestored = {
                 if (pen === undefined) {
                   iFiv = '';
                 }
-                println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
+                println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
               } else {
-                dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
+                dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
               }
             }
           },
@@ -4246,9 +4248,9 @@ const amnesiaRestored = {
         playerC.sScore += 2;
         ////console.log('Sur ' + playerC.sScore);
         if (lastRoom.id === 'corridor-elevatorph') {
-          println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+          println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
         } else {
-          println(`The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+          println(`The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
         }
       },
       exits: [

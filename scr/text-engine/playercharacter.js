@@ -172,7 +172,7 @@ const chelDesc = (w, x, y, z) => {
     `${w} ${x} is sitting ${y} reading ${z}`,
     `More signs of gentrification. A shop that sells nothing but popcorn in various decorator colors, and across the street a restaurant with its name spelled out in giant pink neon letters: NEW COOKING.`,
     `A vandalized car rests on its wheelless axles outside a beer-and-potato-chips grocery store.`,
-    `In the window of a shoe repair shop you see, taped to the soot-freckled glass, a postcard that seems strangely, even disturbingly, familiar. “Welcome to—" and then in very large letters--“SANTA CANDELARIA!” Behind the letters you can glimpse a couple palm trees and a Mission-style church. You find you’re having trouble breathing, and your legs are turning to silly putty. You’d go in the shop and ask them about this Santa Candelaria but a sign next to the postcard explains that the shop is no longer in business, and it gives a number to phone for rental inquiries.`
+    `In the window of a shoe repair shop you see, taped to the soot-freckled glass, a postcard that seems strangely, even disturbingly, familiar. “Welcome to—" and then in very large letters&mdash;“SANTA CANDELARIA!” Behind the letters you can glimpse a couple palm trees and a Mission-style church. You find you’re having trouble breathing, and your legs are turning to silly putty. You’d go in the shop and ask them about this Santa Candelaria but a sign next to the postcard explains that the shop is no longer in business, and it gives a number to phone for rental inquiries.`
   ];
 
   println(chelseaDescriptions[quIndex]);
@@ -228,7 +228,7 @@ const midDesc = (w, x, y, z) => {
     `A brand new ${w} has been wedged into a narrow space betweem ${x} and ${y}`,
     `You are on a street of shops and small businesses: there’s ${w} on the corner, then ${x} ${y} and ${z}`,
     `Bending over to tie ${w} shoelace, you realize that the sidewalk in front of this office building has been paved with ${x} instead of ordinary concrete`,
-    `${w} is having a heated argument with a policeman over the question of whether as a United States citizen one does or does not have the right to plunk down when and where one likes--even in front of ${x} if that’s where one’s feet give out. The policeman takes strong exception to this view. You decide that this dispute is none of your business and move along.`,
+    `${w} is having a heated argument with a policeman over the question of whether as a United States citizen one does or does not have the right to plunk down when and where one likes&mdash;even in front of ${x} if that’s where one’s feet give out. The policeman takes strong exception to this view. You decide that this dispute is none of your business and move along.`,
     `${w} man ${x} stops in the recess of a doorway to light ${y}`,
     `You hear what sounds like gunshots and look up and down the street with consternation. ${w} notices your alarm and gives you a knowing smile. “That’s just a truck backfiring.” You remain convinced, even so, that it was gunshots.`,
     `${w} woman ${x} is standing in front of a window display of ${y} carrying on conversation with ${z}`,
