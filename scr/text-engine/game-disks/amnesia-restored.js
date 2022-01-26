@@ -1946,7 +1946,7 @@ const amnesiaRestored = {
         ////console.log(playerC.sScore);
         const room1502 = getRoom('corridor-1502');
           const exit = getExitDir('hote-room-1', room1502.exits);
-          const item = getItemInInventory('roomkey');
+          const item = getItemInInventoryById('roomkey');
           if (item) {
             delete exit.block;
           } else {
@@ -2009,7 +2009,7 @@ const amnesiaRestored = {
           name: 'trolley',
           desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
           onLook: () => {
-            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
@@ -35680,7 +35680,7 @@ else{
         {dir: 'south', id: '34-madi'},
         {dir: 'east', id: '35-park'},
         {dir: 'west', id: '35-5'},
-        {dir: [`Altman's`,], id: '????', block: `You have no reason to go there.`},
+        {dir: [`Altman's`], block: `You have no reason to go there.`},
       ]
     },
     {
@@ -49261,7 +49261,7 @@ else{
       },
       exits: [
         {dir: 'north', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
-        {dir: ['tenement entrance', 'entrance', 'back', 'leave'], id:'tene'},
+        {dir: ['tenement entrance', 'entrance', 'back', 'leave', 'south', 's'], id:'tene'},
         {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
         {dir: ['living Room', 'west', 'living room', 'room', 'living'], id: `tene-2`},
       ],
