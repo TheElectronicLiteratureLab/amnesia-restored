@@ -4178,7 +4178,7 @@ const amnesiaRestored = {
       desc: `You find yourself on a gravel rooftop. Immediately in front of you is a drained swimming pool surrounded by deck chairs made of brightly colored metal tubing.
 
       Beyond the pool is the penthouse proper, a flat-roofed, windowless brick structure with a metal door from which the weather has almost entirely peeled away the lettering:
-      S DE AND SAU   & HE LT   LUB`,
+      S&nbsp&nbspDE&nbsp&nbsp&nbspAND&nbspSAU&nbsp&nbsp&nbsp&&nbspHE&nbspLT&nbsp&nbsp&nbspLUB`,
       onEnter: () => {
           reenableInput();
       },
