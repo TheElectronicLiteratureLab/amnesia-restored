@@ -1277,7 +1277,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               room.onEnter = () => {
                 room.onEnter() + (degradation = true);
               }
-              room.desc = `The abandoned tenement is here`; //tell player the tenement is here
+              room.desc = `The abandoned tenement is here.`; //tell player the tenement is here
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }

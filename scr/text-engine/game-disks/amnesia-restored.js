@@ -4130,7 +4130,7 @@ const amnesiaRestored = {
       id: 'corridor-security', // Proceeding to Death and Texas, discovered without clothes
       name: '15th Floor Hallway',
       desc: `Hotel security has obviously been alerted to your running about naked.\n
-      All at once, they are on you. Your arms are whipped behind your back, and handcuffs are snapped about your writs.
+      All at once, they are on you. Your arms are whipped behind your back, and handcuffs are snapped about your wrists.
       You realize that any further resistance is useless, and you submit to being led by the two security guards down the entire length of the staircase to the hotel's sub-basement, where you await the arrival of the police in a room the size of a broom closet.`,
       onEnter: () => {
           pressEnter('deat-1'); // proceed to death and texas
@@ -4910,7 +4910,7 @@ const amnesiaRestored = {
       name: 'Death Row',
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
       
-      The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
+      The prosecuting attorney, the judge, the jury, and even F. Lee Bailey, whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
       
       The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
       // arguement for lethal injection or firing squad
@@ -5062,7 +5062,7 @@ const amnesiaRestored = {
       pressEnter('deat-letar2');
      } else if (prevInput === 'protestant') {
        religion = 'protestant';
-       println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`);
+       println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
      } else if (prevInput === 'jewish') {
        religion = 'jewish';
@@ -6715,7 +6715,7 @@ onBlock: () => {
         id: 'prin-club-1',
         coord: [15.390, -6.546],
         name: 'The Princeton Club',
-        desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the Club's Board of Directors on the subject of the dangers of creeping seediness.`,
+        desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the club's Board of Directors on the subject of the dangers of creeping seediness.`,
         onEnter: () => {
           degradation = !degradation;
           pressEnter('prin-club-2');
@@ -6767,7 +6767,7 @@ onBlock: () => {
         id: 'prin-club-6',
         coord: [],
         name: '',
-        desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Dont you remember?" \n"I'm afraid I don't remember anything," you reply. "I have amnesia."`,
+        desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Don't you remember?" \n"I'm afraid I don't remember anything," you reply. "I have amnesia."`,
         onEnter: () => {
           pressEnter('prin-club-7');
         },
@@ -12898,7 +12898,7 @@ else{
         FRANKFURTER         $1.40\n
         BURGER              $1.95\n
         CHEESE SAND         $1.00\n
-        DONUT               $0.75\N
+        DONUT               $0.75\n
         COKE                $0.85\n
         COFFEE              $0.45\n
         The counterman asks you 'What can I get for you, buddy?`,
@@ -15785,7 +15785,7 @@ else{
     {
       id: 'broa-stja',
       coord: [-68.966, 16.633],
-      name: 'E. Broadway and and Saint James Pl.',
+      name: 'E. Broadway and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
