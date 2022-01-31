@@ -1,9 +1,9 @@
-// preload images
-let invArrImg = [];
-let invImgRegex = /\/img\/[gif|png]*\/.*.[gif|png]/;
+// // preload images
+// let invArrImg = [];
+// let invImgRegex = /\/img\/[gif|png]*\/.*.[gif|png]/;
 
-var fs = require('fs');
-var files = fs.readdirSync('/downloads');
+// var fs = require('fs');
+// var files = fs.readdirSync('/downloads');
 
 // global properties, assigned with let for easy overriding by the user
 let disk;
