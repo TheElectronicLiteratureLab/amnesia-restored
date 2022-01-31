@@ -6907,7 +6907,7 @@ onBlock: () => {
         desc: '',
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
-          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this disk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
           pressEnter('frie-comp-5');
         },
         exits: [],
@@ -6943,7 +6943,7 @@ onBlock: () => {
         desc: `You pay the saleswoman for an hour on the computer, and she leads you to a back room about the size of the hotel's safe deposit vault. When you're alone, you boot the disk into the disk drive, and once again the monitor lights up with this introductory message:`,
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
-          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this disk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
           pressEnter('frie-comp-7');
         },
         exits: []
@@ -7038,7 +7038,7 @@ onBlock: () => {
         ridHint: 'Wrong. Need a hint? There it is.',
         onEnter: () => {
           setTimeout(() => {  println(`The text on the screen breaks off and is replaced by a second riddle:`); }, 1000);
-          setTimeout(() => {  println(`Acess to next file controlled by correct answer to the following riddle:`); }, 2000);
+          setTimeout(() => {  println(`Access to next file controlled by correct answer to the following riddle:`); }, 2000);
           setTimeout(() => {
             println(`With every question that I pose \n The keener curiosity grows. \n Who? I ask, and then, a moment later, \n How come? And when? And where's our waiter? \n Who am I?
             `);
@@ -7279,7 +7279,7 @@ onBlock: () => {
     {
         id:'ann-13',
         name:`Ann's House`,
-        desc:`“Now that you've had your fill,” Cecily says, “I'll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let Mummy come out of the bathtub. Okay?`,
+        desc:`“Now that you've had your fill,” Cecily says, “I'll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let mummy come out of the bathtub. Okay?`,
         onBlock: () => {
             if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'answer riddles'){
                 enterRoom('ann-15');
@@ -7318,7 +7318,7 @@ onBlock: () => {
     {
         id:'ann-16',
         name:`Ann's House`,
-        desc:`“You're wrong!” Cecily shrieks gleefully. “You're wrong, you're wrong, you're wrong! There's only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don't be disappointed. Okay, here's one that's even harder: \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, Guess her name, three times I've telled it.”`,
+        desc:`“You're wrong!” Cecily shrieks gleefully. “You're wrong, you're wrong, you're wrong! There's only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don't be disappointed. Okay, here's one that's even harder: \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, guess her name, three times I've telled it.”`,
         onBlock: () => {
             if(prevInput === 'ann' || prevInput === 'anne'){
                 enterRoom('ann-19');
@@ -7330,7 +7330,7 @@ onBlock: () => {
     {
         id:'ann-17',
         name:`Ann's House`,
-        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I'll ask you one from another book then. \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, Guess her name, three times I've telled it.”`,
+        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I'll ask you one from another book then. \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, guess her name, three times I've telled it.”`,
         onEnter: () => {
           playerC.cScore += 3;
         },
@@ -7345,7 +7345,7 @@ onBlock: () => {
       {
         id:'ann-18',
         name:`Ann's House`,
-        desc:`“You're wrong! You're wrong, you're wrong, you're wrong. The right answer is Ann, the same as Mummy's name. Silk AN' satin, gold AN' velvet, get it? Well, you're no good at riddles, I can see that. I'll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don't care.”`,
+        desc:`“You're wrong! You're wrong, you're wrong, you're wrong. The right answer is Ann, the same as mummy's name. Silk AN' satin, gold AN' velvet, get it? Well, you're no good at riddles, I can see that. I'll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don't care.”`,
         onBlock: () => {
             if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                 enterRoom('ann-20');
@@ -7368,7 +7368,7 @@ onBlock: () => {
           {
               id:'ann-19',
               name:`Ann's House`,
-              desc:`“Oh, you knew that one because Mummy's name is Ann. You're no fun to play with at all. I'm going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don't care.”`,
+              desc:`“Oh, you knew that one because mummy's name is Ann. You're no fun to play with at all. I'm going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don't care.”`,
               onBlock: () => {
                 if(prevInput === 'ann' || prevInput === 'Ann' || prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                     enterRoom('ann-20');
@@ -7391,7 +7391,7 @@ onBlock: () => {
               {
                         id:'ann-20',
                         name:`Ann's House`,
-                        desc:`“I told you Mummy is taking a bath. Now don't bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
+                        desc:`“I told you mummy is taking a bath. Now don't bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
                         onBlock: () => {
                           if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                               enterRoom('ann-20');
@@ -11759,7 +11759,7 @@ else{
     name: 'The Dakota', // Displayed each time the player enters the room.
     desc: `Denise calls up the fifth and final riddle, which is prefaced by a preliminary warning:\n
    —CAUTION —\n
-    Acess to File 5 is controlled by the two letter answer to the following riddle. If a wrong answer if given, File 5 will self destruct.`,
+    Access to File 5 is controlled by the two letter answer to the following riddle. If a wrong answer if given, File 5 will self destruct.`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-15');
     },
