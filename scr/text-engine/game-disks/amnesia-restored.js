@@ -1052,7 +1052,7 @@ const amnesiaRestored = {
             itemId: 'stationary',
             icon: 'img/png/image-padofpaper-ingame.gif',
             gif: 'img/gif/gif-padofpaper-ingame.gif',
-            name: ['Hotel Stationery', 'hotel stationery', 'stationery', 'paper'],
+            name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
             desc: 'The stationery says SUNDERLAND HOTEL at the top.',
             isTakeable: true,
             isDroppable: true
@@ -1945,18 +1945,17 @@ const amnesiaRestored = {
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
         playerC.sScore += 2; // Adding to Survival
-        ////console.log(playerC.sScore);
-        const room1502 = getRoom('corridor-1502');
-          const exit = getExitDir('hote-room-1', room1502.exits);
-          const item = getItemInInventory('roomkey');
-          if (item) {
-            delete exit.block;
-          } else {
-            println('You try to return to your room, but the door locked automatically when it was closed.');
-          }
+        //console.log(playerC.sScore)
+        let room1502 = getRoom('corridor-1502');
+        const item = getItemInInventoryById('roomkey');
+        if (item) {
+          delete room1502.exits[0].block;
+        } else {
+          println('You try to return to your room, but the door locked automatically when it was closed.');
+        }
       },
       exits: [
-        {dir: ['leave', '1502', 'room', 'hotel room'], id: 'hote-room-1', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
+        {dir: ['leave', '1502', 'room', 'hotel room', 'back', 'inside'], id: 'hote-room-8', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
         {dir: ['east', 'right', '1503'], id: 'corridor-1503'},
         {dir: ['west', 'left', '1501'], id: 'corridor-1501'},
         {dir: ['elevator', 'lift', 'elevators'], id: 'corridor-elevator15'},
@@ -5036,7 +5035,7 @@ const amnesiaRestored = {
       } else if (prevInput === 'bbq' || prevInput === 'bbq ribs' || prevInput === 'barbecue' || prevInput === 'ribs' || prevInput === 'barbecue ribs') {
         deathFood = 'ribs';
         enterRoom('deat-fsp');
-      } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'stuffed turkey') {
+      } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'roast turkey' || prevInput === 'stuffed turkey') {
         deathFood = 'turkey';
         enterRoom('deat-fsp');
       } else if (prevInput === '') {
@@ -5056,19 +5055,19 @@ const amnesiaRestored = {
      reenableInput();
    },
    onBlock: () => {
-     if (prevInput === 'catholic') {
+     if (prevInput === 'catholic' || prevInput === 'Catholic' || prevInput === 'cath' || prevInput === 'Cath') {
        religion = 'catholic';
        println(`The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`);
       pressEnter('deat-letar2');
-     } else if (prevInput === 'protestant') {
+     } else if (prevInput === 'protestant' || prevInput === 'Protestant' || prevInput === 'Prot' || prevInput === 'prot') {
        religion = 'protestant';
        println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
-     } else if (prevInput === 'jewish') {
+     } else if (prevInput === 'jewish' || prevInput === 'Jewish' || prevInput === 'jew' || prevInput === 'Jew') {
        religion = 'jewish';
        println(`The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
-     } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none') {
+     } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none' || prevInput === 'non-denomination' || prevInput === 'nondenom' || prevInput === 'non-denom') {
        religion = 'none';
        println(`"That's about what I figured," the warden says, and bids you good day.`)
        pressEnter('deat-letar2');
@@ -6588,6 +6587,15 @@ onBlock: () => {
         desc: '',
         passwordCount: 0,
         onBlock: () => {
+          println(`I'M SORRY. THAT IS NOT THE PASSWORD THAT WILL OPEN YOUR BOX.
+                
+          PLEASE TRY TO REMEMBER THE EXACT WORD OR WORDS OR NUMERALS THAT YOU CHOSE TO BE THE PASSWORD.
+          
+          The screen blanks out for a moment, and then offers you another opportunity:
+          
+          YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`)
+          let room = getRoom(disk.roomId);
+          console.log(room.passwordCount);
             if(prevInput === 'with god'){
                 println(`With a click of instant recognition, the little metal door of Box 334 springs open, and a message appears on the monitor before you:
                 
@@ -6797,7 +6805,7 @@ onBlock: () => {
         id: 'prin-club-9',
         coord: [],
         name: '',
-        desc: `"Dear Self," it says. "In case you haven't been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel According to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what's in that box. So get it. Fond regards from Guess Who."`,
+        desc: `"Dear Self," it says. "In case you haven't been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel according to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what's in that box. So get it. Fond regards from Guess Who."`,
         onEnter: () => {
           pressEnter('prin-club-10');
         },
@@ -12130,11 +12138,13 @@ else{
   desc: ` `,
   onEnter: () => {
     clearOutput();
+    playerC.tScore = playerC.dScore + playerC.cScore + playerC.sScore;
     println(`Your scores are as follows:\n
     As a detective: ${playerC.dScore}\n
     As a character: ${playerC.cScore}\n
     As a survivor: ${playerC.sScore}\n
     \n
+
     Your total score is ${playerC.tScore}\n
     Your score ranks you as occasionally absent-minded.\n
     You've reached the end of your adventure. To begin again refresh the browser page.`);
@@ -12578,7 +12588,7 @@ else{
         desc: ``,
         onEnter: () => 
           {
-            println(formatter.format(orderTotal).toString());
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12587,17 +12597,18 @@ else{
             }else{
               pressEnter('lunch-nomon'); // if you have no money
             }
-            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
           },
       },
       {
         id: 'lunch-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: 'Luncheonette', // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
           enterRoom(room.enteredFrom); // Replace with the last room visited secret formula
@@ -12624,7 +12635,7 @@ else{
             const room = getRoom('lunch-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
-            enterRoom(room.enteredFrom);a
+            enterRoom(room.enteredFrom);
           },
       },
       {
@@ -12703,9 +12714,10 @@ else{
       {
         id: 'nedick-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Nedick's`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12718,11 +12730,13 @@ else{
       {
         id: 'nedick-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Nedick's`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ` `,
         onEnter: () => 
         {
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
+          reenableInput();
           const room = getRoom('nedick-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -12824,9 +12838,10 @@ else{
       {
         id: 'pizza-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Pizzeria`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12839,11 +12854,13 @@ else{
       {
         id: 'pizza-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Pizzeria`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('pizza-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -12908,7 +12925,6 @@ else{
         },
         onBlock: () => 
         {
-  
           if(prevInput === "frankfurter"){
             orderTotal += 1.40;
             energyTotal += 28;
@@ -12953,9 +12969,11 @@ else{
       {
         id: 'nuts-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
+
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12968,11 +12986,13 @@ else{
       {
         id: 'nuts-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('nuts-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -13008,7 +13028,7 @@ else{
         id: 'gyro-intro', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
         desc: `The interior of the restaurant is decorated in stylish marble-patterned formica. A counter with stools is decorated with condiment containers containing salt and pepper. \n
-        Small square naplins stand erect in a spring-loaded dispenser. At the moment you are the only customer except for a man and woman involved in an intense argument in a foreign language.`,
+        Small square napkins stand erect in a spring-loaded dispenser. At the moment you are the only customer except for a man and woman involved in an intense argument in a foreign language.`,
         onEnter: () => 
           {
           pressEnter('gyro-buyscreen');
@@ -13018,7 +13038,7 @@ else{
           },
       },
       {
-        id: 'nuts-buyscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+        id: 'gyro-buyscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
         desc: `You sit down at the counter and look at the menu on the wall which offers you a choice of:\n
         GYRO                $1.85\n
@@ -13073,9 +13093,10 @@ else{
       {
         id: 'gyro-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -13088,11 +13109,13 @@ else{
       {
         id: 'gyro-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
