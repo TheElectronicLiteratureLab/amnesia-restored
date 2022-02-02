@@ -403,7 +403,7 @@ let useItem = (itemName) => {
   }
 
   if (item.use) {
-    console.warn(`Warning: The "use" property for Items has been renamed to "onUse" and support for "use" has been deprecated in text-engine 2.0. Please update your disk, renaming any "use" methods to be called "onUse" instead.`);
+    console.warn(`Warning: The "use" property for items has been renamed to "onUse" and support for "use" has been deprecated in text-engine 2.0. Please update your disk, renaming any "use" methods to be called "onUse" instead.`);
 
     item.onUse = item.use;
   }
@@ -533,7 +533,7 @@ let turnOffOn = (toggle, itemId) => {
       if (item.isOn === !true) {
         item.isOn = true;
           if(item.itemId === 'computer') {
-            println(`Without having to look for the switch, you reach behind the computer to turn it on. \n\nAfter 20 seconds or so, the machine emits a groaning noise in the area of the disk drives, and then a "Beep!" \n\nThe small built-in cooling fan begins to whir quietly. The screen remains blank -- and without software that is how it will remain. But you've learned one piece of information: you have used this kind of machine before.`);
+            println(`Without having to look for the switch, you reach behind the computer to turn it on. \n\nAfter 20 seconds or so, the machine emits a groaning noise in the area of the disk drives, and then a "Beep!" \n\nThe small built-in cooling fan begins to whir quietly. The screen remains blank—and without software that is how it will remain. But you've learned one piece of information: you have used this kind of machine before.`);
             item.desc = 'The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned on.';
           } else {
             println(`You turned the ${item.name[0]} on.`);
@@ -746,7 +746,7 @@ let wear = (clothes) => {
     playCloth.top.push(item.itemId);
     playCloth.bottom.push(item.itemId);
     if(item.itemId === 'tuxedo' && room.lukecall === false){
-      println(`With a sense partly of jumping off a diving board into a complete void and partly of self-amazement-- as though you were a matador getting dressed for the first time in his suit-of-lights-- you put on the white tuxedo. First the frilly shirt and the white bow tie, then the pants, which are held up by the novelty of braces instead of by a belt; then the cummerbund; white silk calf-length socks and the whiter-than-white patent leather shoes; and finally the white jacket and the white silk top hat. You step in front of the mirror to see if you look any more or less familiar- but you only look very white.`);
+      println(`With a sense partly of jumping off a diving board into a complete void and partly of self-amazement—as though you were a matador getting dressed for the first time in his suit-of-lights—you put on the white tuxedo. First the frilly shirt and the white bow tie, then the pants, which are held up by the novelty of braces instead of by a belt; then the cummerbund; white silk calf-length socks and the whiter-than-white patent leather shoes; and finally the white jacket and the white silk top hat. You step in front of the mirror to see if you look any more or less familiar—but you only look very white.`);
     } else {
       println(`You put on the ${clothes}.`);
     }
@@ -759,7 +759,7 @@ let wear = (clothes) => {
       playCloth.bottom.push(item.itemId);
       println(`You're in such a state of befuddlement that you begin to put on the tuxedo over the clothes you're wearing.
       
-      Reluctantly-- for it took so much trouble getting these clothes-- you take off the jeans, sneakers, and T-shirt that you are wearing and put them in the gym-bag, together with the change of clothes you put into the plastic bookstore bag. As you do so, the marron address book catches your eye.`);
+      Reluctantly—for it took so much trouble getting these clothes—you take off the jeans, sneakers, and T-shirt that you are wearing and put them in the gym-bag, together with the change of clothes you put into the plastic bookstore bag. As you do so, the marron address book catches your eye.`);
     } else {
       println(`You must first remove the ${playCloth.top} and the ${playCloth.bottom} you're wearing in order to put on something else.`);
     }
@@ -925,7 +925,7 @@ let open = (itemToOpen) => {
     else if (item.itemId === 'hotebox'){
       if(item.isOpen !== true){
         item.isOpen = true;
-        println(`In the box, under a layer of white tissue paper is an ***all-white tuxedo***, together with the appropriate appurtenances; frilly shirt, cummerbund, bow tie and a ***white silk top hat***. A shoe-box-sized box is lying beside the suit, containing, not surprisingly, a pair of shoes, ***white patent leather shoes*** no less. There could be only one place anyone would ever wear this outfit-- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
+        println(`In the box, under a layer of white tissue paper is an __all-white tuxedo__, together with the appropriate appurtenances; frilly shirt, cummerbund, bow tie and a __white silk top hat__. A shoe-box-sized box is lying beside the suit, containing, not surprisingly, a pair of shoes, __white patent leather shoes__ no less. There could be only one place anyone would ever wear this outfit—to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
         
         But maybe they're not meant for you. Maybe they go delivered to this room by mistake. There's an easy way to find out. You slip the jacket on over your T-shirt. It fits about as well as a rented tux could be expected to. In fact, if you were wearing the shirt instead of a T-shirt, you'd almost think it was tailored.`);
       } else {
@@ -1060,7 +1060,7 @@ const phoneMarkerGenerator = () => {
 const press = (button) => {
   let elevator = getRoom(disk.roomId);
   let parsedNum = parseInt(button);
-  if (button === 'l') {
+  if (button === 'l') { //lobby
     parsedNum = parseInt('0');
   } else if (button === 'ph') {
     parsedNum = parseInt('19');
@@ -1277,7 +1277,7 @@ xStreetGoButton.onclick = function () { //set up the function if the submit butt
               room.onEnter = () => {
                 room.onEnter() + (degradation = true);
               }
-              room.desc = `The abandoned tenement is here`; //tell player the tenement is here
+              room.desc = `The abandoned tenement is here.`; //tell player the tenement is here
               println(`You see a tenement here. Perhaps this would be a good place to sleep for the night.`);
             }
         }
@@ -1410,11 +1410,11 @@ const beg = () => {
       //enterRoom('beg-poli'); //enter the room where the police catch you
       println(`A plainclothes police officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.  
 
-      'Sure buddy. But now you been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
+      'Sure buddy. But now you been told and you got no excuse the next time. If I see you begging for change again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?' 
       
-      You nod in agreement 
+      You nod in agreement. 
       
-      The policeman goes off in the same direction that the driver of the car you cleaned went.`)
+      The policeman goes off in the same direction that the person you asked for money went.`)
     } else if (chance1 >= 21 && !policeCaughtBegging) {//if you didnt get caught
       begLootTable(); //roll on loot table
     } else if (chance1 <= 20 && policeCaughtBegging) {//if you did get caught and have been caught before
@@ -1997,7 +1997,7 @@ const carWashEncounter = () => {
     
       if (difficulty === 'medium'){ // 
         if (chance2 <= 15) { //chance to get nothing
-          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+          println(`You clean the windshield and the patron driving the car speeds off before handing you any money.`);
         } else if (16 <= chance2 <= 70) { //chance to get between 0.25 & 1.00
           const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
           println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`); //tell the player how much they got
@@ -2031,7 +2031,7 @@ const carWashEncounter = () => {
     
       } else if (difficulty === 'hard') {
         if (chance2 <= 20) { //chance to get nothing
-          println(`You clean the windshield and the patron driving the car speeds off befor handing you any money.`);
+          println(`You clean the windshield and the patron driving the car speeds off before handing you any money.`);
         } else if (21 <= chance2 <= 75) { //chance to get between 0.25 & 1.00
           const dollarAmount = Math.floor(Math.random() * ((100 - 25) + 25)) / 100;
           println(`You clean the windshield and the driver tips you ${formatter.format(dollarAmount)}.`);
@@ -2071,16 +2071,24 @@ const carWashEncounter = () => {
 
               caughtCoords1 = curRoom.coord;
 
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
               
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
 
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
 
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
@@ -2092,14 +2100,22 @@ const carWashEncounter = () => {
             if(policeCaughtWashing === false) {
               policeCaughtWashing = true;
               caughtCoords1 = curRoom.coord;
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
-            
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
+              
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
                 policeCaughtWashing = false; 
@@ -2113,16 +2129,24 @@ const carWashEncounter = () => {
 
               caughtCoords1 = curRoom.coord;
 
-              println(`You were caught by the police. They let you off with a warning, if they catch you again you won't be so lucky.
+              println(`A plainclothes poluice officer identifies himself to you with a flash of his badge and explains that you are breaking the law. You assure him you weren't aware of this. He smiles.
               
-              The kid who gave you the rag did say that if you did it by the lincoln tunnel the cops would leave you alone...`);
+              'Sure buddy. But now you've been told and you got no excuse the next time. If I see you cleaning cars again you get taken into the station and booked. Capisce? That's Italian for 'Do you understand?'
+              
+              You nod in agreement. 
+              
+              The policeman goes off in the same direction that the drive of the car you cleaned went.`);
             } else if (policeCaughtWashing === true) {
               caughtCoords2 = curRoom.coord;
 
               const distance = distanceFormula(caughtCoords1, caughtCoords2);
 
               if (distance <= 10 ) {
-                println(`The police caught you again still washing cars around the same area. They slap some cuffs on you and lead you to their car...`);
+                println(`You feel a hand on your shoulder. Turning around, you recognize the same plainclothes police officer who earlier had warned you against cleaning cars.  
+
+                'Hello again. I see you want to establish a more meaningful relationship.'  
+                
+                As you begin to protest he snaps handcuffs round your wrist, then leads you to a nearby unmarked police car.`);
 
                 pressEnter('deat-1');
               } else if (distance > 10 ) {
@@ -2201,7 +2225,7 @@ const xStreetEvent = () => {
 
   enterRoom('xStreet');
   } else if (betteApt.hasEntered && !dame.hasEntered) {
-  dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't ever know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
+  dame.desc = `'Why, yes, we're meeting for dinner later tonight,' you ad lib uncomfortably, realizing you don't even know the woman's name. 'The place is at ${encounterStreetNumber} ${encounterStreetName}' The address comes from some frozen corner of your memory, but as to what is its true significance you haven't a clue.`
 
   const dame1 = getRoom('dame-1');
   const dame2 = getRoom('dame-2');
@@ -2333,7 +2357,8 @@ let commands = [
   {
     ring: args => goDir(args),
     enter: args => goDir(args),
-    look: lookThusly,
+    look,
+    //look: lookThusly,
     head: goDir,
     go: goDir,
     take: takeItem,
