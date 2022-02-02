@@ -1060,7 +1060,7 @@ const phoneMarkerGenerator = () => {
 const press = (button) => {
   let elevator = getRoom(disk.roomId);
   let parsedNum = parseInt(button);
-  if (button === 'l') {
+  if (button === 'l') { //lobby
     parsedNum = parseInt('0');
   } else if (button === 'ph') {
     parsedNum = parseInt('19');
@@ -2357,7 +2357,8 @@ let commands = [
   {
     ring: args => goDir(args),
     enter: args => goDir(args),
-    look: lookThusly,
+    look,
+    //look: lookThusly,
     head: goDir,
     go: goDir,
     take: takeItem,

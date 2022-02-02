@@ -1,7 +1,7 @@
 //preLoad();
 
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -303,7 +303,7 @@ const amnesiaRestored = {
           icon: 'img/png/image-gideonbible-thumbnail.png',
           gif: 'img/gif/gif-gideonbible-ingame.gif',
           name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
-          desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
+          desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 rightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
           isTakeable: true,
           onDrop: () => {
             println(`You shouldn't drop that. It might be important.`);
@@ -889,7 +889,7 @@ const amnesiaRestored = {
               icon: 'img/png/image-gideonbible-thumbnail.png',
               gif: 'img/gif/gif-gideonbible-ingame.gif',
               name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
-              desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
+              desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 rightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
               isTakeable: true,
               isDroppable: true,
               onDrop: () => {
@@ -2068,13 +2068,20 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevator15',
       name: '15th Floor Hallway',
-      desc: `You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
+      desc: ` `,
       onEnter: () => {
         let room = getRoom(disk.roomId);
         //todo: renable check for bathtowel
-        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
+        //getItemInInventoryById('bathtowel') || getItemInInventoryById('bedsheet')
+        console.log(getItemInInventoryById('bathtowel'));
+        if (getItemInInventoryById('bedsheet') === undefined) {
           println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
           pressEnter('corridor-security');
+        } else if (getItemInInventoryById('bathtowel') === undefined) {
+          println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
+          pressEnter('corridor-security');
+        } else {
+          println(`You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`)
         }
       },
       exits: [
@@ -2136,7 +2143,7 @@ const amnesiaRestored = {
       name: 'Elevator',
       desc: `The doors close. You wait for something to happen. Nothing happens. You continue to wait, and nothing continues to happen. Clearly, this is a hostile elevator. You push the button marked OPEN DOOR. Zilch.
 
-      The elevator begins to perform a very subdued string-orchestra rendition of "Put on a Happy Face." One of the buttons you still haven't tried is the red button marked ALARM.`,
+      The elevator begins to perform a very subdued string-orchestra rendition of "Put On A Happy Face." One of the buttons you still haven't tried is the red button marked ALARM.`,
       
       exits: [ // These need to be specified with the press command
         {dir: ['ph',], id: 'corridor-elevatorph'},
@@ -2146,10 +2153,15 @@ const amnesiaRestored = {
     {
       id: 'corridor-alarm', // Pressing alarm triggers death and texas
       name: 'Elevator',
-      desc: `At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open—to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, your makeshift costume comes undone and falls to the floor of the elevator. As you stoop to retrieve it, the elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`,
-      
+      desc: ` `,
       onEnter: () => {
+        if (getItemInInventoryById('bedsheet') || getItemInInventoryById('bathtowel')) {
+          println(`At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open—to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, your makeshift costume comes undone and falls to the floor of the elevator. As you stoop to retrieve it, the elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`);
           pressEnter('deat-1');
+        } else {
+          println(`At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open—to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, you try covering yourself but unfortuantely its too late, as elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`);
+          pressEnter('deat-1');
+        }
       },
       exits: [],
     },
@@ -6134,7 +6146,7 @@ onBlock: () => {
         name: 'The Sunderland Hotel Lobby',
         desc: ` `, // player is in the Elevator Alcove
         onEnter: () => {
-          clearOutput();
+          //clearOutput();
           reenableInput();
           println('You are now in the lobby.');
           if(tipBellboy === false){
@@ -6286,10 +6298,11 @@ onBlock: () => {
         name: 'Registration Desk',
         desc: '',
         onEnter: () => {
+          reenableInput();
             const room = getRoom('lobb-revi-6');
             ////console.log(room.visits);
             if(room.visits === 0){
-                println(`As you walk pass the recepetion desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your __safe deposit box__. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope— if she was indeed your wife— that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
+                println(`As you walk pass the registration desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your __safe deposit box__. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope— if she was indeed your wife— that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
             }
             room.visits++;
             ////console.log(room.visits);
@@ -6300,9 +6313,9 @@ onBlock: () => {
         },
         onBlock: () => {
             const room = getRoom('lobb-revi-6');
-            if(prevInput === 'ask about woman' || prevInput === 'ask about wife'){
+            if(prevInput === 'ask about woman' || prevInput === 'ask about wife' || prevInput === 'my wife' || prevInput === 'woman'){
                 println(`"I thought her a very attractive woman and quite smartly dressed. Of course, I did feel suspicious, having earlier spoken to the young lady, Miss Dudley, who had reserved the All-Faith Chapel for your wedding and whom I understood to be your intended bride. Of course, none of this is my business."`);
-            } else if (prevInput === 'ask about safe deposit boxes' || prevInput === 'ask about safe boxes' || prevInput === 'ask about safes' || prevInput === 'safes' || prevInput === 'safe deposit') {
+            } else if (prevInput === 'ask about safe deposit boxes' || prevInput === 'ask about safe boxes' || prevInput === 'ask about safe' || prevInput === 'safe' || prevInput === 'safe deposit' || prevInput === 'safe deposit box') {
               if (safeDeposit === false) {
                 println(`"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`)
               } else {
@@ -6313,6 +6326,8 @@ onBlock: () => {
               println(`"I can assure you, Mr. Cameron, that the manager can tell you no more than I have. Whatever is in your safe deposit box will still be there tomorrow or any later day. Be sure, in the meantime, not to forget your password."
                     
               At the other end of the counter, the bell captain signals urgently to the desk clerk, who goes off with a final cringe of apology.`);
+            } else if (prevInput === 'talk to clerk' || prevInput === 'clerk' || prevInput === 'get clerk attention' || prevInput === `get clerk's attention` || prevInput === `get clerks attention`) {
+              println("Hello, Mr. Cameron, what can I do you for?");
             }
         },
         items: [
@@ -6345,29 +6360,33 @@ onBlock: () => {
         "What is the number of your box, Mr. Cameron?"`,
 
         onBlock: () => {
-            if(prevInput === 'I forgot' || prevInput === `I don't know` || prevInput === `I can't remember`){
+            if(prevInput === 'I forgot' || prevInput === `I don't know` || prevInput === `I can't remember` || prevInput === 'i forgot' || prevInput === `I don't remember` || prevInput === `i don't remember` || prevInput === `i don't know` || prevInput === `don't know` || prevInput === 'forgot' || prevInput === `i can't remember`){
                 println(`"That's all right," the clerk says. "I can easily look up the number of the box in the register at the desk. But I hope you haven't forgetten the password. The box can't be opened unless you type in the original password you entered into the computer. Now if you'll give me just a moment to look in the register..." The clerk leaves you along for just a moment and returns to tell you that the number of your safe deposit box is 334.
                 
                 He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 enterRoom('lobb-revi-18');
             } else if(prevInput === '334'){
                 println(`"Very good," says the clerk. He shows you the position of the box you've named, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 enterRoom('lobb-revi-18');
             } else {
-                println(`"What is the number of your box, Mr. Cameron? Do you remember it?`);
-                enterRoom('lobb-revi-18');
+              println(`"That's all right," the clerk says. "I can easily look up the number of the box in the register at the desk. But I hope you haven't forgetten the password. The box can't be opened unless you type in the original password you entered into the computer. Now if you'll give me just a moment to look in the register..." The clerk leaves you along for just a moment and returns to tell you that the number of your safe deposit box is 334.
+                
+              He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+              
+              YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+              enterRoom('lobb-revi-18');
             }
         },
 
         exits: [
-            {dir: ['n', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
-            {dir: ['s', 'south'], id: 'lobb-revi-6'}, // go to reception desk
+            {dir: ['leave', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
+            {dir: ['registration', 'south'], id: 'lobb-revi-6'}, // go to reception desk
             {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
-            {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+            {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     },// closes lobb-revi-7 room
     {
@@ -6587,21 +6606,14 @@ onBlock: () => {
         desc: '',
         passwordCount: 0,
         onBlock: () => {
-          println(`I'M SORRY. THAT IS NOT THE PASSWORD THAT WILL OPEN YOUR BOX.
-                
-          PLEASE TRY TO REMEMBER THE EXACT WORD OR WORDS OR NUMERALS THAT YOU CHOSE TO BE THE PASSWORD.
-          
-          The screen blanks out for a moment, and then offers you another opportunity:
-          
-          YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`)
           let room = getRoom(disk.roomId);
           console.log(room.passwordCount);
             if(prevInput === 'with god'){
                 println(`With a click of instant recognition, the little metal door of Box 334 springs open, and a message appears on the monitor before you:
                 
                 YOUR SAFETY DEPOSIT BOX IS NOW OPEN FOR EXAMINATION.`);
-            } else if(passwordCount === 0 && prevInput !== 'with god'){
-                passwordCount++;
+            } else if(room.passwordCount === 0 && prevInput !== 'with god'){
+              
                 println(`There is a delicate grinding sound from the console on the wall and then the screen of the monitor flashes this message at you: 
                 
                 I'M SORRY. THAT IS NOT THE PASSWORD THAT WILL OPEN YOUR BOX.
@@ -6610,14 +6622,16 @@ onBlock: () => {
                 
                 The screen blanks out for a moment, and then offers you another opportunity:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
-            } else if(passwordCount === 1 && prevInput !== 'with god'){
-                passwordCount++;
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+                room.passwordCount++;
+            } else if(room.passwordCount === 1 && prevInput !== 'with god'){
+              
                 println(`The screen blanks out for a moment, and you recall having read, earlier in the day, something that may have a hint specific to your present dilemma. But what was it? Something about "doubt and uncertainty." The cursor on the monitor before winks on and off, indifferent to your dilemma:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
-            } else if(passwordCount === 2 && prevInput !== 'with god'){
-                passwordCount++;
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+                room.passwordCount++;
+            } else if(room.passwordCount === 2 && prevInput !== 'with god'){
+              room.passwordCount++;
                 println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. The text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
             
                 if(prevInput === 'look at bible' && getItemInInventory('bible')){
@@ -6625,15 +6639,15 @@ onBlock: () => {
                     
                     The monitor is still winking its cursor at you, waiting for you to fill in the blank:
                     
-                    YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                    YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 } else {
                     println(`The monitor is still winking its cursor at you, waiting for you to fill in the blank:
                     
-                    YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                    YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 }
-            } else if(passwordCount === 3 && prevInput !== 'with god'){
+            } else if(room.passwordCount === 3 && prevInput !== 'with god'){
                 println(`Your fourth hunch is as wrong as the rest. The screen goes completely blank, and a buzzer softly bleeps. A moment later the desk clerk steps into the room. "I'm sorry, Mr. Cameron, but I'll have to ask you to step back out into the lobby. If you still can't remember your password, you'll have to speak with the manager tomorrow. He's the only one empowered to circumvent the password system. Sometimes these modern improvments are more trouble than they're worth." Reluctantly you return to the lobby, and the clerk locks the door to the safe deposit room.`);
-                enterRoom('lobb-revi');
+                pressEnter('lobb-revi');
             }
         },
         items: [
@@ -6732,7 +6746,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-2',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `Surely, such a venerable institution should not be allowed to sag into such a state of shabbiness. Perhaps contributions should be solicited for a Redecorating Fund. Just as you've begun mentally to frame this appeal, the doorman asks you what your business is. You explain that you believe yourself to be a member.`,
         onEnter: () => {
@@ -6743,7 +6757,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-3',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `He assures you that he has an infallible memory for faces and that you are not.  You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
         onEnter: () => {
@@ -6753,7 +6767,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-4',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `You feel as though you'd been expelled from the university on the first day of your freshman year: it was a very brief career.`,
         onEnter: () => {
@@ -6763,7 +6777,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-5',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `"John Cameron!" \n\nYou look round to see who has called you in that deep, cracked voice. She calls again and you spot her, an immense woman wearing layer upon layer of dirty rags. She is sitting on the sidewalk across the street from the Princeton Club, surrounding by shopping bags.`,
         onEnter: () => {
@@ -6773,7 +6787,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-6',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Don't you remember?" \n"I'm afraid I don't remember anything," you reply. "I have amnesia."`,
         onEnter: () => {
@@ -6783,7 +6797,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-7',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `She confesses that she knows about your amnesia, for two weeks earlier you'd had a long conversation with her about it right here at her post of duty. At that time, you'd given her a letter that she was to give you if you ever turned up again—as you have now, thanks to the matchbook from the Princeton Club.`,
         onEnter: () => {
@@ -6793,7 +6807,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-8',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `After some minutes of polite conversation about the perils and pleasures of being destitute in the world's greatest city, you take your leave of the shopping bag lady and open the letter you'd written to yourself:`,
         onEnter: () => {
@@ -6803,7 +6817,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-9',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `"Dear Self," it says. "In case you haven't been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel according to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what's in that box. So get it. Fond regards from Guess Who."`,
         onEnter: () => {
@@ -6813,11 +6827,16 @@ onBlock: () => {
       },
       {
         id: 'prin-club-10',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `Congratulating yourself on your foresight you tear up the note and throw it away. Only you will have the password.`,
         onEnter: () => {
-          storyMarker.addTo(poiLayer);
+          storyMarker.setLatLng([31.222, -6.876]).bindPopup('The Princeton Club').addTo(poiLayer);
+
+          let room = getRoom('lobb-revi-6');
+          console.log(room);
+          safeDeposit = true;
+          delete room.exits[0].block;
           pressEnter('43-5');
         },
         exits: []
@@ -16300,7 +16319,7 @@ else{
         {dir: 'south', id: '13-broa'},
         {dir: 'east', id: '14-4'},
         {dir: 'west', id: '14-usqw'},
-        {dir: ['nedicks', 'restaurant'], id: 'nedick-intro'}
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ]
     },
     {
@@ -16444,7 +16463,7 @@ else{
         {dir: 'south', id: 'bond-broa'},
         {dir: 'east', id: 'grea-lafa'},
         {dir: 'west', id: '3-merc'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -17311,7 +17330,7 @@ else{
         {dir: 'south', id: '6-1'},
         {dir: 'east', id: '7-avea'},
         {dir: 'west', id: '7-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ]
     },
     {
@@ -17963,7 +17982,7 @@ else{
         {dir: 'south', id: '6-avec'},
         {dir: 'east', id: '7-aved'},
         {dir: 'west', id: '7-aveb'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ]
     },
     {
@@ -18004,7 +18023,7 @@ else{
         {dir: 'south', id: '3-avec'},
         {dir: 'east', id: '4-aved'},
         {dir: 'west', id: '4-aveb'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ]
     },
     {
@@ -18532,7 +18551,7 @@ else{
         {dir: 'south', id: 'morr-broa'},
         {dir: 'east', id: 'exch-new'},
         {dir: 'west', id: 'exch-trin'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -18788,7 +18807,7 @@ else{
         {dir: 'south', id: 'thom-broa'},
         {dir: 'east', id: 'wort-lafa'},
         {dir: 'west', id: 'wort-chur'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -19173,7 +19192,7 @@ else{
         {dir: 'south', id: 'broa-sout'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'olds-fron'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -19200,7 +19219,7 @@ else{
         {dir: 'south', id: 'gouv-sout'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'wall-fron'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -19646,7 +19665,7 @@ else{
         {dir: 'south', id: 'beek-gold'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'spru-nass'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -20144,7 +20163,7 @@ else{
         {dir: 'south', id: 'wall-pear'},
         {dir: 'east', id: 'pine-wate'},
         {dir: 'west', id: 'pine-swil'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -20368,7 +20387,7 @@ else{
         {dir: 'south', id: 'gouv-fron'},
         {dir: 'east', id: 'wall-sout'},
         {dir: 'west', id: 'wall-wate'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -20798,7 +20817,7 @@ else{
         {dir: 'south', id: 'pear-baxt'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'pear-kent'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -21011,7 +21030,7 @@ else{
         {dir: 'south', id: 'rect-trin'},
         {dir: 'east', id: 'tham-broa'},
         {dir: 'west', id: 'tham-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -21621,7 +21640,7 @@ else{
         {dir: 'south', id: 'exch-west'},
         {dir: 'east', id: 'rect-wash'},
         {dir: 'west', block: `You can't go that way.`},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -21960,7 +21979,7 @@ else{
         {dir: 'south', id: 'warr-gree'},
         {dir: 'east', id: 'cham-huds'},
         {dir: 'west', id: 'cham-west'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -22351,7 +22370,7 @@ else{
         {dir: 'south', id: 'barc-wbro'},
         {dir: 'east', id: 'park-chur'},
         {dir: 'west', id: 'park-gree'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -22729,7 +22748,7 @@ else{
         {dir: 'south', id: 'nmoo-huds'},
         {dir: 'east', id: 'eric-vari'},
         {dir: 'west', id: 'beac-coll'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -22834,7 +22853,7 @@ else{
         {dir: 'south', id: 'spri-huds'},
         {dir: 'east', id: 'vand-vari'},
         {dir: 'west', id: 'vand-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -23214,7 +23233,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'cana-watt-1'},
         {dir: 'west', id: 'cana-huds'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -23228,7 +23247,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'cana-vari'},
         {dir: 'west', id: 'cana-holl'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -24288,7 +24307,7 @@ else{
         {dir: 'south', id: 'broa-clin'},
         {dir: 'east', id: 'gran-ridg'},
         {dir: 'west', id: 'gran-suff'}, 
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -25061,7 +25080,7 @@ else{
         {dir: 'south', id: 'whou-merc'},
         {dir: 'east', id: 'blee-broa'}, 
         {dir: 'west', id: 'blee-lagu'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -25192,7 +25211,7 @@ else{
         {dir: 'south', id: 'blee-lagu'},
         {dir: 'east', id: '3-gree'}, 
         {dir: 'west', id: '3-thom'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   //todo: map fix
@@ -25504,7 +25523,7 @@ else{
         {dir: 'south', id: '8-5'},
         {dir: 'east', id: '9-univ'}, 
         {dir: 'west', id: '9-amer'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -26559,7 +26578,7 @@ else{
         {dir: 'south', id: 'clar-huds'},
         {dir: 'east', id: 'carm-7'}, 
         {dir: 'west', id: 'lero-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -26587,7 +26606,7 @@ else{
         {dir: 'south', id: 'mort-huds'},
         {dir: 'east', id: 'barr-comm'}, 
         {dir: 'west', id: 'barr-gree'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   //todo: map fix
@@ -26757,7 +26776,7 @@ else{
         {dir: 'south', id: '10-huds'},
         {dir: 'east', id: 'char-blee'}, 
         {dir: 'west', id: 'char-gree-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -26993,7 +27012,7 @@ else{
         {dir: 'south', id: 'chri-blee'},
         {dir: 'east', id: '10-4'}, 
         {dir: 'west', id: '10-huds'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -27072,7 +27091,7 @@ else{
         {dir: 'south', id: 'blee-8'},
         {dir: 'east', id: '12-4-1'}, 
         {dir: 'west', id: '12-huds'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27229,7 +27248,7 @@ else{
         {dir: 'south', id: 'perr-wave'},
         {dir: 'east', id: '11-gree'}, 
         {dir: 'west', id: '4-11'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {   
@@ -27413,7 +27432,7 @@ else{
         {dir: 'south', id: 'whou-gree-1'},
         {dir: 'east', id: 'clar-huds'}, 
         {dir: 'west', id: 'clar-wash'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -27453,7 +27472,7 @@ else{
         {dir: 'south', id: 'mort-gree'},
         {dir: 'east', id: 'barr-huds'}, 
         {dir: 'west', id: 'barr-wash'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27740,7 +27759,7 @@ else{
         {dir: 'south', id: '11-wash'},
         {dir: 'east', id: 'bank-gree-1'}, 
         {dir: 'west', id: 'bank-west'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27794,7 +27813,7 @@ else{
         {dir: 'south', id: 'jane-wash'},
         {dir: 'east', id: 'hora-gree-1'}, 
         {dir: 'west', id: 'hora-west'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -28687,7 +28706,7 @@ else{
         {dir: 'south', id: '22-10'},
         {dir: 'east', id: '23-9'},
         {dir: 'west', id: '23-11'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -28936,7 +28955,7 @@ else{
         {dir: 'south', id: '22-9'},
         {dir: 'east', id: '23-8'},
         {dir: 'west', id: '23-10'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
 
@@ -29110,7 +29129,7 @@ else{
         {dir: 'south', id: '28-8'},
         {dir: 'east', id: '29-7'},
         {dir: 'west', id: '29-9'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -29243,7 +29262,7 @@ else{
         {dir: 'south', id: '18-8'},
         {dir: 'east', id: '19-7'},
         {dir: 'west', id: '19-9'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29378,7 +29397,7 @@ else{
         {dir: 'south', id: '28-7'},
         {dir: 'east', id: '29-amer'},
         {dir: 'west', id: '29-8'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -29446,7 +29465,7 @@ else{
         {dir: 'south', id: '23-7'},
         {dir: 'east', id: '24-amer'},
         {dir: 'west', id: '24-8'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29514,7 +29533,7 @@ else{
         {dir: 'south', id: '18-7'},
         {dir: 'east', id: '19-amer'},
         {dir: 'west', id: '19-8'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29730,6 +29749,7 @@ else{
         {dir: 'south', id: '23-amer'},
         {dir: 'east', id: '24-broa'},
         {dir: 'west', id: '24-7'},
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -30091,7 +30111,7 @@ else{
         {dir: 'south', id: '19-broa'},
         {dir: 'east', id: '20-park'},
         {dir: 'west', id: '20-5'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -30263,7 +30283,7 @@ else{
         {dir: 'south', id: '5-broa'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '24-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
 
       ],
     },
@@ -30665,7 +30685,8 @@ else{
         {dir: 'north', id: '15-usqe'},
         {dir: 'south', id: '14-usqe'},
         {dir: 'east', id: '14-4'},
-        {dir: 'west', block: `You can't go that way.`}
+        {dir: 'west', block: `You can't go that way.`},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
 
@@ -30722,7 +30743,7 @@ else{
         {dir: 'south', id: '30-park'},
         {dir: 'east', id: '31-lexi'},
         {dir: 'west', id: '31-madi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -30802,7 +30823,7 @@ else{
         {dir: 'south', id: '24-park'},
         {dir: 'east', id: '25-lexi'},
         {dir: 'west', id: '25-madi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -31503,7 +31524,7 @@ else{
         {dir: 'south', id: '30-2'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '31-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -32388,7 +32409,7 @@ else{
         {dir: 'south', id: '56-8'},
         {dir: 'east', id: '57-broa'},
         {dir: 'west', id: '57-9'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -32579,7 +32600,7 @@ else{
         {dir: 'south', id: '54-8'},
         {dir: 'east', id: '55-broa'},
         {dir: 'west', id: '55-9'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {
@@ -32715,7 +32736,7 @@ else{
         {dir: 'south', id: '53-amer'},
         {dir: 'east', id: '54-5'},
         {dir: 'west', id: '54-7'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 53rd St.
@@ -32963,7 +32984,7 @@ else{
         {dir: 'south', id: '50-10'},
         {dir: 'east', id: '51-9'},
         {dir: 'west', id: '51-11'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -32990,7 +33011,7 @@ else{
         {dir: 'south', id: '50-8'},
         {dir: 'east', id: '51-broa'},
         {dir: 'west', id: '51-9'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -33339,7 +33360,7 @@ else{
         {dir: 'south', id: '47-amer'},
         {dir: 'east', id: '48-5'},
         {dir: 'west', id: '48-7'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
 //Start 47th Street
@@ -33367,7 +33388,7 @@ else{
         {dir: 'south', id: '46-11'},
         {dir: 'east', id: '47-10'},
         {dir: 'west', id: '47-12'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -33382,7 +33403,7 @@ else{
         {dir: 'south', id: '46-10'},
         {dir: 'east', id: '47-9'},
         {dir: 'west', id: '47-11'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -33448,7 +33469,7 @@ else{
         {dir: 'south', id: '46-amer'},
         {dir: 'east', id: '47-5'},
         {dir: 'west', id: '47-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 46th Street.
@@ -33751,7 +33772,7 @@ else{
         {dir: 'south', id: '43-9'},
         {dir: 'east', id: '44-8'},
         {dir: 'west', id: '44-10'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {
@@ -33868,7 +33889,7 @@ else{
         {dir: 'south', id: '42-9'},
         {dir: 'east', id: '43-8'},
         {dir: 'west', id: '43-10'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -34174,7 +34195,7 @@ else{
         {dir: 'south', id: '40-amer'},
         {dir: 'east', block:`You can't go that way.`},
         {dir: 'west', id: '41-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 40th Street
@@ -34298,7 +34319,7 @@ else{
         {dir: 'south', id: '39-dyer'},
         {dir: 'east', id: '40-9'},
         {dir: 'west', id: 'bta-40'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -34482,7 +34503,7 @@ else{
         {dir: 'south', id: '38-broa'},
         {dir: 'east', id: '39-amer'},
         {dir: 'west', id: '39-7'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -34877,7 +34898,7 @@ else{
         {dir: 'south', id: '34-broa'},
         {dir: 'east', id: '35-amer'},
         {dir: 'west', id: '35-7'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -35288,7 +35309,7 @@ else{
         {dir: 'south', id: '53-madi'},
         {dir: 'east', id: '54-park'},
         {dir: 'west', id: '54-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts'], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35364,7 +35385,7 @@ else{
         {dir: 'south', id: '48-madi'},
         {dir: 'east', id: '49-park'},
         {dir: 'west', id: '49-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35469,7 +35490,7 @@ else{
         {dir: 'south', id: '40-madi'},
         {dir: 'east', id: '41-park'},
         {dir: 'west', id: '41-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35810,7 +35831,7 @@ else{
         {dir: 'south', id: '49-5'},
         {dir: 'east', id: '50-madi'},
         {dir: 'west', id: '50-amer'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -36273,7 +36294,7 @@ else{
         {dir: 'south', id: '36-lexi'},
         {dir: 'east', id: '37-3'},
         {dir: 'west', id: '37-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36681,7 +36702,7 @@ else{
         {dir: 'south', id: '54-3'},
         {dir: 'east', id: '55-2'},
         {dir: 'west', id: '55-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36761,7 +36782,7 @@ else{
         {dir: 'south', id: '48-3'},
         {dir: 'east', id: '49-2'},
         {dir: 'west', id: '49-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36801,7 +36822,7 @@ else{
         {dir: 'south', id: '45-3'},
         {dir: 'east', id: '46-2'},
         {dir: 'west', id: '46-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -37115,7 +37136,7 @@ else{
         {dir: 'south', id: '39-2'},
         {dir: 'east', id: '40-tudo'},
         {dir: 'west', id: '40-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
         ]
     },
     {
@@ -37285,7 +37306,7 @@ else{
         {dir: 'south', id: '52-2'},
         {dir: 'east', id: '53-1'},
         {dir: 'west', id: '53-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -44032,7 +44053,7 @@ else{
         {dir: 'south', id: '94-5'},
         {dir: 'east', id: '95-madi'},
         {dir: 'west', id: '95-amer'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
 // LUNCHEONETTE GOES HERE (95-5) * DEPENDING ON HOW WE HANDLE IT
@@ -45761,7 +45782,7 @@ else{
         {dir: 'south', id: '73-lexi'},
         {dir: 'east', id: '74-3'},
         {dir: 'west', id: '74-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -45815,7 +45836,7 @@ else{
         {dir: 'south', id: '77-lexi'},
         {dir: 'east', id: '78-3'},
         {dir: 'west', id: '78-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -46290,7 +46311,7 @@ else{
         {dir: 'south', id: '62-3'},
         {dir: 'east', id: '63-2'},
         {dir: 'west', id: '63-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],   
     },
     {
@@ -46968,7 +46989,7 @@ else{
         {dir: 'south', id: '61-2'},
         {dir: 'east', id: '62-quen'},
         {dir: 'west', id: '62-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -47099,7 +47120,7 @@ else{
         {dir: 'south', id: '71-2'},
         {dir: 'east', id: '72-1'},
         {dir: 'west', id: '72-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -47166,7 +47187,7 @@ else{
         {dir: 'south', id: '76-2'},
         {dir: 'east', id: '77-1'},
         {dir: 'west', id: '77-3'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     }, 
     {
@@ -47388,7 +47409,7 @@ else{
         {dir: 'south', id: '93-2'},
         {dir: 'east', id: '94-1'},
         {dir: 'west', id: '94-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -47730,7 +47751,7 @@ else{
         {dir: 'south', id: '65-1'},
         {dir: 'east', id: '66-york'},
         {dir: 'west', id: '66-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
