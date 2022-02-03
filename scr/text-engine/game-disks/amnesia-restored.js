@@ -774,7 +774,7 @@ const amnesiaRestored = {
         getRoom('hote-room-8').visits++;
       },
       onBlock: () => {
-        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please') {
+        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please' || prevInput === 'Yes' || prevInput === 'No') {
 
           let dollarItem1 = getItemInInventoryById('dollarbill');
 
@@ -2069,9 +2069,14 @@ const amnesiaRestored = {
       name: '15th Floor Hallway',
       desc: `You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
       onEnter: () => {
-        let room = getRoom(disk.roomId);
         //todo: renable check for bathtowel
-        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
+        let towel = getItemInInventoryById('bathtowel');
+        let sheet = getItemInInventoryById('bedsheet');
+        //getItemInInventoryById('bathtowel') || getItemInInventoryById('bedsheet')
+        console.log(towel);
+        if (towel || sheet) {
+          println(`You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`)
+        } else {
           println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
           pressEnter('corridor-security');
         }
@@ -7765,7 +7770,6 @@ onBlock: () => {
           {dir: ['north'], id: 'nyhist-1f-1'},
           {dir: ['south'], id: 'nyhist-1f-2'},
           {dir: ['south'], id: 'nyhist-entrance'},
-          {dir: ['east'], id: '76-cpkw'},
           {dir: ['west', 'upstairs'], id: 'nyhist-2f-1'}
         ],
       },
@@ -8423,6 +8427,9 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
+      onEnter: () => {
+        reenableInput();
+      },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'sure') {
           println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
@@ -49684,16 +49691,17 @@ else{
       onEnter: () => {
         const room = getRoom('pho-boo1');
 
-        room.coord = lastRoom.coord;
+        //room.coord = lastRoom.coord;
+        room.enteredFrom = lastRoom.id;
 
         room.exits = [];
 
         room.exits.push(
-          {dir: ['leave', 'exit'], id:lastRoom.id},
+          {dir: ['leave', 'exit'], id: room.enteredFrom},
           {dir: 'north', id:``, block: `You need to exit the telephone booth first.`},
-          {dir: 'south', id:'', block: `you need to exit the telephone booth first`},
-          {dir: 'east', id: '', block: `you need to exit the telephone booth first`},
-          {dir: 'west', id: ``, block: `you need to exit the telephone booth first`},
+          {dir: 'south', id:'', block: `you need to exit the telephone booth first.`},
+          {dir: 'east', id: '', block: `you need to exit the telephone booth first.`},
+          {dir: 'west', id: ``, block: `you need to exit the telephone booth first.`},
         )
       },
       exits: [
