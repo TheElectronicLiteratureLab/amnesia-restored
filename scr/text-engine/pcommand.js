@@ -2,15 +2,19 @@
 let inv = () => {
   document.getElementById("inventory").innerHTML = "";
   const items = disk.inventory.filter(item => !item.isHidden);
+
+  //disable player input box
   document.querySelector('input').disabled = true;
 
-  if (!items.length) {
-    slideLeftIn("inventory-display", "inventory-text-container");
-    //document.getElementById("inventory-display").style.display = "block";
-  }
 
+  //check to see if there are items in inventory
+  if (!items.length) { 
+    slideLeftIn("inventory-display", "inventory-text-container");
+    return;
+  } 
+
+  //check to see what items are in inventory when player enters "inv" command
   items.forEach(item => {
-    //document.getElementById("inventory-display").style.display = "block";
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
@@ -19,9 +23,6 @@ let inv = () => {
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }
-    
-   // document.getElementById("inventory-display").style.display = "block";
-    //listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
   });
 
   slideLeftIn("inventory-display", "inventory-text-container");
