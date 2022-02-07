@@ -8456,7 +8456,7 @@ onBlock: () => {
       id: 'side-art-1',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian—black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
+      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian -- black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
 
       YOUR PORTRAIT
       IN CHARCOAL
@@ -8473,9 +8473,6 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
-      onEnter: () => {
-        reenableInput();
-      },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'sure') {
           println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
@@ -8506,115 +8503,185 @@ onBlock: () => {
       You tell him, quite honestly, that you don't know. 
       
       "Here," he says handing you a stick of charcoal and a kneaded eraser, "try it. Draw me."`,
+      onEnter: () => {
+        pressEnter('side-art-4');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-4',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You finish your attempt to draw Tony, and he looks at your work. "That's okay," he admits. "Its's better than my stuff. I'll tell you what. I got a proposition. \nI got ten bucks for far doing this. I'll give you five, plus this sketchpad, and the charcoal, and the clothes I got on, if you'll let me have that white tux. We're about the same size. I know a place in the park where we can switch clothes without anyone seeing. What do you say?"`,
+      onBlock: () => {
+        if (prevInput === 'More money' || prevInput === 'I want more money' || prevInput === 'ask for more money' || prevInput === 'more money' || prevInput === 'give me more money' || prevInput === 'give me more' || prevInput === 'no') {
+          println(`I can't really give you more than the five dollars. Look I got to get by somehow.`);
+        } else if (prevInput === 'yes' || prevInput === 'yep' || prevInput === 'sure' || prevInput === 'okay') {
+          println(`"Ok, follow me." \nAfter some distance, you come to a part of Centeral Park, where Tony judges it will be safe to change. He steps behind a thick stand of bushes and begins to take off his clothes." \n "Come on," he says. "Strip!"`);
+          pressEnter('side-art-5');
+        }
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-5',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You step behind the bushes, and hesitate. You feel embarassed. "Hey, come on," Tony urges. "Save the blushes till later."`,
+      onEnter: () => {
+        pressEnter('side-art-6');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-6',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You pull off your pants, and a momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`,
+      onEnter: () => {
+        pressEnter('side-art-7');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-7',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      desc: `You are in a tiny apartment, but since it takes no space to change into someone else its size is of no importance. Alice stands there with you, smiling. And then the memory is gone like the breeze that brought it. You and Tony step out from behind the bushes; in the white tuxedo he looks like a shy usher at a stranger's wedding.`,
+      onEnter: () => {
+        pressEnter('side-art-8');
+      },
       exits: []
     },
     {
-      id: 'side-art',
+      id: 'side-art-8',
       coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
+      name: 'Somewhere in Central Park',
+      desc: `Tony says, 'Go down to the park at Washington Square in the village and draw there. You should have good business at the park, and the police will not bother you.' Tony bids you goodbye. \nYou are in Manhattan's beautiful Central Park.`,
+      onEnter: () => {
+        pressEnter('76-7');
+        storyMarker.setLatLng([-47.428, -5.559]).bindPopup('Take some time to draw here.').addTo(poiLayer);
+      },
       exits: []
     },
     {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
+      id: 'wasq-park',
+      coord: [-47.428, -5.559],
+      name: 'Washington Square Park',
+      desc: '',
+      onEnter: () => {
+        if (!getItemInInventoryById('sketchpad')) {
+          println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net.
+
+          There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
+          if (sketches >= 1) {
+            pressEnter('book-11');
+            return;
+          }
+          pressEnter('wasq-park-2');
+        }
+        else {
+          println(`One corner of the park is given over to chess-players, and nearby a man is completing a sketch of a woman. When he is done, she pays him and takes the sketch. Then they go off in opposite directions, leaving the bench they'd occupied up for grabs.`);
+        }
+      },
+      exits: [
+        {dir: ['leave', 'back'], id: 'wash-lagu'}
+      ],
     },
     {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
-    },
-    {
-      id: 'side-art',
-      coord: [61.884, -28.210],
-      name: 'W. 76th St. and Central Park W.',
-      desc: `A voice hails you. "Hey there, you in the white tux. Come here!"`,
-      exits: []
+      id: 'wasq-park-2',
+      coord: [-47.428, -5.559],
+      name: 'Washington Square Park',
+      desc: '',
+      onEnter: () => {
+        reenableInput();
+        println(`One corner of the park is given over to chess-players, and nearby a man is completing a sketch of a woman. When he is done, she pays him and takes the sketch. Then they go off in opposite directions, leaving the bench they'd occupied up for grabs.`);
+      },
+      onBlock: () => {
+        if (prevInput === 'sit') {
+          println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net. 
+
+          There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
+          pressEnter('book-1');
+        }
+      },
+      exits: [
+        {dir: ['leave', 'back'], id: 'wash-lagu'}
+      ]
     },
 
   /**********************/
  /*      Sketchpad     */
 /**********************/
-{   //First Sketch
-  id:'book-1',
-  name:'',
-  desc:``,
+//Mandatory First Sketch
+{
+  id: 'book-1',
+  name: 'Washington Square Park',
+  desc: ``,
   onEnter: () => {
+    sketches++;
+    reenableInput();
       println(`You open the sketchpad to the page bearing the hand-lettered sign: \n\nYOUR PORTRAIT
       \n\nIN CHARCOAL\n\n 5.00\n\nYou prop the sketchpad against the back of the bench, assume an artistic expression, and wait for a fish to take the bait. A few people glance your sign as they pass by, but none even slow down. Then there's a nibble\n\nA pair of teenagers, one blonde, the other brunette, comes to a halt some few feet from the bench and confers in whispers. 'Can we see one of your sketches?'`)
   },
-  exits:[
-      {dir:['yes'],id:'book-2'},
-      {dir:['no'],id:'book-3'}
-  ]
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'sure') {
+      enterRoom('book-2');
+    } else if (prevInput === 'no' || prevInput === `I'd rather not` || prevInput === 'nope' || prevInput === 'no thanks') {
+      enterRoom('book-3');
+    } else {
+      println(`I'm sorry can you rephrase that?`);
+    }
+  },
 },
 {
-  id:'book-2',
-  name:'',
-  desc:`You show them the sketch you'd done of Tony, and they confer again. The brunette seems eager to have you do her portrait, but she hasn't enough money. Reluctantly her friend loans her five dollars. 'Okay,' the brunette says, and sits down stiffly on the edge of the bench to pose. 'But if I don't like it, I don't have to buy it. Okay?' You nod your acquiescence. 'Should i smile?'`,
-  exits:[
-      {dir:['yes'],id:'book-5'},
-      {dir:['no'],id:'book-8'}
-  ]
+  id: 'book-2',
+  name: 'Washington Square Park',
+  desc:`You show them the sketch you'd done of Tony, and they confer again. The brunette seems eager to have you do her portrait, but she hasn't enough money. Reluctantly her friend loans her five dollars. 'Okay,' the brunette says, and sits down stiffly on the edge of the bench to pose. 'But if I don't like it, I don't have to buy it. Okay?' You nod your acquiescence. 'Should I smile?'`,
+  onEnter: () => {
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'sure' || prevInput === 'smile' || prevInput === 'you should smile') {
+      pressEnter('book-5');
+    } else if (prevInput === 'no' || prevInput === 'nope' || prevInput === 'be natural') {
+      pressEnter('book-8');
+    }
+  },
 },
 {
   id:'book-3',
-  name:'',
+  name: 'Washington Square Park',
   desc:`Oh, don't be so modest!' the blonde says, taking up your sketchpad with a laugh, and opening it to the sketch you'd done of Tony. 'You did this?' she asks. You nod, and they confer again. The brunette seems eager to have you do her portrait, but she hasn't enough money. Reluctantly her friend loans her five dollars. 'Okay,' the brunette says, and sits down stiffly on the edge of the bench to pose. 'But if I don't like it, I don't have to buy it. Okay?' You nod your acquiescence. 'Should I smile?`,
-  exits:[
-      {dir:['no'],id:'book-7'},
-      {dir:['yes'],id:'book-5'},
-      {dir:['take'],id:'book-4'}
-  ]
+  onEnter: () => {
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'sure' || prevInput === 'smile' || prevInput === 'you should smile') {
+      pressEnter('book-5');
+    } else if (prevInput === 'no' || prevInput === 'nope' || prevInput === 'be natural') {
+      pressEnter('book-8');
+    }
+  },
 },
 {
   id:'book-4',
-  id:'',
+  name: 'Washington Square Park',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
-      if(prevInput === 'draw girl' || prevInput === 'draw' || prevInput === 'sketch'){
+      if(prevInput === 'draw girl' || prevInput === 'draw woman' || prevInput === 'draw' || prevInput === 'sketch' || prevInput === 'draw her' || prevInput === 'draw the brunette') {
           enterRoom('book-6')
-      }else{
-          println(`Can you rephrase that please?`)
+      } else{
+          println(`Can you rephrase that please?`);
       }
   }
 },
 {
   id:'book-5',
-  name:'',
+  name: 'Washington Square Park',
   desc:``,
   onEnter: () => {
       println(`Yes, smile if you like,' you tell her. At one her face freezes into the grimace such as usually only dentist is given to know. She's ready for you to do her portrait.`);
@@ -8624,7 +8691,7 @@ onBlock: () => {
 },
 {
   id:'book-6',
-  name:'',
+  name: 'Washington Square Park',
   desc:``,
   onEnter: () => {
       println(`You draw exactly what you see, and the more exact your drawing, the more certain you are that it is not a salable commodity. This girl needs to go to modeling school. Or discover mirrors. Or stop smiling. But you might as well tell a skull to stop grinning. That smile is frozen in place. You finish the drawing, and she asks to see it.`);
@@ -8633,22 +8700,26 @@ onBlock: () => {
 },
 {
   id:'book-7',
-  name:'',
-  desc:`She reacts to her portrait with a gasp of unbelieving horror—and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
+  name: 'Washington Square Park',
+  desc:`She reacts to her portrait with a gasp of unbelieving horror -- and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
   onEnter: () =>{
       reenableInput();
   },
   onBlock: () => {
-      if(prevInput === 'wait'){
-          enterRoom('book-11')
+    println('You decide to try and ***waiting here*** for another person to sketch. Maybe with better luck.');
+      if (prevInput === 'waiting here' || prevInput === 'wait here'){
+          enterRoom('book-11');
       }else{
-          //player can exit to go spend the money they made returing to the streets.
+        println('What else are you to do?');
       }
-  }
+  },
+  exits: [
+    {dir: ['leave', 'back'], id: 'wash-lagu'}
+  ]
 },
 {
   id:'book-8',
-  name:'',
+  name: 'Washington Square Park',
   desc:``,
   onEnter: () => {
       println(`She complies with a nod, and slowly her face relaxes into an expression of dreamy tranquility. It is the face of an angel. `),
@@ -8658,48 +8729,54 @@ onBlock: () => {
 },
 {
   id:'book-9',
-  name:'',
-  desc:``,
+  name: 'Washington Square Park',
+  desc: ``,
   onEnter: () => {
-      println(`You rapidly sketch the brunette's angelic face, capturing the essence of her dreamy beauty. The result is somewhere between a Raphael and a very expensive Valentine's Day card. You finish the drawing with a flourish, and she asks to see it. `),
-      pressEnter('book-11')
+      println(`You rapidly sketch the brunette's angelic face, capturing the essence of her dreamy beauty. The result is somewhere between a Raphael and a very expensive Valentine's Day card. You finish the drawing with a flourish, and she asks to see it.`),
+      pressEnter('book-10');
   }
 },
 {
   id:'book-10',
-  name:'',
-  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for you $5 and get it—with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
+  name: 'Washington Square Park',
+  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it -- with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
   onEnter: () =>{
       reenableInput();
+      playMon += 6.50;
+      updateMon();
+      enterRoom('book-11');
   },
-  onBlock: () => {
-      if(prevInput === 'wait'){
-          enterRoom('book-11')
-      }else{
-          //Washington Square Park
-      }
-  }
+  exits: [
+    {dir: ['leave', 'dir'], id: 'wash-lagu'}
+  ]
 },
 {
   id:'book-11',
-  name:'',
-  desc:`You open the sketchpad to the page bearing the hand lettered sign:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$10\n\nYou prop the sketchpad against the back of the bench, cross your fingers, and pray that the arts will continue to be supported. Fifteen minutes go by, and so do a hundred or so people, but only a couple of them so much as glance at your sign.
+  name: 'Washington Square Park',
+  desc: `You open the sketchpad to the page bearing the hand lettered sign:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$5\n\nYou prop the sketchpad against the back of the bench, cross your fingers, and pray that the arts will continue to be supported. Fifteen minutes go by, and so do a hundred or so people, but only a couple of them so much as glance at your sign. You could try ***waiting here*** some more.
   `,//need to figure out how to keep track of what the last number entered was and how to edit this text to match what the previous number was. Is this going to be to complex to worry about?//
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
-      if(prevInput === 'Change $10 to $5'){
+      if(prevInput === 'change $10 to $5'){
           println(`You decide to lower your asking price and methodically erase the numeral 10 and write in its place $5.`)
-      }else if(prevInput === 'Change $10 to 15$' || prevInput === 'Change $10 to 20$'){
-          if(prevInput === 'Change $10 to 15$'){
+      } else if(prevInput === 'change $10 to 15$' || prevInput === 'change $10 to 20$'){
+          if(prevInput === 'change $10 to 15$'){
               println(`You decide to raise your asking price and methodically erase the numeral 10 and write in its place $15.`)}
           else{
               println(`You decide to raise your asking price and methodically erase the numeral 10 and write in its place $20.`)
           }
-      }else{
-          println(`You decide to raise your asking price and methodically erase the numeral 10 and write in its place .`);
-          pressEnter('book-12')
+      } else if (prevInput === 'waiting here' || prevInput === 'wait here' || prevInput === 'wait') {
+        enterRoom('book-12');
+      } else {
+          println(`You decide to not change your asking price.`);
+          enterRoom('book-12');
       }
-  }
-
+  },
+  exits: [
+    {dir: ['leave', 'dir'], id: 'wash-lagu'}
+  ]
 },
 {
   id:'book-12',
@@ -8707,49 +8784,53 @@ onBlock: () => {
   desc:`A few people glance your sign as they pass by, but none even slow down. `,
   //need to add a function to choose between two random text options and the two random sitters.\
   onEnter: () => {
-      pressEnter();{
       randomRoom = () => {
-          roomNumber = Math.floor(Math.random() * 3);
+          roomNumber = Math.floor(Math.random() * 4);
+          console.log(roomNumber);
           if(roomNumber === 0){
-              enterRoom('');
+              pressEnter('book-13');
           }else if(roomNumber === 1){
-              enterRoom('');
+              pressEnter('book-19');
           }else if(roomNumber === 2){
-              enterRoom('');
-          }else if(roomNumber === 3){
-              enterRoom('');
-          }else{
-              println('what are numbers?');
+              pressEnter('book-28');
+          } else if(roomNumber === 3) {
+            pressEnter('book-32');
+          } else {
+              println(`That number doesn't exist!`);
           }
-        }
       }
+    if (sketches >= 3 && metBette === false) {
+      pressEnter('book-37');
+    } else {
+      randomRoom();
+    }
   },
-  onBlock: () => {
-      const room1 = getRoom('book-13');
-      const room2 = getRoom('book-19');
-      if(room1.visits >=1 && room2.visits >=1){
-          pressEnter('')
-      }
-  }
 },
+
+//Random Sketch 2
 {
   id:'book-13',
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it—St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for—do my pore-trait.'`),
+      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it -- St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for -- do my pore-trait.'`),
       pressEnter('book-14')
   }
 },
 {
   id:'book-14',
   name:'',
-  desc:`You begin to do his portrait but have only set down the first few lines defining the volumes of his head when his eyes slowly droop closed and he begins quietly to snore. His head remains erect, and you are able to continue drawing him. The wrinkles present an interesting technical problem but you manage to render them realistically without making him look like a giant prune. Finally only the eyes are left to draw. Should you draw him as he is now, with his eyes closed, or should they be open?`,
+  desc:`You begin to do his portrait but have only set down the first few lines defining the volumes of his head when his eyes slowly droop closed and he begins quietly to snore. His head remains erect, and you are able to continue drawing him. The wrinkles present an interesting technical problem but you manage to render them realistically without making him look like a giant prune. Finally only the eyes are left to draw. Should you draw him as he is now, with his eyes ***closed***, or should they be ***with eyes open***?`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
-      if(prevInput === 'open' || prevInput === 'with eyes open'){
-          enterRoom('book-15')
-      }else{
-          enterRoom('book-17')
+      if(prevInput === 'open' || prevInput === 'with eyes open' || prevInput === 'eyes open'){
+          enterRoom('book-15');
+      } else if (prevInput === 'closed' || prevInput === 'close' || prevInput === 'eyes closed' || prevInput === 'with eyes closed') {
+          enterRoom('book-17');
+      } else {
+        println('Can you rephrase that again? With eyes open or closed?');
       }
   }
 },
@@ -8767,39 +8848,42 @@ onBlock: () => {
   name:'',
   desc:``,
   //activates the other portrait scene or activates Bette's Protrait
-  OnEnter: () => {
-      println(`'What in the hell is this!' he says indignantly. Is this your idea of a practical joke? Well, it's not funny, not funny at all.' He gets up from the bench and totters off in a huff.`)
-      pressEnter('book-12')
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
+  onEnter: () => {
+      println(`'What in the hell is this!' he says indignantly. Is this your idea of a practical joke? Well, it's not funny, not funny at all.' He gets up from the bench and totters off in a huff.`);
+      pressEnter('book-11');
       },
 },
 {
-  id:'book-17',
-  name:'',
-  desc:``,
+  id: 'book-17',
+  name: '',
+  desc: ``,
   onEnter: () => {
       println(`You decide to draw just what you see. The result is a good drawing but rather comical in its effect. As you put in the finishing touches, he wakes up, blinks away his confusion, and asks to see what you've done.`),
       pressEnter('book-18')
   }
-
 },
 {
   id:'book-18',
   name:'',
-  desc:`'`,
-  //activates the other portrait scene or Bette's portrait
-  OnEnter: () => {
+  desc: ``,
+  onEnter: () => {
       println(`Why, it looks just like me!' he says admiringly. 'Maybe you went a bit overboard on the wrinkles, but you did the eyes just the way they were! Here's your money,' He takes $5 from his wallet and gives it to you in exchange for the rolled-up sketch. 'Thank you young fella, this will make a fine souvenir of New York City,' he says as he leaves the park.`)
-      pressEnter('book-12')
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
+      playMon += 5;
+      updateMon();
+      pressEnter('book-11')
+
       },
 },
+
+//Random Sketch 3
 {
   id:'book-19',
   name:'',
   desc:`Finally one of the denizens of Washington Square pauses before your bench to ponder your sign. He is about forty years old, and about that many pounds overweight, and he's dressed like Roy Rogers. His cowboy hat alone must have cost $100 and the deaths of a large family of rabbits. 'Howdy,' he says. 'Think you could do MY portrait, pardner?'`,
+  onEnter: () => {
+    sketches++;
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'yes'){
           enterRoom('book-20')
@@ -8829,11 +8913,9 @@ onBlock: () => {
   id:'book-21',
   name:'',
   desc:`The urban cowboy considers whether to take this as an insult, then spits neatly at a nearby pigeon, and saunters off in the direction of the chess tables, out of your sight.`,
-  OnEnter: () => {
+  onEnter: () => {
       println(``)
       pressEnter('book-11')
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
       },
 },
 {
@@ -8850,7 +8932,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson—though it's no compliment to him. You finish the drawing and he asks to see it.`),
+      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson -- though it's no compliment to him. You finish the drawing and he asks to see it.`),
       pressEnter('book-24')
   }
 },
@@ -8859,10 +8941,11 @@ onBlock: () => {
   name:'',
   desc:`His first reaction to your portrait is ill-concealed dismay, but then he picks up the sketchpad to study it more carefully. 'Well, pardner, I could wish I had a different shape of chin, but I reckon that's my own lookout. The drawin' itself ain't half bad. Here.' He peels off a single ten dollar bill from a thick roll. 'Keep the change. Ya look like you can use it.' He takes the sketch and walks off, fingering his flabby chin with a thoughtful expression.`,
   //Next Portrait or Bette's Portrait.
-  OnEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
-      pressEnter('book-12')
+  onEnter: () => {
+      sketches++;
+      playMon += 10;
+      updateMon();
+      pressEnter('book-11')
       },               
 },
 {
@@ -8870,7 +8953,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw—and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
+      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw -- and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
       pressEnter('book-26')
   }
 },
@@ -8888,119 +8971,147 @@ onBlock: () => {
   name:'',
   desc:`He reacts to your portrait with a derisive snort. 'Well, pardner, I'll give ya this. Ya can draw hats real purty, but ya got a lot to learn about drawin' faces. Here's for the paper.' he peels off a single dollar bill from a thick roll. 'Adios, pardner, and vaya con dios!' You pocket the dollar bill, chagrined but not angry. You know he was right.`,
   //Bette's portrait or the other portrait.
-  OnEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
-      pressEnter('book-12')
+  onEnter: () => {
+      sketches++;
+      playMon++;
+      updateMon();
+      pressEnter('book-11')
       },
 
 },
-//third sketch: the Dowager
+//Random third sketch: the Dowager
 {
   id:'book-28',
   name:'',
-  desc:`Just when your patience is about to be exhausted, a woman stops to read your sign. She is tastefully dressed and has a wistful, worldly-wise smile. Her age could be anywhere from 40 to 60. “My portrait,” she says, more to herself than to you. “It's been years since anyone has done my portrait. But why not. It wouldn't do to appear at the reception too early. Here.” She looks inside her alligator handbag and takes out [amount of money on sign]. She hands you the money and sits at the other end of the bench. “You may begin,” she says, “but please, young man-–be kind.”`,
+  desc:`Just when your patience is about to be exhausted, a woman stops to read your sign. She is tastefully dressed and has a wistful, worldly-wise smile. Her age could be anywhere from 40 to 60. “My portrait,” she says, more to herself than to you. “It's been years since anyone has done my portrait. But why not. It wouldn't do to appear at the reception too early. Here.” She looks inside her alligator handbag and takes out $5. She hands you the money and sits at the other end of the bench. “You may begin,” she says, “but please, young man -– be kind.”`,
+  onEnter: () => {
+    playMon += 5;
+    updateMon();
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'ask woman' || prevInput === 'tell woman' || prevInput === 'ask' || prevInput === 'tell') {
+      enterRoom('book-29');
+    } else if (prevInput === 'take money' || prevInput === 'take') {
+      enterRoom('book-30');
+    } else if (prevInput === 'draw' || prevInput === 'sketch' || prevInput === 'draw her' || prevInput === 'draw woman' || prevInput === 'sketch woman' || prevInput === 'sketch her' || prevInput === 'sure' || prevInput === 'okay') {
+      enterRoom('book-31');
+    }
+  },
   exits: [
-      {dir:['ask', 'tell'], id:'book-29'},
-      {dir:['take'], id:'book-30'},
-      {dir:['draw', 'sketch'], id:'book-31'}
-  ]
+      {dir: ['leave', 'back'], id:'wash-lagu'},
+    ]
 },
 {
   id:'book-29',
-  name:'',
+  name: '',
   desc:`The woman looks at you indignantly, takes back the money she put down before you, and says, as she walks off, “Really, young man, I was not paying for your ... companionship!”`,
   onEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
-      pressEnter('book-12')
+      playMon -= 5;
+      updateMon();
+      pressEnter('book-11');
   }
 },
 {
   id:'book-30',
   name:'',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
-  exits:[
-      {dir:['draw', 'sketch'], id:'book-31'} 
-  ]
+  onEnter: () => {
+    pressEnter('book-31');
+  }
 },
 {
   id:'book-31',
   name:'',
   desc:`You feel an almost voluptuous pleasure in drawing her face, as though it were not your charcoal moving across the rough paper but your fingers caressing her pallid brow, feeling the rondure of her high cheekbone, following the elegant curve of her long neck. And her lips! the sweetness of that half-smile! And the eyes, those gray liquid eyes, there's no way you can ever capture their beauty. At last, you admit defeat and tell her you are done. She rises from the bench. “Thank you,” she says, “that was most pleasant.” She begins to walk away. “You are forgetting your portrait!” you call after her. She waves her hand dismissively. “It is much better like this, young man. I'm past the age when mirrors, or portraits, are of interest. But I still enjoy the attention. Good-bye.” `,
-  OnEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
-      pressEnter('book-12')
-      },
+  onEnter: () => {
+      sketches++;
+      pressEnter('book-11');
+    },
 },
-//sketch 4: the Bald Man
+
+//random sketch 4: the Bald Man
 {
   id:'book-32',
-  name:'',
-  desc:`After only a short wait, a young man in a seersucker suit stops to read your sign. He seems to be only in his early twenties, but he is almost totally bald. Only a fringe of wispy, mouse-colored hair remains. He starts to walk away, hesitates, returns, and asks in an embarrassed whisper, “Could you do my portrait ... and show me with a full head of hair?”
-  `,
-  exits:[
-      {dir:['no', 'go away'],id:'book-33'},
-      {dir:['take'],id:'book-34'},
-      {dir:['yes', 'how long', 'what style'],id:'book-35'},
-      {dir:['draw', 'sketch'],id:'book-36'}
-  ]
+  name: '',
+  desc:`After only a short wait, a young man in a seersucker suit stops to read your sign. He seems to be only in his early twenties, but he is almost totally bald. Only a fringe of wispy, mouse-colored hair remains. He starts to walk away, hesitates, returns, and asks in an embarrassed whisper, “Could you do my portrait ... and show me with a full head of hair?”`,
+  onEnter: () => {
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'no' || prevInput == 'go away' || prevInput === 'no thanks' || prevInput === 'nope') {
+      enterRoom('book-33');
+    } else if (prevInput === 'take money' || prevInput === 'take his money' || prevInput === 'take the money') {
+      enterRoom('book-34');
+    } else if (prevInput === 'yes' || prevInput === 'sure' || prevInput === 'how long' || prevInput === 'what style' || prevInput === 'what kind of style') {
+      enterRoom('book-35');
+    } else if (prevInput === 'draw' || prevInput === 'draw him' || prevInput === 'draw the man') {
+      enterRoom('book-36');
+    }
+  },
 },
 {
   id:'book-33',
-  name:'',
+  name: '',
   desc:`The young man blushes violently and hurries away.`,
-  OnEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
-      pressEnter('book-12')
+  onEnter: () => {
+      pressEnter('book-11')
       },
 },
 {
   id:'book-34',
-  name:'',
+  name: '',
   desc:`You open the sketchpad to a fresh sheet and take a stick of charcoal in your right hand. You consider the features of your sitter.`,
-  exits:[
-      {dir:['draw', 'sketch'], id:'book-36'}
-  ]
+  onEnter: () => {
+    pressEnter('book-36');
+  }
 },
 {
   id:'book-35',
   name:'',
   desc:`He blushes and takes a seat on the bench. “Just an average kind of haircut, 'sort of like Johnny Carson, okay? And do it as quick as you can. This is embarrassing.”`,
-  exits:[
-      {dir:['draw', 'sketch'], id:'book-36'}
-  ]
+  onEnter: () => {
+    pressEnter('book-35-1');
+  }
+
 },
 {
-  id:'book-35',
+  id:'book-35-1',
   name:'',
-  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing—and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
-  exits:[
-      {dir:['show', 'give'], id:'book-36'}
-  ]
+  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
+  onEnter: () => {
+    pressEnter('book-36');
+  }
 },
 {
   id:'book-36',
   name:'',
   desc:`He looks at his remodeled face in respectful silence and then says, “Thank you.” He takes a handkerchief from the breast pocket of his suit and wipes a tear from the corner of each eye. He takes $10 from his billfold and gives it to you in exchange for the portrait, which he again studies intently. “You've convinced me,” he says, as he goes off, “to invest in a hairpiece. Thank you.”`,
-  OnEnter: () => {
-      Const.room = getRoom(disk.roomId);
-      room.visits++ ;
+  onEnter: () => {
+    sketches++;
+    playMon += 10;
+    updateMon();
       pressEnter('book-11');
-      },
+    },
 },
+
 //Bette's Scene
 {
   id:'book-37',
   name:'',
-  desc:`You flip the pages of the sketchpad back so as once more to display the hand lettered sign and prop it against the back of the park bench. As you do so, you become aware that you are being scrutinized intently by a woman standing some twenty feet away. Hoping for another customer, you angle the hand lettered sign in her direction:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$10\n\nShe approaches closer. You smile, and that seems to stop her in her tracks.`,
-  exits:[
-      {dir:['look'], id:'book-39'},
-      {dir:['great','hello','hi'], id:'book-38'},
-      {dir:['ask','tell'], id:'book-40'}
-  ]
+  desc:`You flip the pages of the sketchpad back so as once more to display the hand lettered sign and prop it against the back of the park bench. As you do so, you become aware that you are being scrutinized intently by a woman standing some twenty feet away. Hoping for another customer, you angle the hand lettered sign in her direction:\n\nYOUR PORTRAIT IN CHARCOAL\n\n$10\n\nShe approaches closer. You smile, and that seems to stop her in her tracks. You think it would be good to say ***hello***.`,
+  onEnter: () => {
+    metBette = true;
+    reenableInput();
+    storyMarker.setLatLng([-26.361, 5.999]).bindPopup(`Bette's Apartment - The Noblesse`).addTo(poiLayer);
+  },
+  onBlock: () => {
+    if (prevInput === 'say hello' || prevInput === 'hello' || prevInput === 'hi') {
+      enterRoom('book-38');
+    } else {
+      enterRoom('book-40');
+    }
+  },
 },
 {
   id:'book-38',
@@ -9009,16 +9120,25 @@ onBlock: () => {
   onEnter: () => {
       reenableInput();
   },
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'I do' || prevInput === 'i do') {
+      enterRoom('book-40');
+    } else if (prevInput === 'no' || prevInput === 'nope' || prevInput === `i don't`) {
+      enterRoom('book-41');
+    } else {
+      println('Can you rephrase that?');
+    }
+  },
   exits:[
       {dir:['yes'],id:'book-40'},
       {dir:['no'],id:'book-41'},
-      {dir:['ask', 'tell'],id:'book-40'}//planned to fix navigation here.
+      {dir:['ask', 'tell'],id:'book-40'}//nned to fix navigation here.
   ]
 },
 {
   id:'book-39',
   name:'',
-  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her—and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
+  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her--and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
   `,
   exits:[
       {dir:['look'],id:'book-39'},
@@ -9032,11 +9152,11 @@ onBlock: () => {
   desc:`You have said scarcely three words to her, when she cuts you short by raising her finger to her lips in a sign of silence. “No, please, don't talk. Just draw me, if you would. Please.”
   `,
   onBlock: () => {
-      if(prevInput === 'yes' || prevInput === 'yeah'){
+      if(prevInput === 'yes' || prevInput === 'yeah' || prevInput === 'okay' || prevInput === 'sure' || prevInput === 'draw' || prevInput === 'draw her'){
           enterRoom('book-41')
       }else if(prevInput === 'no' || prevInput === 'nope'){
           enterRoom('book-42')
-      }else{
+      } else{
           println(`You almost speak again but feel compelled to honor her request for silence.`)
       }
   }
@@ -9056,7 +9176,7 @@ onBlock: () => {
   desc:``,
   onEnter: () => {
       println(`'But your sign,' she insists, 'says otherwise.' She sits at the other end of the bench and regards you defiantly. 'Draw me! Go ahead. I will sit here and not say a word. Draw me!' She takes off the camera that she had been carrying by a strap round her neck and places it beside her on the bench.`),
-      pressEnter('book-31')
+      pressEnter('book-41')
   }
 },
 {
@@ -9069,14 +9189,17 @@ onBlock: () => {
   }
 },
 {
-  id:'room-44',
+  id:'book-44',
   name:'',
-  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade—\n\n— the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described—and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'embrace' || prevInput === 'kiss' || prevInput === 'hug' || prevInput === 'I love you'){
           enterRoom('book-45')
       }else{
-          println(`Come on, this is no moment for talk. The lady is crying out for affection. Show a little tenderness!`)
+          println(`Come on, this is no moment for talk. The lady is crying out for affection. Show a little tenderness! A ***kiss***, a ***hug***, anything!`)
       }
   }
 },
@@ -9086,23 +9209,23 @@ onBlock: () => {
   desc:`You melt in her arms like butter in a microwave. You fuse in a kiss. You love her, whoever she is, and you tell her so, and she says she loves you. That she should be feeling the same way about you is too good to be true. Your heart's a radio blasting out love songs. The whole world should know about this, and a good section of Washington Square is getting a chance to.\n\nShe falls limp in your arms, and sighs with the bliss of releasing a tension too long sustained.\n\nYou realize you still don't know her name.
   `,
   onBlock: () => {
-      if([prevInput === 'ask name' || prevInput === 'what is your name']){
+      if(prevInput === 'ask name' || prevInput === 'what is your name' || prevInput === 'ask her name' || prevInput === 'ask her for her name' || prevInput === 'name'){
+          enterRoom('book-45-1')
+      }else if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her'){
           enterRoom('book-46')
-      }else if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia'){
-          enterRoom('book-47')
       }else{
           println(`Can you rephrase that please?`)
       }
   }
 },
 {
-  id:'book-45',
+  id:'book-45-1',
   name:'',
   desc:`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.'`,
   onBlock: () => {
-      if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia'){
-          enterRoom('book-46')
-      }else{
+    if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her'){
+      enterRoom('book-46')
+  } else{
           println(`Can you rephrase that please?`)
       }
   }
@@ -9110,12 +9233,12 @@ onBlock: () => {
 {
   id:'book-46',
   name:'',
-  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we—' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on—' She holds her hand out to you. 'Let's stroll back to my place.'`,
+  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`,
   onBlock: () => {
       if(prevInput === 'take her hand' || prevInput === 'grab her hand' || prevInput === 'go with' || prevInput === 'follow'){
           enterRoom('book-48')
-      }else{
-          enterRoom('book-46')
+      } else{
+          enterRoom('book-47')
       }
   }
 },
@@ -9125,8 +9248,8 @@ onBlock: () => {
   desc:``,
   onEnter: () => {
       println(`“Let's talk at my place, darling,” Bette insists. “I'll worry till we're by ourselves.”\n\nShe takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
-      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight—for the second time!'`),
-      pressEnter('')//enters Noblese Lobby
+      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight -- for the second time!'`),
+      pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
 {
@@ -9134,8 +9257,8 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight—for the second time!”`),
-      pressEnter('')//enters Noblese Lobby
+      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight--for the second time!”`),
+      pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
 //notes:
