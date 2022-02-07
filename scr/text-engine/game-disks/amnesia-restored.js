@@ -256,6 +256,7 @@ const amnesiaRestored = {
       hasBed: true,
       desc: `To the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {     
+        //playCloth.bottom.push('jeans');
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
@@ -552,7 +553,6 @@ const amnesiaRestored = {
           itemId: 'bedsheet',
           icon: 'img/png/image-bedsheet-thumbnail.png',
           gif: 'img/gif/gif-bedsheet-ingame.gif',
-          bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
            top: true,
@@ -844,7 +844,6 @@ const amnesiaRestored = {
             })
           })
         }
-
       },
       onLook: () => {
           const room = getRoom('hote-revi');
@@ -1152,6 +1151,8 @@ const amnesiaRestored = {
               icon: 'img/png/image-bedsheet-thumnail.png',
               gif: 'img/gif/gif-bedsheet-ingame.gif',
               name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
+              top: true,
+              bottom: true,
               desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
               isTakeable: true,
               isDroppable: true
@@ -1967,7 +1968,7 @@ const amnesiaRestored = {
       name: '15th Floor Hallway',
       desc: `You are standing in the front of the door with the lighted EXIT sign over it. This must be the stairway.`,
       onEnter: () =>{
-          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'sheet'))){
+          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet'))){
               println(`Despite the fact you are not wearing a stitch, you go out into the corridor. You're at one end of it, near a lighted EXIT sign. Facing you is the door to Room 1501. On along the corridor, the numbers of the rooms increase by increments of one. Some five doors away the maid's laundry trolley is parked, but the maid is not in sight. Farther down the corridor an arrow points left toward a bank of elevators.`)
           }
       },
@@ -2010,11 +2011,12 @@ const amnesiaRestored = {
           name: 'trolley',
           desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
           onLook: () => {
-            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
-              addItem('bath towel');
+              wear('towel');
+              //addItem('bath towel');
             }
           }
         },
@@ -2024,9 +2026,13 @@ const amnesiaRestored = {
           gif: 'img/gif/gif-towel-ingame.gif',
           name: ['Towel', 'large towel', 'bath towel'],
           desc: `It is a large fluffy towel.`,
+          //top: true,
+          bottom: true,
           isTakeable: true,
           isDroppable: true,
           onTake: () => {
+            playerC.cScore += 10;
+            playerC.sScore += 10;
             println('You take the towel.'); //appears in inventory as 'towel'
             const bathroom = getRoom('hote-bath-1');
             bathroom.desc = bathroom.desc.replace(`a towel rack with a __large towel__.`, 'and a towel rack.'); //removes towel description from bathroom look description
@@ -4725,12 +4731,15 @@ const amnesiaRestored = {
               const room = getRoom(disk.roomId);
               if (room.descRead === false) {
                 println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and—Hallelujah!— a small maroon address book.`)
-              } room.descRead = true;
-              pressEnter('heal-club25');
+              }
+              room.descRead = true;
+                pressEnter('heal-club25');
+
             },
             onLook: () => {
               //addItem('canvasbag');
-              enterRoom('heal-club25');
+                pressEnter('heal-club25');
+
             }
           },
         ],
@@ -4739,12 +4748,24 @@ const amnesiaRestored = {
     {
       id: 'heal-club25',
       name: 'Massage Room',
-      desc: `Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
-      
-      You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room—and you see, once again, a complete stranger.`,
+      desc: ` `,
       onEnter: () => {
+        console.log(playCloth);
+        if (getItemInInventoryById('bedsheet')) {
+          remove('sheet');
+        } else if (getItemInInventoryById('bathtowel')) {
+            remove('towel');
+        }
+        playCloth.top.push('tshirt');
+        playCloth.bottom.push('jeans');
+        playCloth.feet.push('sneakers');
+
+        println(`Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
+      
+        You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room—and you see, once again, a complete stranger.`)
         storyMarker.setLatLng([15.390, -6.546]).bindPopup('The Princeton Club').addTo(poiLayer);
         document.getElementById('address-book-button').style.display = "block";
+        
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
         playerC.sScore += 35; // Adding to Survival Score
@@ -4801,8 +4822,9 @@ const amnesiaRestored = {
             itemId: 'tshirt',
             icon: '/img/png/image-tshirt-thumbnail.png',
             gif: '/img/gif/gif-tshirt-ingame.gif',
-            name: ['T-Shirt'],
+            name: ['T-Shirt', 't-shirt', 't shirt', 'tshirt', 'white shirt', 'shirt'],
             desc: `It is a gray t-shirt that has faded to a shade of off white.`,
+            top: true,
             isTakeable: true,
             isDroppable: true,
             onUse: () => {
@@ -4824,8 +4846,9 @@ const amnesiaRestored = {
             itemId: 'jeans',
             icon: 'img/png/image-levis-thumbnail.png',
             gif: 'img/gif/gif-levis-ingame.gif',
-            name: [`Levi's Jeans`],
+            name: [`Levi's Jeans`, 'jeans', `levi's`, 'jean'],
             desc: `The Levi's are of the "501" variety—five pockets and a button fly.`,
+            bottom: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4833,8 +4856,9 @@ const amnesiaRestored = {
             itemId: 'sneakers',
             icon: 'img/png/image-adidas-thumbnail.png',
             gif: 'img/gif/gif-adidas-ingame.gif',
-            name: ['Sneakers'],
+            name: ['Sneakers', 'sneakers', 'sneaker', 'shoes'],
             desc:`The well-worn sneakers are made by Adidas.`,
+            feet: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4842,7 +4866,7 @@ const amnesiaRestored = {
             itemId: 'addressbook',
             icon: 'img/png/image-addressbook-thumbnail.png',
             gif: 'img/gif/gif-addressbook-ingame.gif',
-            name: ['Address Book'],
+            name: ['Address Book', 'address book', 'address'],
             desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names—a Lila T. and an Ana—and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
             onUse: () => {
@@ -49622,11 +49646,14 @@ else{
       name: 'Telephone Enclosure',
       desc: `You enter the pay telephone enclosure at this corner. It requires a 25-cent deposit.`,
       onEnter: () => {
+        reenableInput();
         const room = getRoom('pho-boo1');
+        const room2 = getRoom('pho-boo2');
+        room.enteredFrom = room2.enteredFrom;
 
-        //room.coord = lastRoom.coord;
-        room.enteredFrom = lastRoom.id;
 
+        //const room = getRoom('pho-boo1');
+        //lastRoom.id = room.enteredFrom;
         room.exits = [];
 
         room.exits.push(
@@ -49641,6 +49668,18 @@ else{
 
       ],
     },
+    {
+      id: 'pho-boo2',
+      coord: [],
+      name: 'Telephone Enclosure',
+      desc: ' ',
+      onEnter: () => {
+        const room = getRoom('pho-boo2');
+        console.log(lastRoom.id);
+        room.enteredFrom = lastRoom.id;
+        enterRoom('pho-boo1');
+      }
+    }
 
   ],
   characters: [

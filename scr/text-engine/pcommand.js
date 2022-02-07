@@ -728,6 +728,7 @@ let callNum = (num) => {
 
 // wear command
 let wear = (clothes) => {
+  console.log(playCloth);
   let item = getItemInRoom(clothes, disk.roomId);
   if (item === undefined) {
     item = getItemInInventory(clothes);
@@ -822,7 +823,7 @@ let remove = (clothes) => {
   //////console.log(item.itemId)
   //dropItem(item.name[0]);
 
-  
+  /* 
   let indexToRemove = disk.inventory.indexOf(item);
   //////console.log(disk.inventory.slice(indexToRemove));
   let clotheToRemove = disk.inventory.slice(indexToRemove);
@@ -834,7 +835,7 @@ let remove = (clothes) => {
   } else {
     room.items.push(clotheToRemove[0]);
   }
-
+*/
   
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
@@ -1140,7 +1141,7 @@ function createPhone() { //create function
           rooms[i].exits.push( //push the following into the room's exits array
           {
             dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth', 'inside'], //exit directions for phone booth room
-            id: 'pho-boo1' //id for phone booth
+            id: 'pho-boo2' //id for phone booth
           },
         );
         if (rooms[i].desc !== undefined) {

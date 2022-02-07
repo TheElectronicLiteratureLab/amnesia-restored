@@ -249,7 +249,7 @@ let enterRoom = (id) => {
     if(chance <= 5) {
       const chance2 = Math.floor(Math.random() * 100) + 1;
 
-      if(chance2 <= 25) {
+      if(chance2 <= 15) {
       xStreetEvent();
       } else {
       carWashEncounter();
