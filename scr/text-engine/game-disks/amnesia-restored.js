@@ -8456,7 +8456,7 @@ onBlock: () => {
       id: 'side-art-1',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian -- black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
+      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian—black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
 
       YOUR PORTRAIT
       IN CHARCOAL
@@ -8701,7 +8701,7 @@ onBlock: () => {
 {
   id:'book-7',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with a gasp of unbelieving horror -- and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
+  desc:`She reacts to her portrait with a gasp of unbelieving horror — and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
   onEnter: () =>{
       reenableInput();
   },
@@ -8739,7 +8739,7 @@ onBlock: () => {
 {
   id:'book-10',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it -- with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
+  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it — with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
   onEnter: () =>{
       reenableInput();
       playMon += 6.50;
@@ -8813,7 +8813,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it -- St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for -- do my pore-trait.'`),
+      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it — St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for — do my pore-trait.'`),
       pressEnter('book-14')
   }
 },
@@ -8932,7 +8932,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson -- though it's no compliment to him. You finish the drawing and he asks to see it.`),
+      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson — though it's no compliment to him. You finish the drawing and he asks to see it.`),
       pressEnter('book-24')
   }
 },
@@ -8953,7 +8953,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw -- and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
+      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw — and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
       pressEnter('book-26')
   }
 },
@@ -9078,7 +9078,7 @@ onBlock: () => {
 {
   id:'book-35-1',
   name:'',
-  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
+  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing—and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
   onEnter: () => {
     pressEnter('book-36');
   }
@@ -9138,7 +9138,7 @@ onBlock: () => {
 {
   id:'book-39',
   name:'',
-  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her--and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
+  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her—and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
   `,
   exits:[
       {dir:['look'],id:'book-39'},
@@ -9191,7 +9191,7 @@ onBlock: () => {
 {
   id:'book-44',
   name:'',
-  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade—\n\n— the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described — and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
   onEnter: () => {
     reenableInput();
   },
@@ -9233,7 +9233,7 @@ onBlock: () => {
 {
   id:'book-46',
   name:'',
-  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`,
+  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we—' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on—' She holds her hand out to you. 'Let's stroll back to my place.'`,
   onBlock: () => {
       if(prevInput === 'take her hand' || prevInput === 'grab her hand' || prevInput === 'go with' || prevInput === 'follow'){
           enterRoom('book-48')
@@ -9248,7 +9248,7 @@ onBlock: () => {
   desc:``,
   onEnter: () => {
       println(`“Let's talk at my place, darling,” Bette insists. “I'll worry till we're by ourselves.”\n\nShe takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
-      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight -- for the second time!'`),
+      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight — for the second time!'`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
@@ -9257,7 +9257,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight--for the second time!”`),
+      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight—for the second time!”`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
