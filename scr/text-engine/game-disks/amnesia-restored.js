@@ -1,7 +1,7 @@
 //preLoad();
 
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-8', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -8473,6 +8473,9 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
+      onEnter: () => {
+        reenableInput();
+      },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'sure') {
           println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
@@ -8513,6 +8516,9 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You finish your attempt to draw Tony, and he looks at your work. "That's okay," he admits. "Its's better than my stuff. I'll tell you what. I got a proposition. \nI got ten bucks for far doing this. I'll give you five, plus this sketchpad, and the charcoal, and the clothes I got on, if you'll let me have that white tux. We're about the same size. I know a place in the park where we can switch clothes without anyone seeing. What do you say?"`,
+      onEnter: () => {
+        reenableInput();
+      },
       onBlock: () => {
         if (prevInput === 'More money' || prevInput === 'I want more money' || prevInput === 'ask for more money' || prevInput === 'more money' || prevInput === 'give me more money' || prevInput === 'give me more' || prevInput === 'no') {
           println(`I can't really give you more than the five dollars. Look I got to get by somehow.`);
@@ -9223,7 +9229,7 @@ onBlock: () => {
   name:'',
   desc:`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.'`,
   onBlock: () => {
-    if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her'){
+    if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her' || prevInput === 'I have amnesia' || prevInput === 'i have amnesia'){
       enterRoom('book-46')
   } else{
           println(`Can you rephrase that please?`)
@@ -9281,6 +9287,9 @@ else{
   id: 'nobe-1',
   name: 'Nobeles Lobby',
   desc: `You enter the lobby of a small apartment building identified by its canvas canopy as The Noblesse. You are introduced to the doorman as a houseguest who is to be admitted into the building at any time. \n\nIn the elevator going up to her fifth-floor apartment, your rediscovered beloved remembers that she has yet to tell you her name. She re-introduces herself, between kisses, as Bette Binet; single; age 28; a fashion photographer by profession; and a woman madly in love with a mysterious stranger, you. The elevator arrives at 5, and Bette leads the way to Apartment 5E, unlocks the door, opens it, and stands aside for you to enter.`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'enter apartment' || prevInput === 'apartment'){
           enterRoom('nobe-2');
@@ -9362,6 +9371,9 @@ else{
           }
       },
   ],
+  onLook: () => {
+    enterRoom('nobe-7');
+  },
 },
 {
   id: 'nobe-6',
@@ -9440,6 +9452,7 @@ else{
   desc: `The ***apartment*** seems to have a nice ***sofa bed***. You also see a ***picture*** that catches your eye.`,
   hasEntered: false,
   onEnter: () => {
+    reenableInput();
       const room = getRoom(disk.roomId);
 
       if(room.hasEntered === false ) {
@@ -9562,6 +9575,9 @@ else{
   id: 'nobe-22',
   name: '',
   desc: `'Thank heaven,' Bette says, bursting into the room breathlessly. 'I thought of this before I got out of the lobby—you might come down with a recurrance of your damned amnesia. And if you do, I don't want you to disappear again, darling. So roll up your sleeve, please. This won't hurt, I promise.'`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'roll up sleeve' || prevInput === 'roll sleeve up'){
           enterRoom('nobe-24');
@@ -9966,6 +9982,9 @@ else{
   id: 'nobe-49',
   name: '',
   desc: `The phone rings`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'answer phone'){
           enterRoom('nobe-50');
@@ -9996,6 +10015,9 @@ else{
   id: 'nobe-53',
   name: '',
   desc: `“Do you know that picture of you that's on the dresser, the one with you looking so elegant against that dismal wallpaper in the abandoned building? Well, Ned was just packing up some of the clothes from that shooting to send them back to the designers, and he found this paperback mystery in the right front pocket of the suit you were wearing that day. It's a reprint of an old thriller by Cornell Woolrich called THE BLACK CURTAIN, and it's about amnesia. But that's not the Clue. On the inside back cover of the book, you've written the phone number of someone called Denise, and I don't remember there being any Denise in your Address Book. But I'm sure it's your handwriting. Do you have a pencil to write down the number? Or can you remember it?”`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'find pencil' || prevInput === 'i have a pencil' || prevInput === 'pencil'){
           enterRoom('nobe-54');
@@ -10009,6 +10031,7 @@ else{
   name: '',
   desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it's correct: 555-5413. “I hope it's not Another Woman,” she adds, with a nervous laugh, “but I'll have to wait till tonight to find out. We'll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here's the bunting now. Talk to you later.” She hangs up.`,
   onEnter: () => {
+    
     storyMarker.setLatLng([57.944, -28.158]).bindPopup('The dreaded Dakota building.').addTo(poiLayer);
       numbers.push(
           {number:'5555413', roomid:'phone-30', contactName: 'Denise'}
@@ -10841,7 +10864,7 @@ else{
   desc: `Denise falls silent for a moment and stares into her martini glass intently, as though it were a cup of tea-leaves with your fortune in it. "Sometimes I do reproach myself for having taken the side of the bad guys in all this. You're obviously a NICER person than Zane, and usually as good or better a lay. My only excuse is self-interest."`, 
   onEnter: () => 
   {
-    pressEnter('dakota-denise-34');
+    pressEnter('dakota-denise-34b');
   },
 },
 {
@@ -11749,7 +11772,7 @@ else{
     },
     onBlock: () => {
         if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
-            enterRoom('alisonsdeath-riddle-3');
+            enterRoom('alisonsdeath-riddle-4');
         }else{ 
             enterRoom('alisonsdeath-wrong-2');
         }
@@ -11787,7 +11810,7 @@ else{
     },
     onBlock: () => {
         if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
-            enterRoom('alisonsdeath-riddle-3');
+            enterRoom('alisonsdeath-riddle-4');
         }else{ 
             enterRoom('alisonsdeath-wrong-3');
         }
@@ -12211,6 +12234,9 @@ else{
   coord: [],
   name: `Bette's Apartment`,
   desc: `You wake up the next morning to the ringing of the cordless phone. You have been asleep on the sofa bed in Bette's apartment.`,
+  onEnter: () => {
+    reenableInput();
+  },
   onLook: () =>
   {
     const room = getRoom('epil-1');
@@ -12218,7 +12244,7 @@ else{
   },
   onBlock: () => 
   {
-    if(prevInput === 'phone'){ // **We'll need a command for answering the phone
+    if(prevInput === 'phone' || prevInput === 'answer phone'){ // **We'll need a command for answering the phone
         enterRoom('epil-2');
     }else{
         println(`The phone continues ringing.`);
@@ -12344,6 +12370,10 @@ else{
     Your total score is ${playerC.tScore}
     Your score ranks you as of sound mind.\n
     You've reached the end of your adventure. Congratulations on winning the game! The mystery of who you are is solved. Job well done detective.`);
+    anAmn = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
+      internalSave();
     pressEnter('credits-1');
   }
 },
@@ -41864,6 +41894,7 @@ else{
       The subway entrance here is closed. A sign directs you to another entrance at 71st and Central Park West.`,
       isStreet: true,
       onEnter: () => {
+        reenableInput();
         degradation = true;
       },
       exits: [
@@ -42558,6 +42589,7 @@ else{
     },
     {
       id: '67-amer',
+
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
@@ -43273,6 +43305,9 @@ else{
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '77-7'},
         {dir: 'south', id: '75-7'},
