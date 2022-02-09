@@ -5354,7 +5354,7 @@ const amnesiaRestored = {
     },
     exits: [
       { // If the player is wearing the Tux and goes to Luke
-        dir: 'west',
+        dir: ['foyer', 'luke', 'stetson man', 'smile', 'wave'],
         id: 'lobb-3', 
       },
     ],
@@ -6197,7 +6197,6 @@ onBlock: () => {
             {dir: ['newsstand', 'news-stand', 'south', 'left'], id: 'lobb-revi-1'}, // go to newsstand
             {dir: ['giftshop', 'gift shop', 'south'], id: 'lobb-revi-2'}, // go to giftshop
             {dir: ['staircase', 'stairs', 'south'], id: 'lobb-revi-3'}, // go to second floor staircase
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'foyer', 'west'], id: 'lobb-revi-9'}, // go to reception area
             {dir: 'leave', id: 'lobb-revi-8'}
         ]
@@ -6311,7 +6310,6 @@ onBlock: () => {
         exits: [
             {dir: ['rathskeller', 'rathsekller bar and grill', 'bar and grill', 'bar', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
             {dir: ['exit', 'leave', 'south'], id: 'hote-exit'}, // exit building
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     },// closes lobb-revi-5 room
@@ -6322,12 +6320,10 @@ onBlock: () => {
         onEnter: () => {
           reenableInput();
             const room = getRoom('lobb-revi-6');
-            ////console.log(room.visits);
             if(room.visits === 0){
                 println(`As you walk pass the registration desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your __safe deposit box__. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope— if she was indeed your wife— that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
             }
             room.visits++;
-            ////console.log(room.visits);
             if(room.visits >= 2){
                 println(`You walk over to the registration desk, where the __clerk__ is patiently going about his duties.`);
                 room.desc = room.desc.replace('', `The __clerk__ is patiently going about his duties.`);
@@ -6469,7 +6465,7 @@ onBlock: () => {
             }     
         ],
         exits: [
-            {dir: ['newstand', 'get up', 'north'], id: 'lobb-revi-15'},
+            {dir: ['newsstand', 'get up', 'north'], id: 'lobb-revi-15'},
             {dir: ['registration', 'south'], id: 'lobb-revi-15'},
             {dir: ['elevators', 'east'], id: 'lobb-revi-15', // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
 },
@@ -6490,7 +6486,7 @@ onBlock: () => {
     {
         id: `lobb-revi-11`,
         name: '',
-        desc: `You rise from the sofa, making the vinyl cushions sign, and walk toward the large curtained windows overlooking Fifth Avenue. Because it is dark outside and bright within the hotel, the window glass acts as yet one more mirror in the lobby's maze of mirrors.`,
+        desc: `You make your way toward the large curtained windows overlooking Fifth Avenue. Because it is dark outside and bright within the hotel, the window glass acts as yet one more mirror in the lobby's maze of mirrors.`,
         onBlock: () => {
             if(prevInput === 'mirror'){
                 const listClothes = playCloth;
@@ -6501,11 +6497,8 @@ onBlock: () => {
                 // create a look in mirror command that runs a function that lists line above and clothing worn. 
             }
         },
-        exits: [
-            {dir: ['north'], block: `You can't go that way.`},
-            {dir: ['south'], block: `You can't go that way.`},
-            {dir: ['west'], block: `You can't go that way.`}, 
-            {dir: ['east'], id: 'lobb-revi-9'}
+        exits: [ 
+            {dir: ['leave', 'get up', 'reception'], id: 'lobb-revi-9'}
         ]  
     }, // closes lobb-revi-11 room (windows of reception area)
     {
@@ -6523,7 +6516,6 @@ onBlock: () => {
         exits: [
             {dir: ['registration desk', 'registration', 'north'], id: 'lobb-revi-6'}, // go to reception desk
             {dir: ['newstand', 'south'], id: 'lobb-revi-1'}, // go to newsstand
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     }, // closes lobb-revi-13
@@ -6550,27 +6542,20 @@ onBlock: () => {
         desc: '',
         onEnter: () => {
             const room = getRoom('lobb-revi-9');
-            delete room.exits[0].id;
-            room.exits[0].block = `You can't go that way.`;
-            delete room.exits[1].id;
-            room.exits[1].block = `You can't go that way.`;
-            room.exits[2].id = 'lobb-revi-1';
+            room.exits[0].id = 'lobb-revi-1'
+            room.exits[1].id = `lobb-revi-6`;
+            room.exits[2].id = 'lobb-revi-13';
             room.exits[3].id = 'lobb-revi-11';
 
             println(`Just as you are about to retreat the bellboy comes toward you. "Mr. Hollings?", he inquires with a smile of professional deference. "Are you Xavier Hollings?"`);
         },
         onBlock: () => {
-            if(prevInput === ('yes' || 'maybe' || `I don't know.`)){
+            if(prevInput === 'yes' || prevInput === 'maybe' || prevInput === `I don't know.`){
                 println(`"You should be more caerful, Mr. Hollings. I mean, a white suit is kind of conspicuous for a man on the lam from a murder rap. The police have already been round once showing that same picture. You're lucky nobody but me recognized you. But I wouldn't push my luck staying on in...wasn't it Room 1502?" You are too startled to reply, and the bellboy goes on: "There was nothing about a reward for turning you in, so I didn't say anything then. I figured I'd wait round and talk to you first. Maybe you could help me forget I saw you."
                 
                 You realize you are being blackmailed.`);
-                if(getItemInInventory('weddingring') && (prevInput === 'give ring to bellboy' || prevInput === 'give ring' || prevInput === 'give the ring' || prevInput === 'hand over the ring' || prevInput === 'hand ring over')){
-                    println(`Quickly the bellboy flips open the lid of the box. "Thanks, Mr. Hollings. Or I guess I should say Mr. Cameron. Thanks a whole lot. I served time in the slammer myself, so I wish you the best of luck."`);
-                    pressEnter('lobb-revi-9');
-                } else {
-                    println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
-                    pressEnter('lobb-revi-16');
-                }
+                pressEnter('lobb-revi-ring');
+                
             } else {
                 println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
                 pressEnter('lobb-revi-16');
@@ -6578,12 +6563,30 @@ onBlock: () => {
         }
     }, // closes lobb-revi-15 (bellboy confrontation)
     {
+      id: 'lobb-revi-ring',
+      name: '',
+      desc: '',
+      onEnter: () => {
+        reenableInput();
+        println('What do you do?')
+      },
+      onBlock: () => {
+        if(getItemInInventoryById('weddingbox') && (prevInput === 'give ring to bellboy' || prevInput === 'give ring' || prevInput === 'give the ring' || prevInput === 'hand over the ring' || prevInput === 'hand ring over')){
+          println(`Quickly the bellboy flips open the lid of the box. "Thanks, Mr. Hollings. Or I guess I should say Mr. Cameron. Thanks a whole lot. I served time in the slammer myself, so I wish you the best of luck."`);
+          pressEnter('lobb-revi-9');
+      } else {
+          println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
+          pressEnter('lobb-revi-16');
+      }
+      },
+    },
+    {
         id: 'lobb-revi-16',
         name: '',
         desc: '',
         onEnter: () => {
             println(`You follow the bellboy and while you stand undecided whether to speak to him, he gets a reply on the telephone and begins mumbling into the receiver. He hangs up, and disappears through a door behind the reception desk. The clerk at the desk notices you and calls out, "Mr. Cameron, would you come here a moment please?"`);
-            enterRoom('lobb-revi-6');
+            enterRoom('lobb-revi-20');
         }
     }, // closes lobb-revi-16
     {   
@@ -6690,7 +6693,11 @@ onBlock: () => {
                         desc: 'The disk is 5 and 1/4 inches square. The label reads: User Friendly Computer Store, 56th St. and Madison.',
                         isTakeable: true,
                         onTake: () => println(`You take the disc and put it in the gym bag.`),
-                        onDrop: () => println(`You shouldn't drop that. It might be important.`)
+                        onDrop: () => println(`You shouldn't drop that. It might be important.`),
+                        onLook: () => {
+                          println('The disk is 5 and 1/4 inches square. The label reads: User Friendly Computer Store, 56th St. and Madison.');
+                          storyMarker.setLatLng([37.265, -2.637]).bindPopup('Hopefully the computers are friendly.').addTo(poiLayer);
+                        }
                     });
                     enterRoom('good-bye');
                 }       
@@ -6728,7 +6735,7 @@ onBlock: () => {
                 }
             } else {
                 println(`The policeman presses the button for the floor you've named, and the elevator doors close. As the elevator rises, he asks you, "Pardon me, sir, but would you name be John Cameron?"`);
-                if(prevInput === 'yes' || prevInput === `I don't know`){
+                if(prevInput === 'yes' || prevInput === `I don't know` || prevInput === `i don't know`){
                     println(`"Well, that is a real convenience," he says. Then, turning to his partner. "Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
                     pressEnter('deat-1');
                 } else if(prevInput === 'no'){
@@ -6978,7 +6985,7 @@ onBlock: () => {
             }
           } else {
           println(`"I don't have the time now," you tell the saleswoman. "Maybe later." She smiles stiffly as you go out the door to Madison Avenue.`);
-          enterRoom('56-madi')
+          enterRoom('56-madi');
           }
         },
         exits: [
@@ -7169,6 +7176,7 @@ onBlock: () => {
         name:'Tiny Tykes Talent Town',
         desc:`You climb the steps to the entrance portico. There is a doorbell on the wall with a plastic nameplate beside it. The nameplate reads: TINY TYKES TALENT TOWN`,
         onEnter: () => {
+          reenableInput();
           degradation = !degradation;
         },
         exits:[
@@ -7187,16 +7195,26 @@ onBlock: () => {
           annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
         },
         onBlock: () => {
-            if(prevInput === 'open') {
-                clearTimeout(annTimer);
-                enterRoom('ann-6');
-            } else if(prevInput ==='knock'){
+            if(prevInput === 'open' || prevInput === 'open door' || prevInput === 'door' || prevInput === 'inside' || prevInput === 'go inside') {
                 clearTimeout(annTimer);
                 enterRoom('ann-6');
             } else{
                 println(`What's that?`);
             }
         },
+        items: [
+          {
+            itemId: 'anndoor',
+            name: ['door', 'Door', 'front door'],
+            desc: 'The door is closed.',
+            isOpen: false,
+            onUse: () => {
+              let door = getItemInRoomById('anndoor', disk.roomId);
+              clearTimeout(annTimer);
+              enterRoom('ann-6');
+            }
+          }
+        ],
         exits: [
           {dir: ['leave', 'back'], id: '19-amer'}
         ]
@@ -7206,6 +7224,9 @@ onBlock: () => {
         coord: [],
         name:'Tiny Tykes Talent Town',
         desc:`You try to open the door but you're too late; the buzzer's stopped buzzing.`,
+        onEnter: () => {
+          pressEnter('ann-2');
+        }, 
         exits:[
           {dir:['doorbell','bell','knock'],id:'ann-4'},
           {dir:'leave',id:'19-amer'}
@@ -7220,7 +7241,7 @@ onBlock: () => {
           println(`"Oh, John, how nice. Mummy is in the bathtub, and I'm making imaginary cookies. I'll go tell her you're here."`);
         },
         onBlock: () => {
-          if(prevInput === 'wait'){ // Any response should take you to 9
+          if(prevInput === 'wait here'){ // Any response should take you to 9
               enterRoom('ann-9');
           }else if(prevInput === 'thank you'){
               enterRoom('ann-9');
@@ -7290,7 +7311,7 @@ onBlock: () => {
                   itemId: 'chocogenerator',
                   icon: '',
                   gif: '',
-                  name: ['cookie', 'chocolate cookie', 'chocolate chip cookie', 'invisible cookie'],
+                  name: ['cookie', 'chocolate cookie', 'chocolate chip cookie', 'invisible cookie', 'another', 'a cookie'],
                   desc: 'An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan.',
                   onTake: () => {
                     if (!getItemInInventoryById('chococookie')) {
@@ -7330,7 +7351,7 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“Now that you've had your fill,” Cecily says, “I'll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let mummy come out of the bathtub. Okay?`,
         onBlock: () => {
-            if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'answer riddles'){
+            if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'okay' || prevInput === 'answer riddles'){
                 enterRoom('ann-15');
             } else{
                 enterRoom('ann-14');
@@ -7421,7 +7442,7 @@ onBlock: () => {
               onBlock: () => {
                 if(prevInput === 'ann' || prevInput === 'Ann' || prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                     enterRoom('ann-20');
-                }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
+                }else if(prevInput === 'look room' || prevInput ==='look bookshelves' || prevInput == 'read newspaper' || prevInput === 'watch tv'){
                     enterRoom('ann-21');
                 }else{
                     println(`Can you rephrase that please?`);
@@ -7454,11 +7475,11 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`The one stable and somber note among the apartment's happy jumble are its tall bookshelves. You consider some of the titles of the exposed spines, and recognize many titles and authors that seem familiar, but only as the fame of a foreign city can be familiar though you've never visited it. And then you do find one book, and a very thick one, that you can dimly remember having read, or at least begun. There was a beautiful girl in it, the daughter of a man who carved tombstones. Gerta her name was. You look inside the book—it is called WOLF SOLENT—and find the name on the first page you skim. You feel a fierce glow of accomplishment at having remembered something, even if it was only a character in a book. You continue paging through the long novel until a woman's voice addresses you: “John Cameron! This is a surprise.”`,
         onBlock: () => {
-            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello'){
+            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello' || prevInput === 'hello Ann' || prevInput === 'hi Ann'){
                 enterRoom('ann-22');
-            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes' || prevInput === 'tiny tykes' || prevInput === 'what is tiny tykes'){
                 enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7470,9 +7491,9 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“Hello yourself.”`,
         onBlock: () => {
-            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes' || prevInput === 'tiny tykes'){
                 enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7484,7 +7505,7 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“Oh, that's pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won't have to pay such high taxes if she's a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
         onBlock: () => {
-            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7496,7 +7517,7 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“She's been having a few problems at school. One of her classmates has dyslexia and Cecily is jealous. She wants to be dyslexic too. Were you able to answer her riddles?”`,
         onBlock: () => {
-            if(prevInput === ''){
+            if(prevInput === 'yes' || prevInput === 'sure did' || prevInput === 'nailed them'){
                 enterRoom('ann-25');
             }else{
               enterRoom('ann-26');
@@ -7518,8 +7539,9 @@ onBlock: () => {
     {
         id:'ann-26',
         name:`Ann's House`,
-        desc:`“Don't think, John Cameron, that what we started is still happening. You've had your chance. I'm after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I'm not blaming you— you never pretended to be anything you're not. But you're a bum—a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you're hungry there's a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I've got to put the Little Princess to bed. She's got a makeup call for six a.m.”`,
+        desc: ``,
         onEnter: () =>{
+          println(`“Don't think, John Cameron, that what we started is still happening. You've had your chance. I'm after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I'm not blaming you— you never pretended to be anything you're not. But you're a bum—a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you're hungry there's a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I've got to put the Little Princess to bed. She's got a makeup call for six a.m.”`);
           playerC.cScore += 10;
             if(playHung <= 25){
                 println(`The mention of the brie starts you salivating like one of Pavlov's dogs. You may have amnesia, but your tastebuds don't.`);
@@ -7534,35 +7556,32 @@ onBlock: () => {
               enterRoom('ann-34');
             }
         },
+        items: [
+          {
+            itemId: 'icebox',
+            name: ['icebox', 'Icebox', 'ice', 'box', 'cooler', 'fridge'],
+            desc: 'The icebox that contains various food items and of course free brie.',
+            isOpen: false,
+            onUse: () => {
+
+            }
+          }
+        ]
     },
     {
         id:'ann-27',
         name:`Ann's House`,
-        desc:`You go across the room to a corner that is predominantly kitcheny without quite becoming a kitchen, open the icebox and encounter a truly monumental wedge of brie gleaming in wrinkly plastic wrap.`,
+        desc: ` `,
         onBlock: () => {
             if(prevInput ==='eat brie'){
-                enterRoom('ann-28');
+              println(`Sure enough—as soon as the plastic wrap is off.`);
             }else if(prevInput === 'unwrap brie'){
                 enterRoom('ann-29');
             }else if(prevInput === 'slice brie'){
                 enterRoom('ann-30');
-            }else {
-              enterRoom('ann-34');
             }
           },
         },
-      {
-        id:'ann-28',
-        name:`Ann's House`,
-        desc:`Sure enough—as soon as the plastic wrap is off.`,
-        onBlock: () => {
-            if(prevInput === 'eat brie'){
-                enterRoom('ann-31');
-            }else {
-              enterRoom('ann-34');
-            }
-        },
-    },
     {
         id:'ann-29',
         name:`Ann's House`,
@@ -7788,6 +7807,7 @@ onBlock: () => {
                   playMon - orderTotal;
                   println(`The ticket agent takes your money, and tears a ticket in half, putting it in a box by his side.\n
                   You see a large free-standing bulletin board which shows you the maps of each floor of the museum. There is a special exhibition of 19th century portraits of famous New Yorkers in the first floor galleries to the north and south. Ahead of you to the west is a broad double-staircase mounting to the second floor.`);
+                  updateMon();
               }else{
                 println(`Realizing you do not have enough money, you elect to leave the museum before you attract any official attention.`);
                 pressEnter('76-cpkw');
@@ -49413,9 +49433,9 @@ else{
 
       },
       exits: [
-        {dir: 'north', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
-        {dir: ['tenement entrance', 'entrance', 'back', 'leave', 'south', 's'], id:'tene'},
-        {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
+        {dir: 'upstairs', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
+        {dir: ['entrance', 'tenement entrance', 'back', 'leave', 'south', 's'], id:'tene'},
+        {dir: ['right door', 'right', 'east'], block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
         {dir: ['living Room', 'west', 'living room', 'room', 'living'], id: `tene-2`},
       ],
     },
