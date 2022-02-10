@@ -171,7 +171,7 @@ disk.rooms.forEach((element)=>{
         if (match) {
           let subName = match[1];
           ////console.log(subName)
-          
+          //setting up fast travel functionality
           let marker = L.marker([element.coord[0], element.coord[1]], {icon: subwayIcon}).addTo(subwayLayer);
           marker.bindPopup(subName, {className: 'popup'});
           marker.on('click', function(e) {
@@ -188,6 +188,8 @@ disk.rooms.forEach((element)=>{
                     enterRoom(fastEle.id);
                     playerMarker.unbindPopup();
                     playerMarker.setLatLng(disk.currPos).bindPopup(fastEle.name, {className: 'popup'}).openPopup().update();
+                    let tokenItem = disk.inventory.findIndex(el => el.itemId === 'token');
+                    disk.inventory.splice(tokenItem, 1);
                     //console.log("YOU HAVE ARRIVED");
                   }
                 }                

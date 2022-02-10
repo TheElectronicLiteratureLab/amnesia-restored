@@ -7815,10 +7815,9 @@ onBlock: () => {
           },
           exits: [
             {dir: ['leave'], id: '76-cpkw'},
-            {dir: ['north'], id: 'nyhist-1f-1'},
-            {dir: ['south'], id: 'nyhist-1f-2'},
-            {dir: ['east'], id: '76-cpkw'},
-            {dir: ['west'], id: 'nyhist-2f-1'}
+            {dir: ['north gallery', 'gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'up', 'floor'], id: 'nyhist-2f-1'}
           ],
       },
       {
@@ -7833,10 +7832,9 @@ onBlock: () => {
         },
         exits: [
           {dir: ['leave'], id: '76-cpkw'},
-          {dir: ['north'], id: 'nyhist-1f-1'},
-          {dir: ['south'], id: 'nyhist-1f-2'},
-          {dir: ['south'], id: 'nyhist-entrance'},
-          {dir: ['west', 'upstairs'], id: 'nyhist-2f-1'}
+          {dir: ['north gallery', 'gallery', 'north'], id: 'nyhist-1f-1'},
+          {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+          {dir: ['upstairs', 'up', 'floor'], id: 'nyhist-2f-1'}
         ],
       },
       {
@@ -7844,26 +7842,10 @@ onBlock: () => {
           name: 'N.Y. Historical Society', // This room is only entered if the player returns to the entrance from one of the galleries.
           desc: `You return to the gallery entrance.`,
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2'
-            },
-            { 
-                dir: ['east'],
-                id: '76-cpkw'
-            },
-            {
-                dir: ['west', 'upstairs'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: '76-cpkw'},
+            {dir: ['north gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'west'], id: 'nyhist-2f-1'}
           ],
       },
       {
@@ -7875,58 +7857,22 @@ onBlock: () => {
               room.desc = `Most of the portraits are of long-ago businessmen. They don't seem particularly happy to be assembled here in a public museum with only each other-and you- for company. Surely it was not for this they'd hired the most expensive and dullest painters of their day. You see nothing unusual.`;
           },
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1',
-                block: 'You cannot go that way'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2'
-            },
-            { 
-                dir: ['east'],
-                id: 'nyhist-2f-1'
-            },
-            {
-                dir: ['west'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: 'nyhist-entrance'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'east', 'west'], id: 'nyhist-2f-1'},
           ],
       },
       {
           id: 'nyhist-1f-2', // New York Historical Society entrance
           name: 'N.Y. Historical Society', // This room is only entered if the player boldly declaires himself a member
-          desc: `You enter a gallery hung with many portraits of famous New Yorkers.`,
+          desc: `You enter a gallery hung with many portraits of famous New Yorkers.`,                               
           onLook: () => {
               println(`Most of these paintings are of women wearing magnificent dresses and hung with several small fortunes in jewelry. Each of them seems to be sizing up the other disdainfully, except for Mrs. Aloysius D. Brouwer, who looks with perfect satisfaction into a full-length mirror. Whistler had her number, and no doubt about it.`);
           },
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2',
-                block: 'You cannot go that way.'
-            },
-            { 
-                dir: ['east'],
-                id: 'nyhist-2f-1'
-            },
-            {
-                dir: ['west'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: 'nyhist-entrance'},
+            {dir: ['north gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['upstairs', 'east', 'west'], id: 'nyhist-2f-1'},
           ],
       },
       {
@@ -7939,17 +7885,8 @@ onBlock: () => {
           },
           exits: 
           [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-              dir: ['north', 'upstairs'],
-              id: 'nyhist-1f-1',
-              block: "You cannot go that way."
-            },
-            {dir: ['south'], id: '76-cpkw'},
-            {dir: ['east'], id: 'nyhist-alice-1'},
+            {dir: ['leave', 'south'], id: 'nyhist-entrance'},
+            {dir: ['Neustadt', 'east', 'tiffany', 'lamps'], id: 'nyhist-alice-1'},
             {dir: ['west'], block: "The door to the library is locked."}
           ],
       },
@@ -7983,13 +7920,13 @@ onBlock: () => {
               }
           },
           onBlock: () => {
-              if(prevInput === "wait"){
+              if(prevInput === "wait here"){
               incrementHour();
               println(`You wait for an hour. Strangely, you don't feel any impatience, for the Tiffany lamps are an endless source of wonder.`);
               }
               if (qMeridiem === 1 || yHours === 0 || yHours === 1 || yHours === 2){
-                  ////console.log(qMeridiem);
-                  enterRoom('nyhist-alice-5');
+                  console.log(qMeridiem);
+                  //enterRoom('nyhist-alice-5');
               }else{
                   ////console.log(yHours);
               }
@@ -49781,6 +49718,7 @@ else{
       coord: [100, 100],
       name: 'Subway Station',
       desc: `After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      firstTime: true,
       onEnter: () => {
         const room = getRoom(disk.roomId);
           room.enteredFrom = lastRoom.id;
@@ -49788,10 +49726,16 @@ else{
           
       },
       onBlock: () => {
-        if(prevInput === 'buy token' || prevInput === 'get token') {
+        if(prevInput === 'buy token' || prevInput === 'get token' || prevInput === 'buy a token') {
+          let room = getRoom('subway');
+          if (room.firstTime === true) {
+            room.firstTime = false;
+            println(`***Utilizing the fast travel system: After buying a token, open the map and click on another subway station to instantly ride and get out at another station corner. You have to be inside a subway in order to actually fast travel.***`);
+          }
           if (playMon >= 1) {
             playMon -= 1;
             updateMon();
+            println('You bought a subway token.');
             disk.inventory.push(
               {
                 itemId: "token",
