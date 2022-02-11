@@ -37,6 +37,11 @@ let sketches = 0;
 let roomNumber = 0;
 let metBette = false;
 
+//Bette's Apartment(Noblesse Apartments) Flags and Variables
+let betteActions = 0;
+let zRandomEncounter = 0;
+
+
 //Dakota and Endgame Flags and Variables
 let dakotaEntered = false;
 

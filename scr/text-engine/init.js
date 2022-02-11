@@ -25,10 +25,10 @@ let bullet = '•';
 let annTimer;
 
 //specific counter for Bette's Apartment
-let bettesHome;
+//let bettesHome;
 
 //Specifc move counter for Bette's Apartment
-let betteCounter;
+//let betteCounter;
 
 // reference to the input element
 let input = document.querySelector('#input');

@@ -1125,7 +1125,6 @@ const amnesiaRestored = {
             desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit—to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
             Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
             isTakeable: true,
-            isDroppable: true,
             top: true, 
             bottom: true,
             takeFirst: false,
@@ -4756,6 +4755,7 @@ const amnesiaRestored = {
         } else if (getItemInInventoryById('bathtowel')) {
             remove('towel');
         }
+
         playCloth.top.push('tshirt');
         playCloth.bottom.push('jeans');
         playCloth.feet.push('sneakers');
@@ -7782,7 +7782,7 @@ onBlock: () => {
               orderTotal += 2.00;
               enterRoom('nyhist-3');
               ////console.log("Order Total: " + orderTotal);
-           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member`){
+           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member` || prevInput === `I'm a member` || prevInput === 'Im a member'){
               enterRoom('nyhist-4');
            }else{
 
@@ -7886,7 +7886,7 @@ onBlock: () => {
           exits: 
           [
             {dir: ['leave', 'south'], id: 'nyhist-entrance'},
-            {dir: ['Neustadt', 'east', 'tiffany', 'lamps'], id: 'nyhist-alice-1'},
+            {dir: ['neustadt', 'east', 'tiffany', 'lamps'], id: 'nyhist-alice-1'},
             {dir: ['west'], block: "The door to the library is locked."}
           ],
       },
@@ -7911,11 +7911,12 @@ onBlock: () => {
           id: 'nyhist-alice-3', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           hasEntered: false,
-          desc: `The lamps are beautiful in the self-evident way that a sunset is beautiful, or a coral reef, or water over rock. Each mortised piece of glass has its own focused loveliness, as a single flower does, or a single jewel. En masse, their effect is indescribable.`,
+          desc: `The lamps are beautiful in the self-evident way that a sunset is beautiful, or a coral reef, or water over rock. Each mortised piece of glass has its own focused loveliness, as a single flower does, or a single jewel. En masse, their effect is indescribable. You feel you could __wait here__ a while.`,
           onEnter: () => {
               reenableInput();
               const room = getRoom('nyhist-alice-3')
               if (room.hasEntered){
+                  room.hasEntered = true;
                   pressEnter('nyhist-alice-revisted');
               }
           },
@@ -7926,7 +7927,7 @@ onBlock: () => {
               }
               if (qMeridiem === 1 || yHours === 0 || yHours === 1 || yHours === 2){
                   console.log(qMeridiem);
-                  //enterRoom('nyhist-alice-5');
+                  enterRoom('nyhist-alice-5');
               }else{
                   ////console.log(yHours);
               }
@@ -8039,23 +8040,23 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-              if(prevInput === 'xavier' || prevInput === "hollings"){
+              if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                   enterRoom('nyhist-ask-2');
-              }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+              }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                   enterRoom('nyhist-zane-1');
-              }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+              }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                   enterRoom('nyhist-luke-1');
               }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                   enterRoom('nyhist-amnesia-1');
               }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                   enterRoom('nyhist-murder-1');
-              }else if(prevInput === 'who am i'){
+              }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                   enterRoom('nyhist-who-1');
-              }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+              }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                   enterRoom('nyhist-ann-1');
-              }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+              }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                   enterRoom('nyhist-lila-1');
-              }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise"){
+              }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                   enterRoom('nyhist-denise-1');
               }else{
                 println(`"Don't be a pain in my side, John. Ask your questions.'`);
@@ -8101,26 +8102,28 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-zane-1', // New York Historical 2nd floor
@@ -8205,26 +8208,28 @@ onBlock: () => {
 
           He said that with your amnesia getting worse every day that only an overt threat would get you moving. I was reluctant, but I went along with the idea for your sake, John. You've got to believe that.'`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-amnesia-1', // New York Historical 2nd floor
@@ -8242,130 +8247,140 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-murder-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"First you were busted for drugs, now you're wanted for murder! That's the real reason for going to Australia. I can't tell you any more about your escape or the guard you killed. Anyhow by the time we met you only had a couple of memories left from that whole time. Something about a bowl of chili with a dead tarantula in it."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-who-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"Who are you? Why you're whoever you say you are. John Cameron, the last time I heard. I hope you're not tired of that identity already."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-ann-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"I don't know the woman from Eve. I found a letter she'd written to you once inside a desk drawer. I remember the name on the letterhead. Out of jealousy, I suppose. When we parted company in the chapel, I left notes for you everywhere I could think that you might show up. And the one I left with Ann was the one that got through."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-lila-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `Alice pretends to take an interest in one of the lamps, avoiding your gaze. I can't really say I know anyone by that name.`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-denise-1', // New York Historical 2nd floor
@@ -8500,8 +8515,41 @@ onBlock: () => {
       id: 'side-art-6',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `You pull off your pants, and a momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`,
+      desc: ``,
       onEnter: () => {
+        if (getItemInInventoryById('tuxedo')) {
+          remove('tuxedo');
+        }
+        println(`A momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`)
+        
+        let tuxItem = disk.inventory.findIndex(el => el.itemId === 'tuxedo');
+        disk.inventory.splice(tuxItem, 1);
+
+        //trade out items
+        disk.inventory.push(
+          {
+            itemId: 'sketchpad',
+            icon: 'img/png/image-sketchbook-thumbnail.png',
+            gif: 'img/gif/gif-sketchbook-ingame.gif',
+            name: ['Sketchbook', 'sketchbook', 'sketch', 'pad', 'sketchpad'],
+            desc: `A medium sized sketchbook that contains some crude sketches of people. There are a few where clothes are involved, and those are worthy of framing.`,
+            isTakeable: true,
+            isDroppable: false,
+          },
+          {
+            itemId: 'artistoutfit',
+            icon: 'img/png/image-artistoutfit-thumbnail.png',
+            gif: 'img/gif/gif-artistoutfit-ingame.gif',
+            name: ['Artist Outfit', 'artist outfit', 'outfit'],
+            desc: 'A fancy looking outfit that consists of a beret, turtleneck and some wellworn jeans. Well suited for aspring artists.',
+            //head: true,
+            top: true,
+            bottom: true,
+            isTakeable: true,
+            isDroppable: false,
+          },
+        )
+
         pressEnter('side-art-7');
       },
       exits: []
@@ -8533,7 +8581,7 @@ onBlock: () => {
       name: 'Washington Square Park',
       desc: '',
       onEnter: () => {
-        if (!getItemInInventoryById('sketchpad')) {
+        if (getItemInInventoryById('sketchpad')) {
           println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net.
 
           There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
@@ -9255,7 +9303,7 @@ else{
       }
   },
   exits: [
-      {dir: ['apartment'], id: 'nobe-2'},
+      {dir: ['apartment', 'inside'], id: 'nobe-2'},
   ]
 },
 {
@@ -9265,7 +9313,7 @@ else{
   onBlock: () => {
     if (prevInput === 'sit' || prevInput === 'sit down') {
       enterRoom('nobe-4')
-    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please') {
+    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please' || prevInput === 'a drink please' || prevInput === 'yes please' || prevInput === 'yeah') {
       enterRoom('nobe-5');
     } else if (prevInput === 'no' || prevInput === 'no thanks' || prevInput === 'no thank you') {
       enterRoom('nobe-6');
@@ -9295,7 +9343,9 @@ else{
   name: '',
   desc: `You cross the room to a sofa stacked high with pillows and sit down. What a luxury to be safe and secure! Bette asks again if you would like a drink.`,
   onBlock: () => {
-    if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please') {
+    if (prevInput === 'sit' || prevInput === 'sit down') {
+      enterRoom('nobe-4')
+    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please' || prevInput === 'a drink please' || prevInput === 'yes please' || prevInput === 'yeah') {
       enterRoom('nobe-5');
     } else if (prevInput === 'no' || prevInput === 'no thanks' || prevInput === 'no thank you') {
       enterRoom('nobe-6');
@@ -9318,6 +9368,9 @@ else{
   id: 'nobe-5',
   name: '',
   desc: `“I can't offer more than a glass of wine, I'm afraid,” Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you've taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I've had to learn to believe it.”`,
+  onEnter: () => {
+    pressEnter('nobe-7');
+  },
   items: [
       {
           itemId: 'apartment',
@@ -9336,6 +9389,9 @@ else{
   id: 'nobe-6',
   name: '',
   desc: ` You decline her offer, and together you sit down on a sofa piled high with pillows. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I've had to learn to believe it.”`,
+  onEnter: () => {
+    pressEnter('nobe-7');
+  },
   items: [
       {
           itemId: 'apartment',
@@ -9351,12 +9407,15 @@ else{
   id: 'nobe-7',
   name: '',
   desc: `Bette notices that the piano has captured your attention. “Isn't it lovely?” she says. “It makes we wish I could play, but I can't at all. And the terms of the sublet are that the piano is not to go into storage, so there it stands, my mute baby grand. Do you play?”`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
     if (prevInput === 'yes' || prevInput === 'I do' || prevInput === 'i do') {
       enterRoom('nobe-8');
     } else if (prevInput === 'no' || prevInput === 'not really' || prevInput === `I don't` || prevInput === `I can't`) {
       enterRoom('nobe-9');
-    } else if (prevInput === 'maybe' || prevInput === `I don't know` || prevInput === `I don't know`) {
+    } else if (prevInput === 'maybe' || prevInput === `I don't know` || prevInput === `i don't know`) {
       enterRoom('nobe-10');
     }
   },
@@ -9406,29 +9465,15 @@ else{
 {
   id: 'nobe-12',
   name: '',
-  desc: `The ***apartment*** seems to have a nice ***sofa bed***. You also see a ***picture*** that catches your eye.`,
+  desc: `The __apartment__ seems to have a nice __sofa bed__. You also see a __picture__ that catches your eye. Bette is standing in the corner of your eye.`,
   hasEntered: false,
   onEnter: () => {
     reenableInput();
-      const room = getRoom(disk.roomId);
-
-      if(room.hasEntered === false ) {
-          room.hasEntered === true;
-          betteCounter = 0;
-      }
-
   },
-
   onBlock: () => {
-      if(prevInput){
-          betteCounter++;
-          ////console.log('+1');
-      }else{}
-      if(betteCounter === 3){
-          enterRoom('nobe-19')
-      }else if( prevInput === 'kiss bette'){
-          enterRoom('nobe-17');
-          }
+      if (prevInput === 'kiss' || prevInput === 'kiss Bette' || prevInput === 'kiss bette') {
+        enterRoom('nobe-17');
+      }
   },
   items: [
       //open sofa not working
@@ -9470,6 +9515,9 @@ else{
   onBlock: () => {
       if(prevInput === 'make love to bette' || prevInput === 'have sex with bette' || prevInput === 'have sex' || prevInput === 'fuck bette'){
           enterRoom('nobe-18');
+      } else {
+        println('You decide to get ready for bed after kissing Bette.');
+        enterRoom('nobe-14');
       }
   }
 },
@@ -9479,7 +9527,7 @@ else{
   desc: ``,
   onEnter: () => {
       whatEncounter = () => {
-          zRandomEncounter = math.floor(math.random()* 3);
+          zRandomEncounter = Math.floor(Math.random()* 3);
           if(zRandomEncounter === 0) {
               println(`The look Bette is giving you is like a written invitation, and you answer it with your own best body english. Her arms slip around your body. Your tongues take taste tests of each other's flesh. The temperature rises, the beat quickens, and one thing leads to another.`);
               pressEnter('nobe-12');
@@ -9495,6 +9543,7 @@ else{
               pressEnter('nobe-12');
           }
       }
+      whatEncounter();
   },
 },
 {
@@ -9571,6 +9620,7 @@ else{
   }
 },
 //Living room post shower
+//Create a system here just like in sktechpad. This is the room you will return to if you leave and come back.
 {
   id: 'nobe-27',
   name: '',
