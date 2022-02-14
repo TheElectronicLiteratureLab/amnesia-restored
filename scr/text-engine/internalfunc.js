@@ -249,7 +249,7 @@ let enterRoom = (id) => {
     if(chance <= 5) {
       const chance2 = Math.floor(Math.random() * 100) + 1;
 
-      if(chance2 <= 25) {
+      if(chance2 <= 15) {
       xStreetEvent();
       } else {
       carWashEncounter();
@@ -288,6 +288,7 @@ let pressEnter = (id) => {
   }
 document.addEventListener("keydown", cont);
 };
+
 
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {

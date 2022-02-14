@@ -254,6 +254,7 @@ const amnesiaRestored = {
       hasBed: true,
       desc: `To the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {     
+        //playCloth.bottom.push('jeans');
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
@@ -550,7 +551,6 @@ const amnesiaRestored = {
           itemId: 'bedsheet',
           icon: 'img/png/image-bedsheet-thumbnail.png',
           gif: 'img/gif/gif-bedsheet-ingame.gif',
-          bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
           desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
            top: true,
@@ -842,7 +842,6 @@ const amnesiaRestored = {
             })
           })
         }
-
       },
       onLook: () => {
           const room = getRoom('hote-revi');
@@ -1150,7 +1149,9 @@ const amnesiaRestored = {
               icon: 'img/png/image-bedsheet-thumnail.png',
               gif: 'img/gif/gif-bedsheet-ingame.gif',
               name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
-              desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+              top: true,
+              bottom: true,
+              desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
               isTakeable: true,
               isDroppable: true
             }
@@ -1966,7 +1967,7 @@ const amnesiaRestored = {
       name: '15th Floor Hallway',
       desc: `You are standing in the front of the door with the lighted EXIT sign over it. This must be the stairway.`,
       onEnter: () =>{
-          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'sheet'))){
+          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet'))){
               println(`Despite the fact you are not wearing a stitch, you go out into the corridor. You're at one end of it, near a lighted EXIT sign. Facing you is the door to Room 1501. On along the corridor, the numbers of the rooms increase by increments of one. Some five doors away the maid's laundry trolley is parked, but the maid is not in sight. Farther down the corridor an arrow points left toward a bank of elevators.`)
           }
       },
@@ -2009,11 +2010,12 @@ const amnesiaRestored = {
           name: 'trolley',
           desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
           onLook: () => {
-            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
-              addItem('bath towel');
+              wear('towel');
+              //addItem('bath towel');
             }
           }
         },
@@ -2023,9 +2025,13 @@ const amnesiaRestored = {
           gif: 'img/gif/gif-towel-ingame.gif',
           name: ['Towel', 'large towel', 'bath towel'],
           desc: `It is a large fluffy towel.`,
+          //top: true,
+          bottom: true,
           isTakeable: true,
           isDroppable: true,
           onTake: () => {
+            playerC.cScore += 10;
+            playerC.sScore += 10;
             println('You take the towel.'); //appears in inventory as 'towel'
             const bathroom = getRoom('hote-bath-1');
             bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
@@ -4718,13 +4724,16 @@ const amnesiaRestored = {
             onTake: () => {
               const room = getRoom(disk.roomId);
               if (room.descRead === false) {
-                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
-              } room.descRead = true;
-              pressEnter('heal-club25');
+                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and—Hallelujah!— a small maroon address book.`)
+              }
+              room.descRead = true;
+                pressEnter('heal-club25');
+
             },
             onLook: () => {
               //addItem('canvasbag');
-              enterRoom('heal-club25');
+                pressEnter('heal-club25');
+
             }
           },
         ],
@@ -4733,12 +4742,24 @@ const amnesiaRestored = {
     {
       id: 'heal-club25',
       name: 'Massage Room',
-      desc: `Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
-      
-      You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
+      desc: ` `,
       onEnter: () => {
+        console.log(playCloth);
+        if (getItemInInventoryById('bedsheet')) {
+          remove('sheet');
+        } else if (getItemInInventoryById('bathtowel')) {
+            remove('towel');
+        }
+        playCloth.top.push('tshirt');
+        playCloth.bottom.push('jeans');
+        playCloth.feet.push('sneakers');
+
+        println(`Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
+      
+        You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room—and you see, once again, a complete stranger.`)
         storyMarker.setLatLng([15.390, -6.546]).bindPopup('The Princeton Club').addTo(poiLayer);
         document.getElementById('address-book-button').style.display = "block";
+        
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
         playerC.sScore += 35; // Adding to Survival Score
@@ -4795,8 +4816,9 @@ const amnesiaRestored = {
             itemId: 'tshirt',
             icon: '/img/png/image-tshirt-thumbnail.png',
             gif: '/img/gif/gif-tshirt-ingame.gif',
-            name: ['T-Shirt'],
+            name: ['T-Shirt', 't-shirt', 't shirt', 'tshirt', 'white shirt', 'shirt'],
             desc: `It is a gray t-shirt that has faded to a shade of off white.`,
+            top: true,
             isTakeable: true,
             isDroppable: true,
             onUse: () => {
@@ -4818,8 +4840,9 @@ const amnesiaRestored = {
             itemId: 'jeans',
             icon: 'img/png/image-levis-thumbnail.png',
             gif: 'img/gif/gif-levis-ingame.gif',
-            name: [`Levi's Jeans`],
-            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
+            name: [`Levi's Jeans`, 'jeans', `levi's`, 'jean'],
+            desc: `The Levi's are of the "501" variety—five pockets and a button fly.`,
+            bottom: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4827,8 +4850,9 @@ const amnesiaRestored = {
             itemId: 'sneakers',
             icon: 'img/png/image-adidas-thumbnail.png',
             gif: 'img/gif/gif-adidas-ingame.gif',
-            name: ['Sneakers'],
+            name: ['Sneakers', 'sneakers', 'sneaker', 'shoes'],
             desc:`The well-worn sneakers are made by Adidas.`,
+            feet: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4836,8 +4860,8 @@ const amnesiaRestored = {
             itemId: 'addressbook',
             icon: 'img/png/image-addressbook-thumbnail.png',
             gif: 'img/gif/gif-addressbook-ingame.gif',
-            name: ['Address Book'],
-            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            name: ['Address Book', 'address book', 'address'],
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names—a Lila T. and an Ana—and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
             onUse: () => {
               //Open address book
@@ -8427,9 +8451,6 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
-      onEnter: () => {
-        reenableInput();
-      },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'sure') {
           println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
@@ -8658,7 +8679,7 @@ onBlock: () => {
 {
   id:'book-7',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with a gasp of unbelieving horror -- and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
+  desc:`She reacts to her portrait with a gasp of unbelieving horror — and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
   onEnter: () =>{
       reenableInput();
   },
@@ -8696,7 +8717,7 @@ onBlock: () => {
 {
   id:'book-10',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it -- with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
+  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it — with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
   onEnter: () =>{
       reenableInput();
       playMon += 6.50;
@@ -8770,7 +8791,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it -- St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for -- do my pore-trait.'`),
+      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it — St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for — do my pore-trait.'`),
       pressEnter('book-14')
   }
 },
@@ -8889,7 +8910,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson -- though it's no compliment to him. You finish the drawing and he asks to see it.`),
+      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson — though it's no compliment to him. You finish the drawing and he asks to see it.`),
       pressEnter('book-24')
   }
 },
@@ -8910,7 +8931,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw -- and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
+      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw — and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
       pressEnter('book-26')
   }
 },
@@ -9035,7 +9056,7 @@ onBlock: () => {
 {
   id:'book-35-1',
   name:'',
-  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
+  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing—and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
   onEnter: () => {
     pressEnter('book-36');
   }
@@ -9148,7 +9169,7 @@ onBlock: () => {
 {
   id:'book-44',
   name:'',
-  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade—\n\n— the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described — and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
   onEnter: () => {
     reenableInput();
   },
@@ -9205,7 +9226,7 @@ onBlock: () => {
   desc:``,
   onEnter: () => {
       println(`“Let's talk at my place, darling,” Bette insists. “I'll worry till we're by ourselves.”\n\nShe takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
-      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight -- for the second time!'`),
+      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight — for the second time!'`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
@@ -9214,7 +9235,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight--for the second time!”`),
+      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight—for the second time!”`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
@@ -49689,11 +49710,14 @@ else{
       name: 'Telephone Enclosure',
       desc: `You enter the pay telephone enclosure at this corner. It requires a 25-cent deposit.`,
       onEnter: () => {
+        reenableInput();
         const room = getRoom('pho-boo1');
+        const room2 = getRoom('pho-boo2');
+        room.enteredFrom = room2.enteredFrom;
 
-        //room.coord = lastRoom.coord;
-        room.enteredFrom = lastRoom.id;
 
+        //const room = getRoom('pho-boo1');
+        //lastRoom.id = room.enteredFrom;
         room.exits = [];
 
         room.exits.push(
@@ -49708,6 +49732,18 @@ else{
 
       ],
     },
+    {
+      id: 'pho-boo2',
+      coord: [],
+      name: 'Telephone Enclosure',
+      desc: ' ',
+      onEnter: () => {
+        const room = getRoom('pho-boo2');
+        console.log(lastRoom.id);
+        room.enteredFrom = lastRoom.id;
+        enterRoom('pho-boo1');
+      }
+    }
 
   ],
   characters: [

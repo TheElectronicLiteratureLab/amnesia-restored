@@ -2,15 +2,19 @@
 let inv = () => {
   document.getElementById("inventory").innerHTML = "";
   const items = disk.inventory.filter(item => !item.isHidden);
+
+  //disable player input box
   document.querySelector('input').disabled = true;
 
-  if (!items.length) {
-    slideLeftIn("inventory-display", "inventory-text-container");
-    //document.getElementById("inventory-display").style.display = "block";
-  }
 
+  //check to see if there are items in inventory
+  if (!items.length) { 
+    slideLeftIn("inventory-display", "inventory-text-container");
+    return;
+  } 
+
+  //check to see what items are in inventory when player enters "inv" command
   items.forEach(item => {
-    //document.getElementById("inventory-display").style.display = "block";
     if(item.itemId === 'xindexer'){
       // pulls up xindexer interactive div
       listX(item.icon,`${getName(item.name)}`, 'clickXIndex', item.itemId);
@@ -19,9 +23,6 @@ let inv = () => {
     } else {
       listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
     }
-    
-   // document.getElementById("inventory-display").style.display = "block";
-    //listInv(item.icon, `${getName(item.name)}`, 'clickItemInv', item.itemId);
   });
 
   slideLeftIn("inventory-display", "inventory-text-container");
@@ -727,6 +728,7 @@ let callNum = (num) => {
 
 // wear command
 let wear = (clothes) => {
+  console.log(playCloth);
   let item = getItemInRoom(clothes, disk.roomId);
   if (item === undefined) {
     item = getItemInInventory(clothes);
@@ -821,7 +823,7 @@ let remove = (clothes) => {
   //////console.log(item.itemId)
   //dropItem(item.name[0]);
 
-  
+  /* 
   let indexToRemove = disk.inventory.indexOf(item);
   //////console.log(disk.inventory.slice(indexToRemove));
   let clotheToRemove = disk.inventory.slice(indexToRemove);
@@ -833,7 +835,7 @@ let remove = (clothes) => {
   } else {
     room.items.push(clotheToRemove[0]);
   }
-
+*/
   
   if(item.top && item.bottom && playCloth.top.length >= 1 && playCloth.bottom.length >= 1){
     playCloth.top.splice(item.itemId);
@@ -1139,7 +1141,7 @@ function createPhone() { //create function
           rooms[i].exits.push( //push the following into the room's exits array
           {
             dir: ['phone', 'telephone', 'booth', 'phonebooth', 'phone booth', 'telephone booth', 'inside'], //exit directions for phone booth room
-            id: 'pho-boo1' //id for phone booth
+            id: 'pho-boo2' //id for phone booth
           },
         );
         if (rooms[i].desc !== undefined) {
