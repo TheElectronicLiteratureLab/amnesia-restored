@@ -11186,18 +11186,34 @@ else{
   desc: `With an air of exultation you realize that you are close to solving the riddle of your amnesia. Denise's explanation has filled most of the gaps in your memory; now you can tell Bette what really happened and together the two of you can formulate a plan.`, 
   onEnter: () => 
   {
+    let irvingPlace = getRoom('20-irvi');
+    let dakotaEntrance = getRoom('72-cpkw');
+    dakotaEntrance.exits[4].block = `After bursting out of the building with seemingly no explanation to the guard the place has been put on high alert. It is probably best not to go through the front entrance. Maybe there is another entrance nearby, maybe an alley?`;
+    irvingPlace.exits[4].id = 'retu-bett';
     storyMarker.setLatLng([-26.361, 5.999]).bindPopup(`Tell Bette about your plan!`).addTo(poiLayer);
     dakotaEntered = true;
     pressEnter('67-amer');
   },
 }, 
 
-
   /***********************************/
  /*  Return to Bette's Apartment    */
 /***********************************/
+{
+  id: 'retu-bett',
+  name: `Bette's Apartment`,
+  desc: `You are in Bette's apartement. You look around the place to see the place a mess. A struggle seems to have taken place. As you look more closely you find a note by the phone from Denise. \n\n
+  We knew you would run back to Bette so we had a contingincey in place for that situation. If you want to see your lover alive and well you had best come back to the Dakota. We will be waiting for you and the disk. \n-Denise`,
+  onEnter: () => {
+    let dakotaAlley = getRoom('73-colu');
+    delete dakotaAlley.exits[4].block;
+    storyMarker.setLatLng([58.972, -34.755]).bindPopup('Rescue Bette and finish this.').addTo(poiLayer);
+    pressEnter('20-irvi');
+  },
+  exits: [
 
-
+  ]
+},
 
   /*********************************************/
  /*    The Dakota Alleyway/Alice's Deathbed   */
@@ -11230,14 +11246,14 @@ else{
 {
     id: 'dakota-alley-1', 
     name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `Cautiously, you climb the steep and slippery firestairs. Guessing at the approximate location of apartment 44, you stop on the fourth floor in front of a small window.`,
+    desc: `Cautiously, you climb the steep and slippery firestairs. Guessing at the approximate location of apartment 44, you stop on the fourth floor in front of a small window. It looks somewhat old and weak, and looks like its about to __break__ apart.`,
     onBlock: () => {
-        if(prevInput === 'break'){
+        if(prevInput === 'break' || prevInput === 'break window'){
             enterRoom('dakota-alley-window');
         }else if(prevInput === 'open'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
+            println('The grating on the window prevents you from doing so.')
+        }else if(prevInput === 'enter' || prevInput === 'enter window'){
+            println('The grating on the window prevents you from trying.')
         }else{
             enterRoom('dakota-alley-zane');
         }
@@ -11252,13 +11268,11 @@ else{
 {
     id: 'dakota-alley-window', 
     name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `You manage to smash the window through the protective grating. Glass Fragments shower the interior of the room on the other side.`,
+    desc: `You manage to smash the window through the protective grating. Glass fragments shower the interior of the room on the other side.`,
     onBlock: () => {
-        if(prevInput === 'open' || prevInput === 'go inside'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
+        if(prevInput === 'open' || prevInput === 'go inside' || prevInput === 'inside'){
+            enterRoom('dakota-alley-zane');
+        } else{
             enterRoom('dakota-alley-zane');
         }
     },
@@ -11269,48 +11283,8 @@ else{
       },
       {
         dir: ['inside', 'window'], 
-        id: 'dakota-alley-enter',
+        id: 'dakota-alley-zane',
     }
-    ],
-},
-{
-    id: 'dakota-alley-open', 
-    name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `The grating on the window prevents you from doing so.`,
-    onBlock: () => {
-        if(prevInput === 'break'){
-            enterRoom('dakota-alley-window');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
-            enterRoom('dakota-alley-zane');
-        }
-    },
-    exits: [
-      {
-          dir: ['south', 'leave'], 
-          id: 'dakota-alley',
-      }
-    ],
-},
-{
-    id: 'dakota-alley-enter', 
-    name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `The grating on the window prevents you from trying.`,
-    onBlock: () => {
-        if(prevInput === 'open'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
-            enterRoom('dakota-alley-zane');
-        }
-    },
-    exits: [
-      {
-          dir: ['south', 'leave'], 
-          id: 'dakota-alley',
-      }
     ],
 },
 {
@@ -11357,9 +11331,20 @@ else{
         if(prevInput === 'open'){
             enterRoom('alisonsdeath-3');
         }else{
-            enterRoom('alisonsdeath-4');
+            println(`Your eyes are closed, and your eyelids feel almost as though it's be too painful to open them.`);
         }
     },
+    items: [
+      {
+        itemId: 'youreyes',
+        name: ['eyes', 'eye', 'eyeballs'],
+        desc: 'You see your eyeballs, but not really since that is somewhat impossible.',
+        isOpen: false,
+        onLook: () => {
+          println('What you do see is the inside of your eyelids.');
+        }
+      }
+    ]
 },
 {
     id: 'alisonsdeath-3', 
@@ -11369,21 +11354,7 @@ else{
         pressEnter('alisonsdeath-5');
     },
 },
-{
-    id: 'alisonsdeath-4', 
-    name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Your eyes are closed, and your eyelids feel almost as though it's be too painful to open them.`,
-    onEnter: () => {
-        reenableInput();
-    },
-    onBlock: () => {
-        if(prevInput === 'open'){
-            enterRoom('alisonsdeath-3');
-        }else{
-            enterRoom('alisonsdeath-4');
-        }
-    },
-},
+
 {
     id: 'alisonsdeath-5', 
     name: 'The Dakota', // Displayed each time the player enters the room.
@@ -12480,11 +12451,12 @@ else{
   desc: ``,
   onEnter: () => {
     clearOutput();
+    playerC.tScore = playerC.dScore + playerC.cScore + playerC.sScore;
     println(`Your scores are as follows:\n
     As a detective: ${playerC.dScore}
     As a character: ${playerC.cScore}
     As a survivor: ${playerC.sScore}\n
-    <img src="img/png/x-icon.png"alt="close icon">
+
     Your total score is ${playerC.tScore}
     Your score ranks you as of sound mind.\n
     You've reached the end of your adventure. Congratulations on winning the game! The mystery of who you are is solved. Job well done detective.`);
@@ -12515,8 +12487,11 @@ else{
     Dr. Dene Grigar - Professor
     <img src="/img/png/teams/grigar-1.jpg"> \n
     Suzanne Anderson - Professor\n
+    <img src="/img/png/teams/anderson-1.jpg">
     Holly Slocum - Interface Designer & Developer\n
-    Greg Philbrook - Instructional & Technical Support \n`, 'credits');
+    <img src="/img/png/teams/slocum-1.jpg">
+    Greg Philbrook - Instructional & Technical Support \n
+    <img src="/img/png/teams/philbrook-1.jpg">`, 'credits');
     document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
     pressEnter('credits-3');
   }
@@ -12653,12 +12628,12 @@ else{
     clearOutput();
     println(`**Thomas M. Disch Estate**
     Greg Feeley and Sarah Smith
-    <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n\n
-    Washington State University Vancouver
+    <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n
+    **Washington State University Vancouver**
     <img src="/img/png/wsu-logo.png">
-    The Electronic Literature Lab
+    **The Electronic Literature Lab**
     <img src="/img/png/ellLogo_Text.png">
-    The Creative Media & Digital Culture Program
+    **The Creative Media & Digital Culture Program**
     <img src="/img/png/cmdc-logo-white.png">`, 'credits');
     document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
     pressEnter('credits-10')
@@ -31483,6 +31458,7 @@ else{
       desc: ``,
       isStreet: true,
       onEnter: () => {
+        reenableInput();
         degradation = true;
       },
       exits: [
@@ -31490,7 +31466,7 @@ else{
         {dir: 'south', id: '19-irvi'},
         {dir: 'east', id: '20-gpke'},
         {dir: 'west', id: '20-gpkw'},
-        {dir: 'noblesse', id: 'nobe-27'}
+        {dir: ['noblesse', 'inside'], id: 'nobe-27'}
       ],
     },
     {
@@ -41222,7 +41198,7 @@ else{
         {dir: 'south', id: '72-colu'},
         {dir: 'east', id: '73-cpkw'},
         {dir: 'west', id: '73-amst'},
-        {dir: 'alley',id: 'dakota-alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
+        {dir: ['alley', 'alleyway', 'sneak'],id: 'dakota-alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
       ]
     },
     {

@@ -942,6 +942,15 @@ let open = (itemToOpen) => {
         println(`The ${item.name[0]} is already open.`);
       }
     }
+    //Dakota Eyes
+    else if (item.itemId === 'youreyes') {
+      if(item.isOpen !== true) {
+        enterRoom('alisonsdeath-3');
+        //////console.log(item);
+      } else {
+        println(`The ${item.name[0]} is already open.`);
+      }
+    }
     // Large Box (Hote-Revi)
     else if (item.itemId === 'hotebox'){
       if(item.isOpen !== true){
@@ -970,9 +979,10 @@ let open = (itemToOpen) => {
         addItem('canvasbag');
         enterRoom('heal-club25');
       }
-    } else {
+      else {
         println('You already emptied it of its contents');
-      } 
+      }
+    }  
   } else {
     println("You can't open that.");
   }
