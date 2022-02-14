@@ -43,6 +43,7 @@ marker.on('drag', function(e) {
     navigator.clipboard.writeText(marker.getLatLng().lat.toFixed(3) + ', ' + marker.getLatLng().lng.toFixed(3));
 })
 });
+*/
 
 
 //Layer Groups
