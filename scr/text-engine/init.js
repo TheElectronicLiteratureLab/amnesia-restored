@@ -1,11 +1,18 @@
+// // preload images
+// let invArrImg = [];
+// let invImgRegex = /\/img\/[gif|png]*\/.*.[gif|png]/;
+
+// var fs = require('fs');
+// var files = fs.readdirSync('/downloads');
+
 // global properties, assigned with let for easy overriding by the user
 let disk;
 
 // global values for character creation
-hairColor = 'dark';
-hairLength = 'short';
-hairFace = 'beard';
-eyeColor = 'blue';
+let hairColor = 'dark';
+let hairLength = 'short';
+let hairFace = 'beard';
+let eyeColor = 'blue';
 
 // store user input history
 let inputs = [''];
@@ -25,6 +32,11 @@ let annTimer;
 
 // reference to the input element
 let input = document.querySelector('#input');
+
+// preload all inventory images
+let preLoad = () => {
+  console.log(document.images);
+}
 
 // add any default values to the disk
 // disk -> disk
@@ -274,4 +286,5 @@ let clearTemps = () => {
   //money, hung, fat, time, all flags, player clothes, difficulty (just in case)
 } 
 internalLoad();
+
 
