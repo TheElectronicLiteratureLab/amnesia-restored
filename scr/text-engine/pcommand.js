@@ -657,7 +657,7 @@ function checkKeyPressed(evt){
 let dial = () => {
   const room = getRoom(disk.roomId);
   dialOn = true;
-  if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'nobe-27' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+  if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'nobe-27' || room.id === 'nobe-27-2' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
     slideRightIn("dialPad", "dial-pad-container");
@@ -922,6 +922,35 @@ let open = (itemToOpen) => {
         println(`The ${item.name[0]} is already open.`);
       }
     }
+    // Ann's Apartment Door
+    else if (item.itemId === 'anndoor') {
+      if(item.isOpen !== true) {
+        clearTimeout(annTimer);
+        enterRoom('ann-6');
+        //////console.log(item);
+      } else {
+        println(`The ${item.name[0]} is already open.`);
+      }
+    }
+    // Ann's Icebox
+    else if (item.itemId === 'icebox') {
+      if(item.isOpen !== true) {
+        println(`You go across the room to a corner that is predominantly kitcheny without quite becoming a kitchen, open the icebox and encounter a truly monumental wedge of brie gleaming in wrinkly plastic wrap.`);
+        enterRoom('ann-27')
+        //////console.log(item);
+      } else {
+        println(`The ${item.name[0]} is already open.`);
+      }
+    }
+    //Dakota Eyes
+    else if (item.itemId === 'youreyes') {
+      if(item.isOpen !== true) {
+        enterRoom('alisonsdeath-3');
+        //////console.log(item);
+      } else {
+        println(`The ${item.name[0]} is already open.`);
+      }
+    }
     // Large Box (Hote-Revi)
     else if (item.itemId === 'hotebox'){
       if(item.isOpen !== true){
@@ -946,12 +975,14 @@ let open = (itemToOpen) => {
 
     //Canvas Bag
     else if (item.itemId === 'canvasbag') {
-      if (disk.roomId === 'heal-club23' || disk.roomId === 'heal-club24')
-      addItem('canvasbag');
-      enterRoom('heal-club25');
-    } else {
-      println('You already emptied it of its contents');
-    }
+      if (disk.roomId === 'heal-club23' || disk.roomId === 'heal-club24') {
+        addItem('canvasbag');
+        enterRoom('heal-club25');
+      }
+      else {
+        println('You already emptied it of its contents');
+      }
+    }  
   } else {
     println("You can't open that.");
   }
