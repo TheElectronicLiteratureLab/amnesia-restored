@@ -657,7 +657,7 @@ function checkKeyPressed(evt){
 let dial = () => {
   const room = getRoom(disk.roomId);
   dialOn = true;
-  if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'nobe-27' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
+  if(room.id === 'hote-room-8' || room.id === 'hote-revi' || room.id === 'nobe-27' || room.id === 'nobe-27-2' || room.id === 'pho-boo1' || room.id === 'hous-broa'){
     println("You pick up the phone.")
     // display dial pad
     slideRightIn("dialPad", "dial-pad-container");
