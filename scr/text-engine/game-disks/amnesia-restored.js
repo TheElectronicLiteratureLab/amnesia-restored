@@ -1,3 +1,5 @@
+//preLoad();
+
 const amnesiaRestored = {
   roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
@@ -59,7 +61,7 @@ const amnesiaRestored = {
       desc: "",
       onEnter: () => {
         document.getElementById("output").innerHTML = "";
-        println(`Then the blank of WHERE AM I? balloons into the bigger total blank of WHO AM I? It's a question without an answer. Your memory is an open book--with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n`)
+        println(`Then the blank of WHERE AM I? balloons into the bigger total blank of WHO AM I? It's a question without an answer. Your memory is an open book—with every page blank. You have no name, no known address, no memories of friends or relatives or schools or jobs. You have\n`)
         setTimeout(() => {  println("Thomas M. Disch's\n ", "enterKey"); }, 1000);
         setTimeout(() => {  println("**AMNESIA**", "amnesiaTitle"); }, 1100);
         setTimeout(() => {  document.addEventListener("keydown", pressEnter('amne-intr-2'));}, 1150);
@@ -113,7 +115,7 @@ const amnesiaRestored = {
       name: '',
       desc: "You get out of bed, and as you do, you realize, from a glance at your naked body, that you are white, male, and reasonably well-put-together. But what about your face? That's part of anyone's identity that should be proof against amnesia. The mirror over the dresser is angled so you can't see yourself from where you stand. So you decide to take a simple test, closing your eyes and taking an inventory of how you think you ought to look.",
       onEnter: () => {
-        println('Your hair--is it light or dark?');
+        println('Your hair—is it light or dark?');
       },
       exits: [],
       onBlock: () => {
@@ -165,7 +167,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println('Do you have a beard? Or a mustache? or neither?');
+        println('Do you have a beard? Or a mustache? Or neither?');
       },
       exits: [],
       onBlock: () => {
@@ -237,7 +239,7 @@ const amnesiaRestored = {
       id: 'hote-room-7',
       coord: [],
       name: '',
-      desc: `You take a deep breath--and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationary informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502.\n
+      desc: `You take a deep breath—and long look about the hotel room, starting with the writing pad on the dresser. A sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502.\n
 
       On the nightstand next to the bed you find a strange circular wheel called an 'X-street indexer,' and a single ragged __dollar bill__, both of which you take. To pass the time the hotel offers a television. Also, a __Gideon Bible__. A ballpoint __pen__ has been placed near the phone.
       `,
@@ -254,6 +256,7 @@ const amnesiaRestored = {
       hasBed: true,
       desc: `To the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`,
       onEnter: () => {     
+        //playCloth.bottom.push('jeans');
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
@@ -264,7 +267,7 @@ const amnesiaRestored = {
       },
       onLook: () => {
         let room = getRoom('hote-room-8');
-        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's __stationary__ informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a __Gideon Bible__. A __ballpoint pen__ has been placed near the phone. \nTo the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
+        room.desc = `You take a long look about the hotel room, starting with the dresser. A sheet of the hotel's __stationery__ informs you that you're a guest of the Sunderland Hotel. There is a __room key__ with a large green plastic tag showing your room number, 1502. \nTo pass the time the hotel offers a television. Also, a __Gideon Bible__. A __ballpoint pen__ has been placed near the phone. \nTo the left of the dresser is an Apple //e computer on its own metal cart. You do a slow double-take. Have computers become standard equipment for hotel rooms in the same way that TVs are? No, there's a decal on the side of the monitor declaring that the computer is the property not of the hotel but of the User-Friendly Computer Store.`;
         println(room.desc);
       },
       items: [
@@ -301,7 +304,7 @@ const amnesiaRestored = {
           icon: 'img/png/image-gideonbible-thumbnail.png',
           gif: 'img/gif/gif-gideonbible-ingame.gif',
           name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
-          desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
+          desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 rightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
           isTakeable: true,
           onDrop: () => {
             println(`You shouldn't drop that. It might be important.`);
@@ -325,9 +328,9 @@ const amnesiaRestored = {
             let coat2 = 'not even';
             
             if (getItemInInventoryById('coathanger')) {
-              println(`There's nothing in the walk-in closet -- ${coat2} a forlorn coathanger.`);
+              println(`There's nothing in the walk-in closet—${coat2} a forlorn coathanger.`);
             } else {
-              println(`There's nothing in the walk-in closet -- ${coat1} a forlorn coathanger.`);
+              println(`There's nothing in the walk-in closet—${coat1} a forlorn coathanger.`);
             }
           },
         },
@@ -352,7 +355,7 @@ const amnesiaRestored = {
             `static`,
             `Channel 7 also has a news program. The President has asked Congress for money for arms. Two people died in a fire in the Bronx. \nRioting continues for the fifth day at the State Penitentiary at Revoltillo in Texas, where prisoners are protesting the prison's food and its unsanitary conditions. There is some footage showing vats of stew cooking in the prison kitchen, the sight of which makes you continue to feel strangely queasy all through the weather forecast, which is for another bright and sunny day.`,
             `static`,
-            `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board--here's the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
+            `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board—here's the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
             'static',
             'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
             'static',
@@ -366,26 +369,26 @@ const amnesiaRestored = {
             if(item.isOn) {
               if (item.desc == ' ')
               {
-                println(`It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`);
+                println(`It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`);
               } else {
-                item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
+                item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
               }
               
             } else {
               if (item.desc === ' ')
               {
-                println(`It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`);
+                println(`It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`);
               }
-              item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
+              item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
             }
           },
           onUse: () => {
             let item = getItemInRoomById('roomtv', 'hote-room-8');
             if(item.isOn) {
-              item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
+              item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
               println(item.desc);
             } else {
-              item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
+              item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
               println(item.desc);
             }
           }
@@ -393,7 +396,7 @@ const amnesiaRestored = {
         {
           itemId: 'computer',
           name: ['Apple //e', 'Apple IIe', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
-          desc: `The computer is an Apple IIe equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
+          desc: `The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
           isOn: false,
           onUse: () => {
             let pc = getItemInRoomById('computer', 'hote-room-8');
@@ -412,7 +415,7 @@ const amnesiaRestored = {
           isOpen: false,
           onLook: () => {
             let dresser = getItemInRoomById('dresser', disk.roomId);
-            let stationary = getItemInRoomById('stationary', disk.roomId);
+            let stationary = getItemInRoomById('stationery', disk.roomId);
             let bible = getItemInRoomById('bible', disk.roomId);
             let roomkey = getItemInRoomById('roomkey', disk.roomId);
             let pen = getItemInRoomById('pen', disk.roomId);
@@ -443,9 +446,9 @@ const amnesiaRestored = {
               if (pen === undefined) {
                 iFiv = '';
               }
-              println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
+              println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
             } else {
-              dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
+              dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
             }
           }
         },
@@ -462,8 +465,8 @@ const amnesiaRestored = {
           itemId: 'stationary',
           icon: 'img/png/image-padofpaper-thumbnail.png',
           gif: 'img/gif/gif-padofpaper-ingame.gif',
-          name: ['Stationary', 'stationary', 'paper'],
-          desc: 'The stationary says SUNDERLAND HOTEL at the top.',
+          name: ['Stationery', 'stationery', 'paper'],
+          desc: 'The stationery says SUNDERLAND HOTEL at the top.',
           isTakeable: true,
           isDroppable: true
         },
@@ -488,7 +491,7 @@ const amnesiaRestored = {
             //println('Brochure coming soon!');
             //need some divs to switch between text
             //stretch goal unfortunately
-            println("You look through the brochure and think its really nicely designed and laid out.");
+            println("You look through the brochure and think it's really nicely designed and laid out.");
           },
           onTake: () => {
             println(`You took the brochure.`);
@@ -542,7 +545,7 @@ const amnesiaRestored = {
               }
             }
             else {
-              println(`You need to **open** the door first!`);
+              println(`You need to __open__ the door first!`);
             }
           }
         },
@@ -550,9 +553,8 @@ const amnesiaRestored = {
           itemId: 'bedsheet',
           icon: 'img/png/image-bedsheet-thumbnail.png',
           gif: 'img/gif/gif-bedsheet-ingame.gif',
-          bottom: true,
           name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
-          desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+          desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
            top: true,
               bottom: true,
               isTakeable: true,
@@ -568,18 +570,18 @@ const amnesiaRestored = {
     {
       id: 'hote-bath-1',
       name: 'Bathroom',
-      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel -- a **small pink sink** encased in formica that's pretending to be marble, **a tiled shower**, **a toilet**, a towel rack with a __large towel__. But no clothes.`, 
+      desc: `You're in the bathroom. It has the usual amneities of a good but not over-fancy hotel—a __small pink sink__ encased in formica that's pretending to be marble, __a tiled shower__, __a toilet__, a towel rack with a __large towel__. But no clothes.`, 
       onEnter: () => {
           const room = getRoom('hote-bath-1');
           if(getItemInInventoryById('bathtowel')){ //if the towel is already in inventory
-              room.desc = room.desc.replace(` with a **large towel**.`, '.');
+              room.desc = room.desc.replace(` with a __large towel__.`, '.');
           };
           room.exits[0].id = lastRoom.id;
       },
       items: [
           {
               name: ['sink', 'pink sink'], 
-              desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of **soap** sitting on the vanity.`,
+              desc: `It is a small pink sink encased in formica that's pretending to be marble. There is a used cake of __soap__ sitting on the vanity.`,
               /*item:  //this line is printed after the command WASH HANDS, though on USE SOAP nothing is inputed in emulated game, nor in manuscript. Keep this? Or create a command that allows players to type WASH?
                       },
                   }, //end of sink items*/ //currently can't have an item property on item object.
@@ -595,7 +597,7 @@ const amnesiaRestored = {
             onTake: () => {
                 println('You take the deodorant soap.');//appears in inventory as 'deodorant soap'
                 const sink = getItemInRoom('sink', 'hote-bath-1');
-                sink.desc = sink.desc.replace('There is a used cake of **soap** sitting on the vanity.', '');
+                sink.desc = sink.desc.replace('There is a used cake of __soap__ sitting on the vanity.', '');
             },
             onUse: () => {
               if (disk.roomId === 'hote-bath-1') {
@@ -616,7 +618,7 @@ const amnesiaRestored = {
           {
               itemId: 'bathtoilet',
               name: 'toilet',
-              desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face -- looking very sheepish.`,
+              desc: `Next to the toilet on the wall is a fresh roll of Charmin. You lift the lid of the toilet and bend down to look inside. What you see is a dim reflection of your own unfamiliar face—looking very sheepish.`,
               onUse: () => println(`That's done. Now flush. Very good. Evidently your toilet training has not been neglected.`),
           },
           {
@@ -634,7 +636,7 @@ const amnesiaRestored = {
                 playerC.sScore += 10;
                 println('You take the towel.'); //appears in inventory as 'towel'
                 const bathroom = getRoom('hote-bath-1');
-                bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
+                bathroom.desc = bathroom.desc.replace(`a towel rack with a __large towel__.`, 'and a towel rack.'); //removes towel description from bathroom look description
               },
           },
       ], //end of bathroom items
@@ -760,7 +762,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is resumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
+        println(`The bellboy knocks on the door, and you position yourself behind it in such a way that when you open it a crack to take the readjusted hotel bill, he will not see that you are naked. \nYou consider asking HIM to help you get some clothes, but a combination of shyness and common sense prevents you. \nFirst things first: "One moment," you say, and take the bill over to the desk to examine it. \n\n You examine the slip and find that a name, which is presumably yours, has been typewritten on the top of the statement. You have a name now: John Cameron III. \nYou sign the bill using your new-found name, and hand it back to the bellboy.`);
         pressEnter('hote-room-17');
       },
       exits: [],
@@ -768,13 +770,13 @@ const amnesiaRestored = {
     {
       id: 'hote-room-17',
       name: '',
-      desc: 'The bellboy makes a significant cough -- he must be waiting for a tip. Should you give him one?',
+      desc: 'The bellboy makes a significant cough—he must be waiting for a tip. Should you give him one?',
       onEnter: () => {
         reenableInput();
         getRoom('hote-room-8').visits++;
       },
       onBlock: () => {
-        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please') {
+        if (prevInput === 'yes' || prevInput === 'tip' || prevInput === 'tip bellboy' || prevInput === 'tip him'|| prevInput === 'sure' || prevInput === 'yep' || prevInput === 'ya' || prevInput === 'yup' || prevInput === 'affirmative' || prevInput === 'yar' || prevInput === 'yes please' || prevInput === 'Yes' || prevInput === 'No') {
 
           let dollarItem1 = getItemInInventoryById('dollarbill');
 
@@ -815,7 +817,7 @@ const amnesiaRestored = {
       lukecall: false,
       desc: `The first thing you notice is the late afternoon light streaming across the skyscrapers of the city, flashing from windows and walls of glass. It is late in the day, and the sun is low in the sky.
       
-      You see a **tuxedo** lying on your bed.`, //text that appears when player first enters the room
+      You see a __tuxedo__ lying on your bed.`, //text that appears when player first enters the room
       //**interactable items**
       onEnter: () => {
         reenableInput();
@@ -842,19 +844,18 @@ const amnesiaRestored = {
             })
           })
         }
-
       },
       onLook: () => {
           const room = getRoom('hote-revi');
-          let keyDesc = `There is a **room key** with a large green plastic tag showing your room number, 1502.`;
-          let bibleDesc = `Also, a **Gideon Bible**.`;
-          let penDesc = `A **ballpoint pen** has been placed near the phone.`;
+          let keyDesc = `There is a __room key__ with a large green plastic tag showing your room number, 1502.`;
+          let bibleDesc = `Also, a __Gideon Bible__.`;
+          let penDesc = `A __ballpoint pen__ has been placed near the phone.`;
 
-          room.desc = `You take a deep breath -- and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
+          room.desc = `You take a deep breath—and a long look about the hotel room, starting with the writing pad on the dresser, where a sheet of the hotel's stationery informs you that you're a guest of the Sunderland Hotel. ${keyDesc}
           
-          To pass the time the hotel offers a **television**. ${bibleDesc} ${penDesc}
+          To pass the time the hotel offers a __television__. ${bibleDesc} ${penDesc}
           
-          To the left of the dresser is an **Apple //e** computer on its own metal cart.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
+          To the left of the dresser is an __Apple //e__ computer on its own metal cart.`; //IBM PC will change depending on which version the player is on. Need to add function for this. 
           
           if(getItemInInventory('Room Key')){ //if the 1502 room key is already in inventory
               room.desc = room.desc.replace(`${keyDesc}`, '');
@@ -887,7 +888,7 @@ const amnesiaRestored = {
               icon: 'img/png/image-gideonbible-thumbnail.png',
               gif: 'img/gif/gif-gideonbible-ingame.gif',
               name: ['Gideon Bible', 'bible', 'holy book', 'the bible'],
-              desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 reightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
+              desc: `You open the Bible to the only dog-eared page in the book and you notice that the page so marked has been scribbled on. It is the page on which appropriate texts are cited for those with special needs: For those who mourn; For those in ill health; etc. The list of texts commended to "those in doubt and uncertainty" had been crossed out, and above the deleted citations of chapter and verse someone had written "John I." \n If you remember John 1 rightly, it seems oddly irrelevant to the needs of those in double. But never mind.`,
               isTakeable: true,
               isDroppable: true,
               onDrop: () => {
@@ -912,9 +913,9 @@ const amnesiaRestored = {
               let coat2 = 'not even';
               
               if (getItemInInventoryById('coathanger')) {
-                println(`There's nothing in the walk-in closet -- ${coat2} a forlorn coathanger.`);
+                println(`There's nothing in the walk-in closet—${coat2} a forlorn coathanger.`);
               } else {
-                println(`There's nothing in the walk-in closet -- ${coat1} a forlorn coathanger.`);
+                println(`There's nothing in the walk-in closet—${coat1} a forlorn coathanger.`);
               }
             },
           },
@@ -938,7 +939,7 @@ const amnesiaRestored = {
               `static`,
               `Channel 7 also has a news program. The President has asked Congress for money for arms. Two people died in a fire in the Bronx. \nRioting continues for the fifth day at the State Penitentiary at Revoltillo in Texas, where prisoners are protesting the prison's food and its unsanitary conditions. There is some footage showing vats of stew cooking in the prison kitchen, the sight of which makes you continue to feel strangely queasy all through the weather forecast, which is for another bright and sunny day.`,
               `static`,
-              `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board--here's the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
+              `Channel 9 is showing a re-run of FAMILY FEUD. Host Richard Dawson is speaking: "100 people surveyed, top five answers are on the board—here's the question: 'Name a brand of dishwasher detergent.' The question seems to ring a bell.`,
               `static`,
               'Channel 11 is showing a lot of advertising interspersed with clips from an old black-and-white movie.',
               'static',
@@ -952,26 +953,26 @@ const amnesiaRestored = {
               if(item.isOn) {
                 if (item.desc == ' ')
                 {
-                  println(`It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`);
+                  println(`It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`);
                 } else {
-                  item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
+                  item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
                 }
                 
               } else {
                 if (item.desc == ' ')
                 {
-                  println(`It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`);
+                  println(`It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`);
                 }
-                item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
+                item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
               }
             },
             onUse: () => {
               let item = getItemInRoomById('roomtv', 'hote-room-8');
               if(item.isOn) {
-                item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
+                item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is on.`;
                 println(item.desc);
               } else {
-                item.desc = `It is a Simplex TV--a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
+                item.desc = `It is a Simplex TV—a brand you've never heard of, or at least cannot remember. There are three buttons on the set. The first is for on and off, the second is marked F for forward, allowing you to change the channels, but the third is broken off. The TV is off.`
                 println(item.desc);
               }
             }
@@ -979,8 +980,8 @@ const amnesiaRestored = {
           {
             itemId: 'computer',
             gif: 'gif-appleIIe-ingame.gif',
-            name: ['Apple //e', 'Apple IIe', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
-            desc: `The computer is an Apple IIe equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
+            name: ['Apple //e', 'Apple //e', 'apple', 'com', 'comp', 'computer', 'commodore', 'commodore 64', 'apple iie', 'pc'],
+            desc: `The computer is an Apple //e equipped with a monochrome monitor, and two disk drives. Both drives are empty. A decal on the side of the monitor declares that the computer is the property of the User-Friendly Computer Store. It is turned off.`,
             isOn: false,
             onUse: () => {
               //println(`<img src="/img/gif/gif-appleIIe-ingame.gif">`, 'items');
@@ -1000,7 +1001,7 @@ const amnesiaRestored = {
             isOpen: false,
             onLook: () => {
               let dresser = getItemInRoomById('dresser', disk.roomId);
-              let stationary = getItemInRoomById('stationary', disk.roomId);
+              let stationary = getItemInRoomById('stationery', disk.roomId);
               let bible = getItemInRoomById('bible', disk.roomId);
               let roomkey = getItemInRoomById('roomkey', disk.roomId);
               let pen = getItemInRoomById('pen', disk.roomId);
@@ -1031,9 +1032,9 @@ const amnesiaRestored = {
                 if (pen === undefined) {
                   iFiv = '';
                 }
-                println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
+                println(`The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv}and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`);
               } else {
-                dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationery with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
+                dresser.desc = `The four-drawer dresser is made of unconvincingly simulated wood, and the mirror above it is bolted securely to the wall. On top of the dresser is a supply of stationary with the Sunderland Hotel monogram${comma1}${iOne}${iTwo}${iFiv} and a large black ashtray. At the end of the dresser farthest from the window is a dial telephone${iFou}.`;
               }
             }
           },
@@ -1051,7 +1052,7 @@ const amnesiaRestored = {
             icon: 'img/png/image-padofpaper-ingame.gif',
             gif: 'img/gif/gif-padofpaper-ingame.gif',
             name: ['Hotel Stationary', 'hotel stationary', 'stationary', 'paper'],
-            desc: 'The stationary says SUNDERLAND HOTEL at the top.',
+            desc: 'The stationery says SUNDERLAND HOTEL at the top.',
             isTakeable: true,
             isDroppable: true
           },
@@ -1077,7 +1078,7 @@ const amnesiaRestored = {
               //println('Brochure coming soon!');
               //need some divs to switch between text
               //stretch goal unfortunately
-              println("You look through the brochure and think its really nicely designed and laid out.");
+              println("You look through the brochure and think it's really nicely designed and laid out.");
             },
             onTake: () => {
               println(`You took the brochure.`);
@@ -1121,10 +1122,9 @@ const amnesiaRestored = {
             icon: 'img/png/image-tuxedo-thumbnail.png',
             gif: 'img/gif/gif-tuxedo-ingame.gif',
             name: ['White Tuxedo', 'tuxedo', 'tux'],
-            desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit -- to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
+            desc: `There is an all-while tuxedo, sitting on the bed. There could be only one place anyone would ever wear this outfit—to his own wedding. Could the explanation for your amnesia be as simple as this? A last-ditch attempt to escape the state of matrimony?
             Maybe it got delivered to this room by mistake. There's an easy way to find out. You examine the tuxedo, and seems to be exactly your size.`,
             isTakeable: true,
-            isDroppable: true,
             top: true, 
             bottom: true,
             takeFirst: false,
@@ -1150,7 +1150,9 @@ const amnesiaRestored = {
               icon: 'img/png/image-bedsheet-thumnail.png',
               gif: 'img/gif/gif-bedsheet-ingame.gif',
               name: ['Bed Sheet', 'bed sheets', 'sheets', 'sheet', 'bed covers', 'covers', 'cover', 'bedsheet'],
-              desc: 'A plain white sheet that looks you could wear as a makeshift outfit.',
+              top: true,
+              bottom: true,
+              desc: 'A plain white sheet that looks like you could wear as a makeshift outfit.',
               isTakeable: true,
               isDroppable: true
             }
@@ -1198,7 +1200,7 @@ const amnesiaRestored = {
       desc: '',
       onEnter: () => {
         reenableInput();
-        println(`"John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours, calling your room every five minutes. I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucker yet?"`);
+        println(`"John!" booms a man's gravelly voice. "Where've you been, son? We've been down here in the lobby for the last couple hours calling your room every five minutes. I guess that last margarita last night was your undoing. Well, no matter, so long as you're on your feet again. Have you tried on your white bib and tucker yet?"`);
         let room = getRoom('hote-revi');
         room.exits[1].id = 'hote-revi-8'
         playerC.dScore += 15; // Adding to Detective Score
@@ -1216,7 +1218,7 @@ const amnesiaRestored = {
           println(`"Well, get moving, my boy! Your bride is starting to think you may be planning to leave her standing at the altar. So unless you want me to come up there with a shotgun, you get into them fancy duds and report to the lobby on the double!" He hangs up, and you wonder, fleetingly, if getting married is usually this easy. Why, it's like...putting on a suit of clothes.`);
           enterRoom('hote-revi');
         } else {
-          println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here-- and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called *Alice at the Sunderland Hotel*. And there is the costume for the White Rabbit in three boxes on the bed.`)
+          println(`"Very funny, my boy, very funny. But let's leave the joking for after the ceremony, if you don't mind. I'm paying this preacher by the hour, and he don't come cheap. So move your butt on down here— and be wearing that wedding uniform. Your little Alice says she is aching to see you all in white." He hangs up, and you think: This isn't my life, this is a movie called *Alice at the Sunderland Hotel*. And there is the costume for the White Rabbit in three boxes on the bed.`)
           enterRoom('hote-revi');
         }
       },
@@ -1227,7 +1229,7 @@ const amnesiaRestored = {
       name: '',
       desc: '',
       onEnter: () => {
-          println(`You hear a key being fitted into the lock of the door and feel-- too late-- a sense of urgency. A man enters the room, dressed like a Texas businessman in a suit and tie with boots and a Stetson. The gun in his hand, however, is not consistent with his western theme, being a very modest .38 caliber pistol.`);
+          println(`You hear a key being fitted into the lock of the door and feel— too late— a sense of urgency. A man enters the room, dressed like a Texas businessman in a suit and tie with boots and a Stetson. The gun in his hand, however, is not consistent with his western theme, being a very modest .38 caliber pistol.`);
           pressEnter('hote-revi-6');
       },
       exits: [],
@@ -1280,7 +1282,7 @@ const amnesiaRestored = {
           ////console.log()
             println(`You are just about out the door of the room when you remember to check in your pocket to see if you remembered to take the room key. You've left it back in the room.
             
-            You return to get the key-- and anything else you think you ought to have with you.
+            You return to get the key— and anything else you think you ought to have with you.
             
             You decide to leave most of the hotel's possessions in the room. Apparently you possess a sense of morality.
             
@@ -1322,7 +1324,7 @@ const amnesiaRestored = {
     {
       id: 'nigh-1',
       name:'Nightmare',
-      desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel's gigantic neon light that glows a baleful red outside the window. "X," a voice whispers in the crimson twilight, "X, are you there?" \n\n You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. "Come here, X," the voice insists. "Come here to me, in the **mirror**."`,
+      desc: `You are dreaming that you have been asleep and that you wake to find yourself in a strange hotel. The only light in the room comes from the hotel's gigantic neon light that glows a baleful red outside the window. "X," a voice whispers in the crimson twilight, "X, are you there?" \n\n You know that you are X and that you must answer the voice truthfully, but your mouth is dry, your tongue paralyzed with fear. "Come here, X," the voice insists. "Come here to me, in the __mirror__."`,
       hasEntered: false,
       onEnter: () => {
         playerC.cScore += 3;
@@ -1331,7 +1333,7 @@ const amnesiaRestored = {
         nEntranceRoom = lastRoom.id;
       },
       onBlock: () => {
-        println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: "Come here, X. Come here to me, in the **mirror**."`)
+        println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: "Come here, X. Come here to me, in the __mirror__."`)
       },
       exits:[
         {dir: 'mirror', id: 'nigh-2'},
@@ -1340,7 +1342,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-2',
         name: '',
-        desc: `Obedient to the voice, you go to the mirror. The figure in the mirror leans forward to peer at you intently. He is dressed all in white, like a bridegroom or a ghost. And though he has no face--only eyes that stare anxiously from the smooth ovoid of his head--he smiles, recognizing you. "Excellent," he whispers. \n\n "Now come with me--before the store closes." In the mirror you see him turn away from you and walk toward the door of the room, where he pauses to look back at you, and to beckon, with his raised hand, for you to follow.`, 
+        desc: `Obedient to the voice, you go to the mirror. The figure in the mirror leans forward to peer at you intently. He is dressed all in white, like a bridegroom or a ghost. And though he has no face—only eyes that stare anxiously from the smooth ovoid of his head—he smiles, recognizing you. "Excellent," he whispers. \n\n "Now come with me—before the store closes." In the mirror you see him turn away from you and walk toward the door of the room, where he pauses to look back at you, and to beckon, with his raised hand, for you to follow.`, 
         onEnter: () => {
           pressEnter('nigh-4');
         },    
@@ -1348,13 +1350,13 @@ const amnesiaRestored = {
     {
         id: 'nigh-4',
         name: '',
-        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n "Come," says the faceless figure, putting his arm about your shoulder. "You mustn't be late your first day at work." If you wished to, you could not resist his greater strength. You enter the empty subway car. "Quickly!" Your companion hands you a spray can of black enamel. "Before the police come and you're arrested--write a graffito. Quickly!"`,
+        desc: `As you enter the mirror, the beckoning figure vanishes. You follow him out of the room and catch another glimpse of him at the far end of the corridor. You run toward him and reach his side just as the subway is pulling into the station. The doors open with a shudder. \n\n "Come," says the faceless figure, putting his arm about your shoulder. "You mustn't be late your first day at work." Even if you wished to, you could not resist his greater strength. You enter the empty subway car. "Quickly!" Your companion hands you a spray can of black enamel. "Before the police come and you're arrested—write a graffito. Quickly!"`,
         onEnter: () =>{
           reenableInput();
         },
         onBlock: () => {
           if (firstNightmare === true) {
-            println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a **fuck**, a giant **X** or something risqué comes to mind. Then you press the nozzle and write:");
+            println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a __fuck__, a giant __X__ or something risqué comes to mind. Then you press the nozzle and write:");
             if (prevInput === 'fuck') {
               enterRoom('nigh-5');
             } else if (prevInput === 'x') {
@@ -1367,7 +1369,7 @@ const amnesiaRestored = {
               firstNightmare = false;
             }
           } else {
-            println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a **fuck** or a giant **X** comes to mind. Then you press the nozzle and write:");
+            println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a __fuck__ or a giant __X__ comes to mind. Then you press the nozzle and write:");
             if (prevInput === 'fuck') {
               enterRoom('nigh-5');
             } else if (prevInput === 'x') {
@@ -1404,7 +1406,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter:() => {
-          println(`Commissioner ${nightmareCeleb} and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner ${nightmareCeleb} tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. \n\nYour struggles are useless as the tattooist's buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner ${nightmareCeleb} holds up a mirror to your face--and you wake, screaming.`);
+          println(`Commissioner ${nightmareCeleb} and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner ${nightmareCeleb} tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. \n\nYour struggles are useless as the tattooist's buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner ${nightmareCeleb} holds up a mirror to your face—and you wake, screaming.`);
           pressEnter(nEntranceRoom);
           //this node exits to wherever the player entered into the nightmare node.
       },
@@ -1412,7 +1414,7 @@ const amnesiaRestored = {
     {
         id:'nigh-8',
         name:'',
-        desc:`You spray a giant X across the window of the subway car, then return the spray can to the figure who had given it to you--and who is no longer faceless. Yet the face he now has is somehow more frightening than his earlier facelessness--for it is your own face. \n\n He has taken it from you, along with your name, and left you nothing but this scrawl on the subway window. You press your hands to the featureless ovoid that grows from the stalk of your neck and try, mouthlessly, to scream. You wake, trembling and covered with sweat.`,
+        desc:`You spray a giant X across the window of the subway car, then return the spray can to the figure who had given it to you—and who is no longer faceless. Yet the face he now has is somehow more frightening than his earlier facelessness—for it is your own face. \n\n He has taken it from you, along with your name, and left you nothing but this scrawl on the subway window. You press your hands to the featureless ovoid that grows from the stalk of your neck and try, mouthlessly, to scream. You wake, trembling and covered with sweat.`,
         onEnter:() => {
           pressEnter(nEntranceRoom);
         },
@@ -1420,13 +1422,13 @@ const amnesiaRestored = {
     {
         id: 'nigh-9',
         name: '',
-        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman's Department Store directly from the subway platform. "I'll have to leave you here," your companion tells you, "but the Personnel Office is on the 13th f1oor. And there--" His featureless head nods toward the purring **escalator** at the center of the deserted sales floor. "-is the **escalator**. See you later X."`,
+        desc: `The subway car screeches to a stop at 34th STREET, where you are able to enter Oldman's Department Store directly from the subway platform. "I'll have to leave you here," your companion tells you, "but the Personnel Office is on the 13th f1oor. And there—" His featureless head nods toward the purring __escalator__ at the center of the deserted sales floor. "-is the __escalator__. See you later X."`,
         onEnter: () => {
             reenableInput();
         },
         onBlock: () => {
           if(prevInput !== 'go to escalator'){
-            println(`You try to ${prevInput} but you can't. Your acts don't seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the **escalator**. You nod. He points his bony finger toward the purring, gliding steps. "It's right there, sir," he informs you.`);
+            println(`You try to ${prevInput} but you can't. Your acts don't seem to be under your own control. An elderly floorman approaches you and asks if you are looking for the __escalator__. You nod. He points his bony finger toward the purring, gliding steps. "It's right there, sir," he informs you.`);
           } else {
             enterRoom('nigh-sale');
           }
@@ -1438,7 +1440,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale',
         name: '',
-        desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter--and points at the ascending escalator.`,
+        desc: `You take the escalator up to the main sales floor, which smells rather cloyingly of perfume. An elderly saleswoman smiles at you from behind a cosmetics counter—and points at the ascending escalator.`,
         onEnter: () => {
             reenableInput();
         },
@@ -1455,7 +1457,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale2',
         name: '',
-        desc: `You take the escalator to the second floor, where four female manikins have been grouped in a tableau representing an outing to the beach. Each of the mannequins has lifted her plaster hand to point to the upward-bound escalator.`,
+        desc: `You take the escalator to the second floor, where four female mannequins have been grouped in a tableau representing an outing to the beach. Each of the mannequins has lifted her plaster hand to point to the upward-bound escalator.`,
         onBlock: () => {
           if (prevInput === 'go up escalator' || prevInput === 'go to escalator') {
             enterRoom('nigh-sale3');
@@ -1470,7 +1472,7 @@ const amnesiaRestored = {
     {
         id:'nigh-sale3',
         name:'',
-        desc: `You take the escalator to the third floor, which is devoted to displays of men's fashions. On the counter just before you a single leather glove on sale for $12.95 points to the Up escalator.`,
+        desc: `You take the escalator to the third floor, which is devoted to displays of men's fashions. On the counter just before you a single leather glove on sale for $12.95 points to the up escalator.`,
         onBlock: () => {
           if (prevInput === 'go up escalator' || prevInput === 'go to escalator') {
             enterRoom('nigh-sale4');
@@ -1484,7 +1486,7 @@ const amnesiaRestored = {
     {
         id:'nigh-sale4',
         name: '',
-        desc: `You take the escalator to the fourth floor, where a placard informs you that the Les Delices has been closed for renovation. Another placard shows a hand pointing, with no explanation, toward the Up escalator.`,
+        desc: `You take the escalator to the fourth floor, where a placard informs you that the Les Delices has been closed for renovation. Another placard shows a hand pointing, with no explanation, toward the up escalator.`,
         onBlock: () => {
           if (prevInput === 'go up escalator' || prevInput === 'go to escalator') {
             enterRoom('nigh-sale5');
@@ -1510,7 +1512,7 @@ const amnesiaRestored = {
     {
         id:'knif-sale',
         name: '',
-        desc:`"Very good, Sir. This--" He holds a knife with an 8-inch stainless steel blade to your throat. "--is our very best all-purpose carving knife. And this--" The carving knife drops from his hand, and he takes another, smaller knife from the counter. "This is a superb knife for boning chicken." He lunges at you with the knife, which makes a long gash in the sleeve of your white coat--but does no more significant harm.`,
+        desc:`"Very good, Sir. This—" He holds a knife with an 8-inch stainless steel blade to your throat. "—is our very best all-purpose carving knife. And this—" The carving knife drops from his hand, and he takes another, smaller knife from the counter. "This is a superb knife for boning chicken." He lunges at you with the knife, which makes a long gash in the sleeve of your white coat—but does no more significant harm.`,
         onEnter: () => {
             pressEnter('nigh-sale6');
         },
@@ -1526,7 +1528,7 @@ const amnesiaRestored = {
     {
         id:'nigh-sale6',
         name:'',
-        desc:`You take the escalator to the sixth floor, where the management of Oldman's announces, on a large poster that it is proud to be selling, in cooperation with the Sistine Chapel, a collection of priceless Fine Art Reproductions, including a gigantic full-color reproduction of the Hand of God from the ceiling of the Sistine Chapel. The Hand of God is pointing to the Up escalator.`,
+        desc:`You take the escalator to the sixth floor, where the management of Oldman's announces, on a large poster that it is proud to be selling, in cooperation with the Sistine Chapel, a collection of priceless Fine Art Reproductions, including a gigantic full-color reproduction of the Hand of God from the ceiling of the Sistine Chapel. The Hand of God is pointing to the up escalator.`,
         onEnter: () => {
           reenableInput();
         },
@@ -1543,7 +1545,7 @@ const amnesiaRestored = {
     {
         id:'nigh-sale7',
         name:'',
-        desc:`You take the escalator to the seventh floor, which seems to be an empty warehouse. Luxuriant growths of cobwebs festoon the light fixtures. Unmarked boxes and bundles are piled everywhere. The disembodied arm of a mannequin lies in the dust, its finger pointing with modest insistence to the UP escalator.`,
+        desc:`You take the escalator to the seventh floor, which seems to be an empty warehouse. Luxuriant growths of cobwebs festoon the light fixtures. Unmarked boxes and bundles are piled everywhere. The disembodied arm of a mannequin lies in the dust, its finger pointing with modest insistence to the up escalator.`,
         onBlock: () => {
           if (prevInput === 'go up escalator' || prevInput === 'go to escalator') {
             enterRoom('nigh-sale8');
@@ -1556,7 +1558,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale8',
         name: '',
-        desc:`You take the escalator to the eighth floor, where Oldman's Hair-Styling Saloon is situated. "Hello!" says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali. - "I see we have our work cut out for us today! Sit down, please." He gestures toward a low chair next to the shampooing sink. You shake your head. You don't want a shampoo. The hair stylist insists.`,
+        desc:`You take the escalator to the eighth floor, where Oldman's Hair-Styling Saloon is situated. "Hello!" says the chief hair stylist, an elderly man with a waxed mustache like the artist Salvador Dali—"I see we have our work cut out for us today! Sit down, please." He gestures toward a low chair next to the shampooing sink. You shake your head. You don't want a shampoo. The hair stylist insists.`,
         onEnter: () => {
           pressEnter('sham-sale');
         },
@@ -1572,7 +1574,7 @@ const amnesiaRestored = {
     {
         id:'sham-sale2',
         name: '',
-        desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he'd promised, you have been completely remodeled in the new blank style. "Now, isn't that a lot better," the old man says, holding up a mirror for you to see your now so much more geometrical face. "I'm sure the Personnel Department will hire you right off the bat--and assign you to work in one of the front windows. Well, have a nice day." And he points you toward the Up escalator.`,
+        desc:`While the old hair stylist chattered away, his clippers and trimmers and gougers and sanders and sealers clipped and trimmed and gouged and sanded and sealed until, just as he'd promised, you have been completely remodeled in the new blank style. "Now, isn't that a lot better," the old man says, holding up a mirror for you to see your now so much more geometrical face. "I'm sure the Personnel Department will hire you right off the bat—and assign you to work in one of the front windows. Well, have a nice day." And he points you toward the up escalator.`,
         onEnter: () =>{
             reenableInput();
         },
@@ -1588,7 +1590,7 @@ const amnesiaRestored = {
     {
         id: 'nigh-sale9',
         name: '',
-        desc: `You take the escalator up to the ninth floor, where an elderly salesman insists on giving you a demonstration of the Apple IIe computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
+        desc: `You take the escalator up to the ninth floor, where an elderly salesman insists on giving you a demonstration of the Apple //e computer. The salesman shows you how easy it is to boot a disc, and then some words flicker down the face of the screen. "That is a riddle," the salesman explains, "and you must solve it." The lines on the screen are:`,
         onEnter: () => {
           pressEnter('ridd-1');
         },
@@ -1618,7 +1620,7 @@ const amnesiaRestored = {
     {
       id: 'ridd-2',
       name: '',
-      desc:`"Very good! You see how easy it is to use a computer? And when you've finished, just remove the disc from the disc drive, like so--" \nBut instead of removing the computer's disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n"The program stays on ROM--that is, on Read-Only Memory--until you throw the switch. Now, where do they put the switch on this model?" \nYou think to yourself that you could run away to the next **escalator** or **look** for the switch.`,
+      desc:`"Very good! You see how easy it is to use a computer? And when you've finished, just remove the disc from the disc drive, like so—" \nBut instead of removing the computer's disc, his fingers open a flap in your right side, just beneath your liver, and he removes your own software. \n"The program stays on ROM—that is, on Read-Only Memory—until you throw the switch. Now, where do they put the switch on this model?" \nYou think to yourself that you could run away to the next __escalator__ or __look__ for the switch.`,
       onBlock: () => {
         if (prevInput === 'escalator' || prevInput === 'run' || prevInput === 'run away' || prevInput === 'run to escalator') {
           enterRoom('nigh-sale10');
@@ -1653,7 +1655,7 @@ const amnesiaRestored = {
       name:'',
       desc: ``,
       onEnter: () => {
-          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off differ rent styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
+          println(`You take the escalator up to the tenth floor, which seems to be an assembly area for the store mannequins. Some stand in front of full-length mirrors trying on and taking off different styles and positions of limbs. "Hello," says one particularly attractive blonde, jutting her hip to the side in a traditional posture of greeting. "My name's Hugette, what's yours?" You try to answer her question, but you appear to have lost the use of your voice. Hugette seems not to notice. "My full name," she continues, "is Hugette Wadju­-Paiffer, with a hyphen. You have a very attractive head. Do you mind if I try it on?"`)
           pressEnter('nigh-sale11');
       },
     },
@@ -1686,7 +1688,7 @@ const amnesiaRestored = {
     {
       id:'nigh-sale13',
       name: '',
-      desc:`The security officer takes you to a fitting room at the side of the sales floor and deftly fits a spare head into the empty socket in your neck. You look at yourself in the mirror. To your surprise you are now a man of sixty or seventy years, and a cousin if not the twin of the security officer, who welcomes you with a smile to your new place of employment. At last, you have a mouth and are able--even as you wake from the nightmare--to scream.`,
+      desc:`The security officer takes you to a fitting room at the side of the sales floor and deftly fits a spare head into the empty socket in your neck. You look at yourself in the mirror. To your surprise you are now a man of sixty or seventy years, and a cousin if not the twin of the security officer, who welcomes you with a smile to your new place of employment. At last, you have a mouth and are able—even as you wake from the nightmare—to scream.`,
       onEnter: () => {
         enterRoom(nEntranceRoom);
       }
@@ -1694,7 +1696,7 @@ const amnesiaRestored = {
     {
       id:'nigh-sale14',
       name: '',
-      desc:`"You won't? You won't!" he shouts at you. But you've already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman's Shipping Department. None of the department's staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman's ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I'm suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair--to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
+      desc:`"You won't? You won't!" he shouts at you. But you've already broken his grip and are running up the escalator to the twelfth floor, which is given over to Oldman's Shipping Department. None of the department's staff is anywhere in sight. You are standing in the midst of hundreds of boxes of all shapes and colors, each stamped with Oldman's ornate monogram. Faintly, from one of those boxes, you can hear your head calling to you: "Help! Help me get out of this box. I'm suffocating. Help!" Your voice grows weaker, and your own strength is ebbing rapidly. It seems so unfair—to have got this close to the Personnel Department and then to fail. You tell yourself you must find your head and take it up the last flight of steps to be interviewed.`,
       onBlock: () => {
         if(prevInput === 'open box' || prevInput === 'search box' || prevInput === 'search head' || prevInput === 'search for head' || prevInput === 'look for head' || prevInput === 'find head' || prevInput === 'find your head') {
           enterRoom('nigh-sale15');
@@ -1838,7 +1840,7 @@ const amnesiaRestored = {
     {
       id: 'hell-1',
       name: 'Lethe', 
-      desc: `Now you are dead--but that isn't the end of your problems. Because it turns out that there is an afterlife--and you are there. It is highly unpleasant, though strictly speaking it isn't hell. Not yet. You and a few thousand other naked anxious souls are standing on the bank of a misty black river, being stung by mosquitoes and bitten by large centipedes.`, 
+      desc: `Now you are dead—but that isn't the end of your problems. Because it turns out that there is an afterlife—and you are there. It is highly unpleasant, though strictly speaking it isn't hell. Not yet. You and a few thousand other naked anxious souls are standing on the bank of a misty black river, being stung by mosquitoes and bitten by large centipedes.`, 
       onEnter: () =>{
         pressEnter('hell-2');
       },
@@ -1847,7 +1849,7 @@ const amnesiaRestored = {
     {
       id: 'hell-2',
       name: '',
-      desc: `Every few years a kind of canoe comes up to the shore, and an old man with a long white beard and eyes that glow like a battery-operated jack-o-lantern offers the waiting throng a chance to get into the canoe and be taken to the seat of the Last Judgement. But first, you have to tell him your name. And you--and all these others--are the poor souls who died in a state of amnesia. You can't remember your names, and you can't get either to heaven or to hell until this old geezer, whose name is Charon, has checked you off his list. Each time he returns you have one chance to tell him what you think your name might be.`,
+      desc: `Every few years a kind of canoe comes up to the shore, and an old man with a long white beard and eyes that glow like a battery-operated jack-o-lantern offers the waiting throng a chance to get into the canoe and be taken to the seat of the Last Judgement. But first, you have to tell him your name. And you—and all these others—are the poor souls who died in a state of amnesia. You can't remember your names, and you can't get either to heaven or to hell until this old geezer, whose name is Charon, has checked you off his list. Each time he returns you have one chance to tell him what you think your name might be.`,
       onEnter: () => {
         pressEnter('hell-3');
       },
@@ -1863,7 +1865,7 @@ const amnesiaRestored = {
       onBlock: () => {
         if (prevInput === 'xavier hollings' || prevInput === 'xavier' || prevInput === 'hollings') {
           enterRoom('hell-4');
-        } else if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron') {
+        } else if (prevInput === 'john cameron iii' || prevInput === 'john cameron' || prevInput === 'john' || prevInput === 'cameron') {
           println('That is an interesting name but, ');
           enterRoom('hell-6');
         } else if (prevInput === '') {
@@ -1887,7 +1889,7 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         let styx = getRoom('hell-6');
-        if (prevInput === 'john cameron iii' || prevInput === 'john cmmeron' || prevInput === 'john' || prevInput === 'cameron'){
+        if (prevInput === 'john cameron iii' || prevInput === 'john cameron' || prevInput === 'john' || prevInput === 'cameron'){
           enterRoom('hell-6');
         } else {
           styx.charonReturns++;
@@ -1923,7 +1925,7 @@ const amnesiaRestored = {
       name: 'Eternity Without a Name',
       desc: `"Sorry," says Charon, handing you back your Emigration Card. "I've got no pick-up order for anyone by this name. Better luck next time." Charon picks up his oar, and swats away the other lost souls gathered about his boat.`,
       onEnter: () => {
-        println('Years turned to centuries, which turned to millenia. Millenia became eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
+        println('Years turned to centuries, which turned to millenia. Millenia become eons, time spanning on into eternity and yet you cannot remember your name. The name will come right?');
         eterWith = true;
         updateEndings();
         slideRightIn('achieve-display', 'achieve-text-container');
@@ -1939,22 +1941,21 @@ const amnesiaRestored = {
       id: 'corridor-1502',
       name: '15th Floor Hallway',
       desc: `You are now in a long corridor made to seem still longer by a wallpaper design of continuous horizontal stripes of chocolate brown and dusky orange. To the west, just after the door to your own room, is a door with a lighted EXIT sign above it. On along the corridor to the east the numbers of the rooms increase by increments of one. \n
-      Halfway down the corridor there is a branching northward and and an arrow directing you to a bank of elevators. For the moment, the hallway is desered save for a maid's laundry trolley some five doors away and yourself.`,
+      Halfway down the corridor there is a branching northward hall and an arrow directing you to a bank of elevators. For the moment, the hallway is deserted save for a maid's laundry trolley some five doors away and yourself.`,
       removeOnRead: true,
       onEnter: () => { // If the player tries to go back to room 1502
         playerC.sScore += 2; // Adding to Survival
-        ////console.log(playerC.sScore);
-        const room1502 = getRoom('corridor-1502');
-          const exit = getExitDir('hote-room-1', room1502.exits);
-          const item = getItemInInventory('roomkey');
-          if (item) {
-            delete exit.block;
-          } else {
-            println('You try to return to your room, but the door locked automatically when it was closed.');
-          }
+        //console.log(playerC.sScore)
+        let room1502 = getRoom('corridor-1502');
+        const item = getItemInInventoryById('roomkey');
+        if (item) {
+          delete room1502.exits[0].block;
+        } else {
+          println('You try to return to your room, but the door locked automatically when it was closed.');
+        }
       },
       exits: [
-        {dir: ['leave', '1502', 'room', 'hotel room'], id: 'hote-room-1', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
+        {dir: ['leave', '1502', 'room', 'hotel room', 'back', 'inside'], id: 'hote-room-8', block: 'You try to return to your room, but the door locked automatically when it was closed.'},
         {dir: ['east', 'right', '1503'], id: 'corridor-1503'},
         {dir: ['west', 'left', '1501'], id: 'corridor-1501'},
         {dir: ['elevator', 'lift', 'elevators'], id: 'corridor-elevator15'},
@@ -1966,7 +1967,7 @@ const amnesiaRestored = {
       name: '15th Floor Hallway',
       desc: `You are standing in the front of the door with the lighted EXIT sign over it. This must be the stairway.`,
       onEnter: () =>{
-          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'sheet'))){
+          if((!disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet'))){
               println(`Despite the fact you are not wearing a stitch, you go out into the corridor. You're at one end of it, near a lighted EXIT sign. Facing you is the door to Room 1501. On along the corridor, the numbers of the rooms increase by increments of one. Some five doors away the maid's laundry trolley is parked, but the maid is not in sight. Farther down the corridor an arrow points left toward a bank of elevators.`)
           }
       },
@@ -2009,11 +2010,12 @@ const amnesiaRestored = {
           name: 'trolley',
           desc: `The trolley has a single large bed blanket, a stock of supplies, and various bottles, a brush, and a rag for cleaning.`,
           onLook: () => {
-            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bathtowel')) {
+            if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
               println('On closer inspection you see some towels, but you are already wearing something.');
             } else {
               println('You see a towel on the trolley. You quickly grab it and put it on.');
-              addItem('bath towel');
+              wear('towel');
+              //addItem('bath towel');
             }
           }
         },
@@ -2023,12 +2025,16 @@ const amnesiaRestored = {
           gif: 'img/gif/gif-towel-ingame.gif',
           name: ['Towel', 'large towel', 'bath towel'],
           desc: `It is a large fluffy towel.`,
+          //top: true,
+          bottom: true,
           isTakeable: true,
           isDroppable: true,
           onTake: () => {
+            playerC.cScore += 10;
+            playerC.sScore += 10;
             println('You take the towel.'); //appears in inventory as 'towel'
             const bathroom = getRoom('hote-bath-1');
-            bathroom.desc = bathroom.desc.replace(`a towel rack with a **large towel**.`, 'and a towel rack.'); //removes towel description from bathroom look description
+            bathroom.desc = bathroom.desc.replace(`a towel rack with a __large towel__.`, 'and a towel rack.'); //removes towel description from bathroom look description
           },
         }
       ],
@@ -2067,11 +2073,16 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevator15',
       name: '15th Floor Hallway',
-      desc: `You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
+      desc: ` `,
       onEnter: () => {
-        let room = getRoom(disk.roomId);
         //todo: renable check for bathtowel
-        if(disk.inventory.some(el => el.itemId === 'bathtowel' || el.itemId === 'bedsheet')) {
+        let towel = getItemInInventoryById('bathtowel');
+        let sheet = getItemInInventoryById('bedsheet');
+        //getItemInInventoryById('bathtowel') || getItemInInventoryById('bedsheet')
+        console.log(towel);
+        if (towel || sheet) {
+          println(`You are down the hall from your room. Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`)
+        } else {
           println(`You run down the corridor to where there is a bank of four elevators. Just as you get there the doors of one of the elevators whooshes open, and a women and a bellhop regard you wth expressions of dismay and amusement, respectively. The woman beings to scream. \n\n The bellboy reaches forward to press the button that closes the elevator door. Everything seems to happen slowly, as though you were moving under water. You realize that in coming out into the corridor without clothes you have acted irrationally, and now you can't seem to control your actions at all. You stand rooted to the carpet, waiting for the inevitable, which arrives, quite soon, in the form of two uniformed security guards. \n\n The guards handcuff you and throw a sheet over your shoulders. Then you are hustled into a utility elevator and taken to a small room in the sub-basement of the hotel, where you are left to wait the arrival of the police. When the police do arrive, there is a small altercation between them and the security guards as to whether you are to be allowed to leave the hotel wrapped in one of its sheets.`),
           pressEnter('corridor-security');
         }
@@ -2086,9 +2097,9 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevatorbellboy',
       name: '15th Floor Hallway',
-      desc: `You call for the elevator -- and a moment later the doors of one of the elevators whoosh open, and a woman in a floppy hat and a bellboy regard you with expressions of disdain and amusement, respectively. "Really!" the woman protests as you step toward the elevator.
+      desc: `You call for the elevator—and a moment later the doors of one of the elevators whoosh open, and a woman in a floppy hat and a bellboy regard you with expressions of disdain and amusement, respectively. "Really!" the woman protests as you step toward the elevator.
 
-      The bellboy holds up his hand in friendly warning. "We're going down, buddy," he explains. "The gym is up on 20 -- and I'd suggest you use the stairs, until you've got some more clothes." The elevator doors close with a dull chunk.`,
+      The bellboy holds up his hand in friendly warning. "We're going down, buddy," he explains. "The gym is up on 20—and I'd suggest you use the stairs, until you've got some more clothes." The elevator doors close with a dull chunk.`,
       onEnter: () => {
         let changeRoom = getRoom('corridor-elevator15');
         changeRoom.exits[0].id = 'corridor-elevator';
@@ -2104,7 +2115,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevator',
       name: 'Elevator',
-      desc: `After a short interval an elevator arrives. There are twenty buttons on the aluminum panel -- the lowest marked L for Lobby, the uppermost PH for PENTHOUSE, and the others numbered 2 through 19.`,
+      desc: `After a short interval an elevator arrives. There are twenty buttons on the aluminum panel—the lowest marked L for Lobby, the uppermost PH for PENTHOUSE, and the others numbered 2 through 19.`,
       
       exits: [ // These need to be specified with the press command
           {dir: 'l', id: 'corridor-hostileelevator'},
@@ -2135,7 +2146,7 @@ const amnesiaRestored = {
       name: 'Elevator',
       desc: `The doors close. You wait for something to happen. Nothing happens. You continue to wait, and nothing continues to happen. Clearly, this is a hostile elevator. You push the button marked OPEN DOOR. Zilch.
 
-      The elevator begins to perform a very subdued string-orchestra rendition of "Put on a Happy Face." One of the buttons you still haven't tried is the red button marked ALARM.`,
+      The elevator begins to perform a very subdued string-orchestra rendition of "Put On A Happy Face." One of the buttons you still haven't tried is the red button marked ALARM.`,
       
       exits: [ // These need to be specified with the press command
         {dir: ['ph',], id: 'corridor-elevatorph'},
@@ -2145,10 +2156,15 @@ const amnesiaRestored = {
     {
       id: 'corridor-alarm', // Pressing alarm triggers death and texas
       name: 'Elevator',
-      desc: `At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open -- to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, your makeshift costume comes undone and falls to the floor of the elevator. As you stoop to retrieve it, the elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`,
-      
+      desc: ` `,
       onEnter: () => {
+        if (getItemInInventoryById('bedsheet') || getItemInInventoryById('bathtowel')) {
+          println(`At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open—to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, your makeshift costume comes undone and falls to the floor of the elevator. As you stoop to retrieve it, the elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`);
           pressEnter('deat-1');
+        } else {
+          println(`At the first touch of your finger to the red button, a siren begins to wail, and the doors of the elevator open—to the astonishment of a pair of nuns carrying large canvas suitcases. At this moment, you try covering yourself but unfortuantely its too late, as elevator doors close again, though the siren continues its shrill summons. It is fully five minutes before the doors of the elevator open again, but this time it is not the nuns you confront but two of the hotel's security guards, who have a pair of handcuffs ready. You protest your innocence as they lead you, handcuffed, to the utility elevator, then down to a small room in the sub-basement where you await the arrival of the police to the same Muzak medley that began in the elevator.`);
+          pressEnter('deat-1');
+        }
       },
       exits: [],
     },
@@ -2178,7 +2194,7 @@ const amnesiaRestored = {
         ],
     },
     {
-      id: 'corridor-213', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-213', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 213',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2250,7 +2266,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-204'},
           {dir: ['north', 'south'], block: `You can't go that way.`},
         ],   
@@ -2356,7 +2372,7 @@ const amnesiaRestored = {
       desc: `You are standing just down from the stairway.`,
       exits: [ 
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell3', block: "You're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-304'},
           {dir: ['north', 'south'], id: 'corridor-304', block: `You can't go that way.`},
         ],
@@ -2388,7 +2404,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-413', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-413', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 413',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2466,7 +2482,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell4', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell4', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-404'},
@@ -2503,7 +2519,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-513', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-513', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 513',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2582,7 +2598,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell5', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell5', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-504'},
@@ -2618,7 +2634,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-613', // Player gopes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-613', // Player goes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 613',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2697,7 +2713,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell6', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-604'},
           {dir: ['north', 'south'], id: 'corridor-604', block: `You can't go that way.`},
 
@@ -2732,7 +2748,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-713', // Player gopes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-713', // Player goes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 713',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2802,7 +2818,7 @@ const amnesiaRestored = {
       desc: `You are standing just down from the stairway.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell7', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-704'},
           {dir: ['north', 'south'], id: 'corridor-704', block: `You can't go that way.`}
          ],   
@@ -2836,7 +2852,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-813', // Player gopes into 813, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-813', // Player goes into 813, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 813',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -2921,7 +2937,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "Your're still outside the stairwell."},
+          {dir: ['inside', 'up'], id: 'corridor-stairwell8', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-804'},
           {dir: ['north', 'south'], id: 'corridor-804', block: `You can't go that way.`}
          ],
@@ -2956,7 +2972,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-913', // Player gopes into 913, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-913', // Player goes into 913, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 913',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3041,7 +3057,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell9', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell9', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-904'},
@@ -3080,7 +3096,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1013', // Player gopes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1013', // Player goes into 713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1013',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3159,7 +3175,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell10', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell10', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1004'},
@@ -3171,7 +3187,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-elevator11', // Player presses 11
       name: '11th Floor Hallway',
-      desc: `You press the button for 11. After a lurch and some movement, the elevator arrives at the 11thd floor, the doors open, and you walk out into the hallway.
+      desc: `You press the button for 11. After a lurch and some movement, the elevator arrives at the 11th floor, the doors open, and you walk out into the hallway.
 
       Four elevators are to the north of you. Between each pair of elevators is a panel with buttons to summon either a DOWN or an UP elevator.`,
       
@@ -3231,7 +3247,7 @@ const amnesiaRestored = {
     
     {
       id: 'corridor-1110', 
-      name: '2nd Floor Hallway',
+      name: '11th Floor Hallway',
       desc: `You are standing in front of the doors to rooms 1109 and 1110.`,
       
       exits: [ // These need to be specified with the press command
@@ -3273,7 +3289,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell11', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell11', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1104'},
           {dir: ['north', 'south'], id: 'corridor-1104', block: `You can't go that way.`},
         ],
@@ -3303,7 +3319,7 @@ const amnesiaRestored = {
         ],
     },
     {
-      id: 'corridor-1213', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1213', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1213',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3313,7 +3329,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1214', // 
-      name: '12nd Floor Hallway',
+      name: '12th Floor Hallway',
       desc: `To the east is the end of the hallway, and on either side of you are the doors to rooms 1214 and 1215.`,
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left'], id: 'corridor-1212'},
@@ -3375,7 +3391,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside' ,'up'], id: 'corridor-stairwell12', block: "Your're still outside the stairwell."
+          {dir: ['inside' ,'up'], id: 'corridor-stairwell12', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1204'},
@@ -3495,7 +3511,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell13', block: "Your're still outside the stairwell."
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell13', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1304'},
@@ -3535,7 +3551,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1413', // Player gopes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1413', // Player goes into 213, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1413',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3587,7 +3603,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1408', 
-      name: '4th Floor Hallway',
+      name: '14th Floor Hallway',
       desc: `You are standing betwixt rooms 1407 and 1408`,
       
       exits: [ // These need to be specified with the press command
@@ -3601,7 +3617,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1404', 
-      name: '4th Floor Hallway',
+      name: '14th Floor Hallway',
       desc: `To your west are the doors for rooms 1404 through 1401, and beyond them, the stairway. Right now, you are standing in front of the doors to 1403 and 1404.`,
       
       exits: [ // These need to be specified with the press command
@@ -3620,7 +3636,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside',  ,'up'], id: 'corridor-stairwell14', block: "Your're still outside the stairwell."},
+          {dir: ['inside',  ,'up'], id: 'corridor-stairwell14', block: "you're still outside the stairwell."},
           {dir: ['east','right'], id: 'corridor-1404'},
           {dir: ['north', 'south'], id: 'corridor-1404', block: `You can't go that way.`},
 
@@ -3644,7 +3660,7 @@ const amnesiaRestored = {
     },
     {
       id: 'corridor-1612', 
-      name: '6th Floor Hallway',
+      name: '16th Floor Hallway',
       desc: `You are now a few steps to the east of the elevators, and are standing in front of rooms 1612 and 1613. The door to room 1613 is ajar.`,
       
       exits: [ // These need to be specified with the press command
@@ -3657,7 +3673,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1613', // Player gopes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1613', // Player goes into 613, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1613',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3742,7 +3758,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell16', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell16', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1604'},
@@ -3781,7 +3797,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1713', // Player gopes into 1713, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1713', // Player goes into 1713, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1713',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3866,7 +3882,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell17', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell17', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1704'},
@@ -3905,7 +3921,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1813', // Player gopes into 1813, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1813', // Player goes into 1813, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1813',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -3990,7 +4006,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell18', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell18', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1804'},
@@ -4029,7 +4045,7 @@ const amnesiaRestored = {
          
     },
     {
-      id: 'corridor-1913', // Player gopes into 1913, goes to death and texas/ There is a Room 13 fail state on every floor
+      id: 'corridor-1913', // Player goes into 1913, goes to death and texas/ There is a Room 13 fail state on every floor
       name: 'Room 1913',
       desc: `You walk into the room, and almost immediately, a woman walks out of the bathroom still wet from a shower. Dropping her towel, she screams at the top of her lungs.\n Within 15 seconds, two armed security guards are on the scene and don't even bother to ask the woman what you've done. You are whisked to the basement and put in a holding room while the guards discuss the charge of indecent exposure and trespassing with the local authorities.`,
       onEnter: () => {
@@ -4114,7 +4130,7 @@ const amnesiaRestored = {
       
       exits: [ // These need to be specified with the press command
           {dir: ['west', 'left' ,'inside', 'stairs' , 'stairwell' ], id: 'corridor-stairwell15'},
-          {dir: ['inside', 'up'], id: 'corridor-stairwell19', block: "Your're still outside the stairwell."
+          {dir: ['inside', 'up'], id: 'corridor-stairwell19', block: "you're still outside the stairwell."
               
           },
           {dir: ['east','right'], id: 'corridor-1904'},
@@ -4128,7 +4144,7 @@ const amnesiaRestored = {
       id: 'corridor-security', // Proceeding to Death and Texas, discovered without clothes
       name: '15th Floor Hallway',
       desc: `Hotel security has obviously been alerted to your running about naked.\n
-      All at once, they are on you. Your arms are whipped behind your back, and handcuffs are snapped about your writs.
+      All at once, they are on you. Your arms are whipped behind your back, and handcuffs are snapped about your wrists.
       You realize that any further resistance is useless, and you submit to being led by the two security guards down the entire length of the staircase to the hotel's sub-basement, where you await the arrival of the police in a room the size of a broom closet.`,
       onEnter: () => {
           pressEnter('deat-1'); // proceed to death and texas
@@ -4157,7 +4173,7 @@ const amnesiaRestored = {
     {
       id: 'corridor-stairwellph', // To the health club
       name: '',
-      desc: `You mount the stairs slowly to the next landing. The concrete feels cold under your bare feet. You climb, in all, five flights of steps--and find yourself, at last, before a door marked SUNDERLAND HEALTH CLUB, Authorized Personnel Only.`,
+      desc: `You mount the stairs slowly to the next landing. The concrete feels cold under your bare feet. You climb, in all, five flights of steps—and find yourself, at last, before a door marked SUNDERLAND HEALTH CLUB, Authorized Personnel Only.`,
       onEnter: () => {
           pressEnter('corridor-rooftop');
       },
@@ -4178,7 +4194,7 @@ const amnesiaRestored = {
       desc: `You find yourself on a gravel rooftop. Immediately in front of you is a drained swimming pool surrounded by deck chairs made of brightly colored metal tubing.
 
       Beyond the pool is the penthouse proper, a flat-roofed, windowless brick structure with a metal door from which the weather has almost entirely peeled away the lettering:
-      S DE AND SAU   & HE LT   LUB`,
+      S&nbsp&nbspDE&nbsp&nbsp&nbspAND&nbspSAU&nbsp&nbsp&nbsp&&nbspHE&nbspLT&nbsp&nbsp&nbspLUB`,
       onEnter: () => {
           reenableInput();
       },
@@ -4229,7 +4245,7 @@ const amnesiaRestored = {
           println(`Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`);
           pressEnter('deat-1');
         } else if (prevInput === 'explain' || prevInput === 'explanation' || prevInput === 'you'|| prevInput === 'who are you' || prevInput === 'who are you?') {
-          println(`"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
+          println(`"There's really no much to explain, Mr. Hollings. You were found in the stairwell of the Sunderland Hotel, naked and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were—and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
           pressEnter('deat-1'); 
         }
       }
@@ -4246,9 +4262,9 @@ const amnesiaRestored = {
         playerC.sScore += 2;
         ////console.log('Sur ' + playerC.sScore);
         if (lastRoom.id === 'corridor-elevatorph') {
-          println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+          println(`The elevators open into the reception area from a hallway on one wall. \nThe door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
         } else {
-          println(`The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small Formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the Formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
+          println(`The door opens with a creak, and you step into a small reception area furnished with cast-iron and vinyl armchairs, a water cooler with paper cups, a small formica desk with a stack of application forms, and faded posters of once famous bodybuilders. A sign on the formica desk promises that someone will be "Back in 10 Minutes." \nThere are two doors behind the desk. The one on the left is marked "Dolls," the one on the right "Guys."`);
         }
       },
       exits: [
@@ -4262,7 +4278,7 @@ const amnesiaRestored = {
       name: `Women's Locker Room`,
       desc: `You enter the women's locker room, and a woman who seems to be in training for the Olympic hammer throw looks at you with the joy of combat already glistening in her eyes. 
       
-      "Not here, buddy," she informs you in a low voice. "This is the women's locker room. And you--correct me if I'm wrong--belong in the men's locker room." 
+      "Not here, buddy," she informs you in a low voice. "This is the women's locker room. And you—correct me if I'm wrong—belong in the men's locker room." 
       
       She points the direction with her thumb. "That way."`,
       onEnter: () => {
@@ -4339,7 +4355,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club12',
       name: `Men's Locker Room`,
-      desc: `You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a Minimum Daily Requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.`,
+      desc: `You check out the second alcove of lockers and the fourth locker along the row produces the equivalent, in clothing, of a minimum daily requirement: sweatpants, a Mickey Mouse T-shirt with its sleeves chopped off, and a pair of shower slippers.`,
       onEnter: () => {
         pressEnter('heal-club13');
         let item = getItemInRoomById('mmtshirt', 'heal-club12');
@@ -4393,7 +4409,7 @@ const amnesiaRestored = {
         reenableInput();
       },
       exits: [
-        {dir: ['leave', 'exit'], id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman's voice, and then a man's, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they'd be back in ten minutes has come back. \n\n Realizing that you can't leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly--and feel again the same unreasoning dread, the same need not to be seen.`
+        {dir: ['leave', 'exit'], id: 'heal-club', block: `As you open the door to return to the reception area you can hear a woman's voice, and then a man's, discussing the relative merits of different brands of sneakers. Whoever had left the sign saying they'd be back in ten minutes has come back. \n\n Realizing that you can't leave the health club in the makeshift clothes you wore when you arrived, you close the door quietly—and feel again the same unreasoning dread, the same need not to be seen.`
             },
             {dir: ['right', 'lockers', 'locker',],
               id: 'heal-club6'
@@ -4430,7 +4446,7 @@ const amnesiaRestored = {
       id: 'heal-club11',
       name: `Men's Locker Room`,
       desc: `But this 'then' is like no other then. It does not follow the time that's gone before. Like a fluid under tremendous pressure, the memories suppressed by your amnesia overwhelm you. At some cue supplied by this hot dark cubbyhole, your past supplants your present life. 
-      You are experiencing . . . DEJA-VU!`,
+      You are experiencing . . . D&eacute;j&agrave; Vu!`,
       onEnter: () => {
         pressEnter('deja-vu');
       },
@@ -4441,7 +4457,7 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'deja-vu', 
-      name: 'Deja-Vu', 
+      name: 'D&eacute;j&agrave; Vu', 
       desc: ` `,
       onEnter: () => {
         clearOutput();
@@ -4453,7 +4469,7 @@ const amnesiaRestored = {
     {
       id: 'deja-vu1',
       name: '',
-      desc:`Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You'll probably be beaten again--but you can't help yourself. You scream the same few senseless words over and over, a litany of terror:`,
+      desc:`Worse than the ache is the hunger, and worse than the hunger is the fear that you will never leave this cell alive. You begin to scream. You know it will do no good. You'll probably be beaten again—but you can't help yourself. You scream the same few senseless words over and over, a litany of terror:`,
       onEnter: () => {
         reenableInput();
     },
@@ -4480,7 +4496,7 @@ const amnesiaRestored = {
     {
         id: 'deja-vu3',
         name: '',
-        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed -- just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five alarm chili.'
+        desc: `You ask for food. His eyes shrink to pinponts of sadistic pleasure. "Why sure, Juanito, you'll get fed—just as soon as you ask for it so's I can hear you. There's just two little words you got to say, and I'll bring you a nice big bowl of five alarm chili."
 
         He waits for you to say the two words that will get you fed.`,
         onEnter: () => {
@@ -4543,7 +4559,7 @@ const amnesiaRestored = {
     {
         id: 'deja-vu8',
         name: '',
-        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, of shame for being reduced to such a condition.`,
+        desc: `When the last smear of spicy grease has been licked from the bowl there are tears in your eyes. Tears of thankfulness for being fed, and of shame for being reduced to such a condition.`,
 
         onEnter: () => {
             pressEnter('deja-vu5')
@@ -4554,7 +4570,7 @@ const amnesiaRestored = {
     {
       id: 'deja-vu6',
       name: '',
-      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory--couldn't it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn't try to remember it. Maybe your amnesia is a blessing in disguise.`,
+      desc: `And then, sudden as waking from a nightmare, this mind e­xplosion of memory is over. But was it really a memory—couldn't it have been, instead, some kind of waking nightmare? Aside from this one lurid glimpse of what may have been your past life, you are able to remember nothing else about yourself or that prison. If that was what your life was like, maybe you shouldn't try to remember it. Maybe your amnesia is a blessing in disguise.`,
       onEnter: () => {
         playerC.dScore += 5; // Adding to Detective Score
         playerC.cScore += 15; // Adding to Character Score
@@ -4583,7 +4599,7 @@ const amnesiaRestored = {
         id: 'heal-club15',
         name:'Massage Room',
         desc: `"He's opened his eyes," another voice says.
-        "Yes," says the man standing above you, "but there's this funny dazed look in his eyes. The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can't take the heat in that sauna. Some guys can't."`,
+        "Yes," says the man standing above you, but there's this funny dazed look in his eyes. "The same thing happened when he went into the sauna last night, and I thought it was from drinking too much. We had to carry him down to his room, but maybe he just can't take the heat in that sauna. Some guys can't."`,
         onEnter: () => {
             pressEnter('heal-club16');
         },
@@ -4619,7 +4635,7 @@ const amnesiaRestored = {
     {
         id: 'heal-club19',
         name: 'Massage Room',
-        desc: `"--if there is something seriously wrong with him, I don't want him shipped off to a hospital from here. It doesn't look good for a gym to have people leaving it on stretchers." 
+        desc: `"—if there is something seriously wrong with him, I don't want him shipped off to a hospital from here. It doesn't look good for a gym to have people leaving it on stretchers." 
         
         "Right, boss, I get your message. If I have to, I can carry the guy down there. Does he have his room key on him?" The man nods. 
         
@@ -4685,7 +4701,7 @@ const amnesiaRestored = {
           onTake: () => {
             const room = getRoom(disk.roomId);
             if (room.descRead === false) {
-              println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
+              println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and—Hallelujah!— a small maroon address book.`)
             } room.descRead = true;
             pressEnter('heal-club25');
           },
@@ -4713,13 +4729,16 @@ const amnesiaRestored = {
             onTake: () => {
               const room = getRoom(disk.roomId);
               if (room.descRead === false) {
-                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and--Hallelujah!-- a small maroon address book.`)
-              } room.descRead = true;
-              pressEnter('heal-club25');
+                println(`You zip open the bag and take out: a pair of Levis; a T-shirt laundered from red to rosy pink; a pair of Adidas running shoes, well broken in; a dog-eared paperback rhyming dictionary; and—Hallelujah!— a small maroon address book.`)
+              }
+              room.descRead = true;
+                pressEnter('heal-club25');
+
             },
             onLook: () => {
               //addItem('canvasbag');
-              enterRoom('heal-club25');
+                pressEnter('heal-club25');
+
             }
           },
         ],
@@ -4728,12 +4747,25 @@ const amnesiaRestored = {
     {
       id: 'heal-club25',
       name: 'Massage Room',
-      desc: `Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
-      
-      You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room--and you see, once again, a complete stranger.`,
+      desc: ` `,
       onEnter: () => {
+        console.log(playCloth);
+        if (getItemInInventoryById('bedsheet')) {
+          remove('sheet');
+        } else if (getItemInInventoryById('bathtowel')) {
+            remove('towel');
+        }
+
+        playCloth.top.push('tshirt');
+        playCloth.bottom.push('jeans');
+        playCloth.feet.push('sneakers');
+
+        println(`Quickly you put on the clothes that were in the gym bag. From the fit of both the jeans and the sneakers there can be little doubt that they are yours. Long use has molded them to your proportions as though they were custom-made.
+      
+        You slip on the T-shirt last and look at yourself in the full-length mirror of the massage room—and you see, once again, a complete stranger.`)
         storyMarker.setLatLng([15.390, -6.546]).bindPopup('The Princeton Club').addTo(poiLayer);
         document.getElementById('address-book-button').style.display = "block";
+        
         playerC.dScore += 35; // Adding to Detective Score
         playerC.cScore += 40; // Adding to Character Score
         playerC.sScore += 35; // Adding to Survival Score
@@ -4790,8 +4822,9 @@ const amnesiaRestored = {
             itemId: 'tshirt',
             icon: '/img/png/image-tshirt-thumbnail.png',
             gif: '/img/gif/gif-tshirt-ingame.gif',
-            name: ['T-Shirt'],
+            name: ['T-Shirt', 't-shirt', 't shirt', 'tshirt', 'white shirt', 'shirt'],
             desc: `It is a gray t-shirt that has faded to a shade of off white.`,
+            top: true,
             isTakeable: true,
             isDroppable: true,
             onUse: () => {
@@ -4813,8 +4846,9 @@ const amnesiaRestored = {
             itemId: 'jeans',
             icon: 'img/png/image-levis-thumbnail.png',
             gif: 'img/gif/gif-levis-ingame.gif',
-            name: [`Levi's Jeans`],
-            desc: `The Levi's are of the "501" variety -- five pockets and a button fly.`,
+            name: [`Levi's Jeans`, 'jeans', `levi's`, 'jean'],
+            desc: `The Levi's are of the "501" variety—five pockets and a button fly.`,
+            bottom: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4822,8 +4856,9 @@ const amnesiaRestored = {
             itemId: 'sneakers',
             icon: 'img/png/image-adidas-thumbnail.png',
             gif: 'img/gif/gif-adidas-ingame.gif',
-            name: ['Sneakers'],
+            name: ['Sneakers', 'sneakers', 'sneaker', 'shoes'],
             desc:`The well-worn sneakers are made by Adidas.`,
+            feet: true,
             isDroppable: true,
             isTakeable: true,
           },
@@ -4831,8 +4866,8 @@ const amnesiaRestored = {
             itemId: 'addressbook',
             icon: 'img/png/image-addressbook-thumbnail.png',
             gif: 'img/gif/gif-addressbook-ingame.gif',
-            name: ['Address Book'],
-            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names--a Lila T. and an Ana--and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
+            name: ['Address Book', 'address book', 'address'],
+            desc: `You take a hurried look through the pages of the address book. It is a small treasury of phone numbers. Most of them identified only by initials, though there are one or two first names—a Lila T. and an Ana—and a couple other highly suggestive designations, such as "SEX" and "Drugs." Though nothing in the address book stirs your memory, you nevertheless are certain that it holds the key to your past life.`,
             isTakeable: true,
             onUse: () => {
               //Open address book
@@ -4872,7 +4907,7 @@ const amnesiaRestored = {
     {
       id: 'heal-club28',
       name: 'Massage Room',
-      desc: `Once you are inside the door he hands you the satchel, the bookbag, and their contents and says good-bye -- with a look in his eyes that conveys his low opinion of men who make a habit of fainting in saunas.
+      desc: `Once you are inside the door he hands you the satchel, the bookbag, and their contents and says good-bye—with a look in his eyes that conveys his low opinion of men who make a habit of fainting in saunas.
       
       You breathe a sigh of relief as you close the door behind you. Room 1502 feels almost like home.`,
       onEnter: () => {
@@ -4898,7 +4933,7 @@ const amnesiaRestored = {
           println(`Protests and struggle are unavailing. Your restraints are strong, and the nurse remains unsympathetic. With a grim smile, she plunges the hypodermic into your arm.`);
           pressEnter('deat-1');
         } else if (prevInput === 'explain' || prevInput === 'explanation' || prevInput === 'you'|| prevInput === 'who are you' || prevInput === 'who are you?') {
-          println(`"There's really no much to explain, Mr. Hollings. You were found passed out and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were -- and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
+          println(`"There's really no much to explain, Mr. Hollings. You were found passed out and unconscious, and taken here to Bellevue. Our security staff did a routine check to find out who you were—and when we discovered you were wanted on a murder charge in Texas, naturally we informed the police. I'm told you can expect to be here another day, and then the extradition papers will be ready."`);
           pressEnter('deat-1'); 
         }
       }
@@ -4908,7 +4943,7 @@ const amnesiaRestored = {
       name: 'Death Row',
       desc: `Several months go by during which time you are brought to trial for the murder of the guard you are charged with killing while escaping the State Penitentiary in Revoltillo, Texas. 
       
-      The prosecuting attorney, the judge, the jury, and even F. Lee Bailey; whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
+      The prosecuting attorney, the judge, the jury, and even F. Lee Bailey, whom you hire to defend you, seem to think your amnesia is an imposture, the desperate invention of a guilty man. 
       
       The prosecution calls your own wife, a woman named Denise, to testify that during most of the period after your escape you lived in hiding in her New York apartment, and she is able to produce several witnesses to confirm this. You cannot positively contradict her. You are sentenced to be executed either by a firing squad or lethal injection. Which is it to be?`, // Displayed when the player first enters the room.
       // arguement for lethal injection or firing squad
@@ -4947,7 +4982,7 @@ const amnesiaRestored = {
           println(`It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise's black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`);
           pressEnter('deat-f10');
         } else if (prevInput === 'xavier' || prevInput === 'hollings' || prevInput === 'xavier hollings' || prevInput === 'xav' || prevInput === 'who am i' || prevInput === 'who am I?' || prevInput === 'Who is Xavier Hollings?' || prevInput === 'Who is Xavier Hollings?') {
-          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you've done. And now you must face the fact that you must die. Do please try to die with some style. That's all I have to say, except good-bye--and thank you for a huge inheritance. I'll try and spend it the way you'd want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
+          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you've done. And now you must face the fact that you must die. Do please try to die with some style. That's all I have to say, except good-bye—and thank you for a huge inheritance. I'll try and spend it the way you'd want me to—on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
           pressEnter('deat-f9');
         } else if (prevInput === '' || prevInput !== '') {
           println('Well? What are you going to do?');
@@ -4957,7 +4992,7 @@ const amnesiaRestored = {
     {
       id: 'deat-3', // if the player chooses to appeal the decision
       name: '', // Displayed each time the player enters the room.
-      desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection--which is it?`, // Displayed when the player first enters the room.
+      desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection—which is it?`, // Displayed when the player first enters the room.
       onBlock: () => {
         if (prevInput === 'firing squad' || prevInput === 'squad' || prev === 'firing') {
           firingInjection = false;
@@ -4975,7 +5010,7 @@ const amnesiaRestored = {
     {
       id: 'deat-f5', // after Kiss, hug, or touch  Denise if firing squad selected
       name: '', // Displayed each time the player enters the room.
-      desc: `Denise affects to wipe away a tear with her cambric handkerchief. "Xavier, forgive me, but I don't think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o'clock. It seems you won't be able to cut me out of your will--as you've tried to do behind my back. I'll inherit your estate willy-nilly--and your mother's too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself." She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
+      desc: `Denise affects to wipe away a tear with her cambric handkerchief. "Xavier, forgive me, but I don't think I can bear much more of this. My heart is simply breaking with the pity of it, and in any case I have to see the lawyers at three o'clock. It seems you won't be able to cut me out of your will—as you've tried to do behind my back. I'll inherit your estate willy-nilly—and your mother's too, when she kicks the bucket. And I made the trip here today just to have the satisfaction of telling you myself." She awaits your reaction with a taunting smile.`, // Displayed when the player first enters the room.
       onEnter: () => {
         playerC.dScore += 2; // Adding to Detective Score
         playerC.sScore += 10; // Adding to Survival Score
@@ -5012,7 +5047,7 @@ const amnesiaRestored = {
           println(`It may be a small-minded satisfaction but you feel a genuine glow of pleasure at ruffling Denise's black feathers. She hisses through the wire mesh that her revenge for this final insult will be to inform the reporters after your execution that you were sexually impotent, a drug addict, and that her chief conjugal responsibility was to read you a comic book each night before bed. She leaves the visiting room with a look of pure malice, and the guard escorts you back to your cell.`);
           pressEnter('deat-f10');
         } else if (prevInput === 'xavier' || prevInput === 'hollings' || prevInput === 'xavier hollings' || prevInput === 'xav' || prevInput === 'who am i' || prevInput === 'who am I?' || prevInput === 'Who is Xavier Hollings?' || prevInput === 'Who is Xavier Hollings?') {
-          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you've done. And now you must face the fact that you must die. Do please try to die with some style. That's all I have to say, except good-bye--and thank you for a huge inheritance. I'll try and spend it the way you'd want me to--on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
+          println(`Denise sighs. "Xavier, I refuse to go through this foolish imposture with you. You know who you are. You know what you've done. And now you must face the fact that you must die. Do please try to die with some style. That's all I have to say, except good-bye—and thank you for a huge inheritance. I'll try and spend it the way you'd want me to—on big cars and lovely clothes and rubies and emeralds." She leaves the visiting room with a flourish of her black crepe de chine mourning gown, and the guard leads you back to your cell on Death Row.`);
           pressEnter('deat-f9');
         } else if (prevInput === '' || prevInput !== '') {
           println('Well? What are you going to do?');
@@ -5034,7 +5069,7 @@ const amnesiaRestored = {
       } else if (prevInput === 'bbq' || prevInput === 'bbq ribs' || prevInput === 'barbecue' || prevInput === 'ribs' || prevInput === 'barbecue ribs') {
         deathFood = 'ribs';
         enterRoom('deat-fsp');
-      } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'stuffed turkey') {
+      } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'roast turkey' || prevInput === 'stuffed turkey') {
         deathFood = 'turkey';
         enterRoom('deat-fsp');
       } else if (prevInput === '') {
@@ -5054,19 +5089,19 @@ const amnesiaRestored = {
      reenableInput();
    },
    onBlock: () => {
-     if (prevInput === 'catholic') {
+     if (prevInput === 'catholic' || prevInput === 'Catholic' || prevInput === 'cath' || prevInput === 'Cath') {
        religion = 'catholic';
        println(`The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`);
       pressEnter('deat-letar2');
-     } else if (prevInput === 'protestant') {
+     } else if (prevInput === 'protestant' || prevInput === 'Protestant' || prevInput === 'Prot' || prevInput === 'prot') {
        religion = 'protestant';
-       println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances`);
+       println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
-     } else if (prevInput === 'jewish') {
+     } else if (prevInput === 'jewish' || prevInput === 'Jewish' || prevInput === 'jew' || prevInput === 'Jew') {
        religion = 'jewish';
        println(`The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
-     } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none') {
+     } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none' || prevInput === 'non-denomination' || prevInput === 'nondenom' || prevInput === 'non-denom') {
        religion = 'none';
        println(`"That's about what I figured," the warden says, and bids you good day.`)
        pressEnter('deat-letar2');
@@ -5131,7 +5166,7 @@ const amnesiaRestored = {
   {
     id: 'deat-lert3', //  lethal injection & roasted turkey
     name: '', // Displayed each time the player enters the room.
-    desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner..', // Displayed when the player first enters the room.
+    desc: 'Several slices of turkey breast are surmounted with a perfect sphere of stuffing over which has been ladled a great deal of thick pale gravy. A squat, neat cylinder of cranberry sauce accompanies this holiday dinner.', // Displayed when the player first enters the room.
     onEnter: () => {
       playerC.dScore += 25; // Adding to Detective Score
       ////console.log(playerC.dScore);
@@ -5144,7 +5179,7 @@ const amnesiaRestored = {
     id: 'deat-letar4', //  lethal injection & no meal cont
     name: '', // Displayed each time the player enters the room.
     desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You're holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
-    You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate--and then, like a bolt from the blue, it hits you--a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
+    You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate—and then, like a bolt from the blue, it hits you—a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
     onEnter: () => {
       if (deathFood === 'chili') {
         pressEnter('deat-letar5');
@@ -5181,7 +5216,7 @@ const amnesiaRestored = {
   {
     id: 'deat-lebr5', // lethal injection & Barbecue Ribs
     name: '', // Displayed each time the player enters the room.
-    desc: `You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you'd had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called--you'd seen the bright blue package in every one of the homes you'd been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria's plague of amnesia!.`, // Displayed when the player first enters the room.
+    desc: `You remember an earlier dinner of barbecue ribs you had at a diner somewhere in Texas.  On the outskirts of a town called Santa Candelaria.  From your table you could see back into the kitchen, where a fat counterman was sprinkling soap into an antique dishwasher. It was then you'd had the sense of Eureka, and the pieces of the puzzle had fit together. You remember the Odd Lots Discount Store and its great stacks of the detergent that had failed its test marketing and was being remaindered here and perhaps nowhere else. Shimmer the soap was called—you'd seen the bright blue package in every one of the homes you'd been allowed to investigate. It had only been a hunch, but it had proved correct. It was Shimmer, or one of its decay-products, that had been responsible for Santa Candelaria's plague of amnesia!.`, // Displayed when the player first enters the room.
     onEnter: () => {
       pressEnter('deat-lelw');
     },
@@ -5308,7 +5343,7 @@ const amnesiaRestored = {
       ////console.log(playerC.dScore);
       }
         
-      room.desc = `Mirrors seem to be the prevailing theme at the Sunderland--at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says: \n
+      room.desc = `Mirrors seem to be the prevailing theme at the Sunderland—at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal.  Reflected and multiplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the registration desk, and beyond it the exit to 53rd Street; to your left a news-stand and gift shop, and then a large curving staircase going up to the second floor. Beside the staircase a hand-lettered sign says: \n
       The Sunderland Hotel
       is happy to welcome
       The Noise Abatement League
@@ -5319,7 +5354,7 @@ const amnesiaRestored = {
     },
     exits: [
       { // If the player is wearing the Tux and goes to Luke
-        dir: 'west',
+        dir: ['foyer', 'luke', 'stetson man', 'smile', 'wave'],
         id: 'lobb-3', 
       },
     ],
@@ -5335,7 +5370,7 @@ const amnesiaRestored = {
 
   {//talking to Luke while wearing the tux
     id: 'lobb-3',
-    desc: `"Johnny my boy!" booms the man in the Stetson, in a voice as abrasive as desert sand. "Wouldn't your dear old mother -God rest her gentle soul!--be proud to see you now?" He advances toward you grinning like a friendly skull, with his long, thin arms extended to embrace you, and before you can back away or offer any other protest the embrace is completed. Not what you'd call warm, just a short symbolic collision between your torso and his, with him maintaining the same cadaverous grin all the while. "Well, my boy," he says, releasing you, "how are you feeling after your big toot?"`,
+    desc: `"Johnny my boy!" booms the man in the Stetson, in a voice as abrasive as desert sand. "Wouldn't your dear old mother—God rest her gentle soul!—be proud to see you now?" He advances toward you grinning like a friendly skull, with his long, thin arms extended to embrace you, and before you can back away or offer any other protest the embrace is completed. Not what you'd call warm, just a short symbolic collision between your torso and his, with him maintaining the same cadaverous grin all the while. "Well, my boy," he says, releasing you, "how are you feeling after your big toot?"`,
     onEnter: () =>{
       playerC.sScore +=10;
       playerC.cScore +=10;
@@ -5357,7 +5392,7 @@ const amnesiaRestored = {
   },
   {
     id: 'lobb-4',
-    desc: `"Wish I could say the same for myself, but that's no matter now. Say, why that funny look? Something wrong with what I'm wearing?" You shake your head and go on wondering how anyone who'd ever met this man--as you must have in the life you can't remember--could ever forget him. For he is memorably ugly.`,
+    desc: `"Wish I could say the same for myself, but that's no matter now. Say, why that funny look? Something wrong with what I'm wearing?" You shake your head and go on wondering how anyone who'd ever met this man—as you must have in the life you can't remember—could ever forget him. For he is memorably ugly.`,
     onBlock: () => {
       if (prevInput === 'who are you?' || prevInput === 'who are you' || prevInput === 'who') {
         enterRoom('lobb-4B');
@@ -5377,7 +5412,7 @@ const amnesiaRestored = {
 
   {
     id: 'lobb-4B',
-    desc: `"Hey, Johnny boy, this is no time for dumb questions like that. I gotta go down to this here rats' cellar and fetch back that preacher. Meanwhile you'd better go up to the chapel on the next floor and smooth things over with the little lady. I think she was starting to worry that you was going to leave her standing at the altar a second time, but I told her, 'Honey, I said, just joking like, 'if that Cameron boy walks out on you this time with another dumb excuse like the last one, he's going to have to answer to your daddy.' And then, Johnny, I showed her what I was packing--" The man holds open the jacket of his suit to reveal a shoulder holster from which the butt of a small handgun projects. "--and that seemed to ease her worrying a whole lot. Nuff said, my boy? Do you take my meaning?"`,
+    desc: `"Hey, Johnny boy, this is no time for dumb questions like that. I gotta go down to this here rats' cellar and fetch back that preacher. Meanwhile you'd better go up to the chapel on the next floor and smooth things over with the little lady. I think she was starting to worry that you was going to leave her standing at the altar a second time, but I told her, 'Honey, I said, just joking like, 'if that Cameron boy walks out on you this time with another dumb excuse like the last one, he's going to have to answer to your daddy.' And then, Johnny, I showed her what I was packing—" The man holds open the jacket of his suit to reveal a shoulder holster from which the butt of a small handgun projects. "—and that seemed to ease her worrying a whole lot. Nuff said, my boy? Do you take my meaning?"`,
     onBlock: () => {
       if (prevInput === 'yes') {
         enterRoom('lobb-5');
@@ -5394,7 +5429,7 @@ const amnesiaRestored = {
 
   { 
     id: 'lobb-5',
-    desc: `"Glad to hear it. Cause I wouldn't want to have to do anything to make my little cactus blossom unhappy. You've given that poor gal enough trouble to last her a lifetime, and from here on out, Mr. Know-It-All Cameron the Third, you're going to do right by my little Alice--or my name ain't Luke Dudley. Now scoot on up those stairs and give her some of that sweet talk that got the two of you into this situation.'`,
+    desc: `"Glad to hear it. Cause I wouldn't want to have to do anything to make my little cactus blossom unhappy. You've given that poor gal enough trouble to last her a lifetime, and from here on out, Mr. Know-It-All Cameron the Third, you're going to do right by my little Alice—or my name ain't Luke Dudley. Now scoot on up those stairs and give her some of that sweet talk that got the two of you into this situation."`,
     onEnter: () => {
       reenableInput();
     },
@@ -5437,7 +5472,7 @@ const amnesiaRestored = {
   { //if attempting to talk to Luke without wearing the Tuxedo from earlier.
     id: 'lobb-8',
     name: '',
-    desc: `"Well, god damn," swears the man in the Stetson hat loud enough to be heard from the other side of the reception area. He strides toward you with an angry glint in his beady eyes. "Now where in tarnation is that white suit. I ain't shelling out five hundred bucks to get my little Alice looking like a proper bride and then have you showing up looking like a pig farmer. No siree!" He lays a hand on your shoulder and pushed you back toward the elevator alcove. "We are going right back to your room, and you are going to get dressed in your bridegroom uniform, and then by God you're going to do the right thing by my little Alice. Now get inside that **elevator**."`,
+    desc: `"Well, god damn," swears the man in the Stetson hat loud enough to be heard from the other side of the reception area. He strides toward you with an angry glint in his beady eyes. "Now where in tarnation is that white suit. I ain't shelling out five hundred bucks to get my little Alice looking like a proper bride and then have you showing up looking like a pig farmer. No siree!" He lays a hand on your shoulder and pushed you back toward the elevator alcove. "We are going right back to your room, and you are going to get dressed in your bridegroom uniform, and then by God you're going to do the right thing by my little Alice. Now get inside that __elevator__."`,
     onBlock: () => {
       if (prevInput === 'elevator' || prevInput === 'go to elevator' || prevInput === 'ride elevator' || prevInput === 'get in' || prevInput === 'okay') {
         enterRoom('lobb-9');
@@ -5456,7 +5491,7 @@ const amnesiaRestored = {
   { 
     id: 'lobb-9',
     name: 'Elevator',
-    desc: `The man in the Stetson--his brass belt-buckle identifies him as 'LUKE' -- follows you into the elevator and pushes the button for 15. The doors whoosh close and the elevator starts to go up.`,
+    desc: `The man in the Stetson—his brass belt-buckle identifies him as 'LUKE'—follows you into the elevator and pushes the button for 15. The doors whoosh close and the elevator starts to go up.`,
     onBlock: () => {
       enterRoom('lobb-10A');
     },
@@ -5514,7 +5549,7 @@ const amnesiaRestored = {
 
   { 
     id: 'lobb-13',
-    desc: `Unwisely you try to take the man's revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet--right between the eyes.`,
+    desc: `Unwisely you try to take the man's revolver by force. He proves to be much stronger than his spare frame would suggest. Instead of the gun, you have to make do with a single bullet—right between the eyes.`,
     onEnter: () => {
       pressEnter('hell-1');
     }  
@@ -5522,7 +5557,7 @@ const amnesiaRestored = {
 
   { 
     id: 'lobb-14',
-    desc: `He takes the key from you and unlocks the door to Room 1502. "Now you get in there and change into that white monkey suit on the double--and then like the song says, you're going to the chapel and you're going to get married." He chuckles and adds: "Going to the Chapel of Love!"`,
+    desc: `He takes the key from you and unlocks the door to Room 1502. "Now you get in there and change into that white monkey suit on the double—and then like the song says, you're going to the chapel and you're going to get married." He chuckles and adds: "Going to the Chapel of Love!"`,
     onEnter: () => {
       autoSave();
     },
@@ -5548,7 +5583,7 @@ const amnesiaRestored = {
   { 
     id: 'lobb-16',
     name: 'Hotel Room 1502',
-    desc: `You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don't it?" He presses the button for 2, and the elevator takes you to the second floor--and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`,
+    desc: `You quickly change into the white tuxedo, put the clothes you were wearing into the gym bag, and return with the bag under your arm to where your would-be father-in-law is waiting in the corridor. "Now that looks a whole lot nicer," he says when you're back in the elevator, "and I'll bet it feels more comfortable too, don't it?" He presses the button for 2, and the elevator takes you to the second floor—and the entrance to the All-Faith Chapel. "Now you go in the chapel," Luke says, "and start getting into a romantic mood. I got to go down to that rats' cellar they got here and fetch back that preacher. Damned if this ain't more work than rounding up pigs from a corn patch!" You step out of the elevator, and the doors close behind you.`,
     onEnter: () => {
       pressEnter('chap-1');
     }
@@ -5566,14 +5601,14 @@ const amnesiaRestored = {
 
   { //East from (lobby-7)
     id: 'lobb-18',
-    desc: `You walk on past the stairs towards the 52nd Street exit, but you've not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
+    desc: `You walk on past the stairs towards the 52nd Street exit, but you've not gone more than a few yards before you feel Luke's hand on your shoulder—and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
     onEnter: () => {
       pressEnter('lobb-17');
     }
   },
   { //West from (7)
     id: 'lobb-18A',
-    desc: `Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you've not gone more than a few yards before you feel Luke's hand on your shoulder--and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
+    desc: `Instead of heading toward the stairs, you turn left toward the 53rd Street exit, but you've not gone more than a few yards before you feel Luke's hand on your shoulder—and his revolver pressed into the small of your back. "Lost your way?" he asks sarcastically. You let him conduct you to the foot of the stairs without protest. "To the chapel!" Luke advises, prodding at your back with the revolver.`,
     onEnter: () => {
       pressEnter('lobb-17');
     }
@@ -5657,10 +5692,10 @@ const amnesiaRestored = {
     { 
       id: 'chap-3',
       name: 'All-Faith Chapel',
-      desc: `You enter one of the pews nearest the central marble slab and kneel on the padded kneeler. You fold your hands and bow your head and close your eyes. You're all ready to say a prayer--but what do you want to say a prayer for?`,
+      desc: `You enter one of the pews nearest the central marble slab and kneel on the padded kneeler. You fold your hands and bow your head and close your eyes. You're all ready to say a prayer—but what do you want to say a prayer for?`,
       onBlock: () => {
         if (prevInput === 'memory' || prevInput === 'memories' || prevInput === 'me') {
-          println('You pray to have your memory restored--if not in whole, then for the least scrap of your past, a flashback from childhood, a face, a voice, a feeling--anything authentically belonging to your mislaid identity. And then you wait, trying to make your mind receptively blank. But a blank mind is hard to maintain. You begin to imagine memories you would like to have--your first communion, your bar mitzvah, your wedding day--and the image of each is so vivid that you might be seeing it in an album of family photographs.')
+          println('You pray to have your memory restored—if not in whole, then for the least scrap of your past, a flashback from childhood, a face, a voice, a feeling—anything authentically belonging to your mislaid identity. And then you wait, trying to make your mind receptively blank. But a blank mind is hard to maintain. You begin to imagine memories you would like to have—your first communion, your bar mitzvah, your wedding day—and the image of each is so vivid that you might be seeing it in an album of family photographs.')
         } else if (prevInput === 'leave' || prevInput === 'leave the chapel') {
           println(`Just as you decide to leave the empty chapel, the door opens behind you, and a woman's voice exclaims, "John! Oh my darling, you're here!" You spin around to confront the figure of a woman in a bridal gown.`);
           pressEnter('chap-4');
@@ -5679,7 +5714,7 @@ const amnesiaRestored = {
     { 
       id: 'chap-4',
       name: 'All-Faith Chapel',
-      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well- proportioned figure--or a good dressmaker. Really, there's more of the wedding gown and veil in evidence than of the woman.`,
+      desc: `She is wearing a floor-length gown of creamed white satin trimmed with lace and taffeta. A veil of yellowed lace obscures her face. She is of average height and has a well-proportioned figure—or a good dressmaker. Really, there's more of the wedding gown and veil in evidence than of the woman.`,
       veilRaised: false,
       askSelf: 0,
       onEnter: () => {
@@ -5690,7 +5725,7 @@ const amnesiaRestored = {
       onBlock: () => {
         let room = getRoom(disk.roomId);
         if (prevInput === 'who' || prevInput === 'who are' || prevInput === 'who are you' || prevInput === 'who are you?' || prevInput === 'what is your name' || prevInput === "what's your name") {
-          println(`In answer to your question she laughs--and lifts her bridal bouquet to screen her already veiled face. "I am... a woman of mystery." Her Garbo imitation is first-rate.`);
+          println(`In answer to your question she laughs—and lifts her bridal bouquet to screen her already veiled face. "I am... a woman of mystery." Her Garbo imitation is first-rate.`);
         } 
         //Ask about luke
         else if (prevInput === 'ask about Luke' || prevInput === 'who is Luke' || prevInput === 'how is Luke') { 
@@ -5703,16 +5738,16 @@ const amnesiaRestored = {
         //Lift Veil
         else if (prevInput === 'lift veil' || prevInput === 'veil' || prevInput === 'touch her veil' || prevInput === 'touch veil') {
           room.veilRaised = true;
-          println(`You grasp the lower edge of the veil with a gentle firmness and raise it slowly--to reveal a pale, pretty, and slightly frightened face. Her eyes are fixed on yours imploringly, but she bites her lower lip, as though to keep herself from asking aloud the question that is in her eyes. But the eyes need no interpreters. Do you love me? they ask. Will you love me? Can you love me?`);
+          println(`You grasp the lower edge of the veil with a gentle firmness and raise it slowly—to reveal a pale, pretty, and slightly frightened face. Her eyes are fixed on yours imploringly, but she bites her lower lip, as though to keep herself from asking aloud the question that is in her eyes. But the eyes need no interpreters. Do you love me? they ask. Will you love me? Can you love me?`);
         }
         //Tell Alice you love her
         else if (prevInput === 'love' || prevInput === 'I love you' || prevInput === 'i love you' || prevInput === 'love you' || prevInput === 'luv u') {
-          println(`"Oh my darling, I love you too. More than anything in the whole world. You are my world. You're everything to me. Oh my love--kiss me!"`);
+          println(`"Oh my darling, I love you too. More than anything in the whole world. You are my world. You're everything to me. Oh my love—kiss me!"`);
         }
         //Kiss Alice
         else if (prevInput === 'kiss' || prevInput === 'kiss her' || prevInput === 'kiss Alice' || prevInput === 'kiss alice' || prevInput === 'smooch') {
           if (room.veilRaised === false) {
-            println(`Her lips meet yours eagerly, and the satin of her gown is crushed to the polyester of your tux. The invitation is irresistible. The kiss intensifies from perhaps to entirely. Something phony may be going on, but a kiss like this doesn't leave any room to doubt one thing--this woman wants you.`);
+            println(`Her lips meet yours eagerly, and the satin of her gown is crushed to the polyester of your tux. The invitation is irresistible. The kiss intensifies from perhaps to entirely. Something phony may be going on, but a kiss like this doesn't leave any room to doubt one thing—this woman wants you.`);
           } else {
             println(`You place your hands on her shoulders and incline your head until your lips meet... the yellowed lace of the wedding veil. It has a dusty smell with a faint overtone of mothballs.`);
           }
@@ -5727,10 +5762,10 @@ const amnesiaRestored = {
           ////console.log(room.askSelf);
           switch(room.askSelf) {
             case 1:
-              println(`"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover--but I'm not going to make comparisons. And you've told me you love me-­ and I've believed you."`);
+              println(`"What a strange question. What can I tell you about yourself that you don't know already? You're good-looking, but I guess you know that. You're a great lover—but I'm not going to make comparisons. And you've told me you love me—and I've believed you."`);
               break;
             case 2: 
-              println(`"Are you serious? Maybe you think I blame you for what happened in Texas. But I know that wasn't your fault. You had to get away from that jail. It would have destroyed your soul. You simply have to stop thinking about all that-­ and think about Australia instead."`);
+              println(`"Are you serious? Maybe you think I blame you for what happened in Texas. But I know that wasn't your fault. You had to get away from that jail. It would have destroyed your soul. You simply have to stop thinking about all that—and think about Australia instead."`);
               break;
             case 3:
               println(`"What a vain creature you are, John! Why don't we talk about me for a change? How I feel about sacrificing my career for your sake? Do you realize I could go to jail for helping you get out of the country?"`);
@@ -5741,7 +5776,7 @@ const amnesiaRestored = {
         }
         //Ask about Australia
         else if (prevInput === 'australia' || prevInput === 'Australia' || prevInput === 'the outback' || prevInput === 'outback') {
-          println(`Oh, we're going to be so happy in Australia, John--I know we wil1. It may be hard at first, since we don't either of us know anything about sheep ranches--or are they called farms?--but we're young and strong and healthy, and our love will see us through our trials.`);
+          println(`Oh, we're going to be so happy in Australia, John—I know we wil1. It may be hard at first, since we don't either of us know anything about sheep ranches—or are they called farms?—but we're young and strong and healthy, and our love will see us through our trials.`);
         }
         //Ask about Texas
         else if (prevInput === 'texas' || prevInput === 'Texas') {
@@ -5784,13 +5819,13 @@ const amnesiaRestored = {
  {//When attempting to leave the chapel after Alice has appeared. Also when responding to Alice's questions with: go away/ask her to go/say goodbye/I will not marry you or similar response
   id: 'chap-16',
   name: 'All-Faith Chapel',
-  desc: `"John!" the woman in the bridal dress shrieks, "please don't abandon me like this. I'll die of shame if you leave me now. Surely, whatever reason you may have for changing your mind, it's something we can talk about it. It's Daddy, isn't it? He's such a bully, I know. But once you get to know him he's really a sweet person, and in any case, John, once we're in Australia he won't be able to bother us anymore." She throws herself on her knees before you and lifts up her arms (the same gesture in which you can see Mary Baker Eddy worshipping the Supreme Being in the chapel's mural) imploringly. "Please John. Please say you'll marry me."`,
+  desc: `"John!" the woman in the bridal dress shrieks, "please don't abandon me like this. I'll die of shame if you leave me now. Surely, whatever reason you may have for changing your mind, it's something we can talk about. It's Daddy, isn't it? He's such a bully, I know. But once you get to know him he's really a sweet person, and in any case, John, once we're in Australia he won't be able to bother us anymore." She throws herself on her knees before you and lifts up her arms (the same gesture in which you can see Mary Baker Eddy worshipping the Supreme Being in the chapel's mural) imploringly. "Please John. Please say you'll marry me."`,
   onEnter: () => {
     autoSave();
   },
   onBlock: () => {
     if (prevInput === 'no' || prevInput === 'I will not' || prevInput === 'i will not' || prevInput === 'leave' || prevInput === 'nope' || prevInput === 'nah' || prevInput === 'never') {
-      println(`Considering her almost hysterical manner up till now, she accepts your refusal with surprising dignity. "Very well then, I won't argue. But promise me at least this--promise that we can meet again tomorrow--just to talk. We can't talk now. Daddy will be here at any moment. I must go out and tell him you've left me standing at the altar once again. I expect he'll be very mad for a while, so please stay in the chapel for another half hour or so, till we're out of the hotel. And then tomorrow at noon I'll meet you in that lovely hall of Tiffany lamps at the New York Historical Society. It will be a sort of anniversary for us. Please be there, John." She turns to leave, and then turns round again to hand you a small blue box bearing the words "Tiffany & Co." "Speaking of Tiffany," she says with a sad smile, "I almost forgot to give you this. I bought it with your money, so it belongs to you--until you decide that you want to put it on my finger."`);
+      println(`Considering her almost hysterical manner up till now, she accepts your refusal with surprising dignity. "Very well then, I won't argue. But promise me at least this—promise that we can meet again tomorrow—just to talk. We can't talk now. Daddy will be here at any moment. I must go out and tell him you've left me standing at the altar once again. I expect he'll be very mad for a while, so please stay in the chapel for another half hour or so, till we're out of the hotel. And then tomorrow at noon I'll meet you in that lovely hall of Tiffany lamps at the New York Historical Society. It will be a sort of anniversary for us. Please be there, John." She turns to leave, and then turns round again to hand you a small blue box bearing the words "Tiffany & Co." "Speaking of Tiffany," she says with a sad smile, "I almost forgot to give you this. I bought it with your money, so it belongs to you—until you decide that you want to put it on my finger."`);
       enterRoom('chap-18');  
     } else if (prevInput === 'yes' || prevInput === 'okay' || prevInput === 'i will' || prevInput === 'I will' || prevInput === 'I will marry you' || prevInput === 'sure' || prevInput === 'kiss' || prevInput === 'yeah' || prevInput === 'yep' || prevInput === 'yea' || prevInput === 'yup') {
       enterRoom('marr-1')
@@ -5819,7 +5854,7 @@ const amnesiaRestored = {
       icon: 'img/png/image-openweddingbox-thumbnail.png',
       gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
-      desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
+      desc: 'It is nearly cubical. It is a turquoise blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
       firstGet: true,
       firstUse: true,
@@ -5866,7 +5901,7 @@ const amnesiaRestored = {
 {//When attempting to follow Alice
   id: 'chap-20',
   name: 'All-Faith Chapel',
-  desc: `After a moment's hesitation, you spring forward to pursue her--and fall to the terra cotta floor, tripped by a kneeling pad. As you push yourself up from the dark tiles, a familiar vertigo overcomes you. Your body seems much too heavy a weight for your arms to raise and you slump back to the floor, watching the great octagons of terracotta bend and warp, waver and grow black. Your last conscious thought is that you may be the first bridegroom ever to have fainted when left standing at the altar.`,
+  desc: `After a moment's hesitation, you spring forward to pursue her—and fall to the terra cotta floor, tripped by a kneeling pad. As you push yourself up from the dark tiles, a familiar vertigo overcomes you. Your body seems much too heavy a weight for your arms to raise and you slump back to the floor, watching the great octagons of terracotta bend and warp, waver and grow black. Your last conscious thought is that you may be the first bridegroom ever to have fainted when left standing at the altar.`,
   getUp: 0,
   onBlock: () => {
     let room = getRoom(disk.roomId);
@@ -5876,7 +5911,7 @@ const amnesiaRestored = {
         println(`A dim faraway voice seems to be telling you to do something. But it is so far away, and you are so comfortable, and there is a sunset above you, all with stripes of gold and indigo.`);
         break;
       case 2:
-        println(`The same voice calls to you. It is nearer now, an annoying buzz. You blink your eyes and shift your head--and see that a magenta dawn is silhouetting the poplars.`);
+        println(`The same voice calls to you. It is nearer now, an annoying buzz. You blink your eyes and shift your head—and see that a magenta dawn is silhouetting the poplars.`);
         break;
       default:
         enterRoom('chap-21B');
@@ -5903,7 +5938,7 @@ const amnesiaRestored = {
 {//Examine arm (After getting up)
   id: 'chap-22',
   name: 'All-Faith Chapel',
-  desc: `You are now up. What do you do? There is that strange pain in your **left arm** still.`,
+  desc: `You are now up. What do you do? There is that strange pain in your __left arm__ still.`,
   onBlock: () => {
     if (prevInput === 'examine arm') {
       println(`High on your left arm, near the padded shoulder of the tuxedo jacket, the white polyester has been torn and blotched with blood that is still damp to the touch. When you remove the jacket to examine the wound there is a sharp twinge of pain in your shoulder. There is a larger blotch on the frilly shirt.`);
@@ -5929,8 +5964,8 @@ const amnesiaRestored = {
 {//Remove shirt
   id: 'chap-23',
   name: 'All-Faith Chapel',
-  desc: `You take off the ruined shirt as well and see, to your relief that the source of these bloodstains is a superficial wound--an inch-long line drawn across the smooth flesh as though by a ruler. It represents, you realize, the path of a bullet. \n\nAnd though you did not see or hear that bullet fired you have no doubt at all that it was Luke who shot at you. Perhaps, if you had not stumbled over the kneeler, his bullet might have had a deadlier result.
-  Tentatively you move your arm. Any pronounced movement from the shoulder seems to start the blood flowing freshly from the wound. It would probably be a good idea to **bandage** it up somehow.`,
+  desc: `You take off the ruined shirt as well and see, to your relief that the source of these bloodstains is a superficial wound—an inch-long line drawn across the smooth flesh as though by a ruler. It represents, you realize, the path of a bullet. \n\nAnd though you did not see or hear that bullet fired, you have no doubt at all that it was Luke who shot at you. Perhaps, if you had not stumbled over the kneeler, his bullet might have had a deadlier result.
+  Tentatively you move your arm. Any pronounced movement from the shoulder seems to start the blood flowing freshly from the wound. It would probably be a good idea to __bandage__ it up somehow.`,
   onBlock: () => {
     if (prevInput === 'bandage' || prevInput === 'bandage arm' || prevInput === 'mend arm' || prevInput === 'bandage your arm') {
       println('Good idea, but what to use for a bandage?');
@@ -5944,13 +5979,13 @@ const amnesiaRestored = {
   name: 'All-Faith Chapel',
   desc: ` `,
   onEnter: () => {
-    println('You have a frilly shirt that you could use to bandage yourself up.');
+    println('You have a __frilly shirt__ that you could use to bandage yourself up.');
 
     if (getItemInInventoryById('tshirt')){
-      println('You also remember having a **t-shirt** you can use to bandage yourself up.');
+      println('You also remember having a __t-shirt__ you can use to bandage yourself up.');
     }
     if (getItemInInventoryById('mmtshirt')) {
-      println('You also remember having a **Mickey Mouse t-shirt** you can use to bandage yourself up.');
+      println('You also remember having a __Mickey Mouse t-shirt__ you can use to bandage yourself up.');
     }
   },
   items: [
@@ -5959,7 +5994,7 @@ const amnesiaRestored = {
       name: ['frilly shirt', 'tux shirt', 'frilly'],
       onUse: () => {
         println(`Carefully you tear off the left arm of the bloodstained shirt and wrap it about the wound as a crude bandage. Your arm hurts but not much more than if you'd had a shot at a doctor's office.
-        Now to get dressed again. Except that it's missing its left arm the frilly shirt is still wearable. Or there are the T-shirts in the gym bag--the plain white T-shirt or the Mickey Mouse T-shirt.`);
+        Now to get dressed again. Except that it's missing its left arm the frilly shirt is still wearable. Or there are the T-shirts in the gym bag—the plain white T-shirt or the Mickey Mouse T-shirt.`);
         enterRoom('chap-25');
       },
     }
@@ -5972,7 +6007,7 @@ const amnesiaRestored = {
 {//Dressed again (Could just move this text into the shirt sections)
   id: 'chap-25',
   name: 'All-Faith Chapel',
-  desc: `It doesn't really matter just **get dressed**.`,
+  desc: `It doesn't really matter just __get dressed__.`,
   onBlock: () => {
     if (prevInput === 'get dressed' || prevInput === 'dressed' || prevInput === 'dress yourself' || prevInput ==='dress'|| prevInput === 'put on clothes') {
       println('You get dressed and proceed to leave the chapel.')
@@ -5997,7 +6032,7 @@ const amnesiaRestored = {
   name: 'All-Faith Chapel',
   desc: `"Oh my darling!" she cries, leaping to her feet and embracing you with all of love's tender fury and then some. "Oh my sweet eternal love!" Her lips meet yours, preventing any reply but a kiss: and then another kiss, and then, as though he'd been waiting outside the door of the chapel for this cue, the father of the bride enters with a preacher and two witnesses in tow. You recognize both witnesses: one is the cleaning woman who entered Room 1502 without knocking just after you woke up ear1ier in the day, and the other is the man, Buddy, who took you from the penthouse health club and sauna back to Room 1502.
   
-  The preacher, a thin white-haired man in a Roman collar, takes charge. He positions you and Alice before the marble slab of the altar. He directs Luke Dudley to stand behind his daughter--and to remove his Stetson, which he does with reluctance. Buddy and the cleaning woman take up a position in the center aisle, as though to be able to block you if you make a final bolt. The preacher begins to intone the wedding service from memory, only breaking stride to ask you your name.`,
+  The preacher, a thin white-haired man in a Roman collar, takes charge. He positions you and Alice before the marble slab of the altar. He directs Luke Dudley to stand behind his daughter—and to remove his Stetson, which he does with reluctance. Buddy and the cleaning woman take up a position in the center aisle, as though to be able to block you if you make a final bolt. The preacher begins to intone the wedding service from memory, only breaking stride to ask you your name.`,
 onBlock: () => {
   if (prevInput === 'John Cameron' || prevInput === 'John' || prevInput === 'john cameron' || prevInput === 'cameron' || prevInput === 'john' || prevInput === 'John Cameron III' || prevInput === 'john cameron III') {
     enterRoom('marr-2');
@@ -6045,7 +6080,7 @@ onBlock: () => {
       icon: 'img/png/image-openweddingbox-thumbnail.png',
       gif: 'img/gif/gif-openweddingbox-ingame.gif',
       name: ['Tiffany & Co. Box', 'box', 'tiffany', 'tiffany box', 'blue box', 'blue', 'ring box'],
-      desc: 'It is nearly cubical. It is a turquiose blue with silver lettering that says TIFFANY & CO.',
+      desc: 'It is nearly cubical. It is a turquoise blue with silver lettering that says TIFFANY & CO.',
       isOpen: true,
       firstGet: true,
       firstUse: true,
@@ -6133,7 +6168,7 @@ onBlock: () => {
         name: 'The Sunderland Hotel Lobby',
         desc: ` `, // player is in the Elevator Alcove
         onEnter: () => {
-          clearOutput();
+          //clearOutput();
           reenableInput();
           println('You are now in the lobby.');
           if(tipBellboy === false){
@@ -6141,13 +6176,13 @@ onBlock: () => {
           }
         },
         onLook: () => {
-            println(`Mirrors seem to be the prevailing theme at the Sunderland-- at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal. Reflected and muliplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the **registration desk**, and beyond it the exit to 53rd street; to your left a **news-stand** and **gift shop**, and then a large curving **staircase** going up to the second floor. 
+            println(`Mirrors seem to be the prevailing theme at the Sunderland— at least since the latest decorator got hold of it. There are mirrors on the walls, and mirrors encase the free-standing columns, and the three chandeliers that hang above the main reception area are formed of mirrors instead of crystal. Reflected and muliplied in all this silvered glass, the small body of the hotel's clientele become a multitude. To your right is the __registration desk__, and beyond it the exit to 53rd street; to your left a __news-stand__ and __gift shop__, and then a large curving __staircase__ going up to the second floor. 
             
             Beside the staircase a hand-lettered sign says:
             
             The Sunderland Hotel
             is happy to welcome
-            The Noise Abatment League
+            The Noise Abatement League
             to the Big Apple.
 
             Beyond the staircase, at the end of a mirror-lined corridor, is an entrance to the Rathskeller Bar and Grill, and at the far end of the corridor is the exit to 52nd St.
@@ -6162,7 +6197,6 @@ onBlock: () => {
             {dir: ['newsstand', 'news-stand', 'south', 'left'], id: 'lobb-revi-1'}, // go to newsstand
             {dir: ['giftshop', 'gift shop', 'south'], id: 'lobb-revi-2'}, // go to giftshop
             {dir: ['staircase', 'stairs', 'south'], id: 'lobb-revi-3'}, // go to second floor staircase
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'foyer', 'west'], id: 'lobb-revi-9'}, // go to reception area
             {dir: 'leave', id: 'lobb-revi-8'}
         ]
@@ -6170,7 +6204,7 @@ onBlock: () => {
     {
         id: 'lobb-revi-1',
         name: 'Newsstand',
-        desc: `The upper part of the newsstand us given order to a display of gum and candy. Beneath this display there are a few remaining copies of the New York Post, and on either side of this are small hand-lettered signs explaining that the Times and Daily News are sold out. The Post's headline is ***MOB BOSS IN CASINO SLAYING***.`,
+        desc: `The upper part of the newsstand is given order to a display of gum and candy. Beneath this display there are a few remaining copies of the New York Post, and on either side of this are small hand-lettered signs explaining that the Times and Daily News are sold out. The Post's headline is ***MOB BOSS IN CASINO SLAYING***.`,
         onEnter: () => {
           reenableInput();
         },
@@ -6178,7 +6212,7 @@ onBlock: () => {
             {
                 itemId: 'post',
                 name: ['The Post', 'Post', 'Newspaper', 'Paper'],
-                desc: 'A copy of The Post, that you took from a newstand in the Sunderland Hotel. The headline, ***MOB BOSS IN CASINO SLAYING***',
+                desc: 'A copy of The Post, that you took from a newsstand in the Sunderland Hotel. The headline, ***MOB BOSS IN CASINO SLAYING***',
                 passage: '***MOB BOSS IN CASINO SLAYING***',
                 isTakeable: true,
                 onTake: () => println(`You pick up a copy of the Post, as though to study the picture of the slain mob boss, and when you are certain the newsstand attendant has not noticed, you roll it up and put it under your arm.`),
@@ -6218,7 +6252,7 @@ onBlock: () => {
     {
         id: 'lobb-revi-3',
         name: 'Second Floor Staircase',
-        desc: `There is a thick velvet rope strung across the stairs closing them off, and a hand-lettered sign explaining that the Noise Abatment League has ended its sessions for the day and that the convention suites are therefore closed for the evening.`,
+        desc: `There is a thick velvet rope strung across the stairs closing them off, and a hand-lettered sign explaining that the Noise Abatement League has ended its sessions for the day and that the convention suites are therefore closed for the evening.`,
         
         exits: [
             {dir: ['giftshop', 'gift shop', 'north'], id: 'lobb-revi-2'}, // go to giftshop
@@ -6268,15 +6302,14 @@ onBlock: () => {
                 isTakeable: true,
                 isDroppable: true,
                 onLook: () => {
-                    println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You fold these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
-                    // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV-- but who is now watching you."
+                    println(`You sit in the chair where you found the newspaper and read various stories in the paper, with a growing sense that in some ways your amnesia must extend beyond the realm of your private life. So much of the world, as it is described in the news, seems strange past all belief. What kind of people would commit such atrocious crimes? The city seems like a pool of frenzied sharks, at least according to the Post. Has the world always been like this, and you'd just not known? You find these questions so unsettling that you fold up the newspaper and put it in a trash receptacle.`);
+                    // IF player hasn't spoken to bellboy add this to paper desc. "As you do, you catch a glimpse, in the mirrored wall, of the bellboy who has been watching TV— but who is now watching you."
                 }
             }
         ],
         exits: [
             {dir: ['rathskeller', 'rathsekller bar and grill', 'bar and grill', 'bar', 'north'], id: 'lobb-revi-4'}, // go to rathskeller bar and grill
             {dir: ['exit', 'leave', 'south'], id: 'hote-exit'}, // exit building
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     },// closes lobb-revi-5 room
@@ -6285,23 +6318,22 @@ onBlock: () => {
         name: 'Registration Desk',
         desc: '',
         onEnter: () => {
+          reenableInput();
             const room = getRoom('lobb-revi-6');
-            ////console.log(room.visits);
             if(room.visits === 0){
-                println(`As you walk pass the recepetion desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your **safe deposit box**. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope-- if she was indeed your wife-- that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
+                println(`As you walk pass the registration desk, the clerk behind the desk smiles: "Mr. Cameron, I thought I should tell you that a woman came to the desk about an hour ago and was very insistent that she be allowed to examine your __safe deposit box__. She said she was your wife, but she had no identification, and you weren't in your room, and at last she went away. I hope— if she was indeed your wife— that she was not too much inconvenienced. But we really can't allow anyone to have access to the safe deposit boxes except those who've signed for them."`);
             }
             room.visits++;
-            ////console.log(room.visits);
             if(room.visits >= 2){
-                println(`You walk over to the registration desk, where the **clerk** is patiently going about his duties.`);
-                room.desc = room.desc.replace('', `The **clerk** is patiently going about his duties.`);
+                println(`You walk over to the registration desk, where the __clerk__ is patiently going about his duties.`);
+                room.desc = room.desc.replace('', `The __clerk__ is patiently going about his duties.`);
             }
         },
         onBlock: () => {
             const room = getRoom('lobb-revi-6');
-            if(prevInput === 'ask about woman' || prevInput === 'ask about wife'){
+            if(prevInput === 'ask about woman' || prevInput === 'ask about wife' || prevInput === 'my wife' || prevInput === 'woman'){
                 println(`"I thought her a very attractive woman and quite smartly dressed. Of course, I did feel suspicious, having earlier spoken to the young lady, Miss Dudley, who had reserved the All-Faith Chapel for your wedding and whom I understood to be your intended bride. Of course, none of this is my business."`);
-            } else if (prevInput === 'ask about safe deposit boxes' || prevInput === 'ask about safe boxes' || prevInput === 'ask about safes' || prevInput === 'safes' || prevInput === 'safe deposit') {
+            } else if (prevInput === 'ask about safe deposit boxes' || prevInput === 'ask about safe boxes' || prevInput === 'ask about safe' || prevInput === 'safe' || prevInput === 'safe deposit' || prevInput === 'safe deposit box') {
               if (safeDeposit === false) {
                 println(`"I can assure you that no one has had access to your box since you last locked it yourself. However, as to your getting something out of it today, I'm sorry to have to tell you that the computer controlling the vault's security system has crashed and won't be working again until tomorrow. I do apologize for whatever inconvenience that may represent."`)
               } else {
@@ -6312,6 +6344,8 @@ onBlock: () => {
               println(`"I can assure you, Mr. Cameron, that the manager can tell you no more than I have. Whatever is in your safe deposit box will still be there tomorrow or any later day. Be sure, in the meantime, not to forget your password."
                     
               At the other end of the counter, the bell captain signals urgently to the desk clerk, who goes off with a final cringe of apology.`);
+            } else if (prevInput === 'talk to clerk' || prevInput === 'clerk' || prevInput === 'get clerk attention' || prevInput === `get clerk's attention` || prevInput === `get clerks attention`) {
+              println("Hello, Mr. Cameron, what can I do you for?");
             }
         },
         items: [
@@ -6344,29 +6378,33 @@ onBlock: () => {
         "What is the number of your box, Mr. Cameron?"`,
 
         onBlock: () => {
-            if(prevInput === 'I forgot' || prevInput === `I don't know` || prevInput === `I can't remember`){
+            if(prevInput === 'I forgot' || prevInput === `I don't know` || prevInput === `I can't remember` || prevInput === 'i forgot' || prevInput === `I don't remember` || prevInput === `i don't remember` || prevInput === `i don't know` || prevInput === `don't know` || prevInput === 'forgot' || prevInput === `i can't remember`){
                 println(`"That's all right," the clerk says. "I can easily look up the number of the box in the register at the desk. But I hope you haven't forgetten the password. The box can't be opened unless you type in the original password you entered into the computer. Now if you'll give me just a moment to look in the register..." The clerk leaves you along for just a moment and returns to tell you that the number of your safe deposit box is 334.
                 
-                He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors-- so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+                He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 enterRoom('lobb-revi-18');
             } else if(prevInput === '334'){
-                println(`"Very good," says the clerk. He shows you the position of the box you've named, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors-- so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+                println(`"Very good," says the clerk. He shows you the position of the box you've named, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 enterRoom('lobb-revi-18');
             } else {
-                println(`"What is the number of your box, Mr. Cameron? Do you remember it?`);
-                enterRoom('lobb-revi-18');
+              println(`"That's all right," the clerk says. "I can easily look up the number of the box in the register at the desk. But I hope you haven't forgetten the password. The box can't be opened unless you type in the original password you entered into the computer. Now if you'll give me just a moment to look in the register..." The clerk leaves you along for just a moment and returns to tell you that the number of your safe deposit box is 334.
+                
+              He shows you where your box is, switches on the computer, types a few instructions on keyboard, and leaves the room with this parting advice: "The security system will make allowance for as many as four errors— so do type carefully. Remember, the computer understands a blank space as another letter. If I can be of further assistance, I'll be at the desk outside." He leaves you in the small safe deposit vault, facing the alert-looking monitor of the computer, with its cursor blinking in front of the blank space where you are supposed to type in the password:
+              
+              YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+              enterRoom('lobb-revi-18');
             }
         },
 
         exits: [
-            {dir: ['n', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
-            {dir: ['s', 'south'], id: 'lobb-revi-6'}, // go to reception desk
+            {dir: ['leave', 'north'], id: 'lobb-revi-8'}, // go to 53rd street exit
+            {dir: ['registration', 'south'], id: 'lobb-revi-6'}, // go to reception desk
             {dir: ['e', 'east'], block: `You can't go that way.`}, // no where to go
-            {dir: ['w', 'west'], id: 'lobb-revi-9'} // go to reception area
+            {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     },// closes lobb-revi-7 room
     {
@@ -6396,7 +6434,7 @@ onBlock: () => {
             {
                 itemId: 'times',
                 name: ['times', 'New York Times', 'times newsspaper'],
-                desc: `You skim through the news and reviews and ads in the paper, looking always for some hint of who you are-- some special knowledge, some keenness of interest or hunger that would be a clue to the life you've forgotten. But all the news and reviews seem equally interesting and equally irrelevant. The baseball news evokes no sense of partisanship for one city's team more than another's. From reading through the financial pages, it seems pretty certain that you are not a banker or stockbroker, since there are many entire articles that make no sense to you at all. On the other hand, you do seem to know something about computers, to judge by your response to various ads for computer hardware and software.` 
+                desc: `You skim through the news and reviews and ads in the paper, looking always for some hint of who you are— some special knowledge, some keenness of interest or hunger that would be a clue to the life you've forgotten. But all the news and reviews seem equally interesting and equally irrelevant. The baseball news evokes no sense of partisanship for one city's team more than another's. From reading through the financial pages, it seems pretty certain that you are not a banker or stockbroker, since there are many entire articles that make no sense to you at all. On the other hand, you do seem to know something about computers, to judge by your response to various ads for computer hardware and software.` 
             }
         ],
         exits: [
@@ -6419,7 +6457,7 @@ onBlock: () => {
                 name: ['TV', 'Television'],
                 desc: ``,
                 onLook: () => {
-                    println(`You watch a news program that is in progress-- but you can't be said to listen to it, for a caucus of dissident members of the Noise Abatement League is carrying on a rather noisy argument over the League's platform, and the sound on the TV has been turned quite low.
+                    println(`You watch a news program that is in progress— but you can't be said to listen to it, for a caucus of dissident members of the Noise Abatement League is carrying on a rather noisy argument over the League's platform, and the sound on the TV has been turned quite low.
                         
                     You see a smiling reporter with a microphone standing outside a large stone building. Someone entering a limousine refuses to talk with him. Then there is a picture of a burning apartment building being doused by the Fire Department. Then an advertisement for Total (which seems as familiar to you as the face of the Mona Lisa; your amnesia doesn't extend to television ads, apparently), and another advertisement for fur coats.`);
                     pressEnter('lobb-revi-10');
@@ -6427,7 +6465,7 @@ onBlock: () => {
             }     
         ],
         exits: [
-            {dir: ['newstand', 'get up', 'north'], id: 'lobb-revi-15'},
+            {dir: ['newsstand', 'get up', 'north'], id: 'lobb-revi-15'},
             {dir: ['registration', 'south'], id: 'lobb-revi-15'},
             {dir: ['elevators', 'east'], id: 'lobb-revi-15', // need to print an exit line `You rise from the sofa, making the vinyl cushions sigh, and return to the newsstand in the lobby.`
 },
@@ -6441,14 +6479,14 @@ onBlock: () => {
         onEnter: () => {
             println(`Momentarily your attention is diverted by the shouts of the contending factions of the caucus of the Noise Abatement League. When you look back at the TV you think you see your own face on the screen. The hair is shorter, and you seem very unhappy. Small wonder, for this fleeting portrait is framed, at the top of the screen, by the word WANTED, and at the bottom by a string of numerals. You strain to hear the announcer's voice and catch only the end of the report:
             
-            "...killed during his escape from the Texas State Penitentiary at Revoltillo, where the prisoner was serving a two-year sentence for the possession of an illegal substance. He is beleived to be armed and should be considered dangerous." This caution is followed by the weather report. Tomorrow will be another sunny day.`);
+            "...killed during his escape from the Texas State Penitentiary at Revoltillo, where the prisoner was serving a two-year sentence for the possession of an illegal substance. He is believed to be armed and should be considered dangerous." This caution is followed by the weather report. Tomorrow will be another sunny day.`);
             pressEnter('lobb-revi-9');
         }
     }, // closes lobb-revi-10 room (watching TV continuation)
     {
         id: `lobb-revi-11`,
         name: '',
-        desc: `You rise from the sofa, making the vinyl cushions sign, and walk toward the large curtained windows overlooking Fifth Avenue. Because it is dark outside and bright within the hotel, the window glass acts as yet one more mirror in the lobby's maze of mirrors.`,
+        desc: `You make your way toward the large curtained windows overlooking Fifth Avenue. Because it is dark outside and bright within the hotel, the window glass acts as yet one more mirror in the lobby's maze of mirrors.`,
         onBlock: () => {
             if(prevInput === 'mirror'){
                 const listClothes = playCloth;
@@ -6459,11 +6497,8 @@ onBlock: () => {
                 // create a look in mirror command that runs a function that lists line above and clothing worn. 
             }
         },
-        exits: [
-            {dir: ['north'], block: `You can't go that way.`},
-            {dir: ['south'], block: `You can't go that way.`},
-            {dir: ['west'], block: `You can't go that way.`}, 
-            {dir: ['east'], id: 'lobb-revi-9'}
+        exits: [ 
+            {dir: ['leave', 'get up', 'reception'], id: 'lobb-revi-9'}
         ]  
     }, // closes lobb-revi-11 room (windows of reception area)
     {
@@ -6481,7 +6516,6 @@ onBlock: () => {
         exits: [
             {dir: ['registration desk', 'registration', 'north'], id: 'lobb-revi-6'}, // go to reception desk
             {dir: ['newstand', 'south'], id: 'lobb-revi-1'}, // go to newsstand
-            {dir: ['east'], block: `You can't go that way.`}, // no where to go
             {dir: ['reception', 'west'], id: 'lobb-revi-9'} // go to reception area
         ]
     }, // closes lobb-revi-13
@@ -6492,7 +6526,7 @@ onBlock: () => {
         onEnter: () => {
             println(`You shake out the newspaper, uninterrupted this time.
             
-            You skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold nexk chains appeal to you?
+            You skim the tabloid-size pages quickly, looking for clues to your own identity in the ads and photos. Were you ever the sort of person who would want to wear this 100% acrylic leisure suit with see-through mesh panels around the waist (only $49.95 while the supply lasts)? Or would you be more comfortable in this 3-piece pinstripe suit? Do gold neck chains appeal to you?
             
             This series of rather idle questions comes to an abrupt end as you turn to page 17 and see a blurry picture of your own scowling face. The hair is shorter, but there's no mistaking that face as anyone's but yours. The caption under the photo reads: 
             
@@ -6508,27 +6542,20 @@ onBlock: () => {
         desc: '',
         onEnter: () => {
             const room = getRoom('lobb-revi-9');
-            delete room.exits[0].id;
-            room.exits[0].block = `You can't go that way.`;
-            delete room.exits[1].id;
-            room.exits[1].block = `You can't go that way.`;
-            room.exits[2].id = 'lobb-revi-1';
+            room.exits[0].id = 'lobb-revi-1'
+            room.exits[1].id = `lobb-revi-6`;
+            room.exits[2].id = 'lobb-revi-13';
             room.exits[3].id = 'lobb-revi-11';
 
             println(`Just as you are about to retreat the bellboy comes toward you. "Mr. Hollings?", he inquires with a smile of professional deference. "Are you Xavier Hollings?"`);
         },
         onBlock: () => {
-            if(prevInput === ('yes' || 'maybe' || `I don't know.`)){
+            if(prevInput === 'yes' || prevInput === 'maybe' || prevInput === `I don't know.`){
                 println(`"You should be more caerful, Mr. Hollings. I mean, a white suit is kind of conspicuous for a man on the lam from a murder rap. The police have already been round once showing that same picture. You're lucky nobody but me recognized you. But I wouldn't push my luck staying on in...wasn't it Room 1502?" You are too startled to reply, and the bellboy goes on: "There was nothing about a reward for turning you in, so I didn't say anything then. I figured I'd wait round and talk to you first. Maybe you could help me forget I saw you."
                 
                 You realize you are being blackmailed.`);
-                if(getItemInInventory('weddingring') && (prevInput === 'give ring to bellboy' || prevInput === 'give ring' || prevInput === 'give the ring' || prevInput === 'hand over the ring' || prevInput === 'hand ring over')){
-                    println(`Quickly the bellboy flips open the lid of the box. "Thanks, Mr. Hollings. Or I guess I should say Mr. Cameron. Thanks a whole lot. I served time in the slammer myself, so I wish you the best of luck."`);
-                    pressEnter('lobb-revi-9');
-                } else {
-                    println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
-                    pressEnter('lobb-revi-16');
-                }
+                pressEnter('lobb-revi-ring');
+                
             } else {
                 println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
                 pressEnter('lobb-revi-16');
@@ -6536,12 +6563,30 @@ onBlock: () => {
         }
     }, // closes lobb-revi-15 (bellboy confrontation)
     {
+      id: 'lobb-revi-ring',
+      name: '',
+      desc: '',
+      onEnter: () => {
+        reenableInput();
+        println('What do you do?')
+      },
+      onBlock: () => {
+        if(getItemInInventoryById('weddingbox') && (prevInput === 'give ring to bellboy' || prevInput === 'give ring' || prevInput === 'give the ring' || prevInput === 'hand over the ring' || prevInput === 'hand ring over')){
+          println(`Quickly the bellboy flips open the lid of the box. "Thanks, Mr. Hollings. Or I guess I should say Mr. Cameron. Thanks a whole lot. I served time in the slammer myself, so I wish you the best of luck."`);
+          pressEnter('lobb-revi-9');
+      } else {
+          println(`"Gee, Mr. Hollings, I'm sorry to see you take that attitude." The bellboy strides across the reception area to the house phone. He dials a number and waits for an answer.`);
+          pressEnter('lobb-revi-16');
+      }
+      },
+    },
+    {
         id: 'lobb-revi-16',
         name: '',
         desc: '',
         onEnter: () => {
             println(`You follow the bellboy and while you stand undecided whether to speak to him, he gets a reply on the telephone and begins mumbling into the receiver. He hangs up, and disappears through a door behind the reception desk. The clerk at the desk notices you and calls out, "Mr. Cameron, would you come here a moment please?"`);
-            enterRoom('lobb-revi-6');
+            enterRoom('lobb-revi-20');
         }
     }, // closes lobb-revi-16
     {   
@@ -6560,7 +6605,7 @@ onBlock: () => {
                     let room = getRoom('lobb-revi-17')
                         if(room.elevatorCount === 0){
                             if(prevInput === ('press up' || 'press down' || 'down' || 'up' || 'use elevator')){
-                                println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wai tin the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
+                                println(`You press the button to call for the elevator, intending to return to your room and enjoy the benefit of a night's rest, or at least of some peace and quiet, but while you wait in the alcove a pair of policemen appear. One of them also presses the button summoning the elevator. The other, meanwhile, regards you curiously. And why shouldn't he? Your clothes would inspire anyone's curiosity. The elevator arrives, and the cops get in. "Going up?" the second cop asks, holding the elevator door open.`);
                                 elevatorCount++;
                                 if(prevInput === 'yes'){
                                     enterRoom('lobb-revi-19');
@@ -6571,7 +6616,7 @@ onBlock: () => {
                         }
 
                         if(room.elevatorCount !== 0){
-                            println(`You wait some time for another elevator, and when it arrives the same two policemen get out. "Just the man we were looking for," says the first policeman with satisfaction. "Cuff him Louie, and I'll read him his rights." As the policeman finishes cuffing you, your rights have been read to you. You are not actually JOhn Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
+                            println(`You wait some time for another elevator, and when it arrives the same two policemen get out. "Just the man we were looking for," says the first policeman with satisfaction. "Cuff him Louie, and I'll read him his rights." As the policeman finishes cuffing you, your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
                             pressEnter('deat-1'); // sends player to death and texas
                         }
 
@@ -6586,12 +6631,14 @@ onBlock: () => {
         desc: '',
         passwordCount: 0,
         onBlock: () => {
+          let room = getRoom(disk.roomId);
+          console.log(room.passwordCount);
             if(prevInput === 'with god'){
                 println(`With a click of instant recognition, the little metal door of Box 334 springs open, and a message appears on the monitor before you:
                 
                 YOUR SAFETY DEPOSIT BOX IS NOW OPEN FOR EXAMINATION.`);
-            } else if(passwordCount === 0 && prevInput !== 'with god'){
-                passwordCount++;
+            } else if(room.passwordCount === 0 && prevInput !== 'with god'){
+              
                 println(`There is a delicate grinding sound from the console on the wall and then the screen of the monitor flashes this message at you: 
                 
                 I'M SORRY. THAT IS NOT THE PASSWORD THAT WILL OPEN YOUR BOX.
@@ -6600,30 +6647,32 @@ onBlock: () => {
                 
                 The screen blanks out for a moment, and then offers you another opportunity:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
-            } else if(passwordCount === 1 && prevInput !== 'with god'){
-                passwordCount++;
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+                room.passwordCount++;
+            } else if(room.passwordCount === 1 && prevInput !== 'with god'){
+              
                 println(`The screen blanks out for a moment, and you recall having read, earlier in the day, something that may have a hint specific to your present dilemma. But what was it? Something about "doubt and uncertainty." The cursor on the monitor before winks on and off, indifferent to your dilemma:
                 
-                YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
-            } else if(passwordCount === 2 && prevInput !== 'with god'){
-                passwordCount++;
-                println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. the text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
+                YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
+                room.passwordCount++;
+            } else if(room.passwordCount === 2 && prevInput !== 'with god'){
+              room.passwordCount++;
+                println(`The screen blanks out, and now you remember that it was when you'd looked at the Gideon Bible's lists of chapter-and-verses to be read by those with particular needs. The text commended to those "in doubt and uncertainity" had been crossed out and another text number hand-written in its place. You certainly qualify on the score of doubt and uncertainty. What was that text?`);
             
                 if(prevInput === 'look at bible' && getItemInInventory('bible')){
                     println(`You take the Bible from your gym bag and find the page of recommended texts. Those in doubt and uncertainty are advised to read John I. You turn to the Gospel according to St. John, first chapter, first verse: "In the beginning was the Word, and the word was with God, and the word was God."
                     
                     The monitor is still winking its cursor at you, waiting for you to fill in the blank:
                     
-                    YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                    YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 } else {
                     println(`The monitor is still winking its cursor at you, waiting for you to fill in the blank:
                     
-                    YOUR PASSWORD IS &#95; &#95; &#95; &#95;  &#95; &#95; &#95;`);
+                    YOUR PASSWORD IS &#95; &#95; &#95; &#95; &nbsp; &#95; &#95; &#95;`);
                 }
-            } else if(passwordCount === 3 && prevInput !== 'with god'){
+            } else if(room.passwordCount === 3 && prevInput !== 'with god'){
                 println(`Your fourth hunch is as wrong as the rest. The screen goes completely blank, and a buzzer softly bleeps. A moment later the desk clerk steps into the room. "I'm sorry, Mr. Cameron, but I'll have to ask you to step back out into the lobby. If you still can't remember your password, you'll have to speak with the manager tomorrow. He's the only one empowered to circumvent the password system. Sometimes these modern improvments are more trouble than they're worth." Reluctantly you return to the lobby, and the clerk locks the door to the safe deposit room.`);
-                enterRoom('lobb-revi');
+                pressEnter('lobb-revi');
             }
         },
         items: [
@@ -6635,7 +6684,6 @@ onBlock: () => {
                     println(`You lift the gray metal lid of the box. the box contains a single 5 and 1/4-inch floppy disc in a plain paper sleeve. You feel equal pangs of curiousity and of disappointment. The disc may well have the answer to your basic question of WHO AM I? But money would have been more immediately useful. You feel like a kid who's unwrapped a Christmas present and has to say thank you for new underwear.`);
 
                     println('You take the disc and put it in the gym bag.');
-
                     disk.inventory.push({
                         itemId: 'floppydisk',
                         icon: 'img/png/image-floppydisk-thumbnail.png',
@@ -6644,7 +6692,11 @@ onBlock: () => {
                         desc: 'The disk is 5 and 1/4 inches square. The label reads: User Friendly Computer Store, 56th St. and Madison.',
                         isTakeable: true,
                         onTake: () => println(`You take the disc and put it in the gym bag.`),
-                        onDrop: () => println(`You shouldn't drop that. It might be important.`)
+                        onDrop: () => println(`You shouldn't drop that. It might be important.`),
+                        onLook: () => {
+                          println('The disk is 5 and 1/4 inches square. The label reads: User Friendly Computer Store, 56th St. and Madison.');
+                          storyMarker.setLatLng([37.265, -2.637]).bindPopup('Hopefully the computers are friendly.').addTo(poiLayer);
+                        }
                     });
                     enterRoom('good-bye');
                 }       
@@ -6682,7 +6734,7 @@ onBlock: () => {
                 }
             } else {
                 println(`The policeman presses the button for the floor you've named, and the elevator doors close. As the elevator rises, he asks you, "Pardon me, sir, but would you name be John Cameron?"`);
-                if(prevInput === 'yes' || prevInput === `I don't know`){
+                if(prevInput === 'yes' || prevInput === `I don't know` || prevInput === `i don't know`){
                     println(`"Well, that is a real convenience," he says. Then, turning to his partner. "Cuff him, Louie, and I'll read him his rights." By the time the elevator has gone up to 7 and down again to the lobby, you have been handcuffed and your rights have been read to you. You are not actually John Cameron III, as it turns out, but Xavier Hollings, and you are wanted by the state of Texas for murdering a prison guard while escaping from the state penitentiary at Revoltillo.`);
                     pressEnter('deat-1');
                 } else if(prevInput === 'no'){
@@ -6713,7 +6765,7 @@ onBlock: () => {
         id: 'prin-club-1',
         coord: [15.390, -6.546],
         name: 'The Princeton Club',
-        desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the Club's Board of Directors on the subject of the dangers of creeping seediness.`,
+        desc: `You enter the lobby, fully convinced on the evidence of the empty matchbook, that you are an alumnus of the university and a member of the club. You take a quick scan of the interior and make a mental note to write the club's Board of Directors on the subject of the dangers of creeping seediness.`,
         onEnter: () => {
           degradation = !degradation;
           pressEnter('prin-club-2');
@@ -6722,7 +6774,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-2',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `Surely, such a venerable institution should not be allowed to sag into such a state of shabbiness. Perhaps contributions should be solicited for a Redecorating Fund. Just as you've begun mentally to frame this appeal, the doorman asks you what your business is. You explain that you believe yourself to be a member.`,
         onEnter: () => {
@@ -6733,9 +6785,9 @@ onBlock: () => {
       },
       {
         id: 'prin-club-3',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
-        desc: `He assures you that he has an infallible memory for faces and that you are not.  you are not. You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
+        desc: `He assures you that he has an infallible memory for faces and that you are not.  You insist on seeing a list of the membership. When that list has proven that there is no John Cameron among the members of the Princeton Club, the doorman escorts you out to the street and bids you goodbye with a smile of withering condescension.`,
         onEnter: () => {
           pressEnter('prin-club-4');
         },
@@ -6743,7 +6795,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-4',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `You feel as though you'd been expelled from the university on the first day of your freshman year: it was a very brief career.`,
         onEnter: () => {
@@ -6753,7 +6805,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-5',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `"John Cameron!" \n\nYou look round to see who has called you in that deep, cracked voice. She calls again and you spot her, an immense woman wearing layer upon layer of dirty rags. She is sitting on the sidewalk across the street from the Princeton Club, surrounding by shopping bags.`,
         onEnter: () => {
@@ -6763,9 +6815,9 @@ onBlock: () => {
       },
       {
         id: 'prin-club-6',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
-        desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Dont you remember?" \n"I'm afraid I don't remember anything," you reply. "I have amnesia."`,
+        desc: `You cross the street and ask the woman how she comes to know you. "We were lovers, honey," she confides with a sly smile. "Don't you remember?" \n"I'm afraid I don't remember anything," you reply. "I have amnesia."`,
         onEnter: () => {
           pressEnter('prin-club-7');
         },
@@ -6773,9 +6825,9 @@ onBlock: () => {
       },
       {
         id: 'prin-club-7',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
-        desc: `She confesses that she knows about your amnesia, for two weeks earlier you'd had a long conversation with her about it right here at her post of duty. At that time, you'd given her a letter that she was to give you if you ever turned up again--as you have now, thanks to the matchbook from the Princeton Club.`,
+        desc: `She confesses that she knows about your amnesia, for two weeks earlier you'd had a long conversation with her about it right here at her post of duty. At that time, you'd given her a letter that she was to give you if you ever turned up again—as you have now, thanks to the matchbook from the Princeton Club.`,
         onEnter: () => {
           pressEnter('prin-club-8')
         },
@@ -6783,7 +6835,7 @@ onBlock: () => {
       },
       {
         id: 'prin-club-8',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `After some minutes of polite conversation about the perils and pleasures of being destitute in the world's greatest city, you take your leave of the shopping bag lady and open the letter you'd written to yourself:`,
         onEnter: () => {
@@ -6793,9 +6845,9 @@ onBlock: () => {
       },
       {
         id: 'prin-club-9',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
-        desc: `"Dear Self," it says. "In case you haven't been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel According to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what's in that box. So get it. Fond regards from Guess Who."`,
+        desc: `"Dear Self," it says. "In case you haven't been able to get into your safe deposit box at the hotel, the password comes from the first lines of the Gospel according to John. "In the beginning was the word, and the Word was with God." Get it? With God. You will need what's in that box. So get it. Fond regards from Guess Who."`,
         onEnter: () => {
           pressEnter('prin-club-10');
         },
@@ -6803,11 +6855,16 @@ onBlock: () => {
       },
       {
         id: 'prin-club-10',
-        coord: [],
+        coord: [15.390, -6.546],
         name: '',
         desc: `Congratulating yourself on your foresight you tear up the note and throw it away. Only you will have the password.`,
         onEnter: () => {
-          storyMarker.addTo(poiLayer);
+          storyMarker.setLatLng([31.222, -6.876]).bindPopup('The Princeton Club').addTo(poiLayer);
+
+          let room = getRoom('lobb-revi-6');
+          console.log(room);
+          safeDeposit = true;
+          delete room.exits[0].block;
           pressEnter('43-5');
         },
         exits: []
@@ -6826,12 +6883,12 @@ onBlock: () => {
         id: 'frie-comp-1',
         coord: [],
         name: 'USER-FRIENDLY COMPUTER STORE',
-        desc: `The store looks like it has either not yet opened for business or recently gone bankrupt. There are only a few computers in sight--an Apple, a Commodore, and an IBM PC. \n\n Various products line the wall, including Electronic Arts' "Adventure Construction Set", "Tales of the Unknown: The Bard's Tale", and "Thomas M. Disch's AMNESIA."`,
+        desc: `The store looks like it has either not yet opened for business or recently gone bankrupt. There are only a few computers in sight—an Apple, a Commodore, and an IBM PC. \n\n Various products line the wall, including Electronic Arts' "Adventure Construction Set", "Tales of the Unknown: The Bard's Tale", and "Thomas M. Disch's AMNESIA."`,
         onEnter: () => {
           if (getItemInInventoryById('floppydisk')) {
             degradation = !degradation;
             //if first time:
-            println(`The one other person in the store--a woman in what is almost but not quite a man's business suit--approaches you, and says, "How may I help you, sir?"`);
+            println(`The one other person in the store—a woman in what is almost but not quite a man's business suit—approaches you, and says, "How may I help you, sir?"`);
             pressEnter('frie-comp-3');
           } else {
             println(`You think twice before going inside. There is not much for you to do there.`);
@@ -6855,8 +6912,8 @@ onBlock: () => {
         id: 'frie-comp-3',
         coord: [],
         name: 'User Friendly Computer Store',
-        desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on--and of course it will only run on a machine if it's been formatted to do so.
-        I don't pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple 2e, the IBM PC, and the Commodore 64. Which would you like?`,
+        desc: `The saleswoman examines the disk you show her. “This looks like any other floppy disk, sir. There are any number of machines it might have been made on—and of course it will only run on a machine if it's been formatted to do so.
+        I don't pretend to understand any more of it than that. You can try it on the machines we have here, and if it runs on one of them you can rent time for $7.50 an hour. We have available the Apple //e, the IBM PC, and the Commodore 64. Which would you like?`,
         onEnter: () => {
           degradation = false;
           reenableInput();
@@ -6864,7 +6921,7 @@ onBlock: () => {
         onBlock: () => {
           //Eventually check for which version is being run
           //If player picks a different version afterwards change it.
-          if (prevInput === 'Apple 2e' || prevInput === 'apple' || prevInput === 'Apple' || prevInput === 'the apple' || prevInput === 'the apple 2e' || prevInput === 'apple 2e' ) {
+          if (prevInput === 'Apple 2e' || prevInput === 'apple' || prevInput === 'Apple' || prevInput === 'the apple' || prevInput === 'the apple 2e' || prevInput === 'apple 2e' || prevInput === 'apple //e' || prevInput === 'Apple //e' || prevInput === 'the apple //e') {
             //run a check if version is apple
             if (readApple === true) {
               enterRoom('frie-comp-4');
@@ -6891,7 +6948,7 @@ onBlock: () => {
           } else if (prevInput === '') {
             println('Please select a computer sir.');
           } else {
-            println('Please select a computer sir. We have an Apple 2e, Commodore 64, and IBM PC.');
+            println('Please select a computer sir. We have an Apple //e, Commodore 64, and IBM PC.');
           }
         },
         exits: [
@@ -6905,7 +6962,7 @@ onBlock: () => {
         desc: '',
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
-          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this disk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
           pressEnter('frie-comp-5');
         },
         exits: [],
@@ -6914,7 +6971,7 @@ onBlock: () => {
         id: 'frie-comp-5',
         coord: [],
         name: 'User Friendly Computer Store',
-        desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is an Apple set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
+        desc: `The saleswoman who has been looking over your shoulder gives a little sniff of disapproval after reading the text that appears on the screen. "Well, that certainly piques the curiosity, doesn't it," she comments levelly. "I assume you'll want to work in private if you do wish to rent time, and there is a computer set up in its own little cubbyhole. As I said, the rental fee is $7.50, cash in advance."`,
         onEnter: () => {
           reenableInput();
         },
@@ -6927,7 +6984,7 @@ onBlock: () => {
             }
           } else {
           println(`"I don't have the time now," you tell the saleswoman. "Maybe later." She smiles stiffly as you go out the door to Madison Avenue.`);
-          enterRoom('56-madi')
+          enterRoom('56-madi');
           }
         },
         exits: [
@@ -6938,10 +6995,10 @@ onBlock: () => {
         id: 'frie-comp-6',
         coord: [],
         name: 'User Friendly Computer Store',
-        desc: `You pay the saleswoman for an hour on the Apple, and she leads you to a back room about the size of the hotel's safe deposit vault. When you're alone, you boot the disk into the Apple disk drive, and once again the monitor lights up with this introductory message:`,
+        desc: `You pay the saleswoman for an hour on the computer, and she leads you to a back room about the size of the hotel's safe deposit vault. When you're alone, you boot the disk into the disk drive, and once again the monitor lights up with this introductory message:`,
         onEnter: () => {
           document.getElementById('output').innerHTML = '';
-          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this desk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
+          println(`&#42&#42&#42&#42 HIGHLY CONFIDENTIAL &#42&#42&#42&#42\n\nDo not access material on this disk unless it is YOURS. \n\nYou will know if it is yours only if you don't know who you are.`, 'enter');
           pressEnter('frie-comp-7');
         },
         exits: []
@@ -7020,7 +7077,7 @@ onBlock: () => {
         name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
-          println(`I am writing this message to myself on a rented Apple computer in Room 1502 of the Sunderland Hotel, but beyond that one certain fact everything else I might say about who I am or why I'm here is a matter of faith and/or inference. I'm registered at the desk downstairs as John Cameron III, and my bill is being paid for by an American Express card in that name (no idea where the card is tho, dammit), but all my efforts to dig up solid info about this “John Cameron” have met with no success. American Express insists my records are confidential and can't be divulged over the phone. The WHO'S WHO at the library shows no entry for John Cameron III. The name is probably an alias. This much is certain: whoever I am, I'm suffering from a disease that causes a progressively worse amnesia. The nature and origin of that disease—and much else- are set out (presumably by myself, but that's where faith comes in, since I don't remember writing even yesterday's entry!) on files that are coded within this file. Access to these files is controlled by a series of riddles, similar to but harder than the riddle that opened this file. The need for "burying" this information will become evident as you/I continue to access earlier files. As for the riddles themselves, it seems that even in my amnesiac condition I have a knack for inventing doggerel riddles. God, I hope I don't end up discovering I'm a poet! I have, at this point, almost no memories of my adult life, though I do retain certain capabilities--such as basic programming skills- and general knowledge. There is also a grab-bag of what I suppose are childhood memories--streets and rooms and cooking smells and a woman's voice softly urging me to go to sleep. My mother's voice? I can remember watching DUMBO and wishing that I had his magic feather. I remember unwrapping a birthday present that had one box inside of another box inside of another box--but I can't remember what was in the last box. It's not safe for me to continue writing. You/I will find what you need to know on the earlier files. I have nothing substantive to add. I'll deposit this in the hotel's safe deposit box and use the password that's keyed to John 1:1. None of the other riddles concern the Bible, by the way, so don't think to find more “clues.” I was able to guess them, so I guess you will, since I'm counting on you to be me. This is a weird situation.`, 'compStore');
+          println(`I am writing this message to myself on a rented computer in Room 1502 of the Sunderland Hotel, but beyond that one certain fact everything else I might say about who I am or why I'm here is a matter of faith and/or inference. I'm registered at the desk downstairs as John Cameron III, and my bill is being paid for by an American Express card in that name (no idea where the card is tho, dammit), but all my efforts to dig up solid info about this “John Cameron” have met with no success. American Express insists my records are confidential and can't be divulged over the phone. The WHO'S WHO at the library shows no entry for John Cameron III. The name is probably an alias. This much is certain: whoever I am, I'm suffering from a disease that causes a progressively worse amnesia. The nature and origin of that disease—and much else- are set out (presumably by myself, but that's where faith comes in, since I don't remember writing even yesterday's entry!) on files that are coded within this file. Access to these files is controlled by a series of riddles, similar to but harder than the riddle that opened this file. The need for "burying" this information will become evident as you/I continue to access earlier files. As for the riddles themselves, it seems that even in my amnesiac condition I have a knack for inventing doggerel riddles. God, I hope I don't end up discovering I'm a poet! I have, at this point, almost no memories of my adult life, though I do retain certain capabilities—such as basic programming skills- and general knowledge. There is also a grab-bag of what I suppose are childhood memories—streets and rooms and cooking smells and a woman's voice softly urging me to go to sleep. My mother's voice? I can remember watching DUMBO and wishing that I had his magic feather. I remember unwrapping a birthday present that had one box inside of another box inside of another box—but I can't remember what was in the last box. It's not safe for me to continue writing. You/I will find what you need to know on the earlier files. I have nothing substantive to add. I'll deposit this in the hotel's safe deposit box and use the password that's keyed to John 1:1. None of the other riddles concern the Bible, by the way, so don't think to find more “clues.” I was able to guess them, so I guess you will, since I'm counting on you to be me. This is a weird situation.`, 'compStore');
 
           pressEnter('frie-comp-10')
         },
@@ -7036,7 +7093,7 @@ onBlock: () => {
         ridHint: 'Wrong. Need a hint? There it is.',
         onEnter: () => {
           setTimeout(() => {  println(`The text on the screen breaks off and is replaced by a second riddle:`); }, 1000);
-          setTimeout(() => {  println(`Acess to next file controlled by correct answer to the following riddle:`); }, 2000);
+          setTimeout(() => {  println(`Access to next file controlled by correct answer to the following riddle:`); }, 2000);
           setTimeout(() => {
             println(`With every question that I pose \n The keener curiosity grows. \n Who? I ask, and then, a moment later, \n How come? And when? And where's our waiter? \n Who am I?
             `);
@@ -7065,7 +7122,7 @@ onBlock: () => {
         name: 'User Friendly Computer Store',
         desc: '',
         onEnter: () => {
-          println(`I have become a virtual prisoner in this hotel room. My self-declared fiancée “Alice Dudley” just appeared outside the door and got very impatient rattling the chain lock on the door while I secreted this disk. She brought a Chinese takeout, which I refused to eat, as I've developed the paranoid suspicion that she is doctoring my food, which aggravates my amnesia. When I complained, Alice tells me that my amnesia has been triggered by premarital anxieties. She hints, moreover, that I'm a fugitive from justice--but won't provide details, because (she says) when she did so some short while back the discovery triggered my worst setback amnesia-wise. She may be telling the truth: I can't remember. Tho I don't trust her I don't doubt her essential good will towards me. Call it love, even. But it is an over-protective, manipulating love and I want no part of it. If she were to read this... Not much point in continuing a record of my quandary, yet I've come to feel so dependent on this disc. And I haven't been able to solve the innermost riddles, tho I keep trying. For practice I've been phoning **555-6200**. No idea what the place is, a bookstore maybe; in any case there's a different riddle each day. Found the number in my address book. Don't know why it seems so important to keep others from reading these files, but it does. Reading, or what would be worse, tampering with what's already been written here. (Tho can I be sure it hasn't been tampered with already?) I have to get away, but without money or even clothes (I have sweatpants, a Mickey Mouse tee shirt, sneakers, and a smile) I don't feel very well-equipped to set off on my own. And Alice keeps promising, throwing out hints, asking me to wait “just one more day.” Meanwhile I'm getting a lot of exercise in the hotel's rooftop...  and in bed. Tonight, after we've made love and she's let her guard down, I will ask her what she knows about this Zane Bester. What would be the best way to put it? "Darling, would you happen to know if I'm really Zane Bester? And if so, who the hell is Zane Bester?"`, 'compStore');
+          println(`I have become a virtual prisoner in this hotel room. My self-declared fiancée “Alice Dudley” just appeared outside the door and got very impatient rattling the chain lock on the door while I secreted this disk. She brought a Chinese takeout, which I refused to eat, as I've developed the paranoid suspicion that she is doctoring my food, which aggravates my amnesia. When I complained, Alice tells me that my amnesia has been triggered by premarital anxieties. She hints, moreover, that I'm a fugitive from justice—but won't provide details, because (she says) when she did so some short while back the discovery triggered my worst setback amnesia-wise. She may be telling the truth: I can't remember. Tho I don't trust her I don't doubt her essential good will towards me. Call it love, even. But it is an over-protective, manipulating love and I want no part of it. If she were to read this... Not much point in continuing a record of my quandary, yet I've come to feel so dependent on this disc. And I haven't been able to solve the innermost riddles, tho I keep trying. For practice I've been phoning __555-6200__. No idea what the place is, a bookstore maybe; in any case there's a different riddle each day. Found the number in my address book. Don't know why it seems so important to keep others from reading these files, but it does. Reading, or what would be worse, tampering with what's already been written here. (Tho can I be sure it hasn't been tampered with already?) I have to get away, but without money or even clothes (I have sweatpants, a Mickey Mouse tee shirt, sneakers, and a smile) I don't feel very well-equipped to set off on my own. And Alice keeps promising, throwing out hints, asking me to wait “just one more day.” Meanwhile I'm getting a lot of exercise in the hotel's rooftop...  and in bed. Tonight, after we've made love and she's let her guard down, I will ask her what she knows about this Zane Bester. What would be the best way to put it? "Darling, would you happen to know if I'm really Zane Bester? And if so, who the hell is Zane Bester?"`, 'compStore');
           pressEnter('frie-comp-12')
         },
         exits: []
@@ -7079,7 +7136,7 @@ onBlock: () => {
           incrementHour();
           playFat -= 15;
           updateFat(playFat);
-          println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the Apple you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
+          println(`The text breaks off, and a third riddle is posed, but no sooner has it appeared on the screen than the saleswoman informs you than another customer is waiting to rent the computer you are using. You have just enough time to scribble down the third riddle before you must relinquish the machine. This is what you copy from the monitor:
           I am Evolution's way
           Of saying you've had long enough to play.
           I'm the unveiling of the skull,
@@ -7118,6 +7175,7 @@ onBlock: () => {
         name:'Tiny Tykes Talent Town',
         desc:`You climb the steps to the entrance portico. There is a doorbell on the wall with a plastic nameplate beside it. The nameplate reads: TINY TYKES TALENT TOWN`,
         onEnter: () => {
+          reenableInput();
           degradation = !degradation;
         },
         exits:[
@@ -7136,16 +7194,26 @@ onBlock: () => {
           annTimer = setTimeout(() =>{enterRoom('ann-5')}, 5000);
         },
         onBlock: () => {
-            if(prevInput === 'open') {
-                clearTimeout(annTimer);
-                enterRoom('ann-6');
-            } else if(prevInput ==='knock'){
+            if(prevInput === 'open' || prevInput === 'open door' || prevInput === 'door' || prevInput === 'inside' || prevInput === 'go inside') {
                 clearTimeout(annTimer);
                 enterRoom('ann-6');
             } else{
                 println(`What's that?`);
             }
         },
+        items: [
+          {
+            itemId: 'anndoor',
+            name: ['door', 'Door', 'front door'],
+            desc: 'The door is closed.',
+            isOpen: false,
+            onUse: () => {
+              let door = getItemInRoomById('anndoor', disk.roomId);
+              clearTimeout(annTimer);
+              enterRoom('ann-6');
+            }
+          }
+        ],
         exits: [
           {dir: ['leave', 'back'], id: '19-amer'}
         ]
@@ -7155,6 +7223,9 @@ onBlock: () => {
         coord: [],
         name:'Tiny Tykes Talent Town',
         desc:`You try to open the door but you're too late; the buzzer's stopped buzzing.`,
+        onEnter: () => {
+          pressEnter('ann-2');
+        }, 
         exits:[
           {dir:['doorbell','bell','knock'],id:'ann-4'},
           {dir:'leave',id:'19-amer'}
@@ -7169,7 +7240,7 @@ onBlock: () => {
           println(`"Oh, John, how nice. Mummy is in the bathtub, and I'm making imaginary cookies. I'll go tell her you're here."`);
         },
         onBlock: () => {
-          if(prevInput === 'wait'){ // Any response should take you to 9
+          if(prevInput === 'wait here'){ // Any response should take you to 9
               enterRoom('ann-9');
           }else if(prevInput === 'thank you'){
               enterRoom('ann-9');
@@ -7226,7 +7297,7 @@ onBlock: () => {
               desc:`You enter a large loftlike space, in which the elements of a kitchen, a living room, and a toyshop are mingled in one bright-colored jumble. From another room, muffled, another voice calls to you: “I just got into the tub. Do be a dear, John, and read Cecily that nice book you got her. I won't be long.” A moment later, from behind a room-dividing bookshelf, Cecily appears with an aluminum cookie sheet full of imaginary cookies.`,
               onEnter: () =>{
                 reenableInput();
-                println(`Cecily is at the age when children glow brightest--four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`);
+                println(`Cecily is at the age when children glow brightest—four or maybe five years old. She has that air of privileged playfulness that bright children share with royalty, a cheerful awareness that children are supposed to have fun, be coddled, and admired, and call the shots. She holds out the cookie sheet and offers you a choice between an imaginary chocolate-chip cookie and an imaginary sprinkle cookie.`);
               },
               onBlock: () => {
           //might be better to use the onTake function here.
@@ -7239,7 +7310,7 @@ onBlock: () => {
                   itemId: 'chocogenerator',
                   icon: '',
                   gif: '',
-                  name: ['cookie', 'chocolate cookie', 'chocolate chip cookie', 'invisible cookie'],
+                  name: ['cookie', 'chocolate cookie', 'chocolate chip cookie', 'invisible cookie', 'another', 'a cookie'],
                   desc: 'An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan.',
                   onTake: () => {
                     if (!getItemInInventoryById('chococookie')) {
@@ -7277,9 +7348,9 @@ onBlock: () => {
     {
         id:'ann-13',
         name:`Ann's House`,
-        desc:`“Now that you've had your fill,” Cecily says, “I'll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let Mummy come out of the bathtub. Okay?`,
+        desc:`“Now that you've had your fill,” Cecily says, “I'll entertain you. Do you remember the book you gave me for Christmas with all the riddles in it? Well, you will have to answer three riddles before I let mummy come out of the bathtub. Okay?`,
         onBlock: () => {
-            if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'answer riddles'){
+            if(prevInput === 'yes' || prevInput === 'okay' || prevInput === 'okay' || prevInput === 'answer riddles'){
                 enterRoom('ann-15');
             } else{
                 enterRoom('ann-14');
@@ -7316,7 +7387,7 @@ onBlock: () => {
     {
         id:'ann-16',
         name:`Ann's House`,
-        desc:`“You're wrong!” Cecily shrieks gleefully. “You're wrong, you're wrong, you're wrong! There's only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don't be disappointed. Okay, here's one that's even harder: \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, Guess her name, three times I've telled it.”`,
+        desc:`“You're wrong!” Cecily shrieks gleefully. “You're wrong, you're wrong, you're wrong! There's only one going TO St. Ives, all the others are coming FROM there. That one fools everyone so don't be disappointed. Okay, here's one that's even harder: \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, guess her name, three times I've telled it.”`,
         onBlock: () => {
             if(prevInput === 'ann' || prevInput === 'anne'){
                 enterRoom('ann-19');
@@ -7328,7 +7399,7 @@ onBlock: () => {
     {
         id:'ann-17',
         name:`Ann's House`,
-        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I'll ask you one from another book then. \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, Guess her name, three times I've telled it.”`,
+        desc:`Cecily pouts becomingly. Ooh, you KNEW the answer. You probably read the whole book before you gave it to me. Well, I'll ask you one from another book then. \n\n“There was a girl in our town, silk an' satin was her gown, silk an' satin, gold an' velvet, guess her name, three times I've telled it.”`,
         onEnter: () => {
           playerC.cScore += 3;
         },
@@ -7343,7 +7414,7 @@ onBlock: () => {
       {
         id:'ann-18',
         name:`Ann's House`,
-        desc:`“You're wrong! You're wrong, you're wrong, you're wrong. The right answer is Ann, the same as Mummy's name. Silk AN' satin, gold AN' velvet, get it? Well, you're no good at riddles, I can see that. I'll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don't care.”`,
+        desc:`“You're wrong! You're wrong, you're wrong, you're wrong. The right answer is Ann, the same as mummy's name. Silk AN' satin, gold AN' velvet, get it? Well, you're no good at riddles, I can see that. I'll go bake some more cookies. You can just go sit and read the newspaper or watch TV. I don't care.”`,
         onBlock: () => {
             if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                 enterRoom('ann-20');
@@ -7366,11 +7437,11 @@ onBlock: () => {
           {
               id:'ann-19',
               name:`Ann's House`,
-              desc:`“Oh, you knew that one because Mummy's name is Ann. You're no fun to play with at all. I'm going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don't care.”`,
+              desc:`“Oh, you knew that one because mummy's name is Ann. You're no fun to play with at all. I'm going to bake some more cookies. You can just go sit and read the newspaper or watch the TV. I don't care.”`,
               onBlock: () => {
                 if(prevInput === 'ann' || prevInput === 'Ann' || prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                     enterRoom('ann-20');
-                }else if(prevInput === 'look room' || prevInput ==='look bookshelves'){
+                }else if(prevInput === 'look room' || prevInput ==='look bookshelves' || prevInput == 'read newspaper' || prevInput === 'watch tv'){
                     enterRoom('ann-21');
                 }else{
                     println(`Can you rephrase that please?`);
@@ -7389,7 +7460,7 @@ onBlock: () => {
               {
                         id:'ann-20',
                         name:`Ann's House`,
-                        desc:`“I told you Mummy is taking a bath. Now don't bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
+                        desc:`“I told you mummy is taking a bath. Now don't bother me, this is a complicated recipe, and it takes my full concentration.” Cecily scampers off to her own private space behind the bookshelves.`,
                         onBlock: () => {
                           if(prevInput === 'ask about ann' || prevInput === 'ask cecily about ann'){
                               enterRoom('ann-20');
@@ -7401,13 +7472,13 @@ onBlock: () => {
         {
         id:'ann-21',
         name:`Ann's House`,
-        desc:`The one stable and somber note among the apartment's happy jumble are its tall bookshelves. You consider some of the titles of the exposed spines, and recognize many titles and authors that seem familiar, but only as the fame of a foreign city can be familiar though you've never visited it. And then you do find one book, and a very thick one, that you can dimly remember having read, or at least begun. There was a beautiful girl in it, the daughter of a man who carved tombstones. Gerta her name was. You look inside the book--it is called WOLF SOLENT--and find the name on the first page you skim. You feel a fierce glow of accomplishment at having remembered something, even if it was only a character in a book. You continue paging through the long novel until a woman's voice addresses you: “John Cameron! This is a surprise.”`,
+        desc:`The one stable and somber note among the apartment's happy jumble are its tall bookshelves. You consider some of the titles of the exposed spines, and recognize many titles and authors that seem familiar, but only as the fame of a foreign city can be familiar though you've never visited it. And then you do find one book, and a very thick one, that you can dimly remember having read, or at least begun. There was a beautiful girl in it, the daughter of a man who carved tombstones. Gerta her name was. You look inside the book—it is called WOLF SOLENT—and find the name on the first page you skim. You feel a fierce glow of accomplishment at having remembered something, even if it was only a character in a book. You continue paging through the long novel until a woman's voice addresses you: “John Cameron! This is a surprise.”`,
         onBlock: () => {
-            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello'){
+            if(prevInput === 'hello ann' || prevInput === 'hi ann' || prevInput === 'hi' || prevInput === 'hello' || prevInput === 'hello Ann' || prevInput === 'hi Ann'){
                 enterRoom('ann-22');
-            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+            }else if(prevInput === 'ask about tiny tykes' || prevInput === 'ask ann about tiny tykes' || prevInput === 'tiny tykes' || prevInput === 'what is tiny tykes'){
                 enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7419,9 +7490,9 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“Hello yourself.”`,
         onBlock: () => {
-            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes'){
+            if(prevInput ==='ask about tiny tykes' || prevInput === 'ask ann about tiny tykes' || prevInput === 'tiny tykes'){
                 enterRoom('ann-23');
-            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            }else if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7433,7 +7504,7 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“Oh, that's pretty well defunct now, but we keep the apartment and the phone listed that way because my accountant says Cecily won't have to pay such high taxes if she's a corporation instead of an individual. And she likes being a corporation. It gives her something to brag about.”`,
         onBlock: () => {
-            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily'){
+            if(prevInput === 'ask ann about cecily' || prevInput === 'ask about cecily' || prevInput === 'cecily'){
                 enterRoom('ann-24');
             }else {
               enterRoom('ann-25');
@@ -7445,7 +7516,7 @@ onBlock: () => {
         name:`Ann's House`,
         desc:`“She's been having a few problems at school. One of her classmates has dyslexia and Cecily is jealous. She wants to be dyslexic too. Were you able to answer her riddles?”`,
         onBlock: () => {
-            if(prevInput === ''){
+            if(prevInput === 'yes' || prevInput === 'sure did' || prevInput === 'nailed them'){
                 enterRoom('ann-25');
             }else{
               enterRoom('ann-26');
@@ -7467,8 +7538,9 @@ onBlock: () => {
     {
         id:'ann-26',
         name:`Ann's House`,
-        desc:`“Don't think, John Cameron, that what we started is still happening. You've had your chance. I'm after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I'm not blaming you-- you never pretended to be anything you're not. But you're a bum--a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you're hungry there's a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I've got to put the Little Princess to bed. She's got a makeup call for six a.m.”`,
+        desc: ``,
         onEnter: () =>{
+          println(`“Don't think, John Cameron, that what we started is still happening. You've had your chance. I'm after a long-term relationship. Not one where you pop up with a smile on your face looking for a free dinner and a place to crash and then disappear for a month. I'm not blaming you— you never pretended to be anything you're not. But you're a bum—a good­looking, personable sort of bum, but a bum for all that. Have you eaten? If you're hungry there's a big hunk of brie in the icebox. I carted it home from a party last night, so have all you want, it was free. Now excuse me a moment, I've got to put the Little Princess to bed. She's got a makeup call for six a.m.”`);
           playerC.cScore += 10;
             if(playHung <= 25){
                 println(`The mention of the brie starts you salivating like one of Pavlov's dogs. You may have amnesia, but your tastebuds don't.`);
@@ -7483,35 +7555,32 @@ onBlock: () => {
               enterRoom('ann-34');
             }
         },
+        items: [
+          {
+            itemId: 'icebox',
+            name: ['icebox', 'Icebox', 'ice', 'box', 'cooler', 'fridge'],
+            desc: 'The icebox that contains various food items and of course free brie.',
+            isOpen: false,
+            onUse: () => {
+
+            }
+          }
+        ]
     },
     {
         id:'ann-27',
         name:`Ann's House`,
-        desc:`You go across the room to a corner that is predominantly kitcheny without quite becoming a kitchen, open the icebox and encounter a truly monumental wedge of brie gleaming in wrinkly plastic wrap.`,
+        desc: ` `,
         onBlock: () => {
             if(prevInput ==='eat brie'){
-                enterRoom('ann-28');
+              println(`Sure enough—as soon as the plastic wrap is off.`);
             }else if(prevInput === 'unwrap brie'){
                 enterRoom('ann-29');
             }else if(prevInput === 'slice brie'){
                 enterRoom('ann-30');
-            }else {
-              enterRoom('ann-34');
             }
           },
         },
-      {
-        id:'ann-28',
-        name:`Ann's House`,
-        desc:`Sure enough--as soon as the plastic wrap is off.`,
-        onBlock: () => {
-            if(prevInput === 'eat brie'){
-                enterRoom('ann-31');
-            }else {
-              enterRoom('ann-34');
-            }
-        },
-    },
     {
         id:'ann-29',
         name:`Ann's House`,
@@ -7539,7 +7608,7 @@ onBlock: () => {
       {
       id:'ann-31',
         name:`Ann's House`,
-        desc:`Even cold it is delicious. For a moment, your whole life--both the life you've forgotten and the one you are blundering about it now--seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
+        desc:`Even cold it is delicious. For a moment, your whole life—both the life you've forgotten and the one you are blundering about it now—seems like one long detour from a worthwhile life devoted to making cheese. You eat some more, for it is truly a fine cheese, and Ann is a fine woman for letting you have some.
         Just as you think this grateful thought, she returns from putting to Cecily to bed.`,
         onEnter: () => {
             playerC.sScore += 10;
@@ -7619,7 +7688,7 @@ onBlock: () => {
                 I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
                 
                 Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
-                I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
+                I'm sorry about what happened at the hotel. It was not my fault. I love you—and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
         
                     (signed) Alice.`,
           },
@@ -7634,7 +7703,7 @@ onBlock: () => {
         I have no reason to suppose you'll ever remember your precious Ann when you've forgotten everything else in your past, but you always used to find your way back to her like some salmon returning to spawn, so I will go with my hunch and leave this note with her to pass on to you.\n
         
         Only to say this: I'm sorry I couldn't connect with you in some other fashion, but I was being watched every minute and it would not have been safe. That danger seems to be past now, and if you want to meet me again I will go each day around noon to the New York Historical Society at 77th Street and Central Park West and wait for you upstairs in the Neustadt Gallery.\n
-        I'm sorry about what happened at the hotel. It was not my fault. I love you -- and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
+        I'm sorry about what happened at the hotel. It was not my fault. I love you—and I apologize for doing so. I realize that for you my love only represents an inconvenience.\n
 
             (signed) Alice.`,
             onEnter: () => {
@@ -7712,7 +7781,7 @@ onBlock: () => {
               orderTotal += 2.00;
               enterRoom('nyhist-3');
               ////console.log("Order Total: " + orderTotal);
-           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member`){
+           }else if(prevInput === "member" || prevInput === 'i am a member' || prevInput === `i'm a member` || prevInput === `im a member` || prevInput === `I'm a member` || prevInput === 'Im a member'){
               enterRoom('nyhist-4');
            }else{
 
@@ -7737,6 +7806,7 @@ onBlock: () => {
                   playMon - orderTotal;
                   println(`The ticket agent takes your money, and tears a ticket in half, putting it in a box by his side.\n
                   You see a large free-standing bulletin board which shows you the maps of each floor of the museum. There is a special exhibition of 19th century portraits of famous New Yorkers in the first floor galleries to the north and south. Ahead of you to the west is a broad double-staircase mounting to the second floor.`);
+                  updateMon();
               }else{
                 println(`Realizing you do not have enough money, you elect to leave the museum before you attract any official attention.`);
                 pressEnter('76-cpkw');
@@ -7744,10 +7814,9 @@ onBlock: () => {
           },
           exits: [
             {dir: ['leave'], id: '76-cpkw'},
-            {dir: ['north'], id: 'nyhist-1f-1'},
-            {dir: ['south'], id: 'nyhist-1f-2'},
-            {dir: ['east'], id: '76-cpkw'},
-            {dir: ['west'], id: 'nyhist-2f-1'}
+            {dir: ['north gallery', 'gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'up', 'floor'], id: 'nyhist-2f-1'}
           ],
       },
       {
@@ -7762,11 +7831,9 @@ onBlock: () => {
         },
         exits: [
           {dir: ['leave'], id: '76-cpkw'},
-          {dir: ['north'], id: 'nyhist-1f-1'},
-          {dir: ['south'], id: 'nyhist-1f-2'},
-          {dir: ['south'], id: 'nyhist-entrance'},
-          {dir: ['east'], id: '76-cpkw'},
-          {dir: ['west', 'upstairs'], id: 'nyhist-2f-1'}
+          {dir: ['north gallery', 'gallery', 'north'], id: 'nyhist-1f-1'},
+          {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+          {dir: ['upstairs', 'up', 'floor'], id: 'nyhist-2f-1'}
         ],
       },
       {
@@ -7774,26 +7841,10 @@ onBlock: () => {
           name: 'N.Y. Historical Society', // This room is only entered if the player returns to the entrance from one of the galleries.
           desc: `You return to the gallery entrance.`,
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2'
-            },
-            { 
-                dir: ['east'],
-                id: '76-cpkw'
-            },
-            {
-                dir: ['west', 'upstairs'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: '76-cpkw'},
+            {dir: ['north gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'west'], id: 'nyhist-2f-1'}
           ],
       },
       {
@@ -7805,58 +7856,22 @@ onBlock: () => {
               room.desc = `Most of the portraits are of long-ago businessmen. They don't seem particularly happy to be assembled here in a public museum with only each other-and you- for company. Surely it was not for this they'd hired the most expensive and dullest painters of their day. You see nothing unusual.`;
           },
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1',
-                block: 'You cannot go that way'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2'
-            },
-            { 
-                dir: ['east'],
-                id: 'nyhist-2f-1'
-            },
-            {
-                dir: ['west'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: 'nyhist-entrance'},
+            {dir: ['south gallery', 'south'], id: 'nyhist-1f-2'},
+            {dir: ['upstairs', 'east', 'west'], id: 'nyhist-2f-1'},
           ],
       },
       {
           id: 'nyhist-1f-2', // New York Historical Society entrance
           name: 'N.Y. Historical Society', // This room is only entered if the player boldly declaires himself a member
-          desc: `You enter a gallery hung with many portraits of famous New Yorkers.`,
+          desc: `You enter a gallery hung with many portraits of famous New Yorkers.`,                               
           onLook: () => {
               println(`Most of these paintings are of women wearing magnificent dresses and hung with several small fortunes in jewelry. Each of them seems to be sizing up the other disdainfully, except for Mrs. Aloysius D. Brouwer, who looks with perfect satisfaction into a full-length mirror. Whistler had her number, and no doubt about it.`);
           },
           exits: [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-                dir: ['north'],
-                id: 'nyhist-1f-1'
-            },
-            { 
-                dir: ['south'],
-                id: 'nyhist-1f-2',
-                block: 'You cannot go that way.'
-            },
-            { 
-                dir: ['east'],
-                id: 'nyhist-2f-1'
-            },
-            {
-                dir: ['west'],
-                id: 'nyhist-2f-1'
-            }
+            {dir: ['leave'], id: 'nyhist-entrance'},
+            {dir: ['north gallery', 'north'], id: 'nyhist-1f-1'},
+            {dir: ['upstairs', 'east', 'west'], id: 'nyhist-2f-1'},
           ],
       },
       {
@@ -7869,17 +7884,8 @@ onBlock: () => {
           },
           exits: 
           [
-            { 
-                dir: ['leave'],
-                id: '76-cpkw'
-            },
-            { 
-              dir: ['north', 'upstairs'],
-              id: 'nyhist-1f-1',
-              block: "You cannot go that way."
-            },
-            {dir: ['south'], id: '76-cpkw'},
-            {dir: ['east'], id: 'nyhist-alice-1'},
+            {dir: ['leave', 'south'], id: 'nyhist-entrance'},
+            {dir: ['neustadt', 'east', 'tiffany', 'lamps'], id: 'nyhist-alice-1'},
             {dir: ['west'], block: "The door to the library is locked."}
           ],
       },
@@ -7904,21 +7910,22 @@ onBlock: () => {
           id: 'nyhist-alice-3', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           hasEntered: false,
-          desc: `The lamps are beautiful in the self-evident way that a sunset is beautiful, or a coral reef, or water over rock. Each mortised piece of glass has its own focused loveliness, as a single flower does, or a single jewel. En masse, their effect is indescribable.`,
+          desc: `The lamps are beautiful in the self-evident way that a sunset is beautiful, or a coral reef, or water over rock. Each mortised piece of glass has its own focused loveliness, as a single flower does, or a single jewel. En masse, their effect is indescribable. You feel you could __wait here__ a while.`,
           onEnter: () => {
               reenableInput();
               const room = getRoom('nyhist-alice-3')
               if (room.hasEntered){
+                  room.hasEntered = true;
                   pressEnter('nyhist-alice-revisted');
               }
           },
           onBlock: () => {
-              if(prevInput === "wait"){
+              if(prevInput === "wait here"){
               incrementHour();
               println(`You wait for an hour. Strangely, you don't feel any impatience, for the Tiffany lamps are an endless source of wonder.`);
               }
               if (qMeridiem === 1 || yHours === 0 || yHours === 1 || yHours === 2){
-                  ////console.log(qMeridiem);
+                  console.log(qMeridiem);
                   enterRoom('nyhist-alice-5');
               }else{
                   ////console.log(yHours);
@@ -7934,7 +7941,7 @@ onBlock: () => {
       {
           id: 'nyhist-alice-revisted', //If the player already visited the previous room, and therefore already talked with Alice.
           name: 'N.Y. Historical Society', 
-          desc: `You begin to feel as you did in the sauna, a giddiness and trembling, a sense of your mind speeding away from your will's control -- and then you faint. The guard seems amused at your susceptibility to the beauty of the Neustadt Collection, but he refrains from making any kind of comment as he helps you downstairs and out to the street.`,
+          desc: `You begin to feel as you did in the sauna, a giddiness and trembling, a sense of your mind speeding away from your will's control—and then you faint. The guard seems amused at your susceptibility to the beauty of the Neustadt Collection, but he refrains from making any kind of comment as he helps you downstairs and out to the street.`,
           onEnter: () => {
               pressEnter('76-cpkw');
           },
@@ -8032,23 +8039,23 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-              if(prevInput === 'xavier' || prevInput === "hollings"){
+              if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                   enterRoom('nyhist-ask-2');
-              }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+              }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                   enterRoom('nyhist-zane-1');
-              }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+              }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                   enterRoom('nyhist-luke-1');
               }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                   enterRoom('nyhist-amnesia-1');
               }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                   enterRoom('nyhist-murder-1');
-              }else if(prevInput === 'who am i'){
+              }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                   enterRoom('nyhist-who-1');
-              }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+              }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                   enterRoom('nyhist-ann-1');
-              }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+              }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                   enterRoom('nyhist-lila-1');
-              }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise"){
+              }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                   enterRoom('nyhist-denise-1');
               }else{
                 println(`"Don't be a pain in my side, John. Ask your questions.'`);
@@ -8058,7 +8065,7 @@ onBlock: () => {
       {
           id: 'nyhist-ask-2', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
-          desc: `"Maybe Xavier Hollings is only a role you've played, one among many -- though I doubt that any of your other roles paid so well. It all started about a year ago when the real Xavier Hollings got busted for drugs. Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him -- and serve his time, if you had to. `,
+          desc: `"Maybe Xavier Hollings is only a role you've played, one among many—though I doubt that any of your other roles paid so well. It all started about a year ago when the real Xavier Hollings got busted for drugs. Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him—and serve his time, if you had to. `,
           onEnter: () => {
               pressEnter('nyhist-ask-3'); //Goes directly to sheep ending
           },
@@ -8094,31 +8101,33 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-zane-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
-          desc: `She looks stunned at your question. 'How did you learn about -- ' Her surprise narrows to suspicion. 'Your memory is starting to come back, isn't it?' `,
+          desc: `She looks stunned at your question. 'How did you learn about—' Her surprise narrows to suspicion. 'Your memory is starting to come back, isn't it?' `,
           onEnter: () => {
               pressEnter('nyhist-zane-2'); //Goes directly to sheep ending
           },
@@ -8134,7 +8143,7 @@ onBlock: () => {
       {
           id: 'nyhist-zane-3', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
-          desc: `Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him -- and serve his time, if you had to. `,
+          desc: `Between the bust and his trial, while he was out on bail, he contacted you and got you to agree to go down there and stand trail for him—and serve his time, if you had to. `,
           onEnter: () => {
               pressEnter('nyhist-zane-4'); //Goes directly to sheep ending
           },
@@ -8194,30 +8203,32 @@ onBlock: () => {
       {
           id: 'nyhist-luke-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
-          desc: `'He isn't really my father. I guess you sensed that, didn't you? I don't know that much more about him-- and I don't want to. The shotgun wedding scenario was all his idea. \n
+          desc: `'He isn't really my father. I guess you sensed that, didn't you? I don't know that much more about him— and I don't want to. The shotgun wedding scenario was all his idea. \n
 
           He said that with your amnesia getting worse every day that only an overt threat would get you moving. I was reluctant, but I went along with the idea for your sake, John. You've got to believe that.'`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-amnesia-1', // New York Historical 2nd floor
@@ -8235,130 +8246,140 @@ onBlock: () => {
               reenableInput();
           },
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-murder-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"First you were busted for drugs, now you're wanted for murder! That's the real reason for going to Australia. I can't tell you any more about your escape or the guard you killed. Anyhow by the time we met you only had a couple of memories left from that whole time. Something about a bowl of chili with a dead tarantula in it."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-who-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"Who are you? Why you're whoever you say you are. John Cameron, the last time I heard. I hope you're not tired of that identity already."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-ann-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `"I don't know the woman from Eve. I found a letter she'd written to you once inside a desk drawer. I remember the name on the letterhead. Out of jealousy, I suppose. When we parted company in the chapel, I left notes for you everywhere I could think that you might show up. And the one I left with Ann was the one that got through."`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-lila-1', // New York Historical 2nd floor
           name: 'N.Y. Historical Society', 
           desc: `Alice pretends to take an interest in one of the lamps, avoiding your gaze. I can't really say I know anyone by that name.`,
           onBlock: () => {
-            if(prevInput === 'xavier' || prevInput === "hollings"){
+            if(prevInput === 'xavier' || prevInput === "hollings" || prevInput === 'Xavier' || prevInput === 'Hollings' || prevInput === 'who is xavier' || prevInput === 'who is Xavier' || prevInput === 'who is hollings' || prevInput === 'who is Hollings' || prevInput === 'who is Xavier Hollings' || prevInput === 'who is xavier hollings' || prevInput === 'ask about xavier' || prevInput === 'ask about hollings'){
                 enterRoom('nyhist-ask-2');
-            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane"){
+            }else if(prevInput === "zane" || prevInput === "who is zane" || prevInput === "ask zane" || prevInput === "ask about zane" || prevInput === 'who is Zane'){
                 enterRoom('nyhist-zane-1');
-            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke"){
+            }else if(prevInput === "luke" || prevInput === "who is luke" || prevInput === "ask luke" || prevInput === "ask about luke" || prevInput === 'Luke' ||prevInput === 'who is Luke' || prevInput === 'ask Luke' || prevInput === 'ask about Luke'){
                 enterRoom('nyhist-luke-1');
             }else if(prevInput === "amnesia" || prevInput === "memory" || prevInput === "ask about amnesia" || prevInput === "ask amnesia"){
                 enterRoom('nyhist-amnesia-1');
             }else if(prevInput === 'murder' || prevInput === "ask murder" || prevInput === "ask about murder"){
                 enterRoom('nyhist-murder-1');
-            }else if(prevInput === 'who am i'){
+            }else if(prevInput === 'who am i' || prevInput === 'who am I'){
                 enterRoom('nyhist-who-1');
-            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann"){
+            }else if(prevInput === 'ann' || prevInput === "who is ann" || prevInput === "ask ann" || prevInput === "ask about ann" || prevInput === 'Ann' || prevInput === 'who is Ann' || prevInput === 'ask Ann' || prevInput === 'ask about Ann'){
                 enterRoom('nyhist-ann-1');
-            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila"){
+            }else if(prevInput === 'lila' || prevInput === "who is lila" || prevInput === "ask lila" || prevInput === "ask about lila" || prevInput === 'Lila' || prevInput === 'who is lila' || prevInput === 'ask Lila' || prevInput === 'ask about Lila'){
                 enterRoom('nyhist-lila-1');
-            }else{
+            }else if(prevInput === 'denise' || prevInput === "who is denise" || prevInput === "ask denise" || prevInput === "ask about denise" || prevInput === 'who are you' || prevInput === 'Denise' || prevInput === 'who is Denise' || prevInput === 'ask Denise' || prevInput === 'ask about Denise'){
                 enterRoom('nyhist-denise-1');
+            }else{
+              println(`"Don't be a pain in my side, John. Ask your questions.'`);
             }
-        },
+          },
       },
       {
           id: 'nyhist-denise-1', // New York Historical 2nd floor
@@ -8406,7 +8427,7 @@ onBlock: () => {
       id: 'side-art-1',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian -- black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
+      desc: `You look about to see who has called out to you, and see a young man seated on a bench by the curb, who gestures for you to come nearer. He is wearing the classic uniform of a bohemian—black pants, a black turtleneck sweater, and a black beret. His goatee matches his clothes. \n There is a sketchpad propped against the back of the bench, with a sign carefully handlettered on the page turned open to view: 
 
       YOUR PORTRAIT
       IN CHARCOAL
@@ -8423,6 +8444,9 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You respond to his overtures with a cautious handshake. He doesn't seem to mind your reticence, for he goes on to ask, "Want to have your portrait drawn?"`,
+      onEnter: () => {
+        reenableInput();
+      },
       onBlock: () => {
         if (prevInput === 'yes' || prevInput === 'sure') {
           println(`"Great! Just take a seat here on the bench, and I'll be done in a jiffy."
@@ -8463,6 +8487,9 @@ onBlock: () => {
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
       desc: `You finish your attempt to draw Tony, and he looks at your work. "That's okay," he admits. "Its's better than my stuff. I'll tell you what. I got a proposition. \nI got ten bucks for far doing this. I'll give you five, plus this sketchpad, and the charcoal, and the clothes I got on, if you'll let me have that white tux. We're about the same size. I know a place in the park where we can switch clothes without anyone seeing. What do you say?"`,
+      onEnter: () => {
+        reenableInput();
+      },
       onBlock: () => {
         if (prevInput === 'More money' || prevInput === 'I want more money' || prevInput === 'ask for more money' || prevInput === 'more money' || prevInput === 'give me more money' || prevInput === 'give me more' || prevInput === 'no') {
           println(`I can't really give you more than the five dollars. Look I got to get by somehow.`);
@@ -8487,8 +8514,41 @@ onBlock: () => {
       id: 'side-art-6',
       coord: [61.884, -28.210],
       name: 'W. 76th St. and Central Park W.',
-      desc: `You pull off your pants, and a momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`,
+      desc: ``,
       onEnter: () => {
+        if (getItemInInventoryById('tuxedo')) {
+          remove('tuxedo');
+        }
+        println(`A momentary flash of memory tingles your mind as the breeze tingles the bare skin of your legs. You see yourself standing in a room. You are changing personalities, names, lives, just as easily as you now stand in Central Park and change your clothes.`)
+        
+        let tuxItem = disk.inventory.findIndex(el => el.itemId === 'tuxedo');
+        disk.inventory.splice(tuxItem, 1);
+
+        //trade out items
+        disk.inventory.push(
+          {
+            itemId: 'sketchpad',
+            icon: 'img/png/image-sketchbook-thumbnail.png',
+            gif: 'img/gif/gif-sketchbook-ingame.gif',
+            name: ['Sketchbook', 'sketchbook', 'sketch', 'pad', 'sketchpad'],
+            desc: `A medium sized sketchbook that contains some crude sketches of people. There are a few where clothes are involved, and those are worthy of framing.`,
+            isTakeable: true,
+            isDroppable: false,
+          },
+          {
+            itemId: 'artistoutfit',
+            icon: 'img/png/image-artistoutfit-thumbnail.png',
+            gif: 'img/gif/gif-artistoutfit-ingame.gif',
+            name: ['Artist Outfit', 'artist outfit', 'outfit'],
+            desc: 'A fancy looking outfit that consists of a beret, turtleneck and some wellworn jeans. Well suited for aspring artists.',
+            //head: true,
+            top: true,
+            bottom: true,
+            isTakeable: true,
+            isDroppable: false,
+          },
+        )
+
         pressEnter('side-art-7');
       },
       exits: []
@@ -8520,7 +8580,7 @@ onBlock: () => {
       name: 'Washington Square Park',
       desc: '',
       onEnter: () => {
-        if (!getItemInInventoryById('sketchpad')) {
+        if (getItemInInventoryById('sketchpad')) {
           println(`It is a sunny day, and Washington Square is full of people. Some sit in groups on the rim of the central waterless fountain; some play a conceptual version of volleyball without a net.
 
           There are dog-walkers and girl-watchers, rollerskaters and derelicts in various stages of disintegration. The paths are full of strollers, and the benches are packed with people eating hotdogs or reading newspapers or talking to each other.`);
@@ -8651,7 +8711,7 @@ onBlock: () => {
 {
   id:'book-7',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with a gasp of unbelieving horror -- and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
+  desc:`She reacts to her portrait with a gasp of unbelieving horror — and rips it out of the sketchpad. Her friend insists on seeing it and bursts into giggles. You politely ask for you $5, and the girl's response is to tear the portrait into pieces and throws them at you. 'You've got some nerve, asking money for that!' the brunette shouts at you. She hurries from the bench, and her friend follows her.`,
   onEnter: () =>{
       reenableInput();
   },
@@ -8689,7 +8749,7 @@ onBlock: () => {
 {
   id:'book-10',
   name: 'Washington Square Park',
-  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it -- with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
+  desc:`She reacts to her portrait with an exclamation of pleasure. 'It's wonderful! It looks just like me, doesn't it, Jill?' The blonde takes the sketch. 'Not bad,' she concedes grudgingly. You ask for your $5 and get it — with a $1.50 tip besides. 'Thanks so much,' the brunette says. 'I'm going to have it framed and give it to my fiance for his birthday.' The two girls leave you, and you remain on the bench, aglow with a sense of professional accomplishment.`,
   onEnter: () =>{
       reenableInput();
       playMon += 6.50;
@@ -8763,7 +8823,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it -- St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for -- do my pore-trait.'`),
+      println(`You do pore-traits?' a twangy voice inquires, rousing you from a half-doze. You look up into the wizened face of a man wearing a tarboosh-style hat with the emblem of the Fraternal order of Shriners and his hometown embroidered on it — St. Paul Minnesota. He is dressed in a bright plaid jacket and red Bermuda shorts, and the name badge on the lapel of his jacket says, 'Hi My Name Is Bud!' You assure him you do portraits, and he takes a seat on the bench. 'Well, I could use the rest,' he says with a sigh. 'I tied one on last night. You New Yorkers sure know how to have a good time. Well, what are you waiting for — do my pore-trait.'`),
       pressEnter('book-14')
   }
 },
@@ -8882,7 +8942,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson -- though it's no compliment to him. You finish the drawing and he asks to see it.`),
+      println(`You decide to draw him warts and all. You do try to make the broad curve of his chin a graceful curve that complements the curve of his Stetson — though it's no compliment to him. You finish the drawing and he asks to see it.`),
       pressEnter('book-24')
   }
 },
@@ -8903,7 +8963,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw -- and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
+      println(`He faces the dry fountain at the center of the square, giving you a profile view of his face. You note the well-tended sideburns that extend down to the base of his jaw — and a double chin that bears no resemblance to Roy Rogers' or any other famous cowboy's.`),
       pressEnter('book-26')
   }
 },
@@ -9028,7 +9088,7 @@ onBlock: () => {
 {
   id:'book-35-1',
   name:'',
-  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing--and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
+  desc:`He has regular features, and you are able to get his likeness quickly. You spend longer giving him his imaginary haircut that it took you to do the rest of the drawing—and it's remarkable how much his appearance is improved by it. You finish the drawing, and he asks to see it.`,
   onEnter: () => {
     pressEnter('book-36');
   }
@@ -9088,7 +9148,7 @@ onBlock: () => {
 {
   id:'book-39',
   name:'',
-  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her--and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
+  desc:`She is beautiful, vividly, but not as most women are, by design, or by fitting into the mold of one of the reigning role-models of the beau monde. She resembles no other beautiful woman you can think of. Say instead that she is perfectly ordinary, with an emphasis on perfectly.\n\nYou are unable to stop staring at her—and she similarly has her eyes fixed on you. There is the strangest expression on her face, a look that is both stricken and joyful, as though she had encountered a ghost, but one whom she had prayed to see.
   `,
   exits:[
       {dir:['look'],id:'book-39'},
@@ -9141,7 +9201,7 @@ onBlock: () => {
 {
   id:'book-44',
   name:'',
-  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade--\n\n-- the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described -- and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
+  desc:`You place each line upon the paper as carefully as if your life depended on it, as if it were a tightrope on which you were balanced above an abyss. Slowly a likeness forms upon the sheet of paper. But it is no more than that, an amateurish scrawl, and the wild hope that first inspired you begins to fade—\n\n— the hope that she will see in what you draw the same pale reflection of these extraordinary feelings, this wonderful sweetness that can be, you realize, described — and by a single word.\n\nThe stick of charcoal snaps in your fingers, and you drop the pad and the charcoal, and at just that moment she bursts into tears. 'John!' she cries aloud. 'Dear living love! It is you! Oh, John, I thought you'd left me. I thought you were dead. But you're alive!'`,
   onEnter: () => {
     reenableInput();
   },
@@ -9173,7 +9233,7 @@ onBlock: () => {
   name:'',
   desc:`You ask her name.\n\n'My name?' Her delight is clouded with bewilderment. 'It's the same name it's always been, Bette Binet! You don't suppose that I'd have married since...you went away. Where have you been, John? Why didn't you call? I've been so worried. And seeing you like this, drawing portraits on the street. I don't understand.'`,
   onBlock: () => {
-    if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her'){
+    if(prevInput === 'tell about amnesia' || prevInput === 'explain amnesia' || prevInput === 'tell her about your amnesia' || prevInput === 'amnesia' || prevInput === 'explain to her' || prevInput === 'I have amnesia' || prevInput === 'i have amnesia'){
       enterRoom('book-46')
   } else{
           println(`Can you rephrase that please?`)
@@ -9183,7 +9243,7 @@ onBlock: () => {
 {
   id:'book-46',
   name:'',
-  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we--' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on--' She holds her hand out to you. 'Let's stroll back to my place.'`,
+  desc:`Without elaborating on all the vicissitudes you've been through, you tell Bette about your amnesia. She is astonished, but not skeptical.\n\n“I don't for a minute believe you killed that prison guard in Texas. In fact, I know you could not have, since at the time you say the prison break is supposed to have happened, we were together here in New York virtually every day. Clearly you've been the victim of some kind of plot. But it's also clear that it's dangerous for you to be seen in public. Come!”\n\nShe stands up decisively from the bench and slings her camera back around her neck. 'We'll go to the place I've sublet on Gramercy Park. It's only a studio, I'm afraid, and you'll have to sleep on a convertible sofa. It's so strange having to explain all this to you. When I think of all the times that we—' She breaks off, blushing, and then laughs aloud. 'But I'm so happy! Come on—' She holds her hand out to you. 'Let's stroll back to my place.'`,
   onBlock: () => {
       if(prevInput === 'take her hand' || prevInput === 'grab her hand' || prevInput === 'go with' || prevInput === 'follow'){
           enterRoom('book-48')
@@ -9198,7 +9258,7 @@ onBlock: () => {
   desc:``,
   onEnter: () => {
       println(`“Let's talk at my place, darling,” Bette insists. “I'll worry till we're by ourselves.”\n\nShe takes your hand and leads you from the square. On the way to Gramercy Park Bette dismisses all your questions with her kisses.\n\n
-      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight -- for the second time!'`),
+      'What's so wonderful,' she says as you arrive at her address, 'is that you've fallen in love with me at first sight — for the second time!'`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
@@ -9207,7 +9267,7 @@ onBlock: () => {
   name:'',
   desc:``,
   onEnter: () => {
-      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight--for the second time!”`),
+      println(`You take her hand and follow her out of the park. On Sixth Avenue she hails a cab, and on the ride to Gramercy Park, Bette dismisses all your questions with her kisses.\n\n “What's so wonderful,” she says as the taxi arrives at her address, “is that you've fallen in love with me at first sight—for the second time!”`),
       pressEnter('nobe-1')//enters Noblese Lobby
   }
 },
@@ -9231,6 +9291,9 @@ else{
   id: 'nobe-1',
   name: 'Nobeles Lobby',
   desc: `You enter the lobby of a small apartment building identified by its canvas canopy as The Noblesse. You are introduced to the doorman as a houseguest who is to be admitted into the building at any time. \n\nIn the elevator going up to her fifth-floor apartment, your rediscovered beloved remembers that she has yet to tell you her name. She re-introduces herself, between kisses, as Bette Binet; single; age 28; a fashion photographer by profession; and a woman madly in love with a mysterious stranger, you. The elevator arrives at 5, and Bette leads the way to Apartment 5E, unlocks the door, opens it, and stands aside for you to enter.`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'enter apartment' || prevInput === 'apartment'){
           enterRoom('nobe-2');
@@ -9239,7 +9302,7 @@ else{
       }
   },
   exits: [
-      {dir: ['apartment'], id: 'nobe-2'},
+      {dir: ['apartment', 'inside'], id: 'nobe-2'},
   ]
 },
 {
@@ -9249,7 +9312,7 @@ else{
   onBlock: () => {
     if (prevInput === 'sit' || prevInput === 'sit down') {
       enterRoom('nobe-4')
-    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please') {
+    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please' || prevInput === 'a drink please' || prevInput === 'yes please' || prevInput === 'yeah') {
       enterRoom('nobe-5');
     } else if (prevInput === 'no' || prevInput === 'no thanks' || prevInput === 'no thank you') {
       enterRoom('nobe-6');
@@ -9261,7 +9324,7 @@ else{
 {
   id: 'nobe-3',
   name: '',
-  desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There's no point standing in the hall to talk. Sit down and ask all those questions you're obviously bursting with. But first do you want a drink?”`,
+  desc: `Bette notices your hesitation to enter the apartment and enters ahead of you. “Come in,” she insists. “There's no point standinfg in the hall to talk. Sit down and ask all those questions you're obviously bursting with. But first do you want a drink?”`,
   onBlock: () => {
     if (prevInput === 'sit' || prevInput === 'sit down') {
       enterRoom('nobe-4')
@@ -9279,7 +9342,9 @@ else{
   name: '',
   desc: `You cross the room to a sofa stacked high with pillows and sit down. What a luxury to be safe and secure! Bette asks again if you would like a drink.`,
   onBlock: () => {
-    if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please') {
+    if (prevInput === 'sit' || prevInput === 'sit down') {
+      enterRoom('nobe-4')
+    } else if (prevInput === 'drink please' || prevInput === 'yes' || prevInput === 'sure' || prevInput === 'please' || prevInput === 'a drink please' || prevInput === 'yes please' || prevInput === 'yeah') {
       enterRoom('nobe-5');
     } else if (prevInput === 'no' || prevInput === 'no thanks' || prevInput === 'no thank you') {
       enterRoom('nobe-6');
@@ -9291,7 +9356,7 @@ else{
       {
           itemId: 'apartment',
           name: ['Apartment','Room','apartment','room'],
-          desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
           onLook: () => {
               enterRoom('nobe-7');
           },
@@ -9302,26 +9367,35 @@ else{
   id: 'nobe-5',
   name: '',
   desc: `“I can't offer more than a glass of wine, I'm afraid,” Bette says, crossing the room to the kitchenette in the far corner. She takes a bottle of white wine from the refrigerator and two wine glasses from the cupboard above. She pours the wine into the glasses and brings them to where you've taken a seat on a sofa stacked high with pillows. She gives you one of the glasses and sits beside you. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I've had to learn to believe it.”`,
+  onEnter: () => {
+    pressEnter('nobe-7');
+  },
   items: [
       {
           itemId: 'apartment',
           name: ['Apartment','Room','apartment','room'],
-          desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
           onLook: () => {
               enterRoom('nobe-7');
           }
       },
   ],
+  onLook: () => {
+    enterRoom('nobe-7');
+  },
 },
 {
   id: 'nobe-6',
   name: '',
-  desc: ` You decline her offer, and together you sit down on a sofa piled high with pillows. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I've had to learn to believe it.”`,
+  desc: `You decline her offer, and together you sit down on a sofa piled high with pillows. “Well, what do you think of this place. Would you believe it sublets for twelve hundred a month? I've had to learn to believe it.”`,
+  onEnter: () => {
+    pressEnter('nobe-7');
+  },
   items: [
       {
           itemId: 'apartment',
           name: ['Apartment','Room','apartment','room'],
-          desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
           onLook: () => {
               enterRoom('nobe-7');
           },
@@ -9332,12 +9406,15 @@ else{
   id: 'nobe-7',
   name: '',
   desc: `Bette notices that the piano has captured your attention. “Isn't it lovely?” she says. “It makes we wish I could play, but I can't at all. And the terms of the sublet are that the piano is not to go into storage, so there it stands, my mute baby grand. Do you play?”`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
     if (prevInput === 'yes' || prevInput === 'I do' || prevInput === 'i do') {
       enterRoom('nobe-8');
     } else if (prevInput === 'no' || prevInput === 'not really' || prevInput === `I don't` || prevInput === `I can't`) {
       enterRoom('nobe-9');
-    } else if (prevInput === 'maybe' || prevInput === `I don't know` || prevInput === `I don't know`) {
+    } else if (prevInput === 'maybe' || prevInput === `I don't know` || prevInput === `i don't know`) {
       enterRoom('nobe-10');
     }
   },
@@ -9387,28 +9464,15 @@ else{
 {
   id: 'nobe-12',
   name: '',
-  desc: `The ***apartment*** seems to have a nice ***sofa bed***. You also see a ***picture*** that catches your eye.`,
+  desc: `The __apartment__ seems to have a nice __sofa bed__. You also see a __picture__ that catches your eye. Bette is standing in the corner of your eye.`,
   hasEntered: false,
   onEnter: () => {
-      const room = getRoom(disk.roomId);
-
-      if(room.hasEntered === false ) {
-          room.hasEntered === true;
-          betteCounter = 0;
-      }
-
+    reenableInput();
   },
-
   onBlock: () => {
-      if(prevInput){
-          betteCounter++;
-          ////console.log('+1');
-      }else{}
-      if(betteCounter === 3){
-          enterRoom('nobe-19')
-      }else if( prevInput === 'kiss bette'){
-          enterRoom('nobe-17');
-          }
+      if (prevInput === 'kiss' || prevInput === 'kiss Bette' || prevInput === 'kiss bette') {
+        enterRoom('nobe-17');
+      }
   },
   items: [
       //open sofa not working
@@ -9421,7 +9485,7 @@ else{
       {
           itemId: 'apartment',
           name: ['Apartment','Room','apartment','room'],
-          desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
       },
       {
           itemId: 'dres_phot',
@@ -9448,8 +9512,11 @@ else{
   name: '',
   desc: `Your lips meet softly in a sweet kiss.`,
   onBlock: () => {
-      if(prevInput === 'make love to bette' || prevInput === 'have sex with bette' || prevInput === 'have sex' || prevInput === 'fuck bette'){
+      if(prevInput === 'make love to bette' || prevInput === 'have sex with bette' || prevInput === 'have sex' || prevInput === 'fuck bette' || prevInput === 'make love to Bette' || prevInput === 'have sex with Bette' || prevInput === 'fuck Bette'){
           enterRoom('nobe-18');
+      } else {
+        println('You decide to get ready for bed after kissing Bette.');
+        enterRoom('nobe-14');
       }
   }
 },
@@ -9459,7 +9526,7 @@ else{
   desc: ``,
   onEnter: () => {
       whatEncounter = () => {
-          zRandomEncounter = math.floor(math.random()* 3);
+          zRandomEncounter = Math.floor(Math.random()* 3);
           if(zRandomEncounter === 0) {
               println(`The look Bette is giving you is like a written invitation, and you answer it with your own best body english. Her arms slip around your body. Your tongues take taste tests of each other's flesh. The temperature rises, the beat quickens, and one thing leads to another.`);
               pressEnter('nobe-12');
@@ -9468,13 +9535,14 @@ else{
               println(`Impulsively you kiss Bette, and she responds like a dam bursting. Her fingers claw your back, tangle in your hair, and touch all your buttons. Sensuality and love fuse into a single rocket to the moon. Woosh! And then you land on the moon and pick the flowers growing there and whisper endearment for who knows how long until it's time to return to the rocket and jet back to Earth for a soft landing in the tangled sheets of the unfolded sofabed.`);
               pressEnter('nobe-12');
           }else if(zRandomEncounter === 2){
-              println(` Bette responds to your kiss with the delicacy of a blossom opening at the pressure of the dawn's first light. Time stops and you seem, as your kiss continues, to take flight into the fifth dimension where size and color and rhythm all get synchronized and the usual chirping sounds that tell you you're happy become a whole symphony orchestra announcing the same fact, and you're Arturo Toscanini. You life your baton.`);
+              println(` Bette responds to your kiss with the delicacy of a blossom opening at the pressure of the dawn's first light. Time stops and you seem, as your kiss continues, to take flight into the fifth dimension where size and color and rhythm all get synchronized and the usual chirping sounds that tell you you're happy become a whole symphony orchestra announcing the same fact, and you're Arturo Toscanini. Your life your baton.`);
               pressEnter('nobe-12');
           }else{
-              println(`You kiss, and that kiss modulates into a kid of banquet, a love-feast, a smorgasboard that seems to be replenished by its own devourings. You understand why the word 'carnal' refers not only to the joy of sex but to the pleasure, as well, of being a carnivore. Meat! Bar-B-Q spare-ribs! Loin of pork and breast of veal! Flank steaks! Roast beef au jus! And ladles and ladles of hot gravy.`);
+              println(`You kiss, and that kiss modulates into a kind of banquet, a love-feast, a smorgasboard that seems to be replenished by its own devourings. You understand why the word 'carnal' refers not only to the joy of sex but to the pleasure, as well, of being a carnivore. Meat! Bar-B-Q spare-ribs! Loin of pork and breast of veal! Flank steaks! Roast beef au jus! And ladles and ladles of hot gravy.`);
               pressEnter('nobe-12');
           }
       }
+      whatEncounter();
   },
 },
 {
@@ -9485,7 +9553,7 @@ else{
   hasBed: true,
   onEnter: () => {
       slept();
-      if(getItemInInventory === 'floppy disk'){
+      if(getItemInInventoryById('floppydisk')){
           enterRoom('nobe-20');
       }else{
           enterRoom('nobe-21');
@@ -9511,9 +9579,9 @@ else{
 {
   id: 'nobe-22',
   name: '',
-  desc: `'Thank heaven,' Bette says, bursting into the room breathlessly. 'I thought of this before I got out of the lobby -- you might come down with a recurrance of your damned amnesia. And if you do, I don't want you to disappear again, darling. So roll up your sleeve, please. This won't hurt, I promise.'`,
+  desc: `'Thank heaven,' Bette says, bursting into the room breathlessly. 'I thought of this before I got out of the lobby—you might come down with a recurrance of your damned amnesia. And if you do, I don't want you to disappear again, darling. So roll up your sleeve, please. This won't hurt, I promise.'`,
   onEnter: () => {
-    reenableInput(); 
+    reenableInput();
   },
   onBlock: () => {
       if(prevInput === 'roll up sleeve' || prevInput === 'roll sleeve up'){
@@ -9551,10 +9619,11 @@ else{
   }
 },
 //Living room post shower
+//Create a system here just like in sktechpad. This is the room you will return to if you leave and come back.
 {
   id: 'nobe-27',
   name: '',
-  desc: `You are in Bette's apartment. You see the kitchen, a TV, some mail on the dresser, a sofa bed, and you spot a phone.`,
+  desc: `You are in Bette's apartment. You see the __kitchen__, a __TV__, some __mail__ on the dresser, a __sofa__ bed, and you spot a __phone__.`,
   hasBed: true,
   onEnter: () => {
     reenableInput();
@@ -9566,31 +9635,33 @@ else{
               room.hasEntered === true;
               bettesHome = 0;
           }
-          
-          if(qMeridiem === 1 & yHours === 5){
-              bettesHome ++;
-          }
-          if(bettesHome === 1){
-              enterRoom('nobe-36');
-          }else if(bettesHome === 2){
-              enterRoom('nobe-40');
-          }else if(bettesHome === 3){
-              enterRoom('nobe-44');
-          }else if(bettesHome === 4){
-              enterRoom('nobe-47');
-          }else if(bettesHome >= 5){
-              println(`Bette arrives back from work.`);
-              if(meridam === 1 & yHours === 11){
-                  enterRoom('nobe-39');
-              }//do I need an else statement here?
-          }
-
+        
+          if(qMeridiem === 1 && yHours === 5){
+            bettesHome ++;
+        }
+        if(bettesHome === 1 && betteActions === 0){
+            enterRoom('nobe-36');
+        }else if(bettesHome === 2 && betteActions === 1){
+            enterRoom('nobe-40');
+        }else if(bettesHome === 3 && betteActions === 2){
+            enterRoom('nobe-44');
+        }else if(bettesHome === 4 && betteActions >= 3){
+            enterRoom('nobe-49');
+        }else if(bettesHome >= 5){
+          enterRoom('nobe-49');
+            //println(`Bette arrives back from work.`);
+            //if(meridam === 1 && yHours === 11){
+              //  enterRoom('nobe-39');
+            //}//do I need an else statement here?
+        }
   },
   onBlock: () => {
       if(prevInput){
           betteCounter++;
+          console.log(betteCounter);
       }
-      if(prevInput === 'turn on tv'){
+      
+      if(prevInput === 'watch tv'){
           enterRoom('nobe-28');
       }else if(prevInput === 'open fridge' || prevInput === 'eat'){
           if(qMeridiem >= 1 & yHours >= 5){
@@ -9610,6 +9681,16 @@ else{
   ],
   items: [
     {
+      itemId: 'bettetv',
+      name: ['tv', 'television'],
+      desc: 'An ordinary tv.',
+      onLook: () => {
+        bettesHome++;
+        println(`You flip through the channels on the TV, but find nothing appealing during the daytime hours. Frustrated, you turn the TV off.`)
+        enterRoom('nobe-27');
+      }
+    },
+    {
       itemId: 'roomphone',
       gif: 'img/gif/gif-hotelphone-ingame.gif',
       name: ['phone', 'telephone'],
@@ -9628,12 +9709,89 @@ else{
       {
           itemId: 'apartment',
           name: ['Apartment','Room','apartment','room'],
-          desc: `Betty's studio apartment represents, spatially, the Minimum Daily Requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
       },
       {
           itemId: 'letter',
           name: ['Letter', 'letter', 'Mail', 'mail'],
-          desc: `Bette's mail is her personal business -- leave it alone.`,
+          desc: `Bette's mail is her personal business—leave it alone.`,
+      },
+      {
+          itemId: 'dresser',
+          name: ['dresser','Dresser'],
+          desc: `The dresser contains a jumble of socks, pantyhose, and daintier underthings, all jumbled together in a great tangle direct from the laundry bag to the drawer.`,
+      }
+  ],
+},
+{
+  id: 'nobe-27-2',
+  name: '',
+  desc: `You are in Bette's apartment. You see the __kitchen__, a __TV__, some __mail__ on the dresser, a __sofa__ bed, and you spot a __phone__.`,
+  hasBed: true,
+  onEnter: () => {
+    reenableInput();
+      slept();
+  },
+  onBlock: () => {
+      if(prevInput){
+          betteCounter++;
+          console.log(betteCounter);
+      }
+      
+      if(prevInput === 'watch tv'){
+          enterRoom('nobe-28');
+      }else if(prevInput === 'open fridge' || prevInput === 'eat'){
+          if(qMeridiem >= 1 & yHours >= 5){
+              enterRoom('nobe-30');
+              }
+          else{
+              enterRoom('nobe-32');
+              }
+      }else if(prevInput === 'leave'){
+          enterRoom('nobe-34');
+      }
+  },
+  exits: [
+      {dir: ['kitchen'], id: 'nobe-29'},
+      {dir: 'bathroom', block: `You think twice about going in there.`},
+      {dir: 'leave', id: '20-irvi'}
+  ],
+  items: [
+    {
+      itemId: 'bettetv',
+      name: ['tv', 'television'],
+      desc: 'An ordinary tv.',
+      onLook: () => {
+        bettesHome++;
+        println(`You flip through the channels on the TV, but find nothing appealing during the daytime hours. Frustrated, you turn the TV off.`)
+        enterRoom('nobe-27');
+      }
+    },
+    {
+      itemId: 'roomphone',
+      gif: 'img/gif/gif-hotelphone-ingame.gif',
+      name: ['phone', 'telephone'],
+      inUse: false,
+      desc: 'The phone on the dresser belongs to NYNEX.',
+      onTake: () => {
+        println("You probably shouldn't take that.");
+      }
+    },
+      {
+          itemId: 'sofa-bed',
+          name: [`sofa`, `sofabed`, `sofa-bed`],
+          desc: `At first glance it appears to be a regular living room sofa but upon further inspection you can see that the sofa opens up into a bed.`,
+          isOpen: false
+      },  
+      {
+          itemId: 'apartment',
+          name: ['Apartment','Room','apartment','room'],
+          desc: `Betty's studio apartment represents, spatially, the minimum daily requirement for a civilized life. It is not much bigger than your room at the Sunderland Hotel. It has a single large window with a view, striped by the open blinds, of Gramercy Park. The kitchenette in the far corner is equipped with a small refrigerator surmounted by a microwave oven. In the same corner is a round glass topped table with two ice-cream-parlor chairs. The table clearly doubles as a desk, for it is strewn with letters, bills, and contact sheets and glossy prints of photos, just as the sofa doubles as a bed when it is folded out. There is a large walk-in closet facing the entrance of the apartment, its door partly ajar, and another door to the left of that: the bathroom, presumably. There is a dresser to the left of the window, a tv facing the sofa, but the most notable piece of furniture in the room is a baby grand piano, its gleaming ebony lid raised high. It dominates the space as completely as an elephant would dominate a sheepfold.`,
+      },
+      {
+          itemId: 'letter',
+          name: ['Letter', 'letter', 'Mail', 'mail'],
+          desc: `Bette's mail is her personal business—leave it alone.`,
       },
       {
           itemId: 'dresser',
@@ -9646,9 +9804,15 @@ else{
   id: 'nobe-28',
   name: '',
   desc: `You turn on the TV`,
-  onBlock: () => {
-      println(`You flip through the channels on the TV, but find nothing appealing during the daytime hours. Frustrated, you turn the TV off.`)
-      enterRoom('nobe-27');
+  onEnter: () => {
+    incrementHour();
+    incrementHour();
+    incrementHour();
+    incrementHour();
+    incrementHour();
+    bettesHome++;
+    println(`You flip through the channels on the TV, but find nothing appealing during the daytime hours. Frustrated, you turn the TV off.`)
+    enterRoom('nobe-27');
   },
 },
 //eating dinner 1st day
@@ -9657,7 +9821,7 @@ else{
   name: '',
   desc: `You walk over to the kitchen area. `,
   onEnter: () => {
-      enterRoom('nobe-27');
+      enterRoom('nobe-32');
   },
 },
 {
@@ -9677,20 +9841,25 @@ else{
   name: '',
   desc: ``,
   onEnter: () => {
-      if(prevInput === 'veal casseur'){
+      if(prevInput === 'veal casseur' || prevInput === 'Veal Chasseur' || prevInput === 'veal' || prevInput === 'chasseur' || prevInput === 'Veal'){
           println(`Veal it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\nThe veal is sliced so thin it's a wonder it simply doesn't dissolve into the mushroom sauce.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === `duck l'orang`){
+      }else if(prevInput === `duck l'orange` || prevInput === 'duck' || prevInput === 'Duck' || prevInput === `Duck L'Orange` || prevInput == 'orange duck'){
           println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'chicken veronique'){
-          println(`Duck it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+      }else if(prevInput === 'chicken veronique' || prevInput === 'Chicken Veronique' || prevInput === 'Chicken' || prevInput === 'Veronique'){
+          println(`Chicken it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n The chicken is tasty, and the grapes look pretty, but the sauce hasn't managed to introduce them to each other.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'escargot au reurre'){
+      }else if(prevInput === 'escargot au reurre' || prevInput === 'Escargot Au Reurre' || prevInput === 'Escargot' || prevInput === 'escargot' || prevInput === 'snails' || prevInput === 'snail'){
           println(`Snails it is.\n\n You take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'quiche lorraine'){
+      }else if(prevInput === 'quiche lorraine' || prevInput === 'Quiche Lorraine' || prevInput === 'Quiche' || prevInput === 'quiche' || prevInput === 'Lorraine' || prevInput === 'lorraine' || prevInput === 'egg pie'){
           println(`Quiche it is.\n\nYou take two packages out of the icebox, one for yourself and one for Bette. After reading the instructions on the backs of the packages, you pop them in the microwave, take them out, and dig up some plastic silverware.\n\n Quiche! And not just a mangy calorie-counted quiche, but a quiche of weight and substance.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
       }
   }
@@ -9712,21 +9881,31 @@ else{
   name: `Bette's Apartment`,
   desc: ``,
   onEnter: () => {
-      if(prevInput === 'veal chasseur'){
+      if(prevInput === 'veal casseur' || prevInput === 'Veal Chasseur' || prevInput === 'veal' || prevInput === 'chasseur' || prevInput === 'Veal'){
           println(`Veal it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\nThe veal is sliced so thin it's a wonder it simply doesn't dissolve into the mushroom sauce.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === `duck l'orang`){
+          
+      }else if(prevInput === `duck l'orange` || prevInput === 'duck' || prevInput === 'Duck' || prevInput === `Duck L'Orange` || prevInput == 'orange duck'){
           println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'chicken veronique'){
-          println(`Duck it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n Somewhere under a thin slice of orange and on top of the bed of rice is supposed to be a boneless breast of duck. And here it is! You slice it into two mouthfuls to make it last.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          
+      }else if(prevInput === 'chicken veronique' || prevInput === 'Chicken Veronique' || prevInput === 'Chicken' || prevInput === 'Veronique'){
+          println(`Chicken it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n The chicken is tasty, and the grapes look pretty, but the sauce hasn't managed to introduce them to each other.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'escargots au reurre'){
+          
+      }else if(prevInput === 'escargot au reurre' || prevInput === 'Escargot Au Reurre' || prevInput === 'Escargot' || prevInput === 'escargot' || prevInput === 'snails' || prevInput === 'snail'){
           println(`Snails it is.\n\n You take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\n There are six snails in their own wee shells, and a thin slice of bread to sop up the garlic butter. 'Would you believe only a hundred and eighty calories?' the empty carton asks. You would. \n\nYou enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
-      }else if(prevInput === 'quiche lorraine'){
+          
+      }else if(prevInput === 'quiche lorraine' || prevInput === 'Quiche Lorraine' || prevInput === 'Quiche' || prevInput === 'quiche' || prevInput === 'Lorraine' || prevInput === 'lorraine' || prevInput === 'egg pie'){
           println(`Quiche it is.\n\nYou take your meal out of the icebox, read the cooking instructions, pop it in the microwave, take it out, and dig up some plastic silverware.\n\nQuiche! And not just a mangy calorie-counted quiche, but a quiche of weight and substance.\n\n You enjoy the meal thoroughly. When you are done, the dishes and utensils go in the garbage. Ecologically unsound but undeniably convenient.`);
+          bettesHome++;
           enterRoom('nobe-27');
+          
       }
   }
 },
@@ -9745,9 +9924,9 @@ else{
   name: '',
   desc: `You lie down and proceed to take a restful nap.`,
   onEnter: () => {
-      if(qMeridiem >= 1 & yHours >= 5){
-          println(`'You're going to bed -- at this hour? We'll never get to sleep. Here, read a book.'\n\n She hands you a copy of a marvelous novel called 'LITTLE, BIG,' and it keeps you up till long after midnight. That night your dreams all happen in the world of 'LITTLE, BIG.'\n\n The next morning you awake to find Bette completing her mourning ritual.`);
-          qMeridiem === 0 & yHours === 6;
+      if(xMeridam >= 1 & zHours >= 5){
+          println(`'You're going to bed—at this hour? We'll never get to sleep. Here, read a book.'\n\n She hands you a copy of a marvelous novel called 'LITTLE, BIG,' and it keeps you up till long after midnight. That night your dreams all happen in the world of 'LITTLE, BIG.'\n\n The next morning you awake to find Bette completing her mourning ritual.`);
+          xMeridam === 0 & zHours === 6;
           playFat === 100;
       }else{
           qMeridiem === 0 & yHours === 6;
@@ -9764,7 +9943,7 @@ else{
       if(prevInput === 'open it' || prevInput === 'open box' || prevInput === 'open'){
           enterRoom('nobe-38');
       }else if(prevInput === 'no'){
-          enterRoom('nobe-37');
+          enterRoom('nobe-37');S
       }else{
           println(`Can you rephrase that please?`);
       }
@@ -9785,29 +9964,20 @@ else{
   desc: `In the box is a black turtleneck sweater. With a Ralph Lauren label. Bette looks dismayed. 'Oh dear, I told Ned to get anything BUT a black turtleneck. He must have misheard me.' She blushes. 'Ned's my assistant, and he loves to shop for clothes, so I sent him to Macy's with the shopping list.\n\n I'll take it back and get you something else.'\n\n You give her the box back and she puts it and the Macy's bag away.`,
   //after 10 prompts go to nobe-39
   onEnter: () => {
-      
-      //if player has been to user friendly computer store, and read the floppy disk, go to room phone call sequence that leads to the dakota
-
-      const room = getRoom(disk.roomId);
-
-      if(room.hasEntered === false ) {
-          room.hasEntered === true;
-          betteCounter = 0;
-      }
-      
-      if(prevInput){
-          betteCounter ++;
-      }
+      pressEnter('nobe-39');
+      betteActions++;
   },
+  
   onBlock: () => {
-      if(betteCounter === 10){
-          enterRoom('nobe-39')
-      }else if(prevInput === 'leave'){
+    if(prevInput === 'leave'){
           println(`Bette says: 'I wish you didn't need to go out, John. I'm terrified something will happen to you.' She kisses you goodbye.`)
           enterRoom('nobe-34')
       }
   },
+  exits: []
 },
+
+//
 //player sleeps here.
 {
   id: 'nobe-39',
@@ -9815,6 +9985,7 @@ else{
   desc: ``,
   hasBed: true,
   onEnter: () => {
+    reenableInput();
       slept();
       if(getItemInInventory('floppy disk')){
           println(`As though responding to a cue, the telephone rings. Bette walks over to the phone and answers it. It is an editor, who requires her immediate presence in a Chelsea studio. As she fills a nylon bag with camera equipment, she apologizes for having to leave you alone. 'I'll be back as soon as I can, probably around six.`)
@@ -9829,7 +10000,7 @@ else{
 {
   id: 'nobe-40',
   name: '',
-  desc: `Bette comes home with a package from Woolworth's. She won't let you see what it is till after dinner, which you are delegated to select and prepare from the choices available in the freezer.`,
+  desc: ` `,
   onEnter: () => {
       println(`Bette comes home with a package from Woolworth's. She won't let you see what it is till after dinner, which you are delegated to select and prepare from the choices available in the freezer.`);
       pressEnter('nobe-41');
@@ -9839,10 +10010,17 @@ else{
   id: 'nobe-41',
   name: '',
   desc: `After dinner Bette banishes you to the bathroom for five minutes, and when you come out you find she's spread the pieces of an enormous jigsaw puzzle over the glass-topped table. 'You used to love to do jig-saws,' she explains, 'and you said it was because they put you into a kind of trance state. This is a 2000 piece set that we've worked once already.\n\n But don't look at the picture on the box. My idea was that you might stir some of your buried memories by our working it together again. Do you want to try it?'`,
-  exits: [
-      {dir: ['yes'], id: 'nobe-42'},
-      {dir: ['no'], id: 'nobe-43'},
-  ],
+  onEnter: () => {
+    betteActions++;
+    reenableInput();
+  },
+  onBlock: () => {
+    if (prevInput === 'yes' || prevInput === 'sure') {
+      enterRoom('nobe-42');
+    } else if (prevInput === 'no' || prevInput === 'nope') {
+      enterRoom('nobe-43')
+    }
+  },
 },
 {
   id: 'nobe-42',
@@ -9852,6 +10030,7 @@ else{
   //player sleeps after this
   onEnter: () => {
       println(`With Bette's help, you turn all the pieces right-side up, sorting out the edge pieces, and joining those together first. At the moment the frame is complete, you suddenly are able to envision the completed jigsaw and you describe it in detail to Bette:\n\n There are rowboats in the foreground clustered round a dock; the dark rippled water of a harbor or moat, and beyond the water a square-towered castle that must be somewhere in Europe, since it seems the genuine medieval article, and a great quantity of cloudless blue sky.\n\n\ Bette shows you the picture on the box, and it's all there just as you've described it.\n\n You continue working the puzzle till well past midnight, and though you find it a pleasant pastime you uncover no further buried memories. You go to bed with Bette and dream of jigsaw puzzles.\n\n When you awake late in the morning, Bette has already left for work.`)
+      betteActions++;
       pressEnter('nobe-27')
   }
 },
@@ -9901,7 +10080,8 @@ else{
   desc: ``,
   //player sleeps here
   onEnter: () => {
-      println(`Bette arrives home to announce that she is suffering a PMS headache of monstrous proportions. She takes two aspirins, covers her eyes with a small black sleep-mask ('So you can stay up and read, darling,' she explains.), gets into the unfolded sofabed, and falls into an uneasy sleep. You read a couple of back issues of 'The New Yorker' until you've developed a headache in sympathy with her's.\n\n Then you get ready to call it a night. 'We're becoming a couple,' you think happily as you drift off to sleep. 'We get sick together!'\n\n You both drift off to sleep.`);
+      println(`Bette arrives home to announce that she is suffering a PMS headache of monstrous proportions. She takes two aspirins, covers her eyes with a small black sleep-mask ('So you can stay up and read, darling,' she explains.), gets into the unfolded sofabed, and falls into an uneasy sleep. You read a couple of back issues of 'The New Yorker' until you've developed a headache in sympathy with her's.\n\n Then you get ready to call it a night. 'We're becoming a couple,' you think happily. 'We get sick together!'\n\n You both drift off to sleep.`);
+      betteAction++;
       pressEnter('nobe-48');
   },
 },
@@ -9910,6 +10090,7 @@ else{
   name: '',
   desc: ``,
   onEnter: () => {
+      reenableInput();
       slept();
       println(`The next morning, you awake to find that Bette has already left for work.`);
       enterRoom('nobe-27');
@@ -9919,6 +10100,9 @@ else{
   id: 'nobe-49',
   name: '',
   desc: `The phone rings`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
       if(prevInput === 'answer phone'){
           enterRoom('nobe-50');
@@ -9933,7 +10117,7 @@ else{
   desc: `'John,' says Bette excitedly, when you pick up the phone. 'I've discovered a clue! Isn't that wonderful?'`,
   exits: [
       {dir: ['no'], id: 'nobe-51'},
-      {dir: ['yes'], id: 'nobe-52'},
+      {dir: ['yes'], id: 'nobe-53'},
   ],
 },
 {
@@ -9949,10 +10133,13 @@ else{
   id: 'nobe-53',
   name: '',
   desc: `“Do you know that picture of you that's on the dresser, the one with you looking so elegant against that dismal wallpaper in the abandoned building? Well, Ned was just packing up some of the clothes from that shooting to send them back to the designers, and he found this paperback mystery in the right front pocket of the suit you were wearing that day. It's a reprint of an old thriller by Cornell Woolrich called THE BLACK CURTAIN, and it's about amnesia. But that's not the Clue. On the inside back cover of the book, you've written the phone number of someone called Denise, and I don't remember there being any Denise in your Address Book. But I'm sure it's your handwriting. Do you have a pencil to write down the number? Or can you remember it?”`,
+  onEnter: () => {
+    reenableInput();
+  },
   onBlock: () => {
-      if(prevInput === 'find pencil' || prevInput === 'i have a pencil' || prevInput === 'pencil'){
+      if(prevInput === 'find pencil' || prevInput === 'i have a pencil' || prevInput === 'pencil' || prevInput === `I'll find a pencil` || prevInput === `i'll find a pencil` || prevInput === `I have a pencil` || prevInput === `ill find a pencil`){
           enterRoom('nobe-54');
-      }else if(prevInput === 'remember it' || prevInput === `I'll remember it`){
+      }else if(prevInput === 'remember it' || prevInput === `I'll remember it` || prevInput === `i'll remember it` || prevInput === 'ill remember it' || prevInput === 'remember'){
           enterRoom('nobe-55');
       }
   },
@@ -9962,11 +10149,12 @@ else{
   name: '',
   desc: `You find a pencil and a scrap of paper and return to the phone. Bette reads out the number, and makes you repeat it to be sure it's correct: 555-5413. “I hope it's not Another Woman,” she adds, with a nervous laugh, “but I'll have to wait till tonight to find out. We'll be shooting all day on Liberty Island. Models in swimwear climbing around on the scaffolding that the statue is wrapped in. VOGUE is thinking of doing a patriotic issue. Ah, here's the bunting now. Talk to you later.” She hangs up.`,
   onEnter: () => {
+    
     storyMarker.setLatLng([57.944, -28.158]).bindPopup('The dreaded Dakota building.').addTo(poiLayer);
       numbers.push(
           {number:'5555413', roomid:'phone-30', contactName: 'Denise'}
         );
-        pressEnter('nobe-27');
+        pressEnter('nobe-27-2');
   }
 },
 {
@@ -9979,7 +10167,7 @@ else{
       numbers.push(
           {number:'5555413', roomid:'phone-30', contactName: 'Denise'}
         );
-        pressEnter('nobe-27');
+        pressEnter('nobe-27-2');
   },
 },
 
@@ -9988,9 +10176,9 @@ else{
 {
   id: 'phone-30',
   name: '',
-  desc: `The phone is answered at the third ring by a woman with an agreeable, low-pitched voice, who says, 'Hello, Mrs. Hollings here.'\n\n At last -- a bonafide connection to your past life! In your excitement you're momentarily at a loss for words, and the woman asks, 'Who is this?'`,
+  desc: `The phone is answered at the third ring by a woman with an agreeable, low-pitched voice, who says, 'Hello, Mrs. Hollings here.'\n\n At last—a bonafide connection to your past life! In your excitement you're momentarily at a loss for words, and the woman asks, 'Who is this?'`,
   onBlock: () => {
-      if(prevInput === 'john' || prevInput === 'xavier' || prevInput === 'zane'){
+      if(prevInput === 'john' || prevInput === 'John' || prevInput === 'xavier' || prevInput === 'Xavier' || prevInput === 'zane' || prevInput === 'Zane'){
           enterRoom('phone-31')
       }else{
           println(`Can you rephrase that please?`)
@@ -10008,7 +10196,7 @@ else{
           enterRoom('phone-32');
       }else{
           println(`Before you've said two words, she interrupts. 'Darling, it's really not safe to talk on the phone. But we can speak privately at the Dakota. Remember, the name to give the guard is Colby. Take care.' She hangs up fore you can get in another word. You put down the receiver.`);
-          pressEnter('nobe-27');
+          pressEnter('nobe-27-2');
       }
   },
 },
@@ -10018,7 +10206,7 @@ else{
   desc: ``,
   onEnter: () => {
       println(`Good, then I won't bother making a trip to the bank. Do hurry! See you!' She hangs up before you can get in another word. You put down the receiver.`);
-      pressEnter('nobe-27')
+      pressEnter('nobe-27-2')
   },
 },
 {
@@ -10027,7 +10215,7 @@ else{
   desc: ``,
   onEnter: () => {
       println(`'I'll bring what I can scrape together in the house. A thousand anyhow. Do hurry! I'm so glad to hear your voice. Take care.' She hangs up before you can get in another word. You put down the receiver.`);
-      pressEnter('nobe-27')
+      pressEnter('nobe-27-2')
   }
 },
 //if player tries to call Denise again after this
@@ -10036,8 +10224,8 @@ else{
   name: '',
   desc: ``,
   onEnter: () => {
-      println(`'I'll bring what I can scrape together in the house. A thousand anyhow. Do hurry! I'm so glad to hear your voice. Take care.' She hangs up before you can get in another word. You put down the receiver.`);
-      pressEnter('nobe-27');
+      println(`'Darling, it's really not safe to talk on the phone. But we can speak privately at the Dakota. Remember, the name to give the guard is Colby. Take care.' She hangs up fore you can get in another word. You put down the receiver.`);
+      pressEnter('previous room')
   }
 },
 
@@ -10265,7 +10453,7 @@ else{
 {
   id: 'dakota-denise-1', 
   name: `The Dakota`,
-  desc: `You are in a room decorated with money -- not in its raw form but in fabric and wood equivalents. A few spindly antique chairs are aswim on a swirling sea of Persian carpeting.\n
+  desc: `You are in a room decorated with money—not in its raw form but in fabric and wood equivalents. A few spindly antique chairs are aswim on a swirling sea of Persian carpeting.\n
   The wood-paneled walls are a hymn to money declaring itself spent, and four chandeliers hang from the ceiling with the same purpose in mind. \n
   All sense of individuality or personality has been scrupulously avoided. A bank lobby could not be more completely consecrated to its own inordinate expense.`,
   onEnter: () => 
@@ -10312,7 +10500,7 @@ else{
 {
   id: 'dakota-denise-6', // Introducing Denise outside of Death and Texas
   name: `The Dakota`,
-  desc: `"First, of course, there are the other women in your life. Alison, your ex-assistant. Tell me, Why didn't you marry the poor, pathetic creature?"`,
+  desc: `"First, of course, there are the other women in your life. Alison, your ex-assistant. Tell me, why didn't you marry the poor, pathetic creature?"`,
   onEnter: () =>{
     playerC.dScore += 25; // Adding to Detective Score
     playerC.cScore += 5; // Adding to Character Score
@@ -10336,7 +10524,7 @@ else{
 {
   id: 'dakota-denise-7a',
   name: `The Dakota`,
-  desc: `"I told her you would never go along with her ridiculous scheme -- but I hoped you might, since otherwise how were we to get around killing you? She does love you in her own misguided way."`,
+  desc: `"I told her you would never go along with her ridiculous scheme—but I hoped you might, since otherwise how were we to get around killing you? She does love you in her own misguided way."`,
   onEnter: () => 
   {
     pressEnter('dakota-denise-8');
@@ -10346,7 +10534,7 @@ else{
   id: 'dakota-denise-7b', // If you try to fight
   name: `The Dakota`,
   desc: `A sense of self-preservation forces you not to provoke anyone pointing a gun at you.\n
-  "I told her you would never go along with her ridiculous scheme -- but I hoped you might, since otherwise how were we to get around killing you? She does love you in her own misguided way."`,
+  "I told her you would never go along with her ridiculous scheme—but I hoped you might, since otherwise how were we to get around killing you? She does love you in her own misguided way."`,
   onEnter: () => 
   {
     pressEnter('dakota-denise-8');
@@ -10355,7 +10543,7 @@ else{
 {
   id: 'dakota-denise-8',
   name: `The Dakota`,
-  desc: `"Alison was the one who -- at least temporarily -- convinced us that rather than murder you we should let you go to Australia as Mr. and Mrs. Cameron. That's why we put on our little drama at the Sunderland."`,
+  desc: `"Alison was the one who—at least temporarily—convinced us that rather than murder you we should let you go to Australia as Mr. and Mrs. Cameron. That's why we put on our little drama at the Sunderland."`,
   onEnter: () => 
   {
     playerC.dScore += 35; // Adding to Detective Score
@@ -10379,7 +10567,7 @@ else{
 {
   id: 'dakota-denise-10',
   name: `The Dakota`,
-  desc: `"Then, of course, there is your photographer bitch -- Bette, I believe her name is. I haven't invited her yet, but I think we should have her here, don't you? Tell me, do you love her?"`,
+  desc: `"Then, of course, there is your photographer bitch—Bette, I believe her name is. I haven't invited her yet, but I think we should have her here, don't you? Tell me, do you love her?"`,
   onEnter: () => 
   {
     reenableInput();
@@ -10460,7 +10648,7 @@ else{
   id: 'dakota-denise-13b',
   name: `The Dakota`,
   desc: `"Oh yes, I'm an alcoholic. Alcoholics usually deny they're alcoholics, but I freely admit it."\n
-  "Getting back to our party, the third guest is Luke, whom I'm sure you remember. He's a dreadfully coarse man and I've made it clear that I will not have anything to do with him once we've completed our undertaking -- to prepare you, dear one, for the undertaker."
+  "Getting back to our party, the third guest is Luke, whom I'm sure you remember. He's a dreadfully coarse man and I've made it clear that I will not have anything to do with him once we've completed our undertaking—to prepare you, dear one, for the undertaker."
   "We thought he'd accomplished that little task back at the chapel in the Sunderland. But in any event, I'm sure we'll relish the opportunity to try again."`,
   onEnter: () => 
   {
@@ -10472,7 +10660,7 @@ else{
   name: `The Dakota`,
   desc: `A sense of self-preservation forces you not to provoke anyone pointing a gun at you.\n
   "Oh yes, I'm an alcoholic. Alcoholics usually deny they're alcoholics, but I freely admit it."\n
-  "Getting back to our party, the third guest is Luke, whom I'm sure you remember. He's a dreadfully coarse man and I've made it clear that I will not have anything to do with him once we've completed our undertaking -- to prepare you, dear one, for the undertaker."
+  "Getting back to our party, the third guest is Luke, whom I'm sure you remember. He's a dreadfully coarse man and I've made it clear that I will not have anything to do with him once we've completed our undertaking—to prepare you, dear one, for the undertaker."
   "We thought he'd accomplished that little task back at the chapel in the Sunderland. But in any event, I'm sure we'll relish the opportunity to try again."`,
   onEnter: () => 
   {
@@ -10764,7 +10952,7 @@ else{
 {
   id: 'dakota-denise-30',
   name: `The Dakota`,
-  desc: `"You were off galavanting around the city, and before you got home -- fortunately for you -- Alison persuaded us that, thanks to your convenient amnesial condition, she could not only solve our problem of the two Xavier Hollings, but provide us with an even larger fortune in the process."`, 
+  desc: `"You were off galavanting around the city, and before you got home—fortunately for you—Alison persuaded us that, thanks to your convenient amnesial condition, she could not only solve our problem of the two Xavier Hollings, but provide us with an even larger fortune in the process."`, 
   onEnter: () => 
   {
     pressEnter('dakota-denise-31');
@@ -10773,7 +10961,7 @@ else{
 {
   id: 'dakota-denise-31',
   name: `The Dakota`,
-  desc: `"She would acquire from you the formula for your Texas-style wonder-drug, which she would in turn pass along to us. She would persuade you to marry her, and, as Mr. and Mrs. John Cameron, the two of you would ride out of our lives and into the Australian sunset. And we -- I -- would persuade Luke and Zane to let you go."`, 
+  desc: `"She would acquire from you the formula for your Texas-style wonder-drug, which she would in turn pass along to us. She would persuade you to marry her, and, as Mr. and Mrs. John Cameron, the two of you would ride out of our lives and into the Australian sunset. And we—I—would persuade Luke and Zane to let you go."`, 
   onEnter: () => 
   {
     pressEnter('dakota-denise-32');
@@ -10782,7 +10970,7 @@ else{
 {
   id: 'dakota-denise-32',
   name: `The Dakota`,
-  desc: `"The poor thing thought she'd have you docile as a lamb in three or four days. After four weeks, you not only didn't know the formula for the drug, you still refused to marry her and exit gracefully, even when Luk threatened you at the hotel."`, 
+  desc: `"The poor thing thought she'd have you docile as a lamb in three or four days. After four weeks, you not only didn't know the formula for the drug, you still refused to marry her and exit gracefully, even when Luke threatened you at the hotel."`, 
   onEnter: () => 
   {
     pressEnter('dakota-denise-33');
@@ -10794,7 +10982,7 @@ else{
   desc: `Denise falls silent for a moment and stares into her martini glass intently, as though it were a cup of tea-leaves with your fortune in it. "Sometimes I do reproach myself for having taken the side of the bad guys in all this. You're obviously a NICER person than Zane, and usually as good or better a lay. My only excuse is self-interest."`, 
   onEnter: () => 
   {
-    pressEnter('dakota-denise-34');
+    pressEnter('dakota-denise-34b');
   },
 },
 {
@@ -10847,7 +11035,7 @@ else{
 {
   id: 'dakota-denise-37',
   name: `The Dakota`,
-  desc: `"But I keep saying 'we' -- and you don't yet know who 'we' all are. Let me introduce you, then, to an old friend you may have forgotten." She raises her voice: "Zane, you may come in now."`, 
+  desc: `"But I keep saying 'we'—and you don't yet know who 'we' all are. Let me introduce you, then, to an old friend you may have forgotten." She raises her voice: "Zane, you may come in now."`, 
   onEnter: () => 
   {
     pressEnter('dakota-zane-1'); // Enter Zane
@@ -10856,7 +11044,7 @@ else{
 {
   id: 'dakota-zane-1',
   name: `The Dakota`,
-  desc: `A man enters the room; you turn to look into the face of Zane Bester -- and it is like looking into a mirror. He has his hair styled exactly like yours. His skin may be a shade paler, and his chin a bit slacker, but otherwise you might be identical twins. The crucial difference between the two of you at this moment, however, is the expression on your faces.`, 
+  desc: `A man enters the room; you turn to look into the face of Zane Bester—and it is like looking into a mirror. He has his hair styled exactly like yours. His skin may be a shade paler, and his chin a bit slacker, but otherwise you might be identical twins. The crucial difference between the two of you at this moment, however, is the expression on your faces.`, 
   onEnter: () => 
   {
     playerC.dScore += 10; // Adding to Detective Score
@@ -10998,18 +11186,34 @@ else{
   desc: `With an air of exultation you realize that you are close to solving the riddle of your amnesia. Denise's explanation has filled most of the gaps in your memory; now you can tell Bette what really happened and together the two of you can formulate a plan.`, 
   onEnter: () => 
   {
+    let irvingPlace = getRoom('20-irvi');
+    let dakotaEntrance = getRoom('72-cpkw');
+    dakotaEntrance.exits[4].block = `After bursting out of the building with seemingly no explanation to the guard the place has been put on high alert. It is probably best not to go through the front entrance. Maybe there is another entrance nearby, maybe an alley?`;
+    irvingPlace.exits[4].id = 'retu-bett';
     storyMarker.setLatLng([-26.361, 5.999]).bindPopup(`Tell Bette about your plan!`).addTo(poiLayer);
     dakotaEntered = true;
     pressEnter('67-amer');
   },
 }, 
 
-
   /***********************************/
  /*  Return to Bette's Apartment    */
 /***********************************/
+{
+  id: 'retu-bett',
+  name: `Bette's Apartment`,
+  desc: `You are in Bette's apartement. You look around the place to see the place a mess. A struggle seems to have taken place. As you look more closely you find a note by the phone from Denise. \n\n
+  We knew you would run back to Bette so we had a contingincey in place for that situation. If you want to see your lover alive and well you had best come back to the Dakota. We will be waiting for you and the disk. \n-Denise`,
+  onEnter: () => {
+    let dakotaAlley = getRoom('73-colu');
+    delete dakotaAlley.exits[4].block;
+    storyMarker.setLatLng([58.972, -34.755]).bindPopup('Rescue Bette and finish this.').addTo(poiLayer);
+    pressEnter('20-irvi');
+  },
+  exits: [
 
-
+  ]
+},
 
   /*********************************************/
  /*    The Dakota Alleyway/Alice's Deathbed   */
@@ -11042,14 +11246,14 @@ else{
 {
     id: 'dakota-alley-1', 
     name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `Cautiously, you climb the steep and slippery firestairs. Guessing at the approximate location of apartment 44, you stop on the fourth floor in front of a small window.`,
+    desc: `Cautiously, you climb the steep and slippery firestairs. Guessing at the approximate location of apartment 44, you stop on the fourth floor in front of a small window. It looks somewhat old and weak, and looks like its about to __break__ apart.`,
     onBlock: () => {
-        if(prevInput === 'break'){
+        if(prevInput === 'break' || prevInput === 'break window'){
             enterRoom('dakota-alley-window');
         }else if(prevInput === 'open'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
+            println('The grating on the window prevents you from doing so.')
+        }else if(prevInput === 'enter' || prevInput === 'enter window'){
+            println('The grating on the window prevents you from trying.')
         }else{
             enterRoom('dakota-alley-zane');
         }
@@ -11064,13 +11268,11 @@ else{
 {
     id: 'dakota-alley-window', 
     name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `You manage to smash the window through the protective grating. Glass Fragments shower the interior of the room on the other side.`,
+    desc: `You manage to smash the window through the protective grating. Glass fragments shower the interior of the room on the other side.`,
     onBlock: () => {
-        if(prevInput === 'open' || prevInput === 'go inside'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
+        if(prevInput === 'open' || prevInput === 'go inside' || prevInput === 'inside'){
+            enterRoom('dakota-alley-zane');
+        } else{
             enterRoom('dakota-alley-zane');
         }
     },
@@ -11081,48 +11283,8 @@ else{
       },
       {
         dir: ['inside', 'window'], 
-        id: 'dakota-alley-enter',
+        id: 'dakota-alley-zane',
     }
-    ],
-},
-{
-    id: 'dakota-alley-open', 
-    name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `The grating on the window prevents you from doing so.`,
-    onBlock: () => {
-        if(prevInput === 'break'){
-            enterRoom('dakota-alley-window');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
-            enterRoom('dakota-alley-zane');
-        }
-    },
-    exits: [
-      {
-          dir: ['south', 'leave'], 
-          id: 'dakota-alley',
-      }
-    ],
-},
-{
-    id: 'dakota-alley-enter', 
-    name: 'Dakota Alley', // Displayed each time the player enters the room.
-    desc: `The grating on the window prevents you from trying.`,
-    onBlock: () => {
-        if(prevInput === 'open'){
-            enterRoom('dakota-alley-open');
-        }else if(prevInput === 'enter'){
-            enterRoom('dakota-alley-enter');
-        }else{
-            enterRoom('dakota-alley-zane');
-        }
-    },
-    exits: [
-      {
-          dir: ['south', 'leave'], 
-          id: 'dakota-alley',
-      }
     ],
 },
 {
@@ -11169,9 +11331,20 @@ else{
         if(prevInput === 'open'){
             enterRoom('alisonsdeath-3');
         }else{
-            enterRoom('alisonsdeath-4');
+            println(`Your eyes are closed, and your eyelids feel almost as though it's be too painful to open them.`);
         }
     },
+    items: [
+      {
+        itemId: 'youreyes',
+        name: ['eyes', 'eye', 'eyeballs'],
+        desc: 'You see your eyeballs, but not really since that is somewhat impossible.',
+        isOpen: false,
+        onLook: () => {
+          println('What you do see is the inside of your eyelids.');
+        }
+      }
+    ]
 },
 {
     id: 'alisonsdeath-3', 
@@ -11181,21 +11354,7 @@ else{
         pressEnter('alisonsdeath-5');
     },
 },
-{
-    id: 'alisonsdeath-4', 
-    name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Your eyes are closed, and your eyelids feel almost as though it's be too painful to open them.`,
-    onEnter: () => {
-        reenableInput();
-    },
-    onBlock: () => {
-        if(prevInput === 'open'){
-            enterRoom('alisonsdeath-3');
-        }else{
-            enterRoom('alisonsdeath-4');
-        }
-    },
-},
+
 {
     id: 'alisonsdeath-5', 
     name: 'The Dakota', // Displayed each time the player enters the room.
@@ -11285,8 +11444,8 @@ else{
 {
     id: 'alisonsdeath-explain', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `'I'm not really Alice Dudley, you know. All that – the wedding, what I told you in the museum – that was all lies. My real name is Alison Abrams. I was your secretary at Hollings Pharmaceutical, though my title -- 'At the cost of a deep shuddering breath, she manages to smile, then goes on:  \n
-    '-- my title was Executive Associate. I was never your fiancé. I never let you know how much I wanted to be, either. Not until your amnesia began to take hold. I thought then I could deceive you into loving me. Try and forgive me. I did love you. I still do'`,
+    desc: `'I'm not really Alice Dudley, you know. All that – the wedding, what I told you in the museum – that was all lies. My real name is Alison Abrams. I was your secretary at Hollings Pharmaceutical, though my title—'At the cost of a deep shuddering breath, she manages to smile, then goes on:  \n
+    '— my title was Executive Associate. I was never your fiancé. I never let you know how much I wanted to be, either. Not until your amnesia began to take hold. I thought then I could deceive you into loving me. Try and forgive me. I did love you. I still do'`,
     onEnter: () => {
         pressEnter('alisonsdeath-explain-2');
     },
@@ -11601,7 +11760,7 @@ else{
 {
     id: 'alisonsdeath-disk-4', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Denise smiles with satisfaction. "So you see, Xavier, how much there is to be gained if you'll only be trusting and cooperative. Now let's being, shall we?"`,
+    desc: `Denise smiles with satisfaction. "So you see, Xavier, how much there is to be gained if you'll only be trusting and cooperative. Now let's begin, shall we?"`,
     onEnter: () => {
         pressEnter('alisonsdeath-disk-5');
     },
@@ -11653,7 +11812,7 @@ else{
     I hope you will not understand\n
     Just who I am until the line\n
     Revealing all my taradiddle\n
-    as the substance of - ------\n
+    as the substance of - ———\n
     "Well," says Denise, "whats the answer?`,
     onBlock: () => {
         if(prevInput === 'riddle'){
@@ -11666,7 +11825,7 @@ else{
 {
     id: 'alisonsdeath-riddle-1', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `"Yes," Dennise agrees. "It's pretty obvious. I hope they're all so easy." She types the anser on the keyboard and a large block of text appears on the screen`,
+    desc: `"Yes," Dennise agrees. "It's pretty obvious. I hope they're all so easy." She types the answer on the keyboard and a large block of text appears on the screen`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-2');
     },
@@ -11682,7 +11841,7 @@ else{
 {
     id: 'alisonsdeath-riddle-2', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `The text seems to have to do with your staying at the Sunderland Hotel -- it is hard to read all of it, as Dennise scrolls through the text quickly\n
+    desc: `The text seems to have to do with your staying at the Sunderland Hotel—it is hard to read all of it, as Dennise scrolls through the text quickly\n
     The text on the screen breaks off, and is replaced by a second riddle:`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-3');
@@ -11701,8 +11860,8 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'question'){
-            enterRoom('alisonsdeath-riddle-3');
+        if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
+            enterRoom('alisonsdeath-riddle-4');
         }else{ 
             enterRoom('alisonsdeath-wrong-2');
         }
@@ -11739,8 +11898,8 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'question'){
-            enterRoom('alisonsdeath-riddle-3');
+        if(prevInput === '?' || prevInput === 'a question mark' || prevInput === 'question mark' || prevInput === 'question' || prevInput === 'a question'){
+            enterRoom('alisonsdeath-riddle-4');
         }else{ 
             enterRoom('alisonsdeath-wrong-3');
         }
@@ -11803,7 +11962,7 @@ else{
         reenableInput();
     },
     onBlock: () => {
-        if(prevInput === 'bald'){
+        if(prevInput === 'bald' || prevInput === 'balding'){
             enterRoom('alisonsdeath-riddle-8');
         }else if(prevInput === 'nemesis'){ 
             enterRoom('alisonsdeath-nemesis'); // The covetted nemesis ending
@@ -11898,8 +12057,8 @@ else{
     id: 'alisonsdeath-riddle-14', 
     name: 'The Dakota', // Displayed each time the player enters the room.
     desc: `Denise calls up the fifth and final riddle, which is prefaced by a preliminary warning:\n
-    -- CAUTION --\n
-    Acess to File 5 is controlled by the two letter answer to the following riddle. If a wrong answer if given, File 5 will self destruct.`,
+   —CAUTION —\n
+    Access to File 5 is controlled by the two letter answer to the following riddle. If a wrong answer if given, File 5 will self destruct.`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-15');
     },
@@ -11913,7 +12072,7 @@ else{
     another lease\n
     On life.\n
     Recieve me and achieve surcease,\n
-    For I am sweet AMNES--.`,
+    For I am sweet AMNES—.`,
     onEnter: () => {
         pressEnter('alisonsdeath-riddle-16');
     },
@@ -11982,7 +12141,7 @@ else{
 {
     id: 'alisonsdeath-ending-1', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Bette speaks up. "The answer could also be T and Y -- AMNESTY. It makes just as much sense. More sense, really. I wouldn't say that amnesia has been a very great source of peace in the present case.`,
+    desc: `Bette speaks up. "The answer could also be T and Y—AMNESTY. It makes just as much sense. More sense, really. I wouldn't say that amnesia has been a very great source of peace in the present case.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-2');
     },
@@ -11999,7 +12158,7 @@ else{
 {
     id: 'alisonsdeath-ending-3', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `-- CAUTION --\n
+    desc: `— CAUTION —\n
     Access to File 5 is controlled by the two letter answer to the following riddle. If a wrong answer if given, File 5 will self destruct.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-4');
@@ -12014,7 +12173,7 @@ else{
     another lease\n
     On life.\n
     Recieve me and achieve surcease,\n
-    For I am sweet AMNES--.`,
+    For I am sweet AMNES—.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-5');
     },
@@ -12059,7 +12218,7 @@ else{
     name: 'The Dakota', // Displayed each time the player enters the room.
     desc: `Denise considers your response, and smiles craftily. "Do you really think I'd be so foolish as to fall into your trap? AMNESTY might be the right answer in other circumstances than this. But surely the name of the game is "AMNESIA"."\n
     She types the letters I and A. The screen displays a ranndom pattern of X's and O's, annd then a message appears:\n
-    -- FILE 5 ERASED. -- `,
+   —FILE 5 ERASED.—`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-9');
     },
@@ -12067,9 +12226,9 @@ else{
 {
     id: 'alisonsdeath-ending-8', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Denise considers your response, and smiles craftily. "Do you really think I'd be so foolish as to fall into your trap? AMNESIA's the obvious answer, and so--"\n
+    desc: `Denise considers your response, and smiles craftily. "Do you really think I'd be so foolish as to fall into your trap? AMNESIA's the obvious answer, and so—"\n
     She types the letters T and Y. The screen displays a ranndom pattern of X's and O's, annd then a message appears:\n
-    -- FILE 5 ERASED. -- `,
+   —FILE 5 ERASED.—`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-9');
     },
@@ -12086,7 +12245,7 @@ else{
 {
     id: 'alisonsdeath-ending-10', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `A moment later the door to the room is thrown open and Luke bursts into the room with a gun drawn. "What in the hell is --"`,
+    desc: `A moment later the door to the room is thrown open and Luke bursts into the room with a gun drawn. "What in the hell is —"`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-11');
     },
@@ -12094,7 +12253,7 @@ else{
 {
     id: 'alisonsdeath-ending-11', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Zane spins around with his neurons -- and his gun -- firing. His second bullet, as deadly as the first, hits Luke neatly between the eyes. Luke's body smashes back against the doorframe, then rebounds forward. The gun falls from Luke's hand and skitters across the floor, within inches of where Bette sits frozen in horror.`,
+    desc: `Zane spins around with his neurons—and his gun—firing. His second bullet, as deadly as the first, hits Luke neatly between the eyes. Luke's body smashes back against the doorframe, then rebounds forward. The gun falls from Luke's hand and skitters across the floor, within inches of where Bette sits frozen in horror.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-12');
     },
@@ -12110,7 +12269,7 @@ else{
 {
     id: 'alisonsdeath-ending-13', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `Very slowly, as though she were reaching forward to feed a squirrel that might suddenly take fright and bound away, Bette bends forward and reaches for the gun that lies on the floor. When the gun is in her hand, she stands -- annd Zane, with tears still in his eyes, but a strange smile on his lips, stands up too.`,
+    desc: `Very slowly, as though she were reaching forward to feed a squirrel that might suddenly take fright and bound away, Bette bends forward and reaches for the gun that lies on the floor. When the gun is in her hand, she stands—and Zane, with tears still in his eyes, but a strange smile on his lips, stands up too.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-14');
     },
@@ -12134,7 +12293,7 @@ else{
 {
     id: 'alisonsdeath-ending-16', 
     name: 'The Dakota', // Displayed each time the player enters the room.
-    desc: `The bullet strikes Zane low in his chest. A thoughtful expression comes over his face, as though he'd been stopped not by a bullet but a new idea. "You did it!" he says wonderingly. "You won! Son of a bitch! I didn't think -- " He staggers toward the desk.`,
+    desc: `The bullet strikes Zane low in his chest. A thoughtful expression comes over his face, as though he'd been stopped not by a bullet but a new idea. "You did it!" he says wonderingly. "You won! Son of a bitch! I didn't think—" He staggers toward the desk.`,
     onEnter: () => {
         pressEnter('alisonsdeath-ending-17');
     },
@@ -12164,6 +12323,9 @@ else{
   coord: [],
   name: `Bette's Apartment`,
   desc: `You wake up the next morning to the ringing of the cordless phone. You have been asleep on the sofa bed in Bette's apartment.`,
+  onEnter: () => {
+    reenableInput();
+  },
   onLook: () =>
   {
     const room = getRoom('epil-1');
@@ -12171,7 +12333,7 @@ else{
   },
   onBlock: () => 
   {
-    if(prevInput === 'phone'){ // **We'll need a command for answering the phone
+    if(prevInput === 'phone' || prevInput === 'answer phone'){ // **We'll need a command for answering the phone
         enterRoom('epil-2');
     }else{
         println(`The phone continues ringing.`);
@@ -12209,7 +12371,7 @@ else{
       if(prevInput === 'yes' || 'headline'){
           enterRoom('epil-4');
       }else{
-          println(`"Darling, you simply have to hear this! It seems that Zane didn't die the moment we left. He managed to record a kind of confession -- and he made out a will. I'll just read that part -- listen!"`);
+          println(`"Darling, you simply have to hear this! It seems that Zane didn't die the moment we left. He managed to record a kind of confession—and he made out a will. I'll just read that part—listen!"`);
           pressEnter('epil-4');
 
       }
@@ -12270,11 +12432,13 @@ else{
   desc: ` `,
   onEnter: () => {
     clearOutput();
+    playerC.tScore = playerC.dScore + playerC.cScore + playerC.sScore;
     println(`Your scores are as follows:\n
     As a detective: ${playerC.dScore}\n
     As a character: ${playerC.cScore}\n
     As a survivor: ${playerC.sScore}\n
     \n
+
     Your total score is ${playerC.tScore}\n
     Your score ranks you as occasionally absent-minded.\n
     You've reached the end of your adventure. To begin again refresh the browser page.`);
@@ -12287,14 +12451,19 @@ else{
   desc: ``,
   onEnter: () => {
     clearOutput();
+    playerC.tScore = playerC.dScore + playerC.cScore + playerC.sScore;
     println(`Your scores are as follows:\n
     As a detective: ${playerC.dScore}
     As a character: ${playerC.cScore}
     As a survivor: ${playerC.sScore}\n
-    <img src="img/png/x-icon.png"alt="close icon">
+
     Your total score is ${playerC.tScore}
     Your score ranks you as of sound mind.\n
     You've reached the end of your adventure. Congratulations on winning the game! The mystery of who you are is solved. Job well done detective.`);
+    anAmn = true;
+      updateEndings();
+      slideRightIn('achieve-display', 'achieve-text-container');
+      internalSave();
     pressEnter('credits-1');
   }
 },
@@ -12318,8 +12487,11 @@ else{
     Dr. Dene Grigar - Professor
     <img src="/img/png/teams/grigar-1.jpg"> \n
     Suzanne Anderson - Professor\n
+    <img src="/img/png/teams/anderson-1.jpg">
     Holly Slocum - Interface Designer & Developer\n
-    Greg Philbrook - Instructional & Technical Support \n`, 'credits');
+    <img src="/img/png/teams/slocum-1.jpg">
+    Greg Philbrook - Instructional & Technical Support \n
+    <img src="/img/png/teams/philbrook-1.jpg">`, 'credits');
     document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
     pressEnter('credits-3');
   }
@@ -12456,12 +12628,12 @@ else{
     clearOutput();
     println(`**Thomas M. Disch Estate**
     Greg Feeley and Sarah Smith
-    <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n\n
-    Washington State University Vancouver
+    <img src="/img/png/teams/image-profile-gregoryfeeley.jpg"><img style="padding-top: 1%;" src="/img/png/teams/image-profile-sarahsmith.jpg"> \n
+    **Washington State University Vancouver**
     <img src="/img/png/wsu-logo.png">
-    The Electronic Literature Lab
+    **The Electronic Literature Lab**
     <img src="/img/png/ellLogo_Text.png">
-    The Creative Media & Digital Culture Program
+    **The Creative Media & Digital Culture Program**
     <img src="/img/png/cmdc-logo-white.png">`, 'credits');
     document.querySelector('#output').scrollTo(0, document.body.scrollHeight);
     pressEnter('credits-10')
@@ -12486,12 +12658,12 @@ else{
   coord: [],
   name: `St. Patricks Cathedral`,
   desc: `The moment you enter the cathedral a strange feeling comes over you. A combination of peace and uneasiness and guilt. But how can you feel guilty over a past you can't remember?\n
-  The cathedral provides no answer to that question, but the feeling grows stronger. Waves of vertigo assail you. You'll have to sit in one of the pews -- or leave at once.`,
+  The cathedral provides no answer to that question, but the feeling grows stronger. Waves of vertigo assail you. You'll have to sit in one of the pews—or leave at once.`,
   onEnter: () => {
     degradation = !degradation;
   },
     onBlock: () => {
-    if(prevInput === 'sit'){ // **We'll need a command for answering the phone
+    if(prevInput === 'sit'){
         enterRoom('cathe-2');
     }else{
         println(`You feel compelled to leave the chapel at once by a feeling so strong it almost scares you.`);
@@ -12530,7 +12702,7 @@ else{
     coord: [],
     name: `St. Patricks Cathedral`,
     desc: `You go to the priest so that you may offer the Church the rest of your life in service as a Trappist monk, dedicated to silence, chastity, poverty, and worship.\n
-    Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermonnt. Congratulations on your escape from a world of sin!`,
+    Your problems are over. Holy Mother Church has accepted you into the Trappist order, and for the rest of your long, devout, and holy life you will raise vegetables and praise God at a monastery in rural Vermont. Congratulations on your escape from a world of sin!`,
     onEnter: () =>{
         playerC.sScore = 700;
         playerC.dScore = 0;
@@ -12576,7 +12748,7 @@ else{
       if (prevInput === 'drink champagne' || prevInput === 'drink' || prevInput === 'celebrate') {
         pressEnter('aust-4');
       } else {
-        println(`"Oh darling", Alice says in a cajoling tone. "Don't be so contrary. Look--it's Australian champagne! I'll bet you didn't know there was such a thing, did you?"`);
+        println(`"Oh darling", Alice says in a cajoling tone. "Don't be so contrary. Look—it's Australian champagne! I'll bet you didn't know there was such a thing, did you?"`);
       }
         
     },
@@ -12718,7 +12890,7 @@ else{
         desc: ``,
         onEnter: () => 
           {
-            println(formatter.format(orderTotal).toString());
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12727,17 +12899,18 @@ else{
             }else{
               pressEnter('lunch-nomon'); // if you have no money
             }
-            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
           },
       },
       {
         id: 'lunch-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: 'Luncheonette', // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
           enterRoom(room.enteredFrom); // Replace with the last room visited secret formula
@@ -12764,7 +12937,7 @@ else{
             const room = getRoom('lunch-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
-            enterRoom(room.enteredFrom);a
+            enterRoom(room.enteredFrom);
           },
       },
       {
@@ -12843,9 +13016,10 @@ else{
       {
         id: 'nedick-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Nedick's`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12858,11 +13032,13 @@ else{
       {
         id: 'nedick-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Nedick's`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ` `,
         onEnter: () => 
         {
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
+          reenableInput();
           const room = getRoom('nedick-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -12938,7 +13114,7 @@ else{
           }else if(prevInput ==='rootbeer'){
             orderTotal += 2.75;
             energyTotal += 8;
-            println('One rootbeer is on its way. \n Anything else?');
+            println('One root beer is on its way. \n Anything else?');
             
           }else if(prevInput ==='coke'){
             orderTotal += 0.65;
@@ -12964,9 +13140,10 @@ else{
       {
         id: 'pizza-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Pizzeria`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -12979,11 +13156,13 @@ else{
       {
         id: 'pizza-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Pizzeria`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('pizza-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -13038,7 +13217,7 @@ else{
         FRANKFURTER         $1.40\n
         BURGER              $1.95\n
         CHEESE SAND         $1.00\n
-        DONUT               $0.75\N
+        DONUT               $0.75\n
         COKE                $0.85\n
         COFFEE              $0.45\n
         The counterman asks you 'What can I get for you, buddy?`,
@@ -13048,7 +13227,6 @@ else{
         },
         onBlock: () => 
         {
-  
           if(prevInput === "frankfurter"){
             orderTotal += 1.40;
             energyTotal += 28;
@@ -13093,9 +13271,11 @@ else{
       {
         id: 'nuts-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
+
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -13108,11 +13288,13 @@ else{
       {
         id: 'nuts-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Chock Full O' Nuts`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('nuts-intro');
             orderTotal = 0; // Clearing this variable
             energyTotal = 0; // Clearing the variable 
@@ -13148,7 +13330,7 @@ else{
         id: 'gyro-intro', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
         desc: `The interior of the restaurant is decorated in stylish marble-patterned formica. A counter with stools is decorated with condiment containers containing salt and pepper. \n
-        Small square naplins stand erect in a spring-loaded dispenser. At the moment you are the only customer except for a man and woman involved in an intense argument in a foreign language.`,
+        Small square napkins stand erect in a spring-loaded dispenser. At the moment you are the only customer except for a man and woman involved in an intense argument in a foreign language.`,
         onEnter: () => 
           {
           pressEnter('gyro-buyscreen');
@@ -13158,7 +13340,7 @@ else{
           },
       },
       {
-        id: 'nuts-buyscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
+        id: 'gyro-buyscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
         desc: `You sit down at the counter and look at the menu on the wall which offers you a choice of:\n
         GYRO                $1.85\n
@@ -13213,9 +13395,10 @@ else{
       {
         id: 'gyro-total', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
-        desc: `The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`,
+        desc: ` `,
         onEnter: () => 
           {
+            println(`The attendant totals up your purchase on the register, and it comes to ${formatter.format(orderTotal)}.`);
             if(orderTotal <= playMon){ // Subtracting
             playMon -= orderTotal;
             playHung += energyTotal;
@@ -13228,11 +13411,13 @@ else{
       {
         id: 'gyro-payscreen', // Unique identifier for this room. Entering a room will set the disk's roomId to this.
         name: `Greek Gyro`, // Displayed each time the player enters the room.
-        desc: `You hand him the money. After paying the bill, you check to see how much money money you have left. You come up with ${formatter.format(playMon)}\n
-        \n
-        Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`,
+        desc: ``,
         onEnter: () => 
         {
+          reenableInput();
+          println(`You hand him the money. After paying the bill, you check to see how much money you have left. You come up with ${formatter.format(playMon)}\n
+          \n
+          Your order arrives. You quickly consume your order, then you get up and leave the restaurant.`);
           const room = getRoom('lunch-intro');
           orderTotal = 0; // Clearing this variable
           energyTotal = 0; // Clearing the variable 
@@ -13393,7 +13578,7 @@ else{
     {
         id: 'phone-2-4', // Egg
         name: 'Room Service',
-        desc: `"Allright, egg."\n
+        desc: `"Alright, egg."\n
         "Thank you for your order. Your food will be up shortly."\n
         The person on the other end hangs up.\n
         There is a knock on the door, and without further ado a bellboy enters with your order. The bellboy places the tray of food on top of the dresser and then pauses long enough to say, "Don't bother with a tip, Bud. It's included in the cost of the food."\n
@@ -13421,7 +13606,7 @@ else{
     {
         id: 'phone-2-6', // Coffee
         name: 'Room Service',
-        desc: `"Allright, coffee."\n
+        desc: `"Alright, coffee."\n
         "Thank you for your order. Your food will be up shortly."\n
         The person on the other end hangs up.\n
         There is a knock on the door, and without further ado a bellboy enters with your order. The bellboy places the tray of food on top of the dresser and then pauses long enough to say, "Don't bother with a tip, Bud. It's included in the cost of the food."\n
@@ -13567,7 +13752,7 @@ else{
     {
         id: 'phone-9',
         name: 'Roe & Harpmeister',
-        desc: `The phone rings repeatedly. But no one's home. Finally you hang up. Your moment clinks into the coint slot, and you scoop it out.`,
+        desc: `The phone rings repeatedly. But no one's home. Finally you hang up. Your money clinks into the coin slot, and you scoop it out.`,
         onEnter: () => {
             playerC.money += 0.25;
             const room = getRoom(disk.roomId);
@@ -13615,9 +13800,9 @@ else{
     {
         id: 'phone-12-2',
         name: `JA`,
-        desc: `At the beep you leave a simple sincere message: "Hi, Jane. You'll never guess who this is. But I'll try and be there at five. Hope to see you,. Bye for now." You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `At the beep you leave a simple sincere message: "Hi, Jane. You'll never guess who this is. But I'll try and be there at five. Hope to see you. Bye for now." You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-12');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13652,7 +13837,7 @@ else{
         desc: `"The F.B.I., located at 69th and 1st, is open for business, and our roster of entertainers will include the sensational new comedian, Jerry Ackermann." The message is followed by a few bars of the march that had been the theme-song of the Forties radio program, THE F.B.I. IN PEACE AND WAR. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
             reenableInput();
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-14');
             pressEnter(room.enteredFrom);
         },
@@ -13660,7 +13845,7 @@ else{
     {
         id: 'phone-15',
         name: `E.H`,
-        desc: `After the second ring, a woman's voice answers the phone. "Hi!" she says brightly, "I'm not here right now. This is my answering machine. Just leave a message for me at the blip, along with your number and I'll get in touch as soon as I can -- unless it's you, Zane.\n
+        desc: `After the second ring, a woman's voice answers the phone. "Hi!" she says brightly, "I'm not here right now. This is my answering machine. Just leave a message for me at the blip, along with your number and I'll get in touch as soon as I can—unless it's you, Zane.\n
         We have nothing more to discuss, so don't waste your damn quarters. Just go to hell."\n
         A moment later there is a blip. Got a message for the answering machine?`,
         onEnter: () => {
@@ -13681,7 +13866,7 @@ else{
         name: `E.H`,
         desc: `You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box."`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-15');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13709,7 +13894,7 @@ else{
         name: `Lila T.`,
         desc: `"Sorry, your name doesn't ring a bell. You must have dialed a wrong number." Before you can contradict her, she has hung up and all you hear is dial tone. You putback the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-16');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13730,9 +13915,9 @@ else{
     {
         id: 'phone-18',
         name: `Chelsea H.`,
-        desc: `"Hello, this is the Chelsea Hotel. How can I help you?" You ask to speak to a guest -- giving the first name that comes into your head -- and are told there is no one by that name presently residing at the hotel. That was not a lot of information for a quarter. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `"Hello, this is the Chelsea Hotel. How can I help you?" You ask to speak to a guest—giving the first name that comes into your head—and are told there is no one by that name presently residing at the hotel. That was not a lot of information for a quarter. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13757,7 +13942,7 @@ else{
         Have a real hot time, and don't do anything Wanda wouldn't do!" There is a beep.\n
         After giving your message, you hear a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-19');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13801,9 +13986,9 @@ else{
     {
         id: 'phone-22-2',
         name: `Interlude`,
-        desc: `"Tickets cost $2, and you must arrive between 7 and 8 PM." You put back the receiver and as you do, your money clinks and rattles as it drops `,
+        desc: `"Tickets cost $2, and you must arrive between 7 and 8 PM." You put back the receiver and as you do, your money clinks and rattles as it drops`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-22');
             ////console.log(room.enteredFrom);
             pressEnter(room.enteredFrom);
@@ -13812,7 +13997,7 @@ else{
     {
         id: 'phone-23',
         name: `TTTT`,
-        desc: `Hi, this is Tiny Tykes Talent Town, New York's newest and most successful Children's Modelling Agency. WE can't answer the phone right now, but please leave a message after the beep.`,
+        desc: `Hi, this is Tiny Tykes Talent Town, New York's newest and most successful Children's Modelling Agency. We can't answer the phone right now, but please leave a message after the beep.`,
         onEnter: () => {
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
@@ -13823,7 +14008,7 @@ else{
     {
         id: 'phone-23-2',
         name: `TTTT`,
-        desc: `"We're located at **25 W. 19th** and provide free-of-charge evaluations of your Tiny Tyke's modelling potential."\n
+        desc: `"We're located at __25 W. 19th__ and provide free-of-charge evaluations of your Tiny Tyke's modelling potential."\n
         Unfortunately, You haven't any tiny tyke available for evaluation. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box."`,
         onEnter: () => {
           storyMarker.setLatLng([-28.192, -13.177]).bindPopup('The Brownstone?').addTo(poiLayer);
@@ -13849,9 +14034,9 @@ else{
     {
         id: 'phone-25',
         name: `R + J`,
-        desc: `"Hello," says a man's tape recorded voice. "This is Ray. I'm not here right now. Billym if this is you, try and remember to record the Met's game tonight." The line goes dead without giving you an opportunity to leave a message. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `"Hello," says a man's tape recorded voice. "This is Ray. I'm not here right now. Billy, if this is you, try and remember to record the Met's game tonight." The line goes dead without giving you an opportunity to leave a message. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13903,9 +14088,9 @@ else{
     {
         id: 'phone-26-5',
         name: `J.L`,
-        desc: `You realize you are talking to a dial tone. You put back the receiver and as you do, your moneyclinks and rattles as it drops into the coin box.`,
+        desc: `You realize you are talking to a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom('phone-26');
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13927,9 +14112,9 @@ else{
     {
         id: 'phone-28',
         name: `F`,
-        desc: `"For tomorrow nothing but sunshine, pleasant temperatures, lower humidity all day long, highs around 78. On the sound ond south shore coastal waters wind is from the northwest, increasing from 10 to 15 this afternoon, wave heights at one to 2 feet on the ocean and one foot or less across the sound, the ocean water temperature standing at 71 degrees. Thank you for calling!" You get a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
+        desc: `"For tomorrow nothing but sunshine, pleasant temperatures, lower humidity all day long, highs around 78. On the sound and south shore coastal waters wind is from the northwest, increasing from 10 to 15 this afternoon, wave heights at one to 2 feet on the ocean and one foot or less across the sound, the ocean water temperature standing at 71 degrees. Thank you for calling!" You get a dial tone. You put back the receiver and as you do, your money clinks and rattles as it drops into the coin box.`,
         onEnter: () => {
-            playerC.money += 0.25;
+            playerC.money -= 0.25;
             const room = getRoom(disk.roomId);
             room.enteredFrom = lastRoom.id;
             ////console.log(room.enteredFrom);
@@ -13953,9 +14138,9 @@ else{
             /*********************/
            /*********************/
           /*********************/
-         /*-------------------*/
+         /*—————————-*/
         /* MANHATTAN STREETS */
-       /*-------------------*/
+       /*—————————-*/
       /*********************/
      /*********************/
     /*********************/
@@ -14977,7 +15162,7 @@ else{
       id: 'broo-cent',
       coord: [-61.309, 7.727],
       name: 'Broome St. and Centre St.',
-      desc: `Painted across a miniature Greek-colonnaded building wedged between the store fronts is "Roe-Harpmeister Funeral Service." A sign on the the door says "Closed for annual summer retreat with Koch's Florists."`,
+      desc: `Painted across a miniature Greek-colonnaded building wedged between the store fronts is "Roe-Harpmeister Funeral Service." A sign on the door says "Closed for annual summer retreat with Koch's Florists."`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'kenm-cent'},
@@ -14990,7 +15175,7 @@ else{
       id: 'gran-cent',
       coord: [-62.825, 7.625],
       name: 'Grand St. and Centre St.',
-      desc: `According to what's carved under the pediment of the main entrance on Centre Street this is -- or was -- the police Department. Apparently the police vacated the premises and half their palazzo is in ruins and the other half, including the wedding-cake of a dome, is covered with scaffolding.`,
+      desc: `According to what's carved under the pediment of the main entrance on Centre Street this is—or was—the police Department. Apparently the police vacated the premises and half their palazzo is in ruins and the other half, including the wedding-cake of a dome, is covered with scaffolding.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'broo-cent'},
@@ -15938,7 +16123,7 @@ else{
     {
       id: 'broa-stja',
       coord: [-68.966, 16.633],
-      name: 'E. Broadway and and Saint James Pl.',
+      name: 'E. Broadway and Saint James Pl.',
       desc: '',
       isStreet: true,
       exits: [
@@ -16430,7 +16615,7 @@ else{
         {dir: 'south', id: '13-broa'},
         {dir: 'east', id: '14-4'},
         {dir: 'west', id: '14-usqw'},
-        {dir: ['nedicks', 'restaurant'], id: 'nedick-intro'}
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ]
     },
     {
@@ -16574,7 +16759,7 @@ else{
         {dir: 'south', id: 'bond-broa'},
         {dir: 'east', id: 'grea-lafa'},
         {dir: 'west', id: '3-merc'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -16607,7 +16792,7 @@ else{
       id: 'blee-cros',
       coord: [-52.993, 5.266],
       name: 'Bleecker St. and Crosby St.',
-      desc: `Attractive though the Bayard building is, with its long clean lines, it isn't heaven -- the angels at the top must have lost their way somehow.`,
+      desc: `Attractive though the Bayard building is, with its long clean lines, it isn't heaven—the angels at the top must have lost their way somehow.`,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -17211,7 +17396,7 @@ else{
       id: '10-2',
       coord: [-41.471, 15.651],
       name: 'E. 10th St. and 2nd Ave.',
-      desc: `Behind a fence of sharp black iron spikes, standing in a churchyard paved with little hillocks of patterned brick, is the Church of St. Mark's on the Bowery. A poster urges you to "Join the Poet's Protest Against --" But the rest has been torn off.`,
+      desc: `Behind a fence of sharp black iron spikes, standing in a churchyard paved with little hillocks of patterned brick, is the Church of St. Mark's on the Bowery. A poster urges you to "Join the Poet's Protest Against —" But the rest has been torn off.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'stuy-2'},
@@ -17441,7 +17626,7 @@ else{
         {dir: 'south', id: '6-1'},
         {dir: 'east', id: '7-avea'},
         {dir: 'west', id: '7-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ]
     },
     {
@@ -18093,7 +18278,7 @@ else{
         {dir: 'south', id: '6-avec'},
         {dir: 'east', id: '7-aved'},
         {dir: 'west', id: '7-aveb'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ]
     },
     {
@@ -18134,7 +18319,7 @@ else{
         {dir: 'south', id: '3-avec'},
         {dir: 'east', id: '4-aved'},
         {dir: 'west', id: '4-aveb'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ]
     },
     {
@@ -18662,14 +18847,14 @@ else{
         {dir: 'south', id: 'morr-broa'},
         {dir: 'east', id: 'exch-new'},
         {dir: 'west', id: 'exch-trin'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
       id: 'rect-broa',
       coord: [-77.073, -1.853],
       name: 'Rector St. and Broadway',
-      desc: `The American Stock Exchange-- an institution built of money.`,
+      desc: `The American Stock Exchange— an institution built of money.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'wall-broa'},
@@ -18918,7 +19103,7 @@ else{
         {dir: 'south', id: 'thom-broa'},
         {dir: 'east', id: 'wort-lafa'},
         {dir: 'west', id: 'wort-chur'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -19096,7 +19281,7 @@ else{
       id: 'maid-nass',
       coord: [-75.358, 2.224],
       name: 'Maiden La. and Nassau St.',
-      desc: `You are on Nassau, a street that here has been converted to a pedestrian mall where a variety of shops provies honey for the hives of Wall Street.`,
+      desc: `You are on Nassau, a street that here has been converted to a pedestrian mall where a variety of shops provide honey for the hives of Wall Street.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'john-nass'},
@@ -19303,7 +19488,7 @@ else{
         {dir: 'south', id: 'broa-sout'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'olds-fron'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -19330,7 +19515,7 @@ else{
         {dir: 'south', id: 'gouv-sout'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'wall-fron'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -19776,7 +19961,7 @@ else{
         {dir: 'south', id: 'beek-gold'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'spru-nass'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -19861,7 +20046,7 @@ else{
       id: 'new-wall',
       coord: [-76.866, -0.220],
       name: 'New St. and Wall St.',
-      desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constatnly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
+      desc: `A Roman temple? No, the New York Stock Exchange, where all the wealth of the country turns into a sea of numbers, constabtly shifting and changing but always supporting the fleets of bankers and brokers who are its mariners.`,
       isStreet: true,
       exits: [
         {dir: 'north', block: `You can't go that way.`},
@@ -19992,7 +20177,7 @@ else{
       id: 'wall-wate',
       coord: [-77.341, 9.888],
       name: 'Wall St. and Water St.',
-      desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; here it's just another skyscraper.`,
+      desc: `100 Wall Street is like a good-looking woman at a party of raving beauties. Anywhere else you'd be impressed with it; Here it's just another skyscraper.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'pine-wate'},
@@ -20018,7 +20203,7 @@ else{
       id: 'pine-wate',
       coord: [-76.871, 10.657],
       name: 'Pine St. and Water St.',
-      desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted-- and when it is all New York will know its weight and fortune.`,
+      desc: `Giant letters on the side of one of a pair of white skyscrapers informs you that this is Wall Street Plaza. Wedged between the skyscrapers is a hunk of minimalist art: a big round aluminum coinslot with a big mirror-surfaced slug forever waiting to be inserted— and when it is all New York will know its weight and fortune.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'libe-wate'},
@@ -20274,7 +20459,7 @@ else{
         {dir: 'south', id: 'wall-pear'},
         {dir: 'east', id: 'pine-wate'},
         {dir: 'west', id: 'pine-swil'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -20346,7 +20531,7 @@ else{
       id: 'fult-pear',
       coord: [-75.005, 11.887],
       name: 'Fulton St. and Pearl St.',
-      desc: `The stone towers of the Brooklyn Bridge come into view some blocks to the north. The sudden sight of them is like a blast of Beethoven-- familiar but still inspiring.`,
+      desc: `The stone towers of the Brooklyn Bridge come into view some blocks to the north. The sudden sight of them is like a blast of Beethoven— familiar but still inspiring.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'beek-pear'},
@@ -20498,7 +20683,7 @@ else{
         {dir: 'south', id: 'gouv-fron'},
         {dir: 'east', id: 'wall-sout'},
         {dir: 'west', id: 'wall-wate'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -20928,7 +21113,7 @@ else{
         {dir: 'south', id: 'pear-baxt'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: 'pear-kent'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -21141,7 +21326,7 @@ else{
         {dir: 'south', id: 'rect-trin'},
         {dir: 'east', id: 'tham-broa'},
         {dir: 'west', id: 'tham-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -21215,7 +21400,7 @@ else{
       id: 'vese-chur',
       coord: [-73.757, -3.889],
       name: 'Vesey St. and Church Ave.',
-      desc: `There it is, or rather there they are-- the two towers of the World Trade Center. Aside from their size, there's nothing that special about it. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the all-time champion.`,
+      desc: `There it is, or rather there they are— the two towers of the World Trade Center. Aside from their size, there's nothing that special about it. They may have replaced the Empire State Building as the tallest in the city, but for glamor the Empire State Building is still the all-time champion.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: 'barc-chur'},
@@ -21242,7 +21427,7 @@ else{
       id: 'park-chur',
       coord: [-72.666, -3.735],
       name: 'Park Pl. and Church Ave.',
-      desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was teh tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
+      desc: `Outside the cathedral-like entrance of this gothic-styled skyscraper, a tour-guide is explaining to a cluster of tourists that between 1913 and 1930 this building, the Wollworth Building, was the tallest in the world. "Even today," he points out, "only three U.S. cities have buildings taller." 
         
         "And how tall is it?" on of the tourists asks him.
         
@@ -21751,7 +21936,7 @@ else{
         {dir: 'south', id: 'exch-west'},
         {dir: 'east', id: 'rect-wash'},
         {dir: 'west', block: `You can't go that way.`},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -22090,7 +22275,7 @@ else{
         {dir: 'south', id: 'warr-gree'},
         {dir: 'east', id: 'cham-huds'},
         {dir: 'west', id: 'cham-west'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -22481,7 +22666,7 @@ else{
         {dir: 'south', id: 'barc-wbro'},
         {dir: 'east', id: 'park-chur'},
         {dir: 'west', id: 'park-gree'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -22859,7 +23044,7 @@ else{
         {dir: 'south', id: 'nmoo-huds'},
         {dir: 'east', id: 'eric-vari'},
         {dir: 'west', id: 'beac-coll'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -22964,7 +23149,7 @@ else{
         {dir: 'south', id: 'spri-huds'},
         {dir: 'east', id: 'vand-vari'},
         {dir: 'west', id: 'vand-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -23344,7 +23529,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'cana-watt-1'},
         {dir: 'west', id: 'cana-huds'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -23358,7 +23543,7 @@ else{
         {dir: 'south', block: `You can't go that way.`},
         {dir: 'east', id: 'cana-vari'},
         {dir: 'west', id: 'cana-holl'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -24418,7 +24603,7 @@ else{
         {dir: 'south', id: 'broa-clin'},
         {dir: 'east', id: 'gran-ridg'},
         {dir: 'west', id: 'gran-suff'}, 
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -25191,7 +25376,7 @@ else{
         {dir: 'south', id: 'whou-merc'},
         {dir: 'east', id: 'blee-broa'}, 
         {dir: 'west', id: 'blee-lagu'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -25322,14 +25507,14 @@ else{
         {dir: 'south', id: 'blee-lagu'},
         {dir: 'east', id: '3-gree'}, 
         {dir: 'west', id: '3-thom'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   //todo: map fix
       id: 'wash-lagu',
       coord: [-48.795, -4.258],
       name: 'Washington Square S and LaGuardia Pl.',
-      desc: `You may enter **Washington Square Park** from here.`,
+      desc: `You may enter __Washington Square Park__ from here.`,
       isStreet: true,
       onEnter: () => {
         degradation = true;
@@ -25634,7 +25819,7 @@ else{
         {dir: 'south', id: '8-5'},
         {dir: 'east', id: '9-univ'}, 
         {dir: 'west', id: '9-amer'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -25792,7 +25977,7 @@ else{
       id: 'wave-univ',
       coord: [-46.354, -1.556],
       name: 'Waverly Pl. and University Pl.',
-      desc: `You may enter **Washington Square Park** from here.`,
+      desc: `You may enter ***Washington Square Park*** from here.`,
       isStreet: true,
       onEnter: () => {
         degradation = true;
@@ -26665,7 +26850,7 @@ else{
         {dir: 'west', id: 'perr-7'} 
       ],
     },
-    {   //todo: map fix, husdson st needs to be moved over one street.
+    {   //todo: map fix, hudson st needs to be moved over one street.
       id: 'clar-huds',
       coord: [-55.410, -20.992],
       name: 'Clarkson St. and Hudson St.',
@@ -26689,7 +26874,7 @@ else{
         {dir: 'south', id: 'clar-huds'},
         {dir: 'east', id: 'carm-7'}, 
         {dir: 'west', id: 'lero-gree'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -26717,7 +26902,7 @@ else{
         {dir: 'south', id: 'mort-huds'},
         {dir: 'east', id: 'barr-comm'}, 
         {dir: 'west', id: 'barr-gree'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   //todo: map fix
@@ -26758,7 +26943,7 @@ else{
       
       Then you've ready for a night at New York's cheapest and most offensive Off-Off-Off Broadway theater.
       
-      Nothing in your past experience can have prepared you for the aggressive bad taste of the NTS-- (formerly, the Wooster St. Hole in the Wall Dramatic Academy).
+      Nothing in your past experience can have prepared you for the aggressive bad taste of the NTS— (formerly, the Wooster St. Hole in the Wall Dramatic Academy).
       
       WARNING: The management of this theater is NOT responsible! 
       Admissions: Only $2.00!`,
@@ -26808,7 +26993,7 @@ else{
       name: 'The Theatre of Silliness',
       desc: `"What did I tell you, Louie. Didn't I say we should stake out this joint? Didn't I say he'd return to the scene of the crime? Am I right or am I right?" 
 
-      "You're right, you're right, but why not just settle his hash right here? We know he's guilty -- why waste the taxpayer's money on a trial? When you think of what the sombitch did...." `,
+      "You're right, you're right, but why not just settle his hash right here? We know he's guilty—why waste the taxpayer's money on a trial? When you think of what the sombitch did...." `,
       onEnter: () => {
         pressEnter('chri-huds-3')
       },
@@ -26829,7 +27014,7 @@ else{
       id: 'chri-huds-4',
       coord: [-50.107, -24.806],
       name: 'The Theatre of Silliness',
-      desc: `You are led through the door that had been locked, but which is now open, and stumble forward into the darkness. You bump into someone -- a woman, by the nature of the collision. You knock your shin against a wooden board, and then are made to mount a short flight of steps.`,
+      desc: `You are led through the door that had been locked, but which is now open, and stumble forward into the darkness. You bump into someone—a woman, by the nature of the collision. You knock your shin against a wooden board, and then are made to mount a short flight of steps.`,
       onEnter: () => {
         pressEnter('chri-huds-5')
       },
@@ -26887,7 +27072,7 @@ else{
         {dir: 'south', id: '10-huds'},
         {dir: 'east', id: 'char-blee'}, 
         {dir: 'west', id: 'char-gree-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -27123,7 +27308,7 @@ else{
         {dir: 'south', id: 'chri-blee'},
         {dir: 'east', id: '10-4'}, 
         {dir: 'west', id: '10-huds'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -27202,7 +27387,7 @@ else{
         {dir: 'south', id: 'blee-8'},
         {dir: 'east', id: '12-4-1'}, 
         {dir: 'west', id: '12-huds'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27359,7 +27544,7 @@ else{
         {dir: 'south', id: 'perr-wave'},
         {dir: 'east', id: '11-gree'}, 
         {dir: 'west', id: '4-11'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {   
@@ -27543,7 +27728,7 @@ else{
         {dir: 'south', id: 'whou-gree-1'},
         {dir: 'east', id: 'clar-huds'}, 
         {dir: 'west', id: 'clar-wash'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -27583,7 +27768,7 @@ else{
         {dir: 'south', id: 'mort-gree'},
         {dir: 'east', id: 'barr-huds'}, 
         {dir: 'west', id: 'barr-wash'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27870,7 +28055,7 @@ else{
         {dir: 'south', id: '11-wash'},
         {dir: 'east', id: 'bank-gree-1'}, 
         {dir: 'west', id: 'bank-west'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {   
@@ -27924,7 +28109,7 @@ else{
         {dir: 'south', id: 'jane-wash'},
         {dir: 'east', id: 'hora-gree-1'}, 
         {dir: 'west', id: 'hora-west'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {   
@@ -28817,7 +29002,7 @@ else{
         {dir: 'south', id: '22-10'},
         {dir: 'east', id: '23-9'},
         {dir: 'west', id: '23-11'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29066,7 +29251,7 @@ else{
         {dir: 'south', id: '22-9'},
         {dir: 'east', id: '23-8'},
         {dir: 'west', id: '23-10'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
 
@@ -29240,7 +29425,7 @@ else{
         {dir: 'south', id: '28-8'},
         {dir: 'east', id: '29-7'},
         {dir: 'west', id: '29-9'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -29260,7 +29445,7 @@ else{
       id: '27-8',
       coord: [-14.486, -26.497],
       name: 'W. 27th St. and 8th Ave.',
-      desc: `You are at the edge of a vast tract of buildings all built to the same characterless specs, a monument ot the bureaucratic mind.`,
+      desc: `You are at the edge of a vast tract of buildings all built to the same characterless specs, a monument of the bureaucratic mind.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '28-8'},
@@ -29373,7 +29558,7 @@ else{
         {dir: 'south', id: '18-8'},
         {dir: 'east', id: '19-7'},
         {dir: 'west', id: '19-9'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29508,7 +29693,7 @@ else{
         {dir: 'south', id: '28-7'},
         {dir: 'east', id: '29-amer'},
         {dir: 'west', id: '29-8'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -29576,7 +29761,7 @@ else{
         {dir: 'south', id: '23-7'},
         {dir: 'east', id: '24-amer'},
         {dir: 'west', id: '24-8'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29644,7 +29829,7 @@ else{
         {dir: 'south', id: '18-7'},
         {dir: 'east', id: '19-amer'},
         {dir: 'west', id: '19-8'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -29860,6 +30045,7 @@ else{
         {dir: 'south', id: '23-amer'},
         {dir: 'east', id: '24-broa'},
         {dir: 'west', id: '24-7'},
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -30221,7 +30407,7 @@ else{
         {dir: 'south', id: '19-broa'},
         {dir: 'east', id: '20-park'},
         {dir: 'west', id: '20-5'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -30393,7 +30579,7 @@ else{
         {dir: 'south', id: '5-broa'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '24-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
 
       ],
     },
@@ -30795,7 +30981,8 @@ else{
         {dir: 'north', id: '15-usqe'},
         {dir: 'south', id: '14-usqe'},
         {dir: 'east', id: '14-4'},
-        {dir: 'west', block: `You can't go that way.`}
+        {dir: 'west', block: `You can't go that way.`},
+        {dir: ['nedicks', 'restaurant', 'inside'], id: 'nedick-intro'}
       ],
     },
 
@@ -30852,7 +31039,7 @@ else{
         {dir: 'south', id: '30-park'},
         {dir: 'east', id: '31-lexi'},
         {dir: 'west', id: '31-madi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -30932,7 +31119,7 @@ else{
         {dir: 'south', id: '24-park'},
         {dir: 'east', id: '25-lexi'},
         {dir: 'west', id: '25-madi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -31271,6 +31458,7 @@ else{
       desc: ``,
       isStreet: true,
       onEnter: () => {
+        reenableInput();
         degradation = true;
       },
       exits: [
@@ -31278,7 +31466,7 @@ else{
         {dir: 'south', id: '19-irvi'},
         {dir: 'east', id: '20-gpke'},
         {dir: 'west', id: '20-gpkw'},
-        {dir: 'noblesse', id: 'nobe-27'}
+        {dir: ['noblesse', 'inside'], id: 'nobe-27'}
       ],
     },
     {
@@ -31634,7 +31822,7 @@ else{
         {dir: 'south', id: '30-2'},
         {dir: 'east', block: `You can't go that way.`},
         {dir: 'west', id: '31-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -32519,7 +32707,7 @@ else{
         {dir: 'south', id: '56-8'},
         {dir: 'east', id: '57-broa'},
         {dir: 'west', id: '57-9'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -32710,7 +32898,7 @@ else{
         {dir: 'south', id: '54-8'},
         {dir: 'east', id: '55-broa'},
         {dir: 'west', id: '55-9'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {
@@ -32846,7 +33034,7 @@ else{
         {dir: 'south', id: '53-amer'},
         {dir: 'east', id: '54-5'},
         {dir: 'west', id: '54-7'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 53rd St.
@@ -33094,7 +33282,7 @@ else{
         {dir: 'south', id: '50-10'},
         {dir: 'east', id: '51-9'},
         {dir: 'west', id: '51-11'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -33121,7 +33309,7 @@ else{
         {dir: 'south', id: '50-8'},
         {dir: 'east', id: '51-broa'},
         {dir: 'west', id: '51-9'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -33244,7 +33432,7 @@ else{
       coord: [27.827, -20.911],
       isStreet: true,
       name: 'W. 50th St. and 7th Ave.',
-      desc: 'Radio City Music Hall -- its bronze doors hiding the largest chandeliers and the best legs in the world.',
+      desc: 'Radio City Music Hall—its bronze doors hiding the largest chandeliers and the best legs in the world.',
       exits: [
         {dir: 'north', id: '51-7'},
         {dir: 'south', id: '49-7'},
@@ -33470,7 +33658,7 @@ else{
         {dir: 'south', id: '47-amer'},
         {dir: 'east', id: '48-5'},
         {dir: 'west', id: '48-7'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
 //Start 47th Street
@@ -33498,7 +33686,7 @@ else{
         {dir: 'south', id: '46-11'},
         {dir: 'east', id: '47-10'},
         {dir: 'west', id: '47-12'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -33513,7 +33701,7 @@ else{
         {dir: 'south', id: '46-10'},
         {dir: 'east', id: '47-9'},
         {dir: 'west', id: '47-11'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -33579,7 +33767,7 @@ else{
         {dir: 'south', id: '46-amer'},
         {dir: 'east', id: '47-5'},
         {dir: 'west', id: '47-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 46th Street.
@@ -33781,7 +33969,7 @@ else{
       coord: [18.846, -20.827],
       isStreet: true,
       name: 'Broadway and 7th Ave.',
-      desc: `Times Square -- where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
+      desc: `Times Square—where the city's melting pot reaches a full boil. Every extreme of wealth and squalor rub shoulders here, and every conceivable hustle is in operation.`,
       onBlock: () => {
         let room = getRoom(disk.roomId);
         println(`A sidewalk vendor wants to sell you a genuine gold chain stolen only five minutes ago from a woman standing in line to buy tickets to that long running hit musical, 42ND STREET. 'Check it out,' he chants, shaking the chain in your face, wanna buy this beauty cheap, only $5?"`)
@@ -33796,7 +33984,7 @@ else{
               icon: '',
               gif: '',
               name: ['Gold Elephant Necklace', 'gold necklace', 'necklace', 'elephant necklace'],
-              desc: 'A beautiful gold elephant necklace. What are the chances for such a wacky find? Who knows maybe you might have a treasure on your hands?',
+              desc: 'A beautiful gold elephant necklace. What are the chances for such a wacky find? Who knows, maybe you might have a treasure on your hands?',
               isTakeable: true,
               isDroppable: true
             }
@@ -33883,7 +34071,7 @@ else{
         {dir: 'south', id: '43-9'},
         {dir: 'east', id: '44-8'},
         {dir: 'west', id: '44-10'},
-        {dir: ['greek', 'gyro'], id: 'gyro-intro'}
+        {dir: ['gyro', 'greek gyro', 'inside'], id: 'gyro-intro'}
       ],
     },
     {
@@ -34000,7 +34188,7 @@ else{
         {dir: 'south', id: '42-9'},
         {dir: 'east', id: '43-8'},
         {dir: 'west', id: '43-10'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -34122,7 +34310,7 @@ else{
       coord: [13.036, -33.781],
       isStreet: true,
       name: 'W. 42nd St. and 9th Ave.',
-      desc: 'This block long stretch of 42nd St. is another one lined with movie marquee after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamourizing.',
+      desc: 'This block long stretch of 42nd St. is lined with movie marquees after another advertising either the pornography of sex or the pornography of violence. Under these marquees are the pushers, pimps, muggers, junkies, hustlers and whores who represent the scuzzy reality the movies are glamorizing.',
       exits: [
         {dir: 'north', id: '43-9'},
         {dir: 'south', id: '41-9'},
@@ -34306,7 +34494,7 @@ else{
         {dir: 'south', id: '40-amer'},
         {dir: 'east', block:`You can't go that way.`},
         {dir: 'west', id: '41-broa'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
 //Start 40th Street
@@ -34430,7 +34618,7 @@ else{
         {dir: 'south', id: '39-dyer'},
         {dir: 'east', id: '40-9'},
         {dir: 'west', id: 'bta-40'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -34614,7 +34802,7 @@ else{
         {dir: 'south', id: '38-broa'},
         {dir: 'east', id: '39-amer'},
         {dir: 'west', id: '39-7'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -35009,7 +35197,7 @@ else{
         {dir: 'south', id: '34-broa'},
         {dir: 'east', id: '35-amer'},
         {dir: 'west', id: '35-7'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ],
     },
     {
@@ -35176,7 +35364,7 @@ else{
       name: 'Sunderland Hotel Lobby',
       desc: `At the corner you watch a blind man with a tin cup slowly progress down Fifth Avenue, rattling coins at the milling pedestrians. Most of them are too caught up in their own business even to notice the blind man. A few do see him and veer widely around him, as though fearing the rattle of his cup
             
-            A black man pauses, considers, digs into his pocket, and drops a quarter in the cup. He notices you watching this act of charity, and as he walks by you a moment later, he says, "There but for the grace of God, eh?"
+            A Black man pauses, considers, digs into his pocket, and drops a quarter in the cup. He notices you watching this act of charity, and as he walks by you a moment later, he says, "There but for the grace of God, eh?"
             
             You nod your head thoughtfully.`,
       onEnter: () => {
@@ -35205,7 +35393,7 @@ else{
       id: '53-5',
       coord: [32.787, -6.877],
       name: 'W. 53rd St. and 5th Ave.',
-      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art -- New York's big MOMA.`,
+      desc: `On 53rd Street stands the Sunderland hotel. Across the street, a glass tower rises above the Museum of Modern Art—New York's big MOMA.`,
       isStreet: true,
       curMoveCount: 0,
       onEnter: () => {
@@ -35304,7 +35492,7 @@ else{
       id: '58-5',
       coord: [40.581, -7.031],
       name: 'W. 58th St. and 5th Ave.',
-      desc: `There are certain buildings--the Pyramids, St. Peter's in Rome, the White House--that even an amnesiac would probably recognize. And here's another--the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
+      desc: `There are certain buildings—the Pyramids, St. Peter's in Rome, the White House—that even an amnesiac would probably recognize. And here's another—the Plaza Hotel. One limousine after another pulls up to the brazen art nouveau canopy, like filings of money drawn irresistibly to a great Money Magnet.`,
       isStreet: true,
       onEnter: () => {
         reenableInput();
@@ -35321,7 +35509,7 @@ else{
       id: 'plaz-hote',
       coord: [],
       name: 'Lobby of the Plaza Hotel',
-      desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms--the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don't. You ignore the voice deep inside and leave with a sigh of regret.`,
+      desc: `You enter the Plaza, and the lobby is more splendid than the facade. Marble, gilt, carpets, chandeliers, potted palms—the works. A voice deep inside you says you belong here, but the look on the face of the liveried security guard says that you don't. You ignore the voice deep inside and leave with a sigh of regret.`,
       isStreet: true,
       exits: [],
       onEnter: () => {
@@ -35420,7 +35608,7 @@ else{
         {dir: 'south', id: '53-madi'},
         {dir: 'east', id: '54-park'},
         {dir: 'west', id: '54-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts'], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35496,7 +35684,7 @@ else{
         {dir: 'south', id: '48-madi'},
         {dir: 'east', id: '49-park'},
         {dir: 'west', id: '49-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35601,7 +35789,7 @@ else{
         {dir: 'south', id: '40-madi'},
         {dir: 'east', id: '41-park'},
         {dir: 'west', id: '41-5'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35673,14 +35861,14 @@ else{
       id: '35-madi',
       coord: [0.110, -2.000],
       name: 'E. 35th St. and Madison Ave.',
-      desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn't have asked for a nobler palazzo. Until you're right up beside it you would even guess that all these columns and cornices were the wrappings of a department store--because Altman's doesn't believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
+      desc: `Somewhere in Manhattan there seems to be a piece of architecture corresponding to every period in history. This one here is definitely the High Renaissance. Lorenzo de Medici couldn't have asked for a nobler palazzo. Until you're right up beside it you would even guess that all these columns and cornices were the wrappings of a department store—because Altman's doesn't believe in vulgar ostentation like signs. Neither did Lorenzo the Magnificent, probably.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '36-madi'},
         {dir: 'south', id: '34-madi'},
         {dir: 'east', id: '35-park'},
         {dir: 'west', id: '35-5'},
-        {dir: [`Altman's`,], id: '????', block: `You have no reason to go there.`},
+        {dir: [`Altman's`], block: `You have no reason to go there.`},
       ]
     },
     {
@@ -35806,7 +35994,7 @@ else{
       id: '43-5',
       coord: [15.390, -6.546],
       name: 'W. 43rd St. and 5th Ave.',
-      desc: `Here is the **Princeton Club** - distinctly a members only institution.`,
+      desc: `Here is the __Princeton Club__ - distinctly a members only institution.`,
       isStreet: true,
       onEnter: () => {
         degradation = true;
@@ -35925,7 +36113,7 @@ else{
       name: 'Office Building Lobby',
       desc: `You walk through the revolving doors, and enter a lobby decorated in marble. A security check-point near the elevators makes you think twice about remaining. 
             
-            you turn away quickly and leave`,
+            You turn away quickly and leave.`,
       onEnter: () => {
         pressEnter('49-5')
       }, 
@@ -35942,7 +36130,7 @@ else{
         {dir: 'south', id: '49-5'},
         {dir: 'east', id: '50-madi'},
         {dir: 'west', id: '50-amer'},
-        {dir: ['chock', 'full', 'nuts', 'full-o-nuts',], id: 'nuts-intro'}
+        {dir: ['chock', 'full', 'nuts', 'full-o-nuts', 'inside'], id: 'nuts-intro'}
       ]
     },
     {
@@ -35950,7 +36138,7 @@ else{
       coord: [29.535, -6.832],
       isStreet: true,
       name: 'W. 51st St. and 5th Ave.',
-      desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper--or sightseer--slips in or out.`,
+      desc: `Like a ghost from across the ocean a genuine gothic cathedral rears up out of the welter of midtown hustle and bustle, looking dark and spiky and disapproving of everything going on around it. The center door stands open, where an occasional worshipper—or sightseer—slips in or out.`,
       onEnter: () => {
         degradation = true;
       },
@@ -36405,7 +36593,7 @@ else{
         {dir: 'south', id: '36-lexi'},
         {dir: 'east', id: '37-3'},
         {dir: 'west', id: '37-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36481,7 +36669,7 @@ else{
       hasSubway: true,
       exits: [
         {dir: 'north', id: '44-depe'},
-        {dir: 'south', id: '', oord: [], block: `You can't go that way.`},
+        {dir: 'south', id: '', coord: [], block: `You can't go that way.`},
         {dir: 'east', id: '42-lexi'},
         {dir: 'west', id: '42-park'},
         {dir: 'subway', id: 'subway'}
@@ -36813,7 +37001,7 @@ else{
         {dir: 'south', id: '54-3'},
         {dir: 'east', id: '55-2'},
         {dir: 'west', id: '55-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36893,7 +37081,7 @@ else{
         {dir: 'south', id: '48-3'},
         {dir: 'east', id: '49-2'},
         {dir: 'west', id: '49-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -36933,7 +37121,7 @@ else{
         {dir: 'south', id: '45-3'},
         {dir: 'east', id: '46-2'},
         {dir: 'west', id: '46-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -37247,7 +37435,7 @@ else{
         {dir: 'south', id: '39-2'},
         {dir: 'east', id: '40-tudo'},
         {dir: 'west', id: '40-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
         ]
     },
     {
@@ -37417,7 +37605,7 @@ else{
         {dir: 'south', id: '52-2'},
         {dir: 'east', id: '53-1'},
         {dir: 'west', id: '53-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ]
     },
     {
@@ -41010,7 +41198,7 @@ else{
         {dir: 'south', id: '72-colu'},
         {dir: 'east', id: '73-cpkw'},
         {dir: 'west', id: '73-amst'},
-        {dir: 'alley',id: 'dakota-alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
+        {dir: ['alley', 'alleyway', 'sneak'],id: 'dakota-alley', block: `You have the sense that from somewhere in the building someone is looking at you. Not wanting to gain the attention of the police, you hurry back to the street.`}
       ]
     },
     {
@@ -41800,6 +41988,7 @@ else{
       The subway entrance here is closed. A sign directs you to another entrance at 71st and Central Park West.`,
       isStreet: true,
       onEnter: () => {
+        reenableInput();
         degradation = true;
       },
       exits: [
@@ -41971,7 +42160,7 @@ else{
       id: 'dame-2',
       coord: [],
       name: '',
-      desc: `'Xavier, it's so good to see you!' she says. 'How are you? I used to wonder if you even had a life outside the lab. How did that trip down to Texas on that super-secret project work out? I resigned to marry Jack right after you left, so I lost track of Alison. But don't worry -- she hardly told me anything. I was so sad to hear about your mother.' `,
+      desc: `'Xavier, it's so good to see you!' she says. 'How are you? I used to wonder if you even had a life outside the lab. How did that trip down to Texas on that super-secret project work out? I resigned to marry Jack right after you left, so I lost track of Alison. But don't worry—she hardly told me anything. I was so sad to hear about your mother.' `,
       onEnter: () => {
         pressEnter('dame-3');
       },
@@ -41996,7 +42185,7 @@ else{
       id: 'dame-4',
       coord: [],
       name: '',
-      desc: `Before she can respond, her face is suddenly filled with disgust. 'Oh, hell! It's the same private detective who's been following me around all month. Jack and I are separated and I've filed for divorce and now he's looking to catch me in beg with someone so he can try to weasel out of sharing the bonus he got for closing the Saudi deal.'`,
+      desc: `Before she can respond, her face is suddenly filled with disgust. 'Oh, hell! It's the same private detective who's been following me around all month. Jack and I are separated and I've filed for divorce and now he's looking to catch me in bed with someone so he can try to weasel out of sharing the bonus he got for closing the Saudi deal.'`,
       onEnter: () => {
         pressEnter('dame-5');
       },
@@ -42006,7 +42195,7 @@ else{
       id: 'dame-5',
       coord: [],
       name: '',
-      desc: `She rolls her eyes. 'Can you believe it? I mean, I gave that man eleven months of my life -- a year, really, if you count the time in the flat in SoHo. That's worth one hell of a lot more than $200,000. Xavier, do me a favor and lose this guy for me. I know he'll stop and question you; I can't say hello to a man without the same thing happening.'`,
+      desc: `She rolls her eyes. 'Can you believe it? I mean, I gave that man eleven months of my life—a year, really, if you count the time in the flat in SoHo. That's worth one hell of a lot more than $200,000. Xavier, do me a favor and lose this guy for me. I know he'll stop and question you; I can't say hello to a man without the same thing happening.'`,
       onEnter: () => {
         pressEnter('dame-6');
       },
@@ -42016,7 +42205,7 @@ else{
       id: 'dame-6',
       coord: [],
       name: '',
-      desc: `'Just tell him I'm going to meet you later and throw him off; I've got a special date later -- we're meeting at the World Trade Center, and I simply refuse to go up to the top of the thing, but the lobby's nice, -- and I don't want the atmosphere ruined by that walking hairball.'`,
+      desc: `'Just tell him I'm going to meet you later and throw him off; I've got a special date later—we're meeting at the World Trade Center, and I simply refuse to go up to the top of the thing, but the lobby's nice,—and I don't want the atmosphere ruined by that walking hairball.'`,
       onEnter: () => {
         pressEnter('dame-7');
       },
@@ -42093,7 +42282,7 @@ else{
       id: 'dame-11',
       coord: [],
       name: '',
-      desc: `'Thanks, fella,' he says, writing the information in a little book that looks like it's been dipped in used motor oil. 'Here's five bucks -- buy her a drink on me.' 
+      desc: `'Thanks, fella,' he says, writing the information in a little book that looks like it's been dipped in used motor oil. 'Here's five bucks—buy her a drink on me.' 
   
       The man takes off down the street, his short little legs pumping furiously to try and catch up with his quarry.`,
       onEnter: () => {
@@ -42117,7 +42306,7 @@ else{
       id: 'dame-13',
       coord: [],
       name: '',
-      desc: `Before you can reply, an elderly woman carrying an oversize bag of groceries bumps into the fat detective. As he tries to elbow her away his finger accidentally depresses the trigger of his battered gun, sending one bullet cleanly through you heart.`,
+      desc: `Before you can reply, an elderly woman carrying an oversize bag of groceries bumps into the fat detective. As he tries to elbow her away his finger accidentally depresses the trigger of his battered gun, sending one bullet cleanly through your heart.`,
       onEnter: () => {
         pressEnter('dame-14');
       },
@@ -42188,16 +42377,13 @@ else{
         room.onBlock = () => {
   
           if(prevInput === 'yes' && item) {
-            println(``);
-            enterRoom('wacky-?');
+            enterRoom('wacky-12');
           } else if (prevInput === 'yes' && !item) {
             println(`You don't see a reason to lie to this man. Maybe rethink your answer.`);
           } else if (prevInput === 'no') {
             enterRoom('wacky-5')
-  
           } else { 
             println(`'Come again?
-            
             All I need to know is if you have an elephant themed item son.'`);
   
           }
@@ -42295,12 +42481,70 @@ else{
       exits: [],
     },
     {
+      id: 'wacky-10',
+      coord: [],
+      name: '',
+      desc: `The rope is connected on one end to a pulley, and, beyond the pulley to the buildings roof.`,
+      onEnter: () => {
+        pressEnter('wacky-11');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-11',
+      coord: [],
+      name: '',
+      desc: `On it's other end, the rope is connected to a Korean made genuine simulated rosewood exterior Grand Piano, which, devoid of it's support, plummets directly on top of you, killing you instantly.
+  
+      The Wacky Wanderer is badly shaken, but unhurt.`,
+      onEnter: () => {
+        pressEnter('game-over');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-12',
+      coord: [],
+      name: '',
+      desc: `You, stunned by the coincidence of actually having an elephant themed bauble, take a second to hand it over to the gentleman.`,
+      onEnter: () => {
+        pressEnter('wacky-13');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-13',
+      coord: [],
+      name: '',
+      desc: `As he takes it from your hands, you see his eyes soften as he begins to speak,  
+  
+      "Perhaps the most important lesson I learned is that there are no walls between humans and the elephants except those that we put up ourselves, and that until we allow not only elephants, but all living creatures their place in the sun, we can never be whole ourselves."`,
+      onEnter: () => {
+        pressEnter('wacky-14');
+      },
+      exits: [],
+    },
+    {
+      id: 'wacky-13',
+      coord: [],
+      name: '',
+      desc: `You both share a moment of silence which is broken by him passing you an envelope with a $100 bill in it.`,
+      onEnter: () => {
+        elepAchi = true;
+        updateEndings();
+        slideRightIn('achieve-display', 'achieve-text-container');
+        giveMoney(100);
+        pressEnter('wacky-6');
+      },
+      exits: [],
+    },
+    {
       id: 'rag-get',
       coord: [],
       name: '',
       desc: `He hands you a bottle of Windex and a rather greasy dishrag. 'You can earn plenty washing windshields. Just do it when the turkeys stop for a light. But be careful, man. The cops will leave you alone around the Lincoln Tunnel, but don't try it where the rich folks live.'
   
-      He leaves, doing a cartwheel. 'Me, I got me a new business now -- I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
+      He leaves, doing a cartwheel. 'Me, I got me a new business now—I'm gonna be the break-dancing superstar of New York! See you on Lifestyles of the Rich and Famous!'`,
       onEnter: () => {
         const room = getRoom(lastRoom.id);
 
@@ -42316,7 +42560,7 @@ else{
           icon: 'img/png/image-windex+rag-thumbnail.png',
           gif: 'img/gif/gif-windex+rag-ingame.gif',
           name: ['Rag', 'dishrag', 'windex'],
-          desc: `Standard cleaning supplies for glass. Although still useable you imagine they have seen better days.`,
+          desc: `Standard cleaning supplies for glass. Although still useable, you imagine they have seen better days.`,
           isTakeable: true,
           isDroppable: true,
           isTakeable: true,
@@ -42357,7 +42601,7 @@ else{
       id: '60-amer',
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
-      desc: `According to the plaque in front of it this is a genuine Egyptian obelisk. It even has its own name -- Cleopatra's Needle.`, 
+      desc: `According to the plaque in front of it this is a genuine Egyptian obelisk. It even has its own name—Cleopatra's Needle.`, 
       exits: [
         {dir: 'north', id: '61-amer'},
         {dir: 'south', id: '59-amer'},
@@ -42439,6 +42683,7 @@ else{
     },
     {
       id: '67-amer',
+
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
@@ -42600,8 +42845,7 @@ else{
       id: '80-amer',
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
-      desc: `You see an empty bandshell with rows of empty green benches facing it attentively.\nMonday 2:00PM\n
-            You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
+      desc: `You see an empty bandshell with rows of empty green benches facing it attentively. In the bandshell there are three teenagers practicing break-dancing to the loud blare of a ghetto blaster. Just behind you , scowling at this performance, is a giantic bronze bust of Ludwig von, Roll over, Beethoven!`, 
       exits: [
         {dir: 'north', id: '81-amer'},
         {dir: 'south', id: '79-amer'},
@@ -42649,7 +42893,7 @@ else{
       id: 'epoe-amer',
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
-      desc: `A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike -- all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
+      desc: `A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike—all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
       exits: [
         {dir: 'north', id: '85-amer'},
         {dir: 'south', id: '83-amer'},
@@ -43155,6 +43399,9 @@ else{
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
       desc: ``, 
+      onEnter: () => {
+        reenableInput();
+      },
       exits: [
         {dir: 'north', id: '77-7'},
         {dir: 'south', id: '75-7'},
@@ -43256,7 +43503,7 @@ else{
       id: 'epoe-7',
       coord: [66.303, -18.099],
       name: 'Somewhere in Central Park',
-      desc: `A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike -- all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
+      desc: `A steady procession of joggers are jogging around the cyclone-fenced waters of the Croton Reservoir. Adidas, Puma, Spalding, Nike—all the brand names flash by. You feel your own muscles hungering for the same exercise.`, 
       isStreet: true,
       exits: [
         {dir: 'north', id: '85-7'},
@@ -43900,7 +44147,7 @@ else{
     {
       id: 'met-mus', // Inside the Metropolitan Museum, brief interaction
       name: 'Museum',
-      desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display.\n When you've seen enough of the display, you leAve.`,
+      desc: `You enter the museum, and spend a pleasant hour enjoying the exhibits on display.\n When you've seen enough of the display, you leave.`,
       onEnter: () => {
         pressEnter('81-5');
       },
@@ -43988,7 +44235,7 @@ else{
       id: '88-5',
       coord: [71.166, -7.697],
       name: 'E. 88th St. and 5th Ave.',
-      desc: `From a distance, the Guggenheim Museum might be a gigantic of modern sculpture -- perhaps some demented artist's version of a thunderstorm. Even up close, its huge spiral is enough to make you dizzy for a moment.`,
+      desc: `From a distance, the Guggenheim Museum might be a gigantic of modern sculpture—perhaps some demented artist's version of a thunderstorm. Even up close, its huge spiral is enough to make you dizzy for a moment.`,
       isStreet: true,
       onEnter : () =>{
         reenableInput();
@@ -44113,7 +44360,7 @@ else{
         {dir: 'south', id: '94-5'},
         {dir: 'east', id: '95-madi'},
         {dir: 'west', id: '95-amer'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
 // LUNCHEONETTE GOES HERE (95-5) * DEPENDING ON HOW WE HANDLE IT
@@ -45842,7 +46089,7 @@ else{
         {dir: 'south', id: '73-lexi'},
         {dir: 'east', id: '74-3'},
         {dir: 'west', id: '74-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -45896,7 +46143,7 @@ else{
         {dir: 'south', id: '77-lexi'},
         {dir: 'east', id: '78-3'},
         {dir: 'west', id: '78-park'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -46371,7 +46618,7 @@ else{
         {dir: 'south', id: '62-3'},
         {dir: 'east', id: '63-2'},
         {dir: 'west', id: '63-lexi'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],   
     },
     {
@@ -47049,7 +47296,7 @@ else{
         {dir: 'south', id: '61-2'},
         {dir: 'east', id: '62-quen'},
         {dir: 'west', id: '62-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     },
     {
@@ -47180,7 +47427,7 @@ else{
         {dir: 'south', id: '71-2'},
         {dir: 'east', id: '72-1'},
         {dir: 'west', id: '72-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -47247,7 +47494,7 @@ else{
         {dir: 'south', id: '76-2'},
         {dir: 'east', id: '77-1'},
         {dir: 'west', id: '77-3'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     }, 
     {
@@ -47469,7 +47716,7 @@ else{
         {dir: 'south', id: '93-2'},
         {dir: 'east', id: '94-1'},
         {dir: 'west', id: '94-3'},
-        {dir: ['luncheonette','lunch'], id: 'lunch-intro'}
+        {dir: ['luncheonette', 'lunch', 'inside'], id: 'lunch-intro'}
       ],
     }, 
     {
@@ -47737,7 +47984,7 @@ else{
       id: '61-1',
       coord: [45.243, 18.765],
       name: 'E. 61st St. and 1st Ave.',
-      desc: `Dangerfields -- This looks like a perfectly reasonable night club, but somehow you just don't respect it.`,
+      desc: `Dangerfields—This looks like a perfectly reasonable night club, but somehow you just don't respect it.`,
       isStreet: true,
       exits: [
         {dir: 'north', id: '62-1'},
@@ -47811,7 +48058,7 @@ else{
         {dir: 'south', id: '65-1'},
         {dir: 'east', id: '66-york'},
         {dir: 'west', id: '66-2'},
-        {dir: 'pizzeria', id: 'pizza-intro'}
+        {dir: ['pizzeria', 'restaurant', 'inside'], id: 'pizza-intro'}
       ],
     },
     {
@@ -49260,9 +49507,9 @@ else{
 
       },
       exits: [
-        {dir: 'north', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
-        {dir: ['tenement entrance', 'entrance', 'back', 'leave'], id:'tene'},
-        {dir: 'east', block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
+        {dir: 'upstairs', block: `You go to the foot of the staircase and find there is only a foot and a head. Where the main body of the stairs would be is a gaping hole. From the floor above a pair of feral cats peer down at you with the complacence of secure ownership. They know the upstairs is theirs.`},
+        {dir: ['entrance', 'tenement entrance', 'back', 'leave', 'south', 's'], id:'tene'},
+        {dir: ['right door', 'right', 'east'], block: `The door appears to be jammed, but you hear a rustling noise behind it.`},
         {dir: ['living Room', 'west', 'living room', 'room', 'living'], id: `tene-2`},
       ],
     },
@@ -49329,7 +49576,7 @@ else{
       coord: [],
       name: 'Back Room',
       hasEntered: false,
-      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. Ther is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
+      desc: `You are in the back room of the railroad flat. A pair of windows facing north look out at a back lot embellished with a decade's, perhaps a century's, accumulation of broken bottles, viewed through the lattice ironwork of a rickety fire escape. There is a cast iron bathtub in one corner of the room, a doorless icebox sprawled in its back on the floor, and a poster on the wall that poses the question: 'What if they gave a war and nobody came?' By the looks of this place the question was not posed soon enough.`,
       onEnter: () => {
         const room = getRoom(disk.roomId);
         pressEnter('tene-5')
@@ -49343,7 +49590,7 @@ else{
       id: 'tene-5',
       coord: [],
       name: 'Back Room',
-      desc: `The shattered bottles outside the window trigger just the shadow of a memory -- your hands deftly mixing the contents of an odd collection of bottles over a rickety oval table in a hot, dirty room. You hold a flask up to the light and start to shout excitedly to the empty room.`,
+      desc: `The shattered bottles outside the window trigger just the shadow of a memory—your hands deftly mixing the contents of an odd collection of bottles over a rickety oval table in a hot, dirty room. You hold a flask up to the light and start to shout excitedly to the empty room.`,
       onEnter: () => {
         const backRoom = getRoom('tene-4');
         if (backRoom.hasEntered) {
@@ -49381,7 +49628,7 @@ else{
       coord: [],
       hasEntered: false,
       name: 'Bedroom',
-      desc: `In the last hour of the night you have a dream, and when you wake, to the first gray monochromes of dawn, you try to remember what you'd dreamt, for you know that the dream explained why this building inspired such a sense of deja vu. All you can remember, however, if a woman's face.`,
+      desc: `In the last hour of the night you have a dream, and when you wake, to the first gray monochromes of dawn, you try to remember what you'd dreamt, for you know that the dream explained why this building inspired such a sense of d&eacute;j&agrave; vu. All you can remember, however, is a woman's face.`,
       onEnter: () => {
         const room = getRoom('nigh2-1');
 
@@ -49397,7 +49644,7 @@ else{
       id: 'nigh2-2',
       coord: [],
       name: 'Bedroom',
-      desc: `She smiled and spoke some words -- was one of them "Cheese?" -- and just as you were about to kiss her you awoke. So beautiful! The curve of her lips, the arch of her brow, the radiance of her hair, that smile: Perfection! You hope that the dream arose from some memory of the life you've lived, not from your imagination, for if there is such a woman in the world, then your life has a long-term purpose: love.`,
+      desc: `She smiled and spoke some words—was one of them "Cheese?"—and just as you were about to kiss her you awoke. So beautiful! The curve of her lips, the arch of her brow, the radiance of her hair, that smile: Perfection! You hope that the dream arose from some memory of the life you've lived, not from your imagination, for if there is such a woman in the world, then your life has a long-term purpose: love.`,
       onEnter: () => {
         pressEnter('nigh2-3');
       },
@@ -49598,7 +49845,7 @@ else{
       id: 'test',
       coord: [0, 0],
       name: 'TEST ROOM',
-      desc: `I'm a dumby room!`,
+      desc: `I'm a dummy room!`,
       exits: [
         {dir: 'leave', dir: "43-5"}
       ]
@@ -49607,7 +49854,8 @@ else{
       id: 'subway',
       coord: [100, 100],
       name: 'Subway Station',
-      desc: `You start downstairs.......\n After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      desc: `After traversing the stairway, you enter the subway station. A window in front of the turnstiles displays the sign "TOKENS: 1 dollar."`,
+      firstTime: true,
       onEnter: () => {
         const room = getRoom(disk.roomId);
           room.enteredFrom = lastRoom.id;
@@ -49615,17 +49863,23 @@ else{
           
       },
       onBlock: () => {
-        if(prevInput === 'buy token' || prevInput === 'get token') {
+        if(prevInput === 'buy token' || prevInput === 'get token' || prevInput === 'buy a token') {
+          let room = getRoom('subway');
+          if (room.firstTime === true) {
+            room.firstTime = false;
+            println(`***Utilizing the fast travel system: After buying a token, open the map and click on another subway station to instantly ride and get out at another station corner. You have to be inside a subway in order to actually fast travel.***`);
+          }
           if (playMon >= 1) {
             playMon -= 1;
             updateMon();
+            println('You bought a subway token.');
             disk.inventory.push(
               {
                 itemId: "token",
                 icon: 'img/png/image-subwaytoken-thumbnail.png',
                 gif: '/img/gif/gif-subwaytoken-ingame.gif',
                 name: ["Subway Token", 'token', 'subway token'],
-                desc: 'The brass NY Transit Authority toekn is about the size of a quarter.',
+                desc: 'The brass NY Transit Authority token is about the size of a quarter.',
                 isTakeable: true,
                 isDroppable: true,
                 onUse: () => {
@@ -49682,24 +49936,40 @@ else{
       name: 'Telephone Enclosure',
       desc: `You enter the pay telephone enclosure at this corner. It requires a 25-cent deposit.`,
       onEnter: () => {
+        reenableInput();
         const room = getRoom('pho-boo1');
+        const room2 = getRoom('pho-boo2');
+        room.enteredFrom = room2.enteredFrom;
 
-        room.coord = lastRoom.coord;
 
+        //const room = getRoom('pho-boo1');
+        //lastRoom.id = room.enteredFrom;
         room.exits = [];
 
         room.exits.push(
-          {dir: ['leave', 'exit'], id:lastRoom.id},
+          {dir: ['leave', 'exit'], id: room.enteredFrom},
           {dir: 'north', id:``, block: `You need to exit the telephone booth first.`},
-          {dir: 'south', id:'', block: `you need to exit the telephone booth first`},
-          {dir: 'east', id: '', block: `you need to exit the telephone booth first`},
-          {dir: 'west', id: ``, block: `you need to exit the telephone booth first`},
+          {dir: 'south', id:'', block: `you need to exit the telephone booth first.`},
+          {dir: 'east', id: '', block: `you need to exit the telephone booth first.`},
+          {dir: 'west', id: ``, block: `you need to exit the telephone booth first.`},
         )
       },
       exits: [
 
       ],
     },
+    {
+      id: 'pho-boo2',
+      coord: [],
+      name: 'Telephone Enclosure',
+      desc: ' ',
+      onEnter: () => {
+        const room = getRoom('pho-boo2');
+        console.log(lastRoom.id);
+        room.enteredFrom = lastRoom.id;
+        enterRoom('pho-boo1');
+      }
+    }
 
   ],
   characters: [
@@ -49712,7 +49982,7 @@ else{
               println(`The desk clerk is a blond young man, probably in his mid-20's, who has gone prematurely bald and tries to disguise the fact by combing his side hair over the bald spot. It only makes his baldness more noticeable and pathertic. Is there (you wonder) some evolutionary reason for baldness? If not, why do genes do it?`);
 
               if(prevInput === `I don't know`){
-                  println(`That's all right-- neither does Science.`);
+                  println(`That's all right— neither does Science.`);
               }
           },
           onTalk: () => println(`"Hello, Mr. Cameron. How may I help you?`),
@@ -49752,12 +50022,12 @@ else{
         topics: [
             {
                 option: '**PICTURE**',
-                line: `It was early last November, not long after we first met, at the F-Stop **Cafe**, that we discovered that derelict building and I took that lot of pictures.\n\n You were very reluctant to model for me, and it was only when I promised that the pictures would only go to magazines in Europe that you agreed.`,
+                line: `It was early last November, not long after we first met, at the F-Stop __Cafe__, that we discovered that derelict building and I took that lot of pictures.\n\n You were very reluctant to model for me, and it was only when I promised that the pictures would only go to magazines in Europe that you agreed.`,
             },
             {
                 option: '**CAFE**',
                 prereqs: ['picture'],
-                line: `'We met at a lunch at the F-stop Cafe in Chelsea. You'd come there with a model who was working with me that day. I rather moved in on her, though it was plain to see it was no very serious relationship.`,
+                line: `'We met at lunch at the F-stop Cafe in Chelsea. You'd come there with a model who was working with me that day. I rather moved in on her, though it was plain to see it was not very serious of a relationship.`,
             },
             {
                 option: '**JOHN**',

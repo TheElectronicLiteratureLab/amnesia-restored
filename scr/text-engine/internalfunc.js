@@ -249,7 +249,7 @@ let enterRoom = (id) => {
     if(chance <= 5) {
       const chance2 = Math.floor(Math.random() * 100) + 1;
 
-      if(chance2 <= 25) {
+      if(chance2 <= 15) {
       xStreetEvent();
       } else {
       carWashEncounter();
@@ -274,6 +274,9 @@ let pressEnter = (id) => {
 
   let x = document.getElementById("arrow");
 
+  x.classList.remove('ml-2');
+    x.classList.add('ml-1');
+
   //disable normal input
   document.querySelector('input').disabled = true;
   x.innerHTML = `PLEASE PRESS <strong>&nbsp[ENTER]&nbsp</strong> TO CONTINUE`;
@@ -288,6 +291,7 @@ let pressEnter = (id) => {
   }
 document.addEventListener("keydown", cont);
 };
+
 
 // bring back the input after you delete it with the Press Enter function
 let reenableInput = () => {
