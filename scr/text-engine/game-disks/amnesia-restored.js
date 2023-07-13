@@ -1330,7 +1330,7 @@ const amnesiaRestored = {
         playerC.cScore += 3;
         ////console.log(playerC.cScore);
         reenableInput();
-        nEntranceRoom = lastRoom.id;
+        nightmare.entranceRoom = lastRoom.id;
       },
       onBlock: () => {
         println(`You tell yourself to ${prevInput}, but something prevents you. Your acts seem not to be your own. And the voice repeats its command: "Come here, X. Come here to me, in the __mirror__."`)
@@ -1355,7 +1355,7 @@ const amnesiaRestored = {
           reenableInput();
         },
         onBlock: () => {
-          if (firstNightmare === true) {
+          if (nightmare.first === true) {
             println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a __fuck__, a giant __X__ or something risqué comes to mind. Then you press the nozzle and write:");
             if (prevInput === 'fuck') {
               enterRoom('nigh-5');
@@ -1366,7 +1366,7 @@ const amnesiaRestored = {
             } 
             else {
               enterRoom('nigh-9');
-              firstNightmare = false;
+              nightmare.first = false;
             }
           } else {
             println("You aim the can at the one window of the subway car that is not already a palimpsest of disposable identities. The thought of a __fuck__ or a giant __X__ comes to mind. Then you press the nozzle and write:");
@@ -1387,7 +1387,7 @@ const amnesiaRestored = {
         //need to add a way for this text to be added to a list then recalled later in the text.
         onBlock: () => {
           if (prevInput !== '') {
-            nightmareCeleb = prevInput;
+            nightmare.celeb = prevInput;
             enterRoom('nigh-6')
           }
         },
@@ -1397,7 +1397,7 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter:() =>{
-          println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito "Ladies and gentlemen," the Mayor announces. "Today we eliminate once and for all the problem of graffiti in our subways. Commissioner  ${nightmareCeleb}, please take the guilty party away.`)
+          println(`The press photographer takes a picture of you standing handcuffed between the two policemen in front of the offending graffito "Ladies and gentlemen," the Mayor announces. "Today we eliminate once and for all the problem of graffiti in our subways. Commissioner  ${nightmare.celeb}, please take the guilty party away.`)
           pressEnter('nigh-7');
         },
     },
@@ -1406,8 +1406,8 @@ const amnesiaRestored = {
         name: '',
         desc: ``,
         onEnter:() => {
-          println(`Commissioner ${nightmareCeleb} and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner ${nightmareCeleb} tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. \n\nYour struggles are useless as the tattooist's buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner ${nightmareCeleb} holds up a mirror to your face—and you wake, screaming.`);
-          pressEnter(nEntranceRoom);
+          println(`Commissioner ${nightmare.celeb} and the two policemen assist you out of the subway car and down several flights of foul-smelling steps to the underground tattoo parlor of Tarantula Jack. There, as the policemen hold you down, Commissioner ${nightmare.celeb} tells Tarantula Jack that your forehead is to be tattooed with the same words you sprayed on the window of the subway car. \n\nYour struggles are useless as the tattooist's buzzing needle sets forth its everlasting reminder of a punishment truly suited to its crime. When the work is done, Commissioner ${nightmare.celeb} holds up a mirror to your face—and you wake, screaming.`);
+          pressEnter(nightmare.entranceRoom);
           //this node exits to wherever the player entered into the nightmare node.
       },
     },
@@ -1416,7 +1416,7 @@ const amnesiaRestored = {
         name:'',
         desc:`You spray a giant X across the window of the subway car, then return the spray can to the figure who had given it to you—and who is no longer faceless. Yet the face he now has is somehow more frightening than his earlier facelessness—for it is your own face. \n\n He has taken it from you, along with your name, and left you nothing but this scrawl on the subway window. You press your hands to the featureless ovoid that grows from the stalk of your neck and try, mouthlessly, to scream. You wake, trembling and covered with sweat.`,
         onEnter:() => {
-          pressEnter(nEntranceRoom);
+          pressEnter(nightmare.entranceRoom);
         },
     },
     {
@@ -1647,7 +1647,7 @@ const amnesiaRestored = {
       name: '',
       desc: `You've got it? Good: I'll switch it off." He reaches behind your neck, and the last thing you remember are his fingers on the switch of consciousness as he turns you off. You awake with a cry of protest.`,
       onEnter: () => {;
-          pressEnter(nEntranceRoom);
+          pressEnter(nightmare.entranceRoom);
       },
     },
     {
@@ -1690,7 +1690,7 @@ const amnesiaRestored = {
       name: '',
       desc:`The security officer takes you to a fitting room at the side of the sales floor and deftly fits a spare head into the empty socket in your neck. You look at yourself in the mirror. To your surprise you are now a man of sixty or seventy years, and a cousin if not the twin of the security officer, who welcomes you with a smile to your new place of employment. At last, you have a mouth and are able—even as you wake from the nightmare—to scream.`,
       onEnter: () => {
-        enterRoom(nEntranceRoom);
+        enterRoom(nightmare.entranceRoom);
       }
     },
     {
@@ -1798,7 +1798,7 @@ const amnesiaRestored = {
       name: '',
       desc:`You open a fifth box, which seems too small to contain your head. But there it is, still alive! Its eyes look up to you gratefully. Its lips smile. And then, with horror, you realize your mistake. This isn't your own head. It's an identical head that's been substituted for your own. This head belongs to ... to … His name is on the tip of your tongue. But of course, without a head you are also without a tongue. You wake, gasping for breath, and instantly the nightmare fades from your memory.`,
       onEnter: () => {
-        setTimeout(enterRoom(nEntranceRoom), 2000);
+        setTimeout(enterRoom(nightmare.entranceRoom), 2000);
       }
   },
   {
@@ -4223,12 +4223,12 @@ const amnesiaRestored = {
       name: '?th Floor Stairwell',
       desc: ` `,
       onEnter: () =>{   
-        if (nightmareStair === false) {
+        if (nightmare.stair === false) {
           println(`You go down the steps. At the next floor landing, you feel an odd vertiginous feeling. Foolishly you ignore the feeling, and as you approach the landing of still another floor you lose all sense of balance. 
 
           The stairwell whirls about you. You clutch for the railing and collapse on the landing where you lie, an inert and unconscious heap.`)
           pressEnter('nigh-1'); // change to whatever the room id of the nightmare is
-          nightmareStair = true;
+          nightmare.stair = true;
         } else {
           reenableInput();
           enterRoom('nyu-medical1');
@@ -4952,10 +4952,10 @@ const amnesiaRestored = {
       },
       onBlock: () => {
         if (prevInput === 'firing squad' || prevInput === 'squad') {
-          firingInjection = false;
+          DEATH_AND_TEXAS.firingInjection = false;
           enterRoom('deat-f3');
         } else if (prevInput === 'lethal injection' || prevInput === 'injection') {
-          firingInjection = true;
+          DEATH_AND_TEXAS.firingInjection = true;
           enterRoom('deat-le3');
         } else if (prevInput === 'appeal decision' || prevInput === 'appeal' || prevInput === 'fight' || prevInput === 'fight it' || prevInput === 'resist it' || prevInput === 'resist') {
           enterRoom('deat-3');
@@ -4995,10 +4995,10 @@ const amnesiaRestored = {
       desc: `F. Lee Bailey takes your appeal to the highest court, but always the verdict and the sentence are sustained. At last, the dreaded day is at hand, and you must choose the means of your execution A firing squad or lethal injection—which is it?`, // Displayed when the player first enters the room.
       onBlock: () => {
         if (prevInput === 'firing squad' || prevInput === 'squad' || prev === 'firing') {
-          firingInjection = false;
+          DEATH_AND_TEXAS.firingInjection = false;
           enterRoom('deat-f3');
         } else if (prevInput === 'lethal injection' || prevInput === 'injection' || prev === 'lethal') {
-          firingInjection = true;
+          DEATH_AND_TEXAS.firingInjection = true;
           enterRoom('deat-le3');
         } else if (prevInput === 'appeal decision' || prevInput === 'appeal' || prevInput === 'fight' || prevInput === 'fight it' || prevInput === 'resist it' || prevInput === 'resist') {
           enterRoom('deat-3');
@@ -5064,16 +5064,16 @@ const amnesiaRestored = {
      },
      onBlock: () => {
       if (prevInput === 'steak' || prevInput === 'potatoes' || prevInput === 'steak and potatoes') {
-        deathFood = 'steak';
+        DEATH_AND_TEXAS.deathFood = 'steak';
         enterRoom('deat-fsp');
       } else if (prevInput === 'bbq' || prevInput === 'bbq ribs' || prevInput === 'barbecue' || prevInput === 'ribs' || prevInput === 'barbecue ribs') {
-        deathFood = 'ribs';
+        DEATH_AND_TEXAS.deathFood = 'ribs';
         enterRoom('deat-fsp');
       } else if (prevInput === 'roasted' || prevInput === 'turkey' || prevInput === 'roasted turkey' || prevInput === 'roast turkey' || prevInput === 'stuffed turkey') {
-        deathFood = 'turkey';
+        DEATH_AND_TEXAS.deathFood = 'turkey';
         enterRoom('deat-fsp');
       } else if (prevInput === '') {
-        deathFood = 'chili';
+        DEATH_AND_TEXAS.deathFood = 'chili';
         enterRoom('deat-fsp');
       } else {
         println('So, what will it be?');
@@ -5090,19 +5090,19 @@ const amnesiaRestored = {
    },
    onBlock: () => {
      if (prevInput === 'catholic' || prevInput === 'Catholic' || prevInput === 'cath' || prevInput === 'Cath') {
-       religion = 'catholic';
+       DEATH_AND_TEXAS.religion = 'catholic';
        println(`The warden bids you good-day, and a little later a Catholic priest comes to your cell. He hears your confession, and offers spiritual counsels suited to your circumstances.`);
       pressEnter('deat-letar2');
      } else if (prevInput === 'protestant' || prevInput === 'Protestant' || prevInput === 'Prot' || prevInput === 'prot') {
-       religion = 'protestant';
+       DEATH_AND_TEXAS.religion = 'protestant';
        println(`The warden bids you good-day, and a little later a Protestant minister comes to your cell. He reads passages from the New Testament to you, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
      } else if (prevInput === 'jewish' || prevInput === 'Jewish' || prevInput === 'jew' || prevInput === 'Jew') {
-       religion = 'jewish';
+       DEATH_AND_TEXAS.religion = 'jewish';
        println(`The warden bids you good-day, and a little later a rabbi comes to your cell. He recites two or three of the more consoling Psalms, in Hebrew, and offers spiritual counsels suited to your circumstances.`);
        pressEnter('deat-letar2');
      } else if (prevInput === 'no' || prevInput === 'nondenomination' || prevInput === 'none' || prevInput === 'non-denomination' || prevInput === 'nondenom' || prevInput === 'non-denom') {
-       religion = 'none';
+       DEATH_AND_TEXAS.religion = 'none';
        println(`"That's about what I figured," the warden says, and bids you good day.`)
        pressEnter('deat-letar2');
      }
@@ -5114,13 +5114,13 @@ const amnesiaRestored = {
     desc: `You spend the next hour preparing to face death and debating with yourself the pros and cons of capital punishment. If you could be sure you'd killed a guard while trying to escape from this prison, you'd feel less of two minds. Since you're not sure, you feel it isn't really fair to be executed. How much more humane, you think, to induce amnesia like your own instead of condemning men to death. On the other hand, given a choice between a quick and painless death and a lifetime of dying slowly here in Revoltillo…
     Your gloomy meditations are interrupted by the arrival of a guard with a covered tray. "Your last meal," he announces, placing the tray on a table. "Enjoy it." The guard leaves you alone. You uncover the dish and regard the last meal you're to enjoy in this life.`, // Displayed when the player first enters the room.
     onEnter: () => {
-      if (deathFood === 'chili') {
+      if (DEATH_AND_TEXAS.deathFood === 'chili') {
         pressEnter('deat-letar3');
-      } else if (deathFood === 'steak') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'steak') {
         pressEnter('deat-lesp3') //steak
-      } else if (deathFood === 'ribs') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'ribs') {
         pressEnter('deat-lebr3') //ribs
-      } else if (deathFood === 'turkey') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'turkey') {
         pressEnter('deat-lert3') //turkey
       } else {
         pressEnter('deat-letar3'); //error check just in case
@@ -5181,13 +5181,13 @@ const amnesiaRestored = {
     desc: `The guard looks in through the bars of your cell and sees you are not eating your last meal. "Come on, Hollings," he says encouragingly. "You're holding everything up. Eat your last meal so we can get this show on the road." The guard goes away before you can make any reply, and you look down at the food on the plate. You begin, despite yourself, to salivate.\n
     You begin to eat your last meal. It is delicious! No, that is probably the wrong word. Objectively it is probably at the level of an average roadside diner. But subjectively it seems incredibly significant. You finish the last morsel on your plate—and then, like a bolt from the blue, it hits you—a memory from your past life. A memory that makes you realize that you must be innocent of the crime for which you are dying.`, // Displayed when the player first enters the room.
     onEnter: () => {
-      if (deathFood === 'chili') {
+      if (DEATH_AND_TEXAS.deathFood === 'chili') {
         pressEnter('deat-letar5');
-      } else if (deathFood === 'steak') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'steak') {
         pressEnter('deat-lesp5') //steak
-      } else if (deathFood === 'ribs') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'ribs') {
         pressEnter('deat-lebr5') //ribs
-      } else if (deathFood === 'turkey') {
+      } else if (DEATH_AND_TEXAS.deathFood === 'turkey') {
         pressEnter('deat-lert5') //turkey
       } else {
         pressEnter('deat-letar5'); // error correction 
@@ -5236,7 +5236,7 @@ const amnesiaRestored = {
     name: '', // Displayed each time the player enters the room.
     desc: `The warden regards you with contempt and disbelief. "Come on, Hollings. You've only got a few minutes left. Try and show some dignity." You are led, protesting your innocence, to the place of execution.`, // Displayed when the player first enters the room.
     onEnter: () => {
-      if (firingInjection === false) {
+      if (DEATH_AND_TEXAS.firingInjection === false) {
         enterRoom('deat-fgo');
       } else {
         enterRoom('deat-lego');
@@ -5256,7 +5256,7 @@ const amnesiaRestored = {
      },
     onBlock: () => {
       if(prevInput === 'no' || prevInput === 'yes' || prevInput === '') {
-        if (firingInjection === false) {
+        if (DEATH_AND_TEXAS.firingInjection === false) {
           enterRoom('deat-fgo');
         } else {
           enterRoom('deat-lego');
@@ -5264,7 +5264,7 @@ const amnesiaRestored = {
       } else if (prevInput === 'fuck' || prevInput === 'shit' || prevInput === 'fuck you' || prevInput === 'eat shit' || prevInput === 'die' || prevInput === 'eat shit and die' || prevInput === 'I hate you' || prevInput === 'I am your father' || prevInput === 'ftfy') {
         enterRoom('deat-lebad');
       } else {
-        if (firingInjection === false) {
+        if (DEATH_AND_TEXAS.firingInjection === false) {
           enterRoom('death-fgo');
         } else {
           enterRoom('deat-lego');
@@ -7323,17 +7323,16 @@ onBlock: () => {
                           icon: 'img/png/image-invisiblecookie-thumbnail.png',
                           gif: 'img/png/image-invisiblecookie-thumbnail.png',
                           name: ['Invisible Chocolate Chip Cookie', 'invisible cookie', 'chocolate chip cookie', 'cookie', 'another cookie'],
-                          desc: `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`,
+                          desc: `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${ANNS_APARTMENT.cookieCount}`,
                           isDroppable: true,
                         }
                       )
                     } else {
-                      if (cookieCount > 0) {
+                      if (ANNS_APARTMENT.cookieCount > 0) {
                         println(`After a polite show of hesitation, you take one of the imaginary cookies and profess an exaggerated satisfaction.\n
                         “Have another cookie,” Cecily insists. “I can always pretend to bake some more.”`);
-                        cookieCount++;
-                        getItemInInventoryById('chococookie').desc = `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${cookieCount}`;
-                        ////console.log("CookiesTaken: " + cookieCount)
+                        ANNS_APARTMENT.cookieCount++;
+                        getItemInInventoryById('chococookie').desc = `An invisible chocolate chip cookie that Cecily gave you. Pretty damn delicious, probably the best invisible chocolate chip cookies in Manhattan. \nNumber taken: ${ANNS_APARTMENT.cookieCount}`;
                       } else {
                         println('You are too full on cookies;');
                       }
