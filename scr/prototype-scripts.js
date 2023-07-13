@@ -166,18 +166,11 @@ let newGame = () => {
 let loadGame = () => {
     document.getElementById("game-title").style.display = "none";
     document.getElementById("game-load").style.display = "grid";
+    console.log("Loading Game");
 
-    if (localStorage.length === 1) {
-        document.getElementById("saveSlot1").innerHTML = localStorage.key(0);
-    } else if (localStorage.length === 2) {
-        document.getElementById("saveSlot1").innerHTML = localStorage.key(1);
-        document.getElementById("saveSlot2").innerHTML = localStorage.key(0);
-    } else if (localStorage.length === 3) {
-        document.getElementById("saveSlot1").innerHTML = localStorage.key(2);
-        document.getElementById("saveSlot2").innerHTML = localStorage.key(1);
-        document.getElementById("saveSlot3").innerHTML = localStorage.key(0);  
+    for (let i = 0; i < localStorage.length && i < 3; i++) {
+        document.getElementById(`saveSlot${i+1}`).innerHTML = localStorage.key(localStorage.length - i - 1);
     }
-
     //other data we would like for each save slot
 }
 // back button on load screen
