@@ -25,7 +25,7 @@ window.addEventListener('beforeunload', function (e) {
 
 $(document).ready(function(){
 
-    //jQuery to toggle on and off the command options
+    // Query to toggle on and off the command options
     $("#noAgruCommand").click(function(){
         
       $("#noAgruList").slideToggle("slow", changeCaretNo());
@@ -320,12 +320,29 @@ let visualDesc = (id) => {
     }
 }
 
-let beginGame = () => {
-    document.getElementById("game-options").style.display = "none";
-    document.getElementById("game-load").style.display = "none";
-    document.getElementById("game").style.display = "grid";
+let beginGame = (gameData) => {
+    //This is where we load in game data and start the game
+    if (gameData === undefined) {
+        document.getElementById("game-options").style.display = "none";
+        document.getElementById("game-load").style.display = "none";
+        document.getElementById("game").style.display = "grid";
+    } else if ("slot3") {
+        loadGameData("slot3");
+        // enterRoom("hote-room-8");
+        document.getElementById("game-options").style.display = "none";
+        document.getElementById("game-load").style.display = "none";
+        document.getElementById("game").style.display = "grid";
+    }
 }
 
+
+let loadGameData = (slot) => {
+    if (slot === "slot3") {
+        // (optionally accepts a name for the save)
+        const keys = Object.keys(localStorage);
+        console.log(keys);
+    }
+}
 // changing the mode styling through radio buttons
 
 let changeMode = (mode) => {

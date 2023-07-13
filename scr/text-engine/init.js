@@ -171,7 +171,7 @@ let autoSave = () => {
 
 // restore the disk from storage
 // (optionally accepts a name for the save)
-let load = (name) => {
+let load = (name = "Amnesia Restored Save") => {
   const save = localStorage.getItem(name);
 
   if (!save) {
