@@ -1,7 +1,7 @@
 //preLoad();
 
 const amnesiaRestored = {
-  roomId: 'titl-scre', // Set this to the ID of the room you want the player to start in.
+  roomId: 'hote-room-1', // Set this to the ID of the room you want the player to start in.
   currPos: [0,0],
   /*inventory: [{
     itemId: 'xindexer',
@@ -89,6 +89,7 @@ const amnesiaRestored = {
     //********************************************************/
     {
       id: 'hote-room-1',
+      coord: [100, 100],
       name: 'Hotel Room',
       hasBed: true,
       desc: `What's a person to do in such a situation? \n\nWhat YOU do is...`,

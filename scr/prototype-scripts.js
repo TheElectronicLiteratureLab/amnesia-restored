@@ -169,7 +169,7 @@ let loadGame = () => {
     console.log("Loading Game");
 
     for (let i = 0; i < localStorage.length && i < 3; i++) {
-        document.getElementById(`saveSlot${i+1}`).innerHTML = localStorage.key(localStorage.length - i - 1);
+        document.getElementById(`saveSlot${i+1}`).innerHTML = localStorage.key(i);
     }
     //other data we would like for each save slot
 }
@@ -323,24 +323,63 @@ let visualDesc = (id) => {
 let beginGame = (gameData) => {
     //This is where we load in game data and start the game
     if (gameData === undefined) {
+        clearOutput();
+        enterRoom("titl-scre")
+        document.getElementById("game-options").style.display = "none";
+        document.getElementById("game-load").style.display = "none";
+        document.getElementById("game").style.display = "grid";
+    } else if ("slot1") {
+        disk = JSON.parse(loadGameData(1), (key, value) => {
+            try {
+              return eval(value);
+            } catch (error) {
+              return value;
+            }
+          });
+        console.log(disk.roomId);
+        clearOutput();
+        enterRoom(disk.roomId);
+        document.getElementById("game-options").style.display = "none";
+        document.getElementById("game-load").style.display = "none";
+        document.getElementById("game").style.display = "grid";
+    } else if ("slot2") {
+        disk = JSON.parse(loadGameData(2), (key, value) => {
+            try {
+              return eval(value);
+            } catch (error) {
+              return value;
+            }
+          });
+        clearOutput();
+        enterRoom(disk.roomId);
+        
         document.getElementById("game-options").style.display = "none";
         document.getElementById("game-load").style.display = "none";
         document.getElementById("game").style.display = "grid";
     } else if ("slot3") {
-        loadGameData("slot3");
-        // enterRoom("hote-room-8");
+        disk = JSON.parse(loadGameData(3), (key, value) => {
+            try {
+              return eval(value);
+            } catch (error) {
+              return value;
+            }
+          });
+        clearOutput();
+        enterRoom(disk.roomId);
         document.getElementById("game-options").style.display = "none";
         document.getElementById("game-load").style.display = "none";
         document.getElementById("game").style.display = "grid";
     }
 }
 
-
 let loadGameData = (slot) => {
-    if (slot === "slot3") {
-        // (optionally accepts a name for the save)
-        const keys = Object.keys(localStorage);
-        console.log(keys);
+    let index = slot - 1;
+    if (index === 0) {
+        return localStorage.getItem(localStorage.key(index));
+    } else if (index === 1) {
+        return localStorage.getItem(localStorage.key(index));
+    } else if (index === 2) {
+        return localStorage.getItem(localStorage.key(index));
     }
 }
 // changing the mode styling through radio buttons
