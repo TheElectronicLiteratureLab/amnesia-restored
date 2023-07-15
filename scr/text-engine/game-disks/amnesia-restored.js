@@ -261,13 +261,8 @@ const amnesiaRestored = {
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
-        if (!getItemInInventory('xindexer')){
-          console.log('adding xindexer')
-          addItem('xindexer');
-        }
-        if (!getItemInInventory('dollar bill')){
-          addItem('dollar bill');
-        }
+        addItem('xindexer');
+        addItem('dollar bill');
 
         reenableInput();
         ////console.log(disk.inventory);
