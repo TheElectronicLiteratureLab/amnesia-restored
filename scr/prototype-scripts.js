@@ -336,7 +336,6 @@ let beginGame = (gameData) => {
               return value;
             }
           });
-        console.log(disk.roomId);
         clearOutput();
         enterRoom(disk.roomId);
         document.getElementById("game-options").style.display = "none";

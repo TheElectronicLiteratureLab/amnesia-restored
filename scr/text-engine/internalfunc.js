@@ -317,7 +317,12 @@ let clearOutput = () => {
 // determine whether the object has the passed name
 // item | character, string -> bool
 let objectHasName = (obj, name) => {
-  const compareNames = n => n.toLowerCase().includes(name.toLowerCase());
+  const compareNames = n => {
+    if (typeof n !== 'string') {
+      n = String(n);      
+    }
+    n.toLowerCase().includes(name.toLowerCase());
+  } 
 
   return Array.isArray(obj.name)
     ? obj.name.find(compareNames)

@@ -261,8 +261,14 @@ const amnesiaRestored = {
         document.getElementById('inventory-button').style.display = "grid";
         document.getElementById('save-button').style.display = "grid";
         document.getElementById('game-ui-bar').style.display = "flex";
-        addItem('xindexer');
-        addItem('dollar bill');
+        if (!getItemInInventory('xindexer')){
+          console.log('adding xindexer')
+          addItem('xindexer');
+        }
+        if (!getItemInInventory('dollar bill')){
+          addItem('dollar bill');
+        }
+
         reenableInput();
         ////console.log(disk.inventory);
       },
@@ -11282,7 +11288,7 @@ else{
           id: 'dakota-alley',
       },
       {
-        dir: ['inside', 'window'], 
+        dir: ['inside'], 
         id: 'dakota-alley-zane',
     }
     ],
@@ -49917,7 +49923,7 @@ else{
             ////console.log('Use the token!');
             if(disk.roomId === 'subway') {
               document.getElementById('map-display').style.display = "block";
-              map.invalidateSize();
+              systemMap.invalidateSize();
               let found = disk.inventory.findIndex(el => el.itemId === 'token');
               //////console.log(found);
               disk.inventory.splice(found);

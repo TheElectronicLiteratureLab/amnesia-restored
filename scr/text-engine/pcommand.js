@@ -2351,7 +2351,6 @@ let commands = [
   // no arguments (e.g. "help", "chars", "inv")
   {
     inv,
-    i: inv, // shortcut for inventory
     inventory: inv,
     look,
     l: look, // shortcut for look
