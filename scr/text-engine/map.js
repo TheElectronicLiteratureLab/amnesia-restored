@@ -13,15 +13,15 @@ let playerMarker = L.marker(disk.currPos, {icon: playerIcon, zIndexOffset: 1000,
 let foodLayer = L.layerGroup();
 
 //Custom map of Manhattan
- let map = L.map('map-man', {
+ let systemMap = L.map('map-man', {
     center:[0, 0],
     zoom: 4,
     layers: [playerLayer],
     attributionControl: false,
     zoomControl: false
   });
-map.invalidateSize(); //this allows for resizing within other divs
-setTimeout(function(){ map.invalidateSize(true)}, 100); //this is just in case player tries to resize again and takes care of edge cases
+systemMap.invalidateSize(); //this allows for resizing within other divs
+setTimeout(function(){ systemMap.invalidateSize(true)}, 100); //this is just in case player tries to resize again and takes care of edge cases
 
 //Link the tiles and the file directory template
 L.tileLayer('map/{z}/{x}/{y}.png', {
@@ -29,7 +29,7 @@ L.tileLayer('map/{z}/{x}/{y}.png', {
   noWrap: true,	
   minZoom: 3,
   maxZoom: 6,
-}).addTo(map);
+}).addTo(systemMap);
 
 /*
 ///Coordinate Finder Tool
@@ -61,8 +61,8 @@ let overlays = {
   "Story": poiLayer
 }
 
-L.control.layers(null, overlays, {collapsed: false, position: 'bottomleft'}).addTo(map);
-L.control.zoom({position: 'bottomright'}).addTo(map);
+L.control.layers(null, overlays, {collapsed: false, position: 'bottomleft'}).addTo(systemMap);
+L.control.zoom({position: 'bottomright'}).addTo(systemMap);
 
 
 //******Main Marker Creation Here*******//

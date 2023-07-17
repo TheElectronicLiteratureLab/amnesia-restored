@@ -154,9 +154,23 @@ let save = () => {
 
 // convert the disk to JSON and store it
 // (optionally accepts a name for the save)
+let cache = new Set();
 let save = (name = 'Amnesia Restored Save') => {
-  const save = JSON.stringify(disk, (key, value) => typeof value === 'function' ? value.toString() : value);
-  localStorage.setItem(name, save);
+  let sDisk = disk;
+  if (localStorage.getItem(name)) {
+    localStorage.removeItem(name);
+  }
+  const saveDisk = JSON.stringify(sDisk, (key, value) => {
+    if(typeof value === 'function') {
+        console.log("Function:", key, value.toString());
+        return value.toString();
+    } else {
+        console.log("Value:", key, value);
+        return value;
+    }
+});
+
+  localStorage.setItem(name, saveDisk);
   const line = name.length ? `Game saved as "${name}".` : `Game saved.`;
   println(line);
 };
@@ -171,7 +185,7 @@ let autoSave = () => {
 
 // restore the disk from storage
 // (optionally accepts a name for the save)
-let load = (name) => {
+let load = (name = "Amnesia Restored Save") => {
   const save = localStorage.getItem(name);
 
   if (!save) {

@@ -8,21 +8,26 @@ let saveSlot = '3';
 
 let turnMapOn = false;
 
-//Sunderland Hotel Flags and Variables
+// Sunderland Hotel Flags and Variables
+//todo: make sure to change this where its referenced in the code
 let earlyLeave = false; //Checks to see if player leaves early in hotel tutorial.
 let tipBellboy = true; //Checks to see if player tipped bellboy, this can trigger Bellboy's Revenge ending
 let isNaked = true;
-let firstNightmare = true;
-let nightmareCeleb = 'Disch';
-let nEntranceRoom = 'hote-room-8';
-let nightmareStair = false;
+let nightmare = {
+  first: true,
+  celeb: 'Disch',
+  entranceRoom: 'hote-room-8',
+  stair: false
+};
 let safeDeposit = false;
 
-
 //Death and Texas Flags and Variables
-let firingInjection = false; //false = firing squad, true = injection
-let religion = 'none';
-let deathFood = 'steak';
+//todo: have these as arrays and check for it in onEnter ending
+const DEATH_AND_TEXAS = {
+  firingInjection: false, //false = firing squad, true = injection
+  religion: 'none',
+  deathFood: 'steak'
+}
 
 //User Friendly Computer Store Flags and Variables
 let readApple = true;
@@ -30,7 +35,9 @@ let readC64 = false;
 let readIBM = false;
 
 //Ann's Apartment Flags and Variables
-let cookieCount = 1;
+const ANNS_APARTMENT = {
+  cookieCount: 1
+}
 
 //Sketchpad and Washington Square Park Flags and Variables
 let sketches = 0;
@@ -43,11 +50,10 @@ let zRandomEncounter = 0;
 let betteCounter = 0;
 let bettesHome = 0;
 
-
 //Dakota and Endgame Flags and Variables
 let dakotaEntered = false;
 
-
+// Player Stats
 let playFat = 100;
 let playHung = 100;
 let prevHung; // holds the previous value of playHung
@@ -408,10 +414,10 @@ let fatBelow10 = false;
 //variable for if the player stats should degrade
 let degradation = false;
 
-// ending variables IF true unlock achievement
-// add variable equals true on matching endings
 // add function updateEndings()
 // add function slideRightIn('achieve-display', 'achieve-text-container')
+// ending variables IF true unlock achievement
+// add variable equals true on matching ending
 let emptEnli = false; // empty enlightenment ending (monk ending)
 let theShep = false; // the shepard ending (sheep farmer ending)
 let the1986 = false; // the 1986 classic ending (when you fail a street indexer check)

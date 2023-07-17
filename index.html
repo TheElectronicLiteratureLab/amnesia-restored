@@ -27,7 +27,8 @@
     <script src="scr/leaflet.js"></script>
     <script src="scr/jquery/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/Draggable.min.js"></script>
+    <script src="https://unpkg.com/flatted@3.2.7/min.js"></script>
 
 </head>
 
@@ -118,17 +119,23 @@
                     </div>
                     <div id="load-saves">
                         <div class="saves" id="first-save-container">
-                            <h4 id=saveSlot1></h4>
+                            <button onclick="beginGame('slot1')">
+                                <h4 id=saveSlot1></h4>
+                            </button>
                             <h4 class="saves-date" id="first-save-date"></h4>
                             <h4 class="saves-time" id="first-save-time"></h4>
                         </div>
                         <div class="saves" id="second-save-container">
-                            <h4 id=saveSlot2></h4>
+                            <button onclick="beginGame('slot2')">
+                                <h4 id=saveSlot2></h4>
+                            </button>
                             <h4 class="saves-date" id="second-save-date"></h4>
                             <h4 class="saves-time" id="second-save-time"></h4>
                         </div>
                         <div class="saves" id="third-save-container">
-                            <h4 id=saveSlot3></h4>
+                            <button onclick="beginGame('slot3')">
+                                <h4 id=saveSlot3></h4>
+                            </button>
                             <h4 class="saves-date" id="third-save-date"></h4>
                             <h4 class="saves-time" id="third-save-time"></h4>
                         </div>
